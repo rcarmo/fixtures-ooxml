@@ -33,7 +33,8 @@
     "workflows/pptx/text-box.feature",
     "workflows/xlsx/cell-style.feature",
     "workflows/docx/page-layout.feature",
-    "workflows/pptx/slide-order.feature"
+    "workflows/pptx/slide-order.feature",
+    "workflows/docx/effective-formatting.feature"
   ],
   "executionCredit": "Only local executed assertions count; reports here do not run consumers.",
   "workflows": [
@@ -2953,6 +2954,61 @@
         "python": {
           "status": "planned",
           "evidence": "No equivalent slide order binding reviewed"
+        }
+      }
+    },
+    {
+      "id": "@id-docx-effective-run-formatting",
+      "feature": "workflows/docx/effective-formatting.feature",
+      "expandedCases": 9,
+      "factIds": [],
+      "expectedOutcomes": [
+        "effective flags and provenance match implicit after reopening",
+        "formatting inspection preserves all bytes and existing handles",
+        "effective flags and provenance match defaults after reopening",
+        "effective flags and provenance match default-style after reopening",
+        "effective flags and provenance match inherited after reopening",
+        "effective flags and provenance match toggle-chain after reopening",
+        "effective flags and provenance match style-false after reopening",
+        "effective flags and provenance match direct-off after reopening",
+        "effective flags and provenance match aliased after reopening",
+        "effective flags and provenance match multiple-runs after reopening"
+      ],
+      "consumers": {
+        "bun": {
+          "status": "planned",
+          "evidence": "Native candidate binding requires canonical-path run; no cross-language execution credit"
+        },
+        "go": {
+          "status": "planned",
+          "evidence": "No equivalent effective formatting binding reviewed"
+        },
+        "python": {
+          "status": "planned",
+          "evidence": "No equivalent effective formatting binding reviewed"
+        }
+      }
+    },
+    {
+      "id": "@id-docx-effective-run-formatting-refusal",
+      "feature": "workflows/docx/effective-formatting.feature",
+      "expandedCases": 16,
+      "factIds": [],
+      "expectedOutcomes": [
+        "effective formatting inspection refuses without changing package bytes"
+      ],
+      "consumers": {
+        "bun": {
+          "status": "planned",
+          "evidence": "Native candidate binding requires canonical-path run; no cross-language execution credit"
+        },
+        "go": {
+          "status": "planned",
+          "evidence": "No equivalent effective formatting binding reviewed"
+        },
+        "python": {
+          "status": "planned",
+          "evidence": "No equivalent effective formatting binding reviewed"
         }
       }
     }

@@ -41,6 +41,8 @@ and the consumer release checks.
   sections and text while selecting explicit page dimensions and margins.
   [Slide permutation](contracts/slide-order.md) changes only presentation ordering,
   retaining slide identities, notes and unrelated package parts.
+  [Effective bold/italic](contracts/effective-formatting.md) specifies bounded
+  style-toggle inspection with provenance and explicit unsupported contexts.
 - `workflows/native/`: additional format/package behaviour contracts. Their
   planned tag gives no consumer execution credit.
 - `ledgers/workflows.json`: expected outcomes, related facts and per-consumer

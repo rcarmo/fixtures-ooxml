@@ -3000,6 +3000,21 @@
       "aliases": []
     },
     {
+      "id": "asset-8f1f31180b9e31dfff4e30ecfd9c9c4596edfaff85561cd53e775135cf748b90",
+      "path": "workflows/docx/effective-formatting.feature",
+      "bytes": 1710,
+      "sha256": "8f1f31180b9e31dfff4e30ecfd9c9c4596edfaff85561cd53e775135cf748b90",
+      "role": "workflow",
+      "origins": [
+        {
+          "repository": "https://github.com/rcarmo/fixtures-ooxml",
+          "path": "workflows/docx/effective-formatting.feature",
+          "basis": "Language-neutral bounded effective bold/italic inheritance inspection contract; native save/reopen and refusal assertions remain consumer-local"
+        }
+      ],
+      "aliases": []
+    },
+    {
       "id": "asset-5aca6616eabfbc3c409897f1ee271f9a51a1e37835c1c512ffa13d97cf610181",
       "path": "workflows/docx/page-layout.feature",
       "bytes": 1525,
