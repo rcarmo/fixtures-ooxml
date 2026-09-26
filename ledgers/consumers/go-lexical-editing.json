@@ -1,0 +1,142 @@
+{
+  "schemaVersion": 1,
+  "consumer": "go",
+  "source": {
+    "repository": "https://github.com/rcarmo/go-ooxml",
+    "revision": "e2c5891212beef16f7412c794d3bea6c01e9da35",
+    "publication": "local-unpublished; repository credential lacks push access"
+  },
+  "scope": "Seven remaining declarations from the complete eleven-declaration internal/losslessxml test family; four parser/QName/boundary/normalization declarations stay indexed in go-xml.json. Source-reviewed Go lexical-edit predicates only; new scenarios planned, no Go or cross-runtime execution credit. contracts/go-lexical-editing.md reconciles the full family denominator and gaps.",
+  "declarationCount": 7,
+  "mappings": [
+    {
+      "nativeId": "internal/losslessxml/attributes_test.go::TestAttributeSpliceBatch",
+      "path": "internal/losslessxml/attributes_test.go",
+      "sourceSha256": "54c87bdb247dd1160b743f4e133da9b8c653c654829380caa6cad6039bd5f3e7",
+      "coverage": "partial",
+      "scenarioIds": [
+        "@id-xml-go-attribute-splice-custody",
+        "@id-xml-go-attribute-batch-refusal"
+      ],
+      "verifiedAspects": [
+        "Three exact output strings compare an existing unqualified single-quoted attribute, an existing namespace-bound double-quoted attribute and a fresh attribute without reserialising the sibling",
+        "A duplicate edit to one attribute in a batch returns a non-nil error"
+      ],
+      "gaps": [
+        "Source also refuses an unbound attribute namespace, reserved xmlns, illegal text character and invalid local name; new candidate only covers duplicate edits",
+        "No post-refusal output or independent reparsed attribute-value assertion; Go quote choice is an observed source predicate, not a general XML requirement"
+      ],
+      "executionCredit": false
+    },
+    {
+      "nativeId": "internal/losslessxml/children_test.go::TestStructuredChildInsertionBatch",
+      "path": "internal/losslessxml/children_test.go",
+      "sourceSha256": "ee41101b00fc7edbfa87b346a6116e2650143b6a02bde64e86dca557ed0453bb",
+      "coverage": "partial",
+      "scenarioIds": [
+        "@id-xml-go-child-insertion-custody",
+        "@id-xml-go-child-insertion-refusal"
+      ],
+      "verifiedAspects": [
+        "Inserted child and grandchild are reparsed with expanded element names new/x and empty-namespace plain, and untouched sibling <b>keep</b> remains a byte substring",
+        "Overlapping root/child insertions refuse; a separate nil insertion returns source bytes exactly"
+      ],
+      "gaps": [
+        "The test asserts element identities but does not read back the inserted attribute or grandchild text",
+        "Bad:name, NUL, mixed Text+Children, foreign target and duplicate-parent insertion refusals remain outside the two candidate scenarios"
+      ],
+      "executionCredit": false
+    },
+    {
+      "nativeId": "internal/losslessxml/fuzz_test.go::FuzzImmutableLeafEdits",
+      "path": "internal/losslessxml/fuzz_test.go",
+      "sourceSha256": "58909987aab89c48263ecd4f3628c07f7023fbd02d4eb35fcd7c9eb8e9a65e56",
+      "coverage": "partial",
+      "scenarioIds": [
+        "@id-xml-go-immutable-leaf-seed"
+      ],
+      "verifiedAspects": [
+        "The literal hello leaf is one of five seed inputs; parsing does not mutate caller bytes and an empty edit returns the exact source bytes"
+      ],
+      "gaps": [
+        "The fuzz callback returns without assertion for rejected or over-limit XML inputs; nonempty edits may fail, and successful output is only reparsed. Those conditional paths are not mapped as a success contract",
+        "No arbitrary generated input, guaranteed nonempty replacement, exploratory fuzz campaign or performance credit"
+      ],
+      "executionCredit": false
+    },
+    {
+      "nativeId": "internal/losslessxml/insertion_properties_test.go::TestInsertedExpandedNamesMatrix",
+      "path": "internal/losslessxml/insertion_properties_test.go",
+      "sourceSha256": "745f2ef12be7d935222c2a7c0af0d66604ad6e4c0799fbaf1ccad160414f3a74",
+      "coverage": "partial",
+      "scenarioIds": [
+        "@id-xml-go-child-namespace-matrix"
+      ],
+      "verifiedAspects": [
+        "The feature lists the exact four root XML sources and five namespace URI choices for each element and attribute, giving 100 deterministic source loop iterations. Reparse checks root, child and grandchild expanded names, deep-equal attribute values and exact grandchild text",
+        "Each original root source is retained by a separate empty edit"
+      ],
+      "gaps": [
+        "One source declaration and one workflow, not one hundred independently named canonical cases",
+        "No exact serialized prefix, output part hash, independently measured runtime leaves or complete namespace matrix beyond specified values"
+      ],
+      "executionCredit": false
+    },
+    {
+      "nativeId": "internal/losslessxml/insertion_properties_test.go::FuzzStructuredChildRoundTrip",
+      "path": "internal/losslessxml/insertion_properties_test.go",
+      "sourceSha256": "745f2ef12be7d935222c2a7c0af0d66604ad6e4c0799fbaf1ccad160414f3a74",
+      "coverage": "partial",
+      "scenarioIds": [
+        "@id-xml-go-child-insertion-custody",
+        "@id-xml-go-child-namespace-matrix"
+      ],
+      "verifiedAspects": [
+        "Three literal seed tuples feed the callback; when text and attribute are valid, output reparses and child text, expanded name and full attribute values equal the supplied node"
+      ],
+      "gaps": [
+        "Fixture seed count does not establish an exploratory fuzz run or an exhaustive string space; inputs over 4096 bytes return",
+        "Invalid values require a non-nil error but have no exact error code, unchanged-output or package-level assertion; candidate insertion fixture differs from this fuzz callback"
+      ],
+      "executionCredit": false
+    },
+    {
+      "nativeId": "internal/losslessxml/remove_test.go::TestElementRemovalBatch",
+      "path": "internal/losslessxml/remove_test.go",
+      "sourceSha256": "f9e32b0e1541655dc4d29cac5e63a2cd901215151ace1bdeedc6c669db471720",
+      "coverage": "partial",
+      "scenarioIds": [
+        "@id-xml-go-element-removal-custody",
+        "@id-xml-go-element-removal-refusal"
+      ],
+      "verifiedAspects": [
+        "Removing two disjoint elements yields one exact output retaining comment, namespace declaration and gap; separate nil removal equals original source bytes",
+        "Root and parent/child overlapping selections return non-nil errors in separate Examples rows"
+      ],
+      "gaps": [
+        "Duplicate, foreign and zero-value targets also refuse in source but have no candidate row here",
+        "No post-refusal package rollback or encoded part-custody assertion; one further removal proves parsed snapshot reuse without exact output comparison"
+      ],
+      "executionCredit": false
+    },
+    {
+      "nativeId": "internal/losslessxml/replace_elements_test.go::TestReplaceElementsBatch",
+      "path": "internal/losslessxml/replace_elements_test.go",
+      "sourceSha256": "a76fa1e277a62be5b914f71d597b4ef636974a7647ffd6475252685a1c6065f3",
+      "coverage": "partial",
+      "scenarioIds": [
+        "@id-xml-go-element-replacement-custody",
+        "@id-xml-go-element-replacement-refusal"
+      ],
+      "verifiedAspects": [
+        "Replacing a subtree under surviving parent namespace scope yields an exact output string with bound-prefix new and empty-namespace plain",
+        "Root, duplicate target and parent/child overlapping selections return errors with nil edited output in separate Examples rows; separate nil replacement equals original source bytes"
+      ],
+      "gaps": [
+        "Disjoint replacement-plus-deletion has a separate exact source assertion not reproduced in the new candidates",
+        "Foreign target and invalid NUL text refuse, but are not represented here; no canonical package/Office-level validation"
+      ],
+      "executionCredit": false
+    }
+  ]
+}

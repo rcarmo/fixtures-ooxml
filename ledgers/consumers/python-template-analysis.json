@@ -1,0 +1,99 @@
+{
+  "schemaVersion": 1,
+  "consumer": "python",
+  "source": {
+    "repository": "https://github.com/rcarmo/python-office-mcp-server",
+    "revision": "027a8b2fd2fdcec4c00941eb5ad07b05e6971caf"
+  },
+  "scope": "Seven non-parametrised DOCX template-analysis declarations: five direct analyzer calls and two unified office-template analyze calls, represented by six distinct scenarios. Source review only; no Python binding or execution credit.",
+  "declarationCount": 7,
+  "targetedFamily": {
+    "directAnalyzerDeclarations": 5,
+    "unifiedAnalyzeDeclarations": 2,
+    "nativeCases": 7,
+    "canonicalScenarios": 6,
+    "parameterRows": 0,
+    "sharedBindingsExecuted": 0,
+    "implementation": [
+      {"path": "tools/word_advanced_tools.py", "sha256": "66086062da09606f36ad82803ffe6e8f252c9e1a80e44dceb5a73242ef7d34da"},
+      {"path": "tools/office_unified_tools.py", "sha256": "414525cdaf087bb06bbb8a95113d48248520ac9da874a69ceeaf6a3199d5ca51"}
+    ],
+    "testHelpers": [
+      {"path": "tests/conftest.py", "sha256": "1f3f8d173438c11be5a467004ac4504707d03f9e552c92ae3216b25adebd9e56"},
+      {"path": "tests/test_metadata_cache.py", "sha256": "b1ce664c47890a8188e57188c5ece5965362bd0f6b5fd87e28f389e24b6d2c1f", "symbol": "_build_template", "use": "test-local DOCX builder; not a separate test declaration"}
+    ],
+    "boundary": "A file-wide or total-suite denominator was not inferred from an older staging catalogue. Other SOW parser and copy tests are separate operations; PPTX template analysis/copy tests are not Word analysis. Source-only declaration inventory, not pytest execution."
+  },
+  "mappings": [
+    {
+      "nativeId": "tests/test_word_advanced_tools.py::TestAnalyzeTemplateFormatting::test_analyzes_formatting",
+      "path": "tests/test_word_advanced_tools.py",
+      "sourceSha256": "8606277d4e6508fffa7d6a89883c4d29661fb503ff3df03ac74d7352b0704704",
+      "coverage": "partial",
+      "scenarioIds": ["@id-python-word-template-analysis-sow-response"],
+      "verifiedAspects": ["The saved SOW template is passed to the direct analyzer; the native assertion accepts either absence of an error member or a dictionary response, including an error dictionary."],
+      "gaps": ["The shared planned scenario requires both a dictionary and no error member, stronger than the native OR assertion. The native test accepts a non-dictionary without an error member and a dictionary containing an error; it cannot verify this successful-response contract.", "No analysis fields, classification, table policy or byte-preservation outcome is asserted."],
+      "executionCredit": false
+    },
+    {
+      "nativeId": "tests/test_word_coverage.py::TestAnalyzeTemplateFormatting::test_analyze_template_formatting",
+      "path": "tests/test_word_coverage.py",
+      "sourceSha256": "0a75211906e78cb0de7938f81d07747ab0bbedbff063a2eb86661da4d6d66b59",
+      "coverage": "partial",
+      "scenarioIds": ["@id-python-word-template-analysis-placeholder-response"],
+      "verifiedAspects": ["Saved template with boilerplate and two placeholders is passed to the direct analyzer; result is asserted to be a dictionary."],
+      "gaps": ["An error dictionary satisfies the native assertion.", "Placeholder/boilerplate detection, exact classification and document-byte preservation are not asserted."],
+      "executionCredit": false
+    },
+    {
+      "nativeId": "tests/test_word_pptx_advanced_ops.py::TestWordSowOperations::test_analyze_template_formatting",
+      "path": "tests/test_word_pptx_advanced_ops.py",
+      "sourceSha256": "f2f350d19b449dd59ad335773846d1a5455016349cefbbeb6a0f077643034337",
+      "coverage": "partial",
+      "scenarioIds": ["@id-python-word-template-analysis-colour-response"],
+      "verifiedAspects": ["A saved Word document with heading, blue guidance run, standard text and placeholder is analyzed; response is a dictionary."],
+      "gaps": ["Blue-run detection, guidance classification and individual response fields are not asserted.", "An error dictionary satisfies the native assertion."],
+      "executionCredit": false
+    },
+    {
+      "nativeId": "tests/test_coverage_boost.py::TestWordSowOperations::test_analyze_template_formatting",
+      "path": "tests/test_coverage_boost.py",
+      "sourceSha256": "3ceef0de151845853fa6e30c6a845fb7f536e58abc4b761da8b61f1e4f996bad",
+      "coverage": "partial",
+      "scenarioIds": ["@id-python-word-template-analysis-colour-response"],
+      "verifiedAspects": ["The same saved Word document setup (heading, blue guidance run, standard text and placeholder) is analyzed; response is a dictionary. This native declaration shares one canonical scenario with the other colour test."],
+      "gaps": ["Blue-run detection, guidance classification and individual response fields are not asserted.", "An error dictionary satisfies the native assertion."],
+      "executionCredit": false
+    },
+    {
+      "nativeId": "tests/test_more_coverage.py::TestWordTemplateOperations::test_analyze_template_empty",
+      "path": "tests/test_more_coverage.py",
+      "sourceSha256": "35a1a0840b9f44a8e8066499a7fc0602e88061d29a456827b3b08d130476f6d9",
+      "coverage": "partial",
+      "scenarioIds": ["@id-python-word-template-analysis-plain-response"],
+      "verifiedAspects": ["A saved document with one Simple text paragraph is analyzed; response is a dictionary."],
+      "gaps": ["The document is not empty, despite the native test name.", "An error dictionary satisfies the native assertion; empty summary counts and input preservation are not asserted."],
+      "executionCredit": false
+    },
+    {
+      "nativeId": "tests/test_office_unified_tools.py::TestOfficeTemplateWord::test_analyze_template",
+      "path": "tests/test_office_unified_tools.py",
+      "sourceSha256": "50a094cf7682f512b406b747efab6e6b421e241bd14ef1a920f719b6cc68464a",
+      "coverage": "partial",
+      "scenarioIds": ["@id-python-office-template-analysis-response"],
+      "verifiedAspects": ["Unified office_template analyzes a saved Word template with customer placeholder title and the native assertion checks that the response has no error member."],
+      "gaps": ["No template category, metadata-cache state, formatting pattern, byte-preservation or rendering outcome is asserted.", "The unified path may attach template metadata, but this test does not inspect it."],
+      "executionCredit": false
+    },
+    {
+      "nativeId": "tests/test_metadata_cache.py::TestMetadataCacheIntegration::test_office_template_analyze_exposes_cached_template_metadata",
+      "path": "tests/test_metadata_cache.py",
+      "sourceSha256": "b1ce664c47890a8188e57188c5ece5965362bd0f6b5fd87e28f389e24b6d2c1f",
+      "coverage": "partial",
+      "scenarioIds": ["@id-python-office-template-analysis-cache"],
+      "verifiedAspects": ["Two unified analyses of an unchanged saved Word template expose template_metadata: initial cache reason stored, subsequent reason hit and second response's first table purpose staffing."],
+      "gaps": ["No equality of complete first and second analyses, cache provenance across different processes, header/body classification or source-byte preservation is asserted.", "The assertion concerns metadata from the SOW parser; it does not validate the direct analyzer's formatting categories."],
+      "executionCredit": false
+    }
+  ]
+}

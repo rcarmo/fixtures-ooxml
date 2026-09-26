@@ -62,6 +62,13 @@ export function validateConsumerMappings(ledger:any,scenarioIds:Set<string>){
   if(row.coverage==='unmapped'&&(row.scenarioIds.length||row.verifiedAspects.length)||row.coverage!=='unmapped'&&(!row.scenarioIds.length||!row.verifiedAspects.length)||row.coverage!=='mapped'&&!row.gaps.length||row.coverage==='mapped'&&row.gaps.length)throw Error('Mapping scope must record gaps without implicit credit');
  }
 }
+export function validateWorkflowRegistration(paths:string[],ledger:{features:string[]},manifest:{files:Array<{path:string;role:string}>}){
+ const actual=new Set(paths),registered=new Set(ledger.features),assets=manifest.files.filter(f=>f.role==='workflow');
+ if(actual.size!==paths.length||registered.size!==ledger.features.length||new Set(assets.map(f=>f.path)).size!==assets.length)throw Error('Duplicate workflow registration');
+ for(const path of actual){if(!registered.has(path))throw Error('Unregistered workflow: '+path);if(!assets.some(f=>f.path===path))throw Error('Unsealed workflow: '+path);}
+ for(const path of registered)if(!actual.has(path))throw Error('Missing workflow: '+path);
+ for(const asset of assets)if(!actual.has(asset.path))throw Error('Missing workflow asset: '+asset.path);
+}
 export async function verify(base=root){
  const manifest=await Bun.file(join(base,'manifest.json')).json();const seen=new Set<string>(),hashes=new Set<string>(),assetIds=new Set<string>(),aliases=new Set<string>();
  validateFixtureLayout(manifest);
@@ -96,6 +103,8 @@ export async function verify(base=root){
  const evidence=await Bun.file(join(base,'facts/evidence.json')).json(),eids=new Set(evidence.items.map((e:any)=>e.id));
  const factIds=new Set<string>();for(const group of ['content-types','namespaces','relationships','constants']){const facts=await Bun.file(join(base,'facts',group+'.json')).json();for(const f of facts.values){if(factIds.has(f.id)||!f.value||!['observed','specified','disputed'].includes(f.status)||!f.evidence.length||f.evidence.some((id:string)=>!eids.has(id)))throw Error('Invalid fact '+f.id);factIds.add(f.id);}}
  const ledger=await Bun.file(join(base,'ledgers/workflows.json')).json();const actual=[];const definitions=new Set<string>();
+ const workflowPaths=await Array.fromAsync(new Bun.Glob('workflows/**/*.feature').scan({cwd:base,onlyFiles:true}));
+ validateWorkflowRegistration(workflowPaths,ledger,manifest);
  if(new Set(ledger.features).size!==ledger.features.length)throw Error('Duplicate feature path');
  for(const path of ledger.features){
   if(!safe(path))throw Error('Unsafe feature path');

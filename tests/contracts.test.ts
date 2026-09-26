@@ -1,6 +1,6 @@
 import {test,expect} from 'bun:test';
 import {cases,verify,validateFixtureLayout,validateMutationContract} from '../scripts/verify.ts';
-test('all pinned references and contract links verify',async()=>{const r=await verify();expect(r.assets).toBe(163);expect(r.facts).toBeGreaterThan(130);expect(r.workflows).toBe(122);expect(r.cases).toBe(352);});
+test('all pinned references and contract links verify',async()=>{const r=await verify();expect(r.assets).toBe(180);expect(r.facts).toBe(149);expect(r.workflows).toBe(148);expect(r.cases).toBe(384);});
 test('official Gherkin compilation expands shared cases',async()=>{const p='workflows/mutation-safety.feature';const result=cases(p,await Bun.file(p).text());expect(result).toHaveLength(19);expect(new Set(result.map(r=>r.scenarioId)).size).toBe(8);});
 test('workflow identity is required',()=>{expect(()=>cases('bad.feature','Feature: Bad\n Scenario: unnamed\n  Given input\n')).toThrow();});
 test('canonical scenario IDs cannot be reused within a feature, including Rule blocks',()=>{
@@ -109,4 +109,16 @@ test('slide permutations retain seven positive and fourteen refusal variants',as
 
 test('effective formatting distinguishes nine inspected outcomes and sixteen refusals',async()=>{
  const path='workflows/docx/effective-formatting.feature',rows=cases(path,await Bun.file(path).text());expect(rows).toHaveLength(25);expect(rows.filter(r=>r.scenarioId==='@id-docx-effective-run-formatting')).toHaveLength(9);expect(rows.filter(r=>r.scenarioId==='@id-docx-effective-run-formatting-refusal')).toHaveLength(16);
+});
+
+test('every workflow is registered and sealed once',async()=>{
+ const {validateWorkflowRegistration}=await import('../scripts/verify.ts');
+ const paths=['workflows/xml/a.feature','workflows/xml/b.feature'];
+ const ledger={features:paths},manifest={files:paths.map(path=>({path,role:'workflow'}))};
+ expect(()=>validateWorkflowRegistration(paths,ledger,manifest)).not.toThrow();
+ expect(()=>validateWorkflowRegistration([...paths,'workflows/xml/forgotten.feature'],ledger,manifest)).toThrow('Unregistered');
+ expect(()=>validateWorkflowRegistration(paths,{features:[paths[0]]},manifest)).toThrow('Unregistered');
+ expect(()=>validateWorkflowRegistration(paths,ledger,{files:[manifest.files[0]]})).toThrow('Unsealed');
+ expect(()=>validateWorkflowRegistration(paths,ledger,{files:[...manifest.files,manifest.files[0]]})).toThrow('Duplicate');
+ expect(()=>validateWorkflowRegistration(paths,{features:[...paths,'workflows/missing.feature']},manifest)).toThrow('Missing');
 });

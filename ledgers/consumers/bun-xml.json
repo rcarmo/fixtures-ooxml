@@ -3,15 +3,15 @@
   "consumer": "bun",
   "source": {
     "repository": "https://github.com/rcarmo/bun-ooxml",
-    "revision": "9e39177ca69f60988328c189b62894845501b4db"
+    "revision": "7e9843f492d229c0736d9d5c6f7820ce6fcb92ab"
   },
-  "scope": "Selected 18 XML/QName declarations only; all source assertions reviewed for bounded overlap, not full repository coverage",
+  "scope": "Complete declaration inventory of tests/unit/xml.test.ts and tests/unit/xml-names.test.ts; scenario mappings retain assertion and parameter gaps",
   "declarationCount": 18,
   "mappings": [
     {
       "nativeId": "bun:tests/unit/xml-names.test.ts:XML QName component admission / rejects numeric, punctuation and combining-mark leading local names and declared prefixes",
       "path": "tests/unit/xml-names.test.ts",
-      "sourceSha256": "51179d28472fda636dcd2c281cbecb11db5d9784f1f3dfd44d780ea36d34b3f1",
+      "sourceSha256": "7bb0f4255d7312b842df897e5ab5104883364265bc00cbd2f93585286d9e85da",
       "coverage": "partial",
       "scenarioIds": [
         "@id-xml-invalid-qname-components"
@@ -22,12 +22,19 @@
       "gaps": [
         "Punctuation/combining-leading and extra-colon variants exceed the three canonical example rows"
       ],
-      "executionCredit": false
+      "executionCredit": false,
+      "assertions": [
+        "expect(()=>parseXml(xml)).toThrow()"
+      ],
+      "reviewReasons": [
+        "body-loop"
+      ],
+      "line": 8
     },
     {
       "nativeId": "bun:tests/unit/xml-names.test.ts:XML QName component admission / retains legal Unicode NCNames and exact source offsets",
       "path": "tests/unit/xml-names.test.ts",
-      "sourceSha256": "51179d28472fda636dcd2c281cbecb11db5d9784f1f3dfd44d780ea36d34b3f1",
+      "sourceSha256": "7bb0f4255d7312b842df897e5ab5104883364265bc00cbd2f93585286d9e85da",
       "coverage": "partial",
       "scenarioIds": [
         "@id-xml-unicode-qname-components"
@@ -38,12 +45,21 @@
       "gaps": [
         "Nine native names versus one canonical representative; full parameter reconciliation open"
       ],
-      "executionCredit": false
+      "executionCredit": false,
+      "assertions": [
+        "expect(d.root.localName).toBe(name)",
+        "expect(attribute(d.root,name,'urn:n')).toBe('yes')",
+        "expect(xml.slice(d.root.start,d.root.end)).toBe(xml)"
+      ],
+      "reviewReasons": [
+        "body-loop"
+      ],
+      "line": 11
     },
     {
       "nativeId": "bun:tests/unit/xml-names.test.ts:XML QName component admission / outside-root XML whitespace is lexical and NBSP is never whitespace",
       "path": "tests/unit/xml-names.test.ts",
-      "sourceSha256": "51179d28472fda636dcd2c281cbecb11db5d9784f1f3dfd44d780ea36d34b3f1",
+      "sourceSha256": "7bb0f4255d7312b842df897e5ab5104883364265bc00cbd2f93585286d9e85da",
       "coverage": "partial",
       "scenarioIds": [
         "@id-xml-outside-root-nbsp"
@@ -54,12 +70,20 @@
       "gaps": [
         "Character references outside root and valid literal whitespace need explicit canonical cases"
       ],
-      "executionCredit": false
+      "executionCredit": false,
+      "assertions": [
+        "expect(()=>parseXml(source)).toThrow()",
+        "expect(parseXml(' \\r\\n\\t<r/> \\r\\n\\t').root.localName).toBe('r')"
+      ],
+      "reviewReasons": [
+        "body-loop"
+      ],
+      "line": 14
     },
     {
       "nativeId": "bun:tests/unit/xml-names.test.ts:XML QName component admission / literal whitespace normalises before character reference decoding",
       "path": "tests/unit/xml-names.test.ts",
-      "sourceSha256": "51179d28472fda636dcd2c281cbecb11db5d9784f1f3dfd44d780ea36d34b3f1",
+      "sourceSha256": "7bb0f4255d7312b842df897e5ab5104883364265bc00cbd2f93585286d9e85da",
       "coverage": "partial",
       "scenarioIds": [
         "@id-xml-normalise-line-endings"
@@ -70,12 +94,18 @@
       "gaps": [
         "Exact example strings differ; no cross-runtime result measured from this mapping"
       ],
-      "executionCredit": false
+      "executionCredit": false,
+      "assertions": [
+        "expect(d.root.attributes.a).toBe('x y z\\t\\n\\r')",
+        "expect(d.root.text).toBe('a\\nb\\ncd\\ne\\nf')"
+      ],
+      "reviewReasons": [],
+      "line": 18
     },
     {
       "nativeId": "bun:tests/unit/xml-names.test.ts:XML QName component admission / executes the six QName/whitespace acceptance cases",
       "path": "tests/unit/xml-names.test.ts",
-      "sourceSha256": "51179d28472fda636dcd2c281cbecb11db5d9784f1f3dfd44d780ea36d34b3f1",
+      "sourceSha256": "7bb0f4255d7312b842df897e5ab5104883364265bc00cbd2f93585286d9e85da",
       "coverage": "partial",
       "scenarioIds": [
         "@id-xml-invalid-qname-components",
@@ -86,9 +116,15 @@
         "Acceptance binding assertions require six successful cases and zero failures"
       ],
       "gaps": [
-        "Reported execution belongs to the earlier local feature; central-path rerun required"
+        "Wrapper checks six cases and no failures; individual helper assertions require their own source review"
       ],
-      "executionCredit": false
+      "executionCredit": false,
+      "assertions": [
+        "expect(result.failures).toEqual([])",
+        "expect(result.counts.cases.passed).toBe(6)"
+      ],
+      "reviewReasons": [],
+      "line": 22
     },
     {
       "nativeId": "bun:tests/unit/xml.test.ts:parseXml / parses namespaces, mixed content and UTF-16 offsets",
@@ -104,7 +140,39 @@
       "gaps": [
         "Self-closing span and parent identity details exceed the scenario assertions"
       ],
-      "executionCredit": false
+      "executionCredit": false,
+      "assertions": [
+        "expect(doc.elements).toHaveLength(2)",
+        "expect(root.name).toBe(\"ns:root\")",
+        "expect(root.localName).toBe(\"root\")",
+        "expect(root.namespaceURI).toBe(\"urn:ns\")",
+        "expect(root.attributes).toEqual({\n      xmlns: \"urn:default\",\n      \"xmlns:ns\": \"urn:ns\",\n      \"xmlns:x\": \"urn:x\",\n      a: \"1 & 2\",\n    })",
+        "expect(root.text).toBe(\"premid<tail>\")",
+        "expect(root.start).toBe(xml.indexOf(\"<ns:root\"))",
+        "expect(root.openEnd).toBe(xml.indexOf(\">\", root.start) + 1)",
+        "expect(root.closeStart).toBe(xml.lastIndexOf(\"</ns:root>\"))",
+        "expect(root.end).toBe(root.closeStart + \"</ns:root>\".length)",
+        "expect(root.selfClosing).toBeFalse()",
+        "expect(root.parent).toBeUndefined()",
+        "expect(root.root).toBe(root)",
+        "expect(child).toBeDefined()",
+        "expect(child?.name).toBe(\"x:child\")",
+        "expect(child?.localName).toBe(\"child\")",
+        "expect(child?.namespaceURI).toBe(\"urn:x\")",
+        "expect(child?.attributes).toEqual({ \"x:b\": \"v\" })",
+        "expect(child?.text).toBe(\"\")",
+        "expect(child?.parent).toBe(root)",
+        "expect(child?.root).toBe(root)",
+        "expect(child?.selfClosing).toBeTrue()",
+        "expect(child?.start).toBe(xml.indexOf(\"<x:child\"))",
+        "expect(child?.openEnd).toBe(xml.indexOf(\"/>\", child!.start) + 2)",
+        "expect(child?.closeStart).toBe(child?.openEnd)",
+        "expect(child?.end).toBe(child?.openEnd)",
+        "expect(elements(doc, \"child\", \"urn:x\")).toEqual([child!])",
+        "expect(elements(root, \"root\", \"urn:ns\")).toEqual([root])"
+      ],
+      "reviewReasons": [],
+      "line": 16
     },
     {
       "nativeId": "bun:tests/unit/xml.test.ts:parseXml / accepts predefined and numeric entities",
@@ -112,27 +180,40 @@
       "sourceSha256": "9a2b961cb2ddb6f468fbafbd9d5a8e51c6d32f5948ed8fe2dd69abc7f4306a45",
       "coverage": "partial",
       "scenarioIds": [
-        "@id-xml-parse-offsets"
+        "@id-xml-entity-values"
       ],
       "verifiedAspects": [
-        "Decoded XML predefined and numeric entities"
+        "Exact decoded attribute quote/apostrophe and text AA&<>"
       ],
       "gaps": [
-        "Exact entity-value combinations not enumerated in the canonical scenario"
+        "Native assertion checks the complete attribute map; canonical outcome checks the value of a only"
       ],
-      "executionCredit": false
+      "executionCredit": false,
+      "assertions": [
+        "expect(doc.root.attributes).toEqual({ a: '\"\\'' })",
+        "expect(doc.root.text).toBe(\"AA&<>\")"
+      ],
+      "reviewReasons": [],
+      "line": 61
     },
     {
       "nativeId": "bun:tests/unit/xml.test.ts:parseXml / accepts xml-stylesheet processing instructions before the root element",
       "path": "tests/unit/xml.test.ts",
       "sourceSha256": "9a2b961cb2ddb6f468fbafbd9d5a8e51c6d32f5948ed8fe2dd69abc7f4306a45",
-      "coverage": "unmapped",
-      "scenarioIds": [],
-      "verifiedAspects": [],
-      "gaps": [
-        "Processing-instruction admission has no dedicated canonical outcome yet"
+      "coverage": "mapped",
+      "scenarioIds": [
+        "@id-xml-stylesheet-processing-instruction"
       ],
-      "executionCredit": false
+      "verifiedAspects": [
+        "Root name r after stylesheet PI"
+      ],
+      "gaps": [],
+      "executionCredit": false,
+      "assertions": [
+        "expect(doc.root.name).toBe(\"r\")"
+      ],
+      "reviewReasons": [],
+      "line": 67
     },
     {
       "nativeId": "bun:tests/unit/xml.test.ts:parseXml / normalises literal XML whitespace but preserves character references and original offsets",
@@ -140,15 +221,25 @@
       "sourceSha256": "9a2b961cb2ddb6f468fbafbd9d5a8e51c6d32f5948ed8fe2dd69abc7f4306a45",
       "coverage": "partial",
       "scenarioIds": [
-        "@id-xml-normalise-line-endings"
+        "@id-xml-normalise-line-endings",
+        "@id-xml-escaping-whitespace-roundtrip"
       ],
       "verifiedAspects": [
-        "Literal line-ending normalization, referenced whitespace and original spans"
+        "Literal whitespace normalisation, referenced CR/LF/tab, exact child source slice, escape roundtrips"
       ],
       "gaps": [
-        "Escaping roundtrip assertions exceed this parsing scenario"
+        "Canonical normalisation scenario does not enumerate this exact input string"
       ],
-      "executionCredit": false
+      "executionCredit": false,
+      "assertions": [
+        "expect(doc.root.text).toBe('u\\nv\\nw\\rc\\nd')",
+        "expect(doc.root.attributes.a).toBe('x y z\\r\\n\\t')",
+        "expect(parseXml(`<r a=\"${escapeAttribute(value)}\">${escapeText(value)}</r>`).root.attributes.a).toBe(value)",
+        "expect(parseXml(`<r>${escapeText(value)}</r>`).root.text).toBe(value)",
+        "expect(source.slice(child.start,child.end)).toBe('<s/>')"
+      ],
+      "reviewReasons": [],
+      "line": 72
     },
     {
       "nativeId": "bun:tests/unit/xml.test.ts:parseXml / expanded attribute lookup honours aliases, local rebinding and unqualified attributes",
@@ -156,39 +247,77 @@
       "sourceSha256": "9a2b961cb2ddb6f468fbafbd9d5a8e51c6d32f5948ed8fe2dd69abc7f4306a45",
       "coverage": "partial",
       "scenarioIds": [
-        "@id-xml-parse-offsets"
+        "@id-xml-expanded-attribute-lookup",
+        "@id-xml-immutable-namespace-metadata"
       ],
       "verifiedAspects": [
-        "Expanded attribute identity and local namespace scope"
+        "Seven exact expanded-name lookups, a:id namespace metadata, frozen null-prototype map"
       ],
       "gaps": [
-        "Frozen null-prototype lookup metadata and alias combinations need dedicated scenarios"
+        "Immutable-metadata scenario uses a smaller standalone XML input; native map assertions use the complete rebinding input. Missing lookup is represented as JSON null; native API returns undefined"
       ],
-      "executionCredit": false
+      "executionCredit": false,
+      "assertions": [
+        "expect(attribute(d.root,'id')).toBe('plain')",
+        "expect(attribute(d.root,'id','urn:default')).toBeUndefined()",
+        "expect(attribute(d.root,'id','urn:a')).toBe('outer')",
+        "expect(attribute(d.root.children[0]!,'id','urn:b')).toBe('inner')",
+        "expect(attribute(d.root.children[0]!,'id','urn:a')).toBeUndefined()",
+        "expect(attribute(d.root.children[1]!,'id','urn:a')).toBe('sibling')",
+        "expect(attribute(d.root.children[0]!,'lang',XML_NS)).toBe('en')",
+        "expect(d.root.attributeNamespaces['a:id']).toBe('urn:a')",
+        "expect(Object.isFrozen(d.root.attributeNamespaces)).toBe(true)",
+        "expect(Object.getPrototypeOf(d.root.attributeNamespaces)).toBeNull()"
+      ],
+      "reviewReasons": [],
+      "line": 84
     },
     {
       "nativeId": "bun:tests/unit/xml.test.ts:parseXml / keeps the xml prefix bound implicitly",
       "path": "tests/unit/xml.test.ts",
       "sourceSha256": "9a2b961cb2ddb6f468fbafbd9d5a8e51c6d32f5948ed8fe2dd69abc7f4306a45",
-      "coverage": "unmapped",
-      "scenarioIds": [],
-      "verifiedAspects": [],
-      "gaps": [
-        "Implicit xml prefix binding needs a dedicated canonical scenario"
+      "coverage": "partial",
+      "scenarioIds": [
+        "@id-xml-implicit-xml-prefix"
       ],
-      "executionCredit": false
+      "verifiedAspects": [
+        "Unqualified root namespace, xml:lang attribute and XML namespace constant"
+      ],
+      "gaps": [
+        "Native assertion checks the complete attribute map; canonical outcome checks xml:lang only"
+      ],
+      "executionCredit": false,
+      "assertions": [
+        "expect(doc.root.attributes).toEqual({ \"xml:lang\": \"en\" })",
+        "expect(doc.root.namespaceURI).toBe(\"\")",
+        "expect(XML_NS).toBe(\"http://www.w3.org/XML/1998/namespace\")"
+      ],
+      "reviewReasons": [],
+      "line": 98
     },
     {
       "nativeId": "bun:tests/unit/xml.test.ts:parseXml / stores attributes in null-prototype maps",
       "path": "tests/unit/xml.test.ts",
       "sourceSha256": "9a2b961cb2ddb6f468fbafbd9d5a8e51c6d32f5948ed8fe2dd69abc7f4306a45",
-      "coverage": "unmapped",
-      "scenarioIds": [],
-      "verifiedAspects": [],
-      "gaps": [
-        "JavaScript prototype safety is a separate consumer-specific behaviour"
+      "coverage": "partial",
+      "scenarioIds": [
+        "@id-xml-prototype-safe-attributes"
       ],
-      "executionCredit": false
+      "verifiedAspects": [
+        "Null prototype, own __proto__, preserved __proto__/constructor string values"
+      ],
+      "gaps": [
+        "Canonical constructor own-property check is stronger than the native direct-value assertion"
+      ],
+      "executionCredit": false,
+      "assertions": [
+        "expect(Object.getPrototypeOf(doc.root.attributes)).toBeNull()",
+        "expect(Object.prototype.hasOwnProperty.call(doc.root.attributes, \"__proto__\")).toBeTrue()",
+        "expect(doc.root.attributes[\"__proto__\"]).toBe(\"polluted\")",
+        "expect(doc.root.attributes[\"constructor\"]).toBe(\"safe\")"
+      ],
+      "reviewReasons": [],
+      "line": 105
     },
     {
       "nativeId": "bun:tests/unit/xml.test.ts:parseXml / rejects malformed or unsafe XML",
@@ -204,7 +333,14 @@
       "gaps": [
         "Native invalid-comment/control-character/declaration variants exceed the canonical binding case set"
       ],
-      "executionCredit": false
+      "executionCredit": false,
+      "assertions": [
+        "expect(() => parseXml(xml)).toThrow(\n        expect.objectContaining({\n          code,\n        }),\n      )"
+      ],
+      "reviewReasons": [
+        "body-loop"
+      ],
+      "line": 113
     },
     {
       "nativeId": "bun:tests/unit/xml.test.ts:parseXml / refuses excessive depth, node count and input length",
@@ -220,19 +356,38 @@
       "gaps": [
         "Bun numeric limits and UTF-16 counting are consumer-specific; cross-runtime limit equivalence untested"
       ],
-      "executionCredit": false
+      "executionCredit": false,
+      "assertions": [
+        "expect(() => parseXml(deep)).toThrow(\n      expect.objectContaining({ code: \"XML_DEPTH_LIMIT\" }),\n    )",
+        "expect(() => parseXml(wide)).toThrow(\n      expect.objectContaining({ code: \"XML_NODE_LIMIT\" }),\n    )",
+        "expect(() => parseXml(huge)).toThrow(\n      expect.objectContaining({ code: \"XML_INPUT_TOO_LARGE\" }),\n    )"
+      ],
+      "reviewReasons": [],
+      "line": 141
     },
     {
       "nativeId": "bun:tests/unit/xml.test.ts:escaping helpers / escape text and attribute values",
       "path": "tests/unit/xml.test.ts",
       "sourceSha256": "9a2b961cb2ddb6f468fbafbd9d5a8e51c6d32f5948ed8fe2dd69abc7f4306a45",
-      "coverage": "unmapped",
-      "scenarioIds": [],
-      "verifiedAspects": [],
-      "gaps": [
-        "Escaping API outputs and invalid character refusal need a dedicated scenario"
+      "coverage": "partial",
+      "scenarioIds": [
+        "@id-xml-escaping-values",
+        "@id-xml-escaping-invalid-character"
       ],
-      "executionCredit": false
+      "verifiedAspects": [
+        "Exact escapeText/escapeAttribute strings, U+0001 refusal"
+      ],
+      "gaps": [
+        "Native XML_INVALID_CHAR code is not part of the language-neutral refusal wording"
+      ],
+      "executionCredit": false,
+      "assertions": [
+        "expect(escapeText(`5 < 7 & 9 > 4`)).toBe(\"5 &lt; 7 &amp; 9 &gt; 4\")",
+        "expect(escapeAttribute(`'\\\"<&>`)).toBe(\"&apos;&quot;&lt;&amp;&gt;\")",
+        "expect(() => escapeText(\"\\u0001\")).toThrow(\n      expect.objectContaining({ code: \"XML_INVALID_CHAR\" }),\n    )"
+      ],
+      "reviewReasons": [],
+      "line": 159
     },
     {
       "nativeId": "bun:tests/unit/xml.test.ts:applyEdits / applies sorted disjoint edits with escaped text and XML fragments",
@@ -248,7 +403,14 @@
       "gaps": [
         "Native unsorted-edit ordering is not isolated by canonical binding"
       ],
-      "executionCredit": false
+      "executionCredit": false,
+      "assertions": [
+        "expect(result).toBe(\"<r>1 &lt; 2 <x/></r>\")",
+        "expect(doc.root.text).toBe(\"1 < 2 \")",
+        "expect(doc.root.children.map((child) => child.name)).toEqual([\"x\"])"
+      ],
+      "reviewReasons": [],
+      "line": 169
     },
     {
       "nativeId": "bun:tests/unit/xml.test.ts:applyEdits / refuses overlapping bounds and unsafe resulting XML",
@@ -264,19 +426,64 @@
       "gaps": [
         "Specific error types and all canonical malformed-replacement variants not covered by this single test"
       ],
-      "executionCredit": false
+      "executionCredit": false,
+      "assertions": [
+        "expect(() =>\n      applyEdits(xml, [\n        { start: 3, end: 5, value: \"a\" },\n        { start: 4, end: 6, value: \"b\" },\n      ]),\n    ).toThrow(expect.objectContaining({ code: \"XML_EDIT_OVERLAP\" }))",
+        "expect(() =>\n      applyEdits(xml, [\n        { start: xml.indexOf(\"text\"), end: xml.indexOf(\"text\") + 4, value: \"<!DOCTYPE x><x/>\" },\n      ]),\n    ).toThrow(expect.objectContaining({ code: \"XML_EDIT_UNSAFE\" }))"
+      ],
+      "reviewReasons": [],
+      "line": 190
     },
     {
       "nativeId": "bun:tests/unit/xml.test.ts:applyEdits / returns OoxmlError instances",
       "path": "tests/unit/xml.test.ts",
       "sourceSha256": "9a2b961cb2ddb6f468fbafbd9d5a8e51c6d32f5948ed8fe2dd69abc7f4306a45",
-      "coverage": "unmapped",
-      "scenarioIds": [],
-      "verifiedAspects": [],
-      "gaps": [
-        "Typed error class contract is consumer-specific and not asserted by shared Gherkin"
+      "coverage": "mapped",
+      "scenarioIds": [
+        "@id-xml-typed-parse-error"
       ],
-      "executionCredit": false
+      "verifiedAspects": [
+        "Malformed close tag throws OoxmlError instance"
+      ],
+      "gaps": [],
+      "executionCredit": false,
+      "assertions": [
+        "expect(() => parseXml(\"<a></b>\")).toThrow(OoxmlError)"
+      ],
+      "reviewReasons": [],
+      "line": 207
+    }
+  ],
+  "sourceFiles": [
+    {
+      "path": "tests/unit/xml-names.test.ts",
+      "sha256": "7bb0f4255d7312b842df897e5ab5104883364265bc00cbd2f93585286d9e85da",
+      "declarations": [
+        "bun:tests/unit/xml-names.test.ts:XML QName component admission / rejects numeric, punctuation and combining-mark leading local names and declared prefixes",
+        "bun:tests/unit/xml-names.test.ts:XML QName component admission / retains legal Unicode NCNames and exact source offsets",
+        "bun:tests/unit/xml-names.test.ts:XML QName component admission / outside-root XML whitespace is lexical and NBSP is never whitespace",
+        "bun:tests/unit/xml-names.test.ts:XML QName component admission / literal whitespace normalises before character reference decoding",
+        "bun:tests/unit/xml-names.test.ts:XML QName component admission / executes the six QName/whitespace acceptance cases"
+      ]
+    },
+    {
+      "path": "tests/unit/xml.test.ts",
+      "sha256": "9a2b961cb2ddb6f468fbafbd9d5a8e51c6d32f5948ed8fe2dd69abc7f4306a45",
+      "declarations": [
+        "bun:tests/unit/xml.test.ts:parseXml / parses namespaces, mixed content and UTF-16 offsets",
+        "bun:tests/unit/xml.test.ts:parseXml / accepts predefined and numeric entities",
+        "bun:tests/unit/xml.test.ts:parseXml / accepts xml-stylesheet processing instructions before the root element",
+        "bun:tests/unit/xml.test.ts:parseXml / normalises literal XML whitespace but preserves character references and original offsets",
+        "bun:tests/unit/xml.test.ts:parseXml / expanded attribute lookup honours aliases, local rebinding and unqualified attributes",
+        "bun:tests/unit/xml.test.ts:parseXml / keeps the xml prefix bound implicitly",
+        "bun:tests/unit/xml.test.ts:parseXml / stores attributes in null-prototype maps",
+        "bun:tests/unit/xml.test.ts:parseXml / rejects malformed or unsafe XML",
+        "bun:tests/unit/xml.test.ts:parseXml / refuses excessive depth, node count and input length",
+        "bun:tests/unit/xml.test.ts:escaping helpers / escape text and attribute values",
+        "bun:tests/unit/xml.test.ts:applyEdits / applies sorted disjoint edits with escaped text and XML fragments",
+        "bun:tests/unit/xml.test.ts:applyEdits / refuses overlapping bounds and unsafe resulting XML",
+        "bun:tests/unit/xml.test.ts:applyEdits / returns OoxmlError instances"
+      ]
     }
   ]
 }

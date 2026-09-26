@@ -38,6 +38,10 @@ references and Gherkin scenario identities. Applications run the scenarios again
 their own implementation. Passing these repository checks alone does not establish
 OOXML conformance.
 
+Add new scenarios and source-test mappings directly here using the
+[catalogue contribution guide](CATALOGUE.md). A feature, its mapping and registry
+updates are committed together; validation rejects orphan feature files.
+
 See [reference formats](REFERENCE.md), [XML operations](contracts/xml-profiles.md),
 [package operations](contracts/package-profiles.md) and
 [document operations](contracts/native-profiles.md).
