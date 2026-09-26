@@ -1,0 +1,327 @@
+{
+  "schemaVersion": 1,
+  "consumer": "bun",
+  "source": {
+    "repository": "https://github.com/rcarmo/bun-ooxml",
+    "revision": "13ead381f22f19a000dfd557514369cf1b646454"
+  },
+  "scope": "Nineteen declarations for existing-comment inspection and done-flag mutation only; creation/body/anchor repair excluded",
+  "declarationCount": 19,
+  "mappings": [
+    {
+      "nativeId": "bun:tests/unit/docx-comments.test.ts:all existing comment Gherkin cases assert saved outcomes",
+      "path": "tests/unit/docx-comments.test.ts",
+      "sourceSha256": "25d3bba4abe5a9aff286d93f1572a4b395cc56de08b88830e0d005c0639e6624",
+      "coverage": "partial",
+      "scenarioIds": [
+        "@id-docx-comments-inspection",
+        "@id-docx-comments-resolution",
+        "@id-docx-comments-noop",
+        "@id-docx-comments-refusal"
+      ],
+      "verifiedAspects": [
+        "Four existing scenario bindings execute14variants and require zero failures"
+      ],
+      "gaps": [
+        "Run was against the local feature before central import; canonical execution recorded separately"
+      ],
+      "executionCredit": false
+    },
+    {
+      "nativeId": "bun:tests/unit/docx-comments.test.ts:renamed extension prefixes and multiline comments preserve exact unrelated bytes",
+      "path": "tests/unit/docx-comments.test.ts",
+      "sourceSha256": "25d3bba4abe5a9aff286d93f1572a4b395cc56de08b88830e0d005c0639e6624",
+      "coverage": "partial",
+      "scenarioIds": [
+        "@id-docx-comments-resolution"
+      ],
+      "verifiedAspects": [
+        "Aliased namespace prefix retained while selected done becomes1; reopened state true"
+      ],
+      "gaps": [
+        "Despite the test title this declaration does not construct multiline text; that is covered by another test",
+        "No complete unrelated-member comparison in this declaration; target extension lexical equality only"
+      ],
+      "executionCredit": false
+    },
+    {
+      "nativeId": "bun:tests/unit/docx-comments.test.ts:unsupported comment body is reported read-only and no resolution mutates it",
+      "path": "tests/unit/docx-comments.test.ts",
+      "sourceSha256": "25d3bba4abe5a9aff286d93f1572a4b395cc56de08b88830e0d005c0639e6624",
+      "coverage": "partial",
+      "scenarioIds": [
+        "@id-docx-comments-inspection",
+        "@id-docx-comments-refusal"
+      ],
+      "verifiedAspects": [
+        "Revision body is reported unsupported; inspection and refusal retain exact archive bytes"
+      ],
+      "gaps": [
+        "The explicit unsupported finding is not asserted by the generic canonical refusal variant"
+      ],
+      "executionCredit": false
+    },
+    {
+      "nativeId": "bun:tests/unit/docx-comments.test.ts:unknown IDs and runtime nonboolean arguments leave package unchanged",
+      "path": "tests/unit/docx-comments.test.ts",
+      "sourceSha256": "25d3bba4abe5a9aff286d93f1572a4b395cc56de08b88830e0d005c0639e6624",
+      "coverage": "partial",
+      "scenarioIds": [
+        "@id-docx-comments-refusal"
+      ],
+      "verifiedAspects": [
+        "Missing, negative and unknown IDs and nonboolean states refuse without mutation"
+      ],
+      "gaps": [
+        "These argument cases are not present in the canonical refusal example table"
+      ],
+      "executionCredit": false
+    },
+    {
+      "nativeId": "bun:tests/unit/docx-comments.test.ts:attribute edits preserve quote style, spacing, entities and unrelated attribute text",
+      "path": "tests/unit/docx-comments.test.ts",
+      "sourceSha256": "25d3bba4abe5a9aff286d93f1572a4b395cc56de08b88830e0d005c0639e6624",
+      "coverage": "partial",
+      "scenarioIds": [
+        "@id-docx-comments-resolution"
+      ],
+      "verifiedAspects": [
+        "Done-only lexical edit retains quoting, spacing and lookalike attribute text; other parts remain identical; reopened true"
+      ],
+      "gaps": [
+        "Native quote/entity/lookalike variants are not enumerated in canonical scenarios"
+      ],
+      "executionCredit": false
+    },
+    {
+      "nativeId": "bun:tests/unit/docx-comments.test.ts:missing done flag uses an attribute prefix under a default element namespace",
+      "path": "tests/unit/docx-comments.test.ts",
+      "sourceSha256": "25d3bba4abe5a9aff286d93f1572a4b395cc56de08b88830e0d005c0639e6624",
+      "coverage": "partial",
+      "scenarioIds": [
+        "@id-docx-comments-resolution",
+        "@id-docx-comments-noop"
+      ],
+      "verifiedAspects": [
+        "Absent done means false/no-op; adding true uses existing qualified identity prefix and reopens"
+      ],
+      "gaps": [
+        "Default-element namespace/missing-attribute variant is not in the canonical fixture"
+      ],
+      "executionCredit": false
+    },
+    {
+      "nativeId": "bun:tests/unit/docx-comments.test.ts:same boolean state retains on/off spelling and exact archive bytes",
+      "path": "tests/unit/docx-comments.test.ts",
+      "sourceSha256": "25d3bba4abe5a9aff286d93f1572a4b395cc56de08b88830e0d005c0639e6624",
+      "coverage": "partial",
+      "scenarioIds": [
+        "@id-docx-comments-noop"
+      ],
+      "verifiedAspects": [
+        "on,true,off,false lexical states preserve exact bytes for same Boolean request"
+      ],
+      "gaps": [
+        "Four spelling variants exceed the canonical unresolved no-op case"
+      ],
+      "executionCredit": false
+    },
+    {
+      "nativeId": "bun:tests/unit/docx-comments.test.ts:serialization failure rolls back the done flag while retaining earlier edits",
+      "path": "tests/unit/docx-comments.test.ts",
+      "sourceSha256": "25d3bba4abe5a9aff286d93f1572a4b395cc56de08b88830e0d005c0639e6624",
+      "coverage": "partial",
+      "scenarioIds": [
+        "@id-docx-comments-refusal"
+      ],
+      "verifiedAspects": [
+        "Injected serialization failure restores the extension and prior edited package bytes"
+      ],
+      "gaps": [
+        "Canonical refusal table does not inject serializer failure or earlier edits"
+      ],
+      "executionCredit": false
+    },
+    {
+      "nativeId": "bun:tests/unit/docx-comments.test.ts:misqualified done or parent metadata refuses instead of being ignored",
+      "path": "tests/unit/docx-comments.test.ts",
+      "sourceSha256": "25d3bba4abe5a9aff286d93f1572a4b395cc56de08b88830e0d005c0639e6624",
+      "coverage": "partial",
+      "scenarioIds": [
+        "@id-docx-comments-refusal"
+      ],
+      "verifiedAspects": [
+        "Wrong-namespace metadata refuses atomically"
+      ],
+      "gaps": [
+        "Done/parent namespace variants are not canonical refusal table rows"
+      ],
+      "executionCredit": false
+    },
+    {
+      "nativeId": "bun:tests/unit/docx-comments.test.ts:resolution refuses every enforcing settings part and accepts only explicit disabled protection",
+      "path": "tests/unit/docx-comments.test.ts",
+      "sourceSha256": "25d3bba4abe5a9aff286d93f1572a4b395cc56de08b88830e0d005c0639e6624",
+      "coverage": "partial",
+      "scenarioIds": [
+        "@id-docx-comments-resolution",
+        "@id-docx-comments-refusal"
+      ],
+      "verifiedAspects": [
+        "Missing/empty/enforcing/unrecognised settings refuse, explicit disabled states permit mutation; later guard cannot hide"
+      ],
+      "gaps": [
+        "Nine enforcement spelling variants and mixed protection entries exceed the canonical protected example"
+      ],
+      "executionCredit": false
+    },
+    {
+      "nativeId": "bun:tests/unit/docx-comments.test.ts:inspection results are detached and cannot bypass package custody",
+      "path": "tests/unit/docx-comments.test.ts",
+      "sourceSha256": "25d3bba4abe5a9aff286d93f1572a4b395cc56de08b88830e0d005c0639e6624",
+      "coverage": "partial",
+      "scenarioIds": [
+        "@id-docx-comments-inspection"
+      ],
+      "verifiedAspects": [
+        "Caller mutation of returned comments/findings cannot affect subsequent inspection or archive"
+      ],
+      "gaps": [
+        "Detached-return contract is not asserted by the canonical fixture-read scenario"
+      ],
+      "executionCredit": false
+    },
+    {
+      "nativeId": "bun:tests/unit/docx-comments.test.ts:comment paragraph newlines and tabs are read without rewriting bodies",
+      "path": "tests/unit/docx-comments.test.ts",
+      "sourceSha256": "25d3bba4abe5a9aff286d93f1572a4b395cc56de08b88830e0d005c0639e6624",
+      "coverage": "partial",
+      "scenarioIds": [
+        "@id-docx-comments-inspection",
+        "@id-docx-comments-resolution"
+      ],
+      "verifiedAspects": [
+        "Tab/break decoding and exact body bytes survive inspection and unrelated resolution"
+      ],
+      "gaps": [
+        "Inserted tab/break payload differs from canonical fixture bodies"
+      ],
+      "executionCredit": false
+    },
+    {
+      "nativeId": "bun:tests/unit/docx-comments.test.ts:non-self-closing entries retain boundary whitespace exactly",
+      "path": "tests/unit/docx-comments.test.ts",
+      "sourceSha256": "25d3bba4abe5a9aff286d93f1572a4b395cc56de08b88830e0d005c0639e6624",
+      "coverage": "partial",
+      "scenarioIds": [
+        "@id-docx-comments-resolution"
+      ],
+      "verifiedAspects": [
+        "Missing done insertion preserves all whitespace and non-self-closing syntax"
+      ],
+      "gaps": [
+        "Canonical fixture uses self-closing entries with existing flags"
+      ],
+      "executionCredit": false
+    },
+    {
+      "nativeId": "bun:tests/unit/docx-comments.test.ts:multiple comments settings and external settings refuse before mutation",
+      "path": "tests/unit/docx-comments.test.ts",
+      "sourceSha256": "25d3bba4abe5a9aff286d93f1572a4b395cc56de08b88830e0d005c0639e6624",
+      "coverage": "partial",
+      "scenarioIds": [
+        "@id-docx-comments-refusal"
+      ],
+      "verifiedAspects": [
+        "Second enforcing settings part and external settings relationship refuse atomically"
+      ],
+      "gaps": [
+        "Multiple/external settings variants exceed the canonical protected case"
+      ],
+      "executionCredit": false
+    },
+    {
+      "nativeId": "bun:tests/unit/docx-comments.test.ts:UTF-16 extension encoding and BOM survive a done-only edit",
+      "path": "tests/unit/docx-comments.test.ts",
+      "sourceSha256": "25d3bba4abe5a9aff286d93f1572a4b395cc56de08b88830e0d005c0639e6624",
+      "coverage": "partial",
+      "scenarioIds": [
+        "@id-docx-comments-resolution"
+      ],
+      "verifiedAspects": [
+        "UTF-16LE BOM and bytes outside selected flag preserved, reopened state true"
+      ],
+      "gaps": [
+        "Canonical fixture uses UTF-8; other encoding profiles need independent cases"
+      ],
+      "executionCredit": false
+    },
+    {
+      "nativeId": "bun:tests/unit/docx-comments.test.ts:misqualified comment IDs and paragraph metadata refuse the whole resolution",
+      "path": "tests/unit/docx-comments.test.ts",
+      "sourceSha256": "25d3bba4abe5a9aff286d93f1572a4b395cc56de08b88830e0d005c0639e6624",
+      "coverage": "partial",
+      "scenarioIds": [
+        "@id-docx-comments-refusal"
+      ],
+      "verifiedAspects": [
+        "Unqualified comment ID/paragraph metadata refuse without mutation"
+      ],
+      "gaps": [
+        "Canonical example table does not contain these wrong-namespace metadata variants"
+      ],
+      "executionCredit": false
+    },
+    {
+      "nativeId": "bun:tests/unit/docx-comments.test.ts:incomplete extended metadata remains inspectable but absent targets cannot be resolved",
+      "path": "tests/unit/docx-comments.test.ts",
+      "sourceSha256": "25d3bba4abe5a9aff286d93f1572a4b395cc56de08b88830e0d005c0639e6624",
+      "coverage": "partial",
+      "scenarioIds": [
+        "@id-docx-comments-inspection",
+        "@id-docx-comments-resolution",
+        "@id-docx-comments-refusal"
+      ],
+      "verifiedAspects": [
+        "Missing one extension entry is inspectable, that target refuses, a complete different target changes"
+      ],
+      "gaps": [
+        "Partial extension graph behaviour is outside canonical missing-extension example"
+      ],
+      "executionCredit": false
+    },
+    {
+      "nativeId": "bun:tests/unit/docx-comments.test.ts:public entrypoints save and reopen the resolved flag without changing comment bodies",
+      "path": "tests/unit/docx-comments.test.ts",
+      "sourceSha256": "25d3bba4abe5a9aff286d93f1572a4b395cc56de08b88830e0d005c0639e6624",
+      "coverage": "partial",
+      "scenarioIds": [
+        "@id-docx-comments-resolution"
+      ],
+      "verifiedAspects": [
+        "Root/docx exports reference same functions; disk save/reopen retains comment body and true flag"
+      ],
+      "gaps": [
+        "Export identity and disk path save are extra assertions beyond canonical in-memory reopen"
+      ],
+      "executionCredit": false
+    },
+    {
+      "nativeId": "bun:tests/unit/docx-comments.test.ts:a document without comment parts remains unchanged when inspected or refused",
+      "path": "tests/unit/docx-comments.test.ts",
+      "sourceSha256": "25d3bba4abe5a9aff286d93f1572a4b395cc56de08b88830e0d005c0639e6624",
+      "coverage": "partial",
+      "scenarioIds": [
+        "@id-docx-comments-inspection",
+        "@id-docx-comments-refusal"
+      ],
+      "verifiedAspects": [
+        "Empty comment inspection and target refusal preserve newly created package bytes"
+      ],
+      "gaps": [
+        "Canonical fixture contains comments; empty document scenario not yet added"
+      ],
+      "executionCredit": false
+    }
+  ]
+}

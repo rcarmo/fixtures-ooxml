@@ -15,7 +15,17 @@
     "workflows/xml/comparison.feature",
     "workflows/package/zip-admission.feature",
     "workflows/package/xml-member-admission.feature",
-    "workflows/package/semantic-diff.feature"
+    "workflows/package/semantic-diff.feature",
+    "workflows/docx/comments.feature",
+    "workflows/docx/text.feature",
+    "workflows/docx/creation.feature",
+    "workflows/docx/tables.feature",
+    "workflows/pptx/creation.feature",
+    "workflows/pptx/tables.feature",
+    "workflows/xlsx/creation.feature",
+    "workflows/package/preservation.feature",
+    "workflows/package/zip32.feature",
+    "workflows/package/relationship-namespaces.feature"
   ],
   "executionCredit": "Only local executed assertions count; reports here do not run consumers.",
   "workflows": [
@@ -1541,6 +1551,982 @@
         "python": {
           "status": "planned",
           "evidence": "Four native declarations reviewed and temporary staging14case pass reported; canonical binding not yet executed"
+        }
+      }
+    },
+    {
+      "id": "@id-docx-comments-inspection",
+      "feature": "workflows/docx/comments.feature",
+      "expandedCases": 1,
+      "factIds": [],
+      "expectedOutcomes": [
+        "the three comment bodies and reply parent match the pinned fixture",
+        "the Word comment package bytes remain unchanged"
+      ],
+      "consumers": {
+        "bun": {
+          "status": "planned",
+          "evidence": "Existing local bindings passed; canonical-path run tracked separately in consumer"
+        },
+        "go": {
+          "status": "planned",
+          "evidence": "No equivalent operation binding reviewed; language-specific behaviours remain explicit"
+        },
+        "python": {
+          "status": "planned",
+          "evidence": "No equivalent operation binding reviewed; creation/body editing are not existing-flag mutation"
+        }
+      }
+    },
+    {
+      "id": "@id-docx-comments-resolution",
+      "feature": "workflows/docx/comments.feature",
+      "expandedCases": 1,
+      "factIds": [],
+      "expectedOutcomes": [
+        "saving and reopening shows that comment resolved and its reply link intact",
+        "only the existing commentsExtended part differs from the input",
+        "the original comment package member bytes are restored"
+      ],
+      "consumers": {
+        "bun": {
+          "status": "planned",
+          "evidence": "Existing local bindings passed; canonical-path run tracked separately in consumer"
+        },
+        "go": {
+          "status": "planned",
+          "evidence": "No equivalent operation binding reviewed; language-specific behaviours remain explicit"
+        },
+        "python": {
+          "status": "planned",
+          "evidence": "No equivalent operation binding reviewed; creation/body editing are not existing-flag mutation"
+        }
+      }
+    },
+    {
+      "id": "@id-docx-comments-noop",
+      "feature": "workflows/docx/comments.feature",
+      "expandedCases": 1,
+      "factIds": [],
+      "expectedOutcomes": [
+        "the Word comment package bytes remain unchanged"
+      ],
+      "consumers": {
+        "bun": {
+          "status": "planned",
+          "evidence": "Existing local bindings passed; canonical-path run tracked separately in consumer"
+        },
+        "go": {
+          "status": "planned",
+          "evidence": "No equivalent operation binding reviewed; language-specific behaviours remain explicit"
+        },
+        "python": {
+          "status": "planned",
+          "evidence": "No equivalent operation binding reviewed; creation/body editing are not existing-flag mutation"
+        }
+      }
+    },
+    {
+      "id": "@id-docx-comments-refusal",
+      "feature": "workflows/docx/comments.feature",
+      "expandedCases": 11,
+      "factIds": [],
+      "expectedOutcomes": [
+        "a typed comment refusal leaves every package byte unchanged"
+      ],
+      "consumers": {
+        "bun": {
+          "status": "planned",
+          "evidence": "Existing local bindings passed; canonical-path run tracked separately in consumer"
+        },
+        "go": {
+          "status": "planned",
+          "evidence": "No equivalent operation binding reviewed; language-specific behaviours remain explicit"
+        },
+        "python": {
+          "status": "planned",
+          "evidence": "No equivalent operation binding reviewed; creation/body editing are not existing-flag mutation"
+        }
+      }
+    },
+    {
+      "id": "@id-docx-format-preserve",
+      "feature": "workflows/docx/text.feature",
+      "expandedCases": 1,
+      "factIds": [],
+      "expectedOutcomes": [
+        "DOCX slice paragraph 1 text equals \"Bold Tone and tilted text and underlined text and colored text and large text\"",
+        "DOCX slice paragraph 1 run formatting around the replacement is preserved"
+      ],
+      "consumers": {
+        "bun": {
+          "status": "planned",
+          "evidence": "Existing local bindings passed; canonical-path run tracked separately in consumer"
+        },
+        "go": {
+          "status": "planned",
+          "evidence": "No equivalent operation binding reviewed; language-specific behaviours remain explicit"
+        },
+        "python": {
+          "status": "planned",
+          "evidence": "No equivalent operation binding reviewed; creation/body editing are not existing-flag mutation"
+        }
+      }
+    },
+    {
+      "id": "@id-docx-xml-space",
+      "feature": "workflows/docx/text.feature",
+      "expandedCases": 1,
+      "factIds": [],
+      "expectedOutcomes": [
+        "DOCX slice paragraph 1 text equals \"Alpha Beta\"",
+        "DOCX slice paragraph 1 text nodes preserve boundary whitespace"
+      ],
+      "consumers": {
+        "bun": {
+          "status": "planned",
+          "evidence": "Existing local bindings passed; canonical-path run tracked separately in consumer"
+        },
+        "go": {
+          "status": "planned",
+          "evidence": "No equivalent operation binding reviewed; language-specific behaviours remain explicit"
+        },
+        "python": {
+          "status": "planned",
+          "evidence": "No equivalent operation binding reviewed; creation/body editing are not existing-flag mutation"
+        }
+      }
+    },
+    {
+      "id": "@id-docx-table-paragraph",
+      "feature": "workflows/docx/text.feature",
+      "expandedCases": 1,
+      "factIds": [],
+      "expectedOutcomes": [
+        "DOCX slice paragraph 1 text equals \"Research Materials Inventory\"",
+        "DOCX slice paragraph 2 text equals \"Item\"",
+        "DOCX slice paragraph 5 text equals \"Voltaic battery\"",
+        "DOCX slice paragraph 13 text equals \"University library\""
+      ],
+      "consumers": {
+        "bun": {
+          "status": "planned",
+          "evidence": "Existing local bindings passed; canonical-path run tracked separately in consumer"
+        },
+        "go": {
+          "status": "planned",
+          "evidence": "No equivalent operation binding reviewed; language-specific behaviours remain explicit"
+        },
+        "python": {
+          "status": "planned",
+          "evidence": "No equivalent operation binding reviewed; creation/body editing are not existing-flag mutation"
+        }
+      }
+    },
+    {
+      "id": "@id-docx-stale-span",
+      "feature": "workflows/docx/text.feature",
+      "expandedCases": 1,
+      "factIds": [],
+      "expectedOutcomes": [
+        "DOCX slice refusal code equals \"docx-stale-span\"",
+        "DOCX slice saved bytes equal the remembered bytes"
+      ],
+      "consumers": {
+        "bun": {
+          "status": "planned",
+          "evidence": "Existing local bindings passed; canonical-path run tracked separately in consumer"
+        },
+        "go": {
+          "status": "planned",
+          "evidence": "No equivalent operation binding reviewed; language-specific behaviours remain explicit"
+        },
+        "python": {
+          "status": "planned",
+          "evidence": "No equivalent operation binding reviewed; creation/body editing are not existing-flag mutation"
+        }
+      }
+    },
+    {
+      "id": "@id-docx-refuse-topology",
+      "feature": "workflows/docx/text.feature",
+      "expandedCases": 3,
+      "factIds": [],
+      "expectedOutcomes": [
+        "DOCX slice refusal code equals \"docx-unsupported-topology\""
+      ],
+      "consumers": {
+        "bun": {
+          "status": "planned",
+          "evidence": "Existing local bindings passed; canonical-path run tracked separately in consumer"
+        },
+        "go": {
+          "status": "planned",
+          "evidence": "No equivalent operation binding reviewed; language-specific behaviours remain explicit"
+        },
+        "python": {
+          "status": "planned",
+          "evidence": "No equivalent operation binding reviewed; creation/body editing are not existing-flag mutation"
+        }
+      }
+    },
+    {
+      "id": "@id-docx-create-minimal-package",
+      "feature": "workflows/docx/creation.feature",
+      "expandedCases": 1,
+      "factIds": [],
+      "expectedOutcomes": [
+        "DOCX create package members equal \"[Content_Types].xml,_rels/.rels,word/document.xml\"",
+        "DOCX create paragraph 1 text equals \"  <Frankenstein & friend>  \"",
+        "DOCX create paragraph 1 run has bold and italic formatting",
+        "DOCX create paragraph 1 XML preserves boundary spaces and escapes special characters",
+        "DOCX create paragraph 1 is stored before the section properties"
+      ],
+      "consumers": {
+        "bun": {
+          "status": "planned",
+          "evidence": "Existing local bindings passed; canonical-path run tracked separately in consumer"
+        },
+        "go": {
+          "status": "planned",
+          "evidence": "No equivalent operation binding reviewed; language-specific behaviours remain explicit"
+        },
+        "python": {
+          "status": "planned",
+          "evidence": "No equivalent operation binding reviewed; creation/body editing are not existing-flag mutation"
+        }
+      }
+    },
+    {
+      "id": "@id-docx-create-style-validation",
+      "feature": "workflows/docx/creation.feature",
+      "expandedCases": 1,
+      "factIds": [],
+      "expectedOutcomes": [
+        "DOCX create paragraph 5 text equals \"Created heading\"",
+        "DOCX create paragraph 5 uses paragraph style \"Heading1\""
+      ],
+      "consumers": {
+        "bun": {
+          "status": "planned",
+          "evidence": "Existing local bindings passed; canonical-path run tracked separately in consumer"
+        },
+        "go": {
+          "status": "planned",
+          "evidence": "No equivalent operation binding reviewed; language-specific behaviours remain explicit"
+        },
+        "python": {
+          "status": "planned",
+          "evidence": "No equivalent operation binding reviewed; creation/body editing are not existing-flag mutation"
+        }
+      }
+    },
+    {
+      "id": "@id-docx-create-stale-opaque",
+      "feature": "workflows/docx/creation.feature",
+      "expandedCases": 1,
+      "factIds": [],
+      "expectedOutcomes": [
+        "DOCX create refusal code equals \"docx-stale-span\"",
+        "DOCX create saved bytes equal the remembered bytes",
+        "DOCX create opaque part \"docProps/core.xml\" bytes are unchanged"
+      ],
+      "consumers": {
+        "bun": {
+          "status": "planned",
+          "evidence": "Existing local bindings passed; canonical-path run tracked separately in consumer"
+        },
+        "go": {
+          "status": "planned",
+          "evidence": "No equivalent operation binding reviewed; language-specific behaviours remain explicit"
+        },
+        "python": {
+          "status": "planned",
+          "evidence": "No equivalent operation binding reviewed; creation/body editing are not existing-flag mutation"
+        }
+      }
+    },
+    {
+      "id": "@id-docx-create-atomic-refusals",
+      "feature": "workflows/docx/creation.feature",
+      "expandedCases": 5,
+      "factIds": [],
+      "expectedOutcomes": [
+        "DOCX create refusal code equals \"docx-invalid-argument\"",
+        "DOCX create saved bytes equal the remembered bytes",
+        "DOCX create refusal code equals \"docx-style-unsupported\"",
+        "DOCX create refusal code equals \"docx-style-missing\""
+      ],
+      "consumers": {
+        "bun": {
+          "status": "planned",
+          "evidence": "Existing local bindings passed; canonical-path run tracked separately in consumer"
+        },
+        "go": {
+          "status": "planned",
+          "evidence": "No equivalent operation binding reviewed; language-specific behaviours remain explicit"
+        },
+        "python": {
+          "status": "planned",
+          "evidence": "No equivalent operation binding reviewed; creation/body editing are not existing-flag mutation"
+        }
+      }
+    },
+    {
+      "id": "@id-docx-table-create-roundtrip",
+      "feature": "workflows/docx/tables.feature",
+      "expandedCases": 1,
+      "factIds": [],
+      "expectedOutcomes": [
+        "DOCX table 1 has 2 rows and 2 columns",
+        "DOCX table 1 cell (0,0) text equals \"  <Alpha & Beta>  \"",
+        "DOCX table 1 cell (1,1) text equals \"line 1\\nline 2\"",
+        "DOCX table 1 is stored before the section properties",
+        "DOCX table 1 cell (0,0) XML preserves boundary spaces and escapes special characters"
+      ],
+      "consumers": {
+        "bun": {
+          "status": "planned",
+          "evidence": "Existing local bindings passed; canonical-path run tracked separately in consumer"
+        },
+        "go": {
+          "status": "planned",
+          "evidence": "No equivalent operation binding reviewed; language-specific behaviours remain explicit"
+        },
+        "python": {
+          "status": "planned",
+          "evidence": "No equivalent operation binding reviewed; creation/body editing are not existing-flag mutation"
+        }
+      }
+    },
+    {
+      "id": "@id-docx-table-opaque-preserve",
+      "feature": "workflows/docx/tables.feature",
+      "expandedCases": 1,
+      "factIds": [],
+      "expectedOutcomes": [
+        "DOCX table 1 has 4 rows and 3 columns",
+        "DOCX table 1 cell (1,0) text equals \"Voltaic battery\"",
+        "DOCX table opaque part \"docProps/core.xml\" bytes are unchanged"
+      ],
+      "consumers": {
+        "bun": {
+          "status": "planned",
+          "evidence": "Existing local bindings passed; canonical-path run tracked separately in consumer"
+        },
+        "go": {
+          "status": "planned",
+          "evidence": "No equivalent operation binding reviewed; language-specific behaviours remain explicit"
+        },
+        "python": {
+          "status": "planned",
+          "evidence": "No equivalent operation binding reviewed; creation/body editing are not existing-flag mutation"
+        }
+      }
+    },
+    {
+      "id": "@id-docx-table-stale-cell",
+      "feature": "workflows/docx/tables.feature",
+      "expandedCases": 1,
+      "factIds": [],
+      "expectedOutcomes": [
+        "DOCX table refusal code equals \"docx-stale-table-cell\"",
+        "DOCX table saved bytes equal the remembered bytes"
+      ],
+      "consumers": {
+        "bun": {
+          "status": "planned",
+          "evidence": "Existing local bindings passed; canonical-path run tracked separately in consumer"
+        },
+        "go": {
+          "status": "planned",
+          "evidence": "No equivalent operation binding reviewed; language-specific behaviours remain explicit"
+        },
+        "python": {
+          "status": "planned",
+          "evidence": "No equivalent operation binding reviewed; creation/body editing are not existing-flag mutation"
+        }
+      }
+    },
+    {
+      "id": "@id-docx-table-atomic-refusals",
+      "feature": "workflows/docx/tables.feature",
+      "expandedCases": 4,
+      "factIds": [],
+      "expectedOutcomes": [
+        "DOCX table refusal code equals \"range\"",
+        "DOCX table saved bytes equal the remembered bytes",
+        "DOCX table refusal code equals \"docx-table-merged-cell\"",
+        "DOCX table refusal code equals \"docx-table-cell-unsupported\"",
+        "DOCX table refusal code equals \"docx-table-unsupported\""
+      ],
+      "consumers": {
+        "bun": {
+          "status": "planned",
+          "evidence": "Existing local bindings passed; canonical-path run tracked separately in consumer"
+        },
+        "go": {
+          "status": "planned",
+          "evidence": "No equivalent operation binding reviewed; language-specific behaviours remain explicit"
+        },
+        "python": {
+          "status": "planned",
+          "evidence": "No equivalent operation binding reviewed; creation/body editing are not existing-flag mutation"
+        }
+      }
+    },
+    {
+      "id": "@id-pptx-create-new-minimal",
+      "feature": "workflows/pptx/creation.feature",
+      "expandedCases": 1,
+      "factIds": [],
+      "expectedOutcomes": [
+        "PPTX reopens both slides in order with title and subtitle placeholder text and valid minimal relationships"
+      ],
+      "consumers": {
+        "bun": {
+          "status": "planned",
+          "evidence": "Existing local bindings passed; canonical-path run tracked separately in consumer"
+        },
+        "go": {
+          "status": "planned",
+          "evidence": "No equivalent operation binding reviewed; language-specific behaviours remain explicit"
+        },
+        "python": {
+          "status": "planned",
+          "evidence": "No equivalent operation binding reviewed; creation/body editing are not existing-flag mutation"
+        }
+      }
+    },
+    {
+      "id": "@id-pptx-create-anchor-preservation",
+      "feature": "workflows/pptx/creation.feature",
+      "expandedCases": 1,
+      "factIds": [],
+      "expectedOutcomes": [
+        "PPTX keeps the original slide content ordered and preserved except for the anchored edit and gives the new slide independent relationships"
+      ],
+      "consumers": {
+        "bun": {
+          "status": "planned",
+          "evidence": "Existing local bindings passed; canonical-path run tracked separately in consumer"
+        },
+        "go": {
+          "status": "planned",
+          "evidence": "No equivalent operation binding reviewed; language-specific behaviours remain explicit"
+        },
+        "python": {
+          "status": "planned",
+          "evidence": "No equivalent operation binding reviewed; creation/body editing are not existing-flag mutation"
+        }
+      }
+    },
+    {
+      "id": "@id-pptx-create-refusals",
+      "feature": "workflows/pptx/creation.feature",
+      "expandedCases": 1,
+      "factIds": [],
+      "expectedOutcomes": [
+        "PPTX refuses both requests with rollback and leaves their package bytes unchanged"
+      ],
+      "consumers": {
+        "bun": {
+          "status": "planned",
+          "evidence": "Existing local bindings passed; canonical-path run tracked separately in consumer"
+        },
+        "go": {
+          "status": "planned",
+          "evidence": "No equivalent operation binding reviewed; language-specific behaviours remain explicit"
+        },
+        "python": {
+          "status": "planned",
+          "evidence": "No equivalent operation binding reviewed; creation/body editing are not existing-flag mutation"
+        }
+      }
+    },
+    {
+      "id": "@id-pptx-table-roundtrip-geometry",
+      "feature": "workflows/pptx/tables.feature",
+      "expandedCases": 1,
+      "factIds": [],
+      "expectedOutcomes": [
+        "PPTX preserves the table size, exact grid sums, and cell text after reopen"
+      ],
+      "consumers": {
+        "bun": {
+          "status": "planned",
+          "evidence": "Existing local bindings passed; canonical-path run tracked separately in consumer"
+        },
+        "go": {
+          "status": "planned",
+          "evidence": "No equivalent operation binding reviewed; language-specific behaviours remain explicit"
+        },
+        "python": {
+          "status": "planned",
+          "evidence": "No equivalent operation binding reviewed; creation/body editing are not existing-flag mutation"
+        }
+      }
+    },
+    {
+      "id": "@id-pptx-table-formatting",
+      "feature": "workflows/pptx/tables.feature",
+      "expandedCases": 1,
+      "factIds": [],
+      "expectedOutcomes": [
+        "PPTX preserves table cell formatting across the update and reopen"
+      ],
+      "consumers": {
+        "bun": {
+          "status": "planned",
+          "evidence": "Existing local bindings passed; canonical-path run tracked separately in consumer"
+        },
+        "go": {
+          "status": "planned",
+          "evidence": "No equivalent operation binding reviewed; language-specific behaviours remain explicit"
+        },
+        "python": {
+          "status": "planned",
+          "evidence": "No equivalent operation binding reviewed; creation/body editing are not existing-flag mutation"
+        }
+      }
+    },
+    {
+      "id": "@id-pptx-table-stale-handle",
+      "feature": "workflows/pptx/tables.feature",
+      "expandedCases": 1,
+      "factIds": [],
+      "expectedOutcomes": [
+        "PPTX refuses the stale table handle without mutating the package"
+      ],
+      "consumers": {
+        "bun": {
+          "status": "planned",
+          "evidence": "Existing local bindings passed; canonical-path run tracked separately in consumer"
+        },
+        "go": {
+          "status": "planned",
+          "evidence": "No equivalent operation binding reviewed; language-specific behaviours remain explicit"
+        },
+        "python": {
+          "status": "planned",
+          "evidence": "No equivalent operation binding reviewed; creation/body editing are not existing-flag mutation"
+        }
+      }
+    },
+    {
+      "id": "@id-pptx-table-atomic-refusals",
+      "feature": "workflows/pptx/tables.feature",
+      "expandedCases": 2,
+      "factIds": [],
+      "expectedOutcomes": [
+        "PPTX refusal \"PPTX_TABLE_MERGE_UNSUPPORTED\" is returned atomically for table refusal \"merged-cell\"",
+        "PPTX refusal \"PPTX_TABLE_STRUCTURE_UNSUPPORTED\" is returned atomically for table refusal \"malformed-merge\""
+      ],
+      "consumers": {
+        "bun": {
+          "status": "planned",
+          "evidence": "Existing local bindings passed; canonical-path run tracked separately in consumer"
+        },
+        "go": {
+          "status": "planned",
+          "evidence": "No equivalent operation binding reviewed; language-specific behaviours remain explicit"
+        },
+        "python": {
+          "status": "planned",
+          "evidence": "No equivalent operation binding reviewed; creation/body editing are not existing-flag mutation"
+        }
+      }
+    },
+    {
+      "id": "@id-xlsx-create-native-default",
+      "feature": "workflows/xlsx/creation.feature",
+      "expandedCases": 1,
+      "factIds": [],
+      "expectedOutcomes": [
+        "the reopened created workbook has Sheet1 values at A1, B2 and C3",
+        "the saved created workbook contains only the minimal workbook, worksheet and styles parts",
+        "Sheet1 dimension becomes A1:C3"
+      ],
+      "consumers": {
+        "bun": {
+          "status": "planned",
+          "evidence": "Existing local bindings passed; canonical-path run tracked separately in consumer"
+        },
+        "go": {
+          "status": "planned",
+          "evidence": "No equivalent operation binding reviewed; language-specific behaviours remain explicit"
+        },
+        "python": {
+          "status": "planned",
+          "evidence": "No equivalent operation binding reviewed; creation/body editing are not existing-flag mutation"
+        }
+      }
+    },
+    {
+      "id": "@id-xlsx-create-add-worksheet",
+      "feature": "workflows/xlsx/creation.feature",
+      "expandedCases": 1,
+      "factIds": [],
+      "expectedOutcomes": [
+        "the reopened workbook sheetnames are Sheet1, Data and Summary",
+        "the saved workbook assigns independent worksheet relationship and sheet ids"
+      ],
+      "consumers": {
+        "bun": {
+          "status": "planned",
+          "evidence": "Existing local bindings passed; canonical-path run tracked separately in consumer"
+        },
+        "go": {
+          "status": "planned",
+          "evidence": "No equivalent operation binding reviewed; language-specific behaviours remain explicit"
+        },
+        "python": {
+          "status": "planned",
+          "evidence": "No equivalent operation binding reviewed; creation/body editing are not existing-flag mutation"
+        }
+      }
+    },
+    {
+      "id": "@id-xlsx-create-prefixed-missing-cell",
+      "feature": "workflows/xlsx/creation.feature",
+      "expandedCases": 1,
+      "factIds": [],
+      "expectedOutcomes": [
+        "the saved prefixed worksheet uses qualified dimension row cell and text nodes for B2",
+        "the reopened prefixed workbook reads B2 as \"Prefixed\""
+      ],
+      "consumers": {
+        "bun": {
+          "status": "planned",
+          "evidence": "Existing local bindings passed; canonical-path run tracked separately in consumer"
+        },
+        "go": {
+          "status": "planned",
+          "evidence": "No equivalent operation binding reviewed; language-specific behaviours remain explicit"
+        },
+        "python": {
+          "status": "planned",
+          "evidence": "No equivalent operation binding reviewed; creation/body editing are not existing-flag mutation"
+        }
+      }
+    },
+    {
+      "id": "@id-xlsx-create-coordinate-boundary",
+      "feature": "workflows/xlsx/creation.feature",
+      "expandedCases": 1,
+      "factIds": [],
+      "expectedOutcomes": [
+        "the reopened created workbook reads XFD1048576 as 1",
+        "Sheet1 dimension becomes XFD1048576:XFD1048576"
+      ],
+      "consumers": {
+        "bun": {
+          "status": "planned",
+          "evidence": "Existing local bindings passed; canonical-path run tracked separately in consumer"
+        },
+        "go": {
+          "status": "planned",
+          "evidence": "No equivalent operation binding reviewed; language-specific behaviours remain explicit"
+        },
+        "python": {
+          "status": "planned",
+          "evidence": "No equivalent operation binding reviewed; creation/body editing are not existing-flag mutation"
+        }
+      }
+    },
+    {
+      "id": "@id-xlsx-create-row-ordering",
+      "feature": "workflows/xlsx/creation.feature",
+      "expandedCases": 1,
+      "factIds": [],
+      "expectedOutcomes": [
+        "the saved created worksheet stores rows and cells in ascending numeric order",
+        "the reopened created workbook keeps those ordered values"
+      ],
+      "consumers": {
+        "bun": {
+          "status": "planned",
+          "evidence": "Existing local bindings passed; canonical-path run tracked separately in consumer"
+        },
+        "go": {
+          "status": "planned",
+          "evidence": "No equivalent operation binding reviewed; language-specific behaviours remain explicit"
+        },
+        "python": {
+          "status": "planned",
+          "evidence": "No equivalent operation binding reviewed; creation/body editing are not existing-flag mutation"
+        }
+      }
+    },
+    {
+      "id": "@id-xlsx-create-invalid-params-atomic",
+      "feature": "workflows/xlsx/creation.feature",
+      "expandedCases": 1,
+      "factIds": [],
+      "expectedOutcomes": [
+        "every invalid create-side refusal leaves the workbook bytes unchanged",
+        "the workbook still has only Sheet1"
+      ],
+      "consumers": {
+        "bun": {
+          "status": "planned",
+          "evidence": "Existing local bindings passed; canonical-path run tracked separately in consumer"
+        },
+        "go": {
+          "status": "planned",
+          "evidence": "No equivalent operation binding reviewed; language-specific behaviours remain explicit"
+        },
+        "python": {
+          "status": "planned",
+          "evidence": "No equivalent operation binding reviewed; creation/body editing are not existing-flag mutation"
+        }
+      }
+    },
+    {
+      "id": "@id-xlsx-create-existing-fixture-append",
+      "feature": "workflows/xlsx/creation.feature",
+      "expandedCases": 1,
+      "factIds": [],
+      "expectedOutcomes": [
+        "the reopened existing worksheet has the appended value at E7",
+        "the existing worksheet keeps its surrounding nodes and unrelated parts"
+      ],
+      "consumers": {
+        "bun": {
+          "status": "planned",
+          "evidence": "Existing local bindings passed; canonical-path run tracked separately in consumer"
+        },
+        "go": {
+          "status": "planned",
+          "evidence": "No equivalent operation binding reviewed; language-specific behaviours remain explicit"
+        },
+        "python": {
+          "status": "planned",
+          "evidence": "No equivalent operation binding reviewed; creation/body editing are not existing-flag mutation"
+        }
+      }
+    },
+    {
+      "id": "@id-opc-package-corpus-noop",
+      "feature": "workflows/package/preservation.feature",
+      "expandedCases": 1,
+      "factIds": [],
+      "expectedOutcomes": [
+        "every reopened package matches its original whole-archive bytes",
+        "both fixture corpora contribute their exact known nonzero fixture counts"
+      ],
+      "consumers": {
+        "bun": {
+          "status": "planned",
+          "evidence": "Existing local bindings passed; canonical-path run tracked separately in consumer"
+        },
+        "go": {
+          "status": "planned",
+          "evidence": "No equivalent operation binding reviewed; language-specific behaviours remain explicit"
+        },
+        "python": {
+          "status": "planned",
+          "evidence": "No equivalent operation binding reviewed; creation/body editing are not existing-flag mutation"
+        }
+      }
+    },
+    {
+      "id": "@id-opc-package-transaction-rollback",
+      "feature": "workflows/package/preservation.feature",
+      "expandedCases": 1,
+      "factIds": [],
+      "expectedOutcomes": [
+        "the package reverts to the original bytes and parts after the refusal"
+      ],
+      "consumers": {
+        "bun": {
+          "status": "planned",
+          "evidence": "Existing local bindings passed; canonical-path run tracked separately in consumer"
+        },
+        "go": {
+          "status": "planned",
+          "evidence": "No equivalent operation binding reviewed; language-specific behaviours remain explicit"
+        },
+        "python": {
+          "status": "planned",
+          "evidence": "No equivalent operation binding reviewed; creation/body editing are not existing-flag mutation"
+        }
+      }
+    },
+    {
+      "id": "@id-opc-package-preserve-unrelated",
+      "feature": "workflows/package/preservation.feature",
+      "expandedCases": 1,
+      "factIds": [],
+      "expectedOutcomes": [
+        "the edited part contains the new text after reopen",
+        "the unrelated payload bytes remain unchanged"
+      ],
+      "consumers": {
+        "bun": {
+          "status": "planned",
+          "evidence": "Existing local bindings passed; canonical-path run tracked separately in consumer"
+        },
+        "go": {
+          "status": "planned",
+          "evidence": "No equivalent operation binding reviewed; language-specific behaviours remain explicit"
+        },
+        "python": {
+          "status": "planned",
+          "evidence": "No equivalent operation binding reviewed; creation/body editing are not existing-flag mutation"
+        }
+      }
+    },
+    {
+      "id": "@id-zip-read-valid",
+      "feature": "workflows/package/zip32.feature",
+      "expandedCases": 1,
+      "factIds": [],
+      "expectedOutcomes": [
+        "file entries are returned in central-directory order",
+        "directory entries do not become package parts",
+        "each returned payload matches its declared CRC and size"
+      ],
+      "consumers": {
+        "bun": {
+          "status": "planned",
+          "evidence": "Existing local bindings passed; canonical-path run tracked separately in consumer"
+        },
+        "go": {
+          "status": "planned",
+          "evidence": "No equivalent operation binding reviewed; language-specific behaviours remain explicit"
+        },
+        "python": {
+          "status": "planned",
+          "evidence": "No equivalent operation binding reviewed; creation/body editing are not existing-flag mutation"
+        }
+      }
+    },
+    {
+      "id": "@id-zip-refuse-unsafe",
+      "feature": "workflows/package/zip32.feature",
+      "expandedCases": 1,
+      "factIds": [],
+      "expectedOutcomes": [
+        "the module refuses duplicate member names",
+        "the module refuses ASCII case-colliding member names",
+        "the module refuses noncanonical member paths",
+        "the module refuses encrypted or unsupported-compression members",
+        "the module refuses multi-disk archives and ZIP64 sentinels without valid end records",
+        "the module refuses local-header metadata that disagrees with the central directory",
+        "the module refuses CRC failures, size mismatches, and undeclared trailing structure"
+      ],
+      "consumers": {
+        "bun": {
+          "status": "planned",
+          "evidence": "Existing local bindings passed; canonical-path run tracked separately in consumer"
+        },
+        "go": {
+          "status": "planned",
+          "evidence": "No equivalent operation binding reviewed; language-specific behaviours remain explicit"
+        },
+        "python": {
+          "status": "planned",
+          "evidence": "No equivalent operation binding reviewed; creation/body editing are not existing-flag mutation"
+        }
+      }
+    },
+    {
+      "id": "@id-zip-bounds",
+      "feature": "workflows/package/zip32.feature",
+      "expandedCases": 1,
+      "factIds": [],
+      "expectedOutcomes": [
+        "the module refuses before allocating unbounded output"
+      ],
+      "consumers": {
+        "bun": {
+          "status": "planned",
+          "evidence": "Existing local bindings passed; canonical-path run tracked separately in consumer"
+        },
+        "go": {
+          "status": "planned",
+          "evidence": "No equivalent operation binding reviewed; language-specific behaviours remain explicit"
+        },
+        "python": {
+          "status": "planned",
+          "evidence": "No equivalent operation binding reviewed; creation/body editing are not existing-flag mutation"
+        }
+      }
+    },
+    {
+      "id": "@id-zip-write-deterministic",
+      "feature": "workflows/package/zip32.feature",
+      "expandedCases": 1,
+      "factIds": [],
+      "expectedOutcomes": [
+        "both outputs are byte-identical ZIP32 archives",
+        "file entries use stored or deflated encoding",
+        "names are emitted with the UTF-8 ZIP flag",
+        "writer input that would collide by ASCII case is refused"
+      ],
+      "consumers": {
+        "bun": {
+          "status": "planned",
+          "evidence": "Existing local bindings passed; canonical-path run tracked separately in consumer"
+        },
+        "go": {
+          "status": "planned",
+          "evidence": "No equivalent operation binding reviewed; language-specific behaviours remain explicit"
+        },
+        "python": {
+          "status": "planned",
+          "evidence": "No equivalent operation binding reviewed; creation/body editing are not existing-flag mutation"
+        }
+      }
+    },
+    {
+      "id": "@id-office-relationship-prefix-alias",
+      "feature": "workflows/package/relationship-namespaces.feature",
+      "expandedCases": 2,
+      "factIds": [],
+      "expectedOutcomes": [
+        "the requested pptx value survives and all relationship targets resolve",
+        "the original relationship attribute spelling is preserved",
+        "the requested xlsx value survives and all relationship targets resolve"
+      ],
+      "consumers": {
+        "bun": {
+          "status": "planned",
+          "evidence": "Existing local bindings passed; canonical-path run tracked separately in consumer"
+        },
+        "go": {
+          "status": "planned",
+          "evidence": "No equivalent operation binding reviewed; language-specific behaviours remain explicit"
+        },
+        "python": {
+          "status": "planned",
+          "evidence": "No equivalent operation binding reviewed; creation/body editing are not existing-flag mutation"
+        }
+      }
+    },
+    {
+      "id": "@id-office-relationship-wrong-uri",
+      "feature": "workflows/package/relationship-namespaces.feature",
+      "expandedCases": 2,
+      "factIds": [],
+      "expectedOutcomes": [
+        "the pptx reader refuses with its structural error code",
+        "the supplied archive bytes remain unchanged",
+        "the xlsx reader refuses with its structural error code"
+      ],
+      "consumers": {
+        "bun": {
+          "status": "planned",
+          "evidence": "Existing local bindings passed; canonical-path run tracked separately in consumer"
+        },
+        "go": {
+          "status": "planned",
+          "evidence": "No equivalent operation binding reviewed; language-specific behaviours remain explicit"
+        },
+        "python": {
+          "status": "planned",
+          "evidence": "No equivalent operation binding reviewed; creation/body editing are not existing-flag mutation"
         }
       }
     }

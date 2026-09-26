@@ -1,6 +1,6 @@
 import {test,expect} from 'bun:test';
 import {cases,verify,validateFixtureLayout,validateMutationContract} from '../scripts/verify.ts';
-test('all pinned references and contract links verify',async()=>{const r=await verify();expect(r.assets).toBe(128);expect(r.facts).toBeGreaterThan(130);expect(r.workflows).toBe(57);expect(r.cases).toBe(90);});
+test('all pinned references and contract links verify',async()=>{const r=await verify();expect(r.assets).toBe(138);expect(r.facts).toBeGreaterThan(130);expect(r.workflows).toBe(97);expect(r.cases).toBe(152);});
 test('official Gherkin compilation expands shared cases',async()=>{const p='workflows/mutation-safety.feature';const result=cases(p,await Bun.file(p).text());expect(result).toHaveLength(19);expect(new Set(result.map(r=>r.scenarioId)).size).toBe(8);});
 test('workflow identity is required',()=>{expect(()=>cases('bad.feature','Feature: Bad\n Scenario: unnamed\n  Given input\n')).toThrow();});
 test('canonical scenario IDs cannot be reused within a feature, including Rule blocks',()=>{
@@ -51,4 +51,14 @@ test('each mutation fixture retains hash-linked original derivation in the root 
   expect(source.sha256).toBe(origin.sha256);expect(origin.transformation.length).toBeGreaterThan(0);
   expect(source.origins.some((o:any)=>o.repository===origin.repository&&o.revision===origin.revision&&o.path===origin.path)).toBe(true);
  }
+});
+
+test('format and remaining package profiles compile62cases with19bounded comment mappings',async()=>{
+ const paths=['docx/comments','docx/text','docx/creation','docx/tables','pptx/creation','pptx/tables','xlsx/creation','package/preservation','package/zip32','package/relationship-namespaces'];
+ const all=[];
+ for(const name of paths){const path='workflows/'+name+'.feature',text=await Bun.file(path).text();expect(text.startsWith('@planned\n')).toBe(true);all.push(...cases(path,text));}
+ expect(all).toHaveLength(62);expect(new Set(all.map(c=>c.scenarioId)).size).toBe(40);
+ const commentIds=new Set(cases('workflows/docx/comments.feature',await Bun.file('workflows/docx/comments.feature').text()).map(c=>c.scenarioId));
+ const mapping=await Bun.file('ledgers/consumers/bun-comments.json').json();expect(mapping.mappings).toHaveLength(19);
+ for(const row of mapping.mappings){expect(row.executionCredit).toBe(false);expect(row.coverage).toBe('partial');expect(row.gaps.length).toBeGreaterThan(0);expect(row.scenarioIds.every((id:string)=>commentIds.has(id))).toBe(true);}
 });

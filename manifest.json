@@ -2968,6 +2968,70 @@
       ]
     },
     {
+      "id": "asset-dca421c26a415363ffa59a71d46c296fd28f86eb133539a6bf1960e2dce29663",
+      "path": "workflows/docx/comments.feature",
+      "bytes": 1875,
+      "sha256": "dca421c26a415363ffa59a71d46c296fd28f86eb133539a6bf1960e2dce29663",
+      "role": "workflow",
+      "origins": [
+        {
+          "repository": "https://github.com/rcarmo/bun-ooxml",
+          "revision": "13ead381f22f19a000dfd557514369cf1b646454",
+          "path": "features/docx/comments.feature",
+          "change": "Lifecycle tags only; existing scenario IDs, input examples and step text retained"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "id": "asset-1e827fcb4d336e74a77347001f058b9f6b64901046c18ef49765d00f72d87ded",
+      "path": "workflows/docx/creation.feature",
+      "bytes": 3402,
+      "sha256": "1e827fcb4d336e74a77347001f058b9f6b64901046c18ef49765d00f72d87ded",
+      "role": "workflow",
+      "origins": [
+        {
+          "repository": "https://github.com/rcarmo/bun-ooxml",
+          "revision": "13ead381f22f19a000dfd557514369cf1b646454",
+          "path": "features/docx/create.feature",
+          "change": "Lifecycle tags only; existing scenario IDs, input examples and step text retained"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "id": "asset-53902e41953334f46fdd95c4984bfd478ff6f9fcec82536d1adbf9f044a2ae54",
+      "path": "workflows/docx/tables.feature",
+      "bytes": 3059,
+      "sha256": "53902e41953334f46fdd95c4984bfd478ff6f9fcec82536d1adbf9f044a2ae54",
+      "role": "workflow",
+      "origins": [
+        {
+          "repository": "https://github.com/rcarmo/bun-ooxml",
+          "revision": "13ead381f22f19a000dfd557514369cf1b646454",
+          "path": "features/docx/tables.feature",
+          "change": "Lifecycle tags only; existing scenario IDs, input examples and step text retained"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "id": "asset-27711dc49074796eafded354a478d1ae8068f729b9d8f90a7e124805c459c32d",
+      "path": "workflows/docx/text.feature",
+      "bytes": 3444,
+      "sha256": "27711dc49074796eafded354a478d1ae8068f729b9d8f90a7e124805c459c32d",
+      "role": "workflow",
+      "origins": [
+        {
+          "repository": "https://github.com/rcarmo/bun-ooxml",
+          "revision": "13ead381f22f19a000dfd557514369cf1b646454",
+          "path": "features/docx/text.feature",
+          "change": "Lifecycle tags only; existing scenario IDs, input examples and step text retained"
+        }
+      ],
+      "aliases": []
+    },
+    {
       "id": "asset-9fb2cc7a913cb48b5e7c983e6f942ebf71942840a15a0b62ee9119d6878a87f3",
       "path": "workflows/mutation-safety.feature",
       "bytes": 7234,
@@ -2978,6 +3042,38 @@
           "repository": "https://github.com/rcarmo/bun-ooxml",
           "revision": "61fbe73af0a53894a60cd31014dca2ffb90613c3",
           "path": "docs/contracts/shared-v2/pack/features/mutation-safety.feature"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "id": "asset-15f0782254a299e2ac0402cc4d06272aa3332763bd8d02218826cdcf8cff0a56",
+      "path": "workflows/package/preservation.feature",
+      "bytes": 1374,
+      "sha256": "15f0782254a299e2ac0402cc4d06272aa3332763bd8d02218826cdcf8cff0a56",
+      "role": "workflow",
+      "origins": [
+        {
+          "repository": "https://github.com/rcarmo/bun-ooxml",
+          "revision": "13ead381f22f19a000dfd557514369cf1b646454",
+          "path": "features/opc/package.feature",
+          "change": "Lifecycle tags only; existing scenario IDs, input examples and step text retained"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "id": "asset-e3629117b38ce243a586078ef5d654f49f20e0a01e9bd4cc16df8d607fa572c1",
+      "path": "workflows/package/relationship-namespaces.feature",
+      "bytes": 1175,
+      "sha256": "e3629117b38ce243a586078ef5d654f49f20e0a01e9bd4cc16df8d607fa572c1",
+      "role": "workflow",
+      "origins": [
+        {
+          "repository": "https://github.com/rcarmo/bun-ooxml",
+          "revision": "13ead381f22f19a000dfd557514369cf1b646454",
+          "path": "features/opc/relationship-namespaces.feature",
+          "change": "Lifecycle tags only; existing scenario IDs, input examples and step text retained"
         }
       ],
       "aliases": []
@@ -3026,6 +3122,70 @@
           "revision": "10aedcb7e96d61442fdb5f3065e5fcb822892fb4",
           "path": "docs/catalogue-staging/workflows/package/zip-admission.feature",
           "change": "Exact committed proposed workflow bytes; native-tested inputs and observable outcomes retained"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "id": "asset-eb0616a9badf01f383e4be4dd9579896b4141b6183fc2706e0be94403a1115e9",
+      "path": "workflows/package/zip32.feature",
+      "bytes": 2261,
+      "sha256": "eb0616a9badf01f383e4be4dd9579896b4141b6183fc2706e0be94403a1115e9",
+      "role": "workflow",
+      "origins": [
+        {
+          "repository": "https://github.com/rcarmo/bun-ooxml",
+          "revision": "13ead381f22f19a000dfd557514369cf1b646454",
+          "path": "features/opc/zip.feature",
+          "change": "Lifecycle tags only; existing scenario IDs, input examples and step text retained"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "id": "asset-564ea5266151ebe9d0ce48eead073ecb4b3f944fca79c97556e8a677b518da55",
+      "path": "workflows/pptx/creation.feature",
+      "bytes": 1404,
+      "sha256": "564ea5266151ebe9d0ce48eead073ecb4b3f944fca79c97556e8a677b518da55",
+      "role": "workflow",
+      "origins": [
+        {
+          "repository": "https://github.com/rcarmo/bun-ooxml",
+          "revision": "13ead381f22f19a000dfd557514369cf1b646454",
+          "path": "features/pptx/create.feature",
+          "change": "Lifecycle tags only; existing scenario IDs, input examples and step text retained"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "id": "asset-d9808ba4c51eecbc3b60e0b5c98e16f749f6618237de05010d2968e6cb88aed7",
+      "path": "workflows/pptx/tables.feature",
+      "bytes": 1673,
+      "sha256": "d9808ba4c51eecbc3b60e0b5c98e16f749f6618237de05010d2968e6cb88aed7",
+      "role": "workflow",
+      "origins": [
+        {
+          "repository": "https://github.com/rcarmo/bun-ooxml",
+          "revision": "13ead381f22f19a000dfd557514369cf1b646454",
+          "path": "features/pptx/tables.feature",
+          "change": "Lifecycle tags only; existing scenario IDs, input examples and step text retained"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "id": "asset-bba1c6aee696e3ec9e7086c5a76f129690206915a8ad6e7596dbddef55711257",
+      "path": "workflows/xlsx/creation.feature",
+      "bytes": 2946,
+      "sha256": "bba1c6aee696e3ec9e7086c5a76f129690206915a8ad6e7596dbddef55711257",
+      "role": "workflow",
+      "origins": [
+        {
+          "repository": "https://github.com/rcarmo/bun-ooxml",
+          "revision": "13ead381f22f19a000dfd557514369cf1b646454",
+          "path": "features/xlsx/create.feature",
+          "change": "Lifecycle tags only; existing scenario IDs, input examples and step text retained"
         }
       ],
       "aliases": []

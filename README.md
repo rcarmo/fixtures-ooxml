@@ -24,6 +24,9 @@ and the consumer release checks.
 - `workflows/package/`: bounded ZIP/XML member admission and semantic package
   comparison. [contracts/package-profiles.md](contracts/package-profiles.md)
   separates these from graph edits and byte-based package differences.
+- `workflows/docx/`, `workflows/pptx/`, `workflows/xlsx/`: bounded text, creation,
+  table and existing-comment contracts. See [native profiles](contracts/native-profiles.md)
+  and [comment profiles](contracts/comment-profiles.md) for operation limits.
 - `workflows/native/`: additional format/package behaviour contracts. Their
   planned tag gives no consumer execution credit.
 - `ledgers/workflows.json`: expected outcomes, related facts and per-consumer
