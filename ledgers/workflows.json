@@ -32,7 +32,8 @@
     "workflows/docx/style-authoring.feature",
     "workflows/pptx/text-box.feature",
     "workflows/xlsx/cell-style.feature",
-    "workflows/docx/page-layout.feature"
+    "workflows/docx/page-layout.feature",
+    "workflows/pptx/slide-order.feature"
   ],
   "executionCredit": "Only local executed assertions count; reports here do not run consumers.",
   "workflows": [
@@ -2899,6 +2900,59 @@
         "python": {
           "status": "planned",
           "evidence": "No equivalent page layout binding reviewed"
+        }
+      }
+    },
+    {
+      "id": "@id-pptx-slide-permutation",
+      "feature": "workflows/pptx/slide-order.feature",
+      "expandedCases": 7,
+      "factIds": [],
+      "expectedOutcomes": [
+        "reopened slide order and change receipt match reverse",
+        "slide identities and unrelated package bytes are retained",
+        "reopened slide order and change receipt match rotate",
+        "reopened slide order and change receipt match same",
+        "reopened slide order and change receipt match empty",
+        "reopened slide order and change receipt match aliased",
+        "reopened slide order and change receipt match default-namespace",
+        "reopened slide order and change receipt match notes"
+      ],
+      "consumers": {
+        "bun": {
+          "status": "planned",
+          "evidence": "Native candidate binding requires canonical-path run; no cross-language execution credit"
+        },
+        "go": {
+          "status": "planned",
+          "evidence": "No equivalent slide order binding reviewed"
+        },
+        "python": {
+          "status": "planned",
+          "evidence": "No equivalent slide order binding reviewed"
+        }
+      }
+    },
+    {
+      "id": "@id-pptx-slide-permutation-refusal",
+      "feature": "workflows/pptx/slide-order.feature",
+      "expandedCases": 14,
+      "factIds": [],
+      "expectedOutcomes": [
+        "slide-order refusal preserves archive bytes and handle order"
+      ],
+      "consumers": {
+        "bun": {
+          "status": "planned",
+          "evidence": "Native candidate binding requires canonical-path run; no cross-language execution credit"
+        },
+        "go": {
+          "status": "planned",
+          "evidence": "No equivalent slide order binding reviewed"
+        },
+        "python": {
+          "status": "planned",
+          "evidence": "No equivalent slide order binding reviewed"
         }
       }
     }

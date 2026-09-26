@@ -3234,6 +3234,21 @@
       "aliases": []
     },
     {
+      "id": "asset-6fd4c56131a68b47e47d91c286967127ab410026966f3132f9caf244bde7369e",
+      "path": "workflows/pptx/slide-order.feature",
+      "bytes": 1384,
+      "sha256": "6fd4c56131a68b47e47d91c286967127ab410026966f3132f9caf244bde7369e",
+      "role": "workflow",
+      "origins": [
+        {
+          "repository": "https://github.com/rcarmo/fixtures-ooxml",
+          "path": "workflows/pptx/slide-order.feature",
+          "basis": "Language-neutral exact existing slide permutation contract; native save/reopen and refusal assertions remain consumer-local"
+        }
+      ],
+      "aliases": []
+    },
+    {
       "id": "asset-d9808ba4c51eecbc3b60e0b5c98e16f749f6618237de05010d2968e6cb88aed7",
       "path": "workflows/pptx/tables.feature",
       "bytes": 1673,

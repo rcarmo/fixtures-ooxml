@@ -39,6 +39,8 @@ and the consumer release checks.
   changing values, formulas, caches or style definitions.
   [Final section page geometry](contracts/page-layout.md) preserves earlier Word
   sections and text while selecting explicit page dimensions and margins.
+  [Slide permutation](contracts/slide-order.md) changes only presentation ordering,
+  retaining slide identities, notes and unrelated package parts.
 - `workflows/native/`: additional format/package behaviour contracts. Their
   planned tag gives no consumer execution credit.
 - `ledgers/workflows.json`: expected outcomes, related facts and per-consumer
