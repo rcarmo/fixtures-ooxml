@@ -453,6 +453,15 @@
           "repository": "https://github.com/rcarmo/bun-ooxml",
           "revision": "61fbe73af0a53894a60cd31014dca2ffb90613c3",
           "path": "docs/contracts/shared-v2/pack/fixtures/present-placeholder.docx"
+        },
+        {
+          "kind": "derived-from",
+          "repository": "https://github.com/rcarmo/python-office-mcp-server",
+          "revision": "36ac406ad9d4bd3e7538b4bcc7aa2fb0e51cc943",
+          "path": "tests/_templates/testdata/word/single_paragraph.docx",
+          "sha256": "dfca453a4b60629ec859b7e224040148b1e2fb92aa3a32b28a6ad9c6f4cc3526",
+          "assetId": "fixture-dfca453a4b60629ec859b7e224040148b1e2fb92aa3a32b28a6ad9c6f4cc3526",
+          "transformation": "See build_fixtures.py; generated acceptance text, sentinel, deterministic packaging"
         }
       ],
       "aliases": [
@@ -1526,6 +1535,15 @@
           "repository": "https://github.com/rcarmo/bun-ooxml",
           "revision": "61fbe73af0a53894a60cd31014dca2ffb90613c3",
           "path": "docs/contracts/shared-v2/pack/fixtures/title-and-subtitle.pptx"
+        },
+        {
+          "kind": "derived-from",
+          "repository": "https://github.com/rcarmo/python-office-mcp-server",
+          "revision": "36ac406ad9d4bd3e7538b4bcc7aa2fb0e51cc943",
+          "path": "tests/_templates/testdata/pptx/title_slide.pptx",
+          "sha256": "1b848867cffb781112dc5778fa8cc7b9c9bd472c3636a348ec5d50005f05489e",
+          "assetId": "fixture-1b848867cffb781112dc5778fa8cc7b9c9bd472c3636a348ec5d50005f05489e",
+          "transformation": "See build_fixtures.py; generated acceptance text, sentinel, deterministic packaging"
         }
       ],
       "aliases": [
@@ -2572,6 +2590,15 @@
           "repository": "https://github.com/rcarmo/bun-ooxml",
           "revision": "61fbe73af0a53894a60cd31014dca2ffb90613c3",
           "path": "docs/contracts/shared-v2/pack/fixtures/cross-sheet-cache.xlsx"
+        },
+        {
+          "kind": "derived-from",
+          "repository": "https://github.com/rcarmo/python-office-mcp-server",
+          "revision": "36ac406ad9d4bd3e7538b4bcc7aa2fb0e51cc943",
+          "path": "tests/_templates/testdata/excel/minimal.xlsx",
+          "sha256": "9145d25de350a3da09ac8f1976811464525a4eeaa9947baa17057ae85056c377",
+          "assetId": "fixture-9145d25de350a3da09ac8f1976811464525a4eeaa9947baa17057ae85056c377",
+          "transformation": "See build_fixtures.py; generated acceptance text, sentinel, deterministic packaging"
         }
       ],
       "aliases": [
@@ -2595,6 +2622,15 @@
           "repository": "https://github.com/rcarmo/bun-ooxml",
           "revision": "61fbe73af0a53894a60cd31014dca2ffb90613c3",
           "path": "docs/contracts/shared-v2/pack/fixtures/default-style.xlsx"
+        },
+        {
+          "kind": "derived-from",
+          "repository": "https://github.com/rcarmo/python-office-mcp-server",
+          "revision": "36ac406ad9d4bd3e7538b4bcc7aa2fb0e51cc943",
+          "path": "tests/_templates/testdata/excel/minimal.xlsx",
+          "sha256": "9145d25de350a3da09ac8f1976811464525a4eeaa9947baa17057ae85056c377",
+          "assetId": "fixture-9145d25de350a3da09ac8f1976811464525a4eeaa9947baa17057ae85056c377",
+          "transformation": "See build_fixtures.py; generated acceptance text, sentinel, deterministic packaging"
         }
       ],
       "aliases": [

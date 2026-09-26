@@ -48,6 +48,11 @@ export async function verify(base=root){
   seen.add(f.path);hashes.add(f.sha256);assetIds.add(f.id);
   const bytes=await Bun.file(join(base,f.path)).bytes();if(bytes.length!==f.bytes||hash(bytes)!==f.sha256)throw Error('Asset drift: '+f.path);
   if(!f.origins?.length)throw Error('Missing provenance');
+  for(const origin of f.origins){
+   if(origin.kind!=='derived-from')continue;
+   const source=manifest.files.find((a:any)=>a.id===origin.assetId);
+   if(!source||source.sha256!==origin.sha256||!origin.transformation||!source.origins.some((o:any)=>o.repository===origin.repository&&o.revision===origin.revision&&o.path===origin.path))throw Error('Derived fixture source provenance drift');
+  }
   for(const alias of f.aliases){if(aliases.has(alias))throw Error('Duplicate alias');aliases.add(alias);}
  }
  for(const dir of ['fixtures','notices'])for await(const path of new Bun.Glob('**/*').scan({cwd:join(base,dir),onlyFiles:true}))if(!seen.has(dir+'/'+path))throw Error('Unpinned asset '+path);

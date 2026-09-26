@@ -31,3 +31,14 @@ test('mutation policy references one canonical asset and one member hash map',as
   (c:any)=>{c.fixtures.push(c.fixtures[0]);},
  ]){const copy=structuredClone(contract);change(copy);expect(()=>validateMutationContract(copy,manifest)).toThrow();}
 });
+
+test('each mutation fixture retains hash-linked original derivation in the root manifest',async()=>{
+ const manifest=await Bun.file('manifest.json').json(),contract=await Bun.file('contracts/mutation-safety.json').json();
+ for(const policy of contract.fixtures){
+  const asset=manifest.files.find((a:any)=>a.id===policy.assetId);
+  const origins=asset.origins.filter((o:any)=>o.kind==='derived-from');expect(origins).toHaveLength(1);
+  const origin=origins[0],source=manifest.files.find((a:any)=>a.id===origin.assetId);
+  expect(source.sha256).toBe(origin.sha256);expect(origin.transformation.length).toBeGreaterThan(0);
+  expect(source.origins.some((o:any)=>o.repository===origin.repository&&o.revision===origin.revision&&o.path===origin.path)).toBe(true);
+ }
+});
