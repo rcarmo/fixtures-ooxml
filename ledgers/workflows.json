@@ -31,7 +31,8 @@
     "workflows/docx/paragraph-style.feature",
     "workflows/docx/style-authoring.feature",
     "workflows/pptx/text-box.feature",
-    "workflows/xlsx/cell-style.feature"
+    "workflows/xlsx/cell-style.feature",
+    "workflows/docx/page-layout.feature"
   ],
   "executionCredit": "Only local executed assertions count; reports here do not run consumers.",
   "workflows": [
@@ -2844,6 +2845,60 @@
         "python": {
           "status": "planned",
           "evidence": "No equivalent cell style selection binding reviewed"
+        }
+      }
+    },
+    {
+      "id": "@id-docx-final-section-layout",
+      "feature": "workflows/docx/page-layout.feature",
+      "expandedCases": 8,
+      "factIds": [],
+      "expectedOutcomes": [
+        "saved and reopened page geometry matches portrait",
+        "other section properties, earlier sections and package payloads are unchanged",
+        "saved and reopened page geometry matches landscape",
+        "saved and reopened page geometry matches margins",
+        "saved and reopened page geometry matches same",
+        "saved and reopened page geometry matches aliased",
+        "saved and reopened page geometry matches default-namespace",
+        "saved and reopened page geometry matches earlier-section",
+        "saved and reopened page geometry matches header-reference"
+      ],
+      "consumers": {
+        "bun": {
+          "status": "planned",
+          "evidence": "Native candidate binding requires canonical-path run; no cross-language execution credit"
+        },
+        "go": {
+          "status": "planned",
+          "evidence": "No equivalent page layout binding reviewed"
+        },
+        "python": {
+          "status": "planned",
+          "evidence": "No equivalent page layout binding reviewed"
+        }
+      }
+    },
+    {
+      "id": "@id-docx-final-section-layout-refusal",
+      "feature": "workflows/docx/page-layout.feature",
+      "expandedCases": 14,
+      "factIds": [],
+      "expectedOutcomes": [
+        "page-layout selection refuses without changing archive bytes or handles"
+      ],
+      "consumers": {
+        "bun": {
+          "status": "planned",
+          "evidence": "Native candidate binding requires canonical-path run; no cross-language execution credit"
+        },
+        "go": {
+          "status": "planned",
+          "evidence": "No equivalent page layout binding reviewed"
+        },
+        "python": {
+          "status": "planned",
+          "evidence": "No equivalent page layout binding reviewed"
         }
       }
     }

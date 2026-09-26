@@ -1,6 +1,6 @@
 import {test,expect} from 'bun:test';
 import {cases,verify,validateFixtureLayout,validateMutationContract} from '../scripts/verify.ts';
-test('all pinned references and contract links verify',async()=>{const r=await verify();expect(r.assets).toBe(144);expect(r.facts).toBeGreaterThan(130);expect(r.workflows).toBe(109);expect(r.cases).toBe(277);});
+test('all pinned references and contract links verify',async()=>{const r=await verify();expect(r.assets).toBe(145);expect(r.facts).toBeGreaterThan(130);expect(r.workflows).toBe(111);expect(r.cases).toBe(299);});
 test('official Gherkin compilation expands shared cases',async()=>{const p='workflows/mutation-safety.feature';const result=cases(p,await Bun.file(p).text());expect(result).toHaveLength(19);expect(new Set(result.map(r=>r.scenarioId)).size).toBe(8);});
 test('workflow identity is required',()=>{expect(()=>cases('bad.feature','Feature: Bad\n Scenario: unnamed\n  Given input\n')).toThrow();});
 test('canonical scenario IDs cannot be reused within a feature, including Rule blocks',()=>{
@@ -97,4 +97,8 @@ test('positioned slide text boxes separate authoring outcomes from atomic refusa
 
 test('cell-style contracts separate explicit zero, removal and unsafe cached inputs',async()=>{
  const path='workflows/xlsx/cell-style.feature',rows=cases(path,await Bun.file(path).text());expect(rows).toHaveLength(27);expect(rows.filter(r=>r.scenarioId==='@id-xlsx-cell-style-selection')).toHaveLength(9);expect(rows.filter(r=>r.scenarioId==='@id-xlsx-cell-style-refusal')).toHaveLength(18);
+});
+
+test('final section layout separates preserved geometry changes from unsafe inputs',async()=>{
+ const path='workflows/docx/page-layout.feature',rows=cases(path,await Bun.file(path).text());expect(rows).toHaveLength(22);expect(rows.filter(r=>r.scenarioId==='@id-docx-final-section-layout')).toHaveLength(8);expect(rows.filter(r=>r.scenarioId==='@id-docx-final-section-layout-refusal')).toHaveLength(14);
 });

@@ -3000,6 +3000,21 @@
       "aliases": []
     },
     {
+      "id": "asset-5aca6616eabfbc3c409897f1ee271f9a51a1e37835c1c512ffa13d97cf610181",
+      "path": "workflows/docx/page-layout.feature",
+      "bytes": 1525,
+      "sha256": "5aca6616eabfbc3c409897f1ee271f9a51a1e37835c1c512ffa13d97cf610181",
+      "role": "workflow",
+      "origins": [
+        {
+          "repository": "https://github.com/rcarmo/fixtures-ooxml",
+          "path": "workflows/docx/page-layout.feature",
+          "basis": "Language-neutral final body section page geometry contract; native save/reopen and refusal assertions remain consumer-local"
+        }
+      ],
+      "aliases": []
+    },
+    {
       "id": "asset-462be357951e2961b9b35dfe3457216709e3c6a02eeb0988c6a3c2279b730490",
       "path": "workflows/docx/paragraph-style.feature",
       "bytes": 1540,
