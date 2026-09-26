@@ -1,0 +1,274 @@
+{
+  "schemaVersion": 1,
+  "consumer": "bun",
+  "source": {
+    "repository": "https://github.com/rcarmo/bun-ooxml",
+    "revision": "7e9843f492d229c0736d9d5c6f7820ce6fcb92ab"
+  },
+  "scope": "All nine declarations in tests/unit/package.test.ts. Package API policy, error predicates, byte copies, UTF-16LE, callbacks and destination custody. Existing corpus no-op ID reused with explicit readback/count gaps; no execution credit.",
+  "declarationCount": 9,
+  "sourceFiles": [
+    {
+      "path": "tests/unit/package.test.ts",
+      "sha256": "02c5837eeb0e95e65a85c4eea22996528f6300ef6fc49f3b68f330770bc299ca",
+      "declarations": [
+        "bun:tests/unit/package.test.ts:OpcPackage / conservatively refuses percent-encoded internal names and relationship targets",
+        "bun:tests/unit/package.test.ts:OpcPackage / validates content-type metadata",
+        "bun:tests/unit/package.test.ts:OpcPackage / rejects missing and duplicate OPC relationship references",
+        "bun:tests/unit/package.test.ts:OpcPackage / returns detached copies and keeps custody of opened source bytes",
+        "bun:tests/unit/package.test.ts:OpcPackage / preserves UTF-16 XML encoding when string edits are written back",
+        "bun:tests/unit/package.test.ts:OpcPackage / rejects async transaction callbacks before they run and does not special-case thenables",
+        "bun:tests/unit/package.test.ts:OpcPackage / save refuses invalid packages without touching an existing target",
+        "bun:tests/unit/package.test.ts:OpcPackage / refuses symlink save destinations",
+        "bun:tests/unit/package.test.ts:OpcPackage / preserves exact bytes for every no-op fixture archive in the rcarmo corpora"
+      ]
+    }
+  ],
+  "helpers": [
+    {
+      "path": "tests/unit/package.test.ts",
+      "sha256": "02c5837eeb0e95e65a85c4eea22996528f6300ef6fc49f3b68f330770bc299ca",
+      "symbols": [
+        "createPackageBytes",
+        "contentTypesXml",
+        "relationshipsXml",
+        "encodeUtf16Le"
+      ],
+      "role": "Three-member synthetic OPC envelope and UTF-16LE byte encoder; document payload is not schema-valid WordprocessingML"
+    },
+    {
+      "path": "tests/unit/package.test.ts",
+      "sha256": "02c5837eeb0e95e65a85c4eea22996528f6300ef6fc49f3b68f330770bc299ca",
+      "symbols": [
+        "expectOpcErrorSync",
+        "expectOpcErrorAsync"
+      ],
+      "assertions": [
+        "Thrown value is an OoxmlError instance",
+        "Refusal code equals the supplied value",
+        "Refusal message contains the supplied fragment"
+      ]
+    },
+    {
+      "path": "scripts/fixture-inputs.ts",
+      "sha256": "8f05ee041c84916499becf81e0959ccd9f42adaa375ad74c31d3f0f471906119",
+      "symbol": "CORPUS74_PACKAGE_IDS",
+      "role": "Stable manifest IDs selecting the 74-archive no-op sample"
+    }
+  ],
+  "mappings": [
+    {
+      "nativeId": "bun:tests/unit/package.test.ts:OpcPackage / conservatively refuses percent-encoded internal names and relationship targets",
+      "path": "tests/unit/package.test.ts",
+      "sourceSha256": "02c5837eeb0e95e65a85c4eea22996528f6300ef6fc49f3b68f330770bc299ca",
+      "line": 29,
+      "coverage": "partial",
+      "scenarioIds": [
+        "@id-bun-opc-open-refusal"
+      ],
+      "exampleVariants": [
+        "escaped part name",
+        "escaped target"
+      ],
+      "verifiedAspects": [
+        "Both percent-encoded variants throw exact error class/code/message through expectOpcErrorAsync"
+      ],
+      "gaps": [
+        "Conservative Bun naming policy; native tests do not assert general URI-equivalence or all encoded characters"
+      ],
+      "assertions": [],
+      "reviewReasons": [
+        "helper-or-no-direct-assertion"
+      ],
+      "executionCredit": false
+    },
+    {
+      "nativeId": "bun:tests/unit/package.test.ts:OpcPackage / validates content-type metadata",
+      "path": "tests/unit/package.test.ts",
+      "sourceSha256": "02c5837eeb0e95e65a85c4eea22996528f6300ef6fc49f3b68f330770bc299ca",
+      "line": 43,
+      "coverage": "partial",
+      "scenarioIds": [
+        "@id-bun-opc-open-refusal"
+      ],
+      "exampleVariants": [
+        "duplicate default"
+      ],
+      "verifiedAspects": [
+        "Conflicting rels defaults trigger exact content-types error through expectOpcErrorAsync"
+      ],
+      "gaps": [
+        "Only duplicate default extension checked; no complete content-type grammar coverage"
+      ],
+      "assertions": [],
+      "reviewReasons": [
+        "helper-or-no-direct-assertion"
+      ],
+      "executionCredit": false
+    },
+    {
+      "nativeId": "bun:tests/unit/package.test.ts:OpcPackage / rejects missing and duplicate OPC relationship references",
+      "path": "tests/unit/package.test.ts",
+      "sourceSha256": "02c5837eeb0e95e65a85c4eea22996528f6300ef6fc49f3b68f330770bc299ca",
+      "line": 59,
+      "coverage": "partial",
+      "scenarioIds": [
+        "@id-bun-opc-open-refusal"
+      ],
+      "exampleVariants": [
+        "missing target",
+        "duplicate relation ID"
+      ],
+      "verifiedAspects": [
+        "Missing internal target and duplicate rId1 trigger distinct exact errors through expectOpcErrorAsync"
+      ],
+      "gaps": [
+        "Only root relationship samples; no part-relative target matrix or source-byte custody check after refusal"
+      ],
+      "assertions": [],
+      "reviewReasons": [
+        "helper-or-no-direct-assertion"
+      ],
+      "executionCredit": false
+    },
+    {
+      "nativeId": "bun:tests/unit/package.test.ts:OpcPackage / returns detached copies and keeps custody of opened source bytes",
+      "path": "tests/unit/package.test.ts",
+      "sourceSha256": "02c5837eeb0e95e65a85c4eea22996528f6300ef6fc49f3b68f330770bc299ca",
+      "line": 80,
+      "coverage": "partial",
+      "scenarioIds": [
+        "@id-bun-opc-detached-byte-copies"
+      ],
+      "verifiedAspects": [
+        "Caller array and get-returned array overwritten; fresh get retains Alpha and serialization is byte-equal to original archive"
+      ],
+      "gaps": [
+        "One XML member accessed; no iterable/relationship handle aliasing variants"
+      ],
+      "assertions": [
+        "expect(UTF8_DECODER.decode(pkg.get(DOCUMENT_PART)!)).toContain(\"Alpha\")",
+        "expect(pkg.toBytes()).toEqual(original)"
+      ],
+      "reviewReasons": [],
+      "executionCredit": false
+    },
+    {
+      "nativeId": "bun:tests/unit/package.test.ts:OpcPackage / preserves UTF-16 XML encoding when string edits are written back",
+      "path": "tests/unit/package.test.ts",
+      "sourceSha256": "02c5837eeb0e95e65a85c4eea22996528f6300ef6fc49f3b68f330770bc299ca",
+      "line": 93,
+      "coverage": "partial",
+      "scenarioIds": [
+        "@id-bun-opc-preserve-utf16le-edit"
+      ],
+      "verifiedAspects": [
+        "After string replacement saved member begins FF FE and decoded UTF-16LE contains Beta and UTF-16 declaration"
+      ],
+      "gaps": [
+        "ZIP readback only, not full OPC reopening; exact XML string, UTF-16BE and all untouched member bytes not asserted"
+      ],
+      "assertions": [
+        "expect([...saved.slice(0, 2)]).toEqual([0xff, 0xfe])",
+        "expect(UTF16LE_DECODER.decode(saved)).toContain(\"Beta\")",
+        "expect(UTF16LE_DECODER.decode(saved)).toContain('encoding=\"UTF-16\"')"
+      ],
+      "reviewReasons": [],
+      "executionCredit": false
+    },
+    {
+      "nativeId": "bun:tests/unit/package.test.ts:OpcPackage / rejects async transaction callbacks before they run and does not special-case thenables",
+      "path": "tests/unit/package.test.ts",
+      "sourceSha256": "02c5837eeb0e95e65a85c4eea22996528f6300ef6fc49f3b68f330770bc299ca",
+      "line": 107,
+      "coverage": "partial",
+      "scenarioIds": [
+        "@id-bun-opc-async-transaction-refusal",
+        "@id-bun-opc-thenable-transaction-result"
+      ],
+      "verifiedAspects": [
+        "Async callback body never runs; exact error code/class/message and Alpha remain",
+        "Synchronous callback returning thenable commits Beta and returns same object"
+      ],
+      "gaps": [
+        "Native test performs both operations sequentially on one package; canonical scenarios isolate them",
+        "No late asynchronous side effects, thrown synchronous callback rollback or saved archive checks in this declaration"
+      ],
+      "assertions": [
+        "expect(ran).toBe(false)",
+        "expect(pkg.text(DOCUMENT_PART)).toContain(\"Alpha\")",
+        "expect(result).toBe(thenable)",
+        "expect(pkg.text(DOCUMENT_PART)).toContain(\"Beta\")"
+      ],
+      "reviewReasons": [],
+      "executionCredit": false
+    },
+    {
+      "nativeId": "bun:tests/unit/package.test.ts:OpcPackage / save refuses invalid packages without touching an existing target",
+      "path": "tests/unit/package.test.ts",
+      "sourceSha256": "02c5837eeb0e95e65a85c4eea22996528f6300ef6fc49f3b68f330770bc299ca",
+      "line": 133,
+      "coverage": "partial",
+      "scenarioIds": [
+        "@id-bun-opc-save-invalid-target-custody"
+      ],
+      "verifiedAspects": [
+        "Deleting referenced document makes save throw exact target-missing error and destination file bytes remain equal"
+      ],
+      "gaps": [
+        "Only one validation failure and regular existing destination; temporary-file cleanup and caller package rollback not asserted"
+      ],
+      "assertions": [
+        "expect([...await Bun.file(path).bytes()]).toEqual([...bytes])"
+      ],
+      "reviewReasons": [],
+      "executionCredit": false
+    },
+    {
+      "nativeId": "bun:tests/unit/package.test.ts:OpcPackage / refuses symlink save destinations",
+      "path": "tests/unit/package.test.ts",
+      "sourceSha256": "02c5837eeb0e95e65a85c4eea22996528f6300ef6fc49f3b68f330770bc299ca",
+      "line": 146,
+      "coverage": "partial",
+      "scenarioIds": [
+        "@id-bun-opc-symlink-destination-refusal"
+      ],
+      "verifiedAspects": [
+        "Saving through symlink throws exact symlink error; regular target bytes unchanged"
+      ],
+      "gaps": [
+        "No directory symlink, concurrent alias race or symlink inode custody assertion"
+      ],
+      "assertions": [
+        "expect([...await Bun.file(target).bytes()]).toEqual([...bytes])"
+      ],
+      "reviewReasons": [],
+      "executionCredit": false
+    },
+    {
+      "nativeId": "bun:tests/unit/package.test.ts:OpcPackage / preserves exact bytes for every no-op fixture archive in the rcarmo corpora",
+      "path": "tests/unit/package.test.ts",
+      "sourceSha256": "02c5837eeb0e95e65a85c4eea22996528f6300ef6fc49f3b68f330770bc299ca",
+      "line": 160,
+      "coverage": "partial",
+      "scenarioIds": [
+        "@id-opc-package-corpus-noop"
+      ],
+      "verifiedAspects": [
+        "Exact 74-fixture selection opens and serializes byte-identically"
+      ],
+      "gaps": [
+        "Native test checks total count only rather than per-corpus counts",
+        "Native test serializes without reopening serialized bytes; canonical reopened-package outcome is stronger"
+      ],
+      "assertions": [
+        "expect(fixtures).toHaveLength(EXPECTED_FIXTURE_ARCHIVE_COUNT)",
+        "expect(pkg.toBytes()).toEqual(original)"
+      ],
+      "reviewReasons": [
+        "body-loop"
+      ],
+      "executionCredit": false
+    }
+  ]
+}

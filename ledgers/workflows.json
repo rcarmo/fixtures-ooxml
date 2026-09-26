@@ -42,7 +42,10 @@
     "workflows/docx/python-template-analysis.feature",
     "workflows/package/bun-zip32-profile.feature",
     "workflows/xlsx/go-formula-references.feature",
-    "workflows/docx/python-template-cache.feature"
+    "workflows/docx/python-template-cache.feature",
+    "workflows/package/bun-opc-custody.feature",
+    "workflows/docx/go-document-api.feature",
+    "workflows/docx/python-anchor-discovery.feature"
   ],
   "executionCredit": "Only local executed assertions count; reports here do not run consumers.",
   "workflows": [
@@ -4312,6 +4315,1028 @@
       "expectedOutcomes": [
         "both results have cache reason \"stored\"",
         "the second result has an anchor whose text begins \"Architecture decisions\""
+      ],
+      "consumers": {
+        "bun": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        },
+        "go": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        },
+        "python": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        }
+      }
+    },
+    {
+      "id": "@id-bun-opc-open-refusal",
+      "feature": "workflows/package/bun-opc-custody.feature",
+      "expandedCases": 5,
+      "factIds": [],
+      "expectedOutcomes": [
+        "it throws an OoxmlError with code opc-part-name-invalid",
+        "the error message contains Noncanonical part name",
+        "it throws an OoxmlError with code opc-target-invalid",
+        "the error message contains Percent-encoded",
+        "it throws an OoxmlError with code opc-content-types-invalid",
+        "the error message contains Duplicate/missing default extension",
+        "it throws an OoxmlError with code opc-relationship-target-missing",
+        "the error message contains Missing target",
+        "it throws an OoxmlError with code opc-relationship-duplicate",
+        "the error message contains Duplicate relationship id"
+      ],
+      "consumers": {
+        "bun": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        },
+        "go": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        },
+        "python": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        }
+      }
+    },
+    {
+      "id": "@id-bun-opc-detached-byte-copies",
+      "feature": "workflows/package/bun-opc-custody.feature",
+      "expandedCases": 1,
+      "factIds": [],
+      "expectedOutcomes": [
+        "a fresh get of word/document.xml contains the UTF-8 text Alpha",
+        "serializing the package returns the exact original archive bytes"
+      ],
+      "consumers": {
+        "bun": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        },
+        "go": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        },
+        "python": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        }
+      }
+    },
+    {
+      "id": "@id-bun-opc-preserve-utf16le-edit",
+      "feature": "workflows/package/bun-opc-custody.feature",
+      "expandedCases": 1,
+      "factIds": [],
+      "expectedOutcomes": [
+        "the saved document member starts with hexadecimal bytes FF FE",
+        "decoding the member as UTF-16LE contains Beta and encoding=\"UTF-16\""
+      ],
+      "consumers": {
+        "bun": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        },
+        "go": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        },
+        "python": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        }
+      }
+    },
+    {
+      "id": "@id-bun-opc-async-transaction-refusal",
+      "feature": "workflows/package/bun-opc-custody.feature",
+      "expandedCases": 1,
+      "factIds": [],
+      "expectedOutcomes": [
+        "it throws an OoxmlError with code opc-async-transaction",
+        "the error message contains synchronous edits",
+        "the ran flag is false and the document text still contains Alpha"
+      ],
+      "consumers": {
+        "bun": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        },
+        "go": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        },
+        "python": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        }
+      }
+    },
+    {
+      "id": "@id-bun-opc-thenable-transaction-result",
+      "feature": "workflows/package/bun-opc-custody.feature",
+      "expandedCases": 1,
+      "factIds": [],
+      "expectedOutcomes": [
+        "the transaction returns the same object by identity without invoking then",
+        "the document text contains Beta"
+      ],
+      "consumers": {
+        "bun": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        },
+        "go": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        },
+        "python": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        }
+      }
+    },
+    {
+      "id": "@id-bun-opc-save-invalid-target-custody",
+      "feature": "workflows/package/bun-opc-custody.feature",
+      "expandedCases": 1,
+      "factIds": [],
+      "expectedOutcomes": [
+        "it throws an OoxmlError with code opc-relationship-target-missing",
+        "the error message contains Missing target",
+        "the destination file bytes equal the original archive bytes"
+      ],
+      "consumers": {
+        "bun": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        },
+        "go": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        },
+        "python": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        }
+      }
+    },
+    {
+      "id": "@id-bun-opc-symlink-destination-refusal",
+      "feature": "workflows/package/bun-opc-custody.feature",
+      "expandedCases": 1,
+      "factIds": [],
+      "expectedOutcomes": [
+        "it throws an OoxmlError with code opc-symlink-destination",
+        "the error message contains Symlink",
+        "the regular destination file bytes equal the original archive bytes"
+      ],
+      "consumers": {
+        "bun": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        },
+        "go": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        },
+        "python": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        }
+      }
+    },
+    {
+      "id": "@id-docx-go-new-empty-body",
+      "feature": "workflows/docx/go-document-api.feature",
+      "expandedCases": 1,
+      "factIds": [],
+      "expectedOutcomes": [
+        "the body is present with zero paragraphs and zero tables"
+      ],
+      "consumers": {
+        "bun": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        },
+        "go": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        },
+        "python": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        }
+      }
+    },
+    {
+      "id": "@id-docx-go-core-properties-getters",
+      "feature": "workflows/docx/go-document-api.feature",
+      "expandedCases": 1,
+      "factIds": [],
+      "expectedOutcomes": [
+        "the setter and getter return no error",
+        "only the in-memory title creator and subject are compared to Doc Title, Doc Author and Doc Subject"
+      ],
+      "consumers": {
+        "bun": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        },
+        "go": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        },
+        "python": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        }
+      }
+    },
+    {
+      "id": "@id-docx-go-paragraph-text-getter",
+      "feature": "workflows/docx/go-document-api.feature",
+      "expandedCases": 5,
+      "factIds": [],
+      "expectedOutcomes": [
+        "the paragraph text getter equals JSON \"\"",
+        "the paragraph text getter equals JSON \"Hello World\"",
+        "the paragraph text getter equals JSON \"  spaces  \"",
+        "the paragraph text getter equals JSON \"日本語テキスト\"",
+        "the paragraph text getter equals JSON \"a < b > c & d\""
+      ],
+      "consumers": {
+        "bun": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        },
+        "go": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        },
+        "python": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        }
+      }
+    },
+    {
+      "id": "@id-docx-go-paragraph-style-getters",
+      "feature": "workflows/docx/go-document-api.feature",
+      "expandedCases": 5,
+      "factIds": [],
+      "expectedOutcomes": [
+        "its direct style getter equals JSON \"Heading1\"",
+        "IsHeading equals true and HeadingLevel equals 1",
+        "its direct style getter equals JSON \"Heading9\"",
+        "IsHeading equals true and HeadingLevel equals 9",
+        "its direct style getter equals JSON \"Normal\"",
+        "IsHeading equals false and HeadingLevel equals 0",
+        "its direct style getter equals JSON \"Title\"",
+        "its direct style getter equals JSON \"\""
+      ],
+      "consumers": {
+        "bun": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        },
+        "go": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        },
+        "python": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        }
+      }
+    },
+    {
+      "id": "@id-docx-go-paragraph-alignment-getter",
+      "feature": "workflows/docx/go-document-api.feature",
+      "expandedCases": 4,
+      "factIds": [],
+      "expectedOutcomes": [
+        "its alignment getter equals left",
+        "its alignment getter equals center",
+        "its alignment getter equals right",
+        "its alignment getter equals both"
+      ],
+      "consumers": {
+        "bun": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        },
+        "go": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        },
+        "python": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        }
+      }
+    },
+    {
+      "id": "@id-docx-go-paragraph-spacing-getters",
+      "feature": "workflows/docx/go-document-api.feature",
+      "expandedCases": 4,
+      "factIds": [],
+      "expectedOutcomes": [
+        "its before and after getters equal 0 and 0",
+        "its before and after getters equal 120 and 120",
+        "its before and after getters equal 240 and 240",
+        "its before and after getters equal 240 and 120"
+      ],
+      "consumers": {
+        "bun": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        },
+        "go": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        },
+        "python": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        }
+      }
+    },
+    {
+      "id": "@id-docx-go-paragraph-advanced-toggles",
+      "feature": "workflows/docx/go-document-api.feature",
+      "expandedCases": 1,
+      "factIds": [],
+      "expectedOutcomes": [
+        "all three getters are true in memory"
+      ],
+      "consumers": {
+        "bun": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        },
+        "go": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        },
+        "python": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        }
+      }
+    },
+    {
+      "id": "@id-docx-go-paragraph-multiple-runs",
+      "feature": "workflows/docx/go-document-api.feature",
+      "expandedCases": 1,
+      "factIds": [],
+      "expectedOutcomes": [
+        "the paragraph has three runs and its text equals Hello World!"
+      ],
+      "consumers": {
+        "bun": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        },
+        "go": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        },
+        "python": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        }
+      }
+    },
+    {
+      "id": "@id-docx-go-run-color-getter",
+      "feature": "workflows/docx/go-document-api.feature",
+      "expandedCases": 3,
+      "factIds": [],
+      "expectedOutcomes": [
+        "its in-memory colour getter equals FF0000",
+        "its in-memory colour getter equals ff0000"
+      ],
+      "consumers": {
+        "bun": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        },
+        "go": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        },
+        "python": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        }
+      }
+    },
+    {
+      "id": "@id-docx-go-run-boolean-formatting",
+      "feature": "workflows/docx/go-document-api.feature",
+      "expandedCases": 5,
+      "factIds": [],
+      "expectedOutcomes": [
+        "Bold, Italic and Strike getters equal false, false and false",
+        "Bold, Italic and Strike getters equal true, false and false",
+        "Bold, Italic and Strike getters equal false, true and false",
+        "Bold, Italic and Strike getters equal false, false and true",
+        "Bold, Italic and Strike getters equal true, true and true"
+      ],
+      "consumers": {
+        "bun": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        },
+        "go": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        },
+        "python": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        }
+      }
+    },
+    {
+      "id": "@id-docx-go-run-effects-getters",
+      "feature": "workflows/docx/go-document-api.feature",
+      "expandedCases": 1,
+      "factIds": [],
+      "expectedOutcomes": [
+        "all eight corresponding getters return true in memory"
+      ],
+      "consumers": {
+        "bun": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        },
+        "go": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        },
+        "python": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        }
+      }
+    },
+    {
+      "id": "@id-docx-go-run-underline-style",
+      "feature": "workflows/docx/go-document-api.feature",
+      "expandedCases": 6,
+      "factIds": [],
+      "expectedOutcomes": [
+        "Underline is true and UnderlineStyle equals single",
+        "Underline is true and UnderlineStyle equals double",
+        "Underline is true and UnderlineStyle equals thick",
+        "Underline is true and UnderlineStyle equals dotted",
+        "Underline is true and UnderlineStyle equals dash",
+        "Underline is true and UnderlineStyle equals wave"
+      ],
+      "consumers": {
+        "bun": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        },
+        "go": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        },
+        "python": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        }
+      }
+    },
+    {
+      "id": "@id-docx-go-run-font-name",
+      "feature": "workflows/docx/go-document-api.feature",
+      "expandedCases": 6,
+      "factIds": [],
+      "expectedOutcomes": [
+        "its font-name getter equals Arial",
+        "its font-name getter equals Times New Roman",
+        "its font-name getter equals Calibri",
+        "its font-name getter equals Courier New",
+        "its font-name getter equals Georgia",
+        "its font-name getter equals Verdana"
+      ],
+      "consumers": {
+        "bun": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        },
+        "go": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        },
+        "python": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        }
+      }
+    },
+    {
+      "id": "@id-docx-go-run-highlight",
+      "feature": "workflows/docx/go-document-api.feature",
+      "expandedCases": 5,
+      "factIds": [],
+      "expectedOutcomes": [
+        "the Highlight getter equals yellow",
+        "the Highlight getter equals cyan",
+        "the Highlight getter equals darkBlue",
+        "the Highlight getter equals lightGray",
+        "the Highlight getter equals black"
+      ],
+      "consumers": {
+        "bun": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        },
+        "go": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        },
+        "python": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        }
+      }
+    },
+    {
+      "id": "@id-docx-go-run-vertical-align",
+      "feature": "workflows/docx/go-document-api.feature",
+      "expandedCases": 1,
+      "factIds": [],
+      "expectedOutcomes": [
+        "the first reports superscript true and subscript false",
+        "the second reports subscript true and superscript false"
+      ],
+      "consumers": {
+        "bun": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        },
+        "go": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        },
+        "python": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        }
+      }
+    },
+    {
+      "id": "@id-docx-go-table-dimensions-getters",
+      "feature": "workflows/docx/go-document-api.feature",
+      "expandedCases": 8,
+      "factIds": [],
+      "expectedOutcomes": [
+        "RowCount equals 1 and ColumnCount equals 1 in memory",
+        "RowCount equals 1 and ColumnCount equals 5 in memory",
+        "RowCount equals 5 and ColumnCount equals 1 in memory",
+        "RowCount equals 2 and ColumnCount equals 2 in memory",
+        "RowCount equals 3 and ColumnCount equals 3 in memory",
+        "RowCount equals 5 and ColumnCount equals 5 in memory",
+        "RowCount equals 10 and ColumnCount equals 3 in memory",
+        "RowCount equals 3 and ColumnCount equals 10 in memory"
+      ],
+      "consumers": {
+        "bun": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        },
+        "go": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        },
+        "python": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        }
+      }
+    },
+    {
+      "id": "@id-docx-go-table-cell-access",
+      "feature": "workflows/docx/go-document-api.feature",
+      "expandedCases": 1,
+      "factIds": [],
+      "expectedOutcomes": [
+        "each of those nine calls returns a nonnil cell",
+        "calls for row or column negative one or three at the tested boundary coordinates return nil"
+      ],
+      "consumers": {
+        "bun": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        },
+        "go": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        },
+        "python": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        }
+      }
+    },
+    {
+      "id": "@id-docx-go-table-cell-text-getters",
+      "feature": "workflows/docx/go-document-api.feature",
+      "expandedCases": 1,
+      "factIds": [],
+      "expectedOutcomes": [
+        "the four cell text getters equal A1, B1, A2 and B2 in those positions",
+        "FirstRowText returns exactly A1 and B1"
+      ],
+      "consumers": {
+        "bun": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        },
+        "go": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        },
+        "python": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        }
+      }
+    },
+    {
+      "id": "@id-docx-go-table-row-counts",
+      "feature": "workflows/docx/go-document-api.feature",
+      "expandedCases": 1,
+      "factIds": [],
+      "expectedOutcomes": [
+        "row counts after each step are three, four and three respectively",
+        "deletion at index ten returns an error"
+      ],
+      "consumers": {
+        "bun": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        },
+        "go": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        },
+        "python": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        }
+      }
+    },
+    {
+      "id": "@id-docx-go-table-merge-properties",
+      "feature": "workflows/docx/go-document-api.feature",
+      "expandedCases": 1,
+      "factIds": [],
+      "expectedOutcomes": [
+        "GridSpan at zero-zero equals three",
+        "VerticalMerge at row one is restart and at row two is continue"
+      ],
+      "consumers": {
+        "bun": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        },
+        "go": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        },
+        "python": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        }
+      }
+    },
+    {
+      "id": "@id-docx-go-table-style-getter",
+      "feature": "workflows/docx/go-document-api.feature",
+      "expandedCases": 1,
+      "factIds": [],
+      "expectedOutcomes": [
+        "the first style is empty and the second style is TableGrid"
+      ],
+      "consumers": {
+        "bun": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        },
+        "go": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        },
+        "python": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        }
+      }
+    },
+    {
+      "id": "@id-docx-go-table-header-getter",
+      "feature": "workflows/docx/go-document-api.feature",
+      "expandedCases": 1,
+      "factIds": [],
+      "expectedOutcomes": [
+        "the first result is false and the second is true"
+      ],
+      "consumers": {
+        "bun": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        },
+        "go": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        },
+        "python": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        }
+      }
+    },
+    {
+      "id": "@id-docx-go-cell-shading-getter",
+      "feature": "workflows/docx/go-document-api.feature",
+      "expandedCases": 1,
+      "factIds": [],
+      "expectedOutcomes": [
+        "its shading getter equals FFFF00"
+      ],
+      "consumers": {
+        "bun": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        },
+        "go": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        },
+        "python": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        }
+      }
+    },
+    {
+      "id": "@id-docx-go-cell-properties-getters",
+      "feature": "workflows/docx/go-document-api.feature",
+      "expandedCases": 1,
+      "factIds": [],
+      "expectedOutcomes": [
+        "width equals 2400, width type dxa, alignment center and direction tbRl",
+        "the border collection and top border are nonnil"
+      ],
+      "consumers": {
+        "bun": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        },
+        "go": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        },
+        "python": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        }
+      }
+    },
+    {
+      "id": "@id-docx-go-roundtrip-selected-formatting",
+      "feature": "workflows/docx/go-document-api.feature",
+      "expandedCases": 1,
+      "factIds": [],
+      "expectedOutcomes": [
+        "at least one paragraph and three runs are readable",
+        "the first run is bold and the second italic",
+        "the third run reports colour FF0000, font size 14 and font Arial"
+      ],
+      "consumers": {
+        "bun": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        },
+        "go": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        },
+        "python": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        }
+      }
+    },
+    {
+      "id": "@id-docx-go-roundtrip-table-text",
+      "feature": "workflows/docx/go-document-api.feature",
+      "expandedCases": 1,
+      "factIds": [],
+      "expectedOutcomes": [
+        "exactly one table is readable",
+        "all nine cell text getters equal their original row-order values"
+      ],
+      "consumers": {
+        "bun": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        },
+        "go": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        },
+        "python": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        }
+      }
+    },
+    {
+      "id": "@id-docx-go-section-title-background-getters",
+      "feature": "workflows/docx/go-document-api.feature",
+      "expandedCases": 1,
+      "factIds": [],
+      "expectedOutcomes": [
+        "the section TitlePage getter is true and the document BackgroundColor getter equals EEEEEE"
+      ],
+      "consumers": {
+        "bun": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        },
+        "go": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        },
+        "python": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        }
+      }
+    },
+    {
+      "id": "@id-docx-go-track-author-toggle",
+      "feature": "workflows/docx/go-document-api.feature",
+      "expandedCases": 1,
+      "factIds": [],
+      "expectedOutcomes": [
+        "tracking is enabled and TrackAuthor equals New Author",
+        "disabling tracking makes TrackChangesEnabled false"
+      ],
+      "consumers": {
+        "bun": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        },
+        "go": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        },
+        "python": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        }
+      }
+    },
+    {
+      "id": "@id-docx-go-body-insert-order",
+      "feature": "workflows/docx/go-document-api.feature",
+      "expandedCases": 1,
+      "factIds": [],
+      "expectedOutcomes": [
+        "element counts after each operation are one, two and three",
+        "paragraph texts in order equal First, Second and Third"
+      ],
+      "consumers": {
+        "bun": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        },
+        "go": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        },
+        "python": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        }
+      }
+    },
+    {
+      "id": "@id-python-word-anchor-headings-paragraphs",
+      "feature": "workflows/docx/python-anchor-discovery.feature",
+      "expandedCases": 1,
+      "factIds": [],
+      "expectedOutcomes": [
+        "the anchor count is at least 4",
+        "an anchor has type \"section_heading\" and text \"Introduction\"",
+        "a \"paragraph\" anchor contains \"Customer context\" in its text"
+      ],
+      "consumers": {
+        "bun": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        },
+        "go": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        },
+        "python": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        }
+      }
+    },
+    {
+      "id": "@id-python-word-anchor-text-filter",
+      "feature": "workflows/docx/python-anchor-discovery.feature",
+      "expandedCases": 1,
+      "factIds": [],
+      "expectedOutcomes": [
+        "the anchor count is at least 1",
+        "every returned anchor text contains \"delivery\" case-insensitively"
+      ],
+      "consumers": {
+        "bun": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        },
+        "go": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        },
+        "python": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        }
+      }
+    },
+    {
+      "id": "@id-python-word-anchor-document-map",
+      "feature": "workflows/docx/python-anchor-discovery.feature",
+      "expandedCases": 1,
+      "factIds": [],
+      "expectedOutcomes": [
+        "the map counts 1 section and 1 table",
+        "the map counts at least 1 placeholder and at least 2 anchors",
+        "the map has a nonempty anchors list"
+      ],
+      "consumers": {
+        "bun": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        },
+        "go": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        },
+        "python": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        }
+      }
+    },
+    {
+      "id": "@id-python-word-anchor-discover-insert",
+      "feature": "workflows/docx/python-anchor-discovery.feature",
+      "expandedCases": 1,
+      "factIds": [],
+      "expectedOutcomes": [
+        "the insertion response has success true",
+        "reading the saved Word document shows \"Inserted after discovered anchor\" immediately after \"Delivery approach\""
+      ],
+      "consumers": {
+        "bun": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        },
+        "go": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        },
+        "python": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        }
+      }
+    },
+    {
+      "id": "@id-python-word-anchor-section-discovery-hints",
+      "feature": "workflows/docx/python-anchor-discovery.feature",
+      "expandedCases": 1,
+      "factIds": [],
+      "expectedOutcomes": [
+        "the section-list response's next tools include \"word_list_anchors\" and \"word_document_map\""
       ],
       "consumers": {
         "bun": {

@@ -1,0 +1,81 @@
+{
+  "schemaVersion": 1,
+  "consumer": "python",
+  "source": {
+    "repository": "https://github.com/rcarmo/python-office-mcp-server",
+    "revision": "027a8b2fd2fdcec4c00941eb5ad07b05e6971caf"
+  },
+  "scope": "All five non-parametrised TestWordAnchorDiscovery declarations in tests/test_word_anchor_discovery.py; source review only. Anchor inspection, document-map responses, discovered-heading insertion and section-list next-tool hints.",
+  "declarationCount": 5,
+  "targetedFamily": {
+    "nativeCases": 5,
+    "parameterRows": 0,
+    "canonicalScenarios": 5,
+    "sharedBindingsExecuted": 0,
+    "implementation": [
+      {"path": "tools/word_advanced_tools.py", "sha256": "66086062da09606f36ad82803ffe6e8f252c9e1a80e44dceb5a73242ef7d34da"},
+      {"path": "tools/mutation.py", "sha256": "5931735fe0b4349246ef5f2ecaa2681a86aba5339782fd003adc73fdfc4014e5", "use": "decorator for tracked insertion writer; separate mutation safety is not established here"},
+      {"path": "tools/save_utils.py", "sha256": "dc3a5bf8e4ccebe61db15456d13c825f53b9f711b90acf7f26c8cb6bc81f8cde", "use": "save path used by insertion; no package custody assertion in these tests"}
+    ],
+    "candidateIds": [
+      "@candidate-python-word-anchor-discovery-932c8bfff6",
+      "@candidate-python-word-anchor-discovery-4e2d730967",
+      "@candidate-python-word-anchor-discovery-fd46fd482b",
+      "@candidate-python-word-anchor-discovery-c6740fa993",
+      "@candidate-python-word-anchor-discovery-de120f6192"
+    ],
+    "boundary": "The candidate IDs are unexecuted local catalogue descriptions, not distinct evidence; the five source declarations alone fix this denominator. Other Word insertion/section tests are not counted. Native assertions do not verify whole-package preservation or renderer conformance."
+  },
+  "mappings": [
+    {
+      "nativeId": "tests/test_word_anchor_discovery.py::TestWordAnchorDiscovery::test_headings_and_paragraphs_surface_as_anchors",
+      "path": "tests/test_word_anchor_discovery.py",
+      "sourceSha256": "4da756df35813d9437ae1857f2cc0225a519d4d59d792f7accd6928657d427e8",
+      "coverage": "partial",
+      "scenarioIds": ["@id-python-word-anchor-headings-paragraphs"],
+      "verifiedAspects": ["On a four-paragraph input, anchor count is at least four; among anchors is section_heading Introduction and a paragraph containing Customer context."],
+      "gaps": ["The native test does not require every input paragraph to appear or assert ordering, indexes, nearby sections, absence of extra anchors or unchanged source bytes."],
+      "executionCredit": false
+    },
+    {
+      "nativeId": "tests/test_word_anchor_discovery.py::TestWordAnchorDiscovery::test_anchor_text_filtering_works",
+      "path": "tests/test_word_anchor_discovery.py",
+      "sourceSha256": "4da756df35813d9437ae1857f2cc0225a519d4d59d792f7accd6928657d427e8",
+      "coverage": "partial",
+      "scenarioIds": ["@id-python-word-anchor-text-filter"],
+      "verifiedAspects": ["Query delivery returns at least one anchor and all returned anchor_text values contain delivery after lowercasing."],
+      "gaps": ["Completeness and exact count of matching anchors, exclusions by kind, ordering and unchanged source bytes are not asserted."],
+      "executionCredit": false
+    },
+    {
+      "nativeId": "tests/test_word_anchor_discovery.py::TestWordAnchorDiscovery::test_document_map_includes_sections_tables_placeholders_and_anchors",
+      "path": "tests/test_word_anchor_discovery.py",
+      "sourceSha256": "4da756df35813d9437ae1857f2cc0225a519d4d59d792f7accd6928657d427e8",
+      "coverage": "partial",
+      "scenarioIds": ["@id-python-word-anchor-document-map"],
+      "verifiedAspects": ["A heading, placeholder paragraph and 2x2 table produce counts: sections exactly one, tables exactly one, placeholders at least one, anchors at least two, plus truthy anchors list."],
+      "gaps": ["No exact placeholder or anchor list, section/table content details, map ordering, source bytes or output renderer is asserted."],
+      "executionCredit": false
+    },
+    {
+      "nativeId": "tests/test_word_anchor_discovery.py::TestWordAnchorDiscovery::test_discover_anchor_then_insert",
+      "path": "tests/test_word_anchor_discovery.py",
+      "sourceSha256": "4da756df35813d9437ae1857f2cc0225a519d4d59d792f7accd6928657d427e8",
+      "coverage": "partial",
+      "scenarioIds": ["@id-python-word-anchor-discover-insert"],
+      "verifiedAspects": ["Discover an anchor with text Delivery approach; insertion with position after reports success true; reopening from the saved source path finds inserted text immediately after that heading using track-change-aware paragraph text."],
+      "gaps": ["No exact archive/member custody, complete paragraph order, revision structure or independent Office rendering is asserted; the readback is python-docx on the saved path rather than a separate renderer."],
+      "executionCredit": false
+    },
+    {
+      "nativeId": "tests/test_word_anchor_discovery.py::TestWordAnchorDiscovery::test_section_listing_points_to_anchor_discovery",
+      "path": "tests/test_word_anchor_discovery.py",
+      "sourceSha256": "4da756df35813d9437ae1857f2cc0225a519d4d59d792f7accd6928657d427e8",
+      "coverage": "partial",
+      "scenarioIds": ["@id-python-word-anchor-section-discovery-hints"],
+      "verifiedAspects": ["Listing sections returns next_tools containing word_list_anchors and word_document_map."],
+      "gaps": ["The test does not assert the sections list or call anchor discovery, document map, section guidance, or a subsequent edit."],
+      "executionCredit": false
+    }
+  ]
+}

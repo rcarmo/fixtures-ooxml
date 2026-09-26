@@ -1,0 +1,548 @@
+{
+  "schemaVersion": 1,
+  "consumer": "go",
+  "source": {
+    "repository": "https://github.com/rcarmo/go-ooxml",
+    "revision": "e2c5891212beef16f7412c794d3bea6c01e9da35",
+    "publication": "local-unpublished; repository credential lacks push access"
+  },
+  "scope": "All 33 declarations in pkg/document/document_test.go. In-memory getters and selected save/reopen assertions are distinct. Two nine-row CommonFixtures loops are unmapped smoke checks; one symbol/page-break smoke is unmapped. Existing direct font-size ID is a narrower in-memory overlap only. Source-only, no canonical execution or OOXML conformance credit.",
+  "declarationCount": 33,
+  "helperSources": [
+    {
+      "path": "pkg/document/test_utils_test.go",
+      "sha256": "1a102d72c30ab3db7b8d9c03f3ed9df6cc1c1bffddd54fbd30f2d4e925f620e1",
+      "tables": {
+        "CommonFixtures": 9,
+        "CommonTextCases": 10,
+        "CommonHeadingStyleCases": 13,
+        "CommonFontSizeCases": 15,
+        "CommonAlignmentCases": 4,
+        "CommonColorCases": 7,
+        "CommonTableDimensionCases": 8
+      },
+      "limits": [
+        "SaveDocument/OpenDocument fail on errors; Close errors ignored",
+        "CommonFontSizeCases HalfPts metadata is not asserted by document_test.go"
+      ]
+    }
+  ],
+  "mappings": [
+    {
+      "nativeId": "pkg/document/document_test.go::TestDocument_New",
+      "path": "pkg/document/document_test.go",
+      "sourceSha256": "c362a695cfbed71ee1e94ac346acf12256f3048433473c929d9beab1dda818f6",
+      "coverage": "partial",
+      "scenarioIds": [
+        "@id-docx-go-new-empty-body"
+      ],
+      "verifiedAspects": [
+        "New returns a document with nonnil Body and no paragraphs or tables"
+      ],
+      "gaps": [
+        "Only initial in-memory state; no save or package membership check"
+      ],
+      "executionCredit": false
+    },
+    {
+      "nativeId": "pkg/document/document_test.go::TestDocument_SaveAs_Fixtures",
+      "path": "pkg/document/document_test.go",
+      "sourceSha256": "c362a695cfbed71ee1e94ac346acf12256f3048433473c929d9beab1dda818f6",
+      "coverage": "unmapped",
+      "scenarioIds": [],
+      "verifiedAspects": [],
+      "gaps": [
+        "Nine CommonFixtures setups empty, single_paragraph, multiple_paragraphs, formatted_text, headings, simple_table, mixed_content, unicode_content, sdt_content_controls run SaveAs and Open via fatal-on-error helper methods; no reopened content/size assertions. Setup specifics and Close errors are not verified; no canonical behavior is assigned to this smoke test."
+      ],
+      "executionCredit": false
+    },
+    {
+      "nativeId": "pkg/document/document_test.go::TestDocument_CoreProperties",
+      "path": "pkg/document/document_test.go",
+      "sourceSha256": "c362a695cfbed71ee1e94ac346acf12256f3048433473c929d9beab1dda818f6",
+      "coverage": "partial",
+      "scenarioIds": [
+        "@id-docx-go-core-properties-getters"
+      ],
+      "verifiedAspects": [
+        "SetCoreProperties and CoreProperties succeed with all source fields populated; only Title Doc Title, Creator Doc Author and Subject Doc Subject are compared in memory"
+      ],
+      "gaps": [
+        "Description, Keywords, Category, Language, ContentStatus, Identifier, LastModifiedBy, Revision, Version and three W3CDTF dates are supplied but not read back; no save/reopen"
+      ],
+      "executionCredit": false
+    },
+    {
+      "nativeId": "pkg/document/document_test.go::TestParagraph_SetText",
+      "path": "pkg/document/document_test.go",
+      "sourceSha256": "c362a695cfbed71ee1e94ac346acf12256f3048433473c929d9beab1dda818f6",
+      "coverage": "partial",
+      "scenarioIds": [
+        "@id-docx-go-paragraph-text-getter"
+      ],
+      "verifiedAspects": [
+        "Ten helper text rows set a paragraph and compare the in-memory Text getter exactly"
+      ],
+      "gaps": [
+        "Only five named candidate rows; no escaped XML or persistence check"
+      ],
+      "executionCredit": false
+    },
+    {
+      "nativeId": "pkg/document/document_test.go::TestParagraph_SetStyle",
+      "path": "pkg/document/document_test.go",
+      "sourceSha256": "c362a695cfbed71ee1e94ac346acf12256f3048433473c929d9beab1dda818f6",
+      "coverage": "partial",
+      "scenarioIds": [
+        "@id-docx-go-paragraph-style-getters"
+      ],
+      "verifiedAspects": [
+        "Thirteen helper style rows compare direct Style IsHeading and HeadingLevel getters"
+      ],
+      "gaps": [
+        "Only five candidate rows; no saved pStyle lookup, style definition validity or style inheritance"
+      ],
+      "executionCredit": false
+    },
+    {
+      "nativeId": "pkg/document/document_test.go::TestParagraph_SetAlignment",
+      "path": "pkg/document/document_test.go",
+      "sourceSha256": "c362a695cfbed71ee1e94ac346acf12256f3048433473c929d9beab1dda818f6",
+      "coverage": "partial",
+      "scenarioIds": [
+        "@id-docx-go-paragraph-alignment-getter"
+      ],
+      "verifiedAspects": [
+        "Four helper alignment rows compare direct Alignment getter including justify as both"
+      ],
+      "gaps": [
+        "No serialization or layout/rendered alignment"
+      ],
+      "executionCredit": false
+    },
+    {
+      "nativeId": "pkg/document/document_test.go::TestParagraph_Spacing",
+      "path": "pkg/document/document_test.go",
+      "sourceSha256": "c362a695cfbed71ee1e94ac346acf12256f3048433473c929d9beab1dda818f6",
+      "coverage": "partial",
+      "scenarioIds": [
+        "@id-docx-go-paragraph-spacing-getters"
+      ],
+      "verifiedAspects": [
+        "Four local before/after pairs compare getters exactly in twips"
+      ],
+      "gaps": [
+        "No save/reopen, alternate-unit conversion or pagination check"
+      ],
+      "executionCredit": false
+    },
+    {
+      "nativeId": "pkg/document/document_test.go::TestParagraph_AdvancedToggles",
+      "path": "pkg/document/document_test.go",
+      "sourceSha256": "c362a695cfbed71ee1e94ac346acf12256f3048433473c929d9beab1dda818f6",
+      "coverage": "partial",
+      "scenarioIds": [
+        "@id-docx-go-paragraph-advanced-toggles"
+      ],
+      "verifiedAspects": [
+        "KeepLines PageBreakBefore and WidowControl getters each read true after setters"
+      ],
+      "gaps": [
+        "No false/unset toggles, persistence or pagination"
+      ],
+      "executionCredit": false
+    },
+    {
+      "nativeId": "pkg/document/document_test.go::TestParagraph_MultipleRuns",
+      "path": "pkg/document/document_test.go",
+      "sourceSha256": "c362a695cfbed71ee1e94ac346acf12256f3048433473c929d9beab1dda818f6",
+      "coverage": "partial",
+      "scenarioIds": [
+        "@id-docx-go-paragraph-multiple-runs"
+      ],
+      "verifiedAspects": [
+        "Three added runs yield Runs length three and paragraph Text Hello World!"
+      ],
+      "gaps": [
+        "Individual run text is not independently compared; no save/reopen"
+      ],
+      "executionCredit": false
+    },
+    {
+      "nativeId": "pkg/document/document_test.go::TestRun_FontSize",
+      "path": "pkg/document/document_test.go",
+      "sourceSha256": "c362a695cfbed71ee1e94ac346acf12256f3048433473c929d9beab1dda818f6",
+      "coverage": "partial",
+      "scenarioIds": [
+        "@id-docx-direct-font-size-half-points"
+      ],
+      "verifiedAspects": [
+        "Fifteen helper point sizes compare in-memory FontSize getter; 10.5-point value overlaps the existing direct-font-size scenario"
+      ],
+      "gaps": [
+        "HalfPts helper field is unused by this test; canonical case additionally checks saved w:sz 21 and reopened getter, neither proven by this declaration"
+      ],
+      "executionCredit": false
+    },
+    {
+      "nativeId": "pkg/document/document_test.go::TestRun_Color",
+      "path": "pkg/document/document_test.go",
+      "sourceSha256": "c362a695cfbed71ee1e94ac346acf12256f3048433473c929d9beab1dda818f6",
+      "coverage": "partial",
+      "scenarioIds": [
+        "@id-docx-go-run-color-getter"
+      ],
+      "verifiedAspects": [
+        "Seven helper color rows compare direct getter with supplied Want; selected red hash-red and lowercase rows mapped"
+      ],
+      "gaps": [
+        "No saved XML, color validity or default/theme color coverage"
+      ],
+      "executionCredit": false
+    },
+    {
+      "nativeId": "pkg/document/document_test.go::TestRun_FormattingCombinations",
+      "path": "pkg/document/document_test.go",
+      "sourceSha256": "c362a695cfbed71ee1e94ac346acf12256f3048433473c929d9beab1dda818f6",
+      "coverage": "partial",
+      "scenarioIds": [
+        "@id-docx-go-run-boolean-formatting"
+      ],
+      "verifiedAspects": [
+        "Eight local flag tuples compare in-memory Bold Italic and Strike getters"
+      ],
+      "gaps": [
+        "Five selected candidate tuples; Text Test is set without a text getter assertion, no persistence or Paper formatting parity"
+      ],
+      "executionCredit": false
+    },
+    {
+      "nativeId": "pkg/document/document_test.go::TestRun_AdvancedEffects",
+      "path": "pkg/document/document_test.go",
+      "sourceSha256": "c362a695cfbed71ee1e94ac346acf12256f3048433473c929d9beab1dda818f6",
+      "coverage": "partial",
+      "scenarioIds": [
+        "@id-docx-go-run-effects-getters"
+      ],
+      "verifiedAspects": [
+        "Eight advanced direct run effects each read true after setting true"
+      ],
+      "gaps": [
+        "No false/unset rows or saved XML"
+      ],
+      "executionCredit": false
+    },
+    {
+      "nativeId": "pkg/document/document_test.go::TestRun_UnderlineStyles",
+      "path": "pkg/document/document_test.go",
+      "sourceSha256": "c362a695cfbed71ee1e94ac346acf12256f3048433473c929d9beab1dda818f6",
+      "coverage": "partial",
+      "scenarioIds": [
+        "@id-docx-go-run-underline-style"
+      ],
+      "verifiedAspects": [
+        "Six style names each require Underline true and exact style getter"
+      ],
+      "gaps": [
+        "No saved XML or valid enum/schema/rendering claim"
+      ],
+      "executionCredit": false
+    },
+    {
+      "nativeId": "pkg/document/document_test.go::TestRun_FontNames",
+      "path": "pkg/document/document_test.go",
+      "sourceSha256": "c362a695cfbed71ee1e94ac346acf12256f3048433473c929d9beab1dda818f6",
+      "coverage": "partial",
+      "scenarioIds": [
+        "@id-docx-go-run-font-name"
+      ],
+      "verifiedAspects": [
+        "Six font name rows each compare FontName getter to setter input"
+      ],
+      "gaps": [
+        "No availability, saved XML or fallback-font check"
+      ],
+      "executionCredit": false
+    },
+    {
+      "nativeId": "pkg/document/document_test.go::TestRun_Highlight",
+      "path": "pkg/document/document_test.go",
+      "sourceSha256": "c362a695cfbed71ee1e94ac346acf12256f3048433473c929d9beab1dda818f6",
+      "coverage": "partial",
+      "scenarioIds": [
+        "@id-docx-go-run-highlight"
+      ],
+      "verifiedAspects": [
+        "Fifteen color names each compare Highlight getter to setter input"
+      ],
+      "gaps": [
+        "Only five named candidate rows; no validation, persistence or display check"
+      ],
+      "executionCredit": false
+    },
+    {
+      "nativeId": "pkg/document/document_test.go::TestRun_VerticalAlign",
+      "path": "pkg/document/document_test.go",
+      "sourceSha256": "c362a695cfbed71ee1e94ac346acf12256f3048433473c929d9beab1dda818f6",
+      "coverage": "partial",
+      "scenarioIds": [
+        "@id-docx-go-run-vertical-align"
+      ],
+      "verifiedAspects": [
+        "Separate runs read opposite superscript/subscript flags after one setter each"
+      ],
+      "gaps": [
+        "No same-run transition or persistence"
+      ],
+      "executionCredit": false
+    },
+    {
+      "nativeId": "pkg/document/document_test.go::TestRun_SymbolAndLastRenderedPageBreak",
+      "path": "pkg/document/document_test.go",
+      "sourceSha256": "c362a695cfbed71ee1e94ac346acf12256f3048433473c929d9beab1dda818f6",
+      "coverage": "unmapped",
+      "scenarioIds": [],
+      "verifiedAspects": [],
+      "gaps": [
+        "Adding a symbol and last-rendered page break only checks the resulting paragraph Text is nonempty; neither specific symbol code nor page-break element is asserted"
+      ],
+      "executionCredit": false
+    },
+    {
+      "nativeId": "pkg/document/document_test.go::TestTable_Dimensions",
+      "path": "pkg/document/document_test.go",
+      "sourceSha256": "c362a695cfbed71ee1e94ac346acf12256f3048433473c929d9beab1dda818f6",
+      "coverage": "partial",
+      "scenarioIds": [
+        "@id-docx-go-table-dimensions-getters"
+      ],
+      "verifiedAspects": [
+        "Eight helper row/column dimension tuples compare RowCount and ColumnCount getters"
+      ],
+      "gaps": [
+        "No save/reopen, grid consistency or merged-cell semantics"
+      ],
+      "executionCredit": false
+    },
+    {
+      "nativeId": "pkg/document/document_test.go::TestTable_CellAccess",
+      "path": "pkg/document/document_test.go",
+      "sourceSha256": "c362a695cfbed71ee1e94ac346acf12256f3048433473c929d9beab1dda818f6",
+      "coverage": "partial",
+      "scenarioIds": [
+        "@id-docx-go-table-cell-access"
+      ],
+      "verifiedAspects": [
+        "All nine valid coordinates in a 3x3 return nonnil and five named out-of-range coordinates return nil"
+      ],
+      "gaps": [
+        "No content, grid or serialization assertion"
+      ],
+      "executionCredit": false
+    },
+    {
+      "nativeId": "pkg/document/document_test.go::TestTable_CellContent",
+      "path": "pkg/document/document_test.go",
+      "sourceSha256": "c362a695cfbed71ee1e94ac346acf12256f3048433473c929d9beab1dda818f6",
+      "coverage": "partial",
+      "scenarioIds": [
+        "@id-docx-go-table-cell-text-getters"
+      ],
+      "verifiedAspects": [
+        "Four in-memory cell Text getters equal A1 B1 A2 B2 and FirstRowText equals A1 B1"
+      ],
+      "gaps": [
+        "No save/reopen, row geometry or source XML check"
+      ],
+      "executionCredit": false
+    },
+    {
+      "nativeId": "pkg/document/document_test.go::TestTable_RowOperations",
+      "path": "pkg/document/document_test.go",
+      "sourceSha256": "c362a695cfbed71ee1e94ac346acf12256f3048433473c929d9beab1dda818f6",
+      "coverage": "partial",
+      "scenarioIds": [
+        "@id-docx-go-table-row-counts"
+      ],
+      "verifiedAspects": [
+        "AddRow InsertRow and DeleteRow produce counts three four and three; DeleteRow(10) returns an error"
+      ],
+      "gaps": [
+        "No row-order/content assertion after insertion/deletion, no rollback or persistence"
+      ],
+      "executionCredit": false
+    },
+    {
+      "nativeId": "pkg/document/document_test.go::TestTable_CellMerge",
+      "path": "pkg/document/document_test.go",
+      "sourceSha256": "c362a695cfbed71ee1e94ac346acf12256f3048433473c929d9beab1dda818f6",
+      "coverage": "partial",
+      "scenarioIds": [
+        "@id-docx-go-table-merge-properties"
+      ],
+      "verifiedAspects": [
+        "GridSpan reads three and separate VerticalMerge getters read restart/continue"
+      ],
+      "gaps": [
+        "No actual merge topology, safe-grid preflight or round trip"
+      ],
+      "executionCredit": false
+    },
+    {
+      "nativeId": "pkg/document/document_test.go::TestTable_Style",
+      "path": "pkg/document/document_test.go",
+      "sourceSha256": "c362a695cfbed71ee1e94ac346acf12256f3048433473c929d9beab1dda818f6",
+      "coverage": "partial",
+      "scenarioIds": [
+        "@id-docx-go-table-style-getter"
+      ],
+      "verifiedAspects": [
+        "Style getter moves from empty to TableGrid in memory"
+      ],
+      "gaps": [
+        "No styles definition/relationship or save/reopen check"
+      ],
+      "executionCredit": false
+    },
+    {
+      "nativeId": "pkg/document/document_test.go::TestRow_Header",
+      "path": "pkg/document/document_test.go",
+      "sourceSha256": "c362a695cfbed71ee1e94ac346acf12256f3048433473c929d9beab1dda818f6",
+      "coverage": "partial",
+      "scenarioIds": [
+        "@id-docx-go-table-header-getter"
+      ],
+      "verifiedAspects": [
+        "First row IsHeader reads false before and true after SetHeader(true)"
+      ],
+      "gaps": [
+        "No persistence or repeated table header rendering"
+      ],
+      "executionCredit": false
+    },
+    {
+      "nativeId": "pkg/document/document_test.go::TestCell_Shading",
+      "path": "pkg/document/document_test.go",
+      "sourceSha256": "c362a695cfbed71ee1e94ac346acf12256f3048433473c929d9beab1dda818f6",
+      "coverage": "partial",
+      "scenarioIds": [
+        "@id-docx-go-cell-shading-getter"
+      ],
+      "verifiedAspects": [
+        "SetShading FFFF00 is returned by cell Shading getter"
+      ],
+      "gaps": [
+        "No saved cell properties or appearance check"
+      ],
+      "executionCredit": false
+    },
+    {
+      "nativeId": "pkg/document/document_test.go::TestCell_Properties",
+      "path": "pkg/document/document_test.go",
+      "sourceSha256": "c362a695cfbed71ee1e94ac346acf12256f3048433473c929d9beab1dda818f6",
+      "coverage": "partial",
+      "scenarioIds": [
+        "@id-docx-go-cell-properties-getters"
+      ],
+      "verifiedAspects": [
+        "Width 2400/type dxa, vertical alignment center, text direction tbRl and existence of top border are read back"
+      ],
+      "gaps": [
+        "Top border Val Sz Color are assigned but not read; no persistence or independent XML check"
+      ],
+      "executionCredit": false
+    },
+    {
+      "nativeId": "pkg/document/document_test.go::TestRoundTrip_Fixtures",
+      "path": "pkg/document/document_test.go",
+      "sourceSha256": "c362a695cfbed71ee1e94ac346acf12256f3048433473c929d9beab1dda818f6",
+      "coverage": "unmapped",
+      "scenarioIds": [],
+      "verifiedAspects": [],
+      "gaps": [
+        "The same nine CommonFixtures setups call helper RoundTrip and assert only reopened Body nonnil. No paragraph/table/content/style/control equality or package preservation is checked; helper Close errors are ignored. This does not establish any stronger existing authored-roundtrip scenario."
+      ],
+      "executionCredit": false
+    },
+    {
+      "nativeId": "pkg/document/document_test.go::TestRoundTrip_FormattingPreserved",
+      "path": "pkg/document/document_test.go",
+      "sourceSha256": "c362a695cfbed71ee1e94ac346acf12256f3048433473c929d9beab1dda818f6",
+      "coverage": "partial",
+      "scenarioIds": [
+        "@id-docx-go-roundtrip-selected-formatting"
+      ],
+      "verifiedAspects": [
+        "Reopened document has at least one paragraph/three runs; first Bold second Italic; third Color FF0000 FontSize14 FontName Arial"
+      ],
+      "gaps": [
+        "Allows extra runs and does not check run text, complete formatting or unrelated package parts"
+      ],
+      "executionCredit": false
+    },
+    {
+      "nativeId": "pkg/document/document_test.go::TestSection_TitlePageAndBackground",
+      "path": "pkg/document/document_test.go",
+      "sourceSha256": "c362a695cfbed71ee1e94ac346acf12256f3048433473c929d9beab1dda818f6",
+      "coverage": "partial",
+      "scenarioIds": [
+        "@id-docx-go-section-title-background-getters"
+      ],
+      "verifiedAspects": [
+        "Nonempty Sections and first section TitlePage true plus document BackgroundColor EEEEEE getter"
+      ],
+      "gaps": [
+        "No multiple-section policy or saved/reopened result"
+      ],
+      "executionCredit": false
+    },
+    {
+      "nativeId": "pkg/document/document_test.go::TestRoundTrip_TableContent",
+      "path": "pkg/document/document_test.go",
+      "sourceSha256": "c362a695cfbed71ee1e94ac346acf12256f3048433473c929d9beab1dda818f6",
+      "coverage": "partial",
+      "scenarioIds": [
+        "@id-docx-go-roundtrip-table-text"
+      ],
+      "verifiedAspects": [
+        "Reopened document has exactly one table and all nine specified cell texts match"
+      ],
+      "gaps": [
+        "No table style, merged structure, unknown parts or independent schema validation"
+      ],
+      "executionCredit": false
+    },
+    {
+      "nativeId": "pkg/document/document_test.go::TestTrackChanges",
+      "path": "pkg/document/document_test.go",
+      "sourceSha256": "c362a695cfbed71ee1e94ac346acf12256f3048433473c929d9beab1dda818f6",
+      "coverage": "partial",
+      "scenarioIds": [
+        "@id-docx-go-track-author-toggle"
+      ],
+      "verifiedAspects": [
+        "Tracking default false; enabled author Test Author, changed author New Author, disable returns false"
+      ],
+      "gaps": [
+        "No saved settings, revision markup or tracked edit operation"
+      ],
+      "executionCredit": false
+    },
+    {
+      "nativeId": "pkg/document/document_test.go::TestBody_ElementOperations",
+      "path": "pkg/document/document_test.go",
+      "sourceSha256": "c362a695cfbed71ee1e94ac346acf12256f3048433473c929d9beab1dda818f6",
+      "coverage": "partial",
+      "scenarioIds": [
+        "@id-docx-go-body-insert-order"
+      ],
+      "verifiedAspects": [
+        "Element counts 0 then 1 2 3 and paragraph text order First Second Third after insertion"
+      ],
+      "gaps": [
+        "Only paragraphs, not mixed block/table or saved output"
+      ],
+      "executionCredit": false
+    }
+  ]
+}
