@@ -1,0 +1,1124 @@
+{
+  "schemaVersion": 1,
+  "sourceRevision": "2759377762920433a8c04b3e42b60273dab78543",
+  "policy": "Operation families preserve scenario IDs and compiled predicates; runtime profile tags move to scenario scope. Execution credit is unchanged.",
+  "retiredScenarioIds": [],
+  "groups": [
+    {
+      "target": "workflows/xml/parsing.feature",
+      "sources": [
+        {
+          "path": "workflows/xml/parsing.feature",
+          "sha256": "9ed18e4e4172f1742015e99fae46142bad12a4a50357b00b3c62c4889214c0da",
+          "publication": "published",
+          "cases": [
+            {
+              "scenarioId": "@id-xml-parse-offsets",
+              "sha256": "d894b0aed4918ce0548f82a0fb529f3b61766ecc5370b50d06698492cec64b40"
+            },
+            {
+              "scenarioId": "@id-xml-normalise-line-endings",
+              "sha256": "816ca3df30d58a9922a07dc6a4085729ba10316efda224bf3604f4f9592379c6"
+            },
+            {
+              "scenarioId": "@id-xml-parse-refusals",
+              "sha256": "23d1c49c6d2c314330a27359e8ad3d8733d96e3918a0fee5ad9346b3149adb38"
+            },
+            {
+              "scenarioId": "@id-xml-parse-bounds",
+              "sha256": "5a44d543fdb2322d271fb49399360401f6734977cf3a123572bf70a146b78f76"
+            },
+            {
+              "scenarioId": "@id-xml-apply-edits",
+              "sha256": "6ec7ff401d94b5e60416b6538f752c7655c38ce835b78c8355be4b7aeb52bfc2"
+            }
+          ]
+        },
+        {
+          "path": "workflows/xml/values.feature",
+          "sha256": "9066511bb977abeb356e0946cc2453b2d5ebbf34805744dd9af2e6bd1c49734b",
+          "publication": "published",
+          "cases": [
+            {
+              "scenarioId": "@id-xml-entity-values",
+              "sha256": "b1d961315672124ed21b48c8204f7e39a427f8b26a8d4b9ef7c364263d111f5c"
+            },
+            {
+              "scenarioId": "@id-xml-stylesheet-processing-instruction",
+              "sha256": "ca618f47b6cd17737937c8a5712dcb4638fe078b2b4ff4c504ae8f75966b73c0"
+            },
+            {
+              "scenarioId": "@id-xml-expanded-attribute-lookup",
+              "sha256": "56d3856af482302522ca36d6c4e57f3cf17b8fdb68ae40512351a0ea54f09a02"
+            },
+            {
+              "scenarioId": "@id-xml-implicit-xml-prefix",
+              "sha256": "c2ae8e413a3449999093671dbc697a3c55b6473cafdd11b22f8c71f65a0869ae"
+            },
+            {
+              "scenarioId": "@id-xml-prototype-safe-attributes",
+              "sha256": "f33319608b3e6077c5bcb7cb24346c3168ff607f1977ad0d332797808407cb4a"
+            },
+            {
+              "scenarioId": "@id-xml-immutable-namespace-metadata",
+              "sha256": "11cb778bbf5391d589e7d795cb94a5382a26ecaeda9460c825f6931031b01548"
+            },
+            {
+              "scenarioId": "@id-xml-escaping-values",
+              "sha256": "690956dbe9b735ad90be6a992c4959067a5c31421a6d1aaaa6fad96a4f3b3a0f"
+            },
+            {
+              "scenarioId": "@id-xml-escaping-values",
+              "sha256": "a894759982b598f869a0bd62ca1d63c58217e9ccf87aba5abd50cc9c31e8b2c4"
+            },
+            {
+              "scenarioId": "@id-xml-escaping-invalid-character",
+              "sha256": "ef9585f1c95192fe368b4a0ff75ca7f11e52ed444f8bf129c3d22fc25f5dc28e"
+            },
+            {
+              "scenarioId": "@id-xml-escaping-whitespace-roundtrip",
+              "sha256": "c4eb702a734168580f546b6169967405f290fccd459f8684557bbbd29cf6bb7d"
+            },
+            {
+              "scenarioId": "@id-xml-typed-parse-error",
+              "sha256": "b0bc7432c82868704e4d8b0eaa459b0798179a8df9d96145bd782e188bd91dbc"
+            }
+          ]
+        },
+        {
+          "path": "workflows/xml/go-lexical-editing.feature",
+          "sha256": "53c5934dc8c684219aa32668304e4625f3c9d6893649a248cf34b6d769aa4152",
+          "publication": "published",
+          "cases": [
+            {
+              "scenarioId": "@id-xml-go-attribute-splice-custody",
+              "sha256": "184f35e869d2eeff143d3fca393364480f80b901a65340f7420fbcb6d13dc2a8"
+            },
+            {
+              "scenarioId": "@id-xml-go-attribute-splice-custody",
+              "sha256": "14e6749979c06fc5d646a02a7d7db61be7a67bc5d9e73513b01ff365c8aea805"
+            },
+            {
+              "scenarioId": "@id-xml-go-attribute-splice-custody",
+              "sha256": "f612df35a3e1309531cbe73fd493d1501a25599ca513525aee3f0542d4cb21fb"
+            },
+            {
+              "scenarioId": "@id-xml-go-attribute-batch-refusal",
+              "sha256": "60a3b0bd941005a902b95cdb8ed9a2b86b55241c14007f6870aeaf2bc8e4361a"
+            },
+            {
+              "scenarioId": "@id-xml-go-child-insertion-custody",
+              "sha256": "308156546840ef2178cfe9d50f5517bc569a3ab3b3694e0402fe2586c690210a"
+            },
+            {
+              "scenarioId": "@id-xml-go-child-insertion-refusal",
+              "sha256": "332a1e7610ff63134a4a7c8ecd8126565323b738e312438ba3c3879873d8a4b1"
+            },
+            {
+              "scenarioId": "@id-xml-go-child-namespace-matrix",
+              "sha256": "3edb52be637664f26efa45587c4a98e0b02f99b6999680ab97d633c072076d8e"
+            },
+            {
+              "scenarioId": "@id-xml-go-element-removal-custody",
+              "sha256": "eda5bd87a8ea6eac24368e9b2a1193c7ad288afd24f46a960dba4c8b7c92573e"
+            },
+            {
+              "scenarioId": "@id-xml-go-element-removal-refusal",
+              "sha256": "b1ca8e4af23d99667b0c49ac2a2546473aa9f811eb295be961da74228b396986"
+            },
+            {
+              "scenarioId": "@id-xml-go-element-removal-refusal",
+              "sha256": "c9a235cb9b0b52793af4a4fa88b1d757020fc657dd561cca930ec8e3f91e0b01"
+            },
+            {
+              "scenarioId": "@id-xml-go-element-replacement-custody",
+              "sha256": "8490a0a263462488ef86d31ec1d8b58221d60b0dbee4392902d1faeabc16f103"
+            },
+            {
+              "scenarioId": "@id-xml-go-element-replacement-refusal",
+              "sha256": "bc3fb76ee05068210f91843febe4907ac8737309d5fa48126d405c8569009968"
+            },
+            {
+              "scenarioId": "@id-xml-go-element-replacement-refusal",
+              "sha256": "546ee53fe35b85e0e838c91a8d99fccfdf668e070f545af7e96e1d41550bff63"
+            },
+            {
+              "scenarioId": "@id-xml-go-element-replacement-refusal",
+              "sha256": "39efa51b85d3654c4c25584a801f340d44c7dc1f67fcb6ead23075f5f7f1bffe"
+            },
+            {
+              "scenarioId": "@id-xml-go-immutable-leaf-seed",
+              "sha256": "acf892ab4a61c0b67d18008a5eaf2d9004856bcf0a9a513162bcc577ce403bec"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "target": "workflows/package/zip32.feature",
+      "sources": [
+        {
+          "path": "workflows/package/zip32.feature",
+          "sha256": "eb0616a9badf01f383e4be4dd9579896b4141b6183fc2706e0be94403a1115e9",
+          "publication": "published",
+          "cases": [
+            {
+              "scenarioId": "@id-zip-read-valid",
+              "sha256": "3b92a1eb4d511d7a6987f5f3b59e5269a30937c5f5a574430844cf164b23ff8b"
+            },
+            {
+              "scenarioId": "@id-zip-refuse-unsafe",
+              "sha256": "a4be6d3adb2666a91ae9a1d1eecddef85cebfe3a138a06dfc1e2162bbc2f6bbd"
+            },
+            {
+              "scenarioId": "@id-zip-bounds",
+              "sha256": "9e2237d7bb6a4c1a6aea63268cbe42ec78528ccc1941f6bdda958f59f531cd88"
+            },
+            {
+              "scenarioId": "@id-zip-write-deterministic",
+              "sha256": "604888391643f1ef0f10e22d3f5e1b6007167f1be2f9a080c653ec2430bb434b"
+            }
+          ]
+        },
+        {
+          "path": "workflows/package/bun-zip32-profile.feature",
+          "sha256": "080273b0ea4f74da5123be93f30df0f91163a61ad601d8b8928ad0ce9ef28ae9",
+          "publication": "published",
+          "cases": [
+            {
+              "scenarioId": "@id-zip-crc32-standard-vector",
+              "sha256": "ade7075bbd62cf060c860d894418e4f91c10abfc00e347a75bb20e2b0c8626bb"
+            },
+            {
+              "scenarioId": "@id-bun-zip32-reader-refusal",
+              "sha256": "364778f66f8a688268fb98cd4b882a924c7e16c1b5407f4a68fe96e224aabe96"
+            },
+            {
+              "scenarioId": "@id-bun-zip32-reader-refusal",
+              "sha256": "070328d38323728bdf7b5f6dbc81eb770ff5fcb9023d722e649e382c9ad44d20"
+            },
+            {
+              "scenarioId": "@id-bun-zip32-reader-refusal",
+              "sha256": "322bc13bf23e1b26b20671e0716674355972b9ee37bd6b0d798cd91b781097c3"
+            },
+            {
+              "scenarioId": "@id-bun-zip32-reader-refusal",
+              "sha256": "abb7af30f917fdc4b2e32054dc6daad26cbee3db850665b646c9ecec313170ab"
+            },
+            {
+              "scenarioId": "@id-bun-zip32-reader-refusal",
+              "sha256": "b56eb553894cc973e78b35422efdf2d3fa53b8e19f659f77ea33ef32fe170b1e"
+            },
+            {
+              "scenarioId": "@id-bun-zip32-reader-refusal",
+              "sha256": "50d07bcea345b98758827ec09376f480ed437a366f05d5573b1b60638a89ef71"
+            },
+            {
+              "scenarioId": "@id-bun-zip32-reader-refusal",
+              "sha256": "028f20dddeb64f9aae177ab9d3c5ca42eccacd6f46ba93c7a1d8e35c6be02064"
+            },
+            {
+              "scenarioId": "@id-bun-zip32-reader-refusal",
+              "sha256": "16fc3b9ddc4c594958a6fbbaeccdb00e11b253f2cfc2890984b500f5f0fd0293"
+            },
+            {
+              "scenarioId": "@id-bun-zip32-reader-refusal",
+              "sha256": "a0e105820a9bf57dcf2279990e036070728880a26912c27ff04cd0cbf578052a"
+            },
+            {
+              "scenarioId": "@id-bun-zip32-reader-refusal",
+              "sha256": "f77b8db2e698736de1101fae844ffe7485701be403d6477f3e2a59c7014c75f2"
+            },
+            {
+              "scenarioId": "@id-bun-zip32-reader-refusal",
+              "sha256": "51dab2f0fff4f3e41ce296a817368fb60480c495648713ca896a70ca74803ac3"
+            },
+            {
+              "scenarioId": "@id-bun-zip32-reader-refusal",
+              "sha256": "4772ab23d1365523beb576f90d8f2164c0e607c9f4de9fdda34f83ffe227a3ab"
+            },
+            {
+              "scenarioId": "@id-bun-zip32-writer-refusal",
+              "sha256": "30d5d0d9cd3bee6c62f5d6241bd4e50ed722086eef0aea0146a1943efadc641b"
+            },
+            {
+              "scenarioId": "@id-bun-zip32-writer-refusal",
+              "sha256": "edccbe5a9645be7ef215dc1651aa6a9840cfa81d97bbf4ab12489dfa254a6528"
+            },
+            {
+              "scenarioId": "@id-bun-zip32-configured-bounds",
+              "sha256": "cefd253ef7098ab0ff1f8e06f14a0f1771322d645578490a7dce39aab821e247"
+            },
+            {
+              "scenarioId": "@id-bun-zip32-configured-bounds",
+              "sha256": "da30706c996fc01c5ac04ff7c8d7238251ef3338e73a7580c2342ea7d53c1464"
+            },
+            {
+              "scenarioId": "@id-bun-zip32-configured-bounds",
+              "sha256": "b0ca3e9cc54e2ceeda34ceb1f527d708652afe973ea4b462d2e7ab0ce111831e"
+            },
+            {
+              "scenarioId": "@id-bun-zip32-configured-bounds",
+              "sha256": "7f72db9c0efceca477bbddcfa135f7cb3bb4c3e4cf25f608abc23b69984089e9"
+            },
+            {
+              "scenarioId": "@id-bun-zip32-configured-bounds",
+              "sha256": "cbd5f4d3743f6efd4cedf1f7116122a9ad3ec1728979a87bf1601240c64c21ad"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "target": "workflows/package/preservation.feature",
+      "sources": [
+        {
+          "path": "workflows/package/preservation.feature",
+          "sha256": "15f0782254a299e2ac0402cc4d06272aa3332763bd8d02218826cdcf8cff0a56",
+          "publication": "published",
+          "cases": [
+            {
+              "scenarioId": "@id-opc-package-corpus-noop",
+              "sha256": "eec02c654f519d80cb63a85fac8b722765af6c473d3b12598be46a511a9708ce"
+            },
+            {
+              "scenarioId": "@id-opc-package-transaction-rollback",
+              "sha256": "41c5480a1b5b9a89a72c1a1c551e4bbe86f53ab404866b96c09748292415c315"
+            },
+            {
+              "scenarioId": "@id-opc-package-preserve-unrelated",
+              "sha256": "c1d0847fff843a4e377803f8e6db513f9340e301b19d3471479a7ccbc5986344"
+            }
+          ]
+        },
+        {
+          "path": "workflows/package/bun-opc-custody.feature",
+          "sha256": "88c4c3dc90b1e77c14e88d12a4be5728f034b36fc8b37c7fe96d8086674e1297",
+          "publication": "published",
+          "cases": [
+            {
+              "scenarioId": "@id-bun-opc-open-refusal",
+              "sha256": "a0ab00e7af643594b4eda1b0dbba8dc736cbe1c0ff5882f3088ea829d572fc31"
+            },
+            {
+              "scenarioId": "@id-bun-opc-open-refusal",
+              "sha256": "9482cf6fde0553dc0a7cdf47baa4cbe772009fe3c91017ef62f0c9a8657cfe69"
+            },
+            {
+              "scenarioId": "@id-bun-opc-open-refusal",
+              "sha256": "1b5e09b935b619986e905db4fae47c2c2c16650c34d567b18734f0578486631e"
+            },
+            {
+              "scenarioId": "@id-bun-opc-open-refusal",
+              "sha256": "1449debe593f475778468fe9b8432b78e54946f729d47a6ce0bb3eb65f5e91b9"
+            },
+            {
+              "scenarioId": "@id-bun-opc-open-refusal",
+              "sha256": "0da175b5ae29cdef491167710737bf2e60ee255777e34350b0c082422d4cfbf3"
+            },
+            {
+              "scenarioId": "@id-bun-opc-detached-byte-copies",
+              "sha256": "d25c68f8ff5a583d7910fa3f96a703004fcd22daf2a19ac25ea30102925e849a"
+            },
+            {
+              "scenarioId": "@id-bun-opc-preserve-utf16le-edit",
+              "sha256": "3b85a3780e0c8f2726c9fcf4441c5735fc2b4c5801c28d88c6f390a7b954f43d"
+            },
+            {
+              "scenarioId": "@id-bun-opc-async-transaction-refusal",
+              "sha256": "917a48533dda42e2a3b9726fa3926324619bb4de4c43b4d1200df6803fb9af7d"
+            },
+            {
+              "scenarioId": "@id-bun-opc-thenable-transaction-result",
+              "sha256": "a647a7296fc84ab5243e7d391c0e8d65254a3768ab1f8ee9817e4582bde392c5"
+            },
+            {
+              "scenarioId": "@id-bun-opc-save-invalid-target-custody",
+              "sha256": "0fe9dafa5cba3adcd9d5f560a6fb4097d8d7d01952d8dfc382f001e0efe1aae4"
+            },
+            {
+              "scenarioId": "@id-bun-opc-symlink-destination-refusal",
+              "sha256": "a92e24c7814d6d92e1244b6472271a318a87d7ff3da7126a47e171136aa08494"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "target": "workflows/docx/template-analysis.feature",
+      "sources": [
+        {
+          "path": "workflows/docx/python-template-analysis.feature",
+          "sha256": "0cfdeb1d06e655916942080a10632e57a2a25ab2ec3721b416ac1f25fdb93b6d",
+          "publication": "published",
+          "cases": [
+            {
+              "scenarioId": "@id-python-word-template-analysis-sow-response",
+              "sha256": "09a2603193abf5aa2e6a799fd1298899f0b3d8020fe9066b91477b9a4eaf27b9"
+            },
+            {
+              "scenarioId": "@id-python-word-template-analysis-placeholder-response",
+              "sha256": "c76e531d70b390c6d4d4efa4f6bb6f4fae2a927aff215b603349098def03f5b5"
+            },
+            {
+              "scenarioId": "@id-python-word-template-analysis-colour-response",
+              "sha256": "43c4fa5a7505e336b25d8b1e1c47e9ba9b8f843253d8c7aaaa4ef45b71efc975"
+            },
+            {
+              "scenarioId": "@id-python-word-template-analysis-plain-response",
+              "sha256": "6d99896c1bd525005e5463e888bc613606cfd2f610c0ee181f84c0f5d7ec6ac9"
+            },
+            {
+              "scenarioId": "@id-python-office-template-analysis-response",
+              "sha256": "aaf32b1c1040c20a3d24e3f1cac5aba6c73f17013ee80ddf0046521bd8187ccb"
+            },
+            {
+              "scenarioId": "@id-python-office-template-analysis-cache",
+              "sha256": "d691eafbefe2345f82057ec72df90e46fa7be12b22c49c4e043f4ccaa8ff883c"
+            }
+          ]
+        },
+        {
+          "path": "workflows/docx/python-template-cache.feature",
+          "sha256": "a69b82e6b51c58d66d37e7bc45ba93e69c7a5c77ad2c8823e2299caff3650602",
+          "publication": "published",
+          "cases": [
+            {
+              "scenarioId": "@id-python-template-cache-key-stable",
+              "sha256": "1869ee3a0cbb3c7e1b14c633e056048f272707324813aa3a38be5333139c4b2d"
+            },
+            {
+              "scenarioId": "@id-python-template-cache-roundtrip",
+              "sha256": "eaf747624f294b2209d226b0ff503ff0b9f952318af81ac7e11e4da27305b7c5"
+            },
+            {
+              "scenarioId": "@id-python-template-cache-source-change",
+              "sha256": "87aafdd8a9dc7bd37f23be5ddca58199b77b9228a970c55bbfb6a0708c0b56ef"
+            },
+            {
+              "scenarioId": "@id-python-template-cache-corrupt",
+              "sha256": "0c5330a2910ee6488da90012171587b6866924baeb43adfd21bbe9201b639243"
+            },
+            {
+              "scenarioId": "@id-python-template-cache-schema-mismatch",
+              "sha256": "3e73b04e3739f8b55e13607068b3c98932a1dbfadeda53c3494a47218dd34c08"
+            },
+            {
+              "scenarioId": "@id-python-template-cache-sow-reuse",
+              "sha256": "5850f42171c77acc729279d99e1348dcf51fa1587eb073bace6b8a0aba56d54f"
+            },
+            {
+              "scenarioId": "@id-python-template-cache-sow-regenerate",
+              "sha256": "e40abbc76238326552dd29f2330a2b47992638ce45f3b87d7345c9d2c17f5915"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "target": "workflows/docx/document-model.feature",
+      "sources": [
+        {
+          "path": "workflows/docx/go-document-api.feature",
+          "sha256": "96466ae9feed0b23d39fd7c58aa3da525b6ac2d13d33fb69a905bbcdf1257fcd",
+          "publication": "published",
+          "cases": [
+            {
+              "scenarioId": "@id-docx-go-new-empty-body",
+              "sha256": "ea24abf2b216f8b22c1c410416488395ec4953914637612798f7c3ec65c0de6f"
+            },
+            {
+              "scenarioId": "@id-docx-go-core-properties-getters",
+              "sha256": "e3911697c2252176e7c21173b36e8ad46ab17fe948eb3cbef222faf3c69298a6"
+            },
+            {
+              "scenarioId": "@id-docx-go-paragraph-text-getter",
+              "sha256": "0fa28b7565a6084e551506a9251fee14321fd22394fda79220cec5e3d20a322b"
+            },
+            {
+              "scenarioId": "@id-docx-go-paragraph-text-getter",
+              "sha256": "a5c9d7a76c6661b1c8dddecf37b7274ab6fba317d81032aec2e179f76e86fc77"
+            },
+            {
+              "scenarioId": "@id-docx-go-paragraph-text-getter",
+              "sha256": "f261986655bd597c0dc0f605e67a5bcdc463100eb81f5d6e1d5acc509232f93a"
+            },
+            {
+              "scenarioId": "@id-docx-go-paragraph-text-getter",
+              "sha256": "a966105a4dc9285400d970623f8d55c2a7bac06a7bd998f115d4a1c4d5428321"
+            },
+            {
+              "scenarioId": "@id-docx-go-paragraph-text-getter",
+              "sha256": "3ad5ed1b9655ce22878bd1b5cae5a818b86b3bd63e9cc6bdc94f18760c6cd4d2"
+            },
+            {
+              "scenarioId": "@id-docx-go-paragraph-style-getters",
+              "sha256": "116c71f07e14011fceba013579546a1c36eeddc196abdf7fae7ed1f8a6a126bf"
+            },
+            {
+              "scenarioId": "@id-docx-go-paragraph-style-getters",
+              "sha256": "f7aafa9b1066c1913699e6e559d4fe87d88dd232e6e6e7a7a1da718f406ae26e"
+            },
+            {
+              "scenarioId": "@id-docx-go-paragraph-style-getters",
+              "sha256": "1f37c6b1cf6584b4886e94958d4256b97760338644d5360ec24e28d044f77f70"
+            },
+            {
+              "scenarioId": "@id-docx-go-paragraph-style-getters",
+              "sha256": "2cc5619d6f8ef3b799d420d8b791306374d1a2ea089b4cd35d6242f71db719d8"
+            },
+            {
+              "scenarioId": "@id-docx-go-paragraph-style-getters",
+              "sha256": "3f85a28375c5d117b09b4fc00b9158625565932431a94c4102a27b37461c8ccc"
+            },
+            {
+              "scenarioId": "@id-docx-go-paragraph-alignment-getter",
+              "sha256": "47d83fc94d6246f50b7274330e3ed551e9e60310fe281346e0c2d5334d27fe5c"
+            },
+            {
+              "scenarioId": "@id-docx-go-paragraph-alignment-getter",
+              "sha256": "aea17e3d2c3bc4bd20c04274863b93e4f342edb27be88ef6d1b89a8cc2a34a6e"
+            },
+            {
+              "scenarioId": "@id-docx-go-paragraph-alignment-getter",
+              "sha256": "fb3fa5b15fe0634c3bb8cc50663997d1276f3c187a4423c2d6956ec05eaf2539"
+            },
+            {
+              "scenarioId": "@id-docx-go-paragraph-alignment-getter",
+              "sha256": "4f1506076a6e2b13e689df62854cf2d6e7ba34bce97c6f6183644479497176d2"
+            },
+            {
+              "scenarioId": "@id-docx-go-paragraph-spacing-getters",
+              "sha256": "3e3af7b0cd9208cf38d0f742e98e1e933a4e995b7e93b894a847cd2b7b529331"
+            },
+            {
+              "scenarioId": "@id-docx-go-paragraph-spacing-getters",
+              "sha256": "6553c955987f40d9b0e99944864bd48ed0bac6cce74790561abe77898808d221"
+            },
+            {
+              "scenarioId": "@id-docx-go-paragraph-spacing-getters",
+              "sha256": "42ae5f482eb2e05856c8ed0cf03b74fefd44a75359efc5bd45701884b3da4efe"
+            },
+            {
+              "scenarioId": "@id-docx-go-paragraph-spacing-getters",
+              "sha256": "ed24bacfb7704f97befa8dc95de4f3359bbaf1c231253ddad5271a0eae063559"
+            },
+            {
+              "scenarioId": "@id-docx-go-paragraph-advanced-toggles",
+              "sha256": "af117157de924ded7cb463e572004f014a93318e4d32da20bbfcd0d74060b131"
+            },
+            {
+              "scenarioId": "@id-docx-go-paragraph-multiple-runs",
+              "sha256": "6c104eaf881e4d5ea51cb4d7f8fb72575a855c07e1fb440b276a27e4b3aedbfd"
+            },
+            {
+              "scenarioId": "@id-docx-go-run-color-getter",
+              "sha256": "59fe38bad04e2af75be7e93fed61f3b17baf86a063634b97d4ba19a22ffd693d"
+            },
+            {
+              "scenarioId": "@id-docx-go-run-color-getter",
+              "sha256": "fb4840d836f5cc54fe8c709f6ef38441223abdd139a01871c6796b6ef84855ff"
+            },
+            {
+              "scenarioId": "@id-docx-go-run-color-getter",
+              "sha256": "bd6349616e36dee9a9d285761caa9bac7432ed0b3cabb65ad32b0c4f2a3f56c1"
+            },
+            {
+              "scenarioId": "@id-docx-go-run-boolean-formatting",
+              "sha256": "7de00fad1d76013b6cd74a17966c0ce725e15eee09ae949822b8b70876af0339"
+            },
+            {
+              "scenarioId": "@id-docx-go-run-boolean-formatting",
+              "sha256": "e8aa8d6188228a35b5d63de8a03729551266cd10e782ce0d98f3ae6df6727971"
+            },
+            {
+              "scenarioId": "@id-docx-go-run-boolean-formatting",
+              "sha256": "3382eab387148f8bd341bd87346f8aa2a757e1fb75f90122202cd39d0c01e6e4"
+            },
+            {
+              "scenarioId": "@id-docx-go-run-boolean-formatting",
+              "sha256": "1e1bee94df139d10510e177154ee3747776b141e809c95191c4cf4e991e61b6c"
+            },
+            {
+              "scenarioId": "@id-docx-go-run-boolean-formatting",
+              "sha256": "d50bc64c959e7e474393ee236a3d64f6aad4daa4f10a4d73a810a21c513c5fe5"
+            },
+            {
+              "scenarioId": "@id-docx-go-run-effects-getters",
+              "sha256": "2697ec548ef082531c54081220f25d27a33776ac6b393e1fa0e5e16d46eccab0"
+            },
+            {
+              "scenarioId": "@id-docx-go-run-underline-style",
+              "sha256": "762fe7fc874de3cd27e14db4287a744ddcf43c15619f8735fedc6de770b5a5dd"
+            },
+            {
+              "scenarioId": "@id-docx-go-run-underline-style",
+              "sha256": "d394d04d15d86aa23abc8fc1db1db203734116c5d9f6c4954d3ec2d78aa672d7"
+            },
+            {
+              "scenarioId": "@id-docx-go-run-underline-style",
+              "sha256": "ea757c9057c8cddd8ea0c9ba889ae036ec6678c45cb861bfa942a9ab6e99abf2"
+            },
+            {
+              "scenarioId": "@id-docx-go-run-underline-style",
+              "sha256": "5400d3d64c400191aef9ff5012cfd094f182a641af89aff835089f4cee0ab35d"
+            },
+            {
+              "scenarioId": "@id-docx-go-run-underline-style",
+              "sha256": "505da93234c55c69b63c17dc23d9dddf8be39955de9ea8c8a2784fe40b19b9af"
+            },
+            {
+              "scenarioId": "@id-docx-go-run-underline-style",
+              "sha256": "3b3cbaf0050b98d883566762e239940f1a828f0c109b494e561c90a70667ac42"
+            },
+            {
+              "scenarioId": "@id-docx-go-run-font-name",
+              "sha256": "bcf69e4512529a2898580278d69e5598bc9f304215765f0839ccf00299606fff"
+            },
+            {
+              "scenarioId": "@id-docx-go-run-font-name",
+              "sha256": "3787a0338a48f883d428e80e70deb956d43ad5fb4434cefcb6b4eda7dc6c1626"
+            },
+            {
+              "scenarioId": "@id-docx-go-run-font-name",
+              "sha256": "e28dc4c6d967accd09ff0b08482bf7a27bfb07184cd28d0e5f2fa4e897555fbf"
+            },
+            {
+              "scenarioId": "@id-docx-go-run-font-name",
+              "sha256": "756b33846f7431b48dabe28ab2a26840b5ba5dadb1ee4c7a9d09cb5a2ede2dbc"
+            },
+            {
+              "scenarioId": "@id-docx-go-run-font-name",
+              "sha256": "79012242df0b1899cc71d5da1bd371464c2f161b93760c7987de1280c29abc6e"
+            },
+            {
+              "scenarioId": "@id-docx-go-run-font-name",
+              "sha256": "dc1f39f28f049e679a4673bab55174969b8fa454be0031cc4e11aed522b44d71"
+            },
+            {
+              "scenarioId": "@id-docx-go-run-highlight",
+              "sha256": "ea2ddf466261e0104daeb93829024f9fb8a4464961ceec6df5dadce8b2412c8a"
+            },
+            {
+              "scenarioId": "@id-docx-go-run-highlight",
+              "sha256": "84ebbb87b4946a826d73f926e4cf3f3b6a44b13541bf74fa5c4a496c7a794832"
+            },
+            {
+              "scenarioId": "@id-docx-go-run-highlight",
+              "sha256": "a31eb355a80c076158c481e7ea456ced2296686039eeb93d98525947ca731d4e"
+            },
+            {
+              "scenarioId": "@id-docx-go-run-highlight",
+              "sha256": "a79ad319bdc12f47cbc7e59afab2427daee5c889d43f0f3cf48736ef0fd5ecea"
+            },
+            {
+              "scenarioId": "@id-docx-go-run-highlight",
+              "sha256": "a0f0041ccbd68ae69b44f532b047eba9f3f0f6dbb185855499acb1421ea87d0c"
+            },
+            {
+              "scenarioId": "@id-docx-go-run-vertical-align",
+              "sha256": "bb5d4ae0f521358707736be5c1abc78c1b3606484c29bab80aeed5a2d9427966"
+            },
+            {
+              "scenarioId": "@id-docx-go-table-dimensions-getters",
+              "sha256": "2e294602e0a637a3f75e604a44e04fc0c30edef1d33fee5df0b8ee781281a1f7"
+            },
+            {
+              "scenarioId": "@id-docx-go-table-dimensions-getters",
+              "sha256": "615a584861c4bbe1629d50375079c11e4566634470bbde935122f631066e0c03"
+            },
+            {
+              "scenarioId": "@id-docx-go-table-dimensions-getters",
+              "sha256": "5d099f126eaf139726394920a79a58227a8890252b1f1cdae938e47241f572cb"
+            },
+            {
+              "scenarioId": "@id-docx-go-table-dimensions-getters",
+              "sha256": "f14ccfd246519017063a9ca5cd2f8680e6fdd82978b8ec01ccdde0d780f25d46"
+            },
+            {
+              "scenarioId": "@id-docx-go-table-dimensions-getters",
+              "sha256": "4a23540bfc72fdf8e1b6c98429cace318891887ca6ff5a1ef9d99259b7008671"
+            },
+            {
+              "scenarioId": "@id-docx-go-table-dimensions-getters",
+              "sha256": "a061d40a10ac4cdcdd114f80b83393ad677015eed84d45f475a3bbbdef7264cd"
+            },
+            {
+              "scenarioId": "@id-docx-go-table-dimensions-getters",
+              "sha256": "2581ecd2dc0b427cee967d132257b93ee48c24ef3ecf73c4fd06d649fd8c9a37"
+            },
+            {
+              "scenarioId": "@id-docx-go-table-dimensions-getters",
+              "sha256": "87171d36a57b0e797c6173bffaf798a0fafabf68ff175b96c066014d0c959d1e"
+            },
+            {
+              "scenarioId": "@id-docx-go-table-cell-access",
+              "sha256": "532c20c6885993c4a61a1b78cabca0dd615c371640519375b617dd1f76e4753b"
+            },
+            {
+              "scenarioId": "@id-docx-go-table-cell-text-getters",
+              "sha256": "3edb7fb8f40b329ce4181a7b36f556de59ccd062891f017c11a272e9bce27c3d"
+            },
+            {
+              "scenarioId": "@id-docx-go-table-row-counts",
+              "sha256": "d55e15bfcab799c9978b69d7a0cd4d965e0bf909a911b805c747a1f02e859b97"
+            },
+            {
+              "scenarioId": "@id-docx-go-table-merge-properties",
+              "sha256": "f03bcc4076624fc6333b158506ad1cfdef9c6e89c8023ebaad0e4c5b5634d390"
+            },
+            {
+              "scenarioId": "@id-docx-go-table-style-getter",
+              "sha256": "c4d31d95df50ecea3ed605f4c0c232d79b0d41c1a79030efaf992dfae7148dca"
+            },
+            {
+              "scenarioId": "@id-docx-go-table-header-getter",
+              "sha256": "33fd1eddf39ddf05c5ea9cfebd19a1cb24ec8de865652772457cc803811ea6c7"
+            },
+            {
+              "scenarioId": "@id-docx-go-cell-shading-getter",
+              "sha256": "b454e579c7bf9842d8a9363df0473576056fd51644a2cf3369fc54cba52c35f9"
+            },
+            {
+              "scenarioId": "@id-docx-go-cell-properties-getters",
+              "sha256": "da043980b49f1dfadcd4d5a42bdbfc53e5c945c78b4561e91d2480dd1188e66e"
+            },
+            {
+              "scenarioId": "@id-docx-go-roundtrip-selected-formatting",
+              "sha256": "457d4a430b8305efdff42ab287dd428930805b05417f707b9a4331c6dc5c273c"
+            },
+            {
+              "scenarioId": "@id-docx-go-roundtrip-table-text",
+              "sha256": "44b25df37f84e047a5aa6a9eb9084dd09cc8b795d752afe10f6a5b79dc2888d8"
+            },
+            {
+              "scenarioId": "@id-docx-go-section-title-background-getters",
+              "sha256": "1bc7ecba71a6471a54ac4b549a68a9564cf55261a0264ece29066573faf6878b"
+            },
+            {
+              "scenarioId": "@id-docx-go-track-author-toggle",
+              "sha256": "eb05cc6f1c38f222d3230da40878fdaa06be89c961865635ff5a2b9068811ba1"
+            },
+            {
+              "scenarioId": "@id-docx-go-body-insert-order",
+              "sha256": "6c3c6861cde2ce908f327e32194f0d325fdf7e2093fdd4c58e3bdde91b6d9570"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "target": "workflows/xlsx/formula-references.feature",
+      "sources": [
+        {
+          "path": "workflows/xlsx/go-formula-references.feature",
+          "sha256": "31e27de8fa848a33456df065b2002e416b3ad7b156c7f3323bbcd888090fbf11",
+          "publication": "published",
+          "cases": [
+            {
+              "scenarioId": "@id-xlsx-go-formula-analysis-counts",
+              "sha256": "4d21509dffc44ff2ca6d2f444f60e953e77ff0efe33ac1e42ed0c95e3f38f381"
+            },
+            {
+              "scenarioId": "@id-xlsx-go-formula-analysis-counts",
+              "sha256": "cd85fba4dcd989a1294389fe054fd7aa33cbbbfdc1768da8012e5a0f7721cde5"
+            },
+            {
+              "scenarioId": "@id-xlsx-go-formula-analysis-counts",
+              "sha256": "256fcc6aa4aca391b0f74c77ad7214acde1a57a611e0f144a2ef680d1dc7353d"
+            },
+            {
+              "scenarioId": "@id-xlsx-go-formula-analysis-counts",
+              "sha256": "92c1742d8422027c22eb24f5b259b09655fea6ff2e6295441278e3ed8e920548"
+            },
+            {
+              "scenarioId": "@id-xlsx-go-formula-analysis-counts",
+              "sha256": "0e32d40e49fc5673dbb08fd14cce379435fcd9f2fa9f3704ac51ce15459c2f5a"
+            },
+            {
+              "scenarioId": "@id-xlsx-go-formula-analysis-counts",
+              "sha256": "d90d20ee4ce5c4f830d727b1bcd68585ec94abc4a79a06d80a4405479e21cc6d"
+            },
+            {
+              "scenarioId": "@id-xlsx-go-formula-quoted-sheet-flags",
+              "sha256": "bdf6af146afedb2329450caa2945e998cf4a45be5eb1253b1f1ba45adb6b08d4"
+            },
+            {
+              "scenarioId": "@id-xlsx-go-formula-analysis-refusal",
+              "sha256": "c564b9eb686435c0077ae666c81b3c4f771dab5b0061264cdd6f8ccd7a97bb70"
+            },
+            {
+              "scenarioId": "@id-xlsx-go-formula-analysis-refusal",
+              "sha256": "2eb4a0ac997c66b87b2f7ed487e2953f9b9e5405862434510350609a3b42d941"
+            },
+            {
+              "scenarioId": "@id-xlsx-go-formula-analysis-refusal",
+              "sha256": "cb7daf2f0e662defefbd2612b9b145ea4b954c0933e74534c72eaffbd199953e"
+            },
+            {
+              "scenarioId": "@id-xlsx-go-formula-analysis-refusal",
+              "sha256": "85354b0fc80651ab3cdfa3e85780b9aa0faf018ca4a944526738b2add290e4c0"
+            },
+            {
+              "scenarioId": "@id-xlsx-go-formula-analysis-refusal",
+              "sha256": "8e4c549010bfe3f3210e9fa1736478983b06d9befa015054fe1b73ac82f41b21"
+            },
+            {
+              "scenarioId": "@id-xlsx-go-formula-analysis-refusal",
+              "sha256": "5ce09ad52f2e3c59f287c4b3c4c3e7054647f8b5ae5515250515a2ed63e9fcca"
+            },
+            {
+              "scenarioId": "@id-xlsx-go-formula-analysis-refusal",
+              "sha256": "17dd5ae3d037f99bda0cbee4fdaf0455f89bd6f10d46f6a9db5fca1d8f64623d"
+            },
+            {
+              "scenarioId": "@id-xlsx-go-formula-literal-punctuation",
+              "sha256": "6955ec3b4f8386ea0c7d5e94c2da5e862d67495f23e388e97c0c5f786e13fdfb"
+            },
+            {
+              "scenarioId": "@id-xlsx-go-formula-literal-punctuation",
+              "sha256": "73e2db50c9f5cfc378291a356b6a2f0d4539f23d7a7cae1a14d668c4b7cd54a7"
+            },
+            {
+              "scenarioId": "@id-xlsx-go-formula-literal-punctuation",
+              "sha256": "28bc3a470688c352d62f256e1c3eefe00d8fdcbc475907f23e1fc33a54c8429e"
+            },
+            {
+              "scenarioId": "@id-xlsx-go-formula-literal-punctuation",
+              "sha256": "7a00a743bfc6fb3a234be37ca4eb7e8c9bd8a24a31ba648a9816bb4096763128"
+            },
+            {
+              "scenarioId": "@id-xlsx-go-formula-literal-punctuation",
+              "sha256": "e8700af3385de0f9c38d66dc5457ad07d4fca15ab04451250f507ffc36570214"
+            },
+            {
+              "scenarioId": "@id-xlsx-go-direct-range-parsing",
+              "sha256": "907972ccb5dc8fe70f187c1ef3223e2c45f924505bd94e0468db10a5e58b445b"
+            },
+            {
+              "scenarioId": "@id-xlsx-go-direct-range-parsing",
+              "sha256": "4c172c298b127fdddf2abcc713471fdb879e9df9e6bd8cc368bb800a5ad45e64"
+            },
+            {
+              "scenarioId": "@id-xlsx-go-direct-range-parsing",
+              "sha256": "37d19ec2f7055b25fe41cacfa9ae6022523803baf6dd140e469861aa07d4e495"
+            },
+            {
+              "scenarioId": "@id-xlsx-go-direct-range-parsing",
+              "sha256": "056d18d846839fd09694f246287fd3dd9e05ada9ab5c0a8621a34db054a11f33"
+            },
+            {
+              "scenarioId": "@id-xlsx-go-direct-range-parsing",
+              "sha256": "4f6bc95b31bb6e812c315b15d830b8d66c801f728bd3f71a44cd9a36a6e41605"
+            },
+            {
+              "scenarioId": "@id-xlsx-go-direct-range-parsing",
+              "sha256": "6b19c70a8ac5114d63d392383f437c7a67d2a992c1924609512b6dcbc7ba8386"
+            },
+            {
+              "scenarioId": "@id-xlsx-go-direct-range-refusal",
+              "sha256": "cf01b900f5d34aec67da4a7387439db1de2da74499dbe2b9ef17b64e4650edaf"
+            },
+            {
+              "scenarioId": "@id-xlsx-go-direct-range-refusal",
+              "sha256": "94ee91cf5ee364173fb557e706ddf88bcfd541c247378df76a889c5b2e6dc32a"
+            },
+            {
+              "scenarioId": "@id-xlsx-go-direct-range-refusal",
+              "sha256": "5a94269916dab402d6370595986671a8b6933e6bb8673bc0f750e6cd6ab73e0e"
+            },
+            {
+              "scenarioId": "@id-xlsx-go-direct-range-refusal",
+              "sha256": "499860c609f6dda4ac75bbd6ef92fce9ae308adb98b730bd9b5bda14284c9559"
+            },
+            {
+              "scenarioId": "@id-xlsx-go-direct-range-refusal",
+              "sha256": "96331869ecda528d7e82ac1aaee3136f0077398ceda31e64983e491450d95471"
+            },
+            {
+              "scenarioId": "@id-xlsx-go-direct-range-refusal",
+              "sha256": "644c60e250ce08534b5405ecf3810d7acd32aa90230eef389dbc31385fd7e409"
+            },
+            {
+              "scenarioId": "@id-xlsx-go-direct-range-refusal",
+              "sha256": "065682f315b5d2d6a0080b020b12de710591437976492987947fca9737067ec1"
+            },
+            {
+              "scenarioId": "@id-xlsx-go-static-remap-exact",
+              "sha256": "dadec6029100acbfe82a8a676f07628db1bd2ebde348f11c0075ac17b3b2c4b6"
+            },
+            {
+              "scenarioId": "@id-xlsx-go-static-remap-exact",
+              "sha256": "ef328ed3e5d348dd43ba582cee25c47397ca76f74dd05b80dc95f6ae92631b84"
+            },
+            {
+              "scenarioId": "@id-xlsx-go-static-remap-exact",
+              "sha256": "11acff5d81cca64f07f4cf7ae07e9203ee559688f3d0fc10e96b3a54f091f238"
+            },
+            {
+              "scenarioId": "@id-xlsx-go-static-remap-exact",
+              "sha256": "c789f0469e662f3f9266e870d620630e1d31ecd2758d0c6039dfd5bcd9366429"
+            },
+            {
+              "scenarioId": "@id-xlsx-go-static-remap-exact",
+              "sha256": "37aa11f443891c8fabedf9927f807a480868eb269184564468ed69a851591f2c"
+            },
+            {
+              "scenarioId": "@id-xlsx-go-static-remap-refusal",
+              "sha256": "194b35d2e3b5b831b8c2671de172c8233ecc3bf798ccf7ac10110948ab89faf2"
+            },
+            {
+              "scenarioId": "@id-xlsx-go-static-remap-refusal",
+              "sha256": "649b53228e282a240163022591d21230d19dd292ce9dce1694d1f6dc6b7d65b2"
+            },
+            {
+              "scenarioId": "@id-xlsx-go-static-remap-refusal",
+              "sha256": "e33ad805970d6f126e68bfca43f8df24c88d4eae033b58dcb270eada5e3d1763"
+            },
+            {
+              "scenarioId": "@id-xlsx-go-static-remap-refusal",
+              "sha256": "f1787914f0454bfed9ff011ac3bb182f4f32ceb3c48e314e317f0e111371b7f9"
+            },
+            {
+              "scenarioId": "@id-xlsx-go-static-remap-refusal",
+              "sha256": "3f1cbf4e9ef0f312797d3720a33773a1013c03c7b5ba07a8b1ecf46ae2394717"
+            },
+            {
+              "scenarioId": "@id-xlsx-go-static-remap-refusal",
+              "sha256": "5f52d3da4489e561e546dde03c51ecfd314e2b02666adce74cf93d393a049322"
+            },
+            {
+              "scenarioId": "@id-xlsx-go-static-remap-refusal",
+              "sha256": "2f826e6e2646018082a3720b35f712782211df72620c8f7c22ad4c20e9174399"
+            },
+            {
+              "scenarioId": "@id-xlsx-go-static-reference-properties",
+              "sha256": "412e02cab4d27a48830f14f8b63d08672772753de27a14815bfb871686b01148"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "target": "workflows/docx/anchor-discovery.feature",
+      "sources": [
+        {
+          "path": "workflows/docx/python-anchor-discovery.feature",
+          "sha256": "23c4863ac72b5600ea9a1bfc620be6f40ce30cdda61bd9ca4fe7a6a244ba4316",
+          "publication": "published",
+          "cases": [
+            {
+              "scenarioId": "@id-python-word-anchor-headings-paragraphs",
+              "sha256": "d402f929917dd39e668302ef3136acaab3e6c3e72ba29cb61154aba1ed289e4c"
+            },
+            {
+              "scenarioId": "@id-python-word-anchor-text-filter",
+              "sha256": "75da491139c83cdd9808c31b92a643e7a73ef7e7dc346a28bbe52a36c9e91b38"
+            },
+            {
+              "scenarioId": "@id-python-word-anchor-document-map",
+              "sha256": "e3dfbdbffbbc3812bcde90742953b9ceb835117bafed76f27c4b89be1d0db24a"
+            },
+            {
+              "scenarioId": "@id-python-word-anchor-discover-insert",
+              "sha256": "5f8a89c69966113f7a17c9f44a77d71b0f11a1eb3d0d2775638a67126661df65"
+            },
+            {
+              "scenarioId": "@id-python-word-anchor-section-discovery-hints",
+              "sha256": "36114a173f12f93971ee6532574f40de0bc324f3ab11ec85aae0c84a938300eb"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "target": "workflows/docx/comments.feature",
+      "sources": [
+        {
+          "path": "workflows/docx/comments.feature",
+          "sha256": "dca421c26a415363ffa59a71d46c296fd28f86eb133539a6bf1960e2dce29663",
+          "publication": "published",
+          "cases": [
+            {
+              "scenarioId": "@id-docx-comments-inspection",
+              "sha256": "a97271cb4d7cec9de8a31ae1520df7b5b2f815c8aa76377c995226c403993c18"
+            },
+            {
+              "scenarioId": "@id-docx-comments-resolution",
+              "sha256": "544653e5d7d532721895156e08cd33664b4a79dd431312583d452b0b8005fa2d"
+            },
+            {
+              "scenarioId": "@id-docx-comments-noop",
+              "sha256": "1522f1d74d832eaedf1625029aaf73fdb98604f0aeb8337594e334779b5d0817"
+            },
+            {
+              "scenarioId": "@id-docx-comments-refusal",
+              "sha256": "75d8f70b076270c060a2af9888f3fc2ccaf6135b84117ac141a15d9815dfcb47"
+            },
+            {
+              "scenarioId": "@id-docx-comments-refusal",
+              "sha256": "55ffdb66e8eac5388325dbdbaf353e14c42a1b3d89ccc138ac28737ed705c005"
+            },
+            {
+              "scenarioId": "@id-docx-comments-refusal",
+              "sha256": "a58201d286f97443bb82f74202e1aa09ecfb47be081404af6ef0d94f8ea77908"
+            },
+            {
+              "scenarioId": "@id-docx-comments-refusal",
+              "sha256": "f72fbea5df41c62cc9223e32dd9dd9e4044debc5d20fcf39d041948bef764013"
+            },
+            {
+              "scenarioId": "@id-docx-comments-refusal",
+              "sha256": "0f496580cc00fc4fa902cf6189b6d08cf68124c9f671c17cace2e3dc6acd180d"
+            },
+            {
+              "scenarioId": "@id-docx-comments-refusal",
+              "sha256": "da542b9d01d4d34561ed0871bcad834a1027b791e6f262f542818fba9e256057"
+            },
+            {
+              "scenarioId": "@id-docx-comments-refusal",
+              "sha256": "1e5fd98488854f1d1325fbb0ba6ab2754001831457e5e8abebea9f82bc76d63b"
+            },
+            {
+              "scenarioId": "@id-docx-comments-refusal",
+              "sha256": "c2da9c41edf371a7667bfab09624df8a8490ded872e588c8460be07bdcf03e4f"
+            },
+            {
+              "scenarioId": "@id-docx-comments-refusal",
+              "sha256": "e449017a7456784f3d6236d463982728ad3108aae4a595ddd359862e085e410e"
+            },
+            {
+              "scenarioId": "@id-docx-comments-refusal",
+              "sha256": "ebc5e3ce08a9cc4fe54c8cf6da783f89e0d088d868cf86b130aa59e501664980"
+            },
+            {
+              "scenarioId": "@id-docx-comments-refusal",
+              "sha256": "c072fabb1c86a58efd8282f97dd6f1a056d6e5ca1ea1501d8f63f32c8dd54bd6"
+            }
+          ]
+        },
+        {
+          "path": "workflows/docx/python-comment-resolution.feature",
+          "sha256": "efc7f04ab7641bf6150d569d77840994a61021d2ca98bbac1ab305b1d0f20ed7",
+          "publication": "unpublished contribution",
+          "cases": [
+            {
+              "scenarioId": "@id-python-comments-mixed-done",
+              "sha256": "55e9e011c379f73b4e02362f2acf674deeea0e14c367f2c000c063de67b40c65"
+            },
+            {
+              "scenarioId": "@id-python-comments-resolved-filter",
+              "sha256": "6767942ad599ab98cbc4fb8c26133f5f11f8c384b408a56bce7bae13af748ab3"
+            },
+            {
+              "scenarioId": "@id-python-comments-reopen-filter",
+              "sha256": "4b03472275621edde5fccfdd24eb82f25268915d2c83563fb475841c0aef1bb0"
+            },
+            {
+              "scenarioId": "@id-python-comments-reply-root-resolution",
+              "sha256": "5100467de2ff4beb214c25e0043125cfc76a59c0d57ba015348ba9a8c09fa196"
+            },
+            {
+              "scenarioId": "@id-python-comments-ids-fallback",
+              "sha256": "673fea218ec5bfe80ea625a1fb9a21b2a72ac10ff67fdadea7823c8313ce8918"
+            },
+            {
+              "scenarioId": "@id-python-comments-create-extension",
+              "sha256": "0910f64e797dcb0ebc4a535ba33ab48e80990ec5b2fbd0b0e576cc19a161ea20"
+            },
+            {
+              "scenarioId": "@id-python-comments-filter-predicates",
+              "sha256": "bdfd745c9481be500db1cdb21eb7248469202c0610cc223c5f7422f3b174f23b"
+            },
+            {
+              "scenarioId": "@id-python-comments-threaded-reply",
+              "sha256": "0b779e1ef05c77c86cb9d29f755c18f7ebd52bcca704b2ca86770533ccd919d7"
+            },
+            {
+              "scenarioId": "@id-python-comments-reply-auto-resolve",
+              "sha256": "477aab640e67d2e4e7487fb9d7974658d110d284a1ed7fb5500152fc35e5eb70"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "target": "workflows/native/pptx-text.feature",
+      "sources": [
+        {
+          "path": "workflows/native/pptx-text.feature",
+          "sha256": "a816d0cec964e2b66c081040f6d4888abe0bacd648664eb5051f9a6be60c9350",
+          "publication": "published",
+          "cases": [
+            {
+              "scenarioId": "@id-pptx-order-notes-read",
+              "sha256": "510763a9af844ff32a4ce410cb23cc8fe30f17b3add2ca38e89b189d8e33fe03"
+            },
+            {
+              "scenarioId": "@id-pptx-readable-unsupported-topology",
+              "sha256": "e44bac219294c0fc354e0db1d75211fa48d068a9d5d61ad7012eaead7a420a65"
+            },
+            {
+              "scenarioId": "@id-pptx-cross-run-replace",
+              "sha256": "e0ca9d9eb1507cfb1cb116fdda434c3120aa6978c75c95753fb77ea2ee0f7656"
+            },
+            {
+              "scenarioId": "@id-pptx-stale-anchor-refusal",
+              "sha256": "c706f7cf84e17a17fc4e77022cd9f1c812174cd4d1fd1a3beadbad55c2313310"
+            }
+          ]
+        },
+        {
+          "path": "workflows/pptx/go-notes-editing.feature",
+          "sha256": "b5774fa4feb269cd60d1784c87bc23d3d99e103c0d40ee0532c72f0d931c90a7",
+          "publication": "unpublished contribution",
+          "cases": [
+            {
+              "scenarioId": "@id-pptx-go-notes-exact-splice",
+              "sha256": "f231a700e3b847814928dcaefcc7f582b3e5ec72c3def633cc3e0295d58494f0"
+            },
+            {
+              "scenarioId": "@id-pptx-go-notes-refusal-and-noop-custody",
+              "sha256": "6f68516fd6ea17e3c639d7ab2dc53434e0d862a978b2075bd54e30cd3868af2f"
+            },
+            {
+              "scenarioId": "@id-pptx-go-notes-clear-stale-refill",
+              "sha256": "ae11a539bc72b1207587e1031ecf6dacfd749efda29c3bbdb54fc6af0145c863"
+            },
+            {
+              "scenarioId": "@id-pptx-go-notes-part-fingerprint-refusal",
+              "sha256": "4383370728645f3bdebecd37530ab2be31149730b20fea0b2576d6d551a9ef1d"
+            },
+            {
+              "scenarioId": "@id-pptx-go-notes-self-closing-fill",
+              "sha256": "31ffc47e9e1a9f8d510b86ca42c52516874df5cb8a9ea83cdbdb8dd6b8ac9073"
+            },
+            {
+              "scenarioId": "@id-pptx-go-notes-edge-space-preserve",
+              "sha256": "1d0aa8036e51ba99c259eb860b42e241491626a639d450b7993526019ae9785d"
+            },
+            {
+              "scenarioId": "@id-pptx-go-notes-multiline-template",
+              "sha256": "7aba12501ddfc9b6bdb0f2e08cfb8dc209443cb4bf865ea17719a04f27451b39"
+            },
+            {
+              "scenarioId": "@id-pptx-go-notes-template-fragments",
+              "sha256": "6f93a149dd35fd154113b0e1469e39a370a96a7e00ad4ce55263e33541e07fcc"
+            }
+          ]
+        },
+        {
+          "path": "workflows/pptx/bun-open-save.feature",
+          "sha256": "8622336bc73350534a13bfa3f51a97bd1fa38d5a25e174de6db54b693b8fd758",
+          "publication": "unpublished contribution",
+          "cases": [
+            {
+              "scenarioId": "@id-pptx-bun-open-save-noop",
+              "sha256": "58aa11eebcd699c8e64298def507060eb89e4af00059ceadb81318174e0988ec"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

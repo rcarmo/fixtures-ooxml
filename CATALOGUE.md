@@ -7,6 +7,11 @@ these directories do not register a behaviour.
 
 ## Add an operation
 
+Extend an existing operation family before creating a file. Features are shared
+across runtimes; native tests and bindings stay in their consumer repositories.
+Use a `Rule` when a group needs its own background or policy description, and
+put profile tags on scenarios so they cannot leak into another policy's cases.
+
 Write the canonical `.feature` under `workflows/<format-or-layer>/`. Give each
 scenario one unique `@id-` tag and concrete Given/When/Then steps. Keep distinct
 operations separate: preserving an existing part, rewriting it and refusing the
@@ -46,6 +51,20 @@ Commit the feature, mapping, registry changes and checks together.
 New scenarios are `@planned` until an implementation binds and runs them. Preserve
 that distinction in results, but do not defer writing a valid format contract
 because one implementation does not support it yet.
+
+## Consolidating existing files
+
+[`ledgers/feature-consolidation.json`](ledgers/feature-consolidation.json) records
+old paths, source hashes and compiled-case fingerprints for the operation-family
+migration. Existing scenario IDs, inputs and outcomes are preserved; the old
+feature copies are removed. Reconcile equivalent cases before introducing new
+IDs. Different inputs, save guarantees or refusal policies need separate cases.
+
+Consumers select implemented scenario IDs explicitly. They must keep other
+scenarios in a loaded feature visible as planned, never activate them because a
+neighbouring case is bound. A full-coverage check must reject planned cases even
+inside a partly implemented feature. Changed paths and source hashes require
+fresh consumer results before reference adoption.
 
 ## Completion
 

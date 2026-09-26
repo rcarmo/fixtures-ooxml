@@ -1,6 +1,6 @@
 # Word template analysis
 
-The [Word template feature](../workflows/docx/python-template-analysis.feature)
+The [Word template feature](../workflows/docx/template-analysis.feature)
 requires a successful dictionary response for the SOW input and tests the
 response shape for plain and placeholder documents. The direct analyzer reads
 an existing DOCX and can return content categories, table handling, formatting

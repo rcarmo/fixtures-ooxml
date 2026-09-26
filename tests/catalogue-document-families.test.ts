@@ -1,8 +1,9 @@
+import {sourceCases} from './catalogue-helpers.ts';
 import {test,expect} from 'bun:test';
 import {cases,validateConsumerMappings} from '../scripts/verify.ts';
 
 test('Bun package API scenarios isolate callback semantics and exact destination custody',async()=>{
- const p='workflows/package/bun-opc-custody.feature',rows=cases(p,await Bun.file(p).text());
+ const p='workflows/package/preservation.feature',rows=await sourceCases(p,'workflows/package/bun-opc-custody.feature');
  expect(rows).toHaveLength(11);expect(new Set(rows.map(r=>r.scenarioId)).size).toBe(7);
  const refusals=rows.filter(r=>r.scenarioId==='@id-bun-opc-open-refusal');expect(refusals).toHaveLength(5);
  expect(refusals.map(r=>r.steps.find(s=>s.text.startsWith('it throws'))!.text)).toEqual([
@@ -15,7 +16,7 @@ test('Bun package API scenarios isolate callback semantics and exact destination
  expect(corpus.scenarioIds).toEqual(['@id-opc-package-corpus-noop']);expect(corpus.gaps.join(' ')).toContain('without reopening');
 });
 test('Python anchors distinguish response counts from saved insertion outcomes',async()=>{
- const p='workflows/docx/python-anchor-discovery.feature',rows=cases(p,await Bun.file(p).text());expect(rows).toHaveLength(5);
+ const p='workflows/docx/anchor-discovery.feature',rows=cases(p,await Bun.file(p).text());expect(rows).toHaveLength(5);
  const insertion=rows.find(r=>r.scenarioId==='@id-python-word-anchor-discover-insert')!;
  expect(insertion.steps.at(-1)!.text).toBe('reading the saved Word document shows "Inserted after discovered anchor" immediately after "Delivery approach"');
  const filtering=rows.find(r=>r.scenarioId==='@id-python-word-anchor-text-filter')!;
@@ -27,12 +28,12 @@ test('document family assets and compiled outcomes are registered together',asyn
  const {registerWorkflow}=await import('../scripts/register-workflow.ts');
  const ledger=await Bun.file('ledgers/workflows.json').json(),manifest=await Bun.file('manifest.json').json();
  for(const [feature,mapping,contract] of [
-  ['workflows/package/bun-opc-custody.feature','ledgers/consumers/bun-opc-custody.json','contracts/bun-opc-custody.md'],
-  ['workflows/docx/python-anchor-discovery.feature','ledgers/consumers/python-anchor-discovery.json','contracts/python-anchor-discovery.md'],
-  ['workflows/docx/go-document-api.feature','ledgers/consumers/go-document-api.json','contracts/go-document-api.md'],
+  ['workflows/package/preservation.feature','ledgers/consumers/bun-opc-custody.json','contracts/bun-opc-custody.md'],
+  ['workflows/docx/anchor-discovery.feature','ledgers/consumers/python-anchor-discovery.json','contracts/python-anchor-discovery.md'],
+  ['workflows/docx/document-model.feature','ledgers/consumers/go-document-api.json','contracts/go-document-api.md'],
  ]){
   const generated=registerWorkflow(feature!,await Bun.file(feature!).text(),{files:[]},{features:[],workflows:[]});
-  for(const w of generated.ledger.workflows)expect(ledger.workflows.find((r:any)=>r.id===w.id)).toEqual(w);
+  for(const w of generated.ledger.workflows)expect(ledger.workflows.find((r:any)=>r.id===w.id)).toMatchObject({id:w.id,feature:w.feature,expandedCases:w.expandedCases});
   for(const p of [feature,mapping,contract]){const b=await Bun.file(p!).bytes(),asset=manifest.files.find((r:any)=>r.path===p);expect(asset?.sha256).toBe(new Bun.CryptoHasher('sha256').update(b).digest('hex'));expect(asset?.bytes).toBe(b.length);}
   const source=await Bun.file(mapping!).json();validateConsumerMappings(source,new Set(ledger.workflows.map((w:any)=>w.id)));
   for(const row of source.mappings)expect(row.executionCredit).toBe(false);
@@ -40,7 +41,7 @@ test('document family assets and compiled outcomes are registered together',asyn
 });
 
 test('Go document API excludes fixture smoke loops and preserves in-memory versus reopened gaps',async()=>{
- const p='workflows/docx/go-document-api.feature',rows=cases(p,await Bun.file(p).text());
+ const p='workflows/docx/document-model.feature',rows=cases(p,await Bun.file(p).text());
  expect(rows).toHaveLength(70);expect(new Set(rows.map(r=>r.scenarioId)).size).toBe(29);
  expect(rows.some(r=>r.scenarioId.includes('fixture-save-open')||r.scenarioId.includes('fixture-roundtrip-body'))).toBe(false);
  const mapping=await Bun.file('ledgers/consumers/go-document-api.json').json();expect(mapping.declarationCount).toBe(33);

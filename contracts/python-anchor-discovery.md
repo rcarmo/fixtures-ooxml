@@ -1,6 +1,6 @@
 # Python Word anchor discovery
 
-The [anchor-discovery scenarios](../workflows/docx/python-anchor-discovery.feature)
+The [anchor-discovery scenarios](../workflows/docx/anchor-discovery.feature)
 read a saved Word document and expose headings and likely insertion paragraphs.
 A text query filters returned anchor text without regard to case. The document
 map reports counts for sections, tables, placeholders and anchors. Section

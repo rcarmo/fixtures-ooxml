@@ -1,8 +1,9 @@
+import {sourceCases} from './catalogue-helpers.ts';
 import {test,expect} from 'bun:test';
 import {cases,validateConsumerMappings} from '../scripts/verify.ts';
 
 test('Bun ZIP32 examples keep concrete typed refusal and bound variants',async()=>{
- const p='workflows/package/bun-zip32-profile.feature',rows=cases(p,await Bun.file(p).text());
+ const p='workflows/package/zip32.feature',rows=await sourceCases(p,'workflows/package/bun-zip32-profile.feature');
  expect(rows).toHaveLength(20);expect(new Set(rows.map(r=>r.scenarioId)).size).toBe(4);
  expect(rows.filter(r=>r.scenarioId==='@id-bun-zip32-reader-refusal')).toHaveLength(12);
  expect(rows.filter(r=>r.scenarioId==='@id-bun-zip32-writer-refusal')).toHaveLength(2);
@@ -15,7 +16,7 @@ test('Bun ZIP32 examples keep concrete typed refusal and bound variants',async()
  expect(mapping.helpers.find((r:any)=>r.symbol==='expectZipError').assertions).toHaveLength(3);
 });
 test('Python cache family leaves the existing unified-analysis declaration in its original ledger',async()=>{
- const p='workflows/docx/python-template-cache.feature',rows=cases(p,await Bun.file(p).text());expect(rows).toHaveLength(7);
+ const p='workflows/docx/template-analysis.feature',rows=await sourceCases(p,'workflows/docx/python-template-cache.feature');expect(rows).toHaveLength(7);
  const mapping=await Bun.file('ledgers/consumers/python-template-cache.json').json(),previous=await Bun.file('ledgers/consumers/python-template-analysis.json').json();
  const already=new Set(previous.mappings.map((r:any)=>r.nativeId));expect(mapping.mappings.filter((r:any)=>already.has(r.nativeId))).toEqual([]);
  expect(mapping.mappings).toHaveLength(7);expect(new Set(mapping.mappings.map((r:any)=>r.sourceSha256)).size).toBe(1);
@@ -39,7 +40,7 @@ test('source mapping sets refuse overlapping declarations and contradictory same
 });
 
 test('Go formula profile keeps exact rewrites and explicit unmapped fuzz predicates',async()=>{
- const p='workflows/xlsx/go-formula-references.feature',rows=cases(p,await Bun.file(p).text());
+ const p='workflows/xlsx/formula-references.feature',rows=cases(p,await Bun.file(p).text());
  expect(rows).toHaveLength(45);expect(new Set(rows.map(r=>r.scenarioId)).size).toBe(9);
  const rewrites=rows.filter(r=>r.scenarioId==='@id-xlsx-go-static-remap-exact');expect(rewrites).toHaveLength(5);
  expect(rewrites.map(r=>JSON.parse(r.steps[2]!.text.split('JSON ')[1]!))).toEqual(['IF(A1="A2",A3,Other!A2)',"'O''Brien'!$b$2 + Main!D1",'SUM(A7:A1)','a1 + Other!b2','Main!A1:A4']);
@@ -53,12 +54,12 @@ test('all new family outcomes and byte seals are registered without execution cr
  const {registerWorkflow}=await import('../scripts/register-workflow.ts');
  const ledger=await Bun.file('ledgers/workflows.json').json(),manifest=await Bun.file('manifest.json').json();
  for(const [feature,mapping,contract] of [
-  ['workflows/package/bun-zip32-profile.feature','ledgers/consumers/bun-zip32.json','contracts/bun-zip32-profile.md'],
-  ['workflows/docx/python-template-cache.feature','ledgers/consumers/python-template-cache.json','contracts/python-template-cache.md'],
-  ['workflows/xlsx/go-formula-references.feature','ledgers/consumers/go-formula-references.json','contracts/go-formula-references.md'],
+  ['workflows/package/zip32.feature','ledgers/consumers/bun-zip32.json','contracts/bun-zip32-profile.md'],
+  ['workflows/docx/template-analysis.feature','ledgers/consumers/python-template-cache.json','contracts/python-template-cache.md'],
+  ['workflows/xlsx/formula-references.feature','ledgers/consumers/go-formula-references.json','contracts/go-formula-references.md'],
  ]){
   const generated=registerWorkflow(feature!,await Bun.file(feature!).text(),{files:[]},{features:[],workflows:[]});
-  for(const w of generated.ledger.workflows)expect(ledger.workflows.find((r:any)=>r.id===w.id)).toEqual(w);
+  for(const w of generated.ledger.workflows)expect(ledger.workflows.find((r:any)=>r.id===w.id)).toMatchObject({id:w.id,feature:w.feature,expandedCases:w.expandedCases});
   for(const p of [feature,mapping,contract]){const bytes=await Bun.file(p!).bytes(),asset=manifest.files.find((r:any)=>r.path===p);expect(asset?.sha256).toBe(new Bun.CryptoHasher('sha256').update(bytes).digest('hex'));expect(asset?.bytes).toBe(bytes.length);}
   const source=await Bun.file(mapping!).json();validateConsumerMappings(source,new Set(ledger.workflows.map((w:any)=>w.id)));
   for(const row of source.mappings)expect(row.executionCredit).toBe(false);

@@ -1,6 +1,6 @@
 # Bun package custody and save paths
 
-The [package API examples](../workflows/package/bun-opc-custody.feature) use a
+The [package API examples](../workflows/package/preservation.feature) use a
 three-member OPC envelope. Its document payload is a small XML sample, not a
 schema-valid Word document. The examples check package operations without a
 Word reader or renderer.

@@ -2968,22 +2968,6 @@
       ]
     },
     {
-      "id": "asset-dca421c26a415363ffa59a71d46c296fd28f86eb133539a6bf1960e2dce29663",
-      "path": "workflows/docx/comments.feature",
-      "bytes": 1875,
-      "sha256": "dca421c26a415363ffa59a71d46c296fd28f86eb133539a6bf1960e2dce29663",
-      "role": "workflow",
-      "origins": [
-        {
-          "repository": "https://github.com/rcarmo/bun-ooxml",
-          "revision": "13ead381f22f19a000dfd557514369cf1b646454",
-          "path": "features/docx/comments.feature",
-          "change": "Lifecycle tags only; existing scenario IDs, input examples and step text retained"
-        }
-      ],
-      "aliases": []
-    },
-    {
       "id": "asset-1e827fcb4d336e74a77347001f058b9f6b64901046c18ef49765d00f72d87ded",
       "path": "workflows/docx/creation.feature",
       "bytes": 3402,
@@ -3137,22 +3121,6 @@
       "aliases": []
     },
     {
-      "id": "asset-15f0782254a299e2ac0402cc4d06272aa3332763bd8d02218826cdcf8cff0a56",
-      "path": "workflows/package/preservation.feature",
-      "bytes": 1374,
-      "sha256": "15f0782254a299e2ac0402cc4d06272aa3332763bd8d02218826cdcf8cff0a56",
-      "role": "workflow",
-      "origins": [
-        {
-          "repository": "https://github.com/rcarmo/bun-ooxml",
-          "revision": "13ead381f22f19a000dfd557514369cf1b646454",
-          "path": "features/opc/package.feature",
-          "change": "Lifecycle tags only; existing scenario IDs, input examples and step text retained"
-        }
-      ],
-      "aliases": []
-    },
-    {
       "id": "asset-e3629117b38ce243a586078ef5d654f49f20e0a01e9bd4cc16df8d607fa572c1",
       "path": "workflows/package/relationship-namespaces.feature",
       "bytes": 1175,
@@ -3212,22 +3180,6 @@
           "revision": "10aedcb7e96d61442fdb5f3065e5fcb822892fb4",
           "path": "docs/catalogue-staging/workflows/package/zip-admission.feature",
           "change": "Exact committed proposed workflow bytes; native-tested inputs and observable outcomes retained"
-        }
-      ],
-      "aliases": []
-    },
-    {
-      "id": "asset-eb0616a9badf01f383e4be4dd9579896b4141b6183fc2706e0be94403a1115e9",
-      "path": "workflows/package/zip32.feature",
-      "bytes": 2261,
-      "sha256": "eb0616a9badf01f383e4be4dd9579896b4141b6183fc2706e0be94403a1115e9",
-      "role": "workflow",
-      "origins": [
-        {
-          "repository": "https://github.com/rcarmo/bun-ooxml",
-          "revision": "13ead381f22f19a000dfd557514369cf1b646454",
-          "path": "features/opc/zip.feature",
-          "change": "Lifecycle tags only; existing scenario IDs, input examples and step text retained"
         }
       ],
       "aliases": []
@@ -3352,22 +3304,6 @@
           "repository": "https://github.com/rcarmo/bun-ooxml",
           "revision": "9e39177ca69f60988328c189b62894845501b4db",
           "path": "features/opc/xml-names.feature",
-          "change": "Lifecycle tag only; original scenario IDs and step text retained"
-        }
-      ],
-      "aliases": []
-    },
-    {
-      "id": "asset-9ed18e4e4172f1742015e99fae46142bad12a4a50357b00b3c62c4889214c0da",
-      "path": "workflows/xml/parsing.feature",
-      "bytes": 2316,
-      "sha256": "9ed18e4e4172f1742015e99fae46142bad12a4a50357b00b3c62c4889214c0da",
-      "role": "workflow",
-      "origins": [
-        {
-          "repository": "https://github.com/rcarmo/bun-ooxml",
-          "revision": "9e39177ca69f60988328c189b62894845501b4db",
-          "path": "features/opc/xml.feature",
           "change": "Lifecycle tag only; original scenario IDs and step text retained"
         }
       ],
@@ -3626,55 +3562,10 @@
       "aliases": []
     },
     {
-      "id": "asset-9066511bb977abeb356e0946cc2453b2d5ebbf34805744dd9af2e6bd1c49734b",
-      "path": "workflows/xml/values.feature",
-      "bytes": 4708,
-      "sha256": "9066511bb977abeb356e0946cc2453b2d5ebbf34805744dd9af2e6bd1c49734b",
-      "role": "workflow",
-      "origins": [
-        {
-          "repository": "https://github.com/rcarmo/fixtures-ooxml",
-          "path": "workflows/xml/values.feature",
-          "basis": "Project-owned behaviour contract or source assertion mapping"
-        }
-      ],
-      "aliases": []
-    },
-    {
-      "id": "asset-53c5934dc8c684219aa32668304e4625f3c9d6893649a248cf34b6d769aa4152",
-      "path": "workflows/xml/go-lexical-editing.feature",
-      "bytes": 6128,
-      "sha256": "53c5934dc8c684219aa32668304e4625f3c9d6893649a248cf34b6d769aa4152",
-      "role": "workflow",
-      "origins": [
-        {
-          "repository": "https://github.com/rcarmo/fixtures-ooxml",
-          "path": "workflows/xml/go-lexical-editing.feature",
-          "basis": "Project-owned behaviour contract or source assertion mapping"
-        }
-      ],
-      "aliases": []
-    },
-    {
-      "id": "asset-0cfdeb1d06e655916942080a10632e57a2a25ab2ec3721b416ac1f25fdb93b6d",
-      "path": "workflows/docx/python-template-analysis.feature",
-      "bytes": 2663,
-      "sha256": "0cfdeb1d06e655916942080a10632e57a2a25ab2ec3721b416ac1f25fdb93b6d",
-      "role": "workflow",
-      "origins": [
-        {
-          "repository": "https://github.com/rcarmo/fixtures-ooxml",
-          "path": "workflows/docx/python-template-analysis.feature",
-          "basis": "Project-owned behaviour contract or source assertion mapping"
-        }
-      ],
-      "aliases": []
-    },
-    {
-      "id": "asset-d23508a2e44c4966a1e5d5d91a11a6ddb1e235a09ab5ba62d0f9e68d35610004",
+      "id": "asset-76fab7a20cacc024a4886edaa5987db4c981ad5b3b8cd37f032114439e6771aa",
       "path": "contracts/xml-values.md",
-      "bytes": 1493,
-      "sha256": "d23508a2e44c4966a1e5d5d91a11a6ddb1e235a09ab5ba62d0f9e68d35610004",
+      "bytes": 1494,
+      "sha256": "76fab7a20cacc024a4886edaa5987db4c981ad5b3b8cd37f032114439e6771aa",
       "role": "workflow-contract",
       "origins": [
         {
@@ -3686,10 +3577,10 @@
       "aliases": []
     },
     {
-      "id": "asset-58f5cab4372e82ce85e9138f75f5933b09dc32bf0dd6e5f59f4756259ce37e64",
+      "id": "asset-c7636d3f0dc5a4ee6608a0bfe29810a86576db724441924d13f098fc79c0bd1e",
       "path": "contracts/go-lexical-editing.md",
-      "bytes": 2908,
-      "sha256": "58f5cab4372e82ce85e9138f75f5933b09dc32bf0dd6e5f59f4756259ce37e64",
+      "bytes": 2897,
+      "sha256": "c7636d3f0dc5a4ee6608a0bfe29810a86576db724441924d13f098fc79c0bd1e",
       "role": "workflow-contract",
       "origins": [
         {
@@ -3701,10 +3592,10 @@
       "aliases": []
     },
     {
-      "id": "asset-3a36f459bf02d9d4b39e9d45d135d648cb874c6c8f7a801b82fb094a503790bd",
+      "id": "asset-7840fe0ec43d5880b68ee272f4c817525c1a75ea31cad14a5bfbf53d659bb301",
       "path": "contracts/python-template-analysis.md",
-      "bytes": 1299,
-      "sha256": "3a36f459bf02d9d4b39e9d45d135d648cb874c6c8f7a801b82fb094a503790bd",
+      "bytes": 1292,
+      "sha256": "7840fe0ec43d5880b68ee272f4c817525c1a75ea31cad14a5bfbf53d659bb301",
       "role": "workflow-contract",
       "origins": [
         {
@@ -3841,22 +3732,6 @@
       "aliases": []
     },
     {
-      "id": "asset-a816d0cec964e2b66c081040f6d4888abe0bacd648664eb5051f9a6be60c9350",
-      "path": "workflows/native/pptx-text.feature",
-      "bytes": 1743,
-      "sha256": "a816d0cec964e2b66c081040f6d4888abe0bacd648664eb5051f9a6be60c9350",
-      "role": "workflow",
-      "origins": [
-        {
-          "repository": "https://github.com/rcarmo/fixtures-ooxml",
-          "revision": "641146c020e1011b8f3e930f5fb4fd0b76c27b3d",
-          "path": "workflows/native/pptx-text.feature",
-          "basis": "Existing canonical workflow; unchanged bytes added to the asset manifest"
-        }
-      ],
-      "aliases": []
-    },
-    {
       "id": "asset-7468f407078faf70cc9f968eaeabdb5d88a9b52b922422ac122b03dff9be2f32",
       "path": "workflows/native/xlsx-cells.feature",
       "bytes": 3367,
@@ -3889,21 +3764,6 @@
       "aliases": []
     },
     {
-      "id": "asset-080273b0ea4f74da5123be93f30df0f91163a61ad601d8b8928ad0ce9ef28ae9",
-      "path": "workflows/package/bun-zip32-profile.feature",
-      "bytes": 5863,
-      "sha256": "080273b0ea4f74da5123be93f30df0f91163a61ad601d8b8928ad0ce9ef28ae9",
-      "role": "workflow",
-      "origins": [
-        {
-          "repository": "https://github.com/rcarmo/fixtures-ooxml",
-          "path": "workflows/package/bun-zip32-profile.feature",
-          "basis": "Project-owned behaviour contract or source assertion mapping"
-        }
-      ],
-      "aliases": []
-    },
-    {
       "id": "asset-bad611f4ba4a5cb77039f4089d7dd88fe01074ccffc88dd7d45f29cb5fda9022",
       "path": "ledgers/consumers/bun-zip32.json",
       "bytes": 20239,
@@ -3919,30 +3779,15 @@
       "aliases": []
     },
     {
-      "id": "asset-983abfb48035fda8cf1c2f1286f633295b442aa46178b4a58e8295edce5112b4",
+      "id": "asset-576fc46818cd6e13ebde374d7fb6d1ec21e478bc1a4d91ab1fe4057a9ba3e5d3",
       "path": "contracts/bun-zip32-profile.md",
-      "bytes": 1365,
-      "sha256": "983abfb48035fda8cf1c2f1286f633295b442aa46178b4a58e8295edce5112b4",
+      "bytes": 1353,
+      "sha256": "576fc46818cd6e13ebde374d7fb6d1ec21e478bc1a4d91ab1fe4057a9ba3e5d3",
       "role": "workflow-contract",
       "origins": [
         {
           "repository": "https://github.com/rcarmo/fixtures-ooxml",
           "path": "contracts/bun-zip32-profile.md",
-          "basis": "Project-owned behaviour contract or source assertion mapping"
-        }
-      ],
-      "aliases": []
-    },
-    {
-      "id": "asset-31e27de8fa848a33456df065b2002e416b3ad7b156c7f3323bbcd888090fbf11",
-      "path": "workflows/xlsx/go-formula-references.feature",
-      "bytes": 7960,
-      "sha256": "31e27de8fa848a33456df065b2002e416b3ad7b156c7f3323bbcd888090fbf11",
-      "role": "workflow",
-      "origins": [
-        {
-          "repository": "https://github.com/rcarmo/fixtures-ooxml",
-          "path": "workflows/xlsx/go-formula-references.feature",
           "basis": "Project-owned behaviour contract or source assertion mapping"
         }
       ],
@@ -3964,30 +3809,15 @@
       "aliases": []
     },
     {
-      "id": "asset-d98985fa49ac9f48381acad68c275176c3a9722564c5c598d9cb7b18e0b37b17",
+      "id": "asset-9f8da4b8640777834c5d53a2b65f20bc2078a5c32b82a1a1583610aa80bc0c72",
       "path": "contracts/go-formula-references.md",
-      "bytes": 3771,
-      "sha256": "d98985fa49ac9f48381acad68c275176c3a9722564c5c598d9cb7b18e0b37b17",
+      "bytes": 3768,
+      "sha256": "9f8da4b8640777834c5d53a2b65f20bc2078a5c32b82a1a1583610aa80bc0c72",
       "role": "workflow-contract",
       "origins": [
         {
           "repository": "https://github.com/rcarmo/fixtures-ooxml",
           "path": "contracts/go-formula-references.md",
-          "basis": "Project-owned behaviour contract or source assertion mapping"
-        }
-      ],
-      "aliases": []
-    },
-    {
-      "id": "asset-a69b82e6b51c58d66d37e7bc45ba93e69c7a5c77ad2c8823e2299caff3650602",
-      "path": "workflows/docx/python-template-cache.feature",
-      "bytes": 3761,
-      "sha256": "a69b82e6b51c58d66d37e7bc45ba93e69c7a5c77ad2c8823e2299caff3650602",
-      "role": "workflow",
-      "origins": [
-        {
-          "repository": "https://github.com/rcarmo/fixtures-ooxml",
-          "path": "workflows/docx/python-template-cache.feature",
           "basis": "Project-owned behaviour contract or source assertion mapping"
         }
       ],
@@ -4009,30 +3839,15 @@
       "aliases": []
     },
     {
-      "id": "asset-78fd774d128c8b477a7bdcafa6281e65dde4918a54e5dc2872e0b0280684bc25",
+      "id": "asset-339df71efd46fef7bd923ef453d7305bfcd248e35e1a98cc00b6d2cd3d98fedd",
       "path": "contracts/python-template-cache.md",
-      "bytes": 1568,
-      "sha256": "78fd774d128c8b477a7bdcafa6281e65dde4918a54e5dc2872e0b0280684bc25",
+      "bytes": 1557,
+      "sha256": "339df71efd46fef7bd923ef453d7305bfcd248e35e1a98cc00b6d2cd3d98fedd",
       "role": "workflow-contract",
       "origins": [
         {
           "repository": "https://github.com/rcarmo/fixtures-ooxml",
           "path": "contracts/python-template-cache.md",
-          "basis": "Project-owned behaviour contract or source assertion mapping"
-        }
-      ],
-      "aliases": []
-    },
-    {
-      "id": "asset-88c4c3dc90b1e77c14e88d12a4be5728f034b36fc8b37c7fe96d8086674e1297",
-      "path": "workflows/package/bun-opc-custody.feature",
-      "bytes": 5734,
-      "sha256": "88c4c3dc90b1e77c14e88d12a4be5728f034b36fc8b37c7fe96d8086674e1297",
-      "role": "workflow",
-      "origins": [
-        {
-          "repository": "https://github.com/rcarmo/fixtures-ooxml",
-          "path": "workflows/package/bun-opc-custody.feature",
           "basis": "Project-owned behaviour contract or source assertion mapping"
         }
       ],
@@ -4054,30 +3869,15 @@
       "aliases": []
     },
     {
-      "id": "asset-c970abed4293d6b02626ab096ad8876330e10dfb0f0030ea6139d15a2c248c20",
+      "id": "asset-b0c62e1d45e82f0b664e99a321640bae144f056599dd17a0e65ead69dc022bb1",
       "path": "contracts/bun-opc-custody.md",
-      "bytes": 1447,
-      "sha256": "c970abed4293d6b02626ab096ad8876330e10dfb0f0030ea6139d15a2c248c20",
+      "bytes": 1444,
+      "sha256": "b0c62e1d45e82f0b664e99a321640bae144f056599dd17a0e65ead69dc022bb1",
       "role": "workflow-contract",
       "origins": [
         {
           "repository": "https://github.com/rcarmo/fixtures-ooxml",
           "path": "contracts/bun-opc-custody.md",
-          "basis": "Project-owned behaviour contract or source assertion mapping"
-        }
-      ],
-      "aliases": []
-    },
-    {
-      "id": "asset-96466ae9feed0b23d39fd7c58aa3da525b6ac2d13d33fb69a905bbcdf1257fcd",
-      "path": "workflows/docx/go-document-api.feature",
-      "bytes": 12011,
-      "sha256": "96466ae9feed0b23d39fd7c58aa3da525b6ac2d13d33fb69a905bbcdf1257fcd",
-      "role": "workflow",
-      "origins": [
-        {
-          "repository": "https://github.com/rcarmo/fixtures-ooxml",
-          "path": "workflows/docx/go-document-api.feature",
           "basis": "Project-owned behaviour contract or source assertion mapping"
         }
       ],
@@ -4099,30 +3899,15 @@
       "aliases": []
     },
     {
-      "id": "asset-26b6d0a70db2b374166809d9728c51dfd88114cbfc663fefd0f6208e2ef9b0c5",
+      "id": "asset-bf3489c96ab386e864458a7899f5fae3dbdc679cecef15d7bb4f986f7988358c",
       "path": "contracts/go-document-api.md",
-      "bytes": 2481,
-      "sha256": "26b6d0a70db2b374166809d9728c51dfd88114cbfc663fefd0f6208e2ef9b0c5",
+      "bytes": 2480,
+      "sha256": "bf3489c96ab386e864458a7899f5fae3dbdc679cecef15d7bb4f986f7988358c",
       "role": "workflow-contract",
       "origins": [
         {
           "repository": "https://github.com/rcarmo/fixtures-ooxml",
           "path": "contracts/go-document-api.md",
-          "basis": "Project-owned behaviour contract or source assertion mapping"
-        }
-      ],
-      "aliases": []
-    },
-    {
-      "id": "asset-23c4863ac72b5600ea9a1bfc620be6f40ce30cdda61bd9ca4fe7a6a244ba4316",
-      "path": "workflows/docx/python-anchor-discovery.feature",
-      "bytes": 2729,
-      "sha256": "23c4863ac72b5600ea9a1bfc620be6f40ce30cdda61bd9ca4fe7a6a244ba4316",
-      "role": "workflow",
-      "origins": [
-        {
-          "repository": "https://github.com/rcarmo/fixtures-ooxml",
-          "path": "workflows/docx/python-anchor-discovery.feature",
           "basis": "Project-owned behaviour contract or source assertion mapping"
         }
       ],
@@ -4144,16 +3929,256 @@
       "aliases": []
     },
     {
-      "id": "asset-e827b2186adad1f1533f9d5e8c13ecae3e68aca8d040c2074dae5ae9df612e21",
+      "id": "asset-8b6733b301fa34dbdeac0f8225e35b3172c68115c8da73f01aaff059419d1cf0",
       "path": "contracts/python-anchor-discovery.md",
-      "bytes": 1165,
-      "sha256": "e827b2186adad1f1533f9d5e8c13ecae3e68aca8d040c2074dae5ae9df612e21",
+      "bytes": 1158,
+      "sha256": "8b6733b301fa34dbdeac0f8225e35b3172c68115c8da73f01aaff059419d1cf0",
       "role": "workflow-contract",
       "origins": [
         {
           "repository": "https://github.com/rcarmo/fixtures-ooxml",
           "path": "contracts/python-anchor-discovery.md",
           "basis": "Project-owned behaviour contract or source assertion mapping"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "id": "asset-4a8735740a06e91e0e7b881daec1c192a2d53db33606f7b617886c0ed20fe768",
+      "path": "workflows/xml/parsing.feature",
+      "bytes": 13568,
+      "sha256": "4a8735740a06e91e0e7b881daec1c192a2d53db33606f7b617886c0ed20fe768",
+      "role": "workflow",
+      "origins": [
+        {
+          "repository": "https://github.com/rcarmo/fixtures-ooxml",
+          "path": "workflows/xml/parsing.feature",
+          "basis": "Consolidated operation family; exact source case fingerprints and path migration in ledgers/feature-consolidation.json"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "id": "asset-87248aebdebc78fae8edd2093d93cb54d37514b0cd661bf4bc6f2cb1c7b8c719",
+      "path": "workflows/package/zip32.feature",
+      "bytes": 8402,
+      "sha256": "87248aebdebc78fae8edd2093d93cb54d37514b0cd661bf4bc6f2cb1c7b8c719",
+      "role": "workflow",
+      "origins": [
+        {
+          "repository": "https://github.com/rcarmo/fixtures-ooxml",
+          "path": "workflows/package/zip32.feature",
+          "basis": "Consolidated operation family; exact source case fingerprints and path migration in ledgers/feature-consolidation.json"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "id": "asset-eb3cd4f4d534549b8b8d53dc2c3cb75a9e5c35d614effbb5f446623c0db4e4b1",
+      "path": "workflows/package/preservation.feature",
+      "bytes": 7442,
+      "sha256": "eb3cd4f4d534549b8b8d53dc2c3cb75a9e5c35d614effbb5f446623c0db4e4b1",
+      "role": "workflow",
+      "origins": [
+        {
+          "repository": "https://github.com/rcarmo/fixtures-ooxml",
+          "path": "workflows/package/preservation.feature",
+          "basis": "Consolidated operation family; exact source case fingerprints and path migration in ledgers/feature-consolidation.json"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "id": "asset-1d14a680f87ab70510a6a92f528852c05667c21a037f1ca7ffbe18a618fbe9cd",
+      "path": "workflows/docx/template-analysis.feature",
+      "bytes": 6836,
+      "sha256": "1d14a680f87ab70510a6a92f528852c05667c21a037f1ca7ffbe18a618fbe9cd",
+      "role": "workflow",
+      "origins": [
+        {
+          "repository": "https://github.com/rcarmo/fixtures-ooxml",
+          "path": "workflows/docx/template-analysis.feature",
+          "basis": "Consolidated operation family; exact source case fingerprints and path migration in ledgers/feature-consolidation.json"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "id": "asset-134222823c7c4fb5cf9f73c89ea753902278a1b14b2e3b39a1a22fb0fc5b472d",
+      "path": "workflows/docx/document-model.feature",
+      "bytes": 13256,
+      "sha256": "134222823c7c4fb5cf9f73c89ea753902278a1b14b2e3b39a1a22fb0fc5b472d",
+      "role": "workflow",
+      "origins": [
+        {
+          "repository": "https://github.com/rcarmo/fixtures-ooxml",
+          "path": "workflows/docx/document-model.feature",
+          "basis": "Consolidated operation family; exact source case fingerprints and path migration in ledgers/feature-consolidation.json"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "id": "asset-6e5c0ca867e38fb1d82eaf96d61a272fecbc4a19052e1e8ed8bf47868ad527de",
+      "path": "workflows/xlsx/formula-references.feature",
+      "bytes": 8453,
+      "sha256": "6e5c0ca867e38fb1d82eaf96d61a272fecbc4a19052e1e8ed8bf47868ad527de",
+      "role": "workflow",
+      "origins": [
+        {
+          "repository": "https://github.com/rcarmo/fixtures-ooxml",
+          "path": "workflows/xlsx/formula-references.feature",
+          "basis": "Consolidated operation family; exact source case fingerprints and path migration in ledgers/feature-consolidation.json"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "id": "asset-f33165ea9b4e90556613c3e714e4f9556cfd9edd8edeb185972fee7ef11294ad",
+      "path": "workflows/docx/anchor-discovery.feature",
+      "bytes": 2986,
+      "sha256": "f33165ea9b4e90556613c3e714e4f9556cfd9edd8edeb185972fee7ef11294ad",
+      "role": "workflow",
+      "origins": [
+        {
+          "repository": "https://github.com/rcarmo/fixtures-ooxml",
+          "path": "workflows/docx/anchor-discovery.feature",
+          "basis": "Consolidated operation family; exact source case fingerprints and path migration in ledgers/feature-consolidation.json"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "id": "asset-7c1d435624140439a68e0b70801b7e0c19be4e28008dcb66d9e9c1acb33dc9e0",
+      "path": "workflows/docx/comments.feature",
+      "bytes": 8174,
+      "sha256": "7c1d435624140439a68e0b70801b7e0c19be4e28008dcb66d9e9c1acb33dc9e0",
+      "role": "workflow",
+      "origins": [
+        {
+          "repository": "https://github.com/rcarmo/fixtures-ooxml",
+          "path": "workflows/docx/comments.feature",
+          "basis": "Consolidated operation family; exact source case fingerprints and path migration in ledgers/feature-consolidation.json"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "id": "asset-d2e710f66e78dfa0beabf5d7076d7c67fe4e686744f008a2a134122749cb5444",
+      "path": "workflows/native/pptx-text.feature",
+      "bytes": 8019,
+      "sha256": "d2e710f66e78dfa0beabf5d7076d7c67fe4e686744f008a2a134122749cb5444",
+      "role": "workflow",
+      "origins": [
+        {
+          "repository": "https://github.com/rcarmo/fixtures-ooxml",
+          "path": "workflows/native/pptx-text.feature",
+          "basis": "Consolidated operation family; exact source case fingerprints and path migration in ledgers/feature-consolidation.json"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "id": "asset-0d8d4df957c46abc2237e8a70e97ad1518e890d5bbe8a92920d977ffb60a0d9d",
+      "path": "contracts/bun-pptx.md",
+      "bytes": 1218,
+      "sha256": "0d8d4df957c46abc2237e8a70e97ad1518e890d5bbe8a92920d977ffb60a0d9d",
+      "role": "workflow-contract",
+      "origins": [
+        {
+          "repository": "https://github.com/rcarmo/fixtures-ooxml",
+          "path": "contracts/bun-pptx.md",
+          "basis": "Project-owned behaviour contract or source assertion mapping"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "id": "asset-810a238dc7d0ab51ca9f6a11bf425edbb943f4129007dee4526c38f344d38d07",
+      "path": "contracts/go-notes-editing.md",
+      "bytes": 3449,
+      "sha256": "810a238dc7d0ab51ca9f6a11bf425edbb943f4129007dee4526c38f344d38d07",
+      "role": "workflow-contract",
+      "origins": [
+        {
+          "repository": "https://github.com/rcarmo/fixtures-ooxml",
+          "path": "contracts/go-notes-editing.md",
+          "basis": "Project-owned behaviour contract or source assertion mapping"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "id": "asset-00417721863cf8b1d150360bd6e10f34256c34279be3d75c0edc48a6aca16ca3",
+      "path": "contracts/python-comment-resolution.md",
+      "bytes": 2272,
+      "sha256": "00417721863cf8b1d150360bd6e10f34256c34279be3d75c0edc48a6aca16ca3",
+      "role": "workflow-contract",
+      "origins": [
+        {
+          "repository": "https://github.com/rcarmo/fixtures-ooxml",
+          "path": "contracts/python-comment-resolution.md",
+          "basis": "Project-owned behaviour contract or source assertion mapping"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "id": "asset-82b7966e2455363505bec07c8848af31adfe014c05ee94080bdde54738d79c0d",
+      "path": "ledgers/consumers/bun-pptx.json",
+      "bytes": 10623,
+      "sha256": "82b7966e2455363505bec07c8848af31adfe014c05ee94080bdde54738d79c0d",
+      "role": "consumer-mapping",
+      "origins": [
+        {
+          "repository": "https://github.com/rcarmo/fixtures-ooxml",
+          "path": "ledgers/consumers/bun-pptx.json",
+          "basis": "Project-owned behaviour contract or source assertion mapping"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "id": "asset-031b788fdf9615cec350609a772e08a5e0d9fc188a94b80407a0ce3c062a8e06",
+      "path": "ledgers/consumers/go-notes-editing.json",
+      "bytes": 4413,
+      "sha256": "031b788fdf9615cec350609a772e08a5e0d9fc188a94b80407a0ce3c062a8e06",
+      "role": "consumer-mapping",
+      "origins": [
+        {
+          "repository": "https://github.com/rcarmo/fixtures-ooxml",
+          "path": "ledgers/consumers/go-notes-editing.json",
+          "basis": "Project-owned behaviour contract or source assertion mapping"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "id": "asset-b975ec54c9c24dbcbf96b8351ad039a79cdf22c78bd8437aecd0fa7bff6a823b",
+      "path": "ledgers/consumers/python-comment-resolution.json",
+      "bytes": 9616,
+      "sha256": "b975ec54c9c24dbcbf96b8351ad039a79cdf22c78bd8437aecd0fa7bff6a823b",
+      "role": "consumer-mapping",
+      "origins": [
+        {
+          "repository": "https://github.com/rcarmo/fixtures-ooxml",
+          "path": "ledgers/consumers/python-comment-resolution.json",
+          "basis": "Project-owned behaviour contract or source assertion mapping"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "id": "asset-7255ce3008a7b87a563bfe2e72f4fbb43458e68bc535005acd4af435fdc743f0",
+      "path": "ledgers/feature-consolidation.json",
+      "bytes": 49135,
+      "sha256": "7255ce3008a7b87a563bfe2e72f4fbb43458e68bc535005acd4af435fdc743f0",
+      "role": "workflow-migration",
+      "origins": [
+        {
+          "repository": "https://github.com/rcarmo/fixtures-ooxml",
+          "path": "ledgers/feature-consolidation.json",
+          "basis": "Operation-family migration with source hashes and unchanged compiled-case fingerprints"
         }
       ],
       "aliases": []

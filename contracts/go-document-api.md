@@ -1,6 +1,6 @@
 # Go document API predicates
 
-The [planned Go document API feature](../workflows/docx/go-document-api.feature) separates in-memory getters from saved and reopened document results. Its [consumer mapping](../ledgers/consumers/go-document-api.json) identifies the source test and assertion limits of each outcome. These operations describe selected Go API behaviour; they do not establish complete WordprocessingML conformance or rendered appearance.
+The [planned Go document API feature](../workflows/docx/document-model.feature) separates in-memory getters from saved and reopened document results. Its [consumer mapping](../ledgers/consumers/go-document-api.json) identifies the source test and assertion limits of each outcome. These operations describe selected Go API behaviour; they do not establish complete WordprocessingML conformance or rendered appearance.
 
 ## In-memory document and text
 

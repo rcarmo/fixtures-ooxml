@@ -1,6 +1,7 @@
 import {test,expect} from 'bun:test';
+import {sourceCases} from './catalogue-helpers.ts';
 import {cases,verify,validateFixtureLayout,validateMutationContract} from '../scripts/verify.ts';
-test('all pinned references and contract links verify',async()=>{const r=await verify();expect(r.assets).toBe(198);expect(r.facts).toBe(149);expect(r.workflows).toBe(209);expect(r.cases).toBe(542);});
+test('all pinned references and contract links verify',async()=>{const r=await verify();expect(r.assets).toBe(200);expect(r.facts).toBe(149);expect(r.workflows).toBe(227);expect(r.cases).toBe(560);});
 test('official Gherkin compilation expands shared cases',async()=>{const p='workflows/mutation-safety.feature';const result=cases(p,await Bun.file(p).text());expect(result).toHaveLength(19);expect(new Set(result.map(r=>r.scenarioId)).size).toBe(8);});
 test('workflow identity is required',()=>{expect(()=>cases('bad.feature','Feature: Bad\n Scenario: unnamed\n  Given input\n')).toThrow();});
 test('canonical scenario IDs cannot be reused within a feature, including Rule blocks',()=>{
@@ -56,7 +57,7 @@ test('each mutation fixture retains hash-linked original derivation in the root 
 test('format and remaining package profiles compile62cases with19bounded comment mappings',async()=>{
  const paths=['docx/comments','docx/text','docx/creation','docx/tables','pptx/creation','pptx/tables','xlsx/creation','package/preservation','package/zip32','package/relationship-namespaces'];
  const all=[];
- for(const name of paths){const path='workflows/'+name+'.feature',text=await Bun.file(path).text();expect(text.startsWith('@planned\n')).toBe(true);all.push(...cases(path,text));}
+ for(const name of paths){const path='workflows/'+name+'.feature',text=await Bun.file(path).text();expect(text.startsWith('@planned\n')).toBe(true);all.push(...(['docx/comments','package/preservation','package/zip32'].includes(name)?await sourceCases(path,path):cases(path,text)));}
  expect(all).toHaveLength(62);expect(new Set(all.map(c=>c.scenarioId)).size).toBe(40);
  const commentIds=new Set(cases('workflows/docx/comments.feature',await Bun.file('workflows/docx/comments.feature').text()).map(c=>c.scenarioId));
  const mapping=await Bun.file('ledgers/consumers/bun-comments.json').json();expect(mapping.mappings).toHaveLength(19);

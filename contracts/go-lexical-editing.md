@@ -1,6 +1,6 @@
 # Go lexical XML editing
 
-[Go lexical editing](../workflows/xml/go-lexical-editing.feature) operates on a parsed XML byte snapshot. Attribute edits, child insertion, removal and subtree replacement return new bytes. An empty edit returns the original bytes; edits do not consume the parsed snapshot. The [consumer mapping](../ledgers/consumers/go-lexical-editing.json) records the source predicates and limits for each operation.
+[Go lexical editing](../workflows/xml/parsing.feature) operates on a parsed XML byte snapshot. Attribute edits, child insertion, removal and subtree replacement return new bytes. An empty edit returns the original bytes; edits do not consume the parsed snapshot. The [consumer mapping](../ledgers/consumers/go-lexical-editing.json) records the source predicates and limits for each operation.
 
 ## Attribute edits
 

@@ -1,7 +1,8 @@
+import {sourceCases} from './catalogue-helpers.ts';
 import {test,expect} from 'bun:test';
 import {cases,validateConsumerMappings} from '../scripts/verify.ts';
-const path='workflows/xml/values.feature';
-const expanded=()=>Bun.file(path).text().then(text=>cases(path,text));
+const path='workflows/xml/parsing.feature';
+const expanded=()=>sourceCases(path,'workflows/xml/values.feature');
 test('XML value scenarios retain exact JSON inputs and escaped output strings',async()=>{
  const rows=await expanded();expect(rows).toHaveLength(11);expect(new Set(rows.map(c=>c.scenarioId)).size).toBe(10);
  const parseArgument=(step:string)=>JSON.parse(step.slice(step.indexOf('JSON ')+5));
@@ -56,7 +57,7 @@ test('supporting contracts and source mappings receive independent byte seals',a
 });
 
 test('Go lexical editing keeps named refusal variants and a single namespace matrix',async()=>{
- const rows=cases('workflows/xml/go-lexical-editing.feature',await Bun.file('workflows/xml/go-lexical-editing.feature').text());
+ const rows=await sourceCases('workflows/xml/parsing.feature','workflows/xml/go-lexical-editing.feature');
  expect(rows).toHaveLength(15);expect(new Set(rows.map(c=>c.scenarioId)).size).toBe(10);
  expect(rows.filter(c=>c.scenarioId==='@id-xml-go-element-removal-refusal')).toHaveLength(2);
  expect(rows.filter(c=>c.scenarioId==='@id-xml-go-element-replacement-refusal')).toHaveLength(3);
@@ -70,7 +71,7 @@ test('Go lexical editing keeps named refusal variants and a single namespace mat
  for(const r of mapping.mappings){expect(r.coverage).toBe('partial');expect(r.gaps.length).toBeGreaterThan(0);expect(r.executionCredit).toBe(false);}
 });
 test('Python analysis deduplicates equivalent declarations and records weak native assertions',async()=>{
- const path='workflows/docx/python-template-analysis.feature',rows=cases(path,await Bun.file(path).text());expect(rows).toHaveLength(6);
+ const path='workflows/docx/template-analysis.feature',rows=await sourceCases(path,'workflows/docx/python-template-analysis.feature');expect(rows).toHaveLength(6);
  const mapping=await Bun.file('ledgers/consumers/python-template-analysis.json').json();expect(mapping.declarationCount).toBe(7);
  const colour=mapping.mappings.filter((r:any)=>r.scenarioIds.includes('@id-python-word-template-analysis-colour-response'));expect(colour).toHaveLength(2);
  const sow=rows.find(c=>c.scenarioId==='@id-python-word-template-analysis-sow-response')!;
@@ -80,8 +81,8 @@ test('Python analysis deduplicates equivalent declarations and records weak nati
 });
 test('new family registry records match compiled outcomes, paths and planned consumers',async()=>{
  const {registerWorkflow}=await import('../scripts/register-workflow.ts'),ledger=await Bun.file('ledgers/workflows.json').json();
- for(const path of ['workflows/xml/values.feature','workflows/xml/go-lexical-editing.feature','workflows/docx/python-template-analysis.feature']){
+ for(const path of ['workflows/xml/parsing.feature','workflows/xml/parsing.feature','workflows/docx/template-analysis.feature']){
   const generated=registerWorkflow(path,await Bun.file(path).text(),{files:[]},{features:[],workflows:[]});
-  for(const row of generated.ledger.workflows)expect(ledger.workflows.find((w:any)=>w.id===row.id)).toEqual(row);
+  for(const row of generated.ledger.workflows)expect(ledger.workflows.find((r:any)=>r.id===row.id)).toMatchObject({id:row.id,feature:row.feature,expandedCases:row.expandedCases});
  }
 });

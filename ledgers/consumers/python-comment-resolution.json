@@ -1,0 +1,128 @@
+{
+  "schemaVersion": 1,
+  "consumer": "python",
+  "source": {
+    "repository": "https://github.com/rcarmo/python-office-mcp-server",
+    "revision": "027a8b2fd2fdcec4c00941eb5ad07b05e6971caf"
+  },
+  "scope": "All ten non-parametrised declarations in tests/test_word_comment_resolution.py: newly authored Python comments, commentsIds fallback, optional commentsExtended creation, root-thread policy and selected readback/filter predicates. Distinct from Bun's existing-extension-only comment operation.",
+  "declarationCount": 10,
+  "targetedFamily": {
+    "nativeCases": 10,
+    "parameterRows": 0,
+    "canonicalScenarios": 9,
+    "sharedBindingsExecuted": 0,
+    "implementation": [
+      {"path": "tools/word_tools.py", "sha256": "16e06947ccfd4b09bfd41704dc1f7c0813a0303145cd0b7b6779d2fcd1bd1987", "use": "get, resolve and reply operations"},
+      {"path": "tools/word_advanced_tools.py", "sha256": "66086062da09606f36ad82803ffe6e8f252c9e1a80e44dceb5a73242ef7d34da", "use": "comment authoring operation"}
+    ],
+    "testHelpers": [
+      {"path": "tests/test_word_comment_resolution.py", "sha256": "30d3e291f77249e42b84f54506315bf344e1f432f5ba93ffa0a49cc581f4bc4d", "symbols": ["_read_parts", "_write_parts", "_comment_para_id", "_comment_ex_done", "_create_two_comment_doc"], "use": "test-local builders/readers, not distinct test cases"},
+      {"path": "tests/conftest.py", "sha256": "1f3f8d173438c11be5a467004ac4504707d03f9e552c92ae3216b25adebd9e56", "use": "word_advanced_tools and word_tools fixtures"}
+    ],
+    "existingProfileSeparated": ["@id-docx-comments-inspection", "@id-docx-comments-resolution", "@id-docx-comments-noop", "@id-docx-comments-refusal"],
+    "boundary": "No existing Bun comment scenario is semantically identical to Python's authored-thread/fallback/create path. Source-only mapping, no consumer execution or format-conformance claim."
+  },
+  "mappings": [
+    {
+      "nativeId": "tests/test_word_comment_resolution.py::test_t1_get_comments_includes_mixed_done_state",
+      "path": "tests/test_word_comment_resolution.py",
+      "sourceSha256": "30d3e291f77249e42b84f54506315bf344e1f432f5ba93ffa0a49cc581f4bc4d",
+      "coverage": "partial",
+      "scenarioIds": ["@id-python-comments-mixed-done"],
+      "verifiedAspects": ["On two newly authored comments, resolve first ID succeeds and a fresh unfiltered read reports first done true, second done false."],
+      "gaps": ["Returned order is used to identify first and second; author/body identity is not independently checked. No XML or unrelated-part preservation assertion."],
+      "executionCredit": false
+    },
+    {
+      "nativeId": "tests/test_word_comment_resolution.py::test_t2_resolve_comment_sets_done_and_rereads_true",
+      "path": "tests/test_word_comment_resolution.py",
+      "sourceSha256": "30d3e291f77249e42b84f54506315bf344e1f432f5ba93ffa0a49cc581f4bc4d",
+      "coverage": "partial",
+      "scenarioIds": ["@id-python-comments-resolved-filter"],
+      "verifiedAspects": ["Resolve result success and done true; fresh resolved-filter read contains selected ID with done true."],
+      "gaps": ["The test does not inspect commentsExtended XML, original anchors, unrelated package members or an independent renderer."],
+      "executionCredit": false
+    },
+    {
+      "nativeId": "tests/test_word_comment_resolution.py::test_t3_reopen_comment_sets_done_false",
+      "path": "tests/test_word_comment_resolution.py",
+      "sourceSha256": "30d3e291f77249e42b84f54506315bf344e1f432f5ba93ffa0a49cc581f4bc4d",
+      "coverage": "partial",
+      "scenarioIds": ["@id-python-comments-reopen-filter"],
+      "verifiedAspects": ["Resolve and reopen responses succeed, reopen reports done false, fresh open-filter read contains selected ID with done false."],
+      "gaps": ["Despite the native docstring, w15:done=0 is not inspected directly; archive byte custody and unrelated metadata are not checked."],
+      "executionCredit": false
+    },
+    {
+      "nativeId": "tests/test_word_comment_resolution.py::test_t4_resolve_reply_updates_root_thread_state",
+      "path": "tests/test_word_comment_resolution.py",
+      "sourceSha256": "30d3e291f77249e42b84f54506315bf344e1f432f5ba93ffa0a49cc581f4bc4d",
+      "coverage": "partial",
+      "scenarioIds": ["@id-python-comments-reply-root-resolution"],
+      "verifiedAspects": ["New reply and reply-ID resolution succeed, response identifies original root ID, and fresh read reports root done true."],
+      "gaps": ["No assertion checks reply done state or proves that only root metadata changed; no unrelated-part preservation check."],
+      "executionCredit": false
+    },
+    {
+      "nativeId": "tests/test_word_comment_resolution.py::test_t5_fallback_to_comments_ids_when_paraid_missing",
+      "path": "tests/test_word_comment_resolution.py",
+      "sourceSha256": "30d3e291f77249e42b84f54506315bf344e1f432f5ba93ffa0a49cc581f4bc4d",
+      "coverage": "partial",
+      "scenarioIds": ["@id-python-comments-ids-fallback"],
+      "verifiedAspects": ["After removing the first comment-paragraph w14:paraId and writing a commentsIds mapping (its original ID if present, otherwise 0F0E0D0C), a fresh read returns that mapped para_id."],
+      "gaps": ["The planned fixed 0F0E0D0C case is a more specific input than the native test: Python comment authoring omits w14:paraId, but that source branch is not asserted by the native test. Native equality does not independently validate a fixed literal ID.", "Only one paragraph and one explicit mapping are tested. No first-versus-last paragraph precedence, commentsIds relationship/content type validity, or repair write is asserted."],
+      "executionCredit": false
+    },
+    {
+      "nativeId": "tests/test_word_comment_resolution.py::test_t6_create_comments_extended_entry_when_missing",
+      "path": "tests/test_word_comment_resolution.py",
+      "sourceSha256": "30d3e291f77249e42b84f54506315bf344e1f432f5ba93ffa0a49cc581f4bc4d",
+      "coverage": "partial",
+      "scenarioIds": ["@id-python-comments-create-extension"],
+      "verifiedAspects": ["Prior package lacks commentsExtended.xml; resolving succeeds, reread has truthy para_id, saved new commentsExtended entry for that ID has w15:done=1."],
+      "gaps": ["No check of extension relationship/content type, exact generated para ID, entry count, comment body/anchor custody or unrelated package members."],
+      "executionCredit": false
+    },
+    {
+      "nativeId": "tests/test_word_comment_resolution.py::test_t7_roundtrip_resolve_then_reopen",
+      "path": "tests/test_word_comment_resolution.py",
+      "sourceSha256": "30d3e291f77249e42b84f54506315bf344e1f432f5ba93ffa0a49cc581f4bc4d",
+      "coverage": "partial",
+      "scenarioIds": ["@id-python-comments-reopen-filter"],
+      "verifiedAspects": ["Resolve succeeds, intermediate resolved-filter count is at least one, reopen succeeds, final open-filter read contains selected ID done false. This declaration shares the reopen scenario with T3."],
+      "gaps": ["T7 does not assert the reopen response's done false (required by the shared scenario); the open-filter read checks the target state. Its intermediate count does not require the selected ID, and no saved XML or archive preservation is inspected."],
+      "executionCredit": false
+    },
+    {
+      "nativeId": "tests/test_word_comment_resolution.py::test_word_get_comments_exposes_new_metadata_and_filters",
+      "path": "tests/test_word_comment_resolution.py",
+      "sourceSha256": "30d3e291f77249e42b84f54506315bf344e1f432f5ba93ffa0a49cc581f4bc4d",
+      "coverage": "partial",
+      "scenarioIds": ["@id-python-comments-filter-predicates"],
+      "verifiedAspects": ["First returned comment contains done/is_reply/parent_id/para_id keys; resolving first ID succeeds; each returned open/resolved/mine entry satisfies its respective predicate."],
+      "gaps": ["The planned shared scenario requires nonempty open, resolved and mine results. The native all() checks are vacuous for empty lists and grant no credit for this nonempty requirement. Exact cardinality/completeness, metadata values, case-varied author queries and archive preservation are also unasserted."],
+      "executionCredit": false
+    },
+    {
+      "nativeId": "tests/test_word_comment_resolution.py::test_word_get_comments_threaded_format_groups_replies",
+      "path": "tests/test_word_comment_resolution.py",
+      "sourceSha256": "30d3e291f77249e42b84f54506315bf344e1f432f5ba93ffa0a49cc581f4bc4d",
+      "coverage": "partial",
+      "scenarioIds": ["@id-python-comments-threaded-reply"],
+      "verifiedAspects": ["Reply creation succeeds; threaded read returns threads key and count at least one, first root ID matches original and first replies include reply ID."],
+      "gaps": ["No exact thread/reply count, duplicate exclusion, nesting beyond one reply, reply done flag or independent renderer check."],
+      "executionCredit": false
+    },
+    {
+      "nativeId": "tests/test_word_comment_resolution.py::test_word_reply_auto_resolve_marks_thread_done",
+      "path": "tests/test_word_comment_resolution.py",
+      "sourceSha256": "30d3e291f77249e42b84f54506315bf344e1f432f5ba93ffa0a49cc581f4bc4d",
+      "coverage": "partial",
+      "scenarioIds": ["@id-python-comments-reply-auto-resolve"],
+      "verifiedAspects": ["Reply auto_resolve returns success/resolved true and fresh resolved-filter read contains root ID done true."],
+      "gaps": ["No independent reply done-state, serialized commentsExtended state, comment body custody or unrelated package member preservation assertion."],
+      "executionCredit": false
+    }
+  ]
+}

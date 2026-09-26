@@ -1,6 +1,6 @@
 # Go static formula references
 
-The [planned profile](../workflows/xlsx/go-formula-references.feature) analyses a conservative A1 expression subset, parses direct ranges and remaps static references after a named worksheet row or column insertion. It operates on formula strings. It does not calculate values, change a workbook package or certify Excel formula compatibility. The [Go consumer mapping](../ledgers/consumers/go-formula-references.json) pins the source declarations and their assertion limits.
+The [planned profile](../workflows/xlsx/formula-references.feature) analyses a conservative A1 expression subset, parses direct ranges and remaps static references after a named worksheet row or column insertion. It operates on formula strings. It does not calculate values, change a workbook package or certify Excel formula compatibility. The [Go consumer mapping](../ledgers/consumers/go-formula-references.json) pins the source declarations and their assertion limits.
 
 ## Analysis and direct ranges
 

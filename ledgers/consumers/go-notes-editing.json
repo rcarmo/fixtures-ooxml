@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "consumer": "go",
+  "source": {
+    "repository": "https://github.com/rcarmo/go-ooxml",
+    "revision": "e2c5891212beef16f7412c794d3bea6c01e9da35",
+    "publication": "local-unpublished; repository credential lacks push access"
+  },
+  "scope": "Both top-level test declarations across pkg/presentation/notes_edit_test.go and notes_lines_test.go; three plus four named subtests. The existing @id-pptx-order-notes-read tests ordered relationship reads on different fixtures and is not mapped as equivalent to edits here. Bounded Go existing-notes editor predicates only; no general notes authoring, rendering, ECMA conformance, cross-runtime or new execution credit.",
+  "declarationCount": 2,
+  "mappings": [
+    {
+      "nativeId": "pkg/presentation/notes_edit_test.go::TestExistingNotesFixtureBatch",
+      "path": "pkg/presentation/notes_edit_test.go",
+      "sourceSha256": "1510925446aa1ba3466bd47dec9b9db67ea1fa9db8fc847f064343dbd7894673",
+      "coverage": "partial",
+      "scenarioIds": ["@id-pptx-go-notes-exact-splice", "@id-pptx-go-notes-refusal-and-noop-custody", "@id-pptx-go-notes-clear-stale-refill", "@id-pptx-go-notes-part-fingerprint-refusal"],
+      "verifiedAspects": ["The helper verifies exact notes fixture SHA-256 04faba67841dda25dc3ff9e3e6e345e6feeeef1cf25a6b9065bf5fbdc83163dc before OpenEditing", "One replacement compares in-memory notes XML with a single byte substitution, a one-part receipt, every other original graph part's delivered payload bytes, and reopened FindNotes text", "Foreign target plus three invalid text values return errors; an identical-text edit succeeds and serialised archive bytes still equal source before subsequent clear/refill", "Clearing through a held target succeeds; a second held target errors, a newly found target reads empty and accepts refilled; a directly modified notes-part fingerprint makes an older target error"],
+      "gaps": ["The first branch compares other original graph parts' payloads but does not independently assert complete ZIP membership or rendering after delivery", "Three invalid strings are an inner loop, not three named subtest cases; no exact refusal kind or post-refusal bytes per individual attempt", "No saved/reopened result after the clear/refill path and no post-fingerprint-refusal byte comparison; source archive equality is checked only after the invalid attempts and identical-text no-op", "The existing ordered-notes-read workflow also checks presentation order, blank lines and missing notes; none of those extra preconditions or results is established by this test"],
+      "executionCredit": false
+    },
+    {
+      "nativeId": "pkg/presentation/notes_lines_test.go::TestMultilineNotesEdges",
+      "path": "pkg/presentation/notes_lines_test.go",
+      "sourceSha256": "311fb00148555f9d429da465799cfea0738ab2fd4b0d090c99393cc82794a3e1",
+      "coverage": "partial",
+      "scenarioIds": ["@id-pptx-go-notes-self-closing-fill", "@id-pptx-go-notes-edge-space-preserve", "@id-pptx-go-notes-multiline-template", "@id-pptx-go-notes-template-fragments"],
+      "verifiedAspects": ["The notesWithParagraphs helper replaces the first paragraph in a loaded fixture's notes part through a low-level fingerprinted part edit, leaving the original input fixture untouched", "A self-closing a:t fills and a fresh FindNotes reads filled; a spaced text leaf is reparsed with exact text and xml:space preserve in the XML namespace", "A multirun identical-text no-op retains notes-part bytes; replacement with boundary newlines reads back exact text over four private paragraphs and the entire part contains no literal b=1 attribute", "For two-line replacement a selected color value, escaped font, language and bullet-character fragment each occurs exactly twice in the notes XML"],
+      "gaps": ["No saved/reopened archive in any of these four subtests; helper source mutation is synthetic and not an independent production fixture", "Self-closing fill does not assert retained bold formatting or exact serialised bytes; edge whitespace is not a rendering test", "Four template fragment counts do not verify structural placement, default font size or all paragraph/run properties; no full schema or Office rendering claim", "The no-borrow check searches literal b=1 across the complete notes part; it is not a full structural formatting comparison"],
+      "executionCredit": false
+    }
+  ]
+}

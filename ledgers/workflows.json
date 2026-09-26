@@ -37,15 +37,10 @@
     "workflows/docx/effective-formatting.feature",
     "workflows/docx/font-size.feature",
     "workflows/xlsx/comment-vml-custody.feature",
-    "workflows/xml/values.feature",
-    "workflows/xml/go-lexical-editing.feature",
-    "workflows/docx/python-template-analysis.feature",
-    "workflows/package/bun-zip32-profile.feature",
-    "workflows/xlsx/go-formula-references.feature",
-    "workflows/docx/python-template-cache.feature",
-    "workflows/package/bun-opc-custody.feature",
-    "workflows/docx/go-document-api.feature",
-    "workflows/docx/python-anchor-discovery.feature"
+    "workflows/docx/template-analysis.feature",
+    "workflows/xlsx/formula-references.feature",
+    "workflows/docx/document-model.feature",
+    "workflows/docx/anchor-discovery.feature"
   ],
   "executionCredit": "Only local executed assertions count; reports here do not run consumers.",
   "workflows": [
@@ -3194,7 +3189,7 @@
     },
     {
       "id": "@id-xml-entity-values",
-      "feature": "workflows/xml/values.feature",
+      "feature": "workflows/xml/parsing.feature",
       "expandedCases": 1,
       "factIds": [],
       "expectedOutcomes": [
@@ -3218,7 +3213,7 @@
     },
     {
       "id": "@id-xml-stylesheet-processing-instruction",
-      "feature": "workflows/xml/values.feature",
+      "feature": "workflows/xml/parsing.feature",
       "expandedCases": 1,
       "factIds": [],
       "expectedOutcomes": [
@@ -3241,7 +3236,7 @@
     },
     {
       "id": "@id-xml-expanded-attribute-lookup",
-      "feature": "workflows/xml/values.feature",
+      "feature": "workflows/xml/parsing.feature",
       "expandedCases": 1,
       "factIds": [],
       "expectedOutcomes": [
@@ -3264,7 +3259,7 @@
     },
     {
       "id": "@id-xml-implicit-xml-prefix",
-      "feature": "workflows/xml/values.feature",
+      "feature": "workflows/xml/parsing.feature",
       "expandedCases": 1,
       "factIds": [],
       "expectedOutcomes": [
@@ -3289,7 +3284,7 @@
     },
     {
       "id": "@id-xml-prototype-safe-attributes",
-      "feature": "workflows/xml/values.feature",
+      "feature": "workflows/xml/parsing.feature",
       "expandedCases": 1,
       "factIds": [],
       "expectedOutcomes": [
@@ -3314,7 +3309,7 @@
     },
     {
       "id": "@id-xml-immutable-namespace-metadata",
-      "feature": "workflows/xml/values.feature",
+      "feature": "workflows/xml/parsing.feature",
       "expandedCases": 1,
       "factIds": [],
       "expectedOutcomes": [
@@ -3338,7 +3333,7 @@
     },
     {
       "id": "@id-xml-escaping-values",
-      "feature": "workflows/xml/values.feature",
+      "feature": "workflows/xml/parsing.feature",
       "expandedCases": 2,
       "factIds": [],
       "expectedOutcomes": [
@@ -3362,7 +3357,7 @@
     },
     {
       "id": "@id-xml-escaping-invalid-character",
-      "feature": "workflows/xml/values.feature",
+      "feature": "workflows/xml/parsing.feature",
       "expandedCases": 1,
       "factIds": [],
       "expectedOutcomes": [
@@ -3385,7 +3380,7 @@
     },
     {
       "id": "@id-xml-escaping-whitespace-roundtrip",
-      "feature": "workflows/xml/values.feature",
+      "feature": "workflows/xml/parsing.feature",
       "expandedCases": 1,
       "factIds": [],
       "expectedOutcomes": [
@@ -3408,7 +3403,7 @@
     },
     {
       "id": "@id-xml-typed-parse-error",
-      "feature": "workflows/xml/values.feature",
+      "feature": "workflows/xml/parsing.feature",
       "expandedCases": 1,
       "factIds": [],
       "expectedOutcomes": [
@@ -3431,7 +3426,7 @@
     },
     {
       "id": "@id-xml-go-attribute-splice-custody",
-      "feature": "workflows/xml/go-lexical-editing.feature",
+      "feature": "workflows/xml/parsing.feature",
       "expandedCases": 3,
       "factIds": [],
       "expectedOutcomes": [
@@ -3456,7 +3451,7 @@
     },
     {
       "id": "@id-xml-go-attribute-batch-refusal",
-      "feature": "workflows/xml/go-lexical-editing.feature",
+      "feature": "workflows/xml/parsing.feature",
       "expandedCases": 1,
       "factIds": [],
       "expectedOutcomes": [
@@ -3479,7 +3474,7 @@
     },
     {
       "id": "@id-xml-go-child-insertion-custody",
-      "feature": "workflows/xml/go-lexical-editing.feature",
+      "feature": "workflows/xml/parsing.feature",
       "expandedCases": 1,
       "factIds": [],
       "expectedOutcomes": [
@@ -3503,7 +3498,7 @@
     },
     {
       "id": "@id-xml-go-child-insertion-refusal",
-      "feature": "workflows/xml/go-lexical-editing.feature",
+      "feature": "workflows/xml/parsing.feature",
       "expandedCases": 1,
       "factIds": [],
       "expectedOutcomes": [
@@ -3527,7 +3522,7 @@
     },
     {
       "id": "@id-xml-go-child-namespace-matrix",
-      "feature": "workflows/xml/go-lexical-editing.feature",
+      "feature": "workflows/xml/parsing.feature",
       "expandedCases": 1,
       "factIds": [],
       "expectedOutcomes": [
@@ -3552,7 +3547,7 @@
     },
     {
       "id": "@id-xml-go-element-removal-custody",
-      "feature": "workflows/xml/go-lexical-editing.feature",
+      "feature": "workflows/xml/parsing.feature",
       "expandedCases": 1,
       "factIds": [],
       "expectedOutcomes": [
@@ -3576,7 +3571,7 @@
     },
     {
       "id": "@id-xml-go-element-removal-refusal",
-      "feature": "workflows/xml/go-lexical-editing.feature",
+      "feature": "workflows/xml/parsing.feature",
       "expandedCases": 2,
       "factIds": [],
       "expectedOutcomes": [
@@ -3599,7 +3594,7 @@
     },
     {
       "id": "@id-xml-go-element-replacement-custody",
-      "feature": "workflows/xml/go-lexical-editing.feature",
+      "feature": "workflows/xml/parsing.feature",
       "expandedCases": 1,
       "factIds": [],
       "expectedOutcomes": [
@@ -3622,7 +3617,7 @@
     },
     {
       "id": "@id-xml-go-element-replacement-refusal",
-      "feature": "workflows/xml/go-lexical-editing.feature",
+      "feature": "workflows/xml/parsing.feature",
       "expandedCases": 3,
       "factIds": [],
       "expectedOutcomes": [
@@ -3646,7 +3641,7 @@
     },
     {
       "id": "@id-xml-go-immutable-leaf-seed",
-      "feature": "workflows/xml/go-lexical-editing.feature",
+      "feature": "workflows/xml/parsing.feature",
       "expandedCases": 1,
       "factIds": [],
       "expectedOutcomes": [
@@ -3670,7 +3665,7 @@
     },
     {
       "id": "@id-python-word-template-analysis-sow-response",
-      "feature": "workflows/docx/python-template-analysis.feature",
+      "feature": "workflows/docx/template-analysis.feature",
       "expandedCases": 1,
       "factIds": [],
       "expectedOutcomes": [
@@ -3693,7 +3688,7 @@
     },
     {
       "id": "@id-python-word-template-analysis-placeholder-response",
-      "feature": "workflows/docx/python-template-analysis.feature",
+      "feature": "workflows/docx/template-analysis.feature",
       "expandedCases": 1,
       "factIds": [],
       "expectedOutcomes": [
@@ -3716,7 +3711,7 @@
     },
     {
       "id": "@id-python-word-template-analysis-colour-response",
-      "feature": "workflows/docx/python-template-analysis.feature",
+      "feature": "workflows/docx/template-analysis.feature",
       "expandedCases": 1,
       "factIds": [],
       "expectedOutcomes": [
@@ -3739,7 +3734,7 @@
     },
     {
       "id": "@id-python-word-template-analysis-plain-response",
-      "feature": "workflows/docx/python-template-analysis.feature",
+      "feature": "workflows/docx/template-analysis.feature",
       "expandedCases": 1,
       "factIds": [],
       "expectedOutcomes": [
@@ -3762,7 +3757,7 @@
     },
     {
       "id": "@id-python-office-template-analysis-response",
-      "feature": "workflows/docx/python-template-analysis.feature",
+      "feature": "workflows/docx/template-analysis.feature",
       "expandedCases": 1,
       "factIds": [],
       "expectedOutcomes": [
@@ -3785,7 +3780,7 @@
     },
     {
       "id": "@id-python-office-template-analysis-cache",
-      "feature": "workflows/docx/python-template-analysis.feature",
+      "feature": "workflows/docx/template-analysis.feature",
       "expandedCases": 1,
       "factIds": [],
       "expectedOutcomes": [
@@ -3810,7 +3805,7 @@
     },
     {
       "id": "@id-zip-crc32-standard-vector",
-      "feature": "workflows/package/bun-zip32-profile.feature",
+      "feature": "workflows/package/zip32.feature",
       "expandedCases": 1,
       "factIds": [],
       "expectedOutcomes": [
@@ -3833,7 +3828,7 @@
     },
     {
       "id": "@id-bun-zip32-reader-refusal",
-      "feature": "workflows/package/bun-zip32-profile.feature",
+      "feature": "workflows/package/zip32.feature",
       "expandedCases": 12,
       "factIds": [],
       "expectedOutcomes": [
@@ -3877,7 +3872,7 @@
     },
     {
       "id": "@id-bun-zip32-writer-refusal",
-      "feature": "workflows/package/bun-zip32-profile.feature",
+      "feature": "workflows/package/zip32.feature",
       "expandedCases": 2,
       "factIds": [],
       "expectedOutcomes": [
@@ -3903,7 +3898,7 @@
     },
     {
       "id": "@id-bun-zip32-configured-bounds",
-      "feature": "workflows/package/bun-zip32-profile.feature",
+      "feature": "workflows/package/zip32.feature",
       "expandedCases": 5,
       "factIds": [],
       "expectedOutcomes": [
@@ -3934,7 +3929,7 @@
     },
     {
       "id": "@id-xlsx-go-formula-analysis-counts",
-      "feature": "workflows/xlsx/go-formula-references.feature",
+      "feature": "workflows/xlsx/formula-references.feature",
       "expandedCases": 6,
       "factIds": [],
       "expectedOutcomes": [
@@ -3961,7 +3956,7 @@
     },
     {
       "id": "@id-xlsx-go-formula-quoted-sheet-flags",
-      "feature": "workflows/xlsx/go-formula-references.feature",
+      "feature": "workflows/xlsx/formula-references.feature",
       "expandedCases": 1,
       "factIds": [],
       "expectedOutcomes": [
@@ -3986,7 +3981,7 @@
     },
     {
       "id": "@id-xlsx-go-formula-analysis-refusal",
-      "feature": "workflows/xlsx/go-formula-references.feature",
+      "feature": "workflows/xlsx/formula-references.feature",
       "expandedCases": 7,
       "factIds": [],
       "expectedOutcomes": [
@@ -4009,7 +4004,7 @@
     },
     {
       "id": "@id-xlsx-go-formula-literal-punctuation",
-      "feature": "workflows/xlsx/go-formula-references.feature",
+      "feature": "workflows/xlsx/formula-references.feature",
       "expandedCases": 5,
       "factIds": [],
       "expectedOutcomes": [
@@ -4033,7 +4028,7 @@
     },
     {
       "id": "@id-xlsx-go-direct-range-parsing",
-      "feature": "workflows/xlsx/go-formula-references.feature",
+      "feature": "workflows/xlsx/formula-references.feature",
       "expandedCases": 6,
       "factIds": [],
       "expectedOutcomes": [
@@ -4066,7 +4061,7 @@
     },
     {
       "id": "@id-xlsx-go-direct-range-refusal",
-      "feature": "workflows/xlsx/go-formula-references.feature",
+      "feature": "workflows/xlsx/formula-references.feature",
       "expandedCases": 7,
       "factIds": [],
       "expectedOutcomes": [
@@ -4089,7 +4084,7 @@
     },
     {
       "id": "@id-xlsx-go-static-remap-exact",
-      "feature": "workflows/xlsx/go-formula-references.feature",
+      "feature": "workflows/xlsx/formula-references.feature",
       "expandedCases": 5,
       "factIds": [],
       "expectedOutcomes": [
@@ -4116,7 +4111,7 @@
     },
     {
       "id": "@id-xlsx-go-static-remap-refusal",
-      "feature": "workflows/xlsx/go-formula-references.feature",
+      "feature": "workflows/xlsx/formula-references.feature",
       "expandedCases": 7,
       "factIds": [],
       "expectedOutcomes": [
@@ -4139,7 +4134,7 @@
     },
     {
       "id": "@id-xlsx-go-static-reference-properties",
-      "feature": "workflows/xlsx/go-formula-references.feature",
+      "feature": "workflows/xlsx/formula-references.feature",
       "expandedCases": 1,
       "factIds": [],
       "expectedOutcomes": [
@@ -4164,7 +4159,7 @@
     },
     {
       "id": "@id-python-template-cache-key-stable",
-      "feature": "workflows/docx/python-template-cache.feature",
+      "feature": "workflows/docx/template-analysis.feature",
       "expandedCases": 1,
       "factIds": [],
       "expectedOutcomes": [
@@ -4187,7 +4182,7 @@
     },
     {
       "id": "@id-python-template-cache-roundtrip",
-      "feature": "workflows/docx/python-template-cache.feature",
+      "feature": "workflows/docx/template-analysis.feature",
       "expandedCases": 1,
       "factIds": [],
       "expectedOutcomes": [
@@ -4211,7 +4206,7 @@
     },
     {
       "id": "@id-python-template-cache-source-change",
-      "feature": "workflows/docx/python-template-cache.feature",
+      "feature": "workflows/docx/template-analysis.feature",
       "expandedCases": 1,
       "factIds": [],
       "expectedOutcomes": [
@@ -4235,7 +4230,7 @@
     },
     {
       "id": "@id-python-template-cache-corrupt",
-      "feature": "workflows/docx/python-template-cache.feature",
+      "feature": "workflows/docx/template-analysis.feature",
       "expandedCases": 1,
       "factIds": [],
       "expectedOutcomes": [
@@ -4259,7 +4254,7 @@
     },
     {
       "id": "@id-python-template-cache-schema-mismatch",
-      "feature": "workflows/docx/python-template-cache.feature",
+      "feature": "workflows/docx/template-analysis.feature",
       "expandedCases": 1,
       "factIds": [],
       "expectedOutcomes": [
@@ -4283,7 +4278,7 @@
     },
     {
       "id": "@id-python-template-cache-sow-reuse",
-      "feature": "workflows/docx/python-template-cache.feature",
+      "feature": "workflows/docx/template-analysis.feature",
       "expandedCases": 1,
       "factIds": [],
       "expectedOutcomes": [
@@ -4309,7 +4304,7 @@
     },
     {
       "id": "@id-python-template-cache-sow-regenerate",
-      "feature": "workflows/docx/python-template-cache.feature",
+      "feature": "workflows/docx/template-analysis.feature",
       "expandedCases": 1,
       "factIds": [],
       "expectedOutcomes": [
@@ -4333,7 +4328,7 @@
     },
     {
       "id": "@id-bun-opc-open-refusal",
-      "feature": "workflows/package/bun-opc-custody.feature",
+      "feature": "workflows/package/preservation.feature",
       "expandedCases": 5,
       "factIds": [],
       "expectedOutcomes": [
@@ -4365,7 +4360,7 @@
     },
     {
       "id": "@id-bun-opc-detached-byte-copies",
-      "feature": "workflows/package/bun-opc-custody.feature",
+      "feature": "workflows/package/preservation.feature",
       "expandedCases": 1,
       "factIds": [],
       "expectedOutcomes": [
@@ -4389,7 +4384,7 @@
     },
     {
       "id": "@id-bun-opc-preserve-utf16le-edit",
-      "feature": "workflows/package/bun-opc-custody.feature",
+      "feature": "workflows/package/preservation.feature",
       "expandedCases": 1,
       "factIds": [],
       "expectedOutcomes": [
@@ -4413,7 +4408,7 @@
     },
     {
       "id": "@id-bun-opc-async-transaction-refusal",
-      "feature": "workflows/package/bun-opc-custody.feature",
+      "feature": "workflows/package/preservation.feature",
       "expandedCases": 1,
       "factIds": [],
       "expectedOutcomes": [
@@ -4438,7 +4433,7 @@
     },
     {
       "id": "@id-bun-opc-thenable-transaction-result",
-      "feature": "workflows/package/bun-opc-custody.feature",
+      "feature": "workflows/package/preservation.feature",
       "expandedCases": 1,
       "factIds": [],
       "expectedOutcomes": [
@@ -4462,7 +4457,7 @@
     },
     {
       "id": "@id-bun-opc-save-invalid-target-custody",
-      "feature": "workflows/package/bun-opc-custody.feature",
+      "feature": "workflows/package/preservation.feature",
       "expandedCases": 1,
       "factIds": [],
       "expectedOutcomes": [
@@ -4487,7 +4482,7 @@
     },
     {
       "id": "@id-bun-opc-symlink-destination-refusal",
-      "feature": "workflows/package/bun-opc-custody.feature",
+      "feature": "workflows/package/preservation.feature",
       "expandedCases": 1,
       "factIds": [],
       "expectedOutcomes": [
@@ -4512,7 +4507,7 @@
     },
     {
       "id": "@id-docx-go-new-empty-body",
-      "feature": "workflows/docx/go-document-api.feature",
+      "feature": "workflows/docx/document-model.feature",
       "expandedCases": 1,
       "factIds": [],
       "expectedOutcomes": [
@@ -4535,7 +4530,7 @@
     },
     {
       "id": "@id-docx-go-core-properties-getters",
-      "feature": "workflows/docx/go-document-api.feature",
+      "feature": "workflows/docx/document-model.feature",
       "expandedCases": 1,
       "factIds": [],
       "expectedOutcomes": [
@@ -4559,7 +4554,7 @@
     },
     {
       "id": "@id-docx-go-paragraph-text-getter",
-      "feature": "workflows/docx/go-document-api.feature",
+      "feature": "workflows/docx/document-model.feature",
       "expandedCases": 5,
       "factIds": [],
       "expectedOutcomes": [
@@ -4586,7 +4581,7 @@
     },
     {
       "id": "@id-docx-go-paragraph-style-getters",
-      "feature": "workflows/docx/go-document-api.feature",
+      "feature": "workflows/docx/document-model.feature",
       "expandedCases": 5,
       "factIds": [],
       "expectedOutcomes": [
@@ -4616,7 +4611,7 @@
     },
     {
       "id": "@id-docx-go-paragraph-alignment-getter",
-      "feature": "workflows/docx/go-document-api.feature",
+      "feature": "workflows/docx/document-model.feature",
       "expandedCases": 4,
       "factIds": [],
       "expectedOutcomes": [
@@ -4642,7 +4637,7 @@
     },
     {
       "id": "@id-docx-go-paragraph-spacing-getters",
-      "feature": "workflows/docx/go-document-api.feature",
+      "feature": "workflows/docx/document-model.feature",
       "expandedCases": 4,
       "factIds": [],
       "expectedOutcomes": [
@@ -4668,7 +4663,7 @@
     },
     {
       "id": "@id-docx-go-paragraph-advanced-toggles",
-      "feature": "workflows/docx/go-document-api.feature",
+      "feature": "workflows/docx/document-model.feature",
       "expandedCases": 1,
       "factIds": [],
       "expectedOutcomes": [
@@ -4691,7 +4686,7 @@
     },
     {
       "id": "@id-docx-go-paragraph-multiple-runs",
-      "feature": "workflows/docx/go-document-api.feature",
+      "feature": "workflows/docx/document-model.feature",
       "expandedCases": 1,
       "factIds": [],
       "expectedOutcomes": [
@@ -4714,7 +4709,7 @@
     },
     {
       "id": "@id-docx-go-run-color-getter",
-      "feature": "workflows/docx/go-document-api.feature",
+      "feature": "workflows/docx/document-model.feature",
       "expandedCases": 3,
       "factIds": [],
       "expectedOutcomes": [
@@ -4738,7 +4733,7 @@
     },
     {
       "id": "@id-docx-go-run-boolean-formatting",
-      "feature": "workflows/docx/go-document-api.feature",
+      "feature": "workflows/docx/document-model.feature",
       "expandedCases": 5,
       "factIds": [],
       "expectedOutcomes": [
@@ -4765,7 +4760,7 @@
     },
     {
       "id": "@id-docx-go-run-effects-getters",
-      "feature": "workflows/docx/go-document-api.feature",
+      "feature": "workflows/docx/document-model.feature",
       "expandedCases": 1,
       "factIds": [],
       "expectedOutcomes": [
@@ -4788,7 +4783,7 @@
     },
     {
       "id": "@id-docx-go-run-underline-style",
-      "feature": "workflows/docx/go-document-api.feature",
+      "feature": "workflows/docx/document-model.feature",
       "expandedCases": 6,
       "factIds": [],
       "expectedOutcomes": [
@@ -4816,7 +4811,7 @@
     },
     {
       "id": "@id-docx-go-run-font-name",
-      "feature": "workflows/docx/go-document-api.feature",
+      "feature": "workflows/docx/document-model.feature",
       "expandedCases": 6,
       "factIds": [],
       "expectedOutcomes": [
@@ -4844,7 +4839,7 @@
     },
     {
       "id": "@id-docx-go-run-highlight",
-      "feature": "workflows/docx/go-document-api.feature",
+      "feature": "workflows/docx/document-model.feature",
       "expandedCases": 5,
       "factIds": [],
       "expectedOutcomes": [
@@ -4871,7 +4866,7 @@
     },
     {
       "id": "@id-docx-go-run-vertical-align",
-      "feature": "workflows/docx/go-document-api.feature",
+      "feature": "workflows/docx/document-model.feature",
       "expandedCases": 1,
       "factIds": [],
       "expectedOutcomes": [
@@ -4895,7 +4890,7 @@
     },
     {
       "id": "@id-docx-go-table-dimensions-getters",
-      "feature": "workflows/docx/go-document-api.feature",
+      "feature": "workflows/docx/document-model.feature",
       "expandedCases": 8,
       "factIds": [],
       "expectedOutcomes": [
@@ -4925,7 +4920,7 @@
     },
     {
       "id": "@id-docx-go-table-cell-access",
-      "feature": "workflows/docx/go-document-api.feature",
+      "feature": "workflows/docx/document-model.feature",
       "expandedCases": 1,
       "factIds": [],
       "expectedOutcomes": [
@@ -4949,7 +4944,7 @@
     },
     {
       "id": "@id-docx-go-table-cell-text-getters",
-      "feature": "workflows/docx/go-document-api.feature",
+      "feature": "workflows/docx/document-model.feature",
       "expandedCases": 1,
       "factIds": [],
       "expectedOutcomes": [
@@ -4973,7 +4968,7 @@
     },
     {
       "id": "@id-docx-go-table-row-counts",
-      "feature": "workflows/docx/go-document-api.feature",
+      "feature": "workflows/docx/document-model.feature",
       "expandedCases": 1,
       "factIds": [],
       "expectedOutcomes": [
@@ -4997,7 +4992,7 @@
     },
     {
       "id": "@id-docx-go-table-merge-properties",
-      "feature": "workflows/docx/go-document-api.feature",
+      "feature": "workflows/docx/document-model.feature",
       "expandedCases": 1,
       "factIds": [],
       "expectedOutcomes": [
@@ -5021,7 +5016,7 @@
     },
     {
       "id": "@id-docx-go-table-style-getter",
-      "feature": "workflows/docx/go-document-api.feature",
+      "feature": "workflows/docx/document-model.feature",
       "expandedCases": 1,
       "factIds": [],
       "expectedOutcomes": [
@@ -5044,7 +5039,7 @@
     },
     {
       "id": "@id-docx-go-table-header-getter",
-      "feature": "workflows/docx/go-document-api.feature",
+      "feature": "workflows/docx/document-model.feature",
       "expandedCases": 1,
       "factIds": [],
       "expectedOutcomes": [
@@ -5067,7 +5062,7 @@
     },
     {
       "id": "@id-docx-go-cell-shading-getter",
-      "feature": "workflows/docx/go-document-api.feature",
+      "feature": "workflows/docx/document-model.feature",
       "expandedCases": 1,
       "factIds": [],
       "expectedOutcomes": [
@@ -5090,7 +5085,7 @@
     },
     {
       "id": "@id-docx-go-cell-properties-getters",
-      "feature": "workflows/docx/go-document-api.feature",
+      "feature": "workflows/docx/document-model.feature",
       "expandedCases": 1,
       "factIds": [],
       "expectedOutcomes": [
@@ -5114,7 +5109,7 @@
     },
     {
       "id": "@id-docx-go-roundtrip-selected-formatting",
-      "feature": "workflows/docx/go-document-api.feature",
+      "feature": "workflows/docx/document-model.feature",
       "expandedCases": 1,
       "factIds": [],
       "expectedOutcomes": [
@@ -5139,7 +5134,7 @@
     },
     {
       "id": "@id-docx-go-roundtrip-table-text",
-      "feature": "workflows/docx/go-document-api.feature",
+      "feature": "workflows/docx/document-model.feature",
       "expandedCases": 1,
       "factIds": [],
       "expectedOutcomes": [
@@ -5163,7 +5158,7 @@
     },
     {
       "id": "@id-docx-go-section-title-background-getters",
-      "feature": "workflows/docx/go-document-api.feature",
+      "feature": "workflows/docx/document-model.feature",
       "expandedCases": 1,
       "factIds": [],
       "expectedOutcomes": [
@@ -5186,7 +5181,7 @@
     },
     {
       "id": "@id-docx-go-track-author-toggle",
-      "feature": "workflows/docx/go-document-api.feature",
+      "feature": "workflows/docx/document-model.feature",
       "expandedCases": 1,
       "factIds": [],
       "expectedOutcomes": [
@@ -5210,7 +5205,7 @@
     },
     {
       "id": "@id-docx-go-body-insert-order",
-      "feature": "workflows/docx/go-document-api.feature",
+      "feature": "workflows/docx/document-model.feature",
       "expandedCases": 1,
       "factIds": [],
       "expectedOutcomes": [
@@ -5234,7 +5229,7 @@
     },
     {
       "id": "@id-python-word-anchor-headings-paragraphs",
-      "feature": "workflows/docx/python-anchor-discovery.feature",
+      "feature": "workflows/docx/anchor-discovery.feature",
       "expandedCases": 1,
       "factIds": [],
       "expectedOutcomes": [
@@ -5259,7 +5254,7 @@
     },
     {
       "id": "@id-python-word-anchor-text-filter",
-      "feature": "workflows/docx/python-anchor-discovery.feature",
+      "feature": "workflows/docx/anchor-discovery.feature",
       "expandedCases": 1,
       "factIds": [],
       "expectedOutcomes": [
@@ -5283,7 +5278,7 @@
     },
     {
       "id": "@id-python-word-anchor-document-map",
-      "feature": "workflows/docx/python-anchor-discovery.feature",
+      "feature": "workflows/docx/anchor-discovery.feature",
       "expandedCases": 1,
       "factIds": [],
       "expectedOutcomes": [
@@ -5308,7 +5303,7 @@
     },
     {
       "id": "@id-python-word-anchor-discover-insert",
-      "feature": "workflows/docx/python-anchor-discovery.feature",
+      "feature": "workflows/docx/anchor-discovery.feature",
       "expandedCases": 1,
       "factIds": [],
       "expectedOutcomes": [
@@ -5332,11 +5327,455 @@
     },
     {
       "id": "@id-python-word-anchor-section-discovery-hints",
-      "feature": "workflows/docx/python-anchor-discovery.feature",
+      "feature": "workflows/docx/anchor-discovery.feature",
       "expandedCases": 1,
       "factIds": [],
       "expectedOutcomes": [
         "the section-list response's next tools include \"word_list_anchors\" and \"word_document_map\""
+      ],
+      "consumers": {
+        "bun": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        },
+        "go": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        },
+        "python": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        }
+      }
+    },
+    {
+      "id": "@id-python-comments-mixed-done",
+      "feature": "workflows/docx/comments.feature",
+      "expandedCases": 1,
+      "factIds": [],
+      "expectedOutcomes": [
+        "the resolve response reports success true",
+        "a fresh unfiltered comment read reports the first ID done true and the second ID done false"
+      ],
+      "consumers": {
+        "bun": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        },
+        "go": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        },
+        "python": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        }
+      }
+    },
+    {
+      "id": "@id-python-comments-resolved-filter",
+      "feature": "workflows/docx/comments.feature",
+      "expandedCases": 1,
+      "factIds": [],
+      "expectedOutcomes": [
+        "the resolve response reports success true and done true",
+        "a fresh resolved-filter comment read contains that ID with done true"
+      ],
+      "consumers": {
+        "bun": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        },
+        "go": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        },
+        "python": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        }
+      }
+    },
+    {
+      "id": "@id-python-comments-reopen-filter",
+      "feature": "workflows/docx/comments.feature",
+      "expandedCases": 1,
+      "factIds": [],
+      "expectedOutcomes": [
+        "the resolve response reports success true",
+        "a resolved-filter read reports at least one comment",
+        "the reopen response reports success true and done false",
+        "a fresh open-filter comment read contains that ID with done false"
+      ],
+      "consumers": {
+        "bun": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        },
+        "go": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        },
+        "python": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        }
+      }
+    },
+    {
+      "id": "@id-python-comments-reply-root-resolution",
+      "feature": "workflows/docx/comments.feature",
+      "expandedCases": 1,
+      "factIds": [],
+      "expectedOutcomes": [
+        "the reply creation and resolve responses report success true",
+        "the resolve response identifies the original root comment ID",
+        "a fresh comment read reports the root comment done true"
+      ],
+      "consumers": {
+        "bun": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        },
+        "go": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        },
+        "python": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        }
+      }
+    },
+    {
+      "id": "@id-python-comments-ids-fallback",
+      "feature": "workflows/docx/comments.feature",
+      "expandedCases": 1,
+      "factIds": [],
+      "expectedOutcomes": [
+        "that comment's returned para_id equals \"0F0E0D0C\""
+      ],
+      "consumers": {
+        "bun": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        },
+        "go": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        },
+        "python": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        }
+      }
+    },
+    {
+      "id": "@id-python-comments-create-extension",
+      "feature": "workflows/docx/comments.feature",
+      "expandedCases": 1,
+      "factIds": [],
+      "expectedOutcomes": [
+        "the resolve response reports success true",
+        "a fresh comment read returns a nonempty para_id for that ID",
+        "the saved package contains word/commentsExtended.xml with a commentEx for that para ID and w15:done \"1\""
+      ],
+      "consumers": {
+        "bun": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        },
+        "go": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        },
+        "python": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        }
+      }
+    },
+    {
+      "id": "@id-python-comments-filter-predicates",
+      "feature": "workflows/docx/comments.feature",
+      "expandedCases": 1,
+      "factIds": [],
+      "expectedOutcomes": [
+        "the first unfiltered comment has keys \"done\", \"is_reply\", \"parent_id\", and \"para_id\"",
+        "the resolve response reports success true",
+        "the open-filter, resolved-filter, and mine-filter results are each nonempty",
+        "every returned open-filter comment has done false",
+        "every returned resolved-filter comment has done true",
+        "every returned mine-filter comment for \"Rui Carmo\" has that author ignoring case"
+      ],
+      "consumers": {
+        "bun": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        },
+        "go": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        },
+        "python": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        }
+      }
+    },
+    {
+      "id": "@id-python-comments-threaded-reply",
+      "feature": "workflows/docx/comments.feature",
+      "expandedCases": 1,
+      "factIds": [],
+      "expectedOutcomes": [
+        "the reply creation response reports success true",
+        "the response has a threads field and thread_count at least 1",
+        "the first thread's root ID equals the original root ID",
+        "that first thread's replies contain the added reply ID"
+      ],
+      "consumers": {
+        "bun": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        },
+        "go": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        },
+        "python": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        }
+      }
+    },
+    {
+      "id": "@id-python-comments-reply-auto-resolve",
+      "feature": "workflows/docx/comments.feature",
+      "expandedCases": 1,
+      "factIds": [],
+      "expectedOutcomes": [
+        "the reply response reports success true and resolved true",
+        "a fresh resolved-filter comment read contains the root ID with done true"
+      ],
+      "consumers": {
+        "bun": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        },
+        "go": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        },
+        "python": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        }
+      }
+    },
+    {
+      "id": "@id-pptx-go-notes-exact-splice",
+      "feature": "workflows/native/pptx-text.feature",
+      "expandedCases": 1,
+      "factIds": [],
+      "expectedOutcomes": [
+        "the in-memory ppt/notesSlides/notesSlide1.xml payload equals one replacement of the original speaker text",
+        "the save receipt lists exactly ppt/notesSlides/notesSlide1.xml as its only changed part",
+        "every other part in the original package graph has the same delivered payload bytes",
+        "reopening the saved PPTX reads Updated speaker notes for ppt/slides/slide1.xml"
+      ],
+      "consumers": {
+        "bun": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        },
+        "go": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        },
+        "python": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        }
+      }
+    },
+    {
+      "id": "@id-pptx-go-notes-refusal-and-noop-custody",
+      "feature": "workflows/native/pptx-text.feature",
+      "expandedCases": 1,
+      "factIds": [],
+      "expectedOutcomes": [
+        "each foreign or invalid write returns an error",
+        "replacing through the held target with its unchanged text succeeds",
+        "serialising the first session at that point gives the exact original fixture archive bytes"
+      ],
+      "consumers": {
+        "bun": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        },
+        "go": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        },
+        "python": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        }
+      }
+    },
+    {
+      "id": "@id-pptx-go-notes-clear-stale-refill",
+      "feature": "workflows/native/pptx-text.feature",
+      "expandedCases": 1,
+      "factIds": [],
+      "expectedOutcomes": [
+        "replacement through the second held target with stale returns an error",
+        "a newly found notes target reads the empty string",
+        "replacing through that fresh target with refilled succeeds"
+      ],
+      "consumers": {
+        "bun": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        },
+        "go": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        },
+        "python": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        }
+      }
+    },
+    {
+      "id": "@id-pptx-go-notes-part-fingerprint-refusal",
+      "feature": "workflows/native/pptx-text.feature",
+      "expandedCases": 1,
+      "factIds": [],
+      "expectedOutcomes": [
+        "that notes replacement returns an error"
+      ],
+      "consumers": {
+        "bun": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        },
+        "go": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        },
+        "python": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        }
+      }
+    },
+    {
+      "id": "@id-pptx-go-notes-self-closing-fill",
+      "feature": "workflows/native/pptx-text.feature",
+      "expandedCases": 1,
+      "factIds": [],
+      "expectedOutcomes": [
+        "a newly found notes target for ppt/slides/slide1.xml reads filled"
+      ],
+      "consumers": {
+        "bun": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        },
+        "go": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        },
+        "python": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        }
+      }
+    },
+    {
+      "id": "@id-pptx-go-notes-edge-space-preserve",
+      "feature": "workflows/native/pptx-text.feature",
+      "expandedCases": 1,
+      "factIds": [],
+      "expectedOutcomes": [
+        "the parsed ppt/notesSlides/notesSlide1.xml has a DrawingML text leaf equal to JSON \" leading \"",
+        "that same text leaf has an XML-namespace space attribute equal to preserve"
+      ],
+      "consumers": {
+        "bun": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        },
+        "go": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        },
+        "python": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        }
+      }
+    },
+    {
+      "id": "@id-pptx-go-notes-multiline-template",
+      "feature": "workflows/native/pptx-text.feature",
+      "expandedCases": 1,
+      "factIds": [],
+      "expectedOutcomes": [
+        "the notes part payload bytes are unchanged",
+        "a newly found notes target reads JSON \"\\n A&B \\n雪\\n\" across four paragraphs",
+        "the complete notes part has no literal b=\"1\" attribute"
+      ],
+      "consumers": {
+        "bun": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        },
+        "go": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        },
+        "python": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        }
+      }
+    },
+    {
+      "id": "@id-pptx-go-notes-template-fragments",
+      "feature": "workflows/native/pptx-text.feature",
+      "expandedCases": 1,
+      "factIds": [],
+      "expectedOutcomes": [
+        "the notes XML contains exactly two copies each of val=\"112233\", typeface=\"F&amp;F\", lang=\"en-US\" and char=\"•\""
+      ],
+      "consumers": {
+        "bun": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        },
+        "go": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        },
+        "python": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        }
+      }
+    },
+    {
+      "id": "@id-pptx-bun-open-save-noop",
+      "feature": "workflows/native/pptx-text.feature",
+      "expandedCases": 1,
+      "factIds": [],
+      "expectedOutcomes": [
+        "the path-opened presentation's first inspected paragraph on its first slide is Frankenstein",
+        "serializing the byte-opened presentation returns the exact original archive bytes",
+        "that destination file contains the exact original archive bytes"
       ],
       "consumers": {
         "bun": {

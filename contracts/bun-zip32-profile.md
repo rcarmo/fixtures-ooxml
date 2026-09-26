@@ -1,6 +1,6 @@
 # Bun ZIP32 reader and writer policy
 
-The [ZIP32 profile](../workflows/package/bun-zip32-profile.feature) gives concrete
+The [ZIP32 profile](../workflows/package/zip32.feature) gives concrete
 inputs for the Bun ZIP API's refusal codes and configurable bounds. It checks
 ZIP structure without requiring a complete OPC relationship graph. Successful
 reads and deterministic writes use the existing [ZIP32 workflow](../workflows/package/zip32.feature).
