@@ -4,6 +4,22 @@
   "storagePolicy": "one physical file per SHA-256 under fixtures/<format>/<scenario-group>/; scenarios reuse manifest IDs",
   "files": [
     {
+      "id": "asset-49539a13efb2cce1697e9a9ffdeccd69ce98d79a930aba8757e4f2b017e6118a",
+      "path": "contracts/mutation-safety.json",
+      "bytes": 10724,
+      "sha256": "49539a13efb2cce1697e9a9ffdeccd69ce98d79a930aba8757e4f2b017e6118a",
+      "role": "workflow-contract",
+      "origins": [
+        {
+          "repository": "https://github.com/rcarmo/bun-ooxml",
+          "revision": "61fbe73af0a53894a60cd31014dca2ffb90613c3",
+          "path": "docs/contracts/shared-v2/pack/fixture-manifest.json",
+          "change": "Removed external generator code reference; all fixture hashes and origin metadata unchanged"
+        }
+      ],
+      "aliases": []
+    },
+    {
       "id": "fixture-0655172de7be271600b8c38db59980fe3b37404b53377bcadd15744e82e47363",
       "path": "fixtures/docx/comments/comments-0655172de7be.docx",
       "bytes": 33350,
@@ -2916,23 +2932,8 @@
       ]
     },
     {
-      "id": "asset-bc3bed5b7caf8e297c47712bbae775cade09bf93d3cfc99e2288c789951b5532",
-      "path": "shared/v2/pack/expanded-contracts.json",
-      "bytes": 115980,
-      "sha256": "bc3bed5b7caf8e297c47712bbae775cade09bf93d3cfc99e2288c789951b5532",
-      "role": "workflow",
-      "origins": [
-        {
-          "repository": "https://github.com/rcarmo/bun-ooxml",
-          "revision": "61fbe73af0a53894a60cd31014dca2ffb90613c3",
-          "path": "docs/contracts/shared-v2/pack/expanded-contracts.json"
-        }
-      ],
-      "aliases": []
-    },
-    {
       "id": "asset-9fb2cc7a913cb48b5e7c983e6f942ebf71942840a15a0b62ee9119d6878a87f3",
-      "path": "shared/v2/pack/features/mutation-safety.feature",
+      "path": "workflows/mutation-safety.feature",
       "bytes": 7234,
       "sha256": "9fb2cc7a913cb48b5e7c983e6f942ebf71942840a15a0b62ee9119d6878a87f3",
       "role": "workflow",
@@ -2941,22 +2942,6 @@
           "repository": "https://github.com/rcarmo/bun-ooxml",
           "revision": "61fbe73af0a53894a60cd31014dca2ffb90613c3",
           "path": "docs/contracts/shared-v2/pack/features/mutation-safety.feature"
-        }
-      ],
-      "aliases": []
-    },
-    {
-      "id": "asset-1cccbad597746eef480fcc18c0dd5131c7941c4f336a19e0be328661789d02e8",
-      "path": "shared/v2/pack/fixture-manifest.json",
-      "bytes": 20498,
-      "sha256": "1cccbad597746eef480fcc18c0dd5131c7941c4f336a19e0be328661789d02e8",
-      "role": "fixture-manifest",
-      "origins": [
-        {
-          "repository": "https://github.com/rcarmo/bun-ooxml",
-          "revision": "61fbe73af0a53894a60cd31014dca2ffb90613c3",
-          "path": "docs/contracts/shared-v2/pack/fixture-manifest.json",
-          "change": "Removed external generator code reference; all fixture hashes and origin metadata unchanged"
         }
       ],
       "aliases": []

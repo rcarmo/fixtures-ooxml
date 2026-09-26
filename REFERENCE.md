@@ -22,25 +22,31 @@ entries include:
 
 One unique byte hash has one physical file. The grouped baseline holds 115 fixture
 files in 32 groups, totalling 6,451,099 bytes. It replaces 154 physical copies
-without dropping a unique input. The complete manifest contains 123 assets;
-notices and workflow metadata account for the other eight entries.
+without dropping a unique input. The complete manifest contains 122 assets;
+notices and workflow metadata account for the other seven entries.
 
 Resolve a fixture ID through the manifest. Do not infer its path from an origin,
 copy it for another scenario, or create compatibility directories or symlinks.
 `ledgers/fixture-groups.json` records primary membership. Reusable generated inputs
 are also fixtures; ephemeral edited outputs belong in consumer temporary paths.
 
-## Shared mutation pack
+## Mutation workflow contract
 
-`shared/v2/pack/` stores Gherkin and metadata only. Its fixture manifest is schema 2
-with `pathBase: "repository-root"`; each of the four logical workflow fixtures
-points to its canonical `assetId`. The eight scenarios expand to 19 cases.
+`workflows/mutation-safety.feature` is the single definition of the eight mutation
+scenarios and their 19 expanded cases. `contracts/mutation-safety.json` records
+scenario IDs and the four logical fixture policies. Each policy references a
+canonical `assetId`; file paths, sizes, hashes and provenance belong only to the
+root manifest.
 
-The workflow contract revision `ooxml-shared-contracts-v2`, manifest schema 2,
-outcome interchange version 2 and repository tag `v0.2.0` are separate versions.
-Changing a storage path requires a new distribution seal, while fixture hashes
-and stable scenario/example identities stay unchanged. Historical seals are
-provenance only and cannot validate a different distribution.
+A policy contains readback facts, one `memberSha256` map and an allow-list of
+members that successful edits may change. Membership is exact. Every member not
+in the allow-list must retain its hash. Consumers derive that preserved set; no
+second hash map or generated copy of the expanded Gherkin is stored.
+
+The historical workflow revision `ooxml-shared-contracts-v2` and outcome
+interchange version 2 remain unchanged. They do not imply a versioned directory.
+Root-manifest entries seal the workflow and contract files; the Git commit seals
+the complete reference tree.
 
 ## Facts and behaviour
 
@@ -62,13 +68,13 @@ separate scenarios or a recorded issue. A test title alone is not an outcome.
 ## Consumer pins and release checks
 
 Consumers use `references/fixtures-ooxml` as a submodule and pin the same annotated
-release tag's commit. Pin records include the root-manifest and shared-pack seals.
-Before testing, verify HEAD, annotated-tag identity, both seals, all asset hashes
+release tag's commit. Pin records include the root-manifest seal.
+Before testing, verify HEAD, annotated-tag identity, the seal, all asset hashes
 and clean reference contents, including facts and workflows. Missing or modified
 inputs fail; no fallback corpus is generated.
 
 Pre-release runs may use an explicit candidate root and candidate pin containing
-an exact commit and seals. They must not masquerade as a tagged-release check.
+an exact commit and manifest seal. They must not masquerade as a tagged-release check.
 Publish only after the shared verifier and consumer candidate checks pass, then
 repin consumers and repeat default recursive-clone checks. Never move a published
 tag. Required licence notices and qualified provenance survive migrations.

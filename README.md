@@ -14,9 +14,10 @@ and the consumer release checks.
 - `fixtures/<format>/<scenario-group>/`: reusable fixture files, with exactly one
   physical copy per SHA-256. Groups include `docx/comments`, `pptx/notes`,
   `xlsx/formulas` and format-specific `mutation-safety` groups.
-- `shared/v2/pack/`: shared mutation Gherkin, references to four canonical fixture
-  IDs, per-member custody hashes and expanded stable case identities. No fixture
-  bytes are stored here.
+- `workflows/mutation-safety.feature`: the shared mutation scenarios.
+- `contracts/mutation-safety.json`: four fixture-ID references, readback facts,
+  exact member hashes and permitted changes. Expanded cases are compiled from
+  Gherkin at verification time; there is no second generated scenario catalogue.
 - `workflows/native/`: additional format/package behaviour contracts. Their
   planned tag gives no consumer execution credit.
 - `ledgers/workflows.json`: expected outcomes, related facts and per-consumer
@@ -35,12 +36,13 @@ links, format/scenario grouping and duplicate-hash rejection. Consumers run thei
 save/reopen assertions. A shared contract or another language's result does not
 establish implementation parity, rendered fidelity or calculation correctness.
 
-The schema-2 distribution `fixtures-ooxml-v0.2.0` deduplicates the previous 154
-fixture copies into 115 unique files. Consumers look up `fixture-<full-SHA-256>`
+The schema-2 manifest deduplicates the previous 154 fixture copies into 115 unique
+files. Consumers look up `fixture-<full-SHA-256>`
 IDs and use the manifest path; they must not construct paths from a producer name
 or create compatibility folders. Shared fixture paths are repository-relative.
-Feature text, scenario IDs and fixture bytes are unchanged; the distribution seal
-changes because the metadata and storage layout changed.
+Feature text, scenario IDs and fixture bytes are unchanged. The root manifest
+seals both the workflow and its contract; obsolete pack wrappers and duplicated
+fixture metadata have been removed.
 
 `ContentTypeCommentsExtendedSpecified` records vendor metadata matching the pinned
 fixture. The old observed alias stays `disputed`. No independent Office reopening

@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "features": [
-    "shared/v2/pack/features/mutation-safety.feature",
+    "workflows/mutation-safety.feature",
     "workflows/native/docx-story.feature",
     "workflows/native/docx-revisions.feature",
     "workflows/native/docx-redline.feature",
@@ -15,7 +15,7 @@
   "workflows": [
     {
       "id": "@id-pptx-dry-run-no-mutation",
-      "feature": "shared/v2/pack/features/mutation-safety.feature",
+      "feature": "workflows/mutation-safety.feature",
       "expandedCases": 3,
       "factIds": [
         "NSPresentationML",
@@ -41,7 +41,7 @@
     },
     {
       "id": "@id-docx-dry-run-no-mutation",
-      "feature": "shared/v2/pack/features/mutation-safety.feature",
+      "feature": "workflows/mutation-safety.feature",
       "expandedCases": 3,
       "factIds": [
         "NSWordprocessingML",
@@ -67,7 +67,7 @@
     },
     {
       "id": "@id-xlsx-dry-run-no-mutation",
-      "feature": "shared/v2/pack/features/mutation-safety.feature",
+      "feature": "workflows/mutation-safety.feature",
       "expandedCases": 3,
       "factIds": [
         "NSSpreadsheetML",
@@ -93,7 +93,7 @@
     },
     {
       "id": "@id-xlsx-strict-batch-atomicity",
-      "feature": "shared/v2/pack/features/mutation-safety.feature",
+      "feature": "workflows/mutation-safety.feature",
       "expandedCases": 3,
       "factIds": [
         "NSSpreadsheetML",
@@ -120,7 +120,7 @@
     },
     {
       "id": "@id-docx-strict-batch-per-target-results",
-      "feature": "shared/v2/pack/features/mutation-safety.feature",
+      "feature": "workflows/mutation-safety.feature",
       "expandedCases": 3,
       "factIds": [
         "NSWordprocessingML",
@@ -147,7 +147,7 @@
     },
     {
       "id": "@id-pptx-batch-output-accumulates",
-      "feature": "shared/v2/pack/features/mutation-safety.feature",
+      "feature": "workflows/mutation-safety.feature",
       "expandedCases": 2,
       "factIds": [
         "NSPresentationML",
@@ -173,7 +173,7 @@
     },
     {
       "id": "@id-xlsx-style-dependency-closure",
-      "feature": "shared/v2/pack/features/mutation-safety.feature",
+      "feature": "workflows/mutation-safety.feature",
       "expandedCases": 1,
       "factIds": [
         "NSSpreadsheetML",
@@ -199,7 +199,7 @@
     },
     {
       "id": "@id-xlsx-cross-sheet-cache-invalidation",
-      "feature": "shared/v2/pack/features/mutation-safety.feature",
+      "feature": "workflows/mutation-safety.feature",
       "expandedCases": 1,
       "factIds": [
         "NSSpreadsheetML",

@@ -1,7 +1,7 @@
 import {test,expect} from 'bun:test';
-import {cases,verify,validateFixtureLayout} from '../scripts/verify.ts';
-test('all pinned references and contract links verify',async()=>{const r=await verify();expect(r.assets).toBe(123);expect(r.facts).toBeGreaterThan(130);expect(r.workflows).toBeGreaterThanOrEqual(39);});
-test('official Gherkin compilation expands shared cases',async()=>{const p='shared/v2/pack/features/mutation-safety.feature';const result=cases(p,await Bun.file(p).text());expect(result).toHaveLength(19);expect(new Set(result.map(r=>r.scenarioId)).size).toBe(8);});
+import {cases,verify,validateFixtureLayout,validateMutationContract} from '../scripts/verify.ts';
+test('all pinned references and contract links verify',async()=>{const r=await verify();expect(r.assets).toBe(122);expect(r.facts).toBeGreaterThan(130);expect(r.workflows).toBeGreaterThanOrEqual(39);});
+test('official Gherkin compilation expands shared cases',async()=>{const p='workflows/mutation-safety.feature';const result=cases(p,await Bun.file(p).text());expect(result).toHaveLength(19);expect(new Set(result.map(r=>r.scenarioId)).size).toBe(8);});
 test('workflow identity is required',()=>{expect(()=>cases('bad.feature','Feature: Bad\n Scenario: unnamed\n  Given input\n')).toThrow();});
 
 test('fixture IDs are stored once, grouped by format and scenario purpose',async()=>{
@@ -18,4 +18,16 @@ test('fixture IDs are stored once, grouped by format and scenario purpose',async
  expect(()=>validateFixtureLayout(duplicate)).toThrow('Duplicate');
  const badGroup=structuredClone(manifest);badGroup.files.find((f:any)=>f.role==='fixture').scenarioGroup='../comments';
  expect(()=>validateFixtureLayout(badGroup)).toThrow();
+});
+
+test('mutation policy references one canonical asset and one member hash map',async()=>{
+ const manifest=await Bun.file('manifest.json').json(),contract=await Bun.file('contracts/mutation-safety.json').json();
+ expect(()=>validateMutationContract(contract,manifest)).not.toThrow();
+ for(const change of [
+  (c:any)=>{c.fixtures[0].assetId='fixture-'+ '0'.repeat(64);},
+  (c:any)=>{c.fixtures[0].path='duplicate-path';},
+  (c:any)=>{c.fixtures[0].mustPreservePayloads={};},
+  (c:any)=>{c.fixtures[0].allowedChangedPartsForSuccess.push('missing.xml');},
+  (c:any)=>{c.fixtures.push(c.fixtures[0]);},
+ ]){const copy=structuredClone(contract);change(copy);expect(()=>validateMutationContract(copy,manifest)).toThrow();}
 });

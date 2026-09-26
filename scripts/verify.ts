@@ -27,6 +27,19 @@ export function validateFixtureLayout(manifest:any){
   if(!Array.isArray(asset.scenarioIds)||new Set(asset.scenarioIds).size!==asset.scenarioIds.length)throw Error('Invalid fixture scenario links');
  }
 }
+export function validateMutationContract(contract:any,manifest:any){
+ if(contract.schemaVersion!==1||contract.feature!=='workflows/mutation-safety.feature'||contract.fixturePolicy?.membership!=='exact'||contract.fixturePolicy?.preserve!=='all-except-allowed')throw Error('Invalid mutation contract policy');
+ if(!Array.isArray(contract.scenarioIds)||new Set(contract.scenarioIds).size!==contract.scenarioIds.length||!Array.isArray(contract.fixtures)||!contract.fixtures.length)throw Error('Invalid mutation contract inventory');
+ const ids=new Set<string>();
+ for(const f of contract.fixtures){
+  if(ids.has(f.id)||!f.id)throw Error('Duplicate workflow fixture');ids.add(f.id);
+  const asset=manifest.files.find((a:any)=>a.id===f.assetId&&a.role==='fixture');if(!asset)throw Error('Unknown canonical fixture');
+  for(const key of ['path','bytes','sha256','origin','origins','mustPreservePayloads'])if(key in f)throw Error('Redundant workflow fixture metadata');
+  if(!f.memberSha256||!Object.keys(f.memberSha256).length||!Array.isArray(f.allowedChangedPartsForSuccess)||new Set(f.allowedChangedPartsForSuccess).size!==f.allowedChangedPartsForSuccess.length)throw Error('Invalid member policy');
+  for(const [path,digest]of Object.entries(f.memberSha256))if(!safe(path)||typeof digest!=='string'||!/^[a-f0-9]{64}$/.test(digest))throw Error('Invalid member hash');
+  for(const name of f.allowedChangedPartsForSuccess)if(!Object.hasOwn(f.memberSha256,name))throw Error('Unknown allowed member');
+ }
+}
 export async function verify(base=root){
  const manifest=await Bun.file(join(base,'manifest.json')).json();const seen=new Set<string>(),hashes=new Set<string>(),assetIds=new Set<string>(),aliases=new Set<string>();
  validateFixtureLayout(manifest);
@@ -39,9 +52,18 @@ export async function verify(base=root){
  }
  for(const dir of ['fixtures','notices'])for await(const path of new Bun.Glob('**/*').scan({cwd:join(base,dir),onlyFiles:true}))if(!seen.has(dir+'/'+path))throw Error('Unpinned asset '+path);
  for await(const path of new Bun.Glob('**/*').scan({cwd:base,onlyFiles:true,dot:false}))if(!path.startsWith('node_modules/')&&/\.(docx|pptx|xlsx|png|jpg|jpeg|zip)$/i.test(path)&&!path.startsWith('fixtures/'))throw Error('Fixture outside single fixtures root: '+path);
- const fixtures=await Bun.file(join(base,'shared/v2/pack/fixture-manifest.json')).json();
- if(fixtures.schemaVersion!==2||fixtures.pathBase!=='repository-root')throw Error('Invalid fixture path policy');
- for(const f of fixtures.fixtures){const asset=manifest.files.find((a:any)=>a.id===f.assetId);if(!asset||asset.path!==f.path||asset.sha256!==f.sha256)throw Error('Shared fixture must reference canonical asset');}
+ const contract=await Bun.file(join(base,'contracts/mutation-safety.json')).json();
+ validateMutationContract(contract,manifest);
+ const mutationCases=cases(contract.feature,await Bun.file(join(base,contract.feature)).text());
+ if(mutationCases.length!==contract.expandedCaseCount||JSON.stringify([...new Set(mutationCases.map(c=>c.scenarioId))])!==JSON.stringify(contract.scenarioIds))throw Error('Mutation scenario identity/count drift');
+ for(const c of mutationCases){
+  const fixture=c.steps.find(s=>/^fixture "/.test(s.text))?.text.match(/^fixture "([^"]+)" verified against the fixture manifest$/)?.[1];
+  if(!contract.fixtures.some((f:any)=>f.id===fixture))throw Error('Unknown workflow fixture');
+  for(const step of c.steps){const rows=step.argument?.dataTable?.rows;if(!rows)continue;
+   if(JSON.stringify(rows[0]?.cells.map((cell:any)=>cell.value))!==JSON.stringify(['target','value_json']))throw Error('Invalid mutation table');
+   for(const row of rows.slice(1)){if(row.cells.length!==2||!row.cells[0]?.value)throw Error('Invalid mutation row');const value=JSON.parse(row.cells[1]!.value);if(!(value===null||typeof value==='string'||typeof value==='boolean'||typeof value==='number'&&Number.isFinite(value)))throw Error('Invalid typed mutation value');}
+  }
+ }
  const forbidden=/\.(py|pyi|go|cs|java|rs|swift)$/i;
  for await(const path of new Bun.Glob('**/*').scan({cwd:base,onlyFiles:true,dot:false}))if(!path.startsWith('node_modules/')&&forbidden.test(path))throw Error('External implementation source is not a reference asset: '+path);
  const evidence=await Bun.file(join(base,'facts/evidence.json')).json(),eids=new Set(evidence.items.map((e:any)=>e.id));
@@ -58,7 +80,6 @@ export async function verify(base=root){
   if(JSON.stringify([...scenarioLinks].sort())!==JSON.stringify([...group.scenarioIds].sort()))throw Error('Fixture group scenario links differ');
  }
  if(groupedIds.size!==manifest.files.filter((f:any)=>f.role==='fixture').length)throw Error('Ungrouped fixture');
- const pack=await Bun.file(join(base,'shared/v2/pack/pack-manifest.json')).json();for(const [path,digest]of Object.entries(pack.files)){if(!safe(path)||hash(await Bun.file(join(base,'shared/v2/pack',path)).bytes())!==digest)throw Error('Pack drift '+path);}
  console.log(`Verified ${seen.size} assets, ${factIds.size} facts, ${ids.length} workflows / ${actual.length} cases`);
  return {assets:seen.size,facts:factIds.size,workflows:ids.length,cases:actual.length};
 }
