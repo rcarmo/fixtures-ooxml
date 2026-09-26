@@ -3235,6 +3235,21 @@
       "aliases": []
     },
     {
+      "id": "asset-f1095dc45f85db19d45603fe38938cfc6414c74f3b1f5de63b23f9fd56e880ee",
+      "path": "workflows/pptx/text-box.feature",
+      "bytes": 1553,
+      "sha256": "f1095dc45f85db19d45603fe38938cfc6414c74f3b1f5de63b23f9fd56e880ee",
+      "role": "workflow",
+      "origins": [
+        {
+          "repository": "https://github.com/rcarmo/fixtures-ooxml",
+          "path": "workflows/pptx/text-box.feature",
+          "basis": "Language-neutral positioned slide text-box authoring contract; native save/reopen and refusal assertions remain consumer-local"
+        }
+      ],
+      "aliases": []
+    },
+    {
       "id": "asset-bba1c6aee696e3ec9e7086c5a76f129690206915a8ad6e7596dbddef55711257",
       "path": "workflows/xlsx/creation.feature",
       "bytes": 2946,

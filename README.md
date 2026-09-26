@@ -33,6 +33,8 @@ and the consumer release checks.
   [paragraph style selection](contracts/paragraph-style.md) uses existing definitions.
   [Style authoring](contracts/style-authoring.md) adds named paragraph styles with
   guarded base chains, preserving existing definitions and document text.
+  [Positioned text boxes](contracts/text-box.md) append slide shapes with explicit
+  geometry, preserving existing shapes and unrelated parts.
 - `workflows/native/`: additional format/package behaviour contracts. Their
   planned tag gives no consumer execution credit.
 - `ledgers/workflows.json`: expected outcomes, related facts and per-consumer

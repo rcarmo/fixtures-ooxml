@@ -29,7 +29,8 @@
     "workflows/docx/tracked-workflow.feature",
     "workflows/docx/run-formatting.feature",
     "workflows/docx/paragraph-style.feature",
-    "workflows/docx/style-authoring.feature"
+    "workflows/docx/style-authoring.feature",
+    "workflows/pptx/text-box.feature"
   ],
   "executionCredit": "Only local executed assertions count; reports here do not run consumers.",
   "workflows": [
@@ -2733,6 +2734,60 @@
         "python": {
           "status": "planned",
           "evidence": "No equivalent style authoring binding reviewed"
+        }
+      }
+    },
+    {
+      "id": "@id-pptx-text-box-authoring",
+      "feature": "workflows/pptx/text-box.feature",
+      "expandedCases": 8,
+      "factIds": [],
+      "expectedOutcomes": [
+        "reopened text-box identity geometry and paragraphs match plain",
+        "existing slide shapes and unrelated package payloads are unchanged",
+        "reopened text-box identity geometry and paragraphs match multiline",
+        "reopened text-box identity geometry and paragraphs match empty",
+        "reopened text-box identity geometry and paragraphs match formatted",
+        "reopened text-box identity geometry and paragraphs match alias",
+        "reopened text-box identity geometry and paragraphs match default-namespace",
+        "reopened text-box identity geometry and paragraphs match extension-tail",
+        "reopened text-box identity geometry and paragraphs match nested-id"
+      ],
+      "consumers": {
+        "bun": {
+          "status": "planned",
+          "evidence": "Native candidate binding requires canonical-path run; no cross-language execution credit"
+        },
+        "go": {
+          "status": "planned",
+          "evidence": "No equivalent text-box authoring binding reviewed"
+        },
+        "python": {
+          "status": "planned",
+          "evidence": "No equivalent text-box authoring binding reviewed"
+        }
+      }
+    },
+    {
+      "id": "@id-pptx-text-box-refusal",
+      "feature": "workflows/pptx/text-box.feature",
+      "expandedCases": 15,
+      "factIds": [],
+      "expectedOutcomes": [
+        "text-box creation refuses before package bytes or slide version change"
+      ],
+      "consumers": {
+        "bun": {
+          "status": "planned",
+          "evidence": "Native candidate binding requires canonical-path run; no cross-language execution credit"
+        },
+        "go": {
+          "status": "planned",
+          "evidence": "No equivalent text-box authoring binding reviewed"
+        },
+        "python": {
+          "status": "planned",
+          "evidence": "No equivalent text-box authoring binding reviewed"
         }
       }
     }
