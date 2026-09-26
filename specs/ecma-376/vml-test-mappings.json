@@ -1,0 +1,179 @@
+{
+  "schemaVersion": 1,
+  "status": "planned-unbound",
+  "feature": "workflows/xlsx/comment-vml-custody.feature",
+  "sourceRevisions": {
+    "go": "ae1a55dc73a47c0a4fed94086669a9cbe561047c",
+    "paperXlsx": "a7b86a5466366dc0ec85072926f16f1e2cdd5fc6",
+    "originalGoFixture": "43eda6edfe45db20da5879ba332ec6a25d598efa",
+    "centralComparison": "977ebe92522325a8bbc14999fed17e0a5e9626da"
+  },
+  "fixture": {
+    "id": "fixture-264be55e012d4bc2b3bf25e59824fdd30022e94f70869ea7d6ad960b803a902f",
+    "path": "fixtures/xlsx/comments/comments-264be55e012d.xlsx",
+    "sha256": "264be55e012d4bc2b3bf25e59824fdd30022e94f70869ea7d6ad960b803a902f",
+    "originalPath": "testdata/excel/comments.xlsx",
+    "observedPackageParts": {
+      "xl/comments/comment1.xml": "061e144756e6f09db959cf60bafd60e6dcfdc3f7eee5740664970ebf3fcd2627",
+      "xl/drawings/commentsDrawing1.vml": "bd89654acb50943e04d52e8c21f07f29805a5f01715221a7bd7b5b7b8ad1f26b",
+      "xl/worksheets/_rels/sheet1.xml.rels": "e2d28d8e38b35f1729aa1d52a0dcd52d78a4abb684cdb284d4d991dec8dbc165"
+    },
+    "scope": "Observed ZIP member facts for the first planned inspect case only; the row-shift and editor-refusal cases use synthetic workbooks as specified by their distinct Given steps. No claim that either editor processes the fixture for those cases."
+  },
+  "specification": [
+    {
+      "part": 2,
+      "sha256": "18701071fe15f39389761f82512c70d2effbf22bd16dd034f2939797ff5f6147",
+      "edition": "ECMA-376 Part 2 fifth edition, December 2021",
+      "clause": "§6.5.3.4 Relationship element",
+      "pdfPage": 32,
+      "printedPage": "22",
+      "status": "normative relationship syntax and target semantics",
+      "qualification": "Relationship Type and Target are required; a specific workbook's comments/VML parts are fixture observations, not a universal mandate.",
+      "documentId": "ecma-376-2-2021"
+    },
+    {
+      "part": 1,
+      "sha256": "7cccfd0ad0e2ef89316acece15e44a8a088d0603ce4bba4e7b0361b50d13a37d",
+      "edition": "ECMA-376-1:2016 fifth edition, October 2016",
+      "clause": "Informative Annex L.2.6.3 File Architecture",
+      "pdfPage": 4682,
+      "printedPage": "4672",
+      "status": "informative example of separate spreadsheet comment and legacy drawing data",
+      "qualification": "The example is explanatory and supplies no general save/refusal policy for either editor.",
+      "documentId": "ecma-376-1-2016"
+    },
+    {
+      "part": 1,
+      "sha256": "7cccfd0ad0e2ef89316acece15e44a8a088d0603ce4bba4e7b0361b50d13a37d",
+      "edition": "ECMA-376-1:2016 fifth edition, October 2016",
+      "clause": "Informative Annex L.5.1 Introduction",
+      "pdfPage": 4975,
+      "printedPage": "4965",
+      "status": "informative explicit VML deprecation and preference for DrawingML in new drawings",
+      "qualification": "Deprecation does not imply old VML can be discarded, that all Transitional content is deprecated, or that Go and Paper must accept the same operation.",
+      "documentId": "ecma-376-1-2016"
+    }
+  ],
+  "scenarios": [
+    {
+      "id": "@id-xlsx-comment-vml-existing-graph",
+      "profile": "namespace-aware package inspection",
+      "evidence": [
+        {
+          "kind": "original-fixture-byte-inspection",
+          "source": "testdata/excel/comments.xlsx",
+          "revision": "43eda6edfe45db20da5879ba332ec6a25d598efa",
+          "assertions": "sheet1 legacyDrawing r:id anysvml, separate comments relationship, VML target and comment A2/A3 contents inspected directly from exact shared fixture bytes"
+        },
+        {
+          "kind": "partial-Go-source-overlap",
+          "path": "pkg/spreadsheet/spreadsheet_test.go",
+          "sha256": "72398888f5c6b7eeed57df13af7cf726d7d4a629a69682a6eb7ffc9a4d7d92fa",
+          "symbol": "TestWorksheet_Relationships_WithTablesDrawingsAndComments",
+          "assertions": "synthetic SaveAs/reopen requires nonempty distinct drawing/legacyDrawing IDs, relationship Types, table part types; it does not run on the exact pinned comments fixture or assert both fixture comment payloads"
+        }
+      ],
+      "executionCredit": false
+    },
+    {
+      "id": "@id-xlsx-comment-vml-disjoint-row-shift",
+      "profile": "preservation-row-editor",
+      "evidence": [
+        {
+          "kind": "Paper-source-test",
+          "path": "tests/paper/test_major_structural_regressions.py",
+          "sha256": "5fcaea937db9b5d8d00f043c2e72a16bebff23dcbff99685b8176f9930383d30",
+          "revision": "a7b86a5466366dc0ec85072926f16f1e2cdd5fc6",
+          "symbol": "test_shift_after_comment_preserves_comment_machinery",
+          "assertions": "synthetic A1 comment/A5 tail; insert_rows(5); reopened A1 comment text and A6 value checked, output VML name->payload map equals source set"
+        }
+      ],
+      "noClaim": "Source XLSX byte immutability, non-VML part custody and Go row-shift execution are not asserted by that test.",
+      "executionCredit": false
+    },
+    {
+      "id": "@id-xlsx-comment-vml-affected-row-refusal",
+      "profile": "preservation-row-editor",
+      "evidence": [
+        {
+          "kind": "Paper-source-test",
+          "path": "tests/paper/test_major_structural_regressions.py",
+          "sha256": "5fcaea937db9b5d8d00f043c2e72a16bebff23dcbff99685b8176f9930383d30",
+          "revision": "a7b86a5466366dc0ec85072926f16f1e2cdd5fc6",
+          "symbol": "test_shift_affecting_comment_still_refuses",
+          "assertions": "A5 comment/insert_rows(5) raises PaperRefusal matching comments; held A5 comment text equals note"
+        }
+      ],
+      "noClaim": "Test does not attempt SaveAs after refusal or independently compare package/source/destination bytes.",
+      "executionCredit": false
+    },
+    {
+      "id": "@id-xlsx-comment-vml-control-shape-refusal",
+      "profile": "preservation-row-editor",
+      "evidence": [
+        {
+          "kind": "Paper-source-test",
+          "path": "tests/paper/test_major_structural_regressions.py",
+          "sha256": "5fcaea937db9b5d8d00f043c2e72a16bebff23dcbff99685b8176f9930383d30",
+          "revision": "a7b86a5466366dc0ec85072926f16f1e2cdd5fc6",
+          "symbol": "test_non_comment_vml_still_refuses_disjoint_shift",
+          "assertions": "synthetic A1 comment VML ObjectType Note->Button; insert_rows(5) raises PaperRefusal matching legacy or VML"
+        }
+      ],
+      "noClaim": "Test does not compare pre/post package or held workbook after refusal.",
+      "executionCredit": false
+    },
+    {
+      "id": "@id-xlsx-comment-vml-unknown-shape-refusal",
+      "profile": "preservation-row-editor",
+      "evidence": [
+        {
+          "kind": "Paper-source-test",
+          "path": "tests/paper/test_major_structural_regressions.py",
+          "sha256": "5fcaea937db9b5d8d00f043c2e72a16bebff23dcbff99685b8176f9930383d30",
+          "revision": "a7b86a5466366dc0ec85072926f16f1e2cdd5fc6",
+          "symbol": "test_mixed_vml_still_refuses_disjoint_shift",
+          "assertions": "synthetic A1 comment plus extra unknown VML shape; insert_rows(5) raises PaperRefusal matching legacy or VML"
+        }
+      ],
+      "noClaim": "No unchanged-byte or destination assertion in source test.",
+      "executionCredit": false
+    },
+    {
+      "id": "@id-xlsx-comment-vml-limited-editor-refusal",
+      "profile": "limited-number-editor",
+      "evidence": [
+        {
+          "kind": "Go-source-guard-inference-only",
+          "path": "pkg/spreadsheet/editing.go",
+          "sha256": "fe5d27fd3f7e238e62e7ce535adc03f59a05f5756610548946162d44dce3fcd4",
+          "revision": "ae1a55dc73a47c0a4fed94086669a9cbe561047c",
+          "symbol": "EditSession.SetNumber -> guardMode",
+          "lines": [
+            268,
+            191,
+            218,
+            254
+          ],
+          "assertions": "SetNumber calls guard before replacement; guard rejects unapproved relationship types and legacyDrawing worksheet element as unsupported_structure. The first failing guard depends on package graph."
+        }
+      ],
+      "status": "planned-not-backed-by-specific-executed-Go-test",
+      "noClaim": "No Go test for this generated commented numeric workbook, exact refusal reason, post-refusal bytes, or delivered file. FindNumber B2 is an explicit precondition; fixture construction and bound step remain to be supplied.",
+      "executionCredit": false
+    }
+  ],
+  "validation": {
+    "parser": "official @cucumber/gherkin 42.0.1 and @cucumber/messages 34.2.1",
+    "scenarios": 6,
+    "compiledPickles": 6,
+    "uniqueIdTags": 6,
+    "status": "syntax-only, unbound/planned; source tests were read, not executed in this review"
+  },
+  "limits": [
+    "Neither source inspection nor parser validation confers Go, Paper, Office or canonical Gherkin execution.",
+    "Paper test predicates are operation-specific to preserve-mode row insertion and cannot be applied to Go numeric editing.",
+    "The generic operation profiles are central proposals. Conformance requirements come from the exact cited specification clauses; row shift/refusal policy comes from pinned tests/source, not the ECMA Annex L illustrations."
+  ]
+}

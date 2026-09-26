@@ -11,7 +11,5 @@ ambiguous IDs/targets/lists, wrong slide MIME, lexical barriers, unsupported
 custom-show/extension metadata, protection and stale presentation state refuse
 without changing bytes or handle order.
 
-The 7 positive and 14 refusal variants are canonical contracts, not consumer
-execution evidence. Clone/import/delete, additional order-dependent metadata and
-Microsoft PowerPoint rendering are outside this slice. Reference-only adoption
-by another consumer supplies no slide-reordering credit.
+Slide cloning, import and deletion, additional order-dependent metadata and
+Microsoft PowerPoint rendering are outside this contract.

@@ -34,7 +34,9 @@
     "workflows/xlsx/cell-style.feature",
     "workflows/docx/page-layout.feature",
     "workflows/pptx/slide-order.feature",
-    "workflows/docx/effective-formatting.feature"
+    "workflows/docx/effective-formatting.feature",
+    "workflows/docx/font-size.feature",
+    "workflows/xlsx/comment-vml-custody.feature"
   ],
   "executionCredit": "Only local executed assertions count; reports here do not run consumers.",
   "workflows": [
@@ -3009,6 +3011,175 @@
         "python": {
           "status": "planned",
           "evidence": "No equivalent effective formatting binding reviewed"
+        }
+      }
+    },
+    {
+      "id": "@id-docx-direct-font-size-half-points",
+      "feature": "workflows/docx/font-size.feature",
+      "expandedCases": 1,
+      "factIds": [],
+      "expectedOutcomes": [
+        "the paragraph text is \"Size sample\"",
+        "the run has exactly one direct WordprocessingML w:sz element with w:val \"21\"",
+        "the reopened run's direct font size is 10.5 points"
+      ],
+      "consumers": {
+        "bun": {
+          "status": "planned",
+          "evidence": "Binding and execution pending"
+        },
+        "go": {
+          "status": "planned",
+          "evidence": "Binding and execution pending"
+        },
+        "python": {
+          "status": "planned",
+          "evidence": "Binding and execution pending"
+        }
+      }
+    },
+    {
+      "id": "@id-xlsx-comment-vml-existing-graph",
+      "feature": "workflows/xlsx/comment-vml-custody.feature",
+      "expandedCases": 1,
+      "factIds": [],
+      "expectedOutcomes": [
+        "the legacyDrawing relationship ID is anysvml and resolves internally to xl/drawings/commentsDrawing1.vml",
+        "the corresponding relationship Type is http://schemas.openxmlformats.org/officeDocument/2006/relationships/vmlDrawing",
+        "a separate comments relationship resolves internally to xl/comments/comment1.xml",
+        "the comment part contains A2 with text This is the protagonist who creates the creature.",
+        "the comment part contains A3 with text Often mistakenly called 'Frankenstein' - that is the creator's name."
+      ],
+      "consumers": {
+        "bun": {
+          "status": "planned",
+          "evidence": "Binding and execution pending"
+        },
+        "go": {
+          "status": "planned",
+          "evidence": "Binding and execution pending"
+        },
+        "python": {
+          "status": "planned",
+          "evidence": "Binding and execution pending"
+        }
+      }
+    },
+    {
+      "id": "@id-xlsx-comment-vml-disjoint-row-shift",
+      "feature": "workflows/xlsx/comment-vml-custody.feature",
+      "expandedCases": 1,
+      "factIds": [],
+      "expectedOutcomes": [
+        "the reopened A1 comment text equals note and A6 value equals tail",
+        "the complete set of VML part names and payload bytes equals the saved source set"
+      ],
+      "consumers": {
+        "bun": {
+          "status": "planned",
+          "evidence": "Binding and execution pending"
+        },
+        "go": {
+          "status": "planned",
+          "evidence": "Binding and execution pending"
+        },
+        "python": {
+          "status": "planned",
+          "evidence": "Binding and execution pending"
+        }
+      }
+    },
+    {
+      "id": "@id-xlsx-comment-vml-affected-row-refusal",
+      "feature": "workflows/xlsx/comment-vml-custody.feature",
+      "expandedCases": 1,
+      "factIds": [],
+      "expectedOutcomes": [
+        "the editor raises a comments-related refusal",
+        "the held A5 comment text still equals note"
+      ],
+      "consumers": {
+        "bun": {
+          "status": "planned",
+          "evidence": "Binding and execution pending"
+        },
+        "go": {
+          "status": "planned",
+          "evidence": "Binding and execution pending"
+        },
+        "python": {
+          "status": "planned",
+          "evidence": "Binding and execution pending"
+        }
+      }
+    },
+    {
+      "id": "@id-xlsx-comment-vml-control-shape-refusal",
+      "feature": "workflows/xlsx/comment-vml-custody.feature",
+      "expandedCases": 1,
+      "factIds": [],
+      "expectedOutcomes": [
+        "the editor raises a legacy or VML refusal"
+      ],
+      "consumers": {
+        "bun": {
+          "status": "planned",
+          "evidence": "Binding and execution pending"
+        },
+        "go": {
+          "status": "planned",
+          "evidence": "Binding and execution pending"
+        },
+        "python": {
+          "status": "planned",
+          "evidence": "Binding and execution pending"
+        }
+      }
+    },
+    {
+      "id": "@id-xlsx-comment-vml-unknown-shape-refusal",
+      "feature": "workflows/xlsx/comment-vml-custody.feature",
+      "expandedCases": 1,
+      "factIds": [],
+      "expectedOutcomes": [
+        "the editor raises a legacy or VML refusal"
+      ],
+      "consumers": {
+        "bun": {
+          "status": "planned",
+          "evidence": "Binding and execution pending"
+        },
+        "go": {
+          "status": "planned",
+          "evidence": "Binding and execution pending"
+        },
+        "python": {
+          "status": "planned",
+          "evidence": "Binding and execution pending"
+        }
+      }
+    },
+    {
+      "id": "@id-xlsx-comment-vml-limited-editor-refusal",
+      "feature": "workflows/xlsx/comment-vml-custody.feature",
+      "expandedCases": 1,
+      "factIds": [],
+      "expectedOutcomes": [
+        "the edit refuses unsupported dependent structure before replacement"
+      ],
+      "consumers": {
+        "bun": {
+          "status": "planned",
+          "evidence": "Binding and execution pending"
+        },
+        "go": {
+          "status": "planned",
+          "evidence": "Binding and execution pending"
+        },
+        "python": {
+          "status": "planned",
+          "evidence": "Binding and execution pending"
         }
       }
     }

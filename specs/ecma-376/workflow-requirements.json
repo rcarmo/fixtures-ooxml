@@ -1,0 +1,153 @@
+{
+  "schemaVersion": 1,
+  "executionCredit": false,
+  "requirements": [
+    {
+      "scenarioId": "@id-docx-direct-font-size-half-points",
+      "feature": "workflows/docx/font-size.feature",
+      "kind": "format-requirement",
+      "specification": [
+        {
+          "documentId": "ecma-376-1-2016",
+          "clause": "17.3.2.38",
+          "pdfPage": 323,
+          "authority": "normative",
+          "quotation": "This element specifies the font size which shall be applied to all non complex script characters in the contents of this run when displayed. The font sizes specified by this element’s val attribute are expressed as half-point values."
+        }
+      ],
+      "qualification": "10.5pt input matches original Go test cases; exact serialized value and reopened getter are prospective assertions"
+    },
+    {
+      "scenarioId": "@id-xlsx-comment-vml-existing-graph",
+      "feature": "workflows/xlsx/comment-vml-custody.feature",
+      "kind": "fixture-and-format",
+      "specification": [
+        {
+          "documentId": "ecma-376-2-2021",
+          "clause": "6.5.3.4",
+          "pdfPage": 32,
+          "authority": "normative",
+          "quotation": "A Relationship element shall have a Target attribute."
+        },
+        {
+          "documentId": "ecma-376-1-2016",
+          "clause": "Annex L.5.1",
+          "pdfPage": 4975,
+          "authority": "informative",
+          "quotation": "VML should be considered a deprecated format included in Office Open XML for legacy reasons only"
+        }
+      ],
+      "qualification": "Only relationship syntax comes from the normative clause. Exact fixture values are observed; row-shift and admission rules are operation policies, not ECMA mandates."
+    },
+    {
+      "scenarioId": "@id-xlsx-comment-vml-disjoint-row-shift",
+      "feature": "workflows/xlsx/comment-vml-custody.feature",
+      "kind": "editor-policy",
+      "specification": [
+        {
+          "documentId": "ecma-376-2-2021",
+          "clause": "6.5.3.4",
+          "pdfPage": 32,
+          "authority": "normative",
+          "quotation": "A Relationship element shall have a Target attribute."
+        },
+        {
+          "documentId": "ecma-376-1-2016",
+          "clause": "Annex L.5.1",
+          "pdfPage": 4975,
+          "authority": "informative",
+          "quotation": "VML should be considered a deprecated format included in Office Open XML for legacy reasons only"
+        }
+      ],
+      "qualification": "Only relationship syntax comes from the normative clause. Exact fixture values are observed; row-shift and admission rules are operation policies, not ECMA mandates."
+    },
+    {
+      "scenarioId": "@id-xlsx-comment-vml-affected-row-refusal",
+      "feature": "workflows/xlsx/comment-vml-custody.feature",
+      "kind": "editor-policy",
+      "specification": [
+        {
+          "documentId": "ecma-376-2-2021",
+          "clause": "6.5.3.4",
+          "pdfPage": 32,
+          "authority": "normative",
+          "quotation": "A Relationship element shall have a Target attribute."
+        },
+        {
+          "documentId": "ecma-376-1-2016",
+          "clause": "Annex L.5.1",
+          "pdfPage": 4975,
+          "authority": "informative",
+          "quotation": "VML should be considered a deprecated format included in Office Open XML for legacy reasons only"
+        }
+      ],
+      "qualification": "Only relationship syntax comes from the normative clause. Exact fixture values are observed; row-shift and admission rules are operation policies, not ECMA mandates."
+    },
+    {
+      "scenarioId": "@id-xlsx-comment-vml-control-shape-refusal",
+      "feature": "workflows/xlsx/comment-vml-custody.feature",
+      "kind": "editor-policy",
+      "specification": [
+        {
+          "documentId": "ecma-376-2-2021",
+          "clause": "6.5.3.4",
+          "pdfPage": 32,
+          "authority": "normative",
+          "quotation": "A Relationship element shall have a Target attribute."
+        },
+        {
+          "documentId": "ecma-376-1-2016",
+          "clause": "Annex L.5.1",
+          "pdfPage": 4975,
+          "authority": "informative",
+          "quotation": "VML should be considered a deprecated format included in Office Open XML for legacy reasons only"
+        }
+      ],
+      "qualification": "Only relationship syntax comes from the normative clause. Exact fixture values are observed; row-shift and admission rules are operation policies, not ECMA mandates."
+    },
+    {
+      "scenarioId": "@id-xlsx-comment-vml-unknown-shape-refusal",
+      "feature": "workflows/xlsx/comment-vml-custody.feature",
+      "kind": "editor-policy",
+      "specification": [
+        {
+          "documentId": "ecma-376-2-2021",
+          "clause": "6.5.3.4",
+          "pdfPage": 32,
+          "authority": "normative",
+          "quotation": "A Relationship element shall have a Target attribute."
+        },
+        {
+          "documentId": "ecma-376-1-2016",
+          "clause": "Annex L.5.1",
+          "pdfPage": 4975,
+          "authority": "informative",
+          "quotation": "VML should be considered a deprecated format included in Office Open XML for legacy reasons only"
+        }
+      ],
+      "qualification": "Only relationship syntax comes from the normative clause. Exact fixture values are observed; row-shift and admission rules are operation policies, not ECMA mandates."
+    },
+    {
+      "scenarioId": "@id-xlsx-comment-vml-limited-editor-refusal",
+      "feature": "workflows/xlsx/comment-vml-custody.feature",
+      "kind": "editor-policy",
+      "specification": [
+        {
+          "documentId": "ecma-376-2-2021",
+          "clause": "6.5.3.4",
+          "pdfPage": 32,
+          "authority": "normative",
+          "quotation": "A Relationship element shall have a Target attribute."
+        },
+        {
+          "documentId": "ecma-376-1-2016",
+          "clause": "Annex L.5.1",
+          "pdfPage": 4975,
+          "authority": "informative",
+          "quotation": "VML should be considered a deprecated format included in Office Open XML for legacy reasons only"
+        }
+      ],
+      "qualification": "Only relationship syntax comes from the normative clause. Exact fixture values are observed; row-shift and admission rules are operation policies, not ECMA mandates."
+    }
+  ]
+}

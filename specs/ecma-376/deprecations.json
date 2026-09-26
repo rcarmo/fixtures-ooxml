@@ -1,0 +1,142 @@
+{
+  "schemaVersion": 1,
+  "status": "incomplete",
+  "policy": "Only explicit source statements establish deprecation or removal. Transitional is a conformance class, not a deprecation label. Informative revision notes are not conformance-profile rules; each current normative rule must be verified separately.",
+  "reviewedDocuments": [],
+  "entries": [
+    {
+      "id": "ecma-p1-vml-deprecated",
+      "status": "deprecated",
+      "documentId": "ecma-376-1-2016",
+      "part": 1,
+      "edition": "5",
+      "clause": "Annex L.5.1 Introduction",
+      "pdfPage": 4975,
+      "printedPage": "4965",
+      "quotation": "VML should be considered a deprecated format included in Office Open XML for legacy reasons only and new applications that need a file format for drawings are strongly encouraged to use preferentially DrawingML .",
+      "quotationNormalization": "Whitespace collapsed from PDF text extraction",
+      "profile": "not-applicable",
+      "citationAuthority": "informative",
+      "interpretation": "Annex L describes VML retained for backward compatibility; conversion to DrawingML can lose information. Deprecation does not authorise dropping existing VML or treating all Transitional content as deprecated.",
+      "affectedGoSources": [
+        {
+          "path": "pkg/ooxml/sml/worksheet.go",
+          "sha256": "d3b0dc33319ced51a848f344c9ef4d56b3e06b2d68f03bec122f87ea59caede9",
+          "symbols": [
+            "LegacyDrawing"
+          ]
+        },
+        {
+          "path": "pkg/packaging/constants.go",
+          "sha256": "3998bd7d1202b68697521d706d0dcd47162ea1355bb10b788c271ecc8b1e667a",
+          "symbols": [
+            "RelTypeVML",
+            "ContentTypeVML",
+            "NSVML"
+          ]
+        },
+        {
+          "path": "pkg/spreadsheet/workbook.go",
+          "sha256": "9a90d15f554511a9153ff9f84ded3758a0c316c0bcc3be19eb259a1f4579d209",
+          "symbols": [
+            "updateCommentVML"
+          ]
+        },
+        {
+          "path": "pkg/spreadsheet/spreadsheet_test.go",
+          "sha256": "72398888f5c6b7eeed57df13af7cf726d7d4a629a69682a6eb7ffc9a4d7d92fa",
+          "symbols": [
+            "TestWorksheet_Relationships_WithTablesDrawingsAndComments"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ecma-p1-pivotarea-topright-removed",
+      "status": "removed",
+      "documentId": "ecma-376-1-2016",
+      "part": 1,
+      "edition": "5",
+      "clause": "Annex M.2 SpreadsheetML; ST_PivotAreaType §18.18.58",
+      "pdfPage": 5034,
+      "printedPage": "5024",
+      "quotation": "The ST_PivotAreaType simple type (§18.18.58) no longer allows an enumeration value of topRight",
+      "quotationNormalization": "Whitespace collapsed from PDF text extraction",
+      "profile": "not-applicable",
+      "citationAuthority": "informative",
+      "interpretation": "The 2016 enumeration omits topRight and includes topEnd. This records a type-value change, not removal of PivotTables.",
+      "replacementQuotation": "The ST_PivotAreaType simple type (§18.18.58) now allows an enumeration value of topEnd",
+      "affectedGoSources": []
+    },
+    {
+      "id": "ecma-p2-empty-media-type-option-removed",
+      "status": "removed",
+      "documentId": "ecma-376-2-2021",
+      "part": 2,
+      "edition": "5",
+      "clause": "Foreword; related physical package model Clause 7 (exact current rule not independently reviewed)",
+      "pdfPage": 7,
+      "printedPage": "vii",
+      "quotation": "The option for media type to be an empty string has been removed, as this conflicts with the definition of media type in RFC 2046 and the existing regular expression defined in the schema referenced by C.2.",
+      "quotationNormalization": "Whitespace collapsed from PDF text extraction",
+      "profile": "not-applicable",
+      "citationAuthority": "informative",
+      "interpretation": "The 2021 revision removes the empty media-type option; validate the current media-type rule before changing an implementation.",
+      "affectedGoSources": [
+        {
+          "path": "pkg/packaging/graph_edit.go",
+          "symbol": "GraphPlan addition content type validation",
+          "line": 134,
+          "qualification": "mime.ParseMediaType call located, but current empty-value refusal predicate was not reviewed."
+        }
+      ]
+    },
+    {
+      "id": "ecma-p2-streaming-requirements-dropped",
+      "status": "removed",
+      "documentId": "ecma-376-2-2021",
+      "part": 2,
+      "edition": "5",
+      "clause": "Informative Annex F.2.3 Streaming consumption; Foreword PDF p.7/vii",
+      "pdfPage": 89,
+      "printedPage": "79",
+      "quotation": "The earlier editions of this document defined requirements for streaming consumption. This edition dropped them since different applications of OPC impose different requirements on streaming consumption.",
+      "quotationNormalization": "Whitespace collapsed from PDF text extraction",
+      "profile": "not-applicable",
+      "citationAuthority": "informative",
+      "interpretation": "No specific Go streaming-consumption behaviour linked by bounded source search.",
+      "affectedGoSources": []
+    }
+  ],
+  "relatedChanges": [
+    {
+      "id": "ecma-p2-pack-iri-annex-relocated",
+      "classification": "location-change-not-deprecation",
+      "documentId": "ecma-376-2-2021",
+      "clause": "Foreword; current Clause 6",
+      "pdfPage": 7,
+      "quotation": "The normative annex that defined pack IRIs (Annex B in the preceding editions) has been dropped. Pack IRIs are now defined in Clause 6.",
+      "interpretation": "Do not treat pack IRIs themselves as removed."
+    },
+    {
+      "id": "ecma-p1-wml-transitional-default",
+      "classification": "conformance-class-distinction-not-deprecation",
+      "documentId": "ecma-376-1-2016",
+      "clause": "§17.2.3 document (Document); conformance attribute",
+      "pdfPage": 203,
+      "quotation": "If this attribute is omitted, its default value is transitional.",
+      "interpretation": "Strict and Transitional are conformance classes, not a deprecated/current binary."
+    }
+  ],
+  "review": {
+    "method": "Read-only pdftotext -layout of original Git blobs; form-feed page boundaries cross-checked against printed folios. Bounded keyword scan and direct page review, plus targeted Go grep/source inspection. No tests run.",
+    "part1": "5039 PDF pages; 125 broad keyword hits including incidental phrases. Reviewed cited pages and selected first-page conformance text; no exhaustive clause-by-clause review or validation of all deprecations. Annex L VML statement is explicit. Part1 PDF is original SHA, not rewritten enhanced PDF.",
+    "part2": "95 PDF pages; 2 broad no-longer/deprecation-style hits plus foreword/manual Annex F review. No literal deprecated wording found in searched text; ordinary shall-not prohibitions were not classified as deprecation. Part4 Transitional Migration Features was not available or reviewed.",
+    "executionCredit": false
+  },
+  "pending": [
+    "Review all clauses in Parts 1 through 4; bounded keyword searches are not a complete deprecation review",
+    "Verify current normative rules underlying informative revision-history notes",
+    "Map each affected construct to specification-backed assertions and implementation behavior"
+  ]
+}

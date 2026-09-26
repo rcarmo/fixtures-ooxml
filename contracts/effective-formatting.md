@@ -17,7 +17,6 @@ properties, external/wrong-MIME styles, Office stylesWithEffects and stale
 paragraph handles refuse. This is not a complete style, theme, font or script
 cascade. Unused style ancestry is outside the traversal.
 
-The 9 positive and 16 refusal cases are contracts, not consumer execution
-results. A Bun development probe found LibreOffice 24.2.7 retains bold across two
-paragraph-style true toggles; the OOXML toggle rule returns false. Consumer reports
-must retain that independent disagreement rather than claim renderer equivalence.
+LibreOffice 24.2.7 retains bold across two paragraph-style true toggles; the OOXML
+toggle rule returns false. This known difference prevents a claim of renderer
+equivalence.

@@ -1,9 +1,8 @@
 # Tracked Word workflow dispatch
 
-`workflows/docx/tracked-workflow.feature` refines the existing
-`@id-docx-track-changes-option-outcome` obligation and adds a refusal outline.
-Seventeen cases distinguish tracked, untracked, no-op, preview and deletion
-outcomes from invalid or unsupported requests.
+The [shared feature](../workflows/docx/tracked-workflow.feature) defines tracked,
+untracked, no-op, preview and deletion outcomes, together with refusals for invalid
+or unsupported requests.
 
 The bounded operation accepts one unique plain-text replacement in the main Word
 story, with explicit author and UTC date. It stages native insertion/deletion
@@ -20,10 +19,7 @@ stage clears provisional revision metadata and preserves source/destination file
 
 The source, unrelated package payloads and accept/reject text are checked
 independently of receipt fields. Explicit false dispatch retains ordinary
-untracked editing. No Go or Python workflow binding is assigned by this contract;
-all central lifecycle tags remain planned and consumer execution is separate.
+untracked editing.
 
-The ID is retained from Bun's earlier planned follow-up. Its expanded cases now
-make the formerly broad request observable. This profile does not implement
-multi-target redlining, general document comparison, author filtering, structural
-revisions or independent Office rendering compatibility.
+Multi-target redlining, general document comparison, author filtering, structural
+revisions and independent Office rendering compatibility are outside this contract.

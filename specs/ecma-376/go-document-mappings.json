@@ -1,0 +1,468 @@
+{
+  "schemaVersion": 1,
+  "repository": "https://github.com/rcarmo/go-ooxml",
+  "revision": "43eda6edfe45db20da5879ba332ec6a25d598efa",
+  "executionCredit": false,
+  "sources": [
+    {
+      "path": "pkg/document/ecma376_test.go",
+      "sha256": "3400b510cabf783822c16431575687270814fca671200f239b8034db8e90bf87",
+      "revision": "43eda6edfe45db20da5879ba332ec6a25d598efa"
+    },
+    {
+      "path": "pkg/document/ecma376_phase3_test.go",
+      "sha256": "6baaed18f24c10362ca61a5a7179660243e162f7379938889732e05237ac0c12",
+      "revision": "43eda6edfe45db20da5879ba332ec6a25d598efa"
+    }
+  ],
+  "declarations": [
+    {
+      "source": "ecma376_test.go",
+      "line": 17,
+      "symbol": "TestECMA376_Fixtures",
+      "status": "gap",
+      "scenarioIds": [],
+      "observation": "Save each CommonFixtures document (except SDT) and run an external Open XML SDK schema validator; no generic schema-validator scenario.",
+      "path": "pkg/document/ecma376_test.go",
+      "sourceClauseStatus": "Source citation only; applicability not independently verified",
+      "executionCredit": false
+    },
+    {
+      "source": "ecma376_test.go",
+      "line": 36,
+      "symbol": "TestECMA376_SdtContentControlsFixture",
+      "status": "gap",
+      "scenarioIds": [],
+      "observation": "Validate an existing SDT fixture with the external SDK; shared text topology refusal is not SDT validation.",
+      "path": "pkg/document/ecma376_test.go",
+      "sourceClauseStatus": "Source citation only; applicability not independently verified",
+      "executionCredit": false
+    },
+    {
+      "source": "ecma376_test.go",
+      "line": 45,
+      "symbol": "TestECMA376_ParagraphStyles",
+      "status": "partial",
+      "scenarioIds": [
+        "@id-docx-create-style-validation",
+        "@id-docx-paragraph-style-selection"
+      ],
+      "observation": "Shared scenarios check assigned known style after reopen; Go loop relies on external schema validation and its source comment claims pStyle/@w:val, which is not explicitly asserted here.",
+      "path": "pkg/document/ecma376_test.go",
+      "sourceClauseStatus": "Source citation only; applicability not independently verified",
+      "executionCredit": false
+    },
+    {
+      "source": "ecma376_test.go",
+      "line": 67,
+      "symbol": "TestECMA376_RunFormatting",
+      "status": "partial",
+      "scenarioIds": [
+        "@id-docx-create-minimal-package",
+        "@id-docx-direct-run-formatting"
+      ],
+      "observation": "Shared direct bold/italic cases exist; Go additionally authors underline, point size and colour before external schema validation.",
+      "path": "pkg/document/ecma376_test.go",
+      "sourceClauseStatus": "Source citation only; applicability not independently verified",
+      "executionCredit": false
+    },
+    {
+      "source": "ecma376_test.go",
+      "line": 103,
+      "symbol": "TestECMA376_FontSizes",
+      "status": "gap",
+      "scenarioIds": [],
+      "observation": "Current shared planned scenario asserts 12.5 pt -> w:sz 25 after reopen; no executed binding evidenced. Go CommonFontSizeCases includes 10.5 pt -> 21; TestRun_FontSize checks the immediate getter while TestECMA376_FontSizes only asks an optional external validator to validate saved documents. Neither asserts serialized numerical value or reopened getter. Owner reports official-matching Part 1 PDF §17.3.2.38 (PDF 323 / printed 313) confirms non-complex half-point units; clause not independently inspected here. External candidate now proposes the same scenario ID at 10.5 pt -> w:sz 21, as a refinement/replacement, NOT an additional ID.",
+      "path": "pkg/document/ecma376_test.go",
+      "sourceClauseStatus": "Source citation only; applicability not independently verified",
+      "executionCredit": false
+    },
+    {
+      "source": "ecma376_test.go",
+      "line": 125,
+      "symbol": "TestECMA376_TableDimensions",
+      "status": "partial",
+      "scenarioIds": [
+        "@id-docx-table-create-roundtrip"
+      ],
+      "observation": "Shared 2x2 table row/column round-trip exists; Go dimension matrix and external validator, including its claimed tblPr/tblGrid/tr structure, are not matched.",
+      "path": "pkg/document/ecma376_test.go",
+      "sourceClauseStatus": "Source citation only; applicability not independently verified",
+      "executionCredit": false
+    },
+    {
+      "source": "ecma376_test.go",
+      "line": 146,
+      "symbol": "TestECMA376_ParagraphAlignment",
+      "status": "gap",
+      "scenarioIds": [],
+      "observation": "No direct paragraph-alignment value round-trip/schema scenario; source §17.3.1.13 unverified.",
+      "path": "pkg/document/ecma376_test.go",
+      "sourceClauseStatus": "Source citation only; applicability not independently verified",
+      "executionCredit": false
+    },
+    {
+      "source": "ecma376_test.go",
+      "line": 167,
+      "symbol": "TestECMA376_TextContent",
+      "status": "partial",
+      "scenarioIds": [
+        "@id-docx-create-minimal-package",
+        "@id-docx-table-create-roundtrip"
+      ],
+      "observation": "Shared whitespace/escaping examples exist; Go CommonTextCases matrix and external schema validation are not covered.",
+      "path": "pkg/document/ecma376_test.go",
+      "sourceClauseStatus": "Source citation only; applicability not independently verified",
+      "executionCredit": false
+    },
+    {
+      "source": "ecma376_test.go",
+      "line": 186,
+      "symbol": "TestECMA376_Colors",
+      "status": "gap",
+      "scenarioIds": [],
+      "observation": "No DOCX run-colour creation/serialization or Go CommonColorCases equivalent.",
+      "path": "pkg/document/ecma376_test.go",
+      "sourceClauseStatus": "Source citation only; applicability not independently verified",
+      "executionCredit": false
+    },
+    {
+      "source": "ecma376_phase3_test.go",
+      "line": 26,
+      "symbol": "TestECMA376_InsElement",
+      "status": "partial",
+      "scenarioIds": [
+        "@id-docx-track-changes-option-outcome"
+      ],
+      "observation": "Shared tracked replacement counts insertion/deletion revisions; no direct saved w:ins author/date XML assertion or empty-author case. Source §17.13.5.20 unverified.",
+      "path": "pkg/document/ecma376_phase3_test.go",
+      "sourceClauseStatus": "Source citation only; applicability not independently verified",
+      "executionCredit": false
+    },
+    {
+      "source": "ecma376_phase3_test.go",
+      "line": 104,
+      "symbol": "TestECMA376_DelElement",
+      "status": "partial",
+      "scenarioIds": [
+        "@id-docx-track-changes-option-outcome"
+      ],
+      "observation": "Shared deletion outcome counts one committed revision; it does not assert saved w:delText rather than w:t. Go's conditional XML assertion is vacuous if no w:del exists; source §17.13.5.12 unverified.",
+      "path": "pkg/document/ecma376_phase3_test.go",
+      "sourceClauseStatus": "Source citation only; applicability not independently verified",
+      "executionCredit": false
+    },
+    {
+      "source": "ecma376_phase3_test.go",
+      "line": 143,
+      "symbol": "TestECMA376_RevisionIDUniqueness",
+      "status": "partial",
+      "scenarioIds": [
+        "@id-docx-track-changes-option-outcome"
+      ],
+      "observation": "Shared receipts count revision IDs; no three-insertion uniqueness assertion. Source §17.13.5 unverified.",
+      "path": "pkg/document/ecma376_phase3_test.go",
+      "sourceClauseStatus": "Source citation only; applicability not independently verified",
+      "executionCredit": false
+    },
+    {
+      "source": "ecma376_phase3_test.go",
+      "line": 176,
+      "symbol": "TestECMA376_DateTimeFormat",
+      "status": "partial",
+      "scenarioIds": [
+        "@id-docx-track-changes-option-outcome",
+        "@id-docx-workflow-tracked-refusal"
+      ],
+      "observation": "Shared tracked dispatch accepts explicit UTC dates and refuses invalid dates; Go asserts generated revision date is recent/nonzero, not equivalent.",
+      "path": "pkg/document/ecma376_phase3_test.go",
+      "sourceClauseStatus": "Source citation only; applicability not independently verified",
+      "executionCredit": false
+    },
+    {
+      "source": "ecma376_phase3_test.go",
+      "line": 209,
+      "symbol": "TestECMA376_NestedRevisions",
+      "status": "gap",
+      "scenarioIds": [],
+      "observation": "Go test checks two tracked edits increase revision count; it does not assert actual nested ins/del XML. Shared tracked workflow refuses pre-existing revisions, so its policy must not be counted as nested-revision coverage. Source nesting allowance unverified.",
+      "path": "pkg/document/ecma376_phase3_test.go",
+      "sourceClauseStatus": "Source citation only; applicability not independently verified",
+      "executionCredit": false
+    },
+    {
+      "source": "ecma376_phase3_test.go",
+      "line": 238,
+      "symbol": "TestECMA376_CommentElement",
+      "status": "partial",
+      "scenarioIds": [
+        "@id-docx-comments-inspection"
+      ],
+      "observation": "Shared inspection checks pinned existing comment bodies; Go tests new comment author/text/initials in memory, not saved comment XML. Source §17.13.4.2 unverified.",
+      "path": "pkg/document/ecma376_phase3_test.go",
+      "sourceClauseStatus": "Source citation only; applicability not independently verified",
+      "executionCredit": false
+    },
+    {
+      "source": "ecma376_phase3_test.go",
+      "line": 278,
+      "symbol": "TestECMA376_CommentIDMatching",
+      "status": "partial",
+      "scenarioIds": [
+        "@id-docx-comments-inspection",
+        "@id-docx-comments-refusal"
+      ],
+      "observation": "Shared pinned reply parent and duplicate-id refusal are related; Go asserts newly added comment IDs unique and resolvable in memory, not anchor-to-part ID matching.",
+      "path": "pkg/document/ecma376_phase3_test.go",
+      "sourceClauseStatus": "Source citation only; applicability not independently verified",
+      "executionCredit": false
+    },
+    {
+      "source": "ecma376_phase3_test.go",
+      "line": 310,
+      "symbol": "TestECMA376_CommentDate",
+      "status": "gap",
+      "scenarioIds": [],
+      "observation": "No comment timestamp presence/round-trip or recent-date check.",
+      "path": "pkg/document/ecma376_phase3_test.go",
+      "sourceClauseStatus": "Source citation only; applicability not independently verified",
+      "executionCredit": false
+    },
+    {
+      "source": "ecma376_phase3_test.go",
+      "line": 332,
+      "symbol": "TestECMA376_CommentContent",
+      "status": "partial",
+      "scenarioIds": [
+        "@id-docx-comments-inspection"
+      ],
+      "observation": "Shared inspection verifies bodies in a pinned package; Go changes a comment's text in memory and searches a substring, not a block-level XML assertion. Source §17.13.4.2 unverified.",
+      "path": "pkg/document/ecma376_phase3_test.go",
+      "sourceClauseStatus": "Source citation only; applicability not independently verified",
+      "executionCredit": false
+    },
+    {
+      "source": "ecma376_phase3_test.go",
+      "line": 350,
+      "symbol": "TestECMA376_OrphanedComment",
+      "status": "gap",
+      "scenarioIds": [],
+      "observation": "Go asserts unanchored new comment lookup before save; shared orphan-entry refusal concerns existing commentsExtended resolution, not this same operation. Source permissive comment unverified.",
+      "path": "pkg/document/ecma376_phase3_test.go",
+      "sourceClauseStatus": "Source citation only; applicability not independently verified",
+      "executionCredit": false
+    },
+    {
+      "source": "ecma376_phase3_test.go",
+      "line": 374,
+      "symbol": "TestECMA376_StyleTypes",
+      "status": "partial",
+      "scenarioIds": [
+        "@id-docx-paragraph-style-authoring"
+      ],
+      "observation": "Shared authoring covers paragraph styles only; Go creates paragraph, character, table and numbering styles and checks in-memory type. Source §17.18.83 unverified.",
+      "path": "pkg/document/ecma376_phase3_test.go",
+      "sourceClauseStatus": "Source citation only; applicability not independently verified",
+      "executionCredit": false
+    },
+    {
+      "source": "ecma376_phase3_test.go",
+      "line": 418,
+      "symbol": "TestECMA376_StyleInheritance",
+      "status": "partial",
+      "scenarioIds": [
+        "@id-docx-paragraph-style-authoring",
+        "@id-docx-effective-run-formatting"
+      ],
+      "observation": "Shared basedOn authoring and effective ancestry cover the link plus bounded computed flags; Go verifies only the in-memory basedOn reference, explicitly not property inheritance. Source §17.7.4.3 unverified.",
+      "path": "pkg/document/ecma376_phase3_test.go",
+      "sourceClauseStatus": "Source citation only; applicability not independently verified",
+      "executionCredit": false
+    },
+    {
+      "source": "ecma376_phase3_test.go",
+      "line": 445,
+      "symbol": "TestECMA376_StyleIDUniqueness",
+      "status": "partial",
+      "scenarioIds": [
+        "@id-docx-paragraph-style-authoring-refusal"
+      ],
+      "observation": "Shared duplicate-id refusal concerns paragraph authoring; Go checks IDs after creating mixed paragraph/character styles in memory.",
+      "path": "pkg/document/ecma376_phase3_test.go",
+      "sourceClauseStatus": "Source citation only; applicability not independently verified",
+      "executionCredit": false
+    },
+    {
+      "source": "ecma376_phase3_test.go",
+      "line": 474,
+      "symbol": "TestECMA376_DefaultStyle",
+      "status": "partial",
+      "scenarioIds": [
+        "@id-docx-effective-run-formatting"
+      ],
+      "observation": "Shared inspection uses an existing default paragraph style; no scenario authors a default style and looks it up by ID. Shared style authoring explicitly does not create defaults.",
+      "path": "pkg/document/ecma376_phase3_test.go",
+      "sourceClauseStatus": "Source citation only; applicability not independently verified",
+      "executionCredit": false
+    },
+    {
+      "source": "ecma376_phase3_test.go",
+      "line": 501,
+      "symbol": "TestECMA376_StyleProperties",
+      "status": "partial",
+      "scenarioIds": [
+        "@id-docx-paragraph-style-authoring"
+      ],
+      "observation": "Shared authoring covers direct bold/italic flags; Go checks in-memory pPr/rPr nonnil after alignment, spacing, size, font and colour setters without inspecting serialized values.",
+      "path": "pkg/document/ecma376_phase3_test.go",
+      "sourceClauseStatus": "Source citation only; applicability not independently verified",
+      "executionCredit": false
+    },
+    {
+      "source": "ecma376_phase3_test.go",
+      "line": 535,
+      "symbol": "TestECMA376_StyleApplication",
+      "status": "existing-scenario",
+      "scenarioIds": [
+        "@id-docx-paragraph-style-selection"
+      ],
+      "observation": "Shared assign case sets a known paragraph style and checks saved direct style after reopen, stronger than Go's immediate getter; do not infer Go execution.",
+      "path": "pkg/document/ecma376_phase3_test.go",
+      "sourceClauseStatus": "Source citation only; applicability not independently verified",
+      "executionCredit": false
+    },
+    {
+      "source": "ecma376_phase3_test.go",
+      "line": 560,
+      "symbol": "TestECMA376_HeaderTypes",
+      "status": "gap",
+      "scenarioIds": [],
+      "observation": "No header authoring or default/first/even type round-trip; Go checks in-memory type only. Source §17.18.36 unverified.",
+      "path": "pkg/document/ecma376_phase3_test.go",
+      "sourceClauseStatus": "Source citation only; applicability not independently verified",
+      "executionCredit": false
+    },
+    {
+      "source": "ecma376_phase3_test.go",
+      "line": 591,
+      "symbol": "TestECMA376_FooterTypes",
+      "status": "gap",
+      "scenarioIds": [],
+      "observation": "No footer authoring or default/first/even type round-trip; Go checks in-memory type only.",
+      "path": "pkg/document/ecma376_phase3_test.go",
+      "sourceClauseStatus": "Source citation only; applicability not independently verified",
+      "executionCredit": false
+    },
+    {
+      "source": "ecma376_phase3_test.go",
+      "line": 622,
+      "symbol": "TestECMA376_HeaderContent",
+      "status": "gap",
+      "scenarioIds": [],
+      "observation": "No authored header paragraph and content round-trip; Go checks paragraph added in memory.",
+      "path": "pkg/document/ecma376_phase3_test.go",
+      "sourceClauseStatus": "Source citation only; applicability not independently verified",
+      "executionCredit": false
+    },
+    {
+      "source": "ecma376_phase3_test.go",
+      "line": 645,
+      "symbol": "TestECMA376_FooterContent",
+      "status": "gap",
+      "scenarioIds": [],
+      "observation": "No authored footer paragraph/text round-trip; Go checks text in memory.",
+      "path": "pkg/document/ecma376_phase3_test.go",
+      "sourceClauseStatus": "Source citation only; applicability not independently verified",
+      "executionCredit": false
+    },
+    {
+      "source": "ecma376_phase3_test.go",
+      "line": 670,
+      "symbol": "TestECMA376_MultipleHeadersFooters",
+      "status": "gap",
+      "scenarioIds": [],
+      "observation": "No simultaneous default/first/even header and footer type inventory; Go checks in-memory collection lengths.",
+      "path": "pkg/document/ecma376_phase3_test.go",
+      "sourceClauseStatus": "Source citation only; applicability not independently verified",
+      "executionCredit": false
+    },
+    {
+      "source": "ecma376_phase3_test.go",
+      "line": 700,
+      "symbol": "TestECMA376_HeaderFooterByType",
+      "status": "gap",
+      "scenarioIds": [],
+      "observation": "No lookup of saved header by type or absent even header; Go checks in-memory lookup only.",
+      "path": "pkg/document/ecma376_phase3_test.go",
+      "sourceClauseStatus": "Source citation only; applicability not independently verified",
+      "executionCredit": false
+    },
+    {
+      "source": "ecma376_phase3_test.go",
+      "line": 737,
+      "symbol": "TestECMA376_TrackChangesInSettings",
+      "status": "partial",
+      "scenarioIds": [
+        "@id-docx-track-changes-option-outcome"
+      ],
+      "observation": "Shared tracked dispatch requests revisions; no saved word/settings.xml w:trackRevisions assertion. Go skips if settings part is absent, so its current test does not require the element unconditionally.",
+      "path": "pkg/document/ecma376_phase3_test.go",
+      "sourceClauseStatus": "Source citation only; applicability not independently verified",
+      "executionCredit": false
+    },
+    {
+      "source": "ecma376_phase3_test.go",
+      "line": 775,
+      "symbol": "TestECMA376_TitlePageAndBackground",
+      "status": "gap",
+      "scenarioIds": [],
+      "observation": "No section titlePg plus document-background authoring scenario. Go searches document.xml for titlePg though a section setting may live elsewhere; need correct package location before adopting. No normative clause cited.",
+      "path": "pkg/document/ecma376_phase3_test.go",
+      "sourceClauseStatus": "Source citation only; applicability not independently verified",
+      "executionCredit": false
+    },
+    {
+      "source": "ecma376_phase3_test.go",
+      "line": 803,
+      "symbol": "TestECMA376_RoundTrip_Phase3Features",
+      "status": "partial",
+      "scenarioIds": [
+        "@id-docx-paragraph-style-authoring",
+        "@id-docx-track-changes-option-outcome"
+      ],
+      "observation": "Shared scenarios independently save/reopen a style and tracked operation; no combined comment/header/style/revision package round-trip. Go asserts only reopened style ID and track-changes state, not comment/header persistence.",
+      "path": "pkg/document/ecma376_phase3_test.go",
+      "sourceClauseStatus": "Source citation only; applicability not independently verified",
+      "executionCredit": false
+    },
+    {
+      "source": "ecma376_phase3_test.go",
+      "line": 910,
+      "symbol": "TestECMA376_AttributeFormats",
+      "status": "partial",
+      "scenarioIds": [
+        "@id-docx-track-changes-option-outcome"
+      ],
+      "observation": "Shared tracked workflow takes an explicit UTC date; Go revision-date validation is conditional on date= being present and comment-initials branch only logs, so neither establishes a required serialized attribute.",
+      "path": "pkg/document/ecma376_phase3_test.go",
+      "sourceClauseStatus": "Source citation only; applicability not independently verified",
+      "executionCredit": false
+    }
+  ],
+  "gaps": [
+    "35 source declarations reviewed; no implementation tests executed by this review",
+    "Existing scenario links are partial unless the recorded assertions establish the exact outcome",
+    "Font-size10.5pt=>21halfpoints requirement independently checked against ECMA Part1 2016 section17.3.2.38; Go schema test does not assert conversion"
+  ],
+  "pythonCustomCode": {
+    "revision": "108f9a10a43dab0ec9ac3e44370ac0a90803f4c6",
+    "review": "Read-only search of tools/ and tests/ for DOCX run sizes found no custom setter/getter/serialized size assertion",
+    "observations": [
+      "tools/word_tools.py:add_runs_to_paragraph writes bold/italic/font family/strike, not size",
+      "tools/word_advanced_tools.py:tool_word_analyze_template_formatting inspects highlight/colour, not size",
+      "PPTX font_size helpers are separate from DOCX",
+      "python-docx dependency availability is not custom binding support"
+    ],
+    "executionCredit": false
+  }
+}

@@ -3372,6 +3372,258 @@
         }
       ],
       "aliases": []
+    },
+    {
+      "id": "asset-7cccfd0ad0e2ef89316acece15e44a8a088d0603ce4bba4e7b0361b50d13a37d",
+      "path": "specs/ecma-376/part-1/ECMA-376-Part1-Fundamentals.pdf",
+      "bytes": 35304993,
+      "sha256": "7cccfd0ad0e2ef89316acece15e44a8a088d0603ce4bba4e7b0361b50d13a37d",
+      "role": "specification",
+      "origins": [
+        {
+          "repository": "https://github.com/rcarmo/go-ooxml",
+          "revision": "43eda6edfe45db20da5879ba332ec6a25d598efa",
+          "path": "docs/ECMA-376-Part1-Fundamentals.pdf",
+          "sourceSha256": "7cccfd0ad0e2ef89316acece15e44a8a088d0603ce4bba4e7b0361b50d13a37d"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "id": "asset-18701071fe15f39389761f82512c70d2effbf22bd16dd034f2939797ff5f6147",
+      "path": "specs/ecma-376/part-2/ECMA-376-Part2-OpenPackagingConventions.pdf",
+      "bytes": 2009726,
+      "sha256": "18701071fe15f39389761f82512c70d2effbf22bd16dd034f2939797ff5f6147",
+      "role": "specification",
+      "origins": [
+        {
+          "repository": "https://github.com/rcarmo/go-ooxml",
+          "revision": "43eda6edfe45db20da5879ba332ec6a25d598efa",
+          "path": "docs/ECMA-376-Part2-OpenPackagingConventions.pdf",
+          "sourceSha256": "18701071fe15f39389761f82512c70d2effbf22bd16dd034f2939797ff5f6147"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "id": "asset-5d2b5a4faccd3bb297bfc6e23d0a99fe5ff069e44af4a936b5a3302819d2abc3",
+      "path": "specs/ecma-376/extracts/ECMA-376-Part2-OPC.md",
+      "bytes": 159693,
+      "sha256": "5d2b5a4faccd3bb297bfc6e23d0a99fe5ff069e44af4a936b5a3302819d2abc3",
+      "role": "extract",
+      "origins": [
+        {
+          "repository": "https://github.com/rcarmo/go-ooxml",
+          "revision": "43eda6edfe45db20da5879ba332ec6a25d598efa",
+          "path": "docs/ECMA-376-Part2-OPC.md",
+          "sourceSha256": "5d2b5a4faccd3bb297bfc6e23d0a99fe5ff069e44af4a936b5a3302819d2abc3"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "id": "asset-161c170348706947229027f7fdf14ead4198839756b9148760bc3055df441e0b",
+      "path": "specs/ecma-376/extracts/ECMA-376-WML-Phase3.md",
+      "bytes": 221926,
+      "sha256": "161c170348706947229027f7fdf14ead4198839756b9148760bc3055df441e0b",
+      "role": "extract",
+      "origins": [
+        {
+          "repository": "https://github.com/rcarmo/go-ooxml",
+          "revision": "43eda6edfe45db20da5879ba332ec6a25d598efa",
+          "path": "docs/ECMA-376-WML-Phase3.md",
+          "sourceSha256": "161c170348706947229027f7fdf14ead4198839756b9148760bc3055df441e0b"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "id": "asset-3cec18f50b7720d177bcd4ae4537cb5dc6a075d9072459e65d3872e54d923340",
+      "path": "specs/ecma-376/notes/ECMA-376-Phase3-Reference.md",
+      "bytes": 11323,
+      "sha256": "3cec18f50b7720d177bcd4ae4537cb5dc6a075d9072459e65d3872e54d923340",
+      "role": "derived-note",
+      "origins": [
+        {
+          "repository": "https://github.com/rcarmo/go-ooxml",
+          "revision": "43eda6edfe45db20da5879ba332ec6a25d598efa",
+          "path": "docs/ECMA-376-Phase3-Reference.md",
+          "sourceSha256": "3cec18f50b7720d177bcd4ae4537cb5dc6a075d9072459e65d3872e54d923340"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "id": "asset-2dcbec958059c8b512b6798ee1f0b8416c33d507a21f5bd9a20c19e68218776f",
+      "path": "notices/ecma-text-copyright-policy.pdf",
+      "bytes": 1405996,
+      "sha256": "2dcbec958059c8b512b6798ee1f0b8416c33d507a21f5bd9a20c19e68218776f",
+      "role": "licence",
+      "origins": [
+        {
+          "url": "https://ecma-international.org/wp-content/uploads/Ecma_text_copyright_policy_version_3.pdf",
+          "version": "3",
+          "approved": "2025-12",
+          "sha256": "2dcbec958059c8b512b6798ee1f0b8416c33d507a21f5bd9a20c19e68218776f"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "id": "asset-007df765964afb983a48f2bbe2e6f039b7829dd6db48b09909263cb354736956",
+      "path": "specs/ecma-376/go-test-index.json",
+      "bytes": 499687,
+      "sha256": "007df765964afb983a48f2bbe2e6f039b7829dd6db48b09909263cb354736956",
+      "role": "test-source-index",
+      "origins": [
+        {
+          "repository": "https://github.com/rcarmo/go-ooxml",
+          "revision": "ae1a55dc73a47c0a4fed94086669a9cbe561047c",
+          "path": ".",
+          "kind": "source-inventory",
+          "auditSha256": "19dcb1818c45d3f38b2162b18cceae90bf4370654d208b52b272f71180e562dd"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "id": "asset-3742ae2573fcf2eec6878ee345bf540541b77df47f09a57603851ca2d02dfa13",
+      "path": "specs/ecma-376/part-3/ECMA-376-Part3-MarkupCompatibility.pdf",
+      "bytes": 864652,
+      "sha256": "3742ae2573fcf2eec6878ee345bf540541b77df47f09a57603851ca2d02dfa13",
+      "role": "specification",
+      "origins": [
+        {
+          "kind": "publisher-download",
+          "url": "https://ecma-international.org/wp-content/uploads/ECMA-376-3_5th_edition_december_2015.zip",
+          "archiveSha256": "42294159fbbbe9393ccadac95b859d7729cc68d908898bcbe31034dda059daa8",
+          "member": "Ecma Office Open XML Part 3 - Markup Compatibility and Extensibility.pdf",
+          "sha256": "3742ae2573fcf2eec6878ee345bf540541b77df47f09a57603851ca2d02dfa13"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "id": "asset-753990eae4920e5c75ffca700be7ea73390cd9725530b756a3e68d33757354ee",
+      "path": "specs/ecma-376/part-4/ECMA-376-Part4-TransitionalMigration.pdf",
+      "bytes": 10205576,
+      "sha256": "753990eae4920e5c75ffca700be7ea73390cd9725530b756a3e68d33757354ee",
+      "role": "specification",
+      "origins": [
+        {
+          "kind": "publisher-download",
+          "url": "https://ecma-international.org/wp-content/uploads/ECMA-376-4_5th_edition_december_2016.zip",
+          "archiveSha256": "bd25da1109f73762356596918bf5ff8b74a1331642dba5f1c1d1dfc6bed34ecd",
+          "member": "Ecma Office Open XML Part 4 - Transitional Migration Features.pdf",
+          "sha256": "753990eae4920e5c75ffca700be7ea73390cd9725530b756a3e68d33757354ee"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "id": "asset-619db55d2fb4cf9092799e21e73b8c8ba45f77ef633d5f326f8dd78a5ba833a2",
+      "path": "workflows/docx/font-size.feature",
+      "bytes": 775,
+      "sha256": "619db55d2fb4cf9092799e21e73b8c8ba45f77ef633d5f326f8dd78a5ba833a2",
+      "role": "workflow",
+      "origins": [
+        {
+          "repository": "https://github.com/rcarmo/fixtures-ooxml",
+          "path": "workflows/docx/font-size.feature",
+          "basis": "Specification-linked format requirements and explicit editor operation profiles; source mapping in specs/ecma-376"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "id": "asset-e93331bb775a8c84cd2ca0bf35264b8ef085f5ef9b44578e231c7ff0165e801d",
+      "path": "workflows/xlsx/comment-vml-custody.feature",
+      "bytes": 3646,
+      "sha256": "e93331bb775a8c84cd2ca0bf35264b8ef085f5ef9b44578e231c7ff0165e801d",
+      "role": "workflow",
+      "origins": [
+        {
+          "repository": "https://github.com/rcarmo/fixtures-ooxml",
+          "path": "workflows/xlsx/comment-vml-custody.feature",
+          "basis": "Specification-linked format requirements and explicit editor operation profiles; source mapping in specs/ecma-376"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "id": "asset-1c7f18e033e1632f45217a45d5967ee56ed898954c40851041dc2070486a2fb8",
+      "path": "specs/ecma-376/index.json",
+      "bytes": 9110,
+      "sha256": "1c7f18e033e1632f45217a45d5967ee56ed898954c40851041dc2070486a2fb8",
+      "role": "specification-metadata",
+      "origins": [
+        {
+          "repository": "https://github.com/rcarmo/fixtures-ooxml",
+          "path": "specs/ecma-376/index.json",
+          "basis": "Specification source references and bounded test mapping"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "id": "asset-f7297002c2706accf4d427c668b4fddcee344803653375226576b40955e02258",
+      "path": "specs/ecma-376/deprecations.json",
+      "bytes": 7299,
+      "sha256": "f7297002c2706accf4d427c668b4fddcee344803653375226576b40955e02258",
+      "role": "specification-metadata",
+      "origins": [
+        {
+          "repository": "https://github.com/rcarmo/fixtures-ooxml",
+          "path": "specs/ecma-376/deprecations.json",
+          "basis": "Specification source references and bounded test mapping"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "id": "asset-e2118b10befa7b530a238d08f2748c783242ab8adb9d0d72f117e19209efbba6",
+      "path": "specs/ecma-376/go-document-mappings.json",
+      "bytes": 21632,
+      "sha256": "e2118b10befa7b530a238d08f2748c783242ab8adb9d0d72f117e19209efbba6",
+      "role": "specification-metadata",
+      "origins": [
+        {
+          "repository": "https://github.com/rcarmo/fixtures-ooxml",
+          "path": "specs/ecma-376/go-document-mappings.json",
+          "basis": "Specification source references and bounded test mapping"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "id": "asset-d6aa163d33898ba47caec69e61fdacf24e2c02dcf57cb19263b79b856572dc78",
+      "path": "specs/ecma-376/vml-test-mappings.json",
+      "bytes": 9123,
+      "sha256": "d6aa163d33898ba47caec69e61fdacf24e2c02dcf57cb19263b79b856572dc78",
+      "role": "specification-metadata",
+      "origins": [
+        {
+          "repository": "https://github.com/rcarmo/fixtures-ooxml",
+          "path": "specs/ecma-376/vml-test-mappings.json",
+          "basis": "Specification source references and bounded test mapping"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "id": "asset-c2e339b9215d61207ce0f621f724cdcca183ea8e0419688a09387afd71a1423a",
+      "path": "specs/ecma-376/workflow-requirements.json",
+      "bytes": 6336,
+      "sha256": "c2e339b9215d61207ce0f621f724cdcca183ea8e0419688a09387afd71a1423a",
+      "role": "specification-metadata",
+      "origins": [
+        {
+          "repository": "https://github.com/rcarmo/fixtures-ooxml",
+          "path": "specs/ecma-376/workflow-requirements.json",
+          "basis": "Specification source references and bounded test mapping"
+        }
+      ],
+      "aliases": []
     }
   ]
 }

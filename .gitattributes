@@ -1,1 +1,6 @@
 fixtures/** -diff
+# Preserve imported specification bytes, including original whitespace and newlines.
+specs/ecma-376/part-*/*.pdf binary
+specs/ecma-376/extracts/*.md -text -diff -merge -whitespace
+specs/ecma-376/notes/*.md -text -diff -merge -whitespace
+notices/*.pdf binary

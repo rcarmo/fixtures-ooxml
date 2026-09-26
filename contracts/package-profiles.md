@@ -1,48 +1,34 @@
-# Package operation profiles
+# Package operations
 
-Package admission, graph editing and package comparison expose different
-operations. Their scenarios keep those boundaries explicit.
-
-| Feature | Operation and tested scope |
+| Feature | Operation |
 |---|---|
-| `workflows/package/zip-admission.feature` | Refuse five unsafe member layouts, four caller-limit settings and BZIP2 compression |
-| `workflows/package/xml-member-admission.feature` | Refuse internal DTD, UTF-16-with-BOM DTD and malformed XML inside a ZIP member |
-| `workflows/package/semantic-diff.feature` | Classify equivalent XML, changed/added binary members and an empty removed list |
-| `workflows/native/opc-graph.feature` | Direct part/relationship edits, rollback, content-type removal and type-only diff |
-| `workflows/native/opc-zip64.feature` | Bun bounded ZIP64 read/rewrite, count preflight, safe-integer refusal and caller entry limits |
+| `workflows/package/zip-admission.feature` | Reject unsafe member names, exceeded limits and BZIP2 compression |
+| `workflows/package/xml-member-admission.feature` | Reject DTD-bearing and malformed XML inside ZIP members |
+| `workflows/package/semantic-diff.feature` | Compare XML meaning and binary member changes |
+| `workflows/native/opc-graph.feature` | Edit parts, relationships and content types atomically |
+| `workflows/native/opc-zip64.feature` | Read and rewrite bounded ZIP64 archives |
 
-The package-admission inputs come from four Python native declarations with 14
-parameterised cases. Member order, duplicate names, payload bytes, compression
-method and limit values are specified. The resource input contains exactly
-10,000 spaces inside `<a>...</a>`; the four settings are `max_members=0`,
-`max_member_bytes=2`, `max_total_bytes=2` and `max_ratio=1`. These tests observe
-refusal, not allocations or network activity. The total-byte limit can refuse at
-the compressed-size precheck; the test does not establish that inflation began.
-The UTF-16 payload reproduces the
-source test's little-endian BOM bytes; other UTF-16 variants are untested here.
+## Admission
 
-The Python package guard reads XML from ZIP members, without requiring a complete
-OPC relationship/content-type graph. Its XML-member checks therefore differ from
-standalone lexical parsing and from opening a valid Office document. ZIP writers,
-archive repair and Office rendering are outside this profile.
+Admission checks ZIP members without requiring a complete OPC relationship graph.
+The inputs specify member order, duplicate names, payload bytes, compression
+method and caller limits. The resource-limit input contains exactly 10,000 spaces
+inside `<a>...</a>`; limits are `max_members=0`, `max_member_bytes=2`,
+`max_total_bytes=2` and `max_ratio=1`.
 
-Python semantic diff reports `a.xml` as equivalent for the tested namespace-prefix
-change and reports binary member deltas separately. Bun's `diffPackages` compares
-payload bytes and content types; its type-only scenario has no equivalent-XML
-assertion. Go's graph receipts track planned mutation deltas rather than comparing
-two arbitrary packages. These behaviours need distinct profiles and bindings.
+The XML-member examples include UTF-8 DTD and malformed inputs plus a UTF-16
+little-endian DTD input with a BOM. These checks establish rejection. They do not
+measure allocations or require decompression to begin before a size rejection.
+Archive repair is outside this operation.
 
-Go uses snapshot-bound graph plans and checks retained compressed streams and
-metadata. Bun's direct graph operations use synchronous transactions and compare
-untouched payloads. Similar refusal or preservation wording does not establish
-the same operation, input geometry, error taxonomy or assertion. The released
-ZIP64 feature explicitly names Bun and its safe-integer/error-code profile.
+## Comparison and editing
 
-`ledgers/consumers/*-package.json` records 30 Bun declarations (six partial,
-24 unmapped), 12 Go declarations (four partial, eight unmapped) and four Python
-declarations (mapped to these 14 cases). Source revisions and gaps are recorded;
-the Go revision is local and unpublished. Mapping rows never award execution credit.
-The central tests verify Gherkin expansion and exact source-matched member
-hashes, lengths and outcomes; consumers must execute their own bindings. Large
-allocation bounds, network-fetch isolation and general comparison/custody parity
-are untested by this batch.
+Semantic comparison classifies the tested namespace-prefix change as equivalent
+XML and reports changed, added and removed binary members separately. A payload
+and content-type comparison instead reports changed bytes, even if the XML is
+equivalent. Keep these two operations distinct.
+
+Graph editing changes parts, relationships or content types. Its mutation receipt
+describes that operation, not the comparison of two arbitrary packages. Successful
+edits must preserve unrelated members; failed transactions must leave the original
+package intact. Reopening an archive checks package integrity, not Office rendering.

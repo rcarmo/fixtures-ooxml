@@ -1,0 +1,195 @@
+{
+  "schemaVersion": 1,
+  "authority": "ECMA-376 specification and its normative references",
+  "documents": [
+    {
+      "id": "ecma-376-1-2016",
+      "assetId": "asset-7cccfd0ad0e2ef89316acece15e44a8a088d0603ce4bba4e7b0361b50d13a37d",
+      "path": "specs/ecma-376/part-1/ECMA-376-Part1-Fundamentals.pdf",
+      "sha256": "7cccfd0ad0e2ef89316acece15e44a8a088d0603ce4bba4e7b0361b50d13a37d",
+      "bytes": 35304993,
+      "kind": "specification",
+      "authority": "normative",
+      "part": 1,
+      "edition": "5",
+      "publication": "2016-10",
+      "verbatim": true,
+      "source": {
+        "repository": "https://github.com/rcarmo/go-ooxml",
+        "revision": "43eda6edfe45db20da5879ba332ec6a25d598efa",
+        "path": "docs/ECMA-376-Part1-Fundamentals.pdf",
+        "sha256": "7cccfd0ad0e2ef89316acece15e44a8a088d0603ce4bba4e7b0361b50d13a37d"
+      },
+      "publisher": {
+        "archive": "https://ecma-international.org/wp-content/uploads/ECMA-376-1_5th_edition_december_2016.zip",
+        "archiveSha256": "9d0bcad9cf06054785b03762fcfadbf6bab7e54a5f9d69434e34b7fd464d4129",
+        "member": "Ecma Office Open XML Part 1 - Fundamentals And Markup Language Reference.pdf",
+        "memberSha256": "7cccfd0ad0e2ef89316acece15e44a8a088d0603ce4bba4e7b0361b50d13a37d",
+        "verifiedAgainst": "official-download"
+      }
+    },
+    {
+      "id": "ecma-376-2-2021",
+      "assetId": "asset-18701071fe15f39389761f82512c70d2effbf22bd16dd034f2939797ff5f6147",
+      "path": "specs/ecma-376/part-2/ECMA-376-Part2-OpenPackagingConventions.pdf",
+      "sha256": "18701071fe15f39389761f82512c70d2effbf22bd16dd034f2939797ff5f6147",
+      "bytes": 2009726,
+      "kind": "specification",
+      "authority": "normative",
+      "part": 2,
+      "edition": "5",
+      "publication": "2021-12",
+      "verbatim": true,
+      "source": {
+        "repository": "https://github.com/rcarmo/go-ooxml",
+        "revision": "43eda6edfe45db20da5879ba332ec6a25d598efa",
+        "path": "docs/ECMA-376-Part2-OpenPackagingConventions.pdf",
+        "sha256": "18701071fe15f39389761f82512c70d2effbf22bd16dd034f2939797ff5f6147"
+      },
+      "publisher": {
+        "archive": "https://ecma-international.org/wp-content/uploads/ECMA-376-2_5th_edition_december_2021.zip",
+        "archiveSha256": "1d489dc491168ea1f9e9a59063acc8dd5f02b4ad1d21aa7ec19ba9a58d020c70",
+        "member": "Ecma Office Open XML Part 2 - Open Packaging Conventions.pdf",
+        "memberSha256": "18701071fe15f39389761f82512c70d2effbf22bd16dd034f2939797ff5f6147",
+        "verifiedAgainst": "official-download"
+      }
+    },
+    {
+      "id": "ecma-376-opc-extract",
+      "assetId": "asset-5d2b5a4faccd3bb297bfc6e23d0a99fe5ff069e44af4a936b5a3302819d2abc3",
+      "path": "specs/ecma-376/extracts/ECMA-376-Part2-OPC.md",
+      "sha256": "5d2b5a4faccd3bb297bfc6e23d0a99fe5ff069e44af4a936b5a3302819d2abc3",
+      "bytes": 159693,
+      "kind": "extract",
+      "authority": "informative",
+      "part": 2,
+      "edition": null,
+      "publication": null,
+      "verbatim": true,
+      "source": {
+        "repository": "https://github.com/rcarmo/go-ooxml",
+        "revision": "43eda6edfe45db20da5879ba332ec6a25d598efa",
+        "path": "docs/ECMA-376-Part2-OPC.md",
+        "sha256": "5d2b5a4faccd3bb297bfc6e23d0a99fe5ff069e44af4a936b5a3302819d2abc3"
+      },
+      "qualification": "Preserved original source bytes; extraction completeness, heading accuracy and clause applicability require verification against the full PDF"
+    },
+    {
+      "id": "ecma-376-wml-extract",
+      "assetId": "asset-161c170348706947229027f7fdf14ead4198839756b9148760bc3055df441e0b",
+      "path": "specs/ecma-376/extracts/ECMA-376-WML-Phase3.md",
+      "sha256": "161c170348706947229027f7fdf14ead4198839756b9148760bc3055df441e0b",
+      "bytes": 221926,
+      "kind": "extract",
+      "authority": "informative",
+      "part": 1,
+      "edition": null,
+      "publication": null,
+      "verbatim": true,
+      "source": {
+        "repository": "https://github.com/rcarmo/go-ooxml",
+        "revision": "43eda6edfe45db20da5879ba332ec6a25d598efa",
+        "path": "docs/ECMA-376-WML-Phase3.md",
+        "sha256": "161c170348706947229027f7fdf14ead4198839756b9148760bc3055df441e0b"
+      },
+      "qualification": "Preserved original source bytes; extraction completeness, heading accuracy and clause applicability require verification against the full PDF"
+    },
+    {
+      "id": "ecma-376-wml-notes",
+      "assetId": "asset-3cec18f50b7720d177bcd4ae4537cb5dc6a075d9072459e65d3872e54d923340",
+      "path": "specs/ecma-376/notes/ECMA-376-Phase3-Reference.md",
+      "sha256": "3cec18f50b7720d177bcd4ae4537cb5dc6a075d9072459e65d3872e54d923340",
+      "bytes": 11323,
+      "kind": "derived-note",
+      "authority": "informative",
+      "part": 1,
+      "edition": null,
+      "publication": null,
+      "verbatim": true,
+      "source": {
+        "repository": "https://github.com/rcarmo/go-ooxml",
+        "revision": "43eda6edfe45db20da5879ba332ec6a25d598efa",
+        "path": "docs/ECMA-376-Phase3-Reference.md",
+        "sha256": "3cec18f50b7720d177bcd4ae4537cb5dc6a075d9072459e65d3872e54d923340"
+      },
+      "qualification": "Preserved original source bytes; extraction completeness, heading accuracy and clause applicability require verification against the full PDF"
+    },
+    {
+      "id": "ecma-376-3-2015",
+      "assetId": "asset-3742ae2573fcf2eec6878ee345bf540541b77df47f09a57603851ca2d02dfa13",
+      "path": "specs/ecma-376/part-3/ECMA-376-Part3-MarkupCompatibility.pdf",
+      "sha256": "3742ae2573fcf2eec6878ee345bf540541b77df47f09a57603851ca2d02dfa13",
+      "bytes": 864652,
+      "kind": "specification",
+      "authority": "normative",
+      "part": 3,
+      "edition": "5",
+      "publication": "2015-12",
+      "verbatim": true,
+      "source": {
+        "kind": "publisher-download",
+        "url": "https://ecma-international.org/wp-content/uploads/ECMA-376-3_5th_edition_december_2015.zip",
+        "archiveSha256": "42294159fbbbe9393ccadac95b859d7729cc68d908898bcbe31034dda059daa8",
+        "member": "Ecma Office Open XML Part 3 - Markup Compatibility and Extensibility.pdf",
+        "sha256": "3742ae2573fcf2eec6878ee345bf540541b77df47f09a57603851ca2d02dfa13"
+      },
+      "publisher": {
+        "archive": "https://ecma-international.org/wp-content/uploads/ECMA-376-3_5th_edition_december_2015.zip",
+        "archiveSha256": "42294159fbbbe9393ccadac95b859d7729cc68d908898bcbe31034dda059daa8",
+        "member": "Ecma Office Open XML Part 3 - Markup Compatibility and Extensibility.pdf",
+        "memberSha256": "3742ae2573fcf2eec6878ee345bf540541b77df47f09a57603851ca2d02dfa13",
+        "verifiedAgainst": "official-download"
+      }
+    },
+    {
+      "id": "ecma-376-4-2016",
+      "assetId": "asset-753990eae4920e5c75ffca700be7ea73390cd9725530b756a3e68d33757354ee",
+      "path": "specs/ecma-376/part-4/ECMA-376-Part4-TransitionalMigration.pdf",
+      "sha256": "753990eae4920e5c75ffca700be7ea73390cd9725530b756a3e68d33757354ee",
+      "bytes": 10205576,
+      "kind": "specification",
+      "authority": "normative",
+      "part": 4,
+      "edition": "5",
+      "publication": "2016-10",
+      "verbatim": true,
+      "source": {
+        "kind": "publisher-download",
+        "url": "https://ecma-international.org/wp-content/uploads/ECMA-376-4_5th_edition_december_2016.zip",
+        "archiveSha256": "bd25da1109f73762356596918bf5ff8b74a1331642dba5f1c1d1dfc6bed34ecd",
+        "member": "Ecma Office Open XML Part 4 - Transitional Migration Features.pdf",
+        "sha256": "753990eae4920e5c75ffca700be7ea73390cd9725530b756a3e68d33757354ee"
+      },
+      "publisher": {
+        "archive": "https://ecma-international.org/wp-content/uploads/ECMA-376-4_5th_edition_december_2016.zip",
+        "archiveSha256": "bd25da1109f73762356596918bf5ff8b74a1331642dba5f1c1d1dfc6bed34ecd",
+        "member": "Ecma Office Open XML Part 4 - Transitional Migration Features.pdf",
+        "memberSha256": "753990eae4920e5c75ffca700be7ea73390cd9725530b756a3e68d33757354ee",
+        "verifiedAgainst": "official-download"
+      }
+    }
+  ],
+  "excludedCopies": [
+    {
+      "sourceRevision": "ae1a55dc73a47c0a4fed94086669a9cbe561047c",
+      "sourcePath": "docs/ECMA-376-Part1-Fundamentals.pdf",
+      "sha256": "cae74c96ff4c9aaa2d08835720f5322043d23898293fec4766cff0be1fd02879",
+      "originalDocument": "ecma-376-1-2016",
+      "reason": "Whole-word Paper replaced with extended; altered bytes are not normative"
+    },
+    {
+      "sourceRevision": "ae1a55dc73a47c0a4fed94086669a9cbe561047c",
+      "sourcePath": "docs/ECMA-376-WML-Phase3.md",
+      "sha256": "fd4987ba24fe05f27b962e3a45757fe01297a8e3cab06689c5b058e8ccfa1219",
+      "originalDocument": "ecma-376-wml-extract",
+      "reason": "Two Paper Width strings replaced with extended Width; altered extraction excluded"
+    }
+  ],
+  "copyright": {
+    "holder": "Ecma International",
+    "policy": "https://ecma-international.org/policies/by-ipr/ecma-text-copyright-policy/",
+    "projectLicenseDoesNotApply": true
+  },
+  "missingParts": [],
+  "missingSchemaArchives": true
+}

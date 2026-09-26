@@ -1,7 +1,6 @@
 # Direct paragraph run formatting
 
-`workflows/docx/run-formatting.feature` defines four output cases and eleven
-refusal variants for paragraph-wide bold/italic changes. The operation applies
+`workflows/docx/run-formatting.feature` specifies paragraph-wide bold/italic changes. The operation applies
 only to supported direct text runs in one main-document paragraph, including a
 paragraph inside a table cell.
 
@@ -22,9 +21,5 @@ external settings refuse before mutation. All runs preflight before publication;
 serialization failure rolls the package back. Empty paragraphs have zero changed
 runs; nonempty formatting on self-closing empty runs is unsupported.
 
-Native tests additionally cover namespaces, UTF-16/BOM preservation, property
-ordering, no-op Boolean spellings, settings, stale handles and injected rollback.
-Those declaration assertions require separate mapping review. The central feature
-runs no editing code and awards no consumer coverage; Go/Python bindings have not
-been reviewed. Independent Word rendering, broad run-property schema validation,
-computed styles and other formatting APIs remain outside the tested scope.
+Computed styles, general run-property validation and rendered appearance require
+separate checks.

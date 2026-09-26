@@ -1,8 +1,7 @@
 # Existing paragraph style selection
 
 `workflows/docx/paragraph-style.feature` specifies direct style assignment and
-removal for one supported main-document paragraph. Five saved outcomes and
-fourteen refusal variants cover selection, replacement, removal and exact no-ops.
+removal for one supported main-document paragraph.
 
 The input is an existing paragraph style ID or null. A non-null ID requires one
 internal styles relationship, the Word styles content type, a valid styles root
@@ -23,10 +22,5 @@ no partial model update is committed on failure.
 
 Protected settings, unsupported text/field/revision topology, mixed lexical
 content, duplicate/misplaced paragraph properties, wrong namespaces and stale
-handles refuse. Native tests additionally cover aliases/default namespaces,
-UTF-16/BOM, empty/self-closing nodes, fresh spans, table cells and disk readback.
-Those extra native assertions require separate reconciliation.
-
-This is bounded direct formatting, not style authoring, effective-style
-calculation, broad paragraph layout editing or an independent Office rendering
-check. Other consumers have no binding assigned by this central contract.
+handles refuse. Style creation, effective-style calculation and page layout are
+separate operations.

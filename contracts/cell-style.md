@@ -1,16 +1,16 @@
 # Existing-cell style selection
 
-The [shared feature](../workflows/xlsx/cell-style.feature) specifies selecting an
-existing cellXf index on an existing worksheet cell. Explicit zero writes a direct
-index; removal deletes only that attribute and can expose row/column defaults.
-Neither operation creates cells or definitions or calculates effective formatting.
+The [feature](../workflows/xlsx/cell-style.feature) selects an existing cellXf
+index on an existing worksheet cell. Explicit zero writes `s="0"`; removal deletes
+that attribute and can expose row or column defaults. Neither operation creates
+cells or style definitions.
 
-Save/reopen must preserve values, formulas, caches, other worksheet XML and unrelated
-package parts. Numeric no-ops retain the exact archive. Selection validates the
-styles relationship/MIME/root, relevant collection counts and selected font/base/
-custom-number-format dependencies. Refusals preserve bytes and cached cell state.
+Numeric selection validates the styles relationship, content type and selected
+font, fill, border, base-style and custom-number-format references. Protected or
+stale inputs, missing cells, ambiguous worksheet targets and invalid definitions
+are rejected before any change.
 
-The 9 selection and 18 refusal variants cover invalid inputs, protection, stale
-cached sources and two worksheet names aliasing the same part. Native bindings
-and per-consumer results are required for execution credit. Independent Excel
-rendering and calculation are outside this contract.
+Values, formulas, cached values and unrelated content stay unchanged. Numeric
+no-ops retain the original attribute spelling and archive bytes. The selected
+index or its absence must survive save/reopen. Style creation, effective-format
+calculation and spreadsheet rendering are separate operations.
