@@ -3000,6 +3000,21 @@
       "aliases": []
     },
     {
+      "id": "asset-58ef9d8fde58d0fb929c1adbf7360d909c3294add90054b22f9e08e67a415ade",
+      "path": "workflows/docx/run-formatting.feature",
+      "bytes": 1396,
+      "sha256": "58ef9d8fde58d0fb929c1adbf7360d909c3294add90054b22f9e08e67a415ade",
+      "role": "workflow",
+      "origins": [
+        {
+          "repository": "https://github.com/rcarmo/fixtures-ooxml",
+          "kind": "native-authored-contract",
+          "purpose": "Paragraph-wide direct run overrides; no text splitting or inherited-style evaluation"
+        }
+      ],
+      "aliases": []
+    },
+    {
       "id": "asset-53902e41953334f46fdd95c4984bfd478ff6f9fcec82536d1adbf9f044a2ae54",
       "path": "workflows/docx/tables.feature",
       "bytes": 3059,

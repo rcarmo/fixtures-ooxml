@@ -26,7 +26,8 @@
     "workflows/package/preservation.feature",
     "workflows/package/zip32.feature",
     "workflows/package/relationship-namespaces.feature",
-    "workflows/docx/tracked-workflow.feature"
+    "workflows/docx/tracked-workflow.feature",
+    "workflows/docx/run-formatting.feature"
   ],
   "executionCredit": "Only local executed assertions count; reports here do not run consumers.",
   "workflows": [
@@ -2579,6 +2580,56 @@
         "python": {
           "status": "planned",
           "evidence": "No equivalent workflow dispatcher binding reviewed"
+        }
+      }
+    },
+    {
+      "id": "@id-docx-direct-run-formatting",
+      "feature": "workflows/docx/run-formatting.feature",
+      "expandedCases": 4,
+      "factIds": [],
+      "expectedOutcomes": [
+        "reopening preserves the paragraph text and the enable direct properties",
+        "formatting changes only the main document part and retains unrelated properties",
+        "reopening preserves the paragraph text and the disable direct properties",
+        "reopening preserves the paragraph text and the remove direct properties",
+        "reopening preserves the paragraph text and the no-op direct properties"
+      ],
+      "consumers": {
+        "bun": {
+          "status": "planned",
+          "evidence": "New bounded direct-formatting binding; consumer validation separate"
+        },
+        "go": {
+          "status": "planned",
+          "evidence": "No equivalent consumer binding reviewed"
+        },
+        "python": {
+          "status": "planned",
+          "evidence": "No equivalent consumer binding reviewed"
+        }
+      }
+    },
+    {
+      "id": "@id-docx-direct-formatting-refusal",
+      "feature": "workflows/docx/run-formatting.feature",
+      "expandedCases": 11,
+      "factIds": [],
+      "expectedOutcomes": [
+        "formatting refuses before changing package bytes"
+      ],
+      "consumers": {
+        "bun": {
+          "status": "planned",
+          "evidence": "New bounded direct-formatting binding; consumer validation separate"
+        },
+        "go": {
+          "status": "planned",
+          "evidence": "No equivalent consumer binding reviewed"
+        },
+        "python": {
+          "status": "planned",
+          "evidence": "No equivalent consumer binding reviewed"
         }
       }
     }
