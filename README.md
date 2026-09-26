@@ -48,6 +48,15 @@ fixture metadata have been removed.
 fixture. The old observed alias stays `disputed`. No independent Office reopening
 or authoring certification has been performed.
 
+## Agent coordination
+
+Use `chat` with explicit `mode: "steer"` for release/pin corrections, scope
+changes, stop/hold requests, safety blockers and decisions needed to unblock a
+consumer. Routine progress uses `mode: "queue"`. Address local agents by `@alias`.
+Include the current commit/tag, requested action, responsible agent and superseded
+notice; recipients verify current state and acknowledge once. See the
+[coordination example](REFERENCE.md#priority-agent-communications).
+
 ## Changes and releases
 
 Do not modify data inside a consumer submodule. Propose a central change with

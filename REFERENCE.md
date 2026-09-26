@@ -65,6 +65,31 @@ When several tests exercise the same behaviour, map them to one scenario with
 explicit parameter variants. Distinct preconditions or conflicting outcomes need
 separate scenarios or a recorded issue. A test title alone is not an outcome.
 
+## Priority agent communications
+
+Priority coordination must steer the recipient's active work. Use an explicit
+mode rather than relying on a default:
+
+```js
+chat({
+  action: "send",
+  target_agent_name: "@ooxml-go",
+  mode: "steer",
+  content: "PRIORITY: current release <tag>/<commit>. Go owner: verify the new pin before further edits. Supersedes the earlier candidate-pin notice."
+});
+```
+
+Use steering for user scope changes, stop/hold instructions, release or pin
+corrections, safety blockers and decisions that unblock another agent. Use
+`mode: "queue"` only for routine updates that can wait. A queued progress report
+must not be relied on to halt unsafe work or correct a stale release pin.
+
+The receiver checks the current tag/ref or source of record, acknowledges that
+state once, and acts on the requested change. Delayed progress messages do not
+supersede newer instructions. Do not replay old blockers or repeatedly announce a
+resolved decision. Use `session_control` for session runtime operations; it does
+not replace the coordination message.
+
 ## Consumer pins and release checks
 
 Consumers use `references/fixtures-ooxml` as a submodule and pin the same annotated
