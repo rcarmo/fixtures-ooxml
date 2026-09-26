@@ -31,6 +31,8 @@ and the consumer release checks.
   revisions from committed single-target Word changes. [Direct run formatting](contracts/run-formatting.md)
   covers paragraph-wide bold/italic overrides without text or style-graph edits;
   [paragraph style selection](contracts/paragraph-style.md) uses existing definitions.
+  [Style authoring](contracts/style-authoring.md) adds named paragraph styles with
+  guarded base chains, preserving existing definitions and document text.
 - `workflows/native/`: additional format/package behaviour contracts. Their
   planned tag gives no consumer execution credit.
 - `ledgers/workflows.json`: expected outcomes, related facts and per-consumer

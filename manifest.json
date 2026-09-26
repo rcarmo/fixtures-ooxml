@@ -3030,6 +3030,21 @@
       "aliases": []
     },
     {
+      "id": "asset-d4d4224f70d7b18dc963a7bf6e2fd194cf64f5757652e1ce47df9f47ab32502e",
+      "path": "workflows/docx/style-authoring.feature",
+      "bytes": 1780,
+      "sha256": "d4d4224f70d7b18dc963a7bf6e2fd194cf64f5757652e1ce47df9f47ab32502e",
+      "role": "workflow",
+      "origins": [
+        {
+          "repository": "https://github.com/rcarmo/fixtures-ooxml",
+          "path": "workflows/docx/style-authoring.feature",
+          "basis": "Language-neutral named paragraph style authoring contract; native save/reopen and refusal assertions remain consumer-local"
+        }
+      ],
+      "aliases": []
+    },
+    {
       "id": "asset-53902e41953334f46fdd95c4984bfd478ff6f9fcec82536d1adbf9f044a2ae54",
       "path": "workflows/docx/tables.feature",
       "bytes": 3059,

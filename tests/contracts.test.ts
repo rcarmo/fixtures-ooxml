@@ -1,6 +1,6 @@
 import {test,expect} from 'bun:test';
 import {cases,verify,validateFixtureLayout,validateMutationContract} from '../scripts/verify.ts';
-test('all pinned references and contract links verify',async()=>{const r=await verify();expect(r.assets).toBe(141);expect(r.facts).toBeGreaterThan(130);expect(r.workflows).toBe(103);expect(r.cases).toBe(203);});
+test('all pinned references and contract links verify',async()=>{const r=await verify();expect(r.assets).toBe(142);expect(r.facts).toBeGreaterThan(130);expect(r.workflows).toBe(105);expect(r.cases).toBe(227);});
 test('official Gherkin compilation expands shared cases',async()=>{const p='workflows/mutation-safety.feature';const result=cases(p,await Bun.file(p).text());expect(result).toHaveLength(19);expect(new Set(result.map(r=>r.scenarioId)).size).toBe(8);});
 test('workflow identity is required',()=>{expect(()=>cases('bad.feature','Feature: Bad\n Scenario: unnamed\n  Given input\n')).toThrow();});
 test('canonical scenario IDs cannot be reused within a feature, including Rule blocks',()=>{
@@ -85,4 +85,8 @@ test('direct run formatting profile has four output policies and eleven refusal 
 
 test('paragraph style profile preserves five output policies and fourteen atomic refusal variants',async()=>{
  const p='workflows/docx/paragraph-style.feature',rows=cases(p,await Bun.file(p).text());expect(rows).toHaveLength(19);expect(rows.filter(r=>r.scenarioId==='@id-docx-paragraph-style-selection')).toHaveLength(5);expect(rows.filter(r=>r.scenarioId==='@id-docx-paragraph-style-refusal')).toHaveLength(14);
+});
+
+test('paragraph style authoring distinguishes new definitions and atomic refusals',async()=>{
+ const path='workflows/docx/style-authoring.feature',rows=cases(path,await Bun.file(path).text());expect(rows).toHaveLength(24);expect(rows.filter(r=>r.scenarioId==='@id-docx-paragraph-style-authoring')).toHaveLength(7);expect(rows.filter(r=>r.scenarioId==='@id-docx-paragraph-style-authoring-refusal')).toHaveLength(17);
 });

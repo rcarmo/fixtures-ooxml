@@ -28,7 +28,8 @@
     "workflows/package/relationship-namespaces.feature",
     "workflows/docx/tracked-workflow.feature",
     "workflows/docx/run-formatting.feature",
-    "workflows/docx/paragraph-style.feature"
+    "workflows/docx/paragraph-style.feature",
+    "workflows/docx/style-authoring.feature"
   ],
   "executionCredit": "Only local executed assertions count; reports here do not run consumers.",
   "workflows": [
@@ -2682,6 +2683,56 @@
         "python": {
           "status": "planned",
           "evidence": "No reviewed direct style-selection binding"
+        }
+      }
+    },
+    {
+      "id": "@id-docx-paragraph-style-authoring",
+      "feature": "workflows/docx/style-authoring.feature",
+      "expandedCases": 7,
+      "factIds": [],
+      "expectedOutcomes": [
+        "its saved definition and relationship are correct for plain",
+        "pre-existing style definitions and unrelated package bytes are preserved",
+        "the authored style can be selected and reopened",
+        "its saved definition and relationship are correct for based",
+        "its saved definition and relationship are correct for flags"
+      ],
+      "consumers": {
+        "bun": {
+          "status": "planned",
+          "evidence": "Native candidate binding requires canonical-path run; no cross-language execution credit"
+        },
+        "go": {
+          "status": "planned",
+          "evidence": "No equivalent style authoring binding reviewed"
+        },
+        "python": {
+          "status": "planned",
+          "evidence": "No equivalent style authoring binding reviewed"
+        }
+      }
+    },
+    {
+      "id": "@id-docx-paragraph-style-authoring-refusal",
+      "feature": "workflows/docx/style-authoring.feature",
+      "expandedCases": 17,
+      "factIds": [],
+      "expectedOutcomes": [
+        "style authoring refuses without changing archive bytes or handle state"
+      ],
+      "consumers": {
+        "bun": {
+          "status": "planned",
+          "evidence": "Native candidate binding requires canonical-path run; no cross-language execution credit"
+        },
+        "go": {
+          "status": "planned",
+          "evidence": "No equivalent style authoring binding reviewed"
+        },
+        "python": {
+          "status": "planned",
+          "evidence": "No equivalent style authoring binding reviewed"
         }
       }
     }
