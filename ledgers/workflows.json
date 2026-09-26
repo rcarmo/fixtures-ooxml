@@ -25,7 +25,8 @@
     "workflows/xlsx/creation.feature",
     "workflows/package/preservation.feature",
     "workflows/package/zip32.feature",
-    "workflows/package/relationship-namespaces.feature"
+    "workflows/package/relationship-namespaces.feature",
+    "workflows/docx/tracked-workflow.feature"
   ],
   "executionCredit": "Only local executed assertions count; reports here do not run consumers.",
   "workflows": [
@@ -2527,6 +2528,57 @@
         "python": {
           "status": "planned",
           "evidence": "No equivalent operation binding reviewed; creation/body editing are not existing-flag mutation"
+        }
+      }
+    },
+    {
+      "id": "@id-docx-track-changes-option-outcome",
+      "feature": "workflows/docx/tracked-workflow.feature",
+      "expandedCases": 5,
+      "factIds": [],
+      "expectedOutcomes": [
+        "the tracked workflow outcome is committed with 1 committed changes and 2 committed revisions",
+        "the tracked workflow source and unrelated members retain their bytes",
+        "the tracked workflow outcome is committed with 1 committed changes and 0 committed revisions",
+        "the tracked workflow outcome is committed with 0 committed changes and 0 committed revisions",
+        "the tracked workflow outcome is preview with 0 committed changes and 0 committed revisions",
+        "the tracked workflow outcome is committed with 1 committed changes and 1 committed revisions"
+      ],
+      "consumers": {
+        "bun": {
+          "status": "planned",
+          "evidence": "New single-target dispatcher binding requires native candidate validation"
+        },
+        "go": {
+          "status": "planned",
+          "evidence": "No equivalent workflow dispatcher binding reviewed"
+        },
+        "python": {
+          "status": "planned",
+          "evidence": "No equivalent workflow dispatcher binding reviewed"
+        }
+      }
+    },
+    {
+      "id": "@id-docx-workflow-tracked-refusal",
+      "feature": "workflows/docx/tracked-workflow.feature",
+      "expandedCases": 12,
+      "factIds": [],
+      "expectedOutcomes": [
+        "the tracked workflow refuses with zero committed revisions and unchanged files"
+      ],
+      "consumers": {
+        "bun": {
+          "status": "planned",
+          "evidence": "New single-target dispatcher binding requires native candidate validation"
+        },
+        "go": {
+          "status": "planned",
+          "evidence": "No equivalent workflow dispatcher binding reviewed"
+        },
+        "python": {
+          "status": "planned",
+          "evidence": "No equivalent workflow dispatcher binding reviewed"
         }
       }
     }

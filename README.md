@@ -27,6 +27,8 @@ and the consumer release checks.
 - `workflows/docx/`, `workflows/pptx/`, `workflows/xlsx/`: bounded text, creation,
   table and existing-comment contracts. See [native profiles](contracts/native-profiles.md)
   and [comment profiles](contracts/comment-profiles.md) for operation limits.
+  [Tracked workflow dispatch](contracts/tracked-workflow.md) separates preview
+  revisions from committed single-target Word changes.
 - `workflows/native/`: additional format/package behaviour contracts. Their
   planned tag gives no consumer execution credit.
 - `ledgers/workflows.json`: expected outcomes, related facts and per-consumer

@@ -3032,6 +3032,21 @@
       "aliases": []
     },
     {
+      "id": "asset-70c5251ca3f96b47d729d090db4fc89f11e962b6fabed1ee709e40eeffcd9bb5",
+      "path": "workflows/docx/tracked-workflow.feature",
+      "bytes": 1708,
+      "sha256": "70c5251ca3f96b47d729d090db4fc89f11e962b6fabed1ee709e40eeffcd9bb5",
+      "role": "workflow",
+      "origins": [
+        {
+          "repository": "https://github.com/rcarmo/fixtures-ooxml",
+          "kind": "native-authored-contract",
+          "purpose": "Bounded single-target tracked Word workflow; refines pre-existing docx-track-changes-option-outcome obligation, retains ID"
+        }
+      ],
+      "aliases": []
+    },
+    {
       "id": "asset-9fb2cc7a913cb48b5e7c983e6f942ebf71942840a15a0b62ee9119d6878a87f3",
       "path": "workflows/mutation-safety.feature",
       "bytes": 7234,

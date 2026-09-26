@@ -1,6 +1,6 @@
 import {test,expect} from 'bun:test';
 import {cases,verify,validateFixtureLayout,validateMutationContract} from '../scripts/verify.ts';
-test('all pinned references and contract links verify',async()=>{const r=await verify();expect(r.assets).toBe(138);expect(r.facts).toBeGreaterThan(130);expect(r.workflows).toBe(97);expect(r.cases).toBe(152);});
+test('all pinned references and contract links verify',async()=>{const r=await verify();expect(r.assets).toBe(139);expect(r.facts).toBeGreaterThan(130);expect(r.workflows).toBe(99);expect(r.cases).toBe(169);});
 test('official Gherkin compilation expands shared cases',async()=>{const p='workflows/mutation-safety.feature';const result=cases(p,await Bun.file(p).text());expect(result).toHaveLength(19);expect(new Set(result.map(r=>r.scenarioId)).size).toBe(8);});
 test('workflow identity is required',()=>{expect(()=>cases('bad.feature','Feature: Bad\n Scenario: unnamed\n  Given input\n')).toThrow();});
 test('canonical scenario IDs cannot be reused within a feature, including Rule blocks',()=>{
@@ -61,4 +61,18 @@ test('format and remaining package profiles compile62cases with19bounded comment
  const commentIds=new Set(cases('workflows/docx/comments.feature',await Bun.file('workflows/docx/comments.feature').text()).map(c=>c.scenarioId));
  const mapping=await Bun.file('ledgers/consumers/bun-comments.json').json();expect(mapping.mappings).toHaveLength(19);
  for(const row of mapping.mappings){expect(row.executionCredit).toBe(false);expect(row.coverage).toBe('partial');expect(row.gaps.length).toBeGreaterThan(0);expect(row.scenarioIds.every((id:string)=>commentIds.has(id))).toBe(true);}
+});
+
+test('tracked dispatcher retains the planned obligation ID with explicit outcome and refusal variants',async()=>{
+ const path='workflows/docx/tracked-workflow.feature',rows=cases(path,await Bun.file(path).text());expect(rows).toHaveLength(17);
+ expect(new Set(rows.map(c=>c.scenarioId))).toEqual(new Set(['@id-docx-track-changes-option-outcome','@id-docx-workflow-tracked-refusal']));
+ const outcomes=rows.filter(c=>c.scenarioId==='@id-docx-track-changes-option-outcome');expect(outcomes).toHaveLength(5);
+ expect(outcomes.map(c=>c.steps.find(s=>s.text.startsWith('the tracked workflow outcome'))!.text)).toEqual([
+  'the tracked workflow outcome is committed with 1 committed changes and 2 committed revisions',
+  'the tracked workflow outcome is committed with 1 committed changes and 0 committed revisions',
+  'the tracked workflow outcome is committed with 0 committed changes and 0 committed revisions',
+  'the tracked workflow outcome is preview with 0 committed changes and 0 committed revisions',
+  'the tracked workflow outcome is committed with 1 committed changes and 1 committed revisions',
+ ]);
+ expect(rows.filter(c=>c.scenarioId==='@id-docx-workflow-tracked-refusal')).toHaveLength(12);
 });
