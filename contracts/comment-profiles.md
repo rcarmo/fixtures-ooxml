@@ -25,9 +25,11 @@ extension metadata positionally. A `Done *bool` model field and a reply roundtri
 do not exercise this detached graph-inspection/transactional resolution contract.
 Python's `tests/test_word_comment_resolution.py` covers a different operation:
 resolving a reply updates its root thread, and missing paragraph IDs can use a
-commentsIds fallback. Bun changes only the selected entry and requires its
-existing final-paragraph association. The reply and fallback cases must not be
-mapped to Bun's per-entry/non-creating behaviour. A comments XML roundtrip,
+commentsIds fallback. Python chooses the first paragraph and can synthesise
+missing paragraph IDs, extension parts and entries. Bun changes only the selected
+entry and requires its existing final-paragraph association. The reply, fallback
+and metadata-creation cases must not be mapped to Bun's per-entry/non-creating
+behaviour. A comments XML roundtrip,
 comment-creation API or body-rewriting helper is also a different operation.
 Comment authoring/deletion, body rewriting, anchor validation/repair, modern
 identity metadata authoring and independent Office reopening are outside this
