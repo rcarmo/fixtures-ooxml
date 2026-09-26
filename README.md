@@ -35,6 +35,8 @@ and the consumer release checks.
   guarded base chains, preserving existing definitions and document text.
   [Positioned text boxes](contracts/text-box.md) append slide shapes with explicit
   geometry, preserving existing shapes and unrelated parts.
+  [Cell-style selection](contracts/cell-style.md) uses existing cellXfs without
+  changing values, formulas, caches or style definitions.
 - `workflows/native/`: additional format/package behaviour contracts. Their
   planned tag gives no consumer execution credit.
 - `ledgers/workflows.json`: expected outcomes, related facts and per-consumer

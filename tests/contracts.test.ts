@@ -1,6 +1,6 @@
 import {test,expect} from 'bun:test';
 import {cases,verify,validateFixtureLayout,validateMutationContract} from '../scripts/verify.ts';
-test('all pinned references and contract links verify',async()=>{const r=await verify();expect(r.assets).toBe(143);expect(r.facts).toBeGreaterThan(130);expect(r.workflows).toBe(107);expect(r.cases).toBe(250);});
+test('all pinned references and contract links verify',async()=>{const r=await verify();expect(r.assets).toBe(144);expect(r.facts).toBeGreaterThan(130);expect(r.workflows).toBe(109);expect(r.cases).toBe(277);});
 test('official Gherkin compilation expands shared cases',async()=>{const p='workflows/mutation-safety.feature';const result=cases(p,await Bun.file(p).text());expect(result).toHaveLength(19);expect(new Set(result.map(r=>r.scenarioId)).size).toBe(8);});
 test('workflow identity is required',()=>{expect(()=>cases('bad.feature','Feature: Bad\n Scenario: unnamed\n  Given input\n')).toThrow();});
 test('canonical scenario IDs cannot be reused within a feature, including Rule blocks',()=>{
@@ -93,4 +93,8 @@ test('paragraph style authoring distinguishes new definitions and atomic refusal
 
 test('positioned slide text boxes separate authoring outcomes from atomic refusals',async()=>{
  const path='workflows/pptx/text-box.feature',rows=cases(path,await Bun.file(path).text());expect(rows).toHaveLength(23);expect(rows.filter(r=>r.scenarioId==='@id-pptx-text-box-authoring')).toHaveLength(8);expect(rows.filter(r=>r.scenarioId==='@id-pptx-text-box-refusal')).toHaveLength(15);
+});
+
+test('cell-style contracts separate explicit zero, removal and unsafe cached inputs',async()=>{
+ const path='workflows/xlsx/cell-style.feature',rows=cases(path,await Bun.file(path).text());expect(rows).toHaveLength(27);expect(rows.filter(r=>r.scenarioId==='@id-xlsx-cell-style-selection')).toHaveLength(9);expect(rows.filter(r=>r.scenarioId==='@id-xlsx-cell-style-refusal')).toHaveLength(18);
 });

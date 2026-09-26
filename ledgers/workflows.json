@@ -30,7 +30,8 @@
     "workflows/docx/run-formatting.feature",
     "workflows/docx/paragraph-style.feature",
     "workflows/docx/style-authoring.feature",
-    "workflows/pptx/text-box.feature"
+    "workflows/pptx/text-box.feature",
+    "workflows/xlsx/cell-style.feature"
   ],
   "executionCredit": "Only local executed assertions count; reports here do not run consumers.",
   "workflows": [
@@ -2788,6 +2789,61 @@
         "python": {
           "status": "planned",
           "evidence": "No equivalent text-box authoring binding reviewed"
+        }
+      }
+    },
+    {
+      "id": "@id-xlsx-cell-style-selection",
+      "feature": "workflows/xlsx/cell-style.feature",
+      "expandedCases": 9,
+      "factIds": [],
+      "expectedOutcomes": [
+        "reopened cell style and change receipt match assign",
+        "values formulas caches and unrelated package parts retain exact custody",
+        "reopened cell style and change receipt match replace",
+        "reopened cell style and change receipt match explicit-zero",
+        "reopened cell style and change receipt match remove",
+        "reopened cell style and change receipt match no-op",
+        "reopened cell style and change receipt match absent-removal",
+        "reopened cell style and change receipt match formula",
+        "reopened cell style and change receipt match blank",
+        "reopened cell style and change receipt match aliased"
+      ],
+      "consumers": {
+        "bun": {
+          "status": "planned",
+          "evidence": "Native candidate binding requires canonical-path run; no cross-language execution credit"
+        },
+        "go": {
+          "status": "planned",
+          "evidence": "No equivalent cell style selection binding reviewed"
+        },
+        "python": {
+          "status": "planned",
+          "evidence": "No equivalent cell style selection binding reviewed"
+        }
+      }
+    },
+    {
+      "id": "@id-xlsx-cell-style-refusal",
+      "feature": "workflows/xlsx/cell-style.feature",
+      "expandedCases": 18,
+      "factIds": [],
+      "expectedOutcomes": [
+        "cell-style selection refuses without changing package bytes or cached cell state"
+      ],
+      "consumers": {
+        "bun": {
+          "status": "planned",
+          "evidence": "Native candidate binding requires canonical-path run; no cross-language execution credit"
+        },
+        "go": {
+          "status": "planned",
+          "evidence": "No equivalent cell style selection binding reviewed"
+        },
+        "python": {
+          "status": "planned",
+          "evidence": "No equivalent cell style selection binding reviewed"
         }
       }
     }

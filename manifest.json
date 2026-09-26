@@ -3250,6 +3250,21 @@
       "aliases": []
     },
     {
+      "id": "asset-2b8067d70864d75a3f709bb653c12d605777eb0c87ead6270eb2014ec0e4a6ca",
+      "path": "workflows/xlsx/cell-style.feature",
+      "bytes": 1647,
+      "sha256": "2b8067d70864d75a3f709bb653c12d605777eb0c87ead6270eb2014ec0e4a6ca",
+      "role": "workflow",
+      "origins": [
+        {
+          "repository": "https://github.com/rcarmo/fixtures-ooxml",
+          "path": "workflows/xlsx/cell-style.feature",
+          "basis": "Language-neutral existing-cell style selection and removal contract; native save/reopen and refusal assertions remain consumer-local"
+        }
+      ],
+      "aliases": []
+    },
+    {
       "id": "asset-bba1c6aee696e3ec9e7086c5a76f129690206915a8ad6e7596dbddef55711257",
       "path": "workflows/xlsx/creation.feature",
       "bytes": 2946,
