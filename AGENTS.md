@@ -6,7 +6,10 @@ It does not implement document editing or confer parity on a consumer.
 
 - Import committed source blobs only; retain their origin, revision, path,
   byte length and SHA-256. Never silently regenerate a fixture.
-- Keep historical packs byte-for-byte, including their original lifecycle tags.
+- Never change a published tag. Storage migrations receive a new distribution
+  seal; preserve fixture hashes and scenario identities across the migration.
+- Store fixtures once under fixtures/<format>/<scenario-group>/, regardless of
+  origin. Reuse stable manifest IDs across scenarios, never copies or symlinks.
 - Facts need evidence. Record disagreements; do not pick a value by source majority.
 - Common workflow contracts have stable IDs and expected observable outcomes.
   Per-consumer implementation status and execution evidence are separate.

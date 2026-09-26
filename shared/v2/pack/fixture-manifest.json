@@ -1,5 +1,5 @@
 {
-  "schemaVersion": 1,
+  "schemaVersion": 2,
   "contractRevision": "ooxml-shared-contracts-v2",
   "generator": {
     "kind": "historical-derived-fixtures",
@@ -9,7 +9,7 @@
   "fixtures": [
     {
       "id": "title-and-subtitle.pptx",
-      "path": "fixtures/title-and-subtitle.pptx",
+      "path": "fixtures/pptx/mutation-safety/title-and-subtitle-2aec94471f93.pptx",
       "sha256": "2aec94471f93c300d56ca4789106a974411085d1588f3424155362a06dd043f3",
       "bytes": 91493,
       "origin": {
@@ -109,11 +109,12 @@
         "ppt/tableStyles.xml": "0e7ac03251337ecbaf6c8ca13619db1caeda5c90c4e3210d45d6c3f5df4de103",
         "ppt/theme/theme1.xml": "4c3412087e8fa20cf5642f42e69f1e733881c28611a2bdd4622654ee313d214e",
         "ppt/viewProps.xml": "0dd9e6966af2b7baae65c67e106052babe84d6f4eda2946f07c69888cab51c8e"
-      }
+      },
+      "assetId": "fixture-2aec94471f93c300d56ca4789106a974411085d1588f3424155362a06dd043f3"
     },
     {
       "id": "present-placeholder.docx",
-      "path": "fixtures/present-placeholder.docx",
+      "path": "fixtures/docx/mutation-safety/present-placeholder-535910216e35.docx",
       "sha256": "535910216e3531e4f70959cccf83038f1c51febbf4a149f9f46abfbfa8667d90",
       "bytes": 377049,
       "origin": {
@@ -166,11 +167,12 @@
         "word/styles.xml": "70dd2f9b81a34e12bffca926c1e53fb9f10ef156bc7d2e003502e0c919326332",
         "word/theme/theme1.xml": "b2295d3198893d2c03f5e584c749a15751b798aefdcd9bee2889f13903d68cb2",
         "word/webSettings.xml": "ee07406206c299bd15efc79295c9a223911089ff30b81b89c17dd93064d33d58"
-      }
+      },
+      "assetId": "fixture-535910216e3531e4f70959cccf83038f1c51febbf4a149f9f46abfbfa8667d90"
     },
     {
       "id": "default-style.xlsx",
-      "path": "fixtures/default-style.xlsx",
+      "path": "fixtures/xlsx/mutation-safety/default-style-38c2ed936696.xlsx",
       "sha256": "38c2ed936696179d3b2359e9107ad2b8d62d71d69296f8f60bdfe1fe8f7f2439",
       "bytes": 18860,
       "origin": {
@@ -212,11 +214,12 @@
         "xl/theme/theme1.xml": "d15e8ebf78ef7b9720839d7ae8fdc81a7df5bc24706d8e137df61a5683c358d9",
         "xl/workbook.xml": "0118136ea9ff4b7a8178fc79b6a9a5fa285927dc238c79c67b418fdb505dd400",
         "xl/worksheets/sheet1.xml": "a3e06f53409c8176305d5fcfa9a7870d69fc52a04de629a93f5227d8db110a8c"
-      }
+      },
+      "assetId": "fixture-38c2ed936696179d3b2359e9107ad2b8d62d71d69296f8f60bdfe1fe8f7f2439"
     },
     {
       "id": "cross-sheet-cache.xlsx",
-      "path": "fixtures/cross-sheet-cache.xlsx",
+      "path": "fixtures/xlsx/mutation-safety/cross-sheet-cache-8ba5708d5030.xlsx",
       "sha256": "8ba5708d5030adf93a4f7e4ae466563a1b66341067a200a6cb9b782484dcb5b1",
       "bytes": 20055,
       "origin": {
@@ -263,7 +266,9 @@
         "xl/workbook.xml": "3fac8ac4c7ec6c13cfc1660513c3315145ef20d0fee37f5e17e1eb5e1f927b6e",
         "xl/worksheets/sheet1.xml": "63841d43a2b6686e56b50601bed72c1d007ad52d5d844a0ddc56bac7ba8b3a97",
         "xl/worksheets/sheet2.xml": "636912335c42b3ee0516632ffdf446441a650942364b3786ea125d41ecd0aa64"
-      }
+      },
+      "assetId": "fixture-8ba5708d5030adf93a4f7e4ae466563a1b66341067a200a6cb9b782484dcb5b1"
     }
-  ]
+  ],
+  "pathBase": "repository-root"
 }

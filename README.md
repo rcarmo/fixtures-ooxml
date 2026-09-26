@@ -9,14 +9,20 @@ before testing; missing data is an error, never a reason to generate replacement
 
 - `facts/`: typed MIME, namespace, relationship and other constant values with
   evidence IDs. `observed`, `specified` and `disputed` are distinct states.
-- `fixtures/`: origin-qualified document packages and generated corpus snapshots.
-- `shared/v2/pack/`: shared mutation Gherkin, four fixtures, per-member custody
-  hashes and expanded stable case identities.
+- `fixtures/<format>/<scenario-group>/`: reusable fixture files, with exactly one
+  physical copy per SHA-256. Groups include `docx/comments`, `pptx/notes`,
+  `xlsx/formulas` and format-specific `mutation-safety` groups.
+- `shared/v2/pack/`: shared mutation Gherkin, references to four canonical fixture
+  IDs, per-member custody hashes and expanded stable case identities. No fixture
+  bytes are stored here.
 - `workflows/native/`: additional format/package behaviour contracts. Their
   planned tag gives no consumer execution credit.
 - `ledgers/workflows.json`: expected outcomes, related facts and per-consumer
   mapping state. Historical reported results are not fresh execution evidence.
-- `manifest.json`: path, byte length, SHA-256 and origin for every imported asset.
+- `manifest.json`: stable ID, path, format, scenario group, byte length, SHA-256
+  and all origins for each unique asset. Historical path aliases are metadata only.
+- `ledgers/fixture-groups.json`: primary group membership and reviewed links to
+  scenarios. Multiple scenarios may reuse a fixture ID without copying its file.
 - `notices/`: required original licence texts. Fixture provenance is retained.
 
 ## Validate
@@ -27,10 +33,12 @@ links and reference-only contents. Consumers run their own native operations and
 save/reopen assertions. A shared contract or another language's result does not
 establish implementation parity, rendered fidelity or calculation correctness.
 
-The code-free distribution `fixtures-ooxml-v0.1.0` retains the prior mutation
-pack's fixture bytes, feature text and stable case identities. Its new seal omits
-external generator/compiler sources and diagnostic code references. The historical
-whole-pack seal is provenance only; consumers must verify this distribution's seal.
+The schema-2 distribution `fixtures-ooxml-v0.2.0` deduplicates the previous 154
+fixture copies into 115 unique files. Consumers look up `fixture-<full-SHA-256>`
+IDs and use the manifest path; they must not construct paths from a producer name
+or create compatibility folders. Shared fixture paths are repository-relative.
+Feature text, scenario IDs and fixture bytes are unchanged; the distribution seal
+changes because the metadata and storage layout changed.
 
 `ContentTypeCommentsExtendedSpecified` records vendor metadata matching the pinned
 fixture. The old observed alias stays `disputed`. No independent Office reopening

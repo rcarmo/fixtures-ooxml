@@ -5,7 +5,7 @@ Each imported document/XML/media asset retains its recorded origin and licence;
 the root licence does not replace those terms.
 
 `manifest.json` records original repository, revision/path and exact bytes.
-`notices/` and `shared/v2/pack/notices/` retain the original required notices for
+`notices/` retains the deduplicated original required notices for
 fixture-producing libraries. These notices name their authors and projects as
 required; no external library source or external test implementation is included.
 
