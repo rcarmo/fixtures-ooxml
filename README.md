@@ -4,6 +4,8 @@ Shared behaviour and integration references for the Bun, Go and Python OOXML
 implementations. Consumers pin this repository as `references/fixtures-ooxml`
 using the same immutable annotated tag and commit. Initialise recursive submodules
 before testing; missing data is an error, never a reason to generate replacements.
+[REFERENCE.md](REFERENCE.md) defines fixture IDs, schema versions, coverage states
+and the consumer release checks.
 
 ## Contents
 
@@ -29,7 +31,7 @@ before testing; missing data is an error, never a reason to generate replacement
 
 Run `bun install --frozen-lockfile`, `bun run check` and `bun test`.
 The verifier checks hashes, unique IDs, compiled Gherkin case counts, fact evidence
-links and reference-only contents. Consumers run their own native operations and
+links, format/scenario grouping and duplicate-hash rejection. Consumers run their own native operations and
 save/reopen assertions. A shared contract or another language's result does not
 establish implementation parity, rendered fidelity or calculation correctness.
 
