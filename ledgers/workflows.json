@@ -1,0 +1,1057 @@
+{
+  "schemaVersion": 1,
+  "features": [
+    "shared/v2/pack/features/mutation-safety.feature",
+    "workflows/native/docx-story.feature",
+    "workflows/native/docx-revisions.feature",
+    "workflows/native/docx-redline.feature",
+    "workflows/native/opc-graph.feature",
+    "workflows/native/opc-zip64.feature",
+    "workflows/native/pptx-text.feature",
+    "workflows/native/xlsx-cells.feature",
+    "workflows/native/xlsx-cache-boundaries.feature"
+  ],
+  "executionCredit": "Only local executed assertions count; reports here do not run consumers.",
+  "workflows": [
+    {
+      "id": "@id-pptx-dry-run-no-mutation",
+      "feature": "shared/v2/pack/features/mutation-safety.feature",
+      "expandedCases": 3,
+      "factIds": [
+        "NSPresentationML",
+        "ContentTypePresentation"
+      ],
+      "expectedOutcomes": [
+        "committed change count is 0"
+      ],
+      "consumers": {
+        "bun": {
+          "status": "implemented",
+          "evidence": "consumer-reported:240 native tests;114 total implemented Gherkin cases;19 shared cases at prior checkpoint"
+        },
+        "python": {
+          "status": "implemented",
+          "evidence": "consumer-reported:19 shared cases/159 steps direct-server-call"
+        },
+        "go": {
+          "status": "planned",
+          "evidence": "fixture verification and one direct-native cache outcome only; formal shared runner not complete"
+        }
+      }
+    },
+    {
+      "id": "@id-docx-dry-run-no-mutation",
+      "feature": "shared/v2/pack/features/mutation-safety.feature",
+      "expandedCases": 3,
+      "factIds": [
+        "NSWordprocessingML",
+        "ContentTypeWordDocument"
+      ],
+      "expectedOutcomes": [
+        "committed change count is 0"
+      ],
+      "consumers": {
+        "bun": {
+          "status": "implemented",
+          "evidence": "consumer-reported:240 native tests;114 total implemented Gherkin cases;19 shared cases at prior checkpoint"
+        },
+        "python": {
+          "status": "implemented",
+          "evidence": "consumer-reported:19 shared cases/159 steps direct-server-call"
+        },
+        "go": {
+          "status": "planned",
+          "evidence": "fixture verification and one direct-native cache outcome only; formal shared runner not complete"
+        }
+      }
+    },
+    {
+      "id": "@id-xlsx-dry-run-no-mutation",
+      "feature": "shared/v2/pack/features/mutation-safety.feature",
+      "expandedCases": 3,
+      "factIds": [
+        "NSSpreadsheetML",
+        "ContentTypeWorkbook"
+      ],
+      "expectedOutcomes": [
+        "committed change count is 0"
+      ],
+      "consumers": {
+        "bun": {
+          "status": "implemented",
+          "evidence": "consumer-reported:240 native tests;114 total implemented Gherkin cases;19 shared cases at prior checkpoint"
+        },
+        "python": {
+          "status": "implemented",
+          "evidence": "consumer-reported:19 shared cases/159 steps direct-server-call"
+        },
+        "go": {
+          "status": "planned",
+          "evidence": "fixture verification and one direct-native cache outcome only; formal shared runner not complete"
+        }
+      }
+    },
+    {
+      "id": "@id-xlsx-strict-batch-atomicity",
+      "feature": "shared/v2/pack/features/mutation-safety.feature",
+      "expandedCases": 3,
+      "factIds": [
+        "NSSpreadsheetML",
+        "ContentTypeWorkbook"
+      ],
+      "expectedOutcomes": [
+        "the operation is refused for unmatched target \"Missing!B1\"",
+        "committed change count is 0"
+      ],
+      "consumers": {
+        "bun": {
+          "status": "implemented",
+          "evidence": "consumer-reported:240 native tests;114 total implemented Gherkin cases;19 shared cases at prior checkpoint"
+        },
+        "python": {
+          "status": "implemented",
+          "evidence": "consumer-reported:19 shared cases/159 steps direct-server-call"
+        },
+        "go": {
+          "status": "planned",
+          "evidence": "fixture verification and one direct-native cache outcome only; formal shared runner not complete"
+        }
+      }
+    },
+    {
+      "id": "@id-docx-strict-batch-per-target-results",
+      "feature": "shared/v2/pack/features/mutation-safety.feature",
+      "expandedCases": 3,
+      "factIds": [
+        "NSWordprocessingML",
+        "ContentTypeWordDocument"
+      ],
+      "expectedOutcomes": [
+        "the operation is refused for unmatched target \"<Missing>\"",
+        "committed change count is 0"
+      ],
+      "consumers": {
+        "bun": {
+          "status": "implemented",
+          "evidence": "consumer-reported:240 native tests;114 total implemented Gherkin cases;19 shared cases at prior checkpoint"
+        },
+        "python": {
+          "status": "implemented",
+          "evidence": "consumer-reported:19 shared cases/159 steps direct-server-call"
+        },
+        "go": {
+          "status": "planned",
+          "evidence": "fixture verification and one direct-native cache outcome only; formal shared runner not complete"
+        }
+      }
+    },
+    {
+      "id": "@id-pptx-batch-output-accumulates",
+      "feature": "shared/v2/pack/features/mutation-safety.feature",
+      "expandedCases": 2,
+      "factIds": [
+        "NSPresentationML",
+        "ContentTypePresentation"
+      ],
+      "expectedOutcomes": [
+        "committed change count is 2"
+      ],
+      "consumers": {
+        "bun": {
+          "status": "implemented",
+          "evidence": "consumer-reported:240 native tests;114 total implemented Gherkin cases;19 shared cases at prior checkpoint"
+        },
+        "python": {
+          "status": "implemented",
+          "evidence": "consumer-reported:19 shared cases/159 steps direct-server-call"
+        },
+        "go": {
+          "status": "planned",
+          "evidence": "fixture verification and one direct-native cache outcome only; formal shared runner not complete"
+        }
+      }
+    },
+    {
+      "id": "@id-xlsx-style-dependency-closure",
+      "feature": "shared/v2/pack/features/mutation-safety.feature",
+      "expandedCases": 1,
+      "factIds": [
+        "NSSpreadsheetML",
+        "ContentTypeWorkbook"
+      ],
+      "expectedOutcomes": [
+        "committed change count is 1"
+      ],
+      "consumers": {
+        "bun": {
+          "status": "implemented",
+          "evidence": "consumer-reported:240 native tests;114 total implemented Gherkin cases;19 shared cases at prior checkpoint"
+        },
+        "python": {
+          "status": "implemented",
+          "evidence": "consumer-reported:19 shared cases/159 steps direct-server-call"
+        },
+        "go": {
+          "status": "planned",
+          "evidence": "fixture verification and one direct-native cache outcome only; formal shared runner not complete"
+        }
+      }
+    },
+    {
+      "id": "@id-xlsx-cross-sheet-cache-invalidation",
+      "feature": "shared/v2/pack/features/mutation-safety.feature",
+      "expandedCases": 1,
+      "factIds": [
+        "NSSpreadsheetML",
+        "ContentTypeWorkbook"
+      ],
+      "expectedOutcomes": [
+        "fixture \"cross-sheet-cache.xlsx\" verified against the fixture manifest",
+        "calculation policy is \"invalidate-without-recalculation\"",
+        "committed change count is 1",
+        "the destination Calc!A1 cached value is absent or empty",
+        "a data-only read never returns the old cached value 2 as current"
+      ],
+      "consumers": {
+        "bun": {
+          "status": "implemented",
+          "evidence": "consumer-reported:240 native tests;114 total implemented Gherkin cases;19 shared cases at prior checkpoint"
+        },
+        "python": {
+          "status": "implemented",
+          "evidence": "consumer-reported:19 shared cases/159 steps direct-server-call"
+        },
+        "go": {
+          "status": "planned",
+          "evidence": "fixture verification and one direct-native cache outcome only; formal shared runner not complete"
+        }
+      }
+    },
+    {
+      "id": "@id-docx-story-parts",
+      "feature": "workflows/native/docx-story.feature",
+      "expandedCases": 1,
+      "factIds": [
+        "NSWordprocessingML",
+        "ContentTypeWordDocument"
+      ],
+      "expectedOutcomes": [
+        "DOCX story fixture \"synthetic-revisions\" is opened",
+        "DOCX story parts are listed",
+        "DOCX story parts equal:"
+      ],
+      "consumers": {
+        "bun": {
+          "status": "implemented",
+          "evidence": "Historical consumer acceptance; rerun required after migration"
+        },
+        "go": {
+          "status": "unmapped"
+        },
+        "python": {
+          "status": "unmapped"
+        }
+      }
+    },
+    {
+      "id": "@id-docx-story-views",
+      "feature": "workflows/native/docx-story.feature",
+      "expandedCases": 1,
+      "factIds": [
+        "NSWordprocessingML",
+        "ContentTypeWordDocument"
+      ],
+      "expectedOutcomes": [
+        "DOCX story fixture \"synthetic-revisions\" is opened",
+        "DOCX stories are inspected in \"current\" view",
+        "DOCX story \"word/document.xml\" paragraphs equal:",
+        "DOCX story \"word/header1.xml\" paragraphs equal:",
+        "DOCX story \"word/footnotes.xml\" paragraphs equal:",
+        "DOCX stories are inspected in \"original\" view",
+        "DOCX stories are inspected in \"all\" view"
+      ],
+      "consumers": {
+        "bun": {
+          "status": "implemented",
+          "evidence": "Historical consumer acceptance; rerun required after migration"
+        },
+        "go": {
+          "status": "unmapped"
+        },
+        "python": {
+          "status": "unmapped"
+        }
+      }
+    },
+    {
+      "id": "@id-docx-story-blind",
+      "feature": "workflows/native/docx-story.feature",
+      "expandedCases": 1,
+      "factIds": [
+        "NSWordprocessingML",
+        "ContentTypeWordDocument"
+      ],
+      "expectedOutcomes": [
+        "DOCX story fixture \"synthetic-blind\" is opened",
+        "DOCX story package bytes are remembered",
+        "DOCX stories are inspected in \"current\" view",
+        "DOCX blind regions equal:",
+        "DOCX story package bytes equal the remembered bytes"
+      ],
+      "consumers": {
+        "bun": {
+          "status": "implemented",
+          "evidence": "Historical consumer acceptance; rerun required after migration"
+        },
+        "go": {
+          "status": "unmapped"
+        },
+        "python": {
+          "status": "unmapped"
+        }
+      }
+    },
+    {
+      "id": "@id-docx-revisions-all-stories",
+      "feature": "workflows/native/docx-revisions.feature",
+      "expandedCases": 1,
+      "factIds": [
+        "NSWordprocessingML",
+        "ContentTypeWordDocument"
+      ],
+      "expectedOutcomes": [
+        "the synthetic DOCX revisions fixture \"all-stories\" is opened",
+        "the DOCX revision story texts for view \"current\" are",
+        "the DOCX revision story texts for view \"original\" are",
+        "all DOCX revisions are accepted",
+        "the DOCX revision package is saved and reopened",
+        "the DOCX changed parts are",
+        "the DOCX revision count is 0",
+        "the DOCX revision story texts for view \"all\" are"
+      ],
+      "consumers": {
+        "bun": {
+          "status": "implemented",
+          "evidence": "Historical consumer acceptance; rerun required after migration"
+        },
+        "go": {
+          "status": "unmapped"
+        },
+        "python": {
+          "status": "unmapped"
+        }
+      }
+    },
+    {
+      "id": "@id-docx-revisions-rollback",
+      "feature": "workflows/native/docx-revisions.feature",
+      "expandedCases": 1,
+      "factIds": [
+        "NSWordprocessingML",
+        "ContentTypeWordDocument"
+      ],
+      "expectedOutcomes": [
+        "the synthetic DOCX revisions fixture \"rollback-unsupported\" is opened",
+        "the current DOCX revision bytes are remembered",
+        "the DOCX revision story texts for view \"current\" are",
+        "the DOCX revision story texts for view \"original\" are",
+        "DOCX revisions are accepted for parts",
+        "the DOCX revision refusal code equals \"docx-revisions-unsupported\"",
+        "the DOCX revision refusal mentions \"word/footer2.xml\"",
+        "the DOCX revision refusal mentions \"format\"",
+        "the DOCX revision saved bytes equal the remembered bytes",
+        "the DOCX revision count is 2"
+      ],
+      "consumers": {
+        "bun": {
+          "status": "implemented",
+          "evidence": "Historical consumer acceptance; rerun required after migration"
+        },
+        "go": {
+          "status": "unmapped"
+        },
+        "python": {
+          "status": "unmapped"
+        }
+      }
+    },
+    {
+      "id": "@id-docx-revisions-empty-deletion",
+      "feature": "workflows/native/docx-revisions.feature",
+      "expandedCases": 1,
+      "factIds": [
+        "NSWordprocessingML",
+        "ContentTypeWordDocument"
+      ],
+      "expectedOutcomes": [
+        "the synthetic DOCX revisions fixture \"empty-deletion\" is opened",
+        "all DOCX revisions are rejected",
+        "the DOCX revision package is saved and reopened",
+        "the DOCX revision count is 0",
+        "the DOCX revision story texts for view \"all\" are:"
+      ],
+      "consumers": {
+        "bun": {
+          "status": "implemented",
+          "evidence": "Historical consumer acceptance; rerun required after migration"
+        },
+        "go": {
+          "status": "unmapped"
+        },
+        "python": {
+          "status": "unmapped"
+        }
+      }
+    },
+    {
+      "id": "@id-docx-revisions-protected",
+      "feature": "workflows/native/docx-revisions.feature",
+      "expandedCases": 1,
+      "factIds": [
+        "NSWordprocessingML",
+        "ContentTypeWordDocument"
+      ],
+      "expectedOutcomes": [
+        "the synthetic DOCX revisions fixture \"protected\" is opened",
+        "the current DOCX revision bytes are remembered",
+        "all DOCX revisions are accepted",
+        "the DOCX revision refusal code equals \"docx-revisions-protected\"",
+        "the DOCX revision refusal mentions \"documentProtection\"",
+        "the DOCX revision saved bytes equal the remembered bytes",
+        "the DOCX revision count is 2"
+      ],
+      "consumers": {
+        "bun": {
+          "status": "implemented",
+          "evidence": "Historical consumer acceptance; rerun required after migration"
+        },
+        "go": {
+          "status": "unmapped"
+        },
+        "python": {
+          "status": "unmapped"
+        }
+      }
+    },
+    {
+      "id": "@id-docx-tracked-replace-roundtrip",
+      "feature": "workflows/native/docx-redline.feature",
+      "expandedCases": 1,
+      "factIds": [
+        "NSWordprocessingML",
+        "ContentTypeWordDocument"
+      ],
+      "expectedOutcomes": [
+        "a native Word package with a bold fragmented payment phrase",
+        "that phrase is replaced as tracked changes with an explicit author and date",
+        "reopening exposes the original and current text in their review views",
+        "accepting yields the revised text while rejecting restores the original text",
+        "the starting run formatting and unrelated part bytes survive resolution"
+      ],
+      "consumers": {
+        "bun": {
+          "status": "implemented",
+          "evidence": "Historical consumer acceptance; rerun required after migration"
+        },
+        "go": {
+          "status": "unmapped"
+        },
+        "python": {
+          "status": "unmapped"
+        }
+      }
+    },
+    {
+      "id": "@id-docx-tracked-replace-refusal",
+      "feature": "workflows/native/docx-redline.feature",
+      "expandedCases": 5,
+      "factIds": [
+        "NSWordprocessingML",
+        "ContentTypeWordDocument"
+      ],
+      "expectedOutcomes": [
+        "a native Word tracked-edit refusal case ambiguous",
+        "the tracked replacement is attempted",
+        "it refuses with a typed error and preserves the original archive bytes",
+        "a native Word tracked-edit refusal case drawing",
+        "a native Word tracked-edit refusal case existing",
+        "a native Word tracked-edit refusal case protected",
+        "a native Word tracked-edit refusal case bad-date"
+      ],
+      "consumers": {
+        "bun": {
+          "status": "implemented",
+          "evidence": "Historical consumer acceptance; rerun required after migration"
+        },
+        "go": {
+          "status": "unmapped"
+        },
+        "python": {
+          "status": "unmapped"
+        }
+      }
+    },
+    {
+      "id": "@id-opc-add-related-part",
+      "feature": "workflows/native/opc-graph.feature",
+      "expandedCases": 1,
+      "factIds": [],
+      "expectedOutcomes": [
+        "the shared DOCX package for graph editing",
+        "an opaque part and internal root relationship are added",
+        "the saved package reopens with the new part and its exact content type",
+        "unrelated original payloads retain their exact bytes"
+      ],
+      "consumers": {
+        "bun": {
+          "status": "implemented",
+          "evidence": "Historical consumer acceptance; rerun required after migration"
+        },
+        "go": {
+          "status": "unmapped"
+        },
+        "python": {
+          "status": "unmapped"
+        }
+      }
+    },
+    {
+      "id": "@id-opc-graph-rollback",
+      "feature": "workflows/native/opc-graph.feature",
+      "expandedCases": 1,
+      "factIds": [],
+      "expectedOutcomes": [
+        "the shared DOCX package with an additional related opaque part",
+        "removal of the referenced part is attempted",
+        "graph editing refuses with code \"opc-part-referenced\"",
+        "the package bytes are unchanged after the refusal"
+      ],
+      "consumers": {
+        "bun": {
+          "status": "implemented",
+          "evidence": "Historical consumer acceptance; rerun required after migration"
+        },
+        "go": {
+          "status": "unmapped"
+        },
+        "python": {
+          "status": "unmapped"
+        }
+      }
+    },
+    {
+      "id": "@id-opc-remove-related-part",
+      "feature": "workflows/native/opc-graph.feature",
+      "expandedCases": 1,
+      "factIds": [],
+      "expectedOutcomes": [
+        "the shared DOCX package with an additional related opaque part",
+        "its unreferenced root relationship and part are removed",
+        "the saved package no longer contains the part or its content-type override",
+        "all retained relationship targets resolve"
+      ],
+      "consumers": {
+        "bun": {
+          "status": "implemented",
+          "evidence": "Historical consumer acceptance; rerun required after migration"
+        },
+        "go": {
+          "status": "unmapped"
+        },
+        "python": {
+          "status": "unmapped"
+        }
+      }
+    },
+    {
+      "id": "@id-opc-diff-content-type",
+      "feature": "workflows/native/opc-graph.feature",
+      "expandedCases": 1,
+      "factIds": [],
+      "expectedOutcomes": [
+        "the shared DOCX package for graph editing",
+        "only a part content type is changed",
+        "the package diff identifies the part despite identical payload hashes",
+        "the diff reports no unrelated additions or removals"
+      ],
+      "consumers": {
+        "bun": {
+          "status": "implemented",
+          "evidence": "Historical consumer acceptance; rerun required after migration"
+        },
+        "go": {
+          "status": "unmapped"
+        },
+        "python": {
+          "status": "unmapped"
+        }
+      }
+    },
+    {
+      "id": "@id-parity-zip64",
+      "feature": "workflows/native/opc-zip64.feature",
+      "expandedCases": 1,
+      "factIds": [],
+      "expectedOutcomes": [
+        "a ZIP64 archive with two native-written XML members",
+        "Bun reads it and rewrites a changed member with ZIP64 enabled",
+        "the changed member reopens with its new payload",
+        "the unrelated member retains its exact payload bytes"
+      ],
+      "consumers": {
+        "bun": {
+          "status": "implemented",
+          "evidence": "Historical consumer acceptance; rerun required after migration"
+        },
+        "go": {
+          "status": "unmapped"
+        },
+        "python": {
+          "status": "unmapped"
+        }
+      }
+    },
+    {
+      "id": "@id-zip64-preflight-count",
+      "feature": "workflows/native/opc-zip64.feature",
+      "expandedCases": 1,
+      "factIds": [],
+      "expectedOutcomes": [
+        "a ZIP64 archive declaring more entries than its directory can contain",
+        "Bun attempts bounded ZIP64 admission",
+        "admission refuses with code \"zip-structure-invalid\""
+      ],
+      "consumers": {
+        "bun": {
+          "status": "implemented",
+          "evidence": "Historical consumer acceptance; rerun required after migration"
+        },
+        "go": {
+          "status": "unmapped"
+        },
+        "python": {
+          "status": "unmapped"
+        }
+      }
+    },
+    {
+      "id": "@id-zip64-unsafe-offset",
+      "feature": "workflows/native/opc-zip64.feature",
+      "expandedCases": 1,
+      "factIds": [],
+      "expectedOutcomes": [
+        "a ZIP64 locator offset above the safe integer range",
+        "Bun attempts bounded ZIP64 admission",
+        "admission refuses with code \"zip-zip64-unsupported\""
+      ],
+      "consumers": {
+        "bun": {
+          "status": "implemented",
+          "evidence": "Historical consumer acceptance; rerun required after migration"
+        },
+        "go": {
+          "status": "unmapped"
+        },
+        "python": {
+          "status": "unmapped"
+        }
+      }
+    },
+    {
+      "id": "@id-zip64-resource-limit",
+      "feature": "workflows/native/opc-zip64.feature",
+      "expandedCases": 1,
+      "factIds": [],
+      "expectedOutcomes": [
+        "a valid ZIP64 archive with two entries and a one-entry budget",
+        "Bun attempts bounded ZIP64 admission",
+        "admission refuses with code \"zip-too-many-entries\""
+      ],
+      "consumers": {
+        "bun": {
+          "status": "implemented",
+          "evidence": "Historical consumer acceptance; rerun required after migration"
+        },
+        "go": {
+          "status": "unmapped"
+        },
+        "python": {
+          "status": "unmapped"
+        }
+      }
+    },
+    {
+      "id": "@id-pptx-order-notes-read",
+      "feature": "workflows/native/pptx-text.feature",
+      "expandedCases": 1,
+      "factIds": [
+        "NSPresentationML",
+        "ContentTypePresentation"
+      ],
+      "expectedOutcomes": [
+        "PPTX ordered notes fixtures are prepared",
+        "PPTX opens the reordered notes fixture and probes notes reads",
+        "PPTX keeps slide order, notes blank lines, and notes reads non-mutating without creating missing notes parts"
+      ],
+      "consumers": {
+        "bun": {
+          "status": "implemented",
+          "evidence": "Historical consumer acceptance; rerun required after migration"
+        },
+        "go": {
+          "status": "unmapped"
+        },
+        "python": {
+          "status": "unmapped"
+        }
+      }
+    },
+    {
+      "id": "@id-pptx-readable-unsupported-topology",
+      "feature": "workflows/native/pptx-text.feature",
+      "expandedCases": 1,
+      "factIds": [
+        "NSPresentationML",
+        "ContentTypePresentation"
+      ],
+      "expectedOutcomes": [
+        "PPTX line-break and field text fixture is prepared from a real template",
+        "PPTX inspects the paragraph text and attempts an anchored edit on that topology",
+        "PPTX exposes line breaks and field text faithfully and refuses the unsupported edit without mutation"
+      ],
+      "consumers": {
+        "bun": {
+          "status": "implemented",
+          "evidence": "Historical consumer acceptance; rerun required after migration"
+        },
+        "go": {
+          "status": "unmapped"
+        },
+        "python": {
+          "status": "unmapped"
+        }
+      }
+    },
+    {
+      "id": "@id-pptx-cross-run-replace",
+      "feature": "workflows/native/pptx-text.feature",
+      "expandedCases": 1,
+      "factIds": [
+        "NSPresentationML",
+        "ContentTypePresentation"
+      ],
+      "expectedOutcomes": [
+        "PPTX fragmented title fixture is prepared from a real template and an untouched ZIP member",
+        "PPTX replaces anchored cross-run text and saves then reopens the package",
+        "PPTX preserves the replacement text, the starting run formatting, and unrelated ZIP member bytes"
+      ],
+      "consumers": {
+        "bun": {
+          "status": "implemented",
+          "evidence": "Historical consumer acceptance; rerun required after migration"
+        },
+        "go": {
+          "status": "unmapped"
+        },
+        "python": {
+          "status": "unmapped"
+        }
+      }
+    },
+    {
+      "id": "@id-pptx-stale-anchor-refusal",
+      "feature": "workflows/native/pptx-text.feature",
+      "expandedCases": 1,
+      "factIds": [
+        "NSPresentationML",
+        "ContentTypePresentation"
+      ],
+      "expectedOutcomes": [
+        "PPTX stale-anchor fixture is prepared from a real template",
+        "PPTX replaces anchored text once and retries with the stale anchor",
+        "PPTX refuses the stale anchor and keeps the post-success bytes unchanged"
+      ],
+      "consumers": {
+        "bun": {
+          "status": "implemented",
+          "evidence": "Historical consumer acceptance; rerun required after migration"
+        },
+        "go": {
+          "status": "unmapped"
+        },
+        "python": {
+          "status": "unmapped"
+        }
+      }
+    },
+    {
+      "id": "@id-xlsx-read-rel-linked-shared-strings",
+      "feature": "workflows/native/xlsx-cells.feature",
+      "expandedCases": 1,
+      "factIds": [
+        "NSSpreadsheetML",
+        "ContentTypeWorkbook"
+      ],
+      "expectedOutcomes": [
+        "a synthetic two-sheet XLSX fixture with rel-linked shared strings, numbers, booleans and cached formulas",
+        "I open the workbook through the XLSX reader",
+        "the workbook sheetnames follow workbook relationships",
+        "cell reads include shared strings, numbers, booleans and cached formulas across worksheets"
+      ],
+      "consumers": {
+        "bun": {
+          "status": "implemented",
+          "evidence": "Historical consumer acceptance; rerun required after migration"
+        },
+        "go": {
+          "status": "unmapped"
+        },
+        "python": {
+          "status": "unmapped"
+        }
+      }
+    },
+    {
+      "id": "@id-xlsx-preserve-styled-cell-edit",
+      "feature": "workflows/native/xlsx-cells.feature",
+      "expandedCases": 1,
+      "factIds": [
+        "NSSpreadsheetML",
+        "ContentTypeWorkbook"
+      ],
+      "expectedOutcomes": [
+        "the go-ooxml formatting workbook fixture",
+        "I change the styled cell A2 text to \"Elizabeth Lavenza\" and save and reopen the workbook",
+        "the reopened cell keeps its style attributes and new value",
+        "unrelated ZIP parts still match the original bytes"
+      ],
+      "consumers": {
+        "bun": {
+          "status": "implemented",
+          "evidence": "Historical consumer acceptance; rerun required after migration"
+        },
+        "go": {
+          "status": "unmapped"
+        },
+        "python": {
+          "status": "unmapped"
+        }
+      }
+    },
+    {
+      "id": "@id-xlsx-clear-cross-sheet-caches",
+      "feature": "workflows/native/xlsx-cells.feature",
+      "expandedCases": 1,
+      "factIds": [
+        "NSSpreadsheetML",
+        "ContentTypeWorkbook"
+      ],
+      "expectedOutcomes": [
+        "a synthetic two-sheet XLSX fixture with cross-sheet cached formulas",
+        "I change the input cell A1 to 10 and save the workbook",
+        "every formula cache is removed across the worksheets",
+        "workbook calculation flags request full recalculation"
+      ],
+      "consumers": {
+        "bun": {
+          "status": "implemented",
+          "evidence": "Historical consumer acceptance; rerun required after migration"
+        },
+        "go": {
+          "status": "unmapped"
+        },
+        "python": {
+          "status": "unmapped"
+        }
+      }
+    },
+    {
+      "id": "@id-xlsx-prefixed-namespace-safe-edits",
+      "feature": "workflows/native/xlsx-cells.feature",
+      "expandedCases": 1,
+      "factIds": [
+        "NSSpreadsheetML",
+        "ContentTypeWorkbook"
+      ],
+      "expectedOutcomes": [
+        "a synthetic prefixed XLSX fixture with blank cells and formulas",
+        "I write \"Alpha\" to prefixed A1, 7 to prefixed B1, and save the workbook",
+        "the saved prefixed workbook keeps one qualified calcPr and qualified new cell values"
+      ],
+      "consumers": {
+        "bun": {
+          "status": "implemented",
+          "evidence": "Historical consumer acceptance; rerun required after migration"
+        },
+        "go": {
+          "status": "unmapped"
+        },
+        "python": {
+          "status": "unmapped"
+        }
+      }
+    },
+    {
+      "id": "@id-xlsx-phonetic-guides-excluded",
+      "feature": "workflows/native/xlsx-cells.feature",
+      "expandedCases": 1,
+      "factIds": [
+        "NSSpreadsheetML",
+        "ContentTypeWorkbook"
+      ],
+      "expectedOutcomes": [
+        "a synthetic XLSX fixture with phonetic guides in shared and inline rich strings",
+        "I open the workbook through the XLSX reader",
+        "phonetic guides are excluded while rich text runs stay intact"
+      ],
+      "consumers": {
+        "bun": {
+          "status": "implemented",
+          "evidence": "Historical consumer acceptance; rerun required after migration"
+        },
+        "go": {
+          "status": "unmapped"
+        },
+        "python": {
+          "status": "unmapped"
+        }
+      }
+    },
+    {
+      "id": "@id-xlsx-styled-blank-cell-editable",
+      "feature": "workflows/native/xlsx-cells.feature",
+      "expandedCases": 1,
+      "factIds": [
+        "NSSpreadsheetML",
+        "ContentTypeWorkbook"
+      ],
+      "expectedOutcomes": [
+        "a synthetic XLSX fixture with a styled blank cell",
+        "I change the blank styled cell A1 text to \"filled\" and save and reopen the workbook",
+        "the blank styled cell was readable as null before editing",
+        "the reopened blank styled cell keeps its style and new value"
+      ],
+      "consumers": {
+        "bun": {
+          "status": "implemented",
+          "evidence": "Historical consumer acceptance; rerun required after migration"
+        },
+        "go": {
+          "status": "unmapped"
+        },
+        "python": {
+          "status": "unmapped"
+        }
+      }
+    },
+    {
+      "id": "@id-xlsx-refuse-shared-formula-overwrite",
+      "feature": "workflows/native/xlsx-cells.feature",
+      "expandedCases": 1,
+      "factIds": [
+        "NSSpreadsheetML",
+        "ContentTypeWorkbook"
+      ],
+      "expectedOutcomes": [
+        "the shared-formula XLSX fixture",
+        "I try to overwrite the shared formula cell B2",
+        "the shared formula edit is refused before mutation",
+        "saving afterwards keeps the workbook and worksheet parts byte-identical"
+      ],
+      "consumers": {
+        "bun": {
+          "status": "implemented",
+          "evidence": "Historical consumer acceptance; rerun required after migration"
+        },
+        "go": {
+          "status": "unmapped"
+        },
+        "python": {
+          "status": "unmapped"
+        }
+      }
+    },
+    {
+      "id": "@id-xlsx-refuse-array-formula-overwrite",
+      "feature": "workflows/native/xlsx-cells.feature",
+      "expandedCases": 1,
+      "factIds": [
+        "NSSpreadsheetML",
+        "ContentTypeWorkbook"
+      ],
+      "expectedOutcomes": [
+        "the shared-formula XLSX fixture",
+        "I try to overwrite the array formula cell D2",
+        "the array formula edit is refused before mutation",
+        "saving afterwards keeps the workbook and worksheet parts byte-identical"
+      ],
+      "consumers": {
+        "bun": {
+          "status": "implemented",
+          "evidence": "Historical consumer acceptance; rerun required after migration"
+        },
+        "go": {
+          "status": "unmapped"
+        },
+        "python": {
+          "status": "unmapped"
+        }
+      }
+    },
+    {
+      "id": "@id-xlsx-array-input-refusal",
+      "feature": "workflows/native/xlsx-cache-boundaries.feature",
+      "expandedCases": 2,
+      "factIds": [
+        "NSSpreadsheetML",
+        "ContentTypeWorkbook"
+      ],
+      "expectedOutcomes": [
+        "a two-sheet workbook with a array formula and cached follower cells",
+        "an ordinary input value edit is attempted",
+        "the edit refuses with code \"xlsx-cache-topology-unsupported\"",
+        "every workbook member and cached result remains byte-identical",
+        "a two-sheet workbook with a dataTable formula and cached follower cells"
+      ],
+      "consumers": {
+        "bun": {
+          "status": "implemented",
+          "evidence": "Historical consumer acceptance; rerun required after migration"
+        },
+        "go": {
+          "status": "unmapped"
+        },
+        "python": {
+          "status": "unmapped"
+        }
+      }
+    },
+    {
+      "id": "@id-xlsx-cache-scope-opaque-parts",
+      "feature": "workflows/native/xlsx-cache-boundaries.feature",
+      "expandedCases": 1,
+      "factIds": [
+        "NSSpreadsheetML",
+        "ContentTypeWorkbook"
+      ],
+      "expectedOutcomes": [
+        "a workbook with ordinary worksheet formulas and opaque chart and external-link caches",
+        "its input is changed and the workbook is saved and reopened",
+        "worksheet formula cache values are cleared and their formulas retained",
+        "the opaque chart and external-link cache payloads remain unchanged"
+      ],
+      "consumers": {
+        "bun": {
+          "status": "implemented",
+          "evidence": "Historical consumer acceptance; rerun required after migration"
+        },
+        "go": {
+          "status": "unmapped"
+        },
+        "python": {
+          "status": "unmapped"
+        }
+      }
+    }
+  ]
+}

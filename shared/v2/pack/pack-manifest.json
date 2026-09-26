@@ -1,0 +1,27 @@
+{
+  "schemaVersion": 1,
+  "contractRevision": "ooxml-shared-contracts-v2",
+  "distributionRevision": "fixtures-ooxml-v0.1.0",
+  "scenarioCount": 8,
+  "expandedCaseCount": 19,
+  "lifecycle": "planned",
+  "bindingsImplemented": false,
+  "sourcePackManifestSha256": "4fb30e0d1a75e889985eceb0c6929dc59971089cc3bc692f18675f36dfeb81de",
+  "distributionChanges": [
+    "External generator/compiler source and diagnostic code references excluded",
+    "Fixture bytes, Gherkin, expanded case identities and licence notices retained"
+  ],
+  "files": {
+    "fixture-manifest.json": "5dfebf43342d6f02cd2138d3aa8a3081861a642c5ee974c75c798f86819214e8",
+    "expanded-contracts.json": "bc3bed5b7caf8e297c47712bbae775cade09bf93d3cfc99e2288c789951b5532",
+    "fixtures/present-placeholder.docx": "535910216e3531e4f70959cccf83038f1c51febbf4a149f9f46abfbfa8667d90",
+    "fixtures/title-and-subtitle.pptx": "2aec94471f93c300d56ca4789106a974411085d1588f3424155362a06dd043f3",
+    "fixtures/default-style.xlsx": "38c2ed936696179d3b2359e9107ad2b8d62d71d69296f8f60bdfe1fe8f7f2439",
+    "fixtures/cross-sheet-cache.xlsx": "8ba5708d5030adf93a4f7e4ae466563a1b66341067a200a6cb9b782484dcb5b1",
+    "features/mutation-safety.feature": "9fb2cc7a913cb48b5e7c983e6f942ebf71942840a15a0b62ee9119d6878a87f3",
+    "notices/openpyxl-LICENSE.txt": "0c84bb42f5d367e5ebf9fc2dde35b16141df5ee0fdc189250858bc6c5560f69e",
+    "notices/python-pptx-LICENSE.txt": "7652f271e46d0d533e9dc463f3b5fcbdcacf4d6a9c8d6b554d15efd0f37f6132",
+    "notices/python-docx-LICENSE.txt": "7652f271e46d0d533e9dc463f3b5fcbdcacf4d6a9c8d6b554d15efd0f37f6132",
+    "notices/MCP-FIXTURES.md": "7f88643fc75ab6293254eff83752e1dd8d2c55cc99fb27a6bd6bc4eab9407bf9"
+  }
+}

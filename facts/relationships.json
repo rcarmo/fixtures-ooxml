@@ -1,0 +1,365 @@
+{
+  "schemaVersion": 1,
+  "values": [
+    {
+      "id": "RelTypeOfficeDocument",
+      "value": "http://schemas.openxmlformats.org/officeDocument/2006/relationships/officeDocument",
+      "status": "observed",
+      "evidence": [
+        "go-constants-observation"
+      ]
+    },
+    {
+      "id": "RelTypeStyles",
+      "value": "http://schemas.openxmlformats.org/officeDocument/2006/relationships/styles",
+      "status": "observed",
+      "evidence": [
+        "go-constants-observation"
+      ]
+    },
+    {
+      "id": "RelTypeSettings",
+      "value": "http://schemas.openxmlformats.org/officeDocument/2006/relationships/settings",
+      "status": "observed",
+      "evidence": [
+        "go-constants-observation"
+      ]
+    },
+    {
+      "id": "RelTypeComments",
+      "value": "http://schemas.openxmlformats.org/officeDocument/2006/relationships/comments",
+      "status": "observed",
+      "evidence": [
+        "go-constants-observation"
+      ]
+    },
+    {
+      "id": "RelTypeNumbering",
+      "value": "http://schemas.openxmlformats.org/officeDocument/2006/relationships/numbering",
+      "status": "observed",
+      "evidence": [
+        "go-constants-observation"
+      ]
+    },
+    {
+      "id": "RelTypeHeader",
+      "value": "http://schemas.openxmlformats.org/officeDocument/2006/relationships/header",
+      "status": "observed",
+      "evidence": [
+        "go-constants-observation"
+      ]
+    },
+    {
+      "id": "RelTypeFooter",
+      "value": "http://schemas.openxmlformats.org/officeDocument/2006/relationships/footer",
+      "status": "observed",
+      "evidence": [
+        "go-constants-observation"
+      ]
+    },
+    {
+      "id": "RelTypeWorksheet",
+      "value": "http://schemas.openxmlformats.org/officeDocument/2006/relationships/worksheet",
+      "status": "observed",
+      "evidence": [
+        "go-constants-observation"
+      ]
+    },
+    {
+      "id": "RelTypeSharedStrings",
+      "value": "http://schemas.openxmlformats.org/officeDocument/2006/relationships/sharedStrings",
+      "status": "observed",
+      "evidence": [
+        "go-constants-observation"
+      ]
+    },
+    {
+      "id": "RelTypeTable",
+      "value": "http://schemas.openxmlformats.org/officeDocument/2006/relationships/table",
+      "status": "observed",
+      "evidence": [
+        "go-constants-observation"
+      ]
+    },
+    {
+      "id": "RelTypeSlide",
+      "value": "http://schemas.openxmlformats.org/officeDocument/2006/relationships/slide",
+      "status": "observed",
+      "evidence": [
+        "go-constants-observation"
+      ]
+    },
+    {
+      "id": "RelTypeSlideLayout",
+      "value": "http://schemas.openxmlformats.org/officeDocument/2006/relationships/slideLayout",
+      "status": "observed",
+      "evidence": [
+        "go-constants-observation"
+      ]
+    },
+    {
+      "id": "RelTypeSlideMaster",
+      "value": "http://schemas.openxmlformats.org/officeDocument/2006/relationships/slideMaster",
+      "status": "observed",
+      "evidence": [
+        "go-constants-observation"
+      ]
+    },
+    {
+      "id": "RelTypeNotesMaster",
+      "value": "http://schemas.openxmlformats.org/officeDocument/2006/relationships/notesMaster",
+      "status": "observed",
+      "evidence": [
+        "go-constants-observation"
+      ]
+    },
+    {
+      "id": "RelTypeNotesSlide",
+      "value": "http://schemas.openxmlformats.org/officeDocument/2006/relationships/notesSlide",
+      "status": "observed",
+      "evidence": [
+        "go-constants-observation"
+      ]
+    },
+    {
+      "id": "RelTypeImage",
+      "value": "http://schemas.openxmlformats.org/officeDocument/2006/relationships/image",
+      "status": "observed",
+      "evidence": [
+        "go-constants-observation"
+      ]
+    },
+    {
+      "id": "RelTypeHyperlink",
+      "value": "http://schemas.openxmlformats.org/officeDocument/2006/relationships/hyperlink",
+      "status": "observed",
+      "evidence": [
+        "go-constants-observation"
+      ]
+    },
+    {
+      "id": "RelTypeTheme",
+      "value": "http://schemas.openxmlformats.org/officeDocument/2006/relationships/theme",
+      "status": "observed",
+      "evidence": [
+        "go-constants-observation"
+      ]
+    },
+    {
+      "id": "RelTypeFontTable",
+      "value": "http://schemas.openxmlformats.org/officeDocument/2006/relationships/fontTable",
+      "status": "observed",
+      "evidence": [
+        "go-constants-observation"
+      ]
+    },
+    {
+      "id": "RelTypeWebSettings",
+      "value": "http://schemas.openxmlformats.org/officeDocument/2006/relationships/webSettings",
+      "status": "observed",
+      "evidence": [
+        "go-constants-observation"
+      ]
+    },
+    {
+      "id": "RelTypeEndnotes",
+      "value": "http://schemas.openxmlformats.org/officeDocument/2006/relationships/endnotes",
+      "status": "observed",
+      "evidence": [
+        "go-constants-observation"
+      ]
+    },
+    {
+      "id": "RelTypeFootnotes",
+      "value": "http://schemas.openxmlformats.org/officeDocument/2006/relationships/footnotes",
+      "status": "observed",
+      "evidence": [
+        "go-constants-observation"
+      ]
+    },
+    {
+      "id": "RelTypeCoreProps",
+      "value": "http://schemas.openxmlformats.org/package/2006/relationships/metadata/core-properties",
+      "status": "observed",
+      "evidence": [
+        "go-constants-observation"
+      ]
+    },
+    {
+      "id": "RelTypeExtendedProps",
+      "value": "http://schemas.openxmlformats.org/officeDocument/2006/relationships/extended-properties",
+      "status": "observed",
+      "evidence": [
+        "go-constants-observation"
+      ]
+    },
+    {
+      "id": "RelTypeCustomXML",
+      "value": "http://schemas.openxmlformats.org/officeDocument/2006/relationships/customXml",
+      "status": "observed",
+      "evidence": [
+        "go-constants-observation"
+      ]
+    },
+    {
+      "id": "RelTypeChart",
+      "value": "http://schemas.openxmlformats.org/officeDocument/2006/relationships/chart",
+      "status": "observed",
+      "evidence": [
+        "go-constants-observation"
+      ]
+    },
+    {
+      "id": "RelTypeChartStyle",
+      "value": "http://schemas.microsoft.com/office/2011/relationships/chartStyle",
+      "status": "observed",
+      "evidence": [
+        "go-constants-observation"
+      ]
+    },
+    {
+      "id": "RelTypeChartColorStyle",
+      "value": "http://schemas.microsoft.com/office/2011/relationships/chartColorStyle",
+      "status": "observed",
+      "evidence": [
+        "go-constants-observation"
+      ]
+    },
+    {
+      "id": "RelTypeDrawing",
+      "value": "http://schemas.openxmlformats.org/officeDocument/2006/relationships/drawing",
+      "status": "observed",
+      "evidence": [
+        "go-constants-observation"
+      ]
+    },
+    {
+      "id": "RelTypeVML",
+      "value": "http://schemas.openxmlformats.org/officeDocument/2006/relationships/vmlDrawing",
+      "status": "observed",
+      "evidence": [
+        "go-constants-observation"
+      ]
+    },
+    {
+      "id": "RelTypeTableStyles",
+      "value": "http://schemas.openxmlformats.org/officeDocument/2006/relationships/tableStyles",
+      "status": "observed",
+      "evidence": [
+        "go-constants-observation"
+      ]
+    },
+    {
+      "id": "RelTypeDiagramData",
+      "value": "http://schemas.openxmlformats.org/officeDocument/2006/relationships/diagramData",
+      "status": "observed",
+      "evidence": [
+        "go-constants-observation"
+      ]
+    },
+    {
+      "id": "RelTypeDiagramLayout",
+      "value": "http://schemas.openxmlformats.org/officeDocument/2006/relationships/diagramLayout",
+      "status": "observed",
+      "evidence": [
+        "go-constants-observation"
+      ]
+    },
+    {
+      "id": "RelTypeDiagramColors",
+      "value": "http://schemas.openxmlformats.org/officeDocument/2006/relationships/diagramColors",
+      "status": "observed",
+      "evidence": [
+        "go-constants-observation"
+      ]
+    },
+    {
+      "id": "RelTypeDiagramStyle",
+      "value": "http://schemas.openxmlformats.org/officeDocument/2006/relationships/diagramQuickStyle",
+      "status": "observed",
+      "evidence": [
+        "go-constants-observation"
+      ]
+    },
+    {
+      "id": "RelTypeDiagramDrawing",
+      "value": "http://schemas.microsoft.com/office/2007/relationships/diagramDrawing",
+      "status": "observed",
+      "evidence": [
+        "go-constants-observation"
+      ]
+    },
+    {
+      "id": "RelTypeAudio",
+      "value": "http://schemas.openxmlformats.org/officeDocument/2006/relationships/audio",
+      "status": "observed",
+      "evidence": [
+        "go-constants-observation"
+      ]
+    },
+    {
+      "id": "RelTypeVideo",
+      "value": "http://schemas.openxmlformats.org/officeDocument/2006/relationships/video",
+      "status": "observed",
+      "evidence": [
+        "go-constants-observation"
+      ]
+    },
+    {
+      "id": "RelTypeMedia",
+      "value": "http://schemas.microsoft.com/office/2007/relationships/media",
+      "status": "observed",
+      "evidence": [
+        "go-constants-observation"
+      ]
+    },
+    {
+      "id": "RelTypePPTXComments",
+      "value": "http://schemas.microsoft.com/office/2018/10/relationships/comments",
+      "status": "observed",
+      "evidence": [
+        "go-constants-observation"
+      ]
+    },
+    {
+      "id": "RelTypePPTXAuthors",
+      "value": "http://schemas.microsoft.com/office/2018/10/relationships/authors",
+      "status": "observed",
+      "evidence": [
+        "go-constants-observation"
+      ]
+    },
+    {
+      "id": "RelTypeCalcChain",
+      "value": "http://schemas.openxmlformats.org/officeDocument/2006/relationships/calcChain",
+      "status": "observed",
+      "evidence": [
+        "go-constants-observation"
+      ]
+    },
+    {
+      "id": "RelTypePresProps",
+      "value": "http://schemas.openxmlformats.org/officeDocument/2006/relationships/presProps",
+      "status": "observed",
+      "evidence": [
+        "go-constants-observation"
+      ]
+    },
+    {
+      "id": "RelTypeViewProps",
+      "value": "http://schemas.openxmlformats.org/officeDocument/2006/relationships/viewProps",
+      "status": "observed",
+      "evidence": [
+        "go-constants-observation"
+      ]
+    },
+    {
+      "id": "RelTypeCommentsExtended",
+      "value": "http://schemas.microsoft.com/office/2011/relationships/commentsExtended",
+      "status": "observed",
+      "evidence": [
+        "go-constants-observation"
+      ]
+    }
+  ]
+}

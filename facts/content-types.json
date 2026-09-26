@@ -1,0 +1,376 @@
+{
+  "schemaVersion": 1,
+  "values": [
+    {
+      "id": "ContentTypeWordDocument",
+      "value": "application/vnd.openxmlformats-officedocument.wordprocessingml.document.main+xml",
+      "status": "observed",
+      "evidence": [
+        "go-constants-observation"
+      ]
+    },
+    {
+      "id": "ContentTypeWordTemplate",
+      "value": "application/vnd.openxmlformats-officedocument.wordprocessingml.template.main+xml",
+      "status": "observed",
+      "evidence": [
+        "go-constants-observation"
+      ]
+    },
+    {
+      "id": "ContentTypeWorkbook",
+      "value": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet.main+xml",
+      "status": "observed",
+      "evidence": [
+        "go-constants-observation"
+      ]
+    },
+    {
+      "id": "ContentTypePresentation",
+      "value": "application/vnd.openxmlformats-officedocument.presentationml.presentation.main+xml",
+      "status": "observed",
+      "evidence": [
+        "go-constants-observation"
+      ]
+    },
+    {
+      "id": "ContentTypeStyles",
+      "value": "application/vnd.openxmlformats-officedocument.wordprocessingml.styles+xml",
+      "status": "observed",
+      "evidence": [
+        "go-constants-observation"
+      ]
+    },
+    {
+      "id": "ContentTypeSettings",
+      "value": "application/vnd.openxmlformats-officedocument.wordprocessingml.settings+xml",
+      "status": "observed",
+      "evidence": [
+        "go-constants-observation"
+      ]
+    },
+    {
+      "id": "ContentTypeComments",
+      "value": "application/vnd.openxmlformats-officedocument.wordprocessingml.comments+xml",
+      "status": "observed",
+      "evidence": [
+        "go-constants-observation"
+      ]
+    },
+    {
+      "id": "ContentTypeExcelComments",
+      "value": "application/vnd.openxmlformats-officedocument.spreadsheetml.comments+xml",
+      "status": "observed",
+      "evidence": [
+        "go-constants-observation"
+      ]
+    },
+    {
+      "id": "ContentTypePPTXComments",
+      "value": "application/vnd.ms-powerpoint.comments+xml",
+      "status": "observed",
+      "evidence": [
+        "go-constants-observation"
+      ]
+    },
+    {
+      "id": "ContentTypePPTXAuthors",
+      "value": "application/vnd.ms-powerpoint.authors+xml",
+      "status": "observed",
+      "evidence": [
+        "go-constants-observation"
+      ]
+    },
+    {
+      "id": "ContentTypePresentationProps",
+      "value": "application/vnd.openxmlformats-officedocument.presentationml.presProps+xml",
+      "status": "observed",
+      "evidence": [
+        "go-constants-observation"
+      ]
+    },
+    {
+      "id": "ContentTypePresentationViewProps",
+      "value": "application/vnd.openxmlformats-officedocument.presentationml.viewProps+xml",
+      "status": "observed",
+      "evidence": [
+        "go-constants-observation"
+      ]
+    },
+    {
+      "id": "ContentTypeNumbering",
+      "value": "application/vnd.openxmlformats-officedocument.wordprocessingml.numbering+xml",
+      "status": "observed",
+      "evidence": [
+        "go-constants-observation"
+      ]
+    },
+    {
+      "id": "ContentTypeCommentsExtended",
+      "value": "application/vnd.ms-word.commentsExtended+xml",
+      "status": "disputed",
+      "evidence": [
+        "go-constants-observation"
+      ],
+      "preferredFact": "ContentTypeCommentsExtendedSpecified"
+    },
+    {
+      "id": "ContentTypeHeader",
+      "value": "application/vnd.openxmlformats-officedocument.wordprocessingml.header+xml",
+      "status": "observed",
+      "evidence": [
+        "go-constants-observation"
+      ]
+    },
+    {
+      "id": "ContentTypeFooter",
+      "value": "application/vnd.openxmlformats-officedocument.wordprocessingml.footer+xml",
+      "status": "observed",
+      "evidence": [
+        "go-constants-observation"
+      ]
+    },
+    {
+      "id": "ContentTypeWorksheet",
+      "value": "application/vnd.openxmlformats-officedocument.spreadsheetml.worksheet+xml",
+      "status": "observed",
+      "evidence": [
+        "go-constants-observation"
+      ]
+    },
+    {
+      "id": "ContentTypeSharedStrings",
+      "value": "application/vnd.openxmlformats-officedocument.spreadsheetml.sharedStrings+xml",
+      "status": "observed",
+      "evidence": [
+        "go-constants-observation"
+      ]
+    },
+    {
+      "id": "ContentTypeSlide",
+      "value": "application/vnd.openxmlformats-officedocument.presentationml.slide+xml",
+      "status": "observed",
+      "evidence": [
+        "go-constants-observation"
+      ]
+    },
+    {
+      "id": "ContentTypeSlideLayout",
+      "value": "application/vnd.openxmlformats-officedocument.presentationml.slideLayout+xml",
+      "status": "observed",
+      "evidence": [
+        "go-constants-observation"
+      ]
+    },
+    {
+      "id": "ContentTypeSlideMaster",
+      "value": "application/vnd.openxmlformats-officedocument.presentationml.slideMaster+xml",
+      "status": "observed",
+      "evidence": [
+        "go-constants-observation"
+      ]
+    },
+    {
+      "id": "ContentTypeNotesMaster",
+      "value": "application/vnd.openxmlformats-officedocument.presentationml.notesMaster+xml",
+      "status": "observed",
+      "evidence": [
+        "go-constants-observation"
+      ]
+    },
+    {
+      "id": "ContentTypeNotesSlide",
+      "value": "application/vnd.openxmlformats-officedocument.presentationml.notesSlide+xml",
+      "status": "observed",
+      "evidence": [
+        "go-constants-observation"
+      ]
+    },
+    {
+      "id": "ContentTypeRelationships",
+      "value": "application/vnd.openxmlformats-package.relationships+xml",
+      "status": "observed",
+      "evidence": [
+        "go-constants-observation"
+      ]
+    },
+    {
+      "id": "ContentTypeCoreProps",
+      "value": "application/vnd.openxmlformats-package.core-properties+xml",
+      "status": "observed",
+      "evidence": [
+        "go-constants-observation"
+      ]
+    },
+    {
+      "id": "ContentTypeExtendedProps",
+      "value": "application/vnd.openxmlformats-officedocument.extended-properties+xml",
+      "status": "observed",
+      "evidence": [
+        "go-constants-observation"
+      ]
+    },
+    {
+      "id": "ContentTypeTheme",
+      "value": "application/vnd.openxmlformats-officedocument.theme+xml",
+      "status": "observed",
+      "evidence": [
+        "go-constants-observation"
+      ]
+    },
+    {
+      "id": "ContentTypeExcelStyles",
+      "value": "application/vnd.openxmlformats-officedocument.spreadsheetml.styles+xml",
+      "status": "observed",
+      "evidence": [
+        "go-constants-observation"
+      ]
+    },
+    {
+      "id": "ContentTypeTable",
+      "value": "application/vnd.openxmlformats-officedocument.spreadsheetml.table+xml",
+      "status": "observed",
+      "evidence": [
+        "go-constants-observation"
+      ]
+    },
+    {
+      "id": "ContentTypeChart",
+      "value": "application/vnd.openxmlformats-officedocument.drawingml.chart+xml",
+      "status": "observed",
+      "evidence": [
+        "go-constants-observation"
+      ]
+    },
+    {
+      "id": "ContentTypeChartStyle",
+      "value": "application/vnd.ms-office.chartstyle+xml",
+      "status": "observed",
+      "evidence": [
+        "go-constants-observation"
+      ]
+    },
+    {
+      "id": "ContentTypeChartColorStyle",
+      "value": "application/vnd.ms-office.chartcolorstyle+xml",
+      "status": "observed",
+      "evidence": [
+        "go-constants-observation"
+      ]
+    },
+    {
+      "id": "ContentTypeDrawing",
+      "value": "application/vnd.openxmlformats-officedocument.drawing+xml",
+      "status": "observed",
+      "evidence": [
+        "go-constants-observation"
+      ]
+    },
+    {
+      "id": "ContentTypeVML",
+      "value": "application/vnd.openxmlformats-officedocument.vmlDrawing",
+      "status": "observed",
+      "evidence": [
+        "go-constants-observation"
+      ]
+    },
+    {
+      "id": "ContentTypeDiagramData",
+      "value": "application/vnd.openxmlformats-officedocument.drawingml.diagramData+xml",
+      "status": "observed",
+      "evidence": [
+        "go-constants-observation"
+      ]
+    },
+    {
+      "id": "ContentTypeDiagramLayout",
+      "value": "application/vnd.openxmlformats-officedocument.drawingml.diagramLayout+xml",
+      "status": "observed",
+      "evidence": [
+        "go-constants-observation"
+      ]
+    },
+    {
+      "id": "ContentTypeDiagramColors",
+      "value": "application/vnd.openxmlformats-officedocument.drawingml.diagramColors+xml",
+      "status": "observed",
+      "evidence": [
+        "go-constants-observation"
+      ]
+    },
+    {
+      "id": "ContentTypeDiagramStyle",
+      "value": "application/vnd.openxmlformats-officedocument.drawingml.diagramStyle+xml",
+      "status": "observed",
+      "evidence": [
+        "go-constants-observation"
+      ]
+    },
+    {
+      "id": "ContentTypeDiagramDrawing",
+      "value": "application/vnd.ms-office.drawingml.diagramDrawing+xml",
+      "status": "observed",
+      "evidence": [
+        "go-constants-observation"
+      ]
+    },
+    {
+      "id": "ContentTypeCalcChain",
+      "value": "application/vnd.openxmlformats-officedocument.spreadsheetml.calcChain+xml",
+      "status": "observed",
+      "evidence": [
+        "go-constants-observation"
+      ]
+    },
+    {
+      "id": "ContentTypeFontTable",
+      "value": "application/vnd.openxmlformats-officedocument.wordprocessingml.fontTable+xml",
+      "status": "observed",
+      "evidence": [
+        "go-constants-observation"
+      ]
+    },
+    {
+      "id": "ContentTypeWebSettings",
+      "value": "application/vnd.openxmlformats-officedocument.wordprocessingml.webSettings+xml",
+      "status": "observed",
+      "evidence": [
+        "go-constants-observation"
+      ]
+    },
+    {
+      "id": "ContentTypeEndnotes",
+      "value": "application/vnd.openxmlformats-officedocument.wordprocessingml.endnotes+xml",
+      "status": "observed",
+      "evidence": [
+        "go-constants-observation"
+      ]
+    },
+    {
+      "id": "ContentTypeFootnotes",
+      "value": "application/vnd.openxmlformats-officedocument.wordprocessingml.footnotes+xml",
+      "status": "observed",
+      "evidence": [
+        "go-constants-observation"
+      ]
+    },
+    {
+      "id": "ContentTypeXML",
+      "value": "application/xml",
+      "status": "observed",
+      "evidence": [
+        "go-constants-observation"
+      ]
+    },
+    {
+      "id": "ContentTypeCommentsExtendedSpecified",
+      "value": "application/vnd.openxmlformats-officedocument.wordprocessingml.commentsExtended+xml",
+      "status": "specified",
+      "evidence": [
+        "sdk-comments-extended",
+        "ms-comments-extended"
+      ],
+      "limits": "Vendor metadata + pinned fixture agreement; no independent Office reopen execution."
+    }
+  ]
+}

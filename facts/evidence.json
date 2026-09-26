@@ -1,0 +1,39 @@
+{
+  "schemaVersion": 1,
+  "items": [
+    {
+      "id": "go-constants-observation",
+      "kind": "implementation-observation",
+      "repository": "https://github.com/rcarmo/go-ooxml",
+      "revision": "43fbb43943d203e1476b21a31cf723dfb75268b6",
+      "sha256": "3998bd7d1202b68697521d706d0dcd47162ea1355bb10b788c271ecc8b1e667a",
+      "scope": "Observed declarations only; no schema or producer compatibility certification."
+    },
+    {
+      "id": "ms-comments-extended",
+      "kind": "specification",
+      "url": "https://learn.microsoft.com/en-us/openspecs/office_standards/ms-docx/31f689cd-4192-4c2d-8d2f-202b1f8f20e9",
+      "scope": "Extended comment part purpose and linkage to comments."
+    },
+    {
+      "id": "sdk-comments-extended",
+      "kind": "vendor-metadata",
+      "url": "https://github.com/dotnet/Open-XML-SDK/blob/431ab05cf160248cc3885a4a766026d4f8243792/data/parts/WordprocessingCommentsExPart.json",
+      "sha256": "b0f4e18e694b7c5bd84748e5a14504211287283c7e4dfc4a931cd24efd8ed288",
+      "scope": "Content type and relationship declarations. Metadata inspected; no code vendored or executed."
+    },
+    {
+      "id": "iso-29500-relationships",
+      "kind": "specification",
+      "url": "https://www.ecma-international.org/publications-and-standards/standards/ecma-376/",
+      "scope": "Office document relationship namespace differs from OPC relationship-part namespace."
+    },
+    {
+      "id": "python-constants-observation",
+      "kind": "implementation-observation",
+      "repository": "https://github.com/rcarmo/python-office-mcp-server",
+      "revision": "6b3863ce21d3512df031fba68ce508dc7d8dfc13",
+      "scope": "Observed literal values; not specification authority. Implementation source is not redistributed."
+    }
+  ]
+}

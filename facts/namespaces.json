@@ -1,0 +1,221 @@
+{
+  "schemaVersion": 1,
+  "values": [
+    {
+      "id": "NSWordprocessingML",
+      "value": "http://schemas.openxmlformats.org/wordprocessingml/2006/main",
+      "status": "observed",
+      "evidence": [
+        "go-constants-observation"
+      ]
+    },
+    {
+      "id": "NSSpreadsheetML",
+      "value": "http://schemas.openxmlformats.org/spreadsheetml/2006/main",
+      "status": "observed",
+      "evidence": [
+        "go-constants-observation"
+      ]
+    },
+    {
+      "id": "NSPresentationML",
+      "value": "http://schemas.openxmlformats.org/presentationml/2006/main",
+      "status": "observed",
+      "evidence": [
+        "go-constants-observation"
+      ]
+    },
+    {
+      "id": "NSDrawingML",
+      "value": "http://schemas.openxmlformats.org/drawingml/2006/main",
+      "status": "observed",
+      "evidence": [
+        "go-constants-observation"
+      ]
+    },
+    {
+      "id": "NSDrawingMLDiagram",
+      "value": "http://schemas.openxmlformats.org/drawingml/2006/diagram",
+      "status": "observed",
+      "evidence": [
+        "go-constants-observation"
+      ]
+    },
+    {
+      "id": "NSRelationships",
+      "value": "http://schemas.openxmlformats.org/package/2006/relationships",
+      "status": "observed",
+      "evidence": [
+        "go-constants-observation"
+      ]
+    },
+    {
+      "id": "NSContentTypes",
+      "value": "http://schemas.openxmlformats.org/package/2006/content-types",
+      "status": "observed",
+      "evidence": [
+        "go-constants-observation"
+      ]
+    },
+    {
+      "id": "NSDocumentRelationships",
+      "value": "http://schemas.openxmlformats.org/officeDocument/2006/relationships",
+      "status": "observed",
+      "evidence": [
+        "go-constants-observation"
+      ]
+    },
+    {
+      "id": "NSDublinCore",
+      "value": "http://purl.org/dc/elements/1.1/",
+      "status": "observed",
+      "evidence": [
+        "go-constants-observation"
+      ]
+    },
+    {
+      "id": "NSDublinCoreTerms",
+      "value": "http://purl.org/dc/terms/",
+      "status": "observed",
+      "evidence": [
+        "go-constants-observation"
+      ]
+    },
+    {
+      "id": "NSCoreProperties",
+      "value": "http://schemas.openxmlformats.org/package/2006/metadata/core-properties",
+      "status": "observed",
+      "evidence": [
+        "go-constants-observation"
+      ]
+    },
+    {
+      "id": "NSExtendedProperties",
+      "value": "http://schemas.openxmlformats.org/officeDocument/2006/extended-properties",
+      "status": "observed",
+      "evidence": [
+        "go-constants-observation"
+      ]
+    },
+    {
+      "id": "NSDrawingMLChart",
+      "value": "http://schemas.openxmlformats.org/drawingml/2006/chart",
+      "status": "observed",
+      "evidence": [
+        "go-constants-observation"
+      ]
+    },
+    {
+      "id": "NSDrawingMLPicture",
+      "value": "http://schemas.openxmlformats.org/drawingml/2006/picture",
+      "status": "observed",
+      "evidence": [
+        "go-constants-observation"
+      ]
+    },
+    {
+      "id": "NSDrawingMLSpreadsheetDrawing",
+      "value": "http://schemas.openxmlformats.org/drawingml/2006/spreadsheetDrawing",
+      "status": "observed",
+      "evidence": [
+        "go-constants-observation"
+      ]
+    },
+    {
+      "id": "NSMarkupCompatibility",
+      "value": "http://schemas.openxmlformats.org/markup-compatibility/2006",
+      "status": "observed",
+      "evidence": [
+        "go-constants-observation"
+      ]
+    },
+    {
+      "id": "NSOfficeDocRels",
+      "value": "http://schemas.openxmlformats.org/officeDocument/2006/relationships",
+      "status": "observed",
+      "evidence": [
+        "go-constants-observation"
+      ]
+    },
+    {
+      "id": "NSVML",
+      "value": "urn:schemas-microsoft-com:vml",
+      "status": "observed",
+      "evidence": [
+        "go-constants-observation"
+      ]
+    },
+    {
+      "id": "NSWord14",
+      "value": "http://schemas.microsoft.com/office/word/2010/wordml",
+      "status": "observed",
+      "evidence": [
+        "go-constants-observation"
+      ]
+    },
+    {
+      "id": "PythonObservedbacb769b46f6",
+      "value": "application/json",
+      "status": "observed",
+      "evidence": [
+        "python-constants-observation"
+      ]
+    },
+    {
+      "id": "PythonObserved154b9eac22c1",
+      "value": "http://schemas.microsoft.com/office/drawing/2016/SVG/main",
+      "status": "observed",
+      "evidence": [
+        "python-constants-observation"
+      ]
+    },
+    {
+      "id": "PythonObserved196d6eaeb670",
+      "value": "http://schemas.microsoft.com/office/powerpoint/2018/8/main",
+      "status": "observed",
+      "evidence": [
+        "python-constants-observation"
+      ]
+    },
+    {
+      "id": "PythonObserved2ff662853fd9",
+      "value": "http://schemas.microsoft.com/office/drawing/2013/main/command",
+      "status": "observed",
+      "evidence": [
+        "python-constants-observation"
+      ]
+    },
+    {
+      "id": "PythonObservede55b7e25d776",
+      "value": "http://schemas.microsoft.com/office/powerpoint/2013/main/command",
+      "status": "observed",
+      "evidence": [
+        "python-constants-observation"
+      ]
+    },
+    {
+      "id": "PythonObserved2ecebaab3241",
+      "value": "application/xhtml",
+      "status": "observed",
+      "evidence": [
+        "python-constants-observation"
+      ]
+    },
+    {
+      "id": "PythonObserveddaf4a5c816cb",
+      "value": "http://schemas.microsoft.com/office/word/2012/wordml",
+      "status": "observed",
+      "evidence": [
+        "python-constants-observation"
+      ]
+    },
+    {
+      "id": "PythonObserved73c29c305a13",
+      "value": "http://schemas.microsoft.com/office/word/2016/wordml/cid",
+      "status": "observed",
+      "evidence": [
+        "python-constants-observation"
+      ]
+    }
+  ]
+}

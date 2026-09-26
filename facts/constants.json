@@ -1,0 +1,221 @@
+{
+  "schemaVersion": 1,
+  "values": [
+    {
+      "id": "ContentTypePNG",
+      "value": "image/png",
+      "status": "observed",
+      "evidence": [
+        "go-constants-observation"
+      ]
+    },
+    {
+      "id": "ContentTypeJPEG",
+      "value": "image/jpeg",
+      "status": "observed",
+      "evidence": [
+        "go-constants-observation"
+      ]
+    },
+    {
+      "id": "ContentTypeGIF",
+      "value": "image/gif",
+      "status": "observed",
+      "evidence": [
+        "go-constants-observation"
+      ]
+    },
+    {
+      "id": "ContentTypeBMP",
+      "value": "image/bmp",
+      "status": "observed",
+      "evidence": [
+        "go-constants-observation"
+      ]
+    },
+    {
+      "id": "ContentTypeTIFF",
+      "value": "image/tiff",
+      "status": "observed",
+      "evidence": [
+        "go-constants-observation"
+      ]
+    },
+    {
+      "id": "ContentTypeAudioMPEG",
+      "value": "audio/mpeg",
+      "status": "observed",
+      "evidence": [
+        "go-constants-observation"
+      ]
+    },
+    {
+      "id": "ContentTypeAudioWAV",
+      "value": "audio/wav",
+      "status": "observed",
+      "evidence": [
+        "go-constants-observation"
+      ]
+    },
+    {
+      "id": "ContentTypeAudioMP4",
+      "value": "audio/mp4",
+      "status": "observed",
+      "evidence": [
+        "go-constants-observation"
+      ]
+    },
+    {
+      "id": "ContentTypeVideoMP4",
+      "value": "video/mp4",
+      "status": "observed",
+      "evidence": [
+        "go-constants-observation"
+      ]
+    },
+    {
+      "id": "ContentTypeVideoQuickTime",
+      "value": "video/quicktime",
+      "status": "observed",
+      "evidence": [
+        "go-constants-observation"
+      ]
+    },
+    {
+      "id": "ContentTypeVideoAVI",
+      "value": "video/x-msvideo",
+      "status": "observed",
+      "evidence": [
+        "go-constants-observation"
+      ]
+    },
+    {
+      "id": "ContentTypesPath",
+      "value": "[Content_Types].xml",
+      "status": "observed",
+      "evidence": [
+        "go-constants-observation"
+      ]
+    },
+    {
+      "id": "PackageRelsPath",
+      "value": "_rels/.rels",
+      "status": "observed",
+      "evidence": [
+        "go-constants-observation"
+      ]
+    },
+    {
+      "id": "CorePropertiesPath",
+      "value": "docProps/core.xml",
+      "status": "observed",
+      "evidence": [
+        "go-constants-observation"
+      ]
+    },
+    {
+      "id": "AppPropertiesPath",
+      "value": "docProps/app.xml",
+      "status": "observed",
+      "evidence": [
+        "go-constants-observation"
+      ]
+    },
+    {
+      "id": "WordDocumentPath",
+      "value": "word/document.xml",
+      "status": "observed",
+      "evidence": [
+        "go-constants-observation"
+      ]
+    },
+    {
+      "id": "WordStylesPath",
+      "value": "word/styles.xml",
+      "status": "observed",
+      "evidence": [
+        "go-constants-observation"
+      ]
+    },
+    {
+      "id": "WordSettingsPath",
+      "value": "word/settings.xml",
+      "status": "observed",
+      "evidence": [
+        "go-constants-observation"
+      ]
+    },
+    {
+      "id": "WordNumberingPath",
+      "value": "word/numbering.xml",
+      "status": "observed",
+      "evidence": [
+        "go-constants-observation"
+      ]
+    },
+    {
+      "id": "WordCommentsPath",
+      "value": "word/comments.xml",
+      "status": "observed",
+      "evidence": [
+        "go-constants-observation"
+      ]
+    },
+    {
+      "id": "WordCommentsExtendedPath",
+      "value": "word/commentsExtended.xml",
+      "status": "observed",
+      "evidence": [
+        "go-constants-observation"
+      ]
+    },
+    {
+      "id": "ExcelWorkbookPath",
+      "value": "xl/workbook.xml",
+      "status": "observed",
+      "evidence": [
+        "go-constants-observation"
+      ]
+    },
+    {
+      "id": "ExcelStylesPath",
+      "value": "xl/styles.xml",
+      "status": "observed",
+      "evidence": [
+        "go-constants-observation"
+      ]
+    },
+    {
+      "id": "ExcelSharedStringsPath",
+      "value": "xl/sharedStrings.xml",
+      "status": "observed",
+      "evidence": [
+        "go-constants-observation"
+      ]
+    },
+    {
+      "id": "PresentationPath",
+      "value": "ppt/presentation.xml",
+      "status": "observed",
+      "evidence": [
+        "go-constants-observation"
+      ]
+    },
+    {
+      "id": "PresentationPropsPath",
+      "value": "ppt/presProps.xml",
+      "status": "observed",
+      "evidence": [
+        "go-constants-observation"
+      ]
+    },
+    {
+      "id": "PresentationViewPropsPath",
+      "value": "ppt/viewProps.xml",
+      "status": "observed",
+      "evidence": [
+        "go-constants-observation"
+      ]
+    }
+  ]
+}
