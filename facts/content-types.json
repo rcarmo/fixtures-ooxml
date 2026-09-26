@@ -371,6 +371,33 @@
         "ms-comments-extended"
       ],
       "limits": "Vendor metadata + pinned fixture agreement; no independent Office reopen execution."
+    },
+    {
+      "id": "ContentTypeWordFooter",
+      "value": "application/vnd.openxmlformats-officedocument.wordprocessingml.footer+xml",
+      "aliasOf": "ContentTypeFooter",
+      "status": "observed",
+      "evidence": [
+        "go-constants-observation"
+      ]
+    },
+    {
+      "id": "ContentTypeWordHeader",
+      "value": "application/vnd.openxmlformats-officedocument.wordprocessingml.header+xml",
+      "aliasOf": "ContentTypeHeader",
+      "status": "observed",
+      "evidence": [
+        "go-constants-observation"
+      ]
+    },
+    {
+      "id": "ContentTypeWordStyles",
+      "value": "application/vnd.openxmlformats-officedocument.wordprocessingml.styles+xml",
+      "aliasOf": "ContentTypeStyles",
+      "status": "observed",
+      "evidence": [
+        "go-constants-observation"
+      ]
     }
   ]
 }

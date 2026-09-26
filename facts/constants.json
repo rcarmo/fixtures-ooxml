@@ -216,6 +216,15 @@
       "evidence": [
         "go-constants-observation"
       ]
+    },
+    {
+      "id": "PPTXPresentationPath",
+      "value": "ppt/presentation.xml",
+      "aliasOf": "PresentationPath",
+      "status": "observed",
+      "evidence": [
+        "go-constants-observation"
+      ]
     }
   ]
 }
