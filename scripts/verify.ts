@@ -15,7 +15,7 @@ export function cases(path:string,text:string){
 export async function verify(base=root){
  const manifest=await Bun.file(join(base,'manifest.json')).json();const seen=new Set<string>();
  for(const f of manifest.files){if(!safe(f.path)||seen.has(f.path))throw Error('Invalid manifest path');seen.add(f.path);const bytes=await Bun.file(join(base,f.path)).bytes();if(bytes.length!==f.bytes||hash(bytes)!==f.sha256)throw Error('Asset drift: '+f.path);if(!f.origin)throw Error('Missing provenance');}
- for(const dir of ['fixtures','reference-assets','notices'])for await(const path of new Bun.Glob('**/*').scan({cwd:join(base,dir),onlyFiles:true}))if(!seen.has(dir+'/'+path))throw Error('Unpinned asset '+path);
+ for(const dir of ['fixtures','notices'])for await(const path of new Bun.Glob('**/*').scan({cwd:join(base,dir),onlyFiles:true}))if(!seen.has(dir+'/'+path))throw Error('Unpinned asset '+path);
  const forbidden=/\.(py|pyi|go|cs|java|rs|swift)$/i;
  for await(const path of new Bun.Glob('**/*').scan({cwd:base,onlyFiles:true,dot:false}))if(!path.startsWith('node_modules/')&&forbidden.test(path))throw Error('External implementation source is not a reference asset: '+path);
  const evidence=await Bun.file(join(base,'facts/evidence.json')).json(),eids=new Set(evidence.items.map((e:any)=>e.id));

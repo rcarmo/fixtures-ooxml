@@ -10,8 +10,6 @@ before testing; missing data is an error, never a reason to generate replacement
 - `facts/`: typed MIME, namespace, relationship and other constant values with
   evidence IDs. `observed`, `specified` and `disputed` are distinct states.
 - `fixtures/`: origin-qualified document packages and generated corpus snapshots.
-- `reference-assets/`: document/XML/media test inputs, without implementation or
-  test source code. Original fixture paths appear only in provenance records.
 - `shared/v2/pack/`: shared mutation Gherkin, four fixtures, per-member custody
   hashes and expanded stable case identities.
 - `workflows/native/`: additional format/package behaviour contracts. Their
@@ -45,6 +43,9 @@ provenance and negative validation tests, then publish a new tag after all consu
 owners review it. Never move a published tag. Update consumer submodule commits
 and pin records together; CI uses recursive checkout and fails on mismatches.
 Runtime-generated test output belongs in each consumer's temporary/artifact paths.
+Use owned real documents for integration tests and small native builders for edge
+cases. The external reference corpus imported in v0.1.0 is removed in v0.1.1;
+retaining those fixtures is not required to preserve regression assertions.
 
 Shared facts and contracts are original project data; document assets retain their
 origin licences. See `LICENSE` and `NOTICES.md`. No external implementation or test
