@@ -1,0 +1,102 @@
+{
+  "schemaVersion": 1,
+  "consumer": "python",
+  "source": {
+    "repository": "https://github.com/rcarmo/python-office-mcp-server",
+    "revision": "027a8b2fd2fdcec4c00941eb5ad07b05e6971caf"
+  },
+  "scope": "Exactly seven non-parametrised tests/test_metadata_cache.py declarations: five TestMetadataCacheHelpers and the first two TestMetadataCacheIntegration tests. The eighth office_template analyze declaration is mapped only in python-template-analysis.json. Source inspection does not establish shared scenario execution.",
+  "declarationCount": 7,
+  "targetedFamily": {
+    "nativeCases": 7,
+    "parameterRows": 0,
+    "canonicalScenarios": 7,
+    "helpers": 5,
+    "integration": 2,
+    "sharedBindingsExecuted": 0,
+    "implementation": [
+      {"path": "tools/metadata_cache.py", "sha256": "768627acdef10fe99b9ab350b78eb070428ead5103deac8144a3e43284082d62"},
+      {"path": "tools/word_advanced_tools.py", "sha256": "66086062da09606f36ad82803ffe6e8f252c9e1a80e44dceb5a73242ef7d34da"}
+    ],
+    "testHelper": {
+      "path": "tests/test_metadata_cache.py",
+      "sha256": "b1ce664c47890a8188e57188c5ece5965362bd0f6b5fd87e28f389e24b6d2c1f",
+      "symbol": "_build_template",
+      "role": "test-local DOCX builder; not a test case"
+    },
+    "existingScenarioExcluded": "@id-python-office-template-analysis-cache",
+    "boundary": "This cache API family is not an OOXML specification rule or the complete inherited/custom Python test estate. The excluded unified analysis case is already mapped in python-template-analysis.json. Source-only inventory; no test or scenario run."
+  },
+  "mappings": [
+    {
+      "nativeId": "tests/test_metadata_cache.py::TestMetadataCacheHelpers::test_cache_key_stable_for_same_file_identity",
+      "path": "tests/test_metadata_cache.py",
+      "sourceSha256": "b1ce664c47890a8188e57188c5ece5965362bd0f6b5fd87e28f389e24b6d2c1f",
+      "coverage": "partial",
+      "scenarioIds": ["@id-python-template-cache-key-stable"],
+      "verifiedAspects": ["An unchanged saved Word template produces identical metadata_cache_key values for two calls with word/template_metadata."],
+      "gaps": ["The native test does not assert the key's literal value, uniqueness for different paths or type pairs, or invalidation on content-only changes."],
+      "executionCredit": false
+    },
+    {
+      "nativeId": "tests/test_metadata_cache.py::TestMetadataCacheHelpers::test_cache_read_write_roundtrip",
+      "path": "tests/test_metadata_cache.py",
+      "sourceSha256": "b1ce664c47890a8188e57188c5ece5965362bd0f6b5fd87e28f389e24b6d2c1f",
+      "coverage": "partial",
+      "scenarioIds": ["@id-python-template-cache-roundtrip"],
+      "verifiedAspects": ["A store/load round-trip of the Intro section and empty warnings metadata reports hit true and returns an equal metadata dictionary."],
+      "gaps": ["The test does not inspect the serialized cache record, file permissions, source DOCX custody or cross-process persistence."],
+      "executionCredit": false
+    },
+    {
+      "nativeId": "tests/test_metadata_cache.py::TestMetadataCacheHelpers::test_cache_invalidation_on_file_change",
+      "path": "tests/test_metadata_cache.py",
+      "sourceSha256": "b1ce664c47890a8188e57188c5ece5965362bd0f6b5fd87e28f389e24b6d2c1f",
+      "coverage": "partial",
+      "scenarioIds": ["@id-python-template-cache-source-change"],
+      "verifiedAspects": ["After storing metadata, rewriting the source DOCX with an additional paragraph returns no cached value and reports reason stale."],
+      "gaps": ["The test does not assert the hit flag, unchanged-source hash, or behavior for same-size and same-mtime content replacement."],
+      "executionCredit": false
+    },
+    {
+      "nativeId": "tests/test_metadata_cache.py::TestMetadataCacheHelpers::test_corrupt_cache_falls_back_cleanly",
+      "path": "tests/test_metadata_cache.py",
+      "sourceSha256": "b1ce664c47890a8188e57188c5ece5965362bd0f6b5fd87e28f389e24b6d2c1f",
+      "coverage": "partial",
+      "scenarioIds": ["@id-python-template-cache-corrupt"],
+      "verifiedAspects": ["Loading the invalid JSON cache file returns no cached metadata and reason corrupt."],
+      "gaps": ["The test does not assert hit false, error details, cache-file custody or recovery by the SOW parser."],
+      "executionCredit": false
+    },
+    {
+      "nativeId": "tests/test_metadata_cache.py::TestMetadataCacheHelpers::test_schema_mismatch_falls_back_cleanly",
+      "path": "tests/test_metadata_cache.py",
+      "sourceSha256": "b1ce664c47890a8188e57188c5ece5965362bd0f6b5fd87e28f389e24b6d2c1f",
+      "coverage": "partial",
+      "scenarioIds": ["@id-python-template-cache-schema-mismatch"],
+      "verifiedAspects": ["A valid JSON cache record with schemaVersion one above CACHE_SCHEMA_VERSION and current source identity loads as no metadata with reason schema_mismatch."],
+      "gaps": ["The test does not assert hit false, expected/cached version diagnostics or alternate malformed schema records."],
+      "executionCredit": false
+    },
+    {
+      "nativeId": "tests/test_metadata_cache.py::TestMetadataCacheIntegration::test_word_parse_sow_template_uses_cache_on_second_call",
+      "path": "tests/test_metadata_cache.py",
+      "sourceSha256": "b1ce664c47890a8188e57188c5ece5965362bd0f6b5fd87e28f389e24b6d2c1f",
+      "coverage": "partial",
+      "scenarioIds": ["@id-python-template-cache-sow-reuse"],
+      "verifiedAspects": ["First SOW parse reports stored; second unchanged-source parse reports hit true and reason hit, equal section counts, nonempty anchors and nonempty warnings."],
+      "gaps": ["The test does not compare complete metadata values, verify exact headings/table classification, or establish cache reuse across processes."],
+      "executionCredit": false
+    },
+    {
+      "nativeId": "tests/test_metadata_cache.py::TestMetadataCacheIntegration::test_word_parse_sow_template_regenerates_after_template_change",
+      "path": "tests/test_metadata_cache.py",
+      "sourceSha256": "b1ce664c47890a8188e57188c5ece5965362bd0f6b5fd87e28f389e24b6d2c1f",
+      "coverage": "partial",
+      "scenarioIds": ["@id-python-template-cache-sow-regenerate"],
+      "verifiedAspects": ["First and second SOW parses report stored when source is rewritten with Architecture decisions; the second result has an anchor starting with that text."],
+      "gaps": ["The test does not expose the internal stale reason before regeneration, compare all previous anchors, or verify cache cleanup after the rewrite."],
+      "executionCredit": false
+    }
+  ]
+}

@@ -39,7 +39,10 @@
     "workflows/xlsx/comment-vml-custody.feature",
     "workflows/xml/values.feature",
     "workflows/xml/go-lexical-editing.feature",
-    "workflows/docx/python-template-analysis.feature"
+    "workflows/docx/python-template-analysis.feature",
+    "workflows/package/bun-zip32-profile.feature",
+    "workflows/xlsx/go-formula-references.feature",
+    "workflows/docx/python-template-cache.feature"
   ],
   "executionCredit": "Only local executed assertions count; reports here do not run consumers.",
   "workflows": [
@@ -3786,6 +3789,529 @@
         "the first response has template metadata with cache reason \"stored\"",
         "the second response has template metadata with cache reason \"hit\"",
         "the second response's first template metadata table has purpose \"staffing\""
+      ],
+      "consumers": {
+        "bun": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        },
+        "go": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        },
+        "python": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        }
+      }
+    },
+    {
+      "id": "@id-zip-crc32-standard-vector",
+      "feature": "workflows/package/bun-zip32-profile.feature",
+      "expandedCases": 1,
+      "factIds": [],
+      "expectedOutcomes": [
+        "the unsigned checksum equals hexadecimal CBF43926"
+      ],
+      "consumers": {
+        "bun": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        },
+        "go": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        },
+        "python": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        }
+      }
+    },
+    {
+      "id": "@id-bun-zip32-reader-refusal",
+      "feature": "workflows/package/bun-zip32-profile.feature",
+      "expandedCases": 12,
+      "factIds": [],
+      "expectedOutcomes": [
+        "it throws an OoxmlError with code zip-duplicate-entry",
+        "the error message contains duplicate ZIP member",
+        "it throws an OoxmlError with code zip-case-collision",
+        "the error message contains ASCII case-collides",
+        "it throws an OoxmlError with code zip-name-invalid",
+        "the error message contains noncanonical",
+        "it throws an OoxmlError with code zip-encryption-unsupported",
+        "the error message contains encrypted",
+        "it throws an OoxmlError with code zip-method-unsupported",
+        "the error message contains compression method",
+        "it throws an OoxmlError with code zip-multi-disk-unsupported",
+        "the error message contains multi-disk",
+        "it throws an OoxmlError with code zip-structure-invalid",
+        "the error message contains ZIP64",
+        "it throws an OoxmlError with code zip-local-metadata-mismatch",
+        "the error message contains local and central",
+        "it throws an OoxmlError with code zip-crc-mismatch",
+        "the error message contains CRC",
+        "it throws an OoxmlError with code zip-size-mismatch",
+        "the error message contains declared size",
+        "it throws an OoxmlError with code zip-end-record-missing",
+        "the error message contains end-of-central-directory"
+      ],
+      "consumers": {
+        "bun": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        },
+        "go": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        },
+        "python": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        }
+      }
+    },
+    {
+      "id": "@id-bun-zip32-writer-refusal",
+      "feature": "workflows/package/bun-zip32-profile.feature",
+      "expandedCases": 2,
+      "factIds": [],
+      "expectedOutcomes": [
+        "it throws an OoxmlError with code zip-case-collision",
+        "the error message contains ASCII case-collides",
+        "it throws an OoxmlError with code zip-directory-entry-invalid",
+        "the error message contains must be empty"
+      ],
+      "consumers": {
+        "bun": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        },
+        "go": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        },
+        "python": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        }
+      }
+    },
+    {
+      "id": "@id-bun-zip32-configured-bounds",
+      "feature": "workflows/package/bun-zip32-profile.feature",
+      "expandedCases": 5,
+      "factIds": [],
+      "expectedOutcomes": [
+        "it throws an OoxmlError with code zip-archive-too-large",
+        "the error message contains archive bytes",
+        "it throws an OoxmlError with code zip-too-many-entries",
+        "the error message contains entry limit",
+        "it throws an OoxmlError with code zip-entry-too-large",
+        "it throws an OoxmlError with code zip-total-too-large",
+        "the error message contains total expanded",
+        "it throws an OoxmlError with code zip-compression-ratio-exceeded",
+        "the error message contains compression ratio"
+      ],
+      "consumers": {
+        "bun": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        },
+        "go": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        },
+        "python": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        }
+      }
+    },
+    {
+      "id": "@id-xlsx-go-formula-analysis-counts",
+      "feature": "workflows/xlsx/go-formula-references.feature",
+      "expandedCases": 6,
+      "factIds": [],
+      "expectedOutcomes": [
+        "it returns 3 reference records without error",
+        "every reference has a nonempty byte span inside the original source",
+        "it returns 0 reference records without error",
+        "it returns 1 reference records without error",
+        "it returns 2 reference records without error"
+      ],
+      "consumers": {
+        "bun": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        },
+        "go": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        },
+        "python": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        }
+      }
+    },
+    {
+      "id": "@id-xlsx-go-formula-quoted-sheet-flags",
+      "feature": "workflows/xlsx/go-formula-references.feature",
+      "expandedCases": 1,
+      "factIds": [],
+      "expectedOutcomes": [
+        "its one reference spans every byte of the original source",
+        "the sheet is O'Brien with first cell column 2 row 2 and absolute column only",
+        "the last cell is column 3 row 4 with absolute row only"
+      ],
+      "consumers": {
+        "bun": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        },
+        "go": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        },
+        "python": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        }
+      }
+    },
+    {
+      "id": "@id-xlsx-go-formula-analysis-refusal",
+      "feature": "workflows/xlsx/go-formula-references.feature",
+      "expandedCases": 7,
+      "factIds": [],
+      "expectedOutcomes": [
+        "it returns an error and zero reference records"
+      ],
+      "consumers": {
+        "bun": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        },
+        "go": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        },
+        "python": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        }
+      }
+    },
+    {
+      "id": "@id-xlsx-go-formula-literal-punctuation",
+      "feature": "workflows/xlsx/go-formula-references.feature",
+      "expandedCases": 5,
+      "factIds": [],
+      "expectedOutcomes": [
+        "the analysis is refused with zero references",
+        "the analysis is accepted without error"
+      ],
+      "consumers": {
+        "bun": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        },
+        "go": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        },
+        "python": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        }
+      }
+    },
+    {
+      "id": "@id-xlsx-go-direct-range-parsing",
+      "feature": "workflows/xlsx/go-formula-references.feature",
+      "expandedCases": 6,
+      "factIds": [],
+      "expectedOutcomes": [
+        "its sheet is JSON \"\" and its axis is column",
+        "its first coordinate has row 0 and column 2",
+        "its sheet is JSON \"\" and its axis is row",
+        "its first coordinate has row 3 and column 0",
+        "its sheet is JSON \"O'Brien\" and its axis is column",
+        "its sheet is JSON \"\" and its axis is cell",
+        "its first coordinate has row 3 and column 1",
+        "its sheet is JSON \"Sheet\" and its axis is cell",
+        "its first coordinate has row 1 and column 1",
+        "its sheet is JSON \"3\" and its axis is row",
+        "its first coordinate has row 1 and column 0"
+      ],
+      "consumers": {
+        "bun": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        },
+        "go": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        },
+        "python": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        }
+      }
+    },
+    {
+      "id": "@id-xlsx-go-direct-range-refusal",
+      "feature": "workflows/xlsx/go-formula-references.feature",
+      "expandedCases": 7,
+      "factIds": [],
+      "expectedOutcomes": [
+        "it returns an error"
+      ],
+      "consumers": {
+        "bun": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        },
+        "go": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        },
+        "python": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        }
+      }
+    },
+    {
+      "id": "@id-xlsx-go-static-remap-exact",
+      "feature": "workflows/xlsx/go-formula-references.feature",
+      "expandedCases": 5,
+      "factIds": [],
+      "expectedOutcomes": [
+        "the complete replacement expression equals JSON \"IF(A1=\\\"A2\\\",A3,Other!A2)\"",
+        "the complete replacement expression equals JSON \"'O''Brien'!$b$2 + Main!D1\"",
+        "the complete replacement expression equals JSON \"SUM(A7:A1)\"",
+        "the complete replacement expression equals JSON \"a1 + Other!b2\"",
+        "the complete replacement expression equals JSON \"Main!A1:A4\""
+      ],
+      "consumers": {
+        "bun": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        },
+        "go": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        },
+        "python": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        }
+      }
+    },
+    {
+      "id": "@id-xlsx-go-static-remap-refusal",
+      "feature": "workflows/xlsx/go-formula-references.feature",
+      "expandedCases": 7,
+      "factIds": [],
+      "expectedOutcomes": [
+        "it returns an error and an empty replacement expression"
+      ],
+      "consumers": {
+        "bun": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        },
+        "go": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        },
+        "python": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        }
+      }
+    },
+    {
+      "id": "@id-xlsx-go-static-reference-properties",
+      "feature": "workflows/xlsx/go-formula-references.feature",
+      "expandedCases": 1,
+      "factIds": [],
+      "expectedOutcomes": [
+        "every expression has two references whose source slices each parse as one matching reference",
+        "inserting one row at 100 on Main leaves each original expression byte-identical",
+        "wrapping each expression in SUM preserves its references after adjusting their byte spans"
+      ],
+      "consumers": {
+        "bun": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        },
+        "go": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        },
+        "python": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        }
+      }
+    },
+    {
+      "id": "@id-python-template-cache-key-stable",
+      "feature": "workflows/docx/python-template-cache.feature",
+      "expandedCases": 1,
+      "factIds": [],
+      "expectedOutcomes": [
+        "the two cache keys are equal"
+      ],
+      "consumers": {
+        "bun": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        },
+        "go": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        },
+        "python": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        }
+      }
+    },
+    {
+      "id": "@id-python-template-cache-roundtrip",
+      "feature": "workflows/docx/python-template-cache.feature",
+      "expandedCases": 1,
+      "factIds": [],
+      "expectedOutcomes": [
+        "the load reports a cache hit",
+        "the loaded metadata equals the stored metadata"
+      ],
+      "consumers": {
+        "bun": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        },
+        "go": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        },
+        "python": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        }
+      }
+    },
+    {
+      "id": "@id-python-template-cache-source-change",
+      "feature": "workflows/docx/python-template-cache.feature",
+      "expandedCases": 1,
+      "factIds": [],
+      "expectedOutcomes": [
+        "no cached metadata is returned",
+        "the cache reason is \"stale\""
+      ],
+      "consumers": {
+        "bun": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        },
+        "go": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        },
+        "python": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        }
+      }
+    },
+    {
+      "id": "@id-python-template-cache-corrupt",
+      "feature": "workflows/docx/python-template-cache.feature",
+      "expandedCases": 1,
+      "factIds": [],
+      "expectedOutcomes": [
+        "no cached metadata is returned",
+        "the cache reason is \"corrupt\""
+      ],
+      "consumers": {
+        "bun": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        },
+        "go": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        },
+        "python": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        }
+      }
+    },
+    {
+      "id": "@id-python-template-cache-schema-mismatch",
+      "feature": "workflows/docx/python-template-cache.feature",
+      "expandedCases": 1,
+      "factIds": [],
+      "expectedOutcomes": [
+        "no cached metadata is returned",
+        "the cache reason is \"schema_mismatch\""
+      ],
+      "consumers": {
+        "bun": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        },
+        "go": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        },
+        "python": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        }
+      }
+    },
+    {
+      "id": "@id-python-template-cache-sow-reuse",
+      "feature": "workflows/docx/python-template-cache.feature",
+      "expandedCases": 1,
+      "factIds": [],
+      "expectedOutcomes": [
+        "the first result has cache reason \"stored\"",
+        "the second result reports a cache hit with reason \"hit\"",
+        "both results have the same section count",
+        "the second result has nonempty anchors and nonempty warnings"
+      ],
+      "consumers": {
+        "bun": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        },
+        "go": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        },
+        "python": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        }
+      }
+    },
+    {
+      "id": "@id-python-template-cache-sow-regenerate",
+      "feature": "workflows/docx/python-template-cache.feature",
+      "expandedCases": 1,
+      "factIds": [],
+      "expectedOutcomes": [
+        "both results have cache reason \"stored\"",
+        "the second result has an anchor whose text begins \"Architecture decisions\""
       ],
       "consumers": {
         "bun": {

@@ -1,0 +1,120 @@
+{
+  "schemaVersion": 1,
+  "consumer": "go",
+  "source": {
+    "repository": "https://github.com/rcarmo/go-ooxml",
+    "revision": "e2c5891212beef16f7412c794d3bea6c01e9da35",
+    "publication": "local-unpublished; repository credential lacks push access"
+  },
+  "scope": "Complete six-declaration denominator for internal/formula/{analyze,properties,range,remap,token}_test.go. Static Go formula/range parser and insertion-reference API profile only. No worksheet rewrite, formula evaluation, ECMA conformance, Office rendering or cross-runtime execution credit. Existing native XLSX cache/overwrite workflow IDs describe different operations and are not claimed.",
+  "declarationCount": 6,
+  "mappings": [
+    {
+      "nativeId": "internal/formula/analyze_test.go::TestStaticFormulaAnalysisBatch",
+      "path": "internal/formula/analyze_test.go",
+      "sourceSha256": "c118fe7e30274773b4cc21b1baa55a1794ecab16d46c388d8014112f2b38842d",
+      "coverage": "partial",
+      "scenarioIds": [
+        "@id-xlsx-go-formula-analysis-counts",
+        "@id-xlsx-go-formula-quoted-sheet-flags",
+        "@id-xlsx-go-formula-analysis-refusal"
+      ],
+      "verifiedAspects": [
+        "Six named literal source rows require nil analysis error, exact reference count and nonempty byte spans within the source",
+        "Quoted O'Brien range checks sheet name, endpoint coordinates, absolute flags and span covering the whole source",
+        "Selected unsupported/malformed expressions require a non-nil error and zero references"
+      ],
+      "gaps": [
+        "The new refusal outline selects seven of the source's twenty invalid rows; remaining names, bounds and malformed grammar inputs still need canonical rows",
+        "The count cases do not check each endpoint or actual reference substring; no formula evaluation, dependency graph or ECMA grammar-completeness assertion"
+      ],
+      "executionCredit": false
+    },
+    {
+      "nativeId": "internal/formula/properties_test.go::TestStaticFormulaReferenceProperties",
+      "path": "internal/formula/properties_test.go",
+      "sourceSha256": "54bd2c1b318b5e4ebab5cf41da5d38b0d2f73dd6430aac3df24ecb2220f91045",
+      "coverage": "partial",
+      "scenarioIds": [
+        "@id-xlsx-go-static-reference-properties"
+      ],
+      "verifiedAspects": [
+        "Finite three prefixes by four left cells by four right cells by six operators produce 288 source loop iterations; each yields two references whose source spans re-analyse with matching sheet and endpoints",
+        "Row insertion below all references leaves original expression bytes unchanged, and SUM wrapping retains dependencies after subtracting four bytes from reported spans"
+      ],
+      "gaps": [
+        "The 288 source loop iterations are one planned workflow, not 288 independently measured canonical cases",
+        "No test executes a workbook formula, array/spill/dynamic reference, or cross-sheet update; static parser policy is not Excel formula completeness"
+      ],
+      "executionCredit": false
+    },
+    {
+      "nativeId": "internal/formula/properties_test.go::FuzzStaticReferenceAnalysis",
+      "path": "internal/formula/properties_test.go",
+      "sourceSha256": "54bd2c1b318b5e4ebab5cf41da5d38b0d2f73dd6430aac3df24ecb2220f91045",
+      "coverage": "unmapped",
+      "scenarioIds": [],
+      "verifiedAspects": [],
+      "gaps": [
+        "Six literal fuzz seeds feed a conditional callback. Inputs over 65536 bytes return; analysis refusal only checks that references are empty, and successful analysis checks monotone bounded spans and coordinates",
+        "Foreign-sheet remap refusal requires empty output; successful remaps re-analyse and conditionally preserve formulas without an Other! token. Neither branch establishes guaranteed success for an arbitrary seed, exhaustive fuzzing or a new canonical case"
+      ],
+      "executionCredit": false
+    },
+    {
+      "nativeId": "internal/formula/range_test.go::TestStaticRangeParserBatch",
+      "path": "internal/formula/range_test.go",
+      "sourceSha256": "bdc15308953db2a2624c3c4a4ccef521bb0acc8907ed52e039222a429a56f1cc",
+      "coverage": "partial",
+      "scenarioIds": [
+        "@id-xlsx-go-direct-range-parsing",
+        "@id-xlsx-go-direct-range-refusal"
+      ],
+      "verifiedAspects": [
+        "Six direct input rows compare decoded sheet, first endpoint row and column, and whole-column/whole-row flags",
+        "Selected unsupported direct range strings return non-nil errors"
+      ],
+      "gaps": [
+        "The new refusal outline selects seven of the source's twenty invalid strings",
+        "Successful rows do not assert last endpoint values, exact absolute flags or lexical byte spans; reversed range acceptance does not imply normalised output or spreadsheet validity"
+      ],
+      "executionCredit": false
+    },
+    {
+      "nativeId": "internal/formula/remap_test.go::TestReferenceInsertionBatch",
+      "path": "internal/formula/remap_test.go",
+      "sourceSha256": "db30eaf76b37907aeed695c96f3dbefc7247e3221f8e02fb30942eff67d0792a",
+      "coverage": "partial",
+      "scenarioIds": [
+        "@id-xlsx-go-static-remap-exact",
+        "@id-xlsx-go-static-remap-refusal"
+      ],
+      "verifiedAspects": [
+        "Five literal insertion rows require exact rewritten or unchanged expression string; string literal and unrelated sheet references remain untouched in selected rows",
+        "Six invalid insertion parameters and three overflow/dynamic formulas require an error and empty replacement expression; selected seven appear as distinct outline rows"
+      ],
+      "gaps": [
+        "The invalid outline omits two over-bound insertion arguments; no exact refusal type or no-op delivery to an XLSX package is tested",
+        "Case-insensitive sheet matching is seen in one row; no whole-sheet rename, complete formula grammar, reference-aware workbook remap, or transaction rollback is established"
+      ],
+      "executionCredit": false
+    },
+    {
+      "nativeId": "internal/formula/token_test.go::TestLiteralPunctuationBatch",
+      "path": "internal/formula/token_test.go",
+      "sourceSha256": "9cb83c08930c53ae303e9303b14ad7b9cdb940d25d2e4f78ba55f828d2c84483",
+      "coverage": "partial",
+      "scenarioIds": [
+        "@id-xlsx-go-formula-literal-punctuation"
+      ],
+      "verifiedAspects": [
+        "Selected adjacent string punctuation rows refuse with zero references, while selected quoted punctuation as a function argument or sole literal admits with nil error"
+      ],
+      "gaps": [
+        "Only five of the source's ten punctuation rows are named; remaining invalid and valid positions are not covered",
+        "The native valid tests do not assert reference counts, decoded literal contents or AST values"
+      ],
+      "executionCredit": false
+    }
+  ]
+}

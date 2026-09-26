@@ -62,6 +62,19 @@ export function validateConsumerMappings(ledger:any,scenarioIds:Set<string>){
   if(row.coverage==='unmapped'&&(row.scenarioIds.length||row.verifiedAspects.length)||row.coverage!=='unmapped'&&(!row.scenarioIds.length||!row.verifiedAspects.length)||row.coverage!=='mapped'&&!row.gaps.length||row.coverage==='mapped'&&row.gaps.length)throw Error('Mapping scope must record gaps without implicit credit');
  }
 }
+export function validateConsumerMappingSets(ledgers:any[],scenarioIds:Set<string>){
+ const nativeIds=new Set<string>(),sourceHashes=new Map<string,string>();
+ for(const ledger of ledgers){
+  validateConsumerMappings(ledger,scenarioIds);
+  for(const row of ledger.mappings){
+   const nativeKey=JSON.stringify([ledger.consumer,row.nativeId]);
+   if(nativeIds.has(nativeKey))throw Error('Overlapping native declaration: '+row.nativeId);nativeIds.add(nativeKey);
+   const sourceKey=JSON.stringify([ledger.source.repository,ledger.source.revision,row.path]);
+   if(sourceHashes.has(sourceKey)&&sourceHashes.get(sourceKey)!==row.sourceSha256)throw Error('Conflicting source hash: '+row.path);
+   sourceHashes.set(sourceKey,row.sourceSha256);
+  }
+ }
+}
 export function validateWorkflowRegistration(paths:string[],ledger:{features:string[]},manifest:{files:Array<{path:string;role:string}>}){
  const actual=new Set(paths),registered=new Set(ledger.features),assets=manifest.files.filter(f=>f.role==='workflow');
  if(actual.size!==paths.length||registered.size!==ledger.features.length||new Set(assets.map(f=>f.path)).size!==assets.length)throw Error('Duplicate workflow registration');
@@ -114,7 +127,9 @@ export async function verify(base=root){
  }
  const ids=[...new Set(actual.map(c=>c.scenarioId))].sort();if(JSON.stringify(ids)!==JSON.stringify(ledger.workflows.map((w:any)=>w.id).sort()))throw Error('Workflow ledger scenario drift');
  for(const w of ledger.workflows){if(w.expandedCases!==actual.filter(c=>c.scenarioId===w.id).length||!w.expectedOutcomes?.length||w.factIds.some((id:string)=>!factIds.has(id)))throw Error('Incomplete workflow '+w.id);}
- for await(const path of new Bun.Glob('ledgers/consumers/*.json').scan({cwd:base,onlyFiles:true}))validateConsumerMappings(await Bun.file(join(base,path)).json(),new Set(ids));
+ const consumerLedgers=[];
+ for await(const path of new Bun.Glob('ledgers/consumers/*.json').scan({cwd:base,onlyFiles:true}))consumerLedgers.push(await Bun.file(join(base,path)).json());
+ validateConsumerMappingSets(consumerLedgers,new Set(ids));
  const groups=await Bun.file(join(base,'ledgers/fixture-groups.json')).json(),groupKeys=new Set<string>(),groupedIds=new Set<string>();
  for(const group of groups.groups){
   const key=group.format+'/'+group.scenarioGroup;if(groupKeys.has(key)||!group.fixtureIds?.length)throw Error('Duplicate or empty fixture group');groupKeys.add(key);

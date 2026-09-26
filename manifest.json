@@ -3887,6 +3887,141 @@
         }
       ],
       "aliases": []
+    },
+    {
+      "id": "asset-080273b0ea4f74da5123be93f30df0f91163a61ad601d8b8928ad0ce9ef28ae9",
+      "path": "workflows/package/bun-zip32-profile.feature",
+      "bytes": 5863,
+      "sha256": "080273b0ea4f74da5123be93f30df0f91163a61ad601d8b8928ad0ce9ef28ae9",
+      "role": "workflow",
+      "origins": [
+        {
+          "repository": "https://github.com/rcarmo/fixtures-ooxml",
+          "path": "workflows/package/bun-zip32-profile.feature",
+          "basis": "Project-owned behaviour contract or source assertion mapping"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "id": "asset-bad611f4ba4a5cb77039f4089d7dd88fe01074ccffc88dd7d45f29cb5fda9022",
+      "path": "ledgers/consumers/bun-zip32.json",
+      "bytes": 20239,
+      "sha256": "bad611f4ba4a5cb77039f4089d7dd88fe01074ccffc88dd7d45f29cb5fda9022",
+      "role": "consumer-mapping",
+      "origins": [
+        {
+          "repository": "https://github.com/rcarmo/fixtures-ooxml",
+          "path": "ledgers/consumers/bun-zip32.json",
+          "basis": "Project-owned behaviour contract or source assertion mapping"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "id": "asset-983abfb48035fda8cf1c2f1286f633295b442aa46178b4a58e8295edce5112b4",
+      "path": "contracts/bun-zip32-profile.md",
+      "bytes": 1365,
+      "sha256": "983abfb48035fda8cf1c2f1286f633295b442aa46178b4a58e8295edce5112b4",
+      "role": "workflow-contract",
+      "origins": [
+        {
+          "repository": "https://github.com/rcarmo/fixtures-ooxml",
+          "path": "contracts/bun-zip32-profile.md",
+          "basis": "Project-owned behaviour contract or source assertion mapping"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "id": "asset-31e27de8fa848a33456df065b2002e416b3ad7b156c7f3323bbcd888090fbf11",
+      "path": "workflows/xlsx/go-formula-references.feature",
+      "bytes": 7960,
+      "sha256": "31e27de8fa848a33456df065b2002e416b3ad7b156c7f3323bbcd888090fbf11",
+      "role": "workflow",
+      "origins": [
+        {
+          "repository": "https://github.com/rcarmo/fixtures-ooxml",
+          "path": "workflows/xlsx/go-formula-references.feature",
+          "basis": "Project-owned behaviour contract or source assertion mapping"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "id": "asset-ede7d703b36b3c63ebe1ca3d05fee24013b360b1eaee6b3e3da5e8f56be98f93",
+      "path": "ledgers/consumers/go-formula-references.json",
+      "bytes": 6837,
+      "sha256": "ede7d703b36b3c63ebe1ca3d05fee24013b360b1eaee6b3e3da5e8f56be98f93",
+      "role": "consumer-mapping",
+      "origins": [
+        {
+          "repository": "https://github.com/rcarmo/fixtures-ooxml",
+          "path": "ledgers/consumers/go-formula-references.json",
+          "basis": "Project-owned behaviour contract or source assertion mapping"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "id": "asset-d98985fa49ac9f48381acad68c275176c3a9722564c5c598d9cb7b18e0b37b17",
+      "path": "contracts/go-formula-references.md",
+      "bytes": 3771,
+      "sha256": "d98985fa49ac9f48381acad68c275176c3a9722564c5c598d9cb7b18e0b37b17",
+      "role": "workflow-contract",
+      "origins": [
+        {
+          "repository": "https://github.com/rcarmo/fixtures-ooxml",
+          "path": "contracts/go-formula-references.md",
+          "basis": "Project-owned behaviour contract or source assertion mapping"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "id": "asset-a69b82e6b51c58d66d37e7bc45ba93e69c7a5c77ad2c8823e2299caff3650602",
+      "path": "workflows/docx/python-template-cache.feature",
+      "bytes": 3761,
+      "sha256": "a69b82e6b51c58d66d37e7bc45ba93e69c7a5c77ad2c8823e2299caff3650602",
+      "role": "workflow",
+      "origins": [
+        {
+          "repository": "https://github.com/rcarmo/fixtures-ooxml",
+          "path": "workflows/docx/python-template-cache.feature",
+          "basis": "Project-owned behaviour contract or source assertion mapping"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "id": "asset-d14580ba75acbbdf23d44193f037f59eab4a6e27317f114f2a14e68d2ac44ba4",
+      "path": "ledgers/consumers/python-template-cache.json",
+      "bytes": 6546,
+      "sha256": "d14580ba75acbbdf23d44193f037f59eab4a6e27317f114f2a14e68d2ac44ba4",
+      "role": "consumer-mapping",
+      "origins": [
+        {
+          "repository": "https://github.com/rcarmo/fixtures-ooxml",
+          "path": "ledgers/consumers/python-template-cache.json",
+          "basis": "Project-owned behaviour contract or source assertion mapping"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "id": "asset-78fd774d128c8b477a7bdcafa6281e65dde4918a54e5dc2872e0b0280684bc25",
+      "path": "contracts/python-template-cache.md",
+      "bytes": 1568,
+      "sha256": "78fd774d128c8b477a7bdcafa6281e65dde4918a54e5dc2872e0b0280684bc25",
+      "role": "workflow-contract",
+      "origins": [
+        {
+          "repository": "https://github.com/rcarmo/fixtures-ooxml",
+          "path": "contracts/python-template-cache.md",
+          "basis": "Project-owned behaviour contract or source assertion mapping"
+        }
+      ],
+      "aliases": []
     }
   ]
 }

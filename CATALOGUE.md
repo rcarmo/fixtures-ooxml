@@ -38,8 +38,10 @@ concrete outcomes. Omit an existing contract or mapping from the command; review
 its changes separately and update its hash if it is already in the manifest.
 
 Validation rejects an unregistered feature, a missing file, duplicate IDs or an
-unsealed workflow. Add tests for exact example values and the source-family
-mapping. Commit the feature, mapping, registry changes and checks together.
+unsealed workflow. Each consumer's native test identity belongs to one mapping
+ledger. Files at the same repository revision must have consistent source hashes
+across ledgers. Add tests for exact example values and the source-family mapping.
+Commit the feature, mapping, registry changes and checks together.
 
 New scenarios are `@planned` until an implementation binds and runs them. Preserve
 that distinction in results, but do not defer writing a valid format contract

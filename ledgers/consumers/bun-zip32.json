@@ -1,0 +1,494 @@
+{
+  "schemaVersion": 1,
+  "consumer": "bun",
+  "source": {
+    "repository": "https://github.com/rcarmo/bun-ooxml",
+    "revision": "7e9843f492d229c0736d9d5c6f7820ce6fcb92ab"
+  },
+  "scope": "All 19 declarations in tests/unit/zip.test.ts. Positive reads and deterministic writes reuse existing scenarios. Typed refusal/resource-limit examples specify the Bun ZIP API profile. Fixture admission loop remains unmapped; no shared execution or allocation measurement.",
+  "declarationCount": 19,
+  "sourceFiles": [
+    {
+      "path": "tests/unit/zip.test.ts",
+      "sha256": "559ec05a987de7dd08c1d0e09461624d4b0f3b74b835e81d6e71c04743462118",
+      "declarations": [
+        "bun:tests/unit/zip.test.ts:crc32 / matches the standard test vector",
+        "bun:tests/unit/zip.test.ts:writeZip / writes deterministic UTF-8 ZIP32 output that readZip can reopen",
+        "bun:tests/unit/zip.test.ts:writeZip / refuses ASCII case-colliding output names",
+        "bun:tests/unit/zip.test.ts:writeZip / refuses non-empty directory entries",
+        "bun:tests/unit/zip.test.ts:readZip / reads a valid archive with a directory entry, data descriptor, and declared comment",
+        "bun:tests/unit/zip.test.ts:readZip / refuses duplicate member names",
+        "bun:tests/unit/zip.test.ts:readZip / refuses ASCII case-colliding member names",
+        "bun:tests/unit/zip.test.ts:readZip / refuses noncanonical part paths",
+        "bun:tests/unit/zip.test.ts:readZip / refuses encrypted members",
+        "bun:tests/unit/zip.test.ts:readZip / refuses unsupported compression methods",
+        "bun:tests/unit/zip.test.ts:readZip / refuses multi-disk archives",
+        "bun:tests/unit/zip.test.ts:readZip / refuses malformed ZIP64 sentinels without ZIP64 directory records",
+        "bun:tests/unit/zip.test.ts:readZip / refuses local and central metadata mismatches",
+        "bun:tests/unit/zip.test.ts:readZip / refuses CRC mismatches",
+        "bun:tests/unit/zip.test.ts:readZip / refuses declared size mismatches",
+        "bun:tests/unit/zip.test.ts:readZip / refuses deflated members that inflate past their declared size bound",
+        "bun:tests/unit/zip.test.ts:readZip / refuses undeclared trailing bytes after the archive",
+        "bun:tests/unit/zip.test.ts:readZip / enforces configured archive, count, entry, total, and ratio bounds",
+        "bun:tests/unit/zip.test.ts:readZip / reads every checked-in rcarmo fixture archive under default bounds"
+      ]
+    }
+  ],
+  "helpers": [
+    {
+      "path": "tests/unit/zip.test.ts",
+      "sha256": "559ec05a987de7dd08c1d0e09461624d4b0f3b74b835e81d6e71c04743462118",
+      "symbol": "expectZipError",
+      "assertions": [
+        "Error is an OoxmlError instance",
+        "Error code equals the supplied string",
+        "Error message contains the supplied fragment"
+      ]
+    },
+    {
+      "path": "tests/unit/zip.test.ts",
+      "sha256": "559ec05a987de7dd08c1d0e09461624d4b0f3b74b835e81d6e71c04743462118",
+      "symbol": "buildZip",
+      "role": "Ordered raw-DEFLATE/STORED ZIP32 builder with independently overridable headers and a declared end record; error inputs need not be valid compressed streams"
+    },
+    {
+      "path": "scripts/fixture-inputs.ts",
+      "sha256": "8f05ee041c84916499becf81e0959ccd9f42adaa375ad74c31d3f0f471906119",
+      "symbol": "CORPUS74_PACKAGE_IDS",
+      "role": "Exact fixture selection for the unmapped admission loop"
+    }
+  ],
+  "mappings": [
+    {
+      "nativeId": "bun:tests/unit/zip.test.ts:crc32 / matches the standard test vector",
+      "path": "tests/unit/zip.test.ts",
+      "sourceSha256": "559ec05a987de7dd08c1d0e09461624d4b0f3b74b835e81d6e71c04743462118",
+      "line": 63,
+      "coverage": "partial",
+      "scenarioIds": [
+        "@id-zip-crc32-standard-vector"
+      ],
+      "verifiedAspects": [
+        "UTF-8 123456789 yields unsigned CRC32 0xcbf43926"
+      ],
+      "gaps": [
+        "One check vector; no byte-boundary or incremental checksum variants"
+      ],
+      "assertions": [
+        "expect(crc32(encoder.encode(\"123456789\"))).toBe(0xcbf43926)"
+      ],
+      "reviewReasons": [],
+      "executionCredit": false
+    },
+    {
+      "nativeId": "bun:tests/unit/zip.test.ts:writeZip / writes deterministic UTF-8 ZIP32 output that readZip can reopen",
+      "path": "tests/unit/zip.test.ts",
+      "sourceSha256": "559ec05a987de7dd08c1d0e09461624d4b0f3b74b835e81d6e71c04743462118",
+      "line": 69,
+      "coverage": "partial",
+      "scenarioIds": [
+        "@id-zip-write-deterministic"
+      ],
+      "verifiedAspects": [
+        "Two writes are byte-equal; reopened file names are sorted and directory omitted; document and content-type payloads exact"
+      ],
+      "gaps": [
+        "Native test does not inspect UTF-8 flags or compression method fields required by the canonical scenario",
+        "Core-properties payload is not directly checked after reopening; the fixed ASCII-name input is narrower than all canonical maps"
+      ],
+      "assertions": [
+        "expect(first).toEqual(second)",
+        "expect(Array.from(reopened.keys())).toEqual([\n      \"[Content_Types].xml\",\n      \"docProps/core.xml\",\n      \"word/document.xml\",\n    ])",
+        "expect(decoder.decode(reopened.get(\"word/document.xml\")!)).toBe(\"<w:document/>\")",
+        "expect(decoder.decode(reopened.get(\"[Content_Types].xml\")!)).toBe(\"<Types/>\")"
+      ],
+      "reviewReasons": [],
+      "executionCredit": false
+    },
+    {
+      "nativeId": "bun:tests/unit/zip.test.ts:writeZip / refuses ASCII case-colliding output names",
+      "path": "tests/unit/zip.test.ts",
+      "sourceSha256": "559ec05a987de7dd08c1d0e09461624d4b0f3b74b835e81d6e71c04743462118",
+      "line": 92,
+      "coverage": "partial",
+      "scenarioIds": [
+        "@id-bun-zip32-writer-refusal"
+      ],
+      "exampleVariant": "ASCII case collision",
+      "verifiedAspects": [
+        "Exact writer input variant throws the documented class/code/message via expectZipError"
+      ],
+      "gaps": [
+        "One of two canonical outline variants per declaration; no returned-archive or caller-map custody assertion after refusal"
+      ],
+      "assertions": [],
+      "reviewReasons": [
+        "helper-or-no-direct-assertion"
+      ],
+      "executionCredit": false
+    },
+    {
+      "nativeId": "bun:tests/unit/zip.test.ts:writeZip / refuses non-empty directory entries",
+      "path": "tests/unit/zip.test.ts",
+      "sourceSha256": "559ec05a987de7dd08c1d0e09461624d4b0f3b74b835e81d6e71c04743462118",
+      "line": 105,
+      "coverage": "partial",
+      "scenarioIds": [
+        "@id-bun-zip32-writer-refusal"
+      ],
+      "exampleVariant": "non-empty directory entry",
+      "verifiedAspects": [
+        "Exact writer input variant throws the documented class/code/message via expectZipError"
+      ],
+      "gaps": [
+        "One of two canonical outline variants per declaration; no returned-archive or caller-map custody assertion after refusal"
+      ],
+      "assertions": [],
+      "reviewReasons": [
+        "helper-or-no-direct-assertion"
+      ],
+      "executionCredit": false
+    },
+    {
+      "nativeId": "bun:tests/unit/zip.test.ts:readZip / reads a valid archive with a directory entry, data descriptor, and declared comment",
+      "path": "tests/unit/zip.test.ts",
+      "sourceSha256": "559ec05a987de7dd08c1d0e09461624d4b0f3b74b835e81d6e71c04743462118",
+      "line": 117,
+      "coverage": "partial",
+      "scenarioIds": [
+        "@id-zip-read-valid"
+      ],
+      "verifiedAspects": [
+        "Returned files retain central-directory order, omit word/ directory, and contain exact content-type/document strings",
+        "Input includes STORED and DEFLATE, a signed data descriptor and a declared archive comment"
+      ],
+      "gaps": [
+        "Native assertions compare payloads rather than directly recomputing returned CRC/size; unsigned descriptor and other combinations are not covered"
+      ],
+      "assertions": [
+        "expect(Array.from(parts.keys())).toEqual([\"[Content_Types].xml\", \"word/document.xml\"])",
+        "expect(decoder.decode(parts.get(\"[Content_Types].xml\")!)).toBe(\"<Types/>\")",
+        "expect(decoder.decode(parts.get(\"word/document.xml\")!)).toBe(\"<w:document/>\")"
+      ],
+      "reviewReasons": [],
+      "executionCredit": false
+    },
+    {
+      "nativeId": "bun:tests/unit/zip.test.ts:readZip / refuses duplicate member names",
+      "path": "tests/unit/zip.test.ts",
+      "sourceSha256": "559ec05a987de7dd08c1d0e09461624d4b0f3b74b835e81d6e71c04743462118",
+      "line": 140,
+      "coverage": "partial",
+      "scenarioIds": [
+        "@id-bun-zip32-reader-refusal"
+      ],
+      "exampleVariant": "duplicate names",
+      "verifiedAspects": [
+        "Exact malformed archive variant throws the documented class/code/message via expectZipError"
+      ],
+      "gaps": [
+        "One of twelve canonical outline variants per declaration",
+        "No caller-byte custody assertion or measured allocation bound after refusal"
+      ],
+      "assertions": [],
+      "reviewReasons": [
+        "helper-or-no-direct-assertion"
+      ],
+      "executionCredit": false
+    },
+    {
+      "nativeId": "bun:tests/unit/zip.test.ts:readZip / refuses ASCII case-colliding member names",
+      "path": "tests/unit/zip.test.ts",
+      "sourceSha256": "559ec05a987de7dd08c1d0e09461624d4b0f3b74b835e81d6e71c04743462118",
+      "line": 149,
+      "coverage": "partial",
+      "scenarioIds": [
+        "@id-bun-zip32-reader-refusal"
+      ],
+      "exampleVariant": "ASCII case collision",
+      "verifiedAspects": [
+        "Exact malformed archive variant throws the documented class/code/message via expectZipError"
+      ],
+      "gaps": [
+        "One of twelve canonical outline variants per declaration",
+        "No caller-byte custody assertion or measured allocation bound after refusal"
+      ],
+      "assertions": [],
+      "reviewReasons": [
+        "helper-or-no-direct-assertion"
+      ],
+      "executionCredit": false
+    },
+    {
+      "nativeId": "bun:tests/unit/zip.test.ts:readZip / refuses noncanonical part paths",
+      "path": "tests/unit/zip.test.ts",
+      "sourceSha256": "559ec05a987de7dd08c1d0e09461624d4b0f3b74b835e81d6e71c04743462118",
+      "line": 158,
+      "coverage": "partial",
+      "scenarioIds": [
+        "@id-bun-zip32-reader-refusal"
+      ],
+      "exampleVariant": "parent traversal",
+      "verifiedAspects": [
+        "Exact malformed archive variant throws the documented class/code/message via expectZipError"
+      ],
+      "gaps": [
+        "One of twelve canonical outline variants per declaration",
+        "No caller-byte custody assertion or measured allocation bound after refusal"
+      ],
+      "assertions": [],
+      "reviewReasons": [
+        "helper-or-no-direct-assertion"
+      ],
+      "executionCredit": false
+    },
+    {
+      "nativeId": "bun:tests/unit/zip.test.ts:readZip / refuses encrypted members",
+      "path": "tests/unit/zip.test.ts",
+      "sourceSha256": "559ec05a987de7dd08c1d0e09461624d4b0f3b74b835e81d6e71c04743462118",
+      "line": 164,
+      "coverage": "partial",
+      "scenarioIds": [
+        "@id-bun-zip32-reader-refusal"
+      ],
+      "exampleVariant": "encryption flag",
+      "verifiedAspects": [
+        "Exact malformed archive variant throws the documented class/code/message via expectZipError"
+      ],
+      "gaps": [
+        "One of twelve canonical outline variants per declaration",
+        "No caller-byte custody assertion or measured allocation bound after refusal"
+      ],
+      "assertions": [],
+      "reviewReasons": [
+        "helper-or-no-direct-assertion"
+      ],
+      "executionCredit": false
+    },
+    {
+      "nativeId": "bun:tests/unit/zip.test.ts:readZip / refuses unsupported compression methods",
+      "path": "tests/unit/zip.test.ts",
+      "sourceSha256": "559ec05a987de7dd08c1d0e09461624d4b0f3b74b835e81d6e71c04743462118",
+      "line": 172,
+      "coverage": "partial",
+      "scenarioIds": [
+        "@id-bun-zip32-reader-refusal"
+      ],
+      "exampleVariant": "unsupported method",
+      "verifiedAspects": [
+        "Exact malformed archive variant throws the documented class/code/message via expectZipError"
+      ],
+      "gaps": [
+        "One of twelve canonical outline variants per declaration",
+        "No caller-byte custody assertion or measured allocation bound after refusal"
+      ],
+      "assertions": [],
+      "reviewReasons": [
+        "helper-or-no-direct-assertion"
+      ],
+      "executionCredit": false
+    },
+    {
+      "nativeId": "bun:tests/unit/zip.test.ts:readZip / refuses multi-disk archives",
+      "path": "tests/unit/zip.test.ts",
+      "sourceSha256": "559ec05a987de7dd08c1d0e09461624d4b0f3b74b835e81d6e71c04743462118",
+      "line": 178,
+      "coverage": "partial",
+      "scenarioIds": [
+        "@id-bun-zip32-reader-refusal"
+      ],
+      "exampleVariant": "multiple disks",
+      "verifiedAspects": [
+        "Exact malformed archive variant throws the documented class/code/message via expectZipError"
+      ],
+      "gaps": [
+        "One of twelve canonical outline variants per declaration",
+        "No caller-byte custody assertion or measured allocation bound after refusal"
+      ],
+      "assertions": [],
+      "reviewReasons": [
+        "helper-or-no-direct-assertion"
+      ],
+      "executionCredit": false
+    },
+    {
+      "nativeId": "bun:tests/unit/zip.test.ts:readZip / refuses malformed ZIP64 sentinels without ZIP64 directory records",
+      "path": "tests/unit/zip.test.ts",
+      "sourceSha256": "559ec05a987de7dd08c1d0e09461624d4b0f3b74b835e81d6e71c04743462118",
+      "line": 186,
+      "coverage": "partial",
+      "scenarioIds": [
+        "@id-bun-zip32-reader-refusal"
+      ],
+      "exampleVariant": "missing ZIP64 records",
+      "verifiedAspects": [
+        "Exact malformed archive variant throws the documented class/code/message via expectZipError"
+      ],
+      "gaps": [
+        "One of twelve canonical outline variants per declaration",
+        "No caller-byte custody assertion or measured allocation bound after refusal"
+      ],
+      "assertions": [],
+      "reviewReasons": [
+        "helper-or-no-direct-assertion"
+      ],
+      "executionCredit": false
+    },
+    {
+      "nativeId": "bun:tests/unit/zip.test.ts:readZip / refuses local and central metadata mismatches",
+      "path": "tests/unit/zip.test.ts",
+      "sourceSha256": "559ec05a987de7dd08c1d0e09461624d4b0f3b74b835e81d6e71c04743462118",
+      "line": 195,
+      "coverage": "partial",
+      "scenarioIds": [
+        "@id-bun-zip32-reader-refusal"
+      ],
+      "exampleVariant": "local name mismatch",
+      "verifiedAspects": [
+        "Exact malformed archive variant throws the documented class/code/message via expectZipError"
+      ],
+      "gaps": [
+        "One of twelve canonical outline variants per declaration",
+        "No caller-byte custody assertion or measured allocation bound after refusal"
+      ],
+      "assertions": [],
+      "reviewReasons": [
+        "helper-or-no-direct-assertion"
+      ],
+      "executionCredit": false
+    },
+    {
+      "nativeId": "bun:tests/unit/zip.test.ts:readZip / refuses CRC mismatches",
+      "path": "tests/unit/zip.test.ts",
+      "sourceSha256": "559ec05a987de7dd08c1d0e09461624d4b0f3b74b835e81d6e71c04743462118",
+      "line": 207,
+      "coverage": "partial",
+      "scenarioIds": [
+        "@id-bun-zip32-reader-refusal"
+      ],
+      "exampleVariant": "CRC mismatch",
+      "verifiedAspects": [
+        "Exact malformed archive variant throws the documented class/code/message via expectZipError"
+      ],
+      "gaps": [
+        "One of twelve canonical outline variants per declaration",
+        "No caller-byte custody assertion or measured allocation bound after refusal"
+      ],
+      "assertions": [],
+      "reviewReasons": [
+        "helper-or-no-direct-assertion"
+      ],
+      "executionCredit": false
+    },
+    {
+      "nativeId": "bun:tests/unit/zip.test.ts:readZip / refuses declared size mismatches",
+      "path": "tests/unit/zip.test.ts",
+      "sourceSha256": "559ec05a987de7dd08c1d0e09461624d4b0f3b74b835e81d6e71c04743462118",
+      "line": 219,
+      "coverage": "partial",
+      "scenarioIds": [
+        "@id-bun-zip32-reader-refusal"
+      ],
+      "exampleVariant": "stored size mismatch",
+      "verifiedAspects": [
+        "Exact malformed archive variant throws the documented class/code/message via expectZipError"
+      ],
+      "gaps": [
+        "One of twelve canonical outline variants per declaration",
+        "No caller-byte custody assertion or measured allocation bound after refusal"
+      ],
+      "assertions": [],
+      "reviewReasons": [
+        "helper-or-no-direct-assertion"
+      ],
+      "executionCredit": false
+    },
+    {
+      "nativeId": "bun:tests/unit/zip.test.ts:readZip / refuses deflated members that inflate past their declared size bound",
+      "path": "tests/unit/zip.test.ts",
+      "sourceSha256": "559ec05a987de7dd08c1d0e09461624d4b0f3b74b835e81d6e71c04743462118",
+      "line": 235,
+      "coverage": "partial",
+      "scenarioIds": [
+        "@id-bun-zip32-reader-refusal"
+      ],
+      "exampleVariant": "deflate size overrun",
+      "verifiedAspects": [
+        "Exact malformed archive variant throws the documented class/code/message via expectZipError"
+      ],
+      "gaps": [
+        "One of twelve canonical outline variants per declaration",
+        "No caller-byte custody assertion or measured allocation bound after refusal"
+      ],
+      "assertions": [],
+      "reviewReasons": [
+        "helper-or-no-direct-assertion"
+      ],
+      "executionCredit": false
+    },
+    {
+      "nativeId": "bun:tests/unit/zip.test.ts:readZip / refuses undeclared trailing bytes after the archive",
+      "path": "tests/unit/zip.test.ts",
+      "sourceSha256": "559ec05a987de7dd08c1d0e09461624d4b0f3b74b835e81d6e71c04743462118",
+      "line": 249,
+      "coverage": "partial",
+      "scenarioIds": [
+        "@id-bun-zip32-reader-refusal"
+      ],
+      "exampleVariant": "undeclared trailing byte",
+      "verifiedAspects": [
+        "Exact malformed archive variant throws the documented class/code/message via expectZipError"
+      ],
+      "gaps": [
+        "One of twelve canonical outline variants per declaration",
+        "No caller-byte custody assertion or measured allocation bound after refusal"
+      ],
+      "assertions": [],
+      "reviewReasons": [
+        "helper-or-no-direct-assertion"
+      ],
+      "executionCredit": false
+    },
+    {
+      "nativeId": "bun:tests/unit/zip.test.ts:readZip / enforces configured archive, count, entry, total, and ratio bounds",
+      "path": "tests/unit/zip.test.ts",
+      "sourceSha256": "559ec05a987de7dd08c1d0e09461624d4b0f3b74b835e81d6e71c04743462118",
+      "line": 255,
+      "coverage": "partial",
+      "scenarioIds": [
+        "@id-bun-zip32-configured-bounds"
+      ],
+      "verifiedAspects": [
+        "Five explicit overrides each trigger exact error class, code and message fragment via expectZipError"
+      ],
+      "gaps": [
+        "Helper assertions are reviewed separately from declaration-level extraction",
+        "No allocation/time measurement or just-within-limit positive control is asserted"
+      ],
+      "assertions": [],
+      "reviewReasons": [
+        "helper-or-no-direct-assertion"
+      ],
+      "executionCredit": false
+    },
+    {
+      "nativeId": "bun:tests/unit/zip.test.ts:readZip / reads every checked-in rcarmo fixture archive under default bounds",
+      "path": "tests/unit/zip.test.ts",
+      "sourceSha256": "559ec05a987de7dd08c1d0e09461624d4b0f3b74b835e81d6e71c04743462118",
+      "line": 269,
+      "coverage": "unmapped",
+      "scenarioIds": [],
+      "verifiedAspects": [],
+      "gaps": [
+        "74 selected fixture archives must parse without throwing; exact payloads, per-fixture outcomes and shared scenario bindings are not asserted. Mapping to whole-archive no-op custody would overstate this test"
+      ],
+      "assertions": [
+        "expect(fixtures).toHaveLength(EXPECTED_FIXTURE_ARCHIVE_COUNT)"
+      ],
+      "reviewReasons": [
+        "body-loop"
+      ],
+      "executionCredit": false
+    }
+  ]
+}
