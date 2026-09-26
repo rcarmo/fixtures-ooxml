@@ -6,7 +6,17 @@ const hash=(b:Uint8Array)=>new Bun.CryptoHasher('sha256').update(b).digest('hex'
 const safe=(p:string)=>!!p&&!/[\\:\u0000-\u001f]/.test(p)&&p.split('/').every(s=>s&&s!=='.'&&s!=='..');
 export function cases(path:string,text:string){
  const id=IdGenerator.incrementing(),doc=new Parser(new AstBuilder(id),new GherkinClassicTokenMatcher()).parse(text);
+ const scenarioIds=new Set<string>();
+ const inspect=(children:any[])=>{for(const child of children){
+  if(child.rule)inspect(child.rule.children);
+  if(!child.scenario)continue;
+  const ids=child.scenario.tags.map((t:any)=>t.name).filter((name:string)=>/^@id-/.test(name));
+  if(ids.length!==1)throw Error('Expected unique scenario ID: '+path);
+  if(scenarioIds.has(ids[0]))throw Error('Duplicate scenario ID: '+ids[0]);scenarioIds.add(ids[0]);
+ }};
+ inspect(doc.feature?.children??[]);
  const pickles=compile(doc,path,id);
+ if(!scenarioIds.size||!pickles.length)throw Error('Feature must compile at least one scenario: '+path);
  return pickles.map(p=>{
   const ids=p.tags.map(t=>t.name).filter(t=>/^@id-/.test(t));if(ids.length!==1)throw Error('Expected unique scenario ID: '+path);
   return {scenarioId:ids[0]!,name:p.name,steps:p.steps.map(s=>({text:s.text,argument:s.argument??null}))};
@@ -38,6 +48,17 @@ export function validateMutationContract(contract:any,manifest:any){
   if(!f.memberSha256||!Object.keys(f.memberSha256).length||!Array.isArray(f.allowedChangedPartsForSuccess)||new Set(f.allowedChangedPartsForSuccess).size!==f.allowedChangedPartsForSuccess.length)throw Error('Invalid member policy');
   for(const [path,digest]of Object.entries(f.memberSha256))if(!safe(path)||typeof digest!=='string'||!/^[a-f0-9]{64}$/.test(digest))throw Error('Invalid member hash');
   for(const name of f.allowedChangedPartsForSuccess)if(!Object.hasOwn(f.memberSha256,name))throw Error('Unknown allowed member');
+ }
+}
+export function validateConsumerMappings(ledger:any,scenarioIds:Set<string>){
+ const textList=(values:any)=>Array.isArray(values)&&values.every((value:any)=>typeof value==='string'&&value.trim().length>0);
+ if(ledger.schemaVersion!==1||!['bun','go','python'].includes(ledger.consumer)||!ledger.scope||!/^https:\/\/github\.com\/rcarmo\//.test(ledger.source?.repository??'')||!/^[a-f0-9]{40}$/.test(ledger.source?.revision??'')||!Array.isArray(ledger.mappings)||ledger.declarationCount!==ledger.mappings.length)throw Error('Invalid consumer mapping snapshot');
+ const nativeIds=new Set<string>();
+ for(const row of ledger.mappings){
+  if(typeof row.nativeId!=='string'||!row.nativeId||nativeIds.has(row.nativeId)||!safe(row.path)||!/^\w/.test(row.path)||!/^[a-f0-9]{64}$/.test(row.sourceSha256??''))throw Error('Invalid or duplicate native test identity');
+  nativeIds.add(row.nativeId);
+  if(!['partial','mapped','unmapped'].includes(row.coverage)||row.executionCredit!==false||!Array.isArray(row.scenarioIds)||new Set(row.scenarioIds).size!==row.scenarioIds.length||row.scenarioIds.some((id:string)=>!scenarioIds.has(id))||!textList(row.verifiedAspects)||!textList(row.gaps))throw Error('Invalid mapping state or scenario');
+  if(row.coverage==='unmapped'&&(row.scenarioIds.length||row.verifiedAspects.length)||row.coverage!=='unmapped'&&(!row.scenarioIds.length||!row.verifiedAspects.length)||row.coverage!=='mapped'&&!row.gaps.length||row.coverage==='mapped'&&row.gaps.length)throw Error('Mapping scope must record gaps without implicit credit');
  }
 }
 export async function verify(base=root){
@@ -73,10 +94,17 @@ export async function verify(base=root){
  for await(const path of new Bun.Glob('**/*').scan({cwd:base,onlyFiles:true,dot:false}))if(!path.startsWith('node_modules/')&&forbidden.test(path))throw Error('External implementation source is not a reference asset: '+path);
  const evidence=await Bun.file(join(base,'facts/evidence.json')).json(),eids=new Set(evidence.items.map((e:any)=>e.id));
  const factIds=new Set<string>();for(const group of ['content-types','namespaces','relationships','constants']){const facts=await Bun.file(join(base,'facts',group+'.json')).json();for(const f of facts.values){if(factIds.has(f.id)||!f.value||!['observed','specified','disputed'].includes(f.status)||!f.evidence.length||f.evidence.some((id:string)=>!eids.has(id)))throw Error('Invalid fact '+f.id);factIds.add(f.id);}}
- const ledger=await Bun.file(join(base,'ledgers/workflows.json')).json();const actual=[];
- for(const path of ledger.features){const text=await Bun.file(join(base,path)).text();for(const c of cases(path,text))actual.push({...c,path});}
+ const ledger=await Bun.file(join(base,'ledgers/workflows.json')).json();const actual=[];const definitions=new Set<string>();
+ if(new Set(ledger.features).size!==ledger.features.length)throw Error('Duplicate feature path');
+ for(const path of ledger.features){
+  if(!safe(path))throw Error('Unsafe feature path');
+  const text=await Bun.file(join(base,path)).text(),compiled=cases(path,text);
+  for(const id of new Set(compiled.map(c=>c.scenarioId))){if(definitions.has(id))throw Error('Scenario defined in multiple features');definitions.add(id);}
+  for(const c of compiled)actual.push({...c,path});
+ }
  const ids=[...new Set(actual.map(c=>c.scenarioId))].sort();if(JSON.stringify(ids)!==JSON.stringify(ledger.workflows.map((w:any)=>w.id).sort()))throw Error('Workflow ledger scenario drift');
  for(const w of ledger.workflows){if(w.expandedCases!==actual.filter(c=>c.scenarioId===w.id).length||!w.expectedOutcomes?.length||w.factIds.some((id:string)=>!factIds.has(id)))throw Error('Incomplete workflow '+w.id);}
+ for await(const path of new Bun.Glob('ledgers/consumers/*.json').scan({cwd:base,onlyFiles:true}))validateConsumerMappings(await Bun.file(join(base,path)).json(),new Set(ids));
  const groups=await Bun.file(join(base,'ledgers/fixture-groups.json')).json(),groupKeys=new Set<string>(),groupedIds=new Set<string>();
  for(const group of groups.groups){
   const key=group.format+'/'+group.scenarioGroup;if(groupKeys.has(key)||!group.fixtureIds?.length)throw Error('Duplicate or empty fixture group');groupKeys.add(key);

@@ -2981,6 +2981,54 @@
         }
       ],
       "aliases": []
+    },
+    {
+      "id": "asset-b700a3da8670cb048aa3f836c193f4533908730c185847f63e167e59c48f5e93",
+      "path": "workflows/xml/comparison.feature",
+      "bytes": 3078,
+      "sha256": "b700a3da8670cb048aa3f836c193f4533908730c185847f63e167e59c48f5e93",
+      "role": "workflow",
+      "origins": [
+        {
+          "repository": "https://github.com/rcarmo/python-office-mcp-server",
+          "revision": "7175e5d079713910410bdcdbbcd4bfb29456ae8f",
+          "path": "docs/catalogue-staging/workflows/xml/comparison.feature",
+          "change": "Name the operation without a Python symbol; all XML inputs, Boolean outcomes and scenario IDs retained"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "id": "asset-032ccd1e7adc03078f17baa55ac0d6aa216790d975e57c797b0d79aacc981ed8",
+      "path": "workflows/xml/names.feature",
+      "bytes": 1226,
+      "sha256": "032ccd1e7adc03078f17baa55ac0d6aa216790d975e57c797b0d79aacc981ed8",
+      "role": "workflow",
+      "origins": [
+        {
+          "repository": "https://github.com/rcarmo/bun-ooxml",
+          "revision": "9e39177ca69f60988328c189b62894845501b4db",
+          "path": "features/opc/xml-names.feature",
+          "change": "Lifecycle tag only; original scenario IDs and step text retained"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "id": "asset-9ed18e4e4172f1742015e99fae46142bad12a4a50357b00b3c62c4889214c0da",
+      "path": "workflows/xml/parsing.feature",
+      "bytes": 2316,
+      "sha256": "9ed18e4e4172f1742015e99fae46142bad12a4a50357b00b3c62c4889214c0da",
+      "role": "workflow",
+      "origins": [
+        {
+          "repository": "https://github.com/rcarmo/bun-ooxml",
+          "revision": "9e39177ca69f60988328c189b62894845501b4db",
+          "path": "features/opc/xml.feature",
+          "change": "Lifecycle tag only; original scenario IDs and step text retained"
+        }
+      ],
+      "aliases": []
     }
   ]
 }

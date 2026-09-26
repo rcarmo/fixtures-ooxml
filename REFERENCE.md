@@ -22,8 +22,9 @@ entries include:
 
 One unique byte hash has one physical file. The grouped baseline holds 115 fixture
 files in 32 groups, totalling 6,451,099 bytes. It replaces 154 physical copies
-without dropping a unique input. The complete manifest contains 122 assets;
-notices and workflow metadata account for the other seven entries.
+without dropping a unique input. The manifest also pins notices and workflow metadata; its total asset count grows
+as behaviour contracts are added. Fixture counts and bytes are unchanged by those
+catalogue additions.
 
 Resolve a fixture ID through the manifest. Do not infer its path from an origin,
 copy it for another scenario, or create compatibility directories or symlinks.
@@ -74,6 +75,12 @@ consumer mapping states. Missing, unmapped and planned consumer states grant no
 execution credit. Existing result descriptions are historical reports; verify a
 consumer's current run separately. The full native-test catalogue is still being
 reviewed and reconciled. Generated candidate text is not automatically canonical.
+
+Native test snapshots under `ledgers/consumers/` use `mapped`, `partial` or
+`unmapped` coverage, pinned repository revisions and test-file hashes. They
+require explicit gaps for partial/unmapped rows and always set
+`executionCredit: false`. A complete declaration mapping does not cover a module
+or imply that central bindings ran. See [XML profiles](contracts/xml-profiles.md).
 
 When several tests exercise the same behaviour, map them to one scenario with
 explicit parameter variants. Distinct preconditions or conflicting outcomes need

@@ -1,0 +1,223 @@
+{
+  "schemaVersion": 1,
+  "consumer": "python",
+  "source": {
+    "repository": "https://github.com/rcarmo/python-office-mcp-server",
+    "revision": "78241b7d5b08ebc16d1ef7c616d998f7f0f4838a"
+  },
+  "scope": "Exactly five conservative XML comparison declarations and ten concrete variants; lexical parsing/C14N excluded",
+  "declarationCount": 5,
+  "priorRun": {
+    "kind": "staging-only",
+    "passedCases": 10,
+    "argumentEqualityVerified": true,
+    "canonicalExecution": false
+  },
+  "mappings": [
+    {
+      "nativeId": "tests/test_package_preservation.py::test_prefix_and_opc_collection_order_are_equivalent",
+      "path": "tests/test_package_preservation.py",
+      "sourceSha256": "3ac94b514ec3aa8fb8111283bdf1735370dc2cd08dd4f0c8ebdd669dd3d952d9",
+      "coverage": "mapped",
+      "scenarioIds": [
+        "@id-xml-comparison-prefix-and-opc-order"
+      ],
+      "verifiedAspects": [
+        "Prefix spelling and OPC relationship order compare equivalent: comparison result true"
+      ],
+      "gaps": [],
+      "executionCredit": false,
+      "variants": [
+        {
+          "name": "Prefix spelling and OPC relationship order compare equivalent",
+          "nativeAssertionLine": 10,
+          "leftUtf8": "<Relationships xmlns=\"http://schemas.openxmlformats.org/package/2006/relationships\"><Relationship Id=\"a\" Target=\"a.xml\"/><Relationship Id=\"b\" Target=\"b.xml\"/></Relationships>",
+          "rightUtf8": "<r:Relationships xmlns:r=\"http://schemas.openxmlformats.org/package/2006/relationships\"><r:Relationship Target=\"b.xml\" Id=\"b\"/><r:Relationship Target=\"a.xml\" Id=\"a\"/></r:Relationships>",
+          "expectedBoolean": true
+        }
+      ],
+      "limits": [
+        "Boolean semantic comparison for saved-package preservation, not canonical XML output or lexical-parser acceptance",
+        "Positive OPC test combines prefix/child-order/attribute-order changes; factors not independently isolated",
+        "Only OPC relationship collection is asserted here; no content-type collection example",
+        "Prefix-valued attribute namespace sensitivity covers one pair, not full QName schema semantics",
+        "Malformed/DTD inputs deliberately return false even when identical; this is a safety refusal, not a reflexive equivalence relation over arbitrary bytes",
+        "PI/comment checks cover shown targets/content only; no complete XML canonicalisation coverage",
+        "No package admission, network-fetch trap, ZIP limit, memory measurement or Office rendering claims",
+        "Central deduplication/ID approval remains pending"
+      ]
+    },
+    {
+      "nativeId": "tests/test_package_preservation.py::test_text_whitespace_order_and_attributes_are_significant",
+      "path": "tests/test_package_preservation.py",
+      "sourceSha256": "3ac94b514ec3aa8fb8111283bdf1735370dc2cd08dd4f0c8ebdd669dd3d952d9",
+      "coverage": "mapped",
+      "scenarioIds": [
+        "@id-xml-comparison-significant-content"
+      ],
+      "verifiedAspects": [
+        "XML content change to text whitespace compares different: comparison result false",
+        "XML content change to child order compares different: comparison result false",
+        "XML content change to attribute value compares different: comparison result false"
+      ],
+      "gaps": [],
+      "executionCredit": false,
+      "variants": [
+        {
+          "name": "XML content change to text whitespace compares different",
+          "nativeAssertionLine": 14,
+          "leftUtf8": "<a><b> x </b></a>",
+          "rightUtf8": "<a><b>x</b></a>",
+          "expectedBoolean": false
+        },
+        {
+          "name": "XML content change to child order compares different",
+          "nativeAssertionLine": 15,
+          "leftUtf8": "<a><b/><c/></a>",
+          "rightUtf8": "<a><c/><b/></a>",
+          "expectedBoolean": false
+        },
+        {
+          "name": "XML content change to attribute value compares different",
+          "nativeAssertionLine": 16,
+          "leftUtf8": "<a v=\"1\"/>",
+          "rightUtf8": "<a v=\"2\"/>",
+          "expectedBoolean": false
+        }
+      ],
+      "limits": [
+        "Boolean semantic comparison for saved-package preservation, not canonical XML output or lexical-parser acceptance",
+        "Positive OPC test combines prefix/child-order/attribute-order changes; factors not independently isolated",
+        "Only OPC relationship collection is asserted here; no content-type collection example",
+        "Prefix-valued attribute namespace sensitivity covers one pair, not full QName schema semantics",
+        "Malformed/DTD inputs deliberately return false even when identical; this is a safety refusal, not a reflexive equivalence relation over arbitrary bytes",
+        "PI/comment checks cover shown targets/content only; no complete XML canonicalisation coverage",
+        "No package admission, network-fetch trap, ZIP limit, memory measurement or Office rendering claims",
+        "Central deduplication/ID approval remains pending"
+      ]
+    },
+    {
+      "nativeId": "tests/test_package_preservation.py::test_prefix_valued_attributes_retain_namespace_meaning",
+      "path": "tests/test_package_preservation.py",
+      "sourceSha256": "3ac94b514ec3aa8fb8111283bdf1735370dc2cd08dd4f0c8ebdd669dd3d952d9",
+      "coverage": "mapped",
+      "scenarioIds": [
+        "@id-xml-comparison-prefix-attribute-binding"
+      ],
+      "verifiedAspects": [
+        "A prefix-valued attribute retains its namespace binding: comparison result false"
+      ],
+      "gaps": [],
+      "executionCredit": false,
+      "variants": [
+        {
+          "name": "A prefix-valued attribute retains its namespace binding",
+          "nativeAssertionLine": 22,
+          "leftUtf8": "<a xmlns:p=\"urn:one\" value=\"p:x\"/>",
+          "rightUtf8": "<a xmlns:p=\"urn:two\" value=\"p:x\"/>",
+          "expectedBoolean": false
+        }
+      ],
+      "limits": [
+        "Boolean semantic comparison for saved-package preservation, not canonical XML output or lexical-parser acceptance",
+        "Positive OPC test combines prefix/child-order/attribute-order changes; factors not independently isolated",
+        "Only OPC relationship collection is asserted here; no content-type collection example",
+        "Prefix-valued attribute namespace sensitivity covers one pair, not full QName schema semantics",
+        "Malformed/DTD inputs deliberately return false even when identical; this is a safety refusal, not a reflexive equivalence relation over arbitrary bytes",
+        "PI/comment checks cover shown targets/content only; no complete XML canonicalisation coverage",
+        "No package admission, network-fetch trap, ZIP limit, memory measurement or Office rendering claims",
+        "Central deduplication/ID approval remains pending"
+      ]
+    },
+    {
+      "nativeId": "tests/test_package_preservation.py::test_dtd_or_malformed_xml_is_never_equated",
+      "path": "tests/test_package_preservation.py",
+      "sourceSha256": "3ac94b514ec3aa8fb8111283bdf1735370dc2cd08dd4f0c8ebdd669dd3d952d9",
+      "coverage": "mapped",
+      "scenarioIds": [
+        "@id-xml-comparison-unsafe-input"
+      ],
+      "verifiedAspects": [
+        "Identical DTD-bearing inputs do not compare equivalent: comparison result false",
+        "Identical malformed XML inputs do not compare equivalent: comparison result false"
+      ],
+      "gaps": [],
+      "executionCredit": false,
+      "variants": [
+        {
+          "name": "Identical DTD-bearing inputs do not compare equivalent",
+          "nativeAssertionLine": 27,
+          "leftUtf8": "<!DOCTYPE a [<!ENTITY e \"text\">]><a>&e;</a>",
+          "rightUtf8": "<!DOCTYPE a [<!ENTITY e \"text\">]><a>&e;</a>",
+          "expectedBoolean": false
+        },
+        {
+          "name": "Identical malformed XML inputs do not compare equivalent",
+          "nativeAssertionLine": 28,
+          "leftUtf8": "broken",
+          "rightUtf8": "broken",
+          "expectedBoolean": false
+        }
+      ],
+      "limits": [
+        "Boolean semantic comparison for saved-package preservation, not canonical XML output or lexical-parser acceptance",
+        "Positive OPC test combines prefix/child-order/attribute-order changes; factors not independently isolated",
+        "Only OPC relationship collection is asserted here; no content-type collection example",
+        "Prefix-valued attribute namespace sensitivity covers one pair, not full QName schema semantics",
+        "Malformed/DTD inputs deliberately return false even when identical; this is a safety refusal, not a reflexive equivalence relation over arbitrary bytes",
+        "PI/comment checks cover shown targets/content only; no complete XML canonicalisation coverage",
+        "No package admission, network-fetch trap, ZIP limit, memory measurement or Office rendering claims",
+        "Central deduplication/ID approval remains pending"
+      ]
+    },
+    {
+      "nativeId": "tests/test_package_preservation.py::test_processing_instruction_targets_and_prolog_are_significant",
+      "path": "tests/test_package_preservation.py",
+      "sourceSha256": "3ac94b514ec3aa8fb8111283bdf1735370dc2cd08dd4f0c8ebdd669dd3d952d9",
+      "coverage": "mapped",
+      "scenarioIds": [
+        "@id-xml-comparison-processing-instructions-and-comments"
+      ],
+      "verifiedAspects": [
+        "XML markup change to prolog PI target compares different: comparison result false",
+        "XML markup change to in-document PI target compares different: comparison result false",
+        "XML markup change to prolog comment content compares different: comparison result false"
+      ],
+      "gaps": [],
+      "executionCredit": false,
+      "variants": [
+        {
+          "name": "XML markup change to prolog PI target compares different",
+          "nativeAssertionLine": 32,
+          "leftUtf8": "<?one x?><a/>",
+          "rightUtf8": "<?two x?><a/>",
+          "expectedBoolean": false
+        },
+        {
+          "name": "XML markup change to in-document PI target compares different",
+          "nativeAssertionLine": 33,
+          "leftUtf8": "<a><?one x?></a>",
+          "rightUtf8": "<a><?two x?></a>",
+          "expectedBoolean": false
+        },
+        {
+          "name": "XML markup change to prolog comment content compares different",
+          "nativeAssertionLine": 34,
+          "leftUtf8": "<!--old--><a/>",
+          "rightUtf8": "<!--new--><a/>",
+          "expectedBoolean": false
+        }
+      ],
+      "limits": [
+        "Boolean semantic comparison for saved-package preservation, not canonical XML output or lexical-parser acceptance",
+        "Positive OPC test combines prefix/child-order/attribute-order changes; factors not independently isolated",
+        "Only OPC relationship collection is asserted here; no content-type collection example",
+        "Prefix-valued attribute namespace sensitivity covers one pair, not full QName schema semantics",
+        "Malformed/DTD inputs deliberately return false even when identical; this is a safety refusal, not a reflexive equivalence relation over arbitrary bytes",
+        "PI/comment checks cover shown targets/content only; no complete XML canonicalisation coverage",
+        "No package admission, network-fetch trap, ZIP limit, memory measurement or Office rendering claims",
+        "Central deduplication/ID approval remains pending"
+      ]
+    }
+  ]
+}

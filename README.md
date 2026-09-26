@@ -18,10 +18,15 @@ and the consumer release checks.
 - `contracts/mutation-safety.json`: four fixture-ID references, readback facts,
   exact member hashes and permitted changes. Expanded cases are compiled from
   Gherkin at verification time; there is no second generated scenario catalogue.
+- `workflows/xml/`: lexical parsing, QName checks and conservative comparison
+  profiles. Native operation differences are explicit in
+  [contracts/xml-profiles.md](contracts/xml-profiles.md).
 - `workflows/native/`: additional format/package behaviour contracts. Their
   planned tag gives no consumer execution credit.
 - `ledgers/workflows.json`: expected outcomes, related facts and per-consumer
   mapping state. Historical reported results are not fresh execution evidence.
+- `ledgers/consumers/`: bounded native-test mappings, source hashes, verified
+  assertions and gaps. Mapping is separate from execution.
 - `manifest.json`: stable ID, path, format, scenario group, byte length, SHA-256
   and all origins for each unique asset. Historical path aliases are metadata only.
 - `ledgers/fixture-groups.json`: primary group membership and reviewed links to

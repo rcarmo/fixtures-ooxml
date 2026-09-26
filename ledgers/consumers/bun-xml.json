@@ -1,0 +1,282 @@
+{
+  "schemaVersion": 1,
+  "consumer": "bun",
+  "source": {
+    "repository": "https://github.com/rcarmo/bun-ooxml",
+    "revision": "9e39177ca69f60988328c189b62894845501b4db"
+  },
+  "scope": "Selected 18 XML/QName declarations only; all source assertions reviewed for bounded overlap, not full repository coverage",
+  "declarationCount": 18,
+  "mappings": [
+    {
+      "nativeId": "bun:tests/unit/xml-names.test.ts:XML QName component admission / rejects numeric, punctuation and combining-mark leading local names and declared prefixes",
+      "path": "tests/unit/xml-names.test.ts",
+      "sourceSha256": "51179d28472fda636dcd2c281cbecb11db5d9784f1f3dfd44d780ea36d34b3f1",
+      "coverage": "partial",
+      "scenarioIds": [
+        "@id-xml-invalid-qname-components"
+      ],
+      "verifiedAspects": [
+        "Element, attribute and namespace-prefix NCName refusal"
+      ],
+      "gaps": [
+        "Punctuation/combining-leading and extra-colon variants exceed the three canonical example rows"
+      ],
+      "executionCredit": false
+    },
+    {
+      "nativeId": "bun:tests/unit/xml-names.test.ts:XML QName component admission / retains legal Unicode NCNames and exact source offsets",
+      "path": "tests/unit/xml-names.test.ts",
+      "sourceSha256": "51179d28472fda636dcd2c281cbecb11db5d9784f1f3dfd44d780ea36d34b3f1",
+      "coverage": "partial",
+      "scenarioIds": [
+        "@id-xml-unicode-qname-components"
+      ],
+      "verifiedAspects": [
+        "Unicode QName identity, expanded attribute identity and original spans"
+      ],
+      "gaps": [
+        "Nine native names versus one canonical representative; full parameter reconciliation open"
+      ],
+      "executionCredit": false
+    },
+    {
+      "nativeId": "bun:tests/unit/xml-names.test.ts:XML QName component admission / outside-root XML whitespace is lexical and NBSP is never whitespace",
+      "path": "tests/unit/xml-names.test.ts",
+      "sourceSha256": "51179d28472fda636dcd2c281cbecb11db5d9784f1f3dfd44d780ea36d34b3f1",
+      "coverage": "partial",
+      "scenarioIds": [
+        "@id-xml-outside-root-nbsp"
+      ],
+      "verifiedAspects": [
+        "NBSP before/after root refuses"
+      ],
+      "gaps": [
+        "Character references outside root and valid literal whitespace need explicit canonical cases"
+      ],
+      "executionCredit": false
+    },
+    {
+      "nativeId": "bun:tests/unit/xml-names.test.ts:XML QName component admission / literal whitespace normalises before character reference decoding",
+      "path": "tests/unit/xml-names.test.ts",
+      "sourceSha256": "51179d28472fda636dcd2c281cbecb11db5d9784f1f3dfd44d780ea36d34b3f1",
+      "coverage": "partial",
+      "scenarioIds": [
+        "@id-xml-normalise-line-endings"
+      ],
+      "verifiedAspects": [
+        "Literal attribute/text/CDATA whitespace normalized before reference decoding"
+      ],
+      "gaps": [
+        "Exact example strings differ; no cross-runtime result measured from this mapping"
+      ],
+      "executionCredit": false
+    },
+    {
+      "nativeId": "bun:tests/unit/xml-names.test.ts:XML QName component admission / executes the six QName/whitespace acceptance cases",
+      "path": "tests/unit/xml-names.test.ts",
+      "sourceSha256": "51179d28472fda636dcd2c281cbecb11db5d9784f1f3dfd44d780ea36d34b3f1",
+      "coverage": "partial",
+      "scenarioIds": [
+        "@id-xml-invalid-qname-components",
+        "@id-xml-unicode-qname-components",
+        "@id-xml-outside-root-nbsp"
+      ],
+      "verifiedAspects": [
+        "Acceptance binding assertions require six successful cases and zero failures"
+      ],
+      "gaps": [
+        "Reported execution belongs to the earlier local feature; central-path rerun required"
+      ],
+      "executionCredit": false
+    },
+    {
+      "nativeId": "bun:tests/unit/xml.test.ts:parseXml / parses namespaces, mixed content and UTF-16 offsets",
+      "path": "tests/unit/xml.test.ts",
+      "sourceSha256": "9a2b961cb2ddb6f468fbafbd9d5a8e51c6d32f5948ed8fe2dd69abc7f4306a45",
+      "coverage": "partial",
+      "scenarioIds": [
+        "@id-xml-parse-offsets"
+      ],
+      "verifiedAspects": [
+        "Preorder element tree, decoded attributes/text and original UTF-16 spans"
+      ],
+      "gaps": [
+        "Self-closing span and parent identity details exceed the scenario assertions"
+      ],
+      "executionCredit": false
+    },
+    {
+      "nativeId": "bun:tests/unit/xml.test.ts:parseXml / accepts predefined and numeric entities",
+      "path": "tests/unit/xml.test.ts",
+      "sourceSha256": "9a2b961cb2ddb6f468fbafbd9d5a8e51c6d32f5948ed8fe2dd69abc7f4306a45",
+      "coverage": "partial",
+      "scenarioIds": [
+        "@id-xml-parse-offsets"
+      ],
+      "verifiedAspects": [
+        "Decoded XML predefined and numeric entities"
+      ],
+      "gaps": [
+        "Exact entity-value combinations not enumerated in the canonical scenario"
+      ],
+      "executionCredit": false
+    },
+    {
+      "nativeId": "bun:tests/unit/xml.test.ts:parseXml / accepts xml-stylesheet processing instructions before the root element",
+      "path": "tests/unit/xml.test.ts",
+      "sourceSha256": "9a2b961cb2ddb6f468fbafbd9d5a8e51c6d32f5948ed8fe2dd69abc7f4306a45",
+      "coverage": "unmapped",
+      "scenarioIds": [],
+      "verifiedAspects": [],
+      "gaps": [
+        "Processing-instruction admission has no dedicated canonical outcome yet"
+      ],
+      "executionCredit": false
+    },
+    {
+      "nativeId": "bun:tests/unit/xml.test.ts:parseXml / normalises literal XML whitespace but preserves character references and original offsets",
+      "path": "tests/unit/xml.test.ts",
+      "sourceSha256": "9a2b961cb2ddb6f468fbafbd9d5a8e51c6d32f5948ed8fe2dd69abc7f4306a45",
+      "coverage": "partial",
+      "scenarioIds": [
+        "@id-xml-normalise-line-endings"
+      ],
+      "verifiedAspects": [
+        "Literal line-ending normalization, referenced whitespace and original spans"
+      ],
+      "gaps": [
+        "Escaping roundtrip assertions exceed this parsing scenario"
+      ],
+      "executionCredit": false
+    },
+    {
+      "nativeId": "bun:tests/unit/xml.test.ts:parseXml / expanded attribute lookup honours aliases, local rebinding and unqualified attributes",
+      "path": "tests/unit/xml.test.ts",
+      "sourceSha256": "9a2b961cb2ddb6f468fbafbd9d5a8e51c6d32f5948ed8fe2dd69abc7f4306a45",
+      "coverage": "partial",
+      "scenarioIds": [
+        "@id-xml-parse-offsets"
+      ],
+      "verifiedAspects": [
+        "Expanded attribute identity and local namespace scope"
+      ],
+      "gaps": [
+        "Frozen null-prototype lookup metadata and alias combinations need dedicated scenarios"
+      ],
+      "executionCredit": false
+    },
+    {
+      "nativeId": "bun:tests/unit/xml.test.ts:parseXml / keeps the xml prefix bound implicitly",
+      "path": "tests/unit/xml.test.ts",
+      "sourceSha256": "9a2b961cb2ddb6f468fbafbd9d5a8e51c6d32f5948ed8fe2dd69abc7f4306a45",
+      "coverage": "unmapped",
+      "scenarioIds": [],
+      "verifiedAspects": [],
+      "gaps": [
+        "Implicit xml prefix binding needs a dedicated canonical scenario"
+      ],
+      "executionCredit": false
+    },
+    {
+      "nativeId": "bun:tests/unit/xml.test.ts:parseXml / stores attributes in null-prototype maps",
+      "path": "tests/unit/xml.test.ts",
+      "sourceSha256": "9a2b961cb2ddb6f468fbafbd9d5a8e51c6d32f5948ed8fe2dd69abc7f4306a45",
+      "coverage": "unmapped",
+      "scenarioIds": [],
+      "verifiedAspects": [],
+      "gaps": [
+        "JavaScript prototype safety is a separate consumer-specific behaviour"
+      ],
+      "executionCredit": false
+    },
+    {
+      "nativeId": "bun:tests/unit/xml.test.ts:parseXml / rejects malformed or unsafe XML",
+      "path": "tests/unit/xml.test.ts",
+      "sourceSha256": "9a2b961cb2ddb6f468fbafbd9d5a8e51c6d32f5948ed8fe2dd69abc7f4306a45",
+      "coverage": "partial",
+      "scenarioIds": [
+        "@id-xml-parse-refusals"
+      ],
+      "verifiedAspects": [
+        "Duplicate attributes, unbound prefixes, DTD and malformed XML refusals"
+      ],
+      "gaps": [
+        "Native invalid-comment/control-character/declaration variants exceed the canonical binding case set"
+      ],
+      "executionCredit": false
+    },
+    {
+      "nativeId": "bun:tests/unit/xml.test.ts:parseXml / refuses excessive depth, node count and input length",
+      "path": "tests/unit/xml.test.ts",
+      "sourceSha256": "9a2b961cb2ddb6f468fbafbd9d5a8e51c6d32f5948ed8fe2dd69abc7f4306a45",
+      "coverage": "partial",
+      "scenarioIds": [
+        "@id-xml-parse-bounds"
+      ],
+      "verifiedAspects": [
+        "Configured input-length, node-count and nesting bounds refuse"
+      ],
+      "gaps": [
+        "Bun numeric limits and UTF-16 counting are consumer-specific; cross-runtime limit equivalence untested"
+      ],
+      "executionCredit": false
+    },
+    {
+      "nativeId": "bun:tests/unit/xml.test.ts:escaping helpers / escape text and attribute values",
+      "path": "tests/unit/xml.test.ts",
+      "sourceSha256": "9a2b961cb2ddb6f468fbafbd9d5a8e51c6d32f5948ed8fe2dd69abc7f4306a45",
+      "coverage": "unmapped",
+      "scenarioIds": [],
+      "verifiedAspects": [],
+      "gaps": [
+        "Escaping API outputs and invalid character refusal need a dedicated scenario"
+      ],
+      "executionCredit": false
+    },
+    {
+      "nativeId": "bun:tests/unit/xml.test.ts:applyEdits / applies sorted disjoint edits with escaped text and XML fragments",
+      "path": "tests/unit/xml.test.ts",
+      "sourceSha256": "9a2b961cb2ddb6f468fbafbd9d5a8e51c6d32f5948ed8fe2dd69abc7f4306a45",
+      "coverage": "partial",
+      "scenarioIds": [
+        "@id-xml-apply-edits"
+      ],
+      "verifiedAspects": [
+        "Disjoint edits produce reparsable text/fragments"
+      ],
+      "gaps": [
+        "Native unsorted-edit ordering is not isolated by canonical binding"
+      ],
+      "executionCredit": false
+    },
+    {
+      "nativeId": "bun:tests/unit/xml.test.ts:applyEdits / refuses overlapping bounds and unsafe resulting XML",
+      "path": "tests/unit/xml.test.ts",
+      "sourceSha256": "9a2b961cb2ddb6f468fbafbd9d5a8e51c6d32f5948ed8fe2dd69abc7f4306a45",
+      "coverage": "partial",
+      "scenarioIds": [
+        "@id-xml-apply-edits"
+      ],
+      "verifiedAspects": [
+        "Overlap and DTD-injection refusals"
+      ],
+      "gaps": [
+        "Specific error types and all canonical malformed-replacement variants not covered by this single test"
+      ],
+      "executionCredit": false
+    },
+    {
+      "nativeId": "bun:tests/unit/xml.test.ts:applyEdits / returns OoxmlError instances",
+      "path": "tests/unit/xml.test.ts",
+      "sourceSha256": "9a2b961cb2ddb6f468fbafbd9d5a8e51c6d32f5948ed8fe2dd69abc7f4306a45",
+      "coverage": "unmapped",
+      "scenarioIds": [],
+      "verifiedAspects": [],
+      "gaps": [
+        "Typed error class contract is consumer-specific and not asserted by shared Gherkin"
+      ],
+      "executionCredit": false
+    }
+  ]
+}

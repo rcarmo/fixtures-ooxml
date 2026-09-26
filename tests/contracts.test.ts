@@ -1,8 +1,18 @@
 import {test,expect} from 'bun:test';
 import {cases,verify,validateFixtureLayout,validateMutationContract} from '../scripts/verify.ts';
-test('all pinned references and contract links verify',async()=>{const r=await verify();expect(r.assets).toBe(122);expect(r.facts).toBeGreaterThan(130);expect(r.workflows).toBeGreaterThanOrEqual(39);});
+test('all pinned references and contract links verify',async()=>{const r=await verify();expect(r.assets).toBe(125);expect(r.facts).toBeGreaterThan(130);expect(r.workflows).toBe(52);expect(r.cases).toBe(76);});
 test('official Gherkin compilation expands shared cases',async()=>{const p='workflows/mutation-safety.feature';const result=cases(p,await Bun.file(p).text());expect(result).toHaveLength(19);expect(new Set(result.map(r=>r.scenarioId)).size).toBe(8);});
 test('workflow identity is required',()=>{expect(()=>cases('bad.feature','Feature: Bad\n Scenario: unnamed\n  Given input\n')).toThrow();});
+test('canonical scenario IDs cannot be reused within a feature, including Rule blocks',()=>{
+ for(const text of [
+  'Feature: Duplicate\n @id-same\n Scenario: First\n  Given input\n  Then result\n @id-same\n Scenario: Second\n  Given input\n  Then result\n',
+  'Feature: Duplicate\n Rule: One\n  @id-same\n  Scenario: First\n   Given input\n   Then result\n Rule: Two\n  @id-same\n  Scenario: Second\n   Given input\n   Then result\n',
+ ])expect(()=>cases('duplicate.feature',text)).toThrow('Duplicate scenario ID');
+});
+test('outline rows legitimately share a scenario ID',()=>{
+ const text='Feature: Outline\n @id-outline\n Scenario Outline: Row <value>\n  Given <value>\n  Then result\n  Examples:\n   | value |\n   | one   |\n   | two   |\n';
+ expect(cases('outline.feature',text)).toHaveLength(2);
+});
 
 test('fixture IDs are stored once, grouped by format and scenario purpose',async()=>{
  const manifest=await Bun.file('manifest.json').json();

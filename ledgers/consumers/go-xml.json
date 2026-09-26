@@ -1,0 +1,87 @@
+{
+  "schemaVersion": 1,
+  "consumer": "go",
+  "source": {
+    "repository": "https://github.com/rcarmo/go-ooxml",
+    "revision": "1fd1692078bcd7ca91435478dff296d5a4dbfd6a",
+    "publication": "local-unpublished; repository credential lacks push access"
+  },
+  "scope": "Four lexical-parser declarations only; structured editing and fuzz input space excluded; no cross-runtime execution",
+  "declarationCount": 4,
+  "mappings": [
+    {
+      "nativeId": "internal/losslessxml/document_test.go::TestNamespaceAndLeafContracts",
+      "path": "internal/losslessxml/document_test.go",
+      "sourceSha256": "644ed23d98dc53ee2f8b1ff5e929d6483ebcbd3e52292cf570897dd79e420b2e",
+      "coverage": "partial",
+      "scenarioIds": [
+        "@id-xml-parse-offsets",
+        "@id-xml-parse-refusals"
+      ],
+      "verifiedAspects": [
+        "Expanded names, copied attribute metadata, duplicate/unbound/reserved namespace refusal",
+        "Text edit no-op retains original bytes; no direct numeric offset assertion"
+      ],
+      "gaps": [
+        "Canonical parser profile specifies UTF-16 spans; Go edit-based byte preservation does not verify that assertion",
+        "Mixed-content/foreign-handle/native edit tests are outside these parsing scenarios"
+      ],
+      "executionCredit": false
+    },
+    {
+      "nativeId": "internal/losslessxml/boundary_test.go::TestLexicalDocumentBoundaryBatch",
+      "path": "internal/losslessxml/boundary_test.go",
+      "sourceSha256": "befd555cfa2924e766ee8d7c23d1b640e054e173c125ff6ece3373bf78688fea",
+      "coverage": "unmapped",
+      "scenarioIds": [],
+      "verifiedAspects": [],
+      "gaps": [
+        "Native cases reject references and CDATA outside the root and preserve valid no-op bytes; no dedicated canonical scenario exists yet",
+        "No literal NBSP case is asserted by this declaration"
+      ],
+      "executionCredit": false
+    },
+    {
+      "nativeId": "internal/losslessxml/qname_test.go::TestQNameAndBoundaryBatch",
+      "path": "internal/losslessxml/qname_test.go",
+      "sourceSha256": "f0eb1334446c6281474c7016281a341bde7d875498e760d0c923ea2d56dd405b",
+      "coverage": "partial",
+      "scenarioIds": [
+        "@id-xml-invalid-qname-components",
+        "@id-xml-unicode-qname-components",
+        "@id-xml-outside-root-nbsp"
+      ],
+      "verifiedAspects": [
+        "Numeric-leading element, attribute and declared-prefix components and combining-leading local name refuse",
+        "Literal NBSP before the root refuses; EM SPACE after root refuses separately",
+        "Unicode local and attribute names under ASCII prefix p parse successfully"
+      ],
+      "gaps": [
+        "Canonical NBSP-after-root example is untested here: native after-root input uses EM SPACE U+2003",
+        "Native test does not assert rejection of a separate punctuation-leading QName component",
+        "Unicode namespace prefix is not exercised; native test asserts admission, not expanded-name identity or source offsets",
+        "Go errors are tested only as non-nil, not Bun XML_MALFORMED codes"
+      ],
+      "executionCredit": false
+    },
+    {
+      "nativeId": "internal/losslessxml/normalization_test.go::TestXMLWhitespaceNormalizationBatch",
+      "path": "internal/losslessxml/normalization_test.go",
+      "sourceSha256": "567743243ede823579578510d3ad342e5743563342fc15a915f14b7aaa25f964",
+      "coverage": "partial",
+      "scenarioIds": [
+        "@id-xml-normalise-line-endings"
+      ],
+      "verifiedAspects": [
+        "Literal attribute whitespace normalizes and numeric whitespace references retain characters",
+        "CDATA CRLF/CR decodes to LF; text-leaf replacement preserves exact neighbouring bytes"
+      ],
+      "gaps": [
+        "No direct start/end span assertions; edit/no-op results provide only indirect byte-location evidence, not UTF-16 offsets",
+        "Canonical ordinary-text/reference-CR input is not exercised by the CDATA splice subtest",
+        "Namespace-value normalization and attribute no-op assertions exceed the canonical scenario"
+      ],
+      "executionCredit": false
+    }
+  ]
+}

@@ -9,7 +9,10 @@
     "workflows/native/opc-zip64.feature",
     "workflows/native/pptx-text.feature",
     "workflows/native/xlsx-cells.feature",
-    "workflows/native/xlsx-cache-boundaries.feature"
+    "workflows/native/xlsx-cache-boundaries.feature",
+    "workflows/xml/parsing.feature",
+    "workflows/xml/names.feature",
+    "workflows/xml/comparison.feature"
   ],
   "executionCredit": "Only local executed assertions count; reports here do not run consumers.",
   "workflows": [
@@ -1112,6 +1115,310 @@
         "python": {
           "status": "planned",
           "evidence": "not-run: not yet mapped to this common workflow"
+        }
+      }
+    },
+    {
+      "id": "@id-xml-parse-offsets",
+      "feature": "workflows/xml/parsing.feature",
+      "expandedCases": 1,
+      "factIds": [],
+      "expectedOutcomes": [
+        "the root element and descendants expose decoded text, decoded attributes and namespace URIs",
+        "each element exposes UTF-16 source offsets, parent links, child links, root links and self-closing state"
+      ],
+      "consumers": {
+        "bun": {
+          "status": "planned",
+          "evidence": "Native assertions reviewed; canonical feature binding rerun required"
+        },
+        "go": {
+          "status": "planned",
+          "evidence": "Partial native assertion overlaps recorded separately; no canonical execution"
+        },
+        "python": {
+          "status": "planned",
+          "evidence": "Lexical parsing and semantic comparison remain distinct; no canonical execution"
+        }
+      }
+    },
+    {
+      "id": "@id-xml-normalise-line-endings",
+      "feature": "workflows/xml/parsing.feature",
+      "expandedCases": 1,
+      "factIds": [],
+      "expectedOutcomes": [
+        "decoded text normalises raw line endings but preserves referenced carriage returns",
+        "decoded attributes normalise literal whitespace while preserving referenced whitespace",
+        "element offsets still address the original source string"
+      ],
+      "consumers": {
+        "bun": {
+          "status": "planned",
+          "evidence": "Native assertions reviewed; canonical feature binding rerun required"
+        },
+        "go": {
+          "status": "planned",
+          "evidence": "Partial native assertion overlaps recorded separately; no canonical execution"
+        },
+        "python": {
+          "status": "planned",
+          "evidence": "Lexical parsing and semantic comparison remain distinct; no canonical execution"
+        }
+      }
+    },
+    {
+      "id": "@id-xml-parse-refusals",
+      "feature": "workflows/xml/parsing.feature",
+      "expandedCases": 1,
+      "factIds": [],
+      "expectedOutcomes": [
+        "parsing is refused with a stable XML error code"
+      ],
+      "consumers": {
+        "bun": {
+          "status": "planned",
+          "evidence": "Native assertions reviewed; canonical feature binding rerun required"
+        },
+        "go": {
+          "status": "planned",
+          "evidence": "Partial native assertion overlaps recorded separately; no canonical execution"
+        },
+        "python": {
+          "status": "planned",
+          "evidence": "Lexical parsing and semantic comparison remain distinct; no canonical execution"
+        }
+      }
+    },
+    {
+      "id": "@id-xml-parse-bounds",
+      "feature": "workflows/xml/parsing.feature",
+      "expandedCases": 1,
+      "factIds": [],
+      "expectedOutcomes": [
+        "parsing is refused before returning a partial tree"
+      ],
+      "consumers": {
+        "bun": {
+          "status": "planned",
+          "evidence": "Native assertions reviewed; canonical feature binding rerun required"
+        },
+        "go": {
+          "status": "planned",
+          "evidence": "Partial native assertion overlaps recorded separately; no canonical execution"
+        },
+        "python": {
+          "status": "planned",
+          "evidence": "Lexical parsing and semantic comparison remain distinct; no canonical execution"
+        }
+      }
+    },
+    {
+      "id": "@id-xml-apply-edits",
+      "feature": "workflows/xml/parsing.feature",
+      "expandedCases": 1,
+      "factIds": [],
+      "expectedOutcomes": [
+        "the resulting XML stays well formed and DTD free",
+        "overlapping edits or edits that leave malformed or DTD-bearing XML are refused before returning changed text"
+      ],
+      "consumers": {
+        "bun": {
+          "status": "planned",
+          "evidence": "Native assertions reviewed; canonical feature binding rerun required"
+        },
+        "go": {
+          "status": "planned",
+          "evidence": "Partial native assertion overlaps recorded separately; no canonical execution"
+        },
+        "python": {
+          "status": "planned",
+          "evidence": "Lexical parsing and semantic comparison remain distinct; no canonical execution"
+        }
+      }
+    },
+    {
+      "id": "@id-xml-invalid-qname-components",
+      "feature": "workflows/xml/names.feature",
+      "expandedCases": 3,
+      "factIds": [],
+      "expectedOutcomes": [
+        "parsing refuses with the malformed XML code"
+      ],
+      "consumers": {
+        "bun": {
+          "status": "planned",
+          "evidence": "Native assertions reviewed; canonical feature binding rerun required"
+        },
+        "go": {
+          "status": "planned",
+          "evidence": "Partial native assertion overlaps recorded separately; no canonical execution"
+        },
+        "python": {
+          "status": "planned",
+          "evidence": "Lexical parsing and semantic comparison remain distinct; no canonical execution"
+        }
+      }
+    },
+    {
+      "id": "@id-xml-unicode-qname-components",
+      "feature": "workflows/xml/names.feature",
+      "expandedCases": 1,
+      "factIds": [],
+      "expectedOutcomes": [
+        "expanded element and attribute names retain their Unicode identity",
+        "source offsets still address the original Unicode element"
+      ],
+      "consumers": {
+        "bun": {
+          "status": "planned",
+          "evidence": "Native assertions reviewed; canonical feature binding rerun required"
+        },
+        "go": {
+          "status": "planned",
+          "evidence": "Partial native assertion overlaps recorded separately; no canonical execution"
+        },
+        "python": {
+          "status": "planned",
+          "evidence": "Lexical parsing and semantic comparison remain distinct; no canonical execution"
+        }
+      }
+    },
+    {
+      "id": "@id-xml-outside-root-nbsp",
+      "feature": "workflows/xml/names.feature",
+      "expandedCases": 2,
+      "factIds": [],
+      "expectedOutcomes": [
+        "parsing refuses with the malformed XML code"
+      ],
+      "consumers": {
+        "bun": {
+          "status": "planned",
+          "evidence": "Native assertions reviewed; canonical feature binding rerun required"
+        },
+        "go": {
+          "status": "planned",
+          "evidence": "Partial native assertion overlaps recorded separately; no canonical execution"
+        },
+        "python": {
+          "status": "planned",
+          "evidence": "Lexical parsing and semantic comparison remain distinct; no canonical execution"
+        }
+      }
+    },
+    {
+      "id": "@id-xml-comparison-prefix-and-opc-order",
+      "feature": "workflows/xml/comparison.feature",
+      "expandedCases": 1,
+      "factIds": [],
+      "expectedOutcomes": [
+        "the comparison result is true"
+      ],
+      "consumers": {
+        "bun": {
+          "status": "planned",
+          "evidence": "No semantic XML comparator API binding"
+        },
+        "go": {
+          "status": "planned",
+          "evidence": "Lexical parser/edit API is not this comparison operation"
+        },
+        "python": {
+          "status": "planned",
+          "evidence": "Local staging binding ran ten exact variants; canonical-path binding pending"
+        }
+      }
+    },
+    {
+      "id": "@id-xml-comparison-significant-content",
+      "feature": "workflows/xml/comparison.feature",
+      "expandedCases": 3,
+      "factIds": [],
+      "expectedOutcomes": [
+        "the comparison result is false"
+      ],
+      "consumers": {
+        "bun": {
+          "status": "planned",
+          "evidence": "No semantic XML comparator API binding"
+        },
+        "go": {
+          "status": "planned",
+          "evidence": "Lexical parser/edit API is not this comparison operation"
+        },
+        "python": {
+          "status": "planned",
+          "evidence": "Local staging binding ran ten exact variants; canonical-path binding pending"
+        }
+      }
+    },
+    {
+      "id": "@id-xml-comparison-prefix-attribute-binding",
+      "feature": "workflows/xml/comparison.feature",
+      "expandedCases": 1,
+      "factIds": [],
+      "expectedOutcomes": [
+        "the comparison result is false"
+      ],
+      "consumers": {
+        "bun": {
+          "status": "planned",
+          "evidence": "No semantic XML comparator API binding"
+        },
+        "go": {
+          "status": "planned",
+          "evidence": "Lexical parser/edit API is not this comparison operation"
+        },
+        "python": {
+          "status": "planned",
+          "evidence": "Local staging binding ran ten exact variants; canonical-path binding pending"
+        }
+      }
+    },
+    {
+      "id": "@id-xml-comparison-unsafe-input",
+      "feature": "workflows/xml/comparison.feature",
+      "expandedCases": 2,
+      "factIds": [],
+      "expectedOutcomes": [
+        "the comparison result is false"
+      ],
+      "consumers": {
+        "bun": {
+          "status": "planned",
+          "evidence": "No semantic XML comparator API binding"
+        },
+        "go": {
+          "status": "planned",
+          "evidence": "Lexical parser/edit API is not this comparison operation"
+        },
+        "python": {
+          "status": "planned",
+          "evidence": "Local staging binding ran ten exact variants; canonical-path binding pending"
+        }
+      }
+    },
+    {
+      "id": "@id-xml-comparison-processing-instructions-and-comments",
+      "feature": "workflows/xml/comparison.feature",
+      "expandedCases": 3,
+      "factIds": [],
+      "expectedOutcomes": [
+        "the comparison result is false"
+      ],
+      "consumers": {
+        "bun": {
+          "status": "planned",
+          "evidence": "No semantic XML comparator API binding"
+        },
+        "go": {
+          "status": "planned",
+          "evidence": "Lexical parser/edit API is not this comparison operation"
+        },
+        "python": {
+          "status": "planned",
+          "evidence": "Local staging binding ran ten exact variants; canonical-path binding pending"
         }
       }
     }
