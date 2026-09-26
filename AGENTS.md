@@ -10,6 +10,9 @@ It does not implement document editing or confer parity on a consumer.
   seal; preserve fixture hashes and scenario identities across the migration.
 - Store fixtures once under fixtures/<format>/<scenario-group>/, regardless of
   origin. Reuse stable manifest IDs across scenarios, never copies or symlinks.
+- Use descriptive lower-case kebab-case paths. Add a short hash only to distinguish
+  colliding names; keep full hashes/provenance in metadata. Avoid redundant
+  version/pack/export directory layers; releases are Git tags.
 - Facts need evidence. Record disagreements; do not pick a value by source majority.
 - Common workflow contracts have stable IDs and expected observable outcomes.
   Per-consumer implementation status and execution evidence are separate.

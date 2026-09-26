@@ -444,7 +444,7 @@
     },
     {
       "id": "fixture-535910216e3531e4f70959cccf83038f1c51febbf4a149f9f46abfbfa8667d90",
-      "path": "fixtures/docx/mutation-safety/present-placeholder-535910216e35.docx",
+      "path": "fixtures/docx/mutation-safety/present-placeholder.docx",
       "bytes": 377049,
       "sha256": "535910216e3531e4f70959cccf83038f1c51febbf4a149f9f46abfbfa8667d90",
       "role": "fixture",
@@ -1061,7 +1061,7 @@
     },
     {
       "id": "fixture-21e40e91bf948fd8b179c59915b5b840c0f8438ea7f2f144b4287cfd9b158e7f",
-      "path": "fixtures/png/media/image1-21e40e91bf94.png",
+      "path": "fixtures/png/media/sample-image.png",
       "bytes": 399889,
       "sha256": "21e40e91bf948fd8b179c59915b5b840c0f8438ea7f2f144b4287cfd9b158e7f",
       "role": "fixture",
@@ -1526,7 +1526,7 @@
     },
     {
       "id": "fixture-2aec94471f93c300d56ca4789106a974411085d1588f3424155362a06dd043f3",
-      "path": "fixtures/pptx/mutation-safety/title-and-subtitle-2aec94471f93.pptx",
+      "path": "fixtures/pptx/mutation-safety/title-and-subtitle.pptx",
       "bytes": 91493,
       "sha256": "2aec94471f93c300d56ca4789106a974411085d1588f3424155362a06dd043f3",
       "role": "fixture",
@@ -2581,7 +2581,7 @@
     },
     {
       "id": "fixture-8ba5708d5030adf93a4f7e4ae466563a1b66341067a200a6cb9b782484dcb5b1",
-      "path": "fixtures/xlsx/mutation-safety/cross-sheet-cache-8ba5708d5030.xlsx",
+      "path": "fixtures/xlsx/mutation-safety/cross-sheet-cache.xlsx",
       "bytes": 20055,
       "sha256": "8ba5708d5030adf93a4f7e4ae466563a1b66341067a200a6cb9b782484dcb5b1",
       "role": "fixture",
@@ -2613,7 +2613,7 @@
     },
     {
       "id": "fixture-38c2ed936696179d3b2359e9107ad2b8d62d71d69296f8f60bdfe1fe8f7f2439",
-      "path": "fixtures/xlsx/mutation-safety/default-style-38c2ed936696.xlsx",
+      "path": "fixtures/xlsx/mutation-safety/default-style.xlsx",
       "bytes": 18860,
       "sha256": "38c2ed936696179d3b2359e9107ad2b8d62d71d69296f8f60bdfe1fe8f7f2439",
       "role": "fixture",
@@ -2865,65 +2865,8 @@
       "scenarioIds": []
     },
     {
-      "id": "notice-0c84bb42f5d367e5ebf9fc2dde35b16141df5ee0fdc189250858bc6c5560f69e",
-      "path": "notices/0c84bb42f5d367e5ebf9fc2dde35b16141df5ee0fdc189250858bc6c5560f69e.txt",
-      "bytes": 1131,
-      "sha256": "0c84bb42f5d367e5ebf9fc2dde35b16141df5ee0fdc189250858bc6c5560f69e",
-      "role": "licence",
-      "origins": [
-        {
-          "repository": "https://github.com/rcarmo/bun-ooxml",
-          "revision": "61fbe73af0a53894a60cd31014dca2ffb90613c3",
-          "path": "docs/contracts/shared-v2/pack/notices/openpyxl-LICENSE.txt"
-        }
-      ],
-      "aliases": [
-        "shared/v2/pack/notices/openpyxl-LICENSE.txt"
-      ]
-    },
-    {
-      "id": "notice-294424e94aad380e26e71c644742d21f771f9602e1a5297a6d73820a91a902a9",
-      "path": "notices/294424e94aad380e26e71c644742d21f771f9602e1a5297a6d73820a91a902a9.md",
-      "bytes": 4418,
-      "sha256": "294424e94aad380e26e71c644742d21f771f9602e1a5297a6d73820a91a902a9",
-      "role": "licence",
-      "origins": [
-        {
-          "revision": "43eda6edfe45db20da5879ba332ec6a25d598efa",
-          "path": "testdata/FIXTURES.md",
-          "repository": "https://github.com/rcarmo/go-ooxml"
-        },
-        {
-          "repository": "https://github.com/rcarmo/go-ooxml",
-          "revision": "43fbb43943d203e1476b21a31cf723dfb75268b6",
-          "path": "testdata/FIXTURES.md"
-        }
-      ],
-      "aliases": [
-        "fixtures/go-ooxml/testdata/FIXTURES.md",
-        "fixtures/go-current/testdata/FIXTURES.md"
-      ]
-    },
-    {
-      "id": "notice-318ecf629b51568ed0a0a24cbdbff5af434923df7e7b6c973a742326eb559740",
-      "path": "notices/318ecf629b51568ed0a0a24cbdbff5af434923df7e7b6c973a742326eb559740.md",
-      "bytes": 1053,
-      "sha256": "318ecf629b51568ed0a0a24cbdbff5af434923df7e7b6c973a742326eb559740",
-      "role": "licence",
-      "origins": [
-        {
-          "revision": "43eda6edfe45db20da5879ba332ec6a25d598efa",
-          "path": "LICENSE.md",
-          "repository": "https://github.com/rcarmo/go-ooxml"
-        }
-      ],
-      "aliases": [
-        "notices/go-ooxml/LICENSE.md"
-      ]
-    },
-    {
       "id": "notice-7652f271e46d0d533e9dc463f3b5fcbdcacf4d6a9c8d6b554d15efd0f37f6132",
-      "path": "notices/7652f271e46d0d533e9dc463f3b5fcbdcacf4d6a9c8d6b554d15efd0f37f6132.txt",
+      "path": "notices/document-presentation-fixture-license.txt",
       "bytes": 1104,
       "sha256": "7652f271e46d0d533e9dc463f3b5fcbdcacf4d6a9c8d6b554d15efd0f37f6132",
       "role": "licence",
@@ -2946,7 +2889,7 @@
     },
     {
       "id": "notice-7f88643fc75ab6293254eff83752e1dd8d2c55cc99fb27a6bd6bc4eab9407bf9",
-      "path": "notices/7f88643fc75ab6293254eff83752e1dd8d2c55cc99fb27a6bd6bc4eab9407bf9.md",
+      "path": "notices/go-fixture-provenance.md",
       "bytes": 3736,
       "sha256": "7f88643fc75ab6293254eff83752e1dd8d2c55cc99fb27a6bd6bc4eab9407bf9",
       "role": "licence",
@@ -2965,6 +2908,63 @@
       "aliases": [
         "fixtures/python-office-mcp-server/tests/_templates/FIXTURES.md",
         "shared/v2/pack/notices/MCP-FIXTURES.md"
+      ]
+    },
+    {
+      "id": "notice-294424e94aad380e26e71c644742d21f771f9602e1a5297a6d73820a91a902a9",
+      "path": "notices/go-ooxml-license.md",
+      "bytes": 4418,
+      "sha256": "294424e94aad380e26e71c644742d21f771f9602e1a5297a6d73820a91a902a9",
+      "role": "licence",
+      "origins": [
+        {
+          "revision": "43eda6edfe45db20da5879ba332ec6a25d598efa",
+          "path": "testdata/FIXTURES.md",
+          "repository": "https://github.com/rcarmo/go-ooxml"
+        },
+        {
+          "repository": "https://github.com/rcarmo/go-ooxml",
+          "revision": "43fbb43943d203e1476b21a31cf723dfb75268b6",
+          "path": "testdata/FIXTURES.md"
+        }
+      ],
+      "aliases": [
+        "fixtures/go-ooxml/testdata/FIXTURES.md",
+        "fixtures/go-current/testdata/FIXTURES.md"
+      ]
+    },
+    {
+      "id": "notice-318ecf629b51568ed0a0a24cbdbff5af434923df7e7b6c973a742326eb559740",
+      "path": "notices/office-fixture-provenance.md",
+      "bytes": 1053,
+      "sha256": "318ecf629b51568ed0a0a24cbdbff5af434923df7e7b6c973a742326eb559740",
+      "role": "licence",
+      "origins": [
+        {
+          "revision": "43eda6edfe45db20da5879ba332ec6a25d598efa",
+          "path": "LICENSE.md",
+          "repository": "https://github.com/rcarmo/go-ooxml"
+        }
+      ],
+      "aliases": [
+        "notices/go-ooxml/LICENSE.md"
+      ]
+    },
+    {
+      "id": "notice-0c84bb42f5d367e5ebf9fc2dde35b16141df5ee0fdc189250858bc6c5560f69e",
+      "path": "notices/spreadsheet-fixture-license.txt",
+      "bytes": 1131,
+      "sha256": "0c84bb42f5d367e5ebf9fc2dde35b16141df5ee0fdc189250858bc6c5560f69e",
+      "role": "licence",
+      "origins": [
+        {
+          "repository": "https://github.com/rcarmo/bun-ooxml",
+          "revision": "61fbe73af0a53894a60cd31014dca2ffb90613c3",
+          "path": "docs/contracts/shared-v2/pack/notices/openpyxl-LICENSE.txt"
+        }
+      ],
+      "aliases": [
+        "shared/v2/pack/notices/openpyxl-LICENSE.txt"
       ]
     },
     {

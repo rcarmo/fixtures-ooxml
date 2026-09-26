@@ -30,6 +30,20 @@ copy it for another scenario, or create compatibility directories or symlinks.
 `ledgers/fixture-groups.json` records primary membership. Reusable generated inputs
 are also fixtures; ephemeral edited outputs belong in consumer temporary paths.
 
+## Path names
+
+Name files for their contents and keep directory depth useful. Use lower-case
+kebab-case and the format/scenario group, for example
+`fixtures/xlsx/mutation-safety/cross-sheet-cache.xlsx`. Add a short hash suffix
+only when distinct fixtures otherwise share the same descriptive name. Full
+hashes and all origins remain in the manifest.
+
+Use direct paths such as `workflows/mutation-safety.feature`,
+`contracts/mutation-safety.json` and `notices/go-fixture-provenance.md`. Do not add
+version/pack/export layers or reproduce producer checkout paths. Version the
+repository with tags; resolve reusable files by stable IDs so a rename does not
+change which bytes a consumer uses.
+
 ## Mutation workflow contract
 
 `workflows/mutation-safety.feature` is the single definition of the eight mutation
