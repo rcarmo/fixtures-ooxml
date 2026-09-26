@@ -3000,6 +3000,21 @@
       "aliases": []
     },
     {
+      "id": "asset-462be357951e2961b9b35dfe3457216709e3c6a02eeb0988c6a3c2279b730490",
+      "path": "workflows/docx/paragraph-style.feature",
+      "bytes": 1540,
+      "sha256": "462be357951e2961b9b35dfe3457216709e3c6a02eeb0988c6a3c2279b730490",
+      "role": "workflow",
+      "origins": [
+        {
+          "repository": "https://github.com/rcarmo/fixtures-ooxml",
+          "kind": "native-authored-contract",
+          "purpose": "Direct existing paragraph style assignment/removal without style creation or inheritance evaluation"
+        }
+      ],
+      "aliases": []
+    },
+    {
       "id": "asset-58ef9d8fde58d0fb929c1adbf7360d909c3294add90054b22f9e08e67a415ade",
       "path": "workflows/docx/run-formatting.feature",
       "bytes": 1396,

@@ -29,7 +29,8 @@ and the consumer release checks.
   and [comment profiles](contracts/comment-profiles.md) for operation limits.
   [Tracked workflow dispatch](contracts/tracked-workflow.md) separates preview
   revisions from committed single-target Word changes. [Direct run formatting](contracts/run-formatting.md)
-  covers paragraph-wide bold/italic overrides without text or style-graph edits.
+  covers paragraph-wide bold/italic overrides without text or style-graph edits;
+  [paragraph style selection](contracts/paragraph-style.md) uses existing definitions.
 - `workflows/native/`: additional format/package behaviour contracts. Their
   planned tag gives no consumer execution credit.
 - `ledgers/workflows.json`: expected outcomes, related facts and per-consumer

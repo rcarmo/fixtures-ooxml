@@ -27,7 +27,8 @@
     "workflows/package/zip32.feature",
     "workflows/package/relationship-namespaces.feature",
     "workflows/docx/tracked-workflow.feature",
-    "workflows/docx/run-formatting.feature"
+    "workflows/docx/run-formatting.feature",
+    "workflows/docx/paragraph-style.feature"
   ],
   "executionCredit": "Only local executed assertions count; reports here do not run consumers.",
   "workflows": [
@@ -2630,6 +2631,57 @@
         "python": {
           "status": "planned",
           "evidence": "No equivalent consumer binding reviewed"
+        }
+      }
+    },
+    {
+      "id": "@id-docx-paragraph-style-selection",
+      "feature": "workflows/docx/paragraph-style.feature",
+      "expandedCases": 5,
+      "factIds": [],
+      "expectedOutcomes": [
+        "saved direct style and change receipt match assign",
+        "paragraph text, other properties and unrelated package parts are preserved",
+        "saved direct style and change receipt match replace",
+        "saved direct style and change receipt match remove",
+        "saved direct style and change receipt match same-style",
+        "saved direct style and change receipt match absent-removal"
+      ],
+      "consumers": {
+        "bun": {
+          "status": "planned",
+          "evidence": "New direct style selection binding; native validation separate"
+        },
+        "go": {
+          "status": "planned",
+          "evidence": "No reviewed direct style-selection binding"
+        },
+        "python": {
+          "status": "planned",
+          "evidence": "No reviewed direct style-selection binding"
+        }
+      }
+    },
+    {
+      "id": "@id-docx-paragraph-style-refusal",
+      "feature": "workflows/docx/paragraph-style.feature",
+      "expandedCases": 14,
+      "factIds": [],
+      "expectedOutcomes": [
+        "style assignment refuses before changing package bytes"
+      ],
+      "consumers": {
+        "bun": {
+          "status": "planned",
+          "evidence": "New direct style selection binding; native validation separate"
+        },
+        "go": {
+          "status": "planned",
+          "evidence": "No reviewed direct style-selection binding"
+        },
+        "python": {
+          "status": "planned",
+          "evidence": "No reviewed direct style-selection binding"
         }
       }
     }

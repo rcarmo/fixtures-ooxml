@@ -1,6 +1,6 @@
 import {test,expect} from 'bun:test';
 import {cases,verify,validateFixtureLayout,validateMutationContract} from '../scripts/verify.ts';
-test('all pinned references and contract links verify',async()=>{const r=await verify();expect(r.assets).toBe(140);expect(r.facts).toBeGreaterThan(130);expect(r.workflows).toBe(101);expect(r.cases).toBe(184);});
+test('all pinned references and contract links verify',async()=>{const r=await verify();expect(r.assets).toBe(141);expect(r.facts).toBeGreaterThan(130);expect(r.workflows).toBe(103);expect(r.cases).toBe(203);});
 test('official Gherkin compilation expands shared cases',async()=>{const p='workflows/mutation-safety.feature';const result=cases(p,await Bun.file(p).text());expect(result).toHaveLength(19);expect(new Set(result.map(r=>r.scenarioId)).size).toBe(8);});
 test('workflow identity is required',()=>{expect(()=>cases('bad.feature','Feature: Bad\n Scenario: unnamed\n  Given input\n')).toThrow();});
 test('canonical scenario IDs cannot be reused within a feature, including Rule blocks',()=>{
@@ -81,4 +81,8 @@ test('direct run formatting profile has four output policies and eleven refusal 
  const path='workflows/docx/run-formatting.feature',rows=cases(path,await Bun.file(path).text());
  expect(rows).toHaveLength(15);expect(rows.filter(r=>r.scenarioId==='@id-docx-direct-run-formatting')).toHaveLength(4);expect(rows.filter(r=>r.scenarioId==='@id-docx-direct-formatting-refusal')).toHaveLength(11);
  expect(rows.slice(0,4).map(r=>r.name)).toEqual(['Apply the enable direct formatting policy','Apply the disable direct formatting policy','Apply the remove direct formatting policy','Apply the no-op direct formatting policy']);
+});
+
+test('paragraph style profile preserves five output policies and fourteen atomic refusal variants',async()=>{
+ const p='workflows/docx/paragraph-style.feature',rows=cases(p,await Bun.file(p).text());expect(rows).toHaveLength(19);expect(rows.filter(r=>r.scenarioId==='@id-docx-paragraph-style-selection')).toHaveLength(5);expect(rows.filter(r=>r.scenarioId==='@id-docx-paragraph-style-refusal')).toHaveLength(14);
 });
