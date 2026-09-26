@@ -3989,10 +3989,10 @@
       "aliases": []
     },
     {
-      "id": "asset-1d14a680f87ab70510a6a92f528852c05667c21a037f1ca7ffbe18a618fbe9cd",
+      "id": "asset-87dab18a70c2c6d0b8e4d70511967ea83232b4dfba3233ea452f777eda2169f5",
       "path": "workflows/docx/template-analysis.feature",
-      "bytes": 6836,
-      "sha256": "1d14a680f87ab70510a6a92f528852c05667c21a037f1ca7ffbe18a618fbe9cd",
+      "bytes": 6936,
+      "sha256": "87dab18a70c2c6d0b8e4d70511967ea83232b4dfba3233ea452f777eda2169f5",
       "role": "workflow",
       "origins": [
         {

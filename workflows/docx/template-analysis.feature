@@ -2,9 +2,10 @@
 Feature: Word template analysis and metadata caching
 
   Rule: Inspect Word template formatting and metadata
-    Direct analysis returns a successful dictionary for a readable DOCX. Unified
-    template analysis also exposes SOW metadata from a dedicated cache.
-    Classification accuracy and document rendering are outside these cases.
+    The SOW case requires a dictionary without an error. Other direct-analysis
+    cases check only response shape and can accept an error dictionary. Unified
+    analysis exposes SOW metadata from a dedicated cache. Classification accuracy
+    and document rendering are outside these cases.
     @id-python-word-template-analysis-sow-response
     Scenario: Analyzing the generated SOW template succeeds
       Given the Python SOW template has title, customer and project placeholders, guidance, and a Role/Hours table
@@ -47,8 +48,8 @@ Feature: Word template analysis and metadata caching
   Rule: Cache Word template metadata outside the document
     The Python metadata cache is selected in a dedicated directory. A cache key
     identifies the resolved Word source path and analysis type; its validity is
-    checked against the source file's modification time and size. Cache writes
-    do not change the source DOCX.
+    checked against the source file's modification time and size. These cases
+    do not compare source DOCX bytes before and after cache operations.
     @profile-python-template-cache @id-python-template-cache-key-stable
     Scenario: A Word template's unchanged identity produces the same cache key
       Given a saved Word template and a dedicated Python metadata cache directory
