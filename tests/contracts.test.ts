@@ -1,6 +1,6 @@
 import {test,expect} from 'bun:test';
 import {cases,verify,validateFixtureLayout,validateMutationContract} from '../scripts/verify.ts';
-test('all pinned references and contract links verify',async()=>{const r=await verify();expect(r.assets).toBe(125);expect(r.facts).toBeGreaterThan(130);expect(r.workflows).toBe(52);expect(r.cases).toBe(76);});
+test('all pinned references and contract links verify',async()=>{const r=await verify();expect(r.assets).toBe(128);expect(r.facts).toBeGreaterThan(130);expect(r.workflows).toBe(57);expect(r.cases).toBe(90);});
 test('official Gherkin compilation expands shared cases',async()=>{const p='workflows/mutation-safety.feature';const result=cases(p,await Bun.file(p).text());expect(result).toHaveLength(19);expect(new Set(result.map(r=>r.scenarioId)).size).toBe(8);});
 test('workflow identity is required',()=>{expect(()=>cases('bad.feature','Feature: Bad\n Scenario: unnamed\n  Given input\n')).toThrow();});
 test('canonical scenario IDs cannot be reused within a feature, including Rule blocks',()=>{

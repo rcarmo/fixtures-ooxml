@@ -80,7 +80,8 @@ Native test snapshots under `ledgers/consumers/` use `mapped`, `partial` or
 `unmapped` coverage, pinned repository revisions and test-file hashes. They
 require explicit gaps for partial/unmapped rows and always set
 `executionCredit: false`. A complete declaration mapping does not cover a module
-or imply that central bindings ran. See [XML profiles](contracts/xml-profiles.md).
+or imply that central bindings ran. See [XML profiles](contracts/xml-profiles.md)
+and [package profiles](contracts/package-profiles.md).
 
 When several tests exercise the same behaviour, map them to one scenario with
 explicit parameter variants. Distinct preconditions or conflicting outcomes need

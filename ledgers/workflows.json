@@ -12,7 +12,10 @@
     "workflows/native/xlsx-cache-boundaries.feature",
     "workflows/xml/parsing.feature",
     "workflows/xml/names.feature",
-    "workflows/xml/comparison.feature"
+    "workflows/xml/comparison.feature",
+    "workflows/package/zip-admission.feature",
+    "workflows/package/xml-member-admission.feature",
+    "workflows/package/semantic-diff.feature"
   ],
   "executionCredit": "Only local executed assertions count; reports here do not run consumers.",
   "workflows": [
@@ -1419,6 +1422,125 @@
         "python": {
           "status": "planned",
           "evidence": "Local staging binding ran ten exact variants; canonical-path binding pending"
+        }
+      }
+    },
+    {
+      "id": "@id-package-admission-unsafe-members",
+      "feature": "workflows/package/zip-admission.feature",
+      "expandedCases": 5,
+      "factIds": [],
+      "expectedOutcomes": [
+        "package admission is refused"
+      ],
+      "consumers": {
+        "bun": {
+          "status": "planned",
+          "evidence": "No canonical admission/semantic-diff binding; ZIP reader/writer and byte diff are separate APIs"
+        },
+        "go": {
+          "status": "planned",
+          "evidence": "No canonical package-admission binding; native plans/retained ZIP custody are distinct"
+        },
+        "python": {
+          "status": "planned",
+          "evidence": "Four native declarations reviewed and temporary staging14case pass reported; canonical binding not yet executed"
+        }
+      }
+    },
+    {
+      "id": "@id-package-admission-resource-limits",
+      "feature": "workflows/package/zip-admission.feature",
+      "expandedCases": 4,
+      "factIds": [],
+      "expectedOutcomes": [
+        "package admission is refused"
+      ],
+      "consumers": {
+        "bun": {
+          "status": "planned",
+          "evidence": "No canonical admission/semantic-diff binding; ZIP reader/writer and byte diff are separate APIs"
+        },
+        "go": {
+          "status": "planned",
+          "evidence": "No canonical package-admission binding; native plans/retained ZIP custody are distinct"
+        },
+        "python": {
+          "status": "planned",
+          "evidence": "Four native declarations reviewed and temporary staging14case pass reported; canonical binding not yet executed"
+        }
+      }
+    },
+    {
+      "id": "@id-package-admission-unsupported-compression",
+      "feature": "workflows/package/zip-admission.feature",
+      "expandedCases": 1,
+      "factIds": [],
+      "expectedOutcomes": [
+        "package admission is refused",
+        "the admission error contains compression"
+      ],
+      "consumers": {
+        "bun": {
+          "status": "planned",
+          "evidence": "No canonical admission/semantic-diff binding; ZIP reader/writer and byte diff are separate APIs"
+        },
+        "go": {
+          "status": "planned",
+          "evidence": "No canonical package-admission binding; native plans/retained ZIP custody are distinct"
+        },
+        "python": {
+          "status": "planned",
+          "evidence": "Four native declarations reviewed and temporary staging14case pass reported; canonical binding not yet executed"
+        }
+      }
+    },
+    {
+      "id": "@id-package-admission-unsafe-xml-members",
+      "feature": "workflows/package/xml-member-admission.feature",
+      "expandedCases": 3,
+      "factIds": [],
+      "expectedOutcomes": [
+        "package admission is refused"
+      ],
+      "consumers": {
+        "bun": {
+          "status": "planned",
+          "evidence": "No canonical admission/semantic-diff binding; ZIP reader/writer and byte diff are separate APIs"
+        },
+        "go": {
+          "status": "planned",
+          "evidence": "No canonical package-admission binding; native plans/retained ZIP custody are distinct"
+        },
+        "python": {
+          "status": "planned",
+          "evidence": "Four native declarations reviewed and temporary staging14case pass reported; canonical binding not yet executed"
+        }
+      }
+    },
+    {
+      "id": "@id-package-diff-equivalent-xml-and-binary-changes",
+      "feature": "workflows/package/semantic-diff.feature",
+      "expandedCases": 1,
+      "factIds": [],
+      "expectedOutcomes": [
+        "the equivalent_xml member list is [\"a.xml\"]",
+        "the changed member list is [\"b.bin\"]",
+        "the added member list is [\"c.bin\"]",
+        "the removed member list is []"
+      ],
+      "consumers": {
+        "bun": {
+          "status": "planned",
+          "evidence": "No canonical admission/semantic-diff binding; ZIP reader/writer and byte diff are separate APIs"
+        },
+        "go": {
+          "status": "planned",
+          "evidence": "No canonical package-admission binding; native plans/retained ZIP custody are distinct"
+        },
+        "python": {
+          "status": "planned",
+          "evidence": "Four native declarations reviewed and temporary staging14case pass reported; canonical binding not yet executed"
         }
       }
     }

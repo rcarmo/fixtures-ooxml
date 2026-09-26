@@ -1,0 +1,427 @@
+{
+  "schemaVersion": 1,
+  "consumer": "python",
+  "source": {
+    "repository": "https://github.com/rcarmo/python-office-mcp-server",
+    "revision": "e6fc76ca35dc378b35ab00a44fc5932eb5b9edaf"
+  },
+  "scope": "Exactly four package-guard declarations /14variants. ZIP/XML admission and semantic diff only; allocation and network behaviour unmeasured.",
+  "declarationCount": 4,
+  "priorRun": {
+    "kind": "staging-only",
+    "casesPassed": 14,
+    "nativeParameterizedCasesPassed": 14,
+    "canonicalExecution": false
+  },
+  "mappings": [
+    {
+      "nativeId": "tests/test_package_guard.py::test_unsafe_structure_refuses",
+      "path": "tests/test_package_guard.py",
+      "sourceSha256": "4bdf62929a1fe6c30693e4a9caf860d05ad638fe6512d16a738b740abfe7fb2a",
+      "coverage": "mapped",
+      "scenarioIds": [
+        "@id-package-admission-unsafe-members",
+        "@id-package-admission-unsafe-xml-members"
+      ],
+      "verifiedAspects": [
+        "ZIP admission refuses duplicate member names: {\"pythonException\":\"PackageAdmissionError\"}",
+        "ZIP admission refuses parent traversal name: {\"pythonException\":\"PackageAdmissionError\"}",
+        "ZIP admission refuses absolute member name: {\"pythonException\":\"PackageAdmissionError\"}",
+        "ZIP admission refuses backslash member name: {\"pythonException\":\"PackageAdmissionError\"}",
+        "ZIP admission refuses directory entry with bytes: {\"pythonException\":\"PackageAdmissionError\"}",
+        "XML member admission refuses internal DTD with entity: {\"pythonException\":\"PackageAdmissionError\"}",
+        "XML member admission refuses UTF-16 DTD: {\"pythonException\":\"PackageAdmissionError\"}",
+        "XML member admission refuses malformed XML: {\"pythonException\":\"PackageAdmissionError\"}"
+      ],
+      "gaps": [],
+      "executionCredit": false,
+      "variants": [
+        {
+          "scenarioId": "@id-package-admission-unsafe-members",
+          "name": "ZIP admission refuses duplicate member names",
+          "inputs": {
+            "compression": "ZIP_STORED",
+            "members": [
+              {
+                "name": "a.xml",
+                "payloadBytes": 4,
+                "payloadSha256": "29114363f749a0226b6988dda3ca2492a954117ab6b5f382706c20300dabc079"
+              },
+              {
+                "name": "a.xml",
+                "payloadBytes": 4,
+                "payloadSha256": "c5a1c182c87ac852d7d4621a27899d9d002b02dd501be9355d1fc4f58e9ccc7f"
+              }
+            ]
+          },
+          "expectedOutcomes": {
+            "pythonException": "PackageAdmissionError"
+          }
+        },
+        {
+          "scenarioId": "@id-package-admission-unsafe-members",
+          "name": "ZIP admission refuses parent traversal name",
+          "inputs": {
+            "compression": "ZIP_STORED",
+            "members": [
+              {
+                "name": "../a.xml",
+                "payloadBytes": 4,
+                "payloadSha256": "29114363f749a0226b6988dda3ca2492a954117ab6b5f382706c20300dabc079"
+              }
+            ]
+          },
+          "expectedOutcomes": {
+            "pythonException": "PackageAdmissionError"
+          }
+        },
+        {
+          "scenarioId": "@id-package-admission-unsafe-members",
+          "name": "ZIP admission refuses absolute member name",
+          "inputs": {
+            "compression": "ZIP_STORED",
+            "members": [
+              {
+                "name": "/a.xml",
+                "payloadBytes": 4,
+                "payloadSha256": "29114363f749a0226b6988dda3ca2492a954117ab6b5f382706c20300dabc079"
+              }
+            ]
+          },
+          "expectedOutcomes": {
+            "pythonException": "PackageAdmissionError"
+          }
+        },
+        {
+          "scenarioId": "@id-package-admission-unsafe-members",
+          "name": "ZIP admission refuses backslash member name",
+          "inputs": {
+            "compression": "ZIP_STORED",
+            "members": [
+              {
+                "name": "x\\a.xml",
+                "payloadBytes": 4,
+                "payloadSha256": "29114363f749a0226b6988dda3ca2492a954117ab6b5f382706c20300dabc079"
+              }
+            ]
+          },
+          "expectedOutcomes": {
+            "pythonException": "PackageAdmissionError"
+          }
+        },
+        {
+          "scenarioId": "@id-package-admission-unsafe-members",
+          "name": "ZIP admission refuses directory entry with bytes",
+          "inputs": {
+            "compression": "ZIP_STORED",
+            "members": [
+              {
+                "name": "a/",
+                "payloadBytes": 7,
+                "payloadSha256": "239f59ed55e737c77147cf55ad0c1b030b6d7ee748a7426952f9b852d5a935e5"
+              }
+            ]
+          },
+          "expectedOutcomes": {
+            "pythonException": "PackageAdmissionError"
+          }
+        },
+        {
+          "scenarioId": "@id-package-admission-unsafe-xml-members",
+          "name": "XML member admission refuses internal DTD with entity",
+          "inputs": {
+            "compression": "ZIP_STORED",
+            "members": [
+              {
+                "name": "a.xml",
+                "payloadBytes": 43,
+                "payloadSha256": "d36a8abc85fe4aeb3ee26ecf3fa7c23800db1193a221c6970af4cae2e9c68315"
+              }
+            ],
+            "encoding": "UTF-8"
+          },
+          "expectedOutcomes": {
+            "pythonException": "PackageAdmissionError"
+          }
+        },
+        {
+          "scenarioId": "@id-package-admission-unsafe-xml-members",
+          "name": "XML member admission refuses UTF-16 DTD",
+          "inputs": {
+            "compression": "ZIP_STORED",
+            "members": [
+              {
+                "name": "a.xml",
+                "payloadBytes": 34,
+                "payloadSha256": "212068eda89254ff60d5f62ea1c87dc91407b92ac305d3ce82ef886f47101024"
+              }
+            ],
+            "encoding": "UTF-16 with BOM"
+          },
+          "expectedOutcomes": {
+            "pythonException": "PackageAdmissionError"
+          }
+        },
+        {
+          "scenarioId": "@id-package-admission-unsafe-xml-members",
+          "name": "XML member admission refuses malformed XML",
+          "inputs": {
+            "compression": "ZIP_STORED",
+            "members": [
+              {
+                "name": "a.xml",
+                "payloadBytes": 8,
+                "payloadSha256": "88de8e6e97a972c5e01968eef2e8c871e6ef8229cbd6505591b3bf3c31fc5b82"
+              }
+            ],
+            "encoding": "UTF-8"
+          },
+          "expectedOutcomes": {
+            "pythonException": "PackageAdmissionError"
+          }
+        }
+      ],
+      "limits": [
+        "ZIP admission rejects unsafe package structure; these are not ZIP writer or lexical parser contracts",
+        "XML-member rejection uses PackageAdmissionError; semantic XML comparison returns Boolean instead",
+        "The UTF-16 case uses native Python utf-16 encoding with BOM; explicit encoding retained, no byte-offset equivalence claim",
+        "Limit values are exactly 0/2/2/1; no allocation measurement or decompression/network instrumentation was asserted",
+        "DTD/entity tests use an internal entity only; no external network-fetch prevention test",
+        "Diff partitions modified members semantically; byte-identical payloads are skipped before equivalence checking",
+        "Diff case does not assert hash receipts, ZIP serialization bytes or visual Office fidelity",
+        "Native XML and package bytes are preserved; ZIP timestamps/container bytes are not pinned",
+        "Central deduplication and proposed scenario IDs remain subject to reconciliation"
+      ]
+    },
+    {
+      "nativeId": "tests/test_package_guard.py::test_limits_refuse_before_large_allocations",
+      "path": "tests/test_package_guard.py",
+      "sourceSha256": "4bdf62929a1fe6c30693e4a9caf860d05ad638fe6512d16a738b740abfe7fb2a",
+      "coverage": "mapped",
+      "scenarioIds": [
+        "@id-package-admission-resource-limits"
+      ],
+      "verifiedAspects": [
+        "ZIP admission refuses the package with max_members set to 0: {\"pythonException\":\"PackageAdmissionError\"}",
+        "ZIP admission refuses the package with max_member_bytes set to 2: {\"pythonException\":\"PackageAdmissionError\"}",
+        "ZIP admission refuses the package with max_total_bytes set to 2: {\"pythonException\":\"PackageAdmissionError\"}",
+        "ZIP admission refuses the package with max_ratio set to 1: {\"pythonException\":\"PackageAdmissionError\"}"
+      ],
+      "gaps": [],
+      "executionCredit": false,
+      "variants": [
+        {
+          "scenarioId": "@id-package-admission-resource-limits",
+          "name": "ZIP admission refuses the package with max_members set to 0",
+          "inputs": {
+            "compression": "ZIP_DEFLATED",
+            "limits": {
+              "max_members": 0
+            },
+            "members": [
+              {
+                "name": "a.xml",
+                "payloadBytes": 10007,
+                "payloadSha256": "ef2e0398a770fc78e1ead7b790b646350d28f2e5e2b2a0115f0c899a8c378aa9"
+              }
+            ]
+          },
+          "expectedOutcomes": {
+            "pythonException": "PackageAdmissionError"
+          }
+        },
+        {
+          "scenarioId": "@id-package-admission-resource-limits",
+          "name": "ZIP admission refuses the package with max_member_bytes set to 2",
+          "inputs": {
+            "compression": "ZIP_DEFLATED",
+            "limits": {
+              "max_member_bytes": 2
+            },
+            "members": [
+              {
+                "name": "a.xml",
+                "payloadBytes": 10007,
+                "payloadSha256": "ef2e0398a770fc78e1ead7b790b646350d28f2e5e2b2a0115f0c899a8c378aa9"
+              }
+            ]
+          },
+          "expectedOutcomes": {
+            "pythonException": "PackageAdmissionError"
+          }
+        },
+        {
+          "scenarioId": "@id-package-admission-resource-limits",
+          "name": "ZIP admission refuses the package with max_total_bytes set to 2",
+          "inputs": {
+            "compression": "ZIP_DEFLATED",
+            "limits": {
+              "max_total_bytes": 2
+            },
+            "members": [
+              {
+                "name": "a.xml",
+                "payloadBytes": 10007,
+                "payloadSha256": "ef2e0398a770fc78e1ead7b790b646350d28f2e5e2b2a0115f0c899a8c378aa9"
+              }
+            ]
+          },
+          "expectedOutcomes": {
+            "pythonException": "PackageAdmissionError"
+          }
+        },
+        {
+          "scenarioId": "@id-package-admission-resource-limits",
+          "name": "ZIP admission refuses the package with max_ratio set to 1",
+          "inputs": {
+            "compression": "ZIP_DEFLATED",
+            "limits": {
+              "max_ratio": 1
+            },
+            "members": [
+              {
+                "name": "a.xml",
+                "payloadBytes": 10007,
+                "payloadSha256": "ef2e0398a770fc78e1ead7b790b646350d28f2e5e2b2a0115f0c899a8c378aa9"
+              }
+            ]
+          },
+          "expectedOutcomes": {
+            "pythonException": "PackageAdmissionError"
+          }
+        }
+      ],
+      "limits": [
+        "ZIP admission rejects unsafe package structure; these are not ZIP writer or lexical parser contracts",
+        "XML-member rejection uses PackageAdmissionError; semantic XML comparison returns Boolean instead",
+        "The UTF-16 case uses native Python utf-16 encoding with BOM; explicit encoding retained, no byte-offset equivalence claim",
+        "Limit values are exactly 0/2/2/1; no allocation measurement or decompression/network instrumentation was asserted",
+        "DTD/entity tests use an internal entity only; no external network-fetch prevention test",
+        "Diff partitions modified members semantically; byte-identical payloads are skipped before equivalence checking",
+        "Diff case does not assert hash receipts, ZIP serialization bytes or visual Office fidelity",
+        "Native XML and package bytes are preserved; ZIP timestamps/container bytes are not pinned",
+        "Central deduplication and proposed scenario IDs remain subject to reconciliation"
+      ]
+    },
+    {
+      "nativeId": "tests/test_package_guard.py::test_unsupported_compression_refuses",
+      "path": "tests/test_package_guard.py",
+      "sourceSha256": "4bdf62929a1fe6c30693e4a9caf860d05ad638fe6512d16a738b740abfe7fb2a",
+      "coverage": "mapped",
+      "scenarioIds": [
+        "@id-package-admission-unsupported-compression"
+      ],
+      "verifiedAspects": [
+        "ZIP admission refuses BZIP2 member compression: {\"pythonException\":\"PackageAdmissionError\",\"messageContains\":\"compression\"}"
+      ],
+      "gaps": [],
+      "executionCredit": false,
+      "variants": [
+        {
+          "scenarioId": "@id-package-admission-unsupported-compression",
+          "name": "ZIP admission refuses BZIP2 member compression",
+          "inputs": {
+            "compression": "ZIP_BZIP2",
+            "members": [
+              {
+                "name": "a.xml",
+                "payloadBytes": 4,
+                "payloadSha256": "29114363f749a0226b6988dda3ca2492a954117ab6b5f382706c20300dabc079"
+              }
+            ]
+          },
+          "expectedOutcomes": {
+            "pythonException": "PackageAdmissionError",
+            "messageContains": "compression"
+          }
+        }
+      ],
+      "limits": [
+        "ZIP admission rejects unsafe package structure; these are not ZIP writer or lexical parser contracts",
+        "XML-member rejection uses PackageAdmissionError; semantic XML comparison returns Boolean instead",
+        "The UTF-16 case uses native Python utf-16 encoding with BOM; explicit encoding retained, no byte-offset equivalence claim",
+        "Limit values are exactly 0/2/2/1; no allocation measurement or decompression/network instrumentation was asserted",
+        "DTD/entity tests use an internal entity only; no external network-fetch prevention test",
+        "Diff partitions modified members semantically; byte-identical payloads are skipped before equivalence checking",
+        "Diff case does not assert hash receipts, ZIP serialization bytes or visual Office fidelity",
+        "Native XML and package bytes are preserved; ZIP timestamps/container bytes are not pinned",
+        "Central deduplication and proposed scenario IDs remain subject to reconciliation"
+      ]
+    },
+    {
+      "nativeId": "tests/test_package_guard.py::test_package_diff_distinguishes_real_and_equivalent_changes",
+      "path": "tests/test_package_guard.py",
+      "sourceSha256": "4bdf62929a1fe6c30693e4a9caf860d05ad638fe6512d16a738b740abfe7fb2a",
+      "coverage": "mapped",
+      "scenarioIds": [
+        "@id-package-diff-equivalent-xml-and-binary-changes"
+      ],
+      "verifiedAspects": [
+        "Prefix-only XML changes are reported separately from binary changes: {\"equivalent_xml\":[\"a.xml\"],\"changed\":[\"b.bin\"],\"added\":[\"c.bin\"],\"removed\":[]}"
+      ],
+      "gaps": [],
+      "executionCredit": false,
+      "variants": [
+        {
+          "scenarioId": "@id-package-diff-equivalent-xml-and-binary-changes",
+          "name": "Prefix-only XML changes are reported separately from binary changes",
+          "inputs": {
+            "compression": "ZIP_STORED",
+            "original": [
+              {
+                "name": "a.xml",
+                "payloadBytes": 18,
+                "payloadSha256": "8d8dbad0643d21bb05cc1df88146641c80dd452c6a318da526c7b9708412b7a8"
+              },
+              {
+                "name": "b.bin",
+                "payloadBytes": 3,
+                "payloadSha256": "cba06b5736faf67e54b07b561eae94395e774c517a7d910a54369e1263ccfbd4"
+              }
+            ],
+            "modified": [
+              {
+                "name": "a.xml",
+                "payloadBytes": 22,
+                "payloadSha256": "d67f4780fd8f7c54f954c851140306f5ba65f86fa035bc2c8fb9574045b9305f"
+              },
+              {
+                "name": "b.bin",
+                "payloadBytes": 3,
+                "payloadSha256": "11507a0e2f5e69d5dfa40a62a1bd7b6ee57e6bcd85c67c9b8431b36fff21c437"
+              },
+              {
+                "name": "c.bin",
+                "payloadBytes": 5,
+                "payloadSha256": "279b8a60f444fa8b6275687ce7e44363d97f72f88e4a3285baf0d9ed812e4061"
+              }
+            ]
+          },
+          "expectedOutcomes": {
+            "equivalent_xml": [
+              "a.xml"
+            ],
+            "changed": [
+              "b.bin"
+            ],
+            "added": [
+              "c.bin"
+            ],
+            "removed": []
+          }
+        }
+      ],
+      "limits": [
+        "ZIP admission rejects unsafe package structure; these are not ZIP writer or lexical parser contracts",
+        "XML-member rejection uses PackageAdmissionError; semantic XML comparison returns Boolean instead",
+        "The UTF-16 case uses native Python utf-16 encoding with BOM; explicit encoding retained, no byte-offset equivalence claim",
+        "Limit values are exactly 0/2/2/1; no allocation measurement or decompression/network instrumentation was asserted",
+        "DTD/entity tests use an internal entity only; no external network-fetch prevention test",
+        "Diff partitions modified members semantically; byte-identical payloads are skipped before equivalence checking",
+        "Diff case does not assert hash receipts, ZIP serialization bytes or visual Office fidelity",
+        "Native XML and package bytes are preserved; ZIP timestamps/container bytes are not pinned",
+        "Central deduplication and proposed scenario IDs remain subject to reconciliation"
+      ]
+    }
+  ]
+}

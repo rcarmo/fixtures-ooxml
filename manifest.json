@@ -2983,6 +2983,54 @@
       "aliases": []
     },
     {
+      "id": "asset-eebe822867a6f83d77351a0590dd81d7e929dc13f2d1add0bfcbbc44c5e90ca7",
+      "path": "workflows/package/semantic-diff.feature",
+      "bytes": 1073,
+      "sha256": "eebe822867a6f83d77351a0590dd81d7e929dc13f2d1add0bfcbbc44c5e90ca7",
+      "role": "workflow",
+      "origins": [
+        {
+          "repository": "https://github.com/rcarmo/python-office-mcp-server",
+          "revision": "10aedcb7e96d61442fdb5f3065e5fcb822892fb4",
+          "path": "docs/catalogue-staging/workflows/package/semantic-diff.feature",
+          "change": "Exact committed proposed workflow bytes; native-tested inputs and observable outcomes retained"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "id": "asset-19fa717632d689e7ff4e883fb2af3f31e018373dc79ddb78efecf7742ea14e91",
+      "path": "workflows/package/xml-member-admission.feature",
+      "bytes": 934,
+      "sha256": "19fa717632d689e7ff4e883fb2af3f31e018373dc79ddb78efecf7742ea14e91",
+      "role": "workflow",
+      "origins": [
+        {
+          "repository": "https://github.com/rcarmo/python-office-mcp-server",
+          "revision": "10aedcb7e96d61442fdb5f3065e5fcb822892fb4",
+          "path": "docs/catalogue-staging/workflows/package/xml-member-admission.feature",
+          "change": "Exact committed proposed workflow bytes; native-tested inputs and observable outcomes retained"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "id": "asset-28b1599e839f360929e689ff2d99e13599e000b98d6aa0d58c2e6a47b4efe696",
+      "path": "workflows/package/zip-admission.feature",
+      "bytes": 1987,
+      "sha256": "28b1599e839f360929e689ff2d99e13599e000b98d6aa0d58c2e6a47b4efe696",
+      "role": "workflow",
+      "origins": [
+        {
+          "repository": "https://github.com/rcarmo/python-office-mcp-server",
+          "revision": "10aedcb7e96d61442fdb5f3065e5fcb822892fb4",
+          "path": "docs/catalogue-staging/workflows/package/zip-admission.feature",
+          "change": "Exact committed proposed workflow bytes; native-tested inputs and observable outcomes retained"
+        }
+      ],
+      "aliases": []
+    },
+    {
       "id": "asset-b700a3da8670cb048aa3f836c193f4533908730c185847f63e167e59c48f5e93",
       "path": "workflows/xml/comparison.feature",
       "bytes": 3078,

@@ -1,0 +1,397 @@
+{
+  "schemaVersion": 1,
+  "consumer": "bun",
+  "source": {
+    "repository": "https://github.com/rcarmo/bun-ooxml",
+    "revision": "a8692057a678e143e8d657627c89351c51eed751"
+  },
+  "scope": "Thirty declarations in graph, package-diff and ZIP64 modules; selected existing canonical overlaps only. ZIP32, raw OPC admission and broader runtime coverage excluded.",
+  "declarationCount": 30,
+  "mappings": [
+    {
+      "nativeId": "bun:tests/unit/graph.test.ts:guarded OPC graph edits / opaque parts and content types survive related save/reopen",
+      "path": "tests/unit/graph.test.ts",
+      "sourceSha256": "cd185f7026f63ed0ad203f478634479abce8e2fcb8f3e953e9dc4338aa4038e3",
+      "coverage": "partial",
+      "scenarioIds": [
+        "@id-opc-add-related-part"
+      ],
+      "verifiedAspects": [
+        "Added root relationship resolves, exact content type survives reopen, main document bytes retained"
+      ],
+      "gaps": [
+        "This declaration does not directly assert added payload content or every unrelated part; canonical binding checks the broader package"
+      ],
+      "executionCredit": false
+    },
+    {
+      "nativeId": "bun:tests/unit/graph.test.ts:guarded OPC graph edits / collision and missing relationship targets leave package byte-identical",
+      "path": "tests/unit/graph.test.ts",
+      "sourceSha256": "cd185f7026f63ed0ad203f478634479abce8e2fcb8f3e953e9dc4338aa4038e3",
+      "coverage": "unmapped",
+      "scenarioIds": [],
+      "verifiedAspects": [],
+      "gaps": [
+        "Case-colliding additions and missing relationship targets refuse atomically; referenced-part deletion is a different refusal"
+      ],
+      "executionCredit": false
+    },
+    {
+      "nativeId": "bun:tests/unit/graph.test.ts:guarded OPC graph edits / relationship deduplication and smallest available IDs avoid unnecessary edits",
+      "path": "tests/unit/graph.test.ts",
+      "sourceSha256": "cd185f7026f63ed0ad203f478634479abce8e2fcb8f3e953e9dc4338aa4038e3",
+      "coverage": "unmapped",
+      "scenarioIds": [],
+      "verifiedAspects": [],
+      "gaps": [
+        "Equivalent targets reuse a relationship/bytes and deleted IDs are reused; no canonical ID-allocation scenario"
+      ],
+      "executionCredit": false
+    },
+    {
+      "nativeId": "bun:tests/unit/graph.test.ts:guarded OPC graph edits / equivalent relationship leaves existing overrides and XML encoding byte-identical",
+      "path": "tests/unit/graph.test.ts",
+      "sourceSha256": "cd185f7026f63ed0ad203f478634479abce8e2fcb8f3e953e9dc4338aa4038e3",
+      "coverage": "unmapped",
+      "scenarioIds": [],
+      "verifiedAspects": [],
+      "gaps": [
+        "No-op external relationship insertion preserves explicit overrides and bytes; broader no-op graph profile needed"
+      ],
+      "executionCredit": false
+    },
+    {
+      "nativeId": "bun:tests/unit/graph.test.ts:guarded OPC graph edits / dollar replacement tokens in external targets are literal bytes, not JS replacement directives",
+      "path": "tests/unit/graph.test.ts",
+      "sourceSha256": "cd185f7026f63ed0ad203f478634479abce8e2fcb8f3e953e9dc4338aa4038e3",
+      "coverage": "unmapped",
+      "scenarioIds": [],
+      "verifiedAspects": [],
+      "gaps": [
+        "Literal dollar replacement handling is consumer-specific string API coverage"
+      ],
+      "executionCredit": false
+    },
+    {
+      "nativeId": "bun:tests/unit/graph.test.ts:guarded OPC graph edits / referenced parts refuse until explicitly detached, then only owned metadata is removed",
+      "path": "tests/unit/graph.test.ts",
+      "sourceSha256": "cd185f7026f63ed0ad203f478634479abce8e2fcb8f3e953e9dc4338aa4038e3",
+      "coverage": "partial",
+      "scenarioIds": [
+        "@id-opc-graph-rollback",
+        "@id-opc-remove-related-part"
+      ],
+      "verifiedAspects": [
+        "Referenced deletion throws without changing archive bytes; explicit detach/delete removes payload and override after reopen"
+      ],
+      "gaps": [
+        "Native assertion checks error text, not exact opc-part-referenced code; no explicit all-targets-resolve assertion"
+      ],
+      "executionCredit": false
+    },
+    {
+      "nativeId": "bun:tests/unit/graph.test.ts:guarded OPC graph edits / relationship referenced from owner XML cannot be removed; unknown binary owners refuse",
+      "path": "tests/unit/graph.test.ts",
+      "sourceSha256": "cd185f7026f63ed0ad203f478634479abce8e2fcb8f3e953e9dc4338aa4038e3",
+      "coverage": "unmapped",
+      "scenarioIds": [],
+      "verifiedAspects": [],
+      "gaps": [
+        "Owner-XML reference and binary-owner relationship deletion guards differ from part deletion"
+      ],
+      "executionCredit": false
+    },
+    {
+      "nativeId": "bun:tests/unit/graph.test.ts:guarded OPC graph edits / cycle-safe traversal excludes external targets and preserves orphan parts",
+      "path": "tests/unit/graph.test.ts",
+      "sourceSha256": "cd185f7026f63ed0ad203f478634479abce8e2fcb8f3e953e9dc4338aa4038e3",
+      "coverage": "unmapped",
+      "scenarioIds": [],
+      "verifiedAspects": [],
+      "gaps": [
+        "Cycle traversal, external exclusion and orphan retention lack a canonical traversal scenario"
+      ],
+      "executionCredit": false
+    },
+    {
+      "nativeId": "bun:tests/unit/graph.test.ts:guarded OPC graph edits / part name allocation considers orphan and case-colliding names",
+      "path": "tests/unit/graph.test.ts",
+      "sourceSha256": "cd185f7026f63ed0ad203f478634479abce8e2fcb8f3e953e9dc4338aa4038e3",
+      "coverage": "unmapped",
+      "scenarioIds": [],
+      "verifiedAspects": [],
+      "gaps": [
+        "Case-aware part-name allocation and invalid template refusal lack a dedicated canonical scenario"
+      ],
+      "executionCredit": false
+    },
+    {
+      "nativeId": "bun:tests/unit/graph.test.ts:guarded OPC graph edits / removing a part removes its own rels but never cascades into targets",
+      "path": "tests/unit/graph.test.ts",
+      "sourceSha256": "cd185f7026f63ed0ad203f478634479abce8e2fcb8f3e953e9dc4338aa4038e3",
+      "coverage": "unmapped",
+      "scenarioIds": [],
+      "verifiedAspects": [],
+      "gaps": [
+        "Removal of an unreferenced relationship-owning part and noncascade semantics differ from detaching a leaf"
+      ],
+      "executionCredit": false
+    },
+    {
+      "nativeId": "bun:tests/unit/package-diff.test.ts:diffPackages / raw fixture no-op diffs are empty, preserve exact source bytes, and return detached reports",
+      "path": "tests/unit/package-diff.test.ts",
+      "sourceSha256": "b60e5da0628e1c3bc03b6b88e89c5aed549fdcd03728c55b74b48a06c050fd2b",
+      "coverage": "unmapped",
+      "scenarioIds": [],
+      "verifiedAspects": [],
+      "gaps": [
+        "Byte/type package diff no-op and report detachment differ from semantic XML classification"
+      ],
+      "executionCredit": false
+    },
+    {
+      "nativeId": "bun:tests/unit/package-diff.test.ts:diffPackages / ignores ZIP metadata-only changes",
+      "path": "tests/unit/package-diff.test.ts",
+      "sourceSha256": "b60e5da0628e1c3bc03b6b88e89c5aed549fdcd03728c55b74b48a06c050fd2b",
+      "coverage": "unmapped",
+      "scenarioIds": [],
+      "verifiedAspects": [],
+      "gaps": [
+        "ZIP comment changes are ignored by byte/type diff; semantic-diff example changes XML and binary payloads"
+      ],
+      "executionCredit": false
+    },
+    {
+      "nativeId": "bun:tests/unit/package-diff.test.ts:diffPackages / reports opaque payload edits with hashes, lengths, content types, and detached part records",
+      "path": "tests/unit/package-diff.test.ts",
+      "sourceSha256": "b60e5da0628e1c3bc03b6b88e89c5aed549fdcd03728c55b74b48a06c050fd2b",
+      "coverage": "unmapped",
+      "scenarioIds": [],
+      "verifiedAspects": [],
+      "gaps": [
+        "Typed byte-diff report hashes/lengths/detached records have no equivalent Python semantic-diff scenario"
+      ],
+      "executionCredit": false
+    },
+    {
+      "nativeId": "bun:tests/unit/package-diff.test.ts:diffPackages / reports added and removed parts with content-type updates via package.set",
+      "path": "tests/unit/package-diff.test.ts",
+      "sourceSha256": "b60e5da0628e1c3bc03b6b88e89c5aed549fdcd03728c55b74b48a06c050fd2b",
+      "coverage": "unmapped",
+      "scenarioIds": [],
+      "verifiedAspects": [],
+      "gaps": [
+        "Byte/type diff compares additions/removals and override updates; no semantic XML equivalence assertion"
+      ],
+      "executionCredit": false
+    },
+    {
+      "nativeId": "bun:tests/unit/package-diff.test.ts:diffPackages / marks content-type-only changes as changed even when payload bytes are identical",
+      "path": "tests/unit/package-diff.test.ts",
+      "sourceSha256": "b60e5da0628e1c3bc03b6b88e89c5aed549fdcd03728c55b74b48a06c050fd2b",
+      "coverage": "partial",
+      "scenarioIds": [
+        "@id-opc-diff-content-type"
+      ],
+      "verifiedAspects": [
+        "Type-only change marks metadata and affected payload changed, payload hashes equal, no additions/removals"
+      ],
+      "gaps": [
+        "Native per-part lengths/type/hash record assertions exceed this canonical scenario"
+      ],
+      "executionCredit": false
+    },
+    {
+      "nativeId": "bun:tests/unit/zip64.test.ts:ZIP64 readZip / refuses an undeclared gap before the ZIP64 end record",
+      "path": "tests/unit/zip64.test.ts",
+      "sourceSha256": "576bbb3615856e4bc131b5c32b923db5027a04c61f8ae2fa7c5650d9acf14eb2",
+      "coverage": "unmapped",
+      "scenarioIds": [],
+      "verifiedAspects": [],
+      "gaps": [
+        "ZIP64 directory-boundary gap rejection is outside the existing count/offset/resource scenarios"
+      ],
+      "executionCredit": false
+    },
+    {
+      "nativeId": "bun:tests/unit/zip64.test.ts:ZIP64 readZip / reads an empty deflate payload under a nonzero native inflate cap",
+      "path": "tests/unit/zip64.test.ts",
+      "sourceSha256": "576bbb3615856e4bc131b5c32b923db5027a04c61f8ae2fa7c5650d9acf14eb2",
+      "coverage": "unmapped",
+      "scenarioIds": [],
+      "verifiedAspects": [],
+      "gaps": [
+        "Empty inflate output admission needs a dedicated archive case"
+      ],
+      "executionCredit": false
+    },
+    {
+      "nativeId": "bun:tests/unit/zip64.test.ts:ZIP64 readZip / reads ZIP64 members that use per-entry extras and 64-bit data descriptors",
+      "path": "tests/unit/zip64.test.ts",
+      "sourceSha256": "576bbb3615856e4bc131b5c32b923db5027a04c61f8ae2fa7c5650d9acf14eb2",
+      "coverage": "unmapped",
+      "scenarioIds": [],
+      "verifiedAspects": [],
+      "gaps": [
+        "Descriptor/extras acceptance alone does not establish changed-member rewrite custody"
+      ],
+      "executionCredit": false
+    },
+    {
+      "nativeId": "bun:tests/unit/zip64.test.ts:ZIP64 readZip / refuses malformed ZIP64 locators",
+      "path": "tests/unit/zip64.test.ts",
+      "sourceSha256": "576bbb3615856e4bc131b5c32b923db5027a04c61f8ae2fa7c5650d9acf14eb2",
+      "coverage": "unmapped",
+      "scenarioIds": [],
+      "verifiedAspects": [],
+      "gaps": [
+        "Malformed locator signature is distinct from above-safe-integer locator offset"
+      ],
+      "executionCredit": false
+    },
+    {
+      "nativeId": "bun:tests/unit/zip64.test.ts:ZIP64 readZip / refuses ZIP64 central counts that cannot fit the declared central span",
+      "path": "tests/unit/zip64.test.ts",
+      "sourceSha256": "576bbb3615856e4bc131b5c32b923db5027a04c61f8ae2fa7c5650d9acf14eb2",
+      "coverage": "partial",
+      "scenarioIds": [
+        "@id-zip64-preflight-count"
+      ],
+      "verifiedAspects": [
+        "One-member archive declares10001 entries with maxEntries20000 and refuses zip-structure-invalid"
+      ],
+      "gaps": [
+        "Test observes refusal/message only; allocations are not measured"
+      ],
+      "executionCredit": false
+    },
+    {
+      "nativeId": "bun:tests/unit/zip64.test.ts:ZIP64 readZip / refuses ZIP64 offsets beyond Number.MAX_SAFE_INTEGER",
+      "path": "tests/unit/zip64.test.ts",
+      "sourceSha256": "576bbb3615856e4bc131b5c32b923db5027a04c61f8ae2fa7c5650d9acf14eb2",
+      "coverage": "partial",
+      "scenarioIds": [
+        "@id-zip64-unsafe-offset"
+      ],
+      "verifiedAspects": [
+        "Locator offset Number.MAX_SAFE_INTEGER+1 refuses zip-zip64-unsupported"
+      ],
+      "gaps": [
+        "Specific error class and message fragment exceed the canonical error-code assertion"
+      ],
+      "executionCredit": false
+    },
+    {
+      "nativeId": "bun:tests/unit/zip64.test.ts:ZIP64 readZip / refuses unsupported ZIP64 extensible data sectors",
+      "path": "tests/unit/zip64.test.ts",
+      "sourceSha256": "576bbb3615856e4bc131b5c32b923db5027a04c61f8ae2fa7c5650d9acf14eb2",
+      "coverage": "unmapped",
+      "scenarioIds": [],
+      "verifiedAspects": [],
+      "gaps": [
+        "Extensible-sector refusal has no canonical corruption scenario"
+      ],
+      "executionCredit": false
+    },
+    {
+      "nativeId": "bun:tests/unit/zip64.test.ts:ZIP64 readZip / refuses missing central ZIP64 extras for sentinel fields",
+      "path": "tests/unit/zip64.test.ts",
+      "sourceSha256": "576bbb3615856e4bc131b5c32b923db5027a04c61f8ae2fa7c5650d9acf14eb2",
+      "coverage": "unmapped",
+      "scenarioIds": [],
+      "verifiedAspects": [],
+      "gaps": [
+        "Missing ZIP64 extra fields need separate corruption cases"
+      ],
+      "executionCredit": false
+    },
+    {
+      "nativeId": "bun:tests/unit/zip64.test.ts:ZIP64 readZip / refuses duplicate central ZIP64 extras rather than guessing",
+      "path": "tests/unit/zip64.test.ts",
+      "sourceSha256": "576bbb3615856e4bc131b5c32b923db5027a04c61f8ae2fa7c5650d9acf14eb2",
+      "coverage": "unmapped",
+      "scenarioIds": [],
+      "verifiedAspects": [],
+      "gaps": [
+        "Duplicate ZIP64 extra-field refusal is outside count/offset/budget profiles"
+      ],
+      "executionCredit": false
+    },
+    {
+      "nativeId": "bun:tests/unit/zip64.test.ts:ZIP64 readZip / refuses truncated central ZIP64 extras",
+      "path": "tests/unit/zip64.test.ts",
+      "sourceSha256": "576bbb3615856e4bc131b5c32b923db5027a04c61f8ae2fa7c5650d9acf14eb2",
+      "coverage": "unmapped",
+      "scenarioIds": [],
+      "verifiedAspects": [],
+      "gaps": [
+        "Truncated ZIP64 extra-field refusal needs a separate case"
+      ],
+      "executionCredit": false
+    },
+    {
+      "nativeId": "bun:tests/unit/zip64.test.ts:ZIP64 readZip / refuses ZIP64 local and central size mismatches",
+      "path": "tests/unit/zip64.test.ts",
+      "sourceSha256": "576bbb3615856e4bc131b5c32b923db5027a04c61f8ae2fa7c5650d9acf14eb2",
+      "coverage": "unmapped",
+      "scenarioIds": [],
+      "verifiedAspects": [],
+      "gaps": [
+        "Local/central size disagreement is not covered by current count preflight"
+      ],
+      "executionCredit": false
+    },
+    {
+      "nativeId": "bun:tests/unit/zip64.test.ts:ZIP64 readZip / refuses ZIP64 data descriptor mismatches",
+      "path": "tests/unit/zip64.test.ts",
+      "sourceSha256": "576bbb3615856e4bc131b5c32b923db5027a04c61f8ae2fa7c5650d9acf14eb2",
+      "coverage": "unmapped",
+      "scenarioIds": [],
+      "verifiedAspects": [],
+      "gaps": [
+        "Descriptor-size disagreement needs a separate corruption case"
+      ],
+      "executionCredit": false
+    },
+    {
+      "nativeId": "bun:tests/unit/zip64.test.ts:ZIP64 readZip / refuses CRC mismatches in ZIP64 archives",
+      "path": "tests/unit/zip64.test.ts",
+      "sourceSha256": "576bbb3615856e4bc131b5c32b923db5027a04c61f8ae2fa7c5650d9acf14eb2",
+      "coverage": "unmapped",
+      "scenarioIds": [],
+      "verifiedAspects": [],
+      "gaps": [
+        "CRC failure is not in the existing four ZIP64 canonical scenarios"
+      ],
+      "executionCredit": false
+    },
+    {
+      "nativeId": "bun:tests/unit/zip64.test.ts:ZIP64 writeZip / writes forced tiny ZIP64 output that readZip can reopen",
+      "path": "tests/unit/zip64.test.ts",
+      "sourceSha256": "576bbb3615856e4bc131b5c32b923db5027a04c61f8ae2fa7c5650d9acf14eb2",
+      "coverage": "partial",
+      "scenarioIds": [
+        "@id-parity-zip64"
+      ],
+      "verifiedAspects": [
+        "Forced two-member ZIP64 output has a ZIP64 end record and both payloads reopen"
+      ],
+      "gaps": [
+        "Native declaration only writes/reads initial bytes; it does not rewrite one changed member and compare unrelated payloads"
+      ],
+      "executionCredit": false
+    },
+    {
+      "nativeId": "bun:tests/unit/zip64.test.ts:ZIP64 writeZip / automatically emits ZIP64 EOCD records for 65535 tiny entries",
+      "path": "tests/unit/zip64.test.ts",
+      "sourceSha256": "576bbb3615856e4bc131b5c32b923db5027a04c61f8ae2fa7c5650d9acf14eb2",
+      "coverage": "unmapped",
+      "scenarioIds": [],
+      "verifiedAspects": [],
+      "gaps": [
+        "Automatic writer threshold65535 is not forced-tiny ZIP64 or impossible-count admission"
+      ],
+      "executionCredit": false
+    }
+  ]
+}

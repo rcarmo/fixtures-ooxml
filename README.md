@@ -21,6 +21,9 @@ and the consumer release checks.
 - `workflows/xml/`: lexical parsing, QName checks and conservative comparison
   profiles. Native operation differences are explicit in
   [contracts/xml-profiles.md](contracts/xml-profiles.md).
+- `workflows/package/`: bounded ZIP/XML member admission and semantic package
+  comparison. [contracts/package-profiles.md](contracts/package-profiles.md)
+  separates these from graph edits and byte-based package differences.
 - `workflows/native/`: additional format/package behaviour contracts. Their
   planned tag gives no consumer execution credit.
 - `ledgers/workflows.json`: expected outcomes, related facts and per-consumer
