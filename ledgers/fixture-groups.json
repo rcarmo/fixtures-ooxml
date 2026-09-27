@@ -7,7 +7,6 @@
       "scenarioGroup": "comments",
       "description": "Inspect and preserve comments and threads",
       "fixtureIds": [
-        "fixture-0655172de7be271600b8c38db59980fe3b37404b53377bcadd15744e82e47363",
         "fixture-2029abbda3bdacb270137f6210791ba2ee3f8be62affb8cc3181f3ac72a7c35a",
         "fixture-ccdfb41723d543a8baf3444b16c3f8fa7d8473aead590e13825042ba6119da62"
       ],
@@ -30,8 +29,7 @@
       "fixtureIds": [
         "fixture-291ea45fd599555956c86a7dd98c96c06ded43c5d03a57888422f6e34ea1203c",
         "fixture-b051c0c2ff43f2ab9213e19a52ccbc51217537cf3b336d54a68a91beb6670f9a",
-        "fixture-d9d6a313182a71a73d75a26a0ff3b7826dbd2e300e1d202114ec9f8fb018fda5",
-        "fixture-e96fb7ca0e844af934cf22b9e097ebf5f961a11a2f89c62d65f1c0c4df51ebec"
+        "fixture-d9d6a313182a71a73d75a26a0ff3b7826dbd2e300e1d202114ec9f8fb018fda5"
       ],
       "scenarioIds": []
     },
@@ -41,7 +39,6 @@
       "description": "Inspect and preserve text or cell formatting",
       "fixtureIds": [
         "fixture-12183fb28e49ea1c1ac63de2252b011580c4cfed0a7cfd35efc1ffb20c94653e",
-        "fixture-8ccd3110d52e8a9ef304c327996b22189d26201da8fead7cf1a4302e1d1092a5",
         "fixture-9a92eba3dc84f293a82de9496e571c780fd258cc3bf276b74464faaef5835dbc"
       ],
       "scenarioIds": []
@@ -52,8 +49,7 @@
       "description": "Inspect linked headers and footers",
       "fixtureIds": [
         "fixture-3bafa155242222dbd3529b56af6b8f1939cbd2e954de5b80afeadbbd53a432aa",
-        "fixture-a99df5aa88c56707c994eabc15ccec7f811d5bd2b540b8cb77c90ebeecaa6933",
-        "fixture-c87f711dc96ae4b4e8335707c4a52c3f89bf7faea2e4ce8ccde169416584b4e8"
+        "fixture-a99df5aa88c56707c994eabc15ccec7f811d5bd2b540b8cb77c90ebeecaa6933"
       ],
       "scenarioIds": []
     },
@@ -75,8 +71,6 @@
       "description": "Inspect and preserve bullet and numbered lists",
       "fixtureIds": [
         "fixture-37d3c408403dbecf4310f0a0b1313dc0c3756302e1778cc32d975823988ea3b2",
-        "fixture-3bc84dc50607da21c132323af4a9ebc56958eb620b0635af4c6b7da71ca27f4d",
-        "fixture-bbd798b276db9b1ceb5ccbea21b00e85b7ba965bd08158e0638870917322a949",
         "fixture-cb2c2610f99f786484b1941f25d068f6347cd0cd95213a57db849842d9d4a64b",
         "fixture-fad9dd22fb2d0ef888452d678a5b1bce2b15202af16fc4ed799acb230b33798d",
         "fixture-feaa592c7914153be8cb0ebe30b1a1b3d82fcb15d0b05aeca74f89bb3bbeee12"
@@ -89,7 +83,6 @@
       "description": "Inspect and resolve tracked revisions",
       "fixtureIds": [
         "fixture-2e1022f7358f0deeaeb542a6dd10005f455c433a66f1b9b7e8964a48c7f0fb2a",
-        "fixture-6e2033cb9faa83985b3d830e54d182edd80c375d4978746be6e9b563a1f8b3fe",
         "fixture-e3c5159fbf254f4d5423354773ae83a5535cb3cef8f603f1adca6d18adab11f2"
       ],
       "scenarioIds": []
@@ -100,10 +93,8 @@
       "description": "Resolve and preserve styles",
       "fixtureIds": [
         "fixture-0e3d6fb95187c7e0d5d5b1bf19451b58b617411ed8433911d8c95eab15f09f01",
-        "fixture-3eaae3ce0449d4c2a3392892cab9407de28d566a6acc7e63b589eb59392063d4",
         "fixture-8513f05370714f5e288ec1ca2fb76fe21b74b458636f325666b20b100c9b021a",
         "fixture-9548a1ce68caae9df12bc85732f1c19a098658c5dce3d79488814e4145299e5e",
-        "fixture-bb17e56a283fac961ac171e797314f8ba199900478cf19b0f7556083d2a7e04b",
         "fixture-d35e32ab35d4c95e81c15c5baac18b842696adcea960664e329a5a9a699ab7a1"
       ],
       "scenarioIds": []
@@ -115,10 +106,8 @@
       "fixtureIds": [
         "fixture-10737b881f1643cd13c3e6b664d3116da96c5cfdc9f9fb76548ff2dd852181f3",
         "fixture-28da984e3fc4c6079579c0e8b3b9a901a46ed3f9081f3a074e0fb7333b984695",
-        "fixture-571f92a6140f75212e858431f8cb1b272a4c15b1c9ff8a762123ea86c81fe175",
         "fixture-8192955ef935f09eb61a9fe6805d4996c811efcf54c0c966f52d983e38e0a79c",
-        "fixture-87e3c67cb73bdbf5c8389791fd2bb459ba0eaac862149af6fd7c5b641dafd56b",
-        "fixture-d4852f488c9125cfc4bddfc7ab5e6219fa76ce80b7af7b3d73b2e84251ec3d01"
+        "fixture-87e3c67cb73bdbf5c8389791fd2bb459ba0eaac862149af6fd7c5b641dafd56b"
       ],
       "scenarioIds": []
     },
@@ -127,7 +116,6 @@
       "scenarioGroup": "text",
       "description": "Inspect and edit paragraph or slide text",
       "fixtureIds": [
-        "fixture-32c56f302b0b00a9d75eee9012c1cc892dd8a62e7ed6b1f9c2da991e25380faa",
         "fixture-395b75b992c6662e2bf44c72401020efccc212b41a345e082cb09abee450d97f",
         "fixture-dfca453a4b60629ec859b7e224040148b1e2fb92aa3a32b28a6ad9c6f4cc3526"
       ],
@@ -148,7 +136,6 @@
       "description": "Inspect and preserve comments and threads",
       "fixtureIds": [
         "fixture-2c771c00dfe223d0e30c3082de43cc023537d58babb562e26df8034e0a54c24d",
-        "fixture-98dbb696aeb6196f611b9c14cf68f7c989eab4bee0052b00652f1d9fe8482010",
         "fixture-ababb5bed8eeed4511f25e23da8e9039642ed3020b1517622d3ed71f5d5ef319"
       ],
       "scenarioIds": []
@@ -160,8 +147,6 @@
       "fixtureIds": [
         "fixture-151d747bc37d4f4988c1116f4abb45196b1c1644319ce342ee4dd56d111f3132",
         "fixture-6a28461a00850a9297690a0a53ad8c109aea9e6f279df309639e73be0cc4c762",
-        "fixture-96bbbb4233ebe22fe5dfcbbd0c50afdb132b1af30fb82fb849ddd3f36c04254f",
-        "fixture-a4a816426e8f025b477888440117fba77b709f37a7451454436b8ac16d713a83",
         "fixture-c54a7b746c0328fc1930525edd91387eedbbca69a6f388f7ec024150187b6bab",
         "fixture-e6b4859435d75b21f30a610d766ef64c4f0e926ee0836c9cb389ac2faf7ed5e8"
       ],
@@ -172,10 +157,8 @@
       "scenarioGroup": "layouts",
       "description": "Inspect layouts and masters",
       "fixtureIds": [
-        "fixture-2068ba1fb5661d9e94ed750c5b70d24bbf9c8773f826da2a770cb85e64bc1b90",
         "fixture-7342e20ba487f1bcf7bf3961c93033b9465fae4ddd1e82a187e75cb99ab6fce7",
         "fixture-d902e187a376fb5085ab843234f4ee29b39d019c903b84c33ce134e596b40345",
-        "fixture-e11198af72e1dae267a88af806ce83bb0b038e84717d8d8336754a362c1cd715",
         "fixture-e6bbd95968d9fd04bfc13cecc671a7438ab3c99987bc36b4fe118ef99241296f",
         "fixture-ef5de48dec43f165d513086506ba52c8f1b9ebbbc2fc99a6b4f56731f6115862"
       ],
@@ -186,7 +169,6 @@
       "scenarioGroup": "media",
       "description": "Preserve and reference image payloads",
       "fixtureIds": [
-        "fixture-5625fc605bf3c042ff333fe0acd45cb60f2051362bcc2d983db79441031151e2",
         "fixture-792277d2c358c5bd7c8a4053078a5594fa07bfb55a06b0bb30f2813c151ea459",
         "fixture-88f5cf211cbedea688b081b2822c9207670e58a665afb1222506672fda3de2a8"
       ],
@@ -210,7 +192,6 @@
       "description": "Read and edit speaker notes",
       "fixtureIds": [
         "fixture-04faba67841dda25dc3ff9e3e6e345e6feeeef1cf25a6b9065bf5fbdc83163dc",
-        "fixture-3a6f1dbac41b874216caac79d962143cbcb3e563f9284d2dd6ddd78ccacd4a37",
         "fixture-e97c8d590798576b4b1c27e9e3d98ba73036d99ddeffeafa9ae81dc70a77ff1a"
       ],
       "scenarioIds": []
@@ -221,8 +202,7 @@
       "description": "Inspect and edit shapes",
       "fixtureIds": [
         "fixture-10a6d7267ed96fa09cc5424695f4d7a20833bb5247a44a1e71cf57279c425b27",
-        "fixture-2610748ab308da10d61ebc6e5677f774427a207bdb474b74ebd3ae234152589e",
-        "fixture-536fc5675277259fec167927135cd1866a8dbe8d5feccc2c8119241b087e9c3f"
+        "fixture-2610748ab308da10d61ebc6e5677f774427a207bdb474b74ebd3ae234152589e"
       ],
       "scenarioIds": []
     },
@@ -231,7 +211,6 @@
       "scenarioGroup": "slides",
       "description": "Inspect slide ordering and visibility",
       "fixtureIds": [
-        "fixture-9aa59e15d86add6740fe3e697775a0992d6fd90c75fbcd129a7eb1da1465c77a",
         "fixture-e01ded1106a28f94a3439e8368f9a12ec360891f4a9e2810f6504c4c328ed79c",
         "fixture-fa245a3df00fef7f7bf4739921ee840194040161e06490589e3d52cc9fa7a71d"
       ],
@@ -242,7 +221,6 @@
       "scenarioGroup": "tables",
       "description": "Read and edit tables or refuse merged topology",
       "fixtureIds": [
-        "fixture-053da6e9b0325a69cbe9a2991238a79f6f24a3c95af751d24cfdd4787a504782",
         "fixture-3465194945a0f8084084ceb843c219d59a4ad92b25a271d66182587d637db0be",
         "fixture-3998d8058f356eb629c301bbf31cf29625b9eb2c2a08b561932418fb56696a25"
       ],
@@ -256,9 +234,7 @@
         "fixture-1b848867cffb781112dc5778fa8cc7b9c9bd472c3636a348ec5d50005f05489e",
         "fixture-50f9157c8ff3783b9cb6a976dddd834d5c683e42cc9a21170637b191800bc22e",
         "fixture-5c615f27a23cb0d5fe3d603080ba057c7fc320f2af1df277b5b0dd128f1a8e3d",
-        "fixture-836b5c7d7917a5e053ca994d96af0409d5f6650dd28b02dda9f878f8600c8656",
-        "fixture-9dc19cc6acf04ecfc588ea1bc91c86ce2c47337167c781fc3a0f974f8429210d",
-        "fixture-f14f127fe384e64ffd0e79efe71b534ca121e73b1203b23a131b13bccf494189"
+        "fixture-836b5c7d7917a5e053ca994d96af0409d5f6650dd28b02dda9f878f8600c8656"
       ],
       "scenarioIds": []
     },
@@ -270,9 +246,7 @@
         "fixture-13bf5f08697e7de3da52b47d61e0f5af42081a4f1bdfbc1d51a3926910098b68",
         "fixture-78318622a642a298a0ec9626fc03a86719e0d9d2f170aa7e8d15db99ee29dbd9",
         "fixture-7c4584b7c6a6a9a474fd60dc5ef06a1e5f6d5d830ab1c7d841818bcb0230ea77",
-        "fixture-bc6f9fe38401743fc7817ca6f462bc9cf43337981724e45a9c349472121c28c0",
-        "fixture-bf5ecc732bd2387b953e05b888f5e40937934023f5f61de834a6fb6cd3e349c4",
-        "fixture-faa5563914f18f89fa3c66a557959f652d94092f1bf01f8eff2788824b2250a8"
+        "fixture-bf5ecc732bd2387b953e05b888f5e40937934023f5f61de834a6fb6cd3e349c4"
       ],
       "scenarioIds": []
     },
@@ -282,7 +256,6 @@
       "description": "Inspect and preserve comments and threads",
       "fixtureIds": [
         "fixture-264be55e012d4bc2b3bf25e59824fdd30022e94f70869ea7d6ad960b803a902f",
-        "fixture-40ed8aacbbc24c7b56b1b59ecf51503e920ca082338de039f92d1909884e7a11",
         "fixture-c03ad65508025275563db84b36340934b426560ae259dd572f551a174c443dca"
       ],
       "scenarioIds": []
@@ -292,7 +265,6 @@
       "scenarioGroup": "conditional-formatting",
       "description": "Inspect and preserve conditional cell formatting",
       "fixtureIds": [
-        "fixture-23beaef7d973714f6815f25a94369a7e2e2d1564a048c4618b663c03a2f0cef2",
         "fixture-7124469770b5368c036f9dcc13d0c09c382797827d1b58934d9b2a0b61efee28",
         "fixture-80f3dc2dbfa2178cb0b5bb30dedea12091850ea955278dc9a1328a12044395b8"
       ],
@@ -304,7 +276,6 @@
       "description": "Create and reopen minimal packages",
       "fixtureIds": [
         "fixture-5140bb7ea22875bc86e3a9790b3dce686a8adc518f7c8597fbddd5d83264b59d",
-        "fixture-6465117269910b16b420763e71f9fee72f608f540f1db93bbf9b91862ef1f63a",
         "fixture-9145d25de350a3da09ac8f1976811464525a4eeaa9947baa17057ae85056c377"
       ],
       "scenarioIds": []
@@ -314,7 +285,6 @@
       "scenarioGroup": "defined-names",
       "description": "Inspect and preserve defined ranges",
       "fixtureIds": [
-        "fixture-90b9e6e89d75a8c83de293064d0b78b441771beca5a353024be28332189b02d1",
         "fixture-cc8da5b5969032cbd2bdc6a40b26fc61c2366cf87e3d9455d4fdb8308ceb14fa",
         "fixture-de71d259e267ca978b90556b64c6e76e46b81c6f4134ffbde755ffa77a815656"
       ],
@@ -325,7 +295,6 @@
       "scenarioGroup": "formatting",
       "description": "Inspect and preserve text or cell formatting",
       "fixtureIds": [
-        "fixture-1aefdea520526e5acff6a02eef6392dc87a2af3f76c12673d079c134748acc6f",
         "fixture-dab1d6dbdfa594680115bc87fc1707fbd06adea87b45ef0a1115d7cf4c4f72b5",
         "fixture-ee0ee5c840165d52341ff0c75e1a44007521e176a6fe0232452a5b49973bd6a7"
       ],
@@ -337,7 +306,6 @@
       "description": "Inspect formulas and cached values",
       "fixtureIds": [
         "fixture-61d8806a5fd3ff6c9eb62d716a6d929d0947e35ac6d9ac56626704690ecd3877",
-        "fixture-7352ecbe7ecdc8cf3b8d37b315f29606c3383a9e23bc6968ddd435fde06d80a0",
         "fixture-9668136d1f23973e901042d770ff5058497eea0ff02ea0b201642e52cf024fea"
       ],
       "scenarioIds": []
@@ -365,9 +333,7 @@
         "fixture-444855bd685a55fb37fd098d8024726c914d8f3cc14dffc8f115b5e80b7d2c47",
         "fixture-51eaa2ee2fa09f384e5c177cebd62801d628f20724c57a221a25112cf374a8fb",
         "fixture-691d1d459bd3d2ac3704b889bde121186b802381cf618c0a2daf12ca5b76ebec",
-        "fixture-7a10c58d6f99e7285a905561690502f12438080697890924d80c90f9b67c05e8",
-        "fixture-83c309c321b610dc2d7025c046998b6da995e6381ddaa6b0b0acd1ac4ba03555",
-        "fixture-f91f633cf82ad88c9a2e77d5f6b47dc1c58cc65bd631de4f82f22994701cd17b"
+        "fixture-7a10c58d6f99e7285a905561690502f12438080697890924d80c90f9b67c05e8"
       ],
       "scenarioIds": []
     },
@@ -377,8 +343,7 @@
       "description": "Inspect and edit multiple sheets",
       "fixtureIds": [
         "fixture-40628979d41435d00a452faf189d98cc00343ee1639070f20fcfc21b471a983d",
-        "fixture-a88d1e934bea9d3483325937f29a5d0880065bd54f95bbeceb612f7d4b5575f6",
-        "fixture-fb775da5522a342d6c74b49509e32c9f3530b2dda1ec3ceb13820533038089be"
+        "fixture-a88d1e934bea9d3483325937f29a5d0880065bd54f95bbeceb612f7d4b5575f6"
       ],
       "scenarioIds": []
     },

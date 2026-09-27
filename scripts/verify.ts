@@ -3,6 +3,7 @@ import {IdGenerator} from '@cucumber/messages';
 import {join,resolve} from 'node:path';
 import {verifySpecifications} from './specifications.ts';
 import {verifyFixtureContents} from './fixture-content.ts';
+import {verifyObservedGeneratedRetirement} from './observed-generated-retirement.ts';
 export const root=resolve(import.meta.dir,'..');
 const hash=(b:Uint8Array)=>new Bun.CryptoHasher('sha256').update(b).digest('hex');
 const safe=(p:string)=>!!p&&!/[\\:\u0000-\u001f]/.test(p)&&p.split('/').every(s=>s&&s!=='.'&&s!=='..');
@@ -154,6 +155,7 @@ export async function verify(base=root){
  }
  if(groupedIds.size!==manifest.files.filter((f:any)=>f.role==='fixture').length)throw Error('Ungrouped fixture');
  await verifyFixtureContents(base,manifest);
+ await verifyObservedGeneratedRetirement(base,manifest);
  const specifications=await verifySpecifications(base,manifest);
  console.log(`Verified ${specifications.documents} specification documents and ${specifications.testSourceVariants} test-source variants`);
  console.log(`Verified ${seen.size} assets, ${factIds.size} facts, ${ids.length} workflows / ${actual.length} cases`);

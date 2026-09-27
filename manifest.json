@@ -20,31 +20,6 @@
       "aliases": []
     },
     {
-      "id": "fixture-0655172de7be271600b8c38db59980fe3b37404b53377bcadd15744e82e47363",
-      "path": "fixtures/docx/comments/comments-0655172de7be.docx",
-      "bytes": 33350,
-      "sha256": "0655172de7be271600b8c38db59980fe3b37404b53377bcadd15744e82e47363",
-      "role": "fixture",
-      "origins": [
-        {
-          "kind": "observed-generated",
-          "repository": "https://github.com/rcarmo/go-ooxml",
-          "manifestRevision": "43fbb43943d203e1476b21a31cf723dfb75268b6",
-          "manifestPath": "acceptance/testdata/manifest.json",
-          "manifestSha256": "8c4fe2c404a3b733ec82a880651c02e295246543fdea4b464b961faea735700b",
-          "path": "testdata/generated/word/comments.docx",
-          "qualification": "Observed ignored local generated archive; matched committed manifest. Bytes are not committed at observation HEAD; generator invocation/revision not established."
-        }
-      ],
-      "aliases": [
-        "fixtures/go-current/testdata/generated/word/comments.docx"
-      ],
-      "format": "docx",
-      "scenarioGroup": "comments",
-      "name": "comments",
-      "scenarioIds": []
-    },
-    {
       "id": "fixture-2029abbda3bdacb270137f6210791ba2ee3f8be62affb8cc3181f3ac72a7c35a",
       "path": "fixtures/docx/comments/comments-2029abbda3bd.docx",
       "bytes": 36799,
@@ -189,41 +164,6 @@
       "scenarioIds": []
     },
     {
-      "id": "fixture-e96fb7ca0e844af934cf22b9e097ebf5f961a11a2f89c62d65f1c0c4df51ebec",
-      "path": "fixtures/docx/creation/default-e96fb7ca0e84.docx",
-      "bytes": 33108,
-      "sha256": "e96fb7ca0e844af934cf22b9e097ebf5f961a11a2f89c62d65f1c0c4df51ebec",
-      "role": "fixture",
-      "origins": [
-        {
-          "kind": "observed-generated",
-          "repository": "https://github.com/rcarmo/go-ooxml",
-          "manifestRevision": "43fbb43943d203e1476b21a31cf723dfb75268b6",
-          "manifestPath": "acceptance/testdata/manifest.json",
-          "manifestSha256": "8c4fe2c404a3b733ec82a880651c02e295246543fdea4b464b961faea735700b",
-          "path": "testdata/generated/word/default.docx",
-          "qualification": "Observed ignored local generated archive; matched committed manifest. Bytes are not committed at observation HEAD; generator invocation/revision not established."
-        },
-        {
-          "kind": "observed-generated",
-          "repository": "https://github.com/rcarmo/go-ooxml",
-          "manifestRevision": "43fbb43943d203e1476b21a31cf723dfb75268b6",
-          "manifestPath": "acceptance/testdata/manifest.json",
-          "manifestSha256": "8c4fe2c404a3b733ec82a880651c02e295246543fdea4b464b961faea735700b",
-          "path": "testdata/generated/word/minimal.docx",
-          "qualification": "Observed ignored local generated archive; matched committed manifest. Bytes are not committed at observation HEAD; generator invocation/revision not established."
-        }
-      ],
-      "aliases": [
-        "fixtures/go-current/testdata/generated/word/default.docx",
-        "fixtures/go-current/testdata/generated/word/minimal.docx"
-      ],
-      "format": "docx",
-      "scenarioGroup": "creation",
-      "name": "default",
-      "scenarioIds": []
-    },
-    {
       "id": "fixture-291ea45fd599555956c86a7dd98c96c06ded43c5d03a57888422f6e34ea1203c",
       "path": "fixtures/docx/creation/minimal-291ea45fd599.docx",
       "bytes": 26722,
@@ -259,31 +199,6 @@
       ],
       "aliases": [
         "fixtures/python-office-mcp-server/tests/_templates/testdata/word/formatted_text.docx"
-      ],
-      "format": "docx",
-      "scenarioGroup": "formatting",
-      "name": "formatted-text",
-      "scenarioIds": []
-    },
-    {
-      "id": "fixture-8ccd3110d52e8a9ef304c327996b22189d26201da8fead7cf1a4302e1d1092a5",
-      "path": "fixtures/docx/formatting/formatted-text-8ccd3110d52e.docx",
-      "bytes": 33324,
-      "sha256": "8ccd3110d52e8a9ef304c327996b22189d26201da8fead7cf1a4302e1d1092a5",
-      "role": "fixture",
-      "origins": [
-        {
-          "kind": "observed-generated",
-          "repository": "https://github.com/rcarmo/go-ooxml",
-          "manifestRevision": "43fbb43943d203e1476b21a31cf723dfb75268b6",
-          "manifestPath": "acceptance/testdata/manifest.json",
-          "manifestSha256": "8c4fe2c404a3b733ec82a880651c02e295246543fdea4b464b961faea735700b",
-          "path": "testdata/generated/word/formatted_text.docx",
-          "qualification": "Observed ignored local generated archive; matched committed manifest. Bytes are not committed at observation HEAD; generator invocation/revision not established."
-        }
-      ],
-      "aliases": [
-        "fixtures/go-current/testdata/generated/word/formatted_text.docx"
       ],
       "format": "docx",
       "scenarioGroup": "formatting",
@@ -366,31 +281,6 @@
       "scenarioIds": []
     },
     {
-      "id": "fixture-c87f711dc96ae4b4e8335707c4a52c3f89bf7faea2e4ce8ccde169416584b4e8",
-      "path": "fixtures/docx/headers-footers/headers-footers-c87f711dc96a.docx",
-      "bytes": 34497,
-      "sha256": "c87f711dc96ae4b4e8335707c4a52c3f89bf7faea2e4ce8ccde169416584b4e8",
-      "role": "fixture",
-      "origins": [
-        {
-          "kind": "observed-generated",
-          "repository": "https://github.com/rcarmo/go-ooxml",
-          "manifestRevision": "43fbb43943d203e1476b21a31cf723dfb75268b6",
-          "manifestPath": "acceptance/testdata/manifest.json",
-          "manifestSha256": "8c4fe2c404a3b733ec82a880651c02e295246543fdea4b464b961faea735700b",
-          "path": "testdata/generated/word/headers_footers.docx",
-          "qualification": "Observed ignored local generated archive; matched committed manifest. Bytes are not committed at observation HEAD; generator invocation/revision not established."
-        }
-      ],
-      "aliases": [
-        "fixtures/go-current/testdata/generated/word/headers_footers.docx"
-      ],
-      "format": "docx",
-      "scenarioGroup": "headers-footers",
-      "name": "headers-footers",
-      "scenarioIds": []
-    },
-    {
       "id": "fixture-535910216e3531e4f70959cccf83038f1c51febbf4a149f9f46abfbfa8667d90",
       "path": "fixtures/docx/mutation-safety/present-placeholder.docx",
       "bytes": 377049,
@@ -422,31 +312,6 @@
         "@id-docx-dry-run-no-mutation",
         "@id-docx-strict-batch-per-target-results"
       ]
-    },
-    {
-      "id": "fixture-bbd798b276db9b1ceb5ccbea21b00e85b7ba965bd08158e0638870917322a949",
-      "path": "fixtures/docx/numbering/bullet-list-bbd798b276db.docx",
-      "bytes": 33347,
-      "sha256": "bbd798b276db9b1ceb5ccbea21b00e85b7ba965bd08158e0638870917322a949",
-      "role": "fixture",
-      "origins": [
-        {
-          "kind": "observed-generated",
-          "repository": "https://github.com/rcarmo/go-ooxml",
-          "manifestRevision": "43fbb43943d203e1476b21a31cf723dfb75268b6",
-          "manifestPath": "acceptance/testdata/manifest.json",
-          "manifestSha256": "8c4fe2c404a3b733ec82a880651c02e295246543fdea4b464b961faea735700b",
-          "path": "testdata/generated/word/bullet_list.docx",
-          "qualification": "Observed ignored local generated archive; matched committed manifest. Bytes are not committed at observation HEAD; generator invocation/revision not established."
-        }
-      ],
-      "aliases": [
-        "fixtures/go-current/testdata/generated/word/bullet_list.docx"
-      ],
-      "format": "docx",
-      "scenarioGroup": "numbering",
-      "name": "bullet-list",
-      "scenarioIds": []
     },
     {
       "id": "fixture-cb2c2610f99f786484b1941f25d068f6347cd0cd95213a57db849842d9d4a64b",
@@ -524,31 +389,6 @@
       "scenarioIds": []
     },
     {
-      "id": "fixture-3bc84dc50607da21c132323af4a9ebc56958eb620b0635af4c6b7da71ca27f4d",
-      "path": "fixtures/docx/numbering/numbered-list-3bc84dc50607.docx",
-      "bytes": 33340,
-      "sha256": "3bc84dc50607da21c132323af4a9ebc56958eb620b0635af4c6b7da71ca27f4d",
-      "role": "fixture",
-      "origins": [
-        {
-          "kind": "observed-generated",
-          "repository": "https://github.com/rcarmo/go-ooxml",
-          "manifestRevision": "43fbb43943d203e1476b21a31cf723dfb75268b6",
-          "manifestPath": "acceptance/testdata/manifest.json",
-          "manifestSha256": "8c4fe2c404a3b733ec82a880651c02e295246543fdea4b464b961faea735700b",
-          "path": "testdata/generated/word/numbered_list.docx",
-          "qualification": "Observed ignored local generated archive; matched committed manifest. Bytes are not committed at observation HEAD; generator invocation/revision not established."
-        }
-      ],
-      "aliases": [
-        "fixtures/go-current/testdata/generated/word/numbered_list.docx"
-      ],
-      "format": "docx",
-      "scenarioGroup": "numbering",
-      "name": "numbered-list",
-      "scenarioIds": []
-    },
-    {
       "id": "fixture-feaa592c7914153be8cb0ebe30b1a1b3d82fcb15d0b05aeca74f89bb3bbeee12",
       "path": "fixtures/docx/numbering/numbered-list-feaa592c7914.docx",
       "bytes": 26992,
@@ -590,31 +430,6 @@
       "aliases": [
         "fixtures/go-ooxml/testdata/word/track_changes.docx",
         "fixtures/go-current/testdata/word/track_changes.docx"
-      ],
-      "format": "docx",
-      "scenarioGroup": "revisions",
-      "name": "track-changes",
-      "scenarioIds": []
-    },
-    {
-      "id": "fixture-6e2033cb9faa83985b3d830e54d182edd80c375d4978746be6e9b563a1f8b3fe",
-      "path": "fixtures/docx/revisions/track-changes-6e2033cb9faa.docx",
-      "bytes": 33316,
-      "sha256": "6e2033cb9faa83985b3d830e54d182edd80c375d4978746be6e9b563a1f8b3fe",
-      "role": "fixture",
-      "origins": [
-        {
-          "kind": "observed-generated",
-          "repository": "https://github.com/rcarmo/go-ooxml",
-          "manifestRevision": "43fbb43943d203e1476b21a31cf723dfb75268b6",
-          "manifestPath": "acceptance/testdata/manifest.json",
-          "manifestSha256": "8c4fe2c404a3b733ec82a880651c02e295246543fdea4b464b961faea735700b",
-          "path": "testdata/generated/word/track_changes.docx",
-          "qualification": "Observed ignored local generated archive; matched committed manifest. Bytes are not committed at observation HEAD; generator invocation/revision not established."
-        }
-      ],
-      "aliases": [
-        "fixtures/go-current/testdata/generated/word/track_changes.docx"
       ],
       "format": "docx",
       "scenarioGroup": "revisions",
@@ -664,31 +479,6 @@
       "scenarioIds": []
     },
     {
-      "id": "fixture-3eaae3ce0449d4c2a3392892cab9407de28d566a6acc7e63b589eb59392063d4",
-      "path": "fixtures/docx/styles/headings-3eaae3ce0449.docx",
-      "bytes": 33455,
-      "sha256": "3eaae3ce0449d4c2a3392892cab9407de28d566a6acc7e63b589eb59392063d4",
-      "role": "fixture",
-      "origins": [
-        {
-          "kind": "observed-generated",
-          "repository": "https://github.com/rcarmo/go-ooxml",
-          "manifestRevision": "43fbb43943d203e1476b21a31cf723dfb75268b6",
-          "manifestPath": "acceptance/testdata/manifest.json",
-          "manifestSha256": "8c4fe2c404a3b733ec82a880651c02e295246543fdea4b464b961faea735700b",
-          "path": "testdata/generated/word/headings.docx",
-          "qualification": "Observed ignored local generated archive; matched committed manifest. Bytes are not committed at observation HEAD; generator invocation/revision not established."
-        }
-      ],
-      "aliases": [
-        "fixtures/go-current/testdata/generated/word/headings.docx"
-      ],
-      "format": "docx",
-      "scenarioGroup": "styles",
-      "name": "headings",
-      "scenarioIds": []
-    },
-    {
       "id": "fixture-8513f05370714f5e288ec1ca2fb76fe21b74b458636f325666b20b100c9b021a",
       "path": "fixtures/docx/styles/headings-8513f0537071.docx",
       "bytes": 36857,
@@ -730,31 +520,6 @@
       ],
       "aliases": [
         "fixtures/python-office-mcp-server/tests/_templates/testdata/word/styles.docx"
-      ],
-      "format": "docx",
-      "scenarioGroup": "styles",
-      "name": "styles",
-      "scenarioIds": []
-    },
-    {
-      "id": "fixture-bb17e56a283fac961ac171e797314f8ba199900478cf19b0f7556083d2a7e04b",
-      "path": "fixtures/docx/styles/styles-bb17e56a283f.docx",
-      "bytes": 33356,
-      "sha256": "bb17e56a283fac961ac171e797314f8ba199900478cf19b0f7556083d2a7e04b",
-      "role": "fixture",
-      "origins": [
-        {
-          "kind": "observed-generated",
-          "repository": "https://github.com/rcarmo/go-ooxml",
-          "manifestRevision": "43fbb43943d203e1476b21a31cf723dfb75268b6",
-          "manifestPath": "acceptance/testdata/manifest.json",
-          "manifestSha256": "8c4fe2c404a3b733ec82a880651c02e295246543fdea4b464b961faea735700b",
-          "path": "testdata/generated/word/styles.docx",
-          "qualification": "Observed ignored local generated archive; matched committed manifest. Bytes are not committed at observation HEAD; generator invocation/revision not established."
-        }
-      ],
-      "aliases": [
-        "fixtures/go-current/testdata/generated/word/styles.docx"
       ],
       "format": "docx",
       "scenarioGroup": "styles",
@@ -837,56 +602,6 @@
       "scenarioIds": []
     },
     {
-      "id": "fixture-d4852f488c9125cfc4bddfc7ab5e6219fa76ce80b7af7b3d73b2e84251ec3d01",
-      "path": "fixtures/docx/tables/complex-table-d4852f488c91.docx",
-      "bytes": 33678,
-      "sha256": "d4852f488c9125cfc4bddfc7ab5e6219fa76ce80b7af7b3d73b2e84251ec3d01",
-      "role": "fixture",
-      "origins": [
-        {
-          "kind": "observed-generated",
-          "repository": "https://github.com/rcarmo/go-ooxml",
-          "manifestRevision": "43fbb43943d203e1476b21a31cf723dfb75268b6",
-          "manifestPath": "acceptance/testdata/manifest.json",
-          "manifestSha256": "8c4fe2c404a3b733ec82a880651c02e295246543fdea4b464b961faea735700b",
-          "path": "testdata/generated/word/complex_table.docx",
-          "qualification": "Observed ignored local generated archive; matched committed manifest. Bytes are not committed at observation HEAD; generator invocation/revision not established."
-        }
-      ],
-      "aliases": [
-        "fixtures/go-current/testdata/generated/word/complex_table.docx"
-      ],
-      "format": "docx",
-      "scenarioGroup": "tables",
-      "name": "complex-table",
-      "scenarioIds": []
-    },
-    {
-      "id": "fixture-571f92a6140f75212e858431f8cb1b272a4c15b1c9ff8a762123ea86c81fe175",
-      "path": "fixtures/docx/tables/simple-table-571f92a6140f.docx",
-      "bytes": 33484,
-      "sha256": "571f92a6140f75212e858431f8cb1b272a4c15b1c9ff8a762123ea86c81fe175",
-      "role": "fixture",
-      "origins": [
-        {
-          "kind": "observed-generated",
-          "repository": "https://github.com/rcarmo/go-ooxml",
-          "manifestRevision": "43fbb43943d203e1476b21a31cf723dfb75268b6",
-          "manifestPath": "acceptance/testdata/manifest.json",
-          "manifestSha256": "8c4fe2c404a3b733ec82a880651c02e295246543fdea4b464b961faea735700b",
-          "path": "testdata/generated/word/simple_table.docx",
-          "qualification": "Observed ignored local generated archive; matched committed manifest. Bytes are not committed at observation HEAD; generator invocation/revision not established."
-        }
-      ],
-      "aliases": [
-        "fixtures/go-current/testdata/generated/word/simple_table.docx"
-      ],
-      "format": "docx",
-      "scenarioGroup": "tables",
-      "name": "simple-table",
-      "scenarioIds": []
-    },
-    {
       "id": "fixture-8192955ef935f09eb61a9fe6805d4996c811efcf54c0c966f52d983e38e0a79c",
       "path": "fixtures/docx/tables/simple-table-8192955ef935.docx",
       "bytes": 27221,
@@ -932,31 +647,6 @@
       "format": "docx",
       "scenarioGroup": "tables",
       "name": "simple-table",
-      "scenarioIds": []
-    },
-    {
-      "id": "fixture-32c56f302b0b00a9d75eee9012c1cc892dd8a62e7ed6b1f9c2da991e25380faa",
-      "path": "fixtures/docx/text/single-paragraph-32c56f302b0b.docx",
-      "bytes": 33185,
-      "sha256": "32c56f302b0b00a9d75eee9012c1cc892dd8a62e7ed6b1f9c2da991e25380faa",
-      "role": "fixture",
-      "origins": [
-        {
-          "kind": "observed-generated",
-          "repository": "https://github.com/rcarmo/go-ooxml",
-          "manifestRevision": "43fbb43943d203e1476b21a31cf723dfb75268b6",
-          "manifestPath": "acceptance/testdata/manifest.json",
-          "manifestSha256": "8c4fe2c404a3b733ec82a880651c02e295246543fdea4b464b961faea735700b",
-          "path": "testdata/generated/word/single_paragraph.docx",
-          "qualification": "Observed ignored local generated archive; matched committed manifest. Bytes are not committed at observation HEAD; generator invocation/revision not established."
-        }
-      ],
-      "aliases": [
-        "fixtures/go-current/testdata/generated/word/single_paragraph.docx"
-      ],
-      "format": "docx",
-      "scenarioGroup": "text",
-      "name": "single-paragraph",
       "scenarioIds": []
     },
     {
@@ -1056,31 +746,6 @@
       "scenarioIds": []
     },
     {
-      "id": "fixture-98dbb696aeb6196f611b9c14cf68f7c989eab4bee0052b00652f1d9fe8482010",
-      "path": "fixtures/pptx/comments/comments-98dbb696aeb6.pptx",
-      "bytes": 39132,
-      "sha256": "98dbb696aeb6196f611b9c14cf68f7c989eab4bee0052b00652f1d9fe8482010",
-      "role": "fixture",
-      "origins": [
-        {
-          "kind": "observed-generated",
-          "repository": "https://github.com/rcarmo/go-ooxml",
-          "manifestRevision": "43fbb43943d203e1476b21a31cf723dfb75268b6",
-          "manifestPath": "acceptance/testdata/manifest.json",
-          "manifestSha256": "8c4fe2c404a3b733ec82a880651c02e295246543fdea4b464b961faea735700b",
-          "path": "testdata/generated/pptx/comments.pptx",
-          "qualification": "Observed ignored local generated archive; matched committed manifest. Bytes are not committed at observation HEAD; generator invocation/revision not established."
-        }
-      ],
-      "aliases": [
-        "fixtures/go-current/testdata/generated/pptx/comments.pptx"
-      ],
-      "format": "pptx",
-      "scenarioGroup": "comments",
-      "name": "comments",
-      "scenarioIds": []
-    },
-    {
       "id": "fixture-ababb5bed8eeed4511f25e23da8e9039642ed3020b1517622d3ed71f5d5ef319",
       "path": "fixtures/pptx/comments/comments-ababb5bed8ee.pptx",
       "bytes": 38096,
@@ -1128,31 +793,6 @@
       "aliases": [
         "fixtures/go-ooxml/testdata/default.pptx",
         "fixtures/go-current/testdata/default.pptx"
-      ],
-      "format": "pptx",
-      "scenarioGroup": "creation",
-      "name": "default",
-      "scenarioIds": []
-    },
-    {
-      "id": "fixture-96bbbb4233ebe22fe5dfcbbd0c50afdb132b1af30fb82fb849ddd3f36c04254f",
-      "path": "fixtures/pptx/creation/default-96bbbb4233eb.pptx",
-      "bytes": 30854,
-      "sha256": "96bbbb4233ebe22fe5dfcbbd0c50afdb132b1af30fb82fb849ddd3f36c04254f",
-      "role": "fixture",
-      "origins": [
-        {
-          "kind": "observed-generated",
-          "repository": "https://github.com/rcarmo/go-ooxml",
-          "manifestRevision": "43fbb43943d203e1476b21a31cf723dfb75268b6",
-          "manifestPath": "acceptance/testdata/manifest.json",
-          "manifestSha256": "8c4fe2c404a3b733ec82a880651c02e295246543fdea4b464b961faea735700b",
-          "path": "testdata/generated/pptx/default.pptx",
-          "qualification": "Observed ignored local generated archive; matched committed manifest. Bytes are not committed at observation HEAD; generator invocation/revision not established."
-        }
-      ],
-      "aliases": [
-        "fixtures/go-current/testdata/generated/pptx/default.pptx"
       ],
       "format": "pptx",
       "scenarioGroup": "creation",
@@ -1208,31 +848,6 @@
       "scenarioIds": []
     },
     {
-      "id": "fixture-a4a816426e8f025b477888440117fba77b709f37a7451454436b8ac16d713a83",
-      "path": "fixtures/pptx/creation/minimal-a4a816426e8f.pptx",
-      "bytes": 31628,
-      "sha256": "a4a816426e8f025b477888440117fba77b709f37a7451454436b8ac16d713a83",
-      "role": "fixture",
-      "origins": [
-        {
-          "kind": "observed-generated",
-          "repository": "https://github.com/rcarmo/go-ooxml",
-          "manifestRevision": "43fbb43943d203e1476b21a31cf723dfb75268b6",
-          "manifestPath": "acceptance/testdata/manifest.json",
-          "manifestSha256": "8c4fe2c404a3b733ec82a880651c02e295246543fdea4b464b961faea735700b",
-          "path": "testdata/generated/pptx/minimal.pptx",
-          "qualification": "Observed ignored local generated archive; matched committed manifest. Bytes are not committed at observation HEAD; generator invocation/revision not established."
-        }
-      ],
-      "aliases": [
-        "fixtures/go-current/testdata/generated/pptx/minimal.pptx"
-      ],
-      "format": "pptx",
-      "scenarioGroup": "creation",
-      "name": "minimal",
-      "scenarioIds": []
-    },
-    {
       "id": "fixture-e6b4859435d75b21f30a610d766ef64c4f0e926ee0836c9cb389ac2faf7ed5e8",
       "path": "fixtures/pptx/creation/minimal-e6b4859435d7.pptx",
       "bytes": 28352,
@@ -1275,31 +890,6 @@
       "scenarioIds": []
     },
     {
-      "id": "fixture-e11198af72e1dae267a88af806ce83bb0b038e84717d8d8336754a362c1cd715",
-      "path": "fixtures/pptx/layouts/layouts-e11198af72e1.pptx",
-      "bytes": 39258,
-      "sha256": "e11198af72e1dae267a88af806ce83bb0b038e84717d8d8336754a362c1cd715",
-      "role": "fixture",
-      "origins": [
-        {
-          "kind": "observed-generated",
-          "repository": "https://github.com/rcarmo/go-ooxml",
-          "manifestRevision": "43fbb43943d203e1476b21a31cf723dfb75268b6",
-          "manifestPath": "acceptance/testdata/manifest.json",
-          "manifestSha256": "8c4fe2c404a3b733ec82a880651c02e295246543fdea4b464b961faea735700b",
-          "path": "testdata/generated/pptx/layouts.pptx",
-          "qualification": "Observed ignored local generated archive; matched committed manifest. Bytes are not committed at observation HEAD; generator invocation/revision not established."
-        }
-      ],
-      "aliases": [
-        "fixtures/go-current/testdata/generated/pptx/layouts.pptx"
-      ],
-      "format": "pptx",
-      "scenarioGroup": "layouts",
-      "name": "layouts",
-      "scenarioIds": []
-    },
-    {
       "id": "fixture-ef5de48dec43f165d513086506ba52c8f1b9ebbbc2fc99a6b4f56731f6115862",
       "path": "fixtures/pptx/layouts/layouts-ef5de48dec43.pptx",
       "bytes": 35037,
@@ -1324,31 +914,6 @@
       "format": "pptx",
       "scenarioGroup": "layouts",
       "name": "layouts",
-      "scenarioIds": []
-    },
-    {
-      "id": "fixture-2068ba1fb5661d9e94ed750c5b70d24bbf9c8773f826da2a770cb85e64bc1b90",
-      "path": "fixtures/pptx/layouts/multiple-masters-2068ba1fb566.pptx",
-      "bytes": 35315,
-      "sha256": "2068ba1fb5661d9e94ed750c5b70d24bbf9c8773f826da2a770cb85e64bc1b90",
-      "role": "fixture",
-      "origins": [
-        {
-          "kind": "observed-generated",
-          "repository": "https://github.com/rcarmo/go-ooxml",
-          "manifestRevision": "43fbb43943d203e1476b21a31cf723dfb75268b6",
-          "manifestPath": "acceptance/testdata/manifest.json",
-          "manifestSha256": "8c4fe2c404a3b733ec82a880651c02e295246543fdea4b464b961faea735700b",
-          "path": "testdata/generated/pptx/multiple_masters.pptx",
-          "qualification": "Observed ignored local generated archive; matched committed manifest. Bytes are not committed at observation HEAD; generator invocation/revision not established."
-        }
-      ],
-      "aliases": [
-        "fixtures/go-current/testdata/generated/pptx/multiple_masters.pptx"
-      ],
-      "format": "pptx",
-      "scenarioGroup": "layouts",
-      "name": "multiple-masters",
       "scenarioIds": []
     },
     {
@@ -1397,31 +962,6 @@
       "format": "pptx",
       "scenarioGroup": "layouts",
       "name": "multiple-masters",
-      "scenarioIds": []
-    },
-    {
-      "id": "fixture-5625fc605bf3c042ff333fe0acd45cb60f2051362bcc2d983db79441031151e2",
-      "path": "fixtures/pptx/media/images-5625fc605bf3.pptx",
-      "bytes": 977564,
-      "sha256": "5625fc605bf3c042ff333fe0acd45cb60f2051362bcc2d983db79441031151e2",
-      "role": "fixture",
-      "origins": [
-        {
-          "kind": "observed-generated",
-          "repository": "https://github.com/rcarmo/go-ooxml",
-          "manifestRevision": "43fbb43943d203e1476b21a31cf723dfb75268b6",
-          "manifestPath": "acceptance/testdata/manifest.json",
-          "manifestSha256": "8c4fe2c404a3b733ec82a880651c02e295246543fdea4b464b961faea735700b",
-          "path": "testdata/generated/pptx/images.pptx",
-          "qualification": "Observed ignored local generated archive; matched committed manifest. Bytes are not committed at observation HEAD; generator invocation/revision not established."
-        }
-      ],
-      "aliases": [
-        "fixtures/go-current/testdata/generated/pptx/images.pptx"
-      ],
-      "format": "pptx",
-      "scenarioGroup": "media",
-      "name": "images",
       "scenarioIds": []
     },
     {
@@ -1533,31 +1073,6 @@
       "scenarioIds": []
     },
     {
-      "id": "fixture-3a6f1dbac41b874216caac79d962143cbcb3e563f9284d2dd6ddd78ccacd4a37",
-      "path": "fixtures/pptx/notes/notes-3a6f1dbac41b.pptx",
-      "bytes": 41666,
-      "sha256": "3a6f1dbac41b874216caac79d962143cbcb3e563f9284d2dd6ddd78ccacd4a37",
-      "role": "fixture",
-      "origins": [
-        {
-          "kind": "observed-generated",
-          "repository": "https://github.com/rcarmo/go-ooxml",
-          "manifestRevision": "43fbb43943d203e1476b21a31cf723dfb75268b6",
-          "manifestPath": "acceptance/testdata/manifest.json",
-          "manifestSha256": "8c4fe2c404a3b733ec82a880651c02e295246543fdea4b464b961faea735700b",
-          "path": "testdata/generated/pptx/notes.pptx",
-          "qualification": "Observed ignored local generated archive; matched committed manifest. Bytes are not committed at observation HEAD; generator invocation/revision not established."
-        }
-      ],
-      "aliases": [
-        "fixtures/go-current/testdata/generated/pptx/notes.pptx"
-      ],
-      "format": "pptx",
-      "scenarioGroup": "notes",
-      "name": "notes",
-      "scenarioIds": []
-    },
-    {
       "id": "fixture-e97c8d590798576b4b1c27e9e3d98ba73036d99ddeffeafa9ae81dc70a77ff1a",
       "path": "fixtures/pptx/notes/notes-e97c8d590798.pptx",
       "bytes": 43651,
@@ -1627,56 +1142,6 @@
       "scenarioIds": []
     },
     {
-      "id": "fixture-536fc5675277259fec167927135cd1866a8dbe8d5feccc2c8119241b087e9c3f",
-      "path": "fixtures/pptx/shapes/shapes-536fc5675277.pptx",
-      "bytes": 32324,
-      "sha256": "536fc5675277259fec167927135cd1866a8dbe8d5feccc2c8119241b087e9c3f",
-      "role": "fixture",
-      "origins": [
-        {
-          "kind": "observed-generated",
-          "repository": "https://github.com/rcarmo/go-ooxml",
-          "manifestRevision": "43fbb43943d203e1476b21a31cf723dfb75268b6",
-          "manifestPath": "acceptance/testdata/manifest.json",
-          "manifestSha256": "8c4fe2c404a3b733ec82a880651c02e295246543fdea4b464b961faea735700b",
-          "path": "testdata/generated/pptx/shapes.pptx",
-          "qualification": "Observed ignored local generated archive; matched committed manifest. Bytes are not committed at observation HEAD; generator invocation/revision not established."
-        }
-      ],
-      "aliases": [
-        "fixtures/go-current/testdata/generated/pptx/shapes.pptx"
-      ],
-      "format": "pptx",
-      "scenarioGroup": "shapes",
-      "name": "shapes",
-      "scenarioIds": []
-    },
-    {
-      "id": "fixture-9aa59e15d86add6740fe3e697775a0992d6fd90c75fbcd129a7eb1da1465c77a",
-      "path": "fixtures/pptx/slides/hidden-slides-9aa59e15d86a.pptx",
-      "bytes": 34762,
-      "sha256": "9aa59e15d86add6740fe3e697775a0992d6fd90c75fbcd129a7eb1da1465c77a",
-      "role": "fixture",
-      "origins": [
-        {
-          "kind": "observed-generated",
-          "repository": "https://github.com/rcarmo/go-ooxml",
-          "manifestRevision": "43fbb43943d203e1476b21a31cf723dfb75268b6",
-          "manifestPath": "acceptance/testdata/manifest.json",
-          "manifestSha256": "8c4fe2c404a3b733ec82a880651c02e295246543fdea4b464b961faea735700b",
-          "path": "testdata/generated/pptx/hidden_slides.pptx",
-          "qualification": "Observed ignored local generated archive; matched committed manifest. Bytes are not committed at observation HEAD; generator invocation/revision not established."
-        }
-      ],
-      "aliases": [
-        "fixtures/go-current/testdata/generated/pptx/hidden_slides.pptx"
-      ],
-      "format": "pptx",
-      "scenarioGroup": "slides",
-      "name": "hidden-slides",
-      "scenarioIds": []
-    },
-    {
       "id": "fixture-e01ded1106a28f94a3439e8368f9a12ec360891f4a9e2810f6504c4c328ed79c",
       "path": "fixtures/pptx/slides/hidden-slides-e01ded1106a2.pptx",
       "bytes": 30935,
@@ -1722,31 +1187,6 @@
       "format": "pptx",
       "scenarioGroup": "slides",
       "name": "hidden-slides",
-      "scenarioIds": []
-    },
-    {
-      "id": "fixture-053da6e9b0325a69cbe9a2991238a79f6f24a3c95af751d24cfdd4787a504782",
-      "path": "fixtures/pptx/tables/tables-053da6e9b032.pptx",
-      "bytes": 32288,
-      "sha256": "053da6e9b0325a69cbe9a2991238a79f6f24a3c95af751d24cfdd4787a504782",
-      "role": "fixture",
-      "origins": [
-        {
-          "kind": "observed-generated",
-          "repository": "https://github.com/rcarmo/go-ooxml",
-          "manifestRevision": "43fbb43943d203e1476b21a31cf723dfb75268b6",
-          "manifestPath": "acceptance/testdata/manifest.json",
-          "manifestSha256": "8c4fe2c404a3b733ec82a880651c02e295246543fdea4b464b961faea735700b",
-          "path": "testdata/generated/pptx/tables.pptx",
-          "qualification": "Observed ignored local generated archive; matched committed manifest. Bytes are not committed at observation HEAD; generator invocation/revision not established."
-        }
-      ],
-      "aliases": [
-        "fixtures/go-current/testdata/generated/pptx/tables.pptx"
-      ],
-      "format": "pptx",
-      "scenarioGroup": "tables",
-      "name": "tables",
       "scenarioIds": []
     },
     {
@@ -1846,31 +1286,6 @@
       "scenarioIds": []
     },
     {
-      "id": "fixture-f14f127fe384e64ffd0e79efe71b534ca121e73b1203b23a131b13bccf494189",
-      "path": "fixtures/pptx/text/bullet-points-f14f127fe384.pptx",
-      "bytes": 33955,
-      "sha256": "f14f127fe384e64ffd0e79efe71b534ca121e73b1203b23a131b13bccf494189",
-      "role": "fixture",
-      "origins": [
-        {
-          "kind": "observed-generated",
-          "repository": "https://github.com/rcarmo/go-ooxml",
-          "manifestRevision": "43fbb43943d203e1476b21a31cf723dfb75268b6",
-          "manifestPath": "acceptance/testdata/manifest.json",
-          "manifestSha256": "8c4fe2c404a3b733ec82a880651c02e295246543fdea4b464b961faea735700b",
-          "path": "testdata/generated/pptx/bullet_points.pptx",
-          "qualification": "Observed ignored local generated archive; matched committed manifest. Bytes are not committed at observation HEAD; generator invocation/revision not established."
-        }
-      ],
-      "aliases": [
-        "fixtures/go-current/testdata/generated/pptx/bullet_points.pptx"
-      ],
-      "format": "pptx",
-      "scenarioGroup": "text",
-      "name": "bullet-points",
-      "scenarioIds": []
-    },
-    {
       "id": "fixture-1b848867cffb781112dc5778fa8cc7b9c9bd472c3636a348ec5d50005f05489e",
       "path": "fixtures/pptx/text/title-slide-1b848867cffb.pptx",
       "bytes": 31298,
@@ -1912,31 +1327,6 @@
       "aliases": [
         "fixtures/go-ooxml/testdata/pptx/title_slide.pptx",
         "fixtures/go-current/testdata/pptx/title_slide.pptx"
-      ],
-      "format": "pptx",
-      "scenarioGroup": "text",
-      "name": "title-slide",
-      "scenarioIds": []
-    },
-    {
-      "id": "fixture-9dc19cc6acf04ecfc588ea1bc91c86ce2c47337167c781fc3a0f974f8429210d",
-      "path": "fixtures/pptx/text/title-slide-9dc19cc6acf0.pptx",
-      "bytes": 31836,
-      "sha256": "9dc19cc6acf04ecfc588ea1bc91c86ce2c47337167c781fc3a0f974f8429210d",
-      "role": "fixture",
-      "origins": [
-        {
-          "kind": "observed-generated",
-          "repository": "https://github.com/rcarmo/go-ooxml",
-          "manifestRevision": "43fbb43943d203e1476b21a31cf723dfb75268b6",
-          "manifestPath": "acceptance/testdata/manifest.json",
-          "manifestSha256": "8c4fe2c404a3b733ec82a880651c02e295246543fdea4b464b961faea735700b",
-          "path": "testdata/generated/pptx/title_slide.pptx",
-          "qualification": "Observed ignored local generated archive; matched committed manifest. Bytes are not committed at observation HEAD; generator invocation/revision not established."
-        }
-      ],
-      "aliases": [
-        "fixtures/go-current/testdata/generated/pptx/title_slide.pptx"
       ],
       "format": "pptx",
       "scenarioGroup": "text",
@@ -1992,31 +1382,6 @@
       "scenarioIds": []
     },
     {
-      "id": "fixture-faa5563914f18f89fa3c66a557959f652d94092f1bf01f8eff2788824b2250a8",
-      "path": "fixtures/xlsx/cells/data-types-faa5563914f1.xlsx",
-      "bytes": 6516,
-      "sha256": "faa5563914f18f89fa3c66a557959f652d94092f1bf01f8eff2788824b2250a8",
-      "role": "fixture",
-      "origins": [
-        {
-          "kind": "observed-generated",
-          "repository": "https://github.com/rcarmo/go-ooxml",
-          "manifestRevision": "43fbb43943d203e1476b21a31cf723dfb75268b6",
-          "manifestPath": "acceptance/testdata/manifest.json",
-          "manifestSha256": "8c4fe2c404a3b733ec82a880651c02e295246543fdea4b464b961faea735700b",
-          "path": "testdata/generated/excel/data_types.xlsx",
-          "qualification": "Observed ignored local generated archive; matched committed manifest. Bytes are not committed at observation HEAD; generator invocation/revision not established."
-        }
-      ],
-      "aliases": [
-        "fixtures/go-current/testdata/generated/excel/data_types.xlsx"
-      ],
-      "format": "xlsx",
-      "scenarioGroup": "cells",
-      "name": "data-types",
-      "scenarioIds": []
-    },
-    {
       "id": "fixture-78318622a642a298a0ec9626fc03a86719e0d9d2f170aa7e8d15db99ee29dbd9",
       "path": "fixtures/xlsx/cells/single-cell-78318622a642.xlsx",
       "bytes": 4841,
@@ -2065,31 +1430,6 @@
       "scenarioIds": []
     },
     {
-      "id": "fixture-bc6f9fe38401743fc7817ca6f462bc9cf43337981724e45a9c349472121c28c0",
-      "path": "fixtures/xlsx/cells/single-cell-bc6f9fe38401.xlsx",
-      "bytes": 6299,
-      "sha256": "bc6f9fe38401743fc7817ca6f462bc9cf43337981724e45a9c349472121c28c0",
-      "role": "fixture",
-      "origins": [
-        {
-          "kind": "observed-generated",
-          "repository": "https://github.com/rcarmo/go-ooxml",
-          "manifestRevision": "43fbb43943d203e1476b21a31cf723dfb75268b6",
-          "manifestPath": "acceptance/testdata/manifest.json",
-          "manifestSha256": "8c4fe2c404a3b733ec82a880651c02e295246543fdea4b464b961faea735700b",
-          "path": "testdata/generated/excel/single_cell.xlsx",
-          "qualification": "Observed ignored local generated archive; matched committed manifest. Bytes are not committed at observation HEAD; generator invocation/revision not established."
-        }
-      ],
-      "aliases": [
-        "fixtures/go-current/testdata/generated/excel/single_cell.xlsx"
-      ],
-      "format": "xlsx",
-      "scenarioGroup": "cells",
-      "name": "single-cell",
-      "scenarioIds": []
-    },
-    {
       "id": "fixture-264be55e012d4bc2b3bf25e59824fdd30022e94f70869ea7d6ad960b803a902f",
       "path": "fixtures/xlsx/comments/comments-264be55e012d.xlsx",
       "bytes": 6337,
@@ -2117,31 +1457,6 @@
       "scenarioIds": []
     },
     {
-      "id": "fixture-40ed8aacbbc24c7b56b1b59ecf51503e920ca082338de039f92d1909884e7a11",
-      "path": "fixtures/xlsx/comments/comments-40ed8aacbbc2.xlsx",
-      "bytes": 9177,
-      "sha256": "40ed8aacbbc24c7b56b1b59ecf51503e920ca082338de039f92d1909884e7a11",
-      "role": "fixture",
-      "origins": [
-        {
-          "kind": "observed-generated",
-          "repository": "https://github.com/rcarmo/go-ooxml",
-          "manifestRevision": "43fbb43943d203e1476b21a31cf723dfb75268b6",
-          "manifestPath": "acceptance/testdata/manifest.json",
-          "manifestSha256": "8c4fe2c404a3b733ec82a880651c02e295246543fdea4b464b961faea735700b",
-          "path": "testdata/generated/excel/comments.xlsx",
-          "qualification": "Observed ignored local generated archive; matched committed manifest. Bytes are not committed at observation HEAD; generator invocation/revision not established."
-        }
-      ],
-      "aliases": [
-        "fixtures/go-current/testdata/generated/excel/comments.xlsx"
-      ],
-      "format": "xlsx",
-      "scenarioGroup": "comments",
-      "name": "comments",
-      "scenarioIds": []
-    },
-    {
       "id": "fixture-c03ad65508025275563db84b36340934b426560ae259dd572f551a174c443dca",
       "path": "fixtures/xlsx/comments/comments-c03ad6550802.xlsx",
       "bytes": 10260,
@@ -2160,31 +1475,6 @@
       "format": "xlsx",
       "scenarioGroup": "comments",
       "name": "comments",
-      "scenarioIds": []
-    },
-    {
-      "id": "fixture-23beaef7d973714f6815f25a94369a7e2e2d1564a048c4618b663c03a2f0cef2",
-      "path": "fixtures/xlsx/conditional-formatting/conditional-format-23beaef7d973.xlsx",
-      "bytes": 6598,
-      "sha256": "23beaef7d973714f6815f25a94369a7e2e2d1564a048c4618b663c03a2f0cef2",
-      "role": "fixture",
-      "origins": [
-        {
-          "kind": "observed-generated",
-          "repository": "https://github.com/rcarmo/go-ooxml",
-          "manifestRevision": "43fbb43943d203e1476b21a31cf723dfb75268b6",
-          "manifestPath": "acceptance/testdata/manifest.json",
-          "manifestSha256": "8c4fe2c404a3b733ec82a880651c02e295246543fdea4b464b961faea735700b",
-          "path": "testdata/generated/excel/conditional_format.xlsx",
-          "qualification": "Observed ignored local generated archive; matched committed manifest. Bytes are not committed at observation HEAD; generator invocation/revision not established."
-        }
-      ],
-      "aliases": [
-        "fixtures/go-current/testdata/generated/excel/conditional_format.xlsx"
-      ],
-      "format": "xlsx",
-      "scenarioGroup": "conditional-formatting",
-      "name": "conditional-format",
       "scenarioIds": []
     },
     {
@@ -2263,31 +1553,6 @@
       "scenarioIds": []
     },
     {
-      "id": "fixture-6465117269910b16b420763e71f9fee72f608f540f1db93bbf9b91862ef1f63a",
-      "path": "fixtures/xlsx/creation/minimal-646511726991.xlsx",
-      "bytes": 6224,
-      "sha256": "6465117269910b16b420763e71f9fee72f608f540f1db93bbf9b91862ef1f63a",
-      "role": "fixture",
-      "origins": [
-        {
-          "kind": "observed-generated",
-          "repository": "https://github.com/rcarmo/go-ooxml",
-          "manifestRevision": "43fbb43943d203e1476b21a31cf723dfb75268b6",
-          "manifestPath": "acceptance/testdata/manifest.json",
-          "manifestSha256": "8c4fe2c404a3b733ec82a880651c02e295246543fdea4b464b961faea735700b",
-          "path": "testdata/generated/excel/minimal.xlsx",
-          "qualification": "Observed ignored local generated archive; matched committed manifest. Bytes are not committed at observation HEAD; generator invocation/revision not established."
-        }
-      ],
-      "aliases": [
-        "fixtures/go-current/testdata/generated/excel/minimal.xlsx"
-      ],
-      "format": "xlsx",
-      "scenarioGroup": "creation",
-      "name": "minimal",
-      "scenarioIds": []
-    },
-    {
       "id": "fixture-9145d25de350a3da09ac8f1976811464525a4eeaa9947baa17057ae85056c377",
       "path": "fixtures/xlsx/creation/minimal-9145d25de350.xlsx",
       "bytes": 6523,
@@ -2306,31 +1571,6 @@
       "format": "xlsx",
       "scenarioGroup": "creation",
       "name": "minimal",
-      "scenarioIds": []
-    },
-    {
-      "id": "fixture-90b9e6e89d75a8c83de293064d0b78b441771beca5a353024be28332189b02d1",
-      "path": "fixtures/xlsx/defined-names/named-ranges-90b9e6e89d75.xlsx",
-      "bytes": 6498,
-      "sha256": "90b9e6e89d75a8c83de293064d0b78b441771beca5a353024be28332189b02d1",
-      "role": "fixture",
-      "origins": [
-        {
-          "kind": "observed-generated",
-          "repository": "https://github.com/rcarmo/go-ooxml",
-          "manifestRevision": "43fbb43943d203e1476b21a31cf723dfb75268b6",
-          "manifestPath": "acceptance/testdata/manifest.json",
-          "manifestSha256": "8c4fe2c404a3b733ec82a880651c02e295246543fdea4b464b961faea735700b",
-          "path": "testdata/generated/excel/named_ranges.xlsx",
-          "qualification": "Observed ignored local generated archive; matched committed manifest. Bytes are not committed at observation HEAD; generator invocation/revision not established."
-        }
-      ],
-      "aliases": [
-        "fixtures/go-current/testdata/generated/excel/named_ranges.xlsx"
-      ],
-      "format": "xlsx",
-      "scenarioGroup": "defined-names",
-      "name": "named-ranges",
       "scenarioIds": []
     },
     {
@@ -2379,31 +1619,6 @@
       "format": "xlsx",
       "scenarioGroup": "defined-names",
       "name": "named-ranges",
-      "scenarioIds": []
-    },
-    {
-      "id": "fixture-1aefdea520526e5acff6a02eef6392dc87a2af3f76c12673d079c134748acc6f",
-      "path": "fixtures/xlsx/formatting/formatting-1aefdea52052.xlsx",
-      "bytes": 6756,
-      "sha256": "1aefdea520526e5acff6a02eef6392dc87a2af3f76c12673d079c134748acc6f",
-      "role": "fixture",
-      "origins": [
-        {
-          "kind": "observed-generated",
-          "repository": "https://github.com/rcarmo/go-ooxml",
-          "manifestRevision": "43fbb43943d203e1476b21a31cf723dfb75268b6",
-          "manifestPath": "acceptance/testdata/manifest.json",
-          "manifestSha256": "8c4fe2c404a3b733ec82a880651c02e295246543fdea4b464b961faea735700b",
-          "path": "testdata/generated/excel/formatting.xlsx",
-          "qualification": "Observed ignored local generated archive; matched committed manifest. Bytes are not committed at observation HEAD; generator invocation/revision not established."
-        }
-      ],
-      "aliases": [
-        "fixtures/go-current/testdata/generated/excel/formatting.xlsx"
-      ],
-      "format": "xlsx",
-      "scenarioGroup": "formatting",
-      "name": "formatting",
       "scenarioIds": []
     },
     {
@@ -2475,31 +1690,6 @@
       "aliases": [
         "fixtures/go-ooxml/testdata/excel/formulas.xlsx",
         "fixtures/go-current/testdata/excel/formulas.xlsx"
-      ],
-      "format": "xlsx",
-      "scenarioGroup": "formulas",
-      "name": "formulas",
-      "scenarioIds": []
-    },
-    {
-      "id": "fixture-7352ecbe7ecdc8cf3b8d37b315f29606c3383a9e23bc6968ddd435fde06d80a0",
-      "path": "fixtures/xlsx/formulas/formulas-7352ecbe7ecd.xlsx",
-      "bytes": 6767,
-      "sha256": "7352ecbe7ecdc8cf3b8d37b315f29606c3383a9e23bc6968ddd435fde06d80a0",
-      "role": "fixture",
-      "origins": [
-        {
-          "kind": "observed-generated",
-          "repository": "https://github.com/rcarmo/go-ooxml",
-          "manifestRevision": "43fbb43943d203e1476b21a31cf723dfb75268b6",
-          "manifestPath": "acceptance/testdata/manifest.json",
-          "manifestSha256": "8c4fe2c404a3b733ec82a880651c02e295246543fdea4b464b961faea735700b",
-          "path": "testdata/generated/excel/formulas.xlsx",
-          "qualification": "Observed ignored local generated archive; matched committed manifest. Bytes are not committed at observation HEAD; generator invocation/revision not established."
-        }
-      ],
-      "aliases": [
-        "fixtures/go-current/testdata/generated/excel/formulas.xlsx"
       ],
       "format": "xlsx",
       "scenarioGroup": "formulas",
@@ -2642,31 +1832,6 @@
       "scenarioIds": []
     },
     {
-      "id": "fixture-83c309c321b610dc2d7025c046998b6da995e6381ddaa6b0b0acd1ac4ba03555",
-      "path": "fixtures/xlsx/tables/merged-cells-83c309c321b6.xlsx",
-      "bytes": 6600,
-      "sha256": "83c309c321b610dc2d7025c046998b6da995e6381ddaa6b0b0acd1ac4ba03555",
-      "role": "fixture",
-      "origins": [
-        {
-          "kind": "observed-generated",
-          "repository": "https://github.com/rcarmo/go-ooxml",
-          "manifestRevision": "43fbb43943d203e1476b21a31cf723dfb75268b6",
-          "manifestPath": "acceptance/testdata/manifest.json",
-          "manifestSha256": "8c4fe2c404a3b733ec82a880651c02e295246543fdea4b464b961faea735700b",
-          "path": "testdata/generated/excel/merged_cells.xlsx",
-          "qualification": "Observed ignored local generated archive; matched committed manifest. Bytes are not committed at observation HEAD; generator invocation/revision not established."
-        }
-      ],
-      "aliases": [
-        "fixtures/go-current/testdata/generated/excel/merged_cells.xlsx"
-      ],
-      "format": "xlsx",
-      "scenarioGroup": "tables",
-      "name": "merged-cells",
-      "scenarioIds": []
-    },
-    {
       "id": "fixture-51eaa2ee2fa09f384e5c177cebd62801d628f20724c57a221a25112cf374a8fb",
       "path": "fixtures/xlsx/tables/tables-51eaa2ee2fa0.xlsx",
       "bytes": 5726,
@@ -2715,31 +1880,6 @@
       "scenarioIds": []
     },
     {
-      "id": "fixture-f91f633cf82ad88c9a2e77d5f6b47dc1c58cc65bd631de4f82f22994701cd17b",
-      "path": "fixtures/xlsx/tables/tables-f91f633cf82a.xlsx",
-      "bytes": 7286,
-      "sha256": "f91f633cf82ad88c9a2e77d5f6b47dc1c58cc65bd631de4f82f22994701cd17b",
-      "role": "fixture",
-      "origins": [
-        {
-          "kind": "observed-generated",
-          "repository": "https://github.com/rcarmo/go-ooxml",
-          "manifestRevision": "43fbb43943d203e1476b21a31cf723dfb75268b6",
-          "manifestPath": "acceptance/testdata/manifest.json",
-          "manifestSha256": "8c4fe2c404a3b733ec82a880651c02e295246543fdea4b464b961faea735700b",
-          "path": "testdata/generated/excel/tables.xlsx",
-          "qualification": "Observed ignored local generated archive; matched committed manifest. Bytes are not committed at observation HEAD; generator invocation/revision not established."
-        }
-      ],
-      "aliases": [
-        "fixtures/go-current/testdata/generated/excel/tables.xlsx"
-      ],
-      "format": "xlsx",
-      "scenarioGroup": "tables",
-      "name": "tables",
-      "scenarioIds": []
-    },
-    {
       "id": "fixture-40628979d41435d00a452faf189d98cc00343ee1639070f20fcfc21b471a983d",
       "path": "fixtures/xlsx/worksheets/multiple-sheets-40628979d414.xlsx",
       "bytes": 8386,
@@ -2781,31 +1921,6 @@
       "aliases": [
         "fixtures/go-ooxml/testdata/excel/multiple_sheets.xlsx",
         "fixtures/go-current/testdata/excel/multiple_sheets.xlsx"
-      ],
-      "format": "xlsx",
-      "scenarioGroup": "worksheets",
-      "name": "multiple-sheets",
-      "scenarioIds": []
-    },
-    {
-      "id": "fixture-fb775da5522a342d6c74b49509e32c9f3530b2dda1ec3ceb13820533038089be",
-      "path": "fixtures/xlsx/worksheets/multiple-sheets-fb775da5522a.xlsx",
-      "bytes": 8418,
-      "sha256": "fb775da5522a342d6c74b49509e32c9f3530b2dda1ec3ceb13820533038089be",
-      "role": "fixture",
-      "origins": [
-        {
-          "kind": "observed-generated",
-          "repository": "https://github.com/rcarmo/go-ooxml",
-          "manifestRevision": "43fbb43943d203e1476b21a31cf723dfb75268b6",
-          "manifestPath": "acceptance/testdata/manifest.json",
-          "manifestSha256": "8c4fe2c404a3b733ec82a880651c02e295246543fdea4b464b961faea735700b",
-          "path": "testdata/generated/excel/multiple_sheets.xlsx",
-          "qualification": "Observed ignored local generated archive; matched committed manifest. Bytes are not committed at observation HEAD; generator invocation/revision not established."
-        }
-      ],
-      "aliases": [
-        "fixtures/go-current/testdata/generated/excel/multiple_sheets.xlsx"
       ],
       "format": "xlsx",
       "scenarioGroup": "worksheets",

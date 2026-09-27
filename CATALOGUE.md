@@ -72,6 +72,26 @@ explicitly review any input remap. `bun run check` verifies all remaining
 ZIP member contents and refuses new duplicates. Content equality does not
 grant behaviour execution credit.
 
+The [v0.43 observed-generated retirement ledger](ledgers/observed-generated-retirement.json)
+records 35 distinct DOCX/PPTX/XLSX archives from ignored Go `testdata/generated`
+paths. Their generator invocation and revision are unestablished. All 11 XLSX
+archives have dangling workbook relationships and a C5 calculation-chain entry
+without a matching formula. They are recoverable by their exact paths and
+hashes from immutable v0.43.0; none is an alias for a retained S or P fixture.
+The 35 S and 35 P members of these groups remain as separate inputs: for
+example, the Word revision and comment states and PowerPoint hidden-slide
+states differ. Go's 37 historical `generated/*` labels included two aliases;
+removing all 37 reduces its Office-labelled no-op corpus from 74 to 37.
+That corpus checks packaging byte preservation, not OOXML graph validity.
+The existing v0.40 content-equivalence ledger and Go's older migration rows
+remain unchanged. Fixture selection follows the scenario predicate and package
+graph; the ledger grants no execution credit. A two-slide-master presentation
+and an Office-verified hidden-slide positive are still needed. A valid
+Excel-authored calculation-chain workbook is needed only for that behaviour;
+other Excel-authored baselines are optional producer-diversity inputs. The
+[acquisition list](docs/fixture-acquisition.md) gives the required part and
+application checks.
+
 ## Consolidating existing files
 
 [`ledgers/feature-consolidation.json`](ledgers/feature-consolidation.json) records
