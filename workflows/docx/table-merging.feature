@@ -92,3 +92,96 @@ Feature: Physical horizontal Word table merges with retained content
         | target       |
         | old-handles  |
         | merged-cells |
+
+  @profile-preserving-vertical-merge
+  Rule: Single-column vertical merges retain physical cells and content
+    ECMA-376 Part 1 clause 17.4.84 defines vMerge restart and continue markers.
+
+    @id-docx-vertical-merge-roundtrip
+    Scenario Outline: Save a single-column merge without removing physical cells
+      Given a saved Word vertical merge source with a three by three table
+      When column <column> rows <first> through <last> are merged and saved to a new path
+      Then the reopened table has three rows, three grid columns and nine physical cells
+      And column <column> has restart at row <first> and explicit continue through row <last>
+      And removing only the inserted vertical markers reproduces the complete source document XML
+      And the reopened paragraph sequence, unrelated members and source archive are unchanged
+      Examples:
+        | column | first | last |
+        | 1      | 0     | 2    |
+        | 0      | 1     | 2    |
+        | 2      | 0     | 1    |
+
+    @id-docx-vertical-merge-content-refusal
+    Scenario Outline: Refuse to hide continuation cell content or metadata
+      Given a saved Word vertical merge source whose continuation cell has <content>
+      When column one rows zero through two are merged
+      Then the vertical merge refuses and the archive and held source handles are unchanged
+      Examples:
+        | content          |
+        | text             |
+        | space-text       |
+        | cell-shading     |
+        | paragraph-format |
+        | empty-run        |
+        | lexical-comment  |
+
+    @id-docx-vertical-merge-structure-refusal
+    Scenario Outline: Refuse unsupported structure outside the selected column too
+      Given a saved Word vertical merge source with <structure>
+      When column one rows zero through two are merged
+      Then the vertical merge refuses and the archive and held source handles are unchanged
+      Examples:
+        | structure          |
+        | existing-vertical  |
+        | missing-grid       |
+        | width-mismatch     |
+        | nested-unselected  |
+        | protected          |
+        | external-settings  |
+
+    @id-docx-vertical-merge-coordinate-refusal
+    Scenario Outline: Refuse invalid vertical merge ranges before mutation
+      Given a saved Word vertical merge source with a three by three table
+      When the vertical merge is requested with <coordinates> coordinates
+      Then the vertical merge refuses and the archive and held source handles are unchanged
+      Examples:
+        | coordinates |
+        | singleton   |
+        | reversed    |
+        | outside     |
+        | fractional  |
+
+    @id-docx-vertical-merge-rollback
+    Scenario Outline: Roll back vertical marker publication without invalidating held handles
+      Given a saved Word vertical merge source with a three by three table
+      When the vertical merge fails after <stage>
+      Then the vertical merge refuses and the archive and held source handles are unchanged
+      Examples:
+        | stage         |
+        | part-write    |
+        | serialization |
+
+    @id-docx-vertical-merge-encoding
+    Scenario Outline: Retain byte order and namespace meaning when saving vertical merges
+      Given a saved Word vertical merge source encoded as <encoding>
+      When column one rows zero through two are merged and saved to a new path
+      Then the reopened vertical encoding marker and namespace meaning match the source
+      And column 1 has restart at row 0 and explicit continue through row 2
+      And removing only the inserted vertical markers reproduces the complete source document XML
+      And the reopened paragraph sequence, unrelated members and source archive are unchanged
+      Examples:
+        | encoding   |
+        | UTF-8-BOM  |
+        | UTF-16LE   |
+        | UTF-16BE   |
+
+    @id-docx-vertical-merge-stale
+    Scenario Outline: Keep post-merge refusal boundaries without changing retained cells
+      Given a saved Word vertical merge source with a three by three table
+      When column one rows zero through two are merged in the editing session
+      Then vertical <target> operations refuse without changing the merged archive
+      And the current unmerged vertical tail cell still reads Tail
+      Examples:
+        | target       |
+        | old-handles  |
+        | merged-cells |

@@ -6191,6 +6191,177 @@
           "evidence": "Native execution binding pending"
         }
       }
+    },
+    {
+      "id": "@id-docx-vertical-merge-roundtrip",
+      "feature": "workflows/docx/table-merging.feature",
+      "expandedCases": 3,
+      "factIds": [],
+      "expectedOutcomes": [
+        "the reopened table has three rows, three grid columns and nine physical cells",
+        "column 1 has restart at row 0 and explicit continue through row 2",
+        "removing only the inserted vertical markers reproduces the complete source document XML",
+        "the reopened paragraph sequence, unrelated members and source archive are unchanged",
+        "column 0 has restart at row 1 and explicit continue through row 2",
+        "column 2 has restart at row 0 and explicit continue through row 1"
+      ],
+      "consumers": {
+        "bun": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        },
+        "go": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        },
+        "python": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        }
+      }
+    },
+    {
+      "id": "@id-docx-vertical-merge-content-refusal",
+      "feature": "workflows/docx/table-merging.feature",
+      "expandedCases": 6,
+      "factIds": [],
+      "expectedOutcomes": [
+        "the vertical merge refuses and the archive and held source handles are unchanged"
+      ],
+      "consumers": {
+        "bun": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        },
+        "go": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        },
+        "python": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        }
+      }
+    },
+    {
+      "id": "@id-docx-vertical-merge-structure-refusal",
+      "feature": "workflows/docx/table-merging.feature",
+      "expandedCases": 6,
+      "factIds": [],
+      "expectedOutcomes": [
+        "the vertical merge refuses and the archive and held source handles are unchanged"
+      ],
+      "consumers": {
+        "bun": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        },
+        "go": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        },
+        "python": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        }
+      }
+    },
+    {
+      "id": "@id-docx-vertical-merge-coordinate-refusal",
+      "feature": "workflows/docx/table-merging.feature",
+      "expandedCases": 4,
+      "factIds": [],
+      "expectedOutcomes": [
+        "the vertical merge refuses and the archive and held source handles are unchanged"
+      ],
+      "consumers": {
+        "bun": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        },
+        "go": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        },
+        "python": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        }
+      }
+    },
+    {
+      "id": "@id-docx-vertical-merge-rollback",
+      "feature": "workflows/docx/table-merging.feature",
+      "expandedCases": 2,
+      "factIds": [],
+      "expectedOutcomes": [
+        "the vertical merge refuses and the archive and held source handles are unchanged"
+      ],
+      "consumers": {
+        "bun": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        },
+        "go": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        },
+        "python": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        }
+      }
+    },
+    {
+      "id": "@id-docx-vertical-merge-encoding",
+      "feature": "workflows/docx/table-merging.feature",
+      "expandedCases": 3,
+      "factIds": [],
+      "expectedOutcomes": [
+        "the reopened vertical encoding marker and namespace meaning match the source",
+        "column 1 has restart at row 0 and explicit continue through row 2",
+        "removing only the inserted vertical markers reproduces the complete source document XML",
+        "the reopened paragraph sequence, unrelated members and source archive are unchanged"
+      ],
+      "consumers": {
+        "bun": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        },
+        "go": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        },
+        "python": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        }
+      }
+    },
+    {
+      "id": "@id-docx-vertical-merge-stale",
+      "feature": "workflows/docx/table-merging.feature",
+      "expandedCases": 2,
+      "factIds": [],
+      "expectedOutcomes": [
+        "vertical old-handles operations refuse without changing the merged archive",
+        "the current unmerged vertical tail cell still reads Tail",
+        "vertical merged-cells operations refuse without changing the merged archive"
+      ],
+      "consumers": {
+        "bun": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        },
+        "go": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        },
+        "python": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        }
+      }
     }
   ],
   "consumerStatusPolicy": "Missing/unmapped/planned means not-run and no execution credit."

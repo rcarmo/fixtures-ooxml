@@ -56,6 +56,39 @@ insertion and a second merge. The current unmerged (1,3) cell remains readable a
 `Tail`; refusal attempts must retain the merged archive bytes. These are editing
 session policies, not schema requirements.
 
-Vertical merges, splitting, repeated merges, nonempty absorbed cells and rendered
-layout are outside this contract. Catalogue presence and mapping associations
+Vertical merges are specified by the separate rule below. Splitting, repeated
+merges, nonempty absorbed cells and rendered layout are outside the horizontal rule. Catalogue presence and mapping associations
 alone confer no consumer execution credit.
+
+## Single-column vertical merges
+
+The vertical rule uses ECMA-376 Part 1 §17.4.84. Its source is a three-by-three
+table between `Before` and `After` paragraphs, with grid/cell widths 2,880 twips.
+Cell (0,1) contains `Keep & <text>`, clear shading `ABCDEF` and vertical alignment
+`center`; cell (2,2) contains `Tail`. Other cells contain one structurally empty
+paragraph and only their width property. The opaque part remains `00 ff 2a`.
+As above, the source is saved/reopened first and the output uses a distinct path.
+
+Ranges are `(column, firstRow, lastRow)`, inclusive and zero-based. The writer
+inserts one explicit `restart` and subsequent explicit `continue` markers in
+selected continuation cells only. It removes no cell, paragraph or content and changes no
+width. Readback checks all nine physical cells and every selected/unselected
+cell's markers; removing only the inserted markers must reproduce the exact
+complete source XML. Paragraph text order including empties, all unrelated
+members, and the source archive remain unchanged.
+
+Content-loss variants use cell (1,1) and the same six payloads as the horizontal
+rule. Structural variants use cell (2,0) for existing vertical markers, width
+mismatch (100 twips), and the nested-table case; missing-grid, protection and
+external settings use the same recipes above. Invalid coordinate tuples are
+`(1,0,0)`, `(1,2,1)`, `(3,0,2)` and `(1,0.5,2)`. Refusals retain the three-by-three
+table handle, owner (0,1) cell and `Before` paragraph, without changing bytes or
+publishing output. Both injected fault stages must be reached and restore all
+markers, archive bytes and handles.
+
+The three encoding recipes are unchanged, including the foreign `w` binding for
+UTF-16. Post-merge old handles refuse; current cell access at (0,1), (1,1), (2,1),
+row insertion, another vertical merge and a horizontal merge refuse. The current
+(2,2) cell still reads `Tail`, and every refused operation leaves the merged
+archive unchanged. Multi-column ranges, splitting, repeat merges, property-setter
+API equivalence and rendered layout are outside the vertical rule.

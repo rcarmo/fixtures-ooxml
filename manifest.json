@@ -4357,10 +4357,10 @@
       "aliases": []
     },
     {
-      "id": "asset-ea26fe30dabae6dd353775b7bf5e59ca136c3aa53489d3aa3ec00b7ccc60fa8b",
+      "id": "asset-3ea877322e88e4ac5e5d608e4f60cbe06ee04ea1c89e18fcd5650f9ec2c83cd1",
       "path": "workflows/docx/table-merging.feature",
-      "bytes": 4476,
-      "sha256": "ea26fe30dabae6dd353775b7bf5e59ca136c3aa53489d3aa3ec00b7ccc60fa8b",
+      "bytes": 8824,
+      "sha256": "3ea877322e88e4ac5e5d608e4f60cbe06ee04ea1c89e18fcd5650f9ec2c83cd1",
       "role": "workflow",
       "origins": [
         {
@@ -4372,10 +4372,10 @@
       "aliases": []
     },
     {
-      "id": "asset-95a2153318b2efa1a9a52db0e8ac4afdb90368cac4a1562053d6e27a576d1c3a",
+      "id": "asset-b974224fa83a0f3593ca210b23e61d1919c4ed3c49dd85acb319bdae505e4dea",
       "path": "contracts/table-merging.md",
-      "bytes": 3436,
-      "sha256": "95a2153318b2efa1a9a52db0e8ac4afdb90368cac4a1562053d6e27a576d1c3a",
+      "bytes": 5593,
+      "sha256": "b974224fa83a0f3593ca210b23e61d1919c4ed3c49dd85acb319bdae505e4dea",
       "role": "workflow-contract",
       "origins": [
         {

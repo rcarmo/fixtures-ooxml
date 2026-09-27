@@ -147,6 +147,15 @@ The catalogue now has 48 features, 243 scenarios and 612 cases. Existing individ
 span/vertical-setter predicates and their source mappings are unchanged. New
 consumer entries start planned; physical authoring requires its own native proof.
 
+## Physical vertical merges
+
+The table-merging family also specifies seven vertical scenarios / 26 cases.
+All physical cells, widths and paragraph order remain intact; only explicit
+restart/continue flags are inserted. Refusals, reached fault rollback, encodings
+and stale handles have separate cases. The preceding 26 horizontal case
+fingerprints are unchanged. Totals are 48 features, 250 scenarios and 638 cases;
+new consumer entries start planned, with no property-setter compatibility credit.
+
 ## Weak-outcome review
 
 | Contract | Current assertion boundary | Requirement still missing |
