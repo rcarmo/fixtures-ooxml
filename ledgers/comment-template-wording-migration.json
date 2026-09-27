@@ -1,0 +1,714 @@
+{
+  "schemaVersion": 1,
+  "sourceRevision": "4095fc356a72a4d839ece2d647402b6928041553",
+  "executionCredit": false,
+  "retiredScenarioIds": [],
+  "policy": "Exact Python actor removal and operation/API profile naming. Preserve authored-comment vs existing-extension policies, response dictionaries/keys, nonempty filters, thread/root resolution and metadata-cache identity/reason semantics. Weak outcomes remain weak API observations, not semantic-analysis guarantees. XLSX description only changes; fixture-origin names remain provenance.",
+  "files": [
+    {
+      "path": "workflows/docx/comments.feature",
+      "beforeSha256": "7c1d435624140439a68e0b70801b7e0c19be4e28008dcb66d9e9c1acb33dc9e0",
+      "afterSha256": "4382383b2c93681fdc1ec96c5b157bce619ac39f02250f2f7e840ff0a4234129",
+      "stepRenames": [
+        {
+          "id": "@id-python-comments-mixed-done",
+          "from": "Python comment authoring adds \"Comment alpha\" by \"Manuel\" to the first target and \"Comment beta\" by \"Rui Carmo\" to the second",
+          "to": "comment authoring adds \"Comment alpha\" by \"Manuel\" to the first target and \"Comment beta\" by \"Rui Carmo\" to the second"
+        },
+        {
+          "id": "@id-python-comments-reply-root-resolution",
+          "from": "Python comment authoring adds \"Root comment\" to that paragraph",
+          "to": "comment authoring adds \"Root comment\" to that paragraph"
+        },
+        {
+          "id": "@id-python-comments-ids-fallback",
+          "from": "Python Word comments are read from the modified saved package",
+          "to": "Word comments are read from the modified saved package"
+        }
+      ],
+      "scenarios": [
+        {
+          "id": "@id-python-comments-mixed-done",
+          "beforeCaseSha256": [
+            "55e9e011c379f73b4e02362f2acf674deeea0e14c367f2c000c063de67b40c65"
+          ],
+          "afterCaseSha256": [
+            "138ab358f725a5c4545f8535ff0d699aba1b605417abb166d84da2e6d26d0733"
+          ],
+          "beforeTags": [
+            [
+              "@id-python-comments-mixed-done",
+              "@planned",
+              "@profile-python-comment-resolution"
+            ]
+          ],
+          "afterTags": [
+            [
+              "@id-python-comments-mixed-done",
+              "@planned",
+              "@profile-authored-comment-response-api"
+            ]
+          ]
+        },
+        {
+          "id": "@id-python-comments-resolved-filter",
+          "beforeCaseSha256": [
+            "6767942ad599ab98cbc4fb8c26133f5f11f8c384b408a56bce7bae13af748ab3"
+          ],
+          "afterCaseSha256": [
+            "6767942ad599ab98cbc4fb8c26133f5f11f8c384b408a56bce7bae13af748ab3"
+          ],
+          "beforeTags": [
+            [
+              "@id-python-comments-resolved-filter",
+              "@planned",
+              "@profile-python-comment-resolution"
+            ]
+          ],
+          "afterTags": [
+            [
+              "@id-python-comments-resolved-filter",
+              "@planned",
+              "@profile-authored-comment-response-api"
+            ]
+          ]
+        },
+        {
+          "id": "@id-python-comments-reopen-filter",
+          "beforeCaseSha256": [
+            "4b03472275621edde5fccfdd24eb82f25268915d2c83563fb475841c0aef1bb0"
+          ],
+          "afterCaseSha256": [
+            "4b03472275621edde5fccfdd24eb82f25268915d2c83563fb475841c0aef1bb0"
+          ],
+          "beforeTags": [
+            [
+              "@id-python-comments-reopen-filter",
+              "@planned",
+              "@profile-python-comment-resolution"
+            ]
+          ],
+          "afterTags": [
+            [
+              "@id-python-comments-reopen-filter",
+              "@planned",
+              "@profile-authored-comment-response-api"
+            ]
+          ]
+        },
+        {
+          "id": "@id-python-comments-reply-root-resolution",
+          "beforeCaseSha256": [
+            "5100467de2ff4beb214c25e0043125cfc76a59c0d57ba015348ba9a8c09fa196"
+          ],
+          "afterCaseSha256": [
+            "b845cf2f07249d85540bbd3f98cacc0f463591d58a2a0e90b3cbf24a2e04e3a1"
+          ],
+          "beforeTags": [
+            [
+              "@id-python-comments-reply-root-resolution",
+              "@planned",
+              "@profile-python-comment-resolution"
+            ]
+          ],
+          "afterTags": [
+            [
+              "@id-python-comments-reply-root-resolution",
+              "@planned",
+              "@profile-comment-thread-root-resolution"
+            ]
+          ]
+        },
+        {
+          "id": "@id-python-comments-ids-fallback",
+          "beforeCaseSha256": [
+            "673fea218ec5bfe80ea625a1fb9a21b2a72ac10ff67fdadea7823c8313ce8918"
+          ],
+          "afterCaseSha256": [
+            "26b78e809660bc7f5977b9709ed234868e2a839e3dda38bb7b714d9eab707318"
+          ],
+          "beforeTags": [
+            [
+              "@id-python-comments-ids-fallback",
+              "@planned",
+              "@profile-python-comment-resolution"
+            ]
+          ],
+          "afterTags": [
+            [
+              "@id-python-comments-ids-fallback",
+              "@planned",
+              "@profile-comment-id-fallback"
+            ]
+          ]
+        },
+        {
+          "id": "@id-python-comments-create-extension",
+          "beforeCaseSha256": [
+            "0910f64e797dcb0ebc4a535ba33ab48e80990ec5b2fbd0b0e576cc19a161ea20"
+          ],
+          "afterCaseSha256": [
+            "0910f64e797dcb0ebc4a535ba33ab48e80990ec5b2fbd0b0e576cc19a161ea20"
+          ],
+          "beforeTags": [
+            [
+              "@id-python-comments-create-extension",
+              "@planned",
+              "@profile-python-comment-resolution"
+            ]
+          ],
+          "afterTags": [
+            [
+              "@id-python-comments-create-extension",
+              "@planned",
+              "@profile-comment-extension-authoring"
+            ]
+          ]
+        },
+        {
+          "id": "@id-python-comments-filter-predicates",
+          "beforeCaseSha256": [
+            "bdfd745c9481be500db1cdb21eb7248469202c0610cc223c5f7422f3b174f23b"
+          ],
+          "afterCaseSha256": [
+            "bdfd745c9481be500db1cdb21eb7248469202c0610cc223c5f7422f3b174f23b"
+          ],
+          "beforeTags": [
+            [
+              "@id-python-comments-filter-predicates",
+              "@planned",
+              "@profile-python-comment-resolution"
+            ]
+          ],
+          "afterTags": [
+            [
+              "@id-python-comments-filter-predicates",
+              "@planned",
+              "@profile-authored-comment-response-api"
+            ]
+          ]
+        },
+        {
+          "id": "@id-python-comments-threaded-reply",
+          "beforeCaseSha256": [
+            "0b779e1ef05c77c86cb9d29f755c18f7ebd52bcca704b2ca86770533ccd919d7"
+          ],
+          "afterCaseSha256": [
+            "0b779e1ef05c77c86cb9d29f755c18f7ebd52bcca704b2ca86770533ccd919d7"
+          ],
+          "beforeTags": [
+            [
+              "@id-python-comments-threaded-reply",
+              "@planned",
+              "@profile-python-comment-resolution"
+            ]
+          ],
+          "afterTags": [
+            [
+              "@id-python-comments-threaded-reply",
+              "@planned",
+              "@profile-comment-threaded-response-api"
+            ]
+          ]
+        },
+        {
+          "id": "@id-python-comments-reply-auto-resolve",
+          "beforeCaseSha256": [
+            "477aab640e67d2e4e7487fb9d7974658d110d284a1ed7fb5500152fc35e5eb70"
+          ],
+          "afterCaseSha256": [
+            "477aab640e67d2e4e7487fb9d7974658d110d284a1ed7fb5500152fc35e5eb70"
+          ],
+          "beforeTags": [
+            [
+              "@id-python-comments-reply-auto-resolve",
+              "@planned",
+              "@profile-python-comment-resolution"
+            ]
+          ],
+          "afterTags": [
+            [
+              "@id-python-comments-reply-auto-resolve",
+              "@planned",
+              "@profile-comment-thread-root-resolution"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "path": "workflows/docx/template-analysis.feature",
+      "beforeSha256": "fd446f3b1fe61541780dbeab8a8e4bab206beb433f197b28525af49c4ed7d489",
+      "afterSha256": "bb63e95d9e548c04b66cee96c4454cc816d83a033ff17d5e2282e4e27b7b71fc",
+      "stepRenames": [
+        {
+          "id": "@id-python-word-template-analysis-sow-response",
+          "from": "the Python SOW template has title, customer and project placeholders, guidance, and a Role/Hours table",
+          "to": "the SOW template has title, customer and project placeholders, guidance, and a Role/Hours table"
+        },
+        {
+          "id": "@id-python-word-template-analysis-sow-response",
+          "from": "the Python Word template-formatting analyzer reads that saved document",
+          "to": "the Word template-formatting analyzer reads that saved document"
+        },
+        {
+          "id": "@id-python-word-template-analysis-placeholder-response",
+          "from": "the Python Word template-formatting analyzer reads that saved document",
+          "to": "the Word template-formatting analyzer reads that saved document"
+        },
+        {
+          "id": "@id-python-word-template-analysis-colour-response",
+          "from": "the Python Word template-formatting analyzer reads that saved document",
+          "to": "the Word template-formatting analyzer reads that saved document"
+        },
+        {
+          "id": "@id-python-word-template-analysis-plain-response",
+          "from": "the Python Word template-formatting analyzer reads that saved document",
+          "to": "the Word template-formatting analyzer reads that saved document"
+        },
+        {
+          "id": "@id-python-office-template-analysis-response",
+          "from": "the Python unified office template tool analyzes the saved document",
+          "to": "the unified office template tool analyzes the saved document"
+        },
+        {
+          "id": "@id-python-office-template-analysis-cache",
+          "from": "a dedicated empty Python template metadata cache is selected",
+          "to": "a dedicated empty template metadata cache is selected"
+        },
+        {
+          "id": "@id-python-office-template-analysis-cache",
+          "from": "the Python unified office template tool analyzes the saved document twice without editing it",
+          "to": "the unified office template tool analyzes the saved document twice without editing it"
+        }
+      ],
+      "scenarios": [
+        {
+          "id": "@id-python-word-template-analysis-sow-response",
+          "beforeCaseSha256": [
+            "09a2603193abf5aa2e6a799fd1298899f0b3d8020fe9066b91477b9a4eaf27b9"
+          ],
+          "afterCaseSha256": [
+            "7797e52742aceaead6d657f154222d642dca61dd639ad1b875824c077db98a0c"
+          ],
+          "beforeTags": [
+            [
+              "@id-python-word-template-analysis-sow-response",
+              "@planned"
+            ]
+          ],
+          "afterTags": [
+            [
+              "@id-python-word-template-analysis-sow-response",
+              "@planned",
+              "@profile-template-response-status-api"
+            ]
+          ]
+        },
+        {
+          "id": "@id-python-word-template-analysis-placeholder-response",
+          "beforeCaseSha256": [
+            "c76e531d70b390c6d4d4efa4f6bb6f4fae2a927aff215b603349098def03f5b5"
+          ],
+          "afterCaseSha256": [
+            "03938612b07b840ebf61ad42e8fe33adf3c44830fa2e7d3405e1bdacfdbff4f3"
+          ],
+          "beforeTags": [
+            [
+              "@id-python-word-template-analysis-placeholder-response",
+              "@planned"
+            ]
+          ],
+          "afterTags": [
+            [
+              "@id-python-word-template-analysis-placeholder-response",
+              "@planned",
+              "@profile-template-response-shape-api"
+            ]
+          ]
+        },
+        {
+          "id": "@id-python-word-template-analysis-colour-response",
+          "beforeCaseSha256": [
+            "43c4fa5a7505e336b25d8b1e1c47e9ba9b8f843253d8c7aaaa4ef45b71efc975"
+          ],
+          "afterCaseSha256": [
+            "76920c8ec57b0fefd25262cceba37403f2894046d6d3f122c761ff8b7842f86d"
+          ],
+          "beforeTags": [
+            [
+              "@id-python-word-template-analysis-colour-response",
+              "@planned"
+            ]
+          ],
+          "afterTags": [
+            [
+              "@id-python-word-template-analysis-colour-response",
+              "@planned",
+              "@profile-template-response-shape-api"
+            ]
+          ]
+        },
+        {
+          "id": "@id-python-word-template-analysis-plain-response",
+          "beforeCaseSha256": [
+            "6d99896c1bd525005e5463e888bc613606cfd2f610c0ee181f84c0f5d7ec6ac9"
+          ],
+          "afterCaseSha256": [
+            "0cc9a268ad762e726524df0f772fa0e5df75e86c90900c52e266834e40b161d6"
+          ],
+          "beforeTags": [
+            [
+              "@id-python-word-template-analysis-plain-response",
+              "@planned"
+            ]
+          ],
+          "afterTags": [
+            [
+              "@id-python-word-template-analysis-plain-response",
+              "@planned",
+              "@profile-template-response-shape-api"
+            ]
+          ]
+        },
+        {
+          "id": "@id-python-office-template-analysis-response",
+          "beforeCaseSha256": [
+            "aaf32b1c1040c20a3d24e3f1cac5aba6c73f17013ee80ddf0046521bd8187ccb"
+          ],
+          "afterCaseSha256": [
+            "43cbd9c9499dd83ca054f2e851ceaa46fd9c31cae4799409773d07cc43813484"
+          ],
+          "beforeTags": [
+            [
+              "@id-python-office-template-analysis-response",
+              "@planned"
+            ]
+          ],
+          "afterTags": [
+            [
+              "@id-python-office-template-analysis-response",
+              "@planned",
+              "@profile-template-response-status-api"
+            ]
+          ]
+        },
+        {
+          "id": "@id-python-office-template-analysis-cache",
+          "beforeCaseSha256": [
+            "d691eafbefe2345f82057ec72df90e46fa7be12b22c49c4e043f4ccaa8ff883c"
+          ],
+          "afterCaseSha256": [
+            "dc6ec2d04fe00fb09f3185d789337d79e4b19999ecfc3278d75d2235da45b1b9"
+          ],
+          "beforeTags": [
+            [
+              "@id-python-office-template-analysis-cache",
+              "@planned"
+            ]
+          ],
+          "afterTags": [
+            [
+              "@id-python-office-template-analysis-cache",
+              "@planned",
+              "@profile-template-metadata-response-api"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "path": "workflows/docx/template-cache.feature",
+      "beforeSha256": "7ed0740ba8f3f12be17d6c87012468ce2374268f15ba1dd332f7ab7ff7a10009",
+      "afterSha256": "2f425f013c2beec9d19f37d54154e10944e25e87ef62f29928c2fb71d9a44576",
+      "stepRenames": [
+        {
+          "id": "@id-python-template-cache-key-stable",
+          "from": "a saved Word template and a dedicated Python metadata cache directory",
+          "to": "a saved Word template and a dedicated metadata cache directory"
+        },
+        {
+          "id": "@id-python-template-cache-roundtrip",
+          "from": "a saved Word template and a dedicated Python metadata cache directory",
+          "to": "a saved Word template and a dedicated metadata cache directory"
+        },
+        {
+          "id": "@id-python-template-cache-source-change",
+          "from": "a saved Word template and a dedicated Python metadata cache directory",
+          "to": "a saved Word template and a dedicated metadata cache directory"
+        },
+        {
+          "id": "@id-python-template-cache-corrupt",
+          "from": "a saved Word template and a dedicated Python metadata cache directory",
+          "to": "a saved Word template and a dedicated metadata cache directory"
+        },
+        {
+          "id": "@id-python-template-cache-schema-mismatch",
+          "from": "a saved Word template and a dedicated Python metadata cache directory",
+          "to": "a saved Word template and a dedicated metadata cache directory"
+        },
+        {
+          "id": "@id-python-template-cache-sow-reuse",
+          "from": "a dedicated empty Python metadata cache directory",
+          "to": "a dedicated empty metadata cache directory"
+        },
+        {
+          "id": "@id-python-template-cache-sow-reuse",
+          "from": "the Python Word SOW parser reads the unchanged template twice",
+          "to": "the Word SOW parser reads the unchanged template twice"
+        },
+        {
+          "id": "@id-python-template-cache-sow-regenerate",
+          "from": "a dedicated empty Python metadata cache directory",
+          "to": "a dedicated empty metadata cache directory"
+        },
+        {
+          "id": "@id-python-template-cache-sow-regenerate",
+          "from": "the Python Word SOW parser reads the template",
+          "to": "the Word SOW parser reads the template"
+        },
+        {
+          "id": "@id-python-template-cache-sow-regenerate",
+          "from": "the Python Word SOW parser reads the modified template",
+          "to": "the Word SOW parser reads the modified template"
+        }
+      ],
+      "scenarios": [
+        {
+          "id": "@id-python-template-cache-key-stable",
+          "beforeCaseSha256": [
+            "1869ee3a0cbb3c7e1b14c633e056048f272707324813aa3a38be5333139c4b2d"
+          ],
+          "afterCaseSha256": [
+            "3026152fa9603d141cdd9b0bf91440541e3a6ea5ca0db5960c1ef10462330897"
+          ],
+          "beforeTags": [
+            [
+              "@id-python-template-cache-key-stable",
+              "@planned",
+              "@profile-python-template-cache"
+            ]
+          ],
+          "afterTags": [
+            [
+              "@id-python-template-cache-key-stable",
+              "@planned",
+              "@profile-template-cache-api"
+            ]
+          ]
+        },
+        {
+          "id": "@id-python-template-cache-roundtrip",
+          "beforeCaseSha256": [
+            "eaf747624f294b2209d226b0ff503ff0b9f952318af81ac7e11e4da27305b7c5"
+          ],
+          "afterCaseSha256": [
+            "9ad89eb75438336d2570a49ae3ffb4e3f7d697e7a9326ae75f9f05977051d16f"
+          ],
+          "beforeTags": [
+            [
+              "@id-python-template-cache-roundtrip",
+              "@planned",
+              "@profile-python-template-cache"
+            ]
+          ],
+          "afterTags": [
+            [
+              "@id-python-template-cache-roundtrip",
+              "@planned",
+              "@profile-template-cache-api"
+            ]
+          ]
+        },
+        {
+          "id": "@id-python-template-cache-source-change",
+          "beforeCaseSha256": [
+            "87aafdd8a9dc7bd37f23be5ddca58199b77b9228a970c55bbfb6a0708c0b56ef"
+          ],
+          "afterCaseSha256": [
+            "7cf9420f1ab6477be24e1c4b1b8e56dbb6b3eee4958a52f0ae0a93096e7feaed"
+          ],
+          "beforeTags": [
+            [
+              "@id-python-template-cache-source-change",
+              "@planned",
+              "@profile-python-template-cache"
+            ]
+          ],
+          "afterTags": [
+            [
+              "@id-python-template-cache-source-change",
+              "@planned",
+              "@profile-template-cache-api"
+            ]
+          ]
+        },
+        {
+          "id": "@id-python-template-cache-corrupt",
+          "beforeCaseSha256": [
+            "0c5330a2910ee6488da90012171587b6866924baeb43adfd21bbe9201b639243"
+          ],
+          "afterCaseSha256": [
+            "acb41836241f5a4a2cd1166f0bb63c5412bf2a4a49bf4308ae4490acdab6165c"
+          ],
+          "beforeTags": [
+            [
+              "@id-python-template-cache-corrupt",
+              "@planned",
+              "@profile-python-template-cache"
+            ]
+          ],
+          "afterTags": [
+            [
+              "@id-python-template-cache-corrupt",
+              "@planned",
+              "@profile-template-cache-api"
+            ]
+          ]
+        },
+        {
+          "id": "@id-python-template-cache-schema-mismatch",
+          "beforeCaseSha256": [
+            "3e73b04e3739f8b55e13607068b3c98932a1dbfadeda53c3494a47218dd34c08"
+          ],
+          "afterCaseSha256": [
+            "8712b9fc93bb3443dbe259fa7232420a878012c4379e1812cc03d6491ae7a28d"
+          ],
+          "beforeTags": [
+            [
+              "@id-python-template-cache-schema-mismatch",
+              "@planned",
+              "@profile-python-template-cache"
+            ]
+          ],
+          "afterTags": [
+            [
+              "@id-python-template-cache-schema-mismatch",
+              "@planned",
+              "@profile-template-cache-api"
+            ]
+          ]
+        },
+        {
+          "id": "@id-python-template-cache-sow-reuse",
+          "beforeCaseSha256": [
+            "5850f42171c77acc729279d99e1348dcf51fa1587eb073bace6b8a0aba56d54f"
+          ],
+          "afterCaseSha256": [
+            "dd1c2387e0c615963d44ab79e5543037a19196c2c2b60d0aa9996d0d003281fe"
+          ],
+          "beforeTags": [
+            [
+              "@id-python-template-cache-sow-reuse",
+              "@planned",
+              "@profile-python-template-cache"
+            ]
+          ],
+          "afterTags": [
+            [
+              "@id-python-template-cache-sow-reuse",
+              "@planned",
+              "@profile-template-cache-api"
+            ]
+          ]
+        },
+        {
+          "id": "@id-python-template-cache-sow-regenerate",
+          "beforeCaseSha256": [
+            "e40abbc76238326552dd29f2330a2b47992638ce45f3b87d7345c9d2c17f5915"
+          ],
+          "afterCaseSha256": [
+            "62e9a6673418ddb25e6691fb12ba561d0f2ded83d246cc6aa9c6281138857755"
+          ],
+          "beforeTags": [
+            [
+              "@id-python-template-cache-sow-regenerate",
+              "@planned",
+              "@profile-python-template-cache"
+            ]
+          ],
+          "afterTags": [
+            [
+              "@id-python-template-cache-sow-regenerate",
+              "@planned",
+              "@profile-template-cache-api"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "path": "workflows/xlsx/creation.feature",
+      "beforeSha256": "bba1c6aee696e3ec9e7086c5a76f129690206915a8ad6e7596dbddef55711257",
+      "afterSha256": "a7e59080cb34d381552bbb51afff24dfb39b2a3bfad782a2096fcb2983f0171c",
+      "stepRenames": [],
+      "scenarios": []
+    },
+    {
+      "path": "workflows/xml/parsing.feature",
+      "beforeSha256": "f50e20a9ad3c776ffdc54c0cf7e9a2b13c613c375e91dfbe49ea735782bae9c2",
+      "afterSha256": "350edcdfa0dc1206f9f5165cae93ba41c12b6974ee21e71cd3329ed2a82438ff",
+      "stepRenames": [],
+      "scenarios": [
+        {
+          "id": "@id-xml-escaping-values",
+          "beforeCaseSha256": [
+            "690956dbe9b735ad90be6a992c4959067a5c31421a6d1aaaa6fad96a4f3b3a0f",
+            "a894759982b598f869a0bd62ca1d63c58217e9ccf87aba5abd50cc9c31e8b2c4"
+          ],
+          "afterCaseSha256": [
+            "690956dbe9b735ad90be6a992c4959067a5c31421a6d1aaaa6fad96a4f3b3a0f",
+            "a894759982b598f869a0bd62ca1d63c58217e9ccf87aba5abd50cc9c31e8b2c4"
+          ],
+          "beforeTags": [
+            [
+              "@id-xml-escaping-values",
+              "@planned",
+              "@profile-bun-xml-escaping"
+            ],
+            [
+              "@id-xml-escaping-values",
+              "@planned",
+              "@profile-bun-xml-escaping"
+            ]
+          ],
+          "afterTags": [
+            [
+              "@id-xml-escaping-values",
+              "@planned",
+              "@profile-xml-escaping-api"
+            ],
+            [
+              "@id-xml-escaping-values",
+              "@planned",
+              "@profile-xml-escaping-api"
+            ]
+          ]
+        },
+        {
+          "id": "@id-xml-typed-parse-error",
+          "beforeCaseSha256": [
+            "b0bc7432c82868704e4d8b0eaa459b0798179a8df9d96145bd782e188bd91dbc"
+          ],
+          "afterCaseSha256": [
+            "b0bc7432c82868704e4d8b0eaa459b0798179a8df9d96145bd782e188bd91dbc"
+          ],
+          "beforeTags": [
+            [
+              "@id-xml-typed-parse-error",
+              "@planned",
+              "@profile-bun-xml-errors"
+            ]
+          ],
+          "afterTags": [
+            [
+              "@id-xml-typed-parse-error",
+              "@planned",
+              "@profile-xml-error-api"
+            ]
+          ]
+        }
+      ]
+    }
+  ]
+}

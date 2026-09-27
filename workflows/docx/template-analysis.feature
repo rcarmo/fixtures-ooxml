@@ -7,41 +7,41 @@ Feature: Word template analysis
     analysis exposes SOW metadata from a dedicated cache. Classification accuracy
     and document rendering are outside these cases.
 
-    @id-python-word-template-analysis-sow-response
+    @profile-template-response-status-api @id-python-word-template-analysis-sow-response
     Scenario: Analyzing the generated SOW template succeeds
-      Given the Python SOW template has title, customer and project placeholders, guidance, and a Role/Hours table
-      When the Python Word template-formatting analyzer reads that saved document
+      Given the SOW template has title, customer and project placeholders, guidance, and a Role/Hours table
+      When the Word template-formatting analyzer reads that saved document
       Then its response is a dictionary without an "error" member
 
-    @id-python-word-template-analysis-placeholder-response
+    @profile-template-response-shape-api @id-python-word-template-analysis-placeholder-response
     Scenario: Analyzing a template with plain placeholders returns a dictionary
       Given a saved Word document has a Template heading, boilerplate text, "<Placeholder>", and "[TBD]"
-      When the Python Word template-formatting analyzer reads that saved document
+      When the Word template-formatting analyzer reads that saved document
       Then its response is a dictionary
 
-    @id-python-word-template-analysis-colour-response
+    @profile-template-response-shape-api @id-python-word-template-analysis-colour-response
     Scenario: Analyzing the Word/PPTX advanced-operations sample returns a dictionary
       Given a saved Word document has a project heading, blue guidance run, standard text, and a customer placeholder
-      When the Python Word template-formatting analyzer reads that saved document
+      When the Word template-formatting analyzer reads that saved document
       Then its response is a dictionary
 
-    @id-python-word-template-analysis-plain-response
+    @profile-template-response-shape-api @id-python-word-template-analysis-plain-response
     Scenario: Analyzing a plain document returns a dictionary
       Given a saved Word document has one paragraph "Simple text"
-      When the Python Word template-formatting analyzer reads that saved document
+      When the Word template-formatting analyzer reads that saved document
       Then its response is a dictionary
 
-    @id-python-office-template-analysis-response
+    @profile-template-response-status-api @id-python-office-template-analysis-response
     Scenario: Unified Word template analysis returns no error
       Given a saved Word template has a title "Template for <Customer>"
-      When the Python unified office template tool analyzes the saved document
+      When the unified office template tool analyzes the saved document
       Then its response has no "error" member
 
-    @id-python-office-template-analysis-cache
+    @profile-template-metadata-response-api @id-python-office-template-analysis-cache
     Scenario: Unified Word template analysis exposes stored then cached metadata
       Given a saved Word template has Introduction and Delivery approach headings, customer and guidance placeholders, and a Role/Count table with Architect and 1
-      And a dedicated empty Python template metadata cache is selected
-      When the Python unified office template tool analyzes the saved document twice without editing it
+      And a dedicated empty template metadata cache is selected
+      When the unified office template tool analyzes the saved document twice without editing it
       Then the first response has template metadata with cache reason "stored"
       And the second response has template metadata with cache reason "hit"
       And the second response's first template metadata table has purpose "staffing"

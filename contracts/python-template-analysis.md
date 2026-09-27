@@ -1,8 +1,10 @@
 # Word template analysis
 
-The [template analysis](../workflows/docx/template-analysis.feature), [template cache](../workflows/docx/template-cache.feature)
-requires a successful dictionary response for the SOW input and tests the
-response shape for plain and placeholder documents. The direct analyzer reads
+The [analysis feature](../workflows/docx/template-analysis.feature) separates
+response-shape, response-status and metadata-response API profiles. It requires a
+successful dictionary response for the SOW input and only a dictionary for the
+plain, placeholder and blue-guidance inputs. An error dictionary satisfies those
+three shape-only cases; no classification result is required. The direct analyzer reads
 an existing DOCX and can return content categories, table handling, formatting
 patterns and recommendations. The unified `office_template(operation="analyze")`
 path delegates to the Word analyzer and may add SOW `template_metadata`. With a
@@ -18,4 +20,7 @@ The SOW success condition is stronger than its native Python test: that test
 accepts either an absent `error` member **or** a dictionary, including an error
 dictionary. The [consumer mapping](../ledgers/consumers/python-template-analysis.json)
 pins the Python source and lists the missing assertions. These shared scenarios
-have no Python binding or execution credit.
+have no Python binding or execution credit. A stronger common analysis contract
+must specify useful output values for the supplied document and retain source
+bytes, with tests that reject plausible-looking but incorrect metadata. Those
+requirements cannot be inferred from the current shape checks.

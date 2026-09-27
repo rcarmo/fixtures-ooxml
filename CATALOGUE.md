@@ -116,14 +116,44 @@ are unchanged. The namespace and formula matrices remain single Gherkin cases
 with bounded internal combinations. No workbook mutation, calculation, XML
 canonicalisation or schema validation follows from these profiles.
 
+Comment authoring, template analysis/cache and XML escaping/error profiles now
+use operation/API names. `ledgers/comment-template-wording-migration.json`
+records 24 IDs / 25 cases from `4095fc3`; the XLSX creation change affects only
+its description. The existing commentsExtended-only policy remains separate
+from extension creation, reply-to-root resolution and filtered/threaded response
+APIs. Template response-shape, response-status and cache policies are labelled
+explicitly. JavaScript prototype/thenable policies and exact error types remain
+runtime-specific compatibility contracts.
+
+A catalogue-wide regression rejects Go/Bun/Python actor names in compiled steps
+and origin-named profile prefixes. Historical IDs, source ledgers and corpus
+provenance retain their names. This lexical guard establishes wording hygiene,
+not semantic equivalence or portable support for every API profile.
+
+## Weak-outcome review
+
+| Contract | Current assertion boundary | Requirement still missing |
+|---|---|---|
+| Plain, placeholder and blue-guidance template analysis | Any dictionary, including an error dictionary | Correct sections/placeholders/guidance/table values, no error and source-byte custody |
+| SOW and unified analysis status | No `error` member; SOW also requires a dictionary | Specific nonempty useful analysis fields; native SOW assertion is weaker than the shared success condition |
+| Comment filters | Shared case requires nonempty results with predicates | Source native `all()` checks can pass on empty lists; no execution credit until non-vacuity is asserted |
+| Comment extension authoring | Saved `commentEx` and returned paragraph ID | Relationship/content-type closure and unrelated-member preservation |
+| Cache invalidation | Exact reason and missing value; selected stored/hit results | Full hit-state semantics, cache-file/source custody and cross-process persistence |
+| Word getters and selected readback | Named in-memory values or selected reopened attributes | Complete text, property, package and rendering preservation where required |
+
+No equivalent scenario pair was retired by the wording work. Similar operations
+with different inputs, API returns, save guarantees or thread policies remain
+distinct. Stronger behavioural contracts must add failing predicates and native
+evidence; renaming an actor cannot close these gaps.
+
 Remaining work:
 
 | Family | Remaining work |
 |---|---|
 | Word value APIs | Decide which API observations need stronger common format contracts. Retain explicit nil/heading/effects compatibility policies and their missing saved-output checks. |
-| Word comments | Preserve the distinction between existing-extension edits, extension creation, root/reply resolution and filtered/threaded results. These are different operations and policies. |
+| Word comments | Validate authoring graph/custody and non-vacuous filters; reconcile native assertions against the separate extension/thread policies. |
 | Word templates | Separate useful document analysis from response-shape and metadata-cache APIs. Dictionary-only responses remain weak contracts requiring stronger observable outcomes. |
-| Spreadsheet creation | Remove incidental runtime names; retain exact fixture provenance in manifests and source mappings. |
+| Cross-consumer execution | Bind the shared contracts in each consumer and retain explicit unsupported profiles; a common catalogue alone does not establish parity. |
 
 Similar scenarios are not automatically equivalent. Native worksheet cache
 invalidation and batch-workflow invalidation differ in their receipt, destination

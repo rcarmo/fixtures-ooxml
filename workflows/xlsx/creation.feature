@@ -1,6 +1,6 @@
 @planned
 Feature: Native XLSX workbook creation and missing-cell authoring
-  Bun authors minimal native OOXML workbooks, adds worksheets safely, and extends
+  The workbook editor authors minimal native OOXML workbooks, adds worksheets safely, and extends
   supported worksheets with missing rows and cells while preserving unrelated XML.
 
   @id-xlsx-create-native-default

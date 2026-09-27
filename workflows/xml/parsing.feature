@@ -91,7 +91,7 @@ Feature: XML parsing and value inspection
       Then the namespace recorded for a:id is urn:a
       And the attribute namespace map is frozen and has a null prototype
 
-    @profile-bun-xml-escaping @id-xml-escaping-values
+    @profile-xml-escaping-api @id-xml-escaping-values
     Scenario Outline: Escape <context> content without changing its value
       Given an XML escaping value encoded as JSON <input_json>
       When the value is escaped for XML <context> content
@@ -113,7 +113,7 @@ Feature: XML parsing and value inspection
       When the value is escaped separately as text and as an attribute and both are parsed
       Then the decoded text and attribute both equal JSON "x\r\n\ty"
 
-    @profile-bun-xml-errors @id-xml-typed-parse-error
+    @profile-xml-error-api @id-xml-typed-parse-error
     Scenario: Malformed XML returns the documented error type
       Given XML values input encoded as JSON "<a></b>"
       When the XML values input is parsed

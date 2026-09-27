@@ -3282,10 +3282,10 @@
       "aliases": []
     },
     {
-      "id": "asset-bba1c6aee696e3ec9e7086c5a76f129690206915a8ad6e7596dbddef55711257",
+      "id": "asset-a7e59080cb34d381552bbb51afff24dfb39b2a3bfad782a2096fcb2983f0171c",
       "path": "workflows/xlsx/creation.feature",
-      "bytes": 2946,
-      "sha256": "bba1c6aee696e3ec9e7086c5a76f129690206915a8ad6e7596dbddef55711257",
+      "bytes": 2962,
+      "sha256": "a7e59080cb34d381552bbb51afff24dfb39b2a3bfad782a2096fcb2983f0171c",
       "role": "workflow",
       "origins": [
         {
@@ -3612,10 +3612,10 @@
       "aliases": []
     },
     {
-      "id": "asset-379916f9b9b65a0f41c9b8507841de7394e09308eff088339f48b2c7476ba0dc",
+      "id": "asset-0cacf20b5a8708cb22ff675cb7092d1e04353227f7f1e2de38dfe0ed5960033f",
       "path": "contracts/python-template-analysis.md",
-      "bytes": 1348,
-      "sha256": "379916f9b9b65a0f41c9b8507841de7394e09308eff088339f48b2c7476ba0dc",
+      "bytes": 1730,
+      "sha256": "0cacf20b5a8708cb22ff675cb7092d1e04353227f7f1e2de38dfe0ed5960033f",
       "role": "workflow-contract",
       "origins": [
         {
@@ -3747,10 +3747,10 @@
       "aliases": []
     },
     {
-      "id": "asset-e4e7e5fe6684255b775226273757df7f73f0f0af4c79903556abd95b34304245",
+      "id": "asset-61212210a8d0940f26fd912baabf60f75eb4bb0bb72237ec54c7098faaed0bea",
       "path": "contracts/python-template-cache.md",
-      "bytes": 1679,
-      "sha256": "e4e7e5fe6684255b775226273757df7f73f0f0af4c79903556abd95b34304245",
+      "bytes": 1683,
+      "sha256": "61212210a8d0940f26fd912baabf60f75eb4bb0bb72237ec54c7098faaed0bea",
       "role": "workflow-contract",
       "origins": [
         {
@@ -3852,10 +3852,10 @@
       "aliases": []
     },
     {
-      "id": "asset-f50e20a9ad3c776ffdc54c0cf7e9a2b13c613c375e91dfbe49ea735782bae9c2",
+      "id": "asset-350edcdfa0dc1206f9f5165cae93ba41c12b6974ee21e71cd3329ed2a82438ff",
       "path": "workflows/xml/parsing.feature",
-      "bytes": 6819,
-      "sha256": "f50e20a9ad3c776ffdc54c0cf7e9a2b13c613c375e91dfbe49ea735782bae9c2",
+      "bytes": 6818,
+      "sha256": "350edcdfa0dc1206f9f5165cae93ba41c12b6974ee21e71cd3329ed2a82438ff",
       "role": "workflow",
       "origins": [
         {
@@ -3902,10 +3902,10 @@
       "aliases": []
     },
     {
-      "id": "asset-fd446f3b1fe61541780dbeab8a8e4bab206beb433f197b28525af49c4ed7d489",
+      "id": "asset-bb63e95d9e548c04b66cee96c4454cc816d83a033ff17d5e2282e4e27b7b71fc",
       "path": "workflows/docx/template-analysis.feature",
-      "bytes": 2831,
-      "sha256": "fd446f3b1fe61541780dbeab8a8e4bab206beb433f197b28525af49c4ed7d489",
+      "bytes": 3002,
+      "sha256": "bb63e95d9e548c04b66cee96c4454cc816d83a033ff17d5e2282e4e27b7b71fc",
       "role": "workflow",
       "origins": [
         {
@@ -3952,10 +3952,10 @@
       "aliases": []
     },
     {
-      "id": "asset-7c1d435624140439a68e0b70801b7e0c19be4e28008dcb66d9e9c1acb33dc9e0",
+      "id": "asset-4382383b2c93681fdc1ec96c5b157bce619ac39f02250f2f7e840ff0a4234129",
       "path": "workflows/docx/comments.feature",
-      "bytes": 8174,
-      "sha256": "7c1d435624140439a68e0b70801b7e0c19be4e28008dcb66d9e9c1acb33dc9e0",
+      "bytes": 8339,
+      "sha256": "4382383b2c93681fdc1ec96c5b157bce619ac39f02250f2f7e840ff0a4234129",
       "role": "workflow",
       "origins": [
         {
@@ -3997,10 +3997,10 @@
       "aliases": []
     },
     {
-      "id": "asset-00417721863cf8b1d150360bd6e10f34256c34279be3d75c0edc48a6aca16ca3",
+      "id": "asset-4e3c7bb01b306da2969c20946aa2aa74b26b88ab6ecbd8a52ae4742d04deb624",
       "path": "contracts/python-comment-resolution.md",
-      "bytes": 2272,
-      "sha256": "00417721863cf8b1d150360bd6e10f34256c34279be3d75c0edc48a6aca16ca3",
+      "bytes": 2678,
+      "sha256": "4e3c7bb01b306da2969c20946aa2aa74b26b88ab6ecbd8a52ae4742d04deb624",
       "role": "workflow-contract",
       "origins": [
         {
@@ -4282,10 +4282,10 @@
       "aliases": []
     },
     {
-      "id": "asset-7ed0740ba8f3f12be17d6c87012468ce2374268f15ba1dd332f7ab7ff7a10009",
+      "id": "asset-2f425f013c2beec9d19f37d54154e10944e25e87ef62f29928c2fb71d9a44576",
       "path": "workflows/docx/template-cache.feature",
-      "bytes": 4133,
-      "sha256": "7ed0740ba8f3f12be17d6c87012468ce2374268f15ba1dd332f7ab7ff7a10009",
+      "bytes": 4035,
+      "sha256": "2f425f013c2beec9d19f37d54154e10944e25e87ef62f29928c2fb71d9a44576",
       "role": "workflow",
       "origins": [
         {
