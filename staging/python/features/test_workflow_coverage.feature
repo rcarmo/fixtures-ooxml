@@ -247,17 +247,6 @@ Feature: workflow coverage native behavior capture
     Then result has type dict
     And result field "success" is true
 
-  @candidate-python-workflow-coverage-ff3e87288d
-  # Native: tests/test_workflow_coverage.py::TestAuditOperations::test_word_audit_complete
-  Scenario: Native check: word audit complete [TestAuditOperations]
-    Given an isolated writable temporary directory
-    And doc.save with temp dir under "complete.docx"
-    And tools is prepared as the result of WordAdvancedTools with no arguments
-    And doc is prepared as the result of Document with no arguments
-    And path is prepared as temp dir under "complete.docx"
-    When tools.tool word audit completion using str representation of temp dir under "complete.docx"
-    Then result has type dict
-
   @candidate-python-workflow-coverage-819dbb0c61
   # Native: tests/test_workflow_coverage.py::TestAuditOperations::test_pptx_audit_clean
   Scenario: Native check: pptx audit clean [TestAuditOperations]

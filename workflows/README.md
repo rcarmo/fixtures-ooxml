@@ -9,6 +9,7 @@ Go and Python source candidates live in [staging](../staging/README.md); they ar
 - [anchor-discovery.feature](docx/anchor-discovery.feature) — 5 scenarios, 5 cases
 - [comment-content-type.feature](docx/comment-content-type.feature) — 1 scenario, 1 case
 - [comments.feature](docx/comments.feature) — 21 scenarios, 46 cases
+- [completion-audit.feature](docx/completion-audit.feature) — 3 scenarios, 4 cases
 - [creation.feature](docx/creation.feature) — 5 scenarios, 9 cases
 - [effective-formatting.feature](docx/effective-formatting.feature) — 2 scenarios, 25 cases
 - [font-size.feature](docx/font-size.feature) — 1 scenario, 1 case

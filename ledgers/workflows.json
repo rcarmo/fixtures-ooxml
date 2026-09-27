@@ -57,7 +57,8 @@
     "workflows/xlsx/structural-edits.feature",
     "workflows/xlsx/calculation-engine.feature",
     "workflows/xlsx/style-readback.feature",
-    "workflows/pptx/layout-recommendation.feature"
+    "workflows/pptx/layout-recommendation.feature",
+    "workflows/docx/completion-audit.feature"
   ],
   "executionCredit": "Only local executed assertions count; reports here do not run consumers.",
   "workflows": [
@@ -7506,6 +7507,88 @@
         "python": {
           "status": "planned",
           "evidence": "Notes collection profile binding pending; existing ordered/blank-line profile remains separate"
+        }
+      }
+    },
+    {
+      "id": "@id-docx-audit-completion-read",
+      "feature": "workflows/docx/completion-audit.feature",
+      "expandedCases": 2,
+      "factIds": [],
+      "expectedOutcomes": [
+        "the result's file equals the exact authored input path and success is true",
+        "its status is READY, score is 95, recommendation is \"Document appears complete and ready for review.\"",
+        "its summary equals {\"placeholders_found\":0,\"empty_sections\":1,\"empty_table_cells\":0,\"instruction_remnants\":0,\"pending_changes\":false}",
+        "its issues equal {\"placeholders\":[],\"empty_sections\":[\"Document Start\"],\"empty_table_cells\":[],\"instruction_remnants\":[],\"pending_track_changes\":false}",
+        "its next_tools equals [\"word_cleanup_sow\"]",
+        "the authored archive SHA-256, full bytes, every member payload and relationships remain unchanged",
+        "the sealed blank document fixture bytes remain unchanged"
+      ],
+      "consumers": {
+        "bun": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        },
+        "go": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        },
+        "python": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        }
+      }
+    },
+    {
+      "id": "@id-docx-audit-completion-placeholders",
+      "feature": "workflows/docx/completion-audit.feature",
+      "expandedCases": 1,
+      "factIds": [],
+      "expectedOutcomes": [
+        "its file equals the exact authored input path, success is true, status is NEEDS_REVIEW and score is 85",
+        "its summary equals {\"placeholders_found\":2,\"empty_sections\":1,\"empty_table_cells\":0,\"instruction_remnants\":0,\"pending_changes\":false}",
+        "its ordered placeholder issues are <Name> in Heading 1 context \"Project: <Name>\" and [TBD] in paragraph context \"Customer: [TBD]\", both located in \"Project: <Name>\"",
+        "its other issues contain only empty_sections [\"Document Start\"] with no empty_table_cells, instruction_remnants or pending_track_changes",
+        "its next_tools equals [\"word_audit_sow\",\"word_fix_split_placeholders\",\"word_patch_placeholder\"]",
+        "the authored archive SHA-256, full bytes, every member payload and relationships remain unchanged",
+        "the sealed blank document fixture bytes remain unchanged"
+      ],
+      "consumers": {
+        "bun": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        },
+        "go": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        },
+        "python": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        }
+      }
+    },
+    {
+      "id": "@id-docx-audit-completion-missing-file",
+      "feature": "workflows/docx/completion-audit.feature",
+      "expandedCases": 1,
+      "factIds": [],
+      "expectedOutcomes": [
+        "the result equals {\"error\":\"File not found: <exact absent path>\"}",
+        "no output document is created and the sealed blank fixture archive bytes remain unchanged"
+      ],
+      "consumers": {
+        "bun": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        },
+        "go": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        },
+        "python": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
         }
       }
     }

@@ -119,17 +119,6 @@ Feature: word deep coverage native behavior capture
     When tools.tool word audit completion using str representation of temp dir under "incomplete.docx"
     Then result has type dict
 
-  @candidate-python-word-deep-coverage-c24aff0acc
-  # Native: tests/test_word_deep_coverage.py::TestWordAuditCompletion::test_audit_complete_doc
-  Scenario: Native check: audit complete doc [TestWordAuditCompletion]
-    Given an isolated writable temporary directory
-    And doc.save with temp dir under "complete.docx"
-    And tools is prepared as the result of WordAdvancedTools with no arguments
-    And doc is prepared as the result of Document with no arguments
-    And path is prepared as temp dir under "complete.docx"
-    When tools.tool word audit completion using str representation of temp dir under "complete.docx"
-    Then result has type dict
-
   @candidate-python-word-deep-coverage-1f2ae44bc2
   # Native: tests/test_word_deep_coverage.py::TestWordAuditSow::test_audit_sow
   Scenario: Native check: audit sow [TestWordAuditSow]

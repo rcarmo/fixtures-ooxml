@@ -1,14 +1,16 @@
 {
   "schemaVersion": 1,
   "sourceCommit": "7b7a2fa2610c421cdde9d7b1da9125c8f98b9dd8",
-  "scope": "Four Python source-pair groups reviewed. One exact weak alias compiles once; distinct layout and titled/untitled notes variants moved to stronger planned operation-family profiles with historical identities/hashes and no execution credit; different-input audit pair remains separate.",
+  "scope": "Four Python source-pair groups reviewed. One exact weak alias compiles once; distinct layout, notes and Word audit input variants moved to stronger planned operation-family profiles, with historical identities/hashes and no execution credit.",
   "executionCredit": false,
   "retiredCandidateIds": [
     "@candidate-python-workflows-2b4937f7f0",
     "@candidate-python-high-volume-5465e20c3f",
     "@candidate-python-word-pptx-advanced-ops-895995c6d6",
     "@candidate-python-high-volume-68bcd8d447",
-    "@candidate-python-word-pptx-advanced-ops-b86a4362b4"
+    "@candidate-python-word-pptx-advanced-ops-b86a4362b4",
+    "@candidate-python-word-deep-coverage-c24aff0acc",
+    "@candidate-python-workflow-coverage-ff3e87288d"
   ],
   "groups": [
     {
@@ -125,7 +127,7 @@
       "nativeStrengtheningRequired": "Both native parameter tests must assert exact recommended and first three alternatives, scores, unchanged sealed source and missing-file refusal; mapping alone grants no credit."
     },
     {
-      "status": "weak-predicate-only",
+      "status": "merged-input-variants-into-stronger-planned-profile",
       "members": [
         {
           "path": "staging/python/features/test_word_deep_coverage.feature",
@@ -140,9 +142,40 @@
       ],
       "capturedStepSha256": "6a1ae60cadaa6b34437eee79507f07924f181d2b456723fc2f8c7eb147cd7271",
       "preconditionsEqual": false,
-      "reason": "Both audits return a dict, but source headings and bodies differ; no completion score/placeholder result equivalence is asserted by either captured pair.",
+      "reason": "Two native sources use different heading/body text and assert only a dict. Separate rows preserve both inputs under one planned audit contract requiring exact READY/95 outcome with the observed empty Document Start finding, plus placeholder/refusal and read-only custody controls; weak historical runs earn no credit.",
       "provenanceRetained": true,
-      "executionCredit": false
+      "executionCredit": false,
+      "canonicalId": "@id-docx-audit-completion-read",
+      "canonicalFeature": "workflows/docx/completion-audit.feature",
+      "canonicalStatus": "planned",
+      "historicalSourceSha256": [
+        "23b331885ce6db67cd138ae6d762645bf8ec5fb463ef202395fa9ad505cf9e93",
+        "377c32d5a4a4e16a94e6336888332b6634aa40112c097df931065bc8d2622dc2"
+      ],
+      "currentCandidateSha256": [
+        "a3c4b8a32099e70c4a7da1efc5a13efebc2d2e7ae73e0d8a5668547a46975b04",
+        "b31c1e8b4e853240ad1ee937739cfc999fc9c17d5aa2324ceb750266e0628367"
+      ],
+      "rowMappings": [
+        {
+          "sourceId": "@candidate-python-word-deep-coverage-c24aff0acc",
+          "variant": "deep",
+          "heading": "Complete Project",
+          "body": "All content is filled in properly."
+        },
+        {
+          "sourceId": "@candidate-python-workflow-coverage-ff3e87288d",
+          "variant": "workflow",
+          "heading": "Document",
+          "body": "Complete content without placeholders"
+        }
+      ],
+      "fixtureId": "fixture-b051c0c2ff43f2ab9213e19a52ccbc51217537cf3b336d54a68a91beb6670f9a",
+      "controlIds": [
+        "@id-docx-audit-completion-placeholders",
+        "@id-docx-audit-completion-missing-file"
+      ],
+      "nativeStrengtheningRequired": "Assert exact file/success/status/95 score/Document Start issue, summary/next tools and byte/member/relationship custody for both inputs; separately assert placeholder 85 score and missing-path refusal; do not grant credit until shared Gherkin binding runs."
     },
     {
       "status": "merged-exact-captured-predicate",

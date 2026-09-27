@@ -216,8 +216,12 @@ The [notes collection](workflows/pptx/notes.feature) also unites titled and
 untitled source variants with exact three-note readback, a fourth no-notes slide,
 out-of-range refusal and unchanged source bytes; its two dict-only staged blocks
 were removed. The existing reordered-relationship/blank-line notes profile
-remains distinct. Neither mapping satisfies the stronger outcomes until
-consumer tests run. The remaining Python audit pair has different inputs. The
+remains distinct. A new [Word completion audit](workflows/docx/completion-audit.feature)
+retains both different heading/body inputs as rows, requiring the observed
+READY/95 outcome with an empty Document Start finding, placeholder issues,
+missing-path refusal and read-only custody. Its two dict-only blocks were also
+removed. These mappings do not satisfy stronger outcomes until consumer tests
+and reviewed shared bindings run. The
 [functional review](ledgers/functional-equivalence.json) records twelve Go
 package lookalikes with distinct inputs, operations or outcomes; none is
 retired or credited. Original source hashes and transformed candidate hashes

@@ -14,22 +14,22 @@ native behaviour against the [canonical workflows](../workflows/README.md).
   JSON and source assertion inventory remain in Go until reviewed centrally.
 - `python/features/` retains 67 captured candidate features. The Python consumer
   retains 1,022 native declaration mappings and source evidence separately;
-  one exact weak alias shares a representative; five disjoint layout inputs
-  and two titled/untitled notes inputs occupy stronger planned canonical
-  outlines. The staged files do not participate in Python acceptance execution.
+  one exact weak alias shares a representative; five disjoint layout, two
+  titled/untitled notes and two Word completion-audit inputs occupy stronger
+  planned canonical outlines. The staged files do not participate in Python acceptance execution.
 
 The historical comparison compiled 1,552 expanded cases: 1,541 Go/Python
 candidates plus eleven former Bun planned cases. The 143 current candidate
-files compile 1,536 cases after one exact weak alias, two weak layout and two
-weak notes blocks were retired; 1,547 includes the eleven Bun cases. All five
-native declarations, five layout parameters and two notes inputs remain tracked. No source pair
+files compile 1,534 cases after one exact weak alias and six weaker layout,
+notes and audit blocks were retired; 1,545 includes the eleven Bun cases. All
+seven native declarations and their distinct input variants remain tracked. No source pair
 has the same normalised steps across Go and Python. The
 [functional equivalence review](../ledgers/functional-equivalence.json) records
 a five-row planned layout contract with exact rankings, a two-row planned
-notes collection contract with exact readback and noncreation, one exact weak
-alias, and one remaining different-input audit pair. All seven layout/notes
-inputs survive as separate example cases; their dict-only source scenarios no
-longer compile. Neither source mapping nor a stronger planned contract grants execution
+notes collection contract with exact readback/noncreation, a two-row Word audit
+contract with the observed READY/95 and empty Document Start finding, and one
+exact weak alias. All nine layout/notes/audit inputs survive as separate
+example cases; their dict-only source scenarios no longer compile. Neither source mapping nor a stronger planned contract grants execution
 credit. Matching names, text or fixtures alone cannot prove equivalent
 outcomes, refusals or preservation. The same
 [functional review](../ledgers/functional-equivalence.json) lists twelve Go
