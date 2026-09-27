@@ -47,6 +47,7 @@ Go and Python source candidates live in [staging](../staging/README.md); they ar
 ## XLSX
 
 - [cache-completeness.feature](xlsx/cache-completeness.feature) — 1 scenario, 1 case
+- [calculation-chain-lifecycle.feature](xlsx/calculation-chain-lifecycle.feature) — 1 planned scenario, 1 case
 - [calculation-engine.feature](xlsx/calculation-engine.feature) — 1 scenario, 1 case
 - [cell-style.feature](xlsx/cell-style.feature) — 3 scenarios, 28 cases
 - [cells.feature](xlsx/cells.feature) — 7 scenarios, 7 cases

@@ -60,7 +60,8 @@
     "workflows/pptx/layout-recommendation.feature",
     "workflows/docx/completion-audit.feature",
     "workflows/package/admission-limit-configuration.feature",
-    "workflows/package/data-descriptor-integrity.feature"
+    "workflows/package/data-descriptor-integrity.feature",
+    "workflows/xlsx/calculation-chain-lifecycle.feature"
   ],
   "executionCredit": "Only local executed assertions count; reports here do not run consumers.",
   "workflows": [
@@ -7654,6 +7655,36 @@
         "complete admission refuses the corrupt payload as a CRC or invalid-package failure, not as an ambiguous descriptor-shape failure",
         "no package or member payloads are delivered",
         "the caller's original archive bytes remain unchanged"
+      ],
+      "consumers": {
+        "bun": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        },
+        "go": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        },
+        "python": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        }
+      }
+    },
+    {
+      "id": "@id-xlsx-owned-calculation-chain-invalidation",
+      "feature": "workflows/xlsx/calculation-chain-lifecycle.feature",
+      "expandedCases": 1,
+      "factIds": [],
+      "expectedOutcomes": [
+        "the source package bytes remain unchanged and reopened Input!A1 is numeric 10",
+        "the reopened Calc!A1 and Calc!B1 formulas are unchanged with absent or empty cached values",
+        "a data-only read of those cells cannot return the old cached values 2 and 3 as current",
+        "the reopened Calc!C1 formula and cached value 42 remain unchanged",
+        "the workbook requests full recalculation without claiming a computed result",
+        "xl/chains/order.xml, its workbook relationship and its content-type override are absent",
+        "every destination relationship and content-type target resolves",
+        "every source member payload outside the workbook, two worksheets, workbook relationships and content types remains byte-identical"
       ],
       "consumers": {
         "bun": {

@@ -9,7 +9,7 @@ The v0.43.0 [retirement ledger](../ledgers/observed-generated-retirement.json) p
 
 ## Conditional spreadsheet input
 
-3. **Calculation chain.** Acquire an untouched Excel-authored workbook with a formula cell named by a real `xl/calcChain.xml` entry only if chain intake or preservation is required. Validate workbook relationships, content types, chain target, referenced formula, and application version. If current Excel does not emit a chain, find an older untouched workbook with custody or leave the behaviour unsupported. The deterministic Go-produced `owned-order.xlsx` candidate has a valid OPC graph for internal tests but is not an independently Excel-authored input.
+3. **Calculation chain.** The [planned owned-chain lifecycle case](../workflows/xlsx/calculation-chain-lifecycle.feature) describes a constructed, coherent package with a nonstandard chain path; it does not need an Excel-authored original to test bounded edit behaviour. Acquire an untouched Excel-authored workbook with a formula cell named by a real `xl/calcChain.xml` entry only if independent-producer chain intake or preservation is required. Validate workbook relationships, content types, chain target, referenced formula, and application version. If current Excel does not emit a chain, find an older untouched workbook with custody or leave that producer test unsupported. The deterministic Go-produced `owned-order.xlsx` candidate has a valid OPC graph for internal tests but is not an independently Excel-authored input.
 
 ## Optional producer checks
 

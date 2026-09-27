@@ -6029,6 +6029,21 @@
         }
       ],
       "aliases": []
+    },
+    {
+      "id": "asset-705365c666efd68ae2fc1ac85d86f85511cde77c8fc7644ea04b3978bb56103e",
+      "path": "workflows/xlsx/calculation-chain-lifecycle.feature",
+      "bytes": 1731,
+      "sha256": "705365c666efd68ae2fc1ac85d86f85511cde77c8fc7644ea04b3978bb56103e",
+      "role": "workflow",
+      "origins": [
+        {
+          "repository": "https://github.com/rcarmo/fixtures-ooxml",
+          "path": "workflows/xlsx/calculation-chain-lifecycle.feature",
+          "basis": "Project-owned behaviour contract or source assertion mapping"
+        }
+      ],
+      "aliases": []
     }
   ]
 }
