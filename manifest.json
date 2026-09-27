@@ -4445,6 +4445,2414 @@
         }
       ],
       "aliases": []
+    },
+    {
+      "path": "staging/go/behaviors/archive-candidates.feature",
+      "id": "asset-253dd34eac0b0413609958e753b3ebb30e9e2f6337b55786eec21218a893c270",
+      "role": "catalogue-candidate",
+      "bytes": 4122,
+      "sha256": "253dd34eac0b0413609958e753b3ebb30e9e2f6337b55786eec21218a893c270",
+      "origins": [
+        {
+          "kind": "source",
+          "repository": "https://github.com/rcarmo/go-ooxml",
+          "revision": "8b0c2cf8dd29346dafa7fafd173aa5663ee551b7",
+          "path": "docs/behaviors/archive-candidates.feature"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "path": "staging/go/behaviors/delivery-candidates.feature",
+      "id": "asset-fe498c857b5520c113fe646950a2e84ec34ceee2978fdd15928e64014190bb26",
+      "role": "catalogue-candidate",
+      "bytes": 2920,
+      "sha256": "fe498c857b5520c113fe646950a2e84ec34ceee2978fdd15928e64014190bb26",
+      "origins": [
+        {
+          "kind": "source",
+          "repository": "https://github.com/rcarmo/go-ooxml",
+          "revision": "8b0c2cf8dd29346dafa7fafd173aa5663ee551b7",
+          "path": "docs/behaviors/delivery-candidates.feature"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "path": "staging/go/behaviors/formula-candidates.feature",
+      "id": "asset-0074f6f012a934379337f2d9056ed78f99452cd6c96901c6df1b2cbb8a067772",
+      "role": "catalogue-candidate",
+      "bytes": 3758,
+      "sha256": "0074f6f012a934379337f2d9056ed78f99452cd6c96901c6df1b2cbb8a067772",
+      "origins": [
+        {
+          "kind": "source",
+          "repository": "https://github.com/rcarmo/go-ooxml",
+          "revision": "8b0c2cf8dd29346dafa7fafd173aa5663ee551b7",
+          "path": "docs/behaviors/formula-candidates.feature"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "path": "staging/go/behaviors/graph-candidates.feature",
+      "id": "asset-84ccddbf74e7c761e0f2726396d274aa4964ed300aa766566fc15a0b60fdd86d",
+      "role": "catalogue-candidate",
+      "bytes": 4259,
+      "sha256": "84ccddbf74e7c761e0f2726396d274aa4964ed300aa766566fc15a0b60fdd86d",
+      "origins": [
+        {
+          "kind": "source",
+          "repository": "https://github.com/rcarmo/go-ooxml",
+          "revision": "8b0c2cf8dd29346dafa7fafd173aa5663ee551b7",
+          "path": "docs/behaviors/graph-candidates.feature"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "path": "staging/go/behaviors/ooxml-model-candidates.feature",
+      "id": "asset-7f9f2e55159dc67e2cf72c0b66466cc33b0d6b84342e8925e4fb78491a0ae9ae",
+      "role": "catalogue-candidate",
+      "bytes": 5622,
+      "sha256": "7f9f2e55159dc67e2cf72c0b66466cc33b0d6b84342e8925e4fb78491a0ae9ae",
+      "origins": [
+        {
+          "kind": "source",
+          "repository": "https://github.com/rcarmo/go-ooxml",
+          "revision": "8b0c2cf8dd29346dafa7fafd173aa5663ee551b7",
+          "path": "docs/behaviors/ooxml-model-candidates.feature"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "path": "staging/go/behaviors/package-model-candidates.feature",
+      "id": "asset-65d21a0dbbf719fa5e9f9b38151e155cfe1eb799c447638f70870631e4085fe9",
+      "role": "catalogue-candidate",
+      "bytes": 4734,
+      "sha256": "65d21a0dbbf719fa5e9f9b38151e155cfe1eb799c447638f70870631e4085fe9",
+      "origins": [
+        {
+          "kind": "source",
+          "repository": "https://github.com/rcarmo/go-ooxml",
+          "revision": "8b0c2cf8dd29346dafa7fafd173aa5663ee551b7",
+          "path": "docs/behaviors/package-model-candidates.feature"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "path": "staging/go/behaviors/presentation-api-candidates.feature",
+      "id": "asset-ac4ea513e0ffabc9612ad0659bf0ea6ea46dc2b6bc6ee0ed321404150b119ac2",
+      "role": "catalogue-candidate",
+      "bytes": 7576,
+      "sha256": "ac4ea513e0ffabc9612ad0659bf0ea6ea46dc2b6bc6ee0ed321404150b119ac2",
+      "origins": [
+        {
+          "kind": "source",
+          "repository": "https://github.com/rcarmo/go-ooxml",
+          "revision": "8b0c2cf8dd29346dafa7fafd173aa5663ee551b7",
+          "path": "docs/behaviors/presentation-api-candidates.feature"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "path": "staging/go/behaviors/presentation-fixtures-candidates.feature",
+      "id": "asset-435b25ed29d96f7b0a1f3eef6d96c99858da871245fe87c83f3dfe3ead10d930",
+      "role": "catalogue-candidate",
+      "bytes": 5228,
+      "sha256": "435b25ed29d96f7b0a1f3eef6d96c99858da871245fe87c83f3dfe3ead10d930",
+      "origins": [
+        {
+          "kind": "source",
+          "repository": "https://github.com/rcarmo/go-ooxml",
+          "revision": "8b0c2cf8dd29346dafa7fafd173aa5663ee551b7",
+          "path": "docs/behaviors/presentation-fixtures-candidates.feature"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "path": "staging/go/behaviors/presentation-fuzz-candidates.feature",
+      "id": "asset-b23abf12f8ca9e5ccec39337c7874d70b5fd2d3aae839288bf5bc68a0ec6edc8",
+      "role": "catalogue-candidate",
+      "bytes": 1871,
+      "sha256": "b23abf12f8ca9e5ccec39337c7874d70b5fd2d3aae839288bf5bc68a0ec6edc8",
+      "origins": [
+        {
+          "kind": "source",
+          "repository": "https://github.com/rcarmo/go-ooxml",
+          "revision": "8b0c2cf8dd29346dafa7fafd173aa5663ee551b7",
+          "path": "docs/behaviors/presentation-fuzz-candidates.feature"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "path": "staging/go/behaviors/presentation-measurement-candidates.feature",
+      "id": "asset-70f451375f67363959660bb91176f415f4b3f28d0acb460585662313f2efbaa5",
+      "role": "catalogue-candidate",
+      "bytes": 3061,
+      "sha256": "70f451375f67363959660bb91176f415f4b3f28d0acb460585662313f2efbaa5",
+      "origins": [
+        {
+          "kind": "source",
+          "repository": "https://github.com/rcarmo/go-ooxml",
+          "revision": "8b0c2cf8dd29346dafa7fafd173aa5663ee551b7",
+          "path": "docs/behaviors/presentation-measurement-candidates.feature"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "path": "staging/go/behaviors/presentation-notes-candidates.feature",
+      "id": "asset-572617096b14e5753d5dcc4a8e38b154ecaa3f40eada322b8585be0cca075779",
+      "role": "catalogue-candidate",
+      "bytes": 3782,
+      "sha256": "572617096b14e5753d5dcc4a8e38b154ecaa3f40eada322b8585be0cca075779",
+      "origins": [
+        {
+          "kind": "source",
+          "repository": "https://github.com/rcarmo/go-ooxml",
+          "revision": "8b0c2cf8dd29346dafa7fafd173aa5663ee551b7",
+          "path": "docs/behaviors/presentation-notes-candidates.feature"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "path": "staging/go/behaviors/presentation-parameters-candidates.feature",
+      "id": "asset-6ef3b53c8334a3e9803fb670929ae5ca7b3ad55d67f16484b0efaa59460e95b4",
+      "role": "catalogue-candidate",
+      "bytes": 4163,
+      "sha256": "6ef3b53c8334a3e9803fb670929ae5ca7b3ad55d67f16484b0efaa59460e95b4",
+      "origins": [
+        {
+          "kind": "source",
+          "repository": "https://github.com/rcarmo/go-ooxml",
+          "revision": "8b0c2cf8dd29346dafa7fafd173aa5663ee551b7",
+          "path": "docs/behaviors/presentation-parameters-candidates.feature"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "path": "staging/go/behaviors/spreadsheet-cache-candidates.feature",
+      "id": "asset-da4c1fb4602518714abe942a139fd501ce7b7f6b5a51544e1c801eca312b407c",
+      "role": "catalogue-candidate",
+      "bytes": 4948,
+      "sha256": "da4c1fb4602518714abe942a139fd501ce7b7f6b5a51544e1c801eca312b407c",
+      "origins": [
+        {
+          "kind": "source",
+          "repository": "https://github.com/rcarmo/go-ooxml",
+          "revision": "8b0c2cf8dd29346dafa7fafd173aa5663ee551b7",
+          "path": "docs/behaviors/spreadsheet-cache-candidates.feature"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "path": "staging/go/behaviors/spreadsheet-fuzz-candidates.feature",
+      "id": "asset-8f8b90da1ebc261d5c72300f1579841474ede9ac47e64b349922d7df3827a066",
+      "role": "catalogue-candidate",
+      "bytes": 2966,
+      "sha256": "8f8b90da1ebc261d5c72300f1579841474ede9ac47e64b349922d7df3827a066",
+      "origins": [
+        {
+          "kind": "source",
+          "repository": "https://github.com/rcarmo/go-ooxml",
+          "revision": "8b0c2cf8dd29346dafa7fafd173aa5663ee551b7",
+          "path": "docs/behaviors/spreadsheet-fuzz-candidates.feature"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "path": "staging/go/behaviors/spreadsheet-measurement-candidates.feature",
+      "id": "asset-94330f25e22af642b3f66b811564fab5d45b9e6d6b8d38d3ff0c9ea3751e4981",
+      "role": "catalogue-candidate",
+      "bytes": 3076,
+      "sha256": "94330f25e22af642b3f66b811564fab5d45b9e6d6b8d38d3ff0c9ea3751e4981",
+      "origins": [
+        {
+          "kind": "source",
+          "repository": "https://github.com/rcarmo/go-ooxml",
+          "revision": "8b0c2cf8dd29346dafa7fafd173aa5663ee551b7",
+          "path": "docs/behaviors/spreadsheet-measurement-candidates.feature"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "path": "staging/go/behaviors/spreadsheet-parameters-candidates.feature",
+      "id": "asset-e80b109d2538d79faf468aee99e258041ab1afb8d83412659efa2999f854318e",
+      "role": "catalogue-candidate",
+      "bytes": 5837,
+      "sha256": "e80b109d2538d79faf468aee99e258041ab1afb8d83412659efa2999f854318e",
+      "origins": [
+        {
+          "kind": "source",
+          "repository": "https://github.com/rcarmo/go-ooxml",
+          "revision": "8b0c2cf8dd29346dafa7fafd173aa5663ee551b7",
+          "path": "docs/behaviors/spreadsheet-parameters-candidates.feature"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "path": "staging/go/behaviors/spreadsheet-targets-candidates.feature",
+      "id": "asset-bab92cdc298cfca8efe5f2ff4f99fab5a1a344b22579a2a80886223fee8c9afe",
+      "role": "catalogue-candidate",
+      "bytes": 2672,
+      "sha256": "bab92cdc298cfca8efe5f2ff4f99fab5a1a344b22579a2a80886223fee8c9afe",
+      "origins": [
+        {
+          "kind": "source",
+          "repository": "https://github.com/rcarmo/go-ooxml",
+          "revision": "8b0c2cf8dd29346dafa7fafd173aa5663ee551b7",
+          "path": "docs/behaviors/spreadsheet-targets-candidates.feature"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "path": "staging/go/behaviors/test-custody-candidates.feature",
+      "id": "asset-3ce74a616ec2fbd5e1ec181aeaa9b759eab77df84081acfe32f53ff7a82ab100",
+      "role": "catalogue-candidate",
+      "bytes": 4487,
+      "sha256": "3ce74a616ec2fbd5e1ec181aeaa9b759eab77df84081acfe32f53ff7a82ab100",
+      "origins": [
+        {
+          "kind": "source",
+          "repository": "https://github.com/rcarmo/go-ooxml",
+          "revision": "8b0c2cf8dd29346dafa7fafd173aa5663ee551b7",
+          "path": "docs/behaviors/test-custody-candidates.feature"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "path": "staging/go/behaviors/utilities-candidates.feature",
+      "id": "asset-936aa85aa4645775e7438bafffaa4e467c3636aa084797cb6b16c255c17de16b",
+      "role": "catalogue-candidate",
+      "bytes": 4791,
+      "sha256": "936aa85aa4645775e7438bafffaa4e467c3636aa084797cb6b16c255c17de16b",
+      "origins": [
+        {
+          "kind": "source",
+          "repository": "https://github.com/rcarmo/go-ooxml",
+          "revision": "8b0c2cf8dd29346dafa7fafd173aa5663ee551b7",
+          "path": "docs/behaviors/utilities-candidates.feature"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "path": "staging/go/behaviors/wml-model-candidates.feature",
+      "id": "asset-c5215661abd6d344d2e58637f62f1d4d3b58cccfcc70edb23342453c530f16f1",
+      "role": "catalogue-candidate",
+      "bytes": 9035,
+      "sha256": "c5215661abd6d344d2e58637f62f1d4d3b58cccfcc70edb23342453c530f16f1",
+      "origins": [
+        {
+          "kind": "source",
+          "repository": "https://github.com/rcarmo/go-ooxml",
+          "revision": "8b0c2cf8dd29346dafa7fafd173aa5663ee551b7",
+          "path": "docs/behaviors/wml-model-candidates.feature"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "path": "staging/go/behaviors/xml-candidates.feature",
+      "id": "asset-08597959d4e974e122fc9fff6151a7f6059790632a86f15cb77ecdeb23cd8180",
+      "role": "catalogue-candidate",
+      "bytes": 4379,
+      "sha256": "08597959d4e974e122fc9fff6151a7f6059790632a86f15cb77ecdeb23cd8180",
+      "origins": [
+        {
+          "kind": "source",
+          "repository": "https://github.com/rcarmo/go-ooxml",
+          "revision": "8b0c2cf8dd29346dafa7fafd173aa5663ee551b7",
+          "path": "docs/behaviors/xml-candidates.feature"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "path": "staging/go/features/external/oracle.feature",
+      "id": "asset-27dd0228b0c3cd0c6d2873896627d764c8537ac1fc40d6d0f705d5f397f032fe",
+      "role": "catalogue-candidate",
+      "bytes": 804,
+      "sha256": "27dd0228b0c3cd0c6d2873896627d764c8537ac1fc40d6d0f705d5f397f032fe",
+      "origins": [
+        {
+          "kind": "source",
+          "repository": "https://github.com/rcarmo/go-ooxml",
+          "revision": "8b0c2cf8dd29346dafa7fafd173aa5663ee551b7",
+          "path": "features/external/oracle.feature"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "path": "staging/go/features/implemented/document/bounded-edit.feature",
+      "id": "asset-b86ba78e225e05e023718ef544caf451c231fe6625af96f84011239dba908cbf",
+      "role": "catalogue-candidate",
+      "bytes": 1122,
+      "sha256": "b86ba78e225e05e023718ef544caf451c231fe6625af96f84011239dba908cbf",
+      "origins": [
+        {
+          "kind": "source",
+          "repository": "https://github.com/rcarmo/go-ooxml",
+          "revision": "8b0c2cf8dd29346dafa7fafd173aa5663ee551b7",
+          "path": "features/implemented/document/bounded-edit.feature"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "path": "staging/go/features/implemented/document/comment-mime-preservation.feature",
+      "id": "asset-96cc3933ab47f7a5a9caae478662f51e0be8fcd5b76c6dcce0a7d00a17896f7f",
+      "role": "catalogue-candidate",
+      "bytes": 659,
+      "sha256": "96cc3933ab47f7a5a9caae478662f51e0be8fcd5b76c6dcce0a7d00a17896f7f",
+      "origins": [
+        {
+          "kind": "source",
+          "repository": "https://github.com/rcarmo/go-ooxml",
+          "revision": "8b0c2cf8dd29346dafa7fafd173aa5663ee551b7",
+          "path": "features/implemented/document/comment-mime-preservation.feature"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "path": "staging/go/features/implemented/document/replace-all.feature",
+      "id": "asset-d3875bc07dbc5cba78dcfd9db9b4a81842074a31da4632e431abb4bef6f62245",
+      "role": "catalogue-candidate",
+      "bytes": 1044,
+      "sha256": "d3875bc07dbc5cba78dcfd9db9b4a81842074a31da4632e431abb4bef6f62245",
+      "origins": [
+        {
+          "kind": "source",
+          "repository": "https://github.com/rcarmo/go-ooxml",
+          "revision": "8b0c2cf8dd29346dafa7fafd173aa5663ee551b7",
+          "path": "features/implemented/document/replace-all.feature"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "path": "staging/go/features/implemented/document/run-boundary.feature",
+      "id": "asset-b489faef0abb0e15d29d9f1ff93a680284be5da853d4a31985ebd965d4dfe3fa",
+      "role": "catalogue-candidate",
+      "bytes": 846,
+      "sha256": "b489faef0abb0e15d29d9f1ff93a680284be5da853d4a31985ebd965d4dfe3fa",
+      "origins": [
+        {
+          "kind": "source",
+          "repository": "https://github.com/rcarmo/go-ooxml",
+          "revision": "8b0c2cf8dd29346dafa7fafd173aa5663ee551b7",
+          "path": "features/implemented/document/run-boundary.feature"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "path": "staging/go/features/implemented/document/search-boundaries.feature",
+      "id": "asset-b0037cb4034372cab39dc8de7c07119cc058ec4b42aeb1217801d4615d1fe52b",
+      "role": "catalogue-candidate",
+      "bytes": 671,
+      "sha256": "b0037cb4034372cab39dc8de7c07119cc058ec4b42aeb1217801d4615d1fe52b",
+      "origins": [
+        {
+          "kind": "source",
+          "repository": "https://github.com/rcarmo/go-ooxml",
+          "revision": "8b0c2cf8dd29346dafa7fafd173aa5663ee551b7",
+          "path": "features/implemented/document/search-boundaries.feature"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "path": "staging/go/features/implemented/document/search-policy.feature",
+      "id": "asset-c9c4ba02eae286ef9656876d2f4c713b74736ee5e964635ed8418bb58e8a2f26",
+      "role": "catalogue-candidate",
+      "bytes": 1267,
+      "sha256": "c9c4ba02eae286ef9656876d2f4c713b74736ee5e964635ed8418bb58e8a2f26",
+      "origins": [
+        {
+          "kind": "source",
+          "repository": "https://github.com/rcarmo/go-ooxml",
+          "revision": "8b0c2cf8dd29346dafa7fafd173aa5663ee551b7",
+          "path": "features/implemented/document/search-policy.feature"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "path": "staging/go/features/implemented/document/search-scope.feature",
+      "id": "asset-ab5e24677312265bb7144f7be2ee42a23f245b03b643b5cc7b24ff8967b2796c",
+      "role": "catalogue-candidate",
+      "bytes": 1052,
+      "sha256": "ab5e24677312265bb7144f7be2ee42a23f245b03b643b5cc7b24ff8967b2796c",
+      "origins": [
+        {
+          "kind": "source",
+          "repository": "https://github.com/rcarmo/go-ooxml",
+          "revision": "8b0c2cf8dd29346dafa7fafd173aa5663ee551b7",
+          "path": "features/implemented/document/search-scope.feature"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "path": "staging/go/features/implemented/document/span-batch.feature",
+      "id": "asset-c3dd988d3cd6b4cdb383f9cb5b06259d053f7937321390ac8fcafe852dd91f6e",
+      "role": "catalogue-candidate",
+      "bytes": 1111,
+      "sha256": "c3dd988d3cd6b4cdb383f9cb5b06259d053f7937321390ac8fcafe852dd91f6e",
+      "origins": [
+        {
+          "kind": "source",
+          "repository": "https://github.com/rcarmo/go-ooxml",
+          "revision": "8b0c2cf8dd29346dafa7fafd173aa5663ee551b7",
+          "path": "features/implemented/document/span-batch.feature"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "path": "staging/go/features/implemented/document/span-guards.feature",
+      "id": "asset-2add37a0922f58c15c2517bae544b84c551ccc7f94eb011248531f869fa1f29a",
+      "role": "catalogue-candidate",
+      "bytes": 774,
+      "sha256": "2add37a0922f58c15c2517bae544b84c551ccc7f94eb011248531f869fa1f29a",
+      "origins": [
+        {
+          "kind": "source",
+          "repository": "https://github.com/rcarmo/go-ooxml",
+          "revision": "8b0c2cf8dd29346dafa7fafd173aa5663ee551b7",
+          "path": "features/implemented/document/span-guards.feature"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "path": "staging/go/features/implemented/document/span-replace.feature",
+      "id": "asset-4f647ac34bd88ef0cbd728988b01d9b2188bb2fb3930218b2bd98c41f99a1c99",
+      "role": "catalogue-candidate",
+      "bytes": 1500,
+      "sha256": "4f647ac34bd88ef0cbd728988b01d9b2188bb2fb3930218b2bd98c41f99a1c99",
+      "origins": [
+        {
+          "kind": "source",
+          "repository": "https://github.com/rcarmo/go-ooxml",
+          "revision": "8b0c2cf8dd29346dafa7fafd173aa5663ee551b7",
+          "path": "features/implemented/document/span-replace.feature"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "path": "staging/go/features/implemented/document/spans.feature",
+      "id": "asset-504631e9c3b34dff825891833b5844357ae53aa667fa54d584c0475ea661296e",
+      "role": "catalogue-candidate",
+      "bytes": 1202,
+      "sha256": "504631e9c3b34dff825891833b5844357ae53aa667fa54d584c0475ea661296e",
+      "origins": [
+        {
+          "kind": "source",
+          "repository": "https://github.com/rcarmo/go-ooxml",
+          "revision": "8b0c2cf8dd29346dafa7fafd173aa5663ee551b7",
+          "path": "features/implemented/document/spans.feature"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "path": "staging/go/features/implemented/document/stories.feature",
+      "id": "asset-2db339e95b9e8a6a43fdca27ff0e041af644852dd95f6d714cf9880e7df0d5f8",
+      "role": "catalogue-candidate",
+      "bytes": 951,
+      "sha256": "2db339e95b9e8a6a43fdca27ff0e041af644852dd95f6d714cf9880e7df0d5f8",
+      "origins": [
+        {
+          "kind": "source",
+          "repository": "https://github.com/rcarmo/go-ooxml",
+          "revision": "8b0c2cf8dd29346dafa7fafd173aa5663ee551b7",
+          "path": "features/implemented/document/stories.feature"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "path": "staging/go/features/implemented/document/whitespace.feature",
+      "id": "asset-4bb98aa0c3fcf3e30357aea35aa80e3f67beab3c5ae361274b798f8226bd5f8b",
+      "role": "catalogue-candidate",
+      "bytes": 855,
+      "sha256": "4bb98aa0c3fcf3e30357aea35aa80e3f67beab3c5ae361274b798f8226bd5f8b",
+      "origins": [
+        {
+          "kind": "source",
+          "repository": "https://github.com/rcarmo/go-ooxml",
+          "revision": "8b0c2cf8dd29346dafa7fafd173aa5663ee551b7",
+          "path": "features/implemented/document/whitespace.feature"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "path": "staging/go/features/implemented/package/attributes.feature",
+      "id": "asset-779fbd744e9feec0b11f848f68a509c6c1501741f51ec0062c4b9efcdf800497",
+      "role": "catalogue-candidate",
+      "bytes": 769,
+      "sha256": "779fbd744e9feec0b11f848f68a509c6c1501741f51ec0062c4b9efcdf800497",
+      "origins": [
+        {
+          "kind": "source",
+          "repository": "https://github.com/rcarmo/go-ooxml",
+          "revision": "8b0c2cf8dd29346dafa7fafd173aa5663ee551b7",
+          "path": "features/implemented/package/attributes.feature"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "path": "staging/go/features/implemented/package/baseline.feature",
+      "id": "asset-c6d8918be8f9cc272c9052939bd26a84e00893a09de273c111eb137b5b75d71f",
+      "role": "catalogue-candidate",
+      "bytes": 885,
+      "sha256": "c6d8918be8f9cc272c9052939bd26a84e00893a09de273c111eb137b5b75d71f",
+      "origins": [
+        {
+          "kind": "source",
+          "repository": "https://github.com/rcarmo/go-ooxml",
+          "revision": "8b0c2cf8dd29346dafa7fafd173aa5663ee551b7",
+          "path": "features/implemented/package/baseline.feature"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "path": "staging/go/features/implemented/package/graph-delete.feature",
+      "id": "asset-15a79627fc328b7d8e55a0e171461e4b7e4c043095118c34ce4a732619cca8c4",
+      "role": "catalogue-candidate",
+      "bytes": 1133,
+      "sha256": "15a79627fc328b7d8e55a0e171461e4b7e4c043095118c34ce4a732619cca8c4",
+      "origins": [
+        {
+          "kind": "source",
+          "repository": "https://github.com/rcarmo/go-ooxml",
+          "revision": "8b0c2cf8dd29346dafa7fafd173aa5663ee551b7",
+          "path": "features/implemented/package/graph-delete.feature"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "path": "staging/go/features/implemented/package/graph-edit.feature",
+      "id": "asset-394dd4a2d700f40a1d3b876fa34abaf1c8653074d286c2e8146a848c400df884",
+      "role": "catalogue-candidate",
+      "bytes": 1434,
+      "sha256": "394dd4a2d700f40a1d3b876fa34abaf1c8653074d286c2e8146a848c400df884",
+      "origins": [
+        {
+          "kind": "source",
+          "repository": "https://github.com/rcarmo/go-ooxml",
+          "revision": "8b0c2cf8dd29346dafa7fafd173aa5663ee551b7",
+          "path": "features/implemented/package/graph-edit.feature"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "path": "staging/go/features/implemented/package/graph-target-form.feature",
+      "id": "asset-c61acb9a53e5b14c78a11d65b78c964ea79c51e0106031ee550fc2fc2546fe1a",
+      "role": "catalogue-candidate",
+      "bytes": 598,
+      "sha256": "c61acb9a53e5b14c78a11d65b78c964ea79c51e0106031ee550fc2fc2546fe1a",
+      "origins": [
+        {
+          "kind": "source",
+          "repository": "https://github.com/rcarmo/go-ooxml",
+          "revision": "8b0c2cf8dd29346dafa7fafd173aa5663ee551b7",
+          "path": "features/implemented/package/graph-target-form.feature"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "path": "staging/go/features/implemented/package/graph.feature",
+      "id": "asset-d9ce4ce49d0a36b20ce4e90d7fef2f29030b2120482d9acf8cb47dc0745e75a8",
+      "role": "catalogue-candidate",
+      "bytes": 1000,
+      "sha256": "d9ce4ce49d0a36b20ce4e90d7fef2f29030b2120482d9acf8cb47dc0745e75a8",
+      "origins": [
+        {
+          "kind": "source",
+          "repository": "https://github.com/rcarmo/go-ooxml",
+          "revision": "8b0c2cf8dd29346dafa7fafd173aa5663ee551b7",
+          "path": "features/implemented/package/graph.feature"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "path": "staging/go/features/implemented/package/io-safety.feature",
+      "id": "asset-8c3bb504a84f81b08a2e809d50597185d2194ae728408055bbd381505c0d714f",
+      "role": "catalogue-candidate",
+      "bytes": 1109,
+      "sha256": "8c3bb504a84f81b08a2e809d50597185d2194ae728408055bbd381505c0d714f",
+      "origins": [
+        {
+          "kind": "source",
+          "repository": "https://github.com/rcarmo/go-ooxml",
+          "revision": "8b0c2cf8dd29346dafa7fafd173aa5663ee551b7",
+          "path": "features/implemented/package/io-safety.feature"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "path": "staging/go/features/implemented/package/limits.feature",
+      "id": "asset-91c20510c3019ae3a15a0a7f8b252f860b72b9204ad4169f53ae6c174202b9ba",
+      "role": "catalogue-candidate",
+      "bytes": 718,
+      "sha256": "91c20510c3019ae3a15a0a7f8b252f860b72b9204ad4169f53ae6c174202b9ba",
+      "origins": [
+        {
+          "kind": "source",
+          "repository": "https://github.com/rcarmo/go-ooxml",
+          "revision": "8b0c2cf8dd29346dafa7fafd173aa5663ee551b7",
+          "path": "features/implemented/package/limits.feature"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "path": "staging/go/features/implemented/package/office-link-namespaces.feature",
+      "id": "asset-d2e3aca80e6d14d683558347739487dae960985fda26754ca17a3e54290dfc90",
+      "role": "catalogue-candidate",
+      "bytes": 1353,
+      "sha256": "d2e3aca80e6d14d683558347739487dae960985fda26754ca17a3e54290dfc90",
+      "origins": [
+        {
+          "kind": "source",
+          "repository": "https://github.com/rcarmo/go-ooxml",
+          "revision": "8b0c2cf8dd29346dafa7fafd173aa5663ee551b7",
+          "path": "features/implemented/package/office-link-namespaces.feature"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "path": "staging/go/features/implemented/package/preservation.feature",
+      "id": "asset-474446ce9e1420c0ce2576f412ce333990cec6429d92b44b2e4aa99e211e80c6",
+      "role": "catalogue-candidate",
+      "bytes": 1042,
+      "sha256": "474446ce9e1420c0ce2576f412ce333990cec6429d92b44b2e4aa99e211e80c6",
+      "origins": [
+        {
+          "kind": "source",
+          "repository": "https://github.com/rcarmo/go-ooxml",
+          "revision": "8b0c2cf8dd29346dafa7fafd173aa5663ee551b7",
+          "path": "features/implemented/package/preservation.feature"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "path": "staging/go/features/implemented/package/receipts.feature",
+      "id": "asset-f057d93547630d43d657a37f6463c43ac07ddd99c7267229ff59201cabb48510",
+      "role": "catalogue-candidate",
+      "bytes": 838,
+      "sha256": "f057d93547630d43d657a37f6463c43ac07ddd99c7267229ff59201cabb48510",
+      "origins": [
+        {
+          "kind": "source",
+          "repository": "https://github.com/rcarmo/go-ooxml",
+          "revision": "8b0c2cf8dd29346dafa7fafd173aa5663ee551b7",
+          "path": "features/implemented/package/receipts.feature"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "path": "staging/go/features/implemented/package/structure.feature",
+      "id": "asset-6a626d07ce95f8d330125ff201b433f50c75a959520f1e375e4916c214403e93",
+      "role": "catalogue-candidate",
+      "bytes": 1026,
+      "sha256": "6a626d07ce95f8d330125ff201b433f50c75a959520f1e375e4916c214403e93",
+      "origins": [
+        {
+          "kind": "source",
+          "repository": "https://github.com/rcarmo/go-ooxml",
+          "revision": "8b0c2cf8dd29346dafa7fafd173aa5663ee551b7",
+          "path": "features/implemented/package/structure.feature"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "path": "staging/go/features/implemented/package/xml-boundary.feature",
+      "id": "asset-f3ce5bbade1bc82aa89e17cf448922d2fee4b188933ec62bc33de00de102c65c",
+      "role": "catalogue-candidate",
+      "bytes": 601,
+      "sha256": "f3ce5bbade1bc82aa89e17cf448922d2fee4b188933ec62bc33de00de102c65c",
+      "origins": [
+        {
+          "kind": "source",
+          "repository": "https://github.com/rcarmo/go-ooxml",
+          "revision": "8b0c2cf8dd29346dafa7fafd173aa5663ee551b7",
+          "path": "features/implemented/package/xml-boundary.feature"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "path": "staging/go/features/implemented/package/xml-conformance.feature",
+      "id": "asset-a22dad0297460205a19d850488ee9e986b6b99d40ca1511f101b73cffdb9eb04",
+      "role": "catalogue-candidate",
+      "bytes": 919,
+      "sha256": "a22dad0297460205a19d850488ee9e986b6b99d40ca1511f101b73cffdb9eb04",
+      "origins": [
+        {
+          "kind": "source",
+          "repository": "https://github.com/rcarmo/go-ooxml",
+          "revision": "8b0c2cf8dd29346dafa7fafd173aa5663ee551b7",
+          "path": "features/implemented/package/xml-conformance.feature"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "path": "staging/go/features/implemented/package/xml-insert.feature",
+      "id": "asset-67d6f4ca439fa821955e7d98a4c63b8b26ed4565379e0012891d9b8337538b1d",
+      "role": "catalogue-candidate",
+      "bytes": 1425,
+      "sha256": "67d6f4ca439fa821955e7d98a4c63b8b26ed4565379e0012891d9b8337538b1d",
+      "origins": [
+        {
+          "kind": "source",
+          "repository": "https://github.com/rcarmo/go-ooxml",
+          "revision": "8b0c2cf8dd29346dafa7fafd173aa5663ee551b7",
+          "path": "features/implemented/package/xml-insert.feature"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "path": "staging/go/features/implemented/package/xml-normalization.feature",
+      "id": "asset-d7607e1abc47ded042778aa7d059181b4bf137c32db5aa0c848eec8afd1cd7b3",
+      "role": "catalogue-candidate",
+      "bytes": 1371,
+      "sha256": "d7607e1abc47ded042778aa7d059181b4bf137c32db5aa0c848eec8afd1cd7b3",
+      "origins": [
+        {
+          "kind": "source",
+          "repository": "https://github.com/rcarmo/go-ooxml",
+          "revision": "8b0c2cf8dd29346dafa7fafd173aa5663ee551b7",
+          "path": "features/implemented/package/xml-normalization.feature"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "path": "staging/go/features/implemented/package/xml-subtree.feature",
+      "id": "asset-de7189f5b67fa7b8ee1246d1dcd8cbe3fa499b2f3f4601d4f5430b410be37222",
+      "role": "catalogue-candidate",
+      "bytes": 759,
+      "sha256": "de7189f5b67fa7b8ee1246d1dcd8cbe3fa499b2f3f4601d4f5430b410be37222",
+      "origins": [
+        {
+          "kind": "source",
+          "repository": "https://github.com/rcarmo/go-ooxml",
+          "revision": "8b0c2cf8dd29346dafa7fafd173aa5663ee551b7",
+          "path": "features/implemented/package/xml-subtree.feature"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "path": "staging/go/features/implemented/package/xml.feature",
+      "id": "asset-14d423967963a78754eb1c967c379ef2173cf8739650a7c6eb73b86bb2e2260a",
+      "role": "catalogue-candidate",
+      "bytes": 1129,
+      "sha256": "14d423967963a78754eb1c967c379ef2173cf8739650a7c6eb73b86bb2e2260a",
+      "origins": [
+        {
+          "kind": "source",
+          "repository": "https://github.com/rcarmo/go-ooxml",
+          "revision": "8b0c2cf8dd29346dafa7fafd173aa5663ee551b7",
+          "path": "features/implemented/package/xml.feature"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "path": "staging/go/features/implemented/package/zip64.feature",
+      "id": "asset-6f2cdf3a2277795293afdb5ff742389576b4d467acedc9ec4e3b0821e27f4ccd",
+      "role": "catalogue-candidate",
+      "bytes": 1175,
+      "sha256": "6f2cdf3a2277795293afdb5ff742389576b4d467acedc9ec4e3b0821e27f4ccd",
+      "origins": [
+        {
+          "kind": "source",
+          "repository": "https://github.com/rcarmo/go-ooxml",
+          "revision": "8b0c2cf8dd29346dafa7fafd173aa5663ee551b7",
+          "path": "features/implemented/package/zip64.feature"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "path": "staging/go/features/implemented/presentation/bounded-edit.feature",
+      "id": "asset-5f3a20982f9c210dc1191fb6edc2de4b22267e27216925f5442698799c7f4c9e",
+      "role": "catalogue-candidate",
+      "bytes": 996,
+      "sha256": "5f3a20982f9c210dc1191fb6edc2de4b22267e27216925f5442698799c7f4c9e",
+      "origins": [
+        {
+          "kind": "source",
+          "repository": "https://github.com/rcarmo/go-ooxml",
+          "revision": "8b0c2cf8dd29346dafa7fafd173aa5663ee551b7",
+          "path": "features/implemented/presentation/bounded-edit.feature"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "path": "staging/go/features/implemented/presentation/notes-edit.feature",
+      "id": "asset-3ea6d8cee0cff0dd485bb34036d0a261f12fb071ce0b47b09b3ece88ad7d2aad",
+      "role": "catalogue-candidate",
+      "bytes": 2166,
+      "sha256": "3ea6d8cee0cff0dd485bb34036d0a261f12fb071ce0b47b09b3ece88ad7d2aad",
+      "origins": [
+        {
+          "kind": "source",
+          "repository": "https://github.com/rcarmo/go-ooxml",
+          "revision": "8b0c2cf8dd29346dafa7fafd173aa5663ee551b7",
+          "path": "features/implemented/presentation/notes-edit.feature"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "path": "staging/go/features/implemented/presentation/notes-multiline.feature",
+      "id": "asset-83f6b24b042d2c0eae2f6749c7af772b02a0d1730b19f7bd0400511fd19f358c",
+      "role": "catalogue-candidate",
+      "bytes": 1658,
+      "sha256": "83f6b24b042d2c0eae2f6749c7af772b02a0d1730b19f7bd0400511fd19f358c",
+      "origins": [
+        {
+          "kind": "source",
+          "repository": "https://github.com/rcarmo/go-ooxml",
+          "revision": "8b0c2cf8dd29346dafa7fafd173aa5663ee551b7",
+          "path": "features/implemented/presentation/notes-multiline.feature"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "path": "staging/go/features/implemented/presentation/notes-template-choices.feature",
+      "id": "asset-968313da0d2a291444e02f8713f69292786cee548e0dedeb9181dcfad6e137c8",
+      "role": "catalogue-candidate",
+      "bytes": 739,
+      "sha256": "968313da0d2a291444e02f8713f69292786cee548e0dedeb9181dcfad6e137c8",
+      "origins": [
+        {
+          "kind": "source",
+          "repository": "https://github.com/rcarmo/go-ooxml",
+          "revision": "8b0c2cf8dd29346dafa7fafd173aa5663ee551b7",
+          "path": "features/implemented/presentation/notes-template-choices.feature"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "path": "staging/go/features/implemented/spreadsheet/allowed-values.feature",
+      "id": "asset-82763fab46ead32c5c3609e9dbc5a4d8bedd80e1e69bf0771c9f59641f41c962",
+      "role": "catalogue-candidate",
+      "bytes": 1412,
+      "sha256": "82763fab46ead32c5c3609e9dbc5a4d8bedd80e1e69bf0771c9f59641f41c962",
+      "origins": [
+        {
+          "kind": "source",
+          "repository": "https://github.com/rcarmo/go-ooxml",
+          "revision": "8b0c2cf8dd29346dafa7fafd173aa5663ee551b7",
+          "path": "features/implemented/spreadsheet/allowed-values.feature"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "path": "staging/go/features/implemented/spreadsheet/bounded-edit.feature",
+      "id": "asset-420f54a8d7f20db6aeba098cb61a3722a5fb901599ce0748ed0c000531169fdb",
+      "role": "catalogue-candidate",
+      "bytes": 1054,
+      "sha256": "420f54a8d7f20db6aeba098cb61a3722a5fb901599ce0748ed0c000531169fdb",
+      "origins": [
+        {
+          "kind": "source",
+          "repository": "https://github.com/rcarmo/go-ooxml",
+          "revision": "8b0c2cf8dd29346dafa7fafd173aa5663ee551b7",
+          "path": "features/implemented/spreadsheet/bounded-edit.feature"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "path": "staging/go/features/implemented/spreadsheet/cache-invalidation.feature",
+      "id": "asset-bef04f44afe2c8f653145d6f7de9fde89bb674019dd8c873a0c8275132747a47",
+      "role": "catalogue-candidate",
+      "bytes": 1754,
+      "sha256": "bef04f44afe2c8f653145d6f7de9fde89bb674019dd8c873a0c8275132747a47",
+      "origins": [
+        {
+          "kind": "source",
+          "repository": "https://github.com/rcarmo/go-ooxml",
+          "revision": "8b0c2cf8dd29346dafa7fafd173aa5663ee551b7",
+          "path": "features/implemented/spreadsheet/cache-invalidation.feature"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "path": "staging/go/features/implemented/spreadsheet/calc-chain.feature",
+      "id": "asset-718b57e2c01714dfb70421ec8ce5b8448776da064131c6f85370af728b91d4e4",
+      "role": "catalogue-candidate",
+      "bytes": 1836,
+      "sha256": "718b57e2c01714dfb70421ec8ce5b8448776da064131c6f85370af728b91d4e4",
+      "origins": [
+        {
+          "kind": "source",
+          "repository": "https://github.com/rcarmo/go-ooxml",
+          "revision": "8b0c2cf8dd29346dafa7fafd173aa5663ee551b7",
+          "path": "features/implemented/spreadsheet/calc-chain.feature"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "path": "staging/go/features/implemented/spreadsheet/dependency-structure.feature",
+      "id": "asset-7c0e7730e34593fc49867a0a8c4ed9292e79b372e86b2e02ae4225d94d2da609",
+      "role": "catalogue-candidate",
+      "bytes": 617,
+      "sha256": "7c0e7730e34593fc49867a0a8c4ed9292e79b372e86b2e02ae4225d94d2da609",
+      "origins": [
+        {
+          "kind": "source",
+          "repository": "https://github.com/rcarmo/go-ooxml",
+          "revision": "8b0c2cf8dd29346dafa7fafd173aa5663ee551b7",
+          "path": "features/implemented/spreadsheet/dependency-structure.feature"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "path": "staging/go/features/implemented/spreadsheet/formula-analysis.feature",
+      "id": "asset-bf7acc12daabe07708c14f7bae6f3cb4078df4c977256e7ba08e98287a04b262",
+      "role": "catalogue-candidate",
+      "bytes": 1237,
+      "sha256": "bf7acc12daabe07708c14f7bae6f3cb4078df4c977256e7ba08e98287a04b262",
+      "origins": [
+        {
+          "kind": "source",
+          "repository": "https://github.com/rcarmo/go-ooxml",
+          "revision": "8b0c2cf8dd29346dafa7fafd173aa5663ee551b7",
+          "path": "features/implemented/spreadsheet/formula-analysis.feature"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "path": "staging/go/features/implemented/spreadsheet/formula-remap.feature",
+      "id": "asset-daee0e2ccd59c69abb0979cfda00b6a203183bbfc7c31bee0733fe021128f47d",
+      "role": "catalogue-candidate",
+      "bytes": 1235,
+      "sha256": "daee0e2ccd59c69abb0979cfda00b6a203183bbfc7c31bee0733fe021128f47d",
+      "origins": [
+        {
+          "kind": "source",
+          "repository": "https://github.com/rcarmo/go-ooxml",
+          "revision": "8b0c2cf8dd29346dafa7fafd173aa5663ee551b7",
+          "path": "features/implemented/spreadsheet/formula-remap.feature"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "path": "staging/go/features/implemented/spreadsheet/formula-tokens.feature",
+      "id": "asset-c85553c0d4244f33b64c25a8114d2db6ce11454dad65f32992cf7c5fc3f3a997",
+      "role": "catalogue-candidate",
+      "bytes": 736,
+      "sha256": "c85553c0d4244f33b64c25a8114d2db6ce11454dad65f32992cf7c5fc3f3a997",
+      "origins": [
+        {
+          "kind": "source",
+          "repository": "https://github.com/rcarmo/go-ooxml",
+          "revision": "8b0c2cf8dd29346dafa7fafd173aa5663ee551b7",
+          "path": "features/implemented/spreadsheet/formula-tokens.feature"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "path": "staging/go/features/implemented/spreadsheet/image-replace.feature",
+      "id": "asset-e9d91b445f158d04dfa5c455d0dd6978c699a64a7fa681bb84255ff88bbe451d",
+      "role": "catalogue-candidate",
+      "bytes": 1065,
+      "sha256": "e9d91b445f158d04dfa5c455d0dd6978c699a64a7fa681bb84255ff88bbe451d",
+      "origins": [
+        {
+          "kind": "source",
+          "repository": "https://github.com/rcarmo/go-ooxml",
+          "revision": "8b0c2cf8dd29346dafa7fafd173aa5663ee551b7",
+          "path": "features/implemented/spreadsheet/image-replace.feature"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "path": "staging/go/features/implemented/spreadsheet/style-index.feature",
+      "id": "asset-70b5c0dd83fedb75b3d8a2f9b04b9cfcc596335945f52820039b199d54563435",
+      "role": "catalogue-candidate",
+      "bytes": 966,
+      "sha256": "70b5c0dd83fedb75b3d8a2f9b04b9cfcc596335945f52820039b199d54563435",
+      "origins": [
+        {
+          "kind": "source",
+          "repository": "https://github.com/rcarmo/go-ooxml",
+          "revision": "8b0c2cf8dd29346dafa7fafd173aa5663ee551b7",
+          "path": "features/implemented/spreadsheet/style-index.feature"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "path": "staging/go/features/implemented/spreadsheet/validation-axis-ranges.feature",
+      "id": "asset-bf21ed3d8e560657daaf9b83244d4b584ff294f475ba97e1afaf3cf4665e72cc",
+      "role": "catalogue-candidate",
+      "bytes": 1075,
+      "sha256": "bf21ed3d8e560657daaf9b83244d4b584ff294f475ba97e1afaf3cf4665e72cc",
+      "origins": [
+        {
+          "kind": "source",
+          "repository": "https://github.com/rcarmo/go-ooxml",
+          "revision": "8b0c2cf8dd29346dafa7fafd173aa5663ee551b7",
+          "path": "features/implemented/spreadsheet/validation-axis-ranges.feature"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "path": "staging/go/features/implemented/spreadsheet/validation-lexical-limits.feature",
+      "id": "asset-0b239befeddb77adbd4133b360d8a5d18176fc2a8fcbb38a12cb09bc28b55b42",
+      "role": "catalogue-candidate",
+      "bytes": 1132,
+      "sha256": "0b239befeddb77adbd4133b360d8a5d18176fc2a8fcbb38a12cb09bc28b55b42",
+      "origins": [
+        {
+          "kind": "source",
+          "repository": "https://github.com/rcarmo/go-ooxml",
+          "revision": "8b0c2cf8dd29346dafa7fafd173aa5663ee551b7",
+          "path": "features/implemented/spreadsheet/validation-lexical-limits.feature"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "path": "staging/go/features/implemented/spreadsheet/validation-strings.feature",
+      "id": "asset-67b1e68df71c3a1134b741627dce5f1a2bc4547bbb09bf8ae028990944e9196a",
+      "role": "catalogue-candidate",
+      "bytes": 1082,
+      "sha256": "67b1e68df71c3a1134b741627dce5f1a2bc4547bbb09bf8ae028990944e9196a",
+      "origins": [
+        {
+          "kind": "source",
+          "repository": "https://github.com/rcarmo/go-ooxml",
+          "revision": "8b0c2cf8dd29346dafa7fafd173aa5663ee551b7",
+          "path": "features/implemented/spreadsheet/validation-strings.feature"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "path": "staging/go/features/planned/document.feature",
+      "id": "asset-b48d15c8ee74cadb1a403640da68e8f2e80a1042f53345aad91970b1dc4e0e26",
+      "role": "catalogue-candidate",
+      "bytes": 1994,
+      "sha256": "b48d15c8ee74cadb1a403640da68e8f2e80a1042f53345aad91970b1dc4e0e26",
+      "origins": [
+        {
+          "kind": "source",
+          "repository": "https://github.com/rcarmo/go-ooxml",
+          "revision": "8b0c2cf8dd29346dafa7fafd173aa5663ee551b7",
+          "path": "features/planned/document.feature"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "path": "staging/go/features/planned/oracle-contract.feature",
+      "id": "asset-dfa9b87a30cb69ba3b2c579cbc95b3ffe4a49219a012a3afefd4d89bb94b07f3",
+      "role": "catalogue-candidate",
+      "bytes": 518,
+      "sha256": "dfa9b87a30cb69ba3b2c579cbc95b3ffe4a49219a012a3afefd4d89bb94b07f3",
+      "origins": [
+        {
+          "kind": "source",
+          "repository": "https://github.com/rcarmo/go-ooxml",
+          "revision": "8b0c2cf8dd29346dafa7fafd173aa5663ee551b7",
+          "path": "features/planned/oracle-contract.feature"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "path": "staging/go/features/planned/package.feature",
+      "id": "asset-6525789013024e23fa015abade9d61a5ccdb0c9ae4744875d1c1093babaf3b00",
+      "role": "catalogue-candidate",
+      "bytes": 1762,
+      "sha256": "6525789013024e23fa015abade9d61a5ccdb0c9ae4744875d1c1093babaf3b00",
+      "origins": [
+        {
+          "kind": "source",
+          "repository": "https://github.com/rcarmo/go-ooxml",
+          "revision": "8b0c2cf8dd29346dafa7fafd173aa5663ee551b7",
+          "path": "features/planned/package.feature"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "path": "staging/go/features/planned/presentation.feature",
+      "id": "asset-c0376245d3bc7092f080a2efa90e126e9ebe88f93c8254a2ba037c8edeb4b8a6",
+      "role": "catalogue-candidate",
+      "bytes": 1683,
+      "sha256": "c0376245d3bc7092f080a2efa90e126e9ebe88f93c8254a2ba037c8edeb4b8a6",
+      "origins": [
+        {
+          "kind": "source",
+          "repository": "https://github.com/rcarmo/go-ooxml",
+          "revision": "8b0c2cf8dd29346dafa7fafd173aa5663ee551b7",
+          "path": "features/planned/presentation.feature"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "path": "staging/go/features/planned/spreadsheet.feature",
+      "id": "asset-e16ff842b2e9c299cdea0c96baf4f8b7743efba007d333f381fcc5bc4912508f",
+      "role": "catalogue-candidate",
+      "bytes": 2245,
+      "sha256": "e16ff842b2e9c299cdea0c96baf4f8b7743efba007d333f381fcc5bc4912508f",
+      "origins": [
+        {
+          "kind": "source",
+          "repository": "https://github.com/rcarmo/go-ooxml",
+          "revision": "8b0c2cf8dd29346dafa7fafd173aa5663ee551b7",
+          "path": "features/planned/spreadsheet.feature"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "path": "staging/python/features/test_acceptance_ledger.feature",
+      "id": "asset-d3a803799da58b3ac6b499b7fa00ce94be3049bedfa5e157b11679450b9a6e0b",
+      "role": "catalogue-candidate",
+      "bytes": 10711,
+      "sha256": "d3a803799da58b3ac6b499b7fa00ce94be3049bedfa5e157b11679450b9a6e0b",
+      "origins": [
+        {
+          "kind": "source",
+          "repository": "https://github.com/rcarmo/python-office-mcp-server",
+          "revision": "0c5de7a4ce69c13a06e215e9233954bf2df805d5",
+          "path": "docs/catalogue-staging/python-native/features/test_acceptance_ledger.feature"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "path": "staging/python/features/test_advanced_edge_cases.feature",
+      "id": "asset-49a099fb823c9bd4ec66d480ae170d2d34ff5f040a6022a43c59b1b0f3ad8147",
+      "role": "catalogue-candidate",
+      "bytes": 12625,
+      "sha256": "49a099fb823c9bd4ec66d480ae170d2d34ff5f040a6022a43c59b1b0f3ad8147",
+      "origins": [
+        {
+          "kind": "source",
+          "repository": "https://github.com/rcarmo/python-office-mcp-server",
+          "revision": "0c5de7a4ce69c13a06e215e9233954bf2df805d5",
+          "path": "docs/catalogue-staging/python-native/features/test_advanced_edge_cases.feature"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "path": "staging/python/features/test_aioumcp_validation.feature",
+      "id": "asset-834cf8db33b5548ed1b805bd820282cff8fc4af75d81ec0b1c07a76a4b040d5b",
+      "role": "catalogue-candidate",
+      "bytes": 13313,
+      "sha256": "834cf8db33b5548ed1b805bd820282cff8fc4af75d81ec0b1c07a76a4b040d5b",
+      "origins": [
+        {
+          "kind": "source",
+          "repository": "https://github.com/rcarmo/python-office-mcp-server",
+          "revision": "0c5de7a4ce69c13a06e215e9233954bf2df805d5",
+          "path": "docs/catalogue-staging/python-native/features/test_aioumcp_validation.feature"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "path": "staging/python/features/test_azure_pricing_tools.feature",
+      "id": "asset-06ce8fd03de6d120a5ec46ac5b35dcdea89c31e3a1d00341261ff6de4e38c5df",
+      "role": "catalogue-candidate",
+      "bytes": 3449,
+      "sha256": "06ce8fd03de6d120a5ec46ac5b35dcdea89c31e3a1d00341261ff6de4e38c5df",
+      "origins": [
+        {
+          "kind": "source",
+          "repository": "https://github.com/rcarmo/python-office-mcp-server",
+          "revision": "0c5de7a4ce69c13a06e215e9233954bf2df805d5",
+          "path": "docs/catalogue-staging/python-native/features/test_azure_pricing_tools.feature"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "path": "staging/python/features/test_bugfix_round2.feature",
+      "id": "asset-b8084b882b67e009073baf66166570f6fc1d6cc991c4916112ace188c51d8307",
+      "role": "catalogue-candidate",
+      "bytes": 22568,
+      "sha256": "b8084b882b67e009073baf66166570f6fc1d6cc991c4916112ace188c51d8307",
+      "origins": [
+        {
+          "kind": "source",
+          "repository": "https://github.com/rcarmo/python-office-mcp-server",
+          "revision": "0c5de7a4ce69c13a06e215e9233954bf2df805d5",
+          "path": "docs/catalogue-staging/python-native/features/test_bugfix_round2.feature"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "path": "staging/python/features/test_comment_tools_e2e.feature",
+      "id": "asset-11755ee4f93d6d93e8a631fbb1bcd7fc4b496f131a53b80a720c095f4e2d4b0d",
+      "role": "catalogue-candidate",
+      "bytes": 6170,
+      "sha256": "11755ee4f93d6d93e8a631fbb1bcd7fc4b496f131a53b80a720c095f4e2d4b0d",
+      "origins": [
+        {
+          "kind": "source",
+          "repository": "https://github.com/rcarmo/python-office-mcp-server",
+          "revision": "0c5de7a4ce69c13a06e215e9233954bf2df805d5",
+          "path": "docs/catalogue-staging/python-native/features/test_comment_tools_e2e.feature"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "path": "staging/python/features/test_comprehensive_paths.feature",
+      "id": "asset-0ca22733fa44ba0e50117e5a68661bcc240da2ad5488a55d463f6d6f30b140f7",
+      "role": "catalogue-candidate",
+      "bytes": 19576,
+      "sha256": "0ca22733fa44ba0e50117e5a68661bcc240da2ad5488a55d463f6d6f30b140f7",
+      "origins": [
+        {
+          "kind": "source",
+          "repository": "https://github.com/rcarmo/python-office-mcp-server",
+          "revision": "0c5de7a4ce69c13a06e215e9233954bf2df805d5",
+          "path": "docs/catalogue-staging/python-native/features/test_comprehensive_paths.feature"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "path": "staging/python/features/test_coverage_boost.feature",
+      "id": "asset-f70359697cf37c6bba1e86a5cb44bbdefd03accf346370e4d5851c06709024e9",
+      "role": "catalogue-candidate",
+      "bytes": 19324,
+      "sha256": "f70359697cf37c6bba1e86a5cb44bbdefd03accf346370e4d5851c06709024e9",
+      "origins": [
+        {
+          "kind": "source",
+          "repository": "https://github.com/rcarmo/python-office-mcp-server",
+          "revision": "0c5de7a4ce69c13a06e215e9233954bf2df805d5",
+          "path": "docs/catalogue-staging/python-native/features/test_coverage_boost.feature"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "path": "staging/python/features/test_edge_cases.feature",
+      "id": "asset-492240bfd25b2298c8b482edb5abd669a55b64f6e28274f85e0f78508b70303a",
+      "role": "catalogue-candidate",
+      "bytes": 11445,
+      "sha256": "492240bfd25b2298c8b482edb5abd669a55b64f6e28274f85e0f78508b70303a",
+      "origins": [
+        {
+          "kind": "source",
+          "repository": "https://github.com/rcarmo/python-office-mcp-server",
+          "revision": "0c5de7a4ce69c13a06e215e9233954bf2df805d5",
+          "path": "docs/catalogue-staging/python-native/features/test_edge_cases.feature"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "path": "staging/python/features/test_eighty_percent.feature",
+      "id": "asset-d4cc96edbffea25f7ea8ef52f2172a23fd60e60c239bc08fbeccac2fc5f50ade",
+      "role": "catalogue-candidate",
+      "bytes": 17418,
+      "sha256": "d4cc96edbffea25f7ea8ef52f2172a23fd60e60c239bc08fbeccac2fc5f50ade",
+      "origins": [
+        {
+          "kind": "source",
+          "repository": "https://github.com/rcarmo/python-office-mcp-server",
+          "revision": "0c5de7a4ce69c13a06e215e9233954bf2df805d5",
+          "path": "docs/catalogue-staging/python-native/features/test_eighty_percent.feature"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "path": "staging/python/features/test_error_paths.feature",
+      "id": "asset-e8c58c17857751492812327722b385002dcd5587cd932b1892c41ca1de735945",
+      "role": "catalogue-candidate",
+      "bytes": 14680,
+      "sha256": "e8c58c17857751492812327722b385002dcd5587cd932b1892c41ca1de735945",
+      "origins": [
+        {
+          "kind": "source",
+          "repository": "https://github.com/rcarmo/python-office-mcp-server",
+          "revision": "0c5de7a4ce69c13a06e215e9233954bf2df805d5",
+          "path": "docs/catalogue-staging/python-native/features/test_error_paths.feature"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "path": "staging/python/features/test_excel_advanced_tools.feature",
+      "id": "asset-5d26317bb5c3191a4d9308f6b46d1c27fb8b24592996663606c5f9eeb3371ecb",
+      "role": "catalogue-candidate",
+      "bytes": 56945,
+      "sha256": "5d26317bb5c3191a4d9308f6b46d1c27fb8b24592996663606c5f9eeb3371ecb",
+      "origins": [
+        {
+          "kind": "source",
+          "repository": "https://github.com/rcarmo/python-office-mcp-server",
+          "revision": "0c5de7a4ce69c13a06e215e9233954bf2df805d5",
+          "path": "docs/catalogue-staging/python-native/features/test_excel_advanced_tools.feature"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "path": "staging/python/features/test_excel_charts.feature",
+      "id": "asset-f7bc9725d3924d119dfa6d34e6c812d4506fa97badb36c6b5b77887656f4ba79",
+      "role": "catalogue-candidate",
+      "bytes": 875,
+      "sha256": "f7bc9725d3924d119dfa6d34e6c812d4506fa97badb36c6b5b77887656f4ba79",
+      "origins": [
+        {
+          "kind": "source",
+          "repository": "https://github.com/rcarmo/python-office-mcp-server",
+          "revision": "0c5de7a4ce69c13a06e215e9233954bf2df805d5",
+          "path": "docs/catalogue-staging/python-native/features/test_excel_charts.feature"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "path": "staging/python/features/test_excel_tools.feature",
+      "id": "asset-f700b99154a6bb73aaf0ff5d9c1ccf37724aa2471ba7e208094e458d82a1506b",
+      "role": "catalogue-candidate",
+      "bytes": 8930,
+      "sha256": "f700b99154a6bb73aaf0ff5d9c1ccf37724aa2471ba7e208094e458d82a1506b",
+      "origins": [
+        {
+          "kind": "source",
+          "repository": "https://github.com/rcarmo/python-office-mcp-server",
+          "revision": "0c5de7a4ce69c13a06e215e9233954bf2df805d5",
+          "path": "docs/catalogue-staging/python-native/features/test_excel_tools.feature"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "path": "staging/python/features/test_extended_ops.feature",
+      "id": "asset-571696c7e4650484ba715efeb4cf69f9c89534f476bffaf5071120345df02de7",
+      "role": "catalogue-candidate",
+      "bytes": 19534,
+      "sha256": "571696c7e4650484ba715efeb4cf69f9c89534f476bffaf5071120345df02de7",
+      "origins": [
+        {
+          "kind": "source",
+          "repository": "https://github.com/rcarmo/python-office-mcp-server",
+          "revision": "0c5de7a4ce69c13a06e215e9233954bf2df805d5",
+          "path": "docs/catalogue-staging/python-native/features/test_extended_ops.feature"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "path": "staging/python/features/test_final_coverage.feature",
+      "id": "asset-1edf3e862d89281ade98bcc921793fc52100907cf4abfc9da7b707cf13c030dd",
+      "role": "catalogue-candidate",
+      "bytes": 17209,
+      "sha256": "1edf3e862d89281ade98bcc921793fc52100907cf4abfc9da7b707cf13c030dd",
+      "origins": [
+        {
+          "kind": "source",
+          "repository": "https://github.com/rcarmo/python-office-mcp-server",
+          "revision": "0c5de7a4ce69c13a06e215e9233954bf2df805d5",
+          "path": "docs/catalogue-staging/python-native/features/test_final_coverage.feature"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "path": "staging/python/features/test_final_push.feature",
+      "id": "asset-9996b71a56f95d0c8192b382ad5206961616ab2d4005869cd2a2e9ef90e12ec6",
+      "role": "catalogue-candidate",
+      "bytes": 19798,
+      "sha256": "9996b71a56f95d0c8192b382ad5206961616ab2d4005869cd2a2e9ef90e12ec6",
+      "origins": [
+        {
+          "kind": "source",
+          "repository": "https://github.com/rcarmo/python-office-mcp-server",
+          "revision": "0c5de7a4ce69c13a06e215e9233954bf2df805d5",
+          "path": "docs/catalogue-staging/python-native/features/test_final_push.feature"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "path": "staging/python/features/test_fixture_asset_resolution.feature",
+      "id": "asset-e5668b83c8ed2f157ee079e7e5b92377aa8eba6e6dde1a7976e71f4e747428e2",
+      "role": "catalogue-candidate",
+      "bytes": 4833,
+      "sha256": "e5668b83c8ed2f157ee079e7e5b92377aa8eba6e6dde1a7976e71f4e747428e2",
+      "origins": [
+        {
+          "kind": "source",
+          "repository": "https://github.com/rcarmo/python-office-mcp-server",
+          "revision": "0c5de7a4ce69c13a06e215e9233954bf2df805d5",
+          "path": "docs/catalogue-staging/python-native/features/test_fixture_asset_resolution.feature"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "path": "staging/python/features/test_fixture_files_not_encrypted.feature",
+      "id": "asset-2692ae0c623f9c9b523a60f1d3206bdd1f1eafdfbfe8c84d2d433720e1a272f0",
+      "role": "catalogue-candidate",
+      "bytes": 8382,
+      "sha256": "2692ae0c623f9c9b523a60f1d3206bdd1f1eafdfbfe8c84d2d433720e1a272f0",
+      "origins": [
+        {
+          "kind": "source",
+          "repository": "https://github.com/rcarmo/python-office-mcp-server",
+          "revision": "0c5de7a4ce69c13a06e215e9233954bf2df805d5",
+          "path": "docs/catalogue-staging/python-native/features/test_fixture_files_not_encrypted.feature"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "path": "staging/python/features/test_fixture_source_integrity.feature",
+      "id": "asset-181917bd18b9735edbe71c7e2b45df4c1bb3f100fa8b420df0d68f1db88fa247",
+      "role": "catalogue-candidate",
+      "bytes": 5512,
+      "sha256": "181917bd18b9735edbe71c7e2b45df4c1bb3f100fa8b420df0d68f1db88fa247",
+      "origins": [
+        {
+          "kind": "source",
+          "repository": "https://github.com/rcarmo/python-office-mcp-server",
+          "revision": "0c5de7a4ce69c13a06e215e9233954bf2df805d5",
+          "path": "docs/catalogue-staging/python-native/features/test_fixture_source_integrity.feature"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "path": "staging/python/features/test_high_volume.feature",
+      "id": "asset-f3425a3273202dc2f58ef554ddf30c79f9fb58d40349bfa56c31eb06d6769c2f",
+      "role": "catalogue-candidate",
+      "bytes": 27192,
+      "sha256": "f3425a3273202dc2f58ef554ddf30c79f9fb58d40349bfa56c31eb06d6769c2f",
+      "origins": [
+        {
+          "kind": "source",
+          "repository": "https://github.com/rcarmo/python-office-mcp-server",
+          "revision": "0c5de7a4ce69c13a06e215e9233954bf2df805d5",
+          "path": "docs/catalogue-staging/python-native/features/test_high_volume.feature"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "path": "staging/python/features/test_image_insertion.feature",
+      "id": "asset-a16dde254d8ce2c5a0ad7c4b749076bcad4bd8ebd818c37c3bf0d6828f1a963b",
+      "role": "catalogue-candidate",
+      "bytes": 22984,
+      "sha256": "a16dde254d8ce2c5a0ad7c4b749076bcad4bd8ebd818c37c3bf0d6828f1a963b",
+      "origins": [
+        {
+          "kind": "source",
+          "repository": "https://github.com/rcarmo/python-office-mcp-server",
+          "revision": "0c5de7a4ce69c13a06e215e9233954bf2df805d5",
+          "path": "docs/catalogue-staging/python-native/features/test_image_insertion.feature"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "path": "staging/python/features/test_libreoffice_oracle.feature",
+      "id": "asset-ce2a9e74f9f603764ce3a07ce11dffb7f9d0bc3f9b9f7653ee4cc8f45a7640fe",
+      "role": "catalogue-candidate",
+      "bytes": 2274,
+      "sha256": "ce2a9e74f9f603764ce3a07ce11dffb7f9d0bc3f9b9f7653ee4cc8f45a7640fe",
+      "origins": [
+        {
+          "kind": "source",
+          "repository": "https://github.com/rcarmo/python-office-mcp-server",
+          "revision": "0c5de7a4ce69c13a06e215e9233954bf2df805d5",
+          "path": "docs/catalogue-staging/python-native/features/test_libreoffice_oracle.feature"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "path": "staging/python/features/test_metadata_cache.feature",
+      "id": "asset-400fbb4f16b54dbdccc91f1fca87e9e292338b2469add75ee2e72ad67a112215",
+      "role": "catalogue-candidate",
+      "bytes": 10133,
+      "sha256": "400fbb4f16b54dbdccc91f1fca87e9e292338b2469add75ee2e72ad67a112215",
+      "origins": [
+        {
+          "kind": "source",
+          "repository": "https://github.com/rcarmo/python-office-mcp-server",
+          "revision": "0c5de7a4ce69c13a06e215e9233954bf2df805d5",
+          "path": "docs/catalogue-staging/python-native/features/test_metadata_cache.feature"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "path": "staging/python/features/test_more_coverage.feature",
+      "id": "asset-3fdd4151f545881265e25f1bce4b731f5a406f879a0386d4929f79ee5c958e88",
+      "role": "catalogue-candidate",
+      "bytes": 17206,
+      "sha256": "3fdd4151f545881265e25f1bce4b731f5a406f879a0386d4929f79ee5c958e88",
+      "origins": [
+        {
+          "kind": "source",
+          "repository": "https://github.com/rcarmo/python-office-mcp-server",
+          "revision": "0c5de7a4ce69c13a06e215e9233954bf2df805d5",
+          "path": "docs/catalogue-staging/python-native/features/test_more_coverage.feature"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "path": "staging/python/features/test_mutation_contract_policy.feature",
+      "id": "asset-108df2949064df7bc2bb164b320bce547cf8cfb0fa09a8e36dee0caa2ef578e4",
+      "role": "catalogue-candidate",
+      "bytes": 2533,
+      "sha256": "108df2949064df7bc2bb164b320bce547cf8cfb0fa09a8e36dee0caa2ef578e4",
+      "origins": [
+        {
+          "kind": "source",
+          "repository": "https://github.com/rcarmo/python-office-mcp-server",
+          "revision": "0c5de7a4ce69c13a06e215e9233954bf2df805d5",
+          "path": "docs/catalogue-staging/python-native/features/test_mutation_contract_policy.feature"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "path": "staging/python/features/test_mutation_diagnostics.feature",
+      "id": "asset-396c2ab36de5094a21a495e11faed2f1ffd50463b1954a7ab8933be85f0ee9ed",
+      "role": "catalogue-candidate",
+      "bytes": 4669,
+      "sha256": "396c2ab36de5094a21a495e11faed2f1ffd50463b1954a7ab8933be85f0ee9ed",
+      "origins": [
+        {
+          "kind": "source",
+          "repository": "https://github.com/rcarmo/python-office-mcp-server",
+          "revision": "0c5de7a4ce69c13a06e215e9233954bf2df805d5",
+          "path": "docs/catalogue-staging/python-native/features/test_mutation_diagnostics.feature"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "path": "staging/python/features/test_mutation_faults.feature",
+      "id": "asset-d6f4dbc470073bb1f401e972a7d35050226254534b9931f64e499ab064263de6",
+      "role": "catalogue-candidate",
+      "bytes": 5829,
+      "sha256": "d6f4dbc470073bb1f401e972a7d35050226254534b9931f64e499ab064263de6",
+      "origins": [
+        {
+          "kind": "source",
+          "repository": "https://github.com/rcarmo/python-office-mcp-server",
+          "revision": "0c5de7a4ce69c13a06e215e9233954bf2df805d5",
+          "path": "docs/catalogue-staging/python-native/features/test_mutation_faults.feature"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "path": "staging/python/features/test_mutation_modes.feature",
+      "id": "asset-bb4d06658417bc0da307f9833a23b317a6f75d35a7dc448cc14624331ad6903f",
+      "role": "catalogue-candidate",
+      "bytes": 5112,
+      "sha256": "bb4d06658417bc0da307f9833a23b317a6f75d35a7dc448cc14624331ad6903f",
+      "origins": [
+        {
+          "kind": "source",
+          "repository": "https://github.com/rcarmo/python-office-mcp-server",
+          "revision": "0c5de7a4ce69c13a06e215e9233954bf2df805d5",
+          "path": "docs/catalogue-staging/python-native/features/test_mutation_modes.feature"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "path": "staging/python/features/test_office_help.feature",
+      "id": "asset-ac8105eab2df75206012a6f53a935da581fd45b3d6a416be8017cd524eb365bc",
+      "role": "catalogue-candidate",
+      "bytes": 7182,
+      "sha256": "ac8105eab2df75206012a6f53a935da581fd45b3d6a416be8017cd524eb365bc",
+      "origins": [
+        {
+          "kind": "source",
+          "repository": "https://github.com/rcarmo/python-office-mcp-server",
+          "revision": "0c5de7a4ce69c13a06e215e9233954bf2df805d5",
+          "path": "docs/catalogue-staging/python-native/features/test_office_help.feature"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "path": "staging/python/features/test_office_http.feature",
+      "id": "asset-be6cae443c65c25b3b2b18b783f58f50eb5a37658d8e074009077ba8b617e68b",
+      "role": "catalogue-candidate",
+      "bytes": 8375,
+      "sha256": "be6cae443c65c25b3b2b18b783f58f50eb5a37658d8e074009077ba8b617e68b",
+      "origins": [
+        {
+          "kind": "source",
+          "repository": "https://github.com/rcarmo/python-office-mcp-server",
+          "revision": "0c5de7a4ce69c13a06e215e9233954bf2df805d5",
+          "path": "docs/catalogue-staging/python-native/features/test_office_http.feature"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "path": "staging/python/features/test_office_unified_tools.feature",
+      "id": "asset-525af0846c91f28f544437fd42f93cbc79d8a7474076754e0fb2e648139b55e7",
+      "role": "catalogue-candidate",
+      "bytes": 54046,
+      "sha256": "525af0846c91f28f544437fd42f93cbc79d8a7474076754e0fb2e648139b55e7",
+      "origins": [
+        {
+          "kind": "source",
+          "repository": "https://github.com/rcarmo/python-office-mcp-server",
+          "revision": "0c5de7a4ce69c13a06e215e9233954bf2df805d5",
+          "path": "docs/catalogue-staging/python-native/features/test_office_unified_tools.feature"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "path": "staging/python/features/test_package_guard.feature",
+      "id": "asset-39dad34043a0c361337213f149b3695641c600a3f0a10c431f059aa2dfc3ff1d",
+      "role": "catalogue-candidate",
+      "bytes": 3397,
+      "sha256": "39dad34043a0c361337213f149b3695641c600a3f0a10c431f059aa2dfc3ff1d",
+      "origins": [
+        {
+          "kind": "source",
+          "repository": "https://github.com/rcarmo/python-office-mcp-server",
+          "revision": "0c5de7a4ce69c13a06e215e9233954bf2df805d5",
+          "path": "docs/catalogue-staging/python-native/features/test_package_guard.feature"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "path": "staging/python/features/test_package_preservation.feature",
+      "id": "asset-88d51dbe55765e59820c0a67be798e4e50ec5ef88325259cedbcf76a76700cf7",
+      "role": "catalogue-candidate",
+      "bytes": 3884,
+      "sha256": "88d51dbe55765e59820c0a67be798e4e50ec5ef88325259cedbcf76a76700cf7",
+      "origins": [
+        {
+          "kind": "source",
+          "repository": "https://github.com/rcarmo/python-office-mcp-server",
+          "revision": "0c5de7a4ce69c13a06e215e9233954bf2df805d5",
+          "path": "docs/catalogue-staging/python-native/features/test_package_preservation.feature"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "path": "staging/python/features/test_patch_transactions.feature",
+      "id": "asset-d5367cafbf97e21990bb98f32693b3b0789ad4835fb4eeefd743dd0f0bceb9c2",
+      "role": "catalogue-candidate",
+      "bytes": 9701,
+      "sha256": "d5367cafbf97e21990bb98f32693b3b0789ad4835fb4eeefd743dd0f0bceb9c2",
+      "origins": [
+        {
+          "kind": "source",
+          "repository": "https://github.com/rcarmo/python-office-mcp-server",
+          "revision": "0c5de7a4ce69c13a06e215e9233954bf2df805d5",
+          "path": "docs/catalogue-staging/python-native/features/test_patch_transactions.feature"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "path": "staging/python/features/test_path_variations.feature",
+      "id": "asset-59e994047c14f03977432739c4dcb03502fd4cd76c6d29fc41a391feece17675",
+      "role": "catalogue-candidate",
+      "bytes": 19094,
+      "sha256": "59e994047c14f03977432739c4dcb03502fd4cd76c6d29fc41a391feece17675",
+      "origins": [
+        {
+          "kind": "source",
+          "repository": "https://github.com/rcarmo/python-office-mcp-server",
+          "revision": "0c5de7a4ce69c13a06e215e9233954bf2df805d5",
+          "path": "docs/catalogue-staging/python-native/features/test_path_variations.feature"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "path": "staging/python/features/test_pptx_advanced_tools.feature",
+      "id": "asset-a80ebe6fa15c079bd178ded56b5e5d84f37cd1735722aea2da031e733f106591",
+      "role": "catalogue-candidate",
+      "bytes": 28675,
+      "sha256": "a80ebe6fa15c079bd178ded56b5e5d84f37cd1735722aea2da031e733f106591",
+      "origins": [
+        {
+          "kind": "source",
+          "repository": "https://github.com/rcarmo/python-office-mcp-server",
+          "revision": "0c5de7a4ce69c13a06e215e9233954bf2df805d5",
+          "path": "docs/catalogue-staging/python-native/features/test_pptx_advanced_tools.feature"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "path": "staging/python/features/test_pptx_advanced_tools_extended.feature",
+      "id": "asset-dce4f9fe8d5ac0e353db2d359c2173b0671750c5239c37384d24969bbabe7d61",
+      "role": "catalogue-candidate",
+      "bytes": 16723,
+      "sha256": "dce4f9fe8d5ac0e353db2d359c2173b0671750c5239c37384d24969bbabe7d61",
+      "origins": [
+        {
+          "kind": "source",
+          "repository": "https://github.com/rcarmo/python-office-mcp-server",
+          "revision": "0c5de7a4ce69c13a06e215e9233954bf2df805d5",
+          "path": "docs/catalogue-staging/python-native/features/test_pptx_advanced_tools_extended.feature"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "path": "staging/python/features/test_pptx_coverage.feature",
+      "id": "asset-771c49cb9346dd742b03f3176b1f4d0d7dd693e02b2702fb9d7e1e6d0b694756",
+      "role": "catalogue-candidate",
+      "bytes": 17388,
+      "sha256": "771c49cb9346dd742b03f3176b1f4d0d7dd693e02b2702fb9d7e1e6d0b694756",
+      "origins": [
+        {
+          "kind": "source",
+          "repository": "https://github.com/rcarmo/python-office-mcp-server",
+          "revision": "0c5de7a4ce69c13a06e215e9233954bf2df805d5",
+          "path": "docs/catalogue-staging/python-native/features/test_pptx_coverage.feature"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "path": "staging/python/features/test_pptx_slide_transfer_tools.feature",
+      "id": "asset-75fa5a41a16c0654d17a841e05930d7c34db1de5e29d17fd0ba3e4bbd1c781f9",
+      "role": "catalogue-candidate",
+      "bytes": 5181,
+      "sha256": "75fa5a41a16c0654d17a841e05930d7c34db1de5e29d17fd0ba3e4bbd1c781f9",
+      "origins": [
+        {
+          "kind": "source",
+          "repository": "https://github.com/rcarmo/python-office-mcp-server",
+          "revision": "0c5de7a4ce69c13a06e215e9233954bf2df805d5",
+          "path": "docs/catalogue-staging/python-native/features/test_pptx_slide_transfer_tools.feature"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "path": "staging/python/features/test_pptx_tools.feature",
+      "id": "asset-73ddb7b290610811a6c84fa9201d21b758556e49deaad69b718e1db8bda843c8",
+      "role": "catalogue-candidate",
+      "bytes": 15896,
+      "sha256": "73ddb7b290610811a6c84fa9201d21b758556e49deaad69b718e1db8bda843c8",
+      "origins": [
+        {
+          "kind": "source",
+          "repository": "https://github.com/rcarmo/python-office-mcp-server",
+          "revision": "0c5de7a4ce69c13a06e215e9233954bf2df805d5",
+          "path": "docs/catalogue-staging/python-native/features/test_pptx_tools.feature"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "path": "staging/python/features/test_preserving_text_and_clone.feature",
+      "id": "asset-49f9c33fecb4db637ceb3240a5d0f4860dc188841b4e7629ee2bcedd39115ecd",
+      "role": "catalogue-candidate",
+      "bytes": 4868,
+      "sha256": "49f9c33fecb4db637ceb3240a5d0f4860dc188841b4e7629ee2bcedd39115ecd",
+      "origins": [
+        {
+          "kind": "source",
+          "repository": "https://github.com/rcarmo/python-office-mcp-server",
+          "revision": "0c5de7a4ce69c13a06e215e9233954bf2df805d5",
+          "path": "docs/catalogue-staging/python-native/features/test_preserving_text_and_clone.feature"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "path": "staging/python/features/test_shared_contract_inventory.feature",
+      "id": "asset-1a4ef7914653ee9ec90051aa65628b662142ad067125a38bdd2a8de9e80f0eae",
+      "role": "catalogue-candidate",
+      "bytes": 21043,
+      "sha256": "1a4ef7914653ee9ec90051aa65628b662142ad067125a38bdd2a8de9e80f0eae",
+      "origins": [
+        {
+          "kind": "source",
+          "repository": "https://github.com/rcarmo/python-office-mcp-server",
+          "revision": "0c5de7a4ce69c13a06e215e9233954bf2df805d5",
+          "path": "docs/catalogue-staging/python-native/features/test_shared_contract_inventory.feature"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "path": "staging/python/features/test_stdio_mutation_workflows.feature",
+      "id": "asset-aa31da6f57f3777cae61efced2841ab7b17a77914afd3e5af2dc1dafa3bc0ce5",
+      "role": "catalogue-candidate",
+      "bytes": 3936,
+      "sha256": "aa31da6f57f3777cae61efced2841ab7b17a77914afd3e5af2dc1dafa3bc0ce5",
+      "origins": [
+        {
+          "kind": "source",
+          "repository": "https://github.com/rcarmo/python-office-mcp-server",
+          "revision": "0c5de7a4ce69c13a06e215e9233954bf2df805d5",
+          "path": "docs/catalogue-staging/python-native/features/test_stdio_mutation_workflows.feature"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "path": "staging/python/features/test_strategic_coverage.feature",
+      "id": "asset-1e9249a2da8aab651afa9d4a322e593232f85f4d05b738f93ad45c2d02b294dc",
+      "role": "catalogue-candidate",
+      "bytes": 20842,
+      "sha256": "1e9249a2da8aab651afa9d4a322e593232f85f4d05b738f93ad45c2d02b294dc",
+      "origins": [
+        {
+          "kind": "source",
+          "repository": "https://github.com/rcarmo/python-office-mcp-server",
+          "revision": "0c5de7a4ce69c13a06e215e9233954bf2df805d5",
+          "path": "docs/catalogue-staging/python-native/features/test_strategic_coverage.feature"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "path": "staging/python/features/test_targeted_coverage.feature",
+      "id": "asset-0d708fca3c643cb6af54bc2ff58579c3afb3d4616d94af55bc8e3c28751f244e",
+      "role": "catalogue-candidate",
+      "bytes": 15976,
+      "sha256": "0d708fca3c643cb6af54bc2ff58579c3afb3d4616d94af55bc8e3c28751f244e",
+      "origins": [
+        {
+          "kind": "source",
+          "repository": "https://github.com/rcarmo/python-office-mcp-server",
+          "revision": "0c5de7a4ce69c13a06e215e9233954bf2df805d5",
+          "path": "docs/catalogue-staging/python-native/features/test_targeted_coverage.feature"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "path": "staging/python/features/test_tools_extended.feature",
+      "id": "asset-28068c8d98770fc204e02261d29b8b55ed83f9b4f1425b49cb70f594e9ca82db",
+      "role": "catalogue-candidate",
+      "bytes": 7194,
+      "sha256": "28068c8d98770fc204e02261d29b8b55ed83f9b4f1425b49cb70f594e9ca82db",
+      "origins": [
+        {
+          "kind": "source",
+          "repository": "https://github.com/rcarmo/python-office-mcp-server",
+          "revision": "0c5de7a4ce69c13a06e215e9233954bf2df805d5",
+          "path": "docs/catalogue-staging/python-native/features/test_tools_extended.feature"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "path": "staging/python/features/test_track_change_reading.feature",
+      "id": "asset-6ba2ba589ba774ca271b80cdab201265854919541dd96a18eef0449a5eb82d44",
+      "role": "catalogue-candidate",
+      "bytes": 12579,
+      "sha256": "6ba2ba589ba774ca271b80cdab201265854919541dd96a18eef0449a5eb82d44",
+      "origins": [
+        {
+          "kind": "source",
+          "repository": "https://github.com/rcarmo/python-office-mcp-server",
+          "revision": "0c5de7a4ce69c13a06e215e9233954bf2df805d5",
+          "path": "docs/catalogue-staging/python-native/features/test_track_change_reading.feature"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "path": "staging/python/features/test_track_changes.feature",
+      "id": "asset-f723d55d19a6f5f4454cf5b2cf3cc4e87947570f4ff411412cf7d4433ee72133",
+      "role": "catalogue-candidate",
+      "bytes": 13277,
+      "sha256": "f723d55d19a6f5f4454cf5b2cf3cc4e87947570f4ff411412cf7d4433ee72133",
+      "origins": [
+        {
+          "kind": "source",
+          "repository": "https://github.com/rcarmo/python-office-mcp-server",
+          "revision": "0c5de7a4ce69c13a06e215e9233954bf2df805d5",
+          "path": "docs/catalogue-staging/python-native/features/test_track_changes.feature"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "path": "staging/python/features/test_track_changes_manual.feature",
+      "id": "asset-32cb45397b7a863b22e9aa64c389201c83402f37ca7b6c3485428ea04c254ad3",
+      "role": "catalogue-candidate",
+      "bytes": 3772,
+      "sha256": "32cb45397b7a863b22e9aa64c389201c83402f37ca7b6c3485428ea04c254ad3",
+      "origins": [
+        {
+          "kind": "source",
+          "repository": "https://github.com/rcarmo/python-office-mcp-server",
+          "revision": "0c5de7a4ce69c13a06e215e9233954bf2df805d5",
+          "path": "docs/catalogue-staging/python-native/features/test_track_changes_manual.feature"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "path": "staging/python/features/test_transport_dependency.feature",
+      "id": "asset-a1e3d65baeba4e4aa6e25c34831bf6823b0a6dfc82e8e295db66fedbba4ed35f",
+      "role": "catalogue-candidate",
+      "bytes": 4234,
+      "sha256": "a1e3d65baeba4e4aa6e25c34831bf6823b0a6dfc82e8e295db66fedbba4ed35f",
+      "origins": [
+        {
+          "kind": "source",
+          "repository": "https://github.com/rcarmo/python-office-mcp-server",
+          "revision": "0c5de7a4ce69c13a06e215e9233954bf2df805d5",
+          "path": "docs/catalogue-staging/python-native/features/test_transport_dependency.feature"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "path": "staging/python/features/test_umcp_office_features.feature",
+      "id": "asset-b037f8eb96e73d1d02d0668c5ba094fff75388fec352b4a65b4b5ff9128efc07",
+      "role": "catalogue-candidate",
+      "bytes": 9647,
+      "sha256": "b037f8eb96e73d1d02d0668c5ba094fff75388fec352b4a65b4b5ff9128efc07",
+      "origins": [
+        {
+          "kind": "source",
+          "repository": "https://github.com/rcarmo/python-office-mcp-server",
+          "revision": "0c5de7a4ce69c13a06e215e9233954bf2df805d5",
+          "path": "docs/catalogue-staging/python-native/features/test_umcp_office_features.feature"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "path": "staging/python/features/test_web_tools.feature",
+      "id": "asset-3a4ffb354db02444cf0bbee72f5d81889fb076d9473abf13117b299848bb30e7",
+      "role": "catalogue-candidate",
+      "bytes": 5630,
+      "sha256": "3a4ffb354db02444cf0bbee72f5d81889fb076d9473abf13117b299848bb30e7",
+      "origins": [
+        {
+          "kind": "source",
+          "repository": "https://github.com/rcarmo/python-office-mcp-server",
+          "revision": "0c5de7a4ce69c13a06e215e9233954bf2df805d5",
+          "path": "docs/catalogue-staging/python-native/features/test_web_tools.feature"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "path": "staging/python/features/test_word_advanced_tools.feature",
+      "id": "asset-fa16326009252b1524e217747216aead42ebafb6b62cada7035576b169b45703",
+      "role": "catalogue-candidate",
+      "bytes": 32901,
+      "sha256": "fa16326009252b1524e217747216aead42ebafb6b62cada7035576b169b45703",
+      "origins": [
+        {
+          "kind": "source",
+          "repository": "https://github.com/rcarmo/python-office-mcp-server",
+          "revision": "0c5de7a4ce69c13a06e215e9233954bf2df805d5",
+          "path": "docs/catalogue-staging/python-native/features/test_word_advanced_tools.feature"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "path": "staging/python/features/test_word_advanced_tools_extended.feature",
+      "id": "asset-9ebd421ab7f3b82bd84c2d82a12c75fa6073e309b53b95f4cba85d93d41bc01e",
+      "role": "catalogue-candidate",
+      "bytes": 11536,
+      "sha256": "9ebd421ab7f3b82bd84c2d82a12c75fa6073e309b53b95f4cba85d93d41bc01e",
+      "origins": [
+        {
+          "kind": "source",
+          "repository": "https://github.com/rcarmo/python-office-mcp-server",
+          "revision": "0c5de7a4ce69c13a06e215e9233954bf2df805d5",
+          "path": "docs/catalogue-staging/python-native/features/test_word_advanced_tools_extended.feature"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "path": "staging/python/features/test_word_anchor_discovery.feature",
+      "id": "asset-7c600fb1c7f191edd2ef2899edd583798f3290dd349de148034016596911c4e6",
+      "role": "catalogue-candidate",
+      "bytes": 5336,
+      "sha256": "7c600fb1c7f191edd2ef2899edd583798f3290dd349de148034016596911c4e6",
+      "origins": [
+        {
+          "kind": "source",
+          "repository": "https://github.com/rcarmo/python-office-mcp-server",
+          "revision": "0c5de7a4ce69c13a06e215e9233954bf2df805d5",
+          "path": "docs/catalogue-staging/python-native/features/test_word_anchor_discovery.feature"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "path": "staging/python/features/test_word_comment_replies.feature",
+      "id": "asset-507b48d16c0c23fc61f7560b6aabdbc52cd4a795816ba0dc7af422c9a1ca09ec",
+      "role": "catalogue-candidate",
+      "bytes": 4838,
+      "sha256": "507b48d16c0c23fc61f7560b6aabdbc52cd4a795816ba0dc7af422c9a1ca09ec",
+      "origins": [
+        {
+          "kind": "source",
+          "repository": "https://github.com/rcarmo/python-office-mcp-server",
+          "revision": "0c5de7a4ce69c13a06e215e9233954bf2df805d5",
+          "path": "docs/catalogue-staging/python-native/features/test_word_comment_replies.feature"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "path": "staging/python/features/test_word_comment_resolution.feature",
+      "id": "asset-e463eeff4c9e2446857c029b62f1826662ee826ae7d3f0d66e7bfadd392de1f4",
+      "role": "catalogue-candidate",
+      "bytes": 8785,
+      "sha256": "e463eeff4c9e2446857c029b62f1826662ee826ae7d3f0d66e7bfadd392de1f4",
+      "origins": [
+        {
+          "kind": "source",
+          "repository": "https://github.com/rcarmo/python-office-mcp-server",
+          "revision": "0c5de7a4ce69c13a06e215e9233954bf2df805d5",
+          "path": "docs/catalogue-staging/python-native/features/test_word_comment_resolution.feature"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "path": "staging/python/features/test_word_comment_roundtrip_fixture.feature",
+      "id": "asset-b81f6be178f85b3b36ae59783e1cd23f48389f0b95ddbdf0b465c3cb0612286a",
+      "role": "catalogue-candidate",
+      "bytes": 4074,
+      "sha256": "b81f6be178f85b3b36ae59783e1cd23f48389f0b95ddbdf0b465c3cb0612286a",
+      "origins": [
+        {
+          "kind": "source",
+          "repository": "https://github.com/rcarmo/python-office-mcp-server",
+          "revision": "0c5de7a4ce69c13a06e215e9233954bf2df805d5",
+          "path": "docs/catalogue-staging/python-native/features/test_word_comment_roundtrip_fixture.feature"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "path": "staging/python/features/test_word_coverage.feature",
+      "id": "asset-2ab7144ffc61ca779b6a933405dbdf2e08aaae237b7c069eaa23d11fed581d67",
+      "role": "catalogue-candidate",
+      "bytes": 12506,
+      "sha256": "2ab7144ffc61ca779b6a933405dbdf2e08aaae237b7c069eaa23d11fed581d67",
+      "origins": [
+        {
+          "kind": "source",
+          "repository": "https://github.com/rcarmo/python-office-mcp-server",
+          "revision": "0c5de7a4ce69c13a06e215e9233954bf2df805d5",
+          "path": "docs/catalogue-staging/python-native/features/test_word_coverage.feature"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "path": "staging/python/features/test_word_deep_coverage.feature",
+      "id": "asset-23b331885ce6db67cd138ae6d762645bf8ec5fb463ef202395fa9ad505cf9e93",
+      "role": "catalogue-candidate",
+      "bytes": 21109,
+      "sha256": "23b331885ce6db67cd138ae6d762645bf8ec5fb463ef202395fa9ad505cf9e93",
+      "origins": [
+        {
+          "kind": "source",
+          "repository": "https://github.com/rcarmo/python-office-mcp-server",
+          "revision": "0c5de7a4ce69c13a06e215e9233954bf2df805d5",
+          "path": "docs/catalogue-staging/python-native/features/test_word_deep_coverage.feature"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "path": "staging/python/features/test_word_pptx_advanced_ops.feature",
+      "id": "asset-ed3eb2d0d7cdb20757eaf97549b1b4615be110c60144308920a4d3905fcafb5c",
+      "role": "catalogue-candidate",
+      "bytes": 18456,
+      "sha256": "ed3eb2d0d7cdb20757eaf97549b1b4615be110c60144308920a4d3905fcafb5c",
+      "origins": [
+        {
+          "kind": "source",
+          "repository": "https://github.com/rcarmo/python-office-mcp-server",
+          "revision": "0c5de7a4ce69c13a06e215e9233954bf2df805d5",
+          "path": "docs/catalogue-staging/python-native/features/test_word_pptx_advanced_ops.feature"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "path": "staging/python/features/test_word_tools.feature",
+      "id": "asset-e0bd9628a0baf0f5ed0295d35d66d2e70893ef008e9efd18f93415f62668eeb8",
+      "role": "catalogue-candidate",
+      "bytes": 11031,
+      "sha256": "e0bd9628a0baf0f5ed0295d35d66d2e70893ef008e9efd18f93415f62668eeb8",
+      "origins": [
+        {
+          "kind": "source",
+          "repository": "https://github.com/rcarmo/python-office-mcp-server",
+          "revision": "0c5de7a4ce69c13a06e215e9233954bf2df805d5",
+          "path": "docs/catalogue-staging/python-native/features/test_word_tools.feature"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "path": "staging/python/features/test_workflow_coverage.feature",
+      "id": "asset-377c32d5a4a4e16a94e6336888332b6634aa40112c097df931065bc8d2622dc2",
+      "role": "catalogue-candidate",
+      "bytes": 23405,
+      "sha256": "377c32d5a4a4e16a94e6336888332b6634aa40112c097df931065bc8d2622dc2",
+      "origins": [
+        {
+          "kind": "source",
+          "repository": "https://github.com/rcarmo/python-office-mcp-server",
+          "revision": "0c5de7a4ce69c13a06e215e9233954bf2df805d5",
+          "path": "docs/catalogue-staging/python-native/features/test_workflow_coverage.feature"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "path": "staging/python/features/test_workflows.feature",
+      "id": "asset-4ba79a1ceca3cf58cc95aac833d74cbc6701993228a13824b4df4b3774bf18ac",
+      "role": "catalogue-candidate",
+      "bytes": 17158,
+      "sha256": "4ba79a1ceca3cf58cc95aac833d74cbc6701993228a13824b4df4b3774bf18ac",
+      "origins": [
+        {
+          "kind": "source",
+          "repository": "https://github.com/rcarmo/python-office-mcp-server",
+          "revision": "0c5de7a4ce69c13a06e215e9233954bf2df805d5",
+          "path": "docs/catalogue-staging/python-native/features/test_workflows.feature"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "path": "staging/python/features/test_writer_enrolment.feature",
+      "id": "asset-aa8233608c2a2dd789e0bc793c887ec82861378524277c417f7741cae86dc02b",
+      "role": "catalogue-candidate",
+      "bytes": 5327,
+      "sha256": "aa8233608c2a2dd789e0bc793c887ec82861378524277c417f7741cae86dc02b",
+      "origins": [
+        {
+          "kind": "source",
+          "repository": "https://github.com/rcarmo/python-office-mcp-server",
+          "revision": "0c5de7a4ce69c13a06e215e9233954bf2df805d5",
+          "path": "docs/catalogue-staging/python-native/features/test_writer_enrolment.feature"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "path": "staging/python/features/test_xlsx_dependency_preservation.feature",
+      "id": "asset-887eea35fea9dd8ec799b3c75653e6ca16fa076742a54f85bd79be6cab036dde",
+      "role": "catalogue-candidate",
+      "bytes": 4932,
+      "sha256": "887eea35fea9dd8ec799b3c75653e6ca16fa076742a54f85bd79be6cab036dde",
+      "origins": [
+        {
+          "kind": "source",
+          "repository": "https://github.com/rcarmo/python-office-mcp-server",
+          "revision": "0c5de7a4ce69c13a06e215e9233954bf2df805d5",
+          "path": "docs/catalogue-staging/python-native/features/test_xlsx_dependency_preservation.feature"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "id": "asset-5b0d1392e1bc836afaf15dcd397fc2e1366035a0475f75b5cf464992f32ceb3e",
+      "path": "workflows/docx/review-integration.feature",
+      "bytes": 955,
+      "sha256": "5b0d1392e1bc836afaf15dcd397fc2e1366035a0475f75b5cf464992f32ceb3e",
+      "role": "workflow",
+      "origins": [
+        {
+          "repository": "https://github.com/rcarmo/fixtures-ooxml",
+          "path": "workflows/docx/review-integration.feature",
+          "basis": "Project-owned behaviour contract or source assertion mapping"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "id": "asset-df53d9f86112756deb5124e0feab7ef9568446c414c596fc185e90677f522d16",
+      "path": "workflows/docx/comment-content-type.feature",
+      "bytes": 534,
+      "sha256": "df53d9f86112756deb5124e0feab7ef9568446c414c596fc185e90677f522d16",
+      "role": "workflow",
+      "origins": [
+        {
+          "repository": "https://github.com/rcarmo/fixtures-ooxml",
+          "path": "workflows/docx/comment-content-type.feature",
+          "basis": "Project-owned behaviour contract or source assertion mapping"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "id": "asset-45f092878a7bed948908a696fa9a45e5d3b5a80a061318d55e0a37a3f2edf092",
+      "path": "workflows/xlsx/cache-completeness.feature",
+      "bytes": 569,
+      "sha256": "45f092878a7bed948908a696fa9a45e5d3b5a80a061318d55e0a37a3f2edf092",
+      "role": "workflow",
+      "origins": [
+        {
+          "repository": "https://github.com/rcarmo/fixtures-ooxml",
+          "path": "workflows/xlsx/cache-completeness.feature",
+          "basis": "Project-owned behaviour contract or source assertion mapping"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "id": "asset-8d74a7b29c6b2993ab13e41de35c9a8156e35feb0eeb5eeddab37bce20d89b6b",
+      "path": "workflows/office/full-coverage.feature",
+      "bytes": 559,
+      "sha256": "8d74a7b29c6b2993ab13e41de35c9a8156e35feb0eeb5eeddab37bce20d89b6b",
+      "role": "workflow",
+      "origins": [
+        {
+          "repository": "https://github.com/rcarmo/fixtures-ooxml",
+          "path": "workflows/office/full-coverage.feature",
+          "basis": "Project-owned behaviour contract or source assertion mapping"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "id": "asset-9797cb84555e97b786f66c9e51f45ccb732004b9f717f75ca484424f6a9c82ac",
+      "path": "workflows/pptx/slide-import.feature",
+      "bytes": 527,
+      "sha256": "9797cb84555e97b786f66c9e51f45ccb732004b9f717f75ca484424f6a9c82ac",
+      "role": "workflow",
+      "origins": [
+        {
+          "repository": "https://github.com/rcarmo/fixtures-ooxml",
+          "path": "workflows/pptx/slide-import.feature",
+          "basis": "Project-owned behaviour contract or source assertion mapping"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "id": "asset-6f3e52c41757ca28f46f7ed31994206fe74e8119327f34bf958a2a4e357a8e75",
+      "path": "workflows/xlsx/structural-edits.feature",
+      "bytes": 499,
+      "sha256": "6f3e52c41757ca28f46f7ed31994206fe74e8119327f34bf958a2a4e357a8e75",
+      "role": "workflow",
+      "origins": [
+        {
+          "repository": "https://github.com/rcarmo/fixtures-ooxml",
+          "path": "workflows/xlsx/structural-edits.feature",
+          "basis": "Project-owned behaviour contract or source assertion mapping"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "id": "asset-683d99ac5847362948945f2377e988537045bca7743b187f3422ddc043f8b1c0",
+      "path": "workflows/xlsx/calculation-engine.feature",
+      "bytes": 513,
+      "sha256": "683d99ac5847362948945f2377e988537045bca7743b187f3422ddc043f8b1c0",
+      "role": "workflow",
+      "origins": [
+        {
+          "repository": "https://github.com/rcarmo/fixtures-ooxml",
+          "path": "workflows/xlsx/calculation-engine.feature",
+          "basis": "Project-owned behaviour contract or source assertion mapping"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "id": "asset-6eb8ab565e59ad767f7e8cf5c87a45523a64d340d95be53a7ee52e00305d4633",
+      "path": "workflows/xlsx/style-readback.feature",
+      "bytes": 493,
+      "sha256": "6eb8ab565e59ad767f7e8cf5c87a45523a64d340d95be53a7ee52e00305d4633",
+      "role": "workflow",
+      "origins": [
+        {
+          "repository": "https://github.com/rcarmo/fixtures-ooxml",
+          "path": "workflows/xlsx/style-readback.feature",
+          "basis": "Project-owned behaviour contract or source assertion mapping"
+        }
+      ],
+      "aliases": []
     }
   ]
 }

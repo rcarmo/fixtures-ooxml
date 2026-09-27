@@ -39,7 +39,7 @@ export function validateFixtureLayout(manifest:any){
  }
 }
 export function validateWorkflowPath(path:string){
- const match=/^workflows\/(docx|pptx|xlsx|package|xml)\/([a-z0-9]+(?:-[a-z0-9]+)*)\.feature$/.exec(path);
+ const match=/^workflows\/(docx|pptx|xlsx|package|xml|office)\/([a-z0-9]+(?:-[a-z0-9]+)*)\.feature$/.exec(path);
  if(!match||/^(?:bun|go|python|native|docx|pptx|xlsx)-/.test(match[2]!))throw Error('Invalid workflow path: use format or common package/XML operation family');
 }
 export function validateWorkflowOwnership(ledger:any,actual:{scenarioId:string;path:string}[],contract:any){

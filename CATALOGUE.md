@@ -201,6 +201,14 @@ move refusal; all 43 preceding revision cases are unchanged. Exact saved XML,
 namespace and encoding preservation, required dates, selected scope and rollback
 are checked. General move/edit composition remains outside this profile.
 
+The [feature-source consolidation](ledgers/feature-source-consolidation.json)
+seals 76 Go and 67 Python `.feature` source candidates in `staging/`. Eight
+operation-family workflows preserve eleven former Bun planned cases, with a
+runtime-named actor made neutral and the change recorded. Candidate files grant
+no central execution credit. Four Python pairs share exact captured steps, but
+retain distinct native identities until their inputs and outcomes are reviewed.
+See [staging](staging/README.md) for the source layout and limits.
+
 Remaining work:
 
 | Family | Remaining work |

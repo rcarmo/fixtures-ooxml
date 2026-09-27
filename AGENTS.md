@@ -29,11 +29,14 @@ runtime or source repository. This repository is the shared contract for Bun,
 Go and Python even when each implementation derives and runs native tests.
 Native test suites must not become separate, competing behaviour catalogues.
 
-- Use only `workflows/docx/`, `workflows/pptx/`, `workflows/xlsx/`,
-  `workflows/package/` and `workflows/xml/`, with operation-named kebab-case files.
-  No root-level features, `native/` catch-all, runtime directories or repeated
-  format prefixes. Split mixed source API inventories by operation; source
-  provenance belongs in ledgers. Registration and verification enforce the paths.
+- Use `workflows/docx/`, `workflows/pptx/`, `workflows/xlsx/`,
+  `workflows/package/`, `workflows/xml/` and `workflows/office/` for genuine
+  cross-format obligations, with operation-named kebab-case files. No root-level
+  workflows, `native/` catch-all or repeated format prefixes. Split mixed source
+  API inventories by operation; source provenance belongs in ledgers.
+  `staging/go/` and `staging/python/` hold sealed, non-executed source candidates
+  pending functional reconciliation. They are not canonical workflows and grant
+  no consumer execution credit. Registration and verification enforce workflow paths.
 - Review existing features before adding scenarios. Consolidate equivalent
   preconditions, inputs, operations and outcomes under one canonical scenario ID.
   Several native declarations may map to that ID; do not create one scenario per

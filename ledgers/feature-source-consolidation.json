@@ -1,0 +1,1422 @@
+{
+  "schemaVersion": 1,
+  "sources": {
+    "go": {
+      "repository": "https://github.com/rcarmo/go-ooxml",
+      "revision": "8b0c2cf8dd29346dafa7fafd173aa5663ee551b7"
+    },
+    "python": {
+      "repository": "https://github.com/rcarmo/python-office-mcp-server",
+      "revision": "0c5de7a4ce69c13a06e215e9233954bf2df805d5"
+    },
+    "bun": {
+      "repository": "https://github.com/rcarmo/bun-ooxml",
+      "revision": "413fecb590bc364813043181167e63e7a9d04713"
+    }
+  },
+  "candidates": [
+    {
+      "consumer": "go",
+      "sourcePath": "docs/behaviors/archive-candidates.feature",
+      "path": "staging/go/behaviors/archive-candidates.feature",
+      "sha256": "253dd34eac0b0413609958e753b3ebb30e9e2f6337b55786eec21218a893c270",
+      "compiledCases": 10,
+      "executionCredit": false,
+      "reconciliation": "pending-functional-review"
+    },
+    {
+      "consumer": "go",
+      "sourcePath": "docs/behaviors/delivery-candidates.feature",
+      "path": "staging/go/behaviors/delivery-candidates.feature",
+      "sha256": "fe498c857b5520c113fe646950a2e84ec34ceee2978fdd15928e64014190bb26",
+      "compiledCases": 7,
+      "executionCredit": false,
+      "reconciliation": "pending-functional-review"
+    },
+    {
+      "consumer": "go",
+      "sourcePath": "docs/behaviors/formula-candidates.feature",
+      "path": "staging/go/behaviors/formula-candidates.feature",
+      "sha256": "0074f6f012a934379337f2d9056ed78f99452cd6c96901c6df1b2cbb8a067772",
+      "compiledCases": 8,
+      "executionCredit": false,
+      "reconciliation": "pending-functional-review"
+    },
+    {
+      "consumer": "go",
+      "sourcePath": "docs/behaviors/graph-candidates.feature",
+      "path": "staging/go/behaviors/graph-candidates.feature",
+      "sha256": "84ccddbf74e7c761e0f2726396d274aa4964ed300aa766566fc15a0b60fdd86d",
+      "compiledCases": 10,
+      "executionCredit": false,
+      "reconciliation": "pending-functional-review"
+    },
+    {
+      "consumer": "go",
+      "sourcePath": "docs/behaviors/ooxml-model-candidates.feature",
+      "path": "staging/go/behaviors/ooxml-model-candidates.feature",
+      "sha256": "7f9f2e55159dc67e2cf72c0b66466cc33b0d6b84342e8925e4fb78491a0ae9ae",
+      "compiledCases": 14,
+      "executionCredit": false,
+      "reconciliation": "pending-functional-review"
+    },
+    {
+      "consumer": "go",
+      "sourcePath": "docs/behaviors/package-model-candidates.feature",
+      "path": "staging/go/behaviors/package-model-candidates.feature",
+      "sha256": "65d21a0dbbf719fa5e9f9b38151e155cfe1eb799c447638f70870631e4085fe9",
+      "compiledCases": 11,
+      "executionCredit": false,
+      "reconciliation": "pending-functional-review"
+    },
+    {
+      "consumer": "go",
+      "sourcePath": "docs/behaviors/presentation-api-candidates.feature",
+      "path": "staging/go/behaviors/presentation-api-candidates.feature",
+      "sha256": "ac4ea513e0ffabc9612ad0659bf0ea6ea46dc2b6bc6ee0ed321404150b119ac2",
+      "compiledCases": 21,
+      "executionCredit": false,
+      "reconciliation": "pending-functional-review"
+    },
+    {
+      "consumer": "go",
+      "sourcePath": "docs/behaviors/presentation-fixtures-candidates.feature",
+      "path": "staging/go/behaviors/presentation-fixtures-candidates.feature",
+      "sha256": "435b25ed29d96f7b0a1f3eef6d96c99858da871245fe87c83f3dfe3ead10d930",
+      "compiledCases": 11,
+      "executionCredit": false,
+      "reconciliation": "pending-functional-review"
+    },
+    {
+      "consumer": "go",
+      "sourcePath": "docs/behaviors/presentation-fuzz-candidates.feature",
+      "path": "staging/go/behaviors/presentation-fuzz-candidates.feature",
+      "sha256": "b23abf12f8ca9e5ccec39337c7874d70b5fd2d3aae839288bf5bc68a0ec6edc8",
+      "compiledCases": 3,
+      "executionCredit": false,
+      "reconciliation": "pending-functional-review"
+    },
+    {
+      "consumer": "go",
+      "sourcePath": "docs/behaviors/presentation-measurement-candidates.feature",
+      "path": "staging/go/behaviors/presentation-measurement-candidates.feature",
+      "sha256": "70f451375f67363959660bb91176f415f4b3f28d0acb460585662313f2efbaa5",
+      "compiledCases": 5,
+      "executionCredit": false,
+      "reconciliation": "pending-functional-review"
+    },
+    {
+      "consumer": "go",
+      "sourcePath": "docs/behaviors/presentation-notes-candidates.feature",
+      "path": "staging/go/behaviors/presentation-notes-candidates.feature",
+      "sha256": "572617096b14e5753d5dcc4a8e38b154ecaa3f40eada322b8585be0cca075779",
+      "compiledCases": 7,
+      "executionCredit": false,
+      "reconciliation": "pending-functional-review"
+    },
+    {
+      "consumer": "go",
+      "sourcePath": "docs/behaviors/presentation-parameters-candidates.feature",
+      "path": "staging/go/behaviors/presentation-parameters-candidates.feature",
+      "sha256": "6ef3b53c8334a3e9803fb670929ae5ca7b3ad55d67f16484b0efaa59460e95b4",
+      "compiledCases": 8,
+      "executionCredit": false,
+      "reconciliation": "pending-functional-review"
+    },
+    {
+      "consumer": "go",
+      "sourcePath": "docs/behaviors/spreadsheet-cache-candidates.feature",
+      "path": "staging/go/behaviors/spreadsheet-cache-candidates.feature",
+      "sha256": "da4c1fb4602518714abe942a139fd501ce7b7f6b5a51544e1c801eca312b407c",
+      "compiledCases": 10,
+      "executionCredit": false,
+      "reconciliation": "pending-functional-review"
+    },
+    {
+      "consumer": "go",
+      "sourcePath": "docs/behaviors/spreadsheet-fuzz-candidates.feature",
+      "path": "staging/go/behaviors/spreadsheet-fuzz-candidates.feature",
+      "sha256": "8f8b90da1ebc261d5c72300f1579841474ede9ac47e64b349922d7df3827a066",
+      "compiledCases": 5,
+      "executionCredit": false,
+      "reconciliation": "pending-functional-review"
+    },
+    {
+      "consumer": "go",
+      "sourcePath": "docs/behaviors/spreadsheet-measurement-candidates.feature",
+      "path": "staging/go/behaviors/spreadsheet-measurement-candidates.feature",
+      "sha256": "94330f25e22af642b3f66b811564fab5d45b9e6d6b8d38d3ff0c9ea3751e4981",
+      "compiledCases": 5,
+      "executionCredit": false,
+      "reconciliation": "pending-functional-review"
+    },
+    {
+      "consumer": "go",
+      "sourcePath": "docs/behaviors/spreadsheet-parameters-candidates.feature",
+      "path": "staging/go/behaviors/spreadsheet-parameters-candidates.feature",
+      "sha256": "e80b109d2538d79faf468aee99e258041ab1afb8d83412659efa2999f854318e",
+      "compiledCases": 12,
+      "executionCredit": false,
+      "reconciliation": "pending-functional-review"
+    },
+    {
+      "consumer": "go",
+      "sourcePath": "docs/behaviors/spreadsheet-targets-candidates.feature",
+      "path": "staging/go/behaviors/spreadsheet-targets-candidates.feature",
+      "sha256": "bab92cdc298cfca8efe5f2ff4f99fab5a1a344b22579a2a80886223fee8c9afe",
+      "compiledCases": 5,
+      "executionCredit": false,
+      "reconciliation": "pending-functional-review"
+    },
+    {
+      "consumer": "go",
+      "sourcePath": "docs/behaviors/test-custody-candidates.feature",
+      "path": "staging/go/behaviors/test-custody-candidates.feature",
+      "sha256": "3ce74a616ec2fbd5e1ec181aeaa9b759eab77df84081acfe32f53ff7a82ab100",
+      "compiledCases": 11,
+      "executionCredit": false,
+      "reconciliation": "pending-functional-review"
+    },
+    {
+      "consumer": "go",
+      "sourcePath": "docs/behaviors/utilities-candidates.feature",
+      "path": "staging/go/behaviors/utilities-candidates.feature",
+      "sha256": "936aa85aa4645775e7438bafffaa4e467c3636aa084797cb6b16c255c17de16b",
+      "compiledCases": 11,
+      "executionCredit": false,
+      "reconciliation": "pending-functional-review"
+    },
+    {
+      "consumer": "go",
+      "sourcePath": "docs/behaviors/wml-model-candidates.feature",
+      "path": "staging/go/behaviors/wml-model-candidates.feature",
+      "sha256": "c5215661abd6d344d2e58637f62f1d4d3b58cccfcc70edb23342453c530f16f1",
+      "compiledCases": 24,
+      "executionCredit": false,
+      "reconciliation": "pending-functional-review"
+    },
+    {
+      "consumer": "go",
+      "sourcePath": "docs/behaviors/xml-candidates.feature",
+      "path": "staging/go/behaviors/xml-candidates.feature",
+      "sha256": "08597959d4e974e122fc9fff6151a7f6059790632a86f15cb77ecdeb23cd8180",
+      "compiledCases": 9,
+      "executionCredit": false,
+      "reconciliation": "pending-functional-review"
+    },
+    {
+      "consumer": "go",
+      "sourcePath": "features/external/oracle.feature",
+      "path": "staging/go/features/external/oracle.feature",
+      "sha256": "27dd0228b0c3cd0c6d2873896627d764c8537ac1fc40d6d0f705d5f397f032fe",
+      "compiledCases": 1,
+      "executionCredit": false,
+      "reconciliation": "pending-functional-review"
+    },
+    {
+      "consumer": "go",
+      "sourcePath": "features/implemented/document/bounded-edit.feature",
+      "path": "staging/go/features/implemented/document/bounded-edit.feature",
+      "sha256": "b86ba78e225e05e023718ef544caf451c231fe6625af96f84011239dba908cbf",
+      "compiledCases": 6,
+      "executionCredit": false,
+      "reconciliation": "pending-functional-review"
+    },
+    {
+      "consumer": "go",
+      "sourcePath": "features/implemented/document/comment-mime-preservation.feature",
+      "path": "staging/go/features/implemented/document/comment-mime-preservation.feature",
+      "sha256": "96cc3933ab47f7a5a9caae478662f51e0be8fcd5b76c6dcce0a7d00a17896f7f",
+      "compiledCases": 2,
+      "executionCredit": false,
+      "reconciliation": "pending-functional-review"
+    },
+    {
+      "consumer": "go",
+      "sourcePath": "features/implemented/document/replace-all.feature",
+      "path": "staging/go/features/implemented/document/replace-all.feature",
+      "sha256": "d3875bc07dbc5cba78dcfd9db9b4a81842074a31da4632e431abb4bef6f62245",
+      "compiledCases": 3,
+      "executionCredit": false,
+      "reconciliation": "pending-functional-review"
+    },
+    {
+      "consumer": "go",
+      "sourcePath": "features/implemented/document/run-boundary.feature",
+      "path": "staging/go/features/implemented/document/run-boundary.feature",
+      "sha256": "b489faef0abb0e15d29d9f1ff93a680284be5da853d4a31985ebd965d4dfe3fa",
+      "compiledCases": 4,
+      "executionCredit": false,
+      "reconciliation": "pending-functional-review"
+    },
+    {
+      "consumer": "go",
+      "sourcePath": "features/implemented/document/search-boundaries.feature",
+      "path": "staging/go/features/implemented/document/search-boundaries.feature",
+      "sha256": "b0037cb4034372cab39dc8de7c07119cc058ec4b42aeb1217801d4615d1fe52b",
+      "compiledCases": 2,
+      "executionCredit": false,
+      "reconciliation": "pending-functional-review"
+    },
+    {
+      "consumer": "go",
+      "sourcePath": "features/implemented/document/search-policy.feature",
+      "path": "staging/go/features/implemented/document/search-policy.feature",
+      "sha256": "c9c4ba02eae286ef9656876d2f4c713b74736ee5e964635ed8418bb58e8a2f26",
+      "compiledCases": 4,
+      "executionCredit": false,
+      "reconciliation": "pending-functional-review"
+    },
+    {
+      "consumer": "go",
+      "sourcePath": "features/implemented/document/search-scope.feature",
+      "path": "staging/go/features/implemented/document/search-scope.feature",
+      "sha256": "ab5e24677312265bb7144f7be2ee42a23f245b03b643b5cc7b24ff8967b2796c",
+      "compiledCases": 3,
+      "executionCredit": false,
+      "reconciliation": "pending-functional-review"
+    },
+    {
+      "consumer": "go",
+      "sourcePath": "features/implemented/document/span-batch.feature",
+      "path": "staging/go/features/implemented/document/span-batch.feature",
+      "sha256": "c3dd988d3cd6b4cdb383f9cb5b06259d053f7937321390ac8fcafe852dd91f6e",
+      "compiledCases": 3,
+      "executionCredit": false,
+      "reconciliation": "pending-functional-review"
+    },
+    {
+      "consumer": "go",
+      "sourcePath": "features/implemented/document/span-guards.feature",
+      "path": "staging/go/features/implemented/document/span-guards.feature",
+      "sha256": "2add37a0922f58c15c2517bae544b84c551ccc7f94eb011248531f869fa1f29a",
+      "compiledCases": 2,
+      "executionCredit": false,
+      "reconciliation": "pending-functional-review"
+    },
+    {
+      "consumer": "go",
+      "sourcePath": "features/implemented/document/span-replace.feature",
+      "path": "staging/go/features/implemented/document/span-replace.feature",
+      "sha256": "4f647ac34bd88ef0cbd728988b01d9b2188bb2fb3930218b2bd98c41f99a1c99",
+      "compiledCases": 5,
+      "executionCredit": false,
+      "reconciliation": "pending-functional-review"
+    },
+    {
+      "consumer": "go",
+      "sourcePath": "features/implemented/document/spans.feature",
+      "path": "staging/go/features/implemented/document/spans.feature",
+      "sha256": "504631e9c3b34dff825891833b5844357ae53aa667fa54d584c0475ea661296e",
+      "compiledCases": 5,
+      "executionCredit": false,
+      "reconciliation": "pending-functional-review"
+    },
+    {
+      "consumer": "go",
+      "sourcePath": "features/implemented/document/stories.feature",
+      "path": "staging/go/features/implemented/document/stories.feature",
+      "sha256": "2db339e95b9e8a6a43fdca27ff0e041af644852dd95f6d714cf9880e7df0d5f8",
+      "compiledCases": 4,
+      "executionCredit": false,
+      "reconciliation": "pending-functional-review"
+    },
+    {
+      "consumer": "go",
+      "sourcePath": "features/implemented/document/whitespace.feature",
+      "path": "staging/go/features/implemented/document/whitespace.feature",
+      "sha256": "4bb98aa0c3fcf3e30357aea35aa80e3f67beab3c5ae361274b798f8226bd5f8b",
+      "compiledCases": 2,
+      "executionCredit": false,
+      "reconciliation": "pending-functional-review"
+    },
+    {
+      "consumer": "go",
+      "sourcePath": "features/implemented/package/attributes.feature",
+      "path": "staging/go/features/implemented/package/attributes.feature",
+      "sha256": "779fbd744e9feec0b11f848f68a509c6c1501741f51ec0062c4b9efcdf800497",
+      "compiledCases": 2,
+      "executionCredit": false,
+      "reconciliation": "pending-functional-review"
+    },
+    {
+      "consumer": "go",
+      "sourcePath": "features/implemented/package/baseline.feature",
+      "path": "staging/go/features/implemented/package/baseline.feature",
+      "sha256": "c6d8918be8f9cc272c9052939bd26a84e00893a09de273c111eb137b5b75d71f",
+      "compiledCases": 7,
+      "executionCredit": false,
+      "reconciliation": "pending-functional-review"
+    },
+    {
+      "consumer": "go",
+      "sourcePath": "features/implemented/package/graph-delete.feature",
+      "path": "staging/go/features/implemented/package/graph-delete.feature",
+      "sha256": "15a79627fc328b7d8e55a0e171461e4b7e4c043095118c34ce4a732619cca8c4",
+      "compiledCases": 7,
+      "executionCredit": false,
+      "reconciliation": "pending-functional-review"
+    },
+    {
+      "consumer": "go",
+      "sourcePath": "features/implemented/package/graph-edit.feature",
+      "path": "staging/go/features/implemented/package/graph-edit.feature",
+      "sha256": "394dd4a2d700f40a1d3b876fa34abaf1c8653074d286c2e8146a848c400df884",
+      "compiledCases": 8,
+      "executionCredit": false,
+      "reconciliation": "pending-functional-review"
+    },
+    {
+      "consumer": "go",
+      "sourcePath": "features/implemented/package/graph-target-form.feature",
+      "path": "staging/go/features/implemented/package/graph-target-form.feature",
+      "sha256": "c61acb9a53e5b14c78a11d65b78c964ea79c51e0106031ee550fc2fc2546fe1a",
+      "compiledCases": 2,
+      "executionCredit": false,
+      "reconciliation": "pending-functional-review"
+    },
+    {
+      "consumer": "go",
+      "sourcePath": "features/implemented/package/graph.feature",
+      "path": "staging/go/features/implemented/package/graph.feature",
+      "sha256": "d9ce4ce49d0a36b20ce4e90d7fef2f29030b2120482d9acf8cb47dc0745e75a8",
+      "compiledCases": 6,
+      "executionCredit": false,
+      "reconciliation": "pending-functional-review"
+    },
+    {
+      "consumer": "go",
+      "sourcePath": "features/implemented/package/io-safety.feature",
+      "path": "staging/go/features/implemented/package/io-safety.feature",
+      "sha256": "8c3bb504a84f81b08a2e809d50597185d2194ae728408055bbd381505c0d714f",
+      "compiledCases": 7,
+      "executionCredit": false,
+      "reconciliation": "pending-functional-review"
+    },
+    {
+      "consumer": "go",
+      "sourcePath": "features/implemented/package/limits.feature",
+      "path": "staging/go/features/implemented/package/limits.feature",
+      "sha256": "91c20510c3019ae3a15a0a7f8b252f860b72b9204ad4169f53ae6c174202b9ba",
+      "compiledCases": 5,
+      "executionCredit": false,
+      "reconciliation": "pending-functional-review"
+    },
+    {
+      "consumer": "go",
+      "sourcePath": "features/implemented/package/office-link-namespaces.feature",
+      "path": "staging/go/features/implemented/package/office-link-namespaces.feature",
+      "sha256": "d2e3aca80e6d14d683558347739487dae960985fda26754ca17a3e54290dfc90",
+      "compiledCases": 12,
+      "executionCredit": false,
+      "reconciliation": "pending-functional-review"
+    },
+    {
+      "consumer": "go",
+      "sourcePath": "features/implemented/package/preservation.feature",
+      "path": "staging/go/features/implemented/package/preservation.feature",
+      "sha256": "474446ce9e1420c0ce2576f412ce333990cec6429d92b44b2e4aa99e211e80c6",
+      "compiledCases": 3,
+      "executionCredit": false,
+      "reconciliation": "pending-functional-review"
+    },
+    {
+      "consumer": "go",
+      "sourcePath": "features/implemented/package/receipts.feature",
+      "path": "staging/go/features/implemented/package/receipts.feature",
+      "sha256": "f057d93547630d43d657a37f6463c43ac07ddd99c7267229ff59201cabb48510",
+      "compiledCases": 2,
+      "executionCredit": false,
+      "reconciliation": "pending-functional-review"
+    },
+    {
+      "consumer": "go",
+      "sourcePath": "features/implemented/package/structure.feature",
+      "path": "staging/go/features/implemented/package/structure.feature",
+      "sha256": "6a626d07ce95f8d330125ff201b433f50c75a959520f1e375e4916c214403e93",
+      "compiledCases": 5,
+      "executionCredit": false,
+      "reconciliation": "pending-functional-review"
+    },
+    {
+      "consumer": "go",
+      "sourcePath": "features/implemented/package/xml-boundary.feature",
+      "path": "staging/go/features/implemented/package/xml-boundary.feature",
+      "sha256": "f3ce5bbade1bc82aa89e17cf448922d2fee4b188933ec62bc33de00de102c65c",
+      "compiledCases": 4,
+      "executionCredit": false,
+      "reconciliation": "pending-functional-review"
+    },
+    {
+      "consumer": "go",
+      "sourcePath": "features/implemented/package/xml-conformance.feature",
+      "path": "staging/go/features/implemented/package/xml-conformance.feature",
+      "sha256": "a22dad0297460205a19d850488ee9e986b6b99d40ca1511f101b73cffdb9eb04",
+      "compiledCases": 5,
+      "executionCredit": false,
+      "reconciliation": "pending-functional-review"
+    },
+    {
+      "consumer": "go",
+      "sourcePath": "features/implemented/package/xml-insert.feature",
+      "path": "staging/go/features/implemented/package/xml-insert.feature",
+      "sha256": "67d6f4ca439fa821955e7d98a4c63b8b26ed4565379e0012891d9b8337538b1d",
+      "compiledCases": 4,
+      "executionCredit": false,
+      "reconciliation": "pending-functional-review"
+    },
+    {
+      "consumer": "go",
+      "sourcePath": "features/implemented/package/xml-normalization.feature",
+      "path": "staging/go/features/implemented/package/xml-normalization.feature",
+      "sha256": "d7607e1abc47ded042778aa7d059181b4bf137c32db5aa0c848eec8afd1cd7b3",
+      "compiledCases": 3,
+      "executionCredit": false,
+      "reconciliation": "pending-functional-review"
+    },
+    {
+      "consumer": "go",
+      "sourcePath": "features/implemented/package/xml-subtree.feature",
+      "path": "staging/go/features/implemented/package/xml-subtree.feature",
+      "sha256": "de7189f5b67fa7b8ee1246d1dcd8cbe3fa499b2f3f4601d4f5430b410be37222",
+      "compiledCases": 2,
+      "executionCredit": false,
+      "reconciliation": "pending-functional-review"
+    },
+    {
+      "consumer": "go",
+      "sourcePath": "features/implemented/package/xml.feature",
+      "path": "staging/go/features/implemented/package/xml.feature",
+      "sha256": "14d423967963a78754eb1c967c379ef2173cf8739650a7c6eb73b86bb2e2260a",
+      "compiledCases": 7,
+      "executionCredit": false,
+      "reconciliation": "pending-functional-review"
+    },
+    {
+      "consumer": "go",
+      "sourcePath": "features/implemented/package/zip64.feature",
+      "path": "staging/go/features/implemented/package/zip64.feature",
+      "sha256": "6f2cdf3a2277795293afdb5ff742389576b4d467acedc9ec4e3b0821e27f4ccd",
+      "compiledCases": 14,
+      "executionCredit": false,
+      "reconciliation": "pending-functional-review"
+    },
+    {
+      "consumer": "go",
+      "sourcePath": "features/implemented/presentation/bounded-edit.feature",
+      "path": "staging/go/features/implemented/presentation/bounded-edit.feature",
+      "sha256": "5f3a20982f9c210dc1191fb6edc2de4b22267e27216925f5442698799c7f4c9e",
+      "compiledCases": 5,
+      "executionCredit": false,
+      "reconciliation": "pending-functional-review"
+    },
+    {
+      "consumer": "go",
+      "sourcePath": "features/implemented/presentation/notes-edit.feature",
+      "path": "staging/go/features/implemented/presentation/notes-edit.feature",
+      "sha256": "3ea6d8cee0cff0dd485bb34036d0a261f12fb071ce0b47b09b3ece88ad7d2aad",
+      "compiledCases": 12,
+      "executionCredit": false,
+      "reconciliation": "pending-functional-review"
+    },
+    {
+      "consumer": "go",
+      "sourcePath": "features/implemented/presentation/notes-multiline.feature",
+      "path": "staging/go/features/implemented/presentation/notes-multiline.feature",
+      "sha256": "83f6b24b042d2c0eae2f6749c7af772b02a0d1730b19f7bd0400511fd19f358c",
+      "compiledCases": 9,
+      "executionCredit": false,
+      "reconciliation": "pending-functional-review"
+    },
+    {
+      "consumer": "go",
+      "sourcePath": "features/implemented/presentation/notes-template-choices.feature",
+      "path": "staging/go/features/implemented/presentation/notes-template-choices.feature",
+      "sha256": "968313da0d2a291444e02f8713f69292786cee548e0dedeb9181dcfad6e137c8",
+      "compiledCases": 8,
+      "executionCredit": false,
+      "reconciliation": "pending-functional-review"
+    },
+    {
+      "consumer": "go",
+      "sourcePath": "features/implemented/spreadsheet/allowed-values.feature",
+      "path": "staging/go/features/implemented/spreadsheet/allowed-values.feature",
+      "sha256": "82763fab46ead32c5c3609e9dbc5a4d8bedd80e1e69bf0771c9f59641f41c962",
+      "compiledCases": 19,
+      "executionCredit": false,
+      "reconciliation": "pending-functional-review"
+    },
+    {
+      "consumer": "go",
+      "sourcePath": "features/implemented/spreadsheet/bounded-edit.feature",
+      "path": "staging/go/features/implemented/spreadsheet/bounded-edit.feature",
+      "sha256": "420f54a8d7f20db6aeba098cb61a3722a5fb901599ce0748ed0c000531169fdb",
+      "compiledCases": 9,
+      "executionCredit": false,
+      "reconciliation": "pending-functional-review"
+    },
+    {
+      "consumer": "go",
+      "sourcePath": "features/implemented/spreadsheet/cache-invalidation.feature",
+      "path": "staging/go/features/implemented/spreadsheet/cache-invalidation.feature",
+      "sha256": "bef04f44afe2c8f653145d6f7de9fde89bb674019dd8c873a0c8275132747a47",
+      "compiledCases": 9,
+      "executionCredit": false,
+      "reconciliation": "pending-functional-review"
+    },
+    {
+      "consumer": "go",
+      "sourcePath": "features/implemented/spreadsheet/calc-chain.feature",
+      "path": "staging/go/features/implemented/spreadsheet/calc-chain.feature",
+      "sha256": "718b57e2c01714dfb70421ec8ce5b8448776da064131c6f85370af728b91d4e4",
+      "compiledCases": 7,
+      "executionCredit": false,
+      "reconciliation": "pending-functional-review"
+    },
+    {
+      "consumer": "go",
+      "sourcePath": "features/implemented/spreadsheet/dependency-structure.feature",
+      "path": "staging/go/features/implemented/spreadsheet/dependency-structure.feature",
+      "sha256": "7c0e7730e34593fc49867a0a8c4ed9292e79b372e86b2e02ae4225d94d2da609",
+      "compiledCases": 3,
+      "executionCredit": false,
+      "reconciliation": "pending-functional-review"
+    },
+    {
+      "consumer": "go",
+      "sourcePath": "features/implemented/spreadsheet/formula-analysis.feature",
+      "path": "staging/go/features/implemented/spreadsheet/formula-analysis.feature",
+      "sha256": "bf7acc12daabe07708c14f7bae6f3cb4078df4c977256e7ba08e98287a04b262",
+      "compiledCases": 12,
+      "executionCredit": false,
+      "reconciliation": "pending-functional-review"
+    },
+    {
+      "consumer": "go",
+      "sourcePath": "features/implemented/spreadsheet/formula-remap.feature",
+      "path": "staging/go/features/implemented/spreadsheet/formula-remap.feature",
+      "sha256": "daee0e2ccd59c69abb0979cfda00b6a203183bbfc7c31bee0733fe021128f47d",
+      "compiledCases": 5,
+      "executionCredit": false,
+      "reconciliation": "pending-functional-review"
+    },
+    {
+      "consumer": "go",
+      "sourcePath": "features/implemented/spreadsheet/formula-tokens.feature",
+      "path": "staging/go/features/implemented/spreadsheet/formula-tokens.feature",
+      "sha256": "c85553c0d4244f33b64c25a8114d2db6ce11454dad65f32992cf7c5fc3f3a997",
+      "compiledCases": 2,
+      "executionCredit": false,
+      "reconciliation": "pending-functional-review"
+    },
+    {
+      "consumer": "go",
+      "sourcePath": "features/implemented/spreadsheet/image-replace.feature",
+      "path": "staging/go/features/implemented/spreadsheet/image-replace.feature",
+      "sha256": "e9d91b445f158d04dfa5c455d0dd6978c699a64a7fa681bb84255ff88bbe451d",
+      "compiledCases": 7,
+      "executionCredit": false,
+      "reconciliation": "pending-functional-review"
+    },
+    {
+      "consumer": "go",
+      "sourcePath": "features/implemented/spreadsheet/style-index.feature",
+      "path": "staging/go/features/implemented/spreadsheet/style-index.feature",
+      "sha256": "70b5c0dd83fedb75b3d8a2f9b04b9cfcc596335945f52820039b199d54563435",
+      "compiledCases": 7,
+      "executionCredit": false,
+      "reconciliation": "pending-functional-review"
+    },
+    {
+      "consumer": "go",
+      "sourcePath": "features/implemented/spreadsheet/validation-axis-ranges.feature",
+      "path": "staging/go/features/implemented/spreadsheet/validation-axis-ranges.feature",
+      "sha256": "bf21ed3d8e560657daaf9b83244d4b584ff294f475ba97e1afaf3cf4665e72cc",
+      "compiledCases": 9,
+      "executionCredit": false,
+      "reconciliation": "pending-functional-review"
+    },
+    {
+      "consumer": "go",
+      "sourcePath": "features/implemented/spreadsheet/validation-lexical-limits.feature",
+      "path": "staging/go/features/implemented/spreadsheet/validation-lexical-limits.feature",
+      "sha256": "0b239befeddb77adbd4133b360d8a5d18176fc2a8fcbb38a12cb09bc28b55b42",
+      "compiledCases": 10,
+      "executionCredit": false,
+      "reconciliation": "pending-functional-review"
+    },
+    {
+      "consumer": "go",
+      "sourcePath": "features/implemented/spreadsheet/validation-strings.feature",
+      "path": "staging/go/features/implemented/spreadsheet/validation-strings.feature",
+      "sha256": "67b1e68df71c3a1134b741627dce5f1a2bc4547bbb09bf8ae028990944e9196a",
+      "compiledCases": 8,
+      "executionCredit": false,
+      "reconciliation": "pending-functional-review"
+    },
+    {
+      "consumer": "go",
+      "sourcePath": "features/planned/document.feature",
+      "path": "staging/go/features/planned/document.feature",
+      "sha256": "b48d15c8ee74cadb1a403640da68e8f2e80a1042f53345aad91970b1dc4e0e26",
+      "compiledCases": 4,
+      "executionCredit": false,
+      "reconciliation": "pending-functional-review"
+    },
+    {
+      "consumer": "go",
+      "sourcePath": "features/planned/oracle-contract.feature",
+      "path": "staging/go/features/planned/oracle-contract.feature",
+      "sha256": "dfa9b87a30cb69ba3b2c579cbc95b3ffe4a49219a012a3afefd4d89bb94b07f3",
+      "compiledCases": 1,
+      "executionCredit": false,
+      "reconciliation": "pending-functional-review"
+    },
+    {
+      "consumer": "go",
+      "sourcePath": "features/planned/package.feature",
+      "path": "staging/go/features/planned/package.feature",
+      "sha256": "6525789013024e23fa015abade9d61a5ccdb0c9ae4744875d1c1093babaf3b00",
+      "compiledCases": 6,
+      "executionCredit": false,
+      "reconciliation": "pending-functional-review"
+    },
+    {
+      "consumer": "go",
+      "sourcePath": "features/planned/presentation.feature",
+      "path": "staging/go/features/planned/presentation.feature",
+      "sha256": "c0376245d3bc7092f080a2efa90e126e9ebe88f93c8254a2ba037c8edeb4b8a6",
+      "compiledCases": 4,
+      "executionCredit": false,
+      "reconciliation": "pending-functional-review"
+    },
+    {
+      "consumer": "go",
+      "sourcePath": "features/planned/spreadsheet.feature",
+      "path": "staging/go/features/planned/spreadsheet.feature",
+      "sha256": "e16ff842b2e9c299cdea0c96baf4f8b7743efba007d333f381fcc5bc4912508f",
+      "compiledCases": 5,
+      "executionCredit": false,
+      "reconciliation": "pending-functional-review"
+    },
+    {
+      "consumer": "python",
+      "sourcePath": "docs/catalogue-staging/python-native/features/test_acceptance_ledger.feature",
+      "path": "staging/python/features/test_acceptance_ledger.feature",
+      "sha256": "d3a803799da58b3ac6b499b7fa00ce94be3049bedfa5e157b11679450b9a6e0b",
+      "compiledCases": 8,
+      "executionCredit": false,
+      "reconciliation": "pending-functional-review"
+    },
+    {
+      "consumer": "python",
+      "sourcePath": "docs/catalogue-staging/python-native/features/test_advanced_edge_cases.feature",
+      "path": "staging/python/features/test_advanced_edge_cases.feature",
+      "sha256": "49a099fb823c9bd4ec66d480ae170d2d34ff5f040a6022a43c59b1b0f3ad8147",
+      "compiledCases": 12,
+      "executionCredit": false,
+      "reconciliation": "pending-functional-review"
+    },
+    {
+      "consumer": "python",
+      "sourcePath": "docs/catalogue-staging/python-native/features/test_aioumcp_validation.feature",
+      "path": "staging/python/features/test_aioumcp_validation.feature",
+      "sha256": "834cf8db33b5548ed1b805bd820282cff8fc4af75d81ec0b1c07a76a4b040d5b",
+      "compiledCases": 12,
+      "executionCredit": false,
+      "reconciliation": "pending-functional-review"
+    },
+    {
+      "consumer": "python",
+      "sourcePath": "docs/catalogue-staging/python-native/features/test_azure_pricing_tools.feature",
+      "path": "staging/python/features/test_azure_pricing_tools.feature",
+      "sha256": "06ce8fd03de6d120a5ec46ac5b35dcdea89c31e3a1d00341261ff6de4e38c5df",
+      "compiledCases": 3,
+      "executionCredit": false,
+      "reconciliation": "pending-functional-review"
+    },
+    {
+      "consumer": "python",
+      "sourcePath": "docs/catalogue-staging/python-native/features/test_bugfix_round2.feature",
+      "path": "staging/python/features/test_bugfix_round2.feature",
+      "sha256": "b8084b882b67e009073baf66166570f6fc1d6cc991c4916112ace188c51d8307",
+      "compiledCases": 31,
+      "executionCredit": false,
+      "reconciliation": "pending-functional-review"
+    },
+    {
+      "consumer": "python",
+      "sourcePath": "docs/catalogue-staging/python-native/features/test_comment_tools_e2e.feature",
+      "path": "staging/python/features/test_comment_tools_e2e.feature",
+      "sha256": "11755ee4f93d6d93e8a631fbb1bcd7fc4b496f131a53b80a720c095f4e2d4b0d",
+      "compiledCases": 6,
+      "executionCredit": false,
+      "reconciliation": "pending-functional-review"
+    },
+    {
+      "consumer": "python",
+      "sourcePath": "docs/catalogue-staging/python-native/features/test_comprehensive_paths.feature",
+      "path": "staging/python/features/test_comprehensive_paths.feature",
+      "sha256": "0ca22733fa44ba0e50117e5a68661bcc240da2ad5488a55d463f6d6f30b140f7",
+      "compiledCases": 20,
+      "executionCredit": false,
+      "reconciliation": "pending-functional-review"
+    },
+    {
+      "consumer": "python",
+      "sourcePath": "docs/catalogue-staging/python-native/features/test_coverage_boost.feature",
+      "path": "staging/python/features/test_coverage_boost.feature",
+      "sha256": "f70359697cf37c6bba1e86a5cb44bbdefd03accf346370e4d5851c06709024e9",
+      "compiledCases": 21,
+      "executionCredit": false,
+      "reconciliation": "pending-functional-review"
+    },
+    {
+      "consumer": "python",
+      "sourcePath": "docs/catalogue-staging/python-native/features/test_edge_cases.feature",
+      "path": "staging/python/features/test_edge_cases.feature",
+      "sha256": "492240bfd25b2298c8b482edb5abd669a55b64f6e28274f85e0f78508b70303a",
+      "compiledCases": 14,
+      "executionCredit": false,
+      "reconciliation": "pending-functional-review"
+    },
+    {
+      "consumer": "python",
+      "sourcePath": "docs/catalogue-staging/python-native/features/test_eighty_percent.feature",
+      "path": "staging/python/features/test_eighty_percent.feature",
+      "sha256": "d4cc96edbffea25f7ea8ef52f2172a23fd60e60c239bc08fbeccac2fc5f50ade",
+      "compiledCases": 17,
+      "executionCredit": false,
+      "reconciliation": "pending-functional-review"
+    },
+    {
+      "consumer": "python",
+      "sourcePath": "docs/catalogue-staging/python-native/features/test_error_paths.feature",
+      "path": "staging/python/features/test_error_paths.feature",
+      "sha256": "e8c58c17857751492812327722b385002dcd5587cd932b1892c41ca1de735945",
+      "compiledCases": 20,
+      "executionCredit": false,
+      "reconciliation": "pending-functional-review"
+    },
+    {
+      "consumer": "python",
+      "sourcePath": "docs/catalogue-staging/python-native/features/test_excel_advanced_tools.feature",
+      "path": "staging/python/features/test_excel_advanced_tools.feature",
+      "sha256": "5d26317bb5c3191a4d9308f6b46d1c27fb8b24592996663606c5f9eeb3371ecb",
+      "compiledCases": 89,
+      "executionCredit": false,
+      "reconciliation": "pending-functional-review"
+    },
+    {
+      "consumer": "python",
+      "sourcePath": "docs/catalogue-staging/python-native/features/test_excel_charts.feature",
+      "path": "staging/python/features/test_excel_charts.feature",
+      "sha256": "f7bc9725d3924d119dfa6d34e6c812d4506fa97badb36c6b5b77887656f4ba79",
+      "compiledCases": 1,
+      "executionCredit": false,
+      "reconciliation": "pending-functional-review"
+    },
+    {
+      "consumer": "python",
+      "sourcePath": "docs/catalogue-staging/python-native/features/test_excel_tools.feature",
+      "path": "staging/python/features/test_excel_tools.feature",
+      "sha256": "f700b99154a6bb73aaf0ff5d9c1ccf37724aa2471ba7e208094e458d82a1506b",
+      "compiledCases": 14,
+      "executionCredit": false,
+      "reconciliation": "pending-functional-review"
+    },
+    {
+      "consumer": "python",
+      "sourcePath": "docs/catalogue-staging/python-native/features/test_extended_ops.feature",
+      "path": "staging/python/features/test_extended_ops.feature",
+      "sha256": "571696c7e4650484ba715efeb4cf69f9c89534f476bffaf5071120345df02de7",
+      "compiledCases": 22,
+      "executionCredit": false,
+      "reconciliation": "pending-functional-review"
+    },
+    {
+      "consumer": "python",
+      "sourcePath": "docs/catalogue-staging/python-native/features/test_final_coverage.feature",
+      "path": "staging/python/features/test_final_coverage.feature",
+      "sha256": "1edf3e862d89281ade98bcc921793fc52100907cf4abfc9da7b707cf13c030dd",
+      "compiledCases": 19,
+      "executionCredit": false,
+      "reconciliation": "pending-functional-review"
+    },
+    {
+      "consumer": "python",
+      "sourcePath": "docs/catalogue-staging/python-native/features/test_final_push.feature",
+      "path": "staging/python/features/test_final_push.feature",
+      "sha256": "9996b71a56f95d0c8192b382ad5206961616ab2d4005869cd2a2e9ef90e12ec6",
+      "compiledCases": 22,
+      "executionCredit": false,
+      "reconciliation": "pending-functional-review"
+    },
+    {
+      "consumer": "python",
+      "sourcePath": "docs/catalogue-staging/python-native/features/test_fixture_asset_resolution.feature",
+      "path": "staging/python/features/test_fixture_asset_resolution.feature",
+      "sha256": "e5668b83c8ed2f157ee079e7e5b92377aa8eba6e6dde1a7976e71f4e747428e2",
+      "compiledCases": 6,
+      "executionCredit": false,
+      "reconciliation": "pending-functional-review"
+    },
+    {
+      "consumer": "python",
+      "sourcePath": "docs/catalogue-staging/python-native/features/test_fixture_files_not_encrypted.feature",
+      "path": "staging/python/features/test_fixture_files_not_encrypted.feature",
+      "sha256": "2692ae0c623f9c9b523a60f1d3206bdd1f1eafdfbfe8c84d2d433720e1a272f0",
+      "compiledCases": 2,
+      "executionCredit": false,
+      "reconciliation": "pending-functional-review"
+    },
+    {
+      "consumer": "python",
+      "sourcePath": "docs/catalogue-staging/python-native/features/test_fixture_source_integrity.feature",
+      "path": "staging/python/features/test_fixture_source_integrity.feature",
+      "sha256": "181917bd18b9735edbe71c7e2b45df4c1bb3f100fa8b420df0d68f1db88fa247",
+      "compiledCases": 7,
+      "executionCredit": false,
+      "reconciliation": "pending-functional-review"
+    },
+    {
+      "consumer": "python",
+      "sourcePath": "docs/catalogue-staging/python-native/features/test_high_volume.feature",
+      "path": "staging/python/features/test_high_volume.feature",
+      "sha256": "f3425a3273202dc2f58ef554ddf30c79f9fb58d40349bfa56c31eb06d6769c2f",
+      "compiledCases": 29,
+      "executionCredit": false,
+      "reconciliation": "pending-functional-review"
+    },
+    {
+      "consumer": "python",
+      "sourcePath": "docs/catalogue-staging/python-native/features/test_image_insertion.feature",
+      "path": "staging/python/features/test_image_insertion.feature",
+      "sha256": "a16dde254d8ce2c5a0ad7c4b749076bcad4bd8ebd818c37c3bf0d6828f1a963b",
+      "compiledCases": 34,
+      "executionCredit": false,
+      "reconciliation": "pending-functional-review"
+    },
+    {
+      "consumer": "python",
+      "sourcePath": "docs/catalogue-staging/python-native/features/test_libreoffice_oracle.feature",
+      "path": "staging/python/features/test_libreoffice_oracle.feature",
+      "sha256": "ce2a9e74f9f603764ce3a07ce11dffb7f9d0bc3f9b9f7653ee4cc8f45a7640fe",
+      "compiledCases": 2,
+      "executionCredit": false,
+      "reconciliation": "pending-functional-review"
+    },
+    {
+      "consumer": "python",
+      "sourcePath": "docs/catalogue-staging/python-native/features/test_metadata_cache.feature",
+      "path": "staging/python/features/test_metadata_cache.feature",
+      "sha256": "400fbb4f16b54dbdccc91f1fca87e9e292338b2469add75ee2e72ad67a112215",
+      "compiledCases": 8,
+      "executionCredit": false,
+      "reconciliation": "pending-functional-review"
+    },
+    {
+      "consumer": "python",
+      "sourcePath": "docs/catalogue-staging/python-native/features/test_more_coverage.feature",
+      "path": "staging/python/features/test_more_coverage.feature",
+      "sha256": "3fdd4151f545881265e25f1bce4b731f5a406f879a0386d4929f79ee5c958e88",
+      "compiledCases": 21,
+      "executionCredit": false,
+      "reconciliation": "pending-functional-review"
+    },
+    {
+      "consumer": "python",
+      "sourcePath": "docs/catalogue-staging/python-native/features/test_mutation_contract_policy.feature",
+      "path": "staging/python/features/test_mutation_contract_policy.feature",
+      "sha256": "108df2949064df7bc2bb164b320bce547cf8cfb0fa09a8e36dee0caa2ef578e4",
+      "compiledCases": 3,
+      "executionCredit": false,
+      "reconciliation": "pending-functional-review"
+    },
+    {
+      "consumer": "python",
+      "sourcePath": "docs/catalogue-staging/python-native/features/test_mutation_diagnostics.feature",
+      "path": "staging/python/features/test_mutation_diagnostics.feature",
+      "sha256": "396c2ab36de5094a21a495e11faed2f1ffd50463b1954a7ab8933be85f0ee9ed",
+      "compiledCases": 5,
+      "executionCredit": false,
+      "reconciliation": "pending-functional-review"
+    },
+    {
+      "consumer": "python",
+      "sourcePath": "docs/catalogue-staging/python-native/features/test_mutation_faults.feature",
+      "path": "staging/python/features/test_mutation_faults.feature",
+      "sha256": "d6f4dbc470073bb1f401e972a7d35050226254534b9931f64e499ab064263de6",
+      "compiledCases": 6,
+      "executionCredit": false,
+      "reconciliation": "pending-functional-review"
+    },
+    {
+      "consumer": "python",
+      "sourcePath": "docs/catalogue-staging/python-native/features/test_mutation_modes.feature",
+      "path": "staging/python/features/test_mutation_modes.feature",
+      "sha256": "bb4d06658417bc0da307f9833a23b317a6f75d35a7dc448cc14624331ad6903f",
+      "compiledCases": 6,
+      "executionCredit": false,
+      "reconciliation": "pending-functional-review"
+    },
+    {
+      "consumer": "python",
+      "sourcePath": "docs/catalogue-staging/python-native/features/test_office_help.feature",
+      "path": "staging/python/features/test_office_help.feature",
+      "sha256": "ac8105eab2df75206012a6f53a935da581fd45b3d6a416be8017cd524eb365bc",
+      "compiledCases": 7,
+      "executionCredit": false,
+      "reconciliation": "pending-functional-review"
+    },
+    {
+      "consumer": "python",
+      "sourcePath": "docs/catalogue-staging/python-native/features/test_office_http.feature",
+      "path": "staging/python/features/test_office_http.feature",
+      "sha256": "be6cae443c65c25b3b2b18b783f58f50eb5a37658d8e074009077ba8b617e68b",
+      "compiledCases": 9,
+      "executionCredit": false,
+      "reconciliation": "pending-functional-review"
+    },
+    {
+      "consumer": "python",
+      "sourcePath": "docs/catalogue-staging/python-native/features/test_office_unified_tools.feature",
+      "path": "staging/python/features/test_office_unified_tools.feature",
+      "sha256": "525af0846c91f28f544437fd42f93cbc79d8a7474076754e0fb2e648139b55e7",
+      "compiledCases": 74,
+      "executionCredit": false,
+      "reconciliation": "pending-functional-review"
+    },
+    {
+      "consumer": "python",
+      "sourcePath": "docs/catalogue-staging/python-native/features/test_package_guard.feature",
+      "path": "staging/python/features/test_package_guard.feature",
+      "sha256": "39dad34043a0c361337213f149b3695641c600a3f0a10c431f059aa2dfc3ff1d",
+      "compiledCases": 4,
+      "executionCredit": false,
+      "reconciliation": "pending-functional-review"
+    },
+    {
+      "consumer": "python",
+      "sourcePath": "docs/catalogue-staging/python-native/features/test_package_preservation.feature",
+      "path": "staging/python/features/test_package_preservation.feature",
+      "sha256": "88d51dbe55765e59820c0a67be798e4e50ec5ef88325259cedbcf76a76700cf7",
+      "compiledCases": 5,
+      "executionCredit": false,
+      "reconciliation": "pending-functional-review"
+    },
+    {
+      "consumer": "python",
+      "sourcePath": "docs/catalogue-staging/python-native/features/test_patch_transactions.feature",
+      "path": "staging/python/features/test_patch_transactions.feature",
+      "sha256": "d5367cafbf97e21990bb98f32693b3b0789ad4835fb4eeefd743dd0f0bceb9c2",
+      "compiledCases": 7,
+      "executionCredit": false,
+      "reconciliation": "pending-functional-review"
+    },
+    {
+      "consumer": "python",
+      "sourcePath": "docs/catalogue-staging/python-native/features/test_path_variations.feature",
+      "path": "staging/python/features/test_path_variations.feature",
+      "sha256": "59e994047c14f03977432739c4dcb03502fd4cd76c6d29fc41a391feece17675",
+      "compiledCases": 20,
+      "executionCredit": false,
+      "reconciliation": "pending-functional-review"
+    },
+    {
+      "consumer": "python",
+      "sourcePath": "docs/catalogue-staging/python-native/features/test_pptx_advanced_tools.feature",
+      "path": "staging/python/features/test_pptx_advanced_tools.feature",
+      "sha256": "a80ebe6fa15c079bd178ded56b5e5d84f37cd1735722aea2da031e733f106591",
+      "compiledCases": 40,
+      "executionCredit": false,
+      "reconciliation": "pending-functional-review"
+    },
+    {
+      "consumer": "python",
+      "sourcePath": "docs/catalogue-staging/python-native/features/test_pptx_advanced_tools_extended.feature",
+      "path": "staging/python/features/test_pptx_advanced_tools_extended.feature",
+      "sha256": "dce4f9fe8d5ac0e353db2d359c2173b0671750c5239c37384d24969bbabe7d61",
+      "compiledCases": 23,
+      "executionCredit": false,
+      "reconciliation": "pending-functional-review"
+    },
+    {
+      "consumer": "python",
+      "sourcePath": "docs/catalogue-staging/python-native/features/test_pptx_coverage.feature",
+      "path": "staging/python/features/test_pptx_coverage.feature",
+      "sha256": "771c49cb9346dd742b03f3176b1f4d0d7dd693e02b2702fb9d7e1e6d0b694756",
+      "compiledCases": 27,
+      "executionCredit": false,
+      "reconciliation": "pending-functional-review"
+    },
+    {
+      "consumer": "python",
+      "sourcePath": "docs/catalogue-staging/python-native/features/test_pptx_slide_transfer_tools.feature",
+      "path": "staging/python/features/test_pptx_slide_transfer_tools.feature",
+      "sha256": "75fa5a41a16c0654d17a841e05930d7c34db1de5e29d17fd0ba3e4bbd1c781f9",
+      "compiledCases": 5,
+      "executionCredit": false,
+      "reconciliation": "pending-functional-review"
+    },
+    {
+      "consumer": "python",
+      "sourcePath": "docs/catalogue-staging/python-native/features/test_pptx_tools.feature",
+      "path": "staging/python/features/test_pptx_tools.feature",
+      "sha256": "73ddb7b290610811a6c84fa9201d21b758556e49deaad69b718e1db8bda843c8",
+      "compiledCases": 24,
+      "executionCredit": false,
+      "reconciliation": "pending-functional-review"
+    },
+    {
+      "consumer": "python",
+      "sourcePath": "docs/catalogue-staging/python-native/features/test_preserving_text_and_clone.feature",
+      "path": "staging/python/features/test_preserving_text_and_clone.feature",
+      "sha256": "49f9c33fecb4db637ceb3240a5d0f4860dc188841b4e7629ee2bcedd39115ecd",
+      "compiledCases": 5,
+      "executionCredit": false,
+      "reconciliation": "pending-functional-review"
+    },
+    {
+      "consumer": "python",
+      "sourcePath": "docs/catalogue-staging/python-native/features/test_shared_contract_inventory.feature",
+      "path": "staging/python/features/test_shared_contract_inventory.feature",
+      "sha256": "1a4ef7914653ee9ec90051aa65628b662142ad067125a38bdd2a8de9e80f0eae",
+      "compiledCases": 8,
+      "executionCredit": false,
+      "reconciliation": "pending-functional-review"
+    },
+    {
+      "consumer": "python",
+      "sourcePath": "docs/catalogue-staging/python-native/features/test_stdio_mutation_workflows.feature",
+      "path": "staging/python/features/test_stdio_mutation_workflows.feature",
+      "sha256": "aa31da6f57f3777cae61efced2841ab7b17a77914afd3e5af2dc1dafa3bc0ce5",
+      "compiledCases": 2,
+      "executionCredit": false,
+      "reconciliation": "pending-functional-review"
+    },
+    {
+      "consumer": "python",
+      "sourcePath": "docs/catalogue-staging/python-native/features/test_strategic_coverage.feature",
+      "path": "staging/python/features/test_strategic_coverage.feature",
+      "sha256": "1e9249a2da8aab651afa9d4a322e593232f85f4d05b738f93ad45c2d02b294dc",
+      "compiledCases": 23,
+      "executionCredit": false,
+      "reconciliation": "pending-functional-review"
+    },
+    {
+      "consumer": "python",
+      "sourcePath": "docs/catalogue-staging/python-native/features/test_targeted_coverage.feature",
+      "path": "staging/python/features/test_targeted_coverage.feature",
+      "sha256": "0d708fca3c643cb6af54bc2ff58579c3afb3d4616d94af55bc8e3c28751f244e",
+      "compiledCases": 17,
+      "executionCredit": false,
+      "reconciliation": "pending-functional-review"
+    },
+    {
+      "consumer": "python",
+      "sourcePath": "docs/catalogue-staging/python-native/features/test_tools_extended.feature",
+      "path": "staging/python/features/test_tools_extended.feature",
+      "sha256": "28068c8d98770fc204e02261d29b8b55ed83f9b4f1425b49cb70f594e9ca82db",
+      "compiledCases": 7,
+      "executionCredit": false,
+      "reconciliation": "pending-functional-review"
+    },
+    {
+      "consumer": "python",
+      "sourcePath": "docs/catalogue-staging/python-native/features/test_track_change_reading.feature",
+      "path": "staging/python/features/test_track_change_reading.feature",
+      "sha256": "6ba2ba589ba774ca271b80cdab201265854919541dd96a18eef0449a5eb82d44",
+      "compiledCases": 13,
+      "executionCredit": false,
+      "reconciliation": "pending-functional-review"
+    },
+    {
+      "consumer": "python",
+      "sourcePath": "docs/catalogue-staging/python-native/features/test_track_changes.feature",
+      "path": "staging/python/features/test_track_changes.feature",
+      "sha256": "f723d55d19a6f5f4454cf5b2cf3cc4e87947570f4ff411412cf7d4433ee72133",
+      "compiledCases": 16,
+      "executionCredit": false,
+      "reconciliation": "pending-functional-review"
+    },
+    {
+      "consumer": "python",
+      "sourcePath": "docs/catalogue-staging/python-native/features/test_track_changes_manual.feature",
+      "path": "staging/python/features/test_track_changes_manual.feature",
+      "sha256": "32cb45397b7a863b22e9aa64c389201c83402f37ca7b6c3485428ea04c254ad3",
+      "compiledCases": 4,
+      "executionCredit": false,
+      "reconciliation": "pending-functional-review"
+    },
+    {
+      "consumer": "python",
+      "sourcePath": "docs/catalogue-staging/python-native/features/test_transport_dependency.feature",
+      "path": "staging/python/features/test_transport_dependency.feature",
+      "sha256": "a1e3d65baeba4e4aa6e25c34831bf6823b0a6dfc82e8e295db66fedbba4ed35f",
+      "compiledCases": 4,
+      "executionCredit": false,
+      "reconciliation": "pending-functional-review"
+    },
+    {
+      "consumer": "python",
+      "sourcePath": "docs/catalogue-staging/python-native/features/test_umcp_office_features.feature",
+      "path": "staging/python/features/test_umcp_office_features.feature",
+      "sha256": "b037f8eb96e73d1d02d0668c5ba094fff75388fec352b4a65b4b5ff9128efc07",
+      "compiledCases": 7,
+      "executionCredit": false,
+      "reconciliation": "pending-functional-review"
+    },
+    {
+      "consumer": "python",
+      "sourcePath": "docs/catalogue-staging/python-native/features/test_web_tools.feature",
+      "path": "staging/python/features/test_web_tools.feature",
+      "sha256": "3a4ffb354db02444cf0bbee72f5d81889fb076d9473abf13117b299848bb30e7",
+      "compiledCases": 12,
+      "executionCredit": false,
+      "reconciliation": "pending-functional-review"
+    },
+    {
+      "consumer": "python",
+      "sourcePath": "docs/catalogue-staging/python-native/features/test_word_advanced_tools.feature",
+      "path": "staging/python/features/test_word_advanced_tools.feature",
+      "sha256": "fa16326009252b1524e217747216aead42ebafb6b62cada7035576b169b45703",
+      "compiledCases": 36,
+      "executionCredit": false,
+      "reconciliation": "pending-functional-review"
+    },
+    {
+      "consumer": "python",
+      "sourcePath": "docs/catalogue-staging/python-native/features/test_word_advanced_tools_extended.feature",
+      "path": "staging/python/features/test_word_advanced_tools_extended.feature",
+      "sha256": "9ebd421ab7f3b82bd84c2d82a12c75fa6073e309b53b95f4cba85d93d41bc01e",
+      "compiledCases": 16,
+      "executionCredit": false,
+      "reconciliation": "pending-functional-review"
+    },
+    {
+      "consumer": "python",
+      "sourcePath": "docs/catalogue-staging/python-native/features/test_word_anchor_discovery.feature",
+      "path": "staging/python/features/test_word_anchor_discovery.feature",
+      "sha256": "7c600fb1c7f191edd2ef2899edd583798f3290dd349de148034016596911c4e6",
+      "compiledCases": 5,
+      "executionCredit": false,
+      "reconciliation": "pending-functional-review"
+    },
+    {
+      "consumer": "python",
+      "sourcePath": "docs/catalogue-staging/python-native/features/test_word_comment_replies.feature",
+      "path": "staging/python/features/test_word_comment_replies.feature",
+      "sha256": "507b48d16c0c23fc61f7560b6aabdbc52cd4a795816ba0dc7af422c9a1ca09ec",
+      "compiledCases": 7,
+      "executionCredit": false,
+      "reconciliation": "pending-functional-review"
+    },
+    {
+      "consumer": "python",
+      "sourcePath": "docs/catalogue-staging/python-native/features/test_word_comment_resolution.feature",
+      "path": "staging/python/features/test_word_comment_resolution.feature",
+      "sha256": "e463eeff4c9e2446857c029b62f1826662ee826ae7d3f0d66e7bfadd392de1f4",
+      "compiledCases": 10,
+      "executionCredit": false,
+      "reconciliation": "pending-functional-review"
+    },
+    {
+      "consumer": "python",
+      "sourcePath": "docs/catalogue-staging/python-native/features/test_word_comment_roundtrip_fixture.feature",
+      "path": "staging/python/features/test_word_comment_roundtrip_fixture.feature",
+      "sha256": "b81f6be178f85b3b36ae59783e1cd23f48389f0b95ddbdf0b465c3cb0612286a",
+      "compiledCases": 3,
+      "executionCredit": false,
+      "reconciliation": "pending-functional-review"
+    },
+    {
+      "consumer": "python",
+      "sourcePath": "docs/catalogue-staging/python-native/features/test_word_coverage.feature",
+      "path": "staging/python/features/test_word_coverage.feature",
+      "sha256": "2ab7144ffc61ca779b6a933405dbdf2e08aaae237b7c069eaa23d11fed581d67",
+      "compiledCases": 16,
+      "executionCredit": false,
+      "reconciliation": "pending-functional-review"
+    },
+    {
+      "consumer": "python",
+      "sourcePath": "docs/catalogue-staging/python-native/features/test_word_deep_coverage.feature",
+      "path": "staging/python/features/test_word_deep_coverage.feature",
+      "sha256": "23b331885ce6db67cd138ae6d762645bf8ec5fb463ef202395fa9ad505cf9e93",
+      "compiledCases": 25,
+      "executionCredit": false,
+      "reconciliation": "pending-functional-review"
+    },
+    {
+      "consumer": "python",
+      "sourcePath": "docs/catalogue-staging/python-native/features/test_word_pptx_advanced_ops.feature",
+      "path": "staging/python/features/test_word_pptx_advanced_ops.feature",
+      "sha256": "ed3eb2d0d7cdb20757eaf97549b1b4615be110c60144308920a4d3905fcafb5c",
+      "compiledCases": 19,
+      "executionCredit": false,
+      "reconciliation": "pending-functional-review"
+    },
+    {
+      "consumer": "python",
+      "sourcePath": "docs/catalogue-staging/python-native/features/test_word_tools.feature",
+      "path": "staging/python/features/test_word_tools.feature",
+      "sha256": "e0bd9628a0baf0f5ed0295d35d66d2e70893ef008e9efd18f93415f62668eeb8",
+      "compiledCases": 17,
+      "executionCredit": false,
+      "reconciliation": "pending-functional-review"
+    },
+    {
+      "consumer": "python",
+      "sourcePath": "docs/catalogue-staging/python-native/features/test_workflow_coverage.feature",
+      "path": "staging/python/features/test_workflow_coverage.feature",
+      "sha256": "377c32d5a4a4e16a94e6336888332b6634aa40112c097df931065bc8d2622dc2",
+      "compiledCases": 19,
+      "executionCredit": false,
+      "reconciliation": "pending-functional-review"
+    },
+    {
+      "consumer": "python",
+      "sourcePath": "docs/catalogue-staging/python-native/features/test_workflows.feature",
+      "path": "staging/python/features/test_workflows.feature",
+      "sha256": "4ba79a1ceca3cf58cc95aac833d74cbc6701993228a13824b4df4b3774bf18ac",
+      "compiledCases": 17,
+      "executionCredit": false,
+      "reconciliation": "pending-functional-review"
+    },
+    {
+      "consumer": "python",
+      "sourcePath": "docs/catalogue-staging/python-native/features/test_writer_enrolment.feature",
+      "path": "staging/python/features/test_writer_enrolment.feature",
+      "sha256": "aa8233608c2a2dd789e0bc793c887ec82861378524277c417f7741cae86dc02b",
+      "compiledCases": 4,
+      "executionCredit": false,
+      "reconciliation": "pending-functional-review"
+    },
+    {
+      "consumer": "python",
+      "sourcePath": "docs/catalogue-staging/python-native/features/test_xlsx_dependency_preservation.feature",
+      "path": "staging/python/features/test_xlsx_dependency_preservation.feature",
+      "sha256": "887eea35fea9dd8ec799b3c75653e6ca16fa076742a54f85bd79be6cab036dde",
+      "compiledCases": 5,
+      "executionCredit": false,
+      "reconciliation": "pending-functional-review"
+    }
+  ],
+  "bunMigration": [
+    {
+      "sourcePath": "features/planned/cross-language-followups.feature",
+      "sourceText": "@planned\nFeature: Cross-language limitations require independent full-port contracts\n  These obligations are not satisfied by the bounded shared mutation fixtures.\n\n  @id-docx-review-multistory-resolution\n  Scenario: Accept and reject revisions across supported document stories\n    Given a document with body header footer and footnote revisions\n    When supported insertion deletion move and formatting revisions are resolved\n    Then accepting yields the revised content in every selected story\n    And rejecting yields the original content in every selected story\n    And unsupported revision forms are reported without partial mutation\n\n  @id-docx-commentsextended-content-type\n  Scenario: Extended comments use an independently validated content type\n    Given conflicting upstream commentsExtended content-type constants\n    When the native implementation selects a content type for a fixture\n    Then an authoritative schema or format reference supports that choice\n    And an independent Office consumer accepts the saved comment thread\n\n  @id-xlsx-derived-cache-completeness\n  Scenario: Broader spreadsheet caches require range and relationship awareness\n    Given formula ranges chart caches external-link caches and calculation-chain metadata\n    When a precedent input is changed under a declared cache policy\n    Then every supported dependent representation is invalidated or recalculated correctly\n    And an unowned dependency refuses before a successful freshness claim\n",
+      "sourceSha256": "898eeadebe4b335916cf2222d5e10fca4c36c1f1757d1ead006cafe925a8c597",
+      "compiledCases": 3
+    },
+    {
+      "sourcePath": "features/planned/full-port.feature",
+      "sourceText": "@planned\nFeature: Full Office document behaviour\n  The shared workflow ledger records required outcomes. These contracts describe the\n  remaining families; they receive no credit until bound to executed outcomes.\n\n  @id-parity-inherited\n  Scenario Outline: Preserve complete <format> document behaviour\n    Given the pinned <format> facts fixtures and behaviour contracts\n    When every required operation has a native implementation\n    Then each contract has executed Gherkin steps and saved reopened outcomes\n    And no planned behaviour gaps remain for <format>\n    Examples:\n      | format |\n      | docx   |\n      | pptx   |\n      | xlsx   |\n\n  @id-parity-docx-review\n  Scenario: Native Word reviews survive accept and reject\n    Given documents with supported tracked changes and comment threads\n    When the native compare and review APIs edit them\n    Then accepting yields the revised document and rejecting yields the original\n    And thread anchors and unrelated parts survive reopening\n\n  @id-parity-pptx-composition\n  Scenario: Slide imports preserve the chosen theme and relationship policy\n    Given two presentations with shared media charts workbooks and notes\n    When a slide is imported under an explicit reconciliation policy\n    Then only the imported slide owns its independently editable chart workbook\n    And the import report identifies each touched part and appearance change\n\n  @id-parity-xlsx-structure\n  Scenario: Structural spreadsheet edits rewrite all supported references\n    Given formulas names charts tables and validation ranges across sheets\n    When rows columns sheets or ranges are changed\n    Then dependent references and address remaps agree after reopening\n    And an unsupported reference refuses the entire edit without mutation\n\n  @id-parity-native-oracle\n  Scenario: Native calculation replaces the external Office subprocess\n    Given a frozen workbook and independent calculated reference outputs\n    When the Bun-native oracle evaluates the supported calculation contract\n    Then values errors and exclusions match the pinned comparison corpus\n    And no foreign runtime or Office subprocess executes\n\n",
+      "sourceSha256": "1d8eb82a0519e98c6da861ff7ecae67d5f8ed09e3c9e8783987815201909ec23",
+      "compiledCases": 7
+    },
+    {
+      "sourcePath": "features/planned/office-mutation-additions.feature",
+      "sourceText": "@planned\nFeature: Bun retains mutation obligations beyond the shared audit seed\n  These additive contracts retain checks from the original Bun backlog. Shared\n  office_patch scenario IDs refer to operation semantics, not a required MCP transport.\n\n  @id-office-xlsx-independent-style-reader\n  Scenario: An independent reader accepts every referenced cell style\n    Given a saved workbook containing a newly introduced cell style\n    When an independent reader opens the workbook\n    Then it reads the edited cell without an invalid style index\n    And its identity and version are recorded separately from the writer\n",
+      "sourceSha256": "bddbe8a267a31194e2657e0808849f9c92e35cf17fa025c8cdd08a713d989309",
+      "compiledCases": 1
+    }
+  ],
+  "canonicalFeatures": [
+    "workflows/docx/review-integration.feature",
+    "workflows/docx/comment-content-type.feature",
+    "workflows/xlsx/cache-completeness.feature",
+    "workflows/office/full-coverage.feature",
+    "workflows/pptx/slide-import.feature",
+    "workflows/xlsx/structural-edits.feature",
+    "workflows/xlsx/calculation-engine.feature",
+    "workflows/xlsx/style-readback.feature"
+  ],
+  "policy": "Candidate copies have no canonical workflow identity or execution credit; only reviewed equivalent predicates may retire an ID.",
+  "exactStepCandidateGroups": [
+    {
+      "members": [
+        {
+          "consumer": "python",
+          "sourcePath": "docs/catalogue-staging/python-native/features/test_high_volume.feature",
+          "candidateId": "@candidate-python-high-volume-68bcd8d447",
+          "scenarioName": "Native check: get notes all slides [TestPptxGetNotes]"
+        },
+        {
+          "consumer": "python",
+          "sourcePath": "docs/catalogue-staging/python-native/features/test_word_pptx_advanced_ops.feature",
+          "candidateId": "@candidate-python-word-pptx-advanced-ops-b86a4362b4",
+          "scenarioName": "Native check: get notes no slide number [TestPptxNotesOperations]"
+        }
+      ],
+      "stepSequenceSha256": "c05b494bb7e00f9b3706aafb721b40acd5e334c16a876b48bfd5b60df81c216f",
+      "status": "exact-step-candidate-only",
+      "reason": "Different native declarations/parameter provenance; identical captured step text is insufficient to retire either case."
+    },
+    {
+      "members": [
+        {
+          "consumer": "python",
+          "sourcePath": "docs/catalogue-staging/python-native/features/test_high_volume.feature",
+          "candidateId": "@candidate-python-high-volume-5465e20c3f",
+          "scenarioName": "Native check: recommend layout [TestPptxRecommendLayout]"
+        },
+        {
+          "consumer": "python",
+          "sourcePath": "docs/catalogue-staging/python-native/features/test_word_pptx_advanced_ops.feature",
+          "candidateId": "@candidate-python-word-pptx-advanced-ops-895995c6d6",
+          "scenarioName": "Native check: recommend layout [TestPptxLayoutOperations]"
+        }
+      ],
+      "stepSequenceSha256": "2aad4a6bf83d5b72d2bee59e51f3c7ba0a8e7ba1f7eabcb6f6ee996b8bf7bf48",
+      "status": "exact-step-candidate-only",
+      "reason": "Different native declarations/parameter provenance; identical captured step text is insufficient to retire either case."
+    },
+    {
+      "members": [
+        {
+          "consumer": "python",
+          "sourcePath": "docs/catalogue-staging/python-native/features/test_word_deep_coverage.feature",
+          "candidateId": "@candidate-python-word-deep-coverage-c24aff0acc",
+          "scenarioName": "Native check: audit complete doc [TestWordAuditCompletion]"
+        },
+        {
+          "consumer": "python",
+          "sourcePath": "docs/catalogue-staging/python-native/features/test_workflow_coverage.feature",
+          "candidateId": "@candidate-python-workflow-coverage-ff3e87288d",
+          "scenarioName": "Native check: word audit complete [TestAuditOperations]"
+        }
+      ],
+      "stepSequenceSha256": "2f87b6788253822312d26bb5336c9c564f42ad5237dec4be41a5f9980b0adae7",
+      "status": "exact-step-candidate-only",
+      "reason": "Different native declarations/parameter provenance; identical captured step text is insufficient to retire either case."
+    },
+    {
+      "members": [
+        {
+          "consumer": "python",
+          "sourcePath": "docs/catalogue-staging/python-native/features/test_workflow_coverage.feature",
+          "candidateId": "@candidate-python-workflow-coverage-ddad2d0e41",
+          "scenarioName": "Native check: tool classes available [TestListSupportedFormats]"
+        },
+        {
+          "consumer": "python",
+          "sourcePath": "docs/catalogue-staging/python-native/features/test_workflows.feature",
+          "candidateId": "@candidate-python-workflows-2b4937f7f0",
+          "scenarioName": "Native check: tool classes available [TestListSupportedFormats]"
+        }
+      ],
+      "stepSequenceSha256": "fe263b22e3a4451c61e5a331032df69222237a9df6402be001fe43b07b8ec353",
+      "status": "exact-step-candidate-only",
+      "reason": "Different native declarations/parameter provenance; identical captured step text is insufficient to retire either case."
+    }
+  ],
+  "comparison": {
+    "compiledCases": 1552,
+    "uniqueNormalizedStepSequences": 1548,
+    "crossConsumerExactStepGroups": 0,
+    "withinConsumerDuplicateStepGroups": 4,
+    "rule": "Equivalent behaviour requires same input variants, expected saved outputs, refusal and custody policy; no automatic retirement based on text."
+  }
+}

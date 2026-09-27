@@ -1,7 +1,7 @@
 import {test,expect} from 'bun:test';
 import {sourceCases} from './catalogue-helpers.ts';
 import {cases,verify,validateFixtureLayout,validateMutationContract} from '../scripts/verify.ts';
-test('all pinned references and contract links verify',async()=>{const r=await verify();expect(r.assets).toBe(215);expect(r.facts).toBe(149);expect(r.workflows).toBe(283);expect(r.cases).toBe(761);});
+test('all pinned references and contract links verify',async()=>{const r=await verify();expect(r.assets).toBe(366);expect(r.facts).toBe(149);expect(r.workflows).toBe(292);expect(r.cases).toBe(772);});
 test('official Gherkin compilation expands shared cases',async()=>{const {sourceCases}=await import('./catalogue-helpers.ts');const result=await sourceCases('workflows/mutation-safety.feature');expect(result).toHaveLength(19);expect(new Set(result.map(r=>r.scenarioId)).size).toBe(8);});
 test('workflow identity is required',()=>{expect(()=>cases('bad.feature','Feature: Bad\n Scenario: unnamed\n  Given input\n')).toThrow();});
 test('canonical scenario IDs cannot be reused within a feature, including Rule blocks',()=>{
