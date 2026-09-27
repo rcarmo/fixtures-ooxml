@@ -23,7 +23,7 @@ test('policy tags stay at scenario scope and new API backgrounds do not leak int
  const common=rows.find(r=>r.tags.some(t=>t.name==='@id-opc-package-corpus-noop'))!;
  expect(common.steps).toHaveLength(4);expect(common.tags.some(t=>t.name==='@profile-bun-opc')).toBe(false);
  const api=rows.find(r=>r.tags.some(t=>t.name==='@id-bun-opc-detached-byte-copies'))!;
- expect(api.tags.some(t=>t.name==='@profile-bun-opc')).toBe(true);expect(api.steps[0]!.text).toStartWith('a ZIP contains word/document.xml');
+ expect(api.tags.some(t=>t.name==='@profile-opc-byte-custody')).toBe(true);expect(api.tags.some(t=>t.name==='@profile-ooxml-error-api')).toBe(false);expect(api.steps[0]!.text).toStartWith('a ZIP contains word/document.xml');
 });
 
 test('published catalogue has no runtime-named feature silos or unresolved local contract links',async()=>{

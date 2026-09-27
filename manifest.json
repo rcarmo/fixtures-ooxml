@@ -3687,10 +3687,10 @@
       "aliases": []
     },
     {
-      "id": "asset-576fc46818cd6e13ebde374d7fb6d1ec21e478bc1a4d91ab1fe4057a9ba3e5d3",
+      "id": "asset-d0b4f6fc82b9fa59f4bf423df4dca8cd11a33444dbf52e4d48c697288e36ee90",
       "path": "contracts/bun-zip32-profile.md",
-      "bytes": 1353,
-      "sha256": "576fc46818cd6e13ebde374d7fb6d1ec21e478bc1a4d91ab1fe4057a9ba3e5d3",
+      "bytes": 1571,
+      "sha256": "d0b4f6fc82b9fa59f4bf423df4dca8cd11a33444dbf52e4d48c697288e36ee90",
       "role": "workflow-contract",
       "origins": [
         {
@@ -3777,10 +3777,10 @@
       "aliases": []
     },
     {
-      "id": "asset-b0c62e1d45e82f0b664e99a321640bae144f056599dd17a0e65ead69dc022bb1",
+      "id": "asset-93f7efc32f25f6af2ababbe1a89a3fc9b1bb9be4d066a7f27a43e83db3bc1729",
       "path": "contracts/bun-opc-custody.md",
-      "bytes": 1444,
-      "sha256": "b0c62e1d45e82f0b664e99a321640bae144f056599dd17a0e65ead69dc022bb1",
+      "bytes": 1865,
+      "sha256": "93f7efc32f25f6af2ababbe1a89a3fc9b1bb9be4d066a7f27a43e83db3bc1729",
       "role": "workflow-contract",
       "origins": [
         {
@@ -3872,10 +3872,10 @@
       "aliases": []
     },
     {
-      "id": "asset-87248aebdebc78fae8edd2093d93cb54d37514b0cd661bf4bc6f2cb1c7b8c719",
+      "id": "asset-932bdcb2a1fb0866ec07c3e64d92b54b39dafa06f83e4c405fb48e80634ef24c",
       "path": "workflows/package/zip32.feature",
-      "bytes": 8402,
-      "sha256": "87248aebdebc78fae8edd2093d93cb54d37514b0cd661bf4bc6f2cb1c7b8c719",
+      "bytes": 8571,
+      "sha256": "932bdcb2a1fb0866ec07c3e64d92b54b39dafa06f83e4c405fb48e80634ef24c",
       "role": "workflow",
       "origins": [
         {
@@ -3887,10 +3887,10 @@
       "aliases": []
     },
     {
-      "id": "asset-eb3cd4f4d534549b8b8d53dc2c3cb75a9e5c35d614effbb5f446623c0db4e4b1",
+      "id": "asset-1a2c653871f6bd830da4ca37f2b9c355c3885463234101b55a403786aedbba5a",
       "path": "workflows/package/preservation.feature",
-      "bytes": 7442,
-      "sha256": "eb3cd4f4d534549b8b8d53dc2c3cb75a9e5c35d614effbb5f446623c0db4e4b1",
+      "bytes": 7806,
+      "sha256": "1a2c653871f6bd830da4ca37f2b9c355c3885463234101b55a403786aedbba5a",
       "role": "workflow",
       "origins": [
         {

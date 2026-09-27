@@ -1,0 +1,737 @@
+{
+  "schemaVersion": 1,
+  "sourceRevision": "7b38bbb9609e6a7ab9b3f5188f3a8c09c1a81d2a",
+  "executionCredit": false,
+  "retiredScenarioIds": [],
+  "policy": "Actor names become package/ZIP operations. Exact OoxmlError, code/message strings and option-key vocabulary remain API compatibility predicates. JavaScript synchronous callback/thenable semantics remain explicitly profiled. Source corpus names are provenance. No input or observable outcome change.",
+  "files": [
+    {
+      "path": "workflows/package/preservation.feature",
+      "beforeSha256": "eb3cd4f4d534549b8b8d53dc2c3cb75a9e5c35d614effbb5f446623c0db4e4b1",
+      "afterSha256": "1a2c653871f6bd830da4ca37f2b9c355c3885463234101b55a403786aedbba5a",
+      "stepRenames": [
+        {
+          "id": "@id-bun-opc-open-refusal",
+          "from": "Bun OpcPackage opens its archive bytes",
+          "to": "the package editor opens its archive bytes"
+        },
+        {
+          "id": "@id-bun-opc-detached-byte-copies",
+          "from": "Bun OpcPackage opens the base archive bytes",
+          "to": "the package editor opens the base archive bytes"
+        },
+        {
+          "id": "@id-bun-opc-preserve-utf16le-edit",
+          "from": "Bun OpcPackage opens the package and sets word/document.xml to its decoded text with Alpha replaced by Beta",
+          "to": "the package editor opens the package and sets word/document.xml to its decoded text with Alpha replaced by Beta"
+        },
+        {
+          "id": "@id-bun-opc-async-transaction-refusal",
+          "from": "Bun OpcPackage has opened the base archive bytes",
+          "to": "the package editor has opened the base archive bytes"
+        },
+        {
+          "id": "@id-bun-opc-thenable-transaction-result",
+          "from": "Bun OpcPackage has opened the base archive bytes",
+          "to": "the package editor has opened the base archive bytes"
+        },
+        {
+          "id": "@id-bun-opc-save-invalid-target-custody",
+          "from": "Bun OpcPackage has opened those bytes and deleted word/document.xml",
+          "to": "the package editor has opened those bytes and deleted word/document.xml"
+        },
+        {
+          "id": "@id-bun-opc-symlink-destination-refusal",
+          "from": "Bun OpcPackage has opened the base archive bytes",
+          "to": "the package editor has opened the base archive bytes"
+        }
+      ],
+      "scenarios": [
+        {
+          "id": "@id-opc-package-corpus-noop",
+          "beforeCaseSha256": [
+            "eec02c654f519d80cb63a85fac8b722765af6c473d3b12598be46a511a9708ce"
+          ],
+          "afterCaseSha256": [
+            "eec02c654f519d80cb63a85fac8b722765af6c473d3b12598be46a511a9708ce"
+          ],
+          "beforeTags": [
+            [
+              "@id-opc-package-corpus-noop",
+              "@planned"
+            ]
+          ],
+          "afterTags": [
+            [
+              "@id-opc-package-corpus-noop",
+              "@planned"
+            ]
+          ]
+        },
+        {
+          "id": "@id-opc-package-transaction-rollback",
+          "beforeCaseSha256": [
+            "41c5480a1b5b9a89a72c1a1c551e4bbe86f53ab404866b96c09748292415c315"
+          ],
+          "afterCaseSha256": [
+            "41c5480a1b5b9a89a72c1a1c551e4bbe86f53ab404866b96c09748292415c315"
+          ],
+          "beforeTags": [
+            [
+              "@id-opc-package-transaction-rollback",
+              "@planned"
+            ]
+          ],
+          "afterTags": [
+            [
+              "@id-opc-package-transaction-rollback",
+              "@planned"
+            ]
+          ]
+        },
+        {
+          "id": "@id-opc-package-preserve-unrelated",
+          "beforeCaseSha256": [
+            "c1d0847fff843a4e377803f8e6db513f9340e301b19d3471479a7ccbc5986344"
+          ],
+          "afterCaseSha256": [
+            "c1d0847fff843a4e377803f8e6db513f9340e301b19d3471479a7ccbc5986344"
+          ],
+          "beforeTags": [
+            [
+              "@id-opc-package-preserve-unrelated",
+              "@planned"
+            ]
+          ],
+          "afterTags": [
+            [
+              "@id-opc-package-preserve-unrelated",
+              "@planned"
+            ]
+          ]
+        },
+        {
+          "id": "@id-bun-opc-open-refusal",
+          "beforeCaseSha256": [
+            "a0ab00e7af643594b4eda1b0dbba8dc736cbe1c0ff5882f3088ea829d572fc31",
+            "9482cf6fde0553dc0a7cdf47baa4cbe772009fe3c91017ef62f0c9a8657cfe69",
+            "1b5e09b935b619986e905db4fae47c2c2c16650c34d567b18734f0578486631e",
+            "1449debe593f475778468fe9b8432b78e54946f729d47a6ce0bb3eb65f5e91b9",
+            "0da175b5ae29cdef491167710737bf2e60ee255777e34350b0c082422d4cfbf3"
+          ],
+          "afterCaseSha256": [
+            "318a6be512132c5e37b4fccecbe658ddb175464652356aac2b3f644232464bd2",
+            "e84b8727846d2b550b6120cbe760fe5b65b657f855a2c03544d95fce535b4072",
+            "7991dabd6209d29854a2cd164d020b6c81115da1106b661e709cb3f421f5f4ee",
+            "ae0c9012412e97c94717b01659dba80f72000c7189e5a4ac99ff88edff4b77c0",
+            "287891c4fe9515bbb1e696529031f71f4b3b89a9785228791da9d66594a1dfcd"
+          ],
+          "beforeTags": [
+            [
+              "@id-bun-opc-open-refusal",
+              "@planned",
+              "@profile-bun-opc"
+            ],
+            [
+              "@id-bun-opc-open-refusal",
+              "@planned",
+              "@profile-bun-opc"
+            ],
+            [
+              "@id-bun-opc-open-refusal",
+              "@planned",
+              "@profile-bun-opc"
+            ],
+            [
+              "@id-bun-opc-open-refusal",
+              "@planned",
+              "@profile-bun-opc"
+            ],
+            [
+              "@id-bun-opc-open-refusal",
+              "@planned",
+              "@profile-bun-opc"
+            ]
+          ],
+          "afterTags": [
+            [
+              "@id-bun-opc-open-refusal",
+              "@planned",
+              "@profile-ooxml-error-api"
+            ],
+            [
+              "@id-bun-opc-open-refusal",
+              "@planned",
+              "@profile-ooxml-error-api"
+            ],
+            [
+              "@id-bun-opc-open-refusal",
+              "@planned",
+              "@profile-ooxml-error-api"
+            ],
+            [
+              "@id-bun-opc-open-refusal",
+              "@planned",
+              "@profile-ooxml-error-api"
+            ],
+            [
+              "@id-bun-opc-open-refusal",
+              "@planned",
+              "@profile-ooxml-error-api"
+            ]
+          ]
+        },
+        {
+          "id": "@id-bun-opc-detached-byte-copies",
+          "beforeCaseSha256": [
+            "d25c68f8ff5a583d7910fa3f96a703004fcd22daf2a19ac25ea30102925e849a"
+          ],
+          "afterCaseSha256": [
+            "49a1756f28a6726ad339180dc5ce839be8d7021fcbbb67fe3bf6146576ffaaea"
+          ],
+          "beforeTags": [
+            [
+              "@id-bun-opc-detached-byte-copies",
+              "@planned",
+              "@profile-bun-opc"
+            ]
+          ],
+          "afterTags": [
+            [
+              "@id-bun-opc-detached-byte-copies",
+              "@planned",
+              "@profile-opc-byte-custody"
+            ]
+          ]
+        },
+        {
+          "id": "@id-bun-opc-preserve-utf16le-edit",
+          "beforeCaseSha256": [
+            "3b85a3780e0c8f2726c9fcf4441c5735fc2b4c5801c28d88c6f390a7b954f43d"
+          ],
+          "afterCaseSha256": [
+            "a4235937a7ef5c072cdfd4ec5917ef57b6bd535393dba50ad74dab335cc53158"
+          ],
+          "beforeTags": [
+            [
+              "@id-bun-opc-preserve-utf16le-edit",
+              "@planned",
+              "@profile-bun-opc"
+            ]
+          ],
+          "afterTags": [
+            [
+              "@id-bun-opc-preserve-utf16le-edit",
+              "@planned",
+              "@profile-opc-byte-custody"
+            ]
+          ]
+        },
+        {
+          "id": "@id-bun-opc-async-transaction-refusal",
+          "beforeCaseSha256": [
+            "917a48533dda42e2a3b9726fa3926324619bb4de4c43b4d1200df6803fb9af7d"
+          ],
+          "afterCaseSha256": [
+            "35bdb32e5db176c1b81920ace5359d9204ace2d1ba99dae3c860f4b6b8cf09b9"
+          ],
+          "beforeTags": [
+            [
+              "@id-bun-opc-async-transaction-refusal",
+              "@planned",
+              "@profile-bun-opc"
+            ]
+          ],
+          "afterTags": [
+            [
+              "@id-bun-opc-async-transaction-refusal",
+              "@planned",
+              "@profile-javascript-sync-transactions",
+              "@profile-ooxml-error-api"
+            ]
+          ]
+        },
+        {
+          "id": "@id-bun-opc-thenable-transaction-result",
+          "beforeCaseSha256": [
+            "a647a7296fc84ab5243e7d391c0e8d65254a3768ab1f8ee9817e4582bde392c5"
+          ],
+          "afterCaseSha256": [
+            "4fe9d413455f29b59ad2a81034a911e4aff58ad75443ca9c5a86a9962704c8a8"
+          ],
+          "beforeTags": [
+            [
+              "@id-bun-opc-thenable-transaction-result",
+              "@planned",
+              "@profile-bun-opc"
+            ]
+          ],
+          "afterTags": [
+            [
+              "@id-bun-opc-thenable-transaction-result",
+              "@planned",
+              "@profile-javascript-sync-transactions"
+            ]
+          ]
+        },
+        {
+          "id": "@id-bun-opc-save-invalid-target-custody",
+          "beforeCaseSha256": [
+            "0fe9dafa5cba3adcd9d5f560a6fb4097d8d7d01952d8dfc382f001e0efe1aae4"
+          ],
+          "afterCaseSha256": [
+            "538c5b96b709e8fe0c5fc1e39a5a932f911cd72b92dd17a370318dbb6a2a0502"
+          ],
+          "beforeTags": [
+            [
+              "@id-bun-opc-save-invalid-target-custody",
+              "@planned",
+              "@profile-bun-opc"
+            ]
+          ],
+          "afterTags": [
+            [
+              "@id-bun-opc-save-invalid-target-custody",
+              "@planned",
+              "@profile-ooxml-error-api"
+            ]
+          ]
+        },
+        {
+          "id": "@id-bun-opc-symlink-destination-refusal",
+          "beforeCaseSha256": [
+            "a92e24c7814d6d92e1244b6472271a318a87d7ff3da7126a47e171136aa08494"
+          ],
+          "afterCaseSha256": [
+            "d0c7c0862bcd6169cabc9624bde74ea96942a59669aeed5e72f9ebbbb05a43b5"
+          ],
+          "beforeTags": [
+            [
+              "@id-bun-opc-symlink-destination-refusal",
+              "@planned",
+              "@profile-bun-opc"
+            ]
+          ],
+          "afterTags": [
+            [
+              "@id-bun-opc-symlink-destination-refusal",
+              "@planned",
+              "@profile-ooxml-error-api"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "path": "workflows/package/zip32.feature",
+      "beforeSha256": "87248aebdebc78fae8edd2093d93cb54d37514b0cd661bf4bc6f2cb1c7b8c719",
+      "afterSha256": "932bdcb2a1fb0866ec07c3e64d92b54b39dafa06f83e4c405fb48e80634ef24c",
+      "stepRenames": [
+        {
+          "id": "@id-bun-zip32-reader-refusal",
+          "from": "Bun readZip reads the sample with default limits",
+          "to": "the ZIP reader reads the sample with default limits"
+        },
+        {
+          "id": "@id-bun-zip32-writer-refusal",
+          "from": "Bun writeZip writes the entries with default options",
+          "to": "the ZIP writer writes the entries with default options"
+        },
+        {
+          "id": "@id-bun-zip32-configured-bounds",
+          "from": "Bun readZip reads the archive with only maxArchiveBytes set to archive byte length minus 1",
+          "to": "the ZIP reader reads the archive with only maxArchiveBytes set to archive byte length minus 1"
+        },
+        {
+          "id": "@id-bun-zip32-configured-bounds",
+          "from": "Bun readZip reads the archive with only maxEntries set to 1",
+          "to": "the ZIP reader reads the archive with only maxEntries set to 1"
+        },
+        {
+          "id": "@id-bun-zip32-configured-bounds",
+          "from": "Bun readZip reads the archive with only maxEntryBytes set to 8",
+          "to": "the ZIP reader reads the archive with only maxEntryBytes set to 8"
+        },
+        {
+          "id": "@id-bun-zip32-configured-bounds",
+          "from": "Bun readZip reads the archive with only maxTotalBytes set to 8",
+          "to": "the ZIP reader reads the archive with only maxTotalBytes set to 8"
+        },
+        {
+          "id": "@id-bun-zip32-configured-bounds",
+          "from": "Bun readZip reads the archive with only maxCompressionRatio set to 2",
+          "to": "the ZIP reader reads the archive with only maxCompressionRatio set to 2"
+        }
+      ],
+      "scenarios": [
+        {
+          "id": "@id-zip-read-valid",
+          "beforeCaseSha256": [
+            "3b92a1eb4d511d7a6987f5f3b59e5269a30937c5f5a574430844cf164b23ff8b"
+          ],
+          "afterCaseSha256": [
+            "3b92a1eb4d511d7a6987f5f3b59e5269a30937c5f5a574430844cf164b23ff8b"
+          ],
+          "beforeTags": [
+            [
+              "@id-zip-read-valid",
+              "@planned"
+            ]
+          ],
+          "afterTags": [
+            [
+              "@id-zip-read-valid",
+              "@planned"
+            ]
+          ]
+        },
+        {
+          "id": "@id-zip-refuse-unsafe",
+          "beforeCaseSha256": [
+            "a4be6d3adb2666a91ae9a1d1eecddef85cebfe3a138a06dfc1e2162bbc2f6bbd"
+          ],
+          "afterCaseSha256": [
+            "a4be6d3adb2666a91ae9a1d1eecddef85cebfe3a138a06dfc1e2162bbc2f6bbd"
+          ],
+          "beforeTags": [
+            [
+              "@id-zip-refuse-unsafe",
+              "@planned"
+            ]
+          ],
+          "afterTags": [
+            [
+              "@id-zip-refuse-unsafe",
+              "@planned"
+            ]
+          ]
+        },
+        {
+          "id": "@id-zip-bounds",
+          "beforeCaseSha256": [
+            "9e2237d7bb6a4c1a6aea63268cbe42ec78528ccc1941f6bdda958f59f531cd88"
+          ],
+          "afterCaseSha256": [
+            "9e2237d7bb6a4c1a6aea63268cbe42ec78528ccc1941f6bdda958f59f531cd88"
+          ],
+          "beforeTags": [
+            [
+              "@id-zip-bounds",
+              "@planned"
+            ]
+          ],
+          "afterTags": [
+            [
+              "@id-zip-bounds",
+              "@planned"
+            ]
+          ]
+        },
+        {
+          "id": "@id-zip-write-deterministic",
+          "beforeCaseSha256": [
+            "604888391643f1ef0f10e22d3f5e1b6007167f1be2f9a080c653ec2430bb434b"
+          ],
+          "afterCaseSha256": [
+            "604888391643f1ef0f10e22d3f5e1b6007167f1be2f9a080c653ec2430bb434b"
+          ],
+          "beforeTags": [
+            [
+              "@id-zip-write-deterministic",
+              "@planned"
+            ]
+          ],
+          "afterTags": [
+            [
+              "@id-zip-write-deterministic",
+              "@planned"
+            ]
+          ]
+        },
+        {
+          "id": "@id-zip-crc32-standard-vector",
+          "beforeCaseSha256": [
+            "ade7075bbd62cf060c860d894418e4f91c10abfc00e347a75bb20e2b0c8626bb"
+          ],
+          "afterCaseSha256": [
+            "ade7075bbd62cf060c860d894418e4f91c10abfc00e347a75bb20e2b0c8626bb"
+          ],
+          "beforeTags": [
+            [
+              "@id-zip-crc32-standard-vector",
+              "@planned",
+              "@profile-bun-zip32"
+            ]
+          ],
+          "afterTags": [
+            [
+              "@id-zip-crc32-standard-vector",
+              "@planned"
+            ]
+          ]
+        },
+        {
+          "id": "@id-bun-zip32-reader-refusal",
+          "beforeCaseSha256": [
+            "364778f66f8a688268fb98cd4b882a924c7e16c1b5407f4a68fe96e224aabe96",
+            "070328d38323728bdf7b5f6dbc81eb770ff5fcb9023d722e649e382c9ad44d20",
+            "322bc13bf23e1b26b20671e0716674355972b9ee37bd6b0d798cd91b781097c3",
+            "abb7af30f917fdc4b2e32054dc6daad26cbee3db850665b646c9ecec313170ab",
+            "b56eb553894cc973e78b35422efdf2d3fa53b8e19f659f77ea33ef32fe170b1e",
+            "50d07bcea345b98758827ec09376f480ed437a366f05d5573b1b60638a89ef71",
+            "028f20dddeb64f9aae177ab9d3c5ca42eccacd6f46ba93c7a1d8e35c6be02064",
+            "16fc3b9ddc4c594958a6fbbaeccdb00e11b253f2cfc2890984b500f5f0fd0293",
+            "a0e105820a9bf57dcf2279990e036070728880a26912c27ff04cd0cbf578052a",
+            "f77b8db2e698736de1101fae844ffe7485701be403d6477f3e2a59c7014c75f2",
+            "51dab2f0fff4f3e41ce296a817368fb60480c495648713ca896a70ca74803ac3",
+            "4772ab23d1365523beb576f90d8f2164c0e607c9f4de9fdda34f83ffe227a3ab"
+          ],
+          "afterCaseSha256": [
+            "56f3b6c4f8ff8b28de750890144c7557b5f1bdb8c053ab538e4f81ad440c0bf5",
+            "3392eaa4dda188271955341ee37587c55c2704cbe2d472c496dda7802384bbbe",
+            "04b101f817250b26bcd63ccb12e14080d4dd3291bcbce3f5a6e6c8691d239bde",
+            "111fe7edcd902860ccfba7e83cd573cf441fd6c3586b83c35d4a90979b75cb96",
+            "a97369797c50d34d86ccb03aa4835cf10d587d3b64ef72e820c829adaf6cb34d",
+            "84e8c5d1bb3e921375faac9f93d9eab55d69fc8937a5a185d2beccac06030e00",
+            "ab8daa04f0bed65a0fa4706ce3d49a8e7cf054d1c96e2961138091078e6fe528",
+            "e053f65f7f3213bdcfe4c111f19a6494fbf1c5b2a0ba4e50da06168e919bf929",
+            "3f8d2ca3888654f7db392192b954fa7291ca6941011d3860d4ac46e5adf5fb6f",
+            "24b066925b457b60a87ab0be0fb95facb00d3294769769f62c9da75d86b0ef46",
+            "08faf64b00f01bf4b2a80ddd308319c2c2c2b664d0915c91a3f164d99fbe971e",
+            "14c65698a9e8bb23d6ec1a7caed9e78f3ca558f86e779a697b8161954ca9e331"
+          ],
+          "beforeTags": [
+            [
+              "@id-bun-zip32-reader-refusal",
+              "@planned",
+              "@profile-bun-zip32"
+            ],
+            [
+              "@id-bun-zip32-reader-refusal",
+              "@planned",
+              "@profile-bun-zip32"
+            ],
+            [
+              "@id-bun-zip32-reader-refusal",
+              "@planned",
+              "@profile-bun-zip32"
+            ],
+            [
+              "@id-bun-zip32-reader-refusal",
+              "@planned",
+              "@profile-bun-zip32"
+            ],
+            [
+              "@id-bun-zip32-reader-refusal",
+              "@planned",
+              "@profile-bun-zip32"
+            ],
+            [
+              "@id-bun-zip32-reader-refusal",
+              "@planned",
+              "@profile-bun-zip32"
+            ],
+            [
+              "@id-bun-zip32-reader-refusal",
+              "@planned",
+              "@profile-bun-zip32"
+            ],
+            [
+              "@id-bun-zip32-reader-refusal",
+              "@planned",
+              "@profile-bun-zip32"
+            ],
+            [
+              "@id-bun-zip32-reader-refusal",
+              "@planned",
+              "@profile-bun-zip32"
+            ],
+            [
+              "@id-bun-zip32-reader-refusal",
+              "@planned",
+              "@profile-bun-zip32"
+            ],
+            [
+              "@id-bun-zip32-reader-refusal",
+              "@planned",
+              "@profile-bun-zip32"
+            ],
+            [
+              "@id-bun-zip32-reader-refusal",
+              "@planned",
+              "@profile-bun-zip32"
+            ]
+          ],
+          "afterTags": [
+            [
+              "@id-bun-zip32-reader-refusal",
+              "@planned",
+              "@profile-zip32-error-api"
+            ],
+            [
+              "@id-bun-zip32-reader-refusal",
+              "@planned",
+              "@profile-zip32-error-api"
+            ],
+            [
+              "@id-bun-zip32-reader-refusal",
+              "@planned",
+              "@profile-zip32-error-api"
+            ],
+            [
+              "@id-bun-zip32-reader-refusal",
+              "@planned",
+              "@profile-zip32-error-api"
+            ],
+            [
+              "@id-bun-zip32-reader-refusal",
+              "@planned",
+              "@profile-zip32-error-api"
+            ],
+            [
+              "@id-bun-zip32-reader-refusal",
+              "@planned",
+              "@profile-zip32-error-api"
+            ],
+            [
+              "@id-bun-zip32-reader-refusal",
+              "@planned",
+              "@profile-zip32-error-api"
+            ],
+            [
+              "@id-bun-zip32-reader-refusal",
+              "@planned",
+              "@profile-zip32-error-api"
+            ],
+            [
+              "@id-bun-zip32-reader-refusal",
+              "@planned",
+              "@profile-zip32-error-api"
+            ],
+            [
+              "@id-bun-zip32-reader-refusal",
+              "@planned",
+              "@profile-zip32-error-api"
+            ],
+            [
+              "@id-bun-zip32-reader-refusal",
+              "@planned",
+              "@profile-zip32-error-api"
+            ],
+            [
+              "@id-bun-zip32-reader-refusal",
+              "@planned",
+              "@profile-zip32-error-api"
+            ]
+          ]
+        },
+        {
+          "id": "@id-bun-zip32-writer-refusal",
+          "beforeCaseSha256": [
+            "30d5d0d9cd3bee6c62f5d6241bd4e50ed722086eef0aea0146a1943efadc641b",
+            "edccbe5a9645be7ef215dc1651aa6a9840cfa81d97bbf4ab12489dfa254a6528"
+          ],
+          "afterCaseSha256": [
+            "d378a3d7d62d8d46a17b4e410bf80cddef4a9cc686430cd5c4d01cf250958ca6",
+            "31de4151a3c76407857753e4446f93e276944faf9441b68a1723ab4b36e260e4"
+          ],
+          "beforeTags": [
+            [
+              "@id-bun-zip32-writer-refusal",
+              "@planned",
+              "@profile-bun-zip32"
+            ],
+            [
+              "@id-bun-zip32-writer-refusal",
+              "@planned",
+              "@profile-bun-zip32"
+            ]
+          ],
+          "afterTags": [
+            [
+              "@id-bun-zip32-writer-refusal",
+              "@planned",
+              "@profile-zip32-error-api"
+            ],
+            [
+              "@id-bun-zip32-writer-refusal",
+              "@planned",
+              "@profile-zip32-error-api"
+            ]
+          ]
+        },
+        {
+          "id": "@id-bun-zip32-configured-bounds",
+          "beforeCaseSha256": [
+            "cefd253ef7098ab0ff1f8e06f14a0f1771322d645578490a7dce39aab821e247",
+            "da30706c996fc01c5ac04ff7c8d7238251ef3338e73a7580c2342ea7d53c1464",
+            "b0ca3e9cc54e2ceeda34ceb1f527d708652afe973ea4b462d2e7ab0ce111831e",
+            "7f72db9c0efceca477bbddcfa135f7cb3bb4c3e4cf25f608abc23b69984089e9",
+            "cbd5f4d3743f6efd4cedf1f7116122a9ad3ec1728979a87bf1601240c64c21ad"
+          ],
+          "afterCaseSha256": [
+            "8207572d7de95c85d8f5565c77904831468e7bd59098782e5403861a43e91dda",
+            "3a0ec2c1f503164d445bf30fdcbc7ce5c4b1a5062e7b6aeb7e0d61d110f79f97",
+            "a224c151e3d0600b9527fcba6c1158b5c51bc3353499f13fbceabd76b6a867bc",
+            "27a8128cce095d85e42c45ab60cb28c0171b8c5c67e4f51adbfb7e4ec1fa8584",
+            "a71efead1ea5e2be58c441f1009cc08409c6097bd96f3dfaa863f17284959163"
+          ],
+          "beforeTags": [
+            [
+              "@id-bun-zip32-configured-bounds",
+              "@planned",
+              "@profile-bun-zip32"
+            ],
+            [
+              "@id-bun-zip32-configured-bounds",
+              "@planned",
+              "@profile-bun-zip32"
+            ],
+            [
+              "@id-bun-zip32-configured-bounds",
+              "@planned",
+              "@profile-bun-zip32"
+            ],
+            [
+              "@id-bun-zip32-configured-bounds",
+              "@planned",
+              "@profile-bun-zip32"
+            ],
+            [
+              "@id-bun-zip32-configured-bounds",
+              "@planned",
+              "@profile-bun-zip32"
+            ]
+          ],
+          "afterTags": [
+            [
+              "@id-bun-zip32-configured-bounds",
+              "@planned",
+              "@profile-zip32-error-api"
+            ],
+            [
+              "@id-bun-zip32-configured-bounds",
+              "@planned",
+              "@profile-zip32-error-api"
+            ],
+            [
+              "@id-bun-zip32-configured-bounds",
+              "@planned",
+              "@profile-zip32-error-api"
+            ],
+            [
+              "@id-bun-zip32-configured-bounds",
+              "@planned",
+              "@profile-zip32-error-api"
+            ],
+            [
+              "@id-bun-zip32-configured-bounds",
+              "@planned",
+              "@profile-zip32-error-api"
+            ]
+          ]
+        }
+      ]
+    }
+  ]
+}

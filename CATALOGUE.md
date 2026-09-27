@@ -92,11 +92,18 @@ universal ZIP requirements. Regression tests compare current predicates with the
 reviewed before/after fingerprints; the substitution helper is test-only and
 never accepts legacy wording in an execution binding.
 
+Package custody and ZIP32 actions are also runtime-neutral. Their separate
+`ledgers/package-wording-migration.json` preserves 18 IDs / 38 cases from
+`7b38bbb`, including all original error strings, typed inputs and callback
+outcomes. The byte-custody profile is portable; JavaScript synchronous callback
+and thenable behaviour is explicitly runtime-specific. `OoxmlError` and ZIP
+option-key conventions remain named API compatibility profiles. Corpus names
+identify fixture provenance, not the runtime executing the scenario.
+
 Remaining work:
 
 | Family | Remaining work |
 |---|---|
-| Package preservation and ZIP32 | Remove Bun API names from portable custody, archive and refusal outcomes. Keep JavaScript async/thenable callback semantics and exact API error taxonomies explicitly profiled. |
 | Word paragraphs, formatting and tables | Replace Go wording for shared value operations. Review API-specific nil, heading-classification and return-value conventions independently; do not turn them into format rules. |
 | Word comments | Preserve the distinction between existing-extension edits, extension creation, root/reply resolution and filtered/threaded results. These are different operations and policies. |
 | Word anchors and templates | Separate portable inspection from response envelopes, next-tool hints and cache APIs. Dictionary-only template responses remain weak contracts requiring stronger observable outcomes. |
