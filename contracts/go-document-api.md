@@ -1,14 +1,27 @@
-# Go document API predicates
+# Word document value APIs
 
-Go-origin predicates now belong to the corresponding Word operations:
+Shared value predicates belong to the corresponding Word operations:
 [creation](../workflows/docx/creation.feature), [properties](../workflows/docx/properties.feature),
 [paragraphs](../workflows/docx/paragraphs.feature), [paragraph styles](../workflows/docx/paragraph-style.feature),
 [run formatting](../workflows/docx/run-formatting.feature), [tables](../workflows/docx/tables.feature),
 [page layout](../workflows/docx/page-layout.feature) and [tracked editing](../workflows/docx/tracked-workflow.feature).
 In-memory getters and saved/reopened results remain separate obligations.
-The [consumer mapping](../ledgers/consumers/go-document-api.json) records source
-assertions and gaps. API-specific return values and heading conventions still
-need semantic review before they can be common format contracts.
+The [Go source mapping](../ledgers/consumers/go-document-api.json) records source
+assertions and gaps; historical IDs retain their origin names.
+
+`@profile-document-value-api` retains getter names and return conventions.
+The narrower profiles make compatibility limits explicit:
+
+- `heading-classification-api`: style-ID-based `IsHeading` and `HeadingLevel`,
+  without computed outline inheritance.
+- `nullable-cell-api`: boundary access returns nil, rather than throwing.
+- `in-memory-effects-api`: all eight flags read true even though some pairs are
+  mutually exclusive in saved WordprocessingML. This is not a valid-file recipe.
+- `selected-formatting-readback` and `table-text-readback`: only the stated
+  properties or text positions are required after saving and reopening.
+
+Neutral actor wording does not promote these policies to OOXML requirements.
+Weak presence/count predicates remain explicit gaps for stronger contracts.
 
 ## In-memory document and text
 

@@ -1,0 +1,1508 @@
+{
+  "schemaVersion": 1,
+  "sourceRevision": "d3734216fdd32f592a513f476fed0c4fbda3f32c",
+  "executionCredit": false,
+  "retiredScenarioIds": [],
+  "policy": "Remove Go Word actor names and replace origin-named profiles with operation/API policies. Preserve getter names, nil conventions, heading classification, unsupported simultaneous effects, selected-only readback and anchor/tool response semantics. No new format-conformance or execution credit. Only changed scenario IDs are listed; whole-file seals include unaffected neighbours.",
+  "files": [
+    {
+      "path": "workflows/docx/creation.feature",
+      "beforeSha256": "6610431459359b721f75245b1b3c92073465f80cef867bb9f420d53569083e18",
+      "afterSha256": "b7f4632e576e9e040bdd9b57da3b865f626be9b23928c4a39edeb7363fa9ab94",
+      "stepRenames": [
+        {
+          "id": "@id-docx-go-new-empty-body",
+          "from": "a new Go Word document",
+          "to": "a new Word document"
+        }
+      ],
+      "scenarios": [
+        {
+          "id": "@id-docx-go-new-empty-body",
+          "beforeCaseSha256": [
+            "ea24abf2b216f8b22c1c410416488395ec4953914637612798f7c3ec65c0de6f"
+          ],
+          "afterCaseSha256": [
+            "8b826a6d0656c43988bb13b5d9bbf5067ea8c221a01f49a252a9b74f1d649211"
+          ],
+          "beforeTags": [
+            [
+              "@id-docx-go-new-empty-body",
+              "@planned",
+              "@profile-go-document-api"
+            ]
+          ],
+          "afterTags": [
+            [
+              "@id-docx-go-new-empty-body",
+              "@planned",
+              "@profile-document-value-api"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "path": "workflows/docx/properties.feature",
+      "beforeSha256": "736314ab9423da07013683d33377f7972145f63ba60f213ef08bd37755fa5468",
+      "afterSha256": "59757333a4894b19364fd2b40fd2f1ceaafa19c21f357b4b9ef764bf2197be04",
+      "stepRenames": [
+        {
+          "id": "@id-docx-go-core-properties-getters",
+          "from": "a new Go Word document",
+          "to": "a new Word document"
+        }
+      ],
+      "scenarios": [
+        {
+          "id": "@id-docx-go-core-properties-getters",
+          "beforeCaseSha256": [
+            "e3911697c2252176e7c21173b36e8ad46ab17fe948eb3cbef222faf3c69298a6"
+          ],
+          "afterCaseSha256": [
+            "08464f1e1206b7f738e6c84f3008366b13f90138346f604d24766b85e896ae43"
+          ],
+          "beforeTags": [
+            [
+              "@id-docx-go-core-properties-getters",
+              "@planned",
+              "@profile-go-document-api"
+            ]
+          ],
+          "afterTags": [
+            [
+              "@id-docx-go-core-properties-getters",
+              "@planned",
+              "@profile-document-value-api"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "path": "workflows/docx/paragraphs.feature",
+      "beforeSha256": "520e9c4c4dd394153f1012fb5b7e62dc6aef73dc8f78f9a8d796171056a6b512",
+      "afterSha256": "7c448d5863f64ef188b3cb2ec1c9a82fb4a8a2c7c5104058ccf21ad2561e6856",
+      "stepRenames": [
+        {
+          "id": "@id-docx-go-paragraph-text-getter",
+          "from": "a new Go Word paragraph",
+          "to": "a new Word paragraph"
+        },
+        {
+          "id": "@id-docx-go-paragraph-alignment-getter",
+          "from": "a new Go Word paragraph",
+          "to": "a new Word paragraph"
+        },
+        {
+          "id": "@id-docx-go-paragraph-spacing-getters",
+          "from": "a new Go Word paragraph",
+          "to": "a new Word paragraph"
+        },
+        {
+          "id": "@id-docx-go-paragraph-advanced-toggles",
+          "from": "a new Go Word paragraph",
+          "to": "a new Word paragraph"
+        },
+        {
+          "id": "@id-docx-go-paragraph-multiple-runs",
+          "from": "a new Go Word paragraph",
+          "to": "a new Word paragraph"
+        },
+        {
+          "id": "@id-docx-go-body-insert-order",
+          "from": "a new Go Word body with no elements",
+          "to": "a new Word body with no elements"
+        }
+      ],
+      "scenarios": [
+        {
+          "id": "@id-docx-go-paragraph-text-getter",
+          "beforeCaseSha256": [
+            "0fa28b7565a6084e551506a9251fee14321fd22394fda79220cec5e3d20a322b",
+            "a5c9d7a76c6661b1c8dddecf37b7274ab6fba317d81032aec2e179f76e86fc77",
+            "f261986655bd597c0dc0f605e67a5bcdc463100eb81f5d6e1d5acc509232f93a",
+            "a966105a4dc9285400d970623f8d55c2a7bac06a7bd998f115d4a1c4d5428321",
+            "3ad5ed1b9655ce22878bd1b5cae5a818b86b3bd63e9cc6bdc94f18760c6cd4d2"
+          ],
+          "afterCaseSha256": [
+            "bddb9233b871e563ad13c1ad1e1de45870d736254fbd77b56840e3c2b09e6c3c",
+            "2d28964f9719d3ea2f502bd029e43c8e8be2968ebb36e16d6e899e715fde3057",
+            "ab210035d4e7e5b50cbd340edd9708491491eca3a65d241696a753021423e468",
+            "bef5e54ab31b2ec6661de50003ebb10949f6ce546ade2c5c96d6f12e04165cb5",
+            "a5332b34b35ee3e03a26fafa9e9b2f8808fcebe82418a08500d86396a4d8152b"
+          ],
+          "beforeTags": [
+            [
+              "@id-docx-go-paragraph-text-getter",
+              "@planned",
+              "@profile-go-document-api"
+            ],
+            [
+              "@id-docx-go-paragraph-text-getter",
+              "@planned",
+              "@profile-go-document-api"
+            ],
+            [
+              "@id-docx-go-paragraph-text-getter",
+              "@planned",
+              "@profile-go-document-api"
+            ],
+            [
+              "@id-docx-go-paragraph-text-getter",
+              "@planned",
+              "@profile-go-document-api"
+            ],
+            [
+              "@id-docx-go-paragraph-text-getter",
+              "@planned",
+              "@profile-go-document-api"
+            ]
+          ],
+          "afterTags": [
+            [
+              "@id-docx-go-paragraph-text-getter",
+              "@planned",
+              "@profile-document-value-api"
+            ],
+            [
+              "@id-docx-go-paragraph-text-getter",
+              "@planned",
+              "@profile-document-value-api"
+            ],
+            [
+              "@id-docx-go-paragraph-text-getter",
+              "@planned",
+              "@profile-document-value-api"
+            ],
+            [
+              "@id-docx-go-paragraph-text-getter",
+              "@planned",
+              "@profile-document-value-api"
+            ],
+            [
+              "@id-docx-go-paragraph-text-getter",
+              "@planned",
+              "@profile-document-value-api"
+            ]
+          ]
+        },
+        {
+          "id": "@id-docx-go-paragraph-alignment-getter",
+          "beforeCaseSha256": [
+            "47d83fc94d6246f50b7274330e3ed551e9e60310fe281346e0c2d5334d27fe5c",
+            "aea17e3d2c3bc4bd20c04274863b93e4f342edb27be88ef6d1b89a8cc2a34a6e",
+            "fb3fa5b15fe0634c3bb8cc50663997d1276f3c187a4423c2d6956ec05eaf2539",
+            "4f1506076a6e2b13e689df62854cf2d6e7ba34bce97c6f6183644479497176d2"
+          ],
+          "afterCaseSha256": [
+            "63a2fb06d6d3618e09d8a875d103935f1fb435aa05d548c46a1c7e8a5d76de8f",
+            "ddd35010f81fca6addfdc3144f4a4f271ffc05da7204004be77971abb9e718da",
+            "60f39d7e7c0b867c11b6c1a688e478185e9193a2ec9803ed7431b28dc0c4f71f",
+            "b39690979796b00b14d625443ed1d20ef4237f54ead54f7df69ad25da847c7b2"
+          ],
+          "beforeTags": [
+            [
+              "@id-docx-go-paragraph-alignment-getter",
+              "@planned",
+              "@profile-go-document-api"
+            ],
+            [
+              "@id-docx-go-paragraph-alignment-getter",
+              "@planned",
+              "@profile-go-document-api"
+            ],
+            [
+              "@id-docx-go-paragraph-alignment-getter",
+              "@planned",
+              "@profile-go-document-api"
+            ],
+            [
+              "@id-docx-go-paragraph-alignment-getter",
+              "@planned",
+              "@profile-go-document-api"
+            ]
+          ],
+          "afterTags": [
+            [
+              "@id-docx-go-paragraph-alignment-getter",
+              "@planned",
+              "@profile-document-value-api"
+            ],
+            [
+              "@id-docx-go-paragraph-alignment-getter",
+              "@planned",
+              "@profile-document-value-api"
+            ],
+            [
+              "@id-docx-go-paragraph-alignment-getter",
+              "@planned",
+              "@profile-document-value-api"
+            ],
+            [
+              "@id-docx-go-paragraph-alignment-getter",
+              "@planned",
+              "@profile-document-value-api"
+            ]
+          ]
+        },
+        {
+          "id": "@id-docx-go-paragraph-spacing-getters",
+          "beforeCaseSha256": [
+            "3e3af7b0cd9208cf38d0f742e98e1e933a4e995b7e93b894a847cd2b7b529331",
+            "6553c955987f40d9b0e99944864bd48ed0bac6cce74790561abe77898808d221",
+            "42ae5f482eb2e05856c8ed0cf03b74fefd44a75359efc5bd45701884b3da4efe",
+            "ed24bacfb7704f97befa8dc95de4f3359bbaf1c231253ddad5271a0eae063559"
+          ],
+          "afterCaseSha256": [
+            "258aa43636c5c236141d35c44084f1802c1297a60a702cbdd282a5148d520bf6",
+            "605f1236c543651b3b966ae467606dc5ad0080afdf9837bbb7ea35023a17f05c",
+            "31f64dcb6ee3f19e485f3acc1b7e87a36078b8ffe16bb610be10d5485b909beb",
+            "8b2406ce59084df5e966e212f40a0d13045bd468218ef47edb39c082d98674a3"
+          ],
+          "beforeTags": [
+            [
+              "@id-docx-go-paragraph-spacing-getters",
+              "@planned",
+              "@profile-go-document-api"
+            ],
+            [
+              "@id-docx-go-paragraph-spacing-getters",
+              "@planned",
+              "@profile-go-document-api"
+            ],
+            [
+              "@id-docx-go-paragraph-spacing-getters",
+              "@planned",
+              "@profile-go-document-api"
+            ],
+            [
+              "@id-docx-go-paragraph-spacing-getters",
+              "@planned",
+              "@profile-go-document-api"
+            ]
+          ],
+          "afterTags": [
+            [
+              "@id-docx-go-paragraph-spacing-getters",
+              "@planned",
+              "@profile-document-value-api"
+            ],
+            [
+              "@id-docx-go-paragraph-spacing-getters",
+              "@planned",
+              "@profile-document-value-api"
+            ],
+            [
+              "@id-docx-go-paragraph-spacing-getters",
+              "@planned",
+              "@profile-document-value-api"
+            ],
+            [
+              "@id-docx-go-paragraph-spacing-getters",
+              "@planned",
+              "@profile-document-value-api"
+            ]
+          ]
+        },
+        {
+          "id": "@id-docx-go-paragraph-advanced-toggles",
+          "beforeCaseSha256": [
+            "af117157de924ded7cb463e572004f014a93318e4d32da20bbfcd0d74060b131"
+          ],
+          "afterCaseSha256": [
+            "190fd6f9cf54cbdb8a55a4db71221b6a5da0f968863eda77fdf77e10e6e5505a"
+          ],
+          "beforeTags": [
+            [
+              "@id-docx-go-paragraph-advanced-toggles",
+              "@planned",
+              "@profile-go-document-api"
+            ]
+          ],
+          "afterTags": [
+            [
+              "@id-docx-go-paragraph-advanced-toggles",
+              "@planned",
+              "@profile-document-value-api"
+            ]
+          ]
+        },
+        {
+          "id": "@id-docx-go-paragraph-multiple-runs",
+          "beforeCaseSha256": [
+            "6c104eaf881e4d5ea51cb4d7f8fb72575a855c07e1fb440b276a27e4b3aedbfd"
+          ],
+          "afterCaseSha256": [
+            "22feebfd51ca565e4fd5fb799b5d3bea7c73428b2f8301507f342f22ff582fbc"
+          ],
+          "beforeTags": [
+            [
+              "@id-docx-go-paragraph-multiple-runs",
+              "@planned",
+              "@profile-go-document-api"
+            ]
+          ],
+          "afterTags": [
+            [
+              "@id-docx-go-paragraph-multiple-runs",
+              "@planned",
+              "@profile-document-value-api"
+            ]
+          ]
+        },
+        {
+          "id": "@id-docx-go-body-insert-order",
+          "beforeCaseSha256": [
+            "6c3c6861cde2ce908f327e32194f0d325fdf7e2093fdd4c58e3bdde91b6d9570"
+          ],
+          "afterCaseSha256": [
+            "e818e408dd7002b5129e522427dd9f1765bb53a927b2b4d1b6f7e00093dd5a54"
+          ],
+          "beforeTags": [
+            [
+              "@id-docx-go-body-insert-order",
+              "@planned",
+              "@profile-go-document-api"
+            ]
+          ],
+          "afterTags": [
+            [
+              "@id-docx-go-body-insert-order",
+              "@planned",
+              "@profile-document-value-api"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "path": "workflows/docx/paragraph-style.feature",
+      "beforeSha256": "74d35cd4da1e8e583d0a52b622c4b1bf452d69a1efd1d14f2102aa6163ae993c",
+      "afterSha256": "f0a565511a6f1b1ae0b38ddb9dc2332b23f66a5be2cfea214f9d59fe73990971",
+      "stepRenames": [
+        {
+          "id": "@id-docx-go-paragraph-style-getters",
+          "from": "a new Go Word paragraph",
+          "to": "a new Word paragraph"
+        }
+      ],
+      "scenarios": [
+        {
+          "id": "@id-docx-go-paragraph-style-getters",
+          "beforeCaseSha256": [
+            "116c71f07e14011fceba013579546a1c36eeddc196abdf7fae7ed1f8a6a126bf",
+            "f7aafa9b1066c1913699e6e559d4fe87d88dd232e6e6e7a7a1da718f406ae26e",
+            "1f37c6b1cf6584b4886e94958d4256b97760338644d5360ec24e28d044f77f70",
+            "2cc5619d6f8ef3b799d420d8b791306374d1a2ea089b4cd35d6242f71db719d8",
+            "3f85a28375c5d117b09b4fc00b9158625565932431a94c4102a27b37461c8ccc"
+          ],
+          "afterCaseSha256": [
+            "77347929d37ff7d4fc62dd6333f396105d985c67eb1296e7de53b413368288bb",
+            "ded44a4a13b74fbed6c8751da85f3f9f2d4679d36c89ca0e3056e3d428ea31d7",
+            "525247dd2f578b5d879371bf004b7aabe5dd364a94a0ed340f0521ae05186079",
+            "d08c899688640c2d5d547c77259089940d95d9e8b9f4853f22000b8c1d22ce50",
+            "e34fe846aa4d9b01293818cdeeef5b26b76e0dbe526169ce7c21b5c0f83caf46"
+          ],
+          "beforeTags": [
+            [
+              "@id-docx-go-paragraph-style-getters",
+              "@planned",
+              "@profile-go-document-api"
+            ],
+            [
+              "@id-docx-go-paragraph-style-getters",
+              "@planned",
+              "@profile-go-document-api"
+            ],
+            [
+              "@id-docx-go-paragraph-style-getters",
+              "@planned",
+              "@profile-go-document-api"
+            ],
+            [
+              "@id-docx-go-paragraph-style-getters",
+              "@planned",
+              "@profile-go-document-api"
+            ],
+            [
+              "@id-docx-go-paragraph-style-getters",
+              "@planned",
+              "@profile-go-document-api"
+            ]
+          ],
+          "afterTags": [
+            [
+              "@id-docx-go-paragraph-style-getters",
+              "@planned",
+              "@profile-heading-classification-api"
+            ],
+            [
+              "@id-docx-go-paragraph-style-getters",
+              "@planned",
+              "@profile-heading-classification-api"
+            ],
+            [
+              "@id-docx-go-paragraph-style-getters",
+              "@planned",
+              "@profile-heading-classification-api"
+            ],
+            [
+              "@id-docx-go-paragraph-style-getters",
+              "@planned",
+              "@profile-heading-classification-api"
+            ],
+            [
+              "@id-docx-go-paragraph-style-getters",
+              "@planned",
+              "@profile-heading-classification-api"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "path": "workflows/docx/run-formatting.feature",
+      "beforeSha256": "5b15ae332155e3c7074f466b4752547311eda8299b419ff2214bd1a82d52b869",
+      "afterSha256": "7af8ef3a85775d91a2025e033fd818dbda4bf8799210b294544b4ae1743536a1",
+      "stepRenames": [
+        {
+          "id": "@id-docx-go-run-color-getter",
+          "from": "a new Go Word run",
+          "to": "a new Word run"
+        },
+        {
+          "id": "@id-docx-go-run-boolean-formatting",
+          "from": "a new Go Word run containing Test",
+          "to": "a new Word run containing Test"
+        },
+        {
+          "id": "@id-docx-go-run-effects-getters",
+          "from": "a new Go Word run",
+          "to": "a new Word run"
+        },
+        {
+          "id": "@id-docx-go-run-underline-style",
+          "from": "a new Go Word run",
+          "to": "a new Word run"
+        },
+        {
+          "id": "@id-docx-go-run-font-name",
+          "from": "a new Go Word run",
+          "to": "a new Word run"
+        },
+        {
+          "id": "@id-docx-go-run-highlight",
+          "from": "a new Go Word run",
+          "to": "a new Word run"
+        },
+        {
+          "id": "@id-docx-go-run-vertical-align",
+          "from": "two new Go Word runs",
+          "to": "two new Word runs"
+        },
+        {
+          "id": "@id-docx-go-roundtrip-selected-formatting",
+          "from": "a new Go Word paragraph with three runs Bold-space, Italic-space and Colored",
+          "to": "a new Word paragraph with three runs Bold-space, Italic-space and Colored"
+        }
+      ],
+      "scenarios": [
+        {
+          "id": "@id-docx-go-run-color-getter",
+          "beforeCaseSha256": [
+            "59fe38bad04e2af75be7e93fed61f3b17baf86a063634b97d4ba19a22ffd693d",
+            "fb4840d836f5cc54fe8c709f6ef38441223abdd139a01871c6796b6ef84855ff",
+            "bd6349616e36dee9a9d285761caa9bac7432ed0b3cabb65ad32b0c4f2a3f56c1"
+          ],
+          "afterCaseSha256": [
+            "443fe6309451d5093a4143eca8113b7b6ce5d6e5632ea135a9681a131d413127",
+            "2978679962ec2864579f7f8aaea456d18b8e3d150cc5518b5294af291e03856e",
+            "4bbb17e520e651ed374ea371290c53f246076a96058cabcb9277f42f50490631"
+          ],
+          "beforeTags": [
+            [
+              "@id-docx-go-run-color-getter",
+              "@planned",
+              "@profile-go-document-api"
+            ],
+            [
+              "@id-docx-go-run-color-getter",
+              "@planned",
+              "@profile-go-document-api"
+            ],
+            [
+              "@id-docx-go-run-color-getter",
+              "@planned",
+              "@profile-go-document-api"
+            ]
+          ],
+          "afterTags": [
+            [
+              "@id-docx-go-run-color-getter",
+              "@planned",
+              "@profile-document-value-api"
+            ],
+            [
+              "@id-docx-go-run-color-getter",
+              "@planned",
+              "@profile-document-value-api"
+            ],
+            [
+              "@id-docx-go-run-color-getter",
+              "@planned",
+              "@profile-document-value-api"
+            ]
+          ]
+        },
+        {
+          "id": "@id-docx-go-run-boolean-formatting",
+          "beforeCaseSha256": [
+            "7de00fad1d76013b6cd74a17966c0ce725e15eee09ae949822b8b70876af0339",
+            "e8aa8d6188228a35b5d63de8a03729551266cd10e782ce0d98f3ae6df6727971",
+            "3382eab387148f8bd341bd87346f8aa2a757e1fb75f90122202cd39d0c01e6e4",
+            "1e1bee94df139d10510e177154ee3747776b141e809c95191c4cf4e991e61b6c",
+            "d50bc64c959e7e474393ee236a3d64f6aad4daa4f10a4d73a810a21c513c5fe5"
+          ],
+          "afterCaseSha256": [
+            "9b8c0ffc62af027fc17183d5d4365b20d732630cf9eb1b32cb8a7509e1c11f17",
+            "ee81a2584f477f07152d0ea73b7879fd46806e8febd4427c1ed4026dc448b519",
+            "3332de8df2c5bc861e649fc637a9dd5ea9c0e9a38dcbb14a976d48139aa54b0e",
+            "4fedfe29da5252c83116b9d119732f7c234eb8e5661356853bc20ef91593a7e9",
+            "a6c1f9c5f700429f9fe8d088c7de737226901a6cd6056fdc84b0f838960634d4"
+          ],
+          "beforeTags": [
+            [
+              "@id-docx-go-run-boolean-formatting",
+              "@planned",
+              "@profile-go-document-api"
+            ],
+            [
+              "@id-docx-go-run-boolean-formatting",
+              "@planned",
+              "@profile-go-document-api"
+            ],
+            [
+              "@id-docx-go-run-boolean-formatting",
+              "@planned",
+              "@profile-go-document-api"
+            ],
+            [
+              "@id-docx-go-run-boolean-formatting",
+              "@planned",
+              "@profile-go-document-api"
+            ],
+            [
+              "@id-docx-go-run-boolean-formatting",
+              "@planned",
+              "@profile-go-document-api"
+            ]
+          ],
+          "afterTags": [
+            [
+              "@id-docx-go-run-boolean-formatting",
+              "@planned",
+              "@profile-document-value-api"
+            ],
+            [
+              "@id-docx-go-run-boolean-formatting",
+              "@planned",
+              "@profile-document-value-api"
+            ],
+            [
+              "@id-docx-go-run-boolean-formatting",
+              "@planned",
+              "@profile-document-value-api"
+            ],
+            [
+              "@id-docx-go-run-boolean-formatting",
+              "@planned",
+              "@profile-document-value-api"
+            ],
+            [
+              "@id-docx-go-run-boolean-formatting",
+              "@planned",
+              "@profile-document-value-api"
+            ]
+          ]
+        },
+        {
+          "id": "@id-docx-go-run-effects-getters",
+          "beforeCaseSha256": [
+            "2697ec548ef082531c54081220f25d27a33776ac6b393e1fa0e5e16d46eccab0"
+          ],
+          "afterCaseSha256": [
+            "3ba0b88828c0ee46813533a5d6fc1c4ecfbd24595c51b61a2cd648d59b4ed3a6"
+          ],
+          "beforeTags": [
+            [
+              "@id-docx-go-run-effects-getters",
+              "@planned",
+              "@profile-go-document-api"
+            ]
+          ],
+          "afterTags": [
+            [
+              "@id-docx-go-run-effects-getters",
+              "@planned",
+              "@profile-in-memory-effects-api"
+            ]
+          ]
+        },
+        {
+          "id": "@id-docx-go-run-underline-style",
+          "beforeCaseSha256": [
+            "762fe7fc874de3cd27e14db4287a744ddcf43c15619f8735fedc6de770b5a5dd",
+            "d394d04d15d86aa23abc8fc1db1db203734116c5d9f6c4954d3ec2d78aa672d7",
+            "ea757c9057c8cddd8ea0c9ba889ae036ec6678c45cb861bfa942a9ab6e99abf2",
+            "5400d3d64c400191aef9ff5012cfd094f182a641af89aff835089f4cee0ab35d",
+            "505da93234c55c69b63c17dc23d9dddf8be39955de9ea8c8a2784fe40b19b9af",
+            "3b3cbaf0050b98d883566762e239940f1a828f0c109b494e561c90a70667ac42"
+          ],
+          "afterCaseSha256": [
+            "50dda8431c8a5a7659279bd70f895cae6bcfa46ddb0a9ed537bf49d16b47e818",
+            "20cefb3a639df87a31b330d1f5f0a2b485808500d1893a0bfe6d85891adb5c82",
+            "c5b03e2751b4f7fb92c50c5e97ace8ca988686ba2d825165284e5fc531ac167e",
+            "91411023265055e0f8f283c4a33920390c081d53295686fe73b2d302ac28c75e",
+            "8a55efd15af9e0ede5423f1131b9b90b8ce8bc54e28a1cb78435ee53c09c85ef",
+            "778ce5fd9d74a8904ea49e428109b9c56606b23c2a7ed1dd85c015a0afc1c932"
+          ],
+          "beforeTags": [
+            [
+              "@id-docx-go-run-underline-style",
+              "@planned",
+              "@profile-go-document-api"
+            ],
+            [
+              "@id-docx-go-run-underline-style",
+              "@planned",
+              "@profile-go-document-api"
+            ],
+            [
+              "@id-docx-go-run-underline-style",
+              "@planned",
+              "@profile-go-document-api"
+            ],
+            [
+              "@id-docx-go-run-underline-style",
+              "@planned",
+              "@profile-go-document-api"
+            ],
+            [
+              "@id-docx-go-run-underline-style",
+              "@planned",
+              "@profile-go-document-api"
+            ],
+            [
+              "@id-docx-go-run-underline-style",
+              "@planned",
+              "@profile-go-document-api"
+            ]
+          ],
+          "afterTags": [
+            [
+              "@id-docx-go-run-underline-style",
+              "@planned",
+              "@profile-document-value-api"
+            ],
+            [
+              "@id-docx-go-run-underline-style",
+              "@planned",
+              "@profile-document-value-api"
+            ],
+            [
+              "@id-docx-go-run-underline-style",
+              "@planned",
+              "@profile-document-value-api"
+            ],
+            [
+              "@id-docx-go-run-underline-style",
+              "@planned",
+              "@profile-document-value-api"
+            ],
+            [
+              "@id-docx-go-run-underline-style",
+              "@planned",
+              "@profile-document-value-api"
+            ],
+            [
+              "@id-docx-go-run-underline-style",
+              "@planned",
+              "@profile-document-value-api"
+            ]
+          ]
+        },
+        {
+          "id": "@id-docx-go-run-font-name",
+          "beforeCaseSha256": [
+            "bcf69e4512529a2898580278d69e5598bc9f304215765f0839ccf00299606fff",
+            "3787a0338a48f883d428e80e70deb956d43ad5fb4434cefcb6b4eda7dc6c1626",
+            "e28dc4c6d967accd09ff0b08482bf7a27bfb07184cd28d0e5f2fa4e897555fbf",
+            "756b33846f7431b48dabe28ab2a26840b5ba5dadb1ee4c7a9d09cb5a2ede2dbc",
+            "79012242df0b1899cc71d5da1bd371464c2f161b93760c7987de1280c29abc6e",
+            "dc1f39f28f049e679a4673bab55174969b8fa454be0031cc4e11aed522b44d71"
+          ],
+          "afterCaseSha256": [
+            "68f8ce7cae038699ad3b965ac8cc2ab53c253ce7c4b0d7709232999545a7ba9a",
+            "d232d22f5ea89bb2a3f3320edd76bea77e459aa4839364deea12a44522ea9d03",
+            "f7c89251a0b78257e0559e9a0e5bdacfce31ebe2fe04d514b3c2bc3dd68c8293",
+            "d702562bcd899618540c171c1582a0aa2e90740e0d694503a169095fbc9677ae",
+            "76a9522abf51be7eeb3cca0d4595e74550e78aa4fb473276acf778c5f71428a4",
+            "711f8401da11a92b0f279dc0aaeb859b58d545d98ae4a5bea9e18596368d9412"
+          ],
+          "beforeTags": [
+            [
+              "@id-docx-go-run-font-name",
+              "@planned",
+              "@profile-go-document-api"
+            ],
+            [
+              "@id-docx-go-run-font-name",
+              "@planned",
+              "@profile-go-document-api"
+            ],
+            [
+              "@id-docx-go-run-font-name",
+              "@planned",
+              "@profile-go-document-api"
+            ],
+            [
+              "@id-docx-go-run-font-name",
+              "@planned",
+              "@profile-go-document-api"
+            ],
+            [
+              "@id-docx-go-run-font-name",
+              "@planned",
+              "@profile-go-document-api"
+            ],
+            [
+              "@id-docx-go-run-font-name",
+              "@planned",
+              "@profile-go-document-api"
+            ]
+          ],
+          "afterTags": [
+            [
+              "@id-docx-go-run-font-name",
+              "@planned",
+              "@profile-document-value-api"
+            ],
+            [
+              "@id-docx-go-run-font-name",
+              "@planned",
+              "@profile-document-value-api"
+            ],
+            [
+              "@id-docx-go-run-font-name",
+              "@planned",
+              "@profile-document-value-api"
+            ],
+            [
+              "@id-docx-go-run-font-name",
+              "@planned",
+              "@profile-document-value-api"
+            ],
+            [
+              "@id-docx-go-run-font-name",
+              "@planned",
+              "@profile-document-value-api"
+            ],
+            [
+              "@id-docx-go-run-font-name",
+              "@planned",
+              "@profile-document-value-api"
+            ]
+          ]
+        },
+        {
+          "id": "@id-docx-go-run-highlight",
+          "beforeCaseSha256": [
+            "ea2ddf466261e0104daeb93829024f9fb8a4464961ceec6df5dadce8b2412c8a",
+            "84ebbb87b4946a826d73f926e4cf3f3b6a44b13541bf74fa5c4a496c7a794832",
+            "a31eb355a80c076158c481e7ea456ced2296686039eeb93d98525947ca731d4e",
+            "a79ad319bdc12f47cbc7e59afab2427daee5c889d43f0f3cf48736ef0fd5ecea",
+            "a0f0041ccbd68ae69b44f532b047eba9f3f0f6dbb185855499acb1421ea87d0c"
+          ],
+          "afterCaseSha256": [
+            "7c84133de58e1f528b8e0b0b2fe9b25921a1c6b4f2fdc759d50093a4f6504eff",
+            "30076d7a2107334d534267b65e92e4cfb47460c07ac46074279415c3746e5d4f",
+            "e951f3df26ad5e757bad57c8e171a8c1de257e58ae28d13e970300e7ca2958fb",
+            "8b05db77fa7571decc11d745cf26d6bcffa256ef2700114acc6cebc90bd30094",
+            "3c4830f711465bdc9e46cf79634757a7127f1bfb251679b7a87e76e0991fa971"
+          ],
+          "beforeTags": [
+            [
+              "@id-docx-go-run-highlight",
+              "@planned",
+              "@profile-go-document-api"
+            ],
+            [
+              "@id-docx-go-run-highlight",
+              "@planned",
+              "@profile-go-document-api"
+            ],
+            [
+              "@id-docx-go-run-highlight",
+              "@planned",
+              "@profile-go-document-api"
+            ],
+            [
+              "@id-docx-go-run-highlight",
+              "@planned",
+              "@profile-go-document-api"
+            ],
+            [
+              "@id-docx-go-run-highlight",
+              "@planned",
+              "@profile-go-document-api"
+            ]
+          ],
+          "afterTags": [
+            [
+              "@id-docx-go-run-highlight",
+              "@planned",
+              "@profile-document-value-api"
+            ],
+            [
+              "@id-docx-go-run-highlight",
+              "@planned",
+              "@profile-document-value-api"
+            ],
+            [
+              "@id-docx-go-run-highlight",
+              "@planned",
+              "@profile-document-value-api"
+            ],
+            [
+              "@id-docx-go-run-highlight",
+              "@planned",
+              "@profile-document-value-api"
+            ],
+            [
+              "@id-docx-go-run-highlight",
+              "@planned",
+              "@profile-document-value-api"
+            ]
+          ]
+        },
+        {
+          "id": "@id-docx-go-run-vertical-align",
+          "beforeCaseSha256": [
+            "bb5d4ae0f521358707736be5c1abc78c1b3606484c29bab80aeed5a2d9427966"
+          ],
+          "afterCaseSha256": [
+            "24cd34beb0be247c886d4add79e43807ac7e3824f8292a2406ef77d69f4aa41a"
+          ],
+          "beforeTags": [
+            [
+              "@id-docx-go-run-vertical-align",
+              "@planned",
+              "@profile-go-document-api"
+            ]
+          ],
+          "afterTags": [
+            [
+              "@id-docx-go-run-vertical-align",
+              "@planned",
+              "@profile-document-value-api"
+            ]
+          ]
+        },
+        {
+          "id": "@id-docx-go-roundtrip-selected-formatting",
+          "beforeCaseSha256": [
+            "457d4a430b8305efdff42ab287dd428930805b05417f707b9a4331c6dc5c273c"
+          ],
+          "afterCaseSha256": [
+            "fd6b0de3007040ff726f774154680ae013aa2c58e7f9656534db4350744a5803"
+          ],
+          "beforeTags": [
+            [
+              "@id-docx-go-roundtrip-selected-formatting",
+              "@planned",
+              "@profile-go-document-api"
+            ]
+          ],
+          "afterTags": [
+            [
+              "@id-docx-go-roundtrip-selected-formatting",
+              "@planned",
+              "@profile-selected-formatting-readback"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "path": "workflows/docx/tables.feature",
+      "beforeSha256": "0d248a655bef198469e321ed5908241a5ae8211100b51eaac3520686617a0ec8",
+      "afterSha256": "858a813b0f9ea0ac315ae1034057da288a510c638849f558f242d0ce4aa41f0d",
+      "stepRenames": [
+        {
+          "id": "@id-docx-go-table-dimensions-getters",
+          "from": "a new Go Word document",
+          "to": "a new Word document"
+        },
+        {
+          "id": "@id-docx-go-table-cell-access",
+          "from": "a new Go Word table with three rows and three columns",
+          "to": "a new Word table with three rows and three columns"
+        },
+        {
+          "id": "@id-docx-go-table-cell-text-getters",
+          "from": "a new Go Word table with two rows and two columns",
+          "to": "a new Word table with two rows and two columns"
+        },
+        {
+          "id": "@id-docx-go-table-row-counts",
+          "from": "a new Go Word table with two rows and three columns",
+          "to": "a new Word table with two rows and three columns"
+        },
+        {
+          "id": "@id-docx-go-table-merge-properties",
+          "from": "a new Go Word table with three rows and four columns",
+          "to": "a new Word table with three rows and four columns"
+        },
+        {
+          "id": "@id-docx-go-table-style-getter",
+          "from": "a new Go Word two-by-two table",
+          "to": "a new Word two-by-two table"
+        },
+        {
+          "id": "@id-docx-go-table-header-getter",
+          "from": "the first row of a new Go Word three-by-two table",
+          "to": "the first row of a new Word three-by-two table"
+        },
+        {
+          "id": "@id-docx-go-cell-shading-getter",
+          "from": "cell zero-zero of a new Go Word two-by-two table",
+          "to": "cell zero-zero of a new Word two-by-two table"
+        },
+        {
+          "id": "@id-docx-go-cell-properties-getters",
+          "from": "cell zero-zero of a new Go Word one-by-one table",
+          "to": "cell zero-zero of a new Word one-by-one table"
+        },
+        {
+          "id": "@id-docx-go-roundtrip-table-text",
+          "from": "a new Go Word table with three rows and three columns",
+          "to": "a new Word table with three rows and three columns"
+        }
+      ],
+      "scenarios": [
+        {
+          "id": "@id-docx-go-table-dimensions-getters",
+          "beforeCaseSha256": [
+            "2e294602e0a637a3f75e604a44e04fc0c30edef1d33fee5df0b8ee781281a1f7",
+            "615a584861c4bbe1629d50375079c11e4566634470bbde935122f631066e0c03",
+            "5d099f126eaf139726394920a79a58227a8890252b1f1cdae938e47241f572cb",
+            "f14ccfd246519017063a9ca5cd2f8680e6fdd82978b8ec01ccdde0d780f25d46",
+            "4a23540bfc72fdf8e1b6c98429cace318891887ca6ff5a1ef9d99259b7008671",
+            "a061d40a10ac4cdcdd114f80b83393ad677015eed84d45f475a3bbbdef7264cd",
+            "2581ecd2dc0b427cee967d132257b93ee48c24ef3ecf73c4fd06d649fd8c9a37",
+            "87171d36a57b0e797c6173bffaf798a0fafabf68ff175b96c066014d0c959d1e"
+          ],
+          "afterCaseSha256": [
+            "39bc988f3d6508fbf0f0117dce90746c7626de96b2640ab2f7fad3be2a52f05d",
+            "b895885de529c1217dc26f157180ea568ef7a504a6ff9fd0b4098c89637b433d",
+            "23e6f340d061408995d6084d146115619f03782083e56aa917d1ae4653afba28",
+            "ce502659ec6467ba5ce8d83de7b9f730b16ae4811ffb97343389d557ebc972d1",
+            "2aa3247d0a08f61ed3cfcb8c9d5493f3d915c05c689fd89b3cab770414f0ce85",
+            "7c0670fe3dc809bb9e7d978fea6047b36d04721bd7162059236ceb8d16ed4490",
+            "b2fdfafc2d33d64e31f0a4975ccb83cdcc26848d48dee3ff06a7dd47f59dcd66",
+            "f73e8794fee37e929d17046246d3689ce15d78338b5670079c767e07ff99ac5f"
+          ],
+          "beforeTags": [
+            [
+              "@id-docx-go-table-dimensions-getters",
+              "@planned",
+              "@profile-go-document-api"
+            ],
+            [
+              "@id-docx-go-table-dimensions-getters",
+              "@planned",
+              "@profile-go-document-api"
+            ],
+            [
+              "@id-docx-go-table-dimensions-getters",
+              "@planned",
+              "@profile-go-document-api"
+            ],
+            [
+              "@id-docx-go-table-dimensions-getters",
+              "@planned",
+              "@profile-go-document-api"
+            ],
+            [
+              "@id-docx-go-table-dimensions-getters",
+              "@planned",
+              "@profile-go-document-api"
+            ],
+            [
+              "@id-docx-go-table-dimensions-getters",
+              "@planned",
+              "@profile-go-document-api"
+            ],
+            [
+              "@id-docx-go-table-dimensions-getters",
+              "@planned",
+              "@profile-go-document-api"
+            ],
+            [
+              "@id-docx-go-table-dimensions-getters",
+              "@planned",
+              "@profile-go-document-api"
+            ]
+          ],
+          "afterTags": [
+            [
+              "@id-docx-go-table-dimensions-getters",
+              "@planned",
+              "@profile-document-value-api"
+            ],
+            [
+              "@id-docx-go-table-dimensions-getters",
+              "@planned",
+              "@profile-document-value-api"
+            ],
+            [
+              "@id-docx-go-table-dimensions-getters",
+              "@planned",
+              "@profile-document-value-api"
+            ],
+            [
+              "@id-docx-go-table-dimensions-getters",
+              "@planned",
+              "@profile-document-value-api"
+            ],
+            [
+              "@id-docx-go-table-dimensions-getters",
+              "@planned",
+              "@profile-document-value-api"
+            ],
+            [
+              "@id-docx-go-table-dimensions-getters",
+              "@planned",
+              "@profile-document-value-api"
+            ],
+            [
+              "@id-docx-go-table-dimensions-getters",
+              "@planned",
+              "@profile-document-value-api"
+            ],
+            [
+              "@id-docx-go-table-dimensions-getters",
+              "@planned",
+              "@profile-document-value-api"
+            ]
+          ]
+        },
+        {
+          "id": "@id-docx-go-table-cell-access",
+          "beforeCaseSha256": [
+            "532c20c6885993c4a61a1b78cabca0dd615c371640519375b617dd1f76e4753b"
+          ],
+          "afterCaseSha256": [
+            "7d07e0472ccfefbfe7ab74c30cb7140d892d48384214a36c7c6d54f34cc665d5"
+          ],
+          "beforeTags": [
+            [
+              "@id-docx-go-table-cell-access",
+              "@planned",
+              "@profile-go-document-api"
+            ]
+          ],
+          "afterTags": [
+            [
+              "@id-docx-go-table-cell-access",
+              "@planned",
+              "@profile-nullable-cell-api"
+            ]
+          ]
+        },
+        {
+          "id": "@id-docx-go-table-cell-text-getters",
+          "beforeCaseSha256": [
+            "3edb7fb8f40b329ce4181a7b36f556de59ccd062891f017c11a272e9bce27c3d"
+          ],
+          "afterCaseSha256": [
+            "42efaa3a9d2cea5800dce72bdd41b9fa7a8e80e047abc4a401c3a487e31dfa88"
+          ],
+          "beforeTags": [
+            [
+              "@id-docx-go-table-cell-text-getters",
+              "@planned",
+              "@profile-go-document-api"
+            ]
+          ],
+          "afterTags": [
+            [
+              "@id-docx-go-table-cell-text-getters",
+              "@planned",
+              "@profile-document-value-api"
+            ]
+          ]
+        },
+        {
+          "id": "@id-docx-go-table-row-counts",
+          "beforeCaseSha256": [
+            "d55e15bfcab799c9978b69d7a0cd4d965e0bf909a911b805c747a1f02e859b97"
+          ],
+          "afterCaseSha256": [
+            "8cb138a49f59237c40ae0cf9413f40bf88fa99e8335879c1ef2cc40364821475"
+          ],
+          "beforeTags": [
+            [
+              "@id-docx-go-table-row-counts",
+              "@planned",
+              "@profile-go-document-api"
+            ]
+          ],
+          "afterTags": [
+            [
+              "@id-docx-go-table-row-counts",
+              "@planned",
+              "@profile-document-value-api"
+            ]
+          ]
+        },
+        {
+          "id": "@id-docx-go-table-merge-properties",
+          "beforeCaseSha256": [
+            "f03bcc4076624fc6333b158506ad1cfdef9c6e89c8023ebaad0e4c5b5634d390"
+          ],
+          "afterCaseSha256": [
+            "5f7ce0b7190673d6a8375b4d8d12d9843b0924124a0a075e8d85a9fce0bf3e61"
+          ],
+          "beforeTags": [
+            [
+              "@id-docx-go-table-merge-properties",
+              "@planned",
+              "@profile-go-document-api"
+            ]
+          ],
+          "afterTags": [
+            [
+              "@id-docx-go-table-merge-properties",
+              "@planned",
+              "@profile-document-value-api"
+            ]
+          ]
+        },
+        {
+          "id": "@id-docx-go-table-style-getter",
+          "beforeCaseSha256": [
+            "c4d31d95df50ecea3ed605f4c0c232d79b0d41c1a79030efaf992dfae7148dca"
+          ],
+          "afterCaseSha256": [
+            "c6810678ba4f1d9bd5e688458a9c081659bd91212839046bc4251d3214e077b8"
+          ],
+          "beforeTags": [
+            [
+              "@id-docx-go-table-style-getter",
+              "@planned",
+              "@profile-go-document-api"
+            ]
+          ],
+          "afterTags": [
+            [
+              "@id-docx-go-table-style-getter",
+              "@planned",
+              "@profile-document-value-api"
+            ]
+          ]
+        },
+        {
+          "id": "@id-docx-go-table-header-getter",
+          "beforeCaseSha256": [
+            "33fd1eddf39ddf05c5ea9cfebd19a1cb24ec8de865652772457cc803811ea6c7"
+          ],
+          "afterCaseSha256": [
+            "5c9b025117067a87669550987c62c22138695c9aa8c0adccb94cd2d2c2344a5d"
+          ],
+          "beforeTags": [
+            [
+              "@id-docx-go-table-header-getter",
+              "@planned",
+              "@profile-go-document-api"
+            ]
+          ],
+          "afterTags": [
+            [
+              "@id-docx-go-table-header-getter",
+              "@planned",
+              "@profile-document-value-api"
+            ]
+          ]
+        },
+        {
+          "id": "@id-docx-go-cell-shading-getter",
+          "beforeCaseSha256": [
+            "b454e579c7bf9842d8a9363df0473576056fd51644a2cf3369fc54cba52c35f9"
+          ],
+          "afterCaseSha256": [
+            "330180da8ff983853a1d1dbf70cab00d33f9c1e6c1ce01a145846aa711be66c7"
+          ],
+          "beforeTags": [
+            [
+              "@id-docx-go-cell-shading-getter",
+              "@planned",
+              "@profile-go-document-api"
+            ]
+          ],
+          "afterTags": [
+            [
+              "@id-docx-go-cell-shading-getter",
+              "@planned",
+              "@profile-document-value-api"
+            ]
+          ]
+        },
+        {
+          "id": "@id-docx-go-cell-properties-getters",
+          "beforeCaseSha256": [
+            "da043980b49f1dfadcd4d5a42bdbfc53e5c945c78b4561e91d2480dd1188e66e"
+          ],
+          "afterCaseSha256": [
+            "7a005e9809d7184a00ff4ad3dee9128413fe0b826ffa74ab4b510580aad01d04"
+          ],
+          "beforeTags": [
+            [
+              "@id-docx-go-cell-properties-getters",
+              "@planned",
+              "@profile-go-document-api"
+            ]
+          ],
+          "afterTags": [
+            [
+              "@id-docx-go-cell-properties-getters",
+              "@planned",
+              "@profile-document-value-api"
+            ]
+          ]
+        },
+        {
+          "id": "@id-docx-go-roundtrip-table-text",
+          "beforeCaseSha256": [
+            "44b25df37f84e047a5aa6a9eb9084dd09cc8b795d752afe10f6a5b79dc2888d8"
+          ],
+          "afterCaseSha256": [
+            "a7579482be4cd8a58c4d6b25ec93f65ad4ba008f46db36ba754089f565bf31bb"
+          ],
+          "beforeTags": [
+            [
+              "@id-docx-go-roundtrip-table-text",
+              "@planned",
+              "@profile-go-document-api"
+            ]
+          ],
+          "afterTags": [
+            [
+              "@id-docx-go-roundtrip-table-text",
+              "@planned",
+              "@profile-table-text-readback"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "path": "workflows/docx/page-layout.feature",
+      "beforeSha256": "0f6c6ccc165c37db57be0909398e3d3178d58ca46fe953fa9009986bd8501857",
+      "afterSha256": "8d2e42e828beec30c47698dee64c6bc35380f7d9e0b1a3f3b7aeb36ceb921596",
+      "stepRenames": [
+        {
+          "id": "@id-docx-go-section-title-background-getters",
+          "from": "a new Go Word document with a first section",
+          "to": "a new Word document with a first section"
+        }
+      ],
+      "scenarios": [
+        {
+          "id": "@id-docx-go-section-title-background-getters",
+          "beforeCaseSha256": [
+            "1bc7ecba71a6471a54ac4b549a68a9564cf55261a0264ece29066573faf6878b"
+          ],
+          "afterCaseSha256": [
+            "ac3e5d405e476726fb7de359cb30b0f813114fa8e5d780cf4ac7ff52cfbaac97"
+          ],
+          "beforeTags": [
+            [
+              "@id-docx-go-section-title-background-getters",
+              "@planned",
+              "@profile-go-document-api"
+            ]
+          ],
+          "afterTags": [
+            [
+              "@id-docx-go-section-title-background-getters",
+              "@planned",
+              "@profile-document-value-api"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "path": "workflows/docx/tracked-workflow.feature",
+      "beforeSha256": "5215d55a3604d510754bb01c110a5fde4968fa9b390d70da236f8c7e8b924819",
+      "afterSha256": "f32ad31b4b4e03ad17894a8b246502e6d83f0253ec66abc1c5601764fd551ccd",
+      "stepRenames": [
+        {
+          "id": "@id-docx-go-track-author-toggle",
+          "from": "a new Go Word document with tracking disabled",
+          "to": "a new Word document with tracking disabled"
+        }
+      ],
+      "scenarios": [
+        {
+          "id": "@id-docx-go-track-author-toggle",
+          "beforeCaseSha256": [
+            "eb05cc6f1c38f222d3230da40878fdaa06be89c961865635ff5a2b9068811ba1"
+          ],
+          "afterCaseSha256": [
+            "fae01e4aca38679bbe6fef7531fa1b95325cea6c938a1f8e89de76a198f3d488"
+          ],
+          "beforeTags": [
+            [
+              "@id-docx-go-track-author-toggle",
+              "@planned",
+              "@profile-go-document-api"
+            ]
+          ],
+          "afterTags": [
+            [
+              "@id-docx-go-track-author-toggle",
+              "@planned",
+              "@profile-document-value-api"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "path": "workflows/docx/anchor-discovery.feature",
+      "beforeSha256": "f33165ea9b4e90556613c3e714e4f9556cfd9edd8edeb185972fee7ef11294ad",
+      "afterSha256": "322cf1df8cb454241bf9255cfe62b9f4c84f83042cc27f102b88ef06ff99d911",
+      "stepRenames": [],
+      "scenarios": [
+        {
+          "id": "@id-python-word-anchor-headings-paragraphs",
+          "beforeCaseSha256": [
+            "d402f929917dd39e668302ef3136acaab3e6c3e72ba29cb61154aba1ed289e4c"
+          ],
+          "afterCaseSha256": [
+            "d402f929917dd39e668302ef3136acaab3e6c3e72ba29cb61154aba1ed289e4c"
+          ],
+          "beforeTags": [
+            [
+              "@id-python-word-anchor-headings-paragraphs",
+              "@planned",
+              "@profile-python-anchor-discovery"
+            ]
+          ],
+          "afterTags": [
+            [
+              "@id-python-word-anchor-headings-paragraphs",
+              "@planned",
+              "@profile-anchor-response-api"
+            ]
+          ]
+        },
+        {
+          "id": "@id-python-word-anchor-text-filter",
+          "beforeCaseSha256": [
+            "75da491139c83cdd9808c31b92a643e7a73ef7e7dc346a28bbe52a36c9e91b38"
+          ],
+          "afterCaseSha256": [
+            "75da491139c83cdd9808c31b92a643e7a73ef7e7dc346a28bbe52a36c9e91b38"
+          ],
+          "beforeTags": [
+            [
+              "@id-python-word-anchor-text-filter",
+              "@planned",
+              "@profile-python-anchor-discovery"
+            ]
+          ],
+          "afterTags": [
+            [
+              "@id-python-word-anchor-text-filter",
+              "@planned",
+              "@profile-anchor-response-api"
+            ]
+          ]
+        },
+        {
+          "id": "@id-python-word-anchor-document-map",
+          "beforeCaseSha256": [
+            "e3dfbdbffbbc3812bcde90742953b9ceb835117bafed76f27c4b89be1d0db24a"
+          ],
+          "afterCaseSha256": [
+            "e3dfbdbffbbc3812bcde90742953b9ceb835117bafed76f27c4b89be1d0db24a"
+          ],
+          "beforeTags": [
+            [
+              "@id-python-word-anchor-document-map",
+              "@planned",
+              "@profile-python-anchor-discovery"
+            ]
+          ],
+          "afterTags": [
+            [
+              "@id-python-word-anchor-document-map",
+              "@planned",
+              "@profile-anchor-response-api"
+            ]
+          ]
+        },
+        {
+          "id": "@id-python-word-anchor-discover-insert",
+          "beforeCaseSha256": [
+            "5f8a89c69966113f7a17c9f44a77d71b0f11a1eb3d0d2775638a67126661df65"
+          ],
+          "afterCaseSha256": [
+            "5f8a89c69966113f7a17c9f44a77d71b0f11a1eb3d0d2775638a67126661df65"
+          ],
+          "beforeTags": [
+            [
+              "@id-python-word-anchor-discover-insert",
+              "@planned",
+              "@profile-python-anchor-discovery"
+            ]
+          ],
+          "afterTags": [
+            [
+              "@id-python-word-anchor-discover-insert",
+              "@planned",
+              "@profile-anchor-response-api"
+            ]
+          ]
+        },
+        {
+          "id": "@id-python-word-anchor-section-discovery-hints",
+          "beforeCaseSha256": [
+            "36114a173f12f93971ee6532574f40de0bc324f3ab11ec85aae0c84a938300eb"
+          ],
+          "afterCaseSha256": [
+            "36114a173f12f93971ee6532574f40de0bc324f3ab11ec85aae0c84a938300eb"
+          ],
+          "beforeTags": [
+            [
+              "@id-python-word-anchor-section-discovery-hints",
+              "@planned",
+              "@profile-python-anchor-discovery"
+            ]
+          ],
+          "afterTags": [
+            [
+              "@id-python-word-anchor-section-discovery-hints",
+              "@planned",
+              "@profile-tool-discovery-hints"
+            ]
+          ]
+        }
+      ]
+    }
+  ]
+}

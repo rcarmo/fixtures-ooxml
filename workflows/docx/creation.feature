@@ -52,12 +52,13 @@ Feature: Word document creation
         | new-document                                                                 | style-without-styles-part | docx-style-unsupported |
         | fixture-9548a1ce68caae9df12bc85732f1c19a098658c5dce3d79488814e4145299e5e | unknown-style             | docx-style-missing     |
 
-  Rule: Go document API getter and bounded save-reopen predicates
+  Rule: Document value API and selected save-reopen predicates
     The in-memory operations below check selected getters. Only scenarios that say
-    save and reopen assert disk readback. Values name this API profile, not OOXML validity.
+    save and reopen assert disk readback. Getter names and return conventions are
+    API compatibility predicates, not general OOXML validity or rendering rules.
 
-    @profile-go-document-api @id-docx-go-new-empty-body
+    @profile-document-value-api @id-docx-go-new-empty-body
     Scenario: A new document has a body and no paragraphs or tables
-      Given a new Go Word document
+      Given a new Word document
       When its body paragraphs and tables are enumerated
       Then the body is present with zero paragraphs and zero tables

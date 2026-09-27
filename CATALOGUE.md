@@ -100,13 +100,22 @@ and thenable behaviour is explicitly runtime-specific. `OoxmlError` and ZIP
 option-key conventions remain named API compatibility profiles. Corpus names
 identify fixture provenance, not the runtime executing the scenario.
 
+Word value actions and anchor profiles now identify operations rather than
+source runtimes. `ledgers/word-wording-migration.json` records 34 changed IDs /
+75 cases across nine files from `d373421`. Exact getter names, nil results,
+style-ID heading classification, in-memory-only simultaneous effects, selected
+readback and tool hints remain explicit API policies. Existing neighbouring
+scenarios, values and assertions are unchanged. Wording cleanup does not fill
+missing custody, rendering or semantic assertions.
+
 Remaining work:
 
 | Family | Remaining work |
 |---|---|
-| Word paragraphs, formatting and tables | Replace Go wording for shared value operations. Review API-specific nil, heading-classification and return-value conventions independently; do not turn them into format rules. |
+| Word value APIs | Decide which API observations need stronger common format contracts. Retain explicit nil/heading/effects compatibility policies and their missing saved-output checks. |
 | Word comments | Preserve the distinction between existing-extension edits, extension creation, root/reply resolution and filtered/threaded results. These are different operations and policies. |
-| Word anchors and templates | Separate portable inspection from response envelopes, next-tool hints and cache APIs. Dictionary-only template responses remain weak contracts requiring stronger observable outcomes. |
+| Word templates | Separate useful document analysis from response-shape and metadata-cache APIs. Dictionary-only responses remain weak contracts requiring stronger observable outcomes. |
+| XML editing and formula references | Remove runtime actor names while retaining lexical offsets, immutable ownership, supported grammar and refusal policies. |
 | Spreadsheet creation | Remove incidental runtime names; retain exact fixture provenance in manifests and source mappings. |
 
 Similar scenarios are not automatically equivalent. Native worksheet cache

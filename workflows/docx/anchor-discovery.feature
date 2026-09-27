@@ -5,7 +5,9 @@ Feature: Word anchor discovery and anchored insertion
     Anchor inspection returns headings and candidate paragraphs from a saved DOCX.
     Insertion by a discovered heading writes a paragraph after that heading.
     Section listing advertises discovery tools without extracting guidance.
-    @profile-python-anchor-discovery @id-python-word-anchor-headings-paragraphs
+    Anchor types, map keys and success flags form a response API; tool names are
+    a separate discovery-hints contract. Neither profile implies full traversal.
+    @profile-anchor-response-api @id-python-word-anchor-headings-paragraphs
     Scenario: Headings and body text appear among discovered anchors
       Given a saved Word document has headings "Introduction" and "Delivery approach" and paragraphs "Customer context paragraph" and "Use iterative delivery"
       When Word anchors are listed without a query
@@ -13,14 +15,14 @@ Feature: Word anchor discovery and anchored insertion
       And an anchor has type "section_heading" and text "Introduction"
       And a "paragraph" anchor contains "Customer context" in its text
 
-    @profile-python-anchor-discovery @id-python-word-anchor-text-filter
+    @profile-anchor-response-api @id-python-word-anchor-text-filter
     Scenario: A case-insensitive delivery query filters returned anchor text
       Given a saved Word document has headings "Introduction" and "Delivery approach" and paragraphs "Customer context paragraph" and "Use iterative delivery"
       When Word anchors are listed with query "delivery"
       Then the anchor count is at least 1
       And every returned anchor text contains "delivery" case-insensitively
 
-    @profile-python-anchor-discovery @id-python-word-anchor-document-map
+    @profile-anchor-response-api @id-python-word-anchor-document-map
     Scenario: A document map reports sections, table, placeholders and anchors
       Given a saved Word document has heading "Introduction", paragraph "<Customer Name>", and a 2x2 Role/Count table with Architect and 1
       When its Word document map is requested
@@ -28,7 +30,7 @@ Feature: Word anchor discovery and anchored insertion
       And the map counts at least 1 placeholder and at least 2 anchors
       And the map has a nonempty anchors list
 
-    @profile-python-anchor-discovery @id-python-word-anchor-discover-insert
+    @profile-anchor-response-api @id-python-word-anchor-discover-insert
     Scenario: A discovered heading selects where text is inserted in the saved document
       Given a saved Word document has headings "Introduction" and "Delivery approach" with paragraphs "Current intro" and "Current delivery"
       When Word anchors are listed with query "delivery"
@@ -37,7 +39,7 @@ Feature: Word anchor discovery and anchored insertion
       Then the insertion response has success true
       And reading the saved Word document shows "Inserted after discovered anchor" immediately after "Delivery approach"
 
-    @profile-python-anchor-discovery @id-python-word-anchor-section-discovery-hints
+    @profile-tool-discovery-hints @id-python-word-anchor-section-discovery-hints
     Scenario: Section listing advertises anchor and map discovery tools
       Given a saved Word document has heading "Introduction" and paragraph "Current intro"
       When its Word sections are listed

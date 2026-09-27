@@ -45,12 +45,13 @@ Feature: Word section and page properties
         | protected |
         | stale-document |
 
-  Rule: Go document API getter and bounded save-reopen predicates
+  Rule: Document value API and selected save-reopen predicates
     The in-memory operations below check selected getters. Only scenarios that say
-    save and reopen assert disk readback. Values name this API profile, not OOXML validity.
+    save and reopen assert disk readback. Getter names and return conventions are
+    API compatibility predicates, not general OOXML validity or rendering rules.
 
-    @profile-go-document-api @id-docx-go-section-title-background-getters
+    @profile-document-value-api @id-docx-go-section-title-background-getters
     Scenario: First-section title page and document background read back in memory
-      Given a new Go Word document with a first section
+      Given a new Word document with a first section
       When TitlePage is set true on that section and BackgroundColor to EEEEEE
       Then the section TitlePage getter is true and the document BackgroundColor getter equals EEEEEE

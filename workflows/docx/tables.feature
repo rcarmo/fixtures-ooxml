@@ -54,13 +54,14 @@ Feature: Word tables and cell properties
         | native-merged-nested  | nested-cell | docx-table-cell-unsupported  |
         | synthetic-grid-before                                                                          | bizarre     | docx-table-unsupported       |
 
-  Rule: Go document API getter and bounded save-reopen predicates
+  Rule: Document value API and selected save-reopen predicates
     The in-memory operations below check selected getters. Only scenarios that say
-    save and reopen assert disk readback. Values name this API profile, not OOXML validity.
+    save and reopen assert disk readback. Getter names and return conventions are
+    API compatibility predicates, not general OOXML validity or rendering rules.
 
-    @profile-go-document-api @id-docx-go-table-dimensions-getters
+    @profile-document-value-api @id-docx-go-table-dimensions-getters
     Scenario Outline: A newly added <rows> by <cols> table reports its dimensions
-      Given a new Go Word document
+      Given a new Word document
       When a table with <rows> rows and <cols> columns is added
       Then RowCount equals <rows> and ColumnCount equals <cols> in memory
       Examples:
@@ -74,63 +75,63 @@ Feature: Word tables and cell properties
         | 10   | 3    |
         | 3    | 10   |
 
-    @profile-go-document-api @id-docx-go-table-cell-access
+    @profile-nullable-cell-api @id-docx-go-table-cell-access
     Scenario: A three-by-three table returns cells only at in-range coordinates
-      Given a new Go Word table with three rows and three columns
+      Given a new Word table with three rows and three columns
       When its Cell getter is called for all nine coordinates from zero through two
       Then each of those nine calls returns a nonnil cell
       And calls for row or column negative one or three at the tested boundary coordinates return nil
 
-    @profile-go-document-api @id-docx-go-table-cell-text-getters
+    @profile-document-value-api @id-docx-go-table-cell-text-getters
     Scenario: A two-by-two table reads four assigned texts and its first row
-      Given a new Go Word table with two rows and two columns
+      Given a new Word table with two rows and two columns
       When its cells are set by row to A1, B1, A2 and B2
       Then the four cell text getters equal A1, B1, A2 and B2 in those positions
       And FirstRowText returns exactly A1 and B1
 
-    @profile-go-document-api @id-docx-go-table-row-counts
+    @profile-document-value-api @id-docx-go-table-row-counts
     Scenario: Adding, inserting and deleting rows changes table count in memory
-      Given a new Go Word table with two rows and three columns
+      Given a new Word table with two rows and three columns
       When one row is appended, one is inserted at index one, and index one is deleted
       Then row counts after each step are three, four and three respectively
       And deletion at index ten returns an error
 
-    @profile-go-document-api @id-docx-go-table-merge-properties
+    @profile-document-value-api @id-docx-go-table-merge-properties
     Scenario: A cell span and two vertical-merge flags read back directly
-      Given a new Go Word table with three rows and four columns
+      Given a new Word table with three rows and four columns
       When cell zero-zero gets GridSpan three and first-column rows one and two get restart and continue
       Then GridSpan at zero-zero equals three
       And VerticalMerge at row one is restart and at row two is continue
 
-    @profile-go-document-api @id-docx-go-table-style-getter
+    @profile-document-value-api @id-docx-go-table-style-getter
     Scenario: A table style getter changes from empty to TableGrid
-      Given a new Go Word two-by-two table
+      Given a new Word two-by-two table
       When its style is read, then set to TableGrid and read again
       Then the first style is empty and the second style is TableGrid
 
-    @profile-go-document-api @id-docx-go-table-header-getter
+    @profile-document-value-api @id-docx-go-table-header-getter
     Scenario: A row header getter changes from false to true
-      Given the first row of a new Go Word three-by-two table
+      Given the first row of a new Word three-by-two table
       When IsHeader is read, SetHeader true is applied and IsHeader is read again
       Then the first result is false and the second is true
 
-    @profile-go-document-api @id-docx-go-cell-shading-getter
+    @profile-document-value-api @id-docx-go-cell-shading-getter
     Scenario: A cell shading getter reads direct colour FFFF00
-      Given cell zero-zero of a new Go Word two-by-two table
+      Given cell zero-zero of a new Word two-by-two table
       When its shading is set to FFFF00
       Then its shading getter equals FFFF00
 
-    @profile-go-document-api @id-docx-go-cell-properties-getters
+    @profile-document-value-api @id-docx-go-cell-properties-getters
     Scenario: A table cell reads selected width, alignment, direction and border presence
-      Given cell zero-zero of a new Go Word one-by-one table
+      Given cell zero-zero of a new Word one-by-one table
       When width is set to 2400 dxa, vertical alignment center and text direction tbRl
       And a top border with single style, size eight and colour 000000 is assigned
       Then width equals 2400, width type dxa, alignment center and direction tbRl
       And the border collection and top border are nonnil
 
-    @profile-go-document-api @id-docx-go-roundtrip-table-text
+    @profile-table-text-readback @id-docx-go-roundtrip-table-text
     Scenario: Nine table cell texts survive save and reopen
-      Given a new Go Word table with three rows and three columns
+      Given a new Word table with three rows and three columns
       And its cells contain Header1, Header2, Header3, A1, B1, C1, A2, B2 and C2 in row order
       When the document is saved and reopened
       Then exactly one table is readable

@@ -41,13 +41,14 @@ Feature: Word tracked editing and author settings
         | invalid-option   |
         | missing-metadata |
 
-  Rule: Go document API getter and bounded save-reopen predicates
+  Rule: Document value API and selected save-reopen predicates
     The in-memory operations below check selected getters. Only scenarios that say
-    save and reopen assert disk readback. Values name this API profile, not OOXML validity.
+    save and reopen assert disk readback. Getter names and return conventions are
+    API compatibility predicates, not general OOXML validity or rendering rules.
 
-    @profile-go-document-api @id-docx-go-track-author-toggle
+    @profile-document-value-api @id-docx-go-track-author-toggle
     Scenario: Track Changes author and enabled flag follow a direct toggle sequence
-      Given a new Go Word document with tracking disabled
+      Given a new Word document with tracking disabled
       When tracking is enabled with Test Author and its author is changed to New Author
       Then tracking is enabled and TrackAuthor equals New Author
       And disabling tracking makes TrackChangesEnabled false

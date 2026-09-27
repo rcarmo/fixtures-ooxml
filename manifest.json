@@ -2968,10 +2968,10 @@
       ]
     },
     {
-      "id": "asset-6610431459359b721f75245b1b3c92073465f80cef867bb9f420d53569083e18",
+      "id": "asset-b7f4632e576e9e040bdd9b57da3b865f626be9b23928c4a39edeb7363fa9ab94",
       "path": "workflows/docx/creation.feature",
-      "bytes": 4049,
-      "sha256": "6610431459359b721f75245b1b3c92073465f80cef867bb9f420d53569083e18",
+      "bytes": 4117,
+      "sha256": "b7f4632e576e9e040bdd9b57da3b865f626be9b23928c4a39edeb7363fa9ab94",
       "role": "workflow",
       "origins": [
         {
@@ -3004,10 +3004,10 @@
       "aliases": []
     },
     {
-      "id": "asset-0f6c6ccc165c37db57be0909398e3d3178d58ca46fe953fa9009986bd8501857",
+      "id": "asset-8d2e42e828beec30c47698dee64c6bc35380f7d9e0b1a3f3b7aeb36ceb921596",
       "path": "workflows/docx/page-layout.feature",
-      "bytes": 2284,
-      "sha256": "0f6c6ccc165c37db57be0909398e3d3178d58ca46fe953fa9009986bd8501857",
+      "bytes": 2352,
+      "sha256": "8d2e42e828beec30c47698dee64c6bc35380f7d9e0b1a3f3b7aeb36ceb921596",
       "role": "workflow",
       "origins": [
         {
@@ -3024,10 +3024,10 @@
       "aliases": []
     },
     {
-      "id": "asset-74d35cd4da1e8e583d0a52b622c4b1bf452d69a1efd1d14f2102aa6163ae993c",
+      "id": "asset-f0a565511a6f1b1ae0b38ddb9dc2332b23f66a5be2cfea214f9d59fe73990971",
       "path": "workflows/docx/paragraph-style.feature",
-      "bytes": 2545,
-      "sha256": "74d35cd4da1e8e583d0a52b622c4b1bf452d69a1efd1d14f2102aa6163ae993c",
+      "bytes": 2721,
+      "sha256": "f0a565511a6f1b1ae0b38ddb9dc2332b23f66a5be2cfea214f9d59fe73990971",
       "role": "workflow",
       "origins": [
         {
@@ -3044,10 +3044,10 @@
       "aliases": []
     },
     {
-      "id": "asset-5b15ae332155e3c7074f466b4752547311eda8299b419ff2214bd1a82d52b869",
+      "id": "asset-7af8ef3a85775d91a2025e033fd818dbda4bf8799210b294544b4ae1743536a1",
       "path": "workflows/docx/run-formatting.feature",
-      "bytes": 5398,
-      "sha256": "5b15ae332155e3c7074f466b4752547311eda8299b419ff2214bd1a82d52b869",
+      "bytes": 5598,
+      "sha256": "7af8ef3a85775d91a2025e033fd818dbda4bf8799210b294544b4ae1743536a1",
       "role": "workflow",
       "origins": [
         {
@@ -3079,10 +3079,10 @@
       "aliases": []
     },
     {
-      "id": "asset-0d248a655bef198469e321ed5908241a5ae8211100b51eaac3520686617a0ec8",
+      "id": "asset-858a813b0f9ea0ac315ae1034057da288a510c638849f558f242d0ce4aa41f0d",
       "path": "workflows/docx/tables.feature",
-      "bytes": 7551,
-      "sha256": "0d248a655bef198469e321ed5908241a5ae8211100b51eaac3520686617a0ec8",
+      "bytes": 7619,
+      "sha256": "858a813b0f9ea0ac315ae1034057da288a510c638849f558f242d0ce4aa41f0d",
       "role": "workflow",
       "origins": [
         {
@@ -3116,10 +3116,10 @@
       "aliases": []
     },
     {
-      "id": "asset-5215d55a3604d510754bb01c110a5fde4968fa9b390d70da236f8c7e8b924819",
+      "id": "asset-f32ad31b4b4e03ad17894a8b246502e6d83f0253ec66abc1c5601764fd551ccd",
       "path": "workflows/docx/tracked-workflow.feature",
-      "bytes": 2486,
-      "sha256": "5215d55a3604d510754bb01c110a5fde4968fa9b390d70da236f8c7e8b924819",
+      "bytes": 2554,
+      "sha256": "f32ad31b4b4e03ad17894a8b246502e6d83f0253ec66abc1c5601764fd551ccd",
       "role": "workflow",
       "origins": [
         {
@@ -3807,10 +3807,10 @@
       "aliases": []
     },
     {
-      "id": "asset-7ab7bfe47e02ca08c90361582219080a9309ea19a23f76c3e2956237076c1aae",
+      "id": "asset-2660da7d8b07c61588c2d4c60fc70338b0d1d6d1bd75d296008708a748ccc960",
       "path": "contracts/go-document-api.md",
-      "bytes": 2869,
-      "sha256": "7ab7bfe47e02ca08c90361582219080a9309ea19a23f76c3e2956237076c1aae",
+      "bytes": 3578,
+      "sha256": "2660da7d8b07c61588c2d4c60fc70338b0d1d6d1bd75d296008708a748ccc960",
       "role": "workflow-contract",
       "origins": [
         {
@@ -3837,10 +3837,10 @@
       "aliases": []
     },
     {
-      "id": "asset-8b6733b301fa34dbdeac0f8225e35b3172c68115c8da73f01aaff059419d1cf0",
+      "id": "asset-d52ab5ddcf3e38d303270ed370a8e374b05b21e518fa850ecaf01452905910df",
       "path": "contracts/python-anchor-discovery.md",
-      "bytes": 1158,
-      "sha256": "8b6733b301fa34dbdeac0f8225e35b3172c68115c8da73f01aaff059419d1cf0",
+      "bytes": 1452,
+      "sha256": "d52ab5ddcf3e38d303270ed370a8e374b05b21e518fa850ecaf01452905910df",
       "role": "workflow-contract",
       "origins": [
         {
@@ -3937,10 +3937,10 @@
       "aliases": []
     },
     {
-      "id": "asset-f33165ea9b4e90556613c3e714e4f9556cfd9edd8edeb185972fee7ef11294ad",
+      "id": "asset-322cf1df8cb454241bf9255cfe62b9f4c84f83042cc27f102b88ef06ff99d911",
       "path": "workflows/docx/anchor-discovery.feature",
-      "bytes": 2986,
-      "sha256": "f33165ea9b4e90556613c3e714e4f9556cfd9edd8edeb185972fee7ef11294ad",
+      "bytes": 3129,
+      "sha256": "322cf1df8cb454241bf9255cfe62b9f4c84f83042cc27f102b88ef06ff99d911",
       "role": "workflow",
       "origins": [
         {
@@ -4297,10 +4297,10 @@
       "aliases": []
     },
     {
-      "id": "asset-736314ab9423da07013683d33377f7972145f63ba60f213ef08bd37755fa5468",
+      "id": "asset-59757333a4894b19364fd2b40fd2f1ceaafa19c21f357b4b9ef764bf2197be04",
       "path": "workflows/docx/properties.feature",
-      "bytes": 1102,
-      "sha256": "736314ab9423da07013683d33377f7972145f63ba60f213ef08bd37755fa5468",
+      "bytes": 1170,
+      "sha256": "59757333a4894b19364fd2b40fd2f1ceaafa19c21f357b4b9ef764bf2197be04",
       "role": "workflow",
       "origins": [
         {
@@ -4312,10 +4312,10 @@
       "aliases": []
     },
     {
-      "id": "asset-520e9c4c4dd394153f1012fb5b7e62dc6aef73dc8f78f9a8d796171056a6b512",
+      "id": "asset-7c448d5863f64ef188b3cb2ec1c9a82fb4a8a2c7c5104058ccf21ad2561e6856",
       "path": "workflows/docx/paragraphs.feature",
-      "bytes": 2903,
-      "sha256": "520e9c4c4dd394153f1012fb5b7e62dc6aef73dc8f78f9a8d796171056a6b512",
+      "bytes": 2971,
+      "sha256": "7c448d5863f64ef188b3cb2ec1c9a82fb4a8a2c7c5104058ccf21ad2561e6856",
       "role": "workflow",
       "origins": [
         {

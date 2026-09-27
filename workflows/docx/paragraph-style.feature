@@ -43,13 +43,15 @@ Feature: Word paragraph style selection
         | stale                |
         | invalid-argument     |
 
-  Rule: Go document API getter and bounded save-reopen predicates
+  Rule: Document value API and selected save-reopen predicates
     The in-memory operations below check selected getters. Only scenarios that say
-    save and reopen assert disk readback. Values name this API profile, not OOXML validity.
+    save and reopen assert disk readback. Getter names and return conventions are
+    API compatibility predicates, not general OOXML validity or rendering rules.
 
-    @profile-go-document-api @id-docx-go-paragraph-style-getters
+    # Classification here follows the supplied style identifiers, not computed outline inheritance.
+    @profile-heading-classification-api @id-docx-go-paragraph-style-getters
     Scenario Outline: A <style_json> paragraph has the requested heading classification in memory
-      Given a new Go Word paragraph
+      Given a new Word paragraph
       When style JSON <style_json> is set on that paragraph
       Then its direct style getter equals JSON <style_json>
       And IsHeading equals <heading> and HeadingLevel equals <level>
