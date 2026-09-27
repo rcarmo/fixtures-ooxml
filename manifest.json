@@ -93,31 +93,6 @@
       "scenarioIds": []
     },
     {
-      "id": "fixture-1780cc7a1c0ee45df6c78afcea721d995bdb67846f6bdfb78cfe78c27e28b897",
-      "path": "fixtures/docx/content-controls/sdt-content-controls-1780cc7a1c0e.docx",
-      "bytes": 2317,
-      "sha256": "1780cc7a1c0ee45df6c78afcea721d995bdb67846f6bdfb78cfe78c27e28b897",
-      "role": "fixture",
-      "origins": [
-        {
-          "kind": "observed-generated",
-          "repository": "https://github.com/rcarmo/go-ooxml",
-          "manifestRevision": "43fbb43943d203e1476b21a31cf723dfb75268b6",
-          "manifestPath": "acceptance/testdata/manifest.json",
-          "manifestSha256": "8c4fe2c404a3b733ec82a880651c02e295246543fdea4b464b961faea735700b",
-          "path": "testdata/generated/word/sdt_content_controls.docx",
-          "qualification": "Observed ignored local generated archive; matched committed manifest. Bytes are not committed at observation HEAD; generator invocation/revision not established."
-        }
-      ],
-      "aliases": [
-        "fixtures/go-current/testdata/generated/word/sdt_content_controls.docx"
-      ],
-      "format": "docx",
-      "scenarioGroup": "content-controls",
-      "name": "sdt-content-controls",
-      "scenarioIds": []
-    },
-    {
       "id": "fixture-368fe96cb3ae55a0cc5fecbb599eda1d1058596d4914992f596083f291071ae4",
       "path": "fixtures/docx/content-controls/sdt-content-controls-368fe96cb3ae.docx",
       "bytes": 2317,
@@ -263,33 +238,6 @@
       ],
       "aliases": [
         "fixtures/python-office-mcp-server/tests/_templates/testdata/word/minimal.docx"
-      ],
-      "format": "docx",
-      "scenarioGroup": "creation",
-      "name": "minimal",
-      "scenarioIds": []
-    },
-    {
-      "id": "fixture-9726b477472ddb7595875c9f30493df2577e587416b18418d0dc7221046690fe",
-      "path": "fixtures/docx/creation/minimal-9726b477472d.docx",
-      "bytes": 36563,
-      "sha256": "9726b477472ddb7595875c9f30493df2577e587416b18418d0dc7221046690fe",
-      "role": "fixture",
-      "origins": [
-        {
-          "revision": "43eda6edfe45db20da5879ba332ec6a25d598efa",
-          "path": "testdata/word/minimal.docx",
-          "repository": "https://github.com/rcarmo/go-ooxml"
-        },
-        {
-          "repository": "https://github.com/rcarmo/go-ooxml",
-          "revision": "43fbb43943d203e1476b21a31cf723dfb75268b6",
-          "path": "testdata/word/minimal.docx"
-        }
-      ],
-      "aliases": [
-        "fixtures/go-ooxml/testdata/word/minimal.docx",
-        "fixtures/go-current/testdata/word/minimal.docx"
       ],
       "format": "docx",
       "scenarioGroup": "creation",

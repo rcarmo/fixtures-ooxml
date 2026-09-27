@@ -1,0 +1,191 @@
+{
+  "schemaVersion": 1,
+  "policy": "Historical whole-archive SHA-256 IDs are not aliases for retained bytes. These removed archives remain recoverable from the immutable release; consumers must explicitly remap selected inputs after reviewing ZIP metadata distinctions. No new execution credit follows from content equality.",
+  "releaseSource": {
+    "repository": "https://github.com/rcarmo/fixtures-ooxml",
+    "commit": "a47c51ada71dfe1561f403c8861954bdbf5b9023",
+    "tag": "v0.40.0"
+  },
+  "retired": [
+    {
+      "id": "fixture-1780cc7a1c0ee45df6c78afcea721d995bdb67846f6bdfb78cfe78c27e28b897",
+      "path": "fixtures/docx/content-controls/sdt-content-controls-1780cc7a1c0e.docx",
+      "bytes": 2317,
+      "sha256": "1780cc7a1c0ee45df6c78afcea721d995bdb67846f6bdfb78cfe78c27e28b897",
+      "origins": [
+        {
+          "kind": "observed-generated",
+          "repository": "https://github.com/rcarmo/go-ooxml",
+          "manifestRevision": "43fbb43943d203e1476b21a31cf723dfb75268b6",
+          "manifestPath": "acceptance/testdata/manifest.json",
+          "manifestSha256": "8c4fe2c404a3b733ec82a880651c02e295246543fdea4b464b961faea735700b",
+          "path": "testdata/generated/word/sdt_content_controls.docx",
+          "qualification": "Observed ignored local generated archive; matched committed manifest. Bytes are not committed at observation HEAD; generator invocation/revision not established."
+        }
+      ],
+      "aliases": [
+        "fixtures/go-current/testdata/generated/word/sdt_content_controls.docx"
+      ],
+      "scenarioIds": [],
+      "retainedId": "fixture-368fe96cb3ae55a0cc5fecbb599eda1d1058596d4914992f596083f291071ae4",
+      "retainedPath": "fixtures/docx/content-controls/sdt-content-controls-368fe96cb3ae.docx",
+      "retainedSha256": "368fe96cb3ae55a0cc5fecbb599eda1d1058596d4914992f596083f291071ae4",
+      "logicalSha256": "a836db651ce9b0af33baf37e373f55f7499a7233c32ac798766dfbb968304dc1",
+      "members": [
+        {
+          "name": "[Content_Types].xml",
+          "sha256": "48652aae7e2a5955e964a5f10177b4c56f650abb3a74d88b8b85f1db62caeb3e",
+          "bytes": 975
+        },
+        {
+          "name": "_rels/.rels",
+          "sha256": "92a478cd56dc905d824abbe2478f06930b4a90eb733256cb1e3be0a2edd926f8",
+          "bytes": 312
+        },
+        {
+          "name": "word/_rels/document.xml.rels",
+          "sha256": "56e7b2d7db1cc4e4acbd6374f82f73a3927c31d2f1787282e28e7874b6e36def",
+          "bytes": 442
+        },
+        {
+          "name": "word/document.xml",
+          "sha256": "e5fa2428bf4f34764a9fba93b9a12fd6e227c8e8f4f2ab1b25245346a451d765",
+          "bytes": 3857
+        },
+        {
+          "name": "word/settings.xml",
+          "sha256": "efc29d1f6e302a09205d5939d225267c8adf5765508006828636b4fb6fadba0c",
+          "bytes": 146
+        },
+        {
+          "name": "word/styles.xml",
+          "sha256": "4ded917aa850b8048d21bfd27f76d18aa9a5f674dc0e3896531d64aa60e7cbe4",
+          "bytes": 142
+        }
+      ],
+      "reason": "All 6 decompressed members match the retained source SDT DOCX; ZIP member order differs while timestamps, methods, sizes and CRCs agree.",
+      "historicalUse": [
+        "Go generated/word/sdt_content_controls.docx fixture-ID mapping"
+      ]
+    },
+    {
+      "id": "fixture-9726b477472ddb7595875c9f30493df2577e587416b18418d0dc7221046690fe",
+      "path": "fixtures/docx/creation/minimal-9726b477472d.docx",
+      "bytes": 36563,
+      "sha256": "9726b477472ddb7595875c9f30493df2577e587416b18418d0dc7221046690fe",
+      "origins": [
+        {
+          "revision": "43eda6edfe45db20da5879ba332ec6a25d598efa",
+          "path": "testdata/word/minimal.docx",
+          "repository": "https://github.com/rcarmo/go-ooxml"
+        },
+        {
+          "repository": "https://github.com/rcarmo/go-ooxml",
+          "revision": "43fbb43943d203e1476b21a31cf723dfb75268b6",
+          "path": "testdata/word/minimal.docx"
+        }
+      ],
+      "aliases": [
+        "fixtures/go-ooxml/testdata/word/minimal.docx",
+        "fixtures/go-current/testdata/word/minimal.docx"
+      ],
+      "scenarioIds": [],
+      "retainedId": "fixture-d9d6a313182a71a73d75a26a0ff3b7826dbd2e300e1d202114ec9f8fb018fda5",
+      "retainedPath": "fixtures/docx/creation/default-d9d6a313182a.docx",
+      "retainedSha256": "d9d6a313182a71a73d75a26a0ff3b7826dbd2e300e1d202114ec9f8fb018fda5",
+      "logicalSha256": "2548cdc16b698a29221da53a0dbc7731d9a2383b13f8dfc19be6568018c38a68",
+      "members": [
+        {
+          "name": "[Content_Types].xml",
+          "sha256": "66c84fb7a6aa3c4ead49f895e4a7044df1fb57de1ed76d09b2686e91f5bed5b4",
+          "bytes": 1738
+        },
+        {
+          "name": "_rels/.rels",
+          "sha256": "a9ae57efe9186f07d48303bcac5d54c7e359bf3f503939c03ad2954e5c59a5c4",
+          "bytes": 734
+        },
+        {
+          "name": "docProps/core.xml",
+          "sha256": "d14be8284e406d14dc2a576b19f15e7f637b955f9e27a3d9ed871ec99606f7ba",
+          "bytes": 721
+        },
+        {
+          "name": "docProps/app.xml",
+          "sha256": "be664981c3141cddfc59362beb287ebf20d0773660e2dd6faac5968a5930a081",
+          "bytes": 1132
+        },
+        {
+          "name": "word/document.xml",
+          "sha256": "0e4dd503bc095219cd24e8312b372c588ca56bb834aacac53eafb7bf47836327",
+          "bytes": 1548
+        },
+        {
+          "name": "word/_rels/document.xml.rels",
+          "sha256": "1e7f0eb144a98e199249314f61ff32a8de2a27e56d8e9ee6b524e1c6b235d377",
+          "bytes": 1227
+        },
+        {
+          "name": "word/styles.xml",
+          "sha256": "02d71a68ddb92c055e84526d6a9e45700be3872781ababf759241694bc30e384",
+          "bytes": 349458
+        },
+        {
+          "name": "word/stylesWithEffects.xml",
+          "sha256": "463ae0928cf0d84775dbf8cf18d6c3029f6707c81bf590f6d6dd8757a5e93f15",
+          "bytes": 438131
+        },
+        {
+          "name": "word/settings.xml",
+          "sha256": "51a0d348fe85965c66e4748a03c3c0d055d78455514f03cb121c334af7d73689",
+          "bytes": 2535
+        },
+        {
+          "name": "word/webSettings.xml",
+          "sha256": "349d36de7434d09f86987ff671d8814964a0588c1e630c06e562cda7e75e9f95",
+          "bytes": 438
+        },
+        {
+          "name": "word/fontTable.xml",
+          "sha256": "79385fb7f60247507ecaffc292e9ebd52ea0657b8634f629ba6fccc54011d6bb",
+          "bytes": 2811
+        },
+        {
+          "name": "word/theme/theme1.xml",
+          "sha256": "e3a8ab7db9ca7afca56f5f2820a56e8b660016c647773555b060b0a02ac76941",
+          "bytes": 10939
+        },
+        {
+          "name": "customXml/item1.xml",
+          "sha256": "a86086ffc5d8e83ebd6c71a55d1d2efaa31b137977f5f3a752366e1023612144",
+          "bytes": 262
+        },
+        {
+          "name": "customXml/_rels/item1.xml.rels",
+          "sha256": "1ca6c9a64edcebe24ee703a54403611b322d96da33371779e742d2d3f7ed7a6c",
+          "bytes": 295
+        },
+        {
+          "name": "customXml/itemProps1.xml",
+          "sha256": "c542307b13ec29a8b546217bb37936ab4822e044b265d2952985ec3d6afed24e",
+          "bytes": 354
+        },
+        {
+          "name": "word/numbering.xml",
+          "sha256": "70976f19cbcd896e51890859fe6ecb3467a5a7ad0c040160fedc5a1993cb09ce",
+          "bytes": 5513
+        },
+        {
+          "name": "docProps/thumbnail.jpeg",
+          "sha256": "96367138dc44ce09bf2c8f0f8e49348a1478d2c5c0af69bbc2bbc38b63cdcead",
+          "bytes": 8324
+        }
+      ],
+      "reason": "All 17 decompressed members match the retained default DOCX; the ZIP DOS timestamps differ while member order, methods, sizes and CRCs agree.",
+      "historicalUse": [
+        "Go historical testdata/word/minimal.docx and fixture-ID mapping",
+        "Bun goWord.minimal fixture-ID mapping"
+      ]
+    }
+  ]
+}

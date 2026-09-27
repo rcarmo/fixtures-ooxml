@@ -2,6 +2,7 @@ import {Parser,AstBuilder,GherkinClassicTokenMatcher,compile} from '@cucumber/gh
 import {IdGenerator} from '@cucumber/messages';
 import {join,resolve} from 'node:path';
 import {verifySpecifications} from './specifications.ts';
+import {verifyFixtureContents} from './fixture-content.ts';
 export const root=resolve(import.meta.dir,'..');
 const hash=(b:Uint8Array)=>new Bun.CryptoHasher('sha256').update(b).digest('hex');
 const safe=(p:string)=>!!p&&!/[\\:\u0000-\u001f]/.test(p)&&p.split('/').every(s=>s&&s!=='.'&&s!=='..');
@@ -152,6 +153,7 @@ export async function verify(base=root){
   if(JSON.stringify([...scenarioLinks].sort())!==JSON.stringify([...group.scenarioIds].sort()))throw Error('Fixture group scenario links differ');
  }
  if(groupedIds.size!==manifest.files.filter((f:any)=>f.role==='fixture').length)throw Error('Ungrouped fixture');
+ await verifyFixtureContents(base,manifest);
  const specifications=await verifySpecifications(base,manifest);
  console.log(`Verified ${specifications.documents} specification documents and ${specifications.testSourceVariants} test-source variants`);
  console.log(`Verified ${seen.size} assets, ${factIds.size} facts, ${ids.length} workflows / ${actual.length} cases`);

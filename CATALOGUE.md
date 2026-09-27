@@ -58,6 +58,20 @@ New scenarios are `@planned` until an implementation binds and runs them. Preser
 that distinction in results, but do not defer writing a valid format contract
 because one implementation does not support it yet.
 
+## Fixture content
+
+Each retained OOXML archive has a distinct set of named, decompressed ZIP
+members. The [content consolidation ledger](ledgers/fixture-content-consolidation.json)
+records two retired byte identities: `minimal-9726b477472d.docx` differs from
+the retained `default-d9d6a313182a.docx` only in ZIP timestamps, and the
+observed-generated `sdt-content-controls-1780cc7a1c0e.docx` differs from the
+retained `sdt-content-controls-368fe96cb3ae.docx` only in ZIP member order.
+The retired archives remain recoverable from immutable v0.40.0; their old
+whole-file SHA-256 IDs are not aliases for the retained bytes. Consumers must
+explicitly review any input remap. `bun run check` verifies all remaining
+ZIP member contents and refuses new duplicates. Content equality does not
+grant behaviour execution credit.
+
 ## Consolidating existing files
 
 [`ledgers/feature-consolidation.json`](ledgers/feature-consolidation.json) records
