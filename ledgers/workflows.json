@@ -46,7 +46,8 @@
     "workflows/xml/comparison.feature",
     "workflows/xml/editing.feature",
     "workflows/xml/names.feature",
-    "workflows/xml/parsing.feature"
+    "workflows/xml/parsing.feature",
+    "workflows/docx/tracking-settings.feature"
   ],
   "executionCredit": "Only local executed assertions count; reports here do not run consumers.",
   "workflows": [
@@ -5830,6 +5831,178 @@
       "expectedOutcomes": [
         "\"<Present>\" reports exactly one match",
         "\"<Missing>\" reports exactly zero matches"
+      ],
+      "consumers": {
+        "bun": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        },
+        "go": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        },
+        "python": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        }
+      }
+    },
+    {
+      "id": "@id-docx-tracking-settings-persistence",
+      "feature": "workflows/docx/tracking-settings.feature",
+      "expandedCases": 2,
+      "factIds": [],
+      "expectedOutcomes": [
+        "the reopened tracking preference is true and the session author is empty",
+        "the output has one internal settings relationship with the Word settings content type",
+        "the reopened text and opaque payload equal the source and the source archive is unchanged",
+        "the reopened tracking preference is false and the session author is empty"
+      ],
+      "consumers": {
+        "bun": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        },
+        "go": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        },
+        "python": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        }
+      }
+    },
+    {
+      "id": "@id-docx-tracking-settings-custody",
+      "feature": "workflows/docx/tracking-settings.feature",
+      "expandedCases": 3,
+      "factIds": [],
+      "expectedOutcomes": [
+        "the reopened preference is true and the settings path and encoding match the source",
+        "removing only the added tracking element reproduces the original settings XML",
+        "every unrelated member and the source archive is unchanged"
+      ],
+      "consumers": {
+        "bun": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        },
+        "go": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        },
+        "python": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        }
+      }
+    },
+    {
+      "id": "@id-docx-tracking-settings-no-op",
+      "feature": "workflows/docx/tracking-settings.feature",
+      "expandedCases": 4,
+      "factIds": [],
+      "expectedOutcomes": [
+        "the preference is false and the session author is Session reviewer",
+        "the complete archive is unchanged with zero changed parts",
+        "the preference is true and the session author is Session reviewer"
+      ],
+      "consumers": {
+        "bun": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        },
+        "go": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        },
+        "python": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        }
+      }
+    },
+    {
+      "id": "@id-docx-tracking-settings-refusal",
+      "feature": "workflows/docx/tracking-settings.feature",
+      "expandedCases": 8,
+      "factIds": [],
+      "expectedOutcomes": [
+        "both requests refuse and the session author remains Previous",
+        "the archive and held paragraph text Retained text are unchanged"
+      ],
+      "consumers": {
+        "bun": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        },
+        "go": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        },
+        "python": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        }
+      }
+    },
+    {
+      "id": "@id-docx-tracking-settings-rollback",
+      "feature": "workflows/docx/tracking-settings.feature",
+      "expandedCases": 3,
+      "factIds": [],
+      "expectedOutcomes": [
+        "the settings operation refuses and the session author remains Previous",
+        "the archive and held paragraph text Retained text are unchanged"
+      ],
+      "consumers": {
+        "bun": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        },
+        "go": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        },
+        "python": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        }
+      }
+    },
+    {
+      "id": "@id-docx-tracking-settings-plain-edit",
+      "feature": "workflows/docx/tracking-settings.feature",
+      "expandedCases": 1,
+      "factIds": [],
+      "expectedOutcomes": [
+        "the reopened text is Explicit plain edit and the tracking preference is true",
+        "the reopened document contains no revisions and the opaque payload is unchanged"
+      ],
+      "consumers": {
+        "bun": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        },
+        "go": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        },
+        "python": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        }
+      }
+    },
+    {
+      "id": "@id-docx-tracking-settings-author-refusal",
+      "feature": "workflows/docx/tracking-settings.feature",
+      "expandedCases": 3,
+      "factIds": [],
+      "expectedOutcomes": [
+        "the settings operation refuses and the session author remains Previous",
+        "the archive and held paragraph text Retained text are unchanged"
       ],
       "consumers": {
         "bun": {

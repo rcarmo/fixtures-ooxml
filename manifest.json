@@ -4325,6 +4325,36 @@
         }
       ],
       "aliases": []
+    },
+    {
+      "id": "asset-ba4621e6acd4b892b5a214d57d3d9057b568135d0f21a5ff40fc69b4b6417e9e",
+      "path": "workflows/docx/tracking-settings.feature",
+      "bytes": 4713,
+      "sha256": "ba4621e6acd4b892b5a214d57d3d9057b568135d0f21a5ff40fc69b4b6417e9e",
+      "role": "workflow",
+      "origins": [
+        {
+          "repository": "https://github.com/rcarmo/fixtures-ooxml",
+          "path": "workflows/docx/tracking-settings.feature",
+          "basis": "Project-owned behaviour contract or source assertion mapping"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "id": "asset-57aebc8f3c84d799a7303cd77b081abedd15f78b1a389b04e0c518e42bd6b917",
+      "path": "contracts/tracking-settings.md",
+      "bytes": 2814,
+      "sha256": "57aebc8f3c84d799a7303cd77b081abedd15f78b1a389b04e0c518e42bd6b917",
+      "role": "workflow-contract",
+      "origins": [
+        {
+          "repository": "https://github.com/rcarmo/fixtures-ooxml",
+          "path": "contracts/tracking-settings.md",
+          "basis": "Project-owned behaviour contract or source assertion mapping"
+        }
+      ],
+      "aliases": []
     }
   ]
 }

@@ -30,7 +30,9 @@ test('format migration preserves every scenario and compiled case with no retire
   const record=actual.get(row.scenarioId)??{path,hashes:[]};expect(record.path).toBe(path);
   record.hashes.push(new Bun.CryptoHasher('sha256').update(JSON.stringify(beforeWordingCase(row))).digest('hex'));actual.set(row.scenarioId,record);
  }
- expect([...actual.values()].reduce((n,r)=>n+r.hashes.length,0)).toBe(562);expect(actual.size).toBe(229);
+ expect([...actual.values()].reduce((n,r)=>n+r.hashes.length,0)).toBe(586);expect(actual.size).toBe(236);
+ const added=[...actual.keys()].filter(id=>!migration.scenarios.some((s:any)=>s.id===id));expect(added.sort()).toEqual(['author-refusal','custody','no-op','persistence','plain-edit','refusal','rollback'].map(n=>'@id-docx-tracking-settings-'+n).sort());
+ expect(migration.scenarios.reduce((n:number,s:any)=>n+actual.get(s.id)!.hashes.length,0)).toBe(562);
  for(const row of migration.scenarios){expect(actual.get(row.id)).toEqual({path:row.to,hashes:row.caseSha256});expect(ledger.workflows.find((w:any)=>w.id===row.id)?.feature).toBe(row.to);}
  for(const path of ledger.features){const gen=IdGenerator.incrementing(),doc=new Parser(new AstBuilder(gen),new GherkinClassicTokenMatcher()).parse(await Bun.file(path).text()),rows=compile(doc,path,gen);
   for(const record of migration.scenarios.filter((s:any)=>s.to===path))expect(rows.filter(r=>r.tags.some(t=>t.name===record.id)).map(r=>beforeWordingTags(record.id,r.tags.map(t=>t.name).sort()))).toEqual(record.tags);

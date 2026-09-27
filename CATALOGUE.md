@@ -130,6 +130,14 @@ and origin-named profile prefixes. Historical IDs, source ledgers and corpus
 provenance retain their names. This lexical guard establishes wording hygiene,
 not semantic equivalence or portable support for every API profile.
 
+## Saved tracking preferences
+
+The [tracking preference contracts](contracts/tracking-settings.md) add seven
+scenarios / 24 cases for saved preferences, exact sibling and encoding custody,
+no-ops, atomic refusals and rollback. The earlier getter-only case is unchanged.
+These additions bring the catalogue to 47 features, 236 scenarios and 586 cases.
+All consumer statuses for the new contracts start planned.
+
 ## Weak-outcome review
 
 | Contract | Current assertion boundary | Requirement still missing |
