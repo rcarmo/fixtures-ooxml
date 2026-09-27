@@ -883,12 +883,13 @@
       "consumer": "python",
       "sourcePath": "docs/catalogue-staging/python-native/features/test_high_volume.feature",
       "path": "staging/python/features/test_high_volume.feature",
-      "sha256": "a794ecf4405ba3c40cc31009f4ceb90e075a88773667591d222c5f7a59882c22",
-      "compiledCases": 28,
+      "sha256": "30af102c1cd276c39095593bd493117a0b5469e4a5957924a48a01b1feff6953",
+      "compiledCases": 27,
       "executionCredit": false,
       "reconciliation": "stronger-canonical-profile-planned",
       "historicalSourceSha256": "f3425a3273202dc2f58ef554ddf30c79f9fb58d40349bfa56c31eb06d6769c2f",
-      "transformation": "Remove weak dict-only layout recommendation capture after transferring all five distinct native input variants to the stronger planned @id-pptx-layout-recommendation-ranked outline; neither native test currently satisfies its exact outcomes."
+      "transformation": "Remove weak dict-only layout recommendation capture after transferring all five distinct native input variants to the stronger planned @id-pptx-layout-recommendation-ranked outline; neither native test currently satisfies its exact outcomes. Remove the dict-only all-slide notes read capture after transferring its native declaration to the stronger planned @id-pptx-notes-collection-read variant; retain existing ordered/blank-line profile separately.",
+      "previousCurrentSha256": "a794ecf4405ba3c40cc31009f4ceb90e075a88773667591d222c5f7a59882c22"
     },
     {
       "consumer": "python",
@@ -1254,12 +1255,13 @@
       "consumer": "python",
       "sourcePath": "docs/catalogue-staging/python-native/features/test_word_pptx_advanced_ops.feature",
       "path": "staging/python/features/test_word_pptx_advanced_ops.feature",
-      "sha256": "a93477a7f007fc9e2d9754466a890ace273e1ad318fae6f2cc84e10eaf3a1d45",
-      "compiledCases": 18,
+      "sha256": "6731cc5824c25bdb838feb24500c8bf1321c722a063e595d1feddde5b77bbc1e",
+      "compiledCases": 17,
       "executionCredit": false,
       "reconciliation": "stronger-canonical-profile-planned",
       "historicalSourceSha256": "ed3eb2d0d7cdb20757eaf97549b1b4615be110c60144308920a4d3905fcafb5c",
-      "transformation": "Remove weak dict-only layout recommendation capture after transferring all five distinct native input variants to the stronger planned @id-pptx-layout-recommendation-ranked outline; neither native test currently satisfies its exact outcomes."
+      "transformation": "Remove weak dict-only layout recommendation capture after transferring all five distinct native input variants to the stronger planned @id-pptx-layout-recommendation-ranked outline; neither native test currently satisfies its exact outcomes. Remove the dict-only all-slide notes read capture after transferring its native declaration to the stronger planned @id-pptx-notes-collection-read variant; retain existing ordered/blank-line profile separately.",
+      "previousCurrentSha256": "a93477a7f007fc9e2d9754466a890ace273e1ad318fae6f2cc84e10eaf3a1d45"
     },
     {
       "consumer": "python",
@@ -1426,15 +1428,17 @@
     "rule": "Equivalent behaviour requires same input variants, expected saved outputs, refusal and custody policy; no automatic retirement based on text."
   },
   "currentComparison": {
-    "compiledCases": 1549,
-    "uniqueNormalizedStepSequences": 1547,
+    "compiledCases": 1547,
+    "uniqueNormalizedStepSequences": 1546,
     "crossConsumerExactStepGroups": 0,
-    "withinConsumerDuplicateStepGroups": 2,
+    "withinConsumerDuplicateStepGroups": 1,
     "retiredCandidateIds": [
       "@candidate-python-workflows-2b4937f7f0",
       "@candidate-python-high-volume-5465e20c3f",
-      "@candidate-python-word-pptx-advanced-ops-895995c6d6"
+      "@candidate-python-word-pptx-advanced-ops-895995c6d6",
+      "@candidate-python-high-volume-68bcd8d447",
+      "@candidate-python-word-pptx-advanced-ops-b86a4362b4"
     ],
-    "rule": "Current compiled inventory after one exact weak alias and two weak layout candidates retire into five stronger planned canonical rows; historical comparison and source hashes above remain unchanged."
+    "rule": "Current compiled inventory after exact TOOL_CLASSES alias and stronger planned layout/notes profiles retire five weak candidate scenarios; historical comparison and source hashes remain unchanged."
   }
 }

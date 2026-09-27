@@ -11,6 +11,31 @@ Feature: Presentation notes inspection and editing
       When PPTX opens the reordered notes fixture and probes notes reads
       Then PPTX keeps slide order, notes blank lines, and notes reads non-mutating without creating missing notes parts
 
+  Rule: Read an authored collection without creating notes for a slide that lacks them
+    This collection profile returns nonempty speaker notes in presentation order.
+    It does not cover relationship permutations or preserving blank lines inside notes.
+
+    @profile-notes-collection @id-pptx-notes-collection-read
+    Scenario Outline: Read three notes and one absent note from a <variant> four-slide presentation
+      Given the sealed blank presentation fixture-c54a7b746c0328fc1930525edd91387eedbbca69a6f388f7ec024150187b6bab has no slides
+      And a temporary copy has four slides appended in order using layout index 1
+      And slides 1, 2 and 3 have notes text "Notes for slide 1", "Notes for slide 2" and "Notes for slide 3" respectively
+      And the four slide title placeholders contain <titles>; slide 4 has no notes slide or notes relationship
+      And this authored copy is saved and reopened before its archive SHA-256 and every member payload are recorded
+      When all-slide notes, each slide's notes, and out-of-range slides 0 and 5 are read without writing
+      Then the all-slide result equals {"file":"notes-collection.pptx","slides_with_notes":3,"total_slides":4,"notes":[{"slide_number":1,"notes":"Notes for slide 1"},{"slide_number":2,"notes":"Notes for slide 2"},{"slide_number":3,"notes":"Notes for slide 3"}]}
+      And slides 1, 2 and 3 each return their exact one-based slide number, has_notes true and matching literal notes
+      And slide 4 returns {"file":"notes-collection.pptx","slide_number":4,"has_notes":false,"notes":""}
+      And slides 0 and 5 return exactly "Slide 0 not found. Presentation has 4 slides." and "Slide 5 not found. Presentation has 4 slides." as errors
+      And after every read or refusal the authored source archive SHA-256, bytes, every member payload and relationship equal the recorded values
+      And no slide-4 notes part or slide-4 notes relationship has been created
+      And the sealed blank presentation fixture bytes remain unchanged
+
+      Examples:
+        | variant  | titles                                |
+        | untitled | ["","","",""]                       |
+        | titled   | ["Slide 1","Slide 2","Slide 3","Slide 4"] |
+
   Rule: Edit existing slide notes while retaining unrelated presentation payloads
     An existing notes slide is selected by its related slide part. Notes edits and
     refusals use existing-part targets; creating a notes part is outside this profile.

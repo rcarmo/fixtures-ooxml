@@ -159,17 +159,6 @@ Feature: word pptx advanced ops native behavior capture
     When tool_word_analyze_template_formatting reads that saved document
     Then the result is a dictionary, including an error dictionary
 
-  @candidate-python-word-pptx-advanced-ops-b86a4362b4
-  # Native: tests/test_word_pptx_advanced_ops.py::TestPptxNotesOperations::test_get_notes_no_slide_number
-  Scenario: Native check: get notes no slide number [TestPptxNotesOperations]
-    Given Create an instance of PresentationAdvancedTools.
-    And an isolated writable temporary directory
-    And prs.save with temp dir under "all_notes.pptx"
-    And prs is prepared as the result of Presentation with no arguments
-    And path is prepared as temp dir under "all_notes.pptx"
-    When pptx advanced tools.tool pptx get notes using str representation of temp dir under "all_notes.pptx"
-    Then result has type dict
-
   @candidate-python-word-pptx-advanced-ops-be648375fd
   # Native: tests/test_word_pptx_advanced_ops.py::TestWordComplexOperations::test_generate_sow_with_data
   Scenario: Native check: generate sow with data [TestWordComplexOperations]

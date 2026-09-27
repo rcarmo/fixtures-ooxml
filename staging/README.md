@@ -14,21 +14,22 @@ native behaviour against the [canonical workflows](../workflows/README.md).
   JSON and source assertion inventory remain in Go until reviewed centrally.
 - `python/features/` retains 67 captured candidate features. The Python consumer
   retains 1,022 native declaration mappings and source evidence separately;
-  one exact weak alias shares a representative, while five disjoint layout
-  inputs now share a stronger planned canonical outline. The staged files do
-  not participate in Python acceptance execution.
+  one exact weak alias shares a representative; five disjoint layout inputs
+  and two titled/untitled notes inputs occupy stronger planned canonical
+  outlines. The staged files do not participate in Python acceptance execution.
 
 The historical comparison compiled 1,552 expanded cases: 1,541 Go/Python
 candidates plus eleven former Bun planned cases. The 143 current candidate
-files compile 1,538 cases after one exact weak alias and two weak layout
-scenario blocks were retired; 1,549 includes the eleven Bun cases. All three
-native declarations and all five layout parameter values remain tracked. No source pair
+files compile 1,536 cases after one exact weak alias, two weak layout and two
+weak notes blocks were retired; 1,547 includes the eleven Bun cases. All five
+native declarations, five layout parameters and two notes inputs remain tracked. No source pair
 has the same normalised steps across Go and Python. The
 [functional equivalence review](../ledgers/functional-equivalence.json) records
-one five-row planned layout contract with exact rankings, one exact weak alias,
-and two other Python pairs with different inputs. The five layout values remain
-separate example cases; their dict-only source scenarios no longer compile.
-Neither source mapping nor the stronger planned contract grants execution
+a five-row planned layout contract with exact rankings, a two-row planned
+notes collection contract with exact readback and noncreation, one exact weak
+alias, and one remaining different-input audit pair. All seven layout/notes
+inputs survive as separate example cases; their dict-only source scenarios no
+longer compile. Neither source mapping nor a stronger planned contract grants execution
 credit. Matching names, text or fixtures alone cannot prove equivalent
 outcomes, refusals or preservation. The same
 [functional review](../ledgers/functional-equivalence.json) lists twelve Go

@@ -212,8 +212,12 @@ now occupy five rows of the planned
 with exact rankings and source custody stronger than either native dict-only
 check. Their two redundant staged blocks have been removed, while all five
 inputs and both native declarations retain mappings and historical hashes.
-Neither mapping satisfies the stronger outcome until consumer tests run. The
-other two Python pairs have different inputs. The
+The [notes collection](workflows/pptx/notes.feature) also unites titled and
+untitled source variants with exact three-note readback, a fourth no-notes slide,
+out-of-range refusal and unchanged source bytes; its two dict-only staged blocks
+were removed. The existing reordered-relationship/blank-line notes profile
+remains distinct. Neither mapping satisfies the stronger outcomes until
+consumer tests run. The remaining Python audit pair has different inputs. The
 [functional review](ledgers/functional-equivalence.json) records twelve Go
 package lookalikes with distinct inputs, operations or outcomes; none is
 retired or credited. Original source hashes and transformed candidate hashes

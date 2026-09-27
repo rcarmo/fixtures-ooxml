@@ -7479,6 +7479,35 @@
           "evidence": "Native execution binding pending"
         }
       }
+    },
+    {
+      "id": "@id-pptx-notes-collection-read",
+      "feature": "workflows/pptx/notes.feature",
+      "expandedCases": 2,
+      "factIds": [],
+      "expectedOutcomes": [
+        "the all-slide result equals {\"file\":\"notes-collection.pptx\",\"slides_with_notes\":3,\"total_slides\":4,\"notes\":[{\"slide_number\":1,\"notes\":\"Notes for slide 1\"},{\"slide_number\":2,\"notes\":\"Notes for slide 2\"},{\"slide_number\":3,\"notes\":\"Notes for slide 3\"}]}",
+        "slides 1, 2 and 3 each return their exact one-based slide number, has_notes true and matching literal notes",
+        "slide 4 returns {\"file\":\"notes-collection.pptx\",\"slide_number\":4,\"has_notes\":false,\"notes\":\"\"}",
+        "slides 0 and 5 return exactly \"Slide 0 not found. Presentation has 4 slides.\" and \"Slide 5 not found. Presentation has 4 slides.\" as errors",
+        "after every read or refusal the authored source archive SHA-256, bytes, every member payload and relationship equal the recorded values",
+        "no slide-4 notes part or slide-4 notes relationship has been created",
+        "the sealed blank presentation fixture bytes remain unchanged"
+      ],
+      "consumers": {
+        "bun": {
+          "status": "planned",
+          "evidence": "Notes collection profile binding pending; existing ordered/blank-line profile remains separate"
+        },
+        "go": {
+          "status": "planned",
+          "evidence": "Notes collection profile binding pending; existing ordered/blank-line profile remains separate"
+        },
+        "python": {
+          "status": "planned",
+          "evidence": "Notes collection profile binding pending; existing ordered/blank-line profile remains separate"
+        }
+      }
     }
   ],
   "consumerStatusPolicy": "Missing/unmapped/planned means not-run and no execution credit."

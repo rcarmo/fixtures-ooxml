@@ -4207,10 +4207,10 @@
       "aliases": []
     },
     {
-      "id": "asset-6980daafe08bb43e7ba2f73807a402a3ebabe239f0d41bad81b7c09ca7355f41",
+      "id": "asset-181044e6ee3fabbdb8096b626965155e7db97764bb64223e0968dc50dd5e3daa",
       "path": "workflows/pptx/notes.feature",
-      "bytes": 6029,
-      "sha256": "6980daafe08bb43e7ba2f73807a402a3ebabe239f0d41bad81b7c09ca7355f41",
+      "bytes": 8247,
+      "sha256": "181044e6ee3fabbdb8096b626965155e7db97764bb64223e0968dc50dd5e3daa",
       "role": "workflow",
       "origins": [
         {
@@ -5984,10 +5984,10 @@
     },
     {
       "path": "staging/python/features/test_high_volume.feature",
-      "id": "asset-a794ecf4405ba3c40cc31009f4ceb90e075a88773667591d222c5f7a59882c22",
+      "id": "asset-30af102c1cd276c39095593bd493117a0b5469e4a5957924a48a01b1feff6953",
       "role": "catalogue-candidate",
-      "bytes": 26202,
-      "sha256": "a794ecf4405ba3c40cc31009f4ceb90e075a88773667591d222c5f7a59882c22",
+      "bytes": 25576,
+      "sha256": "30af102c1cd276c39095593bd493117a0b5469e4a5957924a48a01b1feff6953",
       "origins": [
         {
           "kind": "transformed-from-source",
@@ -5995,7 +5995,7 @@
           "revision": "0c5de7a4ce69c13a06e215e9233954bf2df805d5",
           "path": "docs/catalogue-staging/python-native/features/test_high_volume.feature",
           "sha256": "f3425a3273202dc2f58ef554ddf30c79f9fb58d40349bfa56c31eb06d6769c2f",
-          "transformation": "Remove weak dict-only layout recommendation capture after transferring all five distinct native input variants to the stronger planned @id-pptx-layout-recommendation-ranked outline; neither native test currently satisfies its exact outcomes."
+          "transformation": "Remove weak dict-only layout recommendation capture after transferring all five distinct native input variants to the stronger planned @id-pptx-layout-recommendation-ranked outline; neither native test currently satisfies its exact outcomes. Remove the dict-only all-slide notes read capture after transferring its native declaration to the stronger planned @id-pptx-notes-collection-read variant; retain existing ordered/blank-line profile separately."
         }
       ],
       "aliases": []
@@ -6642,10 +6642,10 @@
     },
     {
       "path": "staging/python/features/test_word_pptx_advanced_ops.feature",
-      "id": "asset-a93477a7f007fc9e2d9754466a890ace273e1ad318fae6f2cc84e10eaf3a1d45",
+      "id": "asset-6731cc5824c25bdb838feb24500c8bf1321c722a063e595d1feddde5b77bbc1e",
       "role": "catalogue-candidate",
-      "bytes": 17483,
-      "sha256": "a93477a7f007fc9e2d9754466a890ace273e1ad318fae6f2cc84e10eaf3a1d45",
+      "bytes": 16811,
+      "sha256": "6731cc5824c25bdb838feb24500c8bf1321c722a063e595d1feddde5b77bbc1e",
       "origins": [
         {
           "kind": "transformed-from-source",
@@ -6653,7 +6653,7 @@
           "revision": "0c5de7a4ce69c13a06e215e9233954bf2df805d5",
           "path": "docs/catalogue-staging/python-native/features/test_word_pptx_advanced_ops.feature",
           "sha256": "ed3eb2d0d7cdb20757eaf97549b1b4615be110c60144308920a4d3905fcafb5c",
-          "transformation": "Remove weak dict-only layout recommendation capture after transferring all five distinct native input variants to the stronger planned @id-pptx-layout-recommendation-ranked outline; neither native test currently satisfies its exact outcomes."
+          "transformation": "Remove weak dict-only layout recommendation capture after transferring all five distinct native input variants to the stronger planned @id-pptx-layout-recommendation-ranked outline; neither native test currently satisfies its exact outcomes. Remove the dict-only all-slide notes read capture after transferring its native declaration to the stronger planned @id-pptx-notes-collection-read variant; retain existing ordered/blank-line profile separately."
         }
       ],
       "aliases": []
@@ -6862,10 +6862,10 @@
     },
     {
       "path": "ledgers/functional-equivalence.json",
-      "id": "asset-5d780ec0f48e77c016d2e490cc4c1a02831a07eb12531a77fdb47acdf2ab3e11",
+      "id": "asset-cd1b79ea54b21ad4608525ea510f1846b51028657a19545aec53d0d87150cb17",
       "role": "catalogue-reconciliation",
-      "bytes": 11921,
-      "sha256": "5d780ec0f48e77c016d2e490cc4c1a02831a07eb12531a77fdb47acdf2ab3e11",
+      "bytes": 13750,
+      "sha256": "cd1b79ea54b21ad4608525ea510f1846b51028657a19545aec53d0d87150cb17",
       "origins": [
         {
           "repository": "https://github.com/rcarmo/fixtures-ooxml",

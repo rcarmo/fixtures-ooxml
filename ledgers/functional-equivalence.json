@@ -1,16 +1,18 @@
 {
   "schemaVersion": 1,
   "sourceCommit": "7b7a2fa2610c421cdde9d7b1da9125c8f98b9dd8",
-  "scope": "Four Python source-pair groups reviewed. One exact weak alias compiles once; two disjoint layout captures were replaced by five stronger planned canonical rows with original hashes/identities and no execution credit; other input-dependent pairs remain distinct.",
+  "scope": "Four Python source-pair groups reviewed. One exact weak alias compiles once; distinct layout and titled/untitled notes variants moved to stronger planned operation-family profiles with historical identities/hashes and no execution credit; different-input audit pair remains separate.",
   "executionCredit": false,
   "retiredCandidateIds": [
     "@candidate-python-workflows-2b4937f7f0",
     "@candidate-python-high-volume-5465e20c3f",
-    "@candidate-python-word-pptx-advanced-ops-895995c6d6"
+    "@candidate-python-word-pptx-advanced-ops-895995c6d6",
+    "@candidate-python-high-volume-68bcd8d447",
+    "@candidate-python-word-pptx-advanced-ops-b86a4362b4"
   ],
   "groups": [
     {
-      "status": "weak-predicate-only",
+      "status": "merged-input-variants-into-stronger-planned-profile",
       "members": [
         {
           "path": "staging/python/features/test_high_volume.feature",
@@ -25,9 +27,37 @@
       ],
       "capturedStepSha256": "282caedd8adccad780f88de01b1dc3d6a332f16d0a1e353190e41ed5afe61634",
       "preconditionsEqual": false,
-      "reason": "Both calls return a dict, but the second input also assigns slide titles. No notes-content, ordering or custody assertion establishes full equivalence.",
+      "reason": "The two native all-slide calls assert only dict shape, with titled versus untitled source slides. A two-row notes collection profile keeps both inputs and requires exact ordered aggregate/single-slide results, missing-note noncreation, out-of-range errors and complete read-only custody; neither weak native test earns credit.",
       "provenanceRetained": true,
-      "executionCredit": false
+      "executionCredit": false,
+      "canonicalId": "@id-pptx-notes-collection-read",
+      "canonicalFeature": "workflows/pptx/notes.feature",
+      "canonicalStatus": "planned",
+      "historicalSourceSha256": [
+        "f3425a3273202dc2f58ef554ddf30c79f9fb58d40349bfa56c31eb06d6769c2f",
+        "ed3eb2d0d7cdb20757eaf97549b1b4615be110c60144308920a4d3905fcafb5c"
+      ],
+      "previousCurrentSha256": [
+        "a794ecf4405ba3c40cc31009f4ceb90e075a88773667591d222c5f7a59882c22",
+        "a93477a7f007fc9e2d9754466a890ace273e1ad318fae6f2cc84e10eaf3a1d45"
+      ],
+      "currentCandidateSha256": [
+        "30af102c1cd276c39095593bd493117a0b5469e4a5957924a48a01b1feff6953",
+        "6731cc5824c25bdb838feb24500c8bf1321c722a063e595d1feddde5b77bbc1e"
+      ],
+      "rowMappings": [
+        {
+          "sourceId": "@candidate-python-high-volume-68bcd8d447",
+          "variant": "untitled"
+        },
+        {
+          "sourceId": "@candidate-python-word-pptx-advanced-ops-b86a4362b4",
+          "variant": "titled"
+        }
+      ],
+      "fixtureId": "fixture-c54a7b746c0328fc1930525edd91387eedbbca69a6f388f7ec024150187b6bab",
+      "nativeStrengtheningRequired": "Native tests must assert exact aggregate and per-slide values, slide-4 noncreation, out-of-range errors and input/member/relationship custody after each call; no execution credit until shared binding runs.",
+      "distinctFrom": "@id-pptx-order-notes-read requires reordered relationships and preserved blank lines, outside this collection profile."
     },
     {
       "status": "merged-disjoint-variants-into-stronger-planned-profile",

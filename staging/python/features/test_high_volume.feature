@@ -213,17 +213,6 @@ Feature: high volume native behavior capture
     When pptx advanced tools.tool pptx get notes using str representation of temp dir under "get_notes.pptx"; slide number 1
     Then result has type dict
 
-  @candidate-python-high-volume-68bcd8d447
-  # Native: tests/test_high_volume.py::TestPptxGetNotes::test_get_notes_all_slides
-  Scenario: Native check: get notes all slides [TestPptxGetNotes]
-    Given Create an instance of PresentationAdvancedTools.
-    And an isolated writable temporary directory
-    And prs.save with temp dir under "all_notes.pptx"
-    And prs is prepared as the result of Presentation with no arguments
-    And path is prepared as temp dir under "all_notes.pptx"
-    When pptx advanced tools.tool pptx get notes using str representation of temp dir under "all_notes.pptx"
-    Then result has type dict
-
   @candidate-python-high-volume-d325261ee6
   # Native: tests/test_high_volume.py::TestPptxGetTable::test_get_table_content
   Scenario: Native check: get table content [TestPptxGetTable]
