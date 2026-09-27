@@ -59,7 +59,8 @@
     "workflows/xlsx/style-readback.feature",
     "workflows/pptx/layout-recommendation.feature",
     "workflows/docx/completion-audit.feature",
-    "workflows/package/admission-limit-configuration.feature"
+    "workflows/package/admission-limit-configuration.feature",
+    "workflows/package/data-descriptor-integrity.feature"
   ],
   "executionCredit": "Only local executed assertions count; reports here do not run consumers.",
   "workflows": [
@@ -7627,6 +7628,32 @@
         "it refuses the invalid caller budget before reading source metadata or ZIP members and returns no package or parts",
         "the refusal is an invalid-argument result, not a resource-limit or malformed-archive result",
         "the caller's archive bytes remain unchanged"
+      ],
+      "consumers": {
+        "bun": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        },
+        "go": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        },
+        "python": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        }
+      }
+    },
+    {
+      "id": "@id-zip-unsigned-descriptor-signature-collision",
+      "feature": "workflows/package/data-descriptor-integrity.feature",
+      "expandedCases": 1,
+      "factIds": [],
+      "expectedOutcomes": [
+        "the unsigned descriptor is recognised as twelve bytes without borrowing a four-byte signature or central-directory bytes",
+        "complete admission refuses the corrupt payload as a CRC or invalid-package failure, not as an ambiguous descriptor-shape failure",
+        "no package or member payloads are delivered",
+        "the caller's original archive bytes remain unchanged"
       ],
       "consumers": {
         "bun": {

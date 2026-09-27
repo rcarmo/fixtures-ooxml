@@ -385,5 +385,31 @@
       "python": "admit_package has no distinct source-byte budget and negative max_members currently follows Path.stat/ZipFile and reports a resource refusal. Add preflight invalid-argument validation before source stat, preserve zero max_members resource refusal, and test direct stateless guard with a sealed valid DOCX; no editing session is claimed."
     },
     "executionCredit": false
+  },
+  "goDescriptorAmbiguityParity": {
+    "status": "new-planned-canonical-parity-obligation",
+    "canonicalId": "@id-zip-unsigned-descriptor-signature-collision",
+    "canonicalFeature": "workflows/package/data-descriptor-integrity.feature",
+    "expandedCases": 1,
+    "sourceId": "@candidate-go-archive-004",
+    "sourcePath": "staging/go/behaviors/archive-candidates.feature",
+    "sourceSha256": "253dd34eac0b0413609958e753b3ebb30e9e2f6337b55786eec21218a893c270",
+    "sourceRevision": "8b0c2cf8dd29346dafa7fafd173aa5663ee551b7",
+    "sourceStatus": "partial-overlap-source-retained",
+    "distinctSourcePredicate": "The candidate combines unsigned descriptor geometry with bad payload CRC; staged Go archive candidates retain their other valid and malformed cases. Generic ZIP CRC refusal and ordinary signed-descriptor intake do not cover the signature-value ambiguity.",
+    "nativeObservation": {
+      "repository": "https://github.com/rcarmo/go-ooxml",
+      "revision": "86ea09d30dc6b57d953af06bbfede946adda889c",
+      "path": "pkg/packaging/zip_adversarial_test.go",
+      "sha256": "1134e2d4fe16c97795b2a604c6332d4b159479830015199c4774a7b1f1a780ad",
+      "declaration": "TestZIPDescriptorAndPrefixBatch/unsigned descriptor whose CRC equals signature",
+      "observed": "The native test strips the four-byte signature from a generated data descriptor, declares CRC 08074B50 in its unsigned descriptor and central record, accepts structural geometry and rejects the bad payload on full OpenBytes. It does not assert a typed CRC-versus-descriptor reason, nil package, or unchanged caller bytes."
+    },
+    "consumerGaps": {
+      "go": "Bind exact shared input to the canonical scenario. Independently verify unsigned twelve-byte geometry and a wrong payload CRC, then distinguish CRC/invalid-package refusal from descriptor-shape refusal, nil package/parts and unchanged bytes. Existing Go test only checks nonnil failure for full admission.",
+      "bun": "ZIP32 parser has descriptor-length branches and generic CRC tests but no executed signature-value collision with independently checked geometry and full typed/custody assertions.",
+      "python": "Package guard delegates descriptor/CRC checks to zipfile; no owned raw descriptor-geometry check or exact shared signature-collision binding executes."
+    },
+    "executionCredit": false
   }
 }

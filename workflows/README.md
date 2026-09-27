@@ -65,7 +65,8 @@ Go and Python source candidates live in [staging](../staging/README.md); they ar
 - [relationship-namespaces.feature](package/relationship-namespaces.feature) — 2 scenarios, 4 cases
 - [semantic-diff.feature](package/semantic-diff.feature) — 1 scenario, 1 case
 - [xml-member-admission.feature](package/xml-member-admission.feature) — 1 scenario, 3 cases
-- [admission-limit-configuration.feature](package/admission-limit-configuration.feature) — 1 scenario, 2 cases: invalid negative caller budgets refuse before package intake; Bun/Go/Python bindings planned
+- [admission-limit-configuration.feature](package/admission-limit-configuration.feature) — 1 scenario, 2 cases: invalid negative caller budgets refuse before package intake
+- [data-descriptor-integrity.feature](package/data-descriptor-integrity.feature) — 1 scenario, 1 case: unsigned descriptor CRC/signature collision retains geometry and refuses corrupt payload
 - [zip-admission.feature](package/zip-admission.feature) — 4 scenarios, 11 cases
 - [zip32.feature](package/zip32.feature) — 8 scenarios, 24 cases
 - [zip64.feature](package/zip64.feature) — 4 scenarios, 4 cases

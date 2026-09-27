@@ -6818,10 +6818,10 @@
     },
     {
       "path": "ledgers/functional-equivalence.json",
-      "id": "asset-3fa63f27a9b0c870c1f9f3f9a04f5953209cfd496a792713035176fc7a482275",
+      "id": "asset-c6daaa4094fb9cdd277421acce408d0e7dc206097ef8cd462460c58e4a97f851",
       "role": "catalogue-reconciliation",
-      "bytes": 20168,
-      "sha256": "3fa63f27a9b0c870c1f9f3f9a04f5953209cfd496a792713035176fc7a482275",
+      "bytes": 22531,
+      "sha256": "c6daaa4094fb9cdd277421acce408d0e7dc206097ef8cd462460c58e4a97f851",
       "origins": [
         {
           "repository": "https://github.com/rcarmo/fixtures-ooxml",
@@ -6895,6 +6895,21 @@
         {
           "repository": "https://github.com/rcarmo/fixtures-ooxml",
           "path": "workflows/package/admission-limit-configuration.feature",
+          "basis": "Project-owned behaviour contract or source assertion mapping"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "id": "asset-c0c855a3f4dd74e15fd59aa03572bb7f8c752544fd9bb64b6f082e14388c9370",
+      "path": "workflows/package/data-descriptor-integrity.feature",
+      "bytes": 1315,
+      "sha256": "c0c855a3f4dd74e15fd59aa03572bb7f8c752544fd9bb64b6f082e14388c9370",
+      "role": "workflow",
+      "origins": [
+        {
+          "repository": "https://github.com/rcarmo/fixtures-ooxml",
+          "path": "workflows/package/data-descriptor-integrity.feature",
           "basis": "Project-owned behaviour contract or source assertion mapping"
         }
       ],
