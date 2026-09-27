@@ -228,3 +228,139 @@ Feature: Word revision inspection, resolution and tracked replacement
         | external-settings |
         | malformed-settings|
         | invalid-profile   |
+
+  @profile-text-properties-and-moves
+  Rule: Resolve matched plain-run moves within each selected story
+    Both earlier profiles retain move refusal; other move and property-change forms are unsupported.
+
+    @id-docx-paired-move-roundtrip
+    Scenario Outline: Resolve paired run moves and existing revisions across seven stories by <action>
+      Given a paired-move source archive with text and property revisions in seven reachable stories
+      When the move-enabled profile inspects all selected stories
+      Then 35 revisions have exact source-ordered kinds, wrapper IDs, metadata and text with no unsupported findings
+      And the move package and source archive remain unchanged
+      When all paired-move stories are resolved by <action> and saved to a new path
+      Then the receipt counts 35 revisions and exactly seven changed story parts
+      And the reopened move XML and bytes equal the independent <action> expectations
+      And unselected member bytes and the move source archive remain unchanged
+      And repeated move <action> resolution returns an exact archive no-op
+      Examples:
+        | action |
+        | accept |
+        | reject |
+
+    @id-docx-paired-move-scope
+    Scenario Outline: Resolve only header1 by <action> without touching body moves or unsupported footer moves
+      Given a paired-move source saved with an unmatched move name in nested footer2
+      When only header1 paired revisions are resolved by <action> and saved to a new path
+      Then exactly five header revisions resolve with exact expected XML while all unselected members retain their bytes
+      And the body still exposes its five original revision records and footer2 reports unsupported moves
+      And the move source archive remains unchanged
+      Examples:
+        | action |
+        | accept |
+        | reject |
+
+    @id-docx-paired-move-defaults
+    Scenario Outline: Keep move refusal for the earlier <profile> profile
+      Given a paired-move source archive with text and property revisions in seven reachable stories
+      When the earlier <profile> profile inspects and attempts both resolution actions
+      Then move findings are explicit and both typed refusals return no receipt
+      And the move package and source archive remain unchanged
+      Examples:
+        | profile                 |
+        | text-only               |
+        | text-and-run-properties |
+
+    @id-docx-paired-move-refusal
+    Scenario Outline: Refuse an unsafe later header move pair <defect> before earlier edits
+      Given a paired-move source archive with later header defect <defect>
+      When both move-enabled resolution actions are attempted
+      Then unsupported findings identify the defective selected story and both typed refusals return no receipt
+      And the move package and source archive remain unchanged
+      Examples:
+        | defect                 |
+        | missing-range-end      |
+        | missing-destination    |
+        | duplicate-name         |
+        | duplicate-range-id     |
+        | duplicate-wrapper-id   |
+        | wrong-wrapper          |
+        | overlapping-ranges     |
+        | unowned-wrapper        |
+        | mismatched-text        |
+        | mismatched-properties  |
+        | cross-story            |
+        | mixed-content          |
+        | nested-revision        |
+        | unsupported-properties |
+        | paragraph-mark         |
+        | missing-author         |
+        | decorated-marker       |
+        | text-id-collision      |
+
+    @id-docx-paired-move-encoding
+    Scenario Outline: Resolve <action> aliased paired moves in <encoding>
+      Given a paired-move source with wrapper-local aliases and body encoding <encoding>
+      When only body paired revisions are resolved by <action> and saved to a new path
+      Then exactly five body revisions resolve and every output byte matches the aliased <action> expectation and encoding marker
+      And unselected member bytes and the move source archive remain unchanged
+      Examples:
+        | action | encoding  |
+        | accept | UTF-8-BOM |
+        | reject | UTF-8-BOM |
+        | accept | UTF-16LE  |
+        | reject | UTF-16LE  |
+        | accept | UTF-16BE  |
+        | reject | UTF-16BE  |
+
+    @id-docx-paired-move-rollback
+    Scenario Outline: Roll back reached move-resolution failure at <stage>
+      Given a paired-move source archive with text and property revisions in seven reachable stories
+      And a prior unrelated body edit is remembered after saving the move source
+      When rejecting paired moves fails at <stage>
+      Then the move fault hook was reached and no successful receipt is returned
+      And the move package and source archive remain unchanged
+      Examples:
+        | stage                 |
+        | later-write           |
+        | serialization         |
+        | post-write-validation |
+
+    @id-docx-paired-move-guards
+    Scenario Outline: Check <guard> before a move-profile no-op
+      Given a fully resolved move package saved with guard <guard>
+      When the move-enabled profile requests rejection again
+      Then the exact <guard> refusal returns no receipt
+      And the move package and source archive remain unchanged
+      Examples:
+        | guard              |
+        | protection         |
+        | external-settings  |
+        | malformed-settings |
+
+    @id-docx-paired-move-dates
+    Scenario Outline: Refuse <defect> on the <side> range start during <action>
+      Given a paired-move source whose <side> range start has <defect>
+      When move-enabled resolution <action> is attempted
+      Then a typed unsupported move refusal returns no receipt
+      And the move package and source archive remain unchanged
+      Examples:
+        | side | defect           | action |
+        | from | missing-date     | accept |
+        | from | missing-date     | reject |
+        | to   | missing-date     | accept |
+        | to   | missing-date     | reject |
+        | from | unqualified-date | accept |
+        | from | unqualified-date | reject |
+        | to   | unqualified-date | accept |
+        | to   | unqualified-date | reject |
+
+    @id-docx-paired-move-ordering
+    Scenario: Multiple pairs with distinct-range-ids retain source order even when destinations precede sources
+      Given a paired-move source with a second body pair in separate paragraphs and its destination before its source
+      When the move-enabled profile inspects all selected stories
+      Then body move wrapper IDs are 101,103,203,201 in source order with the declared text and metadata
+      When only body paired revisions are resolved by reject and saved to a new path
+      Then exactly seven body revisions resolve with independent expected XML and no body findings
+      And unselected member bytes and the move source archive remain unchanged

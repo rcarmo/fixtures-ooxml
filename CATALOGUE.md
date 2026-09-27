@@ -195,6 +195,12 @@ namespace and encoding preservation, refusal and rollback. The ten earlier
 revision cases and default text-only policy are unchanged. Moves and other
 property revisions remain outside this profile.
 
+[Paired run moves](contracts/run-move-revisions.md) add nine scenarios / 45 cases
+for matched same-story source/destination ranges. Both earlier profiles retain
+move refusal; all 43 preceding revision cases are unchanged. Exact saved XML,
+namespace and encoding preservation, required dates, selected scope and rollback
+are checked. General move/edit composition remains outside this profile.
+
 Remaining work:
 
 | Family | Remaining work |

@@ -6961,6 +6961,233 @@
           "evidence": "Native execution binding pending"
         }
       }
+    },
+    {
+      "id": "@id-docx-paired-move-roundtrip",
+      "feature": "workflows/docx/revisions.feature",
+      "expandedCases": 2,
+      "factIds": [],
+      "expectedOutcomes": [
+        "35 revisions have exact source-ordered kinds, wrapper IDs, metadata and text with no unsupported findings",
+        "the move package and source archive remain unchanged",
+        "the receipt counts 35 revisions and exactly seven changed story parts",
+        "the reopened move XML and bytes equal the independent accept expectations",
+        "unselected member bytes and the move source archive remain unchanged",
+        "repeated move accept resolution returns an exact archive no-op",
+        "the reopened move XML and bytes equal the independent reject expectations",
+        "repeated move reject resolution returns an exact archive no-op"
+      ],
+      "consumers": {
+        "bun": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        },
+        "go": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        },
+        "python": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        }
+      }
+    },
+    {
+      "id": "@id-docx-paired-move-scope",
+      "feature": "workflows/docx/revisions.feature",
+      "expandedCases": 2,
+      "factIds": [],
+      "expectedOutcomes": [
+        "exactly five header revisions resolve with exact expected XML while all unselected members retain their bytes",
+        "the body still exposes its five original revision records and footer2 reports unsupported moves",
+        "the move source archive remains unchanged"
+      ],
+      "consumers": {
+        "bun": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        },
+        "go": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        },
+        "python": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        }
+      }
+    },
+    {
+      "id": "@id-docx-paired-move-defaults",
+      "feature": "workflows/docx/revisions.feature",
+      "expandedCases": 2,
+      "factIds": [],
+      "expectedOutcomes": [
+        "move findings are explicit and both typed refusals return no receipt",
+        "the move package and source archive remain unchanged"
+      ],
+      "consumers": {
+        "bun": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        },
+        "go": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        },
+        "python": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        }
+      }
+    },
+    {
+      "id": "@id-docx-paired-move-refusal",
+      "feature": "workflows/docx/revisions.feature",
+      "expandedCases": 18,
+      "factIds": [],
+      "expectedOutcomes": [
+        "unsupported findings identify the defective selected story and both typed refusals return no receipt",
+        "the move package and source archive remain unchanged"
+      ],
+      "consumers": {
+        "bun": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        },
+        "go": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        },
+        "python": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        }
+      }
+    },
+    {
+      "id": "@id-docx-paired-move-encoding",
+      "feature": "workflows/docx/revisions.feature",
+      "expandedCases": 6,
+      "factIds": [],
+      "expectedOutcomes": [
+        "exactly five body revisions resolve and every output byte matches the aliased accept expectation and encoding marker",
+        "unselected member bytes and the move source archive remain unchanged",
+        "exactly five body revisions resolve and every output byte matches the aliased reject expectation and encoding marker"
+      ],
+      "consumers": {
+        "bun": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        },
+        "go": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        },
+        "python": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        }
+      }
+    },
+    {
+      "id": "@id-docx-paired-move-rollback",
+      "feature": "workflows/docx/revisions.feature",
+      "expandedCases": 3,
+      "factIds": [],
+      "expectedOutcomes": [
+        "the move fault hook was reached and no successful receipt is returned",
+        "the move package and source archive remain unchanged"
+      ],
+      "consumers": {
+        "bun": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        },
+        "go": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        },
+        "python": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        }
+      }
+    },
+    {
+      "id": "@id-docx-paired-move-guards",
+      "feature": "workflows/docx/revisions.feature",
+      "expandedCases": 3,
+      "factIds": [],
+      "expectedOutcomes": [
+        "the exact protection refusal returns no receipt",
+        "the move package and source archive remain unchanged",
+        "the exact external-settings refusal returns no receipt",
+        "the exact malformed-settings refusal returns no receipt"
+      ],
+      "consumers": {
+        "bun": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        },
+        "go": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        },
+        "python": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        }
+      }
+    },
+    {
+      "id": "@id-docx-paired-move-dates",
+      "feature": "workflows/docx/revisions.feature",
+      "expandedCases": 8,
+      "factIds": [],
+      "expectedOutcomes": [
+        "a typed unsupported move refusal returns no receipt",
+        "the move package and source archive remain unchanged"
+      ],
+      "consumers": {
+        "bun": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        },
+        "go": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        },
+        "python": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        }
+      }
+    },
+    {
+      "id": "@id-docx-paired-move-ordering",
+      "feature": "workflows/docx/revisions.feature",
+      "expandedCases": 1,
+      "factIds": [],
+      "expectedOutcomes": [
+        "body move wrapper IDs are 101,103,203,201 in source order with the declared text and metadata",
+        "exactly seven body revisions resolve with independent expected XML and no body findings",
+        "unselected member bytes and the move source archive remain unchanged"
+      ],
+      "consumers": {
+        "bun": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        },
+        "go": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        },
+        "python": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        }
+      }
     }
   ],
   "consumerStatusPolicy": "Missing/unmapped/planned means not-run and no execution credit."
