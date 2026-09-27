@@ -6818,10 +6818,10 @@
     },
     {
       "path": "ledgers/functional-equivalence.json",
-      "id": "asset-0480983c585758cafb87fbdc7fa646614c5c68af6a1e5588ec4ac90ec3a3d269",
+      "id": "asset-3fa63f27a9b0c870c1f9f3f9a04f5953209cfd496a792713035176fc7a482275",
       "role": "catalogue-reconciliation",
-      "bytes": 17397,
-      "sha256": "0480983c585758cafb87fbdc7fa646614c5c68af6a1e5588ec4ac90ec3a3d269",
+      "bytes": 20168,
+      "sha256": "3fa63f27a9b0c870c1f9f3f9a04f5953209cfd496a792713035176fc7a482275",
       "origins": [
         {
           "repository": "https://github.com/rcarmo/fixtures-ooxml",
@@ -6884,6 +6884,21 @@
       "scenarioIds": [
         "@id-zip-physical-member-overlap-refusal"
       ]
+    },
+    {
+      "id": "asset-885083126a39d17a795609bbf5d2e273678b5d8613af9cafdc0fac46396adb8a",
+      "path": "workflows/package/admission-limit-configuration.feature",
+      "bytes": 1262,
+      "sha256": "885083126a39d17a795609bbf5d2e273678b5d8613af9cafdc0fac46396adb8a",
+      "role": "workflow",
+      "origins": [
+        {
+          "repository": "https://github.com/rcarmo/fixtures-ooxml",
+          "path": "workflows/package/admission-limit-configuration.feature",
+          "basis": "Project-owned behaviour contract or source assertion mapping"
+        }
+      ],
+      "aliases": []
     }
   ]
 }

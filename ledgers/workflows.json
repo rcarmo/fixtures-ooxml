@@ -58,7 +58,8 @@
     "workflows/xlsx/calculation-engine.feature",
     "workflows/xlsx/style-readback.feature",
     "workflows/pptx/layout-recommendation.feature",
-    "workflows/docx/completion-audit.feature"
+    "workflows/docx/completion-audit.feature",
+    "workflows/package/admission-limit-configuration.feature"
   ],
   "executionCredit": "Only local executed assertions count; reports here do not run consumers.",
   "workflows": [
@@ -7614,6 +7615,31 @@
         "python": {
           "status": "planned",
           "evidence": "Canonical physical-overlap admission runner binding pending; native Go ZIP-003 is a weaker historical observation"
+        }
+      }
+    },
+    {
+      "id": "@id-package-admission-negative-budget",
+      "feature": "workflows/package/admission-limit-configuration.feature",
+      "expandedCases": 2,
+      "factIds": [],
+      "expectedOutcomes": [
+        "it refuses the invalid caller budget before reading source metadata or ZIP members and returns no package or parts",
+        "the refusal is an invalid-argument result, not a resource-limit or malformed-archive result",
+        "the caller's archive bytes remain unchanged"
+      ],
+      "consumers": {
+        "bun": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        },
+        "go": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        },
+        "python": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
         }
       }
     }

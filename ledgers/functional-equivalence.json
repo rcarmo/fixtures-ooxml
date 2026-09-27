@@ -345,5 +345,45 @@
       "@id-zip64-preflight-count"
     ],
     "nativeStrengtheningRequired": "Go runner/inventory must explicitly select exactly this canonical ID from a sealed workflow while preserving its 291-case native denominator; independently read all three CRC-valid members, assert nil session, typed invalid_package overlap reason and unchanged bytes before Go execution credit."
+  },
+  "goNegativeBudgetParity": {
+    "status": "new-planned-canonical-parity-obligation",
+    "canonicalId": "@id-package-admission-negative-budget",
+    "canonicalFeature": "workflows/package/admission-limit-configuration.feature",
+    "expandedCases": 2,
+    "sourceId": "@candidate-go-archive-001",
+    "sourcePath": "staging/go/behaviors/archive-candidates.feature",
+    "sourceSha256": "253dd34eac0b0413609958e753b3ebb30e9e2f6337b55786eec21218a893c270",
+    "sourceRevision": "8b0c2cf8dd29346dafa7fafd173aa5663ee551b7",
+    "sourceStatus": "partial-overlap-source-retained",
+    "distinctSourcePredicate": "Positive source/entry/part/total resource refusals and negative argument rejection remain separately observable; retaining the staged source does not execute the new exact two-row contract.",
+    "nativeObservation": {
+      "repository": "https://github.com/rcarmo/go-ooxml",
+      "revision": "985bcc408339b4aa33fad8636a2a11d3a3ede838",
+      "path": "pkg/packaging/limits_test.go",
+      "sha256": "dbe634a45fd262860cc84d2ffe7dd7aa4346979296d94a570b697f8833f58442",
+      "declaration": "TestIntakeBudgetAndIntegrityContracts/invalid arguments",
+      "observed": "Synthetic one-part data.xml archive; MaxSourceBytes=-1 and MaxEntries=-1 yield a non-nil plain error. The test neither checks nil package, error classification nor unchanged input."
+    },
+    "caseRows": [
+      {
+        "budget": "source bytes",
+        "value": -1
+      },
+      {
+        "budget": "entry count",
+        "value": -1
+      }
+    ],
+    "sharedInput": {
+      "fixtureId": "fixture-d9d6a313182a71a73d75a26a0ff3b7826dbd2e300e1d202114ec9f8fb018fda5",
+      "validity": "Sealed DOCX input; independent positive admission and exact byte custody must be checked by native bindings."
+    },
+    "consumerGaps": {
+      "go": "Bind both direct OpenReaderWithLimits rows against the sealed DOCX; prove valid baseline, nil package, invalid argument distinct from resource_limit and invalid_package, no output and unchanged bytes. Existing native non-nil error on a synthetic ZIP is insufficient; source access ordering needs direct instrumentation before claiming pre-metadata refusal.",
+      "bun": "admitPackage validates negative nonnegative-integer limits with package-admission-limit-invalid, but no binding to the sealed DOCX and no source/entry negative parity cases execute.",
+      "python": "admit_package has no distinct source-byte budget and negative max_members currently follows Path.stat/ZipFile and reports a resource refusal. Add preflight invalid-argument validation before source stat, preserve zero max_members resource refusal, and test direct stateless guard with a sealed valid DOCX; no editing session is claimed."
+    },
+    "executionCredit": false
   }
 }
