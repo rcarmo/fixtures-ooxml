@@ -115,3 +115,116 @@ Feature: Word revision inspection, resolution and tracked replacement
         | existing   |
         | protected  |
         | bad-date   |
+
+  @profile-text-and-run-properties
+  Rule: Resolve complete previous direct-run property snapshots using an explicit profile
+    The text-only profile keeps its formatting refusal. Moves and other property changes remain unsupported.
+
+    @id-docx-run-property-revisions-roundtrip
+    Scenario Outline: Resolve text and direct properties across seven reachable stories by <action>
+      Given the all-stories revision package with one direct-run property snapshot per story saved as a source archive
+      When the text-and-run-properties profile inspects all stories
+      Then 21 revisions have exact source-ordered IDs, kinds, authors, dates and text with no unsupported findings
+      And revision inspection leaves the package and source archive unchanged
+      When all selected text and run-property revisions are resolved by <action> and saved to a new path
+      Then the receipt resolves 21 revisions in all seven story parts
+      And reopened story XML equals the exact <action> text and complete property expectations
+      And every other member and the source archive retain their original bytes
+      And repeated <action> resolution returns zero changes and keeps the exact current archive
+      Examples:
+        | action |
+        | accept |
+        | reject |
+
+    @id-docx-run-property-revisions-scope
+    Scenario Outline: Resolve only one story by <action> without touching an unsupported unselected snapshot
+      Given an all-stories revision source saved with an unsupported body snapshot outside the selected header
+      When only header1 revisions are resolved by <action> and saved to a new path
+      Then the receipt resolves three header revisions and all unselected member bytes are unchanged
+      And the header XML equals the exact <action> expectation while 17 supported revisions plus one unsupported body format finding remain visible
+      And the source archive retains its original bytes
+      Examples:
+        | action |
+        | accept |
+        | reject |
+
+    @id-docx-run-property-revisions-default
+    Scenario: The default text-only profile still reports and refuses formatting revisions
+      Given the all-stories revision package with one direct-run property snapshot per story saved as a source archive
+      When the default text-only profile inspects and attempts resolution
+      Then inspection returns 14 text revisions and seven format findings and both actions refuse without a receipt
+      And revision inspection leaves the package and source archive unchanged
+
+    @id-docx-run-property-revisions-refusal
+    Scenario Outline: Reject unsafe later snapshots <defect> before resolving earlier stories
+      Given the all-stories revision package with a later header snapshot defect <defect>
+      When both property-profile resolution actions are attempted
+      Then unsupported findings identify the header and both typed refusals return no receipt
+      And revision inspection leaves the package and source archive unchanged
+      Examples:
+        | defect             |
+        | missing-snapshot   |
+        | duplicate-snapshot |
+        | duplicate-change   |
+        | nested-change      |
+        | wrong-parent       |
+        | non-text-run       |
+        | unknown-property   |
+        | duplicate-property |
+        | decorated-property |
+        | invalid-value      |
+        | duplicate-id       |
+        | property-order     |
+        | mixed-content      |
+        | missing-author     |
+        | foreign-property   |
+        | nested-insertion   |
+
+    @id-docx-run-property-revisions-encoding
+    Scenario Outline: Retain previous property namespace meaning and lexical bytes in <encoding>
+      Given the all-stories revision package with an aliased <encoding> body property snapshot
+      When only body revisions are rejected and saved to a new path
+      Then the receipt resolves three body revisions and the exact expected aliased snapshot survives with its encoding marker
+      And every other member and the source archive retain their original bytes
+      Examples:
+        | encoding  |
+        | UTF-8-BOM |
+        | UTF-16LE  |
+        | UTF-16BE  |
+
+    @id-docx-run-property-revisions-rollback
+    Scenario Outline: Roll back a reached <stage> failure while retaining prior edits
+      Given the all-stories revision package with one direct-run property snapshot per story saved as a source archive
+      And a prior unrelated main-part edit is retained in memory
+      When property-profile rejection fails after <stage>
+      Then the injected hook was reached and no successful receipt is returned
+      And revision inspection leaves the package and source archive unchanged
+      Examples:
+        | stage                 |
+        | later-write           |
+        | serialization         |
+        | post-write-validation |
+
+    @id-docx-run-property-revisions-empty
+    Scenario Outline: Reject to a complete <snapshot> previous set without keeping current properties
+      Given the all-stories revision package with a <snapshot> previous body property snapshot
+      When only body revisions are rejected and saved to a new path
+      Then the body properties equal only the <snapshot> previous set and the exact expected XML
+      And every other member and the source archive retain their original bytes
+      Examples:
+        | snapshot          |
+        | empty             |
+        | shadowed-alias    |
+
+    @id-docx-run-property-revisions-guards
+    Scenario Outline: Validate <guard> even when no revisions remain
+      Given a fully resolved revision package with guard <guard>
+      When the extended revision profile is requested again
+      Then a typed <guard> refusal returns no receipt
+      And revision inspection leaves the package and source archive unchanged
+      Examples:
+        | guard             |
+        | protection        |
+        | external-settings |
+        | malformed-settings|
+        | invalid-profile   |

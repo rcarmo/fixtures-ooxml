@@ -4162,10 +4162,10 @@
       "aliases": []
     },
     {
-      "id": "asset-84b2e3469059bbdc2e02f595780865db9ff3cf76659ec723f9f489962ee5f9e4",
+      "id": "asset-7e3add2e8d7b77513bce2d21cccb4f0184ce379d58351ef1d83bb296931e6fb0",
       "path": "workflows/docx/revisions.feature",
-      "bytes": 5788,
-      "sha256": "84b2e3469059bbdc2e02f595780865db9ff3cf76659ec723f9f489962ee5f9e4",
+      "bytes": 11753,
+      "sha256": "7e3add2e8d7b77513bce2d21cccb4f0184ce379d58351ef1d83bb296931e6fb0",
       "role": "workflow",
       "origins": [
         {
@@ -4411,6 +4411,21 @@
         {
           "repository": "https://github.com/rcarmo/fixtures-ooxml",
           "path": "contracts/comment-threads.md",
+          "basis": "Project-owned behaviour contract or source assertion mapping"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "id": "asset-c4aff46dba131cc42cb0c4773d1b3bbe6bc2dd05bfa78600c6de59859b6fd54c",
+      "path": "contracts/run-property-revisions.md",
+      "bytes": 5968,
+      "sha256": "c4aff46dba131cc42cb0c4773d1b3bbe6bc2dd05bfa78600c6de59859b6fd54c",
+      "role": "workflow-contract",
+      "origins": [
+        {
+          "repository": "https://github.com/rcarmo/fixtures-ooxml",
+          "path": "contracts/run-property-revisions.md",
           "basis": "Project-owned behaviour contract or source assertion mapping"
         }
       ],

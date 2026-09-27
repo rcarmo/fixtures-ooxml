@@ -6757,6 +6757,210 @@
           "evidence": "Native execution binding pending"
         }
       }
+    },
+    {
+      "id": "@id-docx-run-property-revisions-roundtrip",
+      "feature": "workflows/docx/revisions.feature",
+      "expandedCases": 2,
+      "factIds": [],
+      "expectedOutcomes": [
+        "21 revisions have exact source-ordered IDs, kinds, authors, dates and text with no unsupported findings",
+        "revision inspection leaves the package and source archive unchanged",
+        "the receipt resolves 21 revisions in all seven story parts",
+        "reopened story XML equals the exact accept text and complete property expectations",
+        "every other member and the source archive retain their original bytes",
+        "repeated accept resolution returns zero changes and keeps the exact current archive",
+        "reopened story XML equals the exact reject text and complete property expectations",
+        "repeated reject resolution returns zero changes and keeps the exact current archive"
+      ],
+      "consumers": {
+        "bun": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        },
+        "go": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        },
+        "python": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        }
+      }
+    },
+    {
+      "id": "@id-docx-run-property-revisions-scope",
+      "feature": "workflows/docx/revisions.feature",
+      "expandedCases": 2,
+      "factIds": [],
+      "expectedOutcomes": [
+        "the receipt resolves three header revisions and all unselected member bytes are unchanged",
+        "the header XML equals the exact accept expectation while 17 supported revisions plus one unsupported body format finding remain visible",
+        "the source archive retains its original bytes",
+        "the header XML equals the exact reject expectation while 17 supported revisions plus one unsupported body format finding remain visible"
+      ],
+      "consumers": {
+        "bun": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        },
+        "go": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        },
+        "python": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        }
+      }
+    },
+    {
+      "id": "@id-docx-run-property-revisions-default",
+      "feature": "workflows/docx/revisions.feature",
+      "expandedCases": 1,
+      "factIds": [],
+      "expectedOutcomes": [
+        "inspection returns 14 text revisions and seven format findings and both actions refuse without a receipt",
+        "revision inspection leaves the package and source archive unchanged"
+      ],
+      "consumers": {
+        "bun": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        },
+        "go": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        },
+        "python": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        }
+      }
+    },
+    {
+      "id": "@id-docx-run-property-revisions-refusal",
+      "feature": "workflows/docx/revisions.feature",
+      "expandedCases": 16,
+      "factIds": [],
+      "expectedOutcomes": [
+        "unsupported findings identify the header and both typed refusals return no receipt",
+        "revision inspection leaves the package and source archive unchanged"
+      ],
+      "consumers": {
+        "bun": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        },
+        "go": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        },
+        "python": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        }
+      }
+    },
+    {
+      "id": "@id-docx-run-property-revisions-encoding",
+      "feature": "workflows/docx/revisions.feature",
+      "expandedCases": 3,
+      "factIds": [],
+      "expectedOutcomes": [
+        "the receipt resolves three body revisions and the exact expected aliased snapshot survives with its encoding marker",
+        "every other member and the source archive retain their original bytes"
+      ],
+      "consumers": {
+        "bun": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        },
+        "go": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        },
+        "python": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        }
+      }
+    },
+    {
+      "id": "@id-docx-run-property-revisions-rollback",
+      "feature": "workflows/docx/revisions.feature",
+      "expandedCases": 3,
+      "factIds": [],
+      "expectedOutcomes": [
+        "the injected hook was reached and no successful receipt is returned",
+        "revision inspection leaves the package and source archive unchanged"
+      ],
+      "consumers": {
+        "bun": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        },
+        "go": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        },
+        "python": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        }
+      }
+    },
+    {
+      "id": "@id-docx-run-property-revisions-empty",
+      "feature": "workflows/docx/revisions.feature",
+      "expandedCases": 2,
+      "factIds": [],
+      "expectedOutcomes": [
+        "the body properties equal only the empty previous set and the exact expected XML",
+        "every other member and the source archive retain their original bytes",
+        "the body properties equal only the shadowed-alias previous set and the exact expected XML"
+      ],
+      "consumers": {
+        "bun": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        },
+        "go": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        },
+        "python": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        }
+      }
+    },
+    {
+      "id": "@id-docx-run-property-revisions-guards",
+      "feature": "workflows/docx/revisions.feature",
+      "expandedCases": 4,
+      "factIds": [],
+      "expectedOutcomes": [
+        "a typed protection refusal returns no receipt",
+        "revision inspection leaves the package and source archive unchanged",
+        "a typed external-settings refusal returns no receipt",
+        "a typed malformed-settings refusal returns no receipt",
+        "a typed invalid-profile refusal returns no receipt"
+      ],
+      "consumers": {
+        "bun": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        },
+        "go": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        },
+        "python": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        }
+      }
     }
   ],
   "consumerStatusPolicy": "Missing/unmapped/planned means not-run and no execution credit."

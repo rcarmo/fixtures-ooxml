@@ -188,6 +188,13 @@ refusal, rollback and encoding. The 23 earlier comment cases are unchanged.
 Single-comment and authored root-only resolution keep their separate policies.
 These cases do not exercise authoring, filtered responses or Word rendering.
 
+[Direct-run property snapshots](contracts/run-property-revisions.md) add eight
+scenarios / 33 cases for the opt-in text-and-run-properties profile. Both actions
+check complete saved/current properties, selected stories, exact member bytes,
+namespace and encoding preservation, refusal and rollback. The ten earlier
+revision cases and default text-only policy are unchanged. Moves and other
+property revisions remain outside this profile.
+
 Remaining work:
 
 | Family | Remaining work |

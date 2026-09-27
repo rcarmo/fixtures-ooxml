@@ -1,7 +1,7 @@
 {
   "name": "@rcarmo/fixtures-ooxml",
   "private": true,
-  "version": "0.32.0",
+  "version": "0.33.0",
   "scripts": {
     "check": "bun run scripts/verify.ts",
     "test": "bun test tests"
