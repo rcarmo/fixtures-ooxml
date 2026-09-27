@@ -182,6 +182,12 @@ with different inputs, API returns, save guarantees or thread policies remain
 distinct. Stronger behavioural contracts must add failing predicates and native
 evidence; renaming an actor cannot close these gaps.
 
+[Existing complete threads](contracts/comment-threads.md) add eight scenarios /
+23 cases for immutable inspection, all-member resolution, exact byte preservation,
+refusal, rollback and encoding. The 23 earlier comment cases are unchanged.
+Single-comment and authored root-only resolution keep their separate policies.
+These cases do not exercise authoring, filtered responses or Word rendering.
+
 Remaining work:
 
 | Family | Remaining work |

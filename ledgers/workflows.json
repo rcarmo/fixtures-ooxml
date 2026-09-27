@@ -6558,6 +6558,205 @@
           "evidence": "Native execution binding pending"
         }
       }
+    },
+    {
+      "id": "@id-docx-existing-thread-inspection",
+      "feature": "workflows/docx/comments.feature",
+      "expandedCases": 3,
+      "factIds": [],
+      "expectedOutcomes": [
+        "the pinned thread roots, flat replies, parent IDs and bodies match the pinned expectations",
+        "all returned thread records and unsupported findings are immutable detached snapshots",
+        "the existing-thread package and source archive are unchanged",
+        "the nested thread roots, flat replies, parent IDs and bodies match the pinned expectations",
+        "the reordered thread roots, flat replies, parent IDs and bodies match the pinned expectations"
+      ],
+      "consumers": {
+        "bun": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        },
+        "go": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        },
+        "python": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        }
+      }
+    },
+    {
+      "id": "@id-docx-existing-thread-resolution",
+      "feature": "workflows/docx/comments.feature",
+      "expandedCases": 3,
+      "factIds": [],
+      "expectedOutcomes": [
+        "the receipt has root 1, members 1,2 and 2 changed flags in the existing extension only",
+        "reopened selected members are resolved with their original parents and bodies while root 0 remains open",
+        "the reopened package differs only in selected done flags and the source archive is unchanged",
+        "the original package member bytes are restored by the fresh read",
+        "the receipt has root 1, members 1,2,3 and 3 changed flags in the existing extension only"
+      ],
+      "consumers": {
+        "bun": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        },
+        "go": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        },
+        "python": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        }
+      }
+    },
+    {
+      "id": "@id-docx-existing-thread-noop",
+      "feature": "workflows/docx/comments.feature",
+      "expandedCases": 1,
+      "factIds": [],
+      "expectedOutcomes": [
+        "the single-comment edit leaves reply 2 open, the first thread edit changes one flag and the second changes zero",
+        "the repeated thread edit preserves the exact current archive and original source archive"
+      ],
+      "consumers": {
+        "bun": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        },
+        "go": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        },
+        "python": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        }
+      }
+    },
+    {
+      "id": "@id-docx-existing-thread-refusal",
+      "feature": "workflows/docx/comments.feature",
+      "expandedCases": 9,
+      "factIds": [],
+      "expectedOutcomes": [
+        "a typed thread refusal returns no receipt",
+        "the existing-thread package and source archive are unchanged"
+      ],
+      "consumers": {
+        "bun": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        },
+        "go": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        },
+        "python": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        }
+      }
+    },
+    {
+      "id": "@id-docx-existing-thread-rollback",
+      "feature": "workflows/docx/comments.feature",
+      "expandedCases": 2,
+      "factIds": [],
+      "expectedOutcomes": [
+        "the injected fault was reached and no receipt is returned",
+        "the existing-thread package and source archive are unchanged"
+      ],
+      "consumers": {
+        "bun": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        },
+        "go": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        },
+        "python": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        }
+      }
+    },
+    {
+      "id": "@id-docx-existing-thread-encoding",
+      "feature": "workflows/docx/comments.feature",
+      "expandedCases": 3,
+      "factIds": [],
+      "expectedOutcomes": [
+        "the reopened thread has three resolved members and preserves the extension marker and aliased namespace meaning",
+        "the reopened package differs only in selected done flags and the source archive is unchanged"
+      ],
+      "consumers": {
+        "bun": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        },
+        "go": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        },
+        "python": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        }
+      }
+    },
+    {
+      "id": "@id-docx-existing-thread-unsupported",
+      "feature": "workflows/docx/comments.feature",
+      "expandedCases": 1,
+      "factIds": [],
+      "expectedOutcomes": [
+        "two immutable root groups and a nonempty unsupported report are returned",
+        "a typed thread refusal returns no receipt",
+        "the existing-thread package and source archive are unchanged"
+      ],
+      "consumers": {
+        "bun": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        },
+        "go": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        },
+        "python": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        }
+      }
+    },
+    {
+      "id": "@id-docx-existing-thread-limit",
+      "feature": "workflows/docx/comments.feature",
+      "expandedCases": 1,
+      "factIds": [],
+      "expectedOutcomes": [
+        "both operations return the comment limit refusal and no result",
+        "the existing-thread package and source archive are unchanged"
+      ],
+      "consumers": {
+        "bun": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        },
+        "go": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        },
+        "python": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        }
+      }
     }
   ],
   "consumerStatusPolicy": "Missing/unmapped/planned means not-run and no execution credit."

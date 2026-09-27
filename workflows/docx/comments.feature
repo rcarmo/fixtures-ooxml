@@ -132,3 +132,100 @@ Feature: Word comment inspection, resolution and thread policies
       When a reply "Done now" is added to that root comment with auto_resolve true
       Then the reply response reports success true and resolved true
       And a fresh resolved-filter comment read contains the root ID with done true
+
+  @profile-existing-complete-thread
+  Rule: Inspect and resolve complete threads using existing extension metadata
+    These operations never author comments or extension parts and never change a root alone when replies exist.
+
+    @id-docx-existing-thread-inspection
+    Scenario Outline: Group immutable existing comments in source order without mutation
+      Given fixture fixture-ccdfb41723d543a8baf3444b16c3f8fa7d8473aead590e13825042ba6119da62 prepared as <layout> existing threads
+      When existing comment threads are inspected
+      Then the <layout> thread roots, flat replies, parent IDs and bodies match the pinned expectations
+      And all returned thread records and unsupported findings are immutable detached snapshots
+      And the existing-thread package and source archive are unchanged
+      Examples:
+        | layout     |
+        | pinned     |
+        | nested     |
+        | reordered  |
+
+    @id-docx-existing-thread-resolution
+    Scenario Outline: Resolve every selected thread member and reopen the saved output
+      Given fixture fixture-ccdfb41723d543a8baf3444b16c3f8fa7d8473aead590e13825042ba6119da62 prepared as <layout> existing threads
+      When existing thread member <id> is resolved and saved to a new path
+      Then the receipt has root 1, members <members> and <changed> changed flags in the existing extension only
+      And reopened selected members are resolved with their original parents and bodies while root 0 remains open
+      And the reopened package differs only in selected done flags and the source archive is unchanged
+      When the selected thread is reopened and saved again
+      Then the original package member bytes are restored by the fresh read
+      Examples:
+        | layout | id | members | changed |
+        | pinned | 1  | 1,2     | 2       |
+        | pinned | 02 | 1,2     | 2       |
+        | nested | 3  | 1,2,3   | 3       |
+
+    @id-docx-existing-thread-noop
+    Scenario: Mixed single-comment state becomes a complete thread and then an exact no-op
+      Given fixture fixture-ccdfb41723d543a8baf3444b16c3f8fa7d8473aead590e13825042ba6119da62 prepared as pinned existing threads
+      When only comment 1 is resolved then thread member 2 is resolved twice
+      Then the single-comment edit leaves reply 2 open, the first thread edit changes one flag and the second changes zero
+      And the repeated thread edit preserves the exact current archive and original source archive
+
+    @id-docx-existing-thread-refusal
+    Scenario Outline: Refuse unsafe thread resolution before any mutation including a requested no-op
+      Given fixture fixture-ccdfb41723d543a8baf3444b16c3f8fa7d8473aead590e13825042ba6119da62 prepared with thread defect <defect>
+      When thread member 2 is requested open
+      Then a typed thread refusal returns no receipt
+      And the existing-thread package and source archive are unchanged
+      Examples:
+        | defect             |
+        | missing-root-entry |
+        | missing-extension  |
+        | duplicate-id       |
+        | cycle              |
+        | invalid-done       |
+        | protected          |
+        | external-settings  |
+        | unsupported-body   |
+        | unknown-target     |
+
+    @id-docx-existing-thread-rollback
+    Scenario Outline: Roll back reached thread publication faults with all prior package edits intact
+      Given fixture fixture-ccdfb41723d543a8baf3444b16c3f8fa7d8473aead590e13825042ba6119da62 prepared as nested existing threads
+      And the main document has a prior unrelated edit
+      When resolving member 3 fails after <stage>
+      Then the injected fault was reached and no receipt is returned
+      And the existing-thread package and source archive are unchanged
+      Examples:
+        | stage         |
+        | part-write    |
+        | serialization |
+
+    @id-docx-existing-thread-encoding
+    Scenario Outline: Preserve extension encoding namespace meaning and unrelated lexical bytes
+      Given fixture fixture-ccdfb41723d543a8baf3444b16c3f8fa7d8473aead590e13825042ba6119da62 prepared with <encoding> thread extension
+      When existing thread member 3 is resolved and saved to a new path
+      Then the reopened thread has three resolved members and preserves the extension marker and aliased namespace meaning
+      And the reopened package differs only in selected done flags and the source archive is unchanged
+      Examples:
+        | encoding  |
+        | UTF-8-BOM |
+        | UTF-16LE  |
+        | UTF-16BE  |
+
+    @id-docx-existing-thread-unsupported
+    Scenario: Explicit unsupported findings remain visible while mutation refuses
+      Given fixture fixture-ccdfb41723d543a8baf3444b16c3f8fa7d8473aead590e13825042ba6119da62 prepared with thread defect unsupported-body
+      When existing comment threads are inspected
+      Then two immutable root groups and a nonempty unsupported report are returned
+      When thread member 2 is requested open
+      Then a typed thread refusal returns no receipt
+      And the existing-thread package and source archive are unchanged
+
+    @id-docx-existing-thread-limit
+    Scenario: Refuse 10001 comments rather than return a truncated thread result
+      Given fixture fixture-ccdfb41723d543a8baf3444b16c3f8fa7d8473aead590e13825042ba6119da62 prepared with 10001 extension-free comments
+      When thread inspection and member 0 resolution are attempted
+      Then both operations return the comment limit refusal and no result
+      And the existing-thread package and source archive are unchanged
