@@ -317,23 +317,6 @@ Feature: high volume native behavior capture
     When pptx advanced tools.tool pptx analyze layouts using str representation of temp dir under "layouts.pptx"
     Then result has type dict
 
-  @candidate-python-high-volume-5465e20c3f
-  # Native: tests/test_high_volume.py::TestPptxRecommendLayout::test_recommend_layout
-  Scenario: Native check: recommend layout [TestPptxRecommendLayout]
-    Given Create an instance of PresentationAdvancedTools.
-    And an isolated writable temporary directory
-    And a prepared layout name input or fixture
-    And prs.save with temp dir under text rec_{layout name}.pptx
-    And prs is prepared as the result of Presentation with no arguments
-    And path is prepared as temp dir under text rec_{layout name}.pptx
-    And each of these native parameter variants is exercised independently
-      | variant | parameter values |
-      | [title] | {"layout_name": "'title'"} |
-      | [bullets] | {"layout_name": "'bullets'"} |
-      | [table] | {"layout_name": "'table'"} |
-    When pptx advanced tools.tool pptx recommend layout using str representation of temp dir under text rec_{layout name}.pptx; layout name
-    Then result has type dict
-
   @candidate-python-high-volume-c161b80ce2
   # Native: tests/test_high_volume.py::TestPptxAddComment::test_add_comment_default_position
   Scenario: Native check: add comment default position [TestPptxAddComment]

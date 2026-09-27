@@ -56,7 +56,8 @@
     "workflows/pptx/slide-import.feature",
     "workflows/xlsx/structural-edits.feature",
     "workflows/xlsx/calculation-engine.feature",
-    "workflows/xlsx/style-readback.feature"
+    "workflows/xlsx/style-readback.feature",
+    "workflows/pptx/layout-recommendation.feature"
   ],
   "executionCredit": "Only local executed assertions count; reports here do not run consumers.",
   "workflows": [
@@ -7400,6 +7401,69 @@
       "expectedOutcomes": [
         "it reads the edited cell without an invalid style index",
         "its identity and version are recorded separately from the writer"
+      ],
+      "consumers": {
+        "bun": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        },
+        "go": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        },
+        "python": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        }
+      }
+    },
+    {
+      "id": "@id-pptx-layout-recommendation-ranked",
+      "feature": "workflows/pptx/layout-recommendation.feature",
+      "expandedCases": 5,
+      "factIds": [],
+      "expectedOutcomes": [
+        "the result's content_type equals \"title\"",
+        "its recommended index, name, classification and score equal [0,\"Title Slide\",\"title_slide\",2]",
+        "its first three alternatives equal [[2,\"Section Header\",\"section_header\",1],[1,\"Title and Content\",\"title_and_content\",0],[3,\"Two Content\",\"two_content\",0]] in order, including zero-score ties",
+        "its next_tools list equals [\"pptx_add_slide\"]",
+        "the source archive bytes and every member payload still equal the sealed input",
+        "the result's content_type equals \"bullets\"",
+        "its recommended index, name, classification and score equal [1,\"Title and Content\",\"title_and_content\",2]",
+        "its first three alternatives equal [[9,\"Title and Vertical Text\",\"title_and_vertical_text\",1],[10,\"Vertical Title and Text\",\"title_and_vertical_text\",1],[0,\"Title Slide\",\"title_slide\",0]] in order, including zero-score ties",
+        "the result's content_type equals \"table\"",
+        "its recommended index, name, classification and score equal [1,\"Title and Content\",\"title_and_content\",3]",
+        "its first three alternatives equal [[5,\"Title Only\",\"title_only\",2],[6,\"Blank\",\"blank\",1],[0,\"Title Slide\",\"title_slide\",0]] in order, including zero-score ties",
+        "the result's content_type equals \"comparison\"",
+        "its recommended index, name, classification and score equal [4,\"Comparison\",\"comparison\",2]",
+        "its first three alternatives equal [[3,\"Two Content\",\"two_content\",1],[0,\"Title Slide\",\"title_slide\",0],[1,\"Title and Content\",\"title_and_content\",0]] in order, including zero-score ties",
+        "the result's content_type equals \"blank\"",
+        "its recommended index, name, classification and score equal [6,\"Blank\",\"blank\",2]",
+        "its first three alternatives equal [[5,\"Title Only\",\"title_only\",1],[0,\"Title Slide\",\"title_slide\",0],[1,\"Title and Content\",\"title_and_content\",0]] in order, including zero-score ties"
+      ],
+      "consumers": {
+        "bun": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        },
+        "go": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        },
+        "python": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        }
+      }
+    },
+    {
+      "id": "@id-pptx-layout-recommendation-missing-file",
+      "feature": "workflows/pptx/layout-recommendation.feature",
+      "expandedCases": 1,
+      "factIds": [],
+      "expectedOutcomes": [
+        "the result reports File not found with the exact absent path",
+        "no output archive is created and the sealed presentation's archive bytes remain unchanged"
       ],
       "consumers": {
         "bun": {

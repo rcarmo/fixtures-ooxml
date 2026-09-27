@@ -5984,16 +5984,18 @@
     },
     {
       "path": "staging/python/features/test_high_volume.feature",
-      "id": "asset-f3425a3273202dc2f58ef554ddf30c79f9fb58d40349bfa56c31eb06d6769c2f",
+      "id": "asset-a794ecf4405ba3c40cc31009f4ceb90e075a88773667591d222c5f7a59882c22",
       "role": "catalogue-candidate",
-      "bytes": 27192,
-      "sha256": "f3425a3273202dc2f58ef554ddf30c79f9fb58d40349bfa56c31eb06d6769c2f",
+      "bytes": 26202,
+      "sha256": "a794ecf4405ba3c40cc31009f4ceb90e075a88773667591d222c5f7a59882c22",
       "origins": [
         {
-          "kind": "source",
+          "kind": "transformed-from-source",
           "repository": "https://github.com/rcarmo/python-office-mcp-server",
           "revision": "0c5de7a4ce69c13a06e215e9233954bf2df805d5",
-          "path": "docs/catalogue-staging/python-native/features/test_high_volume.feature"
+          "path": "docs/catalogue-staging/python-native/features/test_high_volume.feature",
+          "sha256": "f3425a3273202dc2f58ef554ddf30c79f9fb58d40349bfa56c31eb06d6769c2f",
+          "transformation": "Remove weak dict-only layout recommendation capture after transferring all five distinct native input variants to the stronger planned @id-pptx-layout-recommendation-ranked outline; neither native test currently satisfies its exact outcomes."
         }
       ],
       "aliases": []
@@ -6640,16 +6642,18 @@
     },
     {
       "path": "staging/python/features/test_word_pptx_advanced_ops.feature",
-      "id": "asset-ed3eb2d0d7cdb20757eaf97549b1b4615be110c60144308920a4d3905fcafb5c",
+      "id": "asset-a93477a7f007fc9e2d9754466a890ace273e1ad318fae6f2cc84e10eaf3a1d45",
       "role": "catalogue-candidate",
-      "bytes": 18456,
-      "sha256": "ed3eb2d0d7cdb20757eaf97549b1b4615be110c60144308920a4d3905fcafb5c",
+      "bytes": 17483,
+      "sha256": "a93477a7f007fc9e2d9754466a890ace273e1ad318fae6f2cc84e10eaf3a1d45",
       "origins": [
         {
-          "kind": "source",
+          "kind": "transformed-from-source",
           "repository": "https://github.com/rcarmo/python-office-mcp-server",
           "revision": "0c5de7a4ce69c13a06e215e9233954bf2df805d5",
-          "path": "docs/catalogue-staging/python-native/features/test_word_pptx_advanced_ops.feature"
+          "path": "docs/catalogue-staging/python-native/features/test_word_pptx_advanced_ops.feature",
+          "sha256": "ed3eb2d0d7cdb20757eaf97549b1b4615be110c60144308920a4d3905fcafb5c",
+          "transformation": "Remove weak dict-only layout recommendation capture after transferring all five distinct native input variants to the stronger planned @id-pptx-layout-recommendation-ranked outline; neither native test currently satisfies its exact outcomes."
         }
       ],
       "aliases": []
@@ -6858,15 +6862,30 @@
     },
     {
       "path": "ledgers/functional-equivalence.json",
-      "id": "asset-fd5f496a84e454b9613bd08378c00f1fc9aa8236a758708560af9415c2bc4722",
+      "id": "asset-5d780ec0f48e77c016d2e490cc4c1a02831a07eb12531a77fdb47acdf2ab3e11",
       "role": "catalogue-reconciliation",
-      "bytes": 10087,
-      "sha256": "fd5f496a84e454b9613bd08378c00f1fc9aa8236a758708560af9415c2bc4722",
+      "bytes": 11921,
+      "sha256": "5d780ec0f48e77c016d2e490cc4c1a02831a07eb12531a77fdb47acdf2ab3e11",
       "origins": [
         {
           "repository": "https://github.com/rcarmo/fixtures-ooxml",
           "path": "ledgers/functional-equivalence.json",
           "basis": "Review of Python native predicates at e548ed0 against staged feature source"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "id": "asset-b41b1f3ef7fe9cc022a74113a4b3edbd1fe2d93934ee83225d7e0b99e6b25a75",
+      "path": "workflows/pptx/layout-recommendation.feature",
+      "bytes": 2927,
+      "sha256": "b41b1f3ef7fe9cc022a74113a4b3edbd1fe2d93934ee83225d7e0b99e6b25a75",
+      "role": "workflow",
+      "origins": [
+        {
+          "repository": "https://github.com/rcarmo/fixtures-ooxml",
+          "path": "workflows/pptx/layout-recommendation.feature",
+          "basis": "Project-owned behaviour contract or source assertion mapping"
         }
       ],
       "aliases": []

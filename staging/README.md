@@ -14,19 +14,23 @@ native behaviour against the [canonical workflows](../workflows/README.md).
   JSON and source assertion inventory remain in Go until reviewed centrally.
 - `python/features/` retains 67 captured candidate features. The Python consumer
   retains 1,022 native declaration mappings and source evidence separately;
-  one exact weak alias now shares a representative scenario. The files do not
-  participate in Python acceptance execution.
+  one exact weak alias shares a representative, while five disjoint layout
+  inputs now share a stronger planned canonical outline. The staged files do
+  not participate in Python acceptance execution.
 
 The historical comparison compiled 1,552 expanded cases: 1,541 Go/Python
 candidates plus eleven former Bun planned cases. The 143 current candidate
-files compile 1,540 cases after merging one exact weak availability predicate;
-1,551 includes the eleven Bun cases. Both native declarations remain tracked. No source pair
+files compile 1,538 cases after one exact weak alias and two weak layout
+scenario blocks were retired; 1,549 includes the eleven Bun cases. All three
+native declarations and all five layout parameter values remain tracked. No source pair
 has the same normalised steps across Go and Python. The
 [functional equivalence review](../ledgers/functional-equivalence.json) records
-three other Python pairs with different inputs or parameter variants, so their
-cases remain distinct. The retired ID maps to one representative in the same
-operation family without canonical execution credit. Matching names, text or
-fixtures alone cannot prove equivalent outcomes, refusals or preservation. The same
+one five-row planned layout contract with exact rankings, one exact weak alias,
+and two other Python pairs with different inputs. The five layout values remain
+separate example cases; their dict-only source scenarios no longer compile.
+Neither source mapping nor the stronger planned contract grants execution
+credit. Matching names, text or fixtures alone cannot prove equivalent
+outcomes, refusals or preservation. The same
 [functional review](../ledgers/functional-equivalence.json) lists twelve Go
 ZIP64/graph/preservation lookalikes whose inputs or outcomes differ from the
 canonical cases. They retain separate source identities and no Go execution

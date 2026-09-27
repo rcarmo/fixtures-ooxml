@@ -33,6 +33,7 @@ Go and Python source candidates live in [staging](../staging/README.md); they ar
 ## PPTX
 
 - [creation.feature](pptx/creation.feature) — 3 scenarios, 3 cases
+- [layout-recommendation.feature](pptx/layout-recommendation.feature) — 2 scenarios, 6 cases
 - [mutation-safety.feature](pptx/mutation-safety.feature) — 3 scenarios, 6 cases
 - [notes.feature](pptx/notes.feature) — 9 scenarios, 9 cases
 - [preservation.feature](pptx/preservation.feature) — 1 scenario, 1 case

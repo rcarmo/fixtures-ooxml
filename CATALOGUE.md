@@ -206,12 +206,17 @@ seals 76 Go and 67 Python `.feature` source candidates in `staging/`. Eight
 operation-family workflows preserve eleven former Bun planned cases, with a
 runtime-named actor made neutral and the change recorded. Candidate files grant
 no central execution credit. Of four Python pairs sharing captured steps, one
-exact weak availability predicate now compiles once; its second native declaration
-maps to the representative ID. Two pairs have different inputs and the layout
-pair has disjoint parameters, so all of those cases survive. The
+exact weak availability predicate compiles once. Five disjoint layout inputs
+now occupy five rows of the planned
+[layout-recommendation workflow](workflows/pptx/layout-recommendation.feature),
+with exact rankings and source custody stronger than either native dict-only
+check. Their two redundant staged blocks have been removed, while all five
+inputs and both native declarations retain mappings and historical hashes.
+Neither mapping satisfies the stronger outcome until consumer tests run. The
+other two Python pairs have different inputs. The
 [functional review](ledgers/functional-equivalence.json) records twelve Go
 package lookalikes with distinct inputs, operations or outcomes; none is
-retired or credited. Original source hashes and the transformed candidate hash
+retired or credited. Original source hashes and transformed candidate hashes
 remain separate. See
 [staging](staging/README.md) for the source layout and limits.
 

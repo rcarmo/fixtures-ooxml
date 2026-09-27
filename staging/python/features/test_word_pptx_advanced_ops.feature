@@ -134,22 +134,6 @@ Feature: word pptx advanced ops native behavior capture
     When pptx advanced tools.tool pptx replace placeholders using str representation of temp dir under "multi_replace.pptx"; {"<Company>": "Contoso", "<Project>": "Migration"}
     Then result has type dict
 
-  @candidate-python-word-pptx-advanced-ops-895995c6d6
-  # Native: tests/test_word_pptx_advanced_ops.py::TestPptxLayoutOperations::test_recommend_layout
-  Scenario: Native check: recommend layout [TestPptxLayoutOperations]
-    Given Create an instance of PresentationAdvancedTools.
-    And an isolated writable temporary directory
-    And a prepared layout name input or fixture
-    And prs.save with temp dir under text rec_{layout name}.pptx
-    And prs is prepared as the result of Presentation with no arguments
-    And path is prepared as temp dir under text rec_{layout name}.pptx
-    And each of these native parameter variants is exercised independently
-      | variant | parameter values |
-      | [comparison] | {"layout_name": "'comparison'"} |
-      | [blank] | {"layout_name": "'blank'"} |
-    When pptx advanced tools.tool pptx recommend layout using str representation of temp dir under text rec_{layout name}.pptx; layout name
-    Then result has type dict
-
   @candidate-python-word-pptx-advanced-ops-8ba3f4f594
   # Native: tests/test_word_pptx_advanced_ops.py::TestWordSowOperations::test_extract_sow_structure_complex
   Scenario: Native check: extract sow structure complex [TestWordSowOperations]

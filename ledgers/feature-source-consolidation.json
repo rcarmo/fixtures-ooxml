@@ -883,10 +883,12 @@
       "consumer": "python",
       "sourcePath": "docs/catalogue-staging/python-native/features/test_high_volume.feature",
       "path": "staging/python/features/test_high_volume.feature",
-      "sha256": "f3425a3273202dc2f58ef554ddf30c79f9fb58d40349bfa56c31eb06d6769c2f",
-      "compiledCases": 29,
+      "sha256": "a794ecf4405ba3c40cc31009f4ceb90e075a88773667591d222c5f7a59882c22",
+      "compiledCases": 28,
       "executionCredit": false,
-      "reconciliation": "pending-functional-review"
+      "reconciliation": "stronger-canonical-profile-planned",
+      "historicalSourceSha256": "f3425a3273202dc2f58ef554ddf30c79f9fb58d40349bfa56c31eb06d6769c2f",
+      "transformation": "Remove weak dict-only layout recommendation capture after transferring all five distinct native input variants to the stronger planned @id-pptx-layout-recommendation-ranked outline; neither native test currently satisfies its exact outcomes."
     },
     {
       "consumer": "python",
@@ -1252,10 +1254,12 @@
       "consumer": "python",
       "sourcePath": "docs/catalogue-staging/python-native/features/test_word_pptx_advanced_ops.feature",
       "path": "staging/python/features/test_word_pptx_advanced_ops.feature",
-      "sha256": "ed3eb2d0d7cdb20757eaf97549b1b4615be110c60144308920a4d3905fcafb5c",
-      "compiledCases": 19,
+      "sha256": "a93477a7f007fc9e2d9754466a890ace273e1ad318fae6f2cc84e10eaf3a1d45",
+      "compiledCases": 18,
       "executionCredit": false,
-      "reconciliation": "pending-functional-review"
+      "reconciliation": "stronger-canonical-profile-planned",
+      "historicalSourceSha256": "ed3eb2d0d7cdb20757eaf97549b1b4615be110c60144308920a4d3905fcafb5c",
+      "transformation": "Remove weak dict-only layout recommendation capture after transferring all five distinct native input variants to the stronger planned @id-pptx-layout-recommendation-ranked outline; neither native test currently satisfies its exact outcomes."
     },
     {
       "consumer": "python",
@@ -1422,13 +1426,15 @@
     "rule": "Equivalent behaviour requires same input variants, expected saved outputs, refusal and custody policy; no automatic retirement based on text."
   },
   "currentComparison": {
-    "compiledCases": 1551,
-    "uniqueNormalizedStepSequences": 1548,
+    "compiledCases": 1549,
+    "uniqueNormalizedStepSequences": 1547,
     "crossConsumerExactStepGroups": 0,
-    "withinConsumerDuplicateStepGroups": 3,
+    "withinConsumerDuplicateStepGroups": 2,
     "retiredCandidateIds": [
-      "@candidate-python-workflows-2b4937f7f0"
+      "@candidate-python-workflows-2b4937f7f0",
+      "@candidate-python-high-volume-5465e20c3f",
+      "@candidate-python-word-pptx-advanced-ops-895995c6d6"
     ],
-    "rule": "Current compiled inventory after the reviewed exact predicate alias merge; historical comparison and source hashes above remain unchanged."
+    "rule": "Current compiled inventory after one exact weak alias and two weak layout candidates retire into five stronger planned canonical rows; historical comparison and source hashes above remain unchanged."
   }
 }

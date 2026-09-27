@@ -1,10 +1,12 @@
 {
   "schemaVersion": 1,
   "sourceCommit": "7b7a2fa2610c421cdde9d7b1da9125c8f98b9dd8",
-  "scope": "Four exact captured-step Python candidate pairs reviewed against native inputs and assertions. Only the TOOL_CLASSES exact predicate alias is merged; original source bytes and comparison counts remain historically sealed.",
+  "scope": "Four Python source-pair groups reviewed. One exact weak alias compiles once; two disjoint layout captures were replaced by five stronger planned canonical rows with original hashes/identities and no execution credit; other input-dependent pairs remain distinct.",
   "executionCredit": false,
   "retiredCandidateIds": [
-    "@candidate-python-workflows-2b4937f7f0"
+    "@candidate-python-workflows-2b4937f7f0",
+    "@candidate-python-high-volume-5465e20c3f",
+    "@candidate-python-word-pptx-advanced-ops-895995c6d6"
   ],
   "groups": [
     {
@@ -28,7 +30,7 @@
       "executionCredit": false
     },
     {
-      "status": "distinct-parameter-variants",
+      "status": "merged-disjoint-variants-into-stronger-planned-profile",
       "members": [
         {
           "path": "staging/python/features/test_high_volume.feature",
@@ -43,7 +45,7 @@
       ],
       "capturedStepSha256": "9dac0cdb37a3884d232f5f34b2fecfe24039c6569eb4b5bcf8bcd268f268639a",
       "preconditionsEqual": false,
-      "reason": "The operation and dict result coincide, but three layout inputs (title/bullets/table) and two inputs (comparison/blank) are disjoint; preserve five variants.",
+      "reason": "The source inputs are disjoint and native assertions only check dict shape. All five parameter values now occupy separate rows of a stronger planned operation-family contract; neither weak source declaration earns execution credit until exact ranking and custody tests run.",
       "provenanceRetained": true,
       "executionCredit": false,
       "parameterGroups": [
@@ -56,7 +58,41 @@
           "comparison",
           "blank"
         ]
-      ]
+      ],
+      "canonicalId": "@id-pptx-layout-recommendation-ranked",
+      "canonicalFeature": "workflows/pptx/layout-recommendation.feature",
+      "canonicalStatus": "planned",
+      "historicalSourceSha256": [
+        "f3425a3273202dc2f58ef554ddf30c79f9fb58d40349bfa56c31eb06d6769c2f",
+        "ed3eb2d0d7cdb20757eaf97549b1b4615be110c60144308920a4d3905fcafb5c"
+      ],
+      "currentCandidateSha256": [
+        "a794ecf4405ba3c40cc31009f4ceb90e075a88773667591d222c5f7a59882c22",
+        "a93477a7f007fc9e2d9754466a890ace273e1ad318fae6f2cc84e10eaf3a1d45"
+      ],
+      "rowMappings": [
+        {
+          "sourceId": "@candidate-python-high-volume-5465e20c3f",
+          "contentTypes": [
+            "title",
+            "bullets",
+            "table"
+          ]
+        },
+        {
+          "sourceId": "@candidate-python-word-pptx-advanced-ops-895995c6d6",
+          "contentTypes": [
+            "comparison",
+            "blank"
+          ]
+        }
+      ],
+      "independentExpectationSource": {
+        "fixtureId": "fixture-c54a7b746c0328fc1930525edd91387eedbbca69a6f388f7ec024150187b6bab",
+        "source": "ppt/slideLayouts/slideLayout1..11.xml names and placeholder types inspected independently; content-preference ranking in Python native tool reviewed separately",
+        "executionCredit": false
+      },
+      "nativeStrengtheningRequired": "Both native parameter tests must assert exact recommended and first three alternatives, scores, unchanged sealed source and missing-file refusal; mapping alone grants no credit."
     },
     {
       "status": "weak-predicate-only",
