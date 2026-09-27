@@ -4,7 +4,6 @@ The Gherkin features specify inputs, expected results, error handling and which
 package members an edit may change.
 
 | Feature | Scope |
-
 |---|---|
 | `workflows/docx/comments.feature` | Existing comment inspection and per-entry done flags |
 | `workflows/docx/text.feature` | Cross-run replacement, paragraph ordering and stale spans |
