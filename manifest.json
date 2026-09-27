@@ -6044,6 +6044,36 @@
         }
       ],
       "aliases": []
+    },
+    {
+      "id": "asset-ad58c4e488c61265f9c9177291930485d98dc63e8845c837fa1023338e35333a",
+      "path": "ledgers/consumers/python-xlsx-dependencies.json",
+      "bytes": 5794,
+      "sha256": "ad58c4e488c61265f9c9177291930485d98dc63e8845c837fa1023338e35333a",
+      "role": "consumer-mapping",
+      "origins": [
+        {
+          "repository": "https://github.com/rcarmo/fixtures-ooxml",
+          "path": "ledgers/consumers/python-xlsx-dependencies.json",
+          "basis": "Project-owned behaviour contract or source assertion mapping"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "id": "asset-0a9c4ec586ab3d726efec0a2a048870483f8df4ed0a162a1096d1cd8f5387790",
+      "path": "contracts/python-xlsx-dependencies.md",
+      "bytes": 2015,
+      "sha256": "0a9c4ec586ab3d726efec0a2a048870483f8df4ed0a162a1096d1cd8f5387790",
+      "role": "workflow-contract",
+      "origins": [
+        {
+          "repository": "https://github.com/rcarmo/fixtures-ooxml",
+          "path": "contracts/python-xlsx-dependencies.md",
+          "basis": "Project-owned behaviour contract or source assertion mapping"
+        }
+      ],
+      "aliases": []
     }
   ]
 }

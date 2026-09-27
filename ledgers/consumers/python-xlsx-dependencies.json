@@ -1,0 +1,87 @@
+{
+  "schemaVersion": 1,
+  "consumer": "python",
+  "source": {
+    "repository": "https://github.com/rcarmo/python-office-mcp-server",
+    "revision": "1c3755770f80bde5ecf0863f9591181ced9aa7fd"
+  },
+  "scope": "Exactly five non-parametrised native declarations in tests/test_xlsx_dependency_preservation.py at the published v0.46 consumer revision. A native pass is not a shared workflow binding.",
+  "declarationCount": 5,
+  "nativeRun": {
+    "kind": "published-recursive-clone-pytest",
+    "testsPassed": 1272,
+    "canonicalExecutionCredit": false,
+    "logPath": "/workspace/tmp/python-v046-network.log",
+    "logSha256": "589f65ce9365433579fb4b6360a2dd4f95fd7f5c18d1e3908806dbfc26b65780"
+  },
+  "mappings": [
+    {
+      "nativeId": "tests/test_xlsx_dependency_preservation.py::test_multiline_edit_saves_style_dependency_and_retains_opaque_parts",
+      "path": "tests/test_xlsx_dependency_preservation.py",
+      "sourceSha256": "20eaf9d71ab81fecf7ae58b8848595c9737127783ed3e0270eb2ddc51bd097ed",
+      "coverage": "partial",
+      "scenarioIds": ["@id-xlsx-style-dependency-closure"],
+      "verifiedAspects": [
+        "Copies the shared default-style workbook, patches A1 with first/newline/second into a distinct output and checks changes_applied equals 1.",
+        "Checks all input ZIP member payloads except sheet1.xml and styles.xml equal output payloads, reopens with openpyxl to read A1 and wrap_text, and checks each worksheet style index is below the output cellXfs count."
+      ],
+      "gaps": [
+        "The native test does not assert unchanged whole-source bytes or independently validate every output relationship and content-type target; it checks only the two changed-part exclusions. Its openpyxl readback is not a separate application producer or rendering check."
+      ],
+      "executionCredit": false
+    },
+    {
+      "nativeId": "tests/test_xlsx_dependency_preservation.py::test_cross_sheet_formula_cache_is_invalidated_without_calculation",
+      "path": "tests/test_xlsx_dependency_preservation.py",
+      "sourceSha256": "20eaf9d71ab81fecf7ae58b8848595c9737127783ed3e0270eb2ddc51bd097ed",
+      "coverage": "partial",
+      "scenarioIds": ["@id-xlsx-cross-sheet-cache-invalidation"],
+      "verifiedAspects": [
+        "Copies shared cross-sheet-cache.xlsx to a source path and commits Input!A1 numeric 10 to a distinct output; checks one change, recalculation-required and invalidate-all-formula-caches results.",
+        "Reopens with openpyxl twice: data_only reads Calc!A1 as None and formula mode reads =Input!A1*2; verifies Input!A1 is 10, forceFullCalc is 1, and all original ZIP member payloads outside two worksheets and workbook.xml equal the output."
+      ],
+      "gaps": [
+        "The native test does not compare whole source bytes after the edit, independently check relationship/content-type target closure, or assert that output has no added members; those are separate shared outcomes."
+      ],
+      "executionCredit": false
+    },
+    {
+      "nativeId": "tests/test_xlsx_dependency_preservation.py::test_existing_custom_style_indices_remain_valid",
+      "path": "tests/test_xlsx_dependency_preservation.py",
+      "sourceSha256": "20eaf9d71ab81fecf7ae58b8848595c9737127783ed3e0270eb2ddc51bd097ed",
+      "coverage": "unmapped",
+      "scenarioIds": [],
+      "verifiedAspects": [],
+      "gaps": [
+        "A generated workbook edited in place retains B1 custom number format and right alignment while adding wrap text to A1. The shared style-dependency-closure case instead uses pinned default-style.xlsx, a distinct output, all style indices, relationship closure and member custody. No exact common predicate is registered for this generated-source custom-style preservation."
+      ],
+      "executionCredit": false
+    },
+    {
+      "nativeId": "tests/test_xlsx_dependency_preservation.py::test_style_reindexing_is_refused",
+      "path": "tests/test_xlsx_dependency_preservation.py",
+      "sourceSha256": "20eaf9d71ab81fecf7ae58b8848595c9737127783ed3e0270eb2ddc51bd097ed",
+      "coverage": "unmapped",
+      "scenarioIds": [],
+      "verifiedAspects": [],
+      "gaps": [
+        "merge_styles directly rejects changing an existing XF fontId with ValueError matching registry rewrite. The shared cell-style-refusal cases attempt existing cell-style selection in a package with atomic byte and cache custody; this unit helper test does not exercise that operation or its package rollback."
+      ],
+      "executionCredit": false
+    },
+    {
+      "nativeId": "tests/test_xlsx_dependency_preservation.py::test_calculation_chain_relationship_and_content_type_are_removed",
+      "path": "tests/test_xlsx_dependency_preservation.py",
+      "sourceSha256": "20eaf9d71ab81fecf7ae58b8848595c9737127783ed3e0270eb2ddc51bd097ed",
+      "coverage": "partial",
+      "scenarioIds": ["@id-xlsx-owned-calculation-chain-invalidation"],
+      "verifiedAspects": [
+        "Injects a standard-path xl/calcChain.xml part, one workbook relationship and one content-type override into the shared cross-sheet cache ZIP; after in-place Input!A1 edit to 10, checks one change and absence of the chain part and calcChain tokens in the workbook relationships and content types."
+      ],
+      "gaps": [
+        "The canonical case uses a coherent nonstandard xl/chains/order.xml owned chain with two dependent formula entries, saves and reopens, checks source bytes, both formula texts and empty caches, a data-only stale-read boundary, unrelated cached C1=42, recalculation flags, graph closure and unrelated member custody. This native test asserts none of those outcomes and uses a standard-path injected chain with a single A1 entry. It is not a canonical binding or execution credit."
+      ],
+      "executionCredit": false
+    }
+  ]
+}

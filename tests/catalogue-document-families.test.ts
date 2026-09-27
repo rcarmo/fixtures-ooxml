@@ -30,6 +30,7 @@ test('document family assets and compiled outcomes are registered together',asyn
  for(const [feature,mapping,contract] of [
   ['workflows/package/preservation.feature','ledgers/consumers/bun-opc-custody.json','contracts/bun-opc-custody.md'],
   ['workflows/docx/anchor-discovery.feature','ledgers/consumers/python-anchor-discovery.json','contracts/python-anchor-discovery.md'],
+  ['workflows/xlsx/calculation-chain-lifecycle.feature','ledgers/consumers/python-xlsx-dependencies.json','contracts/python-xlsx-dependencies.md'],
   ...['creation','properties','paragraphs','paragraph-style','run-formatting','tables','page-layout','tracked-workflow'].map(name=>[`workflows/docx/${name}.feature`,'ledgers/consumers/go-document-api.json','contracts/go-document-api.md']),
  ]){
   const generated=registerWorkflow(feature!,await Bun.file(feature!).text(),{files:[]},{features:[],workflows:[]});
