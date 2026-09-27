@@ -205,9 +205,11 @@ The [feature-source consolidation](ledgers/feature-source-consolidation.json)
 seals 76 Go and 67 Python `.feature` source candidates in `staging/`. Eight
 operation-family workflows preserve eleven former Bun planned cases, with a
 runtime-named actor made neutral and the change recorded. Candidate files grant
-no central execution credit. Four Python pairs share exact captured steps, but
-retain distinct native identities until their inputs and outcomes are reviewed.
-See [staging](staging/README.md) for the source layout and limits.
+no central execution credit. Four Python pairs share captured steps. The
+[functional review](ledgers/functional-equivalence.json) distinguishes one exact
+weak availability predicate from two input-dependent overlaps and disjoint layout
+parameters. Native identities and source bytes remain intact; none earns execution
+credit. See [staging](staging/README.md) for the source layout and limits.
 
 Remaining work:
 

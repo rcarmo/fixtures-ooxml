@@ -18,8 +18,10 @@ native behaviour against the [canonical workflows](../workflows/README.md).
 The 143 files compile to 1,541 Go/Python source cases. No source-pair has exactly
 the same normalised step sequence across Go and Python. Four Python pairs have
 identical captured steps within Python, but distinct declaration/parameter
-provenance. The ledger records them for functional review; none is retired or
-counted twice as a canonical case. Candidate text, matching scenario names or
+provenance. The [functional equivalence review](../ledgers/functional-equivalence.json)
+classifies one exact weak availability predicate, two weak overlaps with different
+inputs and one group with disjoint layout parameters. None is retired or counted
+as a canonical case. Native provenance stays available in both source files. Candidate text, matching scenario names or
 shared fixtures alone do not prove equivalent inputs, output bytes, refusal and
 preservation policy. Only reviewed equivalence may merge canonical IDs.
 

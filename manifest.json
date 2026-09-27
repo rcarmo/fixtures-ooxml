@@ -6853,6 +6853,21 @@
         }
       ],
       "aliases": []
+    },
+    {
+      "path": "ledgers/functional-equivalence.json",
+      "id": "asset-653389b1fe3bd4322b979258be2a3301432c362cb35b34e5efe712d0357c60b2",
+      "role": "catalogue-reconciliation",
+      "bytes": 4446,
+      "sha256": "653389b1fe3bd4322b979258be2a3301432c362cb35b34e5efe712d0357c60b2",
+      "origins": [
+        {
+          "repository": "https://github.com/rcarmo/fixtures-ooxml",
+          "path": "ledgers/functional-equivalence.json",
+          "basis": "Review of Python native predicates at e548ed0 against staged feature source"
+        }
+      ],
+      "aliases": []
     }
   ]
 }

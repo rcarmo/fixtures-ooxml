@@ -1,0 +1,105 @@
+{
+  "schemaVersion": 1,
+  "sourceCommit": "7b7a2fa2610c421cdde9d7b1da9125c8f98b9dd8",
+  "scope": "Four exact captured-step Python candidate pairs reviewed against native test inputs and assertions; source files remain immutable provenance.",
+  "executionCredit": false,
+  "retiredCandidateIds": [],
+  "groups": [
+    {
+      "status": "weak-predicate-only",
+      "members": [
+        {
+          "path": "staging/python/features/test_high_volume.feature",
+          "id": "@candidate-python-high-volume-68bcd8d447",
+          "name": "Native check: get notes all slides [TestPptxGetNotes]"
+        },
+        {
+          "path": "staging/python/features/test_word_pptx_advanced_ops.feature",
+          "id": "@candidate-python-word-pptx-advanced-ops-b86a4362b4",
+          "name": "Native check: get notes no slide number [TestPptxNotesOperations]"
+        }
+      ],
+      "capturedStepSha256": "282caedd8adccad780f88de01b1dc3d6a332f16d0a1e353190e41ed5afe61634",
+      "preconditionsEqual": false,
+      "reason": "Both calls return a dict, but the second input also assigns slide titles. No notes-content, ordering or custody assertion establishes full equivalence.",
+      "provenanceRetained": true,
+      "executionCredit": false
+    },
+    {
+      "status": "distinct-parameter-variants",
+      "members": [
+        {
+          "path": "staging/python/features/test_high_volume.feature",
+          "id": "@candidate-python-high-volume-5465e20c3f",
+          "name": "Native check: recommend layout [TestPptxRecommendLayout]"
+        },
+        {
+          "path": "staging/python/features/test_word_pptx_advanced_ops.feature",
+          "id": "@candidate-python-word-pptx-advanced-ops-895995c6d6",
+          "name": "Native check: recommend layout [TestPptxLayoutOperations]"
+        }
+      ],
+      "capturedStepSha256": "9dac0cdb37a3884d232f5f34b2fecfe24039c6569eb4b5bcf8bcd268f268639a",
+      "preconditionsEqual": false,
+      "reason": "The operation and dict result coincide, but three layout inputs (title/bullets/table) and two inputs (comparison/blank) are disjoint; preserve five variants.",
+      "provenanceRetained": true,
+      "executionCredit": false,
+      "parameterGroups": [
+        [
+          "title",
+          "bullets",
+          "table"
+        ],
+        [
+          "comparison",
+          "blank"
+        ]
+      ]
+    },
+    {
+      "status": "weak-predicate-only",
+      "members": [
+        {
+          "path": "staging/python/features/test_word_deep_coverage.feature",
+          "id": "@candidate-python-word-deep-coverage-c24aff0acc",
+          "name": "Native check: audit complete doc [TestWordAuditCompletion]"
+        },
+        {
+          "path": "staging/python/features/test_workflow_coverage.feature",
+          "id": "@candidate-python-workflow-coverage-ff3e87288d",
+          "name": "Native check: word audit complete [TestAuditOperations]"
+        }
+      ],
+      "capturedStepSha256": "6a1ae60cadaa6b34437eee79507f07924f181d2b456723fc2f8c7eb147cd7271",
+      "preconditionsEqual": false,
+      "reason": "Both audits return a dict, but source headings and bodies differ; no completion score/placeholder result equivalence is asserted by either captured pair.",
+      "provenanceRetained": true,
+      "executionCredit": false
+    },
+    {
+      "status": "exact-captured-predicate-alias",
+      "members": [
+        {
+          "path": "staging/python/features/test_workflow_coverage.feature",
+          "id": "@candidate-python-workflow-coverage-ddad2d0e41",
+          "name": "Native check: tool classes available [TestListSupportedFormats]"
+        },
+        {
+          "path": "staging/python/features/test_workflows.feature",
+          "id": "@candidate-python-workflows-2b4937f7f0",
+          "name": "Native check: tool classes available [TestListSupportedFormats]"
+        }
+      ],
+      "capturedStepSha256": "379a36a97f5af346e0354f8e14c65bf2298236d06818e6b7549f20e20fe8cae8",
+      "preconditionsEqual": true,
+      "reason": "Both native declarations have the same no-fixture input and exact nonempty TOOL_CLASSES predicate; this is a weak availability check, not tool membership or validity.",
+      "provenanceRetained": true,
+      "executionCredit": false,
+      "representative": "@candidate-python-workflow-coverage-ddad2d0e41",
+      "aliases": [
+        "@candidate-python-workflows-2b4937f7f0"
+      ],
+      "observedPredicate": "len(TOOL_CLASSES)>=1"
+    }
+  ]
+}
