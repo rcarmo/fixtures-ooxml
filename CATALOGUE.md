@@ -223,9 +223,13 @@ missing-path refusal and read-only custody. Its two dict-only blocks were also
 removed. These mappings do not satisfy stronger outcomes until consumer tests
 and reviewed shared bindings run. The
 [functional review](ledgers/functional-equivalence.json) records twelve Go
-package lookalikes with distinct inputs, operations or outcomes; none is
-retired or credited. Original source hashes and transformed candidate hashes
-remain separate. See
+package lookalikes with distinct inputs, operations or outcomes. A separate
+[physical-overlap ZIP admission](workflows/package/zip-admission.feature) case
+unites two partial Go source predicates with an independently readable
+three-member ZIP, typed structural refusal and byte custody; both weaker
+staged blocks were retired with source hashes. No Go canonical credit follows
+until its exact runner binding and strengthened assertions execute. Original
+source hashes and transformed candidate hashes remain separate. See
 [staging](staging/README.md) for the source layout and limits.
 
 Remaining work:

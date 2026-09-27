@@ -20,16 +20,22 @@ native behaviour against the [canonical workflows](../workflows/README.md).
 
 The historical comparison compiled 1,552 expanded cases: 1,541 Go/Python
 candidates plus eleven former Bun planned cases. The 143 current candidate
-files compile 1,534 cases after one exact weak alias and six weaker layout,
-notes and audit blocks were retired; 1,545 includes the eleven Bun cases. All
-seven native declarations and their distinct input variants remain tracked. No source pair
+files compile 1,532 cases after one exact weak alias, six weaker Python
+layout/notes/audit blocks and two overlapping Go ZIP source blocks were retired;
+1,543 includes the eleven Bun cases. All nine native source identities and
+applicable distinct inputs remain tracked. No source pair
 has the same normalised steps across Go and Python. The
 [functional equivalence review](../ledgers/functional-equivalence.json) records
 a five-row planned layout contract with exact rankings, a two-row planned
 notes collection contract with exact readback/noncreation, a two-row Word audit
 contract with the observed READY/95 and empty Document Start finding, and one
 exact weak alias. All nine layout/notes/audit inputs survive as separate
-example cases; their dict-only source scenarios no longer compile. Neither source mapping nor a stronger planned contract grants execution
+example cases; their dict-only source scenarios no longer compile. One Go
+physical-overlap ZIP32 archive now has a stronger planned canonical intake
+profile requiring independent CRC-valid reads, structural refusal and input
+custody. Its two staged lookalikes no longer compile; the previously executed
+Go three-step source predicate does not confer canonical execution. Neither
+source mapping nor a stronger planned contract grants execution
 credit. Matching names, text or fixtures alone cannot prove equivalent
 outcomes, refusals or preservation. The same
 [functional review](../ledgers/functional-equivalence.json) lists twelve Go

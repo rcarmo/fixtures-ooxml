@@ -383,6 +383,16 @@
         "fixture-fb775da5522a342d6c74b49509e32c9f3530b2dda1ec3ceb13820533038089be"
       ],
       "scenarioIds": []
+    },
+    {
+      "format": "zip",
+      "scenarioGroup": "physical-overlap",
+      "fixtureIds": [
+        "fixture-9286fc07c3f8698f9637cf9b7a0c60461d1f304753ba69b39f655c8c348ea027"
+      ],
+      "scenarioIds": [
+        "@id-zip-physical-member-overlap-refusal"
+      ]
     }
   ]
 }

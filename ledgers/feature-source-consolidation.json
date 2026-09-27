@@ -19,10 +19,12 @@
       "consumer": "go",
       "sourcePath": "docs/behaviors/archive-candidates.feature",
       "path": "staging/go/behaviors/archive-candidates.feature",
-      "sha256": "253dd34eac0b0413609958e753b3ebb30e9e2f6337b55786eec21218a893c270",
-      "compiledCases": 10,
+      "sha256": "b6cd4e589a80375ddf1438d63b52399f81b0186feb078d4bc7e9a68437c00937",
+      "compiledCases": 9,
       "executionCredit": false,
-      "reconciliation": "pending-functional-review"
+      "reconciliation": "stronger-canonical-profile-planned",
+      "historicalSourceSha256": "253dd34eac0b0413609958e753b3ebb30e9e2f6337b55786eec21218a893c270",
+      "transformation": "Remove weaker physical-overlap source scenario after transferring the native predicate to planned @id-zip-physical-member-overlap-refusal with independently readable CRC-valid members, typed structural refusal and unchanged source; Go canonical binding must replace the old runner selection before credit."
     },
     {
       "consumer": "go",
@@ -433,10 +435,12 @@
       "consumer": "go",
       "sourcePath": "features/implemented/package/structure.feature",
       "path": "staging/go/features/implemented/package/structure.feature",
-      "sha256": "6a626d07ce95f8d330125ff201b433f50c75a959520f1e375e4916c214403e93",
-      "compiledCases": 5,
+      "sha256": "1422876484e7389f1a6ebf0a165b0fa1470c8d906cd6b1fd91a360eea76d61a1",
+      "compiledCases": 4,
       "executionCredit": false,
-      "reconciliation": "pending-functional-review"
+      "reconciliation": "stronger-canonical-profile-planned",
+      "historicalSourceSha256": "6a626d07ce95f8d330125ff201b433f50c75a959520f1e375e4916c214403e93",
+      "transformation": "Remove weaker physical-overlap source scenario after transferring the native predicate to planned @id-zip-physical-member-overlap-refusal with independently readable CRC-valid members, typed structural refusal and unchanged source; Go canonical binding must replace the old runner selection before credit."
     },
     {
       "consumer": "go",
@@ -1432,8 +1436,8 @@
     "rule": "Equivalent behaviour requires same input variants, expected saved outputs, refusal and custody policy; no automatic retirement based on text."
   },
   "currentComparison": {
-    "compiledCases": 1545,
-    "uniqueNormalizedStepSequences": 1545,
+    "compiledCases": 1543,
+    "uniqueNormalizedStepSequences": 1543,
     "crossConsumerExactStepGroups": 0,
     "withinConsumerDuplicateStepGroups": 0,
     "retiredCandidateIds": [
@@ -1443,8 +1447,10 @@
       "@candidate-python-high-volume-68bcd8d447",
       "@candidate-python-word-pptx-advanced-ops-b86a4362b4",
       "@candidate-python-word-deep-coverage-c24aff0acc",
-      "@candidate-python-workflow-coverage-ff3e87288d"
+      "@candidate-python-workflow-coverage-ff3e87288d",
+      "@ZIP-003",
+      "@candidate-go-archive-007"
     ],
-    "rule": "Current compiled inventory after exact TOOL_CLASSES alias and stronger planned layout, notes and completion-audit profiles retire seven weak candidate scenarios; historical source comparison/hashes remain unchanged."
+    "rule": "Current compiled source inventory after reviewed exact alias and stronger planned layout, notes, Word-audit and ZIP-overlap profiles; historical comparison/source hashes remain unchanged."
   }
 }

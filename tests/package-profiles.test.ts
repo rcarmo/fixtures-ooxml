@@ -47,8 +47,10 @@ test('package scenarios retain all14 source-matched ordered member bytes and lim
  const expected=ledger.mappings.flatMap((m:any)=>m.variants);
  const actual=[];
  for(const file of ['zip-admission','xml-member-admission','semantic-diff'])actual.push(...cases(`workflows/package/${file}.feature`,await Bun.file(`workflows/package/${file}.feature`).text()));
- expect(expected).toHaveLength(14);expect(actual).toHaveLength(14);
- for(const c of actual){
+ const pythonMapped=actual.filter(c=>c.scenarioId!=='@id-zip-physical-member-overlap-refusal');
+ expect(expected).toHaveLength(14);expect(actual).toHaveLength(15);expect(pythonMapped).toHaveLength(14);
+ expect(actual.filter(c=>c.scenarioId==='@id-zip-physical-member-overlap-refusal')).toHaveLength(1);
+ for(const c of pythonMapped){
   const matches=expected.filter((v:any)=>v.scenarioId===c.scenarioId&&v.name===c.name);
   expect(matches).toHaveLength(1);expect(packageCaseInput(c)).toEqual(matches[0].inputs);
   const expectedOutcomes=matches[0].expectedOutcomes;

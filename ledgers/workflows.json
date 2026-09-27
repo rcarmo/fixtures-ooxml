@@ -7591,6 +7591,31 @@
           "evidence": "Native execution binding pending"
         }
       }
+    },
+    {
+      "id": "@id-zip-physical-member-overlap-refusal",
+      "feature": "workflows/package/zip-admission.feature",
+      "expandedCases": 1,
+      "factIds": [],
+      "expectedOutcomes": [
+        "admission refuses overlapping physical member extents as an invalid package, not a name, CRC or resource refusal",
+        "no package session or output archive is delivered",
+        "the caller's source buffer remains byte-identical to the sealed fixture"
+      ],
+      "consumers": {
+        "bun": {
+          "status": "planned",
+          "evidence": "Canonical physical-overlap admission runner binding pending; native Go ZIP-003 is a weaker historical observation"
+        },
+        "go": {
+          "status": "planned",
+          "evidence": "Canonical physical-overlap admission runner binding pending; native Go ZIP-003 is a weaker historical observation"
+        },
+        "python": {
+          "status": "planned",
+          "evidence": "Canonical physical-overlap admission runner binding pending; native Go ZIP-003 is a weaker historical observation"
+        }
+      }
     }
   ],
   "consumerStatusPolicy": "Missing/unmapped/planned means not-run and no execution credit."

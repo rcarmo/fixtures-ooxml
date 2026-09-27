@@ -31,7 +31,7 @@ export function validateFixtureLayout(manifest:any){
   paths.add(asset.path);hashes.add(asset.sha256);ids.add(asset.id);
   if(asset.role!=='fixture')continue;
   if(!/^[a-f0-9]{64}$/.test(asset.sha256)||asset.id!=='fixture-'+asset.sha256)throw Error('Invalid fixture identity');
-  if(!['docx','pptx','xlsx','png'].includes(asset.format)||!/^\w[\w-]*$/.test(asset.scenarioGroup??''))throw Error('Invalid fixture format or scenario group');
+  if(!['docx','pptx','xlsx','png','zip'].includes(asset.format)||!/^\w[\w-]*$/.test(asset.scenarioGroup??''))throw Error('Invalid fixture format or scenario group');
   const prefix=`fixtures/${asset.format}/${asset.scenarioGroup}/`;
   const file=asset.path.slice(prefix.length);
   if(!asset.path.startsWith(prefix)||!file||file.includes('/')||!file.endsWith('.'+asset.format))throw Error('Fixture must be organised under fixtures/<format>/<scenario-group>/');

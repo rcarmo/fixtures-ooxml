@@ -3184,10 +3184,10 @@
       "aliases": []
     },
     {
-      "id": "asset-28b1599e839f360929e689ff2d99e13599e000b98d6aa0d58c2e6a47b4efe696",
+      "id": "asset-8fa7b8618fd9797e3470dfdfa1132b76784f180fe31d344f1d9d758f5c30f09c",
       "path": "workflows/package/zip-admission.feature",
-      "bytes": 1987,
-      "sha256": "28b1599e839f360929e689ff2d99e13599e000b98d6aa0d58c2e6a47b4efe696",
+      "bytes": 2989,
+      "sha256": "8fa7b8618fd9797e3470dfdfa1132b76784f180fe31d344f1d9d758f5c30f09c",
       "role": "workflow",
       "origins": [
         {
@@ -4448,16 +4448,18 @@
     },
     {
       "path": "staging/go/behaviors/archive-candidates.feature",
-      "id": "asset-253dd34eac0b0413609958e753b3ebb30e9e2f6337b55786eec21218a893c270",
+      "id": "asset-b6cd4e589a80375ddf1438d63b52399f81b0186feb078d4bc7e9a68437c00937",
       "role": "catalogue-candidate",
-      "bytes": 4122,
-      "sha256": "253dd34eac0b0413609958e753b3ebb30e9e2f6337b55786eec21218a893c270",
+      "bytes": 3730,
+      "sha256": "b6cd4e589a80375ddf1438d63b52399f81b0186feb078d4bc7e9a68437c00937",
       "origins": [
         {
-          "kind": "source",
+          "kind": "transformed-from-source",
           "repository": "https://github.com/rcarmo/go-ooxml",
           "revision": "8b0c2cf8dd29346dafa7fafd173aa5663ee551b7",
-          "path": "docs/behaviors/archive-candidates.feature"
+          "path": "docs/behaviors/archive-candidates.feature",
+          "sha256": "253dd34eac0b0413609958e753b3ebb30e9e2f6337b55786eec21218a893c270",
+          "transformation": "Remove weaker physical-overlap source scenario after transferring the native predicate to planned @id-zip-physical-member-overlap-refusal with independently readable CRC-valid members, typed structural refusal and unchanged source; Go canonical binding must replace the old runner selection before credit."
         }
       ],
       "aliases": []
@@ -5184,16 +5186,18 @@
     },
     {
       "path": "staging/go/features/implemented/package/structure.feature",
-      "id": "asset-6a626d07ce95f8d330125ff201b433f50c75a959520f1e375e4916c214403e93",
+      "id": "asset-1422876484e7389f1a6ebf0a165b0fa1470c8d906cd6b1fd91a360eea76d61a1",
       "role": "catalogue-candidate",
-      "bytes": 1026,
-      "sha256": "6a626d07ce95f8d330125ff201b433f50c75a959520f1e375e4916c214403e93",
+      "bytes": 754,
+      "sha256": "1422876484e7389f1a6ebf0a165b0fa1470c8d906cd6b1fd91a360eea76d61a1",
       "origins": [
         {
-          "kind": "source",
+          "kind": "transformed-from-source",
           "repository": "https://github.com/rcarmo/go-ooxml",
           "revision": "8b0c2cf8dd29346dafa7fafd173aa5663ee551b7",
-          "path": "features/implemented/package/structure.feature"
+          "path": "features/implemented/package/structure.feature",
+          "sha256": "6a626d07ce95f8d330125ff201b433f50c75a959520f1e375e4916c214403e93",
+          "transformation": "Remove weaker physical-overlap source scenario after transferring the native predicate to planned @id-zip-physical-member-overlap-refusal with independently readable CRC-valid members, typed structural refusal and unchanged source; Go canonical binding must replace the old runner selection before credit."
         }
       ],
       "aliases": []
@@ -6866,10 +6870,10 @@
     },
     {
       "path": "ledgers/functional-equivalence.json",
-      "id": "asset-ac09ab1829f005e4aeb696dd2e123f87a7c17307269832950c5d509c29c28159",
+      "id": "asset-0480983c585758cafb87fbdc7fa646614c5c68af6a1e5588ec4ac90ec3a3d269",
       "role": "catalogue-reconciliation",
-      "bytes": 15550,
-      "sha256": "ac09ab1829f005e4aeb696dd2e123f87a7c17307269832950c5d509c29c28159",
+      "bytes": 17397,
+      "sha256": "0480983c585758cafb87fbdc7fa646614c5c68af6a1e5588ec4ac90ec3a3d269",
       "origins": [
         {
           "repository": "https://github.com/rcarmo/fixtures-ooxml",
@@ -6908,6 +6912,30 @@
         }
       ],
       "aliases": []
+    },
+    {
+      "id": "fixture-9286fc07c3f8698f9637cf9b7a0c60461d1f304753ba69b39f655c8c348ea027",
+      "path": "fixtures/zip/physical-overlap/overlapping-stored-members-9286fc07c3f8.zip",
+      "bytes": 483,
+      "sha256": "9286fc07c3f8698f9637cf9b7a0c60461d1f304753ba69b39f655c8c348ea027",
+      "role": "fixture",
+      "origins": [
+        {
+          "kind": "derived-from-source",
+          "repository": "https://github.com/rcarmo/go-ooxml",
+          "revision": "8eb8abfb18a5a2b3c65d340d74f3d61512873d1b",
+          "path": "internal/testutil/zip_overlap.go",
+          "sourceSha256": "a9cb1fcc940046126ab936bd7119f1a702f237eb13064236e5dc3052b35aff1d",
+          "transformation": "Invoke testutil.OverlappingZIP() to emit the deterministic 483-byte archive; independently verify three STORED entries, declared sizes, CRCs and readable payloads."
+        }
+      ],
+      "aliases": [],
+      "format": "zip",
+      "scenarioGroup": "physical-overlap",
+      "name": "overlapping-stored-members",
+      "scenarioIds": [
+        "@id-zip-physical-member-overlap-refusal"
+      ]
     }
   ]
 }

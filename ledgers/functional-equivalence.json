@@ -10,7 +10,9 @@
     "@candidate-python-high-volume-68bcd8d447",
     "@candidate-python-word-pptx-advanced-ops-b86a4362b4",
     "@candidate-python-word-deep-coverage-c24aff0acc",
-    "@candidate-python-workflow-coverage-ff3e87288d"
+    "@candidate-python-workflow-coverage-ff3e87288d",
+    "@ZIP-003",
+    "@candidate-go-archive-007"
   ],
   "groups": [
     {
@@ -312,5 +314,36 @@
       "@id-zip64-unsafe-offset",
       "@id-opc-diff-content-type"
     ]
+  },
+  "goPhysicalOverlapMerge": {
+    "status": "merged-partial-source-overlap-into-stronger-planned-profile",
+    "sourceCommit": "8eb8abfb18a5a2b3c65d340d74f3d61512873d1b",
+    "canonicalId": "@id-zip-physical-member-overlap-refusal",
+    "canonicalFeature": "workflows/package/zip-admission.feature",
+    "fixtureId": "fixture-9286fc07c3f8698f9637cf9b7a0c60461d1f304753ba69b39f655c8c348ea027",
+    "executionCredit": false,
+    "sourceRows": [
+      {
+        "sourceId": "@ZIP-003",
+        "path": "staging/go/features/implemented/package/structure.feature",
+        "historicalSourceSha256": "6a626d07ce95f8d330125ff201b433f50c75a959520f1e375e4916c214403e93",
+        "currentCandidateSha256": "1422876484e7389f1a6ebf0a165b0fa1470c8d906cd6b1fd91a360eea76d61a1",
+        "priorExecution": "Go native ZIP-003 acceptance passed on its historical weaker three-step predicate",
+        "executionCredit": false
+      },
+      {
+        "sourceId": "@candidate-go-archive-007",
+        "path": "staging/go/behaviors/archive-candidates.feature",
+        "historicalSourceSha256": "253dd34eac0b0413609958e753b3ebb30e9e2f6337b55786eec21218a893c270",
+        "currentCandidateSha256": "b6cd4e589a80375ddf1438d63b52399f81b0186feb078d4bc7e9a68437c00937",
+        "priorExecution": "staged not-executed candidate",
+        "executionCredit": false
+      }
+    ],
+    "distinctFrom": [
+      "@id-package-admission-unsafe-members",
+      "@id-zip64-preflight-count"
+    ],
+    "nativeStrengtheningRequired": "Go runner/inventory must explicitly select exactly this canonical ID from a sealed workflow while preserving its 291-case native denominator; independently read all three CRC-valid members, assert nil session, typed invalid_package overlap reason and unchanged bytes before Go execution credit."
   }
 }
