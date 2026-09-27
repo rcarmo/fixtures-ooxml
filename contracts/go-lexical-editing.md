@@ -1,6 +1,6 @@
 # Go lexical XML editing
 
-[Go lexical editing](../workflows/xml/parsing.feature) operates on a parsed XML byte snapshot. Attribute edits, child insertion, removal and subtree replacement return new bytes. An empty edit returns the original bytes; edits do not consume the parsed snapshot. The [consumer mapping](../ledgers/consumers/go-lexical-editing.json) records the source predicates and limits for each operation.
+[parsing](../workflows/xml/parsing.feature), [editing](../workflows/xml/editing.feature) operates on a parsed XML byte snapshot. Attribute edits, child insertion, removal and subtree replacement return new bytes. An empty edit returns the original bytes; edits do not consume the parsed snapshot. The [consumer mapping](../ledgers/consumers/go-lexical-editing.json) records the source predicates and limits for each operation.
 
 ## Attribute edits
 
@@ -20,4 +20,4 @@ Removing two disjoint children leaves the original comment, namespace declaratio
 
 Subtree replacement renders authored nodes in the surviving parent's namespace scope. The specified output retains untouched comment and tail bytes, uses the parent's bound prefix for one new element, and clears the default namespace on an unqualified sibling. Root, duplicate-target and overlapping replacements refuse without returning edited bytes. An empty replacement preserves the original bytes.
 
-These refusals concern XML snapshots. They do not establish package rollback, changed-part budgets, schema validity or Office rendering. The [parser](../workflows/xml/parsing.feature), [name](../workflows/xml/names.feature) and separately filed XML value contracts define other operations; a successful byte-level edit does not establish their UTF-16 offset or value predicates.
+These refusals concern XML snapshots. They do not establish package rollback, changed-part budgets, schema validity or Office rendering. The [parsing](../workflows/xml/parsing.feature), [editing](../workflows/xml/editing.feature), [name](../workflows/xml/names.feature) and separately filed XML value contracts define other operations; a successful byte-level edit does not establish their UTF-16 offset or value predicates.

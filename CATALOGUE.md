@@ -12,8 +12,14 @@ across runtimes; native tests and bindings stay in their consumer repositories.
 Use a `Rule` when a group needs its own background or policy description, and
 put profile tags on scenarios so they cannot leak into another policy's cases.
 
-Write the canonical `.feature` under `workflows/<format-or-layer>/`. Give each
-scenario one unique `@id-` tag and concrete Given/When/Then steps. Keep distinct
+Use `workflows/docx/`, `workflows/pptx/` or `workflows/xlsx/` for format
+operations, and `workflows/package/` or `workflows/xml/` for common layers.
+Files at the workflow root, runtime directories and a `native/` catch-all are
+rejected. Name files after the operation without repeating the format name.
+Split mixed operation inventories even if they came from one native test file.
+See the [operation index](workflows/README.md).
+
+Give each scenario one unique `@id-` tag and concrete Given/When/Then steps. Keep distinct
 operations separate: preserving an existing part, rewriting it and refusing the
 input have different contracts.
 
@@ -56,7 +62,11 @@ because one implementation does not support it yet.
 
 [`ledgers/feature-consolidation.json`](ledgers/feature-consolidation.json) records
 old paths, source hashes and compiled-case fingerprints for the operation-family
-migration. Existing scenario IDs, inputs and outcomes are preserved; the old
+migration. The later [format/operation migration](ledgers/workflow-layout-migration.json)
+records all 229 scenario locations and 562 compiled-case fingerprints from
+`d07ee96`, including scenarios whose paths did not change. Tests compare each
+case and its policy tags, require removal of the old files, and reject missing or
+duplicate identities. Existing scenario IDs, inputs and outcomes are preserved; the old
 feature copies are removed. Reconcile equivalent cases before introducing new
 IDs. Different inputs, save guarantees or refusal policies need separate cases.
 
@@ -65,6 +75,32 @@ scenarios in a loaded feature visible as planned, never activate them because a
 neighbouring case is bound. A full-coverage check must reject planned cases even
 inside a partly implemented feature. Changed paths and source hashes require
 fresh consumer results before reference adoption.
+
+## Runtime-neutrality review
+
+The catalogue is shared, but some contracts still encode one runtime's API.
+The format/operation migration preserves exact steps so consumer bindings do
+not silently acquire different semantics. It does not complete this review:
+
+| Family | Remaining work |
+|---|---|
+| Package preservation and ZIP | Remove Bun API names from portable custody, archive and refusal outcomes. Keep JavaScript async/thenable callback semantics and exact API error taxonomies explicitly profiled. |
+| Presentation notes and preservation | Replace Go/Bun wording and origin-named profiles with existing-notes and no-edit archive policies. Bun already executes several Go-origin cases. |
+| Word paragraphs, formatting and tables | Replace Go wording for shared value operations. Review API-specific nil, heading-classification and return-value conventions independently; do not turn them into format rules. |
+| Word comments | Preserve the distinction between existing-extension edits, extension creation, root/reply resolution and filtered/threaded results. These are different operations and policies. |
+| Word anchors and templates | Separate portable inspection from response envelopes, next-tool hints and cache APIs. Dictionary-only template responses remain weak contracts requiring stronger observable outcomes. |
+| Relationship namespaces and spreadsheet creation | Remove incidental runtime names; retain exact fixture provenance in manifests and source mappings. |
+
+Similar scenarios are not automatically equivalent. Native worksheet cache
+invalidation and batch-workflow invalidation differ in their receipt, destination
+and preservation requirements. Direct formatting getters and saved/reopened
+formatting likewise retain different obligations. Deduplication must compare
+preconditions, inputs, policies and every outcome before retiring an ID.
+
+Keep historical IDs stable during wording changes. Coordinate exact step
+bindings, scenario selection, source hashes and fresh execution in every affected
+consumer. Source mapping and catalogue validation alone do not demonstrate that
+all consumers execute the same tests.
 
 ## Completion
 

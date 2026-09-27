@@ -1,8 +1,8 @@
 import {test,expect} from 'bun:test';
-import {cases} from '../scripts/verify.ts';
+import {sourceCases} from './catalogue-helpers.ts';
 const path='workflows/workflow-receipts.feature';
 test('shared receipt contracts preserve the two retained Bun identities and concrete steps',async()=>{
- const text=await Bun.file(path).text(),rows=cases(path,text);expect(text.startsWith('@planned\n')).toBe(true);
+ const rows=await sourceCases(path);for(const p of ['workflows/pptx/mutation-safety.feature','workflows/docx/mutation-safety.feature'])expect((await Bun.file(p).text()).startsWith('@planned\n')).toBe(true);
  expect(rows).toEqual([
   {scenarioId:'@id-office-preview-details',name:'A dry-run preview describes the requested edit without committing it',steps:[
    {text:'a presentation with the title "Original title"',argument:null},
@@ -18,5 +18,5 @@ test('shared receipt contracts preserve the two retained Bun identities and conc
   ]},
  ]);
  const ledger=await Bun.file('ledgers/workflows.json').json();
- for(const row of rows){const entries=ledger.workflows.filter((w:any)=>w.id===row.scenarioId);expect(entries).toHaveLength(1);expect(entries[0].feature).toBe(path);expect(entries[0].expandedCases).toBe(1);expect(Object.values(entries[0].consumers).every((c:any)=>c.status==='planned')).toBe(true);}
+ for(const row of rows){const entries=ledger.workflows.filter((w:any)=>w.id===row.scenarioId);expect(entries).toHaveLength(1);expect(entries[0].feature).toBe(row.scenarioId.includes('docx')?'workflows/docx/mutation-safety.feature':'workflows/pptx/mutation-safety.feature');expect(entries[0].expandedCases).toBe(1);expect(Object.values(entries[0].consumers).every((c:any)=>c.status==='planned')).toBe(true);}
 });

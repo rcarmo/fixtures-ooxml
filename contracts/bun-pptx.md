@@ -1,10 +1,10 @@
 # Bun presentation reads and anchored edits
 
-The [open/save profile](../workflows/native/pptx-text.feature) opens the same
+The [notes](../workflows/pptx/notes.feature), [text](../workflows/pptx/text.feature), [preservation](../workflows/pptx/preservation.feature) opens the same
 presentation from a path and from bytes. A save without edits retains the exact
 archive. The path input also exposes the first slide's `Frankenstein` title.
 
-The [existing text workflow](../workflows/native/pptx-text.feature) covers
+The [notes](../workflows/pptx/notes.feature), [text](../workflows/pptx/text.feature), [preservation](../workflows/pptx/preservation.feature) covers
 relationship-ordered slides, read-only notes, cross-run replacement and stale
 anchor refusal. Missing notes stay missing. Reading line breaks and visible
 field text is supported, while editing that mixed topology is refused.

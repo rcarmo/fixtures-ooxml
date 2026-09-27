@@ -30,18 +30,18 @@ test('Bun XML ledger includes every declared identity in the two reviewed source
 test('registration creates byte seal and concrete outcomes without changing input objects',async()=>{
  const {registerWorkflow}=await import('../scripts/register-workflow.ts'),feature='@planned\nFeature: One\n @id-registration-test\n Scenario: Read result\n  Given input\n  When inspected\n  Then result equals value\n';
  const manifest={files:[]},ledger={features:[],workflows:[]},before=JSON.stringify({manifest,ledger});
- const result=registerWorkflow('workflows/test/one.feature',feature,manifest,ledger);
+ const result=registerWorkflow('workflows/xml/one.feature',feature,manifest,ledger);
  expect(JSON.stringify({manifest,ledger})).toBe(before);expect(result.manifest.files).toHaveLength(1);expect(result.manifest.files[0]!.bytes).toBe(new TextEncoder().encode(feature).length);
  expect(result.ledger.workflows[0]!.expectedOutcomes).toEqual(['result equals value']);expect(result.ledger.workflows[0]!.expandedCases).toBe(1);expect(result.ledger.workflows[0]!.consumers.bun.status).toBe('planned');
- expect(()=>registerWorkflow('workflows/test/one.feature',feature,result.manifest,result.ledger)).toThrow('already');expect(()=>registerWorkflow('workflows/test/two.feature',feature,result.manifest,result.ledger)).toThrow('Duplicate');
+ expect(()=>registerWorkflow('workflows/xml/one.feature',feature,result.manifest,result.ledger)).toThrow('already');expect(()=>registerWorkflow('workflows/xml/two.feature',feature,result.manifest,result.ledger)).toThrow('Duplicate');
  expect(()=>registerWorkflow('../one.feature',feature,manifest,ledger)).toThrow('path');
- expect(()=>registerWorkflow('workflows/test/one.feature',feature.replace('  Then result equals value\n',''),manifest,ledger)).toThrow('Then');
+ expect(()=>registerWorkflow('workflows/xml/one.feature',feature.replace('  Then result equals value\n',''),manifest,ledger)).toThrow('Then');
 });
 
 test('new registrations refuse non-planned or unexpanded scenario definitions',async()=>{
  const {registerWorkflow}=await import('../scripts/register-workflow.ts');
  const feature='@planned\nFeature: One\n @id-registration-test\n Scenario: Read result\n  Given input\n  When inspected\n  Then result equals value\n';
- const register=(text:string)=>registerWorkflow('workflows/test/one.feature',text,{files:[]},{features:[],workflows:[]});
+ const register=(text:string)=>registerWorkflow('workflows/xml/one.feature',text,{files:[]},{features:[],workflows:[]});
  expect(()=>register(feature.replace('@planned\n',''))).toThrow('planned');
  expect(()=>register(feature+' @id-empty-outline\n Scenario Outline: Empty <value>\n  Then value equals <value>\n  Examples:\n   | value |\n')).toThrow('unexpanded');
 });

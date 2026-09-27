@@ -4,10 +4,10 @@
   "storagePolicy": "one physical file per SHA-256 under fixtures/<format>/<scenario-group>/; scenarios reuse manifest IDs",
   "files": [
     {
-      "id": "asset-49539a13efb2cce1697e9a9ffdeccd69ce98d79a930aba8757e4f2b017e6118a",
+      "id": "asset-ae485fbd690e81c0db3c761365155975e3100c392e272922a23080001f2ef66c",
       "path": "contracts/mutation-safety.json",
-      "bytes": 10724,
-      "sha256": "49539a13efb2cce1697e9a9ffdeccd69ce98d79a930aba8757e4f2b017e6118a",
+      "bytes": 10917,
+      "sha256": "ae485fbd690e81c0db3c761365155975e3100c392e272922a23080001f2ef66c",
       "role": "workflow-contract",
       "origins": [
         {
@@ -2968,10 +2968,10 @@
       ]
     },
     {
-      "id": "asset-1e827fcb4d336e74a77347001f058b9f6b64901046c18ef49765d00f72d87ded",
+      "id": "asset-6610431459359b721f75245b1b3c92073465f80cef867bb9f420d53569083e18",
       "path": "workflows/docx/creation.feature",
-      "bytes": 3402,
-      "sha256": "1e827fcb4d336e74a77347001f058b9f6b64901046c18ef49765d00f72d87ded",
+      "bytes": 4049,
+      "sha256": "6610431459359b721f75245b1b3c92073465f80cef867bb9f420d53569083e18",
       "role": "workflow",
       "origins": [
         {
@@ -2979,6 +2979,11 @@
           "revision": "13ead381f22f19a000dfd557514369cf1b646454",
           "path": "features/docx/create.feature",
           "change": "Lifecycle tags only; existing scenario IDs, input examples and step text retained"
+        },
+        {
+          "repository": "https://github.com/rcarmo/fixtures-ooxml",
+          "path": "workflows/docx/creation.feature",
+          "basis": "Format/operation regrouping from d07ee96; exact scenario fingerprints and source paths in ledgers/workflow-layout-migration.json"
         }
       ],
       "aliases": []
@@ -2999,46 +3004,61 @@
       "aliases": []
     },
     {
-      "id": "asset-5aca6616eabfbc3c409897f1ee271f9a51a1e37835c1c512ffa13d97cf610181",
+      "id": "asset-0f6c6ccc165c37db57be0909398e3d3178d58ca46fe953fa9009986bd8501857",
       "path": "workflows/docx/page-layout.feature",
-      "bytes": 1525,
-      "sha256": "5aca6616eabfbc3c409897f1ee271f9a51a1e37835c1c512ffa13d97cf610181",
+      "bytes": 2284,
+      "sha256": "0f6c6ccc165c37db57be0909398e3d3178d58ca46fe953fa9009986bd8501857",
       "role": "workflow",
       "origins": [
         {
           "repository": "https://github.com/rcarmo/fixtures-ooxml",
           "path": "workflows/docx/page-layout.feature",
           "basis": "Language-neutral final body section page geometry contract; native save/reopen and refusal assertions remain consumer-local"
+        },
+        {
+          "repository": "https://github.com/rcarmo/fixtures-ooxml",
+          "path": "workflows/docx/page-layout.feature",
+          "basis": "Format/operation regrouping from d07ee96; exact scenario fingerprints and source paths in ledgers/workflow-layout-migration.json"
         }
       ],
       "aliases": []
     },
     {
-      "id": "asset-462be357951e2961b9b35dfe3457216709e3c6a02eeb0988c6a3c2279b730490",
+      "id": "asset-74d35cd4da1e8e583d0a52b622c4b1bf452d69a1efd1d14f2102aa6163ae993c",
       "path": "workflows/docx/paragraph-style.feature",
-      "bytes": 1540,
-      "sha256": "462be357951e2961b9b35dfe3457216709e3c6a02eeb0988c6a3c2279b730490",
+      "bytes": 2545,
+      "sha256": "74d35cd4da1e8e583d0a52b622c4b1bf452d69a1efd1d14f2102aa6163ae993c",
       "role": "workflow",
       "origins": [
         {
           "repository": "https://github.com/rcarmo/fixtures-ooxml",
           "kind": "native-authored-contract",
           "purpose": "Direct existing paragraph style assignment/removal without style creation or inheritance evaluation"
+        },
+        {
+          "repository": "https://github.com/rcarmo/fixtures-ooxml",
+          "path": "workflows/docx/paragraph-style.feature",
+          "basis": "Format/operation regrouping from d07ee96; exact scenario fingerprints and source paths in ledgers/workflow-layout-migration.json"
         }
       ],
       "aliases": []
     },
     {
-      "id": "asset-58ef9d8fde58d0fb929c1adbf7360d909c3294add90054b22f9e08e67a415ade",
+      "id": "asset-5b15ae332155e3c7074f466b4752547311eda8299b419ff2214bd1a82d52b869",
       "path": "workflows/docx/run-formatting.feature",
-      "bytes": 1396,
-      "sha256": "58ef9d8fde58d0fb929c1adbf7360d909c3294add90054b22f9e08e67a415ade",
+      "bytes": 5398,
+      "sha256": "5b15ae332155e3c7074f466b4752547311eda8299b419ff2214bd1a82d52b869",
       "role": "workflow",
       "origins": [
         {
           "repository": "https://github.com/rcarmo/fixtures-ooxml",
           "kind": "native-authored-contract",
           "purpose": "Paragraph-wide direct run overrides; no text splitting or inherited-style evaluation"
+        },
+        {
+          "repository": "https://github.com/rcarmo/fixtures-ooxml",
+          "path": "workflows/docx/run-formatting.feature",
+          "basis": "Format/operation regrouping from d07ee96; exact scenario fingerprints and source paths in ledgers/workflow-layout-migration.json"
         }
       ],
       "aliases": []
@@ -3059,10 +3079,10 @@
       "aliases": []
     },
     {
-      "id": "asset-53902e41953334f46fdd95c4984bfd478ff6f9fcec82536d1adbf9f044a2ae54",
+      "id": "asset-0d248a655bef198469e321ed5908241a5ae8211100b51eaac3520686617a0ec8",
       "path": "workflows/docx/tables.feature",
-      "bytes": 3059,
-      "sha256": "53902e41953334f46fdd95c4984bfd478ff6f9fcec82536d1adbf9f044a2ae54",
+      "bytes": 7551,
+      "sha256": "0d248a655bef198469e321ed5908241a5ae8211100b51eaac3520686617a0ec8",
       "role": "workflow",
       "origins": [
         {
@@ -3070,6 +3090,11 @@
           "revision": "13ead381f22f19a000dfd557514369cf1b646454",
           "path": "features/docx/tables.feature",
           "change": "Lifecycle tags only; existing scenario IDs, input examples and step text retained"
+        },
+        {
+          "repository": "https://github.com/rcarmo/fixtures-ooxml",
+          "path": "workflows/docx/tables.feature",
+          "basis": "Format/operation regrouping from d07ee96; exact scenario fingerprints and source paths in ledgers/workflow-layout-migration.json"
         }
       ],
       "aliases": []
@@ -3091,31 +3116,21 @@
       "aliases": []
     },
     {
-      "id": "asset-70c5251ca3f96b47d729d090db4fc89f11e962b6fabed1ee709e40eeffcd9bb5",
+      "id": "asset-5215d55a3604d510754bb01c110a5fde4968fa9b390d70da236f8c7e8b924819",
       "path": "workflows/docx/tracked-workflow.feature",
-      "bytes": 1708,
-      "sha256": "70c5251ca3f96b47d729d090db4fc89f11e962b6fabed1ee709e40eeffcd9bb5",
+      "bytes": 2486,
+      "sha256": "5215d55a3604d510754bb01c110a5fde4968fa9b390d70da236f8c7e8b924819",
       "role": "workflow",
       "origins": [
         {
           "repository": "https://github.com/rcarmo/fixtures-ooxml",
           "kind": "native-authored-contract",
           "purpose": "Bounded single-target tracked Word workflow; refines pre-existing docx-track-changes-option-outcome obligation, retains ID"
-        }
-      ],
-      "aliases": []
-    },
-    {
-      "id": "asset-9fb2cc7a913cb48b5e7c983e6f942ebf71942840a15a0b62ee9119d6878a87f3",
-      "path": "workflows/mutation-safety.feature",
-      "bytes": 7234,
-      "sha256": "9fb2cc7a913cb48b5e7c983e6f942ebf71942840a15a0b62ee9119d6878a87f3",
-      "role": "workflow",
-      "origins": [
+        },
         {
-          "repository": "https://github.com/rcarmo/bun-ooxml",
-          "revision": "61fbe73af0a53894a60cd31014dca2ffb90613c3",
-          "path": "docs/contracts/shared-v2/pack/features/mutation-safety.feature"
+          "repository": "https://github.com/rcarmo/fixtures-ooxml",
+          "path": "workflows/docx/tracked-workflow.feature",
+          "basis": "Format/operation regrouping from d07ee96; exact scenario fingerprints and source paths in ledgers/workflow-layout-migration.json"
         }
       ],
       "aliases": []
@@ -3247,16 +3262,21 @@
       "aliases": []
     },
     {
-      "id": "asset-2b8067d70864d75a3f709bb653c12d605777eb0c87ead6270eb2014ec0e4a6ca",
+      "id": "asset-821a4bdda8541d2afd48873221246451c3ebd24273a20184fa8ea14900c76b7a",
       "path": "workflows/xlsx/cell-style.feature",
-      "bytes": 1647,
-      "sha256": "2b8067d70864d75a3f709bb653c12d605777eb0c87ead6270eb2014ec0e4a6ca",
+      "bytes": 2896,
+      "sha256": "821a4bdda8541d2afd48873221246451c3ebd24273a20184fa8ea14900c76b7a",
       "role": "workflow",
       "origins": [
         {
           "repository": "https://github.com/rcarmo/fixtures-ooxml",
           "path": "workflows/xlsx/cell-style.feature",
           "basis": "Language-neutral existing-cell style selection and removal contract; native save/reopen and refusal assertions remain consumer-local"
+        },
+        {
+          "repository": "https://github.com/rcarmo/fixtures-ooxml",
+          "path": "workflows/xlsx/cell-style.feature",
+          "basis": "Format/operation regrouping from d07ee96; exact scenario fingerprints and source paths in ledgers/workflow-layout-migration.json"
         }
       ],
       "aliases": []
@@ -3562,10 +3582,10 @@
       "aliases": []
     },
     {
-      "id": "asset-76fab7a20cacc024a4886edaa5987db4c981ad5b3b8cd37f032114439e6771aa",
+      "id": "asset-c2782cf93ac9d98382b87aa46d01178e59c65bbe2a993e2c76ce80e57c9eed01",
       "path": "contracts/xml-values.md",
-      "bytes": 1494,
-      "sha256": "76fab7a20cacc024a4886edaa5987db4c981ad5b3b8cd37f032114439e6771aa",
+      "bytes": 1530,
+      "sha256": "c2782cf93ac9d98382b87aa46d01178e59c65bbe2a993e2c76ce80e57c9eed01",
       "role": "workflow-contract",
       "origins": [
         {
@@ -3577,10 +3597,10 @@
       "aliases": []
     },
     {
-      "id": "asset-c7636d3f0dc5a4ee6608a0bfe29810a86576db724441924d13f098fc79c0bd1e",
+      "id": "asset-8fab50c9b3e1ebdccff08888180bc1bd72ce903ee4a2b2b48693b844e8bf2581",
       "path": "contracts/go-lexical-editing.md",
-      "bytes": 2897,
-      "sha256": "c7636d3f0dc5a4ee6608a0bfe29810a86576db724441924d13f098fc79c0bd1e",
+      "bytes": 2977,
+      "sha256": "8fab50c9b3e1ebdccff08888180bc1bd72ce903ee4a2b2b48693b844e8bf2581",
       "role": "workflow-contract",
       "origins": [
         {
@@ -3592,10 +3612,10 @@
       "aliases": []
     },
     {
-      "id": "asset-7840fe0ec43d5880b68ee272f4c817525c1a75ea31cad14a5bfbf53d659bb301",
+      "id": "asset-379916f9b9b65a0f41c9b8507841de7394e09308eff088339f48b2c7476ba0dc",
       "path": "contracts/python-template-analysis.md",
-      "bytes": 1292,
-      "sha256": "7840fe0ec43d5880b68ee272f4c817525c1a75ea31cad14a5bfbf53d659bb301",
+      "bytes": 1348,
+      "sha256": "379916f9b9b65a0f41c9b8507841de7394e09308eff088339f48b2c7476ba0dc",
       "role": "workflow-contract",
       "origins": [
         {
@@ -3647,118 +3667,6 @@
           "repository": "https://github.com/rcarmo/fixtures-ooxml",
           "path": "ledgers/consumers/python-template-analysis.json",
           "basis": "Project-owned behaviour contract or source assertion mapping"
-        }
-      ],
-      "aliases": []
-    },
-    {
-      "id": "asset-dc8f304b6807731cb3faea413ebe12777ffa2a088eab852c4a845da1a30b9c68",
-      "path": "workflows/native/docx-story.feature",
-      "bytes": 3366,
-      "sha256": "dc8f304b6807731cb3faea413ebe12777ffa2a088eab852c4a845da1a30b9c68",
-      "role": "workflow",
-      "origins": [
-        {
-          "repository": "https://github.com/rcarmo/fixtures-ooxml",
-          "revision": "641146c020e1011b8f3e930f5fb4fd0b76c27b3d",
-          "path": "workflows/native/docx-story.feature",
-          "basis": "Existing canonical workflow; unchanged bytes added to the asset manifest"
-        }
-      ],
-      "aliases": []
-    },
-    {
-      "id": "asset-ba9eeeef47be329187a0214584a0cdc0370b2243ecb82a212cb5b42c2d0203da",
-      "path": "workflows/native/docx-revisions.feature",
-      "bytes": 4390,
-      "sha256": "ba9eeeef47be329187a0214584a0cdc0370b2243ecb82a212cb5b42c2d0203da",
-      "role": "workflow",
-      "origins": [
-        {
-          "repository": "https://github.com/rcarmo/fixtures-ooxml",
-          "revision": "641146c020e1011b8f3e930f5fb4fd0b76c27b3d",
-          "path": "workflows/native/docx-revisions.feature",
-          "basis": "Existing canonical workflow; unchanged bytes added to the asset manifest"
-        }
-      ],
-      "aliases": []
-    },
-    {
-      "id": "asset-b902b3c97c63436c51e35f137cbf3497bcd2f9d8dfce42104d98f696547fbfb2",
-      "path": "workflows/native/docx-redline.feature",
-      "bytes": 1126,
-      "sha256": "b902b3c97c63436c51e35f137cbf3497bcd2f9d8dfce42104d98f696547fbfb2",
-      "role": "workflow",
-      "origins": [
-        {
-          "repository": "https://github.com/rcarmo/fixtures-ooxml",
-          "revision": "641146c020e1011b8f3e930f5fb4fd0b76c27b3d",
-          "path": "workflows/native/docx-redline.feature",
-          "basis": "Existing canonical workflow; unchanged bytes added to the asset manifest"
-        }
-      ],
-      "aliases": []
-    },
-    {
-      "id": "asset-20f2ca5d050d96372286a8b03920bcc301709504a4578d6e7bde212c2411e3fe",
-      "path": "workflows/native/opc-graph.feature",
-      "bytes": 1519,
-      "sha256": "20f2ca5d050d96372286a8b03920bcc301709504a4578d6e7bde212c2411e3fe",
-      "role": "workflow",
-      "origins": [
-        {
-          "repository": "https://github.com/rcarmo/fixtures-ooxml",
-          "revision": "641146c020e1011b8f3e930f5fb4fd0b76c27b3d",
-          "path": "workflows/native/opc-graph.feature",
-          "basis": "Existing canonical workflow; unchanged bytes added to the asset manifest"
-        }
-      ],
-      "aliases": []
-    },
-    {
-      "id": "asset-18da944b62e7c88c7558627bca9fbc211a121799efbd7cefeb04051dd573af91",
-      "path": "workflows/native/opc-zip64.feature",
-      "bytes": 1298,
-      "sha256": "18da944b62e7c88c7558627bca9fbc211a121799efbd7cefeb04051dd573af91",
-      "role": "workflow",
-      "origins": [
-        {
-          "repository": "https://github.com/rcarmo/fixtures-ooxml",
-          "revision": "641146c020e1011b8f3e930f5fb4fd0b76c27b3d",
-          "path": "workflows/native/opc-zip64.feature",
-          "basis": "Existing canonical workflow; unchanged bytes added to the asset manifest"
-        }
-      ],
-      "aliases": []
-    },
-    {
-      "id": "asset-7468f407078faf70cc9f968eaeabdb5d88a9b52b922422ac122b03dff9be2f32",
-      "path": "workflows/native/xlsx-cells.feature",
-      "bytes": 3367,
-      "sha256": "7468f407078faf70cc9f968eaeabdb5d88a9b52b922422ac122b03dff9be2f32",
-      "role": "workflow",
-      "origins": [
-        {
-          "repository": "https://github.com/rcarmo/fixtures-ooxml",
-          "revision": "641146c020e1011b8f3e930f5fb4fd0b76c27b3d",
-          "path": "workflows/native/xlsx-cells.feature",
-          "basis": "Existing canonical workflow; unchanged bytes added to the asset manifest"
-        }
-      ],
-      "aliases": []
-    },
-    {
-      "id": "asset-e03228b770553f850116c99d3699eaad61788319b7dba131fe0967a805c01b94",
-      "path": "workflows/native/xlsx-cache-boundaries.feature",
-      "bytes": 1145,
-      "sha256": "e03228b770553f850116c99d3699eaad61788319b7dba131fe0967a805c01b94",
-      "role": "workflow",
-      "origins": [
-        {
-          "repository": "https://github.com/rcarmo/fixtures-ooxml",
-          "revision": "641146c020e1011b8f3e930f5fb4fd0b76c27b3d",
-          "path": "workflows/native/xlsx-cache-boundaries.feature",
-          "basis": "Existing canonical workflow; unchanged bytes added to the asset manifest"
         }
       ],
       "aliases": []
@@ -3839,10 +3747,10 @@
       "aliases": []
     },
     {
-      "id": "asset-339df71efd46fef7bd923ef453d7305bfcd248e35e1a98cc00b6d2cd3d98fedd",
+      "id": "asset-e4e7e5fe6684255b775226273757df7f73f0f0af4c79903556abd95b34304245",
       "path": "contracts/python-template-cache.md",
-      "bytes": 1557,
-      "sha256": "339df71efd46fef7bd923ef453d7305bfcd248e35e1a98cc00b6d2cd3d98fedd",
+      "bytes": 1679,
+      "sha256": "e4e7e5fe6684255b775226273757df7f73f0f0af4c79903556abd95b34304245",
       "role": "workflow-contract",
       "origins": [
         {
@@ -3899,10 +3807,10 @@
       "aliases": []
     },
     {
-      "id": "asset-bf3489c96ab386e864458a7899f5fae3dbdc679cecef15d7bb4f986f7988358c",
+      "id": "asset-7ab7bfe47e02ca08c90361582219080a9309ea19a23f76c3e2956237076c1aae",
       "path": "contracts/go-document-api.md",
-      "bytes": 2480,
-      "sha256": "bf3489c96ab386e864458a7899f5fae3dbdc679cecef15d7bb4f986f7988358c",
+      "bytes": 2869,
+      "sha256": "7ab7bfe47e02ca08c90361582219080a9309ea19a23f76c3e2956237076c1aae",
       "role": "workflow-contract",
       "origins": [
         {
@@ -3944,16 +3852,21 @@
       "aliases": []
     },
     {
-      "id": "asset-4a8735740a06e91e0e7b881daec1c192a2d53db33606f7b617886c0ed20fe768",
+      "id": "asset-f50e20a9ad3c776ffdc54c0cf7e9a2b13c613c375e91dfbe49ea735782bae9c2",
       "path": "workflows/xml/parsing.feature",
-      "bytes": 13568,
-      "sha256": "4a8735740a06e91e0e7b881daec1c192a2d53db33606f7b617886c0ed20fe768",
+      "bytes": 6819,
+      "sha256": "f50e20a9ad3c776ffdc54c0cf7e9a2b13c613c375e91dfbe49ea735782bae9c2",
       "role": "workflow",
       "origins": [
         {
           "repository": "https://github.com/rcarmo/fixtures-ooxml",
           "path": "workflows/xml/parsing.feature",
           "basis": "Consolidated operation family; exact source case fingerprints and path migration in ledgers/feature-consolidation.json"
+        },
+        {
+          "repository": "https://github.com/rcarmo/fixtures-ooxml",
+          "path": "workflows/xml/parsing.feature",
+          "basis": "Format/operation regrouping from d07ee96; exact scenario fingerprints and source paths in ledgers/workflow-layout-migration.json"
         }
       ],
       "aliases": []
@@ -3989,31 +3902,21 @@
       "aliases": []
     },
     {
-      "id": "asset-87dab18a70c2c6d0b8e4d70511967ea83232b4dfba3233ea452f777eda2169f5",
+      "id": "asset-fd446f3b1fe61541780dbeab8a8e4bab206beb433f197b28525af49c4ed7d489",
       "path": "workflows/docx/template-analysis.feature",
-      "bytes": 6936,
-      "sha256": "87dab18a70c2c6d0b8e4d70511967ea83232b4dfba3233ea452f777eda2169f5",
+      "bytes": 2831,
+      "sha256": "fd446f3b1fe61541780dbeab8a8e4bab206beb433f197b28525af49c4ed7d489",
       "role": "workflow",
       "origins": [
         {
           "repository": "https://github.com/rcarmo/fixtures-ooxml",
           "path": "workflows/docx/template-analysis.feature",
           "basis": "Consolidated operation family; exact source case fingerprints and path migration in ledgers/feature-consolidation.json"
-        }
-      ],
-      "aliases": []
-    },
-    {
-      "id": "asset-134222823c7c4fb5cf9f73c89ea753902278a1b14b2e3b39a1a22fb0fc5b472d",
-      "path": "workflows/docx/document-model.feature",
-      "bytes": 13256,
-      "sha256": "134222823c7c4fb5cf9f73c89ea753902278a1b14b2e3b39a1a22fb0fc5b472d",
-      "role": "workflow",
-      "origins": [
+        },
         {
           "repository": "https://github.com/rcarmo/fixtures-ooxml",
-          "path": "workflows/docx/document-model.feature",
-          "basis": "Consolidated operation family; exact source case fingerprints and path migration in ledgers/feature-consolidation.json"
+          "path": "workflows/docx/template-analysis.feature",
+          "basis": "Format/operation regrouping from d07ee96; exact scenario fingerprints and source paths in ledgers/workflow-layout-migration.json"
         }
       ],
       "aliases": []
@@ -4064,25 +3967,10 @@
       "aliases": []
     },
     {
-      "id": "asset-d2e710f66e78dfa0beabf5d7076d7c67fe4e686744f008a2a134122749cb5444",
-      "path": "workflows/native/pptx-text.feature",
-      "bytes": 8019,
-      "sha256": "d2e710f66e78dfa0beabf5d7076d7c67fe4e686744f008a2a134122749cb5444",
-      "role": "workflow",
-      "origins": [
-        {
-          "repository": "https://github.com/rcarmo/fixtures-ooxml",
-          "path": "workflows/native/pptx-text.feature",
-          "basis": "Consolidated operation family; exact source case fingerprints and path migration in ledgers/feature-consolidation.json"
-        }
-      ],
-      "aliases": []
-    },
-    {
-      "id": "asset-0d8d4df957c46abc2237e8a70e97ad1518e890d5bbe8a92920d977ffb60a0d9d",
+      "id": "asset-f180ba3f15c480b32e1ccdd9e40e9ab9e3bcb0505882f712a840bb10610d752a",
       "path": "contracts/bun-pptx.md",
-      "bytes": 1218,
-      "sha256": "0d8d4df957c46abc2237e8a70e97ad1518e890d5bbe8a92920d977ffb60a0d9d",
+      "bytes": 1369,
+      "sha256": "f180ba3f15c480b32e1ccdd9e40e9ab9e3bcb0505882f712a840bb10610d752a",
       "role": "workflow-contract",
       "origins": [
         {
@@ -4094,10 +3982,10 @@
       "aliases": []
     },
     {
-      "id": "asset-810a238dc7d0ab51ca9f6a11bf425edbb943f4129007dee4526c38f344d38d07",
+      "id": "asset-d0bd347393cd35bfd3930290d4bb19a82e85193bdc831f2b9ffec692b82464e0",
       "path": "contracts/go-notes-editing.md",
-      "bytes": 3449,
-      "sha256": "810a238dc7d0ab51ca9f6a11bf425edbb943f4129007dee4526c38f344d38d07",
+      "bytes": 3602,
+      "sha256": "d0bd347393cd35bfd3930290d4bb19a82e85193bdc831f2b9ffec692b82464e0",
       "role": "workflow-contract",
       "origins": [
         {
@@ -4184,39 +4072,256 @@
       "aliases": []
     },
     {
-      "id": "asset-613c5a059b2e13d16d73e88aadf75445061acae58262ee5c84cc0ab1db38a71a",
-      "path": "workflows/workflow-receipts.feature",
-      "bytes": 921,
-      "sha256": "613c5a059b2e13d16d73e88aadf75445061acae58262ee5c84cc0ab1db38a71a",
-      "role": "workflow",
-      "origins": [
-        {
-          "repository": "https://github.com/rcarmo/fixtures-ooxml",
-          "path": "workflows/workflow-receipts.feature",
-          "basis": "Project-owned behaviour contract or source assertion mapping"
-        },
-        {
-          "repository": "https://github.com/rcarmo/bun-ooxml",
-          "revision": "15d08ae19fd439985ed7e2202ab09c7bb2fe0574",
-          "path": "features/planned/office-mutation-additions.feature",
-          "bytes": 1312,
-          "sha256": "c4a355afc434c9df3fe2bca839d420e2336e4b98814c9acf24a9bc05c4db5a0a",
-          "basis": "Two retained scenario IDs, names and step sequences; third independent-style-reader scenario excluded"
-        }
-      ],
-      "aliases": []
-    },
-    {
-      "id": "asset-f6220cf8e7ef9e45477955e45fd52e74311c26f298b9709b921446816a511374",
+      "id": "asset-2d0337355138799ca88929b1d00ffa5834512d069e05626ec6d732449adb36a0",
       "path": "contracts/workflow-receipts.md",
-      "bytes": 1706,
-      "sha256": "f6220cf8e7ef9e45477955e45fd52e74311c26f298b9709b921446816a511374",
+      "bytes": 1814,
+      "sha256": "2d0337355138799ca88929b1d00ffa5834512d069e05626ec6d732449adb36a0",
       "role": "workflow-contract",
       "origins": [
         {
           "repository": "https://github.com/rcarmo/fixtures-ooxml",
           "path": "contracts/workflow-receipts.md",
           "basis": "Project-owned behaviour contract or source assertion mapping"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "id": "asset-e1820e2469f1f6b809d96294b9da04a7e3edcb19ac3b45550a89b4094d73d9b8",
+      "path": "workflows/pptx/mutation-safety.feature",
+      "bytes": 2693,
+      "sha256": "e1820e2469f1f6b809d96294b9da04a7e3edcb19ac3b45550a89b4094d73d9b8",
+      "role": "workflow",
+      "origins": [
+        {
+          "repository": "https://github.com/rcarmo/fixtures-ooxml",
+          "path": "workflows/pptx/mutation-safety.feature",
+          "basis": "Format/operation regrouping from d07ee96; exact scenario fingerprints and source paths in ledgers/workflow-layout-migration.json"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "id": "asset-698761ad41f5ec295f1d9e6d141b2e45509cac4b327a937559d2de4d78cb141d",
+      "path": "workflows/docx/mutation-safety.feature",
+      "bytes": 2660,
+      "sha256": "698761ad41f5ec295f1d9e6d141b2e45509cac4b327a937559d2de4d78cb141d",
+      "role": "workflow",
+      "origins": [
+        {
+          "repository": "https://github.com/rcarmo/fixtures-ooxml",
+          "path": "workflows/docx/mutation-safety.feature",
+          "basis": "Format/operation regrouping from d07ee96; exact scenario fingerprints and source paths in ledgers/workflow-layout-migration.json"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "id": "asset-c481cb5e382476ac12fc7a028ba7db2eda76287b0d9066ccc172cf34213050bc",
+      "path": "workflows/xlsx/mutation-safety.feature",
+      "bytes": 1970,
+      "sha256": "c481cb5e382476ac12fc7a028ba7db2eda76287b0d9066ccc172cf34213050bc",
+      "role": "workflow",
+      "origins": [
+        {
+          "repository": "https://github.com/rcarmo/fixtures-ooxml",
+          "path": "workflows/xlsx/mutation-safety.feature",
+          "basis": "Format/operation regrouping from d07ee96; exact scenario fingerprints and source paths in ledgers/workflow-layout-migration.json"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "id": "asset-b1b9c2b9cf7f8f6d5e6403ada30493381b7f42e05c72b1c999273eaedbf705f7",
+      "path": "workflows/xlsx/formula-cache.feature",
+      "bytes": 3153,
+      "sha256": "b1b9c2b9cf7f8f6d5e6403ada30493381b7f42e05c72b1c999273eaedbf705f7",
+      "role": "workflow",
+      "origins": [
+        {
+          "repository": "https://github.com/rcarmo/fixtures-ooxml",
+          "path": "workflows/xlsx/formula-cache.feature",
+          "basis": "Format/operation regrouping from d07ee96; exact scenario fingerprints and source paths in ledgers/workflow-layout-migration.json"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "id": "asset-4ee52f31689348b2a3e453eee6beb4c52fdc7fda196d8af86e811e321bc41e33",
+      "path": "workflows/docx/stories.feature",
+      "bytes": 3554,
+      "sha256": "4ee52f31689348b2a3e453eee6beb4c52fdc7fda196d8af86e811e321bc41e33",
+      "role": "workflow",
+      "origins": [
+        {
+          "repository": "https://github.com/rcarmo/fixtures-ooxml",
+          "path": "workflows/docx/stories.feature",
+          "basis": "Format/operation regrouping from d07ee96; exact scenario fingerprints and source paths in ledgers/workflow-layout-migration.json"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "id": "asset-84b2e3469059bbdc2e02f595780865db9ff3cf76659ec723f9f489962ee5f9e4",
+      "path": "workflows/docx/revisions.feature",
+      "bytes": 5788,
+      "sha256": "84b2e3469059bbdc2e02f595780865db9ff3cf76659ec723f9f489962ee5f9e4",
+      "role": "workflow",
+      "origins": [
+        {
+          "repository": "https://github.com/rcarmo/fixtures-ooxml",
+          "path": "workflows/docx/revisions.feature",
+          "basis": "Format/operation regrouping from d07ee96; exact scenario fingerprints and source paths in ledgers/workflow-layout-migration.json"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "id": "asset-953cab35e20019a234ed4d1aa2f1575a065f3c7768f74fb0a0269bf70b3c4d4e",
+      "path": "workflows/package/graph.feature",
+      "bytes": 1637,
+      "sha256": "953cab35e20019a234ed4d1aa2f1575a065f3c7768f74fb0a0269bf70b3c4d4e",
+      "role": "workflow",
+      "origins": [
+        {
+          "repository": "https://github.com/rcarmo/fixtures-ooxml",
+          "path": "workflows/package/graph.feature",
+          "basis": "Format/operation regrouping from d07ee96; exact scenario fingerprints and source paths in ledgers/workflow-layout-migration.json"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "id": "asset-40f170da5b089c25115d33abbd3871df48d84c9dfe1fa76261607af967c8a804",
+      "path": "workflows/package/zip64.feature",
+      "bytes": 1379,
+      "sha256": "40f170da5b089c25115d33abbd3871df48d84c9dfe1fa76261607af967c8a804",
+      "role": "workflow",
+      "origins": [
+        {
+          "repository": "https://github.com/rcarmo/fixtures-ooxml",
+          "path": "workflows/package/zip64.feature",
+          "basis": "Format/operation regrouping from d07ee96; exact scenario fingerprints and source paths in ledgers/workflow-layout-migration.json"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "id": "asset-a6d11b5450bb7d2280ac095eefec195f736062c4b0faf8655a1d2dc6c546c960",
+      "path": "workflows/pptx/notes.feature",
+      "bytes": 6021,
+      "sha256": "a6d11b5450bb7d2280ac095eefec195f736062c4b0faf8655a1d2dc6c546c960",
+      "role": "workflow",
+      "origins": [
+        {
+          "repository": "https://github.com/rcarmo/fixtures-ooxml",
+          "path": "workflows/pptx/notes.feature",
+          "basis": "Format/operation regrouping from d07ee96; exact scenario fingerprints and source paths in ledgers/workflow-layout-migration.json"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "id": "asset-30fb7380fc0a133c5b710cd843493ebcaee781d2000c23eabb3bff0290b373a8",
+      "path": "workflows/pptx/text.feature",
+      "bytes": 1472,
+      "sha256": "30fb7380fc0a133c5b710cd843493ebcaee781d2000c23eabb3bff0290b373a8",
+      "role": "workflow",
+      "origins": [
+        {
+          "repository": "https://github.com/rcarmo/fixtures-ooxml",
+          "path": "workflows/pptx/text.feature",
+          "basis": "Format/operation regrouping from d07ee96; exact scenario fingerprints and source paths in ledgers/workflow-layout-migration.json"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "id": "asset-b5f6ec1bce609681279180a55ead4122e8a8fcfe9892a5a53dbc2fabbfc06808",
+      "path": "workflows/pptx/preservation.feature",
+      "bytes": 869,
+      "sha256": "b5f6ec1bce609681279180a55ead4122e8a8fcfe9892a5a53dbc2fabbfc06808",
+      "role": "workflow",
+      "origins": [
+        {
+          "repository": "https://github.com/rcarmo/fixtures-ooxml",
+          "path": "workflows/pptx/preservation.feature",
+          "basis": "Format/operation regrouping from d07ee96; exact scenario fingerprints and source paths in ledgers/workflow-layout-migration.json"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "id": "asset-cdfcbd99ba3d8aa775306fc9eb2caf879350d50d832d59d9f9034b0666a6d925",
+      "path": "workflows/xlsx/cells.feature",
+      "bytes": 3094,
+      "sha256": "cdfcbd99ba3d8aa775306fc9eb2caf879350d50d832d59d9f9034b0666a6d925",
+      "role": "workflow",
+      "origins": [
+        {
+          "repository": "https://github.com/rcarmo/fixtures-ooxml",
+          "path": "workflows/xlsx/cells.feature",
+          "basis": "Format/operation regrouping from d07ee96; exact scenario fingerprints and source paths in ledgers/workflow-layout-migration.json"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "id": "asset-1bda1a2ab45bd32e22ca9fdafaeeb2718e66148fc83af58e807a7c9ec42709d5",
+      "path": "workflows/xml/editing.feature",
+      "bytes": 6995,
+      "sha256": "1bda1a2ab45bd32e22ca9fdafaeeb2718e66148fc83af58e807a7c9ec42709d5",
+      "role": "workflow",
+      "origins": [
+        {
+          "repository": "https://github.com/rcarmo/fixtures-ooxml",
+          "path": "workflows/xml/editing.feature",
+          "basis": "Format/operation regrouping from d07ee96; exact scenario fingerprints and source paths in ledgers/workflow-layout-migration.json"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "id": "asset-7ed0740ba8f3f12be17d6c87012468ce2374268f15ba1dd332f7ab7ff7a10009",
+      "path": "workflows/docx/template-cache.feature",
+      "bytes": 4133,
+      "sha256": "7ed0740ba8f3f12be17d6c87012468ce2374268f15ba1dd332f7ab7ff7a10009",
+      "role": "workflow",
+      "origins": [
+        {
+          "repository": "https://github.com/rcarmo/fixtures-ooxml",
+          "path": "workflows/docx/template-cache.feature",
+          "basis": "Format/operation regrouping from d07ee96; exact scenario fingerprints and source paths in ledgers/workflow-layout-migration.json"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "id": "asset-736314ab9423da07013683d33377f7972145f63ba60f213ef08bd37755fa5468",
+      "path": "workflows/docx/properties.feature",
+      "bytes": 1102,
+      "sha256": "736314ab9423da07013683d33377f7972145f63ba60f213ef08bd37755fa5468",
+      "role": "workflow",
+      "origins": [
+        {
+          "repository": "https://github.com/rcarmo/fixtures-ooxml",
+          "path": "workflows/docx/properties.feature",
+          "basis": "Format/operation regrouping from d07ee96; exact scenario fingerprints and source paths in ledgers/workflow-layout-migration.json"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "id": "asset-520e9c4c4dd394153f1012fb5b7e62dc6aef73dc8f78f9a8d796171056a6b512",
+      "path": "workflows/docx/paragraphs.feature",
+      "bytes": 2903,
+      "sha256": "520e9c4c4dd394153f1012fb5b7e62dc6aef73dc8f78f9a8d796171056a6b512",
+      "role": "workflow",
+      "origins": [
+        {
+          "repository": "https://github.com/rcarmo/fixtures-ooxml",
+          "path": "workflows/docx/paragraphs.feature",
+          "basis": "Format/operation regrouping from d07ee96; exact scenario fingerprints and source paths in ledgers/workflow-layout-migration.json"
         }
       ],
       "aliases": []

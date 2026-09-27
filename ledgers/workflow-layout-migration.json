@@ -1,0 +1,5321 @@
+{
+  "schemaVersion": 1,
+  "sourceRevision": "d07ee96ea18f765c0c7de849a5d166d75678bd29",
+  "policy": "Format/operation relocation only. Scenario IDs, names, compiled steps, examples, policy tags and consumer evidence are preserved. Historical runtime names remain compatibility identifiers; runtime-neutral semantics require separate review.",
+  "retiredScenarioIds": [],
+  "removedFeatures": [
+    "workflows/mutation-safety.feature",
+    "workflows/native/docx-story.feature",
+    "workflows/native/docx-revisions.feature",
+    "workflows/native/docx-redline.feature",
+    "workflows/native/opc-graph.feature",
+    "workflows/native/opc-zip64.feature",
+    "workflows/native/pptx-text.feature",
+    "workflows/native/xlsx-cells.feature",
+    "workflows/native/xlsx-cache-boundaries.feature",
+    "workflows/docx/document-model.feature",
+    "workflows/workflow-receipts.feature"
+  ],
+  "scenarios": [
+    {
+      "id": "@id-pptx-dry-run-no-mutation",
+      "from": "workflows/mutation-safety.feature",
+      "to": "workflows/pptx/mutation-safety.feature",
+      "sourceSha256": "9fb2cc7a913cb48b5e7c983e6f942ebf71942840a15a0b62ee9119d6878a87f3",
+      "caseSha256": [
+        "31625b1fa77f1e3ef3096195d0c817e8d9600ae44828b56a75134db6e33d6ffc",
+        "478ae53b203e34d40a09644ed997b07b68fb6edd664c4daeefd3c7076c7c0945",
+        "190a21ffe27b4ace0c1a5f34c5ef603ab9d470deac4f3b14fb049c8c0ed5ba29"
+      ],
+      "tags": [
+        [
+          "@id-pptx-dry-run-no-mutation",
+          "@planned"
+        ],
+        [
+          "@id-pptx-dry-run-no-mutation",
+          "@planned"
+        ],
+        [
+          "@id-pptx-dry-run-no-mutation",
+          "@planned"
+        ]
+      ]
+    },
+    {
+      "id": "@id-docx-dry-run-no-mutation",
+      "from": "workflows/mutation-safety.feature",
+      "to": "workflows/docx/mutation-safety.feature",
+      "sourceSha256": "9fb2cc7a913cb48b5e7c983e6f942ebf71942840a15a0b62ee9119d6878a87f3",
+      "caseSha256": [
+        "31fbcdb4bf3b98f42acea0b08a422b9b46bc2c4bc447d9c22cde9836243ad9b1",
+        "a02514d27388528497a5eed02935ea3a639f4f47dad97bbcc11bb9de8a139674",
+        "7866f206865c9dbea287dbace33d12d6adb1b380aecf26b66e6092ef530d8ff4"
+      ],
+      "tags": [
+        [
+          "@id-docx-dry-run-no-mutation",
+          "@planned"
+        ],
+        [
+          "@id-docx-dry-run-no-mutation",
+          "@planned"
+        ],
+        [
+          "@id-docx-dry-run-no-mutation",
+          "@planned"
+        ]
+      ]
+    },
+    {
+      "id": "@id-xlsx-dry-run-no-mutation",
+      "from": "workflows/mutation-safety.feature",
+      "to": "workflows/xlsx/mutation-safety.feature",
+      "sourceSha256": "9fb2cc7a913cb48b5e7c983e6f942ebf71942840a15a0b62ee9119d6878a87f3",
+      "caseSha256": [
+        "dd92be52c965d963b3aca66a5cacfc71570232b6676b339dc3f3dcf69fd0e4d4",
+        "118cbdec2924648fc795f754a1970592ca98129e3ce99c72e7bc1be66d1ba2cb",
+        "42500b3c4fad41f10c5ec8b49c0cbadaac994fcc3d2816086bb5cd9f2e5f9017"
+      ],
+      "tags": [
+        [
+          "@id-xlsx-dry-run-no-mutation",
+          "@planned"
+        ],
+        [
+          "@id-xlsx-dry-run-no-mutation",
+          "@planned"
+        ],
+        [
+          "@id-xlsx-dry-run-no-mutation",
+          "@planned"
+        ]
+      ]
+    },
+    {
+      "id": "@id-xlsx-strict-batch-atomicity",
+      "from": "workflows/mutation-safety.feature",
+      "to": "workflows/xlsx/mutation-safety.feature",
+      "sourceSha256": "9fb2cc7a913cb48b5e7c983e6f942ebf71942840a15a0b62ee9119d6878a87f3",
+      "caseSha256": [
+        "efb88281a6ad53d2728274cacc1ac621a19b0e7873f680cca06b2efe7f3a77e8",
+        "4a1f9fdbc54b32f80a5ccbabb63d4b93e5a3fb18b98ca45169e95d07f95d419e",
+        "b3f41045e2572e99664ce2f06fba9afde95e32077a372e6233582e621899fbbe"
+      ],
+      "tags": [
+        [
+          "@id-xlsx-strict-batch-atomicity",
+          "@planned"
+        ],
+        [
+          "@id-xlsx-strict-batch-atomicity",
+          "@planned"
+        ],
+        [
+          "@id-xlsx-strict-batch-atomicity",
+          "@planned"
+        ]
+      ]
+    },
+    {
+      "id": "@id-docx-strict-batch-per-target-results",
+      "from": "workflows/mutation-safety.feature",
+      "to": "workflows/docx/mutation-safety.feature",
+      "sourceSha256": "9fb2cc7a913cb48b5e7c983e6f942ebf71942840a15a0b62ee9119d6878a87f3",
+      "caseSha256": [
+        "9370f58c67815727a9c0e59a5fa0189a60e7ba347083f75578e80fac162d9eb2",
+        "a967286d364ad1bdad620f40f8d4109d8efa29c5ee2f0dc639c55a422f39bb77",
+        "376baa73f8db7fa7da2c15c12eda6025199f8f28676195b94ded613a73ea5218"
+      ],
+      "tags": [
+        [
+          "@id-docx-strict-batch-per-target-results",
+          "@planned"
+        ],
+        [
+          "@id-docx-strict-batch-per-target-results",
+          "@planned"
+        ],
+        [
+          "@id-docx-strict-batch-per-target-results",
+          "@planned"
+        ]
+      ]
+    },
+    {
+      "id": "@id-pptx-batch-output-accumulates",
+      "from": "workflows/mutation-safety.feature",
+      "to": "workflows/pptx/mutation-safety.feature",
+      "sourceSha256": "9fb2cc7a913cb48b5e7c983e6f942ebf71942840a15a0b62ee9119d6878a87f3",
+      "caseSha256": [
+        "df1cb72edb70bc1c07d879184b3e9f38df087f8ed8bf3e013ff91f8746612268",
+        "c9b7875ffd22dbc1b65524b18602b7f17756f2927f4271e4678f6f4f71dc4a08"
+      ],
+      "tags": [
+        [
+          "@id-pptx-batch-output-accumulates",
+          "@planned"
+        ],
+        [
+          "@id-pptx-batch-output-accumulates",
+          "@planned"
+        ]
+      ]
+    },
+    {
+      "id": "@id-xlsx-style-dependency-closure",
+      "from": "workflows/mutation-safety.feature",
+      "to": "workflows/xlsx/cell-style.feature",
+      "sourceSha256": "9fb2cc7a913cb48b5e7c983e6f942ebf71942840a15a0b62ee9119d6878a87f3",
+      "caseSha256": [
+        "17977421ba1ffae159e1cda6ce6565e0dbc88484999b50bcac99633f82755e45"
+      ],
+      "tags": [
+        [
+          "@id-xlsx-style-dependency-closure",
+          "@planned"
+        ]
+      ]
+    },
+    {
+      "id": "@id-xlsx-cross-sheet-cache-invalidation",
+      "from": "workflows/mutation-safety.feature",
+      "to": "workflows/xlsx/formula-cache.feature",
+      "sourceSha256": "9fb2cc7a913cb48b5e7c983e6f942ebf71942840a15a0b62ee9119d6878a87f3",
+      "caseSha256": [
+        "c03706869ab378b6fcc45effbac067cda656b3cd3938496a0cc9f2f52d580805"
+      ],
+      "tags": [
+        [
+          "@id-xlsx-cross-sheet-cache-invalidation",
+          "@planned"
+        ]
+      ]
+    },
+    {
+      "id": "@id-docx-story-parts",
+      "from": "workflows/native/docx-story.feature",
+      "to": "workflows/docx/stories.feature",
+      "sourceSha256": "dc8f304b6807731cb3faea413ebe12777ffa2a088eab852c4a845da1a30b9c68",
+      "caseSha256": [
+        "5c762f957c8cf4eb6f388f36134b1e2db3338b533205f03dc34c42805077b3c7"
+      ],
+      "tags": [
+        [
+          "@id-docx-story-parts",
+          "@planned"
+        ]
+      ]
+    },
+    {
+      "id": "@id-docx-story-views",
+      "from": "workflows/native/docx-story.feature",
+      "to": "workflows/docx/stories.feature",
+      "sourceSha256": "dc8f304b6807731cb3faea413ebe12777ffa2a088eab852c4a845da1a30b9c68",
+      "caseSha256": [
+        "048143cddf007c2af04bd86dc412312a3750e0c05d8f9cfcb54e8fd38a7d9e87"
+      ],
+      "tags": [
+        [
+          "@id-docx-story-views",
+          "@planned"
+        ]
+      ]
+    },
+    {
+      "id": "@id-docx-story-blind",
+      "from": "workflows/native/docx-story.feature",
+      "to": "workflows/docx/stories.feature",
+      "sourceSha256": "dc8f304b6807731cb3faea413ebe12777ffa2a088eab852c4a845da1a30b9c68",
+      "caseSha256": [
+        "860e1a0da1a1a8caae68a1ec6d7bbd14b11ba95ec7c124f6824303e9c168f53c"
+      ],
+      "tags": [
+        [
+          "@id-docx-story-blind",
+          "@planned"
+        ]
+      ]
+    },
+    {
+      "id": "@id-docx-revisions-all-stories",
+      "from": "workflows/native/docx-revisions.feature",
+      "to": "workflows/docx/revisions.feature",
+      "sourceSha256": "ba9eeeef47be329187a0214584a0cdc0370b2243ecb82a212cb5b42c2d0203da",
+      "caseSha256": [
+        "2c5483e224f0ba219c9313ceb0c5c0813c23c40ed18d0c898fb14d42eb520544"
+      ],
+      "tags": [
+        [
+          "@id-docx-revisions-all-stories",
+          "@planned"
+        ]
+      ]
+    },
+    {
+      "id": "@id-docx-revisions-rollback",
+      "from": "workflows/native/docx-revisions.feature",
+      "to": "workflows/docx/revisions.feature",
+      "sourceSha256": "ba9eeeef47be329187a0214584a0cdc0370b2243ecb82a212cb5b42c2d0203da",
+      "caseSha256": [
+        "8cb542522f0b44cb5ccd380490f166c1e602eb2fb7adb3554830a591d4ebabd6"
+      ],
+      "tags": [
+        [
+          "@id-docx-revisions-rollback",
+          "@planned"
+        ]
+      ]
+    },
+    {
+      "id": "@id-docx-revisions-empty-deletion",
+      "from": "workflows/native/docx-revisions.feature",
+      "to": "workflows/docx/revisions.feature",
+      "sourceSha256": "ba9eeeef47be329187a0214584a0cdc0370b2243ecb82a212cb5b42c2d0203da",
+      "caseSha256": [
+        "bc0ee8bee6a146b0c03ed368ac71d1df1a25dd08c3e85b6c6c049904337ba23f"
+      ],
+      "tags": [
+        [
+          "@id-docx-revisions-empty-deletion",
+          "@planned"
+        ]
+      ]
+    },
+    {
+      "id": "@id-docx-revisions-protected",
+      "from": "workflows/native/docx-revisions.feature",
+      "to": "workflows/docx/revisions.feature",
+      "sourceSha256": "ba9eeeef47be329187a0214584a0cdc0370b2243ecb82a212cb5b42c2d0203da",
+      "caseSha256": [
+        "77e47fa23c5c51a047d1f689906cf133a0210abe2293e43989f313cd748c8e3d"
+      ],
+      "tags": [
+        [
+          "@id-docx-revisions-protected",
+          "@planned"
+        ]
+      ]
+    },
+    {
+      "id": "@id-docx-tracked-replace-roundtrip",
+      "from": "workflows/native/docx-redline.feature",
+      "to": "workflows/docx/revisions.feature",
+      "sourceSha256": "b902b3c97c63436c51e35f137cbf3497bcd2f9d8dfce42104d98f696547fbfb2",
+      "caseSha256": [
+        "926786c4766d2540979f10cb992e32ebbbd86aa28fadf43067d8d83e0e587131"
+      ],
+      "tags": [
+        [
+          "@id-docx-tracked-replace-roundtrip",
+          "@planned"
+        ]
+      ]
+    },
+    {
+      "id": "@id-docx-tracked-replace-refusal",
+      "from": "workflows/native/docx-redline.feature",
+      "to": "workflows/docx/revisions.feature",
+      "sourceSha256": "b902b3c97c63436c51e35f137cbf3497bcd2f9d8dfce42104d98f696547fbfb2",
+      "caseSha256": [
+        "c813e569b54d94c2941ffdf37d3b8727cbe741116ab56349b5b1057af43373a3",
+        "dc654e1f366e5e66d449a1b1b845e4dfdfa514fbf7e91f8e48c1fbd81e4a6ace",
+        "27286c3efa8e90ff151cc771e3c64df55d600527e445a731c3e8fcc21a8ca132",
+        "9b3797649ba3ff7a131e21393a262a59bc2dba0a89b7831b009bd1a9b66436b2",
+        "c2a1984ef6019c6891b54f733b53c563bc3f1a6fc21bbc0a8988ea7e89ac8ab4"
+      ],
+      "tags": [
+        [
+          "@id-docx-tracked-replace-refusal",
+          "@planned"
+        ],
+        [
+          "@id-docx-tracked-replace-refusal",
+          "@planned"
+        ],
+        [
+          "@id-docx-tracked-replace-refusal",
+          "@planned"
+        ],
+        [
+          "@id-docx-tracked-replace-refusal",
+          "@planned"
+        ],
+        [
+          "@id-docx-tracked-replace-refusal",
+          "@planned"
+        ]
+      ]
+    },
+    {
+      "id": "@id-opc-add-related-part",
+      "from": "workflows/native/opc-graph.feature",
+      "to": "workflows/package/graph.feature",
+      "sourceSha256": "20f2ca5d050d96372286a8b03920bcc301709504a4578d6e7bde212c2411e3fe",
+      "caseSha256": [
+        "90d45ce3f17bc93956b4244eba8ceb58d48c7c3450bb9fb159d559d46b64a54d"
+      ],
+      "tags": [
+        [
+          "@id-opc-add-related-part",
+          "@planned"
+        ]
+      ]
+    },
+    {
+      "id": "@id-opc-graph-rollback",
+      "from": "workflows/native/opc-graph.feature",
+      "to": "workflows/package/graph.feature",
+      "sourceSha256": "20f2ca5d050d96372286a8b03920bcc301709504a4578d6e7bde212c2411e3fe",
+      "caseSha256": [
+        "02c875f7400efd7ebb241c4bbe97f40dab7e29e21b60988439bb744b22a000bf"
+      ],
+      "tags": [
+        [
+          "@id-opc-graph-rollback",
+          "@planned"
+        ]
+      ]
+    },
+    {
+      "id": "@id-opc-remove-related-part",
+      "from": "workflows/native/opc-graph.feature",
+      "to": "workflows/package/graph.feature",
+      "sourceSha256": "20f2ca5d050d96372286a8b03920bcc301709504a4578d6e7bde212c2411e3fe",
+      "caseSha256": [
+        "f0b491f0a87c8c864f7aa8a63add18b537ffdaf76b2a3104885d74e732c78f1f"
+      ],
+      "tags": [
+        [
+          "@id-opc-remove-related-part",
+          "@planned"
+        ]
+      ]
+    },
+    {
+      "id": "@id-opc-diff-content-type",
+      "from": "workflows/native/opc-graph.feature",
+      "to": "workflows/package/graph.feature",
+      "sourceSha256": "20f2ca5d050d96372286a8b03920bcc301709504a4578d6e7bde212c2411e3fe",
+      "caseSha256": [
+        "f85ec30e997a2658b38939c8ae65a2690754053a41f6562ae434b53d423999b2"
+      ],
+      "tags": [
+        [
+          "@id-opc-diff-content-type",
+          "@planned"
+        ]
+      ]
+    },
+    {
+      "id": "@id-parity-zip64",
+      "from": "workflows/native/opc-zip64.feature",
+      "to": "workflows/package/zip64.feature",
+      "sourceSha256": "18da944b62e7c88c7558627bca9fbc211a121799efbd7cefeb04051dd573af91",
+      "caseSha256": [
+        "e906fbbb629eaeae646a283f14cfeb521c08ccc5027a4cc2150b3e4be815a732"
+      ],
+      "tags": [
+        [
+          "@id-parity-zip64",
+          "@planned"
+        ]
+      ]
+    },
+    {
+      "id": "@id-zip64-preflight-count",
+      "from": "workflows/native/opc-zip64.feature",
+      "to": "workflows/package/zip64.feature",
+      "sourceSha256": "18da944b62e7c88c7558627bca9fbc211a121799efbd7cefeb04051dd573af91",
+      "caseSha256": [
+        "95084b389fed18ea54a12853cc8300da9317f037384f1b4798013131ab533d05"
+      ],
+      "tags": [
+        [
+          "@id-zip64-preflight-count",
+          "@planned"
+        ]
+      ]
+    },
+    {
+      "id": "@id-zip64-unsafe-offset",
+      "from": "workflows/native/opc-zip64.feature",
+      "to": "workflows/package/zip64.feature",
+      "sourceSha256": "18da944b62e7c88c7558627bca9fbc211a121799efbd7cefeb04051dd573af91",
+      "caseSha256": [
+        "419a65e6b9b535a9a770fcda53a79d18dae39672b1f77a8130816dd9e09caf58"
+      ],
+      "tags": [
+        [
+          "@id-zip64-unsafe-offset",
+          "@planned"
+        ]
+      ]
+    },
+    {
+      "id": "@id-zip64-resource-limit",
+      "from": "workflows/native/opc-zip64.feature",
+      "to": "workflows/package/zip64.feature",
+      "sourceSha256": "18da944b62e7c88c7558627bca9fbc211a121799efbd7cefeb04051dd573af91",
+      "caseSha256": [
+        "d35e4bc3da570a657371b9c918fc686d35d104f1ac46816f38f2dca556ec701e"
+      ],
+      "tags": [
+        [
+          "@id-zip64-resource-limit",
+          "@planned"
+        ]
+      ]
+    },
+    {
+      "id": "@id-pptx-order-notes-read",
+      "from": "workflows/native/pptx-text.feature",
+      "to": "workflows/pptx/notes.feature",
+      "sourceSha256": "d2e710f66e78dfa0beabf5d7076d7c67fe4e686744f008a2a134122749cb5444",
+      "caseSha256": [
+        "510763a9af844ff32a4ce410cb23cc8fe30f17b3add2ca38e89b189d8e33fe03"
+      ],
+      "tags": [
+        [
+          "@id-pptx-order-notes-read",
+          "@planned"
+        ]
+      ]
+    },
+    {
+      "id": "@id-pptx-readable-unsupported-topology",
+      "from": "workflows/native/pptx-text.feature",
+      "to": "workflows/pptx/text.feature",
+      "sourceSha256": "d2e710f66e78dfa0beabf5d7076d7c67fe4e686744f008a2a134122749cb5444",
+      "caseSha256": [
+        "e44bac219294c0fc354e0db1d75211fa48d068a9d5d61ad7012eaead7a420a65"
+      ],
+      "tags": [
+        [
+          "@id-pptx-readable-unsupported-topology",
+          "@planned"
+        ]
+      ]
+    },
+    {
+      "id": "@id-pptx-cross-run-replace",
+      "from": "workflows/native/pptx-text.feature",
+      "to": "workflows/pptx/text.feature",
+      "sourceSha256": "d2e710f66e78dfa0beabf5d7076d7c67fe4e686744f008a2a134122749cb5444",
+      "caseSha256": [
+        "e0ca9d9eb1507cfb1cb116fdda434c3120aa6978c75c95753fb77ea2ee0f7656"
+      ],
+      "tags": [
+        [
+          "@id-pptx-cross-run-replace",
+          "@planned"
+        ]
+      ]
+    },
+    {
+      "id": "@id-pptx-stale-anchor-refusal",
+      "from": "workflows/native/pptx-text.feature",
+      "to": "workflows/pptx/text.feature",
+      "sourceSha256": "d2e710f66e78dfa0beabf5d7076d7c67fe4e686744f008a2a134122749cb5444",
+      "caseSha256": [
+        "c706f7cf84e17a17fc4e77022cd9f1c812174cd4d1fd1a3beadbad55c2313310"
+      ],
+      "tags": [
+        [
+          "@id-pptx-stale-anchor-refusal",
+          "@planned"
+        ]
+      ]
+    },
+    {
+      "id": "@id-pptx-go-notes-exact-splice",
+      "from": "workflows/native/pptx-text.feature",
+      "to": "workflows/pptx/notes.feature",
+      "sourceSha256": "d2e710f66e78dfa0beabf5d7076d7c67fe4e686744f008a2a134122749cb5444",
+      "caseSha256": [
+        "f231a700e3b847814928dcaefcc7f582b3e5ec72c3def633cc3e0295d58494f0"
+      ],
+      "tags": [
+        [
+          "@id-pptx-go-notes-exact-splice",
+          "@planned",
+          "@profile-go-existing-notes"
+        ]
+      ]
+    },
+    {
+      "id": "@id-pptx-go-notes-refusal-and-noop-custody",
+      "from": "workflows/native/pptx-text.feature",
+      "to": "workflows/pptx/notes.feature",
+      "sourceSha256": "d2e710f66e78dfa0beabf5d7076d7c67fe4e686744f008a2a134122749cb5444",
+      "caseSha256": [
+        "6f68516fd6ea17e3c639d7ab2dc53434e0d862a978b2075bd54e30cd3868af2f"
+      ],
+      "tags": [
+        [
+          "@id-pptx-go-notes-refusal-and-noop-custody",
+          "@planned",
+          "@profile-go-existing-notes"
+        ]
+      ]
+    },
+    {
+      "id": "@id-pptx-go-notes-clear-stale-refill",
+      "from": "workflows/native/pptx-text.feature",
+      "to": "workflows/pptx/notes.feature",
+      "sourceSha256": "d2e710f66e78dfa0beabf5d7076d7c67fe4e686744f008a2a134122749cb5444",
+      "caseSha256": [
+        "ae11a539bc72b1207587e1031ecf6dacfd749efda29c3bbdb54fc6af0145c863"
+      ],
+      "tags": [
+        [
+          "@id-pptx-go-notes-clear-stale-refill",
+          "@planned",
+          "@profile-go-existing-notes"
+        ]
+      ]
+    },
+    {
+      "id": "@id-pptx-go-notes-part-fingerprint-refusal",
+      "from": "workflows/native/pptx-text.feature",
+      "to": "workflows/pptx/notes.feature",
+      "sourceSha256": "d2e710f66e78dfa0beabf5d7076d7c67fe4e686744f008a2a134122749cb5444",
+      "caseSha256": [
+        "4383370728645f3bdebecd37530ab2be31149730b20fea0b2576d6d551a9ef1d"
+      ],
+      "tags": [
+        [
+          "@id-pptx-go-notes-part-fingerprint-refusal",
+          "@planned",
+          "@profile-go-existing-notes"
+        ]
+      ]
+    },
+    {
+      "id": "@id-pptx-go-notes-self-closing-fill",
+      "from": "workflows/native/pptx-text.feature",
+      "to": "workflows/pptx/notes.feature",
+      "sourceSha256": "d2e710f66e78dfa0beabf5d7076d7c67fe4e686744f008a2a134122749cb5444",
+      "caseSha256": [
+        "31ffc47e9e1a9f8d510b86ca42c52516874df5cb8a9ea83cdbdb8dd6b8ac9073"
+      ],
+      "tags": [
+        [
+          "@id-pptx-go-notes-self-closing-fill",
+          "@planned",
+          "@profile-go-existing-notes"
+        ]
+      ]
+    },
+    {
+      "id": "@id-pptx-go-notes-edge-space-preserve",
+      "from": "workflows/native/pptx-text.feature",
+      "to": "workflows/pptx/notes.feature",
+      "sourceSha256": "d2e710f66e78dfa0beabf5d7076d7c67fe4e686744f008a2a134122749cb5444",
+      "caseSha256": [
+        "1d0aa8036e51ba99c259eb860b42e241491626a639d450b7993526019ae9785d"
+      ],
+      "tags": [
+        [
+          "@id-pptx-go-notes-edge-space-preserve",
+          "@planned",
+          "@profile-go-existing-notes"
+        ]
+      ]
+    },
+    {
+      "id": "@id-pptx-go-notes-multiline-template",
+      "from": "workflows/native/pptx-text.feature",
+      "to": "workflows/pptx/notes.feature",
+      "sourceSha256": "d2e710f66e78dfa0beabf5d7076d7c67fe4e686744f008a2a134122749cb5444",
+      "caseSha256": [
+        "7aba12501ddfc9b6bdb0f2e08cfb8dc209443cb4bf865ea17719a04f27451b39"
+      ],
+      "tags": [
+        [
+          "@id-pptx-go-notes-multiline-template",
+          "@planned",
+          "@profile-go-existing-notes"
+        ]
+      ]
+    },
+    {
+      "id": "@id-pptx-go-notes-template-fragments",
+      "from": "workflows/native/pptx-text.feature",
+      "to": "workflows/pptx/notes.feature",
+      "sourceSha256": "d2e710f66e78dfa0beabf5d7076d7c67fe4e686744f008a2a134122749cb5444",
+      "caseSha256": [
+        "6f93a149dd35fd154113b0e1469e39a370a96a7e00ad4ce55263e33541e07fcc"
+      ],
+      "tags": [
+        [
+          "@id-pptx-go-notes-template-fragments",
+          "@planned",
+          "@profile-go-existing-notes"
+        ]
+      ]
+    },
+    {
+      "id": "@id-pptx-bun-open-save-noop",
+      "from": "workflows/native/pptx-text.feature",
+      "to": "workflows/pptx/preservation.feature",
+      "sourceSha256": "d2e710f66e78dfa0beabf5d7076d7c67fe4e686744f008a2a134122749cb5444",
+      "caseSha256": [
+        "58aa11eebcd699c8e64298def507060eb89e4af00059ceadb81318174e0988ec"
+      ],
+      "tags": [
+        [
+          "@id-pptx-bun-open-save-noop",
+          "@planned",
+          "@profile-bun-presentation"
+        ]
+      ]
+    },
+    {
+      "id": "@id-xlsx-read-rel-linked-shared-strings",
+      "from": "workflows/native/xlsx-cells.feature",
+      "to": "workflows/xlsx/cells.feature",
+      "sourceSha256": "7468f407078faf70cc9f968eaeabdb5d88a9b52b922422ac122b03dff9be2f32",
+      "caseSha256": [
+        "cb3e27b3ee5f7b3e8d92500520ffac2b187bd3f902ee860c3641b3f31aeddc2f"
+      ],
+      "tags": [
+        [
+          "@id-xlsx-read-rel-linked-shared-strings",
+          "@planned"
+        ]
+      ]
+    },
+    {
+      "id": "@id-xlsx-preserve-styled-cell-edit",
+      "from": "workflows/native/xlsx-cells.feature",
+      "to": "workflows/xlsx/cells.feature",
+      "sourceSha256": "7468f407078faf70cc9f968eaeabdb5d88a9b52b922422ac122b03dff9be2f32",
+      "caseSha256": [
+        "b7828f93037b412ea9d7e815b2d8d6d62bfa3795a8c0edcfafa12e3700273e0f"
+      ],
+      "tags": [
+        [
+          "@id-xlsx-preserve-styled-cell-edit",
+          "@planned"
+        ]
+      ]
+    },
+    {
+      "id": "@id-xlsx-clear-cross-sheet-caches",
+      "from": "workflows/native/xlsx-cells.feature",
+      "to": "workflows/xlsx/formula-cache.feature",
+      "sourceSha256": "7468f407078faf70cc9f968eaeabdb5d88a9b52b922422ac122b03dff9be2f32",
+      "caseSha256": [
+        "530d1530ffc28e1f86a060bc5edfa2b7a364f6a582ae7fb4fb19f152127ca8f1"
+      ],
+      "tags": [
+        [
+          "@id-xlsx-clear-cross-sheet-caches",
+          "@planned"
+        ]
+      ]
+    },
+    {
+      "id": "@id-xlsx-prefixed-namespace-safe-edits",
+      "from": "workflows/native/xlsx-cells.feature",
+      "to": "workflows/xlsx/cells.feature",
+      "sourceSha256": "7468f407078faf70cc9f968eaeabdb5d88a9b52b922422ac122b03dff9be2f32",
+      "caseSha256": [
+        "bce36cf849fb288442a27c71431a7e1343ac4cb27a32225e12377b31087f73a7"
+      ],
+      "tags": [
+        [
+          "@id-xlsx-prefixed-namespace-safe-edits",
+          "@planned"
+        ]
+      ]
+    },
+    {
+      "id": "@id-xlsx-phonetic-guides-excluded",
+      "from": "workflows/native/xlsx-cells.feature",
+      "to": "workflows/xlsx/cells.feature",
+      "sourceSha256": "7468f407078faf70cc9f968eaeabdb5d88a9b52b922422ac122b03dff9be2f32",
+      "caseSha256": [
+        "ac8368af45b8bbff6d0c45e4726f74e6f58c3a0adf850234d6397ccd3b662357"
+      ],
+      "tags": [
+        [
+          "@id-xlsx-phonetic-guides-excluded",
+          "@planned"
+        ]
+      ]
+    },
+    {
+      "id": "@id-xlsx-styled-blank-cell-editable",
+      "from": "workflows/native/xlsx-cells.feature",
+      "to": "workflows/xlsx/cells.feature",
+      "sourceSha256": "7468f407078faf70cc9f968eaeabdb5d88a9b52b922422ac122b03dff9be2f32",
+      "caseSha256": [
+        "61b40497a836db1671c5e712ef4a58d11a7ff676e43e7c3d09bebdcbbfcf1fe4"
+      ],
+      "tags": [
+        [
+          "@id-xlsx-styled-blank-cell-editable",
+          "@planned"
+        ]
+      ]
+    },
+    {
+      "id": "@id-xlsx-refuse-shared-formula-overwrite",
+      "from": "workflows/native/xlsx-cells.feature",
+      "to": "workflows/xlsx/cells.feature",
+      "sourceSha256": "7468f407078faf70cc9f968eaeabdb5d88a9b52b922422ac122b03dff9be2f32",
+      "caseSha256": [
+        "75179bb4de141f4454ad1e38c624556d81e56697259f572d2c8cc0d81d464a89"
+      ],
+      "tags": [
+        [
+          "@id-xlsx-refuse-shared-formula-overwrite",
+          "@planned"
+        ]
+      ]
+    },
+    {
+      "id": "@id-xlsx-refuse-array-formula-overwrite",
+      "from": "workflows/native/xlsx-cells.feature",
+      "to": "workflows/xlsx/cells.feature",
+      "sourceSha256": "7468f407078faf70cc9f968eaeabdb5d88a9b52b922422ac122b03dff9be2f32",
+      "caseSha256": [
+        "7d84141d882790c147a303eb285118aa09f97103523096e5d9ab73312e322346"
+      ],
+      "tags": [
+        [
+          "@id-xlsx-refuse-array-formula-overwrite",
+          "@planned"
+        ]
+      ]
+    },
+    {
+      "id": "@id-xlsx-array-input-refusal",
+      "from": "workflows/native/xlsx-cache-boundaries.feature",
+      "to": "workflows/xlsx/formula-cache.feature",
+      "sourceSha256": "e03228b770553f850116c99d3699eaad61788319b7dba131fe0967a805c01b94",
+      "caseSha256": [
+        "8ea15270fa3ec95a38ad56075c581c2d659e025f5cd1469e482d4dd0df229af4",
+        "279cf9c96260f1dd54ac9fdbeb429b87d789e2fd432933e92f6ae161c62dd1f8"
+      ],
+      "tags": [
+        [
+          "@id-xlsx-array-input-refusal",
+          "@planned"
+        ],
+        [
+          "@id-xlsx-array-input-refusal",
+          "@planned"
+        ]
+      ]
+    },
+    {
+      "id": "@id-xlsx-cache-scope-opaque-parts",
+      "from": "workflows/native/xlsx-cache-boundaries.feature",
+      "to": "workflows/xlsx/formula-cache.feature",
+      "sourceSha256": "e03228b770553f850116c99d3699eaad61788319b7dba131fe0967a805c01b94",
+      "caseSha256": [
+        "fec67ffeb57723a74a06c44f76633c3e210215479851575c0cd9863d1d7e21ef"
+      ],
+      "tags": [
+        [
+          "@id-xlsx-cache-scope-opaque-parts",
+          "@planned"
+        ]
+      ]
+    },
+    {
+      "id": "@id-xml-parse-offsets",
+      "from": "workflows/xml/parsing.feature",
+      "to": "workflows/xml/parsing.feature",
+      "sourceSha256": "4a8735740a06e91e0e7b881daec1c192a2d53db33606f7b617886c0ed20fe768",
+      "caseSha256": [
+        "d894b0aed4918ce0548f82a0fb529f3b61766ecc5370b50d06698492cec64b40"
+      ],
+      "tags": [
+        [
+          "@id-xml-parse-offsets",
+          "@planned"
+        ]
+      ]
+    },
+    {
+      "id": "@id-xml-normalise-line-endings",
+      "from": "workflows/xml/parsing.feature",
+      "to": "workflows/xml/parsing.feature",
+      "sourceSha256": "4a8735740a06e91e0e7b881daec1c192a2d53db33606f7b617886c0ed20fe768",
+      "caseSha256": [
+        "816ca3df30d58a9922a07dc6a4085729ba10316efda224bf3604f4f9592379c6"
+      ],
+      "tags": [
+        [
+          "@id-xml-normalise-line-endings",
+          "@planned"
+        ]
+      ]
+    },
+    {
+      "id": "@id-xml-parse-refusals",
+      "from": "workflows/xml/parsing.feature",
+      "to": "workflows/xml/parsing.feature",
+      "sourceSha256": "4a8735740a06e91e0e7b881daec1c192a2d53db33606f7b617886c0ed20fe768",
+      "caseSha256": [
+        "23d1c49c6d2c314330a27359e8ad3d8733d96e3918a0fee5ad9346b3149adb38"
+      ],
+      "tags": [
+        [
+          "@id-xml-parse-refusals",
+          "@planned"
+        ]
+      ]
+    },
+    {
+      "id": "@id-xml-parse-bounds",
+      "from": "workflows/xml/parsing.feature",
+      "to": "workflows/xml/parsing.feature",
+      "sourceSha256": "4a8735740a06e91e0e7b881daec1c192a2d53db33606f7b617886c0ed20fe768",
+      "caseSha256": [
+        "5a44d543fdb2322d271fb49399360401f6734977cf3a123572bf70a146b78f76"
+      ],
+      "tags": [
+        [
+          "@id-xml-parse-bounds",
+          "@planned"
+        ]
+      ]
+    },
+    {
+      "id": "@id-xml-apply-edits",
+      "from": "workflows/xml/parsing.feature",
+      "to": "workflows/xml/editing.feature",
+      "sourceSha256": "4a8735740a06e91e0e7b881daec1c192a2d53db33606f7b617886c0ed20fe768",
+      "caseSha256": [
+        "6ec7ff401d94b5e60416b6538f752c7655c38ce835b78c8355be4b7aeb52bfc2"
+      ],
+      "tags": [
+        [
+          "@id-xml-apply-edits",
+          "@planned"
+        ]
+      ]
+    },
+    {
+      "id": "@id-xml-entity-values",
+      "from": "workflows/xml/parsing.feature",
+      "to": "workflows/xml/parsing.feature",
+      "sourceSha256": "4a8735740a06e91e0e7b881daec1c192a2d53db33606f7b617886c0ed20fe768",
+      "caseSha256": [
+        "b1d961315672124ed21b48c8204f7e39a427f8b26a8d4b9ef7c364263d111f5c"
+      ],
+      "tags": [
+        [
+          "@id-xml-entity-values",
+          "@planned"
+        ]
+      ]
+    },
+    {
+      "id": "@id-xml-stylesheet-processing-instruction",
+      "from": "workflows/xml/parsing.feature",
+      "to": "workflows/xml/parsing.feature",
+      "sourceSha256": "4a8735740a06e91e0e7b881daec1c192a2d53db33606f7b617886c0ed20fe768",
+      "caseSha256": [
+        "ca618f47b6cd17737937c8a5712dcb4638fe078b2b4ff4c504ae8f75966b73c0"
+      ],
+      "tags": [
+        [
+          "@id-xml-stylesheet-processing-instruction",
+          "@planned"
+        ]
+      ]
+    },
+    {
+      "id": "@id-xml-expanded-attribute-lookup",
+      "from": "workflows/xml/parsing.feature",
+      "to": "workflows/xml/parsing.feature",
+      "sourceSha256": "4a8735740a06e91e0e7b881daec1c192a2d53db33606f7b617886c0ed20fe768",
+      "caseSha256": [
+        "56d3856af482302522ca36d6c4e57f3cf17b8fdb68ae40512351a0ea54f09a02"
+      ],
+      "tags": [
+        [
+          "@id-xml-expanded-attribute-lookup",
+          "@planned"
+        ]
+      ]
+    },
+    {
+      "id": "@id-xml-implicit-xml-prefix",
+      "from": "workflows/xml/parsing.feature",
+      "to": "workflows/xml/parsing.feature",
+      "sourceSha256": "4a8735740a06e91e0e7b881daec1c192a2d53db33606f7b617886c0ed20fe768",
+      "caseSha256": [
+        "c2ae8e413a3449999093671dbc697a3c55b6473cafdd11b22f8c71f65a0869ae"
+      ],
+      "tags": [
+        [
+          "@id-xml-implicit-xml-prefix",
+          "@planned"
+        ]
+      ]
+    },
+    {
+      "id": "@id-xml-prototype-safe-attributes",
+      "from": "workflows/xml/parsing.feature",
+      "to": "workflows/xml/parsing.feature",
+      "sourceSha256": "4a8735740a06e91e0e7b881daec1c192a2d53db33606f7b617886c0ed20fe768",
+      "caseSha256": [
+        "f33319608b3e6077c5bcb7cb24346c3168ff607f1977ad0d332797808407cb4a"
+      ],
+      "tags": [
+        [
+          "@id-xml-prototype-safe-attributes",
+          "@planned",
+          "@profile-javascript-xml-model"
+        ]
+      ]
+    },
+    {
+      "id": "@id-xml-immutable-namespace-metadata",
+      "from": "workflows/xml/parsing.feature",
+      "to": "workflows/xml/parsing.feature",
+      "sourceSha256": "4a8735740a06e91e0e7b881daec1c192a2d53db33606f7b617886c0ed20fe768",
+      "caseSha256": [
+        "11cb778bbf5391d589e7d795cb94a5382a26ecaeda9460c825f6931031b01548"
+      ],
+      "tags": [
+        [
+          "@id-xml-immutable-namespace-metadata",
+          "@planned",
+          "@profile-javascript-xml-model"
+        ]
+      ]
+    },
+    {
+      "id": "@id-xml-escaping-values",
+      "from": "workflows/xml/parsing.feature",
+      "to": "workflows/xml/parsing.feature",
+      "sourceSha256": "4a8735740a06e91e0e7b881daec1c192a2d53db33606f7b617886c0ed20fe768",
+      "caseSha256": [
+        "690956dbe9b735ad90be6a992c4959067a5c31421a6d1aaaa6fad96a4f3b3a0f",
+        "a894759982b598f869a0bd62ca1d63c58217e9ccf87aba5abd50cc9c31e8b2c4"
+      ],
+      "tags": [
+        [
+          "@id-xml-escaping-values",
+          "@planned",
+          "@profile-bun-xml-escaping"
+        ],
+        [
+          "@id-xml-escaping-values",
+          "@planned",
+          "@profile-bun-xml-escaping"
+        ]
+      ]
+    },
+    {
+      "id": "@id-xml-escaping-invalid-character",
+      "from": "workflows/xml/parsing.feature",
+      "to": "workflows/xml/parsing.feature",
+      "sourceSha256": "4a8735740a06e91e0e7b881daec1c192a2d53db33606f7b617886c0ed20fe768",
+      "caseSha256": [
+        "ef9585f1c95192fe368b4a0ff75ca7f11e52ed444f8bf129c3d22fc25f5dc28e"
+      ],
+      "tags": [
+        [
+          "@id-xml-escaping-invalid-character",
+          "@planned"
+        ]
+      ]
+    },
+    {
+      "id": "@id-xml-escaping-whitespace-roundtrip",
+      "from": "workflows/xml/parsing.feature",
+      "to": "workflows/xml/parsing.feature",
+      "sourceSha256": "4a8735740a06e91e0e7b881daec1c192a2d53db33606f7b617886c0ed20fe768",
+      "caseSha256": [
+        "c4eb702a734168580f546b6169967405f290fccd459f8684557bbbd29cf6bb7d"
+      ],
+      "tags": [
+        [
+          "@id-xml-escaping-whitespace-roundtrip",
+          "@planned"
+        ]
+      ]
+    },
+    {
+      "id": "@id-xml-typed-parse-error",
+      "from": "workflows/xml/parsing.feature",
+      "to": "workflows/xml/parsing.feature",
+      "sourceSha256": "4a8735740a06e91e0e7b881daec1c192a2d53db33606f7b617886c0ed20fe768",
+      "caseSha256": [
+        "b0bc7432c82868704e4d8b0eaa459b0798179a8df9d96145bd782e188bd91dbc"
+      ],
+      "tags": [
+        [
+          "@id-xml-typed-parse-error",
+          "@planned",
+          "@profile-bun-xml-errors"
+        ]
+      ]
+    },
+    {
+      "id": "@id-xml-go-attribute-splice-custody",
+      "from": "workflows/xml/parsing.feature",
+      "to": "workflows/xml/editing.feature",
+      "sourceSha256": "4a8735740a06e91e0e7b881daec1c192a2d53db33606f7b617886c0ed20fe768",
+      "caseSha256": [
+        "184f35e869d2eeff143d3fca393364480f80b901a65340f7420fbcb6d13dc2a8",
+        "14e6749979c06fc5d646a02a7d7db61be7a67bc5d9e73513b01ff365c8aea805",
+        "f612df35a3e1309531cbe73fd493d1501a25599ca513525aee3f0542d4cb21fb"
+      ],
+      "tags": [
+        [
+          "@id-xml-go-attribute-splice-custody",
+          "@planned"
+        ],
+        [
+          "@id-xml-go-attribute-splice-custody",
+          "@planned"
+        ],
+        [
+          "@id-xml-go-attribute-splice-custody",
+          "@planned"
+        ]
+      ]
+    },
+    {
+      "id": "@id-xml-go-attribute-batch-refusal",
+      "from": "workflows/xml/parsing.feature",
+      "to": "workflows/xml/editing.feature",
+      "sourceSha256": "4a8735740a06e91e0e7b881daec1c192a2d53db33606f7b617886c0ed20fe768",
+      "caseSha256": [
+        "60a3b0bd941005a902b95cdb8ed9a2b86b55241c14007f6870aeaf2bc8e4361a"
+      ],
+      "tags": [
+        [
+          "@id-xml-go-attribute-batch-refusal",
+          "@planned"
+        ]
+      ]
+    },
+    {
+      "id": "@id-xml-go-child-insertion-custody",
+      "from": "workflows/xml/parsing.feature",
+      "to": "workflows/xml/editing.feature",
+      "sourceSha256": "4a8735740a06e91e0e7b881daec1c192a2d53db33606f7b617886c0ed20fe768",
+      "caseSha256": [
+        "308156546840ef2178cfe9d50f5517bc569a3ab3b3694e0402fe2586c690210a"
+      ],
+      "tags": [
+        [
+          "@id-xml-go-child-insertion-custody",
+          "@planned"
+        ]
+      ]
+    },
+    {
+      "id": "@id-xml-go-child-insertion-refusal",
+      "from": "workflows/xml/parsing.feature",
+      "to": "workflows/xml/editing.feature",
+      "sourceSha256": "4a8735740a06e91e0e7b881daec1c192a2d53db33606f7b617886c0ed20fe768",
+      "caseSha256": [
+        "332a1e7610ff63134a4a7c8ecd8126565323b738e312438ba3c3879873d8a4b1"
+      ],
+      "tags": [
+        [
+          "@id-xml-go-child-insertion-refusal",
+          "@planned"
+        ]
+      ]
+    },
+    {
+      "id": "@id-xml-go-child-namespace-matrix",
+      "from": "workflows/xml/parsing.feature",
+      "to": "workflows/xml/editing.feature",
+      "sourceSha256": "4a8735740a06e91e0e7b881daec1c192a2d53db33606f7b617886c0ed20fe768",
+      "caseSha256": [
+        "3edb52be637664f26efa45587c4a98e0b02f99b6999680ab97d633c072076d8e"
+      ],
+      "tags": [
+        [
+          "@id-xml-go-child-namespace-matrix",
+          "@planned"
+        ]
+      ]
+    },
+    {
+      "id": "@id-xml-go-element-removal-custody",
+      "from": "workflows/xml/parsing.feature",
+      "to": "workflows/xml/editing.feature",
+      "sourceSha256": "4a8735740a06e91e0e7b881daec1c192a2d53db33606f7b617886c0ed20fe768",
+      "caseSha256": [
+        "eda5bd87a8ea6eac24368e9b2a1193c7ad288afd24f46a960dba4c8b7c92573e"
+      ],
+      "tags": [
+        [
+          "@id-xml-go-element-removal-custody",
+          "@planned"
+        ]
+      ]
+    },
+    {
+      "id": "@id-xml-go-element-removal-refusal",
+      "from": "workflows/xml/parsing.feature",
+      "to": "workflows/xml/editing.feature",
+      "sourceSha256": "4a8735740a06e91e0e7b881daec1c192a2d53db33606f7b617886c0ed20fe768",
+      "caseSha256": [
+        "b1ca8e4af23d99667b0c49ac2a2546473aa9f811eb295be961da74228b396986",
+        "c9a235cb9b0b52793af4a4fa88b1d757020fc657dd561cca930ec8e3f91e0b01"
+      ],
+      "tags": [
+        [
+          "@id-xml-go-element-removal-refusal",
+          "@planned"
+        ],
+        [
+          "@id-xml-go-element-removal-refusal",
+          "@planned"
+        ]
+      ]
+    },
+    {
+      "id": "@id-xml-go-element-replacement-custody",
+      "from": "workflows/xml/parsing.feature",
+      "to": "workflows/xml/editing.feature",
+      "sourceSha256": "4a8735740a06e91e0e7b881daec1c192a2d53db33606f7b617886c0ed20fe768",
+      "caseSha256": [
+        "8490a0a263462488ef86d31ec1d8b58221d60b0dbee4392902d1faeabc16f103"
+      ],
+      "tags": [
+        [
+          "@id-xml-go-element-replacement-custody",
+          "@planned"
+        ]
+      ]
+    },
+    {
+      "id": "@id-xml-go-element-replacement-refusal",
+      "from": "workflows/xml/parsing.feature",
+      "to": "workflows/xml/editing.feature",
+      "sourceSha256": "4a8735740a06e91e0e7b881daec1c192a2d53db33606f7b617886c0ed20fe768",
+      "caseSha256": [
+        "bc3fb76ee05068210f91843febe4907ac8737309d5fa48126d405c8569009968",
+        "546ee53fe35b85e0e838c91a8d99fccfdf668e070f545af7e96e1d41550bff63",
+        "39efa51b85d3654c4c25584a801f340d44c7dc1f67fcb6ead23075f5f7f1bffe"
+      ],
+      "tags": [
+        [
+          "@id-xml-go-element-replacement-refusal",
+          "@planned"
+        ],
+        [
+          "@id-xml-go-element-replacement-refusal",
+          "@planned"
+        ],
+        [
+          "@id-xml-go-element-replacement-refusal",
+          "@planned"
+        ]
+      ]
+    },
+    {
+      "id": "@id-xml-go-immutable-leaf-seed",
+      "from": "workflows/xml/parsing.feature",
+      "to": "workflows/xml/editing.feature",
+      "sourceSha256": "4a8735740a06e91e0e7b881daec1c192a2d53db33606f7b617886c0ed20fe768",
+      "caseSha256": [
+        "acf892ab4a61c0b67d18008a5eaf2d9004856bcf0a9a513162bcc577ce403bec"
+      ],
+      "tags": [
+        [
+          "@id-xml-go-immutable-leaf-seed",
+          "@planned"
+        ]
+      ]
+    },
+    {
+      "id": "@id-xml-invalid-qname-components",
+      "from": "workflows/xml/names.feature",
+      "to": "workflows/xml/names.feature",
+      "sourceSha256": "032ccd1e7adc03078f17baa55ac0d6aa216790d975e57c797b0d79aacc981ed8",
+      "caseSha256": [
+        "b6bb050aac2111f265145529ef9d447fb9942d73b698b4212a6601cf03ef7c23",
+        "1985730b0693006236b1420420abc8ef3fe5abc067d39b7b159e2818fc3892a2",
+        "98039377e156d61eeb50df5174a285d886440b94eec0dccc97b0e12033d815e5"
+      ],
+      "tags": [
+        [
+          "@id-xml-invalid-qname-components",
+          "@planned"
+        ],
+        [
+          "@id-xml-invalid-qname-components",
+          "@planned"
+        ],
+        [
+          "@id-xml-invalid-qname-components",
+          "@planned"
+        ]
+      ]
+    },
+    {
+      "id": "@id-xml-unicode-qname-components",
+      "from": "workflows/xml/names.feature",
+      "to": "workflows/xml/names.feature",
+      "sourceSha256": "032ccd1e7adc03078f17baa55ac0d6aa216790d975e57c797b0d79aacc981ed8",
+      "caseSha256": [
+        "ab2a5633a5e36ebf877f8c01c4c983d896e69c1f979680a0f6c0bd0b71174999"
+      ],
+      "tags": [
+        [
+          "@id-xml-unicode-qname-components",
+          "@planned"
+        ]
+      ]
+    },
+    {
+      "id": "@id-xml-outside-root-nbsp",
+      "from": "workflows/xml/names.feature",
+      "to": "workflows/xml/names.feature",
+      "sourceSha256": "032ccd1e7adc03078f17baa55ac0d6aa216790d975e57c797b0d79aacc981ed8",
+      "caseSha256": [
+        "02f442d2dbb6b119895c305b3c92788edd0486ab93a65905a3b594f04fd6363f",
+        "1cfc11d5dd6e33199a985399ba682d892e9a9e4ee8039a5ce5c3f860487fdadd"
+      ],
+      "tags": [
+        [
+          "@id-xml-outside-root-nbsp",
+          "@planned"
+        ],
+        [
+          "@id-xml-outside-root-nbsp",
+          "@planned"
+        ]
+      ]
+    },
+    {
+      "id": "@id-xml-comparison-prefix-and-opc-order",
+      "from": "workflows/xml/comparison.feature",
+      "to": "workflows/xml/comparison.feature",
+      "sourceSha256": "b700a3da8670cb048aa3f836c193f4533908730c185847f63e167e59c48f5e93",
+      "caseSha256": [
+        "d789bdbf52deb398aabbb6ee0745160634c65093be0286289e03ac16d672cd48"
+      ],
+      "tags": [
+        [
+          "@id-xml-comparison-prefix-and-opc-order",
+          "@planned"
+        ]
+      ]
+    },
+    {
+      "id": "@id-xml-comparison-significant-content",
+      "from": "workflows/xml/comparison.feature",
+      "to": "workflows/xml/comparison.feature",
+      "sourceSha256": "b700a3da8670cb048aa3f836c193f4533908730c185847f63e167e59c48f5e93",
+      "caseSha256": [
+        "e0cecc39a9b263b09c51b17be7bf63d435588c4f8253421667c9b971e8b0ae77",
+        "6023ff891b004382ae4d87a9b2c6aeb01566bcd39602173448c729624694e820",
+        "6758df7c0fb192e42fc6e0a565791a111cdbebe7c515f28517e2b3fd5d383ca3"
+      ],
+      "tags": [
+        [
+          "@id-xml-comparison-significant-content",
+          "@planned"
+        ],
+        [
+          "@id-xml-comparison-significant-content",
+          "@planned"
+        ],
+        [
+          "@id-xml-comparison-significant-content",
+          "@planned"
+        ]
+      ]
+    },
+    {
+      "id": "@id-xml-comparison-prefix-attribute-binding",
+      "from": "workflows/xml/comparison.feature",
+      "to": "workflows/xml/comparison.feature",
+      "sourceSha256": "b700a3da8670cb048aa3f836c193f4533908730c185847f63e167e59c48f5e93",
+      "caseSha256": [
+        "fb8b5d5403ba583833623b6944af40a7ffef07353d36870002a1652ca196302e"
+      ],
+      "tags": [
+        [
+          "@id-xml-comparison-prefix-attribute-binding",
+          "@planned"
+        ]
+      ]
+    },
+    {
+      "id": "@id-xml-comparison-unsafe-input",
+      "from": "workflows/xml/comparison.feature",
+      "to": "workflows/xml/comparison.feature",
+      "sourceSha256": "b700a3da8670cb048aa3f836c193f4533908730c185847f63e167e59c48f5e93",
+      "caseSha256": [
+        "c3aaf358ad1d5217090b109b176ed66e255413290eba22bf508974bac2035bfd",
+        "10be3f088c3280eb09aacd2ab54d2bb5ddd6597952a9bad8c0e0251a32319191"
+      ],
+      "tags": [
+        [
+          "@id-xml-comparison-unsafe-input",
+          "@planned"
+        ],
+        [
+          "@id-xml-comparison-unsafe-input",
+          "@planned"
+        ]
+      ]
+    },
+    {
+      "id": "@id-xml-comparison-processing-instructions-and-comments",
+      "from": "workflows/xml/comparison.feature",
+      "to": "workflows/xml/comparison.feature",
+      "sourceSha256": "b700a3da8670cb048aa3f836c193f4533908730c185847f63e167e59c48f5e93",
+      "caseSha256": [
+        "0f56ce17a8b6fc98970a69975db6e63a5b9977b4245175eee010ec6fcd1c5b92",
+        "9485d5c83494758d8577b7f59f9e14e3108074aeed5e45d740a1a3507a6394da",
+        "57f604597e92da6300541615a2c1c8e293ba83979974fda54c36bbc57814469a"
+      ],
+      "tags": [
+        [
+          "@id-xml-comparison-processing-instructions-and-comments",
+          "@planned"
+        ],
+        [
+          "@id-xml-comparison-processing-instructions-and-comments",
+          "@planned"
+        ],
+        [
+          "@id-xml-comparison-processing-instructions-and-comments",
+          "@planned"
+        ]
+      ]
+    },
+    {
+      "id": "@id-package-admission-unsafe-members",
+      "from": "workflows/package/zip-admission.feature",
+      "to": "workflows/package/zip-admission.feature",
+      "sourceSha256": "28b1599e839f360929e689ff2d99e13599e000b98d6aa0d58c2e6a47b4efe696",
+      "caseSha256": [
+        "078d0c1e18bfca5b3a9ecdf264447d106deb48ec7622d8b1eca9818e0e77530a",
+        "d8a4b6103763c3576390488e437f32a032d5c868b204e5dd337b0fa1f9aa0606",
+        "d646d60c5b2ae02f07443aa3fb43398af8ba121ec8bbf6354bd510a43d61ee42",
+        "719aec9ada60fafd75ca70b54463bb2793289570c20f4d4a9458e60a68cb0fba",
+        "e53d42256205eb6c954483d553ae0b9c8c493d755a992f407fb1bd926608c8d7"
+      ],
+      "tags": [
+        [
+          "@id-package-admission-unsafe-members",
+          "@planned"
+        ],
+        [
+          "@id-package-admission-unsafe-members",
+          "@planned"
+        ],
+        [
+          "@id-package-admission-unsafe-members",
+          "@planned"
+        ],
+        [
+          "@id-package-admission-unsafe-members",
+          "@planned"
+        ],
+        [
+          "@id-package-admission-unsafe-members",
+          "@planned"
+        ]
+      ]
+    },
+    {
+      "id": "@id-package-admission-resource-limits",
+      "from": "workflows/package/zip-admission.feature",
+      "to": "workflows/package/zip-admission.feature",
+      "sourceSha256": "28b1599e839f360929e689ff2d99e13599e000b98d6aa0d58c2e6a47b4efe696",
+      "caseSha256": [
+        "400828e2554742d3597659cb4ef7667b18a12ae6f7012a3e7a2be6d3fc526551",
+        "8101804033e925b0004bb5569ff176fb7008f0873993b1a9d16e8c8d66799f01",
+        "053a1a078a3fa8440c9999a48c6c5ef8f5f7bf11e20e40e166c7af01cac4f8bf",
+        "1ea819eeaef5b03558e47fd08bd0bdae17a3c4b558a21f1791a2f513b3bedaeb"
+      ],
+      "tags": [
+        [
+          "@id-package-admission-resource-limits",
+          "@planned"
+        ],
+        [
+          "@id-package-admission-resource-limits",
+          "@planned"
+        ],
+        [
+          "@id-package-admission-resource-limits",
+          "@planned"
+        ],
+        [
+          "@id-package-admission-resource-limits",
+          "@planned"
+        ]
+      ]
+    },
+    {
+      "id": "@id-package-admission-unsupported-compression",
+      "from": "workflows/package/zip-admission.feature",
+      "to": "workflows/package/zip-admission.feature",
+      "sourceSha256": "28b1599e839f360929e689ff2d99e13599e000b98d6aa0d58c2e6a47b4efe696",
+      "caseSha256": [
+        "656b5a432d236fa1839bc7d56f42c0f6d4983abe3c6cfdc6762e4a39cfd7bb3b"
+      ],
+      "tags": [
+        [
+          "@id-package-admission-unsupported-compression",
+          "@planned"
+        ]
+      ]
+    },
+    {
+      "id": "@id-package-admission-unsafe-xml-members",
+      "from": "workflows/package/xml-member-admission.feature",
+      "to": "workflows/package/xml-member-admission.feature",
+      "sourceSha256": "19fa717632d689e7ff4e883fb2af3f31e018373dc79ddb78efecf7742ea14e91",
+      "caseSha256": [
+        "4e9d58f1cdfadf87926f20567c66f3e1d8d04fca0e3bca98a25974416ddaaf45",
+        "888e72b575cb49081e7caf9919a0b0cfd854ad90f74ac90c063741c45db60087",
+        "8955d3b47ceea623fd4b6f8dc83a4bae679659f3a51087c99bad3683cdf26d4c"
+      ],
+      "tags": [
+        [
+          "@id-package-admission-unsafe-xml-members",
+          "@planned"
+        ],
+        [
+          "@id-package-admission-unsafe-xml-members",
+          "@planned"
+        ],
+        [
+          "@id-package-admission-unsafe-xml-members",
+          "@planned"
+        ]
+      ]
+    },
+    {
+      "id": "@id-package-diff-equivalent-xml-and-binary-changes",
+      "from": "workflows/package/semantic-diff.feature",
+      "to": "workflows/package/semantic-diff.feature",
+      "sourceSha256": "eebe822867a6f83d77351a0590dd81d7e929dc13f2d1add0bfcbbc44c5e90ca7",
+      "caseSha256": [
+        "26162347edb3abddfb2d092234c609d8fd3f4aecef196dcd5dc4cc1a7eafcad9"
+      ],
+      "tags": [
+        [
+          "@id-package-diff-equivalent-xml-and-binary-changes",
+          "@planned"
+        ]
+      ]
+    },
+    {
+      "id": "@id-docx-comments-inspection",
+      "from": "workflows/docx/comments.feature",
+      "to": "workflows/docx/comments.feature",
+      "sourceSha256": "7c1d435624140439a68e0b70801b7e0c19be4e28008dcb66d9e9c1acb33dc9e0",
+      "caseSha256": [
+        "a97271cb4d7cec9de8a31ae1520df7b5b2f815c8aa76377c995226c403993c18"
+      ],
+      "tags": [
+        [
+          "@id-docx-comments-inspection",
+          "@planned",
+          "@profile-existing-comments-extended"
+        ]
+      ]
+    },
+    {
+      "id": "@id-docx-comments-resolution",
+      "from": "workflows/docx/comments.feature",
+      "to": "workflows/docx/comments.feature",
+      "sourceSha256": "7c1d435624140439a68e0b70801b7e0c19be4e28008dcb66d9e9c1acb33dc9e0",
+      "caseSha256": [
+        "544653e5d7d532721895156e08cd33664b4a79dd431312583d452b0b8005fa2d"
+      ],
+      "tags": [
+        [
+          "@id-docx-comments-resolution",
+          "@planned",
+          "@profile-existing-comments-extended"
+        ]
+      ]
+    },
+    {
+      "id": "@id-docx-comments-noop",
+      "from": "workflows/docx/comments.feature",
+      "to": "workflows/docx/comments.feature",
+      "sourceSha256": "7c1d435624140439a68e0b70801b7e0c19be4e28008dcb66d9e9c1acb33dc9e0",
+      "caseSha256": [
+        "1522f1d74d832eaedf1625029aaf73fdb98604f0aeb8337594e334779b5d0817"
+      ],
+      "tags": [
+        [
+          "@id-docx-comments-noop",
+          "@planned",
+          "@profile-existing-comments-extended"
+        ]
+      ]
+    },
+    {
+      "id": "@id-docx-comments-refusal",
+      "from": "workflows/docx/comments.feature",
+      "to": "workflows/docx/comments.feature",
+      "sourceSha256": "7c1d435624140439a68e0b70801b7e0c19be4e28008dcb66d9e9c1acb33dc9e0",
+      "caseSha256": [
+        "75d8f70b076270c060a2af9888f3fc2ccaf6135b84117ac141a15d9815dfcb47",
+        "55ffdb66e8eac5388325dbdbaf353e14c42a1b3d89ccc138ac28737ed705c005",
+        "a58201d286f97443bb82f74202e1aa09ecfb47be081404af6ef0d94f8ea77908",
+        "f72fbea5df41c62cc9223e32dd9dd9e4044debc5d20fcf39d041948bef764013",
+        "0f496580cc00fc4fa902cf6189b6d08cf68124c9f671c17cace2e3dc6acd180d",
+        "da542b9d01d4d34561ed0871bcad834a1027b791e6f262f542818fba9e256057",
+        "1e5fd98488854f1d1325fbb0ba6ab2754001831457e5e8abebea9f82bc76d63b",
+        "c2da9c41edf371a7667bfab09624df8a8490ded872e588c8460be07bdcf03e4f",
+        "e449017a7456784f3d6236d463982728ad3108aae4a595ddd359862e085e410e",
+        "ebc5e3ce08a9cc4fe54c8cf6da783f89e0d088d868cf86b130aa59e501664980",
+        "c072fabb1c86a58efd8282f97dd6f1a056d6e5ca1ea1501d8f63f32c8dd54bd6"
+      ],
+      "tags": [
+        [
+          "@id-docx-comments-refusal",
+          "@planned",
+          "@profile-existing-comments-extended"
+        ],
+        [
+          "@id-docx-comments-refusal",
+          "@planned",
+          "@profile-existing-comments-extended"
+        ],
+        [
+          "@id-docx-comments-refusal",
+          "@planned",
+          "@profile-existing-comments-extended"
+        ],
+        [
+          "@id-docx-comments-refusal",
+          "@planned",
+          "@profile-existing-comments-extended"
+        ],
+        [
+          "@id-docx-comments-refusal",
+          "@planned",
+          "@profile-existing-comments-extended"
+        ],
+        [
+          "@id-docx-comments-refusal",
+          "@planned",
+          "@profile-existing-comments-extended"
+        ],
+        [
+          "@id-docx-comments-refusal",
+          "@planned",
+          "@profile-existing-comments-extended"
+        ],
+        [
+          "@id-docx-comments-refusal",
+          "@planned",
+          "@profile-existing-comments-extended"
+        ],
+        [
+          "@id-docx-comments-refusal",
+          "@planned",
+          "@profile-existing-comments-extended"
+        ],
+        [
+          "@id-docx-comments-refusal",
+          "@planned",
+          "@profile-existing-comments-extended"
+        ],
+        [
+          "@id-docx-comments-refusal",
+          "@planned",
+          "@profile-existing-comments-extended"
+        ]
+      ]
+    },
+    {
+      "id": "@id-python-comments-mixed-done",
+      "from": "workflows/docx/comments.feature",
+      "to": "workflows/docx/comments.feature",
+      "sourceSha256": "7c1d435624140439a68e0b70801b7e0c19be4e28008dcb66d9e9c1acb33dc9e0",
+      "caseSha256": [
+        "55e9e011c379f73b4e02362f2acf674deeea0e14c367f2c000c063de67b40c65"
+      ],
+      "tags": [
+        [
+          "@id-python-comments-mixed-done",
+          "@planned",
+          "@profile-python-comment-resolution"
+        ]
+      ]
+    },
+    {
+      "id": "@id-python-comments-resolved-filter",
+      "from": "workflows/docx/comments.feature",
+      "to": "workflows/docx/comments.feature",
+      "sourceSha256": "7c1d435624140439a68e0b70801b7e0c19be4e28008dcb66d9e9c1acb33dc9e0",
+      "caseSha256": [
+        "6767942ad599ab98cbc4fb8c26133f5f11f8c384b408a56bce7bae13af748ab3"
+      ],
+      "tags": [
+        [
+          "@id-python-comments-resolved-filter",
+          "@planned",
+          "@profile-python-comment-resolution"
+        ]
+      ]
+    },
+    {
+      "id": "@id-python-comments-reopen-filter",
+      "from": "workflows/docx/comments.feature",
+      "to": "workflows/docx/comments.feature",
+      "sourceSha256": "7c1d435624140439a68e0b70801b7e0c19be4e28008dcb66d9e9c1acb33dc9e0",
+      "caseSha256": [
+        "4b03472275621edde5fccfdd24eb82f25268915d2c83563fb475841c0aef1bb0"
+      ],
+      "tags": [
+        [
+          "@id-python-comments-reopen-filter",
+          "@planned",
+          "@profile-python-comment-resolution"
+        ]
+      ]
+    },
+    {
+      "id": "@id-python-comments-reply-root-resolution",
+      "from": "workflows/docx/comments.feature",
+      "to": "workflows/docx/comments.feature",
+      "sourceSha256": "7c1d435624140439a68e0b70801b7e0c19be4e28008dcb66d9e9c1acb33dc9e0",
+      "caseSha256": [
+        "5100467de2ff4beb214c25e0043125cfc76a59c0d57ba015348ba9a8c09fa196"
+      ],
+      "tags": [
+        [
+          "@id-python-comments-reply-root-resolution",
+          "@planned",
+          "@profile-python-comment-resolution"
+        ]
+      ]
+    },
+    {
+      "id": "@id-python-comments-ids-fallback",
+      "from": "workflows/docx/comments.feature",
+      "to": "workflows/docx/comments.feature",
+      "sourceSha256": "7c1d435624140439a68e0b70801b7e0c19be4e28008dcb66d9e9c1acb33dc9e0",
+      "caseSha256": [
+        "673fea218ec5bfe80ea625a1fb9a21b2a72ac10ff67fdadea7823c8313ce8918"
+      ],
+      "tags": [
+        [
+          "@id-python-comments-ids-fallback",
+          "@planned",
+          "@profile-python-comment-resolution"
+        ]
+      ]
+    },
+    {
+      "id": "@id-python-comments-create-extension",
+      "from": "workflows/docx/comments.feature",
+      "to": "workflows/docx/comments.feature",
+      "sourceSha256": "7c1d435624140439a68e0b70801b7e0c19be4e28008dcb66d9e9c1acb33dc9e0",
+      "caseSha256": [
+        "0910f64e797dcb0ebc4a535ba33ab48e80990ec5b2fbd0b0e576cc19a161ea20"
+      ],
+      "tags": [
+        [
+          "@id-python-comments-create-extension",
+          "@planned",
+          "@profile-python-comment-resolution"
+        ]
+      ]
+    },
+    {
+      "id": "@id-python-comments-filter-predicates",
+      "from": "workflows/docx/comments.feature",
+      "to": "workflows/docx/comments.feature",
+      "sourceSha256": "7c1d435624140439a68e0b70801b7e0c19be4e28008dcb66d9e9c1acb33dc9e0",
+      "caseSha256": [
+        "bdfd745c9481be500db1cdb21eb7248469202c0610cc223c5f7422f3b174f23b"
+      ],
+      "tags": [
+        [
+          "@id-python-comments-filter-predicates",
+          "@planned",
+          "@profile-python-comment-resolution"
+        ]
+      ]
+    },
+    {
+      "id": "@id-python-comments-threaded-reply",
+      "from": "workflows/docx/comments.feature",
+      "to": "workflows/docx/comments.feature",
+      "sourceSha256": "7c1d435624140439a68e0b70801b7e0c19be4e28008dcb66d9e9c1acb33dc9e0",
+      "caseSha256": [
+        "0b779e1ef05c77c86cb9d29f755c18f7ebd52bcca704b2ca86770533ccd919d7"
+      ],
+      "tags": [
+        [
+          "@id-python-comments-threaded-reply",
+          "@planned",
+          "@profile-python-comment-resolution"
+        ]
+      ]
+    },
+    {
+      "id": "@id-python-comments-reply-auto-resolve",
+      "from": "workflows/docx/comments.feature",
+      "to": "workflows/docx/comments.feature",
+      "sourceSha256": "7c1d435624140439a68e0b70801b7e0c19be4e28008dcb66d9e9c1acb33dc9e0",
+      "caseSha256": [
+        "477aab640e67d2e4e7487fb9d7974658d110d284a1ed7fb5500152fc35e5eb70"
+      ],
+      "tags": [
+        [
+          "@id-python-comments-reply-auto-resolve",
+          "@planned",
+          "@profile-python-comment-resolution"
+        ]
+      ]
+    },
+    {
+      "id": "@id-docx-format-preserve",
+      "from": "workflows/docx/text.feature",
+      "to": "workflows/docx/text.feature",
+      "sourceSha256": "27711dc49074796eafded354a478d1ae8068f729b9d8f90a7e124805c459c32d",
+      "caseSha256": [
+        "089c2f31cc166536b43f35f5257efcbfd24feb3bf7e4c0d55004226254b710f0"
+      ],
+      "tags": [
+        [
+          "@id-docx-format-preserve",
+          "@planned"
+        ]
+      ]
+    },
+    {
+      "id": "@id-docx-xml-space",
+      "from": "workflows/docx/text.feature",
+      "to": "workflows/docx/text.feature",
+      "sourceSha256": "27711dc49074796eafded354a478d1ae8068f729b9d8f90a7e124805c459c32d",
+      "caseSha256": [
+        "4c1ad44c585b1764cc8468a5c7dc86b6e58781ce0317dfc63ea109bcc7254b0a"
+      ],
+      "tags": [
+        [
+          "@id-docx-xml-space",
+          "@planned"
+        ]
+      ]
+    },
+    {
+      "id": "@id-docx-table-paragraph",
+      "from": "workflows/docx/text.feature",
+      "to": "workflows/docx/text.feature",
+      "sourceSha256": "27711dc49074796eafded354a478d1ae8068f729b9d8f90a7e124805c459c32d",
+      "caseSha256": [
+        "fc4e658bbdf21ab6d675064f1cde9b5cd67b626a5cd484c39ee0eb31a1191d57"
+      ],
+      "tags": [
+        [
+          "@id-docx-table-paragraph",
+          "@planned"
+        ]
+      ]
+    },
+    {
+      "id": "@id-docx-stale-span",
+      "from": "workflows/docx/text.feature",
+      "to": "workflows/docx/text.feature",
+      "sourceSha256": "27711dc49074796eafded354a478d1ae8068f729b9d8f90a7e124805c459c32d",
+      "caseSha256": [
+        "a2219dafbeda456fbd1794136a0bd5f5bca96439f3e59a0e2ee2d8b834dfe3ed"
+      ],
+      "tags": [
+        [
+          "@id-docx-stale-span",
+          "@planned"
+        ]
+      ]
+    },
+    {
+      "id": "@id-docx-refuse-topology",
+      "from": "workflows/docx/text.feature",
+      "to": "workflows/docx/text.feature",
+      "sourceSha256": "27711dc49074796eafded354a478d1ae8068f729b9d8f90a7e124805c459c32d",
+      "caseSha256": [
+        "5e4fb425e5ccb953b3ca5b6034515d0611bbf12b723ce7e20597e1852e1b2de2",
+        "47f3dbfaec8392e2920d020cf875d07da41236bd6abb85efd7d4c9a7282467e1",
+        "63f97a352da6dc2da5233d7b657f9054187fa55825a33a99ed0d3102d77a29aa"
+      ],
+      "tags": [
+        [
+          "@id-docx-refuse-topology",
+          "@planned"
+        ],
+        [
+          "@id-docx-refuse-topology",
+          "@planned"
+        ],
+        [
+          "@id-docx-refuse-topology",
+          "@planned"
+        ]
+      ]
+    },
+    {
+      "id": "@id-docx-create-minimal-package",
+      "from": "workflows/docx/creation.feature",
+      "to": "workflows/docx/creation.feature",
+      "sourceSha256": "1e827fcb4d336e74a77347001f058b9f6b64901046c18ef49765d00f72d87ded",
+      "caseSha256": [
+        "6cd7a2f2b7484139449755bb8bffbd422449dfda6bb541c6fdb509dce76ca20d"
+      ],
+      "tags": [
+        [
+          "@id-docx-create-minimal-package",
+          "@planned"
+        ]
+      ]
+    },
+    {
+      "id": "@id-docx-create-style-validation",
+      "from": "workflows/docx/creation.feature",
+      "to": "workflows/docx/creation.feature",
+      "sourceSha256": "1e827fcb4d336e74a77347001f058b9f6b64901046c18ef49765d00f72d87ded",
+      "caseSha256": [
+        "fbbb3926cd6dbf314b7d0e1a221c183fb22de06918b1e2f6f5e40c900cf13a9d"
+      ],
+      "tags": [
+        [
+          "@id-docx-create-style-validation",
+          "@planned"
+        ]
+      ]
+    },
+    {
+      "id": "@id-docx-create-stale-opaque",
+      "from": "workflows/docx/creation.feature",
+      "to": "workflows/docx/creation.feature",
+      "sourceSha256": "1e827fcb4d336e74a77347001f058b9f6b64901046c18ef49765d00f72d87ded",
+      "caseSha256": [
+        "be6740af8d7d446f7cad294b6971add9d36f51df73c9f3095d914cc9da1dd055"
+      ],
+      "tags": [
+        [
+          "@id-docx-create-stale-opaque",
+          "@planned"
+        ]
+      ]
+    },
+    {
+      "id": "@id-docx-create-atomic-refusals",
+      "from": "workflows/docx/creation.feature",
+      "to": "workflows/docx/creation.feature",
+      "sourceSha256": "1e827fcb4d336e74a77347001f058b9f6b64901046c18ef49765d00f72d87ded",
+      "caseSha256": [
+        "94298d648ddaa5a6c99d5c94f95b47d9a761ad612e010204c24cbd1d328d1728",
+        "bf2bf14a7f23f2e5122e0e5126fcc375140fa5a866a62d2c829f13f81fce7695",
+        "357f195cf46bb2e9de3661648eccd6666717d2dd7aa1dedef2978add6ce09014",
+        "456a2cd40b42e190f8bd082d2b9d9fd5debe3ddd5f1986baa5128a142ce8ad17",
+        "87c2b2a6dfeca09468515844f756edd6e0a0c6d8f5f26fe1ed4c68c1c4d3406b"
+      ],
+      "tags": [
+        [
+          "@id-docx-create-atomic-refusals",
+          "@planned"
+        ],
+        [
+          "@id-docx-create-atomic-refusals",
+          "@planned"
+        ],
+        [
+          "@id-docx-create-atomic-refusals",
+          "@planned"
+        ],
+        [
+          "@id-docx-create-atomic-refusals",
+          "@planned"
+        ],
+        [
+          "@id-docx-create-atomic-refusals",
+          "@planned"
+        ]
+      ]
+    },
+    {
+      "id": "@id-docx-table-create-roundtrip",
+      "from": "workflows/docx/tables.feature",
+      "to": "workflows/docx/tables.feature",
+      "sourceSha256": "53902e41953334f46fdd95c4984bfd478ff6f9fcec82536d1adbf9f044a2ae54",
+      "caseSha256": [
+        "ba62a9d5e2cdadfc1f02bcc51f96138e3dc17ded7f08cbcccf03c7f98acca8d9"
+      ],
+      "tags": [
+        [
+          "@id-docx-table-create-roundtrip",
+          "@planned"
+        ]
+      ]
+    },
+    {
+      "id": "@id-docx-table-opaque-preserve",
+      "from": "workflows/docx/tables.feature",
+      "to": "workflows/docx/tables.feature",
+      "sourceSha256": "53902e41953334f46fdd95c4984bfd478ff6f9fcec82536d1adbf9f044a2ae54",
+      "caseSha256": [
+        "89e1d86195b42eb10a5e7f97e7af649d28dc67931813584a80546eb356b89179"
+      ],
+      "tags": [
+        [
+          "@id-docx-table-opaque-preserve",
+          "@planned"
+        ]
+      ]
+    },
+    {
+      "id": "@id-docx-table-stale-cell",
+      "from": "workflows/docx/tables.feature",
+      "to": "workflows/docx/tables.feature",
+      "sourceSha256": "53902e41953334f46fdd95c4984bfd478ff6f9fcec82536d1adbf9f044a2ae54",
+      "caseSha256": [
+        "5c34fb4b590b3bb87bf8a7f5c635f26120461fef80494fbef0df8c865c1bfec5"
+      ],
+      "tags": [
+        [
+          "@id-docx-table-stale-cell",
+          "@planned"
+        ]
+      ]
+    },
+    {
+      "id": "@id-docx-table-atomic-refusals",
+      "from": "workflows/docx/tables.feature",
+      "to": "workflows/docx/tables.feature",
+      "sourceSha256": "53902e41953334f46fdd95c4984bfd478ff6f9fcec82536d1adbf9f044a2ae54",
+      "caseSha256": [
+        "0021179f51af8254c8b45c34878cecfac58ae8a9197351da85680c523abed399",
+        "507208169c951adb98b1cfb1c2d4509b5cdc81dd66cee6550d1b832557749167",
+        "7c55908fe67f6335ed4437a30e862d496fb07220536e564771721eb76d091673",
+        "ee5b8e9f490168edb196fe1888335bd27a26591a372e31c41588f28e3211abec"
+      ],
+      "tags": [
+        [
+          "@id-docx-table-atomic-refusals",
+          "@planned"
+        ],
+        [
+          "@id-docx-table-atomic-refusals",
+          "@planned"
+        ],
+        [
+          "@id-docx-table-atomic-refusals",
+          "@planned"
+        ],
+        [
+          "@id-docx-table-atomic-refusals",
+          "@planned"
+        ]
+      ]
+    },
+    {
+      "id": "@id-pptx-create-new-minimal",
+      "from": "workflows/pptx/creation.feature",
+      "to": "workflows/pptx/creation.feature",
+      "sourceSha256": "564ea5266151ebe9d0ce48eead073ecb4b3f944fca79c97556e8a677b518da55",
+      "caseSha256": [
+        "a3f6f525fe9fe067e51dc3ad7243166001d5255a9bc97b0281524177287d66e4"
+      ],
+      "tags": [
+        [
+          "@id-pptx-create-new-minimal",
+          "@planned"
+        ]
+      ]
+    },
+    {
+      "id": "@id-pptx-create-anchor-preservation",
+      "from": "workflows/pptx/creation.feature",
+      "to": "workflows/pptx/creation.feature",
+      "sourceSha256": "564ea5266151ebe9d0ce48eead073ecb4b3f944fca79c97556e8a677b518da55",
+      "caseSha256": [
+        "181d28bb8372ca7ffbb2ef09e2d2c928597b191e521aab9dffcd5d11f76dcd14"
+      ],
+      "tags": [
+        [
+          "@id-pptx-create-anchor-preservation",
+          "@planned"
+        ]
+      ]
+    },
+    {
+      "id": "@id-pptx-create-refusals",
+      "from": "workflows/pptx/creation.feature",
+      "to": "workflows/pptx/creation.feature",
+      "sourceSha256": "564ea5266151ebe9d0ce48eead073ecb4b3f944fca79c97556e8a677b518da55",
+      "caseSha256": [
+        "0c7c47223e10d025e2e8513e8404eccb160c5480ffd062577a4eefcb1abfd45a"
+      ],
+      "tags": [
+        [
+          "@id-pptx-create-refusals",
+          "@planned"
+        ]
+      ]
+    },
+    {
+      "id": "@id-pptx-table-roundtrip-geometry",
+      "from": "workflows/pptx/tables.feature",
+      "to": "workflows/pptx/tables.feature",
+      "sourceSha256": "d9808ba4c51eecbc3b60e0b5c98e16f749f6618237de05010d2968e6cb88aed7",
+      "caseSha256": [
+        "85d24104cd77d5ab7132cdc338aa66925e3fc15378b937c244dd24552a62e59e"
+      ],
+      "tags": [
+        [
+          "@id-pptx-table-roundtrip-geometry",
+          "@planned"
+        ]
+      ]
+    },
+    {
+      "id": "@id-pptx-table-formatting",
+      "from": "workflows/pptx/tables.feature",
+      "to": "workflows/pptx/tables.feature",
+      "sourceSha256": "d9808ba4c51eecbc3b60e0b5c98e16f749f6618237de05010d2968e6cb88aed7",
+      "caseSha256": [
+        "41d6ad3cacfe9c65db08242aa9eefafb8123a4433012b6b7b9cf83932cab5705"
+      ],
+      "tags": [
+        [
+          "@id-pptx-table-formatting",
+          "@planned"
+        ]
+      ]
+    },
+    {
+      "id": "@id-pptx-table-stale-handle",
+      "from": "workflows/pptx/tables.feature",
+      "to": "workflows/pptx/tables.feature",
+      "sourceSha256": "d9808ba4c51eecbc3b60e0b5c98e16f749f6618237de05010d2968e6cb88aed7",
+      "caseSha256": [
+        "e6e3042c42110a6cc5272ddcd99d1f3fcc72efc04cbdf68e5ff030d117835f88"
+      ],
+      "tags": [
+        [
+          "@id-pptx-table-stale-handle",
+          "@planned"
+        ]
+      ]
+    },
+    {
+      "id": "@id-pptx-table-atomic-refusals",
+      "from": "workflows/pptx/tables.feature",
+      "to": "workflows/pptx/tables.feature",
+      "sourceSha256": "d9808ba4c51eecbc3b60e0b5c98e16f749f6618237de05010d2968e6cb88aed7",
+      "caseSha256": [
+        "c132357b9a94dc619f629e751446d7970110344607b214473a2dc1d98d482f63",
+        "8817841ee404c601dd190d53b64d8b9bb2359e0d1d955515814b3ab7e2566b8d"
+      ],
+      "tags": [
+        [
+          "@id-pptx-table-atomic-refusals",
+          "@planned"
+        ],
+        [
+          "@id-pptx-table-atomic-refusals",
+          "@planned"
+        ]
+      ]
+    },
+    {
+      "id": "@id-xlsx-create-native-default",
+      "from": "workflows/xlsx/creation.feature",
+      "to": "workflows/xlsx/creation.feature",
+      "sourceSha256": "bba1c6aee696e3ec9e7086c5a76f129690206915a8ad6e7596dbddef55711257",
+      "caseSha256": [
+        "6b595627f1792294c6f88d08c42221c1296af48633129a8a8fb3f099d72da463"
+      ],
+      "tags": [
+        [
+          "@id-xlsx-create-native-default",
+          "@planned"
+        ]
+      ]
+    },
+    {
+      "id": "@id-xlsx-create-add-worksheet",
+      "from": "workflows/xlsx/creation.feature",
+      "to": "workflows/xlsx/creation.feature",
+      "sourceSha256": "bba1c6aee696e3ec9e7086c5a76f129690206915a8ad6e7596dbddef55711257",
+      "caseSha256": [
+        "b259247f3a82f964aa6a8cd6216e246d2bdeeb5f27bb0c0a7fc1303a9c8f44d5"
+      ],
+      "tags": [
+        [
+          "@id-xlsx-create-add-worksheet",
+          "@planned"
+        ]
+      ]
+    },
+    {
+      "id": "@id-xlsx-create-prefixed-missing-cell",
+      "from": "workflows/xlsx/creation.feature",
+      "to": "workflows/xlsx/creation.feature",
+      "sourceSha256": "bba1c6aee696e3ec9e7086c5a76f129690206915a8ad6e7596dbddef55711257",
+      "caseSha256": [
+        "1c5d1d9741c786c2b692b3513fb83c1cccd8e29410f27ca3642391b2f37a8ea4"
+      ],
+      "tags": [
+        [
+          "@id-xlsx-create-prefixed-missing-cell",
+          "@planned"
+        ]
+      ]
+    },
+    {
+      "id": "@id-xlsx-create-coordinate-boundary",
+      "from": "workflows/xlsx/creation.feature",
+      "to": "workflows/xlsx/creation.feature",
+      "sourceSha256": "bba1c6aee696e3ec9e7086c5a76f129690206915a8ad6e7596dbddef55711257",
+      "caseSha256": [
+        "17391989317746267516291f21507374fa524144c7d3e9f07da7e9308261edce"
+      ],
+      "tags": [
+        [
+          "@id-xlsx-create-coordinate-boundary",
+          "@planned"
+        ]
+      ]
+    },
+    {
+      "id": "@id-xlsx-create-row-ordering",
+      "from": "workflows/xlsx/creation.feature",
+      "to": "workflows/xlsx/creation.feature",
+      "sourceSha256": "bba1c6aee696e3ec9e7086c5a76f129690206915a8ad6e7596dbddef55711257",
+      "caseSha256": [
+        "cf4e6e7ee63c90a8cd984a7f92f666debe497b0d83f3f8383bffffedd13d31b3"
+      ],
+      "tags": [
+        [
+          "@id-xlsx-create-row-ordering",
+          "@planned"
+        ]
+      ]
+    },
+    {
+      "id": "@id-xlsx-create-invalid-params-atomic",
+      "from": "workflows/xlsx/creation.feature",
+      "to": "workflows/xlsx/creation.feature",
+      "sourceSha256": "bba1c6aee696e3ec9e7086c5a76f129690206915a8ad6e7596dbddef55711257",
+      "caseSha256": [
+        "4627b07a542c2855569bb6a14c04039249a078a77fbc0c4fd9fc5fed89161a2e"
+      ],
+      "tags": [
+        [
+          "@id-xlsx-create-invalid-params-atomic",
+          "@planned"
+        ]
+      ]
+    },
+    {
+      "id": "@id-xlsx-create-existing-fixture-append",
+      "from": "workflows/xlsx/creation.feature",
+      "to": "workflows/xlsx/creation.feature",
+      "sourceSha256": "bba1c6aee696e3ec9e7086c5a76f129690206915a8ad6e7596dbddef55711257",
+      "caseSha256": [
+        "5b911b8c35dfaffdbf097fe7420c8c52ccdfe8b0eb8ea52ed786b4c7101413bb"
+      ],
+      "tags": [
+        [
+          "@id-xlsx-create-existing-fixture-append",
+          "@planned"
+        ]
+      ]
+    },
+    {
+      "id": "@id-opc-package-corpus-noop",
+      "from": "workflows/package/preservation.feature",
+      "to": "workflows/package/preservation.feature",
+      "sourceSha256": "eb3cd4f4d534549b8b8d53dc2c3cb75a9e5c35d614effbb5f446623c0db4e4b1",
+      "caseSha256": [
+        "eec02c654f519d80cb63a85fac8b722765af6c473d3b12598be46a511a9708ce"
+      ],
+      "tags": [
+        [
+          "@id-opc-package-corpus-noop",
+          "@planned"
+        ]
+      ]
+    },
+    {
+      "id": "@id-opc-package-transaction-rollback",
+      "from": "workflows/package/preservation.feature",
+      "to": "workflows/package/preservation.feature",
+      "sourceSha256": "eb3cd4f4d534549b8b8d53dc2c3cb75a9e5c35d614effbb5f446623c0db4e4b1",
+      "caseSha256": [
+        "41c5480a1b5b9a89a72c1a1c551e4bbe86f53ab404866b96c09748292415c315"
+      ],
+      "tags": [
+        [
+          "@id-opc-package-transaction-rollback",
+          "@planned"
+        ]
+      ]
+    },
+    {
+      "id": "@id-opc-package-preserve-unrelated",
+      "from": "workflows/package/preservation.feature",
+      "to": "workflows/package/preservation.feature",
+      "sourceSha256": "eb3cd4f4d534549b8b8d53dc2c3cb75a9e5c35d614effbb5f446623c0db4e4b1",
+      "caseSha256": [
+        "c1d0847fff843a4e377803f8e6db513f9340e301b19d3471479a7ccbc5986344"
+      ],
+      "tags": [
+        [
+          "@id-opc-package-preserve-unrelated",
+          "@planned"
+        ]
+      ]
+    },
+    {
+      "id": "@id-bun-opc-open-refusal",
+      "from": "workflows/package/preservation.feature",
+      "to": "workflows/package/preservation.feature",
+      "sourceSha256": "eb3cd4f4d534549b8b8d53dc2c3cb75a9e5c35d614effbb5f446623c0db4e4b1",
+      "caseSha256": [
+        "a0ab00e7af643594b4eda1b0dbba8dc736cbe1c0ff5882f3088ea829d572fc31",
+        "9482cf6fde0553dc0a7cdf47baa4cbe772009fe3c91017ef62f0c9a8657cfe69",
+        "1b5e09b935b619986e905db4fae47c2c2c16650c34d567b18734f0578486631e",
+        "1449debe593f475778468fe9b8432b78e54946f729d47a6ce0bb3eb65f5e91b9",
+        "0da175b5ae29cdef491167710737bf2e60ee255777e34350b0c082422d4cfbf3"
+      ],
+      "tags": [
+        [
+          "@id-bun-opc-open-refusal",
+          "@planned",
+          "@profile-bun-opc"
+        ],
+        [
+          "@id-bun-opc-open-refusal",
+          "@planned",
+          "@profile-bun-opc"
+        ],
+        [
+          "@id-bun-opc-open-refusal",
+          "@planned",
+          "@profile-bun-opc"
+        ],
+        [
+          "@id-bun-opc-open-refusal",
+          "@planned",
+          "@profile-bun-opc"
+        ],
+        [
+          "@id-bun-opc-open-refusal",
+          "@planned",
+          "@profile-bun-opc"
+        ]
+      ]
+    },
+    {
+      "id": "@id-bun-opc-detached-byte-copies",
+      "from": "workflows/package/preservation.feature",
+      "to": "workflows/package/preservation.feature",
+      "sourceSha256": "eb3cd4f4d534549b8b8d53dc2c3cb75a9e5c35d614effbb5f446623c0db4e4b1",
+      "caseSha256": [
+        "d25c68f8ff5a583d7910fa3f96a703004fcd22daf2a19ac25ea30102925e849a"
+      ],
+      "tags": [
+        [
+          "@id-bun-opc-detached-byte-copies",
+          "@planned",
+          "@profile-bun-opc"
+        ]
+      ]
+    },
+    {
+      "id": "@id-bun-opc-preserve-utf16le-edit",
+      "from": "workflows/package/preservation.feature",
+      "to": "workflows/package/preservation.feature",
+      "sourceSha256": "eb3cd4f4d534549b8b8d53dc2c3cb75a9e5c35d614effbb5f446623c0db4e4b1",
+      "caseSha256": [
+        "3b85a3780e0c8f2726c9fcf4441c5735fc2b4c5801c28d88c6f390a7b954f43d"
+      ],
+      "tags": [
+        [
+          "@id-bun-opc-preserve-utf16le-edit",
+          "@planned",
+          "@profile-bun-opc"
+        ]
+      ]
+    },
+    {
+      "id": "@id-bun-opc-async-transaction-refusal",
+      "from": "workflows/package/preservation.feature",
+      "to": "workflows/package/preservation.feature",
+      "sourceSha256": "eb3cd4f4d534549b8b8d53dc2c3cb75a9e5c35d614effbb5f446623c0db4e4b1",
+      "caseSha256": [
+        "917a48533dda42e2a3b9726fa3926324619bb4de4c43b4d1200df6803fb9af7d"
+      ],
+      "tags": [
+        [
+          "@id-bun-opc-async-transaction-refusal",
+          "@planned",
+          "@profile-bun-opc"
+        ]
+      ]
+    },
+    {
+      "id": "@id-bun-opc-thenable-transaction-result",
+      "from": "workflows/package/preservation.feature",
+      "to": "workflows/package/preservation.feature",
+      "sourceSha256": "eb3cd4f4d534549b8b8d53dc2c3cb75a9e5c35d614effbb5f446623c0db4e4b1",
+      "caseSha256": [
+        "a647a7296fc84ab5243e7d391c0e8d65254a3768ab1f8ee9817e4582bde392c5"
+      ],
+      "tags": [
+        [
+          "@id-bun-opc-thenable-transaction-result",
+          "@planned",
+          "@profile-bun-opc"
+        ]
+      ]
+    },
+    {
+      "id": "@id-bun-opc-save-invalid-target-custody",
+      "from": "workflows/package/preservation.feature",
+      "to": "workflows/package/preservation.feature",
+      "sourceSha256": "eb3cd4f4d534549b8b8d53dc2c3cb75a9e5c35d614effbb5f446623c0db4e4b1",
+      "caseSha256": [
+        "0fe9dafa5cba3adcd9d5f560a6fb4097d8d7d01952d8dfc382f001e0efe1aae4"
+      ],
+      "tags": [
+        [
+          "@id-bun-opc-save-invalid-target-custody",
+          "@planned",
+          "@profile-bun-opc"
+        ]
+      ]
+    },
+    {
+      "id": "@id-bun-opc-symlink-destination-refusal",
+      "from": "workflows/package/preservation.feature",
+      "to": "workflows/package/preservation.feature",
+      "sourceSha256": "eb3cd4f4d534549b8b8d53dc2c3cb75a9e5c35d614effbb5f446623c0db4e4b1",
+      "caseSha256": [
+        "a92e24c7814d6d92e1244b6472271a318a87d7ff3da7126a47e171136aa08494"
+      ],
+      "tags": [
+        [
+          "@id-bun-opc-symlink-destination-refusal",
+          "@planned",
+          "@profile-bun-opc"
+        ]
+      ]
+    },
+    {
+      "id": "@id-zip-read-valid",
+      "from": "workflows/package/zip32.feature",
+      "to": "workflows/package/zip32.feature",
+      "sourceSha256": "87248aebdebc78fae8edd2093d93cb54d37514b0cd661bf4bc6f2cb1c7b8c719",
+      "caseSha256": [
+        "3b92a1eb4d511d7a6987f5f3b59e5269a30937c5f5a574430844cf164b23ff8b"
+      ],
+      "tags": [
+        [
+          "@id-zip-read-valid",
+          "@planned"
+        ]
+      ]
+    },
+    {
+      "id": "@id-zip-refuse-unsafe",
+      "from": "workflows/package/zip32.feature",
+      "to": "workflows/package/zip32.feature",
+      "sourceSha256": "87248aebdebc78fae8edd2093d93cb54d37514b0cd661bf4bc6f2cb1c7b8c719",
+      "caseSha256": [
+        "a4be6d3adb2666a91ae9a1d1eecddef85cebfe3a138a06dfc1e2162bbc2f6bbd"
+      ],
+      "tags": [
+        [
+          "@id-zip-refuse-unsafe",
+          "@planned"
+        ]
+      ]
+    },
+    {
+      "id": "@id-zip-bounds",
+      "from": "workflows/package/zip32.feature",
+      "to": "workflows/package/zip32.feature",
+      "sourceSha256": "87248aebdebc78fae8edd2093d93cb54d37514b0cd661bf4bc6f2cb1c7b8c719",
+      "caseSha256": [
+        "9e2237d7bb6a4c1a6aea63268cbe42ec78528ccc1941f6bdda958f59f531cd88"
+      ],
+      "tags": [
+        [
+          "@id-zip-bounds",
+          "@planned"
+        ]
+      ]
+    },
+    {
+      "id": "@id-zip-write-deterministic",
+      "from": "workflows/package/zip32.feature",
+      "to": "workflows/package/zip32.feature",
+      "sourceSha256": "87248aebdebc78fae8edd2093d93cb54d37514b0cd661bf4bc6f2cb1c7b8c719",
+      "caseSha256": [
+        "604888391643f1ef0f10e22d3f5e1b6007167f1be2f9a080c653ec2430bb434b"
+      ],
+      "tags": [
+        [
+          "@id-zip-write-deterministic",
+          "@planned"
+        ]
+      ]
+    },
+    {
+      "id": "@id-zip-crc32-standard-vector",
+      "from": "workflows/package/zip32.feature",
+      "to": "workflows/package/zip32.feature",
+      "sourceSha256": "87248aebdebc78fae8edd2093d93cb54d37514b0cd661bf4bc6f2cb1c7b8c719",
+      "caseSha256": [
+        "ade7075bbd62cf060c860d894418e4f91c10abfc00e347a75bb20e2b0c8626bb"
+      ],
+      "tags": [
+        [
+          "@id-zip-crc32-standard-vector",
+          "@planned",
+          "@profile-bun-zip32"
+        ]
+      ]
+    },
+    {
+      "id": "@id-bun-zip32-reader-refusal",
+      "from": "workflows/package/zip32.feature",
+      "to": "workflows/package/zip32.feature",
+      "sourceSha256": "87248aebdebc78fae8edd2093d93cb54d37514b0cd661bf4bc6f2cb1c7b8c719",
+      "caseSha256": [
+        "364778f66f8a688268fb98cd4b882a924c7e16c1b5407f4a68fe96e224aabe96",
+        "070328d38323728bdf7b5f6dbc81eb770ff5fcb9023d722e649e382c9ad44d20",
+        "322bc13bf23e1b26b20671e0716674355972b9ee37bd6b0d798cd91b781097c3",
+        "abb7af30f917fdc4b2e32054dc6daad26cbee3db850665b646c9ecec313170ab",
+        "b56eb553894cc973e78b35422efdf2d3fa53b8e19f659f77ea33ef32fe170b1e",
+        "50d07bcea345b98758827ec09376f480ed437a366f05d5573b1b60638a89ef71",
+        "028f20dddeb64f9aae177ab9d3c5ca42eccacd6f46ba93c7a1d8e35c6be02064",
+        "16fc3b9ddc4c594958a6fbbaeccdb00e11b253f2cfc2890984b500f5f0fd0293",
+        "a0e105820a9bf57dcf2279990e036070728880a26912c27ff04cd0cbf578052a",
+        "f77b8db2e698736de1101fae844ffe7485701be403d6477f3e2a59c7014c75f2",
+        "51dab2f0fff4f3e41ce296a817368fb60480c495648713ca896a70ca74803ac3",
+        "4772ab23d1365523beb576f90d8f2164c0e607c9f4de9fdda34f83ffe227a3ab"
+      ],
+      "tags": [
+        [
+          "@id-bun-zip32-reader-refusal",
+          "@planned",
+          "@profile-bun-zip32"
+        ],
+        [
+          "@id-bun-zip32-reader-refusal",
+          "@planned",
+          "@profile-bun-zip32"
+        ],
+        [
+          "@id-bun-zip32-reader-refusal",
+          "@planned",
+          "@profile-bun-zip32"
+        ],
+        [
+          "@id-bun-zip32-reader-refusal",
+          "@planned",
+          "@profile-bun-zip32"
+        ],
+        [
+          "@id-bun-zip32-reader-refusal",
+          "@planned",
+          "@profile-bun-zip32"
+        ],
+        [
+          "@id-bun-zip32-reader-refusal",
+          "@planned",
+          "@profile-bun-zip32"
+        ],
+        [
+          "@id-bun-zip32-reader-refusal",
+          "@planned",
+          "@profile-bun-zip32"
+        ],
+        [
+          "@id-bun-zip32-reader-refusal",
+          "@planned",
+          "@profile-bun-zip32"
+        ],
+        [
+          "@id-bun-zip32-reader-refusal",
+          "@planned",
+          "@profile-bun-zip32"
+        ],
+        [
+          "@id-bun-zip32-reader-refusal",
+          "@planned",
+          "@profile-bun-zip32"
+        ],
+        [
+          "@id-bun-zip32-reader-refusal",
+          "@planned",
+          "@profile-bun-zip32"
+        ],
+        [
+          "@id-bun-zip32-reader-refusal",
+          "@planned",
+          "@profile-bun-zip32"
+        ]
+      ]
+    },
+    {
+      "id": "@id-bun-zip32-writer-refusal",
+      "from": "workflows/package/zip32.feature",
+      "to": "workflows/package/zip32.feature",
+      "sourceSha256": "87248aebdebc78fae8edd2093d93cb54d37514b0cd661bf4bc6f2cb1c7b8c719",
+      "caseSha256": [
+        "30d5d0d9cd3bee6c62f5d6241bd4e50ed722086eef0aea0146a1943efadc641b",
+        "edccbe5a9645be7ef215dc1651aa6a9840cfa81d97bbf4ab12489dfa254a6528"
+      ],
+      "tags": [
+        [
+          "@id-bun-zip32-writer-refusal",
+          "@planned",
+          "@profile-bun-zip32"
+        ],
+        [
+          "@id-bun-zip32-writer-refusal",
+          "@planned",
+          "@profile-bun-zip32"
+        ]
+      ]
+    },
+    {
+      "id": "@id-bun-zip32-configured-bounds",
+      "from": "workflows/package/zip32.feature",
+      "to": "workflows/package/zip32.feature",
+      "sourceSha256": "87248aebdebc78fae8edd2093d93cb54d37514b0cd661bf4bc6f2cb1c7b8c719",
+      "caseSha256": [
+        "cefd253ef7098ab0ff1f8e06f14a0f1771322d645578490a7dce39aab821e247",
+        "da30706c996fc01c5ac04ff7c8d7238251ef3338e73a7580c2342ea7d53c1464",
+        "b0ca3e9cc54e2ceeda34ceb1f527d708652afe973ea4b462d2e7ab0ce111831e",
+        "7f72db9c0efceca477bbddcfa135f7cb3bb4c3e4cf25f608abc23b69984089e9",
+        "cbd5f4d3743f6efd4cedf1f7116122a9ad3ec1728979a87bf1601240c64c21ad"
+      ],
+      "tags": [
+        [
+          "@id-bun-zip32-configured-bounds",
+          "@planned",
+          "@profile-bun-zip32"
+        ],
+        [
+          "@id-bun-zip32-configured-bounds",
+          "@planned",
+          "@profile-bun-zip32"
+        ],
+        [
+          "@id-bun-zip32-configured-bounds",
+          "@planned",
+          "@profile-bun-zip32"
+        ],
+        [
+          "@id-bun-zip32-configured-bounds",
+          "@planned",
+          "@profile-bun-zip32"
+        ],
+        [
+          "@id-bun-zip32-configured-bounds",
+          "@planned",
+          "@profile-bun-zip32"
+        ]
+      ]
+    },
+    {
+      "id": "@id-office-relationship-prefix-alias",
+      "from": "workflows/package/relationship-namespaces.feature",
+      "to": "workflows/package/relationship-namespaces.feature",
+      "sourceSha256": "e3629117b38ce243a586078ef5d654f49f20e0a01e9bd4cc16df8d607fa572c1",
+      "caseSha256": [
+        "581ccaac579bb214a2be443abd3a768fd4ce4ebc32faee7d29ced669718e3bfa",
+        "804ec697834c0369ce80e4a3ad76b7c8c1448598ed4b7c3f1aa033a8df99ea0a"
+      ],
+      "tags": [
+        [
+          "@id-office-relationship-prefix-alias",
+          "@planned"
+        ],
+        [
+          "@id-office-relationship-prefix-alias",
+          "@planned"
+        ]
+      ]
+    },
+    {
+      "id": "@id-office-relationship-wrong-uri",
+      "from": "workflows/package/relationship-namespaces.feature",
+      "to": "workflows/package/relationship-namespaces.feature",
+      "sourceSha256": "e3629117b38ce243a586078ef5d654f49f20e0a01e9bd4cc16df8d607fa572c1",
+      "caseSha256": [
+        "dd050c5c9ff8a66bf195dac7e26228121a518422a2ddeaa89fd5762ce19859e5",
+        "0934e75b50cdf6373b9dffb5162634eb747be8b6d70300c493d3f1be26a69941"
+      ],
+      "tags": [
+        [
+          "@id-office-relationship-wrong-uri",
+          "@planned"
+        ],
+        [
+          "@id-office-relationship-wrong-uri",
+          "@planned"
+        ]
+      ]
+    },
+    {
+      "id": "@id-docx-track-changes-option-outcome",
+      "from": "workflows/docx/tracked-workflow.feature",
+      "to": "workflows/docx/tracked-workflow.feature",
+      "sourceSha256": "70c5251ca3f96b47d729d090db4fc89f11e962b6fabed1ee709e40eeffcd9bb5",
+      "caseSha256": [
+        "0286bd0f47b08306e76798d54db7f5158199317833bad1462950f38746f3ec55",
+        "f35387734306a0ab910e204030fc452cd3fcd7a3f44b75bbe1f4a8985d7cdd0f",
+        "06b370496269d0f5b92c67333b3f25636e7256f51b28723e6dac85d39cff28c3",
+        "be2027621a0176cfa8674f6a591df6c572eafdcabd53461b8fd730f02087f6f7",
+        "a4019f00d73c4f46a163034b4c1519e3e89d24314b0c4105974344f30cbc19b6"
+      ],
+      "tags": [
+        [
+          "@id-docx-track-changes-option-outcome",
+          "@planned"
+        ],
+        [
+          "@id-docx-track-changes-option-outcome",
+          "@planned"
+        ],
+        [
+          "@id-docx-track-changes-option-outcome",
+          "@planned"
+        ],
+        [
+          "@id-docx-track-changes-option-outcome",
+          "@planned"
+        ],
+        [
+          "@id-docx-track-changes-option-outcome",
+          "@planned"
+        ]
+      ]
+    },
+    {
+      "id": "@id-docx-workflow-tracked-refusal",
+      "from": "workflows/docx/tracked-workflow.feature",
+      "to": "workflows/docx/tracked-workflow.feature",
+      "sourceSha256": "70c5251ca3f96b47d729d090db4fc89f11e962b6fabed1ee709e40eeffcd9bb5",
+      "caseSha256": [
+        "024430e86022ce5edc68664b300ac8f3015286a03f58599bbace7d53bf33ae9f",
+        "e329b8dfcf0d30c90e62f3412def0f1867dfc44a40afff3d18b3e669f369acbb",
+        "10eb0334fb252ef20758efe4e2d9c61d04b965f7e0aa1764d58304413f5dad90",
+        "327a99d5af36b4c6ad8b13c294d26b520630c8d3294c0fc1f943ac7c3d3eae35",
+        "1b21822c9dc0d25f418c68939f622f0066ec0af63ce63761fe03fb9234a11e13",
+        "e1792ccd612275fa34c4c034a89eb0cd54330d72cfa06183690e2a1ef90c50bc",
+        "4c9bc557f4dc697e19be655affa29a5dddc03218a4a07d9f07286351f01e8f9c",
+        "2aba030616090ffb4a001a4d858c51376d009a44123f25fa9da51564215f464e",
+        "cff8018d9dba4f5c9205d400d2ca0c7807f4be206a8ce0e5a597d9f8c1fb3f40",
+        "89c2232d7f722e01e343876e065de1d1d0b0ce34c45e9e4d9e87b1e1b6bd0b87",
+        "842c11834163ec9ad2b1cb562f11b17eef8a4c37272294e2050f262408ca73fe",
+        "9c7fe6aaf5aae1e71284a4afff375272824f60e5e44c8e5c3fa710b6e5b29e23"
+      ],
+      "tags": [
+        [
+          "@id-docx-workflow-tracked-refusal",
+          "@planned"
+        ],
+        [
+          "@id-docx-workflow-tracked-refusal",
+          "@planned"
+        ],
+        [
+          "@id-docx-workflow-tracked-refusal",
+          "@planned"
+        ],
+        [
+          "@id-docx-workflow-tracked-refusal",
+          "@planned"
+        ],
+        [
+          "@id-docx-workflow-tracked-refusal",
+          "@planned"
+        ],
+        [
+          "@id-docx-workflow-tracked-refusal",
+          "@planned"
+        ],
+        [
+          "@id-docx-workflow-tracked-refusal",
+          "@planned"
+        ],
+        [
+          "@id-docx-workflow-tracked-refusal",
+          "@planned"
+        ],
+        [
+          "@id-docx-workflow-tracked-refusal",
+          "@planned"
+        ],
+        [
+          "@id-docx-workflow-tracked-refusal",
+          "@planned"
+        ],
+        [
+          "@id-docx-workflow-tracked-refusal",
+          "@planned"
+        ],
+        [
+          "@id-docx-workflow-tracked-refusal",
+          "@planned"
+        ]
+      ]
+    },
+    {
+      "id": "@id-docx-direct-run-formatting",
+      "from": "workflows/docx/run-formatting.feature",
+      "to": "workflows/docx/run-formatting.feature",
+      "sourceSha256": "58ef9d8fde58d0fb929c1adbf7360d909c3294add90054b22f9e08e67a415ade",
+      "caseSha256": [
+        "c710f78f7f501dbb072d5c3ab2a90cd5f9a086114b1d3f878ad569c3ef8c80fc",
+        "9842aa0adcd0739024f0352ec818e8444232fa0eec12192daf2fa40b6e34217e",
+        "8048142eaac996b593f4fa41c95a6d62953e2208e911287f6412510252aac4bd",
+        "1e853cb10c0178281466f05ed7126067de262e6072668b0391f745cbffdf5dfa"
+      ],
+      "tags": [
+        [
+          "@id-docx-direct-run-formatting",
+          "@planned"
+        ],
+        [
+          "@id-docx-direct-run-formatting",
+          "@planned"
+        ],
+        [
+          "@id-docx-direct-run-formatting",
+          "@planned"
+        ],
+        [
+          "@id-docx-direct-run-formatting",
+          "@planned"
+        ]
+      ]
+    },
+    {
+      "id": "@id-docx-direct-formatting-refusal",
+      "from": "workflows/docx/run-formatting.feature",
+      "to": "workflows/docx/run-formatting.feature",
+      "sourceSha256": "58ef9d8fde58d0fb929c1adbf7360d909c3294add90054b22f9e08e67a415ade",
+      "caseSha256": [
+        "74683e45a364ae2e7622546843e2f2a597c31501455003dfe69929d49f91be0c",
+        "579173fc97d2a96870d29ef7d0d565424a69edc26450462098476e288a46e03a",
+        "a49421ba72a709c81b2d2330c1ad305367d45a9289b7d69c84b714bc5ee5688d",
+        "aaa188e546b6c463d2097f8c0a133c9224bfb9b5cdcaca47e9ed273f2ba959ff",
+        "719eab94b4907cbcd2575ecd45ee9ce6d3018bd557f0fc692701dde8f1568b9f",
+        "e02184f1d4c748305a7831faefd8eef0288e47e1faebc06589bd769fd70951ee",
+        "dbc41be1cb329f9833aff96a181af1ca5a0095c689835cea8e772858bc9d08d9",
+        "88b7cda83fc9345ae6385fa08d612c9a5f49530d30820725a852d7c0ec6992f6",
+        "06813d030df921ec773cb4aa3c61117a286f8aa7b0fbaff4658572da37a15f44",
+        "2ff494102848337f1828e57ac18f6a63478900768a0f55e6e250d31e856f31a8",
+        "99b5ef218fb4a13fb0261a60d73268796b6a57b3689c5c35998aff8bb533a0e4"
+      ],
+      "tags": [
+        [
+          "@id-docx-direct-formatting-refusal",
+          "@planned"
+        ],
+        [
+          "@id-docx-direct-formatting-refusal",
+          "@planned"
+        ],
+        [
+          "@id-docx-direct-formatting-refusal",
+          "@planned"
+        ],
+        [
+          "@id-docx-direct-formatting-refusal",
+          "@planned"
+        ],
+        [
+          "@id-docx-direct-formatting-refusal",
+          "@planned"
+        ],
+        [
+          "@id-docx-direct-formatting-refusal",
+          "@planned"
+        ],
+        [
+          "@id-docx-direct-formatting-refusal",
+          "@planned"
+        ],
+        [
+          "@id-docx-direct-formatting-refusal",
+          "@planned"
+        ],
+        [
+          "@id-docx-direct-formatting-refusal",
+          "@planned"
+        ],
+        [
+          "@id-docx-direct-formatting-refusal",
+          "@planned"
+        ],
+        [
+          "@id-docx-direct-formatting-refusal",
+          "@planned"
+        ]
+      ]
+    },
+    {
+      "id": "@id-docx-paragraph-style-selection",
+      "from": "workflows/docx/paragraph-style.feature",
+      "to": "workflows/docx/paragraph-style.feature",
+      "sourceSha256": "462be357951e2961b9b35dfe3457216709e3c6a02eeb0988c6a3c2279b730490",
+      "caseSha256": [
+        "415401e106c532f48d426038415af8269f7dbfb7f365d81a1209c5545b819bfd",
+        "de16286052c5a036acedf65068028482579dea770114df5907d15d4b22183f31",
+        "af31d8136b156c39a62c45cb988b3bb557ccff5410dfc90eb2630a7cfe9df6f3",
+        "a18e9a2372bbaaf9c49a8b378d78482dfd1be3c7d68a2d9328844c9b062963bd",
+        "a15ebf6010bd4a5bd59c76e64557551752a8f43fd92cb7d5373f7ba62facad30"
+      ],
+      "tags": [
+        [
+          "@id-docx-paragraph-style-selection",
+          "@planned"
+        ],
+        [
+          "@id-docx-paragraph-style-selection",
+          "@planned"
+        ],
+        [
+          "@id-docx-paragraph-style-selection",
+          "@planned"
+        ],
+        [
+          "@id-docx-paragraph-style-selection",
+          "@planned"
+        ],
+        [
+          "@id-docx-paragraph-style-selection",
+          "@planned"
+        ]
+      ]
+    },
+    {
+      "id": "@id-docx-paragraph-style-refusal",
+      "from": "workflows/docx/paragraph-style.feature",
+      "to": "workflows/docx/paragraph-style.feature",
+      "sourceSha256": "462be357951e2961b9b35dfe3457216709e3c6a02eeb0988c6a3c2279b730490",
+      "caseSha256": [
+        "a302af9a95fa5ae953dec954f79cd1e7c715e59049f0f4383fde3feb06c28d54",
+        "f4abdb4962cde65418894386f72825fbb7d4362504430b50f6d3efffa0850212",
+        "83f87d892bd3eb9a0d6a923dd68c66848f7866d405cdd45a7b6d36df6398321e",
+        "63164b5348f50adf9c36eb829201eaca1f7c0b426f6f6eef72c90f21258cd6de",
+        "e5c776280c8285c4da57ac5ec03eb7bcd51472f9ec1512a3bb63ba157f77aa5d",
+        "893845e37489cfaa7469b1581a4bac50badbee662532590b57ce58ee07a8d213",
+        "be54db3c289d5e1c7f9dd20934353da7799482838fd160702704c1cbfc867857",
+        "31dc86496f4d35ad37e8c8437cba8930f7af73f00ab2b7d544aa6930cd704b5b",
+        "b52785c74e831c6d9c2afe5417a09d325e6a66b29e2b6089c4444d0c4fb392f7",
+        "6393125f75d4d1b213ad2e1faa4d7c8fd10133c5b574641f3452e819c1a8779e",
+        "983659d60f07bf7f5c018fa324e868f00103fd730531ab79a9d8d4a6d577642f",
+        "18457ec2a89dfd09aa0cf501bf4fc994f4bb1f5bddafa9d348ea729654f5bedf",
+        "fcad395d56a2b67dddbe35956360e801721bcc52b9b5a918c74c89b31fda2224",
+        "edbed6481cbcfc2adb476786c6d3300a0fc87f66f06acd73353ef9d261f729f0"
+      ],
+      "tags": [
+        [
+          "@id-docx-paragraph-style-refusal",
+          "@planned"
+        ],
+        [
+          "@id-docx-paragraph-style-refusal",
+          "@planned"
+        ],
+        [
+          "@id-docx-paragraph-style-refusal",
+          "@planned"
+        ],
+        [
+          "@id-docx-paragraph-style-refusal",
+          "@planned"
+        ],
+        [
+          "@id-docx-paragraph-style-refusal",
+          "@planned"
+        ],
+        [
+          "@id-docx-paragraph-style-refusal",
+          "@planned"
+        ],
+        [
+          "@id-docx-paragraph-style-refusal",
+          "@planned"
+        ],
+        [
+          "@id-docx-paragraph-style-refusal",
+          "@planned"
+        ],
+        [
+          "@id-docx-paragraph-style-refusal",
+          "@planned"
+        ],
+        [
+          "@id-docx-paragraph-style-refusal",
+          "@planned"
+        ],
+        [
+          "@id-docx-paragraph-style-refusal",
+          "@planned"
+        ],
+        [
+          "@id-docx-paragraph-style-refusal",
+          "@planned"
+        ],
+        [
+          "@id-docx-paragraph-style-refusal",
+          "@planned"
+        ],
+        [
+          "@id-docx-paragraph-style-refusal",
+          "@planned"
+        ]
+      ]
+    },
+    {
+      "id": "@id-docx-paragraph-style-authoring",
+      "from": "workflows/docx/style-authoring.feature",
+      "to": "workflows/docx/style-authoring.feature",
+      "sourceSha256": "d4d4224f70d7b18dc963a7bf6e2fd194cf64f5757652e1ce47df9f47ab32502e",
+      "caseSha256": [
+        "5c58f91bba385429ec6dccd8c7d5341397231e9f831dbb0333b56c9ee5c25d02",
+        "56368252f01fdf1d4a02f3ecd4ca85239b4cb5c3c5bc946010528ccc2e169ff7",
+        "ac417a651918d2372aba5b7e7f91246433239559ee50f6fcfd184d6058d94234",
+        "70d6ec0d5116bc6b43a541c8b8f4e6c8ba5db55399622a5bed426c45791552a6",
+        "25b4e4ca1327675c009307abcecb99d7af11a56ace806226b917cea70140f15c",
+        "e7cfa1f45b96fc563710dff5235a5f5a19764f394f34390f92d0e4f53e677e41",
+        "827ea30ebb32d9b9caee28b583be3fa257dc0cb256384b193bc865ed0f777833"
+      ],
+      "tags": [
+        [
+          "@id-docx-paragraph-style-authoring",
+          "@planned"
+        ],
+        [
+          "@id-docx-paragraph-style-authoring",
+          "@planned"
+        ],
+        [
+          "@id-docx-paragraph-style-authoring",
+          "@planned"
+        ],
+        [
+          "@id-docx-paragraph-style-authoring",
+          "@planned"
+        ],
+        [
+          "@id-docx-paragraph-style-authoring",
+          "@planned"
+        ],
+        [
+          "@id-docx-paragraph-style-authoring",
+          "@planned"
+        ],
+        [
+          "@id-docx-paragraph-style-authoring",
+          "@planned"
+        ]
+      ]
+    },
+    {
+      "id": "@id-docx-paragraph-style-authoring-refusal",
+      "from": "workflows/docx/style-authoring.feature",
+      "to": "workflows/docx/style-authoring.feature",
+      "sourceSha256": "d4d4224f70d7b18dc963a7bf6e2fd194cf64f5757652e1ce47df9f47ab32502e",
+      "caseSha256": [
+        "8c5133c506722eb8faa3591fc753eddc767efb13ad99c6f8a1e6e59775992547",
+        "73f10368c2e66bdd004b5221a9002a499d3ed5c2844da1e4d9f1d15e486f6519",
+        "3f028112a52602af5a7f71f749ad4d505907fd366a6fcaa989ae5a89d7ea22c4",
+        "bdf71effc0804d3d297550c94ea249a271c0b9290c99924e6227a446b81bf69f",
+        "ee2c5b1691c4f6a5a6906a2da01e3537d128d27500774b465153bf0ad73f5035",
+        "a49c3875f9cc66ff37703c60a824892775efa6bf940b90d7e1d3b78e0973bad3",
+        "58c71521258272cdd9559e6f9eadb6fcac6806e7d5662eb4aab6b28bba9cf185",
+        "acfb51276266bf359bcf8b2d21b1de6c00bfad78174675451c741a9b0718c145",
+        "46de2cd854f218f03761ab2f443a2f0f80ac3d11d21ccb8dc16d4e7da7408a52",
+        "f73f74c2e6ade20859d11c91ba0d60fb738a31b130245547bef32154ae766d5c",
+        "cdc6e1384b2590ce7bc401b732f718e220c7a9d543d728bdb4ad5bf374260fad",
+        "f58ab9a152d6434cf0e183b7ae0b95479c12c4a9d6ce765e2ae6c0515407509e",
+        "9ed0fd149f2aaa4692f130b072ba74b34222e91a8bf9f3ec4ed87e7b8027dba0",
+        "19ba05fac965a7bbcf1e0e37ddabf19f4d24207f186412ad451a0d1897d07bd9",
+        "960b85f47c1ae0da18c454b7396c0ae6d84ab05ad2e61527379a1ac34af5513d",
+        "ff66238955460430546774511352b91a3113e8e6b164d6c6d6194da662c867fb",
+        "3d4ac673f47698931d9f33b2dec4a7e5ce0621f0adeace996b279b12b332273c"
+      ],
+      "tags": [
+        [
+          "@id-docx-paragraph-style-authoring-refusal",
+          "@planned"
+        ],
+        [
+          "@id-docx-paragraph-style-authoring-refusal",
+          "@planned"
+        ],
+        [
+          "@id-docx-paragraph-style-authoring-refusal",
+          "@planned"
+        ],
+        [
+          "@id-docx-paragraph-style-authoring-refusal",
+          "@planned"
+        ],
+        [
+          "@id-docx-paragraph-style-authoring-refusal",
+          "@planned"
+        ],
+        [
+          "@id-docx-paragraph-style-authoring-refusal",
+          "@planned"
+        ],
+        [
+          "@id-docx-paragraph-style-authoring-refusal",
+          "@planned"
+        ],
+        [
+          "@id-docx-paragraph-style-authoring-refusal",
+          "@planned"
+        ],
+        [
+          "@id-docx-paragraph-style-authoring-refusal",
+          "@planned"
+        ],
+        [
+          "@id-docx-paragraph-style-authoring-refusal",
+          "@planned"
+        ],
+        [
+          "@id-docx-paragraph-style-authoring-refusal",
+          "@planned"
+        ],
+        [
+          "@id-docx-paragraph-style-authoring-refusal",
+          "@planned"
+        ],
+        [
+          "@id-docx-paragraph-style-authoring-refusal",
+          "@planned"
+        ],
+        [
+          "@id-docx-paragraph-style-authoring-refusal",
+          "@planned"
+        ],
+        [
+          "@id-docx-paragraph-style-authoring-refusal",
+          "@planned"
+        ],
+        [
+          "@id-docx-paragraph-style-authoring-refusal",
+          "@planned"
+        ],
+        [
+          "@id-docx-paragraph-style-authoring-refusal",
+          "@planned"
+        ]
+      ]
+    },
+    {
+      "id": "@id-pptx-text-box-authoring",
+      "from": "workflows/pptx/text-box.feature",
+      "to": "workflows/pptx/text-box.feature",
+      "sourceSha256": "f1095dc45f85db19d45603fe38938cfc6414c74f3b1f5de63b23f9fd56e880ee",
+      "caseSha256": [
+        "294f4b1133f67c2fe6c06a594a4effbdb7938660deba15ebc17e18efc3c9574c",
+        "2d133ae06888d5b35913b50ece3afc222e2da5ec71c9adaa1bd905aed0043711",
+        "01b01744011c853510826118863e55d7160eddcc05e41c55107527f1c63e5045",
+        "548df5c445f62b4bff0d64c935fc79069ac4dbb35498a2f1857b1ab64517a45f",
+        "93c35acca1be2615afdb1d62122f3ad60b9cad6c7658f502e9011515f14eca4a",
+        "4faa0a182661406d67ed809e7ed1e26aa307e74ff99a6ebe8c66c47ceed93db6",
+        "6b62d77cea84d336ed16d3b8baf046cce1896448ad306e6e4771d1e2812ed6c2",
+        "744b33b65c27c38598a356515a10121904cf1056a34b4f3fedef9bb46d7bc5ed"
+      ],
+      "tags": [
+        [
+          "@id-pptx-text-box-authoring",
+          "@planned"
+        ],
+        [
+          "@id-pptx-text-box-authoring",
+          "@planned"
+        ],
+        [
+          "@id-pptx-text-box-authoring",
+          "@planned"
+        ],
+        [
+          "@id-pptx-text-box-authoring",
+          "@planned"
+        ],
+        [
+          "@id-pptx-text-box-authoring",
+          "@planned"
+        ],
+        [
+          "@id-pptx-text-box-authoring",
+          "@planned"
+        ],
+        [
+          "@id-pptx-text-box-authoring",
+          "@planned"
+        ],
+        [
+          "@id-pptx-text-box-authoring",
+          "@planned"
+        ]
+      ]
+    },
+    {
+      "id": "@id-pptx-text-box-refusal",
+      "from": "workflows/pptx/text-box.feature",
+      "to": "workflows/pptx/text-box.feature",
+      "sourceSha256": "f1095dc45f85db19d45603fe38938cfc6414c74f3b1f5de63b23f9fd56e880ee",
+      "caseSha256": [
+        "9b637f1b0a29daa127bf248bc9154116b1d285a96b2bf231c3f7d0ebe98edac9",
+        "805d97b069cee02959374a31525c93e957acd4f90b1449f4278cb03741c28daf",
+        "0e41e950b463fec5c90f18871e9b5806f29cb1ae5f5983cb5fd9a68863032b46",
+        "1d91546b7dcd0f5f78e0ef8720d6215b6b41044d469fc1f0f9fa40d7b8bfa2aa",
+        "40863824655e499738366a337ce4e02d56de390ea2334ace9f00fc8686213ecd",
+        "606f1bdff91b6b18fe187eaa5816d603d2396b1a303fd302c6b703b5a1d7fcb2",
+        "83ae84ae6b73df39777434f4c5eaf32b348eeaea7e510042704bdbb82bfd7b8f",
+        "6e39465818c421fcee311e7ad6d6c64abc5b6b1a5fb8b89fa2b350928cb0c7fd",
+        "e360cf450a6fa7c0871e81561fb5860f1d2ecb5a3d1b339fbb085bd3e873afa4",
+        "587b25c9e160528432092b86a9311d033829b6bf201ab73ba9691a06e1dbec63",
+        "b8b9fc79d81266415d21e18571f3af993791442146f20fdc213b082a7656d07c",
+        "84508bfdaa9cdf84890245b5c1354d2043caf0c75c24c9061924a683609b4556",
+        "4448afad978e24133701db950ead6770abe9f7f55f9226093008c215a822d168",
+        "4acb77596746796764189b9063f0afdfe493532de12abe1577bd43831c17e0ed",
+        "51f37e18df58cb1e1547c2978ac4cee3a7aeeb155f5186ed424c40e7d1aa65a6"
+      ],
+      "tags": [
+        [
+          "@id-pptx-text-box-refusal",
+          "@planned"
+        ],
+        [
+          "@id-pptx-text-box-refusal",
+          "@planned"
+        ],
+        [
+          "@id-pptx-text-box-refusal",
+          "@planned"
+        ],
+        [
+          "@id-pptx-text-box-refusal",
+          "@planned"
+        ],
+        [
+          "@id-pptx-text-box-refusal",
+          "@planned"
+        ],
+        [
+          "@id-pptx-text-box-refusal",
+          "@planned"
+        ],
+        [
+          "@id-pptx-text-box-refusal",
+          "@planned"
+        ],
+        [
+          "@id-pptx-text-box-refusal",
+          "@planned"
+        ],
+        [
+          "@id-pptx-text-box-refusal",
+          "@planned"
+        ],
+        [
+          "@id-pptx-text-box-refusal",
+          "@planned"
+        ],
+        [
+          "@id-pptx-text-box-refusal",
+          "@planned"
+        ],
+        [
+          "@id-pptx-text-box-refusal",
+          "@planned"
+        ],
+        [
+          "@id-pptx-text-box-refusal",
+          "@planned"
+        ],
+        [
+          "@id-pptx-text-box-refusal",
+          "@planned"
+        ],
+        [
+          "@id-pptx-text-box-refusal",
+          "@planned"
+        ]
+      ]
+    },
+    {
+      "id": "@id-xlsx-cell-style-selection",
+      "from": "workflows/xlsx/cell-style.feature",
+      "to": "workflows/xlsx/cell-style.feature",
+      "sourceSha256": "2b8067d70864d75a3f709bb653c12d605777eb0c87ead6270eb2014ec0e4a6ca",
+      "caseSha256": [
+        "ae50b3f8541d623bef86dfb3181ca12ad2ec2d06b29f0164ce7cdbdfebcfe018",
+        "82eef06f96949268a026a12f8433b2209e1f04177ccd70e9dfd13a5000b13398",
+        "b71e9270870b8a07c29905c15940a89bae62567928fea88978ea3c9b548d5961",
+        "fe9b24af2286c55e2b30798c4b966cf5a3d9b0a05c1ccaa7b6f5f906e3b631e6",
+        "30ebeea5ec5777f730aa2eebcaba0062241c104db28723a66ecde066b27f5b6a",
+        "fd0510cd239f4bd7a5f1c4892cc3b7ee84f87dd1a70df2be054cb173db8ef629",
+        "9bcfb34396b0f2da1658be745fb37bbe0ec8cfe2784c80ea44245c28e1859481",
+        "9a973854822f6679ddc6bf2cb5e38db936287e2cc6e45ab7a14a37fce3567f7f",
+        "c2893111b9e6c4fa0d6934c75f090df8963f458bed7edcc01cbbb00f62294825"
+      ],
+      "tags": [
+        [
+          "@id-xlsx-cell-style-selection",
+          "@planned"
+        ],
+        [
+          "@id-xlsx-cell-style-selection",
+          "@planned"
+        ],
+        [
+          "@id-xlsx-cell-style-selection",
+          "@planned"
+        ],
+        [
+          "@id-xlsx-cell-style-selection",
+          "@planned"
+        ],
+        [
+          "@id-xlsx-cell-style-selection",
+          "@planned"
+        ],
+        [
+          "@id-xlsx-cell-style-selection",
+          "@planned"
+        ],
+        [
+          "@id-xlsx-cell-style-selection",
+          "@planned"
+        ],
+        [
+          "@id-xlsx-cell-style-selection",
+          "@planned"
+        ],
+        [
+          "@id-xlsx-cell-style-selection",
+          "@planned"
+        ]
+      ]
+    },
+    {
+      "id": "@id-xlsx-cell-style-refusal",
+      "from": "workflows/xlsx/cell-style.feature",
+      "to": "workflows/xlsx/cell-style.feature",
+      "sourceSha256": "2b8067d70864d75a3f709bb653c12d605777eb0c87ead6270eb2014ec0e4a6ca",
+      "caseSha256": [
+        "97ecae1265d8b35750ba2293c02ccaf805924564c1adc8c2089aa7ebd073ce61",
+        "76c2982550f11cf4e22d7708fb26d79c62b591da45330132026ef17058e281c7",
+        "9f27a0504b2f0af3fa0c733b2c9c4d976cc444e35961bc5d0715c2b5e0129a5b",
+        "a78f1320cca7e5e06963fc3468c964461e217f92b96797b8252794e2bed983a6",
+        "5f812f97a31d726355c0610c955303dd220930b3f10abd2c9cf254d5cf6c8139",
+        "c8e0b94627e7973897f853f8c70987c6b5aad98a8a9323d9eee0d96340a04d24",
+        "6a7a7bdcc2c61cbf9d884617ea20436f399747f7c51d40e95399ed8dbfb1ddc0",
+        "175594cbbf5762a5ebc411a356c99589887a52d51b8c8791dbee6ac3b685f596",
+        "d1124bc0d46836564bfe71a9e2b509780b7a1c04fc415eac1262e36272def03c",
+        "f1f81ab9b179299d844dcd93bd237d58021f34ee4ba2c38dbf242992f7c2d24e",
+        "6d292a23ce9d723eaffe28d62d243b595e6a4c6304042bc371c524dbac1890a0",
+        "2e8b96f524b0d59165f93bd8e4098526ceff810e8a830e2c4762f982ce9e2ef6",
+        "0cbe5bbf24c84e1dd6270f65f62321bfeb04655c19cd83f0ff2f1490271ed9d1",
+        "5b54ea666d0f2f92095f8518fb428d41916e129fe7f6d323f360efb12776db6c",
+        "896554af409c69b19133b548dd20ec63217ee1251dff1e7b20c873d758c4295e",
+        "9d4bbc416d546b13715fef328e1d8af14a9b65d12419b5b4a670fb88f3d74e35",
+        "15b062d38fbf41d368b6aaa3eb94426a9711b49909f15fcd195e527b8ecca383",
+        "293ccf55ee54765b8ecbe559c6adfaa1398efd6260e99630842c349550efe854"
+      ],
+      "tags": [
+        [
+          "@id-xlsx-cell-style-refusal",
+          "@planned"
+        ],
+        [
+          "@id-xlsx-cell-style-refusal",
+          "@planned"
+        ],
+        [
+          "@id-xlsx-cell-style-refusal",
+          "@planned"
+        ],
+        [
+          "@id-xlsx-cell-style-refusal",
+          "@planned"
+        ],
+        [
+          "@id-xlsx-cell-style-refusal",
+          "@planned"
+        ],
+        [
+          "@id-xlsx-cell-style-refusal",
+          "@planned"
+        ],
+        [
+          "@id-xlsx-cell-style-refusal",
+          "@planned"
+        ],
+        [
+          "@id-xlsx-cell-style-refusal",
+          "@planned"
+        ],
+        [
+          "@id-xlsx-cell-style-refusal",
+          "@planned"
+        ],
+        [
+          "@id-xlsx-cell-style-refusal",
+          "@planned"
+        ],
+        [
+          "@id-xlsx-cell-style-refusal",
+          "@planned"
+        ],
+        [
+          "@id-xlsx-cell-style-refusal",
+          "@planned"
+        ],
+        [
+          "@id-xlsx-cell-style-refusal",
+          "@planned"
+        ],
+        [
+          "@id-xlsx-cell-style-refusal",
+          "@planned"
+        ],
+        [
+          "@id-xlsx-cell-style-refusal",
+          "@planned"
+        ],
+        [
+          "@id-xlsx-cell-style-refusal",
+          "@planned"
+        ],
+        [
+          "@id-xlsx-cell-style-refusal",
+          "@planned"
+        ],
+        [
+          "@id-xlsx-cell-style-refusal",
+          "@planned"
+        ]
+      ]
+    },
+    {
+      "id": "@id-docx-final-section-layout",
+      "from": "workflows/docx/page-layout.feature",
+      "to": "workflows/docx/page-layout.feature",
+      "sourceSha256": "5aca6616eabfbc3c409897f1ee271f9a51a1e37835c1c512ffa13d97cf610181",
+      "caseSha256": [
+        "879c6a72f7c8d2d2bbfb0ff030d9bbbd63d79e4a287e488126c6e086509d4592",
+        "822950eb0a0de5fe16bb668bd55bbddc4441502d60d233d996f1438cbd07ddfa",
+        "54ecc2d1ac027351c7fac0e983e947743b24588f863a80125ad4eb4b254fe86d",
+        "47699944794f75a2a3b7efe687ae3b5dfe2428ee85225cc67b55bfe748d314a5",
+        "050c4fda5f4a9fd1ab56985313b0123b96039732ea050f65234260ac4e1d95df",
+        "9fbdc9a19c58bb2ed7e83af7dc16a279093ee9520d0cbd938f0ec7fcfbb2388d",
+        "337bb226deff6c62fcd4124eb2e6404dc624c379a25048db1fd9a5ceceb60fe9",
+        "d70bf68175c93a2eb3b937ae8f5881f14a130efb2e8c8c7c6527ccd72e757160"
+      ],
+      "tags": [
+        [
+          "@id-docx-final-section-layout",
+          "@planned"
+        ],
+        [
+          "@id-docx-final-section-layout",
+          "@planned"
+        ],
+        [
+          "@id-docx-final-section-layout",
+          "@planned"
+        ],
+        [
+          "@id-docx-final-section-layout",
+          "@planned"
+        ],
+        [
+          "@id-docx-final-section-layout",
+          "@planned"
+        ],
+        [
+          "@id-docx-final-section-layout",
+          "@planned"
+        ],
+        [
+          "@id-docx-final-section-layout",
+          "@planned"
+        ],
+        [
+          "@id-docx-final-section-layout",
+          "@planned"
+        ]
+      ]
+    },
+    {
+      "id": "@id-docx-final-section-layout-refusal",
+      "from": "workflows/docx/page-layout.feature",
+      "to": "workflows/docx/page-layout.feature",
+      "sourceSha256": "5aca6616eabfbc3c409897f1ee271f9a51a1e37835c1c512ffa13d97cf610181",
+      "caseSha256": [
+        "984b295d29e2154f924b0f612d6fd44f83138d8df86654ab303db20375f773cf",
+        "fb900013a8547292205627edd7c54e89343c666603479ce1c1ff3d9c472114e3",
+        "13e5e5ebe4fd656e70a7d612f26d20266b045a92df8630e9dcb9eb4719bb48cb",
+        "92395e3ff841cbc0f3964138c41f82e8edde65bbb24cb3a7fd4b311580b9e3ef",
+        "3ceece9c23775ffddc204d8affb64642bda45ff258a7654b3fcf46a33636a563",
+        "31cd3a7a9715fe5484e4e4db1a8701986879e30c827639cd844093a91ed4ec92",
+        "ab9c35b7819478718b8e2a65b39fb9d3a4f312e1397741b0d4d33f7b5ae0f8eb",
+        "d7aa071192480c502d9ad5b5ae00a730024e7b383fc5c8fa0fdcfde698cdb974",
+        "514fb8e5a5c6a609347d152ef84b7fa707e048670ea18de034ad9cd138ad061b",
+        "037a32a2d260a6e5443d8260046781cf5801f5e33c0dce3ba9d5ec7ec8659366",
+        "f908d837f49ddbc1d8dc99fa437472b33e1d463759e09c5799dae621b0ba8e68",
+        "1152538e64621b2ab6deb0df50b0244c8babf1fed6c9d876e4036c4daf42843e",
+        "a7443e19c4e6d3cff18e28459e60febb9b9b46d40ff15dd720ad82138c05770a",
+        "578904b209ad9591284b35f3691b73ea1fdcc5e16004e252ef0996c5ae1e875b"
+      ],
+      "tags": [
+        [
+          "@id-docx-final-section-layout-refusal",
+          "@planned"
+        ],
+        [
+          "@id-docx-final-section-layout-refusal",
+          "@planned"
+        ],
+        [
+          "@id-docx-final-section-layout-refusal",
+          "@planned"
+        ],
+        [
+          "@id-docx-final-section-layout-refusal",
+          "@planned"
+        ],
+        [
+          "@id-docx-final-section-layout-refusal",
+          "@planned"
+        ],
+        [
+          "@id-docx-final-section-layout-refusal",
+          "@planned"
+        ],
+        [
+          "@id-docx-final-section-layout-refusal",
+          "@planned"
+        ],
+        [
+          "@id-docx-final-section-layout-refusal",
+          "@planned"
+        ],
+        [
+          "@id-docx-final-section-layout-refusal",
+          "@planned"
+        ],
+        [
+          "@id-docx-final-section-layout-refusal",
+          "@planned"
+        ],
+        [
+          "@id-docx-final-section-layout-refusal",
+          "@planned"
+        ],
+        [
+          "@id-docx-final-section-layout-refusal",
+          "@planned"
+        ],
+        [
+          "@id-docx-final-section-layout-refusal",
+          "@planned"
+        ],
+        [
+          "@id-docx-final-section-layout-refusal",
+          "@planned"
+        ]
+      ]
+    },
+    {
+      "id": "@id-pptx-slide-permutation",
+      "from": "workflows/pptx/slide-order.feature",
+      "to": "workflows/pptx/slide-order.feature",
+      "sourceSha256": "6fd4c56131a68b47e47d91c286967127ab410026966f3132f9caf244bde7369e",
+      "caseSha256": [
+        "dc89a9f6842d78049edfb0b7fbbfa2b04d024b170dfaccbb84e792207c981a38",
+        "b2d2d9017ef0104639828f2156803f6fa1b44e25cea335dcc5afb590479c06a9",
+        "f26d05601a387f5b477614c47cb5f2064288f6686c125757022a1195d9c2dba5",
+        "7ffae619a1015a4e020a31c9796b8ceab3a541d75d2418535486b4caf742f741",
+        "b596f6f48c33fb77375d77e7fdd403d0e67ce03f124467b559159f68306a5d71",
+        "22d08fe69494edc1e628e44639b9ec8b316208ba39fee33646125daa2356300a",
+        "1995d1da16c593b936092b1bcf69968baad769433bde8254b9b689f99443dbb9"
+      ],
+      "tags": [
+        [
+          "@id-pptx-slide-permutation",
+          "@planned"
+        ],
+        [
+          "@id-pptx-slide-permutation",
+          "@planned"
+        ],
+        [
+          "@id-pptx-slide-permutation",
+          "@planned"
+        ],
+        [
+          "@id-pptx-slide-permutation",
+          "@planned"
+        ],
+        [
+          "@id-pptx-slide-permutation",
+          "@planned"
+        ],
+        [
+          "@id-pptx-slide-permutation",
+          "@planned"
+        ],
+        [
+          "@id-pptx-slide-permutation",
+          "@planned"
+        ]
+      ]
+    },
+    {
+      "id": "@id-pptx-slide-permutation-refusal",
+      "from": "workflows/pptx/slide-order.feature",
+      "to": "workflows/pptx/slide-order.feature",
+      "sourceSha256": "6fd4c56131a68b47e47d91c286967127ab410026966f3132f9caf244bde7369e",
+      "caseSha256": [
+        "96d5d749c126c146f0a48a686882288660e873ad3e97978d3c999c6877b3af26",
+        "0f578067c114d6344d9f0225f2e77dcf4151b6d82f3757b25065b1fca998307a",
+        "2df33992296b99b46f379e6e010ea9d2ed910427fcdf3ad6ee112077e2c3b749",
+        "9ffdda786ed785613fa89eb7699eabaf954d2222cd372ce837f9f175bcb7054d",
+        "f6a7859909ba2b43fdb105b523ebda31d24904ee99bc42a7ea499766c33d781b",
+        "f02cdf412adeebf6709f1a5a2d10bd7ff3962b2dd25ec5ce18e867f6e20ffa0b",
+        "8252f746b3583ce2ce5a3854ff7b87546955c23ebbe0891139af89e211126fa6",
+        "4b0d944836dcd203a73ee4f80c26c62f9c62440ba7b8ad0e0ca5aeb288961b66",
+        "de63ab3ff417a813db58a5175f84e6374613ee77baa1d0c71f3806f55ca1a8f9",
+        "1da8eee4fec75f84abe6b0865b67d68dfc82fe2cd07781646d2718f9dc6eb188",
+        "71646bf44c169e5e945f1d77aacd363c91df10d382fb70a9cd98220cf4d63f55",
+        "70f4a1829aa54f8bc189e51f59f17b63a7c9a29585d6eab6761fa6d85c528193",
+        "89457fed0a6e59bd3d9093cb8401f4fab88bafbe415b4598e420a4cd307961f4",
+        "219de0fadaba55c0a8b919b0dc1e60c387ea2ef903d40676ddf464bfe4f726e6"
+      ],
+      "tags": [
+        [
+          "@id-pptx-slide-permutation-refusal",
+          "@planned"
+        ],
+        [
+          "@id-pptx-slide-permutation-refusal",
+          "@planned"
+        ],
+        [
+          "@id-pptx-slide-permutation-refusal",
+          "@planned"
+        ],
+        [
+          "@id-pptx-slide-permutation-refusal",
+          "@planned"
+        ],
+        [
+          "@id-pptx-slide-permutation-refusal",
+          "@planned"
+        ],
+        [
+          "@id-pptx-slide-permutation-refusal",
+          "@planned"
+        ],
+        [
+          "@id-pptx-slide-permutation-refusal",
+          "@planned"
+        ],
+        [
+          "@id-pptx-slide-permutation-refusal",
+          "@planned"
+        ],
+        [
+          "@id-pptx-slide-permutation-refusal",
+          "@planned"
+        ],
+        [
+          "@id-pptx-slide-permutation-refusal",
+          "@planned"
+        ],
+        [
+          "@id-pptx-slide-permutation-refusal",
+          "@planned"
+        ],
+        [
+          "@id-pptx-slide-permutation-refusal",
+          "@planned"
+        ],
+        [
+          "@id-pptx-slide-permutation-refusal",
+          "@planned"
+        ],
+        [
+          "@id-pptx-slide-permutation-refusal",
+          "@planned"
+        ]
+      ]
+    },
+    {
+      "id": "@id-docx-effective-run-formatting",
+      "from": "workflows/docx/effective-formatting.feature",
+      "to": "workflows/docx/effective-formatting.feature",
+      "sourceSha256": "8f1f31180b9e31dfff4e30ecfd9c9c4596edfaff85561cd53e775135cf748b90",
+      "caseSha256": [
+        "e901c42c43df34feb59429e7037fe4ad638a2e8c8e92efdd8aae9df02bd7a43a",
+        "7607c4c20b5689fcc4e7ec3b92151474aceafc5e5f01461ee98a8fc10add5592",
+        "02f98268d7896231f7ed87d0a5e22165a8bd7f8b1ee206b7bed28f955e1b9bc0",
+        "3998f26778e78e7a349e7ed23be6d3bcb61aa62cf35cf85efed3789b135b94b0",
+        "660b7be2fbf0d4e0582585c2736de7832414aecde5ae38c6e5fc7a4beddb6be4",
+        "82d0f7631ffffdcd03ef5758e7460c54e2547a426b6abc521daa8ed064bf77a5",
+        "26c4f9d9c34b4efadb2affa1ed43818b85644595cef7c3493916189ea143a53d",
+        "96a4e8ff126263fdbab1498efd332a828464321394d7d050043f33107780bb99",
+        "e46376b3b43aa20ca03c5ec41bb1af1b7b1277a3e0b87a034281a0e11b216041"
+      ],
+      "tags": [
+        [
+          "@id-docx-effective-run-formatting",
+          "@planned"
+        ],
+        [
+          "@id-docx-effective-run-formatting",
+          "@planned"
+        ],
+        [
+          "@id-docx-effective-run-formatting",
+          "@planned"
+        ],
+        [
+          "@id-docx-effective-run-formatting",
+          "@planned"
+        ],
+        [
+          "@id-docx-effective-run-formatting",
+          "@planned"
+        ],
+        [
+          "@id-docx-effective-run-formatting",
+          "@planned"
+        ],
+        [
+          "@id-docx-effective-run-formatting",
+          "@planned"
+        ],
+        [
+          "@id-docx-effective-run-formatting",
+          "@planned"
+        ],
+        [
+          "@id-docx-effective-run-formatting",
+          "@planned"
+        ]
+      ]
+    },
+    {
+      "id": "@id-docx-effective-run-formatting-refusal",
+      "from": "workflows/docx/effective-formatting.feature",
+      "to": "workflows/docx/effective-formatting.feature",
+      "sourceSha256": "8f1f31180b9e31dfff4e30ecfd9c9c4596edfaff85561cd53e775135cf748b90",
+      "caseSha256": [
+        "e09101c6ba6b00a1777c7669c088ea21484d4bdb2b73fd71aa3e6fd4ea337db6",
+        "9de1d0778d51752c78086bda55aa03817fda6e32337905c00e85e07657bd555e",
+        "99b8dc2c06daa1b2b9ca7dd7510d3fcf5aea43e85a48cda1cf21107aaee9010a",
+        "65919d6e708bade894c0cd45e3b4146cf89a8829198de011f7e6e6d624de770c",
+        "2bdba2848227d8f36144e186515660bcccaca0a5f302b9fa175a588ecd8065d0",
+        "bf1f9d2c1c00384c95b4d05ff2ac98c5f22cbc7c134f9d28bb730afe17c50d79",
+        "fc3424ab1d287cda5ad5d8cf5f1429f3e17e2e83920c7aa289720695f42131f1",
+        "a0aa29f1d3ff7b249e2fd40f6604d5d8f161f36c0e5db84c113d5590c22afad1",
+        "6a5277bac0362b9fc98608a5bbb261c3df4e21ffd095b03bf2132ad8c8d105f8",
+        "3cba819e77893752e95e9b942d4db75a6f72879ca65c0da1ca7807c4cbbae488",
+        "eaf128f29a181205e203a6377b7ef69934cc2a6449feeb2991a0190280c51ed4",
+        "c91c7a8929d7b509868b5aa3babeae5e314dc8cf840af0c10cd56f1877877aa7",
+        "115da0e679dd41c8d0325c2e088e49bce8a185cba6b1525ca412f3d14cc6df86",
+        "15c3b48c8bfced0066bb04218217f25c4e9f7d6376c3607e9bf1f7fee0e9fc78",
+        "3efcfe93461f09ebc9b72135b55e46fa375d36d3d58e5ff110de3e2feac83783",
+        "36cd926a7868dd74b043d442ca533350f6593663821a88b26462177e81d3e9ec"
+      ],
+      "tags": [
+        [
+          "@id-docx-effective-run-formatting-refusal",
+          "@planned"
+        ],
+        [
+          "@id-docx-effective-run-formatting-refusal",
+          "@planned"
+        ],
+        [
+          "@id-docx-effective-run-formatting-refusal",
+          "@planned"
+        ],
+        [
+          "@id-docx-effective-run-formatting-refusal",
+          "@planned"
+        ],
+        [
+          "@id-docx-effective-run-formatting-refusal",
+          "@planned"
+        ],
+        [
+          "@id-docx-effective-run-formatting-refusal",
+          "@planned"
+        ],
+        [
+          "@id-docx-effective-run-formatting-refusal",
+          "@planned"
+        ],
+        [
+          "@id-docx-effective-run-formatting-refusal",
+          "@planned"
+        ],
+        [
+          "@id-docx-effective-run-formatting-refusal",
+          "@planned"
+        ],
+        [
+          "@id-docx-effective-run-formatting-refusal",
+          "@planned"
+        ],
+        [
+          "@id-docx-effective-run-formatting-refusal",
+          "@planned"
+        ],
+        [
+          "@id-docx-effective-run-formatting-refusal",
+          "@planned"
+        ],
+        [
+          "@id-docx-effective-run-formatting-refusal",
+          "@planned"
+        ],
+        [
+          "@id-docx-effective-run-formatting-refusal",
+          "@planned"
+        ],
+        [
+          "@id-docx-effective-run-formatting-refusal",
+          "@planned"
+        ],
+        [
+          "@id-docx-effective-run-formatting-refusal",
+          "@planned"
+        ]
+      ]
+    },
+    {
+      "id": "@id-docx-direct-font-size-half-points",
+      "from": "workflows/docx/font-size.feature",
+      "to": "workflows/docx/font-size.feature",
+      "sourceSha256": "619db55d2fb4cf9092799e21e73b8c8ba45f77ef633d5f326f8dd78a5ba833a2",
+      "caseSha256": [
+        "7b48524b3dc4b9e371f2c78a02220ee0b5cf2c4571220c3c50a8e08aea5e492f"
+      ],
+      "tags": [
+        [
+          "@id-docx-direct-font-size-half-points",
+          "@planned"
+        ]
+      ]
+    },
+    {
+      "id": "@id-xlsx-comment-vml-existing-graph",
+      "from": "workflows/xlsx/comment-vml-custody.feature",
+      "to": "workflows/xlsx/comment-vml-custody.feature",
+      "sourceSha256": "e93331bb775a8c84cd2ca0bf35264b8ef085f5ef9b44578e231c7ff0165e801d",
+      "caseSha256": [
+        "8fe84756a3a7822326f93d9c4ed4cfa88dceebd64dd61c9303067f21bd5a77e1"
+      ],
+      "tags": [
+        [
+          "@id-xlsx-comment-vml-existing-graph",
+          "@planned"
+        ]
+      ]
+    },
+    {
+      "id": "@id-xlsx-comment-vml-disjoint-row-shift",
+      "from": "workflows/xlsx/comment-vml-custody.feature",
+      "to": "workflows/xlsx/comment-vml-custody.feature",
+      "sourceSha256": "e93331bb775a8c84cd2ca0bf35264b8ef085f5ef9b44578e231c7ff0165e801d",
+      "caseSha256": [
+        "f57eebf12508b5b9d55493e78ab76fcfde00163763763e6ec84388e48d1f2727"
+      ],
+      "tags": [
+        [
+          "@id-xlsx-comment-vml-disjoint-row-shift",
+          "@planned",
+          "@profile-preservation-row-editor"
+        ]
+      ]
+    },
+    {
+      "id": "@id-xlsx-comment-vml-affected-row-refusal",
+      "from": "workflows/xlsx/comment-vml-custody.feature",
+      "to": "workflows/xlsx/comment-vml-custody.feature",
+      "sourceSha256": "e93331bb775a8c84cd2ca0bf35264b8ef085f5ef9b44578e231c7ff0165e801d",
+      "caseSha256": [
+        "241c0a4b20223d831987c74b2c3ee335d4071e5a1a57f36f498984920320d06e"
+      ],
+      "tags": [
+        [
+          "@id-xlsx-comment-vml-affected-row-refusal",
+          "@planned",
+          "@profile-preservation-row-editor"
+        ]
+      ]
+    },
+    {
+      "id": "@id-xlsx-comment-vml-control-shape-refusal",
+      "from": "workflows/xlsx/comment-vml-custody.feature",
+      "to": "workflows/xlsx/comment-vml-custody.feature",
+      "sourceSha256": "e93331bb775a8c84cd2ca0bf35264b8ef085f5ef9b44578e231c7ff0165e801d",
+      "caseSha256": [
+        "5fde090708acc9e6dd114ebcaadd634b7688ad53193ce852dec7ab3efeee5f04"
+      ],
+      "tags": [
+        [
+          "@id-xlsx-comment-vml-control-shape-refusal",
+          "@planned",
+          "@profile-preservation-row-editor"
+        ]
+      ]
+    },
+    {
+      "id": "@id-xlsx-comment-vml-unknown-shape-refusal",
+      "from": "workflows/xlsx/comment-vml-custody.feature",
+      "to": "workflows/xlsx/comment-vml-custody.feature",
+      "sourceSha256": "e93331bb775a8c84cd2ca0bf35264b8ef085f5ef9b44578e231c7ff0165e801d",
+      "caseSha256": [
+        "b9f023d7c3c80e50f6783aa3e186a5e156a5525f64bc7457069363c80c66759c"
+      ],
+      "tags": [
+        [
+          "@id-xlsx-comment-vml-unknown-shape-refusal",
+          "@planned",
+          "@profile-preservation-row-editor"
+        ]
+      ]
+    },
+    {
+      "id": "@id-xlsx-comment-vml-limited-editor-refusal",
+      "from": "workflows/xlsx/comment-vml-custody.feature",
+      "to": "workflows/xlsx/comment-vml-custody.feature",
+      "sourceSha256": "e93331bb775a8c84cd2ca0bf35264b8ef085f5ef9b44578e231c7ff0165e801d",
+      "caseSha256": [
+        "b55c1b08df3bd2e9297bd1bcba34d0dbe66477f13c5db58b6467b07fb178eac8"
+      ],
+      "tags": [
+        [
+          "@id-xlsx-comment-vml-limited-editor-refusal",
+          "@planned",
+          "@profile-limited-number-editor"
+        ]
+      ]
+    },
+    {
+      "id": "@id-python-word-template-analysis-sow-response",
+      "from": "workflows/docx/template-analysis.feature",
+      "to": "workflows/docx/template-analysis.feature",
+      "sourceSha256": "87dab18a70c2c6d0b8e4d70511967ea83232b4dfba3233ea452f777eda2169f5",
+      "caseSha256": [
+        "09a2603193abf5aa2e6a799fd1298899f0b3d8020fe9066b91477b9a4eaf27b9"
+      ],
+      "tags": [
+        [
+          "@id-python-word-template-analysis-sow-response",
+          "@planned"
+        ]
+      ]
+    },
+    {
+      "id": "@id-python-word-template-analysis-placeholder-response",
+      "from": "workflows/docx/template-analysis.feature",
+      "to": "workflows/docx/template-analysis.feature",
+      "sourceSha256": "87dab18a70c2c6d0b8e4d70511967ea83232b4dfba3233ea452f777eda2169f5",
+      "caseSha256": [
+        "c76e531d70b390c6d4d4efa4f6bb6f4fae2a927aff215b603349098def03f5b5"
+      ],
+      "tags": [
+        [
+          "@id-python-word-template-analysis-placeholder-response",
+          "@planned"
+        ]
+      ]
+    },
+    {
+      "id": "@id-python-word-template-analysis-colour-response",
+      "from": "workflows/docx/template-analysis.feature",
+      "to": "workflows/docx/template-analysis.feature",
+      "sourceSha256": "87dab18a70c2c6d0b8e4d70511967ea83232b4dfba3233ea452f777eda2169f5",
+      "caseSha256": [
+        "43c4fa5a7505e336b25d8b1e1c47e9ba9b8f843253d8c7aaaa4ef45b71efc975"
+      ],
+      "tags": [
+        [
+          "@id-python-word-template-analysis-colour-response",
+          "@planned"
+        ]
+      ]
+    },
+    {
+      "id": "@id-python-word-template-analysis-plain-response",
+      "from": "workflows/docx/template-analysis.feature",
+      "to": "workflows/docx/template-analysis.feature",
+      "sourceSha256": "87dab18a70c2c6d0b8e4d70511967ea83232b4dfba3233ea452f777eda2169f5",
+      "caseSha256": [
+        "6d99896c1bd525005e5463e888bc613606cfd2f610c0ee181f84c0f5d7ec6ac9"
+      ],
+      "tags": [
+        [
+          "@id-python-word-template-analysis-plain-response",
+          "@planned"
+        ]
+      ]
+    },
+    {
+      "id": "@id-python-office-template-analysis-response",
+      "from": "workflows/docx/template-analysis.feature",
+      "to": "workflows/docx/template-analysis.feature",
+      "sourceSha256": "87dab18a70c2c6d0b8e4d70511967ea83232b4dfba3233ea452f777eda2169f5",
+      "caseSha256": [
+        "aaf32b1c1040c20a3d24e3f1cac5aba6c73f17013ee80ddf0046521bd8187ccb"
+      ],
+      "tags": [
+        [
+          "@id-python-office-template-analysis-response",
+          "@planned"
+        ]
+      ]
+    },
+    {
+      "id": "@id-python-office-template-analysis-cache",
+      "from": "workflows/docx/template-analysis.feature",
+      "to": "workflows/docx/template-analysis.feature",
+      "sourceSha256": "87dab18a70c2c6d0b8e4d70511967ea83232b4dfba3233ea452f777eda2169f5",
+      "caseSha256": [
+        "d691eafbefe2345f82057ec72df90e46fa7be12b22c49c4e043f4ccaa8ff883c"
+      ],
+      "tags": [
+        [
+          "@id-python-office-template-analysis-cache",
+          "@planned"
+        ]
+      ]
+    },
+    {
+      "id": "@id-python-template-cache-key-stable",
+      "from": "workflows/docx/template-analysis.feature",
+      "to": "workflows/docx/template-cache.feature",
+      "sourceSha256": "87dab18a70c2c6d0b8e4d70511967ea83232b4dfba3233ea452f777eda2169f5",
+      "caseSha256": [
+        "1869ee3a0cbb3c7e1b14c633e056048f272707324813aa3a38be5333139c4b2d"
+      ],
+      "tags": [
+        [
+          "@id-python-template-cache-key-stable",
+          "@planned",
+          "@profile-python-template-cache"
+        ]
+      ]
+    },
+    {
+      "id": "@id-python-template-cache-roundtrip",
+      "from": "workflows/docx/template-analysis.feature",
+      "to": "workflows/docx/template-cache.feature",
+      "sourceSha256": "87dab18a70c2c6d0b8e4d70511967ea83232b4dfba3233ea452f777eda2169f5",
+      "caseSha256": [
+        "eaf747624f294b2209d226b0ff503ff0b9f952318af81ac7e11e4da27305b7c5"
+      ],
+      "tags": [
+        [
+          "@id-python-template-cache-roundtrip",
+          "@planned",
+          "@profile-python-template-cache"
+        ]
+      ]
+    },
+    {
+      "id": "@id-python-template-cache-source-change",
+      "from": "workflows/docx/template-analysis.feature",
+      "to": "workflows/docx/template-cache.feature",
+      "sourceSha256": "87dab18a70c2c6d0b8e4d70511967ea83232b4dfba3233ea452f777eda2169f5",
+      "caseSha256": [
+        "87aafdd8a9dc7bd37f23be5ddca58199b77b9228a970c55bbfb6a0708c0b56ef"
+      ],
+      "tags": [
+        [
+          "@id-python-template-cache-source-change",
+          "@planned",
+          "@profile-python-template-cache"
+        ]
+      ]
+    },
+    {
+      "id": "@id-python-template-cache-corrupt",
+      "from": "workflows/docx/template-analysis.feature",
+      "to": "workflows/docx/template-cache.feature",
+      "sourceSha256": "87dab18a70c2c6d0b8e4d70511967ea83232b4dfba3233ea452f777eda2169f5",
+      "caseSha256": [
+        "0c5330a2910ee6488da90012171587b6866924baeb43adfd21bbe9201b639243"
+      ],
+      "tags": [
+        [
+          "@id-python-template-cache-corrupt",
+          "@planned",
+          "@profile-python-template-cache"
+        ]
+      ]
+    },
+    {
+      "id": "@id-python-template-cache-schema-mismatch",
+      "from": "workflows/docx/template-analysis.feature",
+      "to": "workflows/docx/template-cache.feature",
+      "sourceSha256": "87dab18a70c2c6d0b8e4d70511967ea83232b4dfba3233ea452f777eda2169f5",
+      "caseSha256": [
+        "3e73b04e3739f8b55e13607068b3c98932a1dbfadeda53c3494a47218dd34c08"
+      ],
+      "tags": [
+        [
+          "@id-python-template-cache-schema-mismatch",
+          "@planned",
+          "@profile-python-template-cache"
+        ]
+      ]
+    },
+    {
+      "id": "@id-python-template-cache-sow-reuse",
+      "from": "workflows/docx/template-analysis.feature",
+      "to": "workflows/docx/template-cache.feature",
+      "sourceSha256": "87dab18a70c2c6d0b8e4d70511967ea83232b4dfba3233ea452f777eda2169f5",
+      "caseSha256": [
+        "5850f42171c77acc729279d99e1348dcf51fa1587eb073bace6b8a0aba56d54f"
+      ],
+      "tags": [
+        [
+          "@id-python-template-cache-sow-reuse",
+          "@planned",
+          "@profile-python-template-cache"
+        ]
+      ]
+    },
+    {
+      "id": "@id-python-template-cache-sow-regenerate",
+      "from": "workflows/docx/template-analysis.feature",
+      "to": "workflows/docx/template-cache.feature",
+      "sourceSha256": "87dab18a70c2c6d0b8e4d70511967ea83232b4dfba3233ea452f777eda2169f5",
+      "caseSha256": [
+        "e40abbc76238326552dd29f2330a2b47992638ce45f3b87d7345c9d2c17f5915"
+      ],
+      "tags": [
+        [
+          "@id-python-template-cache-sow-regenerate",
+          "@planned",
+          "@profile-python-template-cache"
+        ]
+      ]
+    },
+    {
+      "id": "@id-xlsx-go-formula-analysis-counts",
+      "from": "workflows/xlsx/formula-references.feature",
+      "to": "workflows/xlsx/formula-references.feature",
+      "sourceSha256": "6e5c0ca867e38fb1d82eaf96d61a272fecbc4a19052e1e8ed8bf47868ad527de",
+      "caseSha256": [
+        "4d21509dffc44ff2ca6d2f444f60e953e77ff0efe33ac1e42ed0c95e3f38f381",
+        "cd85fba4dcd989a1294389fe054fd7aa33cbbbfdc1768da8012e5a0f7721cde5",
+        "256fcc6aa4aca391b0f74c77ad7214acde1a57a611e0f144a2ef680d1dc7353d",
+        "92c1742d8422027c22eb24f5b259b09655fea6ff2e6295441278e3ed8e920548",
+        "0e32d40e49fc5673dbb08fd14cce379435fcd9f2fa9f3704ac51ce15459c2f5a",
+        "d90d20ee4ce5c4f830d727b1bcd68585ec94abc4a79a06d80a4405479e21cc6d"
+      ],
+      "tags": [
+        [
+          "@id-xlsx-go-formula-analysis-counts",
+          "@planned",
+          "@profile-go-static-formula"
+        ],
+        [
+          "@id-xlsx-go-formula-analysis-counts",
+          "@planned",
+          "@profile-go-static-formula"
+        ],
+        [
+          "@id-xlsx-go-formula-analysis-counts",
+          "@planned",
+          "@profile-go-static-formula"
+        ],
+        [
+          "@id-xlsx-go-formula-analysis-counts",
+          "@planned",
+          "@profile-go-static-formula"
+        ],
+        [
+          "@id-xlsx-go-formula-analysis-counts",
+          "@planned",
+          "@profile-go-static-formula"
+        ],
+        [
+          "@id-xlsx-go-formula-analysis-counts",
+          "@planned",
+          "@profile-go-static-formula"
+        ]
+      ]
+    },
+    {
+      "id": "@id-xlsx-go-formula-quoted-sheet-flags",
+      "from": "workflows/xlsx/formula-references.feature",
+      "to": "workflows/xlsx/formula-references.feature",
+      "sourceSha256": "6e5c0ca867e38fb1d82eaf96d61a272fecbc4a19052e1e8ed8bf47868ad527de",
+      "caseSha256": [
+        "bdf6af146afedb2329450caa2945e998cf4a45be5eb1253b1f1ba45adb6b08d4"
+      ],
+      "tags": [
+        [
+          "@id-xlsx-go-formula-quoted-sheet-flags",
+          "@planned",
+          "@profile-go-static-formula"
+        ]
+      ]
+    },
+    {
+      "id": "@id-xlsx-go-formula-analysis-refusal",
+      "from": "workflows/xlsx/formula-references.feature",
+      "to": "workflows/xlsx/formula-references.feature",
+      "sourceSha256": "6e5c0ca867e38fb1d82eaf96d61a272fecbc4a19052e1e8ed8bf47868ad527de",
+      "caseSha256": [
+        "c564b9eb686435c0077ae666c81b3c4f771dab5b0061264cdd6f8ccd7a97bb70",
+        "2eb4a0ac997c66b87b2f7ed487e2953f9b9e5405862434510350609a3b42d941",
+        "cb7daf2f0e662defefbd2612b9b145ea4b954c0933e74534c72eaffbd199953e",
+        "85354b0fc80651ab3cdfa3e85780b9aa0faf018ca4a944526738b2add290e4c0",
+        "8e4c549010bfe3f3210e9fa1736478983b06d9befa015054fe1b73ac82f41b21",
+        "5ce09ad52f2e3c59f287c4b3c4c3e7054647f8b5ae5515250515a2ed63e9fcca",
+        "17dd5ae3d037f99bda0cbee4fdaf0455f89bd6f10d46f6a9db5fca1d8f64623d"
+      ],
+      "tags": [
+        [
+          "@id-xlsx-go-formula-analysis-refusal",
+          "@planned",
+          "@profile-go-static-formula"
+        ],
+        [
+          "@id-xlsx-go-formula-analysis-refusal",
+          "@planned",
+          "@profile-go-static-formula"
+        ],
+        [
+          "@id-xlsx-go-formula-analysis-refusal",
+          "@planned",
+          "@profile-go-static-formula"
+        ],
+        [
+          "@id-xlsx-go-formula-analysis-refusal",
+          "@planned",
+          "@profile-go-static-formula"
+        ],
+        [
+          "@id-xlsx-go-formula-analysis-refusal",
+          "@planned",
+          "@profile-go-static-formula"
+        ],
+        [
+          "@id-xlsx-go-formula-analysis-refusal",
+          "@planned",
+          "@profile-go-static-formula"
+        ],
+        [
+          "@id-xlsx-go-formula-analysis-refusal",
+          "@planned",
+          "@profile-go-static-formula"
+        ]
+      ]
+    },
+    {
+      "id": "@id-xlsx-go-formula-literal-punctuation",
+      "from": "workflows/xlsx/formula-references.feature",
+      "to": "workflows/xlsx/formula-references.feature",
+      "sourceSha256": "6e5c0ca867e38fb1d82eaf96d61a272fecbc4a19052e1e8ed8bf47868ad527de",
+      "caseSha256": [
+        "6955ec3b4f8386ea0c7d5e94c2da5e862d67495f23e388e97c0c5f786e13fdfb",
+        "73e2db50c9f5cfc378291a356b6a2f0d4539f23d7a7cae1a14d668c4b7cd54a7",
+        "28bc3a470688c352d62f256e1c3eefe00d8fdcbc475907f23e1fc33a54c8429e",
+        "7a00a743bfc6fb3a234be37ca4eb7e8c9bd8a24a31ba648a9816bb4096763128",
+        "e8700af3385de0f9c38d66dc5457ad07d4fca15ab04451250f507ffc36570214"
+      ],
+      "tags": [
+        [
+          "@id-xlsx-go-formula-literal-punctuation",
+          "@planned",
+          "@profile-go-static-formula"
+        ],
+        [
+          "@id-xlsx-go-formula-literal-punctuation",
+          "@planned",
+          "@profile-go-static-formula"
+        ],
+        [
+          "@id-xlsx-go-formula-literal-punctuation",
+          "@planned",
+          "@profile-go-static-formula"
+        ],
+        [
+          "@id-xlsx-go-formula-literal-punctuation",
+          "@planned",
+          "@profile-go-static-formula"
+        ],
+        [
+          "@id-xlsx-go-formula-literal-punctuation",
+          "@planned",
+          "@profile-go-static-formula"
+        ]
+      ]
+    },
+    {
+      "id": "@id-xlsx-go-direct-range-parsing",
+      "from": "workflows/xlsx/formula-references.feature",
+      "to": "workflows/xlsx/formula-references.feature",
+      "sourceSha256": "6e5c0ca867e38fb1d82eaf96d61a272fecbc4a19052e1e8ed8bf47868ad527de",
+      "caseSha256": [
+        "907972ccb5dc8fe70f187c1ef3223e2c45f924505bd94e0468db10a5e58b445b",
+        "4c172c298b127fdddf2abcc713471fdb879e9df9e6bd8cc368bb800a5ad45e64",
+        "37d19ec2f7055b25fe41cacfa9ae6022523803baf6dd140e469861aa07d4e495",
+        "056d18d846839fd09694f246287fd3dd9e05ada9ab5c0a8621a34db054a11f33",
+        "4f6bc95b31bb6e812c315b15d830b8d66c801f728bd3f71a44cd9a36a6e41605",
+        "6b19c70a8ac5114d63d392383f437c7a67d2a992c1924609512b6dcbc7ba8386"
+      ],
+      "tags": [
+        [
+          "@id-xlsx-go-direct-range-parsing",
+          "@planned",
+          "@profile-go-static-formula"
+        ],
+        [
+          "@id-xlsx-go-direct-range-parsing",
+          "@planned",
+          "@profile-go-static-formula"
+        ],
+        [
+          "@id-xlsx-go-direct-range-parsing",
+          "@planned",
+          "@profile-go-static-formula"
+        ],
+        [
+          "@id-xlsx-go-direct-range-parsing",
+          "@planned",
+          "@profile-go-static-formula"
+        ],
+        [
+          "@id-xlsx-go-direct-range-parsing",
+          "@planned",
+          "@profile-go-static-formula"
+        ],
+        [
+          "@id-xlsx-go-direct-range-parsing",
+          "@planned",
+          "@profile-go-static-formula"
+        ]
+      ]
+    },
+    {
+      "id": "@id-xlsx-go-direct-range-refusal",
+      "from": "workflows/xlsx/formula-references.feature",
+      "to": "workflows/xlsx/formula-references.feature",
+      "sourceSha256": "6e5c0ca867e38fb1d82eaf96d61a272fecbc4a19052e1e8ed8bf47868ad527de",
+      "caseSha256": [
+        "cf01b900f5d34aec67da4a7387439db1de2da74499dbe2b9ef17b64e4650edaf",
+        "94ee91cf5ee364173fb557e706ddf88bcfd541c247378df76a889c5b2e6dc32a",
+        "5a94269916dab402d6370595986671a8b6933e6bb8673bc0f750e6cd6ab73e0e",
+        "499860c609f6dda4ac75bbd6ef92fce9ae308adb98b730bd9b5bda14284c9559",
+        "96331869ecda528d7e82ac1aaee3136f0077398ceda31e64983e491450d95471",
+        "644c60e250ce08534b5405ecf3810d7acd32aa90230eef389dbc31385fd7e409",
+        "065682f315b5d2d6a0080b020b12de710591437976492987947fca9737067ec1"
+      ],
+      "tags": [
+        [
+          "@id-xlsx-go-direct-range-refusal",
+          "@planned",
+          "@profile-go-static-formula"
+        ],
+        [
+          "@id-xlsx-go-direct-range-refusal",
+          "@planned",
+          "@profile-go-static-formula"
+        ],
+        [
+          "@id-xlsx-go-direct-range-refusal",
+          "@planned",
+          "@profile-go-static-formula"
+        ],
+        [
+          "@id-xlsx-go-direct-range-refusal",
+          "@planned",
+          "@profile-go-static-formula"
+        ],
+        [
+          "@id-xlsx-go-direct-range-refusal",
+          "@planned",
+          "@profile-go-static-formula"
+        ],
+        [
+          "@id-xlsx-go-direct-range-refusal",
+          "@planned",
+          "@profile-go-static-formula"
+        ],
+        [
+          "@id-xlsx-go-direct-range-refusal",
+          "@planned",
+          "@profile-go-static-formula"
+        ]
+      ]
+    },
+    {
+      "id": "@id-xlsx-go-static-remap-exact",
+      "from": "workflows/xlsx/formula-references.feature",
+      "to": "workflows/xlsx/formula-references.feature",
+      "sourceSha256": "6e5c0ca867e38fb1d82eaf96d61a272fecbc4a19052e1e8ed8bf47868ad527de",
+      "caseSha256": [
+        "dadec6029100acbfe82a8a676f07628db1bd2ebde348f11c0075ac17b3b2c4b6",
+        "ef328ed3e5d348dd43ba582cee25c47397ca76f74dd05b80dc95f6ae92631b84",
+        "11acff5d81cca64f07f4cf7ae07e9203ee559688f3d0fc10e96b3a54f091f238",
+        "c789f0469e662f3f9266e870d620630e1d31ecd2758d0c6039dfd5bcd9366429",
+        "37aa11f443891c8fabedf9927f807a480868eb269184564468ed69a851591f2c"
+      ],
+      "tags": [
+        [
+          "@id-xlsx-go-static-remap-exact",
+          "@planned",
+          "@profile-go-static-formula"
+        ],
+        [
+          "@id-xlsx-go-static-remap-exact",
+          "@planned",
+          "@profile-go-static-formula"
+        ],
+        [
+          "@id-xlsx-go-static-remap-exact",
+          "@planned",
+          "@profile-go-static-formula"
+        ],
+        [
+          "@id-xlsx-go-static-remap-exact",
+          "@planned",
+          "@profile-go-static-formula"
+        ],
+        [
+          "@id-xlsx-go-static-remap-exact",
+          "@planned",
+          "@profile-go-static-formula"
+        ]
+      ]
+    },
+    {
+      "id": "@id-xlsx-go-static-remap-refusal",
+      "from": "workflows/xlsx/formula-references.feature",
+      "to": "workflows/xlsx/formula-references.feature",
+      "sourceSha256": "6e5c0ca867e38fb1d82eaf96d61a272fecbc4a19052e1e8ed8bf47868ad527de",
+      "caseSha256": [
+        "194b35d2e3b5b831b8c2671de172c8233ecc3bf798ccf7ac10110948ab89faf2",
+        "649b53228e282a240163022591d21230d19dd292ce9dce1694d1f6dc6b7d65b2",
+        "e33ad805970d6f126e68bfca43f8df24c88d4eae033b58dcb270eada5e3d1763",
+        "f1787914f0454bfed9ff011ac3bb182f4f32ceb3c48e314e317f0e111371b7f9",
+        "3f1cbf4e9ef0f312797d3720a33773a1013c03c7b5ba07a8b1ecf46ae2394717",
+        "5f52d3da4489e561e546dde03c51ecfd314e2b02666adce74cf93d393a049322",
+        "2f826e6e2646018082a3720b35f712782211df72620c8f7c22ad4c20e9174399"
+      ],
+      "tags": [
+        [
+          "@id-xlsx-go-static-remap-refusal",
+          "@planned",
+          "@profile-go-static-formula"
+        ],
+        [
+          "@id-xlsx-go-static-remap-refusal",
+          "@planned",
+          "@profile-go-static-formula"
+        ],
+        [
+          "@id-xlsx-go-static-remap-refusal",
+          "@planned",
+          "@profile-go-static-formula"
+        ],
+        [
+          "@id-xlsx-go-static-remap-refusal",
+          "@planned",
+          "@profile-go-static-formula"
+        ],
+        [
+          "@id-xlsx-go-static-remap-refusal",
+          "@planned",
+          "@profile-go-static-formula"
+        ],
+        [
+          "@id-xlsx-go-static-remap-refusal",
+          "@planned",
+          "@profile-go-static-formula"
+        ],
+        [
+          "@id-xlsx-go-static-remap-refusal",
+          "@planned",
+          "@profile-go-static-formula"
+        ]
+      ]
+    },
+    {
+      "id": "@id-xlsx-go-static-reference-properties",
+      "from": "workflows/xlsx/formula-references.feature",
+      "to": "workflows/xlsx/formula-references.feature",
+      "sourceSha256": "6e5c0ca867e38fb1d82eaf96d61a272fecbc4a19052e1e8ed8bf47868ad527de",
+      "caseSha256": [
+        "412e02cab4d27a48830f14f8b63d08672772753de27a14815bfb871686b01148"
+      ],
+      "tags": [
+        [
+          "@id-xlsx-go-static-reference-properties",
+          "@planned",
+          "@profile-go-static-formula"
+        ]
+      ]
+    },
+    {
+      "id": "@id-docx-go-new-empty-body",
+      "from": "workflows/docx/document-model.feature",
+      "to": "workflows/docx/creation.feature",
+      "sourceSha256": "134222823c7c4fb5cf9f73c89ea753902278a1b14b2e3b39a1a22fb0fc5b472d",
+      "caseSha256": [
+        "ea24abf2b216f8b22c1c410416488395ec4953914637612798f7c3ec65c0de6f"
+      ],
+      "tags": [
+        [
+          "@id-docx-go-new-empty-body",
+          "@planned",
+          "@profile-go-document-api"
+        ]
+      ]
+    },
+    {
+      "id": "@id-docx-go-core-properties-getters",
+      "from": "workflows/docx/document-model.feature",
+      "to": "workflows/docx/properties.feature",
+      "sourceSha256": "134222823c7c4fb5cf9f73c89ea753902278a1b14b2e3b39a1a22fb0fc5b472d",
+      "caseSha256": [
+        "e3911697c2252176e7c21173b36e8ad46ab17fe948eb3cbef222faf3c69298a6"
+      ],
+      "tags": [
+        [
+          "@id-docx-go-core-properties-getters",
+          "@planned",
+          "@profile-go-document-api"
+        ]
+      ]
+    },
+    {
+      "id": "@id-docx-go-paragraph-text-getter",
+      "from": "workflows/docx/document-model.feature",
+      "to": "workflows/docx/paragraphs.feature",
+      "sourceSha256": "134222823c7c4fb5cf9f73c89ea753902278a1b14b2e3b39a1a22fb0fc5b472d",
+      "caseSha256": [
+        "0fa28b7565a6084e551506a9251fee14321fd22394fda79220cec5e3d20a322b",
+        "a5c9d7a76c6661b1c8dddecf37b7274ab6fba317d81032aec2e179f76e86fc77",
+        "f261986655bd597c0dc0f605e67a5bcdc463100eb81f5d6e1d5acc509232f93a",
+        "a966105a4dc9285400d970623f8d55c2a7bac06a7bd998f115d4a1c4d5428321",
+        "3ad5ed1b9655ce22878bd1b5cae5a818b86b3bd63e9cc6bdc94f18760c6cd4d2"
+      ],
+      "tags": [
+        [
+          "@id-docx-go-paragraph-text-getter",
+          "@planned",
+          "@profile-go-document-api"
+        ],
+        [
+          "@id-docx-go-paragraph-text-getter",
+          "@planned",
+          "@profile-go-document-api"
+        ],
+        [
+          "@id-docx-go-paragraph-text-getter",
+          "@planned",
+          "@profile-go-document-api"
+        ],
+        [
+          "@id-docx-go-paragraph-text-getter",
+          "@planned",
+          "@profile-go-document-api"
+        ],
+        [
+          "@id-docx-go-paragraph-text-getter",
+          "@planned",
+          "@profile-go-document-api"
+        ]
+      ]
+    },
+    {
+      "id": "@id-docx-go-paragraph-style-getters",
+      "from": "workflows/docx/document-model.feature",
+      "to": "workflows/docx/paragraph-style.feature",
+      "sourceSha256": "134222823c7c4fb5cf9f73c89ea753902278a1b14b2e3b39a1a22fb0fc5b472d",
+      "caseSha256": [
+        "116c71f07e14011fceba013579546a1c36eeddc196abdf7fae7ed1f8a6a126bf",
+        "f7aafa9b1066c1913699e6e559d4fe87d88dd232e6e6e7a7a1da718f406ae26e",
+        "1f37c6b1cf6584b4886e94958d4256b97760338644d5360ec24e28d044f77f70",
+        "2cc5619d6f8ef3b799d420d8b791306374d1a2ea089b4cd35d6242f71db719d8",
+        "3f85a28375c5d117b09b4fc00b9158625565932431a94c4102a27b37461c8ccc"
+      ],
+      "tags": [
+        [
+          "@id-docx-go-paragraph-style-getters",
+          "@planned",
+          "@profile-go-document-api"
+        ],
+        [
+          "@id-docx-go-paragraph-style-getters",
+          "@planned",
+          "@profile-go-document-api"
+        ],
+        [
+          "@id-docx-go-paragraph-style-getters",
+          "@planned",
+          "@profile-go-document-api"
+        ],
+        [
+          "@id-docx-go-paragraph-style-getters",
+          "@planned",
+          "@profile-go-document-api"
+        ],
+        [
+          "@id-docx-go-paragraph-style-getters",
+          "@planned",
+          "@profile-go-document-api"
+        ]
+      ]
+    },
+    {
+      "id": "@id-docx-go-paragraph-alignment-getter",
+      "from": "workflows/docx/document-model.feature",
+      "to": "workflows/docx/paragraphs.feature",
+      "sourceSha256": "134222823c7c4fb5cf9f73c89ea753902278a1b14b2e3b39a1a22fb0fc5b472d",
+      "caseSha256": [
+        "47d83fc94d6246f50b7274330e3ed551e9e60310fe281346e0c2d5334d27fe5c",
+        "aea17e3d2c3bc4bd20c04274863b93e4f342edb27be88ef6d1b89a8cc2a34a6e",
+        "fb3fa5b15fe0634c3bb8cc50663997d1276f3c187a4423c2d6956ec05eaf2539",
+        "4f1506076a6e2b13e689df62854cf2d6e7ba34bce97c6f6183644479497176d2"
+      ],
+      "tags": [
+        [
+          "@id-docx-go-paragraph-alignment-getter",
+          "@planned",
+          "@profile-go-document-api"
+        ],
+        [
+          "@id-docx-go-paragraph-alignment-getter",
+          "@planned",
+          "@profile-go-document-api"
+        ],
+        [
+          "@id-docx-go-paragraph-alignment-getter",
+          "@planned",
+          "@profile-go-document-api"
+        ],
+        [
+          "@id-docx-go-paragraph-alignment-getter",
+          "@planned",
+          "@profile-go-document-api"
+        ]
+      ]
+    },
+    {
+      "id": "@id-docx-go-paragraph-spacing-getters",
+      "from": "workflows/docx/document-model.feature",
+      "to": "workflows/docx/paragraphs.feature",
+      "sourceSha256": "134222823c7c4fb5cf9f73c89ea753902278a1b14b2e3b39a1a22fb0fc5b472d",
+      "caseSha256": [
+        "3e3af7b0cd9208cf38d0f742e98e1e933a4e995b7e93b894a847cd2b7b529331",
+        "6553c955987f40d9b0e99944864bd48ed0bac6cce74790561abe77898808d221",
+        "42ae5f482eb2e05856c8ed0cf03b74fefd44a75359efc5bd45701884b3da4efe",
+        "ed24bacfb7704f97befa8dc95de4f3359bbaf1c231253ddad5271a0eae063559"
+      ],
+      "tags": [
+        [
+          "@id-docx-go-paragraph-spacing-getters",
+          "@planned",
+          "@profile-go-document-api"
+        ],
+        [
+          "@id-docx-go-paragraph-spacing-getters",
+          "@planned",
+          "@profile-go-document-api"
+        ],
+        [
+          "@id-docx-go-paragraph-spacing-getters",
+          "@planned",
+          "@profile-go-document-api"
+        ],
+        [
+          "@id-docx-go-paragraph-spacing-getters",
+          "@planned",
+          "@profile-go-document-api"
+        ]
+      ]
+    },
+    {
+      "id": "@id-docx-go-paragraph-advanced-toggles",
+      "from": "workflows/docx/document-model.feature",
+      "to": "workflows/docx/paragraphs.feature",
+      "sourceSha256": "134222823c7c4fb5cf9f73c89ea753902278a1b14b2e3b39a1a22fb0fc5b472d",
+      "caseSha256": [
+        "af117157de924ded7cb463e572004f014a93318e4d32da20bbfcd0d74060b131"
+      ],
+      "tags": [
+        [
+          "@id-docx-go-paragraph-advanced-toggles",
+          "@planned",
+          "@profile-go-document-api"
+        ]
+      ]
+    },
+    {
+      "id": "@id-docx-go-paragraph-multiple-runs",
+      "from": "workflows/docx/document-model.feature",
+      "to": "workflows/docx/paragraphs.feature",
+      "sourceSha256": "134222823c7c4fb5cf9f73c89ea753902278a1b14b2e3b39a1a22fb0fc5b472d",
+      "caseSha256": [
+        "6c104eaf881e4d5ea51cb4d7f8fb72575a855c07e1fb440b276a27e4b3aedbfd"
+      ],
+      "tags": [
+        [
+          "@id-docx-go-paragraph-multiple-runs",
+          "@planned",
+          "@profile-go-document-api"
+        ]
+      ]
+    },
+    {
+      "id": "@id-docx-go-run-color-getter",
+      "from": "workflows/docx/document-model.feature",
+      "to": "workflows/docx/run-formatting.feature",
+      "sourceSha256": "134222823c7c4fb5cf9f73c89ea753902278a1b14b2e3b39a1a22fb0fc5b472d",
+      "caseSha256": [
+        "59fe38bad04e2af75be7e93fed61f3b17baf86a063634b97d4ba19a22ffd693d",
+        "fb4840d836f5cc54fe8c709f6ef38441223abdd139a01871c6796b6ef84855ff",
+        "bd6349616e36dee9a9d285761caa9bac7432ed0b3cabb65ad32b0c4f2a3f56c1"
+      ],
+      "tags": [
+        [
+          "@id-docx-go-run-color-getter",
+          "@planned",
+          "@profile-go-document-api"
+        ],
+        [
+          "@id-docx-go-run-color-getter",
+          "@planned",
+          "@profile-go-document-api"
+        ],
+        [
+          "@id-docx-go-run-color-getter",
+          "@planned",
+          "@profile-go-document-api"
+        ]
+      ]
+    },
+    {
+      "id": "@id-docx-go-run-boolean-formatting",
+      "from": "workflows/docx/document-model.feature",
+      "to": "workflows/docx/run-formatting.feature",
+      "sourceSha256": "134222823c7c4fb5cf9f73c89ea753902278a1b14b2e3b39a1a22fb0fc5b472d",
+      "caseSha256": [
+        "7de00fad1d76013b6cd74a17966c0ce725e15eee09ae949822b8b70876af0339",
+        "e8aa8d6188228a35b5d63de8a03729551266cd10e782ce0d98f3ae6df6727971",
+        "3382eab387148f8bd341bd87346f8aa2a757e1fb75f90122202cd39d0c01e6e4",
+        "1e1bee94df139d10510e177154ee3747776b141e809c95191c4cf4e991e61b6c",
+        "d50bc64c959e7e474393ee236a3d64f6aad4daa4f10a4d73a810a21c513c5fe5"
+      ],
+      "tags": [
+        [
+          "@id-docx-go-run-boolean-formatting",
+          "@planned",
+          "@profile-go-document-api"
+        ],
+        [
+          "@id-docx-go-run-boolean-formatting",
+          "@planned",
+          "@profile-go-document-api"
+        ],
+        [
+          "@id-docx-go-run-boolean-formatting",
+          "@planned",
+          "@profile-go-document-api"
+        ],
+        [
+          "@id-docx-go-run-boolean-formatting",
+          "@planned",
+          "@profile-go-document-api"
+        ],
+        [
+          "@id-docx-go-run-boolean-formatting",
+          "@planned",
+          "@profile-go-document-api"
+        ]
+      ]
+    },
+    {
+      "id": "@id-docx-go-run-effects-getters",
+      "from": "workflows/docx/document-model.feature",
+      "to": "workflows/docx/run-formatting.feature",
+      "sourceSha256": "134222823c7c4fb5cf9f73c89ea753902278a1b14b2e3b39a1a22fb0fc5b472d",
+      "caseSha256": [
+        "2697ec548ef082531c54081220f25d27a33776ac6b393e1fa0e5e16d46eccab0"
+      ],
+      "tags": [
+        [
+          "@id-docx-go-run-effects-getters",
+          "@planned",
+          "@profile-go-document-api"
+        ]
+      ]
+    },
+    {
+      "id": "@id-docx-go-run-underline-style",
+      "from": "workflows/docx/document-model.feature",
+      "to": "workflows/docx/run-formatting.feature",
+      "sourceSha256": "134222823c7c4fb5cf9f73c89ea753902278a1b14b2e3b39a1a22fb0fc5b472d",
+      "caseSha256": [
+        "762fe7fc874de3cd27e14db4287a744ddcf43c15619f8735fedc6de770b5a5dd",
+        "d394d04d15d86aa23abc8fc1db1db203734116c5d9f6c4954d3ec2d78aa672d7",
+        "ea757c9057c8cddd8ea0c9ba889ae036ec6678c45cb861bfa942a9ab6e99abf2",
+        "5400d3d64c400191aef9ff5012cfd094f182a641af89aff835089f4cee0ab35d",
+        "505da93234c55c69b63c17dc23d9dddf8be39955de9ea8c8a2784fe40b19b9af",
+        "3b3cbaf0050b98d883566762e239940f1a828f0c109b494e561c90a70667ac42"
+      ],
+      "tags": [
+        [
+          "@id-docx-go-run-underline-style",
+          "@planned",
+          "@profile-go-document-api"
+        ],
+        [
+          "@id-docx-go-run-underline-style",
+          "@planned",
+          "@profile-go-document-api"
+        ],
+        [
+          "@id-docx-go-run-underline-style",
+          "@planned",
+          "@profile-go-document-api"
+        ],
+        [
+          "@id-docx-go-run-underline-style",
+          "@planned",
+          "@profile-go-document-api"
+        ],
+        [
+          "@id-docx-go-run-underline-style",
+          "@planned",
+          "@profile-go-document-api"
+        ],
+        [
+          "@id-docx-go-run-underline-style",
+          "@planned",
+          "@profile-go-document-api"
+        ]
+      ]
+    },
+    {
+      "id": "@id-docx-go-run-font-name",
+      "from": "workflows/docx/document-model.feature",
+      "to": "workflows/docx/run-formatting.feature",
+      "sourceSha256": "134222823c7c4fb5cf9f73c89ea753902278a1b14b2e3b39a1a22fb0fc5b472d",
+      "caseSha256": [
+        "bcf69e4512529a2898580278d69e5598bc9f304215765f0839ccf00299606fff",
+        "3787a0338a48f883d428e80e70deb956d43ad5fb4434cefcb6b4eda7dc6c1626",
+        "e28dc4c6d967accd09ff0b08482bf7a27bfb07184cd28d0e5f2fa4e897555fbf",
+        "756b33846f7431b48dabe28ab2a26840b5ba5dadb1ee4c7a9d09cb5a2ede2dbc",
+        "79012242df0b1899cc71d5da1bd371464c2f161b93760c7987de1280c29abc6e",
+        "dc1f39f28f049e679a4673bab55174969b8fa454be0031cc4e11aed522b44d71"
+      ],
+      "tags": [
+        [
+          "@id-docx-go-run-font-name",
+          "@planned",
+          "@profile-go-document-api"
+        ],
+        [
+          "@id-docx-go-run-font-name",
+          "@planned",
+          "@profile-go-document-api"
+        ],
+        [
+          "@id-docx-go-run-font-name",
+          "@planned",
+          "@profile-go-document-api"
+        ],
+        [
+          "@id-docx-go-run-font-name",
+          "@planned",
+          "@profile-go-document-api"
+        ],
+        [
+          "@id-docx-go-run-font-name",
+          "@planned",
+          "@profile-go-document-api"
+        ],
+        [
+          "@id-docx-go-run-font-name",
+          "@planned",
+          "@profile-go-document-api"
+        ]
+      ]
+    },
+    {
+      "id": "@id-docx-go-run-highlight",
+      "from": "workflows/docx/document-model.feature",
+      "to": "workflows/docx/run-formatting.feature",
+      "sourceSha256": "134222823c7c4fb5cf9f73c89ea753902278a1b14b2e3b39a1a22fb0fc5b472d",
+      "caseSha256": [
+        "ea2ddf466261e0104daeb93829024f9fb8a4464961ceec6df5dadce8b2412c8a",
+        "84ebbb87b4946a826d73f926e4cf3f3b6a44b13541bf74fa5c4a496c7a794832",
+        "a31eb355a80c076158c481e7ea456ced2296686039eeb93d98525947ca731d4e",
+        "a79ad319bdc12f47cbc7e59afab2427daee5c889d43f0f3cf48736ef0fd5ecea",
+        "a0f0041ccbd68ae69b44f532b047eba9f3f0f6dbb185855499acb1421ea87d0c"
+      ],
+      "tags": [
+        [
+          "@id-docx-go-run-highlight",
+          "@planned",
+          "@profile-go-document-api"
+        ],
+        [
+          "@id-docx-go-run-highlight",
+          "@planned",
+          "@profile-go-document-api"
+        ],
+        [
+          "@id-docx-go-run-highlight",
+          "@planned",
+          "@profile-go-document-api"
+        ],
+        [
+          "@id-docx-go-run-highlight",
+          "@planned",
+          "@profile-go-document-api"
+        ],
+        [
+          "@id-docx-go-run-highlight",
+          "@planned",
+          "@profile-go-document-api"
+        ]
+      ]
+    },
+    {
+      "id": "@id-docx-go-run-vertical-align",
+      "from": "workflows/docx/document-model.feature",
+      "to": "workflows/docx/run-formatting.feature",
+      "sourceSha256": "134222823c7c4fb5cf9f73c89ea753902278a1b14b2e3b39a1a22fb0fc5b472d",
+      "caseSha256": [
+        "bb5d4ae0f521358707736be5c1abc78c1b3606484c29bab80aeed5a2d9427966"
+      ],
+      "tags": [
+        [
+          "@id-docx-go-run-vertical-align",
+          "@planned",
+          "@profile-go-document-api"
+        ]
+      ]
+    },
+    {
+      "id": "@id-docx-go-table-dimensions-getters",
+      "from": "workflows/docx/document-model.feature",
+      "to": "workflows/docx/tables.feature",
+      "sourceSha256": "134222823c7c4fb5cf9f73c89ea753902278a1b14b2e3b39a1a22fb0fc5b472d",
+      "caseSha256": [
+        "2e294602e0a637a3f75e604a44e04fc0c30edef1d33fee5df0b8ee781281a1f7",
+        "615a584861c4bbe1629d50375079c11e4566634470bbde935122f631066e0c03",
+        "5d099f126eaf139726394920a79a58227a8890252b1f1cdae938e47241f572cb",
+        "f14ccfd246519017063a9ca5cd2f8680e6fdd82978b8ec01ccdde0d780f25d46",
+        "4a23540bfc72fdf8e1b6c98429cace318891887ca6ff5a1ef9d99259b7008671",
+        "a061d40a10ac4cdcdd114f80b83393ad677015eed84d45f475a3bbbdef7264cd",
+        "2581ecd2dc0b427cee967d132257b93ee48c24ef3ecf73c4fd06d649fd8c9a37",
+        "87171d36a57b0e797c6173bffaf798a0fafabf68ff175b96c066014d0c959d1e"
+      ],
+      "tags": [
+        [
+          "@id-docx-go-table-dimensions-getters",
+          "@planned",
+          "@profile-go-document-api"
+        ],
+        [
+          "@id-docx-go-table-dimensions-getters",
+          "@planned",
+          "@profile-go-document-api"
+        ],
+        [
+          "@id-docx-go-table-dimensions-getters",
+          "@planned",
+          "@profile-go-document-api"
+        ],
+        [
+          "@id-docx-go-table-dimensions-getters",
+          "@planned",
+          "@profile-go-document-api"
+        ],
+        [
+          "@id-docx-go-table-dimensions-getters",
+          "@planned",
+          "@profile-go-document-api"
+        ],
+        [
+          "@id-docx-go-table-dimensions-getters",
+          "@planned",
+          "@profile-go-document-api"
+        ],
+        [
+          "@id-docx-go-table-dimensions-getters",
+          "@planned",
+          "@profile-go-document-api"
+        ],
+        [
+          "@id-docx-go-table-dimensions-getters",
+          "@planned",
+          "@profile-go-document-api"
+        ]
+      ]
+    },
+    {
+      "id": "@id-docx-go-table-cell-access",
+      "from": "workflows/docx/document-model.feature",
+      "to": "workflows/docx/tables.feature",
+      "sourceSha256": "134222823c7c4fb5cf9f73c89ea753902278a1b14b2e3b39a1a22fb0fc5b472d",
+      "caseSha256": [
+        "532c20c6885993c4a61a1b78cabca0dd615c371640519375b617dd1f76e4753b"
+      ],
+      "tags": [
+        [
+          "@id-docx-go-table-cell-access",
+          "@planned",
+          "@profile-go-document-api"
+        ]
+      ]
+    },
+    {
+      "id": "@id-docx-go-table-cell-text-getters",
+      "from": "workflows/docx/document-model.feature",
+      "to": "workflows/docx/tables.feature",
+      "sourceSha256": "134222823c7c4fb5cf9f73c89ea753902278a1b14b2e3b39a1a22fb0fc5b472d",
+      "caseSha256": [
+        "3edb7fb8f40b329ce4181a7b36f556de59ccd062891f017c11a272e9bce27c3d"
+      ],
+      "tags": [
+        [
+          "@id-docx-go-table-cell-text-getters",
+          "@planned",
+          "@profile-go-document-api"
+        ]
+      ]
+    },
+    {
+      "id": "@id-docx-go-table-row-counts",
+      "from": "workflows/docx/document-model.feature",
+      "to": "workflows/docx/tables.feature",
+      "sourceSha256": "134222823c7c4fb5cf9f73c89ea753902278a1b14b2e3b39a1a22fb0fc5b472d",
+      "caseSha256": [
+        "d55e15bfcab799c9978b69d7a0cd4d965e0bf909a911b805c747a1f02e859b97"
+      ],
+      "tags": [
+        [
+          "@id-docx-go-table-row-counts",
+          "@planned",
+          "@profile-go-document-api"
+        ]
+      ]
+    },
+    {
+      "id": "@id-docx-go-table-merge-properties",
+      "from": "workflows/docx/document-model.feature",
+      "to": "workflows/docx/tables.feature",
+      "sourceSha256": "134222823c7c4fb5cf9f73c89ea753902278a1b14b2e3b39a1a22fb0fc5b472d",
+      "caseSha256": [
+        "f03bcc4076624fc6333b158506ad1cfdef9c6e89c8023ebaad0e4c5b5634d390"
+      ],
+      "tags": [
+        [
+          "@id-docx-go-table-merge-properties",
+          "@planned",
+          "@profile-go-document-api"
+        ]
+      ]
+    },
+    {
+      "id": "@id-docx-go-table-style-getter",
+      "from": "workflows/docx/document-model.feature",
+      "to": "workflows/docx/tables.feature",
+      "sourceSha256": "134222823c7c4fb5cf9f73c89ea753902278a1b14b2e3b39a1a22fb0fc5b472d",
+      "caseSha256": [
+        "c4d31d95df50ecea3ed605f4c0c232d79b0d41c1a79030efaf992dfae7148dca"
+      ],
+      "tags": [
+        [
+          "@id-docx-go-table-style-getter",
+          "@planned",
+          "@profile-go-document-api"
+        ]
+      ]
+    },
+    {
+      "id": "@id-docx-go-table-header-getter",
+      "from": "workflows/docx/document-model.feature",
+      "to": "workflows/docx/tables.feature",
+      "sourceSha256": "134222823c7c4fb5cf9f73c89ea753902278a1b14b2e3b39a1a22fb0fc5b472d",
+      "caseSha256": [
+        "33fd1eddf39ddf05c5ea9cfebd19a1cb24ec8de865652772457cc803811ea6c7"
+      ],
+      "tags": [
+        [
+          "@id-docx-go-table-header-getter",
+          "@planned",
+          "@profile-go-document-api"
+        ]
+      ]
+    },
+    {
+      "id": "@id-docx-go-cell-shading-getter",
+      "from": "workflows/docx/document-model.feature",
+      "to": "workflows/docx/tables.feature",
+      "sourceSha256": "134222823c7c4fb5cf9f73c89ea753902278a1b14b2e3b39a1a22fb0fc5b472d",
+      "caseSha256": [
+        "b454e579c7bf9842d8a9363df0473576056fd51644a2cf3369fc54cba52c35f9"
+      ],
+      "tags": [
+        [
+          "@id-docx-go-cell-shading-getter",
+          "@planned",
+          "@profile-go-document-api"
+        ]
+      ]
+    },
+    {
+      "id": "@id-docx-go-cell-properties-getters",
+      "from": "workflows/docx/document-model.feature",
+      "to": "workflows/docx/tables.feature",
+      "sourceSha256": "134222823c7c4fb5cf9f73c89ea753902278a1b14b2e3b39a1a22fb0fc5b472d",
+      "caseSha256": [
+        "da043980b49f1dfadcd4d5a42bdbfc53e5c945c78b4561e91d2480dd1188e66e"
+      ],
+      "tags": [
+        [
+          "@id-docx-go-cell-properties-getters",
+          "@planned",
+          "@profile-go-document-api"
+        ]
+      ]
+    },
+    {
+      "id": "@id-docx-go-roundtrip-selected-formatting",
+      "from": "workflows/docx/document-model.feature",
+      "to": "workflows/docx/run-formatting.feature",
+      "sourceSha256": "134222823c7c4fb5cf9f73c89ea753902278a1b14b2e3b39a1a22fb0fc5b472d",
+      "caseSha256": [
+        "457d4a430b8305efdff42ab287dd428930805b05417f707b9a4331c6dc5c273c"
+      ],
+      "tags": [
+        [
+          "@id-docx-go-roundtrip-selected-formatting",
+          "@planned",
+          "@profile-go-document-api"
+        ]
+      ]
+    },
+    {
+      "id": "@id-docx-go-roundtrip-table-text",
+      "from": "workflows/docx/document-model.feature",
+      "to": "workflows/docx/tables.feature",
+      "sourceSha256": "134222823c7c4fb5cf9f73c89ea753902278a1b14b2e3b39a1a22fb0fc5b472d",
+      "caseSha256": [
+        "44b25df37f84e047a5aa6a9eb9084dd09cc8b795d752afe10f6a5b79dc2888d8"
+      ],
+      "tags": [
+        [
+          "@id-docx-go-roundtrip-table-text",
+          "@planned",
+          "@profile-go-document-api"
+        ]
+      ]
+    },
+    {
+      "id": "@id-docx-go-section-title-background-getters",
+      "from": "workflows/docx/document-model.feature",
+      "to": "workflows/docx/page-layout.feature",
+      "sourceSha256": "134222823c7c4fb5cf9f73c89ea753902278a1b14b2e3b39a1a22fb0fc5b472d",
+      "caseSha256": [
+        "1bc7ecba71a6471a54ac4b549a68a9564cf55261a0264ece29066573faf6878b"
+      ],
+      "tags": [
+        [
+          "@id-docx-go-section-title-background-getters",
+          "@planned",
+          "@profile-go-document-api"
+        ]
+      ]
+    },
+    {
+      "id": "@id-docx-go-track-author-toggle",
+      "from": "workflows/docx/document-model.feature",
+      "to": "workflows/docx/tracked-workflow.feature",
+      "sourceSha256": "134222823c7c4fb5cf9f73c89ea753902278a1b14b2e3b39a1a22fb0fc5b472d",
+      "caseSha256": [
+        "eb05cc6f1c38f222d3230da40878fdaa06be89c961865635ff5a2b9068811ba1"
+      ],
+      "tags": [
+        [
+          "@id-docx-go-track-author-toggle",
+          "@planned",
+          "@profile-go-document-api"
+        ]
+      ]
+    },
+    {
+      "id": "@id-docx-go-body-insert-order",
+      "from": "workflows/docx/document-model.feature",
+      "to": "workflows/docx/paragraphs.feature",
+      "sourceSha256": "134222823c7c4fb5cf9f73c89ea753902278a1b14b2e3b39a1a22fb0fc5b472d",
+      "caseSha256": [
+        "6c3c6861cde2ce908f327e32194f0d325fdf7e2093fdd4c58e3bdde91b6d9570"
+      ],
+      "tags": [
+        [
+          "@id-docx-go-body-insert-order",
+          "@planned",
+          "@profile-go-document-api"
+        ]
+      ]
+    },
+    {
+      "id": "@id-python-word-anchor-headings-paragraphs",
+      "from": "workflows/docx/anchor-discovery.feature",
+      "to": "workflows/docx/anchor-discovery.feature",
+      "sourceSha256": "f33165ea9b4e90556613c3e714e4f9556cfd9edd8edeb185972fee7ef11294ad",
+      "caseSha256": [
+        "d402f929917dd39e668302ef3136acaab3e6c3e72ba29cb61154aba1ed289e4c"
+      ],
+      "tags": [
+        [
+          "@id-python-word-anchor-headings-paragraphs",
+          "@planned",
+          "@profile-python-anchor-discovery"
+        ]
+      ]
+    },
+    {
+      "id": "@id-python-word-anchor-text-filter",
+      "from": "workflows/docx/anchor-discovery.feature",
+      "to": "workflows/docx/anchor-discovery.feature",
+      "sourceSha256": "f33165ea9b4e90556613c3e714e4f9556cfd9edd8edeb185972fee7ef11294ad",
+      "caseSha256": [
+        "75da491139c83cdd9808c31b92a643e7a73ef7e7dc346a28bbe52a36c9e91b38"
+      ],
+      "tags": [
+        [
+          "@id-python-word-anchor-text-filter",
+          "@planned",
+          "@profile-python-anchor-discovery"
+        ]
+      ]
+    },
+    {
+      "id": "@id-python-word-anchor-document-map",
+      "from": "workflows/docx/anchor-discovery.feature",
+      "to": "workflows/docx/anchor-discovery.feature",
+      "sourceSha256": "f33165ea9b4e90556613c3e714e4f9556cfd9edd8edeb185972fee7ef11294ad",
+      "caseSha256": [
+        "e3dfbdbffbbc3812bcde90742953b9ceb835117bafed76f27c4b89be1d0db24a"
+      ],
+      "tags": [
+        [
+          "@id-python-word-anchor-document-map",
+          "@planned",
+          "@profile-python-anchor-discovery"
+        ]
+      ]
+    },
+    {
+      "id": "@id-python-word-anchor-discover-insert",
+      "from": "workflows/docx/anchor-discovery.feature",
+      "to": "workflows/docx/anchor-discovery.feature",
+      "sourceSha256": "f33165ea9b4e90556613c3e714e4f9556cfd9edd8edeb185972fee7ef11294ad",
+      "caseSha256": [
+        "5f8a89c69966113f7a17c9f44a77d71b0f11a1eb3d0d2775638a67126661df65"
+      ],
+      "tags": [
+        [
+          "@id-python-word-anchor-discover-insert",
+          "@planned",
+          "@profile-python-anchor-discovery"
+        ]
+      ]
+    },
+    {
+      "id": "@id-python-word-anchor-section-discovery-hints",
+      "from": "workflows/docx/anchor-discovery.feature",
+      "to": "workflows/docx/anchor-discovery.feature",
+      "sourceSha256": "f33165ea9b4e90556613c3e714e4f9556cfd9edd8edeb185972fee7ef11294ad",
+      "caseSha256": [
+        "36114a173f12f93971ee6532574f40de0bc324f3ab11ec85aae0c84a938300eb"
+      ],
+      "tags": [
+        [
+          "@id-python-word-anchor-section-discovery-hints",
+          "@planned",
+          "@profile-python-anchor-discovery"
+        ]
+      ]
+    },
+    {
+      "id": "@id-office-preview-details",
+      "from": "workflows/workflow-receipts.feature",
+      "to": "workflows/pptx/mutation-safety.feature",
+      "sourceSha256": "613c5a059b2e13d16d73e88aadf75445061acae58262ee5c84cc0ab1db38a71a",
+      "caseSha256": [
+        "6cc794be8b05b63757d6a2904565606fdb8ad9ffb213cbb40594d0af1e34264c"
+      ],
+      "tags": [
+        [
+          "@id-office-preview-details",
+          "@planned"
+        ]
+      ]
+    },
+    {
+      "id": "@id-office-docx-exact-match-counts",
+      "from": "workflows/workflow-receipts.feature",
+      "to": "workflows/docx/mutation-safety.feature",
+      "sourceSha256": "613c5a059b2e13d16d73e88aadf75445061acae58262ee5c84cc0ab1db38a71a",
+      "caseSha256": [
+        "09d9dbb3d05509a409e7549ff761c1ed71edbc89b762d0a0d8a3b9bf81f0ab46"
+      ],
+      "tags": [
+        [
+          "@id-office-docx-exact-match-counts",
+          "@planned"
+        ]
+      ]
+    }
+  ]
+}

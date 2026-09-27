@@ -1,36 +1,20 @@
 @planned
-Feature: Presentation text, notes and archive custody
+Feature: Presentation notes inspection and editing
 
   Rule: PPTX relationship-ordered reads and anchored text replacement
     The first PPTX slice opens real packages, reads existing notes without creating
     missing notes parts, and performs exact anchored text replacement across runs.
+
     @id-pptx-order-notes-read
     Scenario: Follow presentation relationships and keep notes reads non-mutating
       Given PPTX ordered notes fixtures are prepared
       When PPTX opens the reordered notes fixture and probes notes reads
       Then PPTX keeps slide order, notes blank lines, and notes reads non-mutating without creating missing notes parts
 
-    @id-pptx-readable-unsupported-topology
-    Scenario: Read line breaks and field text faithfully but refuse editing that topology
-      Given PPTX line-break and field text fixture is prepared from a real template
-      When PPTX inspects the paragraph text and attempts an anchored edit on that topology
-      Then PPTX exposes line breaks and field text faithfully and refuses the unsupported edit without mutation
-
-    @id-pptx-cross-run-replace
-    Scenario: Replace exact anchored text across runs and preserve unrelated members after reopen
-      Given PPTX fragmented title fixture is prepared from a real template and an untouched ZIP member
-      When PPTX replaces anchored cross-run text and saves then reopens the package
-      Then PPTX preserves the replacement text, the starting run formatting, and unrelated ZIP member bytes
-
-    @id-pptx-stale-anchor-refusal
-    Scenario: Refuse a stale anchored replacement without mutation
-      Given PPTX stale-anchor fixture is prepared from a real template
-      When PPTX replaces anchored text once and retries with the stale anchor
-      Then PPTX refuses the stale anchor and keeps the post-success bytes unchanged
-
   Rule: Edit existing slide notes while retaining unrelated presentation payloads
     An existing notes slide is selected by its related slide part. Notes edits and
     refusals below concern a bounded Go editor, not a general PPTX authoring rule.
+
     @profile-go-existing-notes @id-pptx-go-notes-exact-splice
     Scenario: Replace existing speaker text with one changed notes part after save and reopen
       Given fixture fixture-04faba67841dda25dc3ff9e3e6e345e6feeeef1cf25a6b9065bf5fbdc83163dc
@@ -94,14 +78,3 @@ Feature: Presentation text, notes and archive custody
       Given the pinned notes fixture's first notes paragraph is replaced in memory by <a:p><a:pPr algn="ctr"><a:buChar char="•"/><a:defRPr sz="1200"/></a:pPr><a:r><a:rPr b="1"><a:solidFill><a:srgbClr val="112233"/></a:solidFill><a:latin typeface="F&amp;F"/></a:rPr><a:t>old</a:t></a:r><a:endParaRPr lang="en-US"/></a:p>
       When Go replaces its notes with JSON "a\nb"
       Then the notes XML contains exactly two copies each of val="112233", typeface="F&amp;F", lang="en-US" and char="•"
-
-  Rule: Open a presentation from a path or bytes without changing it
-    The presentation API retains the input archive for a save with no edits.
-    @profile-bun-presentation @id-pptx-bun-open-save-noop
-    Scenario: Path and byte inputs retain the original presentation archive
-      Given fixture fixture-1b848867cffb781112dc5778fa8cc7b9c9bd472c3636a348ec5d50005f05489e
-      When Bun Presentation opens the fixture path and separately opens its archive bytes
-      Then the path-opened presentation's first inspected paragraph on its first slide is Frankenstein
-      And serializing the byte-opened presentation returns the exact original archive bytes
-      When the path-opened presentation is saved without edits to a new PPTX path
-      Then that destination file contains the exact original archive bytes

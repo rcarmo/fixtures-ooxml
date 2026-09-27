@@ -30,7 +30,7 @@ test('document family assets and compiled outcomes are registered together',asyn
  for(const [feature,mapping,contract] of [
   ['workflows/package/preservation.feature','ledgers/consumers/bun-opc-custody.json','contracts/bun-opc-custody.md'],
   ['workflows/docx/anchor-discovery.feature','ledgers/consumers/python-anchor-discovery.json','contracts/python-anchor-discovery.md'],
-  ['workflows/docx/document-model.feature','ledgers/consumers/go-document-api.json','contracts/go-document-api.md'],
+  ...['creation','properties','paragraphs','paragraph-style','run-formatting','tables','page-layout','tracked-workflow'].map(name=>[`workflows/docx/${name}.feature`,'ledgers/consumers/go-document-api.json','contracts/go-document-api.md']),
  ]){
   const generated=registerWorkflow(feature!,await Bun.file(feature!).text(),{files:[]},{features:[],workflows:[]});
   for(const w of generated.ledger.workflows)expect(ledger.workflows.find((r:any)=>r.id===w.id)).toMatchObject({id:w.id,feature:w.feature,expandedCases:w.expandedCases});
@@ -41,7 +41,7 @@ test('document family assets and compiled outcomes are registered together',asyn
 });
 
 test('Go document API excludes fixture smoke loops and preserves in-memory versus reopened gaps',async()=>{
- const p='workflows/docx/document-model.feature',rows=cases(p,await Bun.file(p).text());
+ const rows=await sourceCases('workflows/docx/document-model.feature');
  expect(rows).toHaveLength(70);expect(new Set(rows.map(r=>r.scenarioId)).size).toBe(29);
  expect(rows.some(r=>r.scenarioId.includes('fixture-save-open')||r.scenarioId.includes('fixture-roundtrip-body'))).toBe(false);
  const mapping=await Bun.file('ledgers/consumers/go-document-api.json').json();expect(mapping.declarationCount).toBe(33);

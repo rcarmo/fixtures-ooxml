@@ -1,6 +1,6 @@
 # Go edits to existing presentation notes
 
-The [planned feature](../workflows/native/pptx-text.feature) exercises a Go editor that targets an **existing** notes part through its related slide. The [consumer mapping](../ledgers/consumers/go-notes-editing.json) pins both source test declarations at Go revision `e2c5891212beef16f7412c794d3bea6c01e9da35` and records their assertion limits. The read-only [ordered notes workflow](../workflows/native/pptx-text.feature) has different fixture and order preconditions; its `@id-pptx-order-notes-read` ID is not reused as edit evidence.
+The [notes](../workflows/pptx/notes.feature), [text](../workflows/pptx/text.feature), [preservation](../workflows/pptx/preservation.feature) exercises a Go editor that targets an **existing** notes part through its related slide. The [consumer mapping](../ledgers/consumers/go-notes-editing.json) pins both source test declarations at Go revision `e2c5891212beef16f7412c794d3bea6c01e9da35` and records their assertion limits. The read-only [notes](../workflows/pptx/notes.feature), [text](../workflows/pptx/text.feature), [preservation](../workflows/pptx/preservation.feature) has different fixture and order preconditions; its `@id-pptx-order-notes-read` ID is not reused as edit evidence.
 
 ## Fixture and exact replacement
 

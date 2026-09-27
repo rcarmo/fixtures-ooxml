@@ -41,8 +41,8 @@ test('notes and comments assets are sealed and match compiled planned outcomes',
  const {registerWorkflow}=await import('../scripts/register-workflow.ts');
  const ledger=await Bun.file('ledgers/workflows.json').json(),manifest=await Bun.file('manifest.json').json();
  for(const [feature,mapping,contract] of [
-  ['workflows/native/pptx-text.feature','ledgers/consumers/bun-pptx.json','contracts/bun-pptx.md'],
-  ['workflows/native/pptx-text.feature','ledgers/consumers/go-notes-editing.json','contracts/go-notes-editing.md'],
+  ...['text','notes','preservation'].map(name=>[`workflows/pptx/${name}.feature`,'ledgers/consumers/bun-pptx.json','contracts/bun-pptx.md']),
+  ['workflows/pptx/notes.feature','ledgers/consumers/go-notes-editing.json','contracts/go-notes-editing.md'],
   ['workflows/docx/comments.feature','ledgers/consumers/python-comment-resolution.json','contracts/python-comment-resolution.md'],
  ]){
   const generated=registerWorkflow(feature!,await Bun.file(feature!).text(),{files:[]},{features:[],workflows:[]});

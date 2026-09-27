@@ -1,53 +1,58 @@
 {
   "schemaVersion": 1,
   "features": [
-    "workflows/mutation-safety.feature",
-    "workflows/native/docx-story.feature",
-    "workflows/native/docx-revisions.feature",
-    "workflows/native/docx-redline.feature",
-    "workflows/native/opc-graph.feature",
-    "workflows/native/opc-zip64.feature",
-    "workflows/native/pptx-text.feature",
-    "workflows/native/xlsx-cells.feature",
-    "workflows/native/xlsx-cache-boundaries.feature",
-    "workflows/xml/parsing.feature",
-    "workflows/xml/names.feature",
-    "workflows/xml/comparison.feature",
-    "workflows/package/zip-admission.feature",
-    "workflows/package/xml-member-admission.feature",
-    "workflows/package/semantic-diff.feature",
+    "workflows/docx/anchor-discovery.feature",
     "workflows/docx/comments.feature",
-    "workflows/docx/text.feature",
     "workflows/docx/creation.feature",
-    "workflows/docx/tables.feature",
-    "workflows/pptx/creation.feature",
-    "workflows/pptx/tables.feature",
-    "workflows/xlsx/creation.feature",
-    "workflows/package/preservation.feature",
-    "workflows/package/zip32.feature",
-    "workflows/package/relationship-namespaces.feature",
-    "workflows/docx/tracked-workflow.feature",
-    "workflows/docx/run-formatting.feature",
-    "workflows/docx/paragraph-style.feature",
-    "workflows/docx/style-authoring.feature",
-    "workflows/pptx/text-box.feature",
-    "workflows/xlsx/cell-style.feature",
-    "workflows/docx/page-layout.feature",
-    "workflows/pptx/slide-order.feature",
     "workflows/docx/effective-formatting.feature",
     "workflows/docx/font-size.feature",
-    "workflows/xlsx/comment-vml-custody.feature",
+    "workflows/docx/mutation-safety.feature",
+    "workflows/docx/page-layout.feature",
+    "workflows/docx/paragraph-style.feature",
+    "workflows/docx/paragraphs.feature",
+    "workflows/docx/properties.feature",
+    "workflows/docx/revisions.feature",
+    "workflows/docx/run-formatting.feature",
+    "workflows/docx/stories.feature",
+    "workflows/docx/style-authoring.feature",
+    "workflows/docx/tables.feature",
     "workflows/docx/template-analysis.feature",
+    "workflows/docx/template-cache.feature",
+    "workflows/docx/text.feature",
+    "workflows/docx/tracked-workflow.feature",
+    "workflows/package/graph.feature",
+    "workflows/package/preservation.feature",
+    "workflows/package/relationship-namespaces.feature",
+    "workflows/package/semantic-diff.feature",
+    "workflows/package/xml-member-admission.feature",
+    "workflows/package/zip-admission.feature",
+    "workflows/package/zip32.feature",
+    "workflows/package/zip64.feature",
+    "workflows/pptx/creation.feature",
+    "workflows/pptx/mutation-safety.feature",
+    "workflows/pptx/notes.feature",
+    "workflows/pptx/preservation.feature",
+    "workflows/pptx/slide-order.feature",
+    "workflows/pptx/tables.feature",
+    "workflows/pptx/text-box.feature",
+    "workflows/pptx/text.feature",
+    "workflows/xlsx/cell-style.feature",
+    "workflows/xlsx/cells.feature",
+    "workflows/xlsx/comment-vml-custody.feature",
+    "workflows/xlsx/creation.feature",
+    "workflows/xlsx/formula-cache.feature",
     "workflows/xlsx/formula-references.feature",
-    "workflows/docx/document-model.feature",
-    "workflows/docx/anchor-discovery.feature",
-    "workflows/workflow-receipts.feature"
+    "workflows/xlsx/mutation-safety.feature",
+    "workflows/xml/comparison.feature",
+    "workflows/xml/editing.feature",
+    "workflows/xml/names.feature",
+    "workflows/xml/parsing.feature"
   ],
   "executionCredit": "Only local executed assertions count; reports here do not run consumers.",
   "workflows": [
     {
       "id": "@id-pptx-dry-run-no-mutation",
-      "feature": "workflows/mutation-safety.feature",
+      "feature": "workflows/pptx/mutation-safety.feature",
       "expandedCases": 3,
       "factIds": [
         "NSPresentationML",
@@ -73,7 +78,7 @@
     },
     {
       "id": "@id-docx-dry-run-no-mutation",
-      "feature": "workflows/mutation-safety.feature",
+      "feature": "workflows/docx/mutation-safety.feature",
       "expandedCases": 3,
       "factIds": [
         "NSWordprocessingML",
@@ -99,7 +104,7 @@
     },
     {
       "id": "@id-xlsx-dry-run-no-mutation",
-      "feature": "workflows/mutation-safety.feature",
+      "feature": "workflows/xlsx/mutation-safety.feature",
       "expandedCases": 3,
       "factIds": [
         "NSSpreadsheetML",
@@ -125,7 +130,7 @@
     },
     {
       "id": "@id-xlsx-strict-batch-atomicity",
-      "feature": "workflows/mutation-safety.feature",
+      "feature": "workflows/xlsx/mutation-safety.feature",
       "expandedCases": 3,
       "factIds": [
         "NSSpreadsheetML",
@@ -152,7 +157,7 @@
     },
     {
       "id": "@id-docx-strict-batch-per-target-results",
-      "feature": "workflows/mutation-safety.feature",
+      "feature": "workflows/docx/mutation-safety.feature",
       "expandedCases": 3,
       "factIds": [
         "NSWordprocessingML",
@@ -179,7 +184,7 @@
     },
     {
       "id": "@id-pptx-batch-output-accumulates",
-      "feature": "workflows/mutation-safety.feature",
+      "feature": "workflows/pptx/mutation-safety.feature",
       "expandedCases": 2,
       "factIds": [
         "NSPresentationML",
@@ -205,7 +210,7 @@
     },
     {
       "id": "@id-xlsx-style-dependency-closure",
-      "feature": "workflows/mutation-safety.feature",
+      "feature": "workflows/xlsx/cell-style.feature",
       "expandedCases": 1,
       "factIds": [
         "NSSpreadsheetML",
@@ -231,7 +236,7 @@
     },
     {
       "id": "@id-xlsx-cross-sheet-cache-invalidation",
-      "feature": "workflows/mutation-safety.feature",
+      "feature": "workflows/xlsx/formula-cache.feature",
       "expandedCases": 1,
       "factIds": [
         "NSSpreadsheetML",
@@ -261,7 +266,7 @@
     },
     {
       "id": "@id-docx-story-parts",
-      "feature": "workflows/native/docx-story.feature",
+      "feature": "workflows/docx/stories.feature",
       "expandedCases": 1,
       "factIds": [
         "NSWordprocessingML",
@@ -289,7 +294,7 @@
     },
     {
       "id": "@id-docx-story-views",
-      "feature": "workflows/native/docx-story.feature",
+      "feature": "workflows/docx/stories.feature",
       "expandedCases": 1,
       "factIds": [
         "NSWordprocessingML",
@@ -321,7 +326,7 @@
     },
     {
       "id": "@id-docx-story-blind",
-      "feature": "workflows/native/docx-story.feature",
+      "feature": "workflows/docx/stories.feature",
       "expandedCases": 1,
       "factIds": [
         "NSWordprocessingML",
@@ -351,7 +356,7 @@
     },
     {
       "id": "@id-docx-revisions-all-stories",
-      "feature": "workflows/native/docx-revisions.feature",
+      "feature": "workflows/docx/revisions.feature",
       "expandedCases": 1,
       "factIds": [
         "NSWordprocessingML",
@@ -384,7 +389,7 @@
     },
     {
       "id": "@id-docx-revisions-rollback",
-      "feature": "workflows/native/docx-revisions.feature",
+      "feature": "workflows/docx/revisions.feature",
       "expandedCases": 1,
       "factIds": [
         "NSWordprocessingML",
@@ -419,7 +424,7 @@
     },
     {
       "id": "@id-docx-revisions-empty-deletion",
-      "feature": "workflows/native/docx-revisions.feature",
+      "feature": "workflows/docx/revisions.feature",
       "expandedCases": 1,
       "factIds": [
         "NSWordprocessingML",
@@ -449,7 +454,7 @@
     },
     {
       "id": "@id-docx-revisions-protected",
-      "feature": "workflows/native/docx-revisions.feature",
+      "feature": "workflows/docx/revisions.feature",
       "expandedCases": 1,
       "factIds": [
         "NSWordprocessingML",
@@ -481,7 +486,7 @@
     },
     {
       "id": "@id-docx-tracked-replace-roundtrip",
-      "feature": "workflows/native/docx-redline.feature",
+      "feature": "workflows/docx/revisions.feature",
       "expandedCases": 1,
       "factIds": [
         "NSWordprocessingML",
@@ -511,7 +516,7 @@
     },
     {
       "id": "@id-docx-tracked-replace-refusal",
-      "feature": "workflows/native/docx-redline.feature",
+      "feature": "workflows/docx/revisions.feature",
       "expandedCases": 5,
       "factIds": [
         "NSWordprocessingML",
@@ -543,7 +548,7 @@
     },
     {
       "id": "@id-opc-add-related-part",
-      "feature": "workflows/native/opc-graph.feature",
+      "feature": "workflows/package/graph.feature",
       "expandedCases": 1,
       "factIds": [],
       "expectedOutcomes": [
@@ -569,7 +574,7 @@
     },
     {
       "id": "@id-opc-graph-rollback",
-      "feature": "workflows/native/opc-graph.feature",
+      "feature": "workflows/package/graph.feature",
       "expandedCases": 1,
       "factIds": [],
       "expectedOutcomes": [
@@ -595,7 +600,7 @@
     },
     {
       "id": "@id-opc-remove-related-part",
-      "feature": "workflows/native/opc-graph.feature",
+      "feature": "workflows/package/graph.feature",
       "expandedCases": 1,
       "factIds": [],
       "expectedOutcomes": [
@@ -621,7 +626,7 @@
     },
     {
       "id": "@id-opc-diff-content-type",
-      "feature": "workflows/native/opc-graph.feature",
+      "feature": "workflows/package/graph.feature",
       "expandedCases": 1,
       "factIds": [],
       "expectedOutcomes": [
@@ -647,7 +652,7 @@
     },
     {
       "id": "@id-parity-zip64",
-      "feature": "workflows/native/opc-zip64.feature",
+      "feature": "workflows/package/zip64.feature",
       "expandedCases": 1,
       "factIds": [],
       "expectedOutcomes": [
@@ -673,7 +678,7 @@
     },
     {
       "id": "@id-zip64-preflight-count",
-      "feature": "workflows/native/opc-zip64.feature",
+      "feature": "workflows/package/zip64.feature",
       "expandedCases": 1,
       "factIds": [],
       "expectedOutcomes": [
@@ -698,7 +703,7 @@
     },
     {
       "id": "@id-zip64-unsafe-offset",
-      "feature": "workflows/native/opc-zip64.feature",
+      "feature": "workflows/package/zip64.feature",
       "expandedCases": 1,
       "factIds": [],
       "expectedOutcomes": [
@@ -723,7 +728,7 @@
     },
     {
       "id": "@id-zip64-resource-limit",
-      "feature": "workflows/native/opc-zip64.feature",
+      "feature": "workflows/package/zip64.feature",
       "expandedCases": 1,
       "factIds": [],
       "expectedOutcomes": [
@@ -748,7 +753,7 @@
     },
     {
       "id": "@id-pptx-order-notes-read",
-      "feature": "workflows/native/pptx-text.feature",
+      "feature": "workflows/pptx/notes.feature",
       "expandedCases": 1,
       "factIds": [
         "NSPresentationML",
@@ -776,7 +781,7 @@
     },
     {
       "id": "@id-pptx-readable-unsupported-topology",
-      "feature": "workflows/native/pptx-text.feature",
+      "feature": "workflows/pptx/text.feature",
       "expandedCases": 1,
       "factIds": [
         "NSPresentationML",
@@ -804,7 +809,7 @@
     },
     {
       "id": "@id-pptx-cross-run-replace",
-      "feature": "workflows/native/pptx-text.feature",
+      "feature": "workflows/pptx/text.feature",
       "expandedCases": 1,
       "factIds": [
         "NSPresentationML",
@@ -832,7 +837,7 @@
     },
     {
       "id": "@id-pptx-stale-anchor-refusal",
-      "feature": "workflows/native/pptx-text.feature",
+      "feature": "workflows/pptx/text.feature",
       "expandedCases": 1,
       "factIds": [
         "NSPresentationML",
@@ -860,7 +865,7 @@
     },
     {
       "id": "@id-xlsx-read-rel-linked-shared-strings",
-      "feature": "workflows/native/xlsx-cells.feature",
+      "feature": "workflows/xlsx/cells.feature",
       "expandedCases": 1,
       "factIds": [
         "NSSpreadsheetML",
@@ -889,7 +894,7 @@
     },
     {
       "id": "@id-xlsx-preserve-styled-cell-edit",
-      "feature": "workflows/native/xlsx-cells.feature",
+      "feature": "workflows/xlsx/cells.feature",
       "expandedCases": 1,
       "factIds": [
         "NSSpreadsheetML",
@@ -918,7 +923,7 @@
     },
     {
       "id": "@id-xlsx-clear-cross-sheet-caches",
-      "feature": "workflows/native/xlsx-cells.feature",
+      "feature": "workflows/xlsx/formula-cache.feature",
       "expandedCases": 1,
       "factIds": [
         "NSSpreadsheetML",
@@ -947,7 +952,7 @@
     },
     {
       "id": "@id-xlsx-prefixed-namespace-safe-edits",
-      "feature": "workflows/native/xlsx-cells.feature",
+      "feature": "workflows/xlsx/cells.feature",
       "expandedCases": 1,
       "factIds": [
         "NSSpreadsheetML",
@@ -975,7 +980,7 @@
     },
     {
       "id": "@id-xlsx-phonetic-guides-excluded",
-      "feature": "workflows/native/xlsx-cells.feature",
+      "feature": "workflows/xlsx/cells.feature",
       "expandedCases": 1,
       "factIds": [
         "NSSpreadsheetML",
@@ -1003,7 +1008,7 @@
     },
     {
       "id": "@id-xlsx-styled-blank-cell-editable",
-      "feature": "workflows/native/xlsx-cells.feature",
+      "feature": "workflows/xlsx/cells.feature",
       "expandedCases": 1,
       "factIds": [
         "NSSpreadsheetML",
@@ -1032,7 +1037,7 @@
     },
     {
       "id": "@id-xlsx-refuse-shared-formula-overwrite",
-      "feature": "workflows/native/xlsx-cells.feature",
+      "feature": "workflows/xlsx/cells.feature",
       "expandedCases": 1,
       "factIds": [
         "NSSpreadsheetML",
@@ -1061,7 +1066,7 @@
     },
     {
       "id": "@id-xlsx-refuse-array-formula-overwrite",
-      "feature": "workflows/native/xlsx-cells.feature",
+      "feature": "workflows/xlsx/cells.feature",
       "expandedCases": 1,
       "factIds": [
         "NSSpreadsheetML",
@@ -1090,7 +1095,7 @@
     },
     {
       "id": "@id-xlsx-array-input-refusal",
-      "feature": "workflows/native/xlsx-cache-boundaries.feature",
+      "feature": "workflows/xlsx/formula-cache.feature",
       "expandedCases": 2,
       "factIds": [
         "NSSpreadsheetML",
@@ -1120,7 +1125,7 @@
     },
     {
       "id": "@id-xlsx-cache-scope-opaque-parts",
-      "feature": "workflows/native/xlsx-cache-boundaries.feature",
+      "feature": "workflows/xlsx/formula-cache.feature",
       "expandedCases": 1,
       "factIds": [
         "NSSpreadsheetML",
@@ -1244,7 +1249,7 @@
     },
     {
       "id": "@id-xml-apply-edits",
-      "feature": "workflows/xml/parsing.feature",
+      "feature": "workflows/xml/editing.feature",
       "expandedCases": 1,
       "factIds": [],
       "expectedOutcomes": [
@@ -3427,7 +3432,7 @@
     },
     {
       "id": "@id-xml-go-attribute-splice-custody",
-      "feature": "workflows/xml/parsing.feature",
+      "feature": "workflows/xml/editing.feature",
       "expandedCases": 3,
       "factIds": [],
       "expectedOutcomes": [
@@ -3452,7 +3457,7 @@
     },
     {
       "id": "@id-xml-go-attribute-batch-refusal",
-      "feature": "workflows/xml/parsing.feature",
+      "feature": "workflows/xml/editing.feature",
       "expandedCases": 1,
       "factIds": [],
       "expectedOutcomes": [
@@ -3475,7 +3480,7 @@
     },
     {
       "id": "@id-xml-go-child-insertion-custody",
-      "feature": "workflows/xml/parsing.feature",
+      "feature": "workflows/xml/editing.feature",
       "expandedCases": 1,
       "factIds": [],
       "expectedOutcomes": [
@@ -3499,7 +3504,7 @@
     },
     {
       "id": "@id-xml-go-child-insertion-refusal",
-      "feature": "workflows/xml/parsing.feature",
+      "feature": "workflows/xml/editing.feature",
       "expandedCases": 1,
       "factIds": [],
       "expectedOutcomes": [
@@ -3523,7 +3528,7 @@
     },
     {
       "id": "@id-xml-go-child-namespace-matrix",
-      "feature": "workflows/xml/parsing.feature",
+      "feature": "workflows/xml/editing.feature",
       "expandedCases": 1,
       "factIds": [],
       "expectedOutcomes": [
@@ -3548,7 +3553,7 @@
     },
     {
       "id": "@id-xml-go-element-removal-custody",
-      "feature": "workflows/xml/parsing.feature",
+      "feature": "workflows/xml/editing.feature",
       "expandedCases": 1,
       "factIds": [],
       "expectedOutcomes": [
@@ -3572,7 +3577,7 @@
     },
     {
       "id": "@id-xml-go-element-removal-refusal",
-      "feature": "workflows/xml/parsing.feature",
+      "feature": "workflows/xml/editing.feature",
       "expandedCases": 2,
       "factIds": [],
       "expectedOutcomes": [
@@ -3595,7 +3600,7 @@
     },
     {
       "id": "@id-xml-go-element-replacement-custody",
-      "feature": "workflows/xml/parsing.feature",
+      "feature": "workflows/xml/editing.feature",
       "expandedCases": 1,
       "factIds": [],
       "expectedOutcomes": [
@@ -3618,7 +3623,7 @@
     },
     {
       "id": "@id-xml-go-element-replacement-refusal",
-      "feature": "workflows/xml/parsing.feature",
+      "feature": "workflows/xml/editing.feature",
       "expandedCases": 3,
       "factIds": [],
       "expectedOutcomes": [
@@ -3642,7 +3647,7 @@
     },
     {
       "id": "@id-xml-go-immutable-leaf-seed",
-      "feature": "workflows/xml/parsing.feature",
+      "feature": "workflows/xml/editing.feature",
       "expandedCases": 1,
       "factIds": [],
       "expectedOutcomes": [
@@ -4160,7 +4165,7 @@
     },
     {
       "id": "@id-python-template-cache-key-stable",
-      "feature": "workflows/docx/template-analysis.feature",
+      "feature": "workflows/docx/template-cache.feature",
       "expandedCases": 1,
       "factIds": [],
       "expectedOutcomes": [
@@ -4183,7 +4188,7 @@
     },
     {
       "id": "@id-python-template-cache-roundtrip",
-      "feature": "workflows/docx/template-analysis.feature",
+      "feature": "workflows/docx/template-cache.feature",
       "expandedCases": 1,
       "factIds": [],
       "expectedOutcomes": [
@@ -4207,7 +4212,7 @@
     },
     {
       "id": "@id-python-template-cache-source-change",
-      "feature": "workflows/docx/template-analysis.feature",
+      "feature": "workflows/docx/template-cache.feature",
       "expandedCases": 1,
       "factIds": [],
       "expectedOutcomes": [
@@ -4231,7 +4236,7 @@
     },
     {
       "id": "@id-python-template-cache-corrupt",
-      "feature": "workflows/docx/template-analysis.feature",
+      "feature": "workflows/docx/template-cache.feature",
       "expandedCases": 1,
       "factIds": [],
       "expectedOutcomes": [
@@ -4255,7 +4260,7 @@
     },
     {
       "id": "@id-python-template-cache-schema-mismatch",
-      "feature": "workflows/docx/template-analysis.feature",
+      "feature": "workflows/docx/template-cache.feature",
       "expandedCases": 1,
       "factIds": [],
       "expectedOutcomes": [
@@ -4279,7 +4284,7 @@
     },
     {
       "id": "@id-python-template-cache-sow-reuse",
-      "feature": "workflows/docx/template-analysis.feature",
+      "feature": "workflows/docx/template-cache.feature",
       "expandedCases": 1,
       "factIds": [],
       "expectedOutcomes": [
@@ -4305,7 +4310,7 @@
     },
     {
       "id": "@id-python-template-cache-sow-regenerate",
-      "feature": "workflows/docx/template-analysis.feature",
+      "feature": "workflows/docx/template-cache.feature",
       "expandedCases": 1,
       "factIds": [],
       "expectedOutcomes": [
@@ -4508,7 +4513,7 @@
     },
     {
       "id": "@id-docx-go-new-empty-body",
-      "feature": "workflows/docx/document-model.feature",
+      "feature": "workflows/docx/creation.feature",
       "expandedCases": 1,
       "factIds": [],
       "expectedOutcomes": [
@@ -4531,7 +4536,7 @@
     },
     {
       "id": "@id-docx-go-core-properties-getters",
-      "feature": "workflows/docx/document-model.feature",
+      "feature": "workflows/docx/properties.feature",
       "expandedCases": 1,
       "factIds": [],
       "expectedOutcomes": [
@@ -4555,7 +4560,7 @@
     },
     {
       "id": "@id-docx-go-paragraph-text-getter",
-      "feature": "workflows/docx/document-model.feature",
+      "feature": "workflows/docx/paragraphs.feature",
       "expandedCases": 5,
       "factIds": [],
       "expectedOutcomes": [
@@ -4582,7 +4587,7 @@
     },
     {
       "id": "@id-docx-go-paragraph-style-getters",
-      "feature": "workflows/docx/document-model.feature",
+      "feature": "workflows/docx/paragraph-style.feature",
       "expandedCases": 5,
       "factIds": [],
       "expectedOutcomes": [
@@ -4612,7 +4617,7 @@
     },
     {
       "id": "@id-docx-go-paragraph-alignment-getter",
-      "feature": "workflows/docx/document-model.feature",
+      "feature": "workflows/docx/paragraphs.feature",
       "expandedCases": 4,
       "factIds": [],
       "expectedOutcomes": [
@@ -4638,7 +4643,7 @@
     },
     {
       "id": "@id-docx-go-paragraph-spacing-getters",
-      "feature": "workflows/docx/document-model.feature",
+      "feature": "workflows/docx/paragraphs.feature",
       "expandedCases": 4,
       "factIds": [],
       "expectedOutcomes": [
@@ -4664,7 +4669,7 @@
     },
     {
       "id": "@id-docx-go-paragraph-advanced-toggles",
-      "feature": "workflows/docx/document-model.feature",
+      "feature": "workflows/docx/paragraphs.feature",
       "expandedCases": 1,
       "factIds": [],
       "expectedOutcomes": [
@@ -4687,7 +4692,7 @@
     },
     {
       "id": "@id-docx-go-paragraph-multiple-runs",
-      "feature": "workflows/docx/document-model.feature",
+      "feature": "workflows/docx/paragraphs.feature",
       "expandedCases": 1,
       "factIds": [],
       "expectedOutcomes": [
@@ -4710,7 +4715,7 @@
     },
     {
       "id": "@id-docx-go-run-color-getter",
-      "feature": "workflows/docx/document-model.feature",
+      "feature": "workflows/docx/run-formatting.feature",
       "expandedCases": 3,
       "factIds": [],
       "expectedOutcomes": [
@@ -4734,7 +4739,7 @@
     },
     {
       "id": "@id-docx-go-run-boolean-formatting",
-      "feature": "workflows/docx/document-model.feature",
+      "feature": "workflows/docx/run-formatting.feature",
       "expandedCases": 5,
       "factIds": [],
       "expectedOutcomes": [
@@ -4761,7 +4766,7 @@
     },
     {
       "id": "@id-docx-go-run-effects-getters",
-      "feature": "workflows/docx/document-model.feature",
+      "feature": "workflows/docx/run-formatting.feature",
       "expandedCases": 1,
       "factIds": [],
       "expectedOutcomes": [
@@ -4784,7 +4789,7 @@
     },
     {
       "id": "@id-docx-go-run-underline-style",
-      "feature": "workflows/docx/document-model.feature",
+      "feature": "workflows/docx/run-formatting.feature",
       "expandedCases": 6,
       "factIds": [],
       "expectedOutcomes": [
@@ -4812,7 +4817,7 @@
     },
     {
       "id": "@id-docx-go-run-font-name",
-      "feature": "workflows/docx/document-model.feature",
+      "feature": "workflows/docx/run-formatting.feature",
       "expandedCases": 6,
       "factIds": [],
       "expectedOutcomes": [
@@ -4840,7 +4845,7 @@
     },
     {
       "id": "@id-docx-go-run-highlight",
-      "feature": "workflows/docx/document-model.feature",
+      "feature": "workflows/docx/run-formatting.feature",
       "expandedCases": 5,
       "factIds": [],
       "expectedOutcomes": [
@@ -4867,7 +4872,7 @@
     },
     {
       "id": "@id-docx-go-run-vertical-align",
-      "feature": "workflows/docx/document-model.feature",
+      "feature": "workflows/docx/run-formatting.feature",
       "expandedCases": 1,
       "factIds": [],
       "expectedOutcomes": [
@@ -4891,7 +4896,7 @@
     },
     {
       "id": "@id-docx-go-table-dimensions-getters",
-      "feature": "workflows/docx/document-model.feature",
+      "feature": "workflows/docx/tables.feature",
       "expandedCases": 8,
       "factIds": [],
       "expectedOutcomes": [
@@ -4921,7 +4926,7 @@
     },
     {
       "id": "@id-docx-go-table-cell-access",
-      "feature": "workflows/docx/document-model.feature",
+      "feature": "workflows/docx/tables.feature",
       "expandedCases": 1,
       "factIds": [],
       "expectedOutcomes": [
@@ -4945,7 +4950,7 @@
     },
     {
       "id": "@id-docx-go-table-cell-text-getters",
-      "feature": "workflows/docx/document-model.feature",
+      "feature": "workflows/docx/tables.feature",
       "expandedCases": 1,
       "factIds": [],
       "expectedOutcomes": [
@@ -4969,7 +4974,7 @@
     },
     {
       "id": "@id-docx-go-table-row-counts",
-      "feature": "workflows/docx/document-model.feature",
+      "feature": "workflows/docx/tables.feature",
       "expandedCases": 1,
       "factIds": [],
       "expectedOutcomes": [
@@ -4993,7 +4998,7 @@
     },
     {
       "id": "@id-docx-go-table-merge-properties",
-      "feature": "workflows/docx/document-model.feature",
+      "feature": "workflows/docx/tables.feature",
       "expandedCases": 1,
       "factIds": [],
       "expectedOutcomes": [
@@ -5017,7 +5022,7 @@
     },
     {
       "id": "@id-docx-go-table-style-getter",
-      "feature": "workflows/docx/document-model.feature",
+      "feature": "workflows/docx/tables.feature",
       "expandedCases": 1,
       "factIds": [],
       "expectedOutcomes": [
@@ -5040,7 +5045,7 @@
     },
     {
       "id": "@id-docx-go-table-header-getter",
-      "feature": "workflows/docx/document-model.feature",
+      "feature": "workflows/docx/tables.feature",
       "expandedCases": 1,
       "factIds": [],
       "expectedOutcomes": [
@@ -5063,7 +5068,7 @@
     },
     {
       "id": "@id-docx-go-cell-shading-getter",
-      "feature": "workflows/docx/document-model.feature",
+      "feature": "workflows/docx/tables.feature",
       "expandedCases": 1,
       "factIds": [],
       "expectedOutcomes": [
@@ -5086,7 +5091,7 @@
     },
     {
       "id": "@id-docx-go-cell-properties-getters",
-      "feature": "workflows/docx/document-model.feature",
+      "feature": "workflows/docx/tables.feature",
       "expandedCases": 1,
       "factIds": [],
       "expectedOutcomes": [
@@ -5110,7 +5115,7 @@
     },
     {
       "id": "@id-docx-go-roundtrip-selected-formatting",
-      "feature": "workflows/docx/document-model.feature",
+      "feature": "workflows/docx/run-formatting.feature",
       "expandedCases": 1,
       "factIds": [],
       "expectedOutcomes": [
@@ -5135,7 +5140,7 @@
     },
     {
       "id": "@id-docx-go-roundtrip-table-text",
-      "feature": "workflows/docx/document-model.feature",
+      "feature": "workflows/docx/tables.feature",
       "expandedCases": 1,
       "factIds": [],
       "expectedOutcomes": [
@@ -5159,7 +5164,7 @@
     },
     {
       "id": "@id-docx-go-section-title-background-getters",
-      "feature": "workflows/docx/document-model.feature",
+      "feature": "workflows/docx/page-layout.feature",
       "expandedCases": 1,
       "factIds": [],
       "expectedOutcomes": [
@@ -5182,7 +5187,7 @@
     },
     {
       "id": "@id-docx-go-track-author-toggle",
-      "feature": "workflows/docx/document-model.feature",
+      "feature": "workflows/docx/tracked-workflow.feature",
       "expandedCases": 1,
       "factIds": [],
       "expectedOutcomes": [
@@ -5206,7 +5211,7 @@
     },
     {
       "id": "@id-docx-go-body-insert-order",
-      "feature": "workflows/docx/document-model.feature",
+      "feature": "workflows/docx/paragraphs.feature",
       "expandedCases": 1,
       "factIds": [],
       "expectedOutcomes": [
@@ -5576,7 +5581,7 @@
     },
     {
       "id": "@id-pptx-go-notes-exact-splice",
-      "feature": "workflows/native/pptx-text.feature",
+      "feature": "workflows/pptx/notes.feature",
       "expandedCases": 1,
       "factIds": [],
       "expectedOutcomes": [
@@ -5602,7 +5607,7 @@
     },
     {
       "id": "@id-pptx-go-notes-refusal-and-noop-custody",
-      "feature": "workflows/native/pptx-text.feature",
+      "feature": "workflows/pptx/notes.feature",
       "expandedCases": 1,
       "factIds": [],
       "expectedOutcomes": [
@@ -5627,7 +5632,7 @@
     },
     {
       "id": "@id-pptx-go-notes-clear-stale-refill",
-      "feature": "workflows/native/pptx-text.feature",
+      "feature": "workflows/pptx/notes.feature",
       "expandedCases": 1,
       "factIds": [],
       "expectedOutcomes": [
@@ -5652,7 +5657,7 @@
     },
     {
       "id": "@id-pptx-go-notes-part-fingerprint-refusal",
-      "feature": "workflows/native/pptx-text.feature",
+      "feature": "workflows/pptx/notes.feature",
       "expandedCases": 1,
       "factIds": [],
       "expectedOutcomes": [
@@ -5675,7 +5680,7 @@
     },
     {
       "id": "@id-pptx-go-notes-self-closing-fill",
-      "feature": "workflows/native/pptx-text.feature",
+      "feature": "workflows/pptx/notes.feature",
       "expandedCases": 1,
       "factIds": [],
       "expectedOutcomes": [
@@ -5698,7 +5703,7 @@
     },
     {
       "id": "@id-pptx-go-notes-edge-space-preserve",
-      "feature": "workflows/native/pptx-text.feature",
+      "feature": "workflows/pptx/notes.feature",
       "expandedCases": 1,
       "factIds": [],
       "expectedOutcomes": [
@@ -5722,7 +5727,7 @@
     },
     {
       "id": "@id-pptx-go-notes-multiline-template",
-      "feature": "workflows/native/pptx-text.feature",
+      "feature": "workflows/pptx/notes.feature",
       "expandedCases": 1,
       "factIds": [],
       "expectedOutcomes": [
@@ -5747,7 +5752,7 @@
     },
     {
       "id": "@id-pptx-go-notes-template-fragments",
-      "feature": "workflows/native/pptx-text.feature",
+      "feature": "workflows/pptx/notes.feature",
       "expandedCases": 1,
       "factIds": [],
       "expectedOutcomes": [
@@ -5770,7 +5775,7 @@
     },
     {
       "id": "@id-pptx-bun-open-save-noop",
-      "feature": "workflows/native/pptx-text.feature",
+      "feature": "workflows/pptx/preservation.feature",
       "expandedCases": 1,
       "factIds": [],
       "expectedOutcomes": [
@@ -5795,7 +5800,7 @@
     },
     {
       "id": "@id-office-preview-details",
-      "feature": "workflows/workflow-receipts.feature",
+      "feature": "workflows/pptx/mutation-safety.feature",
       "expandedCases": 1,
       "factIds": [],
       "expectedOutcomes": [
@@ -5819,7 +5824,7 @@
     },
     {
       "id": "@id-office-docx-exact-match-counts",
-      "feature": "workflows/workflow-receipts.feature",
+      "feature": "workflows/docx/mutation-safety.feature",
       "expandedCases": 1,
       "factIds": [],
       "expectedOutcomes": [

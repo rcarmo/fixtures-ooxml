@@ -38,8 +38,17 @@ export function validateFixtureLayout(manifest:any){
   if(!Array.isArray(asset.scenarioIds)||new Set(asset.scenarioIds).size!==asset.scenarioIds.length)throw Error('Invalid fixture scenario links');
  }
 }
+export function validateWorkflowPath(path:string){
+ const match=/^workflows\/(docx|pptx|xlsx|package|xml)\/([a-z0-9]+(?:-[a-z0-9]+)*)\.feature$/.exec(path);
+ if(!match||/^(?:bun|go|python|native|docx|pptx|xlsx)-/.test(match[2]!))throw Error('Invalid workflow path: use format or common package/XML operation family');
+}
+export function validateWorkflowOwnership(ledger:any,actual:{scenarioId:string;path:string}[],contract:any){
+ for(const w of ledger.workflows)if(!actual.some(c=>c.scenarioId===w.id)||actual.some(c=>c.scenarioId===w.id&&c.path!==w.feature))throw Error('Workflow feature ownership drift: '+w.id);
+ for(const id of contract.scenarioIds)if(!contract.features.includes(ledger.workflows.find((w:any)=>w.id===id)?.feature))throw Error('Mutation feature ownership drift: '+id);
+}
 export function validateMutationContract(contract:any,manifest:any){
- if(contract.schemaVersion!==1||contract.feature!=='workflows/mutation-safety.feature'||contract.fixturePolicy?.membership!=='exact'||contract.fixturePolicy?.preserve!=='all-except-allowed')throw Error('Invalid mutation contract policy');
+ if(contract.schemaVersion!==2||'feature' in contract||!Array.isArray(contract.features)||!contract.features.length||new Set(contract.features).size!==contract.features.length||contract.fixturePolicy?.membership!=='exact'||contract.fixturePolicy?.preserve!=='all-except-allowed')throw Error('Invalid mutation contract policy');
+ for(const path of contract.features){validateWorkflowPath(path);if(!manifest.files.some((f:any)=>f.path===path&&f.role==='workflow'))throw Error('Unsealed mutation feature');}
  if(!Array.isArray(contract.scenarioIds)||new Set(contract.scenarioIds).size!==contract.scenarioIds.length||!Array.isArray(contract.fixtures)||!contract.fixtures.length)throw Error('Invalid mutation contract inventory');
  const ids=new Set<string>();
  for(const f of contract.fixtures){
@@ -101,8 +110,11 @@ export async function verify(base=root){
  for await(const path of new Bun.Glob('**/*').scan({cwd:base,onlyFiles:true,dot:false}))if(!path.startsWith('node_modules/')&&/\.(docx|pptx|xlsx|png|jpg|jpeg|zip)$/i.test(path)&&!path.startsWith('fixtures/'))throw Error('Fixture outside single fixtures root: '+path);
  const contract=await Bun.file(join(base,'contracts/mutation-safety.json')).json();
  validateMutationContract(contract,manifest);
- const mutationCases=cases(contract.feature,await Bun.file(join(base,contract.feature)).text());
- if(mutationCases.length!==contract.expandedCaseCount||JSON.stringify([...new Set(mutationCases.map(c=>c.scenarioId))])!==JSON.stringify(contract.scenarioIds))throw Error('Mutation scenario identity/count drift');
+ const mutationCases=(await Promise.all(contract.features.map(async(path:string)=>{
+  const selected=cases(path,await Bun.file(join(base,path)).text()).filter(c=>contract.scenarioIds.includes(c.scenarioId));
+  if(!selected.length)throw Error('Mutation feature has no selected scenarios');return selected;
+ }))).flat();
+ if(mutationCases.length!==contract.expandedCaseCount||JSON.stringify([...new Set(mutationCases.map(c=>c.scenarioId))].sort())!==JSON.stringify([...contract.scenarioIds].sort()))throw Error('Mutation scenario identity/count drift');
  for(const c of mutationCases){
   const fixture=c.steps.find(s=>/^fixture "/.test(s.text))?.text.match(/^fixture "([^"]+)" verified against the fixture manifest$/)?.[1];
   if(!contract.fixtures.some((f:any)=>f.id===fixture))throw Error('Unknown workflow fixture');
@@ -121,12 +133,14 @@ export async function verify(base=root){
  if(new Set(ledger.features).size!==ledger.features.length)throw Error('Duplicate feature path');
  for(const path of ledger.features){
   if(!safe(path))throw Error('Unsafe feature path');
+  validateWorkflowPath(path);
   const text=await Bun.file(join(base,path)).text(),compiled=cases(path,text);
   for(const id of new Set(compiled.map(c=>c.scenarioId))){if(definitions.has(id))throw Error('Scenario defined in multiple features');definitions.add(id);}
   for(const c of compiled)actual.push({...c,path});
  }
  const ids=[...new Set(actual.map(c=>c.scenarioId))].sort();if(JSON.stringify(ids)!==JSON.stringify(ledger.workflows.map((w:any)=>w.id).sort()))throw Error('Workflow ledger scenario drift');
  for(const w of ledger.workflows){if(w.expandedCases!==actual.filter(c=>c.scenarioId===w.id).length||!w.expectedOutcomes?.length||w.factIds.some((id:string)=>!factIds.has(id)))throw Error('Incomplete workflow '+w.id);}
+ validateWorkflowOwnership(ledger,actual,contract);
  const consumerLedgers=[];
  for await(const path of new Bun.Glob('ledgers/consumers/*.json').scan({cwd:base,onlyFiles:true}))consumerLedgers.push(await Bun.file(join(base,path)).json());
  validateConsumerMappingSets(consumerLedgers,new Set(ids));

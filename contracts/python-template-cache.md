@@ -1,6 +1,6 @@
 # Python Word template metadata cache
 
-The [cache scenarios](../workflows/docx/template-analysis.feature) describe
+The [template analysis](../workflows/docx/template-analysis.feature), [template cache](../workflows/docx/template-cache.feature) describe
 Python API behaviour for a Word SOW template. The metadata cache lives outside
 the source DOCX. A cache key identifies the resolved file path, document type
 `word` and analysis type `template_metadata`. Cached metadata is valid while
@@ -21,4 +21,4 @@ only for one unchanged file and one type pair. A source-change test verifies
 value and reason without inspecting `hit` or cache-file custody. The SOW tests
 check selected metadata, not all returned fields or cross-process persistence.
 The separate unified `office_template(operation="analyze")` cache test belongs
-to [template analysis](../workflows/docx/template-analysis.feature).
+to [template analysis](../workflows/docx/template-analysis.feature), [template cache](../workflows/docx/template-cache.feature).

@@ -1,6 +1,6 @@
 # XML values and parser APIs
 
-[`values.feature`](../workflows/xml/parsing.feature) specifies entity decoding,
+[parsing](../workflows/xml/parsing.feature), [editing](../workflows/xml/editing.feature) specifies entity decoding,
 processing-instruction admission, expanded attribute lookup and escaping. JSON
 arguments retain exact quotes, tabs and line endings.
 

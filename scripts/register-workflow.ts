@@ -2,7 +2,7 @@
 import {resolve,join} from 'node:path';
 import {Parser,AstBuilder,GherkinClassicTokenMatcher,compile} from '@cucumber/gherkin';
 import {IdGenerator} from '@cucumber/messages';
-import {cases} from './verify.ts';
+import {cases,validateWorkflowPath} from './verify.ts';
 function seal(path:string,text:string,manifest:any,role:string){
  if(manifest.files.some((f:any)=>f.path===path))throw Error('Asset already registered');
  const bytes=new TextEncoder().encode(text),sha256=new Bun.CryptoHasher('sha256').update(bytes).digest('hex');
@@ -15,7 +15,7 @@ export function registerAsset(path:string,text:string,manifest:any){
  return seal(path,text,manifest,role);
 }
 export function registerWorkflow(path:string,text:string,manifest:any,ledger:any){
- if(!/^workflows\/(?:[A-Za-z0-9_-]+\/)*[A-Za-z0-9_-]+\.feature$/.test(path))throw Error('Invalid workflow path');
+ validateWorkflowPath(path);
  const rows=cases(path,text),ids=[...new Set(rows.map(c=>c.scenarioId))];
  if(ledger.features.includes(path)||manifest.files.some((f:any)=>f.path===path))throw Error('Workflow already registered');
  if(ids.some(id=>ledger.workflows.some((w:any)=>w.id===id)))throw Error('Duplicate canonical scenario');

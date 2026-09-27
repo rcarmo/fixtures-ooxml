@@ -34,9 +34,14 @@ Temporary edited documents belong in the application's test-output directory.
 
 ## Mutation contracts
 
-`workflows/mutation-safety.feature` defines the mutation scenarios.
-`contracts/mutation-safety.json` associates them with fixture IDs, expected readback
-values, member hashes and the list of package members an operation may change.
+`contracts/mutation-safety.json` schema 2 lists the format-local `features` and
+selects eight `scenarioIds` (nineteen expanded cases). There is no singular
+`feature` path. Verify each declared feature against the manifest, compile it,
+select only those IDs and require exact aggregate membership without duplicates.
+Additional scenarios in the same files are separate obligations.
+
+The contract associates the selected scenarios with fixture IDs, expected
+readback values, member hashes and the package members an operation may change.
 
 Membership is exact. Members outside the permitted list must retain their hashes.
 The Gherkin examples contain typed JSON values so null, numbers, strings and

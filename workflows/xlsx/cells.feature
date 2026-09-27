@@ -1,0 +1,53 @@
+@planned
+Feature: Spreadsheet cell reading and editing
+
+  Rule: XLSX cell reads and style-preserving value edits
+    Workbook cells are read from the preserved OOXML package and simple value edits
+    patch only the required XML slots while keeping untouched package bytes intact.
+
+    @id-xlsx-read-rel-linked-shared-strings
+    Scenario: Read rel-linked shared strings, numbers, booleans and cached formulas across worksheets
+      Given a synthetic two-sheet XLSX fixture with rel-linked shared strings, numbers, booleans and cached formulas
+      When I open the workbook through the XLSX reader
+      Then the workbook sheetnames follow workbook relationships
+      And cell reads include shared strings, numbers, booleans and cached formulas across worksheets
+
+    @id-xlsx-preserve-styled-cell-edit
+    Scenario: Edit a styled existing cell without disturbing unrelated package parts
+      Given the go-ooxml formatting workbook fixture
+      When I change the styled cell A2 text to "Elizabeth Lavenza" and save and reopen the workbook
+      Then the reopened cell keeps its style attributes and new value
+      And unrelated ZIP parts still match the original bytes
+
+    @id-xlsx-prefixed-namespace-safe-edits
+    Scenario: Edit prefixed workbook and worksheet parts without creating unqualified spreadsheet nodes
+      Given a synthetic prefixed XLSX fixture with blank cells and formulas
+      When I write "Alpha" to prefixed A1, 7 to prefixed B1, and save the workbook
+      Then the saved prefixed workbook keeps one qualified calcPr and qualified new cell values
+
+    @id-xlsx-phonetic-guides-excluded
+    Scenario: Read rich strings while excluding phonetic guides
+      Given a synthetic XLSX fixture with phonetic guides in shared and inline rich strings
+      When I open the workbook through the XLSX reader
+      Then phonetic guides are excluded while rich text runs stay intact
+
+    @id-xlsx-styled-blank-cell-editable
+    Scenario: Read and edit a styled blank cell without losing its style
+      Given a synthetic XLSX fixture with a styled blank cell
+      When I change the blank styled cell A1 text to "filled" and save and reopen the workbook
+      Then the blank styled cell was readable as null before editing
+      And the reopened blank styled cell keeps its style and new value
+
+    @id-xlsx-refuse-shared-formula-overwrite
+    Scenario: Refuse destructive edits to an unsupported shared formula without mutating the workbook
+      Given the shared-formula XLSX fixture
+      When I try to overwrite the shared formula cell B2
+      Then the shared formula edit is refused before mutation
+      And saving afterwards keeps the workbook and worksheet parts byte-identical
+
+    @id-xlsx-refuse-array-formula-overwrite
+    Scenario: Refuse destructive edits to an unsupported array formula without mutating the workbook
+      Given the shared-formula XLSX fixture
+      When I try to overwrite the array formula cell D2
+      Then the array formula edit is refused before mutation
+      And saving afterwards keeps the workbook and worksheet parts byte-identical

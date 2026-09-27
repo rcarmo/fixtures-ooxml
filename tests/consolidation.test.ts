@@ -1,11 +1,12 @@
 import {test,expect} from 'bun:test';
+import {sourceCases} from './catalogue-helpers.ts';
 import {cases} from '../scripts/verify.ts';
 test('unified operation families retain all source scenario IDs and expanded cases exactly',async()=>{
  const migration=await Bun.file('ledgers/feature-consolidation.json').json();
  expect(migration.schemaVersion).toBe(1);expect(migration.retiredScenarioIds).toEqual([]);
  const seen=new Set<string>();
  for(const group of migration.groups){
-  const actual=cases(group.target,await Bun.file(group.target).text());
+  const actual=(await Promise.all(group.sources.map((s:any)=>sourceCases(group.target,s.path)))).flat();
   const fingerprint=(c:any)=>({scenarioId:c.scenarioId,sha256:new Bun.CryptoHasher('sha256').update(JSON.stringify(c)).digest('hex')});
   expect(actual.map(fingerprint)).toEqual(group.sources.flatMap((s:any)=>s.cases));
   for(const source of group.sources){

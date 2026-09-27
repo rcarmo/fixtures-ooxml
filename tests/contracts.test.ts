@@ -1,8 +1,8 @@
 import {test,expect} from 'bun:test';
 import {sourceCases} from './catalogue-helpers.ts';
 import {cases,verify,validateFixtureLayout,validateMutationContract} from '../scripts/verify.ts';
-test('all pinned references and contract links verify',async()=>{const r=await verify();expect(r.assets).toBe(202);expect(r.facts).toBe(149);expect(r.workflows).toBe(229);expect(r.cases).toBe(562);});
-test('official Gherkin compilation expands shared cases',async()=>{const p='workflows/mutation-safety.feature';const result=cases(p,await Bun.file(p).text());expect(result).toHaveLength(19);expect(new Set(result.map(r=>r.scenarioId)).size).toBe(8);});
+test('all pinned references and contract links verify',async()=>{const r=await verify();expect(r.assets).toBe(207);expect(r.facts).toBe(149);expect(r.workflows).toBe(229);expect(r.cases).toBe(562);});
+test('official Gherkin compilation expands shared cases',async()=>{const {sourceCases}=await import('./catalogue-helpers.ts');const result=await sourceCases('workflows/mutation-safety.feature');expect(result).toHaveLength(19);expect(new Set(result.map(r=>r.scenarioId)).size).toBe(8);});
 test('workflow identity is required',()=>{expect(()=>cases('bad.feature','Feature: Bad\n Scenario: unnamed\n  Given input\n')).toThrow();});
 test('canonical scenario IDs cannot be reused within a feature, including Rule blocks',()=>{
  for(const text of [
@@ -57,7 +57,7 @@ test('each mutation fixture retains hash-linked original derivation in the root 
 test('format and remaining package profiles compile62cases with19bounded comment mappings',async()=>{
  const paths=['docx/comments','docx/text','docx/creation','docx/tables','pptx/creation','pptx/tables','xlsx/creation','package/preservation','package/zip32','package/relationship-namespaces'];
  const all=[];
- for(const name of paths){const path='workflows/'+name+'.feature',text=await Bun.file(path).text();expect(text.startsWith('@planned\n')).toBe(true);all.push(...(['docx/comments','package/preservation','package/zip32'].includes(name)?await sourceCases(path,path):cases(path,text)));}
+ for(const name of paths){const path='workflows/'+name+'.feature',text=await Bun.file(path).text();expect(text.startsWith('@planned\n')).toBe(true);all.push(...await sourceCases(path,path));}
  expect(all).toHaveLength(62);expect(new Set(all.map(c=>c.scenarioId)).size).toBe(40);
  const commentIds=new Set(cases('workflows/docx/comments.feature',await Bun.file('workflows/docx/comments.feature').text()).map(c=>c.scenarioId));
  const mapping=await Bun.file('ledgers/consumers/bun-comments.json').json();expect(mapping.mappings).toHaveLength(19);
@@ -65,7 +65,7 @@ test('format and remaining package profiles compile62cases with19bounded comment
 });
 
 test('tracked dispatcher retains the planned obligation ID with explicit outcome and refusal variants',async()=>{
- const path='workflows/docx/tracked-workflow.feature',rows=cases(path,await Bun.file(path).text());expect(rows).toHaveLength(17);
+ const path='workflows/docx/tracked-workflow.feature',rows=await sourceCases(path);expect(rows).toHaveLength(17);
  expect(new Set(rows.map(c=>c.scenarioId))).toEqual(new Set(['@id-docx-track-changes-option-outcome','@id-docx-workflow-tracked-refusal']));
  const outcomes=rows.filter(c=>c.scenarioId==='@id-docx-track-changes-option-outcome');expect(outcomes).toHaveLength(5);
  expect(outcomes.map(c=>c.steps.find(s=>s.text.startsWith('the tracked workflow outcome'))!.text)).toEqual([
@@ -79,13 +79,13 @@ test('tracked dispatcher retains the planned obligation ID with explicit outcome
 });
 
 test('direct run formatting profile has four output policies and eleven refusal variants',async()=>{
- const path='workflows/docx/run-formatting.feature',rows=cases(path,await Bun.file(path).text());
+ const path='workflows/docx/run-formatting.feature',rows=await sourceCases(path);
  expect(rows).toHaveLength(15);expect(rows.filter(r=>r.scenarioId==='@id-docx-direct-run-formatting')).toHaveLength(4);expect(rows.filter(r=>r.scenarioId==='@id-docx-direct-formatting-refusal')).toHaveLength(11);
  expect(rows.slice(0,4).map(r=>r.name)).toEqual(['Apply the enable direct formatting policy','Apply the disable direct formatting policy','Apply the remove direct formatting policy','Apply the no-op direct formatting policy']);
 });
 
 test('paragraph style profile preserves five output policies and fourteen atomic refusal variants',async()=>{
- const p='workflows/docx/paragraph-style.feature',rows=cases(p,await Bun.file(p).text());expect(rows).toHaveLength(19);expect(rows.filter(r=>r.scenarioId==='@id-docx-paragraph-style-selection')).toHaveLength(5);expect(rows.filter(r=>r.scenarioId==='@id-docx-paragraph-style-refusal')).toHaveLength(14);
+ const p='workflows/docx/paragraph-style.feature',rows=await sourceCases(p);expect(rows).toHaveLength(19);expect(rows.filter(r=>r.scenarioId==='@id-docx-paragraph-style-selection')).toHaveLength(5);expect(rows.filter(r=>r.scenarioId==='@id-docx-paragraph-style-refusal')).toHaveLength(14);
 });
 
 test('paragraph style authoring distinguishes new definitions and atomic refusals',async()=>{
@@ -97,11 +97,11 @@ test('positioned slide text boxes separate authoring outcomes from atomic refusa
 });
 
 test('cell-style contracts separate explicit zero, removal and unsafe cached inputs',async()=>{
- const path='workflows/xlsx/cell-style.feature',rows=cases(path,await Bun.file(path).text());expect(rows).toHaveLength(27);expect(rows.filter(r=>r.scenarioId==='@id-xlsx-cell-style-selection')).toHaveLength(9);expect(rows.filter(r=>r.scenarioId==='@id-xlsx-cell-style-refusal')).toHaveLength(18);
+ const path='workflows/xlsx/cell-style.feature',rows=await sourceCases(path);expect(rows).toHaveLength(27);expect(rows.filter(r=>r.scenarioId==='@id-xlsx-cell-style-selection')).toHaveLength(9);expect(rows.filter(r=>r.scenarioId==='@id-xlsx-cell-style-refusal')).toHaveLength(18);
 });
 
 test('final section layout separates preserved geometry changes from unsafe inputs',async()=>{
- const path='workflows/docx/page-layout.feature',rows=cases(path,await Bun.file(path).text());expect(rows).toHaveLength(22);expect(rows.filter(r=>r.scenarioId==='@id-docx-final-section-layout')).toHaveLength(8);expect(rows.filter(r=>r.scenarioId==='@id-docx-final-section-layout-refusal')).toHaveLength(14);
+ const path='workflows/docx/page-layout.feature',rows=await sourceCases(path);expect(rows).toHaveLength(22);expect(rows.filter(r=>r.scenarioId==='@id-docx-final-section-layout')).toHaveLength(8);expect(rows.filter(r=>r.scenarioId==='@id-docx-final-section-layout-refusal')).toHaveLength(14);
 });
 
 test('slide permutations retain seven positive and fourteen refusal variants',async()=>{

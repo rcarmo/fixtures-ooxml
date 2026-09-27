@@ -1,6 +1,14 @@
 # Go document API predicates
 
-The [planned Go document API feature](../workflows/docx/document-model.feature) separates in-memory getters from saved and reopened document results. Its [consumer mapping](../ledgers/consumers/go-document-api.json) identifies the source test and assertion limits of each outcome. These operations describe selected Go API behaviour; they do not establish complete WordprocessingML conformance or rendered appearance.
+Go-origin predicates now belong to the corresponding Word operations:
+[creation](../workflows/docx/creation.feature), [properties](../workflows/docx/properties.feature),
+[paragraphs](../workflows/docx/paragraphs.feature), [paragraph styles](../workflows/docx/paragraph-style.feature),
+[run formatting](../workflows/docx/run-formatting.feature), [tables](../workflows/docx/tables.feature),
+[page layout](../workflows/docx/page-layout.feature) and [tracked editing](../workflows/docx/tracked-workflow.feature).
+In-memory getters and saved/reopened results remain separate obligations.
+The [consumer mapping](../ledgers/consumers/go-document-api.json) records source
+assertions and gaps. API-specific return values and heading conventions still
+need semantic review before they can be common format contracts.
 
 ## In-memory document and text
 

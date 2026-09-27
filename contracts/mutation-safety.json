@@ -1,7 +1,6 @@
 {
-  "schemaVersion": 1,
+  "schemaVersion": 2,
   "contractRevision": "ooxml-shared-contracts-v2",
-  "feature": "workflows/mutation-safety.feature",
   "scenarioIds": [
     "@id-pptx-dry-run-no-mutation",
     "@id-docx-dry-run-no-mutation",
@@ -162,5 +161,12 @@
         "xl/worksheets/sheet2.xml": "636912335c42b3ee0516632ffdf446441a650942364b3786ea125d41ecd0aa64"
       }
     }
+  ],
+  "features": [
+    "workflows/docx/mutation-safety.feature",
+    "workflows/pptx/mutation-safety.feature",
+    "workflows/xlsx/cell-style.feature",
+    "workflows/xlsx/formula-cache.feature",
+    "workflows/xlsx/mutation-safety.feature"
   ]
 }
