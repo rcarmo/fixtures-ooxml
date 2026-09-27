@@ -3597,10 +3597,10 @@
       "aliases": []
     },
     {
-      "id": "asset-8fab50c9b3e1ebdccff08888180bc1bd72ce903ee4a2b2b48693b844e8bf2581",
+      "id": "asset-fd909f7181f6a68859e80f9a37236a6812e7f425d1e850d6213c4c5df42c4097",
       "path": "contracts/go-lexical-editing.md",
-      "bytes": 2977,
-      "sha256": "8fab50c9b3e1ebdccff08888180bc1bd72ce903ee4a2b2b48693b844e8bf2581",
+      "bytes": 3044,
+      "sha256": "fd909f7181f6a68859e80f9a37236a6812e7f425d1e850d6213c4c5df42c4097",
       "role": "workflow-contract",
       "origins": [
         {
@@ -3717,10 +3717,10 @@
       "aliases": []
     },
     {
-      "id": "asset-9f8da4b8640777834c5d53a2b65f20bc2078a5c32b82a1a1583610aa80bc0c72",
+      "id": "asset-7bd708e58948e1cad00796d3e92957fb74aa9e5e0070bb388365c82b2f94a7b1",
       "path": "contracts/go-formula-references.md",
-      "bytes": 3768,
-      "sha256": "9f8da4b8640777834c5d53a2b65f20bc2078a5c32b82a1a1583610aa80bc0c72",
+      "bytes": 3894,
+      "sha256": "7bd708e58948e1cad00796d3e92957fb74aa9e5e0070bb388365c82b2f94a7b1",
       "role": "workflow-contract",
       "origins": [
         {
@@ -3922,10 +3922,10 @@
       "aliases": []
     },
     {
-      "id": "asset-6e5c0ca867e38fb1d82eaf96d61a272fecbc4a19052e1e8ed8bf47868ad527de",
+      "id": "asset-03aa16e68b314e3f2743a4c34235803e479809bc8414f3fa5e892934b045720e",
       "path": "workflows/xlsx/formula-references.feature",
-      "bytes": 8453,
-      "sha256": "6e5c0ca867e38fb1d82eaf96d61a272fecbc4a19052e1e8ed8bf47868ad527de",
+      "bytes": 8617,
+      "sha256": "03aa16e68b314e3f2743a4c34235803e479809bc8414f3fa5e892934b045720e",
       "role": "workflow",
       "origins": [
         {
@@ -4267,10 +4267,10 @@
       "aliases": []
     },
     {
-      "id": "asset-1bda1a2ab45bd32e22ca9fdafaeeb2718e66148fc83af58e807a7c9ec42709d5",
+      "id": "asset-a9c308f9995d7a335b3d96054c2eb8fd8286937c95a46bd07b26428c63292ff3",
       "path": "workflows/xml/editing.feature",
-      "bytes": 6995,
-      "sha256": "1bda1a2ab45bd32e22ca9fdafaeeb2718e66148fc83af58e807a7c9ec42709d5",
+      "bytes": 7484,
+      "sha256": "a9c308f9995d7a335b3d96054c2eb8fd8286937c95a46bd07b26428c63292ff3",
       "role": "workflow",
       "origins": [
         {

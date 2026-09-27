@@ -1,12 +1,14 @@
-# Go lexical XML editing
+# Lexical XML editing
 
-[parsing](../workflows/xml/parsing.feature), [editing](../workflows/xml/editing.feature) operates on a parsed XML byte snapshot. Attribute edits, child insertion, removal and subtree replacement return new bytes. An empty edit returns the original bytes; edits do not consume the parsed snapshot. The [consumer mapping](../ledgers/consumers/go-lexical-editing.json) records the source predicates and limits for each operation.
+The [editing profile](../workflows/xml/editing.feature) operates on a parsed XML
+snapshot. `@profile-lexical-snapshot-api` describes exact lexical output and
+snapshot ownership without selecting a runtime. Attribute edits, child insertion, removal and subtree replacement return new bytes. An empty edit returns the original bytes; edits do not consume the parsed snapshot. The [Go source mapping](../ledgers/consumers/go-lexical-editing.json) records the source predicates and limits for each operation.
 
 ## Attribute edits
 
 An edit selects an element and an expanded attribute name. Replacing an existing value preserves unrelated source bytes, including the original quote style and adjacent elements, in the specified examples. Adding an attribute keeps the surrounding XML. Replacement text is escaped for attribute syntax. Two edits to the same attribute in one batch refuse.
 
-The exact quote and escape spelling in the examples is an output predicate for this Go editor, not a general XML serialization rule. Unbound namespaces, reserved names, invalid characters and malformed local names require separate refusal cases.
+The exact quote and escape spelling in the examples is a lexical API output predicate, not a general XML serialization rule. Unbound namespaces, reserved names, invalid characters and malformed local names require separate refusal cases.
 
 ## Structured children
 

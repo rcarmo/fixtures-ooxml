@@ -1,6 +1,7 @@
-# Go static formula references
+# Static formula references
 
-The [planned profile](../workflows/xlsx/formula-references.feature) analyses a conservative A1 expression subset, parses direct ranges and remaps static references after a named worksheet row or column insertion. It operates on formula strings. It does not calculate values, change a workbook package or certify Excel formula compatibility. The [Go consumer mapping](../ledgers/consumers/go-formula-references.json) pins the source declarations and their assertion limits.
+The [static-reference API profile](../workflows/xlsx/formula-references.feature)
+(`@profile-static-reference-api`) analyses a conservative A1 expression subset, parses direct ranges and remaps static references after a named worksheet row or column insertion. It operates on formula strings. It does not calculate values, change a workbook package or certify Excel formula compatibility. The [Go consumer mapping](../ledgers/consumers/go-formula-references.json) pins the source declarations and their assertion limits.
 
 ## Analysis and direct ranges
 
@@ -18,4 +19,4 @@ A deterministic source test examines three sheet prefixes, four left cells, four
 
 The full target family has five tracked `internal/formula/*_test.go` files and **six declarations** at Go revision `e2c5891212beef16f7412c794d3bea6c01e9da35`. Five table/property test declarations have partial mappings in the ledger; `FuzzStaticReferenceAnalysis` is explicitly unmapped. Its six seed strings enter a conditional callback with early exits on input size, parser refusal and remap refusal. The source does not establish successful remapping of every seed or an exploratory fuzz campaign. Unrepresented invalid table rows and unasserted endpoints remain listed per declaration.
 
-The existing XLSX cache-invalidation and shared/array-formula overwrite workflows use workbook-level operations. Their IDs are not reused for this string-level profile. No ECMA clause is assigned as authority for the supported parser grammar or rewrite policy; those are Go API boundaries. The complete ECMA PDFs in the [specification index](../specs/ecma-376/README.md) govern format requirements and require separate edition, part and clause review before conformance claims.
+The existing XLSX cache-invalidation and shared/array-formula overwrite workflows use workbook-level operations. Their IDs are not reused for this string-level profile. No ECMA clause is assigned as authority for the supported parser grammar or rewrite policy; those are explicit API compatibility boundaries. Historical IDs and source mappings retain their origin names. The complete ECMA PDFs in the [specification index](../specs/ecma-376/README.md) govern format requirements and require separate edition, part and clause review before conformance claims.

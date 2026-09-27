@@ -108,6 +108,14 @@ readback and tool hints remain explicit API policies. Existing neighbouring
 scenarios, values and assertions are unchanged. Wording cleanup does not fill
 missing custody, rendering or semantic assertions.
 
+XML snapshot editing and static formula references now use operation actors and
+API profiles for 19 IDs / 60 cases. The exact substitutions from `3901018` are in
+`ledgers/xml-formula-wording-migration.json`. Lexical bytes, ownership, offset
+units, grammar restrictions, absent-axis zeros and no-partial-result refusals
+are unchanged. The namespace and formula matrices remain single Gherkin cases
+with bounded internal combinations. No workbook mutation, calculation, XML
+canonicalisation or schema validation follows from these profiles.
+
 Remaining work:
 
 | Family | Remaining work |
@@ -115,7 +123,6 @@ Remaining work:
 | Word value APIs | Decide which API observations need stronger common format contracts. Retain explicit nil/heading/effects compatibility policies and their missing saved-output checks. |
 | Word comments | Preserve the distinction between existing-extension edits, extension creation, root/reply resolution and filtered/threaded results. These are different operations and policies. |
 | Word templates | Separate useful document analysis from response-shape and metadata-cache APIs. Dictionary-only responses remain weak contracts requiring stronger observable outcomes. |
-| XML editing and formula references | Remove runtime actor names while retaining lexical offsets, immutable ownership, supported grammar and refusal policies. |
 | Spreadsheet creation | Remove incidental runtime names; retain exact fixture provenance in manifests and source mappings. |
 
 Similar scenarios are not automatically equivalent. Native worksheet cache

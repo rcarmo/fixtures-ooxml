@@ -1,7 +1,8 @@
 import portable from '../ledgers/runtime-wording-migration.json';
 import packages from '../ledgers/package-wording-migration.json';
 import word from '../ledgers/word-wording-migration.json';
-const files=[...portable.files,...packages.files,...word.files];
+import xmlFormula from '../ledgers/xml-formula-wording-migration.json';
+const files=[...portable.files,...packages.files,...word.files,...xmlFormula.files];
 /** Undo only the reviewed exact wording substitutions for historical fingerprints.
  * This is test-only provenance comparison, never a consumer binding fallback. */
 export function beforeWordingCase<T extends {scenarioId:string;steps:{text:string;argument:unknown}[]}>(row:T):T{

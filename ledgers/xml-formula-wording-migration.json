@@ -1,0 +1,1101 @@
+{
+  "schemaVersion": 1,
+  "sourceRevision": "390101863775f611e33963e3c2ed0bc6a9a6d7cd",
+  "executionCredit": false,
+  "retiredScenarioIds": [],
+  "policy": "Exact Go actor removal and operation-profile labels only. Preserve lexical spelling, immutable ownership, typed JSON/tables, offsets, grammar limits, empty-result refusals and static string remaps; no schema/calculation/workbook/renderer credit. Unchanged neighbouring scenario remains outside this ledger.",
+  "files": [
+    {
+      "path": "workflows/xml/editing.feature",
+      "beforeSha256": "1bda1a2ab45bd32e22ca9fdafaeeb2718e66148fc83af58e807a7c9ec42709d5",
+      "afterSha256": "a9c308f9995d7a335b3d96054c2eb8fd8286937c95a46bd07b26428c63292ff3",
+      "stepRenames": [
+        {
+          "id": "@id-xml-go-attribute-splice-custody",
+          "from": "a Go lexical edit sets the attribute a of the first t element to x'y&z",
+          "to": "a lexical edit sets the attribute a of the first t element to x'y&z"
+        },
+        {
+          "id": "@id-xml-go-attribute-splice-custody",
+          "from": "a Go lexical edit sets the attribute p:n of the first t element to new",
+          "to": "a lexical edit sets the attribute p:n of the first t element to new"
+        },
+        {
+          "id": "@id-xml-go-attribute-splice-custody",
+          "from": "a Go lexical edit sets the attribute fresh of the first t element to value",
+          "to": "a lexical edit sets the attribute fresh of the first t element to value"
+        },
+        {
+          "id": "@id-xml-go-attribute-batch-refusal",
+          "from": "one Go lexical edit batch sets a of the first t element to x and to y",
+          "to": "one lexical edit batch sets a of the first t element to x and to y"
+        },
+        {
+          "id": "@id-xml-go-child-insertion-custody",
+          "from": "a Go structured edit inserts a new-namespace x child with an other-namespace a attribute and a plain text child under the existing a element",
+          "to": "a structured edit inserts a new-namespace x child with an other-namespace a attribute and a plain text child under the existing a element"
+        },
+        {
+          "id": "@id-xml-go-child-insertion-refusal",
+          "from": "one Go structured insertion batch targets both the root and its nested a element",
+          "to": "one structured insertion batch targets both the root and its nested a element"
+        },
+        {
+          "id": "@id-xml-go-child-namespace-matrix",
+          "from": "Go inserts child with a flag attribute of JSON value \"\\t\\r\\n & 😀\" and a plain grandchild of JSON text \"x\\ry\\nz\" for all 4 by 5 by 5 choices",
+          "to": "the XML editor inserts child with a flag attribute of JSON value \"\\t\\r\\n & 😀\" and a plain grandchild of JSON text \"x\\ry\\nz\" for all 4 by 5 by 5 choices"
+        },
+        {
+          "id": "@id-xml-go-element-removal-custody",
+          "from": "Go removes the p:a subtree and the p:c element from one parsed snapshot",
+          "to": "the XML editor removes the p:a subtree and the p:c element from one parsed snapshot"
+        },
+        {
+          "id": "@id-xml-go-element-removal-refusal",
+          "from": "a Go removal batch selects root",
+          "to": "a removal batch selects root"
+        },
+        {
+          "id": "@id-xml-go-element-removal-refusal",
+          "from": "a Go removal batch selects p:a and its nested p:b",
+          "to": "a removal batch selects p:a and its nested p:b"
+        },
+        {
+          "id": "@id-xml-go-element-replacement-custody",
+          "from": "Go replaces p:old with a bound-namespace new element containing value and an empty-namespace plain element",
+          "to": "the XML editor replaces p:old with a bound-namespace new element containing value and an empty-namespace plain element"
+        },
+        {
+          "id": "@id-xml-go-element-replacement-refusal",
+          "from": "a Go replacement batch selects root",
+          "to": "a replacement batch selects root"
+        },
+        {
+          "id": "@id-xml-go-element-replacement-refusal",
+          "from": "a Go replacement batch selects p:old twice",
+          "to": "a replacement batch selects p:old twice"
+        },
+        {
+          "id": "@id-xml-go-element-replacement-refusal",
+          "from": "a Go replacement batch selects p:old and its nested p:child",
+          "to": "a replacement batch selects p:old and its nested p:child"
+        },
+        {
+          "id": "@id-xml-go-immutable-leaf-seed",
+          "from": "Go parses a caller-owned byte slice and performs an empty edit",
+          "to": "the XML editor parses a caller-owned byte slice and performs an empty edit"
+        }
+      ],
+      "scenarios": [
+        {
+          "id": "@id-xml-go-attribute-splice-custody",
+          "beforeCaseSha256": [
+            "184f35e869d2eeff143d3fca393364480f80b901a65340f7420fbcb6d13dc2a8",
+            "14e6749979c06fc5d646a02a7d7db61be7a67bc5d9e73513b01ff365c8aea805",
+            "f612df35a3e1309531cbe73fd493d1501a25599ca513525aee3f0542d4cb21fb"
+          ],
+          "afterCaseSha256": [
+            "74b7d4c012568d5b4b305775a38b07f177b7dc0abaaf6b763683ce4448e8342d",
+            "3c13e37262db3d95b3af68dc06e89a66ee6a55d83b011a6153373a75ba1223b0",
+            "f158982c92c392875776ce76bdefe177cc4a7feeebdce6691b0e8bcd8dd9dd06"
+          ],
+          "beforeTags": [
+            [
+              "@id-xml-go-attribute-splice-custody",
+              "@planned"
+            ],
+            [
+              "@id-xml-go-attribute-splice-custody",
+              "@planned"
+            ],
+            [
+              "@id-xml-go-attribute-splice-custody",
+              "@planned"
+            ]
+          ],
+          "afterTags": [
+            [
+              "@id-xml-go-attribute-splice-custody",
+              "@planned",
+              "@profile-lexical-snapshot-api"
+            ],
+            [
+              "@id-xml-go-attribute-splice-custody",
+              "@planned",
+              "@profile-lexical-snapshot-api"
+            ],
+            [
+              "@id-xml-go-attribute-splice-custody",
+              "@planned",
+              "@profile-lexical-snapshot-api"
+            ]
+          ]
+        },
+        {
+          "id": "@id-xml-go-attribute-batch-refusal",
+          "beforeCaseSha256": [
+            "60a3b0bd941005a902b95cdb8ed9a2b86b55241c14007f6870aeaf2bc8e4361a"
+          ],
+          "afterCaseSha256": [
+            "5d1c342d278d0ba141dee99e911555fcb8da16eecf95609e210df9c8b3c47af5"
+          ],
+          "beforeTags": [
+            [
+              "@id-xml-go-attribute-batch-refusal",
+              "@planned"
+            ]
+          ],
+          "afterTags": [
+            [
+              "@id-xml-go-attribute-batch-refusal",
+              "@planned",
+              "@profile-lexical-snapshot-api"
+            ]
+          ]
+        },
+        {
+          "id": "@id-xml-go-child-insertion-custody",
+          "beforeCaseSha256": [
+            "308156546840ef2178cfe9d50f5517bc569a3ab3b3694e0402fe2586c690210a"
+          ],
+          "afterCaseSha256": [
+            "8fd78b46410f24db971b13b27f59910a18e5f80b175f5afb6c353872e4df4074"
+          ],
+          "beforeTags": [
+            [
+              "@id-xml-go-child-insertion-custody",
+              "@planned"
+            ]
+          ],
+          "afterTags": [
+            [
+              "@id-xml-go-child-insertion-custody",
+              "@planned",
+              "@profile-lexical-snapshot-api"
+            ]
+          ]
+        },
+        {
+          "id": "@id-xml-go-child-insertion-refusal",
+          "beforeCaseSha256": [
+            "332a1e7610ff63134a4a7c8ecd8126565323b738e312438ba3c3879873d8a4b1"
+          ],
+          "afterCaseSha256": [
+            "132e2af2030da266dd2590d93eecb256e48494dd1a59a650361802b8e16462ee"
+          ],
+          "beforeTags": [
+            [
+              "@id-xml-go-child-insertion-refusal",
+              "@planned"
+            ]
+          ],
+          "afterTags": [
+            [
+              "@id-xml-go-child-insertion-refusal",
+              "@planned",
+              "@profile-lexical-snapshot-api"
+            ]
+          ]
+        },
+        {
+          "id": "@id-xml-go-child-namespace-matrix",
+          "beforeCaseSha256": [
+            "3edb52be637664f26efa45587c4a98e0b02f99b6999680ab97d633c072076d8e"
+          ],
+          "afterCaseSha256": [
+            "edce589d2e26d5a94dfe47a1ee8c10feae3ffcc336bff3d20dc39e3b3b7e8cee"
+          ],
+          "beforeTags": [
+            [
+              "@id-xml-go-child-namespace-matrix",
+              "@planned"
+            ]
+          ],
+          "afterTags": [
+            [
+              "@id-xml-go-child-namespace-matrix",
+              "@planned",
+              "@profile-lexical-snapshot-api"
+            ]
+          ]
+        },
+        {
+          "id": "@id-xml-go-element-removal-custody",
+          "beforeCaseSha256": [
+            "eda5bd87a8ea6eac24368e9b2a1193c7ad288afd24f46a960dba4c8b7c92573e"
+          ],
+          "afterCaseSha256": [
+            "e989ff7d71aedd0dec945cbe6a8338c2ce25bd6719c6eeab94e71902cfeb3c9f"
+          ],
+          "beforeTags": [
+            [
+              "@id-xml-go-element-removal-custody",
+              "@planned"
+            ]
+          ],
+          "afterTags": [
+            [
+              "@id-xml-go-element-removal-custody",
+              "@planned",
+              "@profile-lexical-snapshot-api"
+            ]
+          ]
+        },
+        {
+          "id": "@id-xml-go-element-removal-refusal",
+          "beforeCaseSha256": [
+            "b1ca8e4af23d99667b0c49ac2a2546473aa9f811eb295be961da74228b396986",
+            "c9a235cb9b0b52793af4a4fa88b1d757020fc657dd561cca930ec8e3f91e0b01"
+          ],
+          "afterCaseSha256": [
+            "9670e20fbdf515b1ab03f83e306d7ada927938e94f7d4b8a62aaf723eccaa335",
+            "576e2a5983648df5deafc1f660f9cfef276d0dd55f3b84cc5ae5906b2f9a24bd"
+          ],
+          "beforeTags": [
+            [
+              "@id-xml-go-element-removal-refusal",
+              "@planned"
+            ],
+            [
+              "@id-xml-go-element-removal-refusal",
+              "@planned"
+            ]
+          ],
+          "afterTags": [
+            [
+              "@id-xml-go-element-removal-refusal",
+              "@planned",
+              "@profile-lexical-snapshot-api"
+            ],
+            [
+              "@id-xml-go-element-removal-refusal",
+              "@planned",
+              "@profile-lexical-snapshot-api"
+            ]
+          ]
+        },
+        {
+          "id": "@id-xml-go-element-replacement-custody",
+          "beforeCaseSha256": [
+            "8490a0a263462488ef86d31ec1d8b58221d60b0dbee4392902d1faeabc16f103"
+          ],
+          "afterCaseSha256": [
+            "4cdfe01212b926b649873b25b50230db0862c906417e44a573bd3d23497cd5dc"
+          ],
+          "beforeTags": [
+            [
+              "@id-xml-go-element-replacement-custody",
+              "@planned"
+            ]
+          ],
+          "afterTags": [
+            [
+              "@id-xml-go-element-replacement-custody",
+              "@planned",
+              "@profile-lexical-snapshot-api"
+            ]
+          ]
+        },
+        {
+          "id": "@id-xml-go-element-replacement-refusal",
+          "beforeCaseSha256": [
+            "bc3fb76ee05068210f91843febe4907ac8737309d5fa48126d405c8569009968",
+            "546ee53fe35b85e0e838c91a8d99fccfdf668e070f545af7e96e1d41550bff63",
+            "39efa51b85d3654c4c25584a801f340d44c7dc1f67fcb6ead23075f5f7f1bffe"
+          ],
+          "afterCaseSha256": [
+            "c90bb114d14d4b2ab4a396aa29a5b1afaa46c8df91d4f90d8a0777a3ccc80751",
+            "ab42637c8562107b5eb2bcb4439d7706a933f4eceea06a08667c6da937e6810d",
+            "65c838bca65f36b319918cab18baab22a626c1bb21f1c74ba03784c33401087c"
+          ],
+          "beforeTags": [
+            [
+              "@id-xml-go-element-replacement-refusal",
+              "@planned"
+            ],
+            [
+              "@id-xml-go-element-replacement-refusal",
+              "@planned"
+            ],
+            [
+              "@id-xml-go-element-replacement-refusal",
+              "@planned"
+            ]
+          ],
+          "afterTags": [
+            [
+              "@id-xml-go-element-replacement-refusal",
+              "@planned",
+              "@profile-lexical-snapshot-api"
+            ],
+            [
+              "@id-xml-go-element-replacement-refusal",
+              "@planned",
+              "@profile-lexical-snapshot-api"
+            ],
+            [
+              "@id-xml-go-element-replacement-refusal",
+              "@planned",
+              "@profile-lexical-snapshot-api"
+            ]
+          ]
+        },
+        {
+          "id": "@id-xml-go-immutable-leaf-seed",
+          "beforeCaseSha256": [
+            "acf892ab4a61c0b67d18008a5eaf2d9004856bcf0a9a513162bcc577ce403bec"
+          ],
+          "afterCaseSha256": [
+            "ac1fbb081b2f2fb5bd88a04ff17c3d3e095dc0bcd58e5cb837c9170f12c0a7c6"
+          ],
+          "beforeTags": [
+            [
+              "@id-xml-go-immutable-leaf-seed",
+              "@planned"
+            ]
+          ],
+          "afterTags": [
+            [
+              "@id-xml-go-immutable-leaf-seed",
+              "@planned",
+              "@profile-lexical-snapshot-api"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "path": "workflows/xlsx/formula-references.feature",
+      "beforeSha256": "6e5c0ca867e38fb1d82eaf96d61a272fecbc4a19052e1e8ed8bf47868ad527de",
+      "afterSha256": "03aa16e68b314e3f2743a4c34235803e479809bc8414f3fa5e892934b045720e",
+      "stepRenames": [
+        {
+          "id": "@id-xlsx-go-formula-analysis-counts",
+          "from": "the Go static formula analyser reads the source",
+          "to": "the static formula analyser reads the source"
+        },
+        {
+          "id": "@id-xlsx-go-formula-quoted-sheet-flags",
+          "from": "the Go static formula analyser reads the source",
+          "to": "the static formula analyser reads the source"
+        },
+        {
+          "id": "@id-xlsx-go-formula-analysis-refusal",
+          "from": "the Go static formula analyser reads the source",
+          "to": "the static formula analyser reads the source"
+        },
+        {
+          "id": "@id-xlsx-go-formula-literal-punctuation",
+          "from": "the Go static formula analyser reads the source",
+          "to": "the static formula analyser reads the source"
+        },
+        {
+          "id": "@id-xlsx-go-direct-range-parsing",
+          "from": "the Go direct-range parser reads the source",
+          "to": "the direct-range parser reads the source"
+        },
+        {
+          "id": "@id-xlsx-go-direct-range-refusal",
+          "from": "the Go direct-range parser reads the source",
+          "to": "the direct-range parser reads the source"
+        },
+        {
+          "id": "@id-xlsx-go-static-remap-exact",
+          "from": "the Go static remapper inserts row at 2 by 1 on sheet JSON \"Main\"",
+          "to": "the static remapper inserts row at 2 by 1 on sheet JSON \"Main\""
+        },
+        {
+          "id": "@id-xlsx-go-static-remap-exact",
+          "from": "the Go static remapper inserts column at 2 by 1 on sheet JSON \"Main\"",
+          "to": "the static remapper inserts column at 2 by 1 on sheet JSON \"Main\""
+        },
+        {
+          "id": "@id-xlsx-go-static-remap-exact",
+          "from": "the Go static remapper inserts row at 3 by 2 on sheet JSON \"Main\"",
+          "to": "the static remapper inserts row at 3 by 2 on sheet JSON \"Main\""
+        },
+        {
+          "id": "@id-xlsx-go-static-remap-exact",
+          "from": "the Go static remapper inserts row at 2 by 1 on sheet JSON \"main\"",
+          "to": "the static remapper inserts row at 2 by 1 on sheet JSON \"main\""
+        },
+        {
+          "id": "@id-xlsx-go-static-remap-refusal",
+          "from": "the Go static remapper inserts bad at 1 by 1 on sheet JSON \"Main\"",
+          "to": "the static remapper inserts bad at 1 by 1 on sheet JSON \"Main\""
+        },
+        {
+          "id": "@id-xlsx-go-static-remap-refusal",
+          "from": "the Go static remapper inserts row at 0 by 1 on sheet JSON \"Main\"",
+          "to": "the static remapper inserts row at 0 by 1 on sheet JSON \"Main\""
+        },
+        {
+          "id": "@id-xlsx-go-static-remap-refusal",
+          "from": "the Go static remapper inserts column at 1 by 0 on sheet JSON \"Main\"",
+          "to": "the static remapper inserts column at 1 by 0 on sheet JSON \"Main\""
+        },
+        {
+          "id": "@id-xlsx-go-static-remap-refusal",
+          "from": "the Go static remapper inserts row at 1 by 1 on sheet JSON \"\"",
+          "to": "the static remapper inserts row at 1 by 1 on sheet JSON \"\""
+        },
+        {
+          "id": "@id-xlsx-go-static-remap-refusal",
+          "from": "the Go static remapper inserts row at 1 by 1 on sheet JSON \"Main\"",
+          "to": "the static remapper inserts row at 1 by 1 on sheet JSON \"Main\""
+        },
+        {
+          "id": "@id-xlsx-go-static-remap-refusal",
+          "from": "the Go static remapper inserts column at 1 by 1 on sheet JSON \"Main\"",
+          "to": "the static remapper inserts column at 1 by 1 on sheet JSON \"Main\""
+        },
+        {
+          "id": "@id-xlsx-go-static-reference-properties",
+          "from": "the Go static analyser checks all 3 by 4 by 4 by 6 source expressions",
+          "to": "the static analyser checks all 3 by 4 by 4 by 6 source expressions"
+        }
+      ],
+      "scenarios": [
+        {
+          "id": "@id-xlsx-go-formula-analysis-counts",
+          "beforeCaseSha256": [
+            "4d21509dffc44ff2ca6d2f444f60e953e77ff0efe33ac1e42ed0c95e3f38f381",
+            "cd85fba4dcd989a1294389fe054fd7aa33cbbbfdc1768da8012e5a0f7721cde5",
+            "256fcc6aa4aca391b0f74c77ad7214acde1a57a611e0f144a2ef680d1dc7353d",
+            "92c1742d8422027c22eb24f5b259b09655fea6ff2e6295441278e3ed8e920548",
+            "0e32d40e49fc5673dbb08fd14cce379435fcd9f2fa9f3704ac51ce15459c2f5a",
+            "d90d20ee4ce5c4f830d727b1bcd68585ec94abc4a79a06d80a4405479e21cc6d"
+          ],
+          "afterCaseSha256": [
+            "e88d131493282e8f499a7bea7ea0d515f5cff7a014e17d04952f5fabe2960431",
+            "8901e6beaba814f5ee9a92a4524aae6218fe34cb6b48cad598be1e48d26c3f0c",
+            "7ce3ee43bbe18e5d38a4243a98cc2e427b6f40b04cdf840e26ed2e7ccdc1c464",
+            "7f6436bfb9135488393b415f1c6669a0f4eb3467aa4080d39a224ef541f77ccf",
+            "9e378228459ad9a02ca272365e6d835a088091b71d5d39e7e59fe46bd05903c9",
+            "5041415913586cda7afc68bc22860ebaa74adeef3beb4d24f5407db44799a866"
+          ],
+          "beforeTags": [
+            [
+              "@id-xlsx-go-formula-analysis-counts",
+              "@planned",
+              "@profile-go-static-formula"
+            ],
+            [
+              "@id-xlsx-go-formula-analysis-counts",
+              "@planned",
+              "@profile-go-static-formula"
+            ],
+            [
+              "@id-xlsx-go-formula-analysis-counts",
+              "@planned",
+              "@profile-go-static-formula"
+            ],
+            [
+              "@id-xlsx-go-formula-analysis-counts",
+              "@planned",
+              "@profile-go-static-formula"
+            ],
+            [
+              "@id-xlsx-go-formula-analysis-counts",
+              "@planned",
+              "@profile-go-static-formula"
+            ],
+            [
+              "@id-xlsx-go-formula-analysis-counts",
+              "@planned",
+              "@profile-go-static-formula"
+            ]
+          ],
+          "afterTags": [
+            [
+              "@id-xlsx-go-formula-analysis-counts",
+              "@planned",
+              "@profile-static-reference-api"
+            ],
+            [
+              "@id-xlsx-go-formula-analysis-counts",
+              "@planned",
+              "@profile-static-reference-api"
+            ],
+            [
+              "@id-xlsx-go-formula-analysis-counts",
+              "@planned",
+              "@profile-static-reference-api"
+            ],
+            [
+              "@id-xlsx-go-formula-analysis-counts",
+              "@planned",
+              "@profile-static-reference-api"
+            ],
+            [
+              "@id-xlsx-go-formula-analysis-counts",
+              "@planned",
+              "@profile-static-reference-api"
+            ],
+            [
+              "@id-xlsx-go-formula-analysis-counts",
+              "@planned",
+              "@profile-static-reference-api"
+            ]
+          ]
+        },
+        {
+          "id": "@id-xlsx-go-formula-quoted-sheet-flags",
+          "beforeCaseSha256": [
+            "bdf6af146afedb2329450caa2945e998cf4a45be5eb1253b1f1ba45adb6b08d4"
+          ],
+          "afterCaseSha256": [
+            "0e466796ec741218f9f5f1f8a317e025a633cd92199b58ed12be37ff260bd5c4"
+          ],
+          "beforeTags": [
+            [
+              "@id-xlsx-go-formula-quoted-sheet-flags",
+              "@planned",
+              "@profile-go-static-formula"
+            ]
+          ],
+          "afterTags": [
+            [
+              "@id-xlsx-go-formula-quoted-sheet-flags",
+              "@planned",
+              "@profile-static-reference-api"
+            ]
+          ]
+        },
+        {
+          "id": "@id-xlsx-go-formula-analysis-refusal",
+          "beforeCaseSha256": [
+            "c564b9eb686435c0077ae666c81b3c4f771dab5b0061264cdd6f8ccd7a97bb70",
+            "2eb4a0ac997c66b87b2f7ed487e2953f9b9e5405862434510350609a3b42d941",
+            "cb7daf2f0e662defefbd2612b9b145ea4b954c0933e74534c72eaffbd199953e",
+            "85354b0fc80651ab3cdfa3e85780b9aa0faf018ca4a944526738b2add290e4c0",
+            "8e4c549010bfe3f3210e9fa1736478983b06d9befa015054fe1b73ac82f41b21",
+            "5ce09ad52f2e3c59f287c4b3c4c3e7054647f8b5ae5515250515a2ed63e9fcca",
+            "17dd5ae3d037f99bda0cbee4fdaf0455f89bd6f10d46f6a9db5fca1d8f64623d"
+          ],
+          "afterCaseSha256": [
+            "f7667ea2f49ccb937a19ffb6d60b01caac81efe43ab2b151c4471040ef485fcd",
+            "513dc1461b70aeeece79e6e9f3052489d1d0ef86b7d58ffa41ce093a828a4abd",
+            "7bfc8e13487c9edfac3ef483b12595c38761a85d0ce67fb8ec2c6d66ac3c9de1",
+            "5ef854212e30f232b093cd7107176d4f179070e0134d550d5cdf81d68ee5b2c1",
+            "c0ed1dfa0c257032d5f8f4b2f2b9b5437434248158728e4a9567c500ea8e49e4",
+            "7c12590b38f50627a5bb70c52be5fffd289d35885038f3a40d5730daf0b736af",
+            "ef32b4ecd8ab8bf713327abc4fe7ffd5df17e38a73c6f76885b0eaf6628df7d4"
+          ],
+          "beforeTags": [
+            [
+              "@id-xlsx-go-formula-analysis-refusal",
+              "@planned",
+              "@profile-go-static-formula"
+            ],
+            [
+              "@id-xlsx-go-formula-analysis-refusal",
+              "@planned",
+              "@profile-go-static-formula"
+            ],
+            [
+              "@id-xlsx-go-formula-analysis-refusal",
+              "@planned",
+              "@profile-go-static-formula"
+            ],
+            [
+              "@id-xlsx-go-formula-analysis-refusal",
+              "@planned",
+              "@profile-go-static-formula"
+            ],
+            [
+              "@id-xlsx-go-formula-analysis-refusal",
+              "@planned",
+              "@profile-go-static-formula"
+            ],
+            [
+              "@id-xlsx-go-formula-analysis-refusal",
+              "@planned",
+              "@profile-go-static-formula"
+            ],
+            [
+              "@id-xlsx-go-formula-analysis-refusal",
+              "@planned",
+              "@profile-go-static-formula"
+            ]
+          ],
+          "afterTags": [
+            [
+              "@id-xlsx-go-formula-analysis-refusal",
+              "@planned",
+              "@profile-static-reference-api"
+            ],
+            [
+              "@id-xlsx-go-formula-analysis-refusal",
+              "@planned",
+              "@profile-static-reference-api"
+            ],
+            [
+              "@id-xlsx-go-formula-analysis-refusal",
+              "@planned",
+              "@profile-static-reference-api"
+            ],
+            [
+              "@id-xlsx-go-formula-analysis-refusal",
+              "@planned",
+              "@profile-static-reference-api"
+            ],
+            [
+              "@id-xlsx-go-formula-analysis-refusal",
+              "@planned",
+              "@profile-static-reference-api"
+            ],
+            [
+              "@id-xlsx-go-formula-analysis-refusal",
+              "@planned",
+              "@profile-static-reference-api"
+            ],
+            [
+              "@id-xlsx-go-formula-analysis-refusal",
+              "@planned",
+              "@profile-static-reference-api"
+            ]
+          ]
+        },
+        {
+          "id": "@id-xlsx-go-formula-literal-punctuation",
+          "beforeCaseSha256": [
+            "6955ec3b4f8386ea0c7d5e94c2da5e862d67495f23e388e97c0c5f786e13fdfb",
+            "73e2db50c9f5cfc378291a356b6a2f0d4539f23d7a7cae1a14d668c4b7cd54a7",
+            "28bc3a470688c352d62f256e1c3eefe00d8fdcbc475907f23e1fc33a54c8429e",
+            "7a00a743bfc6fb3a234be37ca4eb7e8c9bd8a24a31ba648a9816bb4096763128",
+            "e8700af3385de0f9c38d66dc5457ad07d4fca15ab04451250f507ffc36570214"
+          ],
+          "afterCaseSha256": [
+            "312805227df85db70c123261f49f98c4404505064f09b9b690a277bb95c618e1",
+            "49b995ca1573f48ad42783983e3fb606a0d5cde727d13301ec3a7c620bde1581",
+            "205d6776cb3aa8352e62f1779c22485488f33813db100ab8aba3712048aaad7b",
+            "fe4cae77bb9a6e924d5ef5d1af7e459972edb00ea183c05558ae3c949d1c0e13",
+            "f21284bfcd313cc8885f6d7f6d4b39079cf6a39d4f007d06fb5dc230863d7f51"
+          ],
+          "beforeTags": [
+            [
+              "@id-xlsx-go-formula-literal-punctuation",
+              "@planned",
+              "@profile-go-static-formula"
+            ],
+            [
+              "@id-xlsx-go-formula-literal-punctuation",
+              "@planned",
+              "@profile-go-static-formula"
+            ],
+            [
+              "@id-xlsx-go-formula-literal-punctuation",
+              "@planned",
+              "@profile-go-static-formula"
+            ],
+            [
+              "@id-xlsx-go-formula-literal-punctuation",
+              "@planned",
+              "@profile-go-static-formula"
+            ],
+            [
+              "@id-xlsx-go-formula-literal-punctuation",
+              "@planned",
+              "@profile-go-static-formula"
+            ]
+          ],
+          "afterTags": [
+            [
+              "@id-xlsx-go-formula-literal-punctuation",
+              "@planned",
+              "@profile-static-reference-api"
+            ],
+            [
+              "@id-xlsx-go-formula-literal-punctuation",
+              "@planned",
+              "@profile-static-reference-api"
+            ],
+            [
+              "@id-xlsx-go-formula-literal-punctuation",
+              "@planned",
+              "@profile-static-reference-api"
+            ],
+            [
+              "@id-xlsx-go-formula-literal-punctuation",
+              "@planned",
+              "@profile-static-reference-api"
+            ],
+            [
+              "@id-xlsx-go-formula-literal-punctuation",
+              "@planned",
+              "@profile-static-reference-api"
+            ]
+          ]
+        },
+        {
+          "id": "@id-xlsx-go-direct-range-parsing",
+          "beforeCaseSha256": [
+            "907972ccb5dc8fe70f187c1ef3223e2c45f924505bd94e0468db10a5e58b445b",
+            "4c172c298b127fdddf2abcc713471fdb879e9df9e6bd8cc368bb800a5ad45e64",
+            "37d19ec2f7055b25fe41cacfa9ae6022523803baf6dd140e469861aa07d4e495",
+            "056d18d846839fd09694f246287fd3dd9e05ada9ab5c0a8621a34db054a11f33",
+            "4f6bc95b31bb6e812c315b15d830b8d66c801f728bd3f71a44cd9a36a6e41605",
+            "6b19c70a8ac5114d63d392383f437c7a67d2a992c1924609512b6dcbc7ba8386"
+          ],
+          "afterCaseSha256": [
+            "3962f4faa2697c2c2e90dc6f9cd473d4a23b021c0dc4458a264c14d572434c6c",
+            "f6ef164a0f350ecd84eebe53d86e03e5de67311b8757820ca5fdbf5c7083c69f",
+            "14002de27fcf8f510f72870e7674b35ac5c0f12e4e625081daceebf9b3292919",
+            "29ac774d0e7ccf7c0e4e994ac03cefdb7cb01f58f478d3ffa228897c98cfe8de",
+            "e02e7810243432505123be7da134f62bd47244eb6e2cf6a601082ad735b6a376",
+            "e2e5fbb6aef00d233e5c7ee4c6c0ae21786f07f7a231b6dccec4ab642a579e23"
+          ],
+          "beforeTags": [
+            [
+              "@id-xlsx-go-direct-range-parsing",
+              "@planned",
+              "@profile-go-static-formula"
+            ],
+            [
+              "@id-xlsx-go-direct-range-parsing",
+              "@planned",
+              "@profile-go-static-formula"
+            ],
+            [
+              "@id-xlsx-go-direct-range-parsing",
+              "@planned",
+              "@profile-go-static-formula"
+            ],
+            [
+              "@id-xlsx-go-direct-range-parsing",
+              "@planned",
+              "@profile-go-static-formula"
+            ],
+            [
+              "@id-xlsx-go-direct-range-parsing",
+              "@planned",
+              "@profile-go-static-formula"
+            ],
+            [
+              "@id-xlsx-go-direct-range-parsing",
+              "@planned",
+              "@profile-go-static-formula"
+            ]
+          ],
+          "afterTags": [
+            [
+              "@id-xlsx-go-direct-range-parsing",
+              "@planned",
+              "@profile-static-reference-api"
+            ],
+            [
+              "@id-xlsx-go-direct-range-parsing",
+              "@planned",
+              "@profile-static-reference-api"
+            ],
+            [
+              "@id-xlsx-go-direct-range-parsing",
+              "@planned",
+              "@profile-static-reference-api"
+            ],
+            [
+              "@id-xlsx-go-direct-range-parsing",
+              "@planned",
+              "@profile-static-reference-api"
+            ],
+            [
+              "@id-xlsx-go-direct-range-parsing",
+              "@planned",
+              "@profile-static-reference-api"
+            ],
+            [
+              "@id-xlsx-go-direct-range-parsing",
+              "@planned",
+              "@profile-static-reference-api"
+            ]
+          ]
+        },
+        {
+          "id": "@id-xlsx-go-direct-range-refusal",
+          "beforeCaseSha256": [
+            "cf01b900f5d34aec67da4a7387439db1de2da74499dbe2b9ef17b64e4650edaf",
+            "94ee91cf5ee364173fb557e706ddf88bcfd541c247378df76a889c5b2e6dc32a",
+            "5a94269916dab402d6370595986671a8b6933e6bb8673bc0f750e6cd6ab73e0e",
+            "499860c609f6dda4ac75bbd6ef92fce9ae308adb98b730bd9b5bda14284c9559",
+            "96331869ecda528d7e82ac1aaee3136f0077398ceda31e64983e491450d95471",
+            "644c60e250ce08534b5405ecf3810d7acd32aa90230eef389dbc31385fd7e409",
+            "065682f315b5d2d6a0080b020b12de710591437976492987947fca9737067ec1"
+          ],
+          "afterCaseSha256": [
+            "ea605a2396971de97bde20277f6b936ca5736e5b236063a813575c5e7db78204",
+            "69e26ac377493d1456ac4449b11dc18c54d766d30830dbca4281fef2fbbb6380",
+            "bb98bd71cf74d3c0c5b65bb34ba1a96a29e1ac70ea19f313a82174aca667b001",
+            "031eb077b5b50421203e95da6976c806b2c6d408f45ac4ecbe0165df0e62350c",
+            "321be828ef6bdec772d6910a33038721306b7e23c572f25994f90d2ff8dbd233",
+            "fc6e7cd0fd3c2cacf3de8970981b0df64e1bc21f83ff09c7316962b552d5b404",
+            "2f399e42a67dbadb1a21500a4a30a14e3ab5093574aaa0bf4867929a027590ea"
+          ],
+          "beforeTags": [
+            [
+              "@id-xlsx-go-direct-range-refusal",
+              "@planned",
+              "@profile-go-static-formula"
+            ],
+            [
+              "@id-xlsx-go-direct-range-refusal",
+              "@planned",
+              "@profile-go-static-formula"
+            ],
+            [
+              "@id-xlsx-go-direct-range-refusal",
+              "@planned",
+              "@profile-go-static-formula"
+            ],
+            [
+              "@id-xlsx-go-direct-range-refusal",
+              "@planned",
+              "@profile-go-static-formula"
+            ],
+            [
+              "@id-xlsx-go-direct-range-refusal",
+              "@planned",
+              "@profile-go-static-formula"
+            ],
+            [
+              "@id-xlsx-go-direct-range-refusal",
+              "@planned",
+              "@profile-go-static-formula"
+            ],
+            [
+              "@id-xlsx-go-direct-range-refusal",
+              "@planned",
+              "@profile-go-static-formula"
+            ]
+          ],
+          "afterTags": [
+            [
+              "@id-xlsx-go-direct-range-refusal",
+              "@planned",
+              "@profile-static-reference-api"
+            ],
+            [
+              "@id-xlsx-go-direct-range-refusal",
+              "@planned",
+              "@profile-static-reference-api"
+            ],
+            [
+              "@id-xlsx-go-direct-range-refusal",
+              "@planned",
+              "@profile-static-reference-api"
+            ],
+            [
+              "@id-xlsx-go-direct-range-refusal",
+              "@planned",
+              "@profile-static-reference-api"
+            ],
+            [
+              "@id-xlsx-go-direct-range-refusal",
+              "@planned",
+              "@profile-static-reference-api"
+            ],
+            [
+              "@id-xlsx-go-direct-range-refusal",
+              "@planned",
+              "@profile-static-reference-api"
+            ],
+            [
+              "@id-xlsx-go-direct-range-refusal",
+              "@planned",
+              "@profile-static-reference-api"
+            ]
+          ]
+        },
+        {
+          "id": "@id-xlsx-go-static-remap-exact",
+          "beforeCaseSha256": [
+            "dadec6029100acbfe82a8a676f07628db1bd2ebde348f11c0075ac17b3b2c4b6",
+            "ef328ed3e5d348dd43ba582cee25c47397ca76f74dd05b80dc95f6ae92631b84",
+            "11acff5d81cca64f07f4cf7ae07e9203ee559688f3d0fc10e96b3a54f091f238",
+            "c789f0469e662f3f9266e870d620630e1d31ecd2758d0c6039dfd5bcd9366429",
+            "37aa11f443891c8fabedf9927f807a480868eb269184564468ed69a851591f2c"
+          ],
+          "afterCaseSha256": [
+            "6fd1472ebd364c57c14751b458405b379f2fdbb5bee69d9fdf29cc7335bc6b8f",
+            "333bab5ac613a884ab80124cc11066bed676bade84b8cc8f2b389f3109f585c7",
+            "bd48d87db9940fa0b1251a94edba762ec44575479aaae321a918e76fdc8d7c38",
+            "f486211bad49ad9eabf988541053ab1047dd835733a542f50fd281f5c2170ff8",
+            "294f2b8d9f8a72de2ac1b0b7b7c66f6f48bfad71848bae711c2eb64daf89033f"
+          ],
+          "beforeTags": [
+            [
+              "@id-xlsx-go-static-remap-exact",
+              "@planned",
+              "@profile-go-static-formula"
+            ],
+            [
+              "@id-xlsx-go-static-remap-exact",
+              "@planned",
+              "@profile-go-static-formula"
+            ],
+            [
+              "@id-xlsx-go-static-remap-exact",
+              "@planned",
+              "@profile-go-static-formula"
+            ],
+            [
+              "@id-xlsx-go-static-remap-exact",
+              "@planned",
+              "@profile-go-static-formula"
+            ],
+            [
+              "@id-xlsx-go-static-remap-exact",
+              "@planned",
+              "@profile-go-static-formula"
+            ]
+          ],
+          "afterTags": [
+            [
+              "@id-xlsx-go-static-remap-exact",
+              "@planned",
+              "@profile-static-reference-api"
+            ],
+            [
+              "@id-xlsx-go-static-remap-exact",
+              "@planned",
+              "@profile-static-reference-api"
+            ],
+            [
+              "@id-xlsx-go-static-remap-exact",
+              "@planned",
+              "@profile-static-reference-api"
+            ],
+            [
+              "@id-xlsx-go-static-remap-exact",
+              "@planned",
+              "@profile-static-reference-api"
+            ],
+            [
+              "@id-xlsx-go-static-remap-exact",
+              "@planned",
+              "@profile-static-reference-api"
+            ]
+          ]
+        },
+        {
+          "id": "@id-xlsx-go-static-remap-refusal",
+          "beforeCaseSha256": [
+            "194b35d2e3b5b831b8c2671de172c8233ecc3bf798ccf7ac10110948ab89faf2",
+            "649b53228e282a240163022591d21230d19dd292ce9dce1694d1f6dc6b7d65b2",
+            "e33ad805970d6f126e68bfca43f8df24c88d4eae033b58dcb270eada5e3d1763",
+            "f1787914f0454bfed9ff011ac3bb182f4f32ceb3c48e314e317f0e111371b7f9",
+            "3f1cbf4e9ef0f312797d3720a33773a1013c03c7b5ba07a8b1ecf46ae2394717",
+            "5f52d3da4489e561e546dde03c51ecfd314e2b02666adce74cf93d393a049322",
+            "2f826e6e2646018082a3720b35f712782211df72620c8f7c22ad4c20e9174399"
+          ],
+          "afterCaseSha256": [
+            "6230eaed3ab76a0ac521d97529469b0ffb9b3df443438c29bf07769fb04f2550",
+            "5f441247aa8429f68abefb7d74c469cfaa40fa22562d84fa3fc61c72849a2a74",
+            "835b36e812f3e276ea1e152731acfdf49baa6ad5b779df743f4f9689a78e792a",
+            "2c7f24e33e2209ed94e5362681dc1b18be4dc81d017005b91776258493f76242",
+            "d25b9570911aa5c6dac7f6240cb4255991f64eec51977698c06308c031d281f1",
+            "06ef379bedf33d8b334eded69d3e27fa369561a035a1983aff909bd3c1508add",
+            "40379d19e8205680012daa438a17126f133f97951bb87dc0d1ba8f9bd65a2c26"
+          ],
+          "beforeTags": [
+            [
+              "@id-xlsx-go-static-remap-refusal",
+              "@planned",
+              "@profile-go-static-formula"
+            ],
+            [
+              "@id-xlsx-go-static-remap-refusal",
+              "@planned",
+              "@profile-go-static-formula"
+            ],
+            [
+              "@id-xlsx-go-static-remap-refusal",
+              "@planned",
+              "@profile-go-static-formula"
+            ],
+            [
+              "@id-xlsx-go-static-remap-refusal",
+              "@planned",
+              "@profile-go-static-formula"
+            ],
+            [
+              "@id-xlsx-go-static-remap-refusal",
+              "@planned",
+              "@profile-go-static-formula"
+            ],
+            [
+              "@id-xlsx-go-static-remap-refusal",
+              "@planned",
+              "@profile-go-static-formula"
+            ],
+            [
+              "@id-xlsx-go-static-remap-refusal",
+              "@planned",
+              "@profile-go-static-formula"
+            ]
+          ],
+          "afterTags": [
+            [
+              "@id-xlsx-go-static-remap-refusal",
+              "@planned",
+              "@profile-static-reference-api"
+            ],
+            [
+              "@id-xlsx-go-static-remap-refusal",
+              "@planned",
+              "@profile-static-reference-api"
+            ],
+            [
+              "@id-xlsx-go-static-remap-refusal",
+              "@planned",
+              "@profile-static-reference-api"
+            ],
+            [
+              "@id-xlsx-go-static-remap-refusal",
+              "@planned",
+              "@profile-static-reference-api"
+            ],
+            [
+              "@id-xlsx-go-static-remap-refusal",
+              "@planned",
+              "@profile-static-reference-api"
+            ],
+            [
+              "@id-xlsx-go-static-remap-refusal",
+              "@planned",
+              "@profile-static-reference-api"
+            ],
+            [
+              "@id-xlsx-go-static-remap-refusal",
+              "@planned",
+              "@profile-static-reference-api"
+            ]
+          ]
+        },
+        {
+          "id": "@id-xlsx-go-static-reference-properties",
+          "beforeCaseSha256": [
+            "412e02cab4d27a48830f14f8b63d08672772753de27a14815bfb871686b01148"
+          ],
+          "afterCaseSha256": [
+            "f752a40e885c5f485eec93059a33af1c83fa6ac40d13db563315b564b9a1190b"
+          ],
+          "beforeTags": [
+            [
+              "@id-xlsx-go-static-reference-properties",
+              "@planned",
+              "@profile-go-static-formula"
+            ]
+          ],
+          "afterTags": [
+            [
+              "@id-xlsx-go-static-reference-properties",
+              "@planned",
+              "@profile-static-reference-api"
+            ]
+          ]
+        }
+      ]
+    }
+  ]
+}
