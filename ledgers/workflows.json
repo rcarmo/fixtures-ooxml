@@ -7692,8 +7692,8 @@
           "evidence": "Native execution binding pending"
         },
         "go": {
-          "status": "planned",
-          "evidence": "Native execution binding pending"
+          "status": "implemented",
+          "evidence": "Go a8515940db69c42294493161fb77b80936f23357 selects this canonical case once in place of native @CHAIN-001. Saved-file readback checks Input!A1, both formula texts and empty cache slots (including persisted data-only leaves), unaffected Calc!C1 cache 42, recalculation flags, owned chain/relationship/content-type removal, resolved graph, source bytes and unrelated member payloads. Uncached 294 selected cases/1004 passed steps/0 failures; independent recursive clone and post-push GitHub network recursive clone passed. See go-ooxml/reports/batches/160.md and /workspace/tmp/go-v045-github-published-gate.log (SHA-256 ef75c15eda31503954d28633bccce99364d4442c2a98255e15c5d18a9e432edd). No formula calculation or Office producer check."
         },
         "python": {
           "status": "planned",

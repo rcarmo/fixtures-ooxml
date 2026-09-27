@@ -1,15 +1,25 @@
 import {test,expect} from 'bun:test';
+import {execFileSync} from 'node:child_process';
 import {cases} from '../scripts/verify.ts';
 
 const path='workflows/xlsx/calculation-chain-lifecycle.feature';
 const id='@id-xlsx-owned-calculation-chain-invalidation';
-test('the owned-chain case has one bounded planned identity and no native execution credit',async()=>{
+test('the owned-chain case has one bounded identity; Go execution is separately evidenced',async()=>{
  const text=await Bun.file(path).text(),rows=cases(path,text);
  expect(rows).toHaveLength(1);expect(rows[0]?.scenarioId).toBe(id);
  const registry=await Bun.file('ledgers/workflows.json').json(),entry=registry.workflows.find((w:any)=>w.id===id);
  expect(registry.features.filter((p:string)=>p===path)).toHaveLength(1);
  expect(entry?.feature).toBe(path);expect(entry?.expandedCases).toBe(1);
- for(const consumer of ['bun','go','python'])expect(entry?.consumers[consumer].status).toBe('planned');
+ for(const consumer of ['bun','python'])expect(entry?.consumers[consumer].status).toBe('planned');
+ expect(entry?.consumers.go.status).toBe('implemented');
+ for(const evidence of ['a8515940db69c42294493161fb77b80936f23357','@CHAIN-001','294 selected cases/1004 passed steps/0 failures','reports/batches/160.md','ef75c15eda31503954d28633bccce99364d4442c2a98255e15c5d18a9e432edd'])expect(entry?.consumers.go.evidence).toContain(evidence);
+ const previous=JSON.parse(execFileSync('git',['show','3f0fbe2d11f8db6deda69779d5833086ee510799:ledgers/workflows.json']).toString());
+ const oldEntry=previous.workflows.find((w:any)=>w.id===id);
+ expect(oldEntry.consumers.go.status).toBe('planned');
+ const unchanged=structuredClone(entry);unchanged.consumers.go=oldEntry.consumers.go;
+ expect(unchanged).toEqual(oldEntry);
+ expect(registry.features).toEqual(previous.features);
+ expect(registry.workflows.filter((w:any)=>w.id!==id)).toEqual(previous.workflows.filter((w:any)=>w.id!==id));
  const predicates=rows[0]!.steps.map(s=>s.text).join('\n');
  for(const required of ['xl/chains/order.xml','Input!A1','Calc!A1','Calc!B1','Calc!C1','absent or empty cached values','source package bytes remain unchanged','content-type override are absent','destination relationship and content-type target resolves','byte-identical'])expect(predicates).toContain(required);
  const old=await Bun.file('staging/go/features/implemented/spreadsheet/calc-chain.feature').text();
