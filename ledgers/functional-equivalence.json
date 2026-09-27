@@ -1,9 +1,11 @@
 {
   "schemaVersion": 1,
   "sourceCommit": "7b7a2fa2610c421cdde9d7b1da9125c8f98b9dd8",
-  "scope": "Four exact captured-step Python candidate pairs reviewed against native test inputs and assertions; source files remain immutable provenance.",
+  "scope": "Four exact captured-step Python candidate pairs reviewed against native inputs and assertions. Only the TOOL_CLASSES exact predicate alias is merged; original source bytes and comparison counts remain historically sealed.",
   "executionCredit": false,
-  "retiredCandidateIds": [],
+  "retiredCandidateIds": [
+    "@candidate-python-workflows-2b4937f7f0"
+  ],
   "groups": [
     {
       "status": "weak-predicate-only",
@@ -77,7 +79,7 @@
       "executionCredit": false
     },
     {
-      "status": "exact-captured-predicate-alias",
+      "status": "merged-exact-captured-predicate",
       "members": [
         {
           "path": "staging/python/features/test_workflow_coverage.feature",
@@ -92,14 +94,16 @@
       ],
       "capturedStepSha256": "379a36a97f5af346e0354f8e14c65bf2298236d06818e6b7549f20e20fe8cae8",
       "preconditionsEqual": true,
-      "reason": "Both native declarations have the same no-fixture input and exact nonempty TOOL_CLASSES predicate; this is a weak availability check, not tool membership or validity.",
+      "reason": "Both native declarations have the same no-fixture input and exact nonempty TOOL_CLASSES predicate. One staged scenario now represents both declarations; it remains a weak availability check, not tool membership, validity or canonical execution.",
       "provenanceRetained": true,
       "executionCredit": false,
       "representative": "@candidate-python-workflow-coverage-ddad2d0e41",
       "aliases": [
         "@candidate-python-workflows-2b4937f7f0"
       ],
-      "observedPredicate": "len(TOOL_CLASSES)>=1"
+      "observedPredicate": "len(TOOL_CLASSES)>=1",
+      "historicalSourceSha256": "4ba79a1ceca3cf58cc95aac833d74cbc6701993228a13824b4df4b3774bf18ac",
+      "currentCandidateSha256": "1585bba8bc80d84901dfe11cfeb84b91787f712b0b7d6869323834a06286dba3"
     }
   ],
   "goReview": {

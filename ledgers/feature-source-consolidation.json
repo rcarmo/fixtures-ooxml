@@ -1279,10 +1279,12 @@
       "consumer": "python",
       "sourcePath": "docs/catalogue-staging/python-native/features/test_workflows.feature",
       "path": "staging/python/features/test_workflows.feature",
-      "sha256": "4ba79a1ceca3cf58cc95aac833d74cbc6701993228a13824b4df4b3774bf18ac",
-      "compiledCases": 17,
+      "sha256": "1585bba8bc80d84901dfe11cfeb84b91787f712b0b7d6869323834a06286dba3",
+      "compiledCases": 16,
       "executionCredit": false,
-      "reconciliation": "pending-functional-review"
+      "reconciliation": "exact-predicate-alias-retired",
+      "historicalSourceSha256": "4ba79a1ceca3cf58cc95aac833d74cbc6701993228a13824b4df4b3774bf18ac",
+      "transformation": "Remove the duplicate TOOL_CLASSES availability scenario; source declaration maps to representative @candidate-python-workflow-coverage-ddad2d0e41 with the same captured predicate and no execution credit."
     },
     {
       "consumer": "python",
@@ -1418,5 +1420,15 @@
     "crossConsumerExactStepGroups": 0,
     "withinConsumerDuplicateStepGroups": 4,
     "rule": "Equivalent behaviour requires same input variants, expected saved outputs, refusal and custody policy; no automatic retirement based on text."
+  },
+  "currentComparison": {
+    "compiledCases": 1551,
+    "uniqueNormalizedStepSequences": 1548,
+    "crossConsumerExactStepGroups": 0,
+    "withinConsumerDuplicateStepGroups": 3,
+    "retiredCandidateIds": [
+      "@candidate-python-workflows-2b4937f7f0"
+    ],
+    "rule": "Current compiled inventory after the reviewed exact predicate alias merge; historical comparison and source hashes above remain unchanged."
   }
 }

@@ -6688,16 +6688,18 @@
     },
     {
       "path": "staging/python/features/test_workflows.feature",
-      "id": "asset-4ba79a1ceca3cf58cc95aac833d74cbc6701993228a13824b4df4b3774bf18ac",
+      "id": "asset-1585bba8bc80d84901dfe11cfeb84b91787f712b0b7d6869323834a06286dba3",
       "role": "catalogue-candidate",
-      "bytes": 17158,
-      "sha256": "4ba79a1ceca3cf58cc95aac833d74cbc6701993228a13824b4df4b3774bf18ac",
+      "bytes": 16812,
+      "sha256": "1585bba8bc80d84901dfe11cfeb84b91787f712b0b7d6869323834a06286dba3",
       "origins": [
         {
-          "kind": "source",
+          "kind": "transformed-from-source",
           "repository": "https://github.com/rcarmo/python-office-mcp-server",
           "revision": "0c5de7a4ce69c13a06e215e9233954bf2df805d5",
-          "path": "docs/catalogue-staging/python-native/features/test_workflows.feature"
+          "path": "docs/catalogue-staging/python-native/features/test_workflows.feature",
+          "sha256": "4ba79a1ceca3cf58cc95aac833d74cbc6701993228a13824b4df4b3774bf18ac",
+          "transformation": "Remove the duplicate TOOL_CLASSES availability scenario; source declaration maps to representative @candidate-python-workflow-coverage-ddad2d0e41 with the same captured predicate and no execution credit."
         }
       ],
       "aliases": []
@@ -6856,10 +6858,10 @@
     },
     {
       "path": "ledgers/functional-equivalence.json",
-      "id": "asset-170636af9c291981a84161a89e0f4e441f79409008d8b8b19a2bfa0f560f4d9c",
+      "id": "asset-fd5f496a84e454b9613bd08378c00f1fc9aa8236a758708560af9415c2bc4722",
       "role": "catalogue-reconciliation",
-      "bytes": 9680,
-      "sha256": "170636af9c291981a84161a89e0f4e441f79409008d8b8b19a2bfa0f560f4d9c",
+      "bytes": 10087,
+      "sha256": "fd5f496a84e454b9613bd08378c00f1fc9aa8236a758708560af9415c2bc4722",
       "origins": [
         {
           "repository": "https://github.com/rcarmo/fixtures-ooxml",

@@ -219,10 +219,3 @@ Feature: workflows native behavior capture
     And path is prepared as temp dir under "clean.pptx"
     When pptx advanced tools.tool pptx audit placeholders using str representation of temp dir under "clean.pptx"
     Then result has type dict
-
-  @candidate-python-workflows-2b4937f7f0
-  # Native: tests/test_workflows.py::TestListSupportedFormats::test_tool_classes_available
-  Scenario: Native check: tool classes available [TestListSupportedFormats]
-    Given Import TOOL_CLASSES from tools.
-    When Evaluate len(TOOL_CLASSES).
-    Then len(TOOL_CLASSES) is greater than or equal to 1.
