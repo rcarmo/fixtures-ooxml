@@ -19,7 +19,7 @@ It does not implement document editing or confer parity on a consumer.
 - Tags are immutable. Consumers pin the same tag's commit as a Git submodule;
   no runtime fetching, floating branches or copied fallback corpora.
 - Validate hashes, registry references and workflow ledgers before tagging.
-- Commit as Rui Carmo <rcarmo@users.noreply.github.com>, local/global configured.
+- Commit as Rui Carmo <rui.carmo@gmail.com>, local/global configured.
 - Never rebase or rewrite a published tag. Coordinate migrations across consumers.
 
 ## Unified behaviour catalogue
@@ -34,9 +34,11 @@ Native test suites must not become separate, competing behaviour catalogues.
   cross-format obligations, with operation-named kebab-case files. No root-level
   workflows, `native/` catch-all or repeated format prefixes. Split mixed source
   API inventories by operation; source provenance belongs in ledgers.
-  `staging/go/` and `staging/python/` hold sealed, non-executed source candidates
-  pending functional reconciliation. They are not canonical workflows and grant
-  no consumer execution credit. Registration and verification enforce workflow paths.
+  `staging/go/` and `staging/python/` hold non-executed source candidates
+  pending functional reconciliation. Seal original source bytes and hashes in
+  provenance before changing a staged copy. These candidates are not canonical
+  workflows and grant no consumer execution credit. Registration and
+  verification enforce workflow paths.
 - Review existing features before adding scenarios. Consolidate equivalent
   preconditions, inputs, operations and outcomes under one canonical scenario ID.
   Several native declarations may map to that ID; do not create one scenario per
@@ -74,7 +76,7 @@ Native test suites must not become separate, competing behaviour catalogues.
   the remaining scenarios visible as planned gaps. Shared wording, inventory,
   parser success, source mappings and reference adoption confer no execution or
   cross-runtime conformance credit.
-- Preserve published scenario IDs during consolidation. Retain equivalent cases;
+- Preserve published scenario IDs during consolidation. Retain distinct cases;
   use an explicit migration map when duplicate IDs must be retired. Review
   consumer path lookups, exact step bindings, lifecycle selection and expected
   case counts before moving files or changing steps. Coordinate any required
@@ -85,6 +87,44 @@ Native test suites must not become separate, competing behaviour catalogues.
   every scenario is registered once, intended cases and profile distinctions
   survive, mappings still resolve, fixture bytes are unchanged, and affected
   consumers execute only their declared scenarios.
+
+## Feature consolidation and cascading test strength
+
+- Reconcile *observable behaviour*, not scenario names, matching step text or
+  file location. Compare input bytes and parameters, preconditions, operation,
+  output values, saved/reopened state, preservation and refusal policy. Merge
+  equivalent cases into one operation-family scenario; several native tests may
+  map to its ID. Combine disjoint example rows under one outline when the same
+  contract covers every row. Keep incompatible inputs or outcomes as distinct
+  cases or explicit profiles within that operation family.
+- The merged contract retains the strongest applicable assertions from every
+  source: exact values and error codes, output geometry, changed-part lists,
+  unchanged bytes, rollback and readback where those outcomes apply. A weak
+  `dict`, nonempty, success-only or permissive assertion cannot replace a
+  stronger check. Do not add a strong claim without a fixture, independent
+  expected value or other source evidence; mark it planned until verified.
+- When one consumer tests only a weaker predicate, strengthen its native test
+  and, where needed, its implementation to satisfy the merged outcome. Cascade
+  changes through fixture creation, test data, bindings, mappings and per-case
+  execution status. Keep that consumer planned until the stronger test runs;
+  adopting a shared tag, passing an old weak test or rewording Gherkin grants
+  no execution credit. Development in a consumer is preferable to retaining
+  duplicate weak scenarios as permanent alternative contracts.
+- Retire redundant scenario text after proving full equivalence. Map every
+  retired ID and native declaration to the representative ID and exact example
+  row, preserving original repository, revision, path, source hash, parameter
+  scope and any stronger or non-equivalent predicates. Keep original bytes in
+  immutable Git history or an explicit historical seal; record the transformed
+  copy's new hash separately. Do not falsify old review counts or rewrite
+  historical provenance to match the new copy. Partial overlap alone cannot
+  retire a case or earn credit.
+- Test the merge boundary: the representative has all applicable outcomes,
+  aliases resolve to it once, disjoint rows and policy differences survive,
+  retired IDs no longer compile as separate scenarios, and source fixtures
+  retain their sealed bytes. Update manifests, reconciliation and consumer
+  mappings together. Run the shared default and fresh-clone gates, then each
+  affected consumer's default and fresh-clone tests and CI before publishing a
+  new immutable tag and coordinated pins. Record unrun gates as unverified.
 
 ## Priority coordination
 
