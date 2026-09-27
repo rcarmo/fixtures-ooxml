@@ -6362,6 +6362,202 @@
           "evidence": "Native execution binding pending"
         }
       }
+    },
+    {
+      "id": "@id-docx-template-inventory-values",
+      "feature": "workflows/docx/template-analysis.feature",
+      "expandedCases": 1,
+      "factIds": [],
+      "expectedOutcomes": [
+        "the inventory scope is main-body-and-tables with counts 8 paragraphs, 2 sections, 1 table and 3 placeholders",
+        "every paragraphIndex, body location, table coordinate, section level, table value and placeholder offset equals the concrete sample expectation",
+        "the source archive and held paragraph and table handles are unchanged"
+      ],
+      "consumers": {
+        "bun": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        },
+        "go": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        },
+        "python": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        }
+      }
+    },
+    {
+      "id": "@id-docx-template-inventory-empty",
+      "feature": "workflows/docx/template-analysis.feature",
+      "expandedCases": 2,
+      "factIds": [],
+      "expectedOutcomes": [
+        "the empty inventory has exact empty collections and literal paragraph values",
+        "the source archive is unchanged",
+        "the plain inventory has exact empty collections and literal paragraph values"
+      ],
+      "consumers": {
+        "bun": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        },
+        "go": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        },
+        "python": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        }
+      }
+    },
+    {
+      "id": "@id-docx-template-inventory-placeholders",
+      "feature": "workflows/docx/template-analysis.feature",
+      "expandedCases": 1,
+      "factIds": [],
+      "expectedOutcomes": [
+        "its two placeholder occurrences have names Customer and offsets 3 through 13 and 14 through 24 in paragraphIndex 0",
+        "no nested, blank, bracketed or cross-paragraph placeholder is reported",
+        "the source archive is unchanged"
+      ],
+      "consumers": {
+        "bun": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        },
+        "go": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        },
+        "python": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        }
+      }
+    },
+    {
+      "id": "@id-docx-template-inventory-refusal",
+      "feature": "workflows/docx/template-analysis.feature",
+      "expandedCases": 10,
+      "factIds": [],
+      "expectedOutcomes": [
+        "inspection refuses without returning an inventory",
+        "the source archive is unchanged"
+      ],
+      "consumers": {
+        "bun": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        },
+        "go": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        },
+        "python": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        }
+      }
+    },
+    {
+      "id": "@id-docx-template-inventory-bounds",
+      "feature": "workflows/docx/template-analysis.feature",
+      "expandedCases": 3,
+      "factIds": [],
+      "expectedOutcomes": [
+        "inspection refuses with the template limit error and no inventory",
+        "the source archive is unchanged"
+      ],
+      "consumers": {
+        "bun": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        },
+        "go": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        },
+        "python": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        }
+      }
+    },
+    {
+      "id": "@id-docx-template-inventory-encoding",
+      "feature": "workflows/docx/template-analysis.feature",
+      "expandedCases": 2,
+      "factIds": [],
+      "expectedOutcomes": [
+        "every paragraphIndex, body location, table coordinate, section level, table value and placeholder offset equals the concrete sample expectation",
+        "the source archive and encoding bytes are unchanged"
+      ],
+      "consumers": {
+        "bun": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        },
+        "go": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        },
+        "python": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        }
+      }
+    },
+    {
+      "id": "@id-docx-template-inventory-snapshot",
+      "feature": "workflows/docx/template-analysis.feature",
+      "expandedCases": 1,
+      "factIds": [],
+      "expectedOutcomes": [
+        "the prior snapshot remains deeply immutable with No placeholder and three placeholders",
+        "a new snapshot reports Changed <New> and four placeholders",
+        "the saved source archive is unchanged"
+      ],
+      "consumers": {
+        "bun": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        },
+        "go": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        },
+        "python": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        }
+      }
+    },
+    {
+      "id": "@id-docx-template-inventory-scope",
+      "feature": "workflows/docx/template-analysis.feature",
+      "expandedCases": 2,
+      "factIds": [],
+      "expectedOutcomes": [
+        "every paragraphIndex, body location, table coordinate, section level, table value and placeholder offset equals the concrete sample expectation",
+        "the source archive is unchanged"
+      ],
+      "consumers": {
+        "bun": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        },
+        "go": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        },
+        "python": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        }
+      }
     }
   ],
   "consumerStatusPolicy": "Missing/unmapped/planned means not-run and no execution credit."

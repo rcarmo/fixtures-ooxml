@@ -1,0 +1,8 @@
+import {test,expect} from 'bun:test';import {cases} from '../scripts/verify.ts';
+const path='workflows/docx/template-analysis.feature',suffixes=['values','empty','placeholders','refusal','bounds','encoding','snapshot','scope'];
+test('concrete template rule adds eight IDs22 cases without changing the historical response or cache predicates',async()=>{
+ const rows=cases(path,await Bun.file(path).text()),prior=rows.filter(r=>!r.scenarioId.startsWith('@id-docx-template-inventory-')),added=rows.filter(r=>r.scenarioId.startsWith('@id-docx-template-inventory-'));expect(prior).toHaveLength(6);expect(new Bun.CryptoHasher('sha256').update(JSON.stringify(prior)).digest('hex')).toBe('7cfa54653400bf966471652d754f94cb70ec3b48bd27a6ad80a591b2f2cfea7a');expect(added).toHaveLength(22);expect([...new Set(added.map(r=>r.scenarioId))]).toEqual(suffixes.map(s=>'@id-docx-template-inventory-'+s));const l=await Bun.file('ledgers/workflows.json').json();for(const s of suffixes){const id='@id-docx-template-inventory-'+s,w=l.workflows.find((w:any)=>w.id===id);expect(w.feature).toBe(path);expect(w.expandedCases).toBe(added.filter(r=>r.scenarioId===id).length);expect(Object.values(w.consumers).every((v:any)=>v.status==='planned')).toBe(true);}
+});
+test('inventory predicates require exact values scope offsets custody and refusal with no classification inference',async()=>{
+ const s=await Bun.file(path).text(),c=await Bun.file('contracts/template-inventory.md').text();for(const x of ['UTF-16BE','row-before','source archive','paragraphIndex','10001','snapshot'])expect(s).toContain(x);for(const x of ['no staffing','UTF-16','Statement for <Customer>','4,320','10,000'])expect(c).toContain(x);
+});

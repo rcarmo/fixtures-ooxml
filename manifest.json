@@ -3902,10 +3902,10 @@
       "aliases": []
     },
     {
-      "id": "asset-bb63e95d9e548c04b66cee96c4454cc816d83a033ff17d5e2282e4e27b7b71fc",
+      "id": "asset-433f432d8af73c042d4b5c938450080dbb46811ee24ccee77507a02c809e414e",
       "path": "workflows/docx/template-analysis.feature",
-      "bytes": 3002,
-      "sha256": "bb63e95d9e548c04b66cee96c4454cc816d83a033ff17d5e2282e4e27b7b71fc",
+      "bytes": 7626,
+      "sha256": "433f432d8af73c042d4b5c938450080dbb46811ee24ccee77507a02c809e414e",
       "role": "workflow",
       "origins": [
         {
@@ -4381,6 +4381,21 @@
         {
           "repository": "https://github.com/rcarmo/fixtures-ooxml",
           "path": "contracts/table-merging.md",
+          "basis": "Project-owned behaviour contract or source assertion mapping"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "id": "asset-0e444485809c2bfe06d90de5276077421a70c1ea2248e347c0b518f0d05eff4d",
+      "path": "contracts/template-inventory.md",
+      "bytes": 4256,
+      "sha256": "0e444485809c2bfe06d90de5276077421a70c1ea2248e347c0b518f0d05eff4d",
+      "role": "workflow-contract",
+      "origins": [
+        {
+          "repository": "https://github.com/rcarmo/fixtures-ooxml",
+          "path": "contracts/template-inventory.md",
           "basis": "Project-owned behaviour contract or source assertion mapping"
         }
       ],

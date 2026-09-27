@@ -156,6 +156,16 @@ and stale handles have separate cases. The preceding 26 horizontal case
 fingerprints are unchanged. Totals are 48 features, 250 scenarios and 638 cases;
 new consumer entries start planned, with no property-setter compatibility credit.
 
+## Concrete template inventory
+
+Eight [concrete inventory scenarios](contracts/template-inventory.md) add 22
+cases to template analysis: exact body/table values and locations, literal
+placeholder offsets, whole-operation refusals and bounds, encoding, detached
+snapshots and named scope. The six earlier response/status/cache cases retain
+their predicates and historical fingerprints. Totals are 48 features, 258
+scenarios, 660 cases and 212 assets; all new consumer entries start planned.
+No semantic SOW/guidance/table-purpose or cache behaviour follows from this rule.
+
 ## Weak-outcome review
 
 | Contract | Current assertion boundary | Requirement still missing |
