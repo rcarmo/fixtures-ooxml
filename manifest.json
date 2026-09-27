@@ -4182,6 +4182,44 @@
         }
       ],
       "aliases": []
+    },
+    {
+      "id": "asset-613c5a059b2e13d16d73e88aadf75445061acae58262ee5c84cc0ab1db38a71a",
+      "path": "workflows/workflow-receipts.feature",
+      "bytes": 921,
+      "sha256": "613c5a059b2e13d16d73e88aadf75445061acae58262ee5c84cc0ab1db38a71a",
+      "role": "workflow",
+      "origins": [
+        {
+          "repository": "https://github.com/rcarmo/fixtures-ooxml",
+          "path": "workflows/workflow-receipts.feature",
+          "basis": "Project-owned behaviour contract or source assertion mapping"
+        },
+        {
+          "repository": "https://github.com/rcarmo/bun-ooxml",
+          "revision": "15d08ae19fd439985ed7e2202ab09c7bb2fe0574",
+          "path": "features/planned/office-mutation-additions.feature",
+          "bytes": 1312,
+          "sha256": "c4a355afc434c9df3fe2bca839d420e2336e4b98814c9acf24a9bc05c4db5a0a",
+          "basis": "Two retained scenario IDs, names and step sequences; third independent-style-reader scenario excluded"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "id": "asset-f6220cf8e7ef9e45477955e45fd52e74311c26f298b9709b921446816a511374",
+      "path": "contracts/workflow-receipts.md",
+      "bytes": 1706,
+      "sha256": "f6220cf8e7ef9e45477955e45fd52e74311c26f298b9709b921446816a511374",
+      "role": "workflow-contract",
+      "origins": [
+        {
+          "repository": "https://github.com/rcarmo/fixtures-ooxml",
+          "path": "contracts/workflow-receipts.md",
+          "basis": "Project-owned behaviour contract or source assertion mapping"
+        }
+      ],
+      "aliases": []
     }
   ]
 }

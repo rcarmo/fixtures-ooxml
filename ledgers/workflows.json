@@ -40,7 +40,8 @@
     "workflows/docx/template-analysis.feature",
     "workflows/xlsx/formula-references.feature",
     "workflows/docx/document-model.feature",
-    "workflows/docx/anchor-discovery.feature"
+    "workflows/docx/anchor-discovery.feature",
+    "workflows/workflow-receipts.feature"
   ],
   "executionCredit": "Only local executed assertions count; reports here do not run consumers.",
   "workflows": [
@@ -5776,6 +5777,54 @@
         "the path-opened presentation's first inspected paragraph on its first slide is Frankenstein",
         "serializing the byte-opened presentation returns the exact original archive bytes",
         "that destination file contains the exact original archive bytes"
+      ],
+      "consumers": {
+        "bun": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        },
+        "go": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        },
+        "python": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        }
+      }
+    },
+    {
+      "id": "@id-office-preview-details",
+      "feature": "workflows/workflow-receipts.feature",
+      "expandedCases": 1,
+      "factIds": [],
+      "expectedOutcomes": [
+        "the preview identifies the original target and requested replacement",
+        "the preview reports zero committed changes"
+      ],
+      "consumers": {
+        "bun": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        },
+        "go": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        },
+        "python": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        }
+      }
+    },
+    {
+      "id": "@id-office-docx-exact-match-counts",
+      "feature": "workflows/workflow-receipts.feature",
+      "expandedCases": 1,
+      "factIds": [],
+      "expectedOutcomes": [
+        "\"<Present>\" reports exactly one match",
+        "\"<Missing>\" reports exactly zero matches"
       ],
       "consumers": {
         "bun": {
