@@ -138,6 +138,15 @@ no-ops, atomic refusals and rollback. The earlier getter-only case is unchanged.
 These additions bring the catalogue to 47 features, 236 scenarios and 586 cases.
 All consumer statuses for the new contracts start planned.
 
+## Physical horizontal merges
+
+The [physical merge contract](contracts/table-merging.md) adds seven scenarios /
+26 cases: saved geometry and exact retained content, content-loss and structural
+refusals, coordinate errors, rollback, three encodings and post-merge handles.
+The catalogue now has 48 features, 243 scenarios and 612 cases. Existing individual
+span/vertical-setter predicates and their source mappings are unchanged. New
+consumer entries start planned; physical authoring requires its own native proof.
+
 ## Weak-outcome review
 
 | Contract | Current assertion boundary | Requirement still missing |

@@ -47,7 +47,8 @@
     "workflows/xml/editing.feature",
     "workflows/xml/names.feature",
     "workflows/xml/parsing.feature",
-    "workflows/docx/tracking-settings.feature"
+    "workflows/docx/tracking-settings.feature",
+    "workflows/docx/table-merging.feature"
   ],
   "executionCredit": "Only local executed assertions count; reports here do not run consumers.",
   "workflows": [
@@ -6003,6 +6004,178 @@
       "expectedOutcomes": [
         "the settings operation refuses and the session author remains Previous",
         "the archive and held paragraph text Retained text are unchanged"
+      ],
+      "consumers": {
+        "bun": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        },
+        "go": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        },
+        "python": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        }
+      }
+    },
+    {
+      "id": "@id-docx-horizontal-merge-roundtrip",
+      "feature": "workflows/docx/table-merging.feature",
+      "expandedCases": 3,
+      "factIds": [],
+      "expectedOutcomes": [
+        "the reopened table has two rows and four grid columns with a gridSpan of 3 at row 0 column 0",
+        "the merged width is 6480 twips and that row has 2 physical cells",
+        "the reopened retained paragraph sequence matches the source minus only the absorbed empty paragraphs",
+        "the grid, unselected cells and rows, unrelated members and source archive are unchanged",
+        "the reopened table has two rows and four grid columns with a gridSpan of 4 at row 0 column 0",
+        "the merged width is 8640 twips and that row has 1 physical cells",
+        "the reopened table has two rows and four grid columns with a gridSpan of 2 at row 1 column 1",
+        "the merged width is 4320 twips and that row has 3 physical cells"
+      ],
+      "consumers": {
+        "bun": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        },
+        "go": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        },
+        "python": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        }
+      }
+    },
+    {
+      "id": "@id-docx-horizontal-merge-content-refusal",
+      "feature": "workflows/docx/table-merging.feature",
+      "expandedCases": 6,
+      "factIds": [],
+      "expectedOutcomes": [
+        "the merge refuses and the archive and held source handles are unchanged"
+      ],
+      "consumers": {
+        "bun": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        },
+        "go": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        },
+        "python": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        }
+      }
+    },
+    {
+      "id": "@id-docx-horizontal-merge-structure-refusal",
+      "feature": "workflows/docx/table-merging.feature",
+      "expandedCases": 6,
+      "factIds": [],
+      "expectedOutcomes": [
+        "the merge refuses and the archive and held source handles are unchanged"
+      ],
+      "consumers": {
+        "bun": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        },
+        "go": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        },
+        "python": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        }
+      }
+    },
+    {
+      "id": "@id-docx-horizontal-merge-coordinate-refusal",
+      "feature": "workflows/docx/table-merging.feature",
+      "expandedCases": 4,
+      "factIds": [],
+      "expectedOutcomes": [
+        "the merge refuses and the archive and held source handles are unchanged"
+      ],
+      "consumers": {
+        "bun": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        },
+        "go": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        },
+        "python": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        }
+      }
+    },
+    {
+      "id": "@id-docx-horizontal-merge-rollback",
+      "feature": "workflows/docx/table-merging.feature",
+      "expandedCases": 2,
+      "factIds": [],
+      "expectedOutcomes": [
+        "the merge refuses and the archive and held source handles are unchanged"
+      ],
+      "consumers": {
+        "bun": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        },
+        "go": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        },
+        "python": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        }
+      }
+    },
+    {
+      "id": "@id-docx-horizontal-merge-encoding",
+      "feature": "workflows/docx/table-merging.feature",
+      "expandedCases": 3,
+      "factIds": [],
+      "expectedOutcomes": [
+        "the reopened encoding marker and namespace meaning match the source",
+        "the reopened retained paragraph sequence matches the source minus only the absorbed empty paragraphs",
+        "the grid, unselected cells and rows, unrelated members and source archive are unchanged"
+      ],
+      "consumers": {
+        "bun": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        },
+        "go": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        },
+        "python": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        }
+      }
+    },
+    {
+      "id": "@id-docx-horizontal-merge-stale",
+      "feature": "workflows/docx/table-merging.feature",
+      "expandedCases": 2,
+      "factIds": [],
+      "expectedOutcomes": [
+        "old-handles operations refuse without changing the merged archive",
+        "the current unmerged tail cell still reads Tail",
+        "merged-cells operations refuse without changing the merged archive"
       ],
       "consumers": {
         "bun": {

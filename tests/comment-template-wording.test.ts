@@ -22,7 +22,7 @@ test('normalization cannot hide weak response semantics thread policy or cache i
  ]){const row=cases(path!,await Bun.file(path!).text()).find(c=>c.scenarioId===id)!,bad=structuredClone(row);for(const step of bad.steps)step.text=step.text.replace(from!,to!);expect(beforeWordingCase(bad)).not.toEqual(beforeWordingCase(row));}
 });
 test('all shared workflow steps and profiles avoid runtime-origin labels',async()=>{
- const ledger=await Bun.file('ledgers/workflows.json').json();expect(ledger.features).toHaveLength(47);
+ const ledger=await Bun.file('ledgers/workflows.json').json();expect(ledger.features).toHaveLength(48);
  for(const path of ledger.features){const text=await Bun.file(path).text();expect(text).not.toMatch(/@profile-(?:python|go|bun)-/);for(const c of cases(path,text))for(const s of c.steps)expect(s.text).not.toMatch(/\b(?:Python|Bun|Go)\b/);}
  const xml=await Bun.file('workflows/xml/parsing.feature').text();expect(xml).toContain('@profile-javascript-xml-model');expect(xml).toContain('@profile-xml-error-api');expect(xml).toContain('OoxmlError instance');
 });

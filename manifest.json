@@ -4355,6 +4355,36 @@
         }
       ],
       "aliases": []
+    },
+    {
+      "id": "asset-ea26fe30dabae6dd353775b7bf5e59ca136c3aa53489d3aa3ec00b7ccc60fa8b",
+      "path": "workflows/docx/table-merging.feature",
+      "bytes": 4476,
+      "sha256": "ea26fe30dabae6dd353775b7bf5e59ca136c3aa53489d3aa3ec00b7ccc60fa8b",
+      "role": "workflow",
+      "origins": [
+        {
+          "repository": "https://github.com/rcarmo/fixtures-ooxml",
+          "path": "workflows/docx/table-merging.feature",
+          "basis": "Project-owned behaviour contract or source assertion mapping"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "id": "asset-95a2153318b2efa1a9a52db0e8ac4afdb90368cac4a1562053d6e27a576d1c3a",
+      "path": "contracts/table-merging.md",
+      "bytes": 3436,
+      "sha256": "95a2153318b2efa1a9a52db0e8ac4afdb90368cac4a1562053d6e27a576d1c3a",
+      "role": "workflow-contract",
+      "origins": [
+        {
+          "repository": "https://github.com/rcarmo/fixtures-ooxml",
+          "path": "contracts/table-merging.md",
+          "basis": "Project-owned behaviour contract or source assertion mapping"
+        }
+      ],
+      "aliases": []
     }
   ]
 }
