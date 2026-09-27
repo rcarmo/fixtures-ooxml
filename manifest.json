@@ -6856,10 +6856,10 @@
     },
     {
       "path": "ledgers/functional-equivalence.json",
-      "id": "asset-653389b1fe3bd4322b979258be2a3301432c362cb35b34e5efe712d0357c60b2",
+      "id": "asset-170636af9c291981a84161a89e0f4e441f79409008d8b8b19a2bfa0f560f4d9c",
       "role": "catalogue-reconciliation",
-      "bytes": 4446,
-      "sha256": "653389b1fe3bd4322b979258be2a3301432c362cb35b34e5efe712d0357c60b2",
+      "bytes": 9680,
+      "sha256": "170636af9c291981a84161a89e0f4e441f79409008d8b8b19a2bfa0f560f4d9c",
       "origins": [
         {
           "repository": "https://github.com/rcarmo/fixtures-ooxml",

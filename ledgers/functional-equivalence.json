@@ -101,5 +101,113 @@
       ],
       "observedPredicate": "len(TOOL_CLASSES)>=1"
     }
-  ]
+  ],
+  "goReview": {
+    "sourceCommit": "8eb8abfb18a5a2b3c65d340d74f3d61512873d1b",
+    "scope": "Twelve bounded package graph/ZIP64/preservation candidates compared to existing canonical cases; no full equivalence or Go credit.",
+    "executionCredit": false,
+    "retiredCandidateIds": [],
+    "rows": [
+      {
+        "sourceId": "@ZSIX-001",
+        "canonicalId": "@id-parity-zip64",
+        "sourcePath": "staging/go/features/implemented/package/zip64.feature",
+        "status": "distinct-predicate",
+        "reason": "No-op of tiny ZIP64 layouts versus changed XML member with ZIP64-enabled output and unrelated payload custody.",
+        "executionCredit": false
+      },
+      {
+        "sourceId": "@candidate-go-archive-008",
+        "canonicalId": "@id-parity-zip64",
+        "sourcePath": "staging/go/behaviors/archive-candidates.feature",
+        "status": "distinct-predicate",
+        "reason": "Staged replacement/reopen candidate lacks canonical two native-written XML members and ZIP64 writer policy; not executed.",
+        "executionCredit": false
+      },
+      {
+        "sourceId": "@ZSIX-002",
+        "canonicalId": "@id-zip64-preflight-count",
+        "sourcePath": "staging/go/features/implemented/package/zip64.feature",
+        "status": "distinct-predicate",
+        "reason": "Malformed classic-count variants do not assert impossible ZIP64 directory count, pre-allocation refusal or exact zip-structure-invalid code.",
+        "executionCredit": false
+      },
+      {
+        "sourceId": "@LIMIT-001",
+        "canonicalId": "@id-zip64-resource-limit",
+        "sourcePath": "staging/go/features/implemented/package/limits.feature",
+        "status": "distinct-predicate",
+        "reason": "Generic entry ceiling and Go resource code differ from valid two-entry ZIP64 input, one-entry budget and zip-too-many-entries.",
+        "executionCredit": false
+      },
+      {
+        "sourceId": "@SURGERY-001",
+        "canonicalId": "@id-opc-add-related-part",
+        "sourcePath": "staging/go/features/implemented/package/graph-edit.feature",
+        "status": "distinct-predicate",
+        "reason": "Adds private binary and retargets an existing edge; canonical operation creates a new internal root relationship and checks exact content type.",
+        "executionCredit": false
+      },
+      {
+        "sourceId": "@DELETE-002",
+        "canonicalId": "@id-opc-graph-rollback",
+        "sourcePath": "staging/go/features/implemented/package/graph-delete.feature",
+        "status": "distinct-predicate",
+        "reason": "Mixed-plan owner edit and referenced-leaf refusal differs from standalone canonical removal and exact opc-part-referenced code.",
+        "executionCredit": false
+      },
+      {
+        "sourceId": "@DELETE-001",
+        "canonicalId": "@id-opc-remove-related-part",
+        "sourcePath": "staging/go/features/implemented/package/graph-delete.feature",
+        "status": "distinct-predicate",
+        "reason": "Two-edge removal plus owner XML edit differs from canonical one-root-edge detach and retained target resolution.",
+        "executionCredit": false
+      },
+      {
+        "sourceId": "@SOURCE-001",
+        "canonicalId": "@id-opc-package-corpus-noop",
+        "sourcePath": "staging/go/features/implemented/package/preservation.feature",
+        "status": "distinct-predicate",
+        "reason": "One synthetic source no-op does not cover both enumerated named corpora or known nonzero counts.",
+        "executionCredit": false
+      },
+      {
+        "sourceId": "@candidate-go-archive-010",
+        "canonicalId": "@id-opc-package-corpus-noop",
+        "sourcePath": "staging/go/behaviors/archive-candidates.feature",
+        "status": "distinct-predicate",
+        "reason": "Staged owned-corpus no-op lacks two named corpora and counts; candidate is not executed.",
+        "executionCredit": false
+      },
+      {
+        "sourceId": "@SOURCE-002",
+        "canonicalId": "@id-opc-package-preserve-unrelated",
+        "sourcePath": "staging/go/features/implemented/package/preservation.feature",
+        "status": "distinct-predicate",
+        "reason": "ZIP payload comparison after fingerprinted XML replacement does not prove canonical OPC reopen and text outcome.",
+        "executionCredit": false
+      },
+      {
+        "sourceId": "@SOURCE-003",
+        "canonicalId": "@id-opc-package-transaction-rollback",
+        "sourcePath": "staging/go/features/implemented/package/preservation.feature",
+        "status": "distinct-predicate",
+        "reason": "Stale-fingerprint preflight refuses before edit; canonical rollback follows edits to multiple parts before a later failure.",
+        "executionCredit": false
+      },
+      {
+        "sourceId": "@candidate-go-graph-010",
+        "canonicalId": "@id-opc-remove-related-part",
+        "sourcePath": "staging/go/behaviors/graph-candidates.feature",
+        "status": "distinct-predicate",
+        "reason": "Staged mixed retarget/remove/delete with several inbound edges differs from canonical simple detach/remove; not executed.",
+        "executionCredit": false
+      }
+    ],
+    "unmatchedCanonicalIds": [
+      "@id-zip64-unsafe-offset",
+      "@id-opc-diff-content-type"
+    ]
+  }
 }

@@ -23,7 +23,11 @@ classifies one exact weak availability predicate, two weak overlaps with differe
 inputs and one group with disjoint layout parameters. None is retired or counted
 as a canonical case. Native provenance stays available in both source files. Candidate text, matching scenario names or
 shared fixtures alone do not prove equivalent inputs, output bytes, refusal and
-preservation policy. Only reviewed equivalence may merge canonical IDs.
+preservation policy. Only reviewed equivalence may merge canonical IDs. The same
+[functional review](../ledgers/functional-equivalence.json) lists twelve Go
+ZIP64/graph/preservation lookalikes whose inputs or outcomes differ from the
+canonical cases. They retain separate source identities and no Go execution
+credit; two canonical ZIP64/content-type outcomes have no reviewed Go match.
 
 The eight new format/operation workflows in `workflows/` contain eleven Bun
 planned cases moved from three local feature files. Their original compiled
