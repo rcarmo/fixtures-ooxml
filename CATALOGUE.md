@@ -80,16 +80,27 @@ fresh consumer results before reference adoption.
 
 The catalogue is shared, but some contracts still encode one runtime's API.
 The format/operation migration preserves exact steps so consumer bindings do
-not silently acquire different semantics. It does not complete this review:
+not silently acquire different semantics.
+
+The first wording revision covers presentation notes, no-edit presentation saves,
+relationship namespaces and ZIP64 reader actions (16 scenarios, 18 cases).
+`ledgers/runtime-wording-migration.json` records exact step substitutions and
+profile changes from `048dac5`; historical IDs, inputs and observable results are
+retained. Notes and no-edit saves now use operation profiles. ZIP64 refusal codes
+and the safe-integer bound remain explicit compatibility policies rather than
+universal ZIP requirements. Regression tests compare current predicates with the
+reviewed before/after fingerprints; the substitution helper is test-only and
+never accepts legacy wording in an execution binding.
+
+Remaining work:
 
 | Family | Remaining work |
 |---|---|
-| Package preservation and ZIP | Remove Bun API names from portable custody, archive and refusal outcomes. Keep JavaScript async/thenable callback semantics and exact API error taxonomies explicitly profiled. |
-| Presentation notes and preservation | Replace Go/Bun wording and origin-named profiles with existing-notes and no-edit archive policies. Bun already executes several Go-origin cases. |
+| Package preservation and ZIP32 | Remove Bun API names from portable custody, archive and refusal outcomes. Keep JavaScript async/thenable callback semantics and exact API error taxonomies explicitly profiled. |
 | Word paragraphs, formatting and tables | Replace Go wording for shared value operations. Review API-specific nil, heading-classification and return-value conventions independently; do not turn them into format rules. |
 | Word comments | Preserve the distinction between existing-extension edits, extension creation, root/reply resolution and filtered/threaded results. These are different operations and policies. |
 | Word anchors and templates | Separate portable inspection from response envelopes, next-tool hints and cache APIs. Dictionary-only template responses remain weak contracts requiring stronger observable outcomes. |
-| Relationship namespaces and spreadsheet creation | Remove incidental runtime names; retain exact fixture provenance in manifests and source mappings. |
+| Spreadsheet creation | Remove incidental runtime names; retain exact fixture provenance in manifests and source mappings. |
 
 Similar scenarios are not automatically equivalent. Native worksheet cache
 invalidation and batch-workflow invalidation differ in their receipt, destination

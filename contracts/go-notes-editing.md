@@ -1,6 +1,15 @@
-# Go edits to existing presentation notes
+# Existing presentation notes
 
-The [notes](../workflows/pptx/notes.feature), [text](../workflows/pptx/text.feature), [preservation](../workflows/pptx/preservation.feature) exercises a Go editor that targets an **existing** notes part through its related slide. The [consumer mapping](../ledgers/consumers/go-notes-editing.json) pins both source test declarations at Go revision `e2c5891212beef16f7412c794d3bea6c01e9da35` and records their assertion limits. The read-only [notes](../workflows/pptx/notes.feature), [text](../workflows/pptx/text.feature), [preservation](../workflows/pptx/preservation.feature) has different fixture and order preconditions; its `@id-pptx-order-notes-read` ID is not reused as edit evidence.
+The [notes feature](../workflows/pptx/notes.feature) targets an existing notes part
+through its related slide. `@profile-existing-notes` describes target ownership,
+staleness, text-input policy and template reuse, without selecting a runtime.
+Creating a missing notes part is outside this profile. Historical scenario IDs
+remain stable.
+
+The [Go source mapping](../ledgers/consumers/go-notes-editing.json) pins two native
+test declarations at revision `e2c5891212beef16f7412c794d3bea6c01e9da35` and records
+their assertion limits. The read-only `@id-pptx-order-notes-read` scenario uses
+different fixture and ordering preconditions; it is not reused as edit evidence.
 
 ## Fixture and exact replacement
 
@@ -16,4 +25,4 @@ A two-line replacement in a paragraph with bullet, colour, font and language tem
 
 ## Scope
 
-The complete target has two declarations with three and four named subtests respectively in `pkg/presentation/notes_edit_test.go` and `notes_lines_test.go`. Three invalid text attempts are an inner loop, not three extra named subtests. All eight feature scenarios are planned and source-derived. Existing-part selection, text policy and refusal rules describe the Go editing profile; no ECMA requirement is inferred from their implementation. The complete ECMA PDFs are indexed [separately](../specs/ecma-376/README.md) for edition- and clause-specific requirements. There is no Go binding or new execution credit from this filing.
+The complete target has two declarations with three and four named subtests respectively in `pkg/presentation/notes_edit_test.go` and `notes_lines_test.go`. Three invalid text attempts are an inner loop, not three extra named subtests. All eight feature scenarios are planned and source-derived. Existing-part selection, text policy and refusal rules are editor policies; no ECMA requirement is inferred from the source implementation. The complete ECMA PDFs are indexed [separately](../specs/ecma-376/README.md) for edition- and clause-specific requirements. There is no Go binding or new execution credit from this filing.

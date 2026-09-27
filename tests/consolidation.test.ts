@@ -1,5 +1,6 @@
 import {test,expect} from 'bun:test';
 import {sourceCases} from './catalogue-helpers.ts';
+import {beforeWordingCase} from './runtime-wording-helpers.ts';
 import {cases} from '../scripts/verify.ts';
 test('unified operation families retain all source scenario IDs and expanded cases exactly',async()=>{
  const migration=await Bun.file('ledgers/feature-consolidation.json').json();
@@ -7,7 +8,7 @@ test('unified operation families retain all source scenario IDs and expanded cas
  const seen=new Set<string>();
  for(const group of migration.groups){
   const actual=(await Promise.all(group.sources.map((s:any)=>sourceCases(group.target,s.path)))).flat();
-  const fingerprint=(c:any)=>({scenarioId:c.scenarioId,sha256:new Bun.CryptoHasher('sha256').update(JSON.stringify(c)).digest('hex')});
+  const fingerprint=(c:any)=>({scenarioId:c.scenarioId,sha256:new Bun.CryptoHasher('sha256').update(JSON.stringify(beforeWordingCase(c))).digest('hex')});
   expect(actual.map(fingerprint)).toEqual(group.sources.flatMap((s:any)=>s.cases));
   for(const source of group.sources){
    for(const id of new Set(source.cases.map((c:any)=>c.scenarioId))){expect(seen.has(id as string)).toBe(false);seen.add(id as string);}

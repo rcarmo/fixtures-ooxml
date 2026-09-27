@@ -10,7 +10,7 @@ test('Go notes predicates preserve fixture identity and separate delivery from i
  const saved=rows.find(r=>r.scenarioId==='@id-pptx-go-notes-exact-splice')!;
  expect(saved.steps.at(-1)!.text).toBe('reopening the saved PPTX reads Updated speaker notes for ppt/slides/slide1.xml');
  const multiline=rows.find(r=>r.scenarioId==='@id-pptx-go-notes-multiline-template')!;
- const value=multiline.steps.find(s=>s.text.startsWith('Go replaces through that target with JSON '))!.text;
+ const value=multiline.steps.find(s=>s.text.startsWith('the editor replaces through that target with JSON '))!.text;
  expect(JSON.parse(value.split('JSON ')[1]!)).toBe('\n A&B \n雪\n');
  const ledger=await Bun.file('ledgers/consumers/go-notes-editing.json').json();expect(ledger.declarationCount).toBe(2);
  expect(new Set(ledger.mappings.flatMap((r:any)=>r.scenarioIds)).size).toBe(8);

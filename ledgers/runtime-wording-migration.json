@@ -1,0 +1,492 @@
+{
+  "schemaVersion": 1,
+  "sourceRevision": "048dac539886751c414d3ab075aa1fc37e2e051d",
+  "policy": "Exact implementation-name removal and operation-profile renaming only. IDs, example values, input arguments and all observable predicates remain; ZIP64 error-code vocabulary and safe-integer policy are retained explicit API compatibility constraints.",
+  "executionCredit": false,
+  "retiredScenarioIds": [],
+  "files": [
+    {
+      "path": "workflows/pptx/notes.feature",
+      "beforeSha256": "a6d11b5450bb7d2280ac095eefec195f736062c4b0faf8655a1d2dc6c546c960",
+      "afterSha256": "6980daafe08bb43e7ba2f73807a402a3ebabe239f0d41bad81b7c09ca7355f41",
+      "stepRenames": [
+        {
+          "id": "@id-pptx-go-notes-refusal-and-noop-custody",
+          "from": "two Go edit sessions open fixture fixture-04faba67841dda25dc3ff9e3e6e345e6feeeef1cf25a6b9065bf5fbdc83163dc",
+          "to": "two presentation edit sessions open fixture fixture-04faba67841dda25dc3ff9e3e6e345e6feeeef1cf25a6b9065bf5fbdc83163dc"
+        },
+        {
+          "id": "@id-pptx-go-notes-clear-stale-refill",
+          "from": "a Go edit session holds a notes target for ppt/slides/slide1.xml from fixture fixture-04faba67841dda25dc3ff9e3e6e345e6feeeef1cf25a6b9065bf5fbdc83163dc",
+          "to": "a presentation edit session holds a notes target for ppt/slides/slide1.xml from fixture fixture-04faba67841dda25dc3ff9e3e6e345e6feeeef1cf25a6b9065bf5fbdc83163dc"
+        },
+        {
+          "id": "@id-pptx-go-notes-part-fingerprint-refusal",
+          "from": "a Go edit session holds notes for ppt/slides/slide1.xml from fixture fixture-04faba67841dda25dc3ff9e3e6e345e6feeeef1cf25a6b9065bf5fbdc83163dc",
+          "to": "a presentation edit session holds notes for ppt/slides/slide1.xml from fixture fixture-04faba67841dda25dc3ff9e3e6e345e6feeeef1cf25a6b9065bf5fbdc83163dc"
+        },
+        {
+          "id": "@id-pptx-go-notes-self-closing-fill",
+          "from": "Go replaces its notes with filled",
+          "to": "the editor replaces its notes with filled"
+        },
+        {
+          "id": "@id-pptx-go-notes-edge-space-preserve",
+          "from": "Go replaces its notes with JSON \" leading \"",
+          "to": "the editor replaces its notes with JSON \" leading \""
+        },
+        {
+          "id": "@id-pptx-go-notes-multiline-template",
+          "from": "Go replaces through that target with JSON \"\\n A&B \\n雪\\n\"",
+          "to": "the editor replaces through that target with JSON \"\\n A&B \\n雪\\n\""
+        },
+        {
+          "id": "@id-pptx-go-notes-template-fragments",
+          "from": "Go replaces its notes with JSON \"a\\nb\"",
+          "to": "the editor replaces its notes with JSON \"a\\nb\""
+        }
+      ],
+      "scenarios": [
+        {
+          "id": "@id-pptx-order-notes-read",
+          "beforeCaseSha256": [
+            "510763a9af844ff32a4ce410cb23cc8fe30f17b3add2ca38e89b189d8e33fe03"
+          ],
+          "afterCaseSha256": [
+            "510763a9af844ff32a4ce410cb23cc8fe30f17b3add2ca38e89b189d8e33fe03"
+          ],
+          "beforeTags": [
+            [
+              "@id-pptx-order-notes-read",
+              "@planned"
+            ]
+          ],
+          "afterTags": [
+            [
+              "@id-pptx-order-notes-read",
+              "@planned"
+            ]
+          ]
+        },
+        {
+          "id": "@id-pptx-go-notes-exact-splice",
+          "beforeCaseSha256": [
+            "f231a700e3b847814928dcaefcc7f582b3e5ec72c3def633cc3e0295d58494f0"
+          ],
+          "afterCaseSha256": [
+            "f231a700e3b847814928dcaefcc7f582b3e5ec72c3def633cc3e0295d58494f0"
+          ],
+          "beforeTags": [
+            [
+              "@id-pptx-go-notes-exact-splice",
+              "@planned",
+              "@profile-go-existing-notes"
+            ]
+          ],
+          "afterTags": [
+            [
+              "@id-pptx-go-notes-exact-splice",
+              "@planned",
+              "@profile-existing-notes"
+            ]
+          ]
+        },
+        {
+          "id": "@id-pptx-go-notes-refusal-and-noop-custody",
+          "beforeCaseSha256": [
+            "6f68516fd6ea17e3c639d7ab2dc53434e0d862a978b2075bd54e30cd3868af2f"
+          ],
+          "afterCaseSha256": [
+            "2a794650d6ae15ffdce61812bc0e4ef871755eb7764bfec21f062d5cdc493181"
+          ],
+          "beforeTags": [
+            [
+              "@id-pptx-go-notes-refusal-and-noop-custody",
+              "@planned",
+              "@profile-go-existing-notes"
+            ]
+          ],
+          "afterTags": [
+            [
+              "@id-pptx-go-notes-refusal-and-noop-custody",
+              "@planned",
+              "@profile-existing-notes"
+            ]
+          ]
+        },
+        {
+          "id": "@id-pptx-go-notes-clear-stale-refill",
+          "beforeCaseSha256": [
+            "ae11a539bc72b1207587e1031ecf6dacfd749efda29c3bbdb54fc6af0145c863"
+          ],
+          "afterCaseSha256": [
+            "86f201e4c5f5019610cd79dfce0f337d21472db2874617c37049d66121d966e5"
+          ],
+          "beforeTags": [
+            [
+              "@id-pptx-go-notes-clear-stale-refill",
+              "@planned",
+              "@profile-go-existing-notes"
+            ]
+          ],
+          "afterTags": [
+            [
+              "@id-pptx-go-notes-clear-stale-refill",
+              "@planned",
+              "@profile-existing-notes"
+            ]
+          ]
+        },
+        {
+          "id": "@id-pptx-go-notes-part-fingerprint-refusal",
+          "beforeCaseSha256": [
+            "4383370728645f3bdebecd37530ab2be31149730b20fea0b2576d6d551a9ef1d"
+          ],
+          "afterCaseSha256": [
+            "635c1830236394a241e044bdbcd5be1c0770d6a5e01f11c21125e652fcceadc4"
+          ],
+          "beforeTags": [
+            [
+              "@id-pptx-go-notes-part-fingerprint-refusal",
+              "@planned",
+              "@profile-go-existing-notes"
+            ]
+          ],
+          "afterTags": [
+            [
+              "@id-pptx-go-notes-part-fingerprint-refusal",
+              "@planned",
+              "@profile-existing-notes"
+            ]
+          ]
+        },
+        {
+          "id": "@id-pptx-go-notes-self-closing-fill",
+          "beforeCaseSha256": [
+            "31ffc47e9e1a9f8d510b86ca42c52516874df5cb8a9ea83cdbdb8dd6b8ac9073"
+          ],
+          "afterCaseSha256": [
+            "fdc99e6e9846d5dcd073422cc0ac1fa585100f7d71d6f5a3a04f3ac21c9799c0"
+          ],
+          "beforeTags": [
+            [
+              "@id-pptx-go-notes-self-closing-fill",
+              "@planned",
+              "@profile-go-existing-notes"
+            ]
+          ],
+          "afterTags": [
+            [
+              "@id-pptx-go-notes-self-closing-fill",
+              "@planned",
+              "@profile-existing-notes"
+            ]
+          ]
+        },
+        {
+          "id": "@id-pptx-go-notes-edge-space-preserve",
+          "beforeCaseSha256": [
+            "1d0aa8036e51ba99c259eb860b42e241491626a639d450b7993526019ae9785d"
+          ],
+          "afterCaseSha256": [
+            "8d782ed08fac1d3861ff82f894ff818414684a88b9f6e877ea7456bad55d88ee"
+          ],
+          "beforeTags": [
+            [
+              "@id-pptx-go-notes-edge-space-preserve",
+              "@planned",
+              "@profile-go-existing-notes"
+            ]
+          ],
+          "afterTags": [
+            [
+              "@id-pptx-go-notes-edge-space-preserve",
+              "@planned",
+              "@profile-existing-notes"
+            ]
+          ]
+        },
+        {
+          "id": "@id-pptx-go-notes-multiline-template",
+          "beforeCaseSha256": [
+            "7aba12501ddfc9b6bdb0f2e08cfb8dc209443cb4bf865ea17719a04f27451b39"
+          ],
+          "afterCaseSha256": [
+            "b741f3b77d72133956f9e62cad9993131fe92804c62df94c6b1983899b47e95a"
+          ],
+          "beforeTags": [
+            [
+              "@id-pptx-go-notes-multiline-template",
+              "@planned",
+              "@profile-go-existing-notes"
+            ]
+          ],
+          "afterTags": [
+            [
+              "@id-pptx-go-notes-multiline-template",
+              "@planned",
+              "@profile-existing-notes"
+            ]
+          ]
+        },
+        {
+          "id": "@id-pptx-go-notes-template-fragments",
+          "beforeCaseSha256": [
+            "6f93a149dd35fd154113b0e1469e39a370a96a7e00ad4ce55263e33541e07fcc"
+          ],
+          "afterCaseSha256": [
+            "8f5dd49236b9e1ca79e35fa9d33c61e219149e4bb7d9d7d1cec295aaa181f3be"
+          ],
+          "beforeTags": [
+            [
+              "@id-pptx-go-notes-template-fragments",
+              "@planned",
+              "@profile-go-existing-notes"
+            ]
+          ],
+          "afterTags": [
+            [
+              "@id-pptx-go-notes-template-fragments",
+              "@planned",
+              "@profile-existing-notes"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "path": "workflows/pptx/preservation.feature",
+      "beforeSha256": "b5f6ec1bce609681279180a55ead4122e8a8fcfe9892a5a53dbc2fabbfc06808",
+      "afterSha256": "c6976d4551ff74b83293b656cceb7490f33f8a1d89ee651784a7a33052493870",
+      "stepRenames": [
+        {
+          "id": "@id-pptx-bun-open-save-noop",
+          "from": "Bun Presentation opens the fixture path and separately opens its archive bytes",
+          "to": "the presentation reader opens the fixture path and separately opens its archive bytes"
+        }
+      ],
+      "scenarios": [
+        {
+          "id": "@id-pptx-bun-open-save-noop",
+          "beforeCaseSha256": [
+            "58aa11eebcd699c8e64298def507060eb89e4af00059ceadb81318174e0988ec"
+          ],
+          "afterCaseSha256": [
+            "407ab46198ce165d501d3abda0262c4902b3eb14b0c7f56f805a80cee57bbd20"
+          ],
+          "beforeTags": [
+            [
+              "@id-pptx-bun-open-save-noop",
+              "@planned",
+              "@profile-bun-presentation"
+            ]
+          ],
+          "afterTags": [
+            [
+              "@id-pptx-bun-open-save-noop",
+              "@planned",
+              "@profile-archive-noop"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "path": "workflows/package/zip64.feature",
+      "beforeSha256": "40f170da5b089c25115d33abbd3871df48d84c9dfe1fa76261607af967c8a804",
+      "afterSha256": "f103ace071e647ffee092085a1c4b58e9b7be2cb4cb7553c3558c53f3be5c69a",
+      "stepRenames": [
+        {
+          "id": "@id-parity-zip64",
+          "from": "Bun reads it and rewrites a changed member with ZIP64 enabled",
+          "to": "the ZIP reader reads it and rewrites a changed member with ZIP64 enabled"
+        },
+        {
+          "id": "@id-zip64-preflight-count",
+          "from": "Bun attempts bounded ZIP64 admission",
+          "to": "the ZIP reader attempts bounded ZIP64 admission"
+        },
+        {
+          "id": "@id-zip64-unsafe-offset",
+          "from": "Bun attempts bounded ZIP64 admission",
+          "to": "the ZIP reader attempts bounded ZIP64 admission"
+        },
+        {
+          "id": "@id-zip64-resource-limit",
+          "from": "Bun attempts bounded ZIP64 admission",
+          "to": "the ZIP reader attempts bounded ZIP64 admission"
+        }
+      ],
+      "scenarios": [
+        {
+          "id": "@id-parity-zip64",
+          "beforeCaseSha256": [
+            "e906fbbb629eaeae646a283f14cfeb521c08ccc5027a4cc2150b3e4be815a732"
+          ],
+          "afterCaseSha256": [
+            "a208e562d13c0057368ba7edd27bd7080c65bcc54f279bc14fbb998aec3e35e0"
+          ],
+          "beforeTags": [
+            [
+              "@id-parity-zip64",
+              "@planned"
+            ]
+          ],
+          "afterTags": [
+            [
+              "@id-parity-zip64",
+              "@planned"
+            ]
+          ]
+        },
+        {
+          "id": "@id-zip64-preflight-count",
+          "beforeCaseSha256": [
+            "95084b389fed18ea54a12853cc8300da9317f037384f1b4798013131ab533d05"
+          ],
+          "afterCaseSha256": [
+            "3bf75076099511469f6da90c504945a4090704835b896941f0b10da10fd35b01"
+          ],
+          "beforeTags": [
+            [
+              "@id-zip64-preflight-count",
+              "@planned"
+            ]
+          ],
+          "afterTags": [
+            [
+              "@id-zip64-preflight-count",
+              "@planned",
+              "@profile-zip64-error-codes"
+            ]
+          ]
+        },
+        {
+          "id": "@id-zip64-unsafe-offset",
+          "beforeCaseSha256": [
+            "419a65e6b9b535a9a770fcda53a79d18dae39672b1f77a8130816dd9e09caf58"
+          ],
+          "afterCaseSha256": [
+            "e211d36f91384f58ff852d81bf32cb75390d3b63b65344603fda90f0b25d3e72"
+          ],
+          "beforeTags": [
+            [
+              "@id-zip64-unsafe-offset",
+              "@planned"
+            ]
+          ],
+          "afterTags": [
+            [
+              "@id-zip64-unsafe-offset",
+              "@planned",
+              "@profile-zip64-error-codes"
+            ]
+          ]
+        },
+        {
+          "id": "@id-zip64-resource-limit",
+          "beforeCaseSha256": [
+            "d35e4bc3da570a657371b9c918fc686d35d104f1ac46816f38f2dca556ec701e"
+          ],
+          "afterCaseSha256": [
+            "94b47d4cf73074177cb6f18c82cabe7b2e0b0181e94fbcd3bcb7f5abe5fcf236"
+          ],
+          "beforeTags": [
+            [
+              "@id-zip64-resource-limit",
+              "@planned"
+            ]
+          ],
+          "afterTags": [
+            [
+              "@id-zip64-resource-limit",
+              "@planned",
+              "@profile-zip64-error-codes"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "path": "workflows/package/relationship-namespaces.feature",
+      "beforeSha256": "e3629117b38ce243a586078ef5d654f49f20e0a01e9bd4cc16df8d607fa572c1",
+      "afterSha256": "25a2b3fb3998a1f8efd9b2d7e8f5fe558517c7e852459ef56394bf5b0249610c",
+      "stepRenames": [
+        {
+          "id": "@id-office-relationship-prefix-alias",
+          "from": "Bun opens it edits its text and saves then reopens it",
+          "to": "the document editor opens it edits its text and saves then reopens it"
+        },
+        {
+          "id": "@id-office-relationship-wrong-uri",
+          "from": "Bun attempts to open the namespace-mismatched Office document",
+          "to": "the document reader attempts to open the namespace-mismatched Office document"
+        }
+      ],
+      "scenarios": [
+        {
+          "id": "@id-office-relationship-prefix-alias",
+          "beforeCaseSha256": [
+            "581ccaac579bb214a2be443abd3a768fd4ce4ebc32faee7d29ced669718e3bfa",
+            "804ec697834c0369ce80e4a3ad76b7c8c1448598ed4b7c3f1aa033a8df99ea0a"
+          ],
+          "afterCaseSha256": [
+            "7decf441f4958ac94822108bc0736f63262437831fbf22e7850e654f844caa02",
+            "0b528fbd83a0e2a289e7275bf2d788b1767292bdc07d0bf1e58d1007980c25eb"
+          ],
+          "beforeTags": [
+            [
+              "@id-office-relationship-prefix-alias",
+              "@planned"
+            ],
+            [
+              "@id-office-relationship-prefix-alias",
+              "@planned"
+            ]
+          ],
+          "afterTags": [
+            [
+              "@id-office-relationship-prefix-alias",
+              "@planned"
+            ],
+            [
+              "@id-office-relationship-prefix-alias",
+              "@planned"
+            ]
+          ]
+        },
+        {
+          "id": "@id-office-relationship-wrong-uri",
+          "beforeCaseSha256": [
+            "dd050c5c9ff8a66bf195dac7e26228121a518422a2ddeaa89fd5762ce19859e5",
+            "0934e75b50cdf6373b9dffb5162634eb747be8b6d70300c493d3f1be26a69941"
+          ],
+          "afterCaseSha256": [
+            "bb006b17ac758e93df2e80bc0947c8cdfa5c8029020823531d3255d48b411271",
+            "73a571b5d3c3cb5f23b7a7379b063dbe1030e3beb69c8ba4d4ca6fb2b60cdd72"
+          ],
+          "beforeTags": [
+            [
+              "@id-office-relationship-wrong-uri",
+              "@planned"
+            ],
+            [
+              "@id-office-relationship-wrong-uri",
+              "@planned"
+            ]
+          ],
+          "afterTags": [
+            [
+              "@id-office-relationship-wrong-uri",
+              "@planned"
+            ],
+            [
+              "@id-office-relationship-wrong-uri",
+              "@planned"
+            ]
+          ]
+        }
+      ]
+    }
+  ]
+}

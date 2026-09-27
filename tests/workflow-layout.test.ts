@@ -3,6 +3,7 @@ import {cases,validateWorkflowOwnership} from '../scripts/verify.ts';
 import {registerWorkflow} from '../scripts/register-workflow.ts';
 import {Parser,AstBuilder,GherkinClassicTokenMatcher,compile} from '@cucumber/gherkin';
 import {IdGenerator} from '@cucumber/messages';
+import {beforeWordingCase,beforeWordingTags} from './runtime-wording-helpers.ts';
 
 test('every canonical feature belongs to a format or common package/XML operation family',async()=>{
  const ledger=await Bun.file('ledgers/workflows.json').json();
@@ -27,12 +28,12 @@ test('format migration preserves every scenario and compiled case with no retire
  const actual=new Map<string,{path:string,hashes:string[]}>();
  for(const path of ledger.features)for(const row of cases(path,await Bun.file(path).text())){
   const record=actual.get(row.scenarioId)??{path,hashes:[]};expect(record.path).toBe(path);
-  record.hashes.push(new Bun.CryptoHasher('sha256').update(JSON.stringify(row)).digest('hex'));actual.set(row.scenarioId,record);
+  record.hashes.push(new Bun.CryptoHasher('sha256').update(JSON.stringify(beforeWordingCase(row))).digest('hex'));actual.set(row.scenarioId,record);
  }
  expect([...actual.values()].reduce((n,r)=>n+r.hashes.length,0)).toBe(562);expect(actual.size).toBe(229);
  for(const row of migration.scenarios){expect(actual.get(row.id)).toEqual({path:row.to,hashes:row.caseSha256});expect(ledger.workflows.find((w:any)=>w.id===row.id)?.feature).toBe(row.to);}
  for(const path of ledger.features){const gen=IdGenerator.incrementing(),doc=new Parser(new AstBuilder(gen),new GherkinClassicTokenMatcher()).parse(await Bun.file(path).text()),rows=compile(doc,path,gen);
-  for(const record of migration.scenarios.filter((s:any)=>s.to===path))expect(rows.filter(r=>r.tags.some(t=>t.name===record.id)).map(r=>r.tags.map(t=>t.name).sort())).toEqual(record.tags);
+  for(const record of migration.scenarios.filter((s:any)=>s.to===path))expect(rows.filter(r=>r.tags.some(t=>t.name===record.id)).map(r=>beforeWordingTags(record.id,r.tags.map(t=>t.name).sort()))).toEqual(record.tags);
  }
  for(const path of migration.removedFeatures)expect(await Bun.file(path).exists()).toBe(false);
 });

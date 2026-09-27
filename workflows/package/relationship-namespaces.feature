@@ -6,7 +6,7 @@ Feature: Office relationship attributes use expanded XML names
   @id-office-relationship-prefix-alias
   Scenario Outline: A valid alternate relationship prefix survives <format> editing
     Given the shared <format> fixture with its relationship prefix changed to link
-    When Bun opens it edits its text and saves then reopens it
+    When the document editor opens it edits its text and saves then reopens it
     Then the requested <format> value survives and all relationship targets resolve
     And the original relationship attribute spelling is preserved
     Examples:
@@ -17,7 +17,7 @@ Feature: Office relationship attributes use expanded XML names
   @id-office-relationship-wrong-uri
   Scenario Outline: A relationship attribute in the wrong namespace refuses for <format>
     Given the shared <format> fixture with r bound to package relationships
-    When Bun attempts to open the namespace-mismatched Office document
+    When the document reader attempts to open the namespace-mismatched Office document
     Then the <format> reader refuses with its structural error code
     And the supplied archive bytes remain unchanged
     Examples:

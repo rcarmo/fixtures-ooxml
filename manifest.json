@@ -3136,10 +3136,10 @@
       "aliases": []
     },
     {
-      "id": "asset-e3629117b38ce243a586078ef5d654f49f20e0a01e9bd4cc16df8d607fa572c1",
+      "id": "asset-25a2b3fb3998a1f8efd9b2d7e8f5fe558517c7e852459ef56394bf5b0249610c",
       "path": "workflows/package/relationship-namespaces.feature",
-      "bytes": 1175,
-      "sha256": "e3629117b38ce243a586078ef5d654f49f20e0a01e9bd4cc16df8d607fa572c1",
+      "bytes": 1207,
+      "sha256": "25a2b3fb3998a1f8efd9b2d7e8f5fe558517c7e852459ef56394bf5b0249610c",
       "role": "workflow",
       "origins": [
         {
@@ -3967,10 +3967,10 @@
       "aliases": []
     },
     {
-      "id": "asset-f180ba3f15c480b32e1ccdd9e40e9ab9e3bcb0505882f712a840bb10610d752a",
+      "id": "asset-bf9612bc4d8507047bae164c5a74302486043ab7f79ef0abba5484f3c4e4379b",
       "path": "contracts/bun-pptx.md",
-      "bytes": 1369,
-      "sha256": "f180ba3f15c480b32e1ccdd9e40e9ab9e3bcb0505882f712a840bb10610d752a",
+      "bytes": 1250,
+      "sha256": "bf9612bc4d8507047bae164c5a74302486043ab7f79ef0abba5484f3c4e4379b",
       "role": "workflow-contract",
       "origins": [
         {
@@ -3982,10 +3982,10 @@
       "aliases": []
     },
     {
-      "id": "asset-d0bd347393cd35bfd3930290d4bb19a82e85193bdc831f2b9ffec692b82464e0",
+      "id": "asset-62a2c3dc5b5781e9a184a94434ca2cfccc06c186ed9527afab905ca538516df8",
       "path": "contracts/go-notes-editing.md",
-      "bytes": 3602,
-      "sha256": "d0bd347393cd35bfd3930290d4bb19a82e85193bdc831f2b9ffec692b82464e0",
+      "bytes": 3560,
+      "sha256": "62a2c3dc5b5781e9a184a94434ca2cfccc06c186ed9527afab905ca538516df8",
       "role": "workflow-contract",
       "origins": [
         {
@@ -4192,10 +4192,10 @@
       "aliases": []
     },
     {
-      "id": "asset-40f170da5b089c25115d33abbd3871df48d84c9dfe1fa76261607af967c8a804",
+      "id": "asset-f103ace071e647ffee092085a1c4b58e9b7be2cb4cb7553c3558c53f3be5c69a",
       "path": "workflows/package/zip64.feature",
-      "bytes": 1379,
-      "sha256": "40f170da5b089c25115d33abbd3871df48d84c9dfe1fa76261607af967c8a804",
+      "bytes": 1666,
+      "sha256": "f103ace071e647ffee092085a1c4b58e9b7be2cb4cb7553c3558c53f3be5c69a",
       "role": "workflow",
       "origins": [
         {
@@ -4207,10 +4207,10 @@
       "aliases": []
     },
     {
-      "id": "asset-a6d11b5450bb7d2280ac095eefec195f736062c4b0faf8655a1d2dc6c546c960",
+      "id": "asset-6980daafe08bb43e7ba2f73807a402a3ebabe239f0d41bad81b7c09ca7355f41",
       "path": "workflows/pptx/notes.feature",
-      "bytes": 6021,
-      "sha256": "a6d11b5450bb7d2280ac095eefec195f736062c4b0faf8655a1d2dc6c546c960",
+      "bytes": 6029,
+      "sha256": "6980daafe08bb43e7ba2f73807a402a3ebabe239f0d41bad81b7c09ca7355f41",
       "role": "workflow",
       "origins": [
         {
@@ -4237,10 +4237,10 @@
       "aliases": []
     },
     {
-      "id": "asset-b5f6ec1bce609681279180a55ead4122e8a8fcfe9892a5a53dbc2fabbfc06808",
+      "id": "asset-c6976d4551ff74b83293b656cceb7490f33f8a1d89ee651784a7a33052493870",
       "path": "workflows/pptx/preservation.feature",
-      "bytes": 869,
-      "sha256": "b5f6ec1bce609681279180a55ead4122e8a8fcfe9892a5a53dbc2fabbfc06808",
+      "bytes": 872,
+      "sha256": "c6976d4551ff74b83293b656cceb7490f33f8a1d89ee651784a7a33052493870",
       "role": "workflow",
       "origins": [
         {

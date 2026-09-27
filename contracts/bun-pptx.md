@@ -1,11 +1,11 @@
-# Bun presentation reads and anchored edits
+# Presentation reads and anchored edits
 
-The [notes](../workflows/pptx/notes.feature), [text](../workflows/pptx/text.feature), [preservation](../workflows/pptx/preservation.feature) opens the same
+The [archive-noop profile](../workflows/pptx/preservation.feature) opens the same
 presentation from a path and from bytes. A save without edits retains the exact
 archive. The path input also exposes the first slide's `Frankenstein` title.
 
-The [notes](../workflows/pptx/notes.feature), [text](../workflows/pptx/text.feature), [preservation](../workflows/pptx/preservation.feature) covers
-relationship-ordered slides, read-only notes, cross-run replacement and stale
+The [notes](../workflows/pptx/notes.feature) and [text](../workflows/pptx/text.feature)
+features cover relationship-ordered slides, read-only notes, cross-run replacement and stale
 anchor refusal. Missing notes stay missing. Reading line breaks and visible
 field text is supported, while editing that mixed topology is refused.
 
@@ -14,7 +14,7 @@ new title and selected run attributes. The example also compares two unrelated
 member payloads and the package's change list. The stale-anchor example retains
 the successful first replacement when a second attempt fails.
 
-The [source mapping](../ledgers/consumers/bun-pptx.json) pins the unit declarations,
+The [Bun source mapping](../ledgers/consumers/bun-pptx.json) pins the unit declarations,
 operation helpers and fixture selection. It distinguishes the acceptance runner's
 aggregate result from the direct title, attribute and archive-byte assertions.
 These samples do not test rendering, full field evaluation or inherited style
