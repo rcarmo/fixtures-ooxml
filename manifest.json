@@ -6065,10 +6065,10 @@
       "aliases": []
     },
     {
-      "id": "asset-0a9c4ec586ab3d726efec0a2a048870483f8df4ed0a162a1096d1cd8f5387790",
+      "id": "asset-071e44a2c4f67d913a1158c91001ed17af92bdb7e5db3b0f7e9263ed49a7770f",
       "path": "contracts/python-xlsx-dependencies.md",
-      "bytes": 2015,
-      "sha256": "0a9c4ec586ab3d726efec0a2a048870483f8df4ed0a162a1096d1cd8f5387790",
+      "bytes": 2321,
+      "sha256": "071e44a2c4f67d913a1158c91001ed17af92bdb7e5db3b0f7e9263ed49a7770f",
       "role": "workflow-contract",
       "origins": [
         {
