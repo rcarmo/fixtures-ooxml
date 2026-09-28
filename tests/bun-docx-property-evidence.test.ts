@@ -1,0 +1,22 @@
+import {test,expect} from 'bun:test';
+import {execFileSync} from 'node:child_process';
+import {cases} from '../scripts/verify.ts';
+
+const specs=[
+ {id:'@id-docx-go-core-properties-getters',path:'workflows/docx/properties.feature',steps:['a new Word document','its core properties are set to title Doc Title, creator Doc Author and subject Doc Subject','description Doc Description, keywords one;two, category Category and language en-US are supplied','content status Draft, identifier urn:example:doc, last modifier Reviewer, revision 2 and version 1.0 are supplied','created, modified and last-printed W3CDTF timestamps are supplied for 2026-02-03T00:00:00Z, 2026-02-03T01:00:00Z and 2026-02-03T02:00:00Z','the setter and getter return no error','only the in-memory title creator and subject are compared to Doc Title, Doc Author and Doc Subject']},
+ {id:'@id-docx-go-section-title-background-getters',path:'workflows/docx/page-layout.feature',steps:['a new Word document with a first section','TitlePage is set true on that section and BackgroundColor to EEEEEE','the section TitlePage getter is true and the document BackgroundColor getter equals EEEEEE']},
+];
+test('Bun executes exact direct document property getters without broader saved or Python credit',async()=>{
+ const registry=await Bun.file('ledgers/workflows.json').json();
+ const prior=JSON.parse(execFileSync('git',['show','8450367177a03798b8c49b9bb1553ba1df51bd2b:ledgers/workflows.json']).toString());
+ for(const {id,path,steps} of specs){
+  const entry=registry.workflows.find((w:any)=>w.id===id),former=prior.workflows.find((w:any)=>w.id===id);
+  expect(entry.feature).toBe(path);expect(entry.expandedCases).toBe(1);
+  expect(cases(path,await Bun.file(path).text()).filter((row:any)=>row.scenarioId===id).map((row:any)=>row.steps.map((step:any)=>step.text))).toEqual([steps]);
+  expect(former.consumers.bun.status).toBe('planned');expect(entry.consumers.bun.status).toBe('implemented');
+  expect(entry.consumers.go.status).toBe('implemented');expect(entry.consumers.python).toEqual(former.consumers.python);
+  for(const marker of ['f6fe61409fde572488a3e7b8ab63333cee0aaa36','Fresh GitHub recursive make check','732/732'])expect(entry.consumers.bun.evidence).toContain(marker);
+  const unchanged=structuredClone(entry);unchanged.consumers.bun=former.consumers.bun;unchanged.consumers.go=former.consumers.go;expect(unchanged).toEqual(former);
+ }
+ const ids=new Set(specs.map(s=>s.id));expect(registry.workflows.filter((w:any)=>!ids.has(w.id))).toEqual(prior.workflows.filter((w:any)=>!ids.has(w.id)));
+});

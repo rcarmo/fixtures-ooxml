@@ -18,5 +18,5 @@ test('Bun executes empty-body and nine-cell saved-table cases without Python cre
   for(const marker of ['3ffa21d4922a84df8759af931f11cc4660082511','Fresh GitHub recursive make check','732/732'])expect(entry.consumers.bun.evidence).toContain(marker);
   const unchanged=structuredClone(entry);unchanged.consumers.bun=former.consumers.bun;unchanged.consumers.go=former.consumers.go;expect(unchanged).toEqual(former);
  }
- const ids=new Set(specs.map(s=>s.id));expect(registry.workflows.filter((w:any)=>!ids.has(w.id))).toEqual(prior.workflows.filter((w:any)=>!ids.has(w.id)));
+ const ids=new Set([...specs.map(s=>s.id),'@id-docx-go-core-properties-getters','@id-docx-go-section-title-background-getters']);expect(registry.workflows.filter((w:any)=>!ids.has(w.id))).toEqual(prior.workflows.filter((w:any)=>!ids.has(w.id)));
 });

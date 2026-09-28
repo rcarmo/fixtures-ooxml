@@ -4561,12 +4561,12 @@
       ],
       "consumers": {
         "bun": {
-          "status": "planned",
-          "evidence": "Native execution binding pending"
+          "status": "implemented",
+          "evidence": "Bun f6fe61409fde572488a3e7b8ab63333cee0aaa36 at shared v0.67.0 selects all seven exact core-property steps in features/shared.json and tests/acceptance/core-properties.ts. Fresh GitHub recursive make check passed 732/732 selected cases; tests/unit/docx-core-properties.test.ts changes or corrupts Title, Creator and Subject readbacks to force failures. Only those three in-memory fields are compared; other supplied metadata is setup, not saved/readback credit."
         },
         "go": {
-          "status": "planned",
-          "evidence": "Native execution binding pending"
+          "status": "implemented",
+          "evidence": "Go 0f627605c1a8afc8f7a739eb2be1e73a0d650252 binds all seven exact steps: specified core metadata setup, setter/getter without error, and only Title Doc Title, Creator Doc Author and Subject Doc Subject compared in memory. Real setter/getter negative controls alter each selected field or refuse error/nil outcomes. Published Go 56b999644e27091436ae85120ea2d210c3eaf7eb at shared v0.67.0 passed 333 selected cases/1144 steps/0 failures in a fresh GitHub recursive clone; reports/batches/192.md. No saved readback or other metadata getter credit."
         },
         "python": {
           "status": "planned",
@@ -5188,12 +5188,12 @@
       ],
       "consumers": {
         "bun": {
-          "status": "planned",
-          "evidence": "Native execution binding pending"
+          "status": "implemented",
+          "evidence": "Bun f6fe61409fde572488a3e7b8ab63333cee0aaa36 at shared v0.67.0 selects all three exact title/background steps in features/shared.json and tests/acceptance/document-properties.ts. Fresh GitHub recursive make check passed 732/732 selected cases; tests/unit/docx-document-properties.test.ts changes or corrupts TitlePage and BackgroundColor readbacks to force failures. In-memory direct getters only, not saved page-layout or rendered background."
         },
         "go": {
-          "status": "planned",
-          "evidence": "Native execution binding pending"
+          "status": "implemented",
+          "evidence": "Go 0f627605c1a8afc8f7a739eb2be1e73a0d650252 binds all three exact steps: first-section TitlePage true and document BackgroundColor EEEEEE with in-memory getter assertions. Real setter negative controls clear TitlePage or change background. Published Go 56b999644e27091436ae85120ea2d210c3eaf7eb at shared v0.67.0 passed 333 selected cases/1144 steps/0 failures in a fresh GitHub recursive clone; reports/batches/192.md. No saved page-layout or Office rendering claim."
         },
         "python": {
           "status": "planned",
