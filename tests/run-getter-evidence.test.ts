@@ -22,5 +22,6 @@ test('exact underline and font getter rows record Bun and Go execution without P
   expect(rows.map((row:any)=>row.steps.map((step:any)=>step.text))).toEqual(spec.values.map(value=>['a new Word run',spec.when(value),spec.then(value)]));
   const unchanged=structuredClone(entry);unchanged.consumers.bun=former.consumers.bun;unchanged.consumers.go=former.consumers.go;expect(unchanged).toEqual(former);
  }
- expect(registry.workflows.filter((w:any)=>!ids.includes(w.id))).toEqual(prior.workflows.filter((w:any)=>!ids.includes(w.id)));
+ const laterBunIds=new Set(['@id-docx-go-run-color-getter','@id-docx-go-run-highlight','@id-docx-go-run-vertical-align','@id-docx-go-roundtrip-selected-formatting']);
+ expect(registry.workflows.filter((w:any)=>!ids.includes(w.id)&&!laterBunIds.has(w.id))).toEqual(prior.workflows.filter((w:any)=>!ids.includes(w.id)&&!laterBunIds.has(w.id)));
 });

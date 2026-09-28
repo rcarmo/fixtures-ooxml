@@ -4740,8 +4740,8 @@
       ],
       "consumers": {
         "bun": {
-          "status": "planned",
-          "evidence": "Native execution binding pending"
+          "status": "implemented",
+          "evidence": "Bun a79dc7917cfcdbdd43238298649b05769eafd554 at shared v0.61.0 selects three exact in-memory colour getter rows in features/shared.json and tests/acceptance/run-appearance.ts. Fresh GitHub recursive make check passed 732/732 selected cases, including these three; tests/unit/docx-run-appearance.test.ts changes expected colours and requires all three rows to fail. Direct getter policy only, not saved OOXML or rendering."
         },
         "go": {
           "status": "planned",
@@ -4873,8 +4873,8 @@
       ],
       "consumers": {
         "bun": {
-          "status": "planned",
-          "evidence": "Native execution binding pending"
+          "status": "implemented",
+          "evidence": "Bun a79dc7917cfcdbdd43238298649b05769eafd554 at shared v0.61.0 selects all five exact highlight getter rows in features/shared.json and tests/acceptance/run-appearance.ts. Fresh GitHub recursive make check passed 732/732 selected cases; tests/unit/docx-run-appearance.test.ts changes the expected highlight and requires all five rows to fail. In-memory direct getter only, not saved OOXML or rendering."
         },
         "go": {
           "status": "planned",
@@ -4897,8 +4897,8 @@
       ],
       "consumers": {
         "bun": {
-          "status": "planned",
-          "evidence": "Native execution binding pending"
+          "status": "implemented",
+          "evidence": "Bun a79dc7917cfcdbdd43238298649b05769eafd554 at shared v0.61.0 selects the exact four-step two-run vertical-align case in features/shared.json and tests/acceptance/run-appearance.ts. Fresh GitHub recursive make check passed 732/732 selected cases; tests/unit/docx-run-appearance.test.ts corrupts the second run alignment and requires this case to fail. The direct in-memory values are compared against opposite states; no saved OOXML or rendering claim."
         },
         "go": {
           "status": "planned",
@@ -5141,8 +5141,8 @@
       ],
       "consumers": {
         "bun": {
-          "status": "planned",
-          "evidence": "Native execution binding pending"
+          "status": "implemented",
+          "evidence": "Bun a79dc7917cfcdbdd43238298649b05769eafd554 at shared v0.61.0 selects all six exact steps through tests/acceptance/append-run.ts and a real path save/reopen binding. Fresh GitHub recursive make check passed 732/732 selected cases. tests/unit/docx-append-run.test.ts changes expected third-run values and separately corrupts reopened bold, italic, colour, font size and font name, requiring this case to fail. This tests selected saved readback, not general styling or Office rendering."
         },
         "go": {
           "status": "planned",

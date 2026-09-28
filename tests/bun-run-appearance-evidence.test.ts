@@ -1,0 +1,30 @@
+import {test,expect} from 'bun:test';
+import {execFileSync} from 'node:child_process';
+import {cases} from '../scripts/verify.ts';
+
+const path='workflows/docx/run-formatting.feature';
+const specs=[
+ {id:'@id-docx-go-run-color-getter',steps:[
+  ['a new Word run','its colour is set to FF0000','its in-memory colour getter equals FF0000'],
+  ['a new Word run','its colour is set to #FF0000','its in-memory colour getter equals FF0000'],
+  ['a new Word run','its colour is set to ff0000','its in-memory colour getter equals ff0000'],
+ ]},
+ {id:'@id-docx-go-run-highlight',steps:['yellow','cyan','darkBlue','lightGray','black'].map(v=>['a new Word run',`highlight is set to ${v}`,`the Highlight getter equals ${v}`])},
+ {id:'@id-docx-go-run-vertical-align',steps:[['two new Word runs','Superscript is enabled on the first and Subscript on the second','the first reports superscript true and subscript false','the second reports subscript true and superscript false']]},
+ {id:'@id-docx-go-roundtrip-selected-formatting',steps:[['a new Word paragraph with three runs Bold-space, Italic-space and Colored','the first run is bold, the second italic, and the third has colour FF0000, font size 14 and font Arial','the document is saved and reopened','at least one paragraph and three runs are readable','the first run is bold and the second italic','the third run reports colour FF0000, font size 14 and font Arial']]},
+];
+test('Bun executes exact direct appearance and selected saved-formatting rows without Go or Python credit',async()=>{
+ const registry=await Bun.file('ledgers/workflows.json').json();
+ const prior=JSON.parse(execFileSync('git',['show','d983be75704bc5a531cddf97d4b2405ee82b9c08:ledgers/workflows.json']).toString());
+ const compiled=cases(path,await Bun.file(path).text());
+ for(const {id,steps} of specs){
+  const entry=registry.workflows.find((w:any)=>w.id===id),former=prior.workflows.find((w:any)=>w.id===id);
+  expect(entry.feature).toBe(path);expect(entry.expandedCases).toBe(steps.length);
+  expect(compiled.filter((row:any)=>row.scenarioId===id).map((row:any)=>row.steps.map((step:any)=>step.text))).toEqual(steps);
+  expect(former.consumers.bun.status).toBe('planned');expect(entry.consumers.bun.status).toBe('implemented');
+  expect(entry.consumers.go).toEqual(former.consumers.go);expect(entry.consumers.python).toEqual(former.consumers.python);
+  for(const marker of ['a79dc7917cfcdbdd43238298649b05769eafd554','Fresh GitHub recursive make check','732/732'])expect(entry.consumers.bun.evidence).toContain(marker);
+  const unchanged=structuredClone(entry);unchanged.consumers.bun=former.consumers.bun;expect(unchanged).toEqual(former);
+ }
+ const ids=new Set(specs.map(s=>s.id));expect(registry.workflows.filter((w:any)=>!ids.has(w.id))).toEqual(prior.workflows.filter((w:any)=>!ids.has(w.id)));
+});
