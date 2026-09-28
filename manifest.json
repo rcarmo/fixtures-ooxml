@@ -6067,8 +6067,8 @@
     {
       "id": "asset-b3145f831c0eae2aef11c1e24fb494499685214114ae44572471a93baa4da567",
       "path": "contracts/python-xlsx-dependencies.md",
-      "bytes": 2569,
-      "sha256": "b3145f831c0eae2aef11c1e24fb494499685214114ae44572471a93baa4da567",
+      "bytes": 2716,
+      "sha256": "207ef696d46333740659dcd6a84b8a7156ee93e158635222097451571886ac0d",
       "role": "workflow-contract",
       "origins": [
         {

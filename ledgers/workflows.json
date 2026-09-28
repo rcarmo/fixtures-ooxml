@@ -7689,8 +7689,8 @@
       ],
       "consumers": {
         "bun": {
-          "status": "planned",
-          "evidence": "Native execution binding pending"
+          "status": "implemented",
+          "evidence": "Bun c9892d2c891f54ec0802b1d0cdf88b645ece5637 selects this canonical case once with explicit dependent-cache invalidation; tests/acceptance/owned-chain.ts runs 14 exact shared steps. A constructed two-sheet XLSX saves and reopens Input!A1=10, Calc!A1/B1 formulas with absent cached values (independent saved-XML data-only read), unaffected Calc!C1 cache 42, full recalculation flags, owned chain/relationship/content-type removal, resolved package targets, source bytes and unrelated member payloads. The earlier 729 case identities remain guarded; 730/730 selected cases and 1,112 native tests passed in a fresh recursive GitHub clone at shared v0.56 b663ce767e0f112abc2f83d42df2225ec7a52384. Default value edits still refuse owned chains and their two native refusal tests remain unmapped. No formula calculation or Excel-authored chain claim."
         },
         "go": {
           "status": "implemented",

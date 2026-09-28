@@ -4,13 +4,14 @@ import {cases} from '../scripts/verify.ts';
 
 const path='workflows/xlsx/calculation-chain-lifecycle.feature';
 const id='@id-xlsx-owned-calculation-chain-invalidation';
-test('the owned-chain case has one bounded identity; Bun refusal is not Go/Python success',async()=>{
+test('the owned-chain case has one bounded identity; Bun default refusal is separate from opt-in success',async()=>{
  const text=await Bun.file(path).text(),rows=cases(path,text);
  expect(rows).toHaveLength(1);expect(rows[0]?.scenarioId).toBe(id);
  const registry=await Bun.file('ledgers/workflows.json').json(),entry=registry.workflows.find((w:any)=>w.id===id);
  expect(registry.features.filter((p:string)=>p===path)).toHaveLength(1);
  expect(entry?.feature).toBe(path);expect(entry?.expandedCases).toBe(1);
- expect(entry?.consumers.bun.status).toBe('planned');
+ expect(entry?.consumers.bun.status).toBe('implemented');
+ for(const evidence of ['c9892d2c891f54ec0802b1d0cdf88b645ece5637','14 exact shared steps','730/730 selected cases','1,112 native tests','v0.56'])expect(entry?.consumers.bun.evidence).toContain(evidence);
  const refusal=await Bun.file('ledgers/consumers/bun-xlsx-owned-chain-refusal.json').json();
  expect(refusal.source.revision).toBe('19af500df68c3f345fc661675925b995337fd9f4');
  expect(refusal.mappings).toHaveLength(2);
@@ -23,7 +24,7 @@ test('the owned-chain case has one bounded identity; Bun refusal is not Go/Pytho
  const previous=JSON.parse(execFileSync('git',['show','3f0fbe2d11f8db6deda69779d5833086ee510799:ledgers/workflows.json']).toString());
  const oldEntry=previous.workflows.find((w:any)=>w.id===id);
  expect(oldEntry.consumers.go.status).toBe('planned');
- const unchanged=structuredClone(entry);unchanged.consumers.go=oldEntry.consumers.go;unchanged.consumers.python=oldEntry.consumers.python;
+ const unchanged=structuredClone(entry);unchanged.consumers.go=oldEntry.consumers.go;unchanged.consumers.python=oldEntry.consumers.python;unchanged.consumers.bun=oldEntry.consumers.bun;
  expect(unchanged).toEqual(oldEntry);
  const visibility='workflows/pptx/slide-visibility.feature';
  expect(registry.features.filter((p:string)=>p!==visibility)).toEqual(previous.features);
