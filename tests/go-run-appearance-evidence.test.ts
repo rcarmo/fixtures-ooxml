@@ -25,6 +25,6 @@ test('Go selects exact colour, highlight and saved selected-formatting cases wit
   for(const marker of ['3b3db209b4f6c86f5cae1a152e832b1743075a3b','2a7369a9d662619c174b5f9b23fe40323a7f7a98','316 selected cases/1082 steps/0 failures','fresh GitHub recursive clone','reports/batches/181.md'])expect(entry.consumers.go.evidence).toContain(marker);
   const unchanged=structuredClone(entry);unchanged.consumers.go=former.consumers.go;expect(unchanged).toEqual(former);
  }
- const vertical=registry.workflows.find((w:any)=>w.id==='@id-docx-go-run-vertical-align');expect(vertical.consumers.go.status).toBe('planned');
- const ids=new Set(specs.map(s=>s.id));expect(registry.workflows.filter((w:any)=>!ids.has(w.id))).toEqual(prior.workflows.filter((w:any)=>!ids.has(w.id)));
+ const vertical=registry.workflows.find((w:any)=>w.id==='@id-docx-go-run-vertical-align');expect(vertical.consumers.go.status).toBe('implemented');
+ const ids=new Set([...specs.map(s=>s.id),'@id-docx-go-run-vertical-align','@id-docx-go-table-style-getter','@id-docx-go-table-header-getter','@id-docx-go-cell-shading-getter','@id-docx-go-cell-properties-getters']);expect(registry.workflows.filter((w:any)=>!ids.has(w.id))).toEqual(prior.workflows.filter((w:any)=>!ids.has(w.id)));
 });

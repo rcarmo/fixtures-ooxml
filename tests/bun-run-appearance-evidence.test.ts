@@ -22,11 +22,10 @@ test('Bun executes exact direct appearance and selected saved-formatting rows wi
   expect(entry.feature).toBe(path);expect(entry.expandedCases).toBe(steps.length);
   expect(compiled.filter((row:any)=>row.scenarioId===id).map((row:any)=>row.steps.map((step:any)=>step.text))).toEqual(steps);
   expect(former.consumers.bun.status).toBe('planned');expect(entry.consumers.bun.status).toBe('implemented');
-  if(id==='@id-docx-go-run-vertical-align')expect(entry.consumers.go).toEqual(former.consumers.go);
-  else expect(entry.consumers.go.status).toBe('implemented');
+  expect(entry.consumers.go.status).toBe('implemented');
   expect(entry.consumers.python).toEqual(former.consumers.python);
   for(const marker of ['a79dc7917cfcdbdd43238298649b05769eafd554','Fresh GitHub recursive make check','732/732'])expect(entry.consumers.bun.evidence).toContain(marker);
   const unchanged=structuredClone(entry);unchanged.consumers.bun=former.consumers.bun;unchanged.consumers.go=former.consumers.go;expect(unchanged).toEqual(former);
  }
- const ids=new Set(specs.map(s=>s.id));expect(registry.workflows.filter((w:any)=>!ids.has(w.id))).toEqual(prior.workflows.filter((w:any)=>!ids.has(w.id)));
+ const ids=new Set([...specs.map(s=>s.id),'@id-docx-go-table-style-getter','@id-docx-go-table-header-getter','@id-docx-go-cell-shading-getter','@id-docx-go-cell-properties-getters']);expect(registry.workflows.filter((w:any)=>!ids.has(w.id))).toEqual(prior.workflows.filter((w:any)=>!ids.has(w.id)));
 });
