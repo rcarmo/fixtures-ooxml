@@ -3,10 +3,10 @@
   "consumer": "go",
   "source": {
     "repository": "https://github.com/rcarmo/go-ooxml",
-    "revision": "1596e7481053a1966d85b4c9d31e9c9fe4b79d28"
+    "revision": "72cfcd1a215bf5ee9d15b0795cb44b92811a14ce"
   },
-  "scope": "Three Go top-level declarations: the historical TestFixtureRoundTrip_Complex plus two native retained-S/P package structure tests. Its hidden_slides.pptx and multiple_masters.pptx table rows remain subcases of that declaration. Native structure checks do not select the canonical Gherkin case or establish PowerPoint behaviour. Go and Python status is recorded separately.",
-  "declarationCount": 3,
+  "scope": "Five Go top-level declarations: the historical TestFixtureRoundTrip_Complex, two retained-S/P package structure tests, one CT_Slide decoding test and one Presentation Hidden/save-readback test. The round-trip fixture rows remain subcases. Native tests do not select the canonical visibility case or establish PowerPoint behaviour. Go and Python status is recorded separately.",
+  "declarationCount": 5,
   "mappings": [
     {
       "nativeId": "pkg/presentation/fixture_roundtrip_test.go::TestFixtureRoundTrip_Complex",
@@ -19,7 +19,7 @@
         "The multiple_masters.pptx row adds a slide and requires nonempty Masters and Layouts collections after reopening; it does not assert a second slide master."
       ],
       "gaps": [
-        "The hidden-slide result does not identify slide 3 of the untouched source or compare all four original slide identities, relationships, qualified versus unqualified visibility attributes and source bytes; the newly added hidden slide can alone satisfy the assertion. A separate Go reader reports S slide 3 hidden from namespaced p:show=0, although ECMA-376 CT_Slide defines unqualified show; that observation does not establish PowerPoint behaviour.",
+        "The hidden-slide result does not identify slide 3 of the untouched source or compare all four original slide identities, relationships, qualified versus unqualified visibility attributes and source bytes; the newly added hidden slide can alone satisfy the assertion. Before Go 260eacb, its reader reported S slide 3 hidden from namespaced p:show=0; the current decoder uses only unqualified show. Neither historical nor current reader result establishes PowerPoint behaviour.",
         "Neither row reopens an untouched PowerPoint original in PowerPoint; the multiple-masters input has only one slide master and cannot supply that positive."
       ],
       "executionCredit": false
@@ -49,6 +49,34 @@
       ],
       "gaps": [
         "Corruption controls test the native structural inspector; they do not select the shared case or prove PowerPoint behaviour."
+      ],
+      "executionCredit": false
+    },
+    {
+      "nativeId": "pkg/ooxml/pml/slide_visibility_test.go::TestSlideShowAttributeQualification",
+      "path": "pkg/ooxml/pml/slide_visibility_test.go",
+      "sourceSha256": "2a2f4eb68cb5030997ea8fb195d6b7afd1ed4efa4db81c1b32d4e646d3ae3eb0",
+      "coverage": "partial",
+      "scenarioIds": ["@id-pptx-slide-visibility-retained-inputs"],
+      "verifiedAspects": [
+        "Seven decoder variants distinguish missing, namespaced, foreign, unqualified visible/hidden and mixed show attributes; only the unqualified CT_Slide attribute sets Show, including XML readback."
+      ],
+      "gaps": [
+        "This type-level test does not select the retained-input Gherkin case, verify both manifest-backed ZIP graphs or measure PowerPoint display state."
+      ],
+      "executionCredit": false
+    },
+    {
+      "nativeId": "pkg/presentation/slide_visibility_semantics_test.go::TestSlideHiddenAttributeQualification",
+      "path": "pkg/presentation/slide_visibility_semantics_test.go",
+      "sourceSha256": "cf585d77f894c98acf389caf07bcd19a2fe4afd1db494c5ef1e19d5104490155",
+      "coverage": "partial",
+      "scenarioIds": ["@id-pptx-slide-visibility-retained-inputs"],
+      "verifiedAspects": [
+        "The retained S original opens with four reader-visible slides; in-memory variants distinguish unqualified hidden, visible, absent and mixed markers after SaveAs and reopen without editing the original archive."
+      ],
+      "gaps": [
+        "Native readback checks reader semantics, not Office confirmation or a selected canonical Gherkin run."
       ],
       "executionCredit": false
     }
