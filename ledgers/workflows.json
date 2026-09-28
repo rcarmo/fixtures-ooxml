@@ -7608,8 +7608,8 @@
       ],
       "consumers": {
         "bun": {
-          "status": "planned",
-          "evidence": "Canonical physical-overlap admission runner binding pending; native Go ZIP-003 is a weaker historical observation"
+          "status": "implemented",
+          "evidence": "Bun a83e2286e19033086396351d5950af73368ee0c6 selects this canonical case once; tests/acceptance/physical-overlap.ts runs 7 exact shared steps on the sealed 483-byte ZIP32 fixture. Independent central/local geometry checks find three distinct STORED members with declared sizes and CRC32 values, including the complete inner.bin local header and payload nested inside outer.bin. With maxEntries=4 and maxTotalBytes=4096, admitPackage refuses before delivering a package or output with zip-size-mismatch for outer.bin declared size overrunning its local record; no name, CRC or resource refusal is credited, and the caller buffer remains unchanged. The earlier 730 case identities are guarded; 731/731 selected cases and 1,112 native tests passed from a fresh recursive GitHub network clone at shared v0.57 ce728d256a81d62472721fbd4d50532c79138d42. This bounded outcome does not establish general ZIP64 or Office parity."
         },
         "go": {
           "status": "planned",

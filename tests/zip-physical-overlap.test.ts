@@ -1,10 +1,11 @@
 import {test,expect} from 'bun:test';
+import {execFileSync} from 'node:child_process';
 import {crc32} from 'node:zlib';
 import {cases} from '../scripts/verify.ts';
 const id='@id-zip-physical-member-overlap-refusal';
 const path='workflows/package/zip-admission.feature';
 const fixture='fixture-9286fc07c3f8698f9637cf9b7a0c60461d1f304753ba69b39f655c8c348ea027';
-test('one planned physical-overlap outcome preserves both Go source identities and independently readable fixture bytes',async()=>{
+test('one bounded physical-overlap outcome preserves Go source identities and independently readable fixture bytes',async()=>{
  const r=await Bun.file('ledgers/functional-equivalence.json').json(),g=r.goPhysicalOverlapMerge,m=await Bun.file('manifest.json').json(),l=await Bun.file('ledgers/feature-source-consolidation.json').json(),w=await Bun.file('ledgers/workflows.json').json();
  expect(g.canonicalId).toBe(id);expect(g.canonicalFeature).toBe(path);expect(g.executionCredit).toBe(false);expect(g.sourceRows.map((x:any)=>x.sourceId)).toEqual(['@ZIP-003','@candidate-go-archive-007']);
  for(const row of g.sourceRows){const c=l.candidates.find((x:any)=>x.path===row.path);expect(row.historicalSourceSha256).toBe(c.historicalSourceSha256);expect(row.currentCandidateSha256).toBe(c.sha256);expect((await Bun.file(row.path).text())).not.toContain(row.sourceId);expect(c.executionCredit).toBe(false);}
@@ -17,5 +18,10 @@ test('one planned physical-overlap outcome preserves both Go source identities a
  for(let i=0;i<3;i++){expect(u32(p)).toBe(0x02014b50);expect(u16(p+8)).toBe(0);expect(u16(p+10)).toBe(0);const checksum=u32(p+16),size=u32(p+24),length=u16(p+28),extra=u16(p+30),comment=u16(p+32),name=decoder.decode(b.slice(p+46,p+46+length)),local=u32(p+42);expect(u32(p+20)).toBe(size);names.push(name);sizes.push(size);checksums.push(checksum);expect(u32(local)).toBe(0x04034b50);expect(u16(local+6)).toBe(0);expect(u16(local+8)).toBe(0);expect(decoder.decode(b.slice(local+30,local+30+u16(local+26)))).toBe(name);const start=local+30+u16(local+26)+u16(local+28),end=start+size,payload=b.slice(start,end);expect(payload.length).toBe(size);expect(crc32(payload)>>>0).toBe(checksum);expect(u32(local+14)).toBe(checksum);ranges.push({name,local,start,end});p+=46+length+extra+comment;}
  expect(names).toEqual(['[Content_Types].xml','outer.bin','inner.bin']);expect(sizes).toEqual([149,49,10]);expect(checksums.map(n=>n.toString(16).padStart(8,'0'))).toEqual(['d694f44a','32c80458','4daa6380']);expect(ranges[1]!.start).toBe(ranges[2]!.local);expect(ranges[2]!.end).toBeLessThanOrEqual(ranges[1]!.end);
  const rows=cases(path,await Bun.file(path).text()).filter(x=>x.scenarioId===id);expect(rows).toHaveLength(1);const steps=rows[0]!.steps.map(x=>x.text);expect(steps).toContain(`fixture ${fixture} has exactly three distinct STORED members [Content_Types].xml, outer.bin and inner.bin`);expect(steps).toContain('an independent ZIP reader opens all three members with declared lengths 149, 49 and 10 bytes and matching CRC32 d694f44a, 32c80458 and 4daa6380');expect(steps).toContain('admission refuses overlapping physical member extents as an invalid package, not a name, CRC or resource refusal');expect(steps).toContain("the caller's source buffer remains byte-identical to the sealed fixture");
- const owner=w.workflows.find((x:any)=>x.id===id);expect(owner.feature).toBe(path);expect(owner.expandedCases).toBe(1);expect(Object.values(owner.consumers).every((x:any)=>x.status==='planned')).toBe(true);
+ const owner=w.workflows.find((x:any)=>x.id===id);expect(owner.feature).toBe(path);expect(owner.expandedCases).toBe(1);
+ expect(owner.consumers.bun.status).toBe('implemented');for(const evidence of ['a83e2286e19033086396351d5950af73368ee0c6','7 exact shared steps','731/731 selected cases','1,112 native tests','zip-size-mismatch'])expect(owner.consumers.bun.evidence).toContain(evidence);
+ expect(owner.consumers.go.status).toBe('planned');expect(owner.consumers.python.status).toBe('planned');
+ const previous=JSON.parse(execFileSync('git',['show','ce728d256a81d62472721fbd4d50532c79138d42:ledgers/workflows.json']).toString());const old=previous.workflows.find((x:any)=>x.id===id);
+ const unchanged=structuredClone(owner);unchanged.consumers.bun=old.consumers.bun;expect(unchanged).toEqual(old);
+ expect(w.workflows.filter((x:any)=>x.id!==id)).toEqual(previous.workflows.filter((x:any)=>x.id!==id));
 });

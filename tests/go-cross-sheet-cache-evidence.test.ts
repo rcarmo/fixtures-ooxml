@@ -18,6 +18,6 @@ test('published Go cross-sheet case replaces one native selection without changi
  expect(unchanged).toEqual(former);
  const visibility='workflows/pptx/slide-visibility.feature';
  expect(registry.features.filter((p:string)=>p!==visibility)).toEqual(prior.features);
- const chainId='@id-xlsx-owned-calculation-chain-invalidation';
- expect(registry.workflows.filter((w:any)=>w.id!==id&&w.id!==chainId&&w.feature!==visibility)).toEqual(prior.workflows.filter((w:any)=>w.id!==id&&w.id!==chainId));
+ const chainId='@id-xlsx-owned-calculation-chain-invalidation',overlapId='@id-zip-physical-member-overlap-refusal';
+ expect(registry.workflows.filter((w:any)=>w.id!==id&&w.id!==chainId&&w.id!==overlapId&&w.feature!==visibility)).toEqual(prior.workflows.filter((w:any)=>w.id!==id&&w.id!==chainId&&w.id!==overlapId));
 });

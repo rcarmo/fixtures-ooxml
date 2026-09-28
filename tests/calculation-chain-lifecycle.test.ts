@@ -28,8 +28,8 @@ test('the owned-chain case has one bounded identity; Bun default refusal is sepa
  expect(unchanged).toEqual(oldEntry);
  const visibility='workflows/pptx/slide-visibility.feature';
  expect(registry.features.filter((p:string)=>p!==visibility)).toEqual(previous.features);
- const cacheId='@id-xlsx-cross-sheet-cache-invalidation';
- expect(registry.workflows.filter((w:any)=>w.id!==id&&w.id!==cacheId&&w.feature!==visibility)).toEqual(previous.workflows.filter((w:any)=>w.id!==id&&w.id!==cacheId));
+ const cacheId='@id-xlsx-cross-sheet-cache-invalidation',overlapId='@id-zip-physical-member-overlap-refusal';
+ expect(registry.workflows.filter((w:any)=>w.id!==id&&w.id!==cacheId&&w.id!==overlapId&&w.feature!==visibility)).toEqual(previous.workflows.filter((w:any)=>w.id!==id&&w.id!==cacheId&&w.id!==overlapId));
  const predicates=rows[0]!.steps.map(s=>s.text).join('\n');
  for(const required of ['xl/chains/order.xml','Input!A1','Calc!A1','Calc!B1','Calc!C1','absent or empty cached values','source package bytes remain unchanged','content-type override are absent','destination relationship and content-type target resolves','byte-identical'])expect(predicates).toContain(required);
  const old=await Bun.file('staging/go/features/implemented/spreadsheet/calc-chain.feature').text();
