@@ -4794,8 +4794,8 @@
           "evidence": "Native execution binding pending"
         },
         "go": {
-          "status": "planned",
-          "evidence": "Native execution binding pending"
+          "status": "implemented",
+          "evidence": "Go 7ebe1c4d81d9e9278e6df8055729240870af16a6 binds all three exact shared steps on one run; all eight direct getters return true after being set true, with eight per-getter clearing negative controls. Published GitHub recursive clone at shared v0.59.0 12d878a6f3500f4c53b5792da7f8b1f390181ad5 passed 295 selected cases/1016 steps/0 failures; reports/batches/177.md. In-memory Go API only; simultaneous conflicting effects have no saved OOXML or rendering claim. Bun and Python remain planned."
         },
         "python": {
           "status": "planned",

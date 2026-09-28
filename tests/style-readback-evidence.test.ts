@@ -12,7 +12,8 @@ test('independent XLSX style readback records one Bun execution without assignin
  expect(entry.consumers.go.status).toBe('planned');expect(entry.consumers.python.status).toBe('planned');
  const previous=JSON.parse(execFileSync('git',['show','4063149c5fb48028471588db79a4ab440ccbe0a1:ledgers/workflows.json']).toString()),prior=previous.workflows.find((w:any)=>w.id===id);
  expect(prior.consumers.bun.status).toBe('planned');const unchanged=structuredClone(entry);unchanged.consumers.bun=prior.consumers.bun;expect(unchanged).toEqual(prior);
- expect(registry.workflows.filter((w:any)=>w.id!==id)).toEqual(previous.workflows.filter((w:any)=>w.id!==id));
+ const runEffectsId='@id-docx-go-run-effects-getters';
+ expect(registry.workflows.filter((w:any)=>w.id!==id&&w.id!==runEffectsId)).toEqual(previous.workflows.filter((w:any)=>w.id!==id&&w.id!==runEffectsId));
  const steps=cases(path,await Bun.file(path).text()).find(row=>row.scenarioId===id)!.steps.map(step=>step.text);
  expect(steps).toEqual(['a saved workbook containing a newly introduced cell style','an independent reader opens the workbook','it reads the edited cell without an invalid style index','its identity and version are recorded separately from the writer']);
 });
