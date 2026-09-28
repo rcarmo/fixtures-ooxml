@@ -15,6 +15,6 @@ test('Go executes two-run opposite vertical flags in memory without Python or ta
  expect(entry.consumers.bun).toEqual(former.consumers.bun);expect(entry.consumers.python).toEqual(former.consumers.python);
  for(const marker of ['3d138c5ea5286263389e6dfa55e9c9b593c25920','57e767fdbc9ad45a8cd8b91ce0c54a60b1e01253','317 selected cases/1086 steps/0 failures','fresh GitHub recursive clone','reports/batches/184.md','in-memory'])expect(entry.consumers.go.evidence).toContain(marker);
  const unchanged=structuredClone(entry);unchanged.consumers.go=former.consumers.go;expect(unchanged).toEqual(former);
- const laterTableIds=new Set(['@id-docx-go-table-merge-properties','@id-docx-go-table-style-getter','@id-docx-go-table-header-getter','@id-docx-go-cell-shading-getter','@id-docx-go-cell-properties-getters']);
+ const laterTableIds=new Set(['@id-docx-go-table-merge-properties','@id-docx-go-table-style-getter','@id-docx-go-table-header-getter','@id-docx-go-cell-shading-getter','@id-docx-go-cell-properties-getters','@id-docx-go-table-dimensions-getters','@id-docx-go-table-cell-access','@id-docx-go-table-cell-text-getters','@id-docx-go-table-row-counts']);
  expect(registry.workflows.filter((w:any)=>w.id!==id&&!laterTableIds.has(w.id))).toEqual(prior.workflows.filter((w:any)=>w.id!==id&&!laterTableIds.has(w.id)));
 });

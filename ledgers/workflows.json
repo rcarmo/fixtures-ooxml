@@ -4927,12 +4927,12 @@
       ],
       "consumers": {
         "bun": {
-          "status": "planned",
-          "evidence": "Native execution binding pending"
+          "status": "implemented",
+          "evidence": "Bun 34ba675cd78e8fe44fce9c6ca91ca5b3b3b22d49 at shared v0.65.0 selects all eight exact three-step dimension rows in features/shared.json and tests/acceptance/docx-model.ts. Fresh GitHub recursive make check passed 732/732 selected cases; tests/unit/docx-model-bindings.test.ts rejects incorrect dimensions across the eight grids. Direct in-memory row/column counts only, not saved geometry or rendering."
         },
         "go": {
-          "status": "planned",
-          "evidence": "Native execution binding pending"
+          "status": "implemented",
+          "evidence": "Go 7ffcec37a34a3cbc1aa7e12313fa966bb66aaa7c binds all eight exact three-step dimension examples and per-row wrong-count negative controls. Published Go 970296224e0c79758fbe2140113a34eeca80833f at shared v0.65.0 passed 329 selected cases/1126 steps/0 failures in a fresh GitHub recursive clone; reports/batches/188.md. In-memory row/column getters only; no saved geometry or rendering claim."
         },
         "python": {
           "status": "planned",
@@ -4951,12 +4951,12 @@
       ],
       "consumers": {
         "bun": {
-          "status": "planned",
-          "evidence": "Native execution binding pending"
+          "status": "implemented",
+          "evidence": "Bun 34ba675cd78e8fe44fce9c6ca91ca5b3b3b22d49 at shared v0.65.0 selects the exact four-step nullable cell case in features/shared.json and tests/acceptance/nullable-cell.ts. All nine in-range results are nonnil and four boundary calls return null; tests/unit/docx-nullable-cell.test.ts corrupts an in-range result and fabricates a nonnil boundary result to force failure. Fresh GitHub recursive make check passed 732/732 selected cases. Nullable API convention only, not general merged-cell semantics."
         },
         "go": {
-          "status": "planned",
-          "evidence": "Native execution binding pending"
+          "status": "implemented",
+          "evidence": "Go 7ffcec37a34a3cbc1aa7e12313fa966bb66aaa7c binds the exact four-step 3x3 cell-access case: all nine in-range coordinates nonnil and tested negative/three boundary coordinates nil. Missing/available-cell negative controls fail the predicates. Published Go 970296224e0c79758fbe2140113a34eeca80833f at shared v0.65.0 passed 329 selected cases/1126 steps/0 failures in a fresh GitHub recursive clone; reports/batches/188.md. Nullable API convention only, not general merged-cell semantics."
         },
         "python": {
           "status": "planned",
@@ -4975,12 +4975,12 @@
       ],
       "consumers": {
         "bun": {
-          "status": "planned",
-          "evidence": "Native execution binding pending"
+          "status": "implemented",
+          "evidence": "Bun 34ba675cd78e8fe44fce9c6ca91ca5b3b3b22d49 at shared v0.65.0 selects all four exact cell-text and first-row steps in features/shared.json and tests/acceptance/row-texts.ts. Fresh GitHub recursive make check passed 732/732 selected cases; tests/unit/docx-row-texts.test.ts changes each cell expectation, reverses the row, and removes/adds row values to force failure. Direct in-memory text getters only, not saved readback."
         },
         "go": {
-          "status": "planned",
-          "evidence": "Native execution binding pending"
+          "status": "implemented",
+          "evidence": "Go 7ffcec37a34a3cbc1aa7e12313fa966bb66aaa7c binds all four exact steps, assigning A1/B1/A2/B2, checking each positioned text getter and FirstRowText order; four text and first-row negative controls fail. Published Go 970296224e0c79758fbe2140113a34eeca80833f at shared v0.65.0 passed 329 selected cases/1126 steps/0 failures in a fresh GitHub recursive clone; reports/batches/188.md. In-memory text getters only, not saved readback."
         },
         "python": {
           "status": "planned",
@@ -4999,12 +4999,12 @@
       ],
       "consumers": {
         "bun": {
-          "status": "planned",
-          "evidence": "Native execution binding pending"
+          "status": "implemented",
+          "evidence": "Bun 34ba675cd78e8fe44fce9c6ca91ca5b3b3b22d49 at shared v0.65.0 selects all four exact row-count and deletion-refusal steps in features/shared.json and tests/acceptance/table-rows.ts. Fresh GitHub recursive make check passed 732/732 selected cases; tests/unit/docx-table-rows.test.ts changes each count and fabricates successful out-of-range deletion to force failure. In-memory counts with atomic index-ten refusal only, not saved row identity or contents."
         },
         "go": {
-          "status": "planned",
-          "evidence": "Native execution binding pending"
+          "status": "implemented",
+          "evidence": "Go 7ffcec37a34a3cbc1aa7e12313fa966bb66aaa7c binds all four exact steps, checking counts 3/4/3 after append/insert/delete and the index-ten deletion error. Intermediate-count and fabricated-success negative controls fail. Published Go 970296224e0c79758fbe2140113a34eeca80833f at shared v0.65.0 passed 329 selected cases/1126 steps/0 failures in a fresh GitHub recursive clone; reports/batches/188.md. In-memory counts and tested error only, not saved row identity or contents."
         },
         "python": {
           "status": "planned",

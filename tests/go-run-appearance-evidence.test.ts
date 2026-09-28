@@ -26,5 +26,5 @@ test('Go selects exact colour, highlight and saved selected-formatting cases wit
   const unchanged=structuredClone(entry);unchanged.consumers.go=former.consumers.go;expect(unchanged).toEqual(former);
  }
  const vertical=registry.workflows.find((w:any)=>w.id==='@id-docx-go-run-vertical-align');expect(vertical.consumers.go.status).toBe('implemented');
- const ids=new Set([...specs.map(s=>s.id),'@id-docx-go-run-vertical-align','@id-docx-go-table-merge-properties','@id-docx-go-table-style-getter','@id-docx-go-table-header-getter','@id-docx-go-cell-shading-getter','@id-docx-go-cell-properties-getters']);expect(registry.workflows.filter((w:any)=>!ids.has(w.id))).toEqual(prior.workflows.filter((w:any)=>!ids.has(w.id)));
+ const ids=new Set([...specs.map(s=>s.id),'@id-docx-go-run-vertical-align','@id-docx-go-table-merge-properties','@id-docx-go-table-style-getter','@id-docx-go-table-header-getter','@id-docx-go-cell-shading-getter','@id-docx-go-cell-properties-getters','@id-docx-go-table-dimensions-getters','@id-docx-go-table-cell-access','@id-docx-go-table-cell-text-getters','@id-docx-go-table-row-counts']);expect(registry.workflows.filter((w:any)=>!ids.has(w.id))).toEqual(prior.workflows.filter((w:any)=>!ids.has(w.id)));
 });
