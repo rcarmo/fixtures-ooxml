@@ -1,0 +1,36 @@
+{
+  "schemaVersion": 1,
+  "consumer": "bun",
+  "source": {
+    "repository": "https://github.com/rcarmo/bun-ooxml",
+    "revision": "19af500df68c3f345fc661675925b995337fd9f4"
+  },
+  "scope": "Two native Bun declarations test fail-closed value edits when a workbook has a calculation-chain relationship. They use a constructed nonstandard chain based on the sealed cross-sheet-cache.xlsx input. This refusal differs from the successful owned-chain removal required by @id-xlsx-owned-calculation-chain-invalidation; it does not select that case.",
+  "declarationCount": 2,
+  "mappings": [
+    {
+      "nativeId": "bun:tests/unit/xlsx-owned-chain-refusal.test.ts:owned nonstandard chain value edit refuses before stale metadata can survive",
+      "path": "tests/unit/xlsx-owned-chain-refusal.test.ts",
+      "sourceSha256": "03c539d05cd48d8187c028c16bcecf901fede3ab80d025853a456ea2d2449249",
+      "coverage": "unmapped",
+      "scenarioIds": [],
+      "verifiedAspects": [],
+      "gaps": [
+        "The native test verifies exact pre-edit values, xlsx-calculation-chain-unsupported refusal, an unchanged input cell and byte-identical source. The canonical owned-chain case instead requires a successful edit, removal of the chain/relationship/override, selective cache invalidation and saved readback; none is executed by this refusal."
+      ],
+      "executionCredit": false
+    },
+    {
+      "nativeId": "bun:tests/unit/xlsx-owned-chain-refusal.test.ts:owned chain workflow refusal preserves source and an existing destination",
+      "path": "tests/unit/xlsx-owned-chain-refusal.test.ts",
+      "sourceSha256": "03c539d05cd48d8187c028c16bcecf901fede3ab80d025853a456ea2d2449249",
+      "coverage": "unmapped",
+      "scenarioIds": [],
+      "verifiedAspects": [],
+      "gaps": [
+        "The workflow test verifies refused status, zero committed changes, the xlsx-calculation-chain-unsupported code, unchanged source bytes and an untouched pre-existing destination. It does not run the canonical success predicate or demonstrate chain removal."
+      ],
+      "executionCredit": false
+    }
+  ]
+}

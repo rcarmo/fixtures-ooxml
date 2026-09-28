@@ -6065,10 +6065,10 @@
       "aliases": []
     },
     {
-      "id": "asset-071e44a2c4f67d913a1158c91001ed17af92bdb7e5db3b0f7e9263ed49a7770f",
+      "id": "asset-b3145f831c0eae2aef11c1e24fb494499685214114ae44572471a93baa4da567",
       "path": "contracts/python-xlsx-dependencies.md",
-      "bytes": 2321,
-      "sha256": "071e44a2c4f67d913a1158c91001ed17af92bdb7e5db3b0f7e9263ed49a7770f",
+      "bytes": 2569,
+      "sha256": "b3145f831c0eae2aef11c1e24fb494499685214114ae44572471a93baa4da567",
       "role": "workflow-contract",
       "origins": [
         {
@@ -6149,6 +6149,21 @@
         {
           "repository": "https://github.com/rcarmo/fixtures-ooxml",
           "path": "ledgers/consumers/bun-pptx-slide-visibility.json",
+          "basis": "Project-owned behaviour contract or source assertion mapping"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "id": "asset-bc2866699052627321400afd5c577d092d005286175c09d8d2bf598b3604fabf",
+      "path": "ledgers/consumers/bun-xlsx-owned-chain-refusal.json",
+      "bytes": 2102,
+      "sha256": "bc2866699052627321400afd5c577d092d005286175c09d8d2bf598b3604fabf",
+      "role": "consumer-mapping",
+      "origins": [
+        {
+          "repository": "https://github.com/rcarmo/fixtures-ooxml",
+          "path": "ledgers/consumers/bun-xlsx-owned-chain-refusal.json",
           "basis": "Project-owned behaviour contract or source assertion mapping"
         }
       ],

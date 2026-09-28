@@ -4,13 +4,18 @@ import {cases} from '../scripts/verify.ts';
 
 const path='workflows/xlsx/calculation-chain-lifecycle.feature';
 const id='@id-xlsx-owned-calculation-chain-invalidation';
-test('the owned-chain case has one bounded identity; Go execution is separately evidenced',async()=>{
+test('the owned-chain case has one bounded identity; Bun refusal is not Go/Python success',async()=>{
  const text=await Bun.file(path).text(),rows=cases(path,text);
  expect(rows).toHaveLength(1);expect(rows[0]?.scenarioId).toBe(id);
  const registry=await Bun.file('ledgers/workflows.json').json(),entry=registry.workflows.find((w:any)=>w.id===id);
  expect(registry.features.filter((p:string)=>p===path)).toHaveLength(1);
  expect(entry?.feature).toBe(path);expect(entry?.expandedCases).toBe(1);
  expect(entry?.consumers.bun.status).toBe('planned');
+ const refusal=await Bun.file('ledgers/consumers/bun-xlsx-owned-chain-refusal.json').json();
+ expect(refusal.source.revision).toBe('19af500df68c3f345fc661675925b995337fd9f4');
+ expect(refusal.mappings).toHaveLength(2);
+ expect(refusal.mappings.every((m:any)=>m.coverage==='unmapped'&&m.scenarioIds.length===0&&m.executionCredit===false)).toBe(true);
+ expect(refusal.mappings.map((m:any)=>m.sourceSha256)).toEqual(Array(2).fill('03c539d05cd48d8187c028c16bcecf901fede3ab80d025853a456ea2d2449249'));
  expect(entry?.consumers.go.status).toBe('implemented');
  expect(entry?.consumers.python.status).toBe('implemented');
  for(const evidence of ['7fdc10f5371e7842f13713e81462bb657789128f','1 case/14 passed steps','19-case/159-step','1,324 tests','shared v0.48 82a67a1'])expect(entry?.consumers.python.evidence).toContain(evidence);
