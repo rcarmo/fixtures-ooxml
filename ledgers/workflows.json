@@ -7409,8 +7409,8 @@
       ],
       "consumers": {
         "bun": {
-          "status": "planned",
-          "evidence": "Native execution binding pending"
+          "status": "implemented",
+          "evidence": "Bun 0546d6dd009149af248f5ad092b60e4821d39d22 selects this canonical case once in the default acceptance gate; tests/acceptance/xlsx-style-readback.ts executes four exact shared steps. An authored workbook is saved with a new explicit wrap XF and reopened; the independent DocumentFormat.OpenXml 3.5.1 Office2019 reader is restored in locked mode and built from source with .NET 10 before reading all three saved cells. It verifies the edited Sheet1!A1 style index and dependent fields, records SDK and writer identity/version separately, and checks saved source/output bytes after readback. Fresh recursive GitHub network clone passed 1,112 native tests and 732/732 selected cases at shared v0.58 4063149c5fb48028471588db79a4ab440ccbe0a1; check CI run 36481577065 succeeded at exact Bun SHA. The earlier 731 case identities remain guarded. This verifies one saved explicit style sample, not general effective formatting, rendering or Microsoft Excel display."
         },
         "go": {
           "status": "planned",
