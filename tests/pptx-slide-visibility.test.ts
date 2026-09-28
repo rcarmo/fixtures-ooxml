@@ -28,11 +28,12 @@ test('retained PPTX inputs distinguish a namespaced marker from CT_Slide visibil
  const ledger=await Bun.file('ledgers/workflows.json').json();
  for(const id of [retained,office]){const w=ledger.workflows.find((x:any)=>x.id===id);expect(w.expandedCases).toBe(1);for(const consumer of ['bun','go','python'])expect(w.consumers[consumer].status).toBe('planned');}
  const scenarioSet=new Set(ledger.workflows.map((w:any)=>w.id));
- for(const path of ['ledgers/consumers/pptx-slide-visibility.json','ledgers/consumers/python-pptx-slide-visibility.json']){
+ for(const path of ['ledgers/consumers/bun-pptx-slide-visibility.json','ledgers/consumers/pptx-slide-visibility.json','ledgers/consumers/python-pptx-slide-visibility.json']){
   const mapping=await Bun.file(path).json();validateConsumerMappings(mapping,scenarioSet);
   expect(mapping.mappings).toHaveLength(mapping.declarationCount);
   expect(mapping.mappings.every((r:any)=>r.executionCredit===false)).toBe(true);
  }
+ const bun=await Bun.file('ledgers/consumers/bun-pptx-slide-visibility.json').json();expect(bun.mappings).toHaveLength(3);expect(bun.mappings.map((r:any)=>r.coverage)).toEqual(Array(3).fill('partial'));
  const go=await Bun.file('ledgers/consumers/pptx-slide-visibility.json').json();expect(go.mappings[0].coverage).toBe('partial');
  const python=await Bun.file('ledgers/consumers/python-pptx-slide-visibility.json').json();expect(python.mappings.map((r:any)=>r.coverage)).toEqual(Array(6).fill('unmapped'));
 });

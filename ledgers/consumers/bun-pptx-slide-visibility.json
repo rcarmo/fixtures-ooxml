@@ -1,0 +1,55 @@
+{
+  "schemaVersion": 1,
+  "consumer": "bun",
+  "source": {
+    "repository": "https://github.com/rcarmo/bun-ooxml",
+    "revision": "84716d19e25394258b91413d875b71c5eb2df584"
+  },
+  "scope": "Three native package-level test declarations in tests/unit/pptx-retained-visibility.test.ts. The helper tests/unit/pptx-retained-visibility.ts inspects the manifest-backed S and P originals without selecting either canonical visibility scenario for acceptance execution.",
+  "declarationCount": 3,
+  "mappings": [
+    {
+      "nativeId": "bun:tests/unit/pptx-retained-visibility.test.ts:retained S/P slide identities and namespace-qualified marker match their unchanged inputs",
+      "path": "tests/unit/pptx-retained-visibility.test.ts",
+      "sourceSha256": "d8d28a7d3ac3a6789357961ae2d74e8806800d73561a034c474e52ceff36694b",
+      "coverage": "partial",
+      "scenarioIds": ["@id-pptx-slide-visibility-retained-inputs"],
+      "verifiedAspects": [
+        "The manifest-backed S and P inputs each have four ordered slide IDs 256 through 259, exact internal relationship IDs and distinct slide parts 1 through 4; the Presentation slide handles match the resolved part order.",
+        "Only S slide 3 has namespaced p:show=0; no retained slide root has an unqualified show attribute, and P has no root show marker. Both original archives match their manifest byte seals after inspection."
+      ],
+      "gaps": [
+        "The native test does not select or execute the canonical Gherkin case. The absence of PowerPoint confirmation is an evidence classification, not a PowerPoint visibility measurement; neither retained original was reopened in PowerPoint."
+      ],
+      "executionCredit": false
+    },
+    {
+      "nativeId": "bun:tests/unit/pptx-retained-visibility.test.ts:qualified marker cannot masquerade as the unqualified CT_Slide attribute",
+      "path": "tests/unit/pptx-retained-visibility.test.ts",
+      "sourceSha256": "d8d28a7d3ac3a6789357961ae2d74e8806800d73561a034c474e52ceff36694b",
+      "coverage": "partial",
+      "scenarioIds": ["@id-pptx-slide-visibility-retained-inputs"],
+      "verifiedAspects": [
+        "In-memory S marker replacement with unqualified show=0 and P insertion of a namespaced p:show=0 both fail the bounded structural inspector; the original fixture bytes remain unchanged."
+      ],
+      "gaps": [
+        "These are negative controls for the inspector, not canonical Gherkin execution or independent PowerPoint interpretation."
+      ],
+      "executionCredit": false
+    },
+    {
+      "nativeId": "bun:tests/unit/pptx-retained-visibility.test.ts:changed slide identity, relationship target and missing part fail closed",
+      "path": "tests/unit/pptx-retained-visibility.test.ts",
+      "sourceSha256": "d8d28a7d3ac3a6789357961ae2d74e8806800d73561a034c474e52ceff36694b",
+      "coverage": "partial",
+      "scenarioIds": ["@id-pptx-slide-visibility-retained-inputs"],
+      "verifiedAspects": [
+        "In-memory slide-ID replacement and relationship retargeting fail the inspector; serialising a relationship to a nonexistent slide part fails the OPC package graph check, without changing the original fixture."
+      ],
+      "gaps": [
+        "The malformed variants exercise native failure boundaries only; the canonical case remains unselected and the Office-positive case has no original."
+      ],
+      "executionCredit": false
+    }
+  ]
+}
