@@ -18,6 +18,6 @@ test('Go runs only the eight in-memory run-effect getter predicates',async()=>{
  expect(entry.consumers.bun.status).toBe('planned');expect(entry.consumers.python.status).toBe('planned');
  for(const marker of ['7ebe1c4d81d9e9278e6df8055729240870af16a6','all three exact shared steps','eight per-getter clearing negative controls','295 selected cases/1016 steps/0 failures','reports/batches/177.md','no saved OOXML or rendering claim'])expect(entry.consumers.go.evidence).toContain(marker);
  const unchanged=structuredClone(entry);unchanged.consumers.go=prior.consumers.go;expect(unchanged).toEqual(prior);
- const newRunIds=new Set(['@id-docx-go-run-underline-style','@id-docx-go-run-font-name','@id-docx-go-run-color-getter','@id-docx-go-run-highlight','@id-docx-go-run-vertical-align','@id-docx-go-roundtrip-selected-formatting','@id-docx-go-table-style-getter','@id-docx-go-table-header-getter','@id-docx-go-cell-shading-getter','@id-docx-go-cell-properties-getters']);
+ const newRunIds=new Set(['@id-docx-go-run-underline-style','@id-docx-go-run-font-name','@id-docx-go-run-color-getter','@id-docx-go-run-highlight','@id-docx-go-run-vertical-align','@id-docx-go-roundtrip-selected-formatting','@id-docx-go-table-merge-properties','@id-docx-go-table-style-getter','@id-docx-go-table-header-getter','@id-docx-go-cell-shading-getter','@id-docx-go-cell-properties-getters']);
  expect(registry.workflows.filter((w:any)=>w.id!==id&&!newRunIds.has(w.id))).toEqual(previous.workflows.filter((w:any)=>w.id!==id&&!newRunIds.has(w.id)));
 });

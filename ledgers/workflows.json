@@ -5027,8 +5027,8 @@
           "evidence": "Native execution binding pending"
         },
         "go": {
-          "status": "planned",
-          "evidence": "Native execution binding pending"
+          "status": "implemented",
+          "evidence": "Go 243b57bb7cc86ed52c261359c5285885ffdca6d5 binds all four exact steps: a new 3x4 table, GridSpan three at cell zero-zero, first-column restart and continue at rows one and two, and three direct getter results. Wrong/cleared span and both wrong vertical-flag negative controls fail the predicates. Published Go f0e709826f2896fb23776b95a2fbce2fd78c2672 at shared v0.64.0 passed 318 selected cases/1090 steps/0 failures in a fresh GitHub recursive clone; reports/batches/186.md. In-memory getters only; no physical merge topology, safe grid, saved readback or Office rendering claim."
         },
         "python": {
           "status": "planned",
