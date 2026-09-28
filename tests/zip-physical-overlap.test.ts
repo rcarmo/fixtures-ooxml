@@ -23,5 +23,5 @@ test('one bounded physical-overlap outcome preserves Go source identities and in
  expect(owner.consumers.go.status).toBe('planned');expect(owner.consumers.python.status).toBe('planned');
  const previous=JSON.parse(execFileSync('git',['show','ce728d256a81d62472721fbd4d50532c79138d42:ledgers/workflows.json']).toString());const old=previous.workflows.find((x:any)=>x.id===id);
  const unchanged=structuredClone(owner);unchanged.consumers.bun=old.consumers.bun;expect(unchanged).toEqual(old);
- const styleId='@id-office-xlsx-independent-style-reader',runEffectsId='@id-docx-go-run-effects-getters';expect(w.workflows.filter((x:any)=>x.id!==id&&x.id!==styleId&&x.id!==runEffectsId)).toEqual(previous.workflows.filter((x:any)=>x.id!==id&&x.id!==styleId&&x.id!==runEffectsId));
+ const exceptions=new Set([id,'@id-office-xlsx-independent-style-reader','@id-docx-go-run-effects-getters','@id-docx-go-run-underline-style','@id-docx-go-run-font-name']);expect(w.workflows.filter((x:any)=>!exceptions.has(x.id))).toEqual(previous.workflows.filter((x:any)=>!exceptions.has(x.id)));
 });

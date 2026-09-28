@@ -4818,12 +4818,12 @@
       ],
       "consumers": {
         "bun": {
-          "status": "planned",
-          "evidence": "Native execution binding pending"
+          "status": "implemented",
+          "evidence": "Bun e505d84f6818aff1a80ead8ccd7c978b4b2289f5 at shared v0.60.0 selects all six exact three-step rows in features/shared.json and tests/acceptance/run-appearance.ts; the fresh GitHub recursive make check passed 732/732 selected cases, including all six underline rows. tests/unit/docx-run-appearance.test.ts independently changes expected values and corrupts bindings to reject wrong getters. The assertion is direct in-memory underline state and style, not saved OOXML or rendering."
         },
         "go": {
-          "status": "planned",
-          "evidence": "Native execution binding pending"
+          "status": "implemented",
+          "evidence": "Go 85b5b85c4ec31a0b285f53c8cef5d94ea8d300cd binds all six exact three-step underline examples; separate Underline() true and UnderlineStyle() exact checks and per-row negative controls. Published Go 4e07f23fb0ee4b0d75e11730fd6041b62369c48b at shared v0.60.0 passed 307 selected cases/1052 steps/0 failures in a fresh GitHub recursive clone; reports/batches/179.md. In-memory API only; no saved OOXML, enum/schema or Office rendering claim."
         },
         "python": {
           "status": "planned",
@@ -4846,12 +4846,12 @@
       ],
       "consumers": {
         "bun": {
-          "status": "planned",
-          "evidence": "Native execution binding pending"
+          "status": "implemented",
+          "evidence": "Bun e505d84f6818aff1a80ead8ccd7c978b4b2289f5 at shared v0.60.0 selects all six exact three-step rows in features/shared.json and tests/acceptance/run-font-name.ts; the fresh GitHub recursive make check passed 732/732 selected cases, including all six font-name rows. tests/unit/docx-run-font-name.test.ts rejects all six rows for changed expectations and corrupted getter data. Direct in-memory font-name getter only; no saved OOXML, font availability or fallback claim."
         },
         "go": {
-          "status": "planned",
-          "evidence": "Native execution binding pending"
+          "status": "implemented",
+          "evidence": "Go 85b5b85c4ec31a0b285f53c8cef5d94ea8d300cd binds all six exact three-step font examples and checks FontName() equals the set name, with per-row negative controls. Published Go 4e07f23fb0ee4b0d75e11730fd6041b62369c48b at shared v0.60.0 passed 307 selected cases/1052 steps/0 failures in a fresh GitHub recursive clone; reports/batches/179.md. In-memory API only; no saved OOXML, font availability or Office rendering claim."
         },
         "python": {
           "status": "planned",
