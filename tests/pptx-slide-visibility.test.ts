@@ -34,6 +34,6 @@ test('retained PPTX inputs distinguish a namespaced marker from CT_Slide visibil
   expect(mapping.mappings.every((r:any)=>r.executionCredit===false)).toBe(true);
  }
  const bun=await Bun.file('ledgers/consumers/bun-pptx-slide-visibility.json').json();expect(bun.mappings).toHaveLength(3);expect(bun.mappings.map((r:any)=>r.coverage)).toEqual(Array(3).fill('partial'));
- const go=await Bun.file('ledgers/consumers/pptx-slide-visibility.json').json();expect(go.mappings[0].coverage).toBe('partial');
- const python=await Bun.file('ledgers/consumers/python-pptx-slide-visibility.json').json();expect(python.mappings.map((r:any)=>r.coverage)).toEqual(Array(6).fill('unmapped'));
+ const go=await Bun.file('ledgers/consumers/pptx-slide-visibility.json').json();expect(go.mappings.map((r:any)=>r.coverage)).toEqual(Array(3).fill('partial'));
+ const python=await Bun.file('ledgers/consumers/python-pptx-slide-visibility.json').json();expect(python.mappings.map((r:any)=>r.coverage)).toEqual([...Array(6).fill('unmapped'),...Array(2).fill('partial')]);
 });

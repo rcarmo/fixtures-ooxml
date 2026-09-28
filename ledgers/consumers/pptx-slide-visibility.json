@@ -3,10 +3,10 @@
   "consumer": "go",
   "source": {
     "repository": "https://github.com/rcarmo/go-ooxml",
-    "revision": "255e439231f0260574a11bc333fc178546b5712f"
+    "revision": "1596e7481053a1966d85b4c9d31e9c9fe4b79d28"
   },
-  "scope": "Exactly one Go TestFixtureRoundTrip_Complex top-level declaration; its hidden_slides.pptx and multiple_masters.pptx table rows remain subcases of that declaration. Go and Python status is recorded in separate ledger files to preserve native identity and avoid a synthetic combined execution count.",
-  "declarationCount": 1,
+  "scope": "Three Go top-level declarations: the historical TestFixtureRoundTrip_Complex plus two native retained-S/P package structure tests. Its hidden_slides.pptx and multiple_masters.pptx table rows remain subcases of that declaration. Native structure checks do not select the canonical Gherkin case or establish PowerPoint behaviour. Go and Python status is recorded separately.",
+  "declarationCount": 3,
   "mappings": [
     {
       "nativeId": "pkg/presentation/fixture_roundtrip_test.go::TestFixtureRoundTrip_Complex",
@@ -21,6 +21,34 @@
       "gaps": [
         "The hidden-slide result does not identify slide 3 of the untouched source or compare all four original slide identities, relationships, qualified versus unqualified visibility attributes and source bytes; the newly added hidden slide can alone satisfy the assertion. A separate Go reader reports S slide 3 hidden from namespaced p:show=0, although ECMA-376 CT_Slide defines unqualified show; that observation does not establish PowerPoint behaviour.",
         "Neither row reopens an untouched PowerPoint original in PowerPoint; the multiple-masters input has only one slide master and cannot supply that positive."
+      ],
+      "executionCredit": false
+    },
+    {
+      "nativeId": "pkg/presentation/retained_visibility_test.go::TestRetainedSlideVisibilityStructure",
+      "path": "pkg/presentation/retained_visibility_test.go",
+      "sourceSha256": "ea7856718a333c1bc9d11efe8a72e7b7bb0d3fcddf747f3761ddd318093c8233",
+      "coverage": "partial",
+      "scenarioIds": ["@id-pptx-slide-visibility-retained-inputs"],
+      "verifiedAspects": [
+        "Both sealed S/P archives have exactly four ordered slide IDs, unique internal relationships and resolved slide parts; S slide 3 alone carries namespaced p:show=0, all slides lack unqualified show, and the input bytes remain unchanged."
+      ],
+      "gaps": [
+        "Native ZIP inspection is not a selected canonical Gherkin execution; the absence of PowerPoint confirmation is an evidence classification, not a measured application-visible slide state."
+      ],
+      "executionCredit": false
+    },
+    {
+      "nativeId": "pkg/presentation/retained_visibility_test.go::TestRetainedSlideVisibilityRejectsBrokenStructure",
+      "path": "pkg/presentation/retained_visibility_test.go",
+      "sourceSha256": "ea7856718a333c1bc9d11efe8a72e7b7bb0d3fcddf747f3761ddd318093c8233",
+      "coverage": "partial",
+      "scenarioIds": ["@id-pptx-slide-visibility-retained-inputs"],
+      "verifiedAspects": [
+        "In-memory marker, namespace, missing/duplicate/reordered/wrong/external relationships, missing/reused/escaping parts and malformed XML controls fail closed without changing the committed fixtures."
+      ],
+      "gaps": [
+        "Corruption controls test the native structural inspector; they do not select the shared case or prove PowerPoint behaviour."
       ],
       "executionCredit": false
     }

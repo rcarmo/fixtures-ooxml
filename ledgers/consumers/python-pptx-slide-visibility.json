@@ -3,10 +3,10 @@
   "consumer": "python",
   "source": {
     "repository": "https://github.com/rcarmo/python-office-mcp-server",
-    "revision": "b63d0ab03992d1dff7089ff3ec5f5dfe3a603a20"
+    "revision": "494e91fd08944a088acd137520328f2ab4f296b3"
   },
-  "scope": "Six non-parametrised presentation hide/list/unhide declarations across test_pptx_advanced_tools_extended.py, test_targeted_coverage.py and test_high_volume.py. These use temporary generated decks, not the retained manifest-backed four-slide originals. A separate Python hidden-slide tool inspection reports zero hidden slides for retained S; it does not establish PowerPoint behaviour or execution credit.",
-  "declarationCount": 6,
+  "scope": "Six non-parametrised presentation hide/list/unhide declarations use temporary generated decks. Two new native test declarations inspect the retained manifest-backed S/P four-slide originals (one with two parameter rows, one with eleven corruption rows). Python's hidden-slide tool reports zero hidden slides for S; this is reader behaviour, not PowerPoint confirmation or canonical Gherkin execution.",
+  "declarationCount": 8,
   "mappings": [
     {
       "nativeId": "tests/test_pptx_advanced_tools_extended.py::TestHiddenSlides::test_hide_slide",
@@ -66,6 +66,34 @@
       "scenarioIds": [],
       "verifiedAspects": [],
       "gaps": ["A generated four-slide deck marks alternating slides hidden before listing, but the native assertion only checks that the response is a dict; exact hidden slide numbers and relationship identities are not asserted."],
+      "executionCredit": false
+    },
+    {
+      "nativeId": "tests/test_pptx_retained_visibility_native.py::test_retained_pptx_slide_structure_and_native_read_only",
+      "path": "tests/test_pptx_retained_visibility_native.py",
+      "sourceSha256": "a2c8e574ee1a540aba2dc7fd2a8283491306f7f5f05fef8dd665042f671ade55",
+      "coverage": "partial",
+      "scenarioIds": ["@id-pptx-slide-visibility-retained-inputs"],
+      "verifiedAspects": [
+        "Two parameter rows inspect manifest-sealed S/P archives, four ordered slide IDs and internal relationship targets, S slide 3's namespaced p:show=0, absent unqualified show on all slides, and unchanged input bytes. The native reader reports four slides and zero reader-hidden slides on both inputs."
+      ],
+      "gaps": [
+        "The reader's zero-hidden result does not establish PowerPoint display state; this native test does not select or execute the shared Gherkin case."
+      ],
+      "executionCredit": false
+    },
+    {
+      "nativeId": "tests/test_pptx_retained_visibility_native.py::test_retained_visibility_negative_controls_fail_closed",
+      "path": "tests/test_pptx_retained_visibility_native.py",
+      "sourceSha256": "a2c8e574ee1a540aba2dc7fd2a8283491306f7f5f05fef8dd665042f671ade55",
+      "coverage": "partial",
+      "scenarioIds": ["@id-pptx-slide-visibility-retained-inputs"],
+      "verifiedAspects": [
+        "Eleven in-memory malformed marker, missing/duplicate/external/unsafe/wrong-type relationship, slide identity and missing part controls reject changed input structures without editing the originals."
+      ],
+      "gaps": [
+        "Corruption controls cover the native inspector only; the canonical case is unselected and no PowerPoint-produced hidden-positive original has been verified."
+      ],
       "executionCredit": false
     }
   ]

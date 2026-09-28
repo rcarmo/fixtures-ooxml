@@ -6095,10 +6095,10 @@
       "aliases": []
     },
     {
-      "id": "asset-c04fcc492b890020ce118f30c2489e2c6434e560521e182552dc46d6bf6244ca",
+      "id": "asset-cd56bf2401b00a6d6a728f509c6e17e5fb7feb691429251cba492977bed8a29c",
       "path": "contracts/pptx-slide-visibility.md",
-      "bytes": 2349,
-      "sha256": "c04fcc492b890020ce118f30c2489e2c6434e560521e182552dc46d6bf6244ca",
+      "bytes": 2479,
+      "sha256": "cd56bf2401b00a6d6a728f509c6e17e5fb7feb691429251cba492977bed8a29c",
       "role": "workflow-contract",
       "origins": [
         {
@@ -6110,10 +6110,10 @@
       "aliases": []
     },
     {
-      "id": "asset-cf6f1f0d8c2a88bab32fc92b47ddb48606b95f04206eb273216c7c1cfa5b8b94",
+      "id": "asset-77304459a6954706bbbd87a5b86e7600e0b3d9c0c9953c697c56fcb19568a6a6",
       "path": "ledgers/consumers/pptx-slide-visibility.json",
-      "bytes": 1956,
-      "sha256": "cf6f1f0d8c2a88bab32fc92b47ddb48606b95f04206eb273216c7c1cfa5b8b94",
+      "bytes": 3743,
+      "sha256": "77304459a6954706bbbd87a5b86e7600e0b3d9c0c9953c697c56fcb19568a6a6",
       "role": "consumer-mapping",
       "origins": [
         {
@@ -6125,10 +6125,10 @@
       "aliases": []
     },
     {
-      "id": "asset-ee99217f6c6c7992e186c97a66700f1d72af4e7dabf347852e2f8a0c9d11d14f",
+      "id": "asset-b54abcb313a3154e946e17191a7250987a6b2b3a69f21a175fa7fd60cada73b5",
       "path": "ledgers/consumers/python-pptx-slide-visibility.json",
-      "bytes": 4120,
-      "sha256": "ee99217f6c6c7992e186c97a66700f1d72af4e7dabf347852e2f8a0c9d11d14f",
+      "bytes": 5911,
+      "sha256": "b54abcb313a3154e946e17191a7250987a6b2b3a69f21a175fa7fd60cada73b5",
       "role": "consumer-mapping",
       "origins": [
         {
