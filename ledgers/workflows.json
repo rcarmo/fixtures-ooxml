@@ -274,8 +274,8 @@
           "evidence": "consumer-reported:19 shared cases/159 steps direct-server-call"
         },
         "go": {
-          "status": "planned",
-          "evidence": "fixture verification and one direct-native cache outcome only; formal shared runner not complete"
+          "status": "implemented",
+          "evidence": "Go d929fc78b52b2ab28c3695eec486761414c7aede selects this exact manifest-backed 14-step case once, replacing native @CACHE-001 (retained in inventory as superseded). The distinct-output edit checks unchanged source, numeric Input!A1=10 and Calc!A1 formula/cache on disk, an independent ZIP data-only cached-slot read, recalculation flags, graph/sentinel closure, receipt and unchanged members outside the manifest allowance. Default, exact-commit independent recursive and post-push GitHub network recursive gates passed 294 selected cases/1013 steps/0 other; post-push log /workspace/tmp/go-cache-github-published-gate.log SHA-256 0fa74dad775f9458ce9212ed8c8dac84ce18cadea9fcc511c5c02557cb573e5a. No calculation engine or Office producer check."
         }
       }
     },
