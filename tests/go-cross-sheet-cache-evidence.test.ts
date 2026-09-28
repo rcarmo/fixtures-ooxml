@@ -17,5 +17,6 @@ test('published Go cross-sheet case replaces one native selection without changi
  const unchanged=structuredClone(entry);unchanged.consumers.go=former.consumers.go;
  expect(unchanged).toEqual(former);
  expect(registry.features).toEqual(prior.features);
- expect(registry.workflows.filter((w:any)=>w.id!==id)).toEqual(prior.workflows.filter((w:any)=>w.id!==id));
+ const chainId='@id-xlsx-owned-calculation-chain-invalidation';
+ expect(registry.workflows.filter((w:any)=>w.id!==id&&w.id!==chainId)).toEqual(prior.workflows.filter((w:any)=>w.id!==id&&w.id!==chainId));
 });

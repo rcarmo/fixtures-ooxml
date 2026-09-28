@@ -29,5 +29,9 @@ test('five Python XLSX dependency declarations retain exact source custody and b
  expect(chain.scenarioIds).toEqual(['@id-xlsx-owned-calculation-chain-invalidation']);
  expect(chain.verifiedAspects.join(' ')).toContain('standard-path xl/calcChain.xml');
  for(const missing of ['nonstandard xl/chains/order.xml','two dependent formula entries','source bytes','unrelated member custody'])expect(chain.gaps.join(' ')).toContain(missing);
- expect(workflows.workflows.find((w:any)=>w.id===chain.scenarioIds[0]).consumers.python.status).toBe('planned');
+ const executed=workflows.workflows.find((w:any)=>w.id===chain.scenarioIds[0]).consumers.python;
+ expect(executed.status).toBe('implemented');
+ expect(executed.evidence).toContain('7fdc10f5371e7842f13713e81462bb657789128f');
+ expect(executed.evidence).toContain('separate fail-closed calculation-chain acceptance lane');
+ expect(chain.executionCredit).toBe(false); // Historical native standard-path test did not run this predicate.
 });

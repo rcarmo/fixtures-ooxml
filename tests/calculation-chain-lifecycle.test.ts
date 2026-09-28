@@ -10,13 +10,15 @@ test('the owned-chain case has one bounded identity; Go execution is separately 
  const registry=await Bun.file('ledgers/workflows.json').json(),entry=registry.workflows.find((w:any)=>w.id===id);
  expect(registry.features.filter((p:string)=>p===path)).toHaveLength(1);
  expect(entry?.feature).toBe(path);expect(entry?.expandedCases).toBe(1);
- for(const consumer of ['bun','python'])expect(entry?.consumers[consumer].status).toBe('planned');
+ expect(entry?.consumers.bun.status).toBe('planned');
  expect(entry?.consumers.go.status).toBe('implemented');
+ expect(entry?.consumers.python.status).toBe('implemented');
+ for(const evidence of ['7fdc10f5371e7842f13713e81462bb657789128f','1 case/14 passed steps','19-case/159-step','1,324 tests','shared v0.48 82a67a1'])expect(entry?.consumers.python.evidence).toContain(evidence);
  for(const evidence of ['a8515940db69c42294493161fb77b80936f23357','@CHAIN-001','294 selected cases/1004 passed steps/0 failures','reports/batches/160.md','ef75c15eda31503954d28633bccce99364d4442c2a98255e15c5d18a9e432edd'])expect(entry?.consumers.go.evidence).toContain(evidence);
  const previous=JSON.parse(execFileSync('git',['show','3f0fbe2d11f8db6deda69779d5833086ee510799:ledgers/workflows.json']).toString());
  const oldEntry=previous.workflows.find((w:any)=>w.id===id);
  expect(oldEntry.consumers.go.status).toBe('planned');
- const unchanged=structuredClone(entry);unchanged.consumers.go=oldEntry.consumers.go;
+ const unchanged=structuredClone(entry);unchanged.consumers.go=oldEntry.consumers.go;unchanged.consumers.python=oldEntry.consumers.python;
  expect(unchanged).toEqual(oldEntry);
  expect(registry.features).toEqual(previous.features);
  const cacheId='@id-xlsx-cross-sheet-cache-invalidation';
