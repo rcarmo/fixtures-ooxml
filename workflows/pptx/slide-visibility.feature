@@ -1,16 +1,19 @@
 @planned
 Feature: PowerPoint slide visibility by slide identity
-  Slide order and visibility are separate properties. Package-level visibility
-  can be checked on committed files; application-confirmed hidden state needs
+  Slide order and visibility are separate properties. The retained source has
+  a namespaced p:show marker, while CT_Slide defines unqualified show. Its
+  application-visible hidden state is unproved; an Office-positive requires
   an untouched PowerPoint export and reopen evidence.
 
   @id-pptx-slide-visibility-retained-inputs
-  Scenario: A retained four-slide input identifies a hidden third slide and a fully visible control
+  Scenario: Retained four-slide inputs distinguish a namespaced marker from a visible control
     Given the committed fixture fixture-e01ded1106a28f94a3439e8368f9a12ec360891f4a9e2810f6504c4c328ed79c is loaded without editing
     And the committed fixture fixture-fa245a3df00fef7f7bf4739921ee840194040161e06490589e3d52cc9fa7a71d is loaded as a visible control
     When their four ordered slide identities and root visibility attributes are inspected
-    Then the source fixture has exactly four slides with slide 3 marked p:show="0" and slides 1, 2 and 4 unmarked
+    Then the source fixture has exactly four slides with slide 3 marked namespaced p:show="0" and slides 1, 2 and 4 unmarked
+    And the source fixture's four slides lack an unqualified show attribute
     And the visible control has exactly four slides without a hidden visibility attribute
+    And no slide in either retained input is counted as an application-confirmed hidden slide
     And both source archive bytes remain unchanged
     And the reported slide numbers refer to the same slide relationships as the inspected parts
 

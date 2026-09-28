@@ -7,7 +7,7 @@ const office='@id-pptx-office-hidden-slide-positive';
 const feature='workflows/pptx/slide-visibility.feature';
 const ids={source:'fixture-e01ded1106a28f94a3439e8368f9a12ec360891f4a9e2810f6504c4c328ed79c',control:'fixture-fa245a3df00fef7f7bf4739921ee840194040161e06490589e3d52cc9fa7a71d'};
 
-test('retained PPTX inputs distinguish exact package-level slide visibility from Office confirmation',async()=>{
+test('retained PPTX inputs distinguish a namespaced marker from CT_Slide visibility',async()=>{
  const rows=cases(feature,await Bun.file(feature).text());expect(rows.map(r=>r.scenarioId)).toEqual([retained,office]);
  const manifest=await Bun.file('manifest.json').json(),groups=await Bun.file('ledgers/fixture-groups.json').json();
  const group=groups.groups.find((g:any)=>g.format==='pptx'&&g.scenarioGroup==='slides');
@@ -20,8 +20,9 @@ test('retained PPTX inputs distinguish exact package-level slide visibility from
   for(let n=1;n<=4;n++){
    const xml=execFileSync('unzip',['-p',fixture.path,`ppt/slides/slide${n}.xml`],{encoding:'utf8'});
    const root=xml.match(/<p:sld\b[^>]*>/)?.[0];expect(root).toBeDefined();
-   expect(/\bp:show="0"/.test(root!)).toBe(role==='source'&&n===3);
-   if(role==='control'||n!==3)expect(/\b(?:p:)?show=/.test(root!)).toBe(false);
+   expect(/(?:^|\s)p:show="0"/.test(root!)).toBe(role==='source'&&n===3);
+   expect(/(?:^|\s)show=/.test(root!)).toBe(false);
+   if(role==='control'||n!==3)expect(/(?:^|\s)p:show=/.test(root!)).toBe(false);
   }
  }
  const ledger=await Bun.file('ledgers/workflows.json').json();

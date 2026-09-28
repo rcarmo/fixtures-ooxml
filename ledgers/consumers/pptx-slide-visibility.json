@@ -19,7 +19,7 @@
         "The multiple_masters.pptx row adds a slide and requires nonempty Masters and Layouts collections after reopening; it does not assert a second slide master."
       ],
       "gaps": [
-        "The hidden-slide result does not identify slide 3 of the untouched source or compare all four original slide identities, relationships, visibility attributes and source bytes; the newly added hidden slide can alone satisfy the assertion.",
+        "The hidden-slide result does not identify slide 3 of the untouched source or compare all four original slide identities, relationships, qualified versus unqualified visibility attributes and source bytes; the newly added hidden slide can alone satisfy the assertion. A separate Go reader reports S slide 3 hidden from namespaced p:show=0, although ECMA-376 CT_Slide defines unqualified show; that observation does not establish PowerPoint behaviour.",
         "Neither row reopens an untouched PowerPoint original in PowerPoint; the multiple-masters input has only one slide master and cannot supply that positive."
       ],
       "executionCredit": false

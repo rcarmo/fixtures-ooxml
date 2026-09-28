@@ -7708,8 +7708,10 @@
       "expandedCases": 1,
       "factIds": [],
       "expectedOutcomes": [
-        "the source fixture has exactly four slides with slide 3 marked p:show=\"0\" and slides 1, 2 and 4 unmarked",
+        "the source fixture has exactly four slides with slide 3 marked namespaced p:show=\"0\" and slides 1, 2 and 4 unmarked",
+        "the source fixture's four slides lack an unqualified show attribute",
         "the visible control has exactly four slides without a hidden visibility attribute",
+        "no slide in either retained input is counted as an application-confirmed hidden slide",
         "both source archive bytes remain unchanged",
         "the reported slide numbers refer to the same slide relationships as the inspected parts"
       ],

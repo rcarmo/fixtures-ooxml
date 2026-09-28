@@ -5,7 +5,7 @@
     "repository": "https://github.com/rcarmo/python-office-mcp-server",
     "revision": "b63d0ab03992d1dff7089ff3ec5f5dfe3a603a20"
   },
-  "scope": "Six non-parametrised presentation hide/list/unhide declarations across test_pptx_advanced_tools_extended.py, test_targeted_coverage.py and test_high_volume.py. These use temporary generated decks, not the retained manifest-backed four-slide originals.",
+  "scope": "Six non-parametrised presentation hide/list/unhide declarations across test_pptx_advanced_tools_extended.py, test_targeted_coverage.py and test_high_volume.py. These use temporary generated decks, not the retained manifest-backed four-slide originals. A separate Python hidden-slide tool inspection reports zero hidden slides for retained S; it does not establish PowerPoint behaviour or execution credit.",
   "declarationCount": 6,
   "mappings": [
     {

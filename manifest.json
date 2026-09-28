@@ -6080,10 +6080,10 @@
       "aliases": []
     },
     {
-      "id": "asset-5c6c2ebcc27a9c8654732370b2a03d08a7302275ecfa9c913bd18357899fba0a",
+      "id": "asset-b348743de0c6bc7303811f613761a6d67a8a0f4f57132466238a0c7e752acd78",
       "path": "workflows/pptx/slide-visibility.feature",
-      "bytes": 1851,
-      "sha256": "5c6c2ebcc27a9c8654732370b2a03d08a7302275ecfa9c913bd18357899fba0a",
+      "bytes": 2098,
+      "sha256": "b348743de0c6bc7303811f613761a6d67a8a0f4f57132466238a0c7e752acd78",
       "role": "workflow",
       "origins": [
         {
@@ -6095,10 +6095,10 @@
       "aliases": []
     },
     {
-      "id": "asset-c8769a27e8d97a59e361e13a8e40ac7e5489ec7b22bfdec784fae46a092a2192",
+      "id": "asset-e3e196975fe7bef1683ab7c084c3dc81de1a5dca9b4baf20ec502d34e25ed3c8",
       "path": "contracts/pptx-slide-visibility.md",
-      "bytes": 1748,
-      "sha256": "c8769a27e8d97a59e361e13a8e40ac7e5489ec7b22bfdec784fae46a092a2192",
+      "bytes": 2090,
+      "sha256": "e3e196975fe7bef1683ab7c084c3dc81de1a5dca9b4baf20ec502d34e25ed3c8",
       "role": "workflow-contract",
       "origins": [
         {
@@ -6110,10 +6110,10 @@
       "aliases": []
     },
     {
-      "id": "asset-a36e1d80b305c69520331e881c303697c63ebe0e86cc0e1791a50cc11b5ff026",
+      "id": "asset-cf6f1f0d8c2a88bab32fc92b47ddb48606b95f04206eb273216c7c1cfa5b8b94",
       "path": "ledgers/consumers/pptx-slide-visibility.json",
-      "bytes": 1744,
-      "sha256": "a36e1d80b305c69520331e881c303697c63ebe0e86cc0e1791a50cc11b5ff026",
+      "bytes": 1956,
+      "sha256": "cf6f1f0d8c2a88bab32fc92b47ddb48606b95f04206eb273216c7c1cfa5b8b94",
       "role": "consumer-mapping",
       "origins": [
         {
@@ -6125,10 +6125,10 @@
       "aliases": []
     },
     {
-      "id": "asset-c0c0054c91fa6e4237744b86358fc0b97d3ff710266a0511d57d195ec7432740",
+      "id": "asset-ee99217f6c6c7992e186c97a66700f1d72af4e7dabf347852e2f8a0c9d11d14f",
       "path": "ledgers/consumers/python-pptx-slide-visibility.json",
-      "bytes": 3966,
-      "sha256": "c0c0054c91fa6e4237744b86358fc0b97d3ff710266a0511d57d195ec7432740",
+      "bytes": 4120,
+      "sha256": "ee99217f6c6c7992e186c97a66700f1d72af4e7dabf347852e2f8a0c9d11d14f",
       "role": "consumer-mapping",
       "origins": [
         {
