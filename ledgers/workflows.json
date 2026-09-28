@@ -4537,12 +4537,12 @@
       ],
       "consumers": {
         "bun": {
-          "status": "planned",
-          "evidence": "Native execution binding pending"
+          "status": "implemented",
+          "evidence": "Bun 3ffa21d4922a84df8759af931f11cc4660082511 at shared v0.66.0 selects the exact three-step empty-body case in features/shared.json and tests/acceptance/docx-model.ts. Fresh GitHub recursive make check passed 732/732 selected cases; tests/unit/docx-model-bindings.test.ts removes the body and changes paragraph or table counts to force failures. In-memory body/count predicate only, not saved DOCX or rendered layout."
         },
         "go": {
-          "status": "planned",
-          "evidence": "Native execution binding pending"
+          "status": "implemented",
+          "evidence": "Go 2d8a1596a2a1ddd9143176eb302b728db2c05f0d binds all three exact new-document body/count steps. Missing body and added paragraph/table negative controls fail the predicate. Published Go d825dbe2172bfb90fbbf82715073415392724f82 at shared v0.66.0 passed 331 selected cases/1134 steps/0 failures in a fresh GitHub recursive clone; reports/batches/190.md. In-memory body/count predicate only; no saved DOCX or rendering claim."
         },
         "python": {
           "status": "planned",
@@ -5165,12 +5165,12 @@
       ],
       "consumers": {
         "bun": {
-          "status": "planned",
-          "evidence": "Native execution binding pending"
+          "status": "implemented",
+          "evidence": "Bun 3ffa21d4922a84df8759af931f11cc4660082511 at shared v0.66.0 selects all five exact steps through tests/acceptance/docx-model.ts. A 3x3 table is saved to a path and reopened; all nine positioned texts and one-table count are checked. Fresh GitHub recursive make check passed 732/732 selected cases; tests/unit/docx-model-bindings.test.ts corrupts each reopened cell or the saved bytes to force failure. Selected table text readback only, not general table layout or rendering."
         },
         "go": {
-          "status": "planned",
-          "evidence": "Native execution binding pending"
+          "status": "implemented",
+          "evidence": "Go 2d8a1596a2a1ddd9143176eb302b728db2c05f0d binds all five exact table-text steps: a 3x3 table with nine ordered assigned texts, path save and reopen, exactly one reopened table and all nine positioned text getters. Nine changed-cell and second-reopened-table negative controls fail the selected predicates. Published Go d825dbe2172bfb90fbbf82715073415392724f82 at shared v0.66.0 passed 331 selected cases/1134 steps/0 failures in a fresh GitHub recursive clone; reports/batches/190.md. Selected saved table text readback only; no general table validity or Office rendering claim."
         },
         "python": {
           "status": "planned",
