@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "consumer": "go",
+  "source": {
+    "repository": "https://github.com/rcarmo/go-ooxml",
+    "revision": "255e439231f0260574a11bc333fc178546b5712f"
+  },
+  "scope": "Exactly one Go TestFixtureRoundTrip_Complex top-level declaration; its hidden_slides.pptx and multiple_masters.pptx table rows remain subcases of that declaration. Go and Python status is recorded in separate ledger files to preserve native identity and avoid a synthetic combined execution count.",
+  "declarationCount": 1,
+  "mappings": [
+    {
+      "nativeId": "pkg/presentation/fixture_roundtrip_test.go::TestFixtureRoundTrip_Complex",
+      "path": "pkg/presentation/fixture_roundtrip_test.go",
+      "sourceSha256": "8bf77dc2a2a7d2f496511f12bf1b3cd392e67e3b52ac005d4370270d0b78099e",
+      "coverage": "partial",
+      "scenarioIds": ["@id-pptx-slide-visibility-retained-inputs"],
+      "verifiedAspects": [
+        "The hidden_slides.pptx row opens the committed Go fixture, adds a new layout-zero slide, sets Hidden true, saves, reopens and requires at least one slide with Hidden true.",
+        "The multiple_masters.pptx row adds a slide and requires nonempty Masters and Layouts collections after reopening; it does not assert a second slide master."
+      ],
+      "gaps": [
+        "The hidden-slide result does not identify slide 3 of the untouched source or compare all four original slide identities, relationships, visibility attributes and source bytes; the newly added hidden slide can alone satisfy the assertion.",
+        "Neither row reopens an untouched PowerPoint original in PowerPoint; the multiple-masters input has only one slide master and cannot supply that positive."
+      ],
+      "executionCredit": false
+    }
+  ]
+}

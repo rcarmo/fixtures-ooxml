@@ -1166,7 +1166,9 @@
       "format": "pptx",
       "scenarioGroup": "slides",
       "name": "hidden-slides",
-      "scenarioIds": []
+      "scenarioIds": [
+        "@id-pptx-slide-visibility-retained-inputs"
+      ]
     },
     {
       "id": "fixture-fa245a3df00fef7f7bf4739921ee840194040161e06490589e3d52cc9fa7a71d",
@@ -1187,7 +1189,9 @@
       "format": "pptx",
       "scenarioGroup": "slides",
       "name": "hidden-slides",
-      "scenarioIds": []
+      "scenarioIds": [
+        "@id-pptx-slide-visibility-retained-inputs"
+      ]
     },
     {
       "id": "fixture-3465194945a0f8084084ceb843c219d59a4ad92b25a271d66182587d637db0be",
@@ -6070,6 +6074,66 @@
         {
           "repository": "https://github.com/rcarmo/fixtures-ooxml",
           "path": "contracts/python-xlsx-dependencies.md",
+          "basis": "Project-owned behaviour contract or source assertion mapping"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "id": "asset-5c6c2ebcc27a9c8654732370b2a03d08a7302275ecfa9c913bd18357899fba0a",
+      "path": "workflows/pptx/slide-visibility.feature",
+      "bytes": 1851,
+      "sha256": "5c6c2ebcc27a9c8654732370b2a03d08a7302275ecfa9c913bd18357899fba0a",
+      "role": "workflow",
+      "origins": [
+        {
+          "repository": "https://github.com/rcarmo/fixtures-ooxml",
+          "path": "workflows/pptx/slide-visibility.feature",
+          "basis": "Project-owned behaviour contract or source assertion mapping"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "id": "asset-c8769a27e8d97a59e361e13a8e40ac7e5489ec7b22bfdec784fae46a092a2192",
+      "path": "contracts/pptx-slide-visibility.md",
+      "bytes": 1748,
+      "sha256": "c8769a27e8d97a59e361e13a8e40ac7e5489ec7b22bfdec784fae46a092a2192",
+      "role": "workflow-contract",
+      "origins": [
+        {
+          "repository": "https://github.com/rcarmo/fixtures-ooxml",
+          "path": "contracts/pptx-slide-visibility.md",
+          "basis": "Project-owned behaviour contract or source assertion mapping"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "id": "asset-a36e1d80b305c69520331e881c303697c63ebe0e86cc0e1791a50cc11b5ff026",
+      "path": "ledgers/consumers/pptx-slide-visibility.json",
+      "bytes": 1744,
+      "sha256": "a36e1d80b305c69520331e881c303697c63ebe0e86cc0e1791a50cc11b5ff026",
+      "role": "consumer-mapping",
+      "origins": [
+        {
+          "repository": "https://github.com/rcarmo/fixtures-ooxml",
+          "path": "ledgers/consumers/pptx-slide-visibility.json",
+          "basis": "Project-owned behaviour contract or source assertion mapping"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "id": "asset-c0c0054c91fa6e4237744b86358fc0b97d3ff710266a0511d57d195ec7432740",
+      "path": "ledgers/consumers/python-pptx-slide-visibility.json",
+      "bytes": 3966,
+      "sha256": "c0c0054c91fa6e4237744b86358fc0b97d3ff710266a0511d57d195ec7432740",
+      "role": "consumer-mapping",
+      "origins": [
+        {
+          "repository": "https://github.com/rcarmo/fixtures-ooxml",
+          "path": "ledgers/consumers/python-pptx-slide-visibility.json",
           "basis": "Project-owned behaviour contract or source assertion mapping"
         }
       ],

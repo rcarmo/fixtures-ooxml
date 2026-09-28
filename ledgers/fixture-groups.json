@@ -214,7 +214,9 @@
         "fixture-e01ded1106a28f94a3439e8368f9a12ec360891f4a9e2810f6504c4c328ed79c",
         "fixture-fa245a3df00fef7f7bf4739921ee840194040161e06490589e3d52cc9fa7a71d"
       ],
-      "scenarioIds": []
+      "scenarioIds": [
+        "@id-pptx-slide-visibility-retained-inputs"
+      ]
     },
     {
       "format": "pptx",

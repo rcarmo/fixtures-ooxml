@@ -1,0 +1,72 @@
+{
+  "schemaVersion": 1,
+  "consumer": "python",
+  "source": {
+    "repository": "https://github.com/rcarmo/python-office-mcp-server",
+    "revision": "b63d0ab03992d1dff7089ff3ec5f5dfe3a603a20"
+  },
+  "scope": "Six non-parametrised presentation hide/list/unhide declarations across test_pptx_advanced_tools_extended.py, test_targeted_coverage.py and test_high_volume.py. These use temporary generated decks, not the retained manifest-backed four-slide originals.",
+  "declarationCount": 6,
+  "mappings": [
+    {
+      "nativeId": "tests/test_pptx_advanced_tools_extended.py::TestHiddenSlides::test_hide_slide",
+      "path": "tests/test_pptx_advanced_tools_extended.py",
+      "sourceSha256": "fb79dcf4b9400fd732a5e67d9d72f94b245201f0e50a2a57a61fdac730ac7a50",
+      "coverage": "unmapped",
+      "scenarioIds": [],
+      "verifiedAspects": [],
+      "gaps": ["Hiding slide 2 on a generated deck checks success or hidden response, not a byte-preserved retained four-slide source, exact hidden slide 3/visible control identities, or an application-confirmed PowerPoint original."],
+      "executionCredit": false
+    },
+    {
+      "nativeId": "tests/test_pptx_advanced_tools_extended.py::TestHiddenSlides::test_get_hidden_slides",
+      "path": "tests/test_pptx_advanced_tools_extended.py",
+      "sourceSha256": "fb79dcf4b9400fd732a5e67d9d72f94b245201f0e50a2a57a61fdac730ac7a50",
+      "coverage": "unmapped",
+      "scenarioIds": [],
+      "verifiedAspects": [],
+      "gaps": ["The generated input's hidden-slides response is checked only as a list; no exact slide membership, relationship identity, original archive custody or PowerPoint reopen is asserted."],
+      "executionCredit": false
+    },
+    {
+      "nativeId": "tests/test_targeted_coverage.py::TestPptxAdvancedSlideOps::test_hide_multiple_slides",
+      "path": "tests/test_targeted_coverage.py",
+      "sourceSha256": "00776db3be0479a283f7dc3f31fdcdda785ba1c1f5fed0e3b20611a752785f2e",
+      "coverage": "unmapped",
+      "scenarioIds": [],
+      "verifiedAspects": [],
+      "gaps": ["The test authors three slides, requests hiding slide 2 and accepts success or hidden truthiness. It does not inspect a saved slide part, report the exact hidden set, compare manifest-backed source/control bytes or verify Office interpretation."],
+      "executionCredit": false
+    },
+    {
+      "nativeId": "tests/test_high_volume.py::TestPptxHideSlide::test_hide_slide",
+      "path": "tests/test_high_volume.py",
+      "sourceSha256": "2edb16062770ef3064a63344cdfcc39c5eabd1ae5cd546153b26e894deb29a6c",
+      "coverage": "unmapped",
+      "scenarioIds": [],
+      "verifiedAspects": [],
+      "gaps": ["The generated deck hide-slide result is checked only as a dict. No output slide identity, package custody or control deck is asserted."],
+      "executionCredit": false
+    },
+    {
+      "nativeId": "tests/test_high_volume.py::TestPptxHideSlide::test_unhide_slide",
+      "path": "tests/test_high_volume.py",
+      "sourceSha256": "2edb16062770ef3064a63344cdfcc39c5eabd1ae5cd546153b26e894deb29a6c",
+      "coverage": "unmapped",
+      "scenarioIds": [],
+      "verifiedAspects": [],
+      "gaps": ["Removing a generated slide's show attribute is exercised, but the assertion only checks a dict result; no reopened exact slide visibility or source custody is measured."],
+      "executionCredit": false
+    },
+    {
+      "nativeId": "tests/test_high_volume.py::TestPptxGetHiddenSlides::test_get_hidden_slides",
+      "path": "tests/test_high_volume.py",
+      "sourceSha256": "2edb16062770ef3064a63344cdfcc39c5eabd1ae5cd546153b26e894deb29a6c",
+      "coverage": "unmapped",
+      "scenarioIds": [],
+      "verifiedAspects": [],
+      "gaps": ["A generated four-slide deck marks alternating slides hidden before listing, but the native assertion only checks that the response is a dict; exact hidden slide numbers and relationship identities are not asserted."],
+      "executionCredit": false
+    }
+  ]
+}

@@ -16,7 +16,8 @@ test('published Go cross-sheet case replaces one native selection without changi
  for(const marker of ['d929fc78b52b2ab28c3695eec486761414c7aede','@CACHE-001','14-step','294 selected cases/1013 steps/0 other','go-cache-github-published-gate.log','0fa74dad775f9458ce9212ed8c8dac84ce18cadea9fcc511c5c02557cb573e5a'])expect(entry.consumers.go.evidence).toContain(marker);
  const unchanged=structuredClone(entry);unchanged.consumers.go=former.consumers.go;
  expect(unchanged).toEqual(former);
- expect(registry.features).toEqual(prior.features);
+ const visibility='workflows/pptx/slide-visibility.feature';
+ expect(registry.features.filter((p:string)=>p!==visibility)).toEqual(prior.features);
  const chainId='@id-xlsx-owned-calculation-chain-invalidation';
- expect(registry.workflows.filter((w:any)=>w.id!==id&&w.id!==chainId)).toEqual(prior.workflows.filter((w:any)=>w.id!==id&&w.id!==chainId));
+ expect(registry.workflows.filter((w:any)=>w.id!==id&&w.id!==chainId&&w.feature!==visibility)).toEqual(prior.workflows.filter((w:any)=>w.id!==id&&w.id!==chainId));
 });

@@ -40,6 +40,7 @@ Go and Python source candidates live in [staging](../staging/README.md); they ar
 - [preservation.feature](pptx/preservation.feature) — 1 scenario, 1 case
 - [slide-import.feature](pptx/slide-import.feature) — 1 scenario, 1 case
 - [slide-order.feature](pptx/slide-order.feature) — 2 scenarios, 21 cases
+- [slide-visibility.feature](pptx/slide-visibility.feature) — 2 planned scenarios, 2 cases
 - [tables.feature](pptx/tables.feature) — 4 scenarios, 5 cases
 - [text-box.feature](pptx/text-box.feature) — 2 scenarios, 23 cases
 - [text.feature](pptx/text.feature) — 3 scenarios, 3 cases

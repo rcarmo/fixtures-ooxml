@@ -61,7 +61,8 @@
     "workflows/docx/completion-audit.feature",
     "workflows/package/admission-limit-configuration.feature",
     "workflows/package/data-descriptor-integrity.feature",
-    "workflows/xlsx/calculation-chain-lifecycle.feature"
+    "workflows/xlsx/calculation-chain-lifecycle.feature",
+    "workflows/pptx/slide-visibility.feature"
   ],
   "executionCredit": "Only local executed assertions count; reports here do not run consumers.",
   "workflows": [
@@ -7698,6 +7699,58 @@
         "python": {
           "status": "implemented",
           "evidence": "Python 7fdc10f5371e7842f13713e81462bb657789128f selects this exact sealed case once in a separate fail-closed calculation-chain acceptance lane (1 case/14 passed steps). A constructed two-sheet package from the pinned cross-sheet fixture adds an owned nonstandard xl/chains/order.xml; opt-in bounded dependency analysis clears Calc!A1/B1 caches and retains proved-independent Calc!C1=42, with saved/reopened data-only and formula reads, source/member custody, full-recalc flags and chain relationship/content-type removal. The existing 19-case/159-step mutation lane and default all-cache policy remain unchanged. Independent and post-push GitHub recursive full suites passed 1,324 tests; post-push ledgers for all six lanes passed at shared v0.48 82a67a1. Unsupported formula/graph inputs refuse atomically. No Office authorship or formula calculation is asserted."
+        }
+      }
+    },
+    {
+      "id": "@id-pptx-slide-visibility-retained-inputs",
+      "feature": "workflows/pptx/slide-visibility.feature",
+      "expandedCases": 1,
+      "factIds": [],
+      "expectedOutcomes": [
+        "the source fixture has exactly four slides with slide 3 marked p:show=\"0\" and slides 1, 2 and 4 unmarked",
+        "the visible control has exactly four slides without a hidden visibility attribute",
+        "both source archive bytes remain unchanged",
+        "the reported slide numbers refer to the same slide relationships as the inspected parts"
+      ],
+      "consumers": {
+        "bun": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        },
+        "go": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        },
+        "python": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        }
+      }
+    },
+    {
+      "id": "@id-pptx-office-hidden-slide-positive",
+      "feature": "workflows/pptx/slide-visibility.feature",
+      "expandedCases": 1,
+      "factIds": [],
+      "expectedOutcomes": [
+        "slide 3 alone is hidden in the original presentation and slides 1, 2 and 4 remain visible",
+        "every control slide remains visible",
+        "the identity of each visible or hidden slide matches its slide relationship and part",
+        "both original archive bytes remain unchanged"
+      ],
+      "consumers": {
+        "bun": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        },
+        "go": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        },
+        "python": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
         }
       }
     }
