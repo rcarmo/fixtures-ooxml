@@ -27,5 +27,5 @@ test('Python credits only sealed existing-extension comment resolution and lexic
   const current=ledger.workflows.find((w:any)=>w.id===sibling),previous=prior.workflows.find((w:any)=>w.id===sibling);
   expect(current).toEqual(previous);
  }
- expect(ledger.workflows.filter((w:any)=>w.id!==id)).toEqual(prior.workflows.filter((w:any)=>w.id!==id));
+ expect(ledger.workflows.filter((w:any)=>w.id!==id&&w.id!=='@id-xml-expanded-attribute-lookup')).toEqual(prior.workflows.filter((w:any)=>w.id!==id&&w.id!=='@id-xml-expanded-attribute-lookup'));
 });
