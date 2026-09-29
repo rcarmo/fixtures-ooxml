@@ -1,3 +1,4 @@
+const pptxTableIds = new Set(["@id-pptx-table-roundtrip-geometry","@id-pptx-table-formatting","@id-pptx-table-stale-handle","@id-pptx-table-atomic-refusals"]);
 const pptxNoopId = new Set(['@id-pptx-bun-open-save-noop']);
 import { test, expect } from 'bun:test';
 import { execFileSync } from 'node:child_process';
@@ -37,5 +38,5 @@ test('Bun executes twenty-three exact existing-thread cases without Go/Python cr
   expect(counts.reduce((n, c) => n + c, 0)).toBe(23);
   expect(counts.reduce((n, c, i) => n + c * steps[i]!, 0)).toBe(108);
   const changed = new Set(suffixes.map(s => '@id-docx-existing-thread-' + s));
-  expect(ledger.workflows.filter((w: any) =>!pptxNoopId.has(w.id)&& !changed.has(w.id))).toEqual(prior.workflows.filter((w: any) =>!pptxNoopId.has(w.id)&& !changed.has(w.id)));
+  expect(ledger.workflows.filter((w: any) =>!pptxTableIds.has(w.id)&&!pptxNoopId.has(w.id)&& !changed.has(w.id))).toEqual(prior.workflows.filter((w: any) =>!pptxTableIds.has(w.id)&&!pptxNoopId.has(w.id)&& !changed.has(w.id)));
 });

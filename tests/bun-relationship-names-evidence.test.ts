@@ -1,3 +1,4 @@
+const pptxTableIds = new Set(["@id-pptx-table-roundtrip-geometry","@id-pptx-table-formatting","@id-pptx-table-stale-handle","@id-pptx-table-atomic-refusals"]);
 const pptxNoopId = new Set(['@id-pptx-bun-open-save-noop']);
 const threadIds = new Set(["@id-docx-existing-thread-inspection","@id-docx-existing-thread-resolution","@id-docx-existing-thread-noop","@id-docx-existing-thread-refusal","@id-docx-existing-thread-rollback","@id-docx-existing-thread-encoding","@id-docx-existing-thread-unsupported","@id-docx-existing-thread-limit"]);
 const commentIds = new Set(["@id-docx-comments-inspection","@id-docx-comments-resolution","@id-docx-comments-noop","@id-docx-comments-refusal"]);
@@ -36,5 +37,5 @@ test('Bun executes four exact PPTX/XLSX relationship expanded-name cases without
     const unchanged = structuredClone(now); unchanged.consumers.bun = old.consumers.bun; expect(unchanged).toEqual(old);
   }
   const changed = new Set(specs.map(s => s.id));
-  expect(ledger.workflows.filter((w: any) =>!pptxNoopId.has(w.id)&&!threadIds.has(w.id)&&!commentIds.has(w.id)&& !changed.has(w.id))).toEqual(prior.workflows.filter((w: any) =>!pptxNoopId.has(w.id)&&!threadIds.has(w.id)&&!commentIds.has(w.id)&& !changed.has(w.id)));
+  expect(ledger.workflows.filter((w: any) =>!pptxTableIds.has(w.id)&&!pptxNoopId.has(w.id)&&!threadIds.has(w.id)&&!commentIds.has(w.id)&& !changed.has(w.id))).toEqual(prior.workflows.filter((w: any) =>!pptxTableIds.has(w.id)&&!pptxNoopId.has(w.id)&&!threadIds.has(w.id)&&!commentIds.has(w.id)&& !changed.has(w.id)));
 });

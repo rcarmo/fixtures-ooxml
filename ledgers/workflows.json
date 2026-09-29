@@ -2091,8 +2091,8 @@
       ],
       "consumers": {
         "bun": {
-          "status": "planned",
-          "evidence": "Existing local bindings passed; canonical-path run tracked separately in consumer"
+          "status": "implemented",
+          "evidence": "Bun 23ca11a6fee107c8abcf3e7552865866fbc944fa at shared v0.94.0 executes One exact three-step native PPTX table authoring case creates a 2x3 table, saves and reopens, checks exact first-cell escaped text, x/y/width/height values and column/row grid sums. features/shared.json, tests/acceptance/tables-pptx.ts and tests/unit/pptx-tables.test.ts bind four exact scenarios (five cases/15 steps), with independently parsed saved XML geometry/formatting and typed refusal custody. Fresh post-push GitHub recursive make check passed 732/732 selected cases; Bun CI 36528973679 succeeded. No Go/Python, merged-table editing, Office rendering, general PPTX table geometry or cross-consumer credit."
         },
         "go": {
           "status": "planned",
@@ -2114,8 +2114,8 @@
       ],
       "consumers": {
         "bun": {
-          "status": "planned",
-          "evidence": "Existing local bindings passed; canonical-path run tracked separately in consumer"
+          "status": "implemented",
+          "evidence": "Bun 23ca11a6fee107c8abcf3e7552865866fbc944fa at shared v0.94.0 executes One exact three-step existing styled-table edit saves/reopens updated cell text and preserves wrap, margin, fill, paragraph alignment, bold/size run attributes and end-paragraph language. features/shared.json, tests/acceptance/tables-pptx.ts and tests/unit/pptx-tables.test.ts bind four exact scenarios (five cases/15 steps), with independently parsed saved XML geometry/formatting and typed refusal custody. Fresh post-push GitHub recursive make check passed 732/732 selected cases; Bun CI 36528973679 succeeded. No Go/Python, merged-table editing, Office rendering, general PPTX table geometry or cross-consumer credit."
         },
         "go": {
           "status": "planned",
@@ -2137,8 +2137,8 @@
       ],
       "consumers": {
         "bun": {
-          "status": "planned",
-          "evidence": "Existing local bindings passed; canonical-path run tracked separately in consumer"
+          "status": "implemented",
+          "evidence": "Bun 23ca11a6fee107c8abcf3e7552865866fbc944fa at shared v0.94.0 executes One exact three-step table-handle case creates a new slide, invalidates its earlier cell handle by adding a second table, then requires typed PPTX_STALE_TABLE_HANDLE without changing package bytes. features/shared.json, tests/acceptance/tables-pptx.ts and tests/unit/pptx-tables.test.ts bind four exact scenarios (five cases/15 steps), with independently parsed saved XML geometry/formatting and typed refusal custody. Fresh post-push GitHub recursive make check passed 732/732 selected cases; Bun CI 36528973679 succeeded. No Go/Python, merged-table editing, Office rendering, general PPTX table geometry or cross-consumer credit."
         },
         "go": {
           "status": "planned",
@@ -2161,8 +2161,8 @@
       ],
       "consumers": {
         "bun": {
-          "status": "planned",
-          "evidence": "Existing local bindings passed; canonical-path run tracked separately in consumer"
+          "status": "implemented",
+          "evidence": "Bun 23ca11a6fee107c8abcf3e7552865866fbc944fa at shared v0.94.0 executes Two exact three-step table-topology refusals: merged-cell yields PPTX_TABLE_MERGE_UNSUPPORTED and malformed-merge yields PPTX_TABLE_STRUCTURE_UNSUPPORTED; both keep an empty package diff and source archive bytes unchanged. features/shared.json, tests/acceptance/tables-pptx.ts and tests/unit/pptx-tables.test.ts bind four exact scenarios (five cases/15 steps), with independently parsed saved XML geometry/formatting and typed refusal custody. Fresh post-push GitHub recursive make check passed 732/732 selected cases; Bun CI 36528973679 succeeded. No Go/Python, merged-table editing, Office rendering, general PPTX table geometry or cross-consumer credit."
         },
         "go": {
           "status": "planned",
