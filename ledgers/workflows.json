@@ -4367,8 +4367,8 @@
       ],
       "consumers": {
         "bun": {
-          "status": "planned",
-          "evidence": "Native execution binding pending"
+          "status": "implemented",
+          "evidence": "Bun d71b9b673304b7437a6d5ce9c745ce42ab23792a at shared v0.89.0 executes Five exact nine-step OPC open refusals: noncanonical part name, percent-encoded relationship target, duplicate/missing default content type, missing relationship target and duplicate relationship ID each return the specified typed OoxmlError code/message without a package result. The unit binding test independently inspects ordered ZIP member and XML background mutations. features/shared.json, tests/acceptance/opc-custody.ts, tests/acceptance/refusal-outcomes.ts and tests/unit/opc-custody-bindings.test.ts execute eleven exact cases/108 compiled steps across seven IDs, with mutation controls for error codes, messages, byte custody, callback flags, thenable identity, saved members and destination/symlink integrity plus temporary-file cleanup. Fresh post-push GitHub recursive make check passed 732/732 selected cases; Bun CI 36524662142 succeeded. No Go/Python, Office schema/rendering, other OPC profiles or cross-consumer credit."
         },
         "go": {
           "status": "planned",
@@ -4391,8 +4391,8 @@
       ],
       "consumers": {
         "bun": {
-          "status": "planned",
-          "evidence": "Native execution binding pending"
+          "status": "implemented",
+          "evidence": "Bun d71b9b673304b7437a6d5ce9c745ce42ab23792a at shared v0.89.0 executes One exact ten-step OPC byte-custody case overwrites caller archive bytes and a get() return array, yet a fresh get() still contains Alpha and unchanged serialization/reopen equals the original archive byte-for-byte. features/shared.json, tests/acceptance/opc-custody.ts, tests/acceptance/refusal-outcomes.ts and tests/unit/opc-custody-bindings.test.ts execute eleven exact cases/108 compiled steps across seven IDs, with mutation controls for error codes, messages, byte custody, callback flags, thenable identity, saved members and destination/symlink integrity plus temporary-file cleanup. Fresh post-push GitHub recursive make check passed 732/732 selected cases; Bun CI 36524662142 succeeded. No Go/Python, Office schema/rendering, other OPC profiles or cross-consumer credit."
         },
         "go": {
           "status": "planned",
@@ -4415,8 +4415,8 @@
       ],
       "consumers": {
         "bun": {
-          "status": "planned",
-          "evidence": "Native execution binding pending"
+          "status": "implemented",
+          "evidence": "Bun d71b9b673304b7437a6d5ce9c745ce42ab23792a at shared v0.89.0 executes One exact ten-step UTF-16LE OPC edit starts with a BOM, changes Alpha to Beta, saves/reopens, checks FF FE bytes and a UTF-16 XML declaration while retaining unrelated member bytes. features/shared.json, tests/acceptance/opc-custody.ts, tests/acceptance/refusal-outcomes.ts and tests/unit/opc-custody-bindings.test.ts execute eleven exact cases/108 compiled steps across seven IDs, with mutation controls for error codes, messages, byte custody, callback flags, thenable identity, saved members and destination/symlink integrity plus temporary-file cleanup. Fresh post-push GitHub recursive make check passed 732/732 selected cases; Bun CI 36524662142 succeeded. No Go/Python, Office schema/rendering, other OPC profiles or cross-consumer credit."
         },
         "go": {
           "status": "planned",
@@ -4440,8 +4440,8 @@
       ],
       "consumers": {
         "bun": {
-          "status": "planned",
-          "evidence": "Native execution binding pending"
+          "status": "implemented",
+          "evidence": "Bun d71b9b673304b7437a6d5ce9c745ce42ab23792a at shared v0.89.0 executes One exact ten-step JavaScript transaction case refuses an async callback with typed opc-async-transaction and synchronous-edits message before its body runs, retaining Alpha and original package bytes. features/shared.json, tests/acceptance/opc-custody.ts, tests/acceptance/refusal-outcomes.ts and tests/unit/opc-custody-bindings.test.ts execute eleven exact cases/108 compiled steps across seven IDs, with mutation controls for error codes, messages, byte custody, callback flags, thenable identity, saved members and destination/symlink integrity plus temporary-file cleanup. Fresh post-push GitHub recursive make check passed 732/732 selected cases; Bun CI 36524662142 succeeded. No Go/Python, Office schema/rendering, other OPC profiles or cross-consumer credit."
         },
         "go": {
           "status": "planned",
@@ -4464,8 +4464,8 @@
       ],
       "consumers": {
         "bun": {
-          "status": "planned",
-          "evidence": "Native execution binding pending"
+          "status": "implemented",
+          "evidence": "Bun d71b9b673304b7437a6d5ce9c745ce42ab23792a at shared v0.89.0 executes One exact ten-step JavaScript transaction case returns the identical thenable from a synchronous edit without invoking then(), saves/reopens Beta and preserves unrelated members. features/shared.json, tests/acceptance/opc-custody.ts, tests/acceptance/refusal-outcomes.ts and tests/unit/opc-custody-bindings.test.ts execute eleven exact cases/108 compiled steps across seven IDs, with mutation controls for error codes, messages, byte custody, callback flags, thenable identity, saved members and destination/symlink integrity plus temporary-file cleanup. Fresh post-push GitHub recursive make check passed 732/732 selected cases; Bun CI 36524662142 succeeded. No Go/Python, Office schema/rendering, other OPC profiles or cross-consumer credit."
         },
         "go": {
           "status": "planned",
@@ -4489,8 +4489,8 @@
       ],
       "consumers": {
         "bun": {
-          "status": "planned",
-          "evidence": "Native execution binding pending"
+          "status": "implemented",
+          "evidence": "Bun d71b9b673304b7437a6d5ce9c745ce42ab23792a at shared v0.89.0 executes One exact eleven-step save case deletes the relationship target in memory; validation returns typed opc-relationship-target-missing with Missing target message, while an existing destination file still contains the original package bytes after failure. features/shared.json, tests/acceptance/opc-custody.ts, tests/acceptance/refusal-outcomes.ts and tests/unit/opc-custody-bindings.test.ts execute eleven exact cases/108 compiled steps across seven IDs, with mutation controls for error codes, messages, byte custody, callback flags, thenable identity, saved members and destination/symlink integrity plus temporary-file cleanup. Fresh post-push GitHub recursive make check passed 732/732 selected cases; Bun CI 36524662142 succeeded. No Go/Python, Office schema/rendering, other OPC profiles or cross-consumer credit."
         },
         "go": {
           "status": "planned",
@@ -4514,8 +4514,8 @@
       ],
       "consumers": {
         "bun": {
-          "status": "planned",
-          "evidence": "Native execution binding pending"
+          "status": "implemented",
+          "evidence": "Bun d71b9b673304b7437a6d5ce9c745ce42ab23792a at shared v0.89.0 executes One exact twelve-step save case refuses a symlink destination with typed opc-symlink-destination and Symlink message while the regular target file and symlink identity/target remain unchanged. features/shared.json, tests/acceptance/opc-custody.ts, tests/acceptance/refusal-outcomes.ts and tests/unit/opc-custody-bindings.test.ts execute eleven exact cases/108 compiled steps across seven IDs, with mutation controls for error codes, messages, byte custody, callback flags, thenable identity, saved members and destination/symlink integrity plus temporary-file cleanup. Fresh post-push GitHub recursive make check passed 732/732 selected cases; Bun CI 36524662142 succeeded. No Go/Python, Office schema/rendering, other OPC profiles or cross-consumer credit."
         },
         "go": {
           "status": "planned",
