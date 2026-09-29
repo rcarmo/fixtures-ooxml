@@ -20,5 +20,5 @@ test('Go duplicate-attribute refusal is one canonical case, not borrowed from sp
  expect(now.consumers.bun).toEqual(old.consumers.bun);expect(now.consumers.python).toEqual(old.consumers.python);
  const unchanged=structuredClone(now);unchanged.consumers.go=old.consumers.go;expect(unchanged).toEqual(old);
  for(const sibling of ['@id-xml-go-attribute-splice-custody','@id-xml-comparison-prefix-and-opc-order'])expect(ledger.workflows.find((w:any)=>w.id===sibling)).toEqual(prior.workflows.find((w:any)=>w.id===sibling));
- expect(ledger.workflows.filter((w:any)=>w.id!=="@id-xml-stylesheet-processing-instruction"&&w.id!==id)).toEqual(prior.workflows.filter((w:any)=>w.id!=="@id-xml-stylesheet-processing-instruction"&&w.id!==id));
+ expect(ledger.workflows.filter((w:any)=>w.id!=="@id-xml-go-element-removal-custody"&&w.id!=="@id-xml-stylesheet-processing-instruction"&&w.id!==id)).toEqual(prior.workflows.filter((w:any)=>w.id!=="@id-xml-go-element-removal-custody"&&w.id!=="@id-xml-stylesheet-processing-instruction"&&w.id!==id));
 });

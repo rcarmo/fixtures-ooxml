@@ -3582,8 +3582,8 @@
           "evidence": "Native execution binding pending"
         },
         "go": {
-          "status": "planned",
-          "evidence": "Native execution binding pending"
+          "status": "implemented",
+          "evidence": "Go published d16a3652cb39a9fa7b5873bf32ad6c4da80920f6 at shared v0.120.0 executes only @id-xml-go-element-removal-custody, one four-step profile-lexical-snapshot-api case from workflows/xml/editing.feature via acceptance/{acceptance,inventory,element_removal}_test.go; its exact ID/name/line 72/no-Examples/four-step guard excludes sibling refusal. The binding parses caller-owned <r xmlns:p=\"u\"><!--keep--><p:a x = '1'><p:b>text</p:b></p:a> gap <p:c /></r>, verifies source-order expanded names and nested text, then removes p:a and p:c in one snapshot call. Independently coded complete output <r xmlns:p=\"u\"><!--keep--> gap </r> preserves literal comment, gap and surrounding bytes; reparse has root only and caller bytes remain unchanged. Separate empty RemoveElements(nil) returns exact original; root and ancestor-plus-descendant refusal controls return nonnil error and nil output, then valid removal on same snapshot succeeds. Mutating returned bytes cannot change caller or later empty output. These controls do NOT select or credit @id-xml-go-element-removal-refusal. Existing test-only attribute-splice output matcher was narrowed to avoid ambiguous Gherkin steps; prior splice 3/9 stays green. Initial matcher/Given setup failures are not behavioural red; a temporary removal pass-through mutation made canonical output-byte step fail after first two passed, then was restored byte-for-byte before five-file test-only commit. Uncached no-override exact local, independent clean recursive pre-push and fresh GitHub recursive post-push root+acceptance gates each passed 411 cases/1411 steps with removal 1/4, sibling refusal and defective positive OPC-like comparison zero selected, zero nonpassed. Go has no GitHub Actions workflow or CI result. No Bun/Python, general XML/schema/ECMA, Office, CACHE-001, PPTX or PDF credit."
         },
         "python": {
           "status": "planned",
