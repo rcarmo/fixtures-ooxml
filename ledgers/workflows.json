@@ -1821,8 +1821,8 @@
       ],
       "consumers": {
         "bun": {
-          "status": "planned",
-          "evidence": "Existing local bindings passed; canonical-path run tracked separately in consumer"
+          "status": "implemented",
+          "evidence": "Bun 65ab23d90e047e43be6865bf2078647983842782 at shared v0.72.0 executes all eight exact DOCX create steps in features/shared.json and tests/acceptance/create-docx.ts. New package is saved and reopened; three members, escaped boundary-spaced text, bold/italic run and paragraph-before-section placement are checked. Fresh GitHub recursive make check passed 732/732 selected cases; tests/unit/docx-create.test.ts runs all four canonical creation scenarios (8 cases) with dedicated and parent bindings. No Go/Python, rendering or broader minimal-package credit."
         },
         "go": {
           "status": "planned",
@@ -1845,8 +1845,8 @@
       ],
       "consumers": {
         "bun": {
-          "status": "planned",
-          "evidence": "Existing local bindings passed; canonical-path run tracked separately in consumer"
+          "status": "implemented",
+          "evidence": "Bun 65ab23d90e047e43be6865bf2078647983842782 at shared v0.72.0 executes all five exact DOCX create steps in features/shared.json and tests/acceptance/create-docx.ts. A Heading1 paragraph is appended to the selected fixture, saved and reopened, then paragraph five text and style are checked. Fresh GitHub recursive make check passed 732/732 selected cases; tests/unit/docx-create.test.ts runs the canonical creation scope (8 cases). No Go/Python or unrelated style credit."
         },
         "go": {
           "status": "planned",
@@ -1870,8 +1870,8 @@
       ],
       "consumers": {
         "bun": {
-          "status": "planned",
-          "evidence": "Existing local bindings passed; canonical-path run tracked separately in consumer"
+          "status": "implemented",
+          "evidence": "Bun 65ab23d90e047e43be6865bf2078647983842782 at shared v0.72.0 executes all nine exact DOCX create steps in features/shared.json and tests/acceptance/create-docx.ts. After append, the earlier span refuses with docx-stale-span; saved bytes match the post-append baseline and docProps/core.xml remains unchanged. Fresh GitHub recursive make check passed 732/732 selected cases; tests/unit/docx-create.test.ts runs the canonical creation scope (8 cases). No Go/Python or general saved-part custody credit."
         },
         "go": {
           "status": "planned",
@@ -1896,8 +1896,8 @@
       ],
       "consumers": {
         "bun": {
-          "status": "planned",
-          "evidence": "Existing local bindings passed; canonical-path run tracked separately in consumer"
+          "status": "implemented",
+          "evidence": "Bun 65ab23d90e047e43be6865bf2078647983842782 at shared v0.72.0 executes all five exact five-step DOCX create refusal rows in features/shared.json and tests/acceptance/create-docx.ts. Invalid text, options and bold arguments refuse with docx-invalid-argument; missing styles part returns docx-style-unsupported; unknown-style lookup returns docx-style-missing. Each post-refusal save equals its remembered baseline. Fresh GitHub recursive make check passed 732/732 selected cases; tests/unit/docx-create.test.ts runs the canonical creation scope (8 cases). No Go/Python or unselected refusal credit."
         },
         "go": {
           "status": "planned",

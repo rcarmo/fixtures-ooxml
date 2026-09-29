@@ -24,5 +24,5 @@ test('Bun executes seven exact DOCX text slice rows without Go or Python credit'
   for(const marker of [...markers,'58606ce10af271ae043f4b5c5baba86cadd3f7bb','Fresh GitHub recursive make check','732/732','canonical source'])expect(current.consumers.bun.evidence).toContain(marker);
   const unchanged=structuredClone(current);unchanged.consumers.bun=old.consumers.bun;expect(unchanged).toEqual(old);
  }
- const ids=new Set(specs.map(s=>s.id));expect(ledger.workflows.filter((w:any)=>!ids.has(w.id))).toEqual(prior.workflows.filter((w:any)=>!ids.has(w.id)));
+ const ids=new Set([...specs.map(s=>s.id),...["@id-docx-create-minimal-package","@id-docx-create-style-validation","@id-docx-create-stale-opaque","@id-docx-create-atomic-refusals"]]);expect(ledger.workflows.filter((w:any)=>!ids.has(w.id))).toEqual(prior.workflows.filter((w:any)=>!ids.has(w.id)));
 });
