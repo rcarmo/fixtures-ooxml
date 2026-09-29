@@ -2186,8 +2186,8 @@
       ],
       "consumers": {
         "bun": {
-          "status": "planned",
-          "evidence": "Existing local bindings passed; canonical-path run tracked separately in consumer"
+          "status": "implemented",
+          "evidence": "Bun 61721658e5f3284c3b942cea7455f60e8f8fdeee at shared v0.97.0 executes One exact five-step native XLSX creation case saves/reopens Alpha at A1, 7 at B2 and true at C3, checks the minimal six package parts and Sheet1 dimension A1:C3. features/shared.json, tests/acceptance/create-xlsx.ts and tests/unit/xlsx-create.test.ts bind seven exact cases/29 steps and verify saved/reopened values, XML and atomic refusal. Fresh post-push GitHub recursive make check passed 732/732 selected cases; Bun CI 36531508355 succeeded. No Go/Python, live spreadsheet calculation, Office rendering, other worksheet families or cross-consumer credit."
         },
         "go": {
           "status": "planned",
@@ -2210,8 +2210,8 @@
       ],
       "consumers": {
         "bun": {
-          "status": "planned",
-          "evidence": "Existing local bindings passed; canonical-path run tracked separately in consumer"
+          "status": "implemented",
+          "evidence": "Bun 61721658e5f3284c3b942cea7455f60e8f8fdeee at shared v0.97.0 executes One exact four-step worksheet-add case saves/reopens Sheet1, Data and Summary with exact Data A1 and Summary B2 values, sheet IDs 1/2/3 and separate rId1/rId3/rId4 worksheet relationships. features/shared.json, tests/acceptance/create-xlsx.ts and tests/unit/xlsx-create.test.ts bind seven exact cases/29 steps and verify saved/reopened values, XML and atomic refusal. Fresh post-push GitHub recursive make check passed 732/732 selected cases; Bun CI 36531508355 succeeded. No Go/Python, live spreadsheet calculation, Office rendering, other worksheet families or cross-consumer credit."
         },
         "go": {
           "status": "planned",
@@ -2234,8 +2234,8 @@
       ],
       "consumers": {
         "bun": {
-          "status": "planned",
-          "evidence": "Existing local bindings passed; canonical-path run tracked separately in consumer"
+          "status": "implemented",
+          "evidence": "Bun 61721658e5f3284c3b942cea7455f60e8f8fdeee at shared v0.97.0 executes One exact four-step prefixed-worksheet case writes missing B2, saves/reopens Prefixed as text, and checks qualified dimension/row/cell/text XML nodes instead of unqualified nodes. features/shared.json, tests/acceptance/create-xlsx.ts and tests/unit/xlsx-create.test.ts bind seven exact cases/29 steps and verify saved/reopened values, XML and atomic refusal. Fresh post-push GitHub recursive make check passed 732/732 selected cases; Bun CI 36531508355 succeeded. No Go/Python, live spreadsheet calculation, Office rendering, other worksheet families or cross-consumer credit."
         },
         "go": {
           "status": "planned",
@@ -2258,8 +2258,8 @@
       ],
       "consumers": {
         "bun": {
-          "status": "planned",
-          "evidence": "Existing local bindings passed; canonical-path run tracked separately in consumer"
+          "status": "implemented",
+          "evidence": "Bun 61721658e5f3284c3b942cea7455f60e8f8fdeee at shared v0.97.0 executes One exact four-step maximum-coordinate case saves/reopens XFD1048576 as number 1 and checks the exact dimension XFD1048576:XFD1048576. features/shared.json, tests/acceptance/create-xlsx.ts and tests/unit/xlsx-create.test.ts bind seven exact cases/29 steps and verify saved/reopened values, XML and atomic refusal. Fresh post-push GitHub recursive make check passed 732/732 selected cases; Bun CI 36531508355 succeeded. No Go/Python, live spreadsheet calculation, Office rendering, other worksheet families or cross-consumer credit."
         },
         "go": {
           "status": "planned",
@@ -2282,8 +2282,8 @@
       ],
       "consumers": {
         "bun": {
-          "status": "planned",
-          "evidence": "Existing local bindings passed; canonical-path run tracked separately in consumer"
+          "status": "implemented",
+          "evidence": "Bun 61721658e5f3284c3b942cea7455f60e8f8fdeee at shared v0.97.0 executes One exact four-step missing-row/cell insertion case saves/reopens four values and requires ascending numeric rows 1/2/3 and cells A1/B1/A2/C3. features/shared.json, tests/acceptance/create-xlsx.ts and tests/unit/xlsx-create.test.ts bind seven exact cases/29 steps and verify saved/reopened values, XML and atomic refusal. Fresh post-push GitHub recursive make check passed 732/732 selected cases; Bun CI 36531508355 succeeded. No Go/Python, live spreadsheet calculation, Office rendering, other worksheet families or cross-consumer credit."
         },
         "go": {
           "status": "planned",
@@ -2306,8 +2306,8 @@
       ],
       "consumers": {
         "bun": {
-          "status": "planned",
-          "evidence": "Existing local bindings passed; canonical-path run tracked separately in consumer"
+          "status": "implemented",
+          "evidence": "Bun 61721658e5f3284c3b942cea7455f60e8f8fdeee at shared v0.97.0 executes One exact four-step refusal case tries three invalid coordinates and seven invalid worksheet names; each refusal retains the original workbook bytes and only Sheet1. features/shared.json, tests/acceptance/create-xlsx.ts and tests/unit/xlsx-create.test.ts bind seven exact cases/29 steps and verify saved/reopened values, XML and atomic refusal. Fresh post-push GitHub recursive make check passed 732/732 selected cases; Bun CI 36531508355 succeeded. No Go/Python, live spreadsheet calculation, Office rendering, other worksheet families or cross-consumer credit."
         },
         "go": {
           "status": "planned",
@@ -2330,8 +2330,8 @@
       ],
       "consumers": {
         "bun": {
-          "status": "planned",
-          "evidence": "Existing local bindings passed; canonical-path run tracked separately in consumer"
+          "status": "implemented",
+          "evidence": "Bun 61721658e5f3284c3b942cea7455f60e8f8fdeee at shared v0.97.0 executes One exact four-step existing-formatting-workbook append writes E7 tail, saves/reopens, preserves five unrelated parts byte-for-byte plus surrounding column/page nodes, and changes dimension to A1:E7. features/shared.json, tests/acceptance/create-xlsx.ts and tests/unit/xlsx-create.test.ts bind seven exact cases/29 steps and verify saved/reopened values, XML and atomic refusal. Fresh post-push GitHub recursive make check passed 732/732 selected cases; Bun CI 36531508355 succeeded. No Go/Python, live spreadsheet calculation, Office rendering, other worksheet families or cross-consumer credit."
         },
         "go": {
           "status": "planned",

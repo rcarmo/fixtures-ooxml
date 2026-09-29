@@ -1,3 +1,4 @@
+const xlsxCreateIds = new Set(["@id-xlsx-create-native-default","@id-xlsx-create-add-worksheet","@id-xlsx-create-prefixed-missing-cell","@id-xlsx-create-coordinate-boundary","@id-xlsx-create-row-ordering","@id-xlsx-create-invalid-params-atomic","@id-xlsx-create-existing-fixture-append"]);
 const slideOrderIds = new Set(["@id-pptx-slide-permutation","@id-pptx-slide-permutation-refusal"]);
 import { test, expect } from 'bun:test';
 import { execFileSync } from 'node:child_process';
@@ -36,5 +37,5 @@ test('Bun executes exact positioned PPTX text-box outcomes and atomic refusals w
   expect(specs.reduce((n, s) => n + s.kinds.length, 0)).toBe(23);
   expect(specs.reduce((n, s) => n + s.kinds.reduce((m, k) => m + s.steps(k).length, 0), 0)).toBe(77);
   const changed = new Set(specs.map(s => s.id));
-  expect(ledger.workflows.filter((w: any) =>!slideOrderIds.has(w.id)&& !changed.has(w.id))).toEqual(prior.workflows.filter((w: any) =>!slideOrderIds.has(w.id)&& !changed.has(w.id)));
+  expect(ledger.workflows.filter((w: any) =>!xlsxCreateIds.has(w.id)&&!slideOrderIds.has(w.id)&& !changed.has(w.id))).toEqual(prior.workflows.filter((w: any) =>!xlsxCreateIds.has(w.id)&&!slideOrderIds.has(w.id)&& !changed.has(w.id)));
 });
