@@ -3087,8 +3087,8 @@
           "evidence": "Binding and execution pending"
         },
         "python": {
-          "status": "planned",
-          "evidence": "Binding and execution pending"
+          "status": "implemented",
+          "evidence": "Python published 75684be5b3c041f2c83140fa8d6839e327fe8b15 at shared v0.105.0 executes the one exact seven-step existing-graph case: namespace-aware worksheet legacyDrawing anysvml resolves internally to xl/drawings/commentsDrawing1.vml with exact vmlDrawing Type, a distinct internal comments relationship resolves to xl/comments/comment1.xml, and A2/A3 text matches the sealed source. tools/xlsx_comment_vml.py is read-only; tests/comment_vml_acceptance/{cases,conftest,test_existing_graph,test_graph_controls}.py binds exact case key, feature seal, step texts/outcomes, source byte custody and 15 malformed-graph/false-pass/alias controls. Canonical red preceded implementation. Local, independent clean recursive pre-push and fresh GitHub post-push full suites each passed 1,353 tests; seven lanes including comment-VML 1 case/7 steps passed, and Python CI 36541700081 succeeded across 3.10/3.12/3.13. Five preservation-row/limited-number editor cases remain planned. No comment editing, VML shape custody, save/reopen, Go execution, Office rendering or cross-consumer credit."
         }
       }
     },

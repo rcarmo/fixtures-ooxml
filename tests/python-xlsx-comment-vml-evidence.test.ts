@@ -1,0 +1,25 @@
+import {test,expect} from 'bun:test';
+import {execFileSync} from 'node:child_process';
+import {cases} from '../scripts/verify.ts';
+
+const path='workflows/xlsx/comment-vml-custody.feature',id='@id-xlsx-comment-vml-existing-graph';
+const steps=[
+ 'fixture fixture-264be55e012d4bc2b3bf25e59824fdd30022e94f70869ea7d6ad960b803a902f',
+ 'a namespace-aware reader opens xl/worksheets/sheet1.xml and its relationship part',
+ 'the legacyDrawing relationship ID is anysvml and resolves internally to xl/drawings/commentsDrawing1.vml',
+ 'the corresponding relationship Type is http://schemas.openxmlformats.org/officeDocument/2006/relationships/vmlDrawing',
+ 'a separate comments relationship resolves internally to xl/comments/comment1.xml',
+ 'the comment part contains A2 with text This is the protagonist who creates the creature.',
+ "the comment part contains A3 with text Often mistakenly called 'Frankenstein' - that is the creator's name.",
+];
+
+test('Python executes only exact seven-step existing XLSX comment/VML read graph',async()=>{
+ const ledger=await Bun.file('ledgers/workflows.json').json(),prior=JSON.parse(execFileSync('git',['show','8312404125486650956807f940a1e5ab583f79c3:ledgers/workflows.json']).toString()),compiled=cases(path,await Bun.file(path).text());
+ const now=ledger.workflows.find((w:any)=>w.id===id),old=prior.workflows.find((w:any)=>w.id===id);
+ expect(now.feature).toBe(path);expect(now.expandedCases).toBe(1);expect(compiled.filter((r:any)=>r.scenarioId===id).map((r:any)=>r.steps.map((s:any)=>s.text))).toEqual([steps]);expect(now.expectedOutcomes).toEqual(steps.slice(2));
+ expect(old.consumers.python.status).toBe('planned');expect(now.consumers.python.status).toBe('implemented');
+ for(const marker of ['75684be5b3c041f2c83140fa8d6839e327fe8b15','shared v0.105.0','one exact seven-step','xl/drawings/commentsDrawing1.vml','xl/comments/comment1.xml','A2/A3','tools/xlsx_comment_vml.py','test_existing_graph,test_graph_controls','15 malformed-graph/false-pass/alias controls','1,353 tests','comment-VML 1 case/7 steps','36541700081','Five preservation-row/limited-number editor cases remain planned','No comment editing'])expect(now.consumers.python.evidence).toContain(marker);
+ expect(now.consumers.bun).toEqual(old.consumers.bun);expect(now.consumers.go).toEqual(old.consumers.go);const unchanged=structuredClone(now);unchanged.consumers.python=old.consumers.python;expect(unchanged).toEqual(old);
+ expect(compiled.filter((r:any)=>r.scenarioId!==id)).toHaveLength(5);
+ expect(ledger.workflows.filter((w:any)=>w.id!==id&&!['@id-docx-paragraph-style-authoring','@id-docx-paragraph-style-authoring-refusal'].includes(w.id))).toEqual(prior.workflows.filter((w:any)=>w.id!==id&&!['@id-docx-paragraph-style-authoring','@id-docx-paragraph-style-authoring-refusal'].includes(w.id)));
+});
