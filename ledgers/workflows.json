@@ -3295,8 +3295,8 @@
           "evidence": "Bun 2635a5ff62eab79cc8d12ad1cb013bab9536d38e at shared v0.77.0 executes One exact five-step case preserves empty root namespace, xml:lang en and the implicit XML namespace URI. features/shared.json and tests/acceptance/xml-values.ts bind the exact shared steps; tests/unit/xml-values-bindings.test.ts runs all ten canonical XML value scenarios (11 cases/39 steps) and altered expectations or corrupted results fail without undefined/ambiguous bindings. Fresh GitHub recursive make check passed 732/732 selected cases. No Go/Python, OPC package, rendering or unselected XML credit."
         },
         "go": {
-          "status": "planned",
-          "evidence": "Native execution binding pending"
+          "status": "implemented",
+          "evidence": "Go published cb5e9682f32eef23cadf1701816d714709d3ef1b at shared v0.132.0 binds only @id-xml-implicit-xml-prefix, one canonical five-step case at workflows/xml/parsing.feature:71–77 via acceptance/{acceptance,inventory,xml_entity_values,xml_implicit_prefix}_test.go. Native losslessxml.Parse verifies the unqualified r root, expanded xml:lang=en, implicit http://www.w3.org/XML/1998/namespace URI, original caller custody and detached no-op output. Reserved xmlns:xml rebind refuses with caller custody and valid retry; two temporary production mutations removing namespace seeding and corrupting attribute expansion produced restored behavioural reds. Published Go main and fresh recursive GitHub clone passed uncached no-override root and acceptance gates: 423 cases/1458 steps, zero nonpassed; CACHE-001 selected zero. Go has no GitHub Actions CI. No general XML, DTD, offsets, OPC, CACHE, PPTX, Office or PDF credit."
         },
         "python": {
           "status": "implemented",
