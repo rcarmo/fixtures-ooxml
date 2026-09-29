@@ -20,5 +20,5 @@ test('Python credits only one staged DOCX OPC unrelated-payload preservation cas
  expect(now.consumers.bun).toEqual(old.consumers.bun);expect(now.consumers.go).toEqual(old.consumers.go);
  const unchanged=structuredClone(now);unchanged.consumers.python=old.consumers.python;expect(unchanged).toEqual(old);
  for(const sibling of ['@id-opc-package-corpus-noop','@id-opc-package-transaction-rollback','@id-xml-comparison-prefix-and-opc-order'])expect(ledger.workflows.find((w:any)=>w.id===sibling)).toEqual(prior.workflows.find((w:any)=>w.id===sibling));
- expect(ledger.workflows.filter((w:any)=>w.id!=="@id-xml-go-attribute-splice-custody"&&w.id!==id)).toEqual(prior.workflows.filter((w:any)=>w.id!=="@id-xml-go-attribute-splice-custody"&&w.id!==id));
+ expect(ledger.workflows.filter((w:any)=>w.id!=="@id-xml-entity-values"&&w.id!=="@id-xml-go-attribute-splice-custody"&&w.id!==id)).toEqual(prior.workflows.filter((w:any)=>w.id!=="@id-xml-entity-values"&&w.id!=="@id-xml-go-attribute-splice-custody"&&w.id!==id));
 });

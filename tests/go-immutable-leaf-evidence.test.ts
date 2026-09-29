@@ -20,5 +20,5 @@ test('Go executes only the four-step immutable XML leaf seed with snapshot and a
  expect(now.consumers.bun).toEqual(old.consumers.bun);expect(now.consumers.python).toEqual(old.consumers.python);
  const unchanged=structuredClone(now);unchanged.consumers.go=old.consumers.go;expect(unchanged).toEqual(old);
  const positive=ledger.workflows.find((w:any)=>w.id==='@id-xml-comparison-prefix-and-opc-order');expect(positive).toEqual(prior.workflows.find((w:any)=>w.id===positive.id));expect(positive.consumers.go.status).toBe('planned');
- expect(ledger.workflows.filter((w:any)=>w.id!=="@id-xml-go-attribute-splice-custody"&&w.id!=="@id-opc-package-preserve-unrelated"&&w.id!==id)).toEqual(prior.workflows.filter((w:any)=>w.id!=="@id-xml-go-attribute-splice-custody"&&w.id!=="@id-opc-package-preserve-unrelated"&&w.id!==id));
+ expect(ledger.workflows.filter((w:any)=>w.id!=="@id-xml-entity-values"&&w.id!=="@id-xml-go-attribute-splice-custody"&&w.id!=="@id-opc-package-preserve-unrelated"&&w.id!==id)).toEqual(prior.workflows.filter((w:any)=>w.id!=="@id-xml-entity-values"&&w.id!=="@id-xml-go-attribute-splice-custody"&&w.id!=="@id-opc-package-preserve-unrelated"&&w.id!==id));
 });

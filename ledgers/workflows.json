@@ -3228,8 +3228,8 @@
           "evidence": "Native execution binding pending"
         },
         "python": {
-          "status": "planned",
-          "evidence": "Native execution binding pending"
+          "status": "implemented",
+          "evidence": "Python published 9354a5996f1ac3b87a4c9a343894d325ecfe7ecc at shared v0.116.0 executes only @id-xml-entity-values, one exact four-step case from workflows/xml/parsing.feature SHA256 350edcdfa0dc1206f9f5165cae93ba41c12b6974ee21e71cd3329ed2a82438ff, via tests/xml_entity_values/{cases,conftest,test_entities}.py. Exact ID/name/step types and JSON Given/output literals are sealed; the test decodes UTF-8 input <r a=\"&quot;&apos;\">&#x41;&#65;&amp;&lt;&gt;</r> (48 bytes), invokes existing tools.xlsx_preservation.parse once and independently asserts root r, attribute a as double+single quote and text AA&<> while preserving caller source bytes and per-step evidence. Seven separate one-reference mutations (hex, decimal, quot, apos, amp, lt, gt) each change only the expected decoded value; malformed reference refuses with XMLSyntaxError as an auxiliary control. A separate control documents that this parser ACCEPTS an internal DTD declaration, so this case does not establish DTD refusal, package admission or general XML security. Canonical red test lacked observed result/custody then targeted ten tests passed. Exact published local, independent recursive pre-push and fresh GitHub recursive post-push full suites each passed 1,373 tests (three existing warnings) with ten clean-provenance lanes including XML entity exact 1 case/4 steps; Python CI 36569839564 succeeded on 3.10/3.12/3.13. No Go credit, offsets, generic XML parser API, Office, package, PPTX or PDF claim."
         }
       }
     },
