@@ -14,5 +14,5 @@ test('Go latent negative-budget and ZIP32 unsigned-descriptor canonical executio
   expect(old.consumers.go.status).toBe('planned');expect(now.consumers.go.status).toBe('implemented');for(const marker of [commit,log,binding,hash,'fba1b5cd7c45a83eff00b95b85d8cf8a569a0bdf','395 selected cases/1351 passed steps','stale planned ledger state','Go code or selector change'])expect(now.consumers.go.evidence).toContain(marker);
   expect(now.consumers.bun).toEqual(old.consumers.bun);expect(now.consumers.python).toEqual(old.consumers.python);const unchanged=structuredClone(now);unchanged.consumers.go=old.consumers.go;expect(unchanged).toEqual(old);
  }
- const ids=new Set(specs.map(([id])=>id));expect(ledger.workflows.filter((w:any)=>!ids.has(w.id))).toEqual(prior.workflows.filter((w:any)=>!ids.has(w.id)));
+ const ids=new Set(specs.map(([id])=>id));expect(ledger.workflows.filter((w:any)=>!['@id-xml-comparison-significant-content','@id-xml-comparison-prefix-attribute-binding','@id-xml-comparison-unsafe-input','@id-xml-comparison-processing-instructions-and-comments'].includes(w.id) && !ids.has(w.id))).toEqual(prior.workflows.filter((w:any)=>!['@id-xml-comparison-significant-content','@id-xml-comparison-prefix-attribute-binding','@id-xml-comparison-unsafe-input','@id-xml-comparison-processing-instructions-and-comments'].includes(w.id) && !ids.has(w.id)));
 });

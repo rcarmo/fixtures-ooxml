@@ -1,0 +1,25 @@
+import {test,expect} from 'bun:test';
+import {execFileSync} from 'node:child_process';
+import {cases} from '../scripts/verify.ts';
+
+const path='workflows/xml/comparison.feature';
+const specs=[
+ ['@id-xml-comparison-significant-content',3,'three four-step negative pairs'],
+ ['@id-xml-comparison-prefix-attribute-binding',1,'one four-step negative pair'],
+ ['@id-xml-comparison-unsafe-input',2,'two four-step identical DTD-bearing and malformed'],
+ ['@id-xml-comparison-processing-instructions-and-comments',3,'three four-step negative pairs'],
+] as const;
+
+test('Go executes nine bounded negative XML Boolean pairs without positive OPC or broad schema credit',async()=>{
+ const ledger=await Bun.file('ledgers/workflows.json').json(),prior=JSON.parse(execFileSync('git',['show','f767fa76873a3ae84366294f1b68e09262f7e182:ledgers/workflows.json']).toString()),rows=cases(path,await Bun.file(path).text());
+ for(const[id,count,scope]of specs){const now=ledger.workflows.find((w:any)=>w.id===id),old=prior.workflows.find((w:any)=>w.id===id),actual=rows.filter((r:any)=>r.scenarioId===id);
+  expect(now.feature).toBe(path);expect(now.expandedCases).toBe(count);expect(actual).toHaveLength(count);
+  for(const row of actual){expect(row.steps).toHaveLength(4);expect(row.steps.map((s:any)=>s.text).slice(2)).toEqual(['the conservative XML comparator compares their UTF-8 bytes','the comparison result is false']);}
+  expect(now.expectedOutcomes).toEqual(['the comparison result is false']);expect(old.consumers.go.status).toBe('planned');expect(now.consumers.go.status).toBe('implemented');
+  for(const marker of [scope,'01a840925354bde308d9f35f0e064d3e24950259','shared v0.111.0','nine cases/36 steps','acceptance/{xml_comparison,inventory,acceptance}_test.go','internal/losslessxml/comparison.go','reports/batches/244.md','404 selected cases/1387 steps','zero positive OPC case','No Go GitHub CI workflow','no XML canonical output'])expect(now.consumers.go.evidence).toContain(marker);
+  expect(now.consumers.bun).toEqual(old.consumers.bun);expect(now.consumers.python).toEqual(old.consumers.python);const unchanged=structuredClone(now);unchanged.consumers.go=old.consumers.go;expect(unchanged).toEqual(old);
+ }
+ expect(specs.reduce((n,[,count])=>n+count,0)).toBe(9);
+ const positive=ledger.workflows.find((w:any)=>w.id==='@id-xml-comparison-prefix-and-opc-order');expect(positive.consumers.go.status).toBe('planned');expect(positive).toEqual(prior.workflows.find((w:any)=>w.id===positive.id));
+ const changed=new Set(specs.map(([id])=>id));expect(ledger.workflows.filter((w:any)=>!changed.has(w.id))).toEqual(prior.workflows.filter((w:any)=>!changed.has(w.id)));
+});
