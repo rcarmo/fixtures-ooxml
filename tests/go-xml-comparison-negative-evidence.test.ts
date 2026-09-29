@@ -21,5 +21,5 @@ test('Go executes nine bounded negative XML Boolean pairs without positive OPC o
  }
  expect(specs.reduce((n,[,count])=>n+count,0)).toBe(9);
  const positive=ledger.workflows.find((w:any)=>w.id==='@id-xml-comparison-prefix-and-opc-order');expect(positive.consumers.go.status).toBe('planned');expect(positive).toEqual(prior.workflows.find((w:any)=>w.id===positive.id));
- const changed=new Set(specs.map(([id])=>id));expect(ledger.workflows.filter((w:any)=>!changed.has(w.id))).toEqual(prior.workflows.filter((w:any)=>!changed.has(w.id)));
+ const changed=new Set(specs.map(([id])=>id));expect(ledger.workflows.filter((w:any)=>!['@id-package-admission-negative-budget','@id-zip-unsigned-descriptor-signature-collision'].includes(w.id) && !changed.has(w.id))).toEqual(prior.workflows.filter((w:any)=>!['@id-package-admission-negative-budget','@id-zip-unsigned-descriptor-signature-collision'].includes(w.id) && !changed.has(w.id)));
 });

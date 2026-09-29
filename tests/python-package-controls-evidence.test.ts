@@ -1,0 +1,20 @@
+import {test,expect} from 'bun:test';
+import {execFileSync} from 'node:child_process';
+import {cases} from '../scripts/verify.ts';
+
+const specs=[
+ ['@id-package-admission-negative-budget','workflows/package/admission-limit-configuration.feature',2,12,'two exact six-step','tests/package_limit_configuration/{cases,conftest,test_negative_budgets}.py','885083126a39d17a795609bbf5d2e273678b5d8613af9cafdc0fac46396adb8a'],
+ ['@id-zip-unsigned-descriptor-signature-collision','workflows/package/data-descriptor-integrity.feature',1,8,'one exact eight-step','tests/package_descriptor_integrity/{cases,conftest,test_descriptor}.py','c0c855a3f4dd74e15fd59aa03572bb7f8c752544fd9bb64b6f082e14388c9370'],
+] as const;
+
+test('Python executes bounded negative budgets and one ZIP32 descriptor collision with independent controls',async()=>{
+ const ledger=await Bun.file('ledgers/workflows.json').json(),prior=JSON.parse(execFileSync('git',['show','ef1e20a4b9e142f9675eb9c79eee0f678bcb87c6:ledgers/workflows.json']).toString());
+ for(const[id,path,count,steps,scope,binding,seal]of specs){const now=ledger.workflows.find((w:any)=>w.id===id),old=prior.workflows.find((w:any)=>w.id===id),rows=cases(path,await Bun.file(path).text()).filter((r:any)=>r.scenarioId===id);
+  expect(now.feature).toBe(path);expect(now.expandedCases).toBe(count);expect(rows).toHaveLength(count);expect(rows.reduce((n:number,r:any)=>n+r.steps.length,0)).toBe(steps);expect(now.expectedOutcomes).toEqual([...new Set(rows.flatMap((r:any)=>r.steps.slice(count===2?3:4).map((s:any)=>s.text)))]);
+  expect(old.consumers.python.status).toBe('planned');expect(now.consumers.python.status).toBe('implemented');for(const marker of [scope,'c384e4582b75490e06355b05c4ee1c79252f48a2','shared v0.111.0',binding,seal,'1,359 tests','Python CI 36556335436','No new runtime code'])expect(now.consumers.python.evidence).toContain(marker);
+  if(count===2){for(const marker of ['Path.stat, Path.read_bytes, Path.open and ZipFile','zero pre-intake probes','PackageAdmissionArgumentError','default budgets','zero source/member budgets'])expect(now.consumers.python.evidence).toContain(marker);}
+  else {for(const marker of ['135-byte','08074b50','422c6a15','same-geometry','PackageAdmissionError','12-byte descriptor'])expect(now.consumers.python.evidence).toContain(marker);}
+  expect(now.consumers.bun).toEqual(old.consumers.bun);expect(now.consumers.go).toEqual(old.consumers.go);const unchanged=structuredClone(now);unchanged.consumers.python=old.consumers.python;expect(unchanged).toEqual(old);
+ }
+ const ids=new Set(specs.map(([id])=>id));expect(ledger.workflows.filter((w:any)=>!ids.has(w.id))).toEqual(prior.workflows.filter((w:any)=>!ids.has(w.id)));
+});
