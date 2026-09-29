@@ -2478,8 +2478,8 @@
       ],
       "consumers": {
         "bun": {
-          "status": "planned",
-          "evidence": "Existing local bindings passed; canonical-path run tracked separately in consumer"
+          "status": "implemented",
+          "evidence": "Bun 7745d19daa9c8f50a34882ff51bc460dde162200 at shared v0.85.0 executes one exact three-step broad ZIP32 configured-bounds case. features/shared.json and tests/acceptance/core.ts build a two-entry raw-DEFLATE archive and require typed codes for maxArchiveBytes, maxEntries, maxEntryBytes, maxTotalBytes and maxCompressionRatio. Independent invalid-DEFLATE control on the same declared expanded payload fails zip-data-invalid without limits; each configured threshold instead returns its distinct limit OoxmlError before inflation is attempted, with caller archive bytes unchanged. tests/unit/zip.test.ts checks the five codes/messages; tests/unit/zip32-bindings.test.ts executes five separate exact configured-bound rows. Fresh post-push GitHub recursive make check passed 732/732 selected cases and Bun CI 36521702825 succeeded. No Go/Python; this is not a measured allocator cap, ZIP64 admission, rendering or general OPC credit."
         },
         "go": {
           "status": "planned",

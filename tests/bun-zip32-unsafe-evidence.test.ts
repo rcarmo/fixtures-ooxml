@@ -29,6 +29,6 @@ test('Bun alone executes broad ZIP32 unsafe structural refusal without bounds or
   for (const marker of ['98138f740215c8bca8f94512198824c2b330b269', 'shared v0.84.0', 'nine-step', 'eleven distinct archives', 'independent literal code', 'tests/acceptance/core.ts', 'tests/unit/zip32-bindings.test.ts', 'Fresh post-push GitHub recursive make check', '732/732', 'No Go/Python']) expect(now.consumers.bun.evidence).toContain(marker);
   expect(now.consumers.go).toEqual(old.consumers.go); expect(now.consumers.python).toEqual(old.consumers.python);
   const unchanged = structuredClone(now); unchanged.consumers.bun = old.consumers.bun; expect(unchanged).toEqual(old);
-  expect(ledger.workflows.filter((w: any) => w.id !== id)).toEqual(prior.workflows.filter((w: any) => w.id !== id));
-  expect(ledger.workflows.find((w: any) => w.id === '@id-zip-bounds').consumers.bun.status).toBe('planned');
+  expect(ledger.workflows.filter((w: any) => w.id !== id && w.id !== '@id-zip-bounds')).toEqual(prior.workflows.filter((w: any) => w.id !== id && w.id !== '@id-zip-bounds'));
+  expect(ledger.workflows.find((w: any) => w.id === '@id-zip-bounds').consumers.bun.status).toBe('implemented');
 });
