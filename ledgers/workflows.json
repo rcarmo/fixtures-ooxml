@@ -1297,8 +1297,8 @@
       ],
       "consumers": {
         "bun": {
-          "status": "planned",
-          "evidence": "Native assertions reviewed; canonical feature binding rerun required"
+          "status": "implemented",
+          "evidence": "Bun ee1a099d8a1cd928ddb3814f3b94b35d9adee989 at shared v0.78.0 executes all three exact three-step invalid QName rows in features/shared.json and tests/acceptance/xml-names.ts. Numeric-leading element-local, attribute-local and declared-prefix components each refuse with XML_MALFORMED and no parsed document. tests/unit/xml-names.test.ts runs the canonical feature (6 cases) with exported bindings; fresh GitHub recursive make check passed 732/732 selected cases. No Go/Python or unselected XML admission credit."
         },
         "go": {
           "status": "planned",
@@ -1321,8 +1321,8 @@
       ],
       "consumers": {
         "bun": {
-          "status": "planned",
-          "evidence": "Native assertions reviewed; canonical feature binding rerun required"
+          "status": "implemented",
+          "evidence": "Bun ee1a099d8a1cd928ddb3814f3b94b35d9adee989 at shared v0.78.0 executes all four exact Unicode QName steps in features/shared.json and tests/acceptance/xml-names.ts. Prefix/local Unicode identity, expanded names and attribute value are checked; UTF-16 source offsets slice the original Unicode child element. tests/unit/xml-names.test.ts runs the canonical feature (6 cases); fresh GitHub recursive make check passed 732/732 selected cases. No Go/Python or general Unicode XML credit."
         },
         "go": {
           "status": "planned",
@@ -1344,8 +1344,8 @@
       ],
       "consumers": {
         "bun": {
-          "status": "planned",
-          "evidence": "Native assertions reviewed; canonical feature binding rerun required"
+          "status": "implemented",
+          "evidence": "Bun ee1a099d8a1cd928ddb3814f3b94b35d9adee989 at shared v0.78.0 executes both exact three-step NBSP rows in features/shared.json and tests/acceptance/xml-names.ts. A non-breaking space before or after the root refuses with XML_MALFORMED and no returned document. tests/unit/xml-names.test.ts runs the canonical feature (6 cases); fresh GitHub recursive make check passed 732/732 selected cases. No Go/Python or unrelated XML whitespace credit."
         },
         "go": {
           "status": "planned",
