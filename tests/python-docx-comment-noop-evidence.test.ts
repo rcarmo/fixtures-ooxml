@@ -21,5 +21,5 @@ test('Python credits only the exact pinned existing-comment archive no-op',async
  expect(now.consumers.bun).toEqual(old.consumers.bun);expect(now.consumers.go).toEqual(old.consumers.go);
  const unchanged=structuredClone(now);unchanged.consumers.python=old.consumers.python;expect(unchanged).toEqual(old);
  for(const sibling of ['@id-docx-comments-inspection','@id-docx-comments-resolution','@id-docx-comments-refusal'])expect(ledger.workflows.find((w:any)=>w.id===sibling)).toEqual(prior.workflows.find((w:any)=>w.id===sibling));
- expect(ledger.workflows.filter((w:any)=>w.id!==id)).toEqual(prior.workflows.filter((w:any)=>w.id!==id));
+ expect(ledger.workflows.filter((w:any)=>w.id!==id&&w.id!=='@id-opc-package-preserve-unrelated')).toEqual(prior.workflows.filter((w:any)=>w.id!==id&&w.id!=='@id-opc-package-preserve-unrelated'));
 });

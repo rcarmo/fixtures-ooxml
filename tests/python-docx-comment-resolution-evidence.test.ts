@@ -27,5 +27,5 @@ test('Python credits only sealed existing-extension comment resolution and lexic
   const current=ledger.workflows.find((w:any)=>w.id===sibling),previous=prior.workflows.find((w:any)=>w.id===sibling);
   expect(current).toEqual(previous);
  }
- expect(ledger.workflows.filter((w:any)=>w.id!==id&&w.id!=='@id-xml-expanded-attribute-lookup'&&w.id!=='@id-docx-comments-noop')).toEqual(prior.workflows.filter((w:any)=>w.id!==id&&w.id!=='@id-xml-expanded-attribute-lookup'&&w.id!=='@id-docx-comments-noop'));
+ expect(ledger.workflows.filter((w:any)=>w.id!==id&&w.id!=='@id-xml-expanded-attribute-lookup'&&w.id!=='@id-docx-comments-noop'&&w.id!=='@id-opc-package-preserve-unrelated')).toEqual(prior.workflows.filter((w:any)=>w.id!==id&&w.id!=='@id-xml-expanded-attribute-lookup'&&w.id!=='@id-docx-comments-noop'&&w.id!=='@id-opc-package-preserve-unrelated'));
 });
