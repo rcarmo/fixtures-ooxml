@@ -3509,8 +3509,8 @@
           "evidence": "Native execution binding pending"
         },
         "go": {
-          "status": "planned",
-          "evidence": "Native execution binding pending"
+          "status": "implemented",
+          "evidence": "Go published 8b8180f512899c21b6be8697211a074b19a47607 at shared v0.124.0 executes only @id-xml-go-child-insertion-custody: one exact four-step lexical-snapshot case in workflows/xml/editing.feature via acceptance/{acceptance,inventory,child_insertion_custody}_test.go and reports/batches/260.md. Exact ID, profile, scenario name, line 38, absence of Examples, source and all four expanded steps are guarded; sibling insertion refusal and namespace matrix remain unselected. Fresh caller-owned <root xmlns=\"u\" xmlns:n1=\"occupied\"><a/><b>keep</b></root> is parsed into a reusable snapshot with independently checked root/a/b expanded names and b text. One structured InsertChildren under existing a appends new/x with an other/a attribute v and empty-namespace plain descendant text text. Output is reparsed independently: source order root/a/new:x/plain/b, all parent links, expanded attribute, descendant and b text are checked. Literal original bytes through <a> and suffix </a><b>keep</b></root remain in place with exactly one sibling; no generated prefix spelling is required. Empty insertion before and after yields original bytes; repeated valid insertion on the SAME snapshot yields the same output; mutating returned bytes cannot alter caller or source snapshot. Temporary production inserted-text mutation text→wrong made the new canonical Then fail after Given/When passed; production restored byte-for-byte before four-file test/receipt commit. Uncached no-override scoped acceptance, local root+acceptance, independent clean recursive pre-push and fresh GitHub recursive post-push gates each passed 414 cases/1421 steps, insertion 1/4, zero nonpassed; sibling refusal/namespace matrix, positive OPC-like XML and CACHE-001 zero selected. Go has no GitHub Actions CI. No Bun/Python, general XML/schema/ECMA, Office, PPTX or PDF credit."
         },
         "python": {
           "status": "planned",

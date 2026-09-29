@@ -21,5 +21,5 @@ test('Go credits exactly two XML removal refusals, not custody-case auxiliary ch
  expect(now.consumers.bun).toEqual(old.consumers.bun);expect(now.consumers.python).toEqual(old.consumers.python);
  const unchanged=structuredClone(now);unchanged.consumers.go=old.consumers.go;expect(unchanged).toEqual(old);
  for(const sibling of ['@id-xml-go-element-removal-custody','@id-xml-comparison-prefix-and-opc-order'])expect(ledger.workflows.find((w:any)=>w.id===sibling)).toEqual(prior.workflows.find((w:any)=>w.id===sibling));
- expect(ledger.workflows.filter((w:any)=>w.id!=="@id-xml-implicit-xml-prefix"&&w.id!==id)).toEqual(prior.workflows.filter((w:any)=>w.id!=="@id-xml-implicit-xml-prefix"&&w.id!==id));
+ expect(ledger.workflows.filter((w:any)=>w.id!=="@id-xml-go-child-insertion-custody"&&w.id!=="@id-xml-implicit-xml-prefix"&&w.id!==id)).toEqual(prior.workflows.filter((w:any)=>w.id!=="@id-xml-go-child-insertion-custody"&&w.id!=="@id-xml-implicit-xml-prefix"&&w.id!==id));
 });

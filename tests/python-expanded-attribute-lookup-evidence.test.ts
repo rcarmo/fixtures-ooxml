@@ -29,5 +29,5 @@ test('Python credits one exact seven-row expanded attribute lookup outcome',asyn
  const unchanged=structuredClone(now);unchanged.consumers.python=old.consumers.python;expect(unchanged).toEqual(old);
  for(const sibling of ['@id-xml-comparison-prefix-and-opc-order','@id-opc-diff-content-type'])expect(ledger.workflows.find((w:any)=>w.id===sibling)).toEqual(prior.workflows.find((w:any)=>w.id===sibling));
  const implicit=ledger.workflows.find((w:any)=>w.id==='@id-xml-implicit-xml-prefix');expect(implicit.consumers.python.status).toBe('implemented');expect(implicit.consumers.go.status).toBe('planned');
- expect(ledger.workflows.filter((w:any)=>w.id!=="@id-xml-implicit-xml-prefix"&&w.id!=="@id-xml-go-element-removal-refusal"&&w.id!==id)).toEqual(prior.workflows.filter((w:any)=>w.id!=="@id-xml-implicit-xml-prefix"&&w.id!=="@id-xml-go-element-removal-refusal"&&w.id!==id));
+ expect(ledger.workflows.filter((w:any)=>w.id!=="@id-xml-go-child-insertion-custody"&&w.id!=="@id-xml-implicit-xml-prefix"&&w.id!=="@id-xml-go-element-removal-refusal"&&w.id!==id)).toEqual(prior.workflows.filter((w:any)=>w.id!=="@id-xml-go-child-insertion-custody"&&w.id!=="@id-xml-implicit-xml-prefix"&&w.id!=="@id-xml-go-element-removal-refusal"&&w.id!==id));
 });
