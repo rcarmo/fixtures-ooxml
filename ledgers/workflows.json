@@ -3558,8 +3558,8 @@
           "evidence": "Native execution binding pending"
         },
         "go": {
-          "status": "planned",
-          "evidence": "Native execution binding pending"
+          "status": "implemented",
+          "evidence": "Go published 53b070f7e83fc166331a63cffbe98868f7901d20 at shared v0.126.0 executes only @id-xml-go-child-namespace-matrix as ONE exact six-step lexical-snapshot case in workflows/xml/editing.feature via acceptance/{acceptance,inventory,child_namespace_matrix}_test.go and reports/batches/264.md. Exact ID/profile/scenario name/line 52/no-Examples/six steps and both ordered canonical tables are guarded with negative drift checks. Four JSON-decoded root sources (<r/>, default u, prefixed p:u, default u with n1:v and n2:occupied) independently combine with five child and five flag-attribute namespace URIs (empty,u,v,fresh,XML URI) into 4×5×5=100 iterations derived from validated rows, NOT 100 credited cases. For each, Document.InsertChildren inserts child with flag value JSON tab+CR+LF+space+ampersand+space+emoji and unqualified plain grandchild text JSON x+CR+y+LF+z; output reparse independently checks root/child/grandchild expanded names and parent chain, sole flag expanded name/value, grandchild leaf and decoded text. Caller-owned root bytes remain unchanged, and a separate empty Edit(nil,nil) on the original snapshot returns exact source for each root. No fixed renderer-prefix spelling or generated-byte hash is required. A temporary production attribute-default-namespace mutation made first three steps pass and fourth fail at choice 31 (expanded attribute drift), then was restored byte-for-byte before four-file test/receipt commit. Uncached no-override scoped, local root+acceptance, independent clean recursive pre-push and fresh GitHub recursive post-push gates each passed 416 cases/1431 steps with matrix 1/6, zero nonpassed and CACHE-001 zero selected. Go has no GitHub Actions CI. Prior child insertion custody/refusal are separate; no Bun/Python, general XML/schema/ECMA, Office, PPTX, positive OPC-like comparison or PDF credit."
         },
         "python": {
           "status": "planned",

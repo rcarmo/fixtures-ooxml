@@ -21,6 +21,7 @@ test('Go credits only exact nested child-insertion refusal and separate empty ba
  for(const marker of ['40eeb71a03b6e3ac6752dd1794a6d7b80b12f2a8','shared v0.125.0','acceptance/{acceptance,inventory,child_insertion_refusal}_test.go','line 45','nonnil error AND nil output','415 cases/1425 steps','Go has no GitHub Actions CI'])expect(now.consumers.go.evidence).toContain(marker);
  expect(now.consumers.bun).toEqual(old.consumers.bun);expect(now.consumers.python).toEqual(old.consumers.python);
  const unchanged=structuredClone(now);unchanged.consumers.go=old.consumers.go;expect(unchanged).toEqual(old);
- for(const sibling of ['@id-xml-go-child-insertion-custody','@id-xml-go-child-namespace-matrix','@id-xml-comparison-prefix-and-opc-order'])expect(ledger.workflows.find((w:any)=>w.id===sibling)).toEqual(prior.workflows.find((w:any)=>w.id===sibling));
- expect(ledger.workflows.filter((w:any)=>w.id!=="@id-xml-escaping-whitespace-roundtrip"&&w.id!==id)).toEqual(prior.workflows.filter((w:any)=>w.id!=="@id-xml-escaping-whitespace-roundtrip"&&w.id!==id));
+ for(const sibling of ['@id-xml-go-child-insertion-custody','@id-xml-comparison-prefix-and-opc-order'])expect(ledger.workflows.find((w:any)=>w.id===sibling)).toEqual(prior.workflows.find((w:any)=>w.id===sibling));
+ const matrix=ledger.workflows.find((w:any)=>w.id==='@id-xml-go-child-namespace-matrix');expect(matrix.consumers.go.status).toBe('implemented');expect(matrix.consumers.bun.status).toBe('planned');expect(matrix.consumers.python.status).toBe('planned');
+ expect(ledger.workflows.filter((w:any)=>w.id!=="@id-xml-go-child-namespace-matrix"&&w.id!=="@id-xml-escaping-whitespace-roundtrip"&&w.id!==id)).toEqual(prior.workflows.filter((w:any)=>w.id!=="@id-xml-go-child-namespace-matrix"&&w.id!=="@id-xml-escaping-whitespace-roundtrip"&&w.id!==id));
 });
