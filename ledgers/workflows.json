@@ -3274,8 +3274,8 @@
           "evidence": "Native execution binding pending"
         },
         "python": {
-          "status": "planned",
-          "evidence": "Native execution binding pending"
+          "status": "implemented",
+          "evidence": "Python published c20eca69f9117dc1647f04e83ceba62a84fb0950 at shared v0.120.0 executes only @id-xml-expanded-attribute-lookup: one canonical case/three steps with ONE seven-row outcome table from workflows/xml/parsing.feature SHA256 350edcdfa0dc1206f9f5165cae93ba41c12b6974ee21e71cd3329ed2a82438ff. tests/xml_expanded_attributes/{cases,conftest,test_attributes}.py seals exact scenario ID/name/steps/types, unique seven table rows and JSON-decoded 157-byte UTF-8 source; existing tools.xlsx_preservation.parse yields {urn:default}r, child and other elements with checked parent identities. Independent literal expanded-name lookups produce root unqualified id plain, root {urn:default}id None, root {urn:a}id outer, child {urn:b}id inner, child {urn:a}id None, other {urn:a}id sibling and child {http://www.w3.org/XML/1998/namespace}lang en. All seven are rows of a single case/outcome, not seven cases or additional shared steps. The source bytes remain unchanged; per-step and per-row evidence records exact values and clean fixture provenance. Seven separate well-formed one-row mutations each break its corresponding expectation; a valid prefix alias and duplicate-expanded-name/mismatched-tag XMLSyntaxError controls establish bounded namespace sensitivity but earn no sibling credit. Canonical red initially failed eight absent-result checks, then targeted eleven tests passed. Exact published local, independent clean recursive pre-push and fresh GitHub recursive post-push full suites each passed 1,391 tests (three existing warnings) with twelve provenance-clean lanes, new exact attribute lane 1 case/3 steps; Python CI 36576009644 succeeded on 3.10/3.12/3.13. This credits only bounded namespace-aware attribute lookup in an existing XLSX-preservation helper: no Go credit, source offsets, broad QName/parser/DTD, OPC/Office, PPTX or PDF claim."
         }
       }
     },
