@@ -3967,8 +3967,8 @@
           "evidence": "Bun 9aa63cf33a5b602fed7479748f6922e74d669621 at shared v0.100.0 executes six example formulas count supported static reference records and bounded nonempty UTF-8 byte spans, including zero-reference string, literal and Boolean rows; counts do not evaluate formulas. features/shared.json selects nine XLSX static-reference scenarios (45 exact cases/152 steps); tests/acceptance/formula-analysis.ts, tests/acceptance/xlsx-range.ts and tests/acceptance/formula-remap.ts bind canonical cases with tests/unit/xlsx-formula-analysis.test.ts, tests/unit/xlsx-range.test.ts and tests/unit/xlsx-formula-remap.test.ts controls. Fresh post-push recursive Bun make check passed 732/732 and Bun CI 36534553649 succeeded. Static API only; no formula evaluation, saved workbook, calculation, Office rendering, Go/Python or cross-consumer execution credit."
         },
         "go": {
-          "status": "planned",
-          "evidence": "Native execution binding pending"
+          "status": "implemented",
+          "evidence": "Go published 9ff28dc21dc90b71266c84b42315956a8420178a at shared v0.102.0 executes six exact static-formula rows count references for mixed formula, strings only, numeric exponent, unary arithmetic, boolean literal and Unicode sheet; each returned reference has a nonempty in-bounds UTF-8 byte span. acceptance/canonical_formula_analysis_test.go and acceptance/inventory_test.go bind independent exact row name, JSON source, expected outcome and step guards for three IDs/14 cases/50 steps, invoking internal/formula.Analyze. reports/batches/233.md records true undefined-step red; local and independent exact-16d3eb9 recursive gates, plus fresh post-push GitHub exact-9ff28dc recursive gate, each passed 377 selected cases/1294 steps with zero failures/skips. Existing two direct-range IDs remain selected; four other sibling formula IDs/18 cases remain planned. Static API only: no formula evaluation, workbook edit/save, Office rendering, Bun/Python or cross-consumer credit."
         },
         "python": {
           "status": "planned",
@@ -3992,8 +3992,8 @@
           "evidence": "Bun 9aa63cf33a5b602fed7479748f6922e74d669621 at shared v0.100.0 executes one quoted-sheet range spans all UTF-8 source bytes, decodes O'Brien and checks independent first/last row, column and absolute flags. features/shared.json selects nine XLSX static-reference scenarios (45 exact cases/152 steps); tests/acceptance/formula-analysis.ts, tests/acceptance/xlsx-range.ts and tests/acceptance/formula-remap.ts bind canonical cases with tests/unit/xlsx-formula-analysis.test.ts, tests/unit/xlsx-range.test.ts and tests/unit/xlsx-formula-remap.test.ts controls. Fresh post-push recursive Bun make check passed 732/732 and Bun CI 36534553649 succeeded. Static API only; no formula evaluation, saved workbook, calculation, Office rendering, Go/Python or cross-consumer execution credit."
         },
         "go": {
-          "status": "planned",
-          "evidence": "Native execution binding pending"
+          "status": "implemented",
+          "evidence": "Go published 9ff28dc21dc90b71266c84b42315956a8420178a at shared v0.102.0 executes one quoted O'Brien range spans every source byte and checks decoded sheet, first row/column and absolute column flag, plus last row/column and absolute row flag. acceptance/canonical_formula_analysis_test.go and acceptance/inventory_test.go bind independent exact row name, JSON source, expected outcome and step guards for three IDs/14 cases/50 steps, invoking internal/formula.Analyze. reports/batches/233.md records true undefined-step red; local and independent exact-16d3eb9 recursive gates, plus fresh post-push GitHub exact-9ff28dc recursive gate, each passed 377 selected cases/1294 steps with zero failures/skips. Existing two direct-range IDs remain selected; four other sibling formula IDs/18 cases remain planned. Static API only: no formula evaluation, workbook edit/save, Office rendering, Bun/Python or cross-consumer credit."
         },
         "python": {
           "status": "planned",
@@ -4015,8 +4015,8 @@
           "evidence": "Bun 9aa63cf33a5b602fed7479748f6922e74d669621 at shared v0.100.0 executes seven unsupported/invalid static formulas refuse with xlsx-formula-unsupported and no partial reference records. features/shared.json selects nine XLSX static-reference scenarios (45 exact cases/152 steps); tests/acceptance/formula-analysis.ts, tests/acceptance/xlsx-range.ts and tests/acceptance/formula-remap.ts bind canonical cases with tests/unit/xlsx-formula-analysis.test.ts, tests/unit/xlsx-range.test.ts and tests/unit/xlsx-formula-remap.test.ts controls. Fresh post-push recursive Bun make check passed 732/732 and Bun CI 36534553649 succeeded. Static API only; no formula evaluation, saved workbook, calculation, Office rendering, Go/Python or cross-consumer execution credit."
         },
         "go": {
-          "status": "planned",
-          "evidence": "Native execution binding pending"
+          "status": "implemented",
+          "evidence": "Go published 9ff28dc21dc90b71266c84b42315956a8420178a at shared v0.102.0 executes seven unsupported static formulas (dynamic function, unresolved name, out-of-grid column/row, open quoted sheet, unsupported spill and unfinished function) return an error with zero reference records. acceptance/canonical_formula_analysis_test.go and acceptance/inventory_test.go bind independent exact row name, JSON source, expected outcome and step guards for three IDs/14 cases/50 steps, invoking internal/formula.Analyze. reports/batches/233.md records true undefined-step red; local and independent exact-16d3eb9 recursive gates, plus fresh post-push GitHub exact-9ff28dc recursive gate, each passed 377 selected cases/1294 steps with zero failures/skips. Existing two direct-range IDs remain selected; four other sibling formula IDs/18 cases remain planned. Static API only: no formula evaluation, workbook edit/save, Office rendering, Bun/Python or cross-consumer credit."
         },
         "python": {
           "status": "planned",

@@ -1,0 +1,23 @@
+import {test,expect} from 'bun:test';
+import {execFileSync} from 'node:child_process';
+import {cases} from '../scripts/verify.ts';
+
+const path='workflows/xlsx/formula-references.feature';
+const specs=[
+ ['@id-xlsx-go-formula-analysis-counts',6,24,'six exact static-formula rows'],
+ ['@id-xlsx-go-formula-quoted-sheet-flags',1,5,"one quoted O'Brien range"],
+ ['@id-xlsx-go-formula-analysis-refusal',7,21,'seven unsupported static formulas'],
+] as const;
+
+test('Go executes fourteen exact static formula-analysis rows, leaving other siblings planned',async()=>{
+ const ledger=await Bun.file('ledgers/workflows.json').json(),prior=JSON.parse(execFileSync('git',['show','638c76b9d43430c49af260f12256cf307fb7d2e8:ledgers/workflows.json']).toString()),compiled=cases(path,await Bun.file(path).text());
+ for(const [id,count,steps,scope] of specs){const now=ledger.workflows.find((w:any)=>w.id===id),old=prior.workflows.find((w:any)=>w.id===id),rows=compiled.filter((r:any)=>r.scenarioId===id);
+  expect(now.feature).toBe(path);expect(now.expandedCases).toBe(count);expect(rows).toHaveLength(count);expect(rows.reduce((n:number,r:any)=>n+r.steps.length,0)).toBe(steps);
+  expect(now.expectedOutcomes).toEqual([...new Set(rows.flatMap((r:any)=>r.steps.slice(2).map((s:any)=>s.text)))]);
+  expect(old.consumers.go.status).toBe('planned');expect(now.consumers.go.status).toBe('implemented');
+  for(const m of [scope,'9ff28dc21dc90b71266c84b42315956a8420178a','shared v0.102.0','acceptance/canonical_formula_analysis_test.go','acceptance/inventory_test.go','reports/batches/233.md','three IDs/14 cases/50 steps','377 selected cases/1294 steps','four other sibling formula IDs/18 cases remain planned','no formula evaluation','Bun/Python'])expect(now.consumers.go.evidence).toContain(m);
+  expect(now.consumers.bun).toEqual(old.consumers.bun);expect(now.consumers.python).toEqual(old.consumers.python);const unchanged=structuredClone(now);unchanged.consumers.go=old.consumers.go;expect(unchanged).toEqual(old);
+ }
+ expect(specs.reduce((n,[,cases])=>n+cases,0)).toBe(14);expect(specs.reduce((n,[,,steps])=>n+steps,0)).toBe(50);
+ const changed=new Set(specs.map(([id])=>id));expect(ledger.workflows.filter((w:any)=>!changed.has(w.id))).toEqual(prior.workflows.filter((w:any)=>!changed.has(w.id)));
+});

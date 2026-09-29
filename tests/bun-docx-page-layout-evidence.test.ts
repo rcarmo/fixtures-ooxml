@@ -18,5 +18,5 @@ test('Bun executes exact final-section DOCX page-layout cases without broader re
   expect(now.consumers.go).toEqual(old.consumers.go);expect(now.consumers.python).toEqual(old.consumers.python);const unchanged=structuredClone(now);unchanged.consumers.bun=old.consumers.bun;expect(unchanged).toEqual(old);
  }
  expect(specs.reduce((n,s)=>n+s.kinds.length,0)).toBe(22);expect(specs.reduce((n,s)=>n+s.kinds.reduce((m,k)=>m+s.steps(k).length,0),0)).toBe(74);
- const changed=new Set(specs.map(s=>s.id));expect(ledger.workflows.filter((w:any)=>!changed.has(w.id))).toEqual(prior.workflows.filter((w:any)=>!changed.has(w.id)));
+ const changed=new Set(specs.map(s=>s.id));expect(ledger.workflows.filter((w:any)=>!['@id-xlsx-go-formula-analysis-counts','@id-xlsx-go-formula-quoted-sheet-flags','@id-xlsx-go-formula-analysis-refusal'].includes(w.id) && !changed.has(w.id))).toEqual(prior.workflows.filter((w:any)=>!['@id-xlsx-go-formula-analysis-counts','@id-xlsx-go-formula-quoted-sheet-flags','@id-xlsx-go-formula-analysis-refusal'].includes(w.id) && !changed.has(w.id)));
 });
