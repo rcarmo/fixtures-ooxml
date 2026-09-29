@@ -1,0 +1,28 @@
+import {test,expect} from 'bun:test';
+import {execFileSync} from 'node:child_process';
+import {cases} from '../scripts/verify.ts';
+
+const path='workflows/docx/text.feature';
+const specs=[
+ {id:'@id-docx-format-preserve',steps:[['DOCX slice fixture "fixture-12183fb28e49ea1c1ac63de2252b011580c4cfed0a7cfd35efc1ffb20c94653e" is opened','DOCX slice paragraph 1 exact text "text and italic text" is replaced with "Tone and tilted text"','DOCX slice document is saved and reopened','DOCX slice paragraph 1 text equals "Bold Tone and tilted text and underlined text and colored text and large text"','DOCX slice paragraph 1 run formatting around the replacement is preserved']],markers:['nine styled run fragments','saved and reopened']},
+ {id:'@id-docx-xml-space',steps:[['DOCX slice fixture "synthetic-whitespace" is opened','DOCX slice paragraph 1 exact text "phaBe" is replaced with "pha Be"','DOCX slice document is saved and reopened','DOCX slice paragraph 1 text equals "Alpha Beta"','DOCX slice paragraph 1 text nodes preserve boundary whitespace']],markers:['xml:space=preserve','saved and reopened']},
+ {id:'@id-docx-table-paragraph',steps:[['DOCX slice fixture "fixture-8192955ef935f09eb61a9fe6805d4996c811efcf54c0c966f52d983e38e0a79c" is opened','DOCX slice paragraph 5 exact text "Galvanic battery" is replaced with "Voltaic battery"','DOCX slice document is saved and reopened','DOCX slice paragraph 1 text equals "Research Materials Inventory"','DOCX slice paragraph 2 text equals "Item"','DOCX slice paragraph 5 text equals "Voltaic battery"','DOCX slice paragraph 13 text equals "University library"']],markers:['document order','saved and reopened']},
+ {id:'@id-docx-stale-span',steps:[['DOCX slice fixture "fixture-12183fb28e49ea1c1ac63de2252b011580c4cfed0a7cfd35efc1ffb20c94653e" is opened','DOCX slice paragraph 1 span "text and italic text" is remembered','DOCX slice paragraph 1 exact text "colored text" is replaced with "scarlet text"','DOCX slice current saved bytes are remembered','DOCX slice stale replacement "Tone and tilted text" is attempted on the remembered span','DOCX slice refusal code equals "docx-stale-span"','DOCX slice saved bytes equal the remembered bytes']],markers:['docx-stale-span','baseline bytes']},
+ {id:'@id-docx-refuse-topology',steps:[...['fixture-e3c5159fbf254f4d5423354773ae83a5535cb3cef8f603f1adca6d18adab11f2|1|amazing','fixture-e4f051ec2eb5f48b9b8299e931abb2bca1fa86ca5007865b3b2f9b83ba16676f|2|[Enter Title Here]','synthetic-field|1|2026-01-01'].map(row=>{const [fixture,index,query]=row.split('|');return [`DOCX slice fixture "${fixture}" is opened`,`DOCX slice paragraph ${index} exact search for "${query}" is attempted`,'DOCX slice refusal code equals "docx-unsupported-topology"']})],markers:['three exact','docx-unsupported-topology']},
+];
+test('Bun executes seven exact DOCX text slice rows without Go or Python credit',async()=>{
+ const ledger=await Bun.file('ledgers/workflows.json').json();
+ const prior=JSON.parse(execFileSync('git',['show','e8ff3e752e19c8a935089c7efac0de57ec577fa5:ledgers/workflows.json']).toString());
+ const rows=cases(path,await Bun.file(path).text());
+ for(const {id,steps,markers} of specs){
+  const current=ledger.workflows.find((w:any)=>w.id===id),old=prior.workflows.find((w:any)=>w.id===id);
+  expect(current.feature).toBe(path);expect(current.expandedCases).toBe(steps.length);
+  expect(rows.filter((r:any)=>r.scenarioId===id).map((r:any)=>r.steps.map((s:any)=>s.text))).toEqual(steps);
+  expect(current.expectedOutcomes).toEqual(steps.length===1?steps[0]!.filter((s:string)=>s.startsWith('DOCX slice paragraph')||s.startsWith('DOCX slice refusal')||s.startsWith('DOCX slice saved bytes')).slice(id==='@id-docx-stale-span'?-2:id==='@id-docx-table-paragraph'?-4:-2):[steps[0]!.at(-1)]);
+  expect(old.consumers.bun.status).toBe('planned');expect(current.consumers.bun.status).toBe('implemented');
+  expect(current.consumers.go).toEqual(old.consumers.go);expect(current.consumers.python).toEqual(old.consumers.python);
+  for(const marker of [...markers,'58606ce10af271ae043f4b5c5baba86cadd3f7bb','Fresh GitHub recursive make check','732/732','canonical source'])expect(current.consumers.bun.evidence).toContain(marker);
+  const unchanged=structuredClone(current);unchanged.consumers.bun=old.consumers.bun;expect(unchanged).toEqual(old);
+ }
+ const ids=new Set(specs.map(s=>s.id));expect(ledger.workflows.filter((w:any)=>!ids.has(w.id))).toEqual(prior.workflows.filter((w:any)=>!ids.has(w.id)));
+});

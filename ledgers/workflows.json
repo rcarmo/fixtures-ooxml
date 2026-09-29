@@ -1697,8 +1697,8 @@
       ],
       "consumers": {
         "bun": {
-          "status": "planned",
-          "evidence": "Existing local bindings passed; canonical-path run tracked separately in consumer"
+          "status": "implemented",
+          "evidence": "Bun 58606ce10af271ae043f4b5c5baba86cadd3f7bb at shared v0.71.0 executes five exact DOCX slice steps in features/shared.json and tests/acceptance/docx.ts. Cross-run replacement is saved and reopened; exact paragraph text and nine styled run fragments are checked. Fresh GitHub recursive make check passed 732/732 selected cases; tests/unit/docx.test.ts also runs all five text-feature scenarios (7 cases) from the canonical source with exported bindings. No Go/Python or general rendering credit."
         },
         "go": {
           "status": "planned",
@@ -1721,8 +1721,8 @@
       ],
       "consumers": {
         "bun": {
-          "status": "planned",
-          "evidence": "Existing local bindings passed; canonical-path run tracked separately in consumer"
+          "status": "implemented",
+          "evidence": "Bun 58606ce10af271ae043f4b5c5baba86cadd3f7bb at shared v0.71.0 executes five exact DOCX slice steps in features/shared.json and tests/acceptance/docx.ts. Synthetic cross-run replacement is saved and reopened; Alpha Beta and the three text nodes, including leading-space xml:space=preserve, are checked. Fresh GitHub recursive make check passed 732/732 selected cases; tests/unit/docx.test.ts also runs the canonical source (7 cases). No Go/Python or general rendering credit."
         },
         "go": {
           "status": "planned",
@@ -1747,8 +1747,8 @@
       ],
       "consumers": {
         "bun": {
-          "status": "planned",
-          "evidence": "Existing local bindings passed; canonical-path run tracked separately in consumer"
+          "status": "implemented",
+          "evidence": "Bun 58606ce10af271ae043f4b5c5baba86cadd3f7bb at shared v0.71.0 executes seven exact DOCX slice steps in features/shared.json and tests/acceptance/docx.ts. Table-cell paragraph five is replaced, saved and reopened; paragraph texts at indexes 1, 2, 5 and 13 are checked in document order. Fresh GitHub recursive make check passed 732/732 selected cases; tests/unit/docx.test.ts also runs the canonical source (7 cases). No blanket table preservation, Go or Python credit."
         },
         "go": {
           "status": "planned",
@@ -1771,8 +1771,8 @@
       ],
       "consumers": {
         "bun": {
-          "status": "planned",
-          "evidence": "Existing local bindings passed; canonical-path run tracked separately in consumer"
+          "status": "implemented",
+          "evidence": "Bun 58606ce10af271ae043f4b5c5baba86cadd3f7bb at shared v0.71.0 executes seven exact DOCX slice steps in features/shared.json and tests/acceptance/docx.ts. After another edit, the remembered stale span refuses with docx-stale-span and a subsequent save equals the remembered baseline bytes. Fresh GitHub recursive make check passed 732/732 selected cases; tests/unit/docx.test.ts also runs the canonical source (7 cases). Byte custody is limited to this no-mutation refusal, not all outputs; Go/Python planned."
         },
         "go": {
           "status": "planned",
@@ -1794,8 +1794,8 @@
       ],
       "consumers": {
         "bun": {
-          "status": "planned",
-          "evidence": "Existing local bindings passed; canonical-path run tracked separately in consumer"
+          "status": "implemented",
+          "evidence": "Bun 58606ce10af271ae043f4b5c5baba86cadd3f7bb at shared v0.71.0 executes three exact unsupported-topology search rows in features/shared.json and tests/acceptance/docx.ts: textbox, tracked revision and synthetic field. Each returns docx-unsupported-topology. Fresh GitHub recursive make check passed 732/732 selected cases; tests/unit/docx.test.ts also runs the canonical source (7 cases). No saved-byte custody is claimed for these three search refusals; Go/Python planned."
         },
         "go": {
           "status": "planned",

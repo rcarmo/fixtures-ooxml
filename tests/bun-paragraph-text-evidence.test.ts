@@ -14,7 +14,7 @@ test('Bun executes five exact paragraph text getter rows without saved or Python
  expect(former.consumers.bun.status).toBe('planned');expect(entry.consumers.bun.status).toBe('implemented');
  expect(entry.consumers.go.status).toBe('implemented');expect(entry.consumers.python).toEqual(former.consumers.python);
  for(const marker of ['8381344e26be0f41901ce18a028e486474b3d92f','Fresh GitHub recursive make check','732/732','five exact JSON'])expect(entry.consumers.bun.evidence).toContain(marker);
- const laterIds=new Set(["@id-docx-go-paragraph-alignment-getter","@id-docx-go-paragraph-spacing-getters","@id-docx-go-paragraph-advanced-toggles","@id-docx-go-paragraph-multiple-runs","@id-docx-go-body-insert-order"]);
+ const laterIds=new Set(["@id-docx-go-paragraph-alignment-getter","@id-docx-go-paragraph-spacing-getters","@id-docx-go-paragraph-advanced-toggles","@id-docx-go-paragraph-multiple-runs","@id-docx-go-body-insert-order","@id-docx-format-preserve","@id-docx-xml-space","@id-docx-table-paragraph","@id-docx-stale-span","@id-docx-refuse-topology"]);
  const unchanged=structuredClone(entry);unchanged.consumers.bun=former.consumers.bun;unchanged.consumers.go=former.consumers.go;expect(unchanged).toEqual(former);
  expect(registry.workflows.filter((w:any)=>w.id!==id&&!laterIds.has(w.id))).toEqual(prior.workflows.filter((w:any)=>w.id!==id&&!laterIds.has(w.id)));
 });
