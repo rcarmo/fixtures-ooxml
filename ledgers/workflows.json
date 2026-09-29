@@ -4588,12 +4588,12 @@
       ],
       "consumers": {
         "bun": {
-          "status": "planned",
-          "evidence": "Native execution binding pending"
+          "status": "implemented",
+          "evidence": "Bun 8381344e26be0f41901ce18a028e486474b3d92f at shared v0.68.0 selects all five exact JSON text getter rows in features/shared.json and tests/acceptance/paragraph-text.ts. Fresh GitHub recursive make check passed 732/732 selected cases; tests/unit/docx-paragraph-text.test.ts changes expected text or corrupts getter state to force all five rows to fail. Direct in-memory paragraph text only, not saved XML or unselected native text variants."
         },
         "go": {
-          "status": "planned",
-          "evidence": "Native execution binding pending"
+          "status": "implemented",
+          "evidence": "Go 89e6dcf77eb8e8461cd7b1571d38105d3031a9b4 binds all five exact three-step JSON string rows: empty, Hello World, preserved surrounding spaces, Japanese and XML punctuation. Each compares the in-memory paragraph Text() getter after SetText; changed-getter and malformed/non-string JSON negative controls fail, with exact row and step guards. Published Go 4ac68b6204b49970d38bdd8233fa0a322cf65b81 at shared v0.68.0 passed 338 selected cases/1159 steps/0 failures in a fresh GitHub recursive clone; reports/batches/194.md. Other native text variants, saved XML and rendering are not credited."
         },
         "python": {
           "status": "planned",

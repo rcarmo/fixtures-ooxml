@@ -17,6 +17,6 @@ test('Go checks direct span and vertical-merge values without physical topology 
  expect(entry.consumers.bun).toEqual(former.consumers.bun);expect(entry.consumers.python).toEqual(former.consumers.python);
  for(const marker of ['243b57bb7cc86ed52c261359c5285885ffdca6d5','f0e709826f2896fb23776b95a2fbce2fd78c2672','318 selected cases/1090 steps/0 failures','fresh GitHub recursive clone','reports/batches/186.md','no physical merge topology'])expect(entry.consumers.go.evidence).toContain(marker);
  const unchanged=structuredClone(entry);unchanged.consumers.go=former.consumers.go;expect(unchanged).toEqual(former);
- const laterBunIds=new Set(['@id-docx-go-table-dimensions-getters','@id-docx-go-table-cell-access','@id-docx-go-table-cell-text-getters','@id-docx-go-table-row-counts','@id-docx-go-new-empty-body','@id-docx-go-roundtrip-table-text','@id-docx-go-core-properties-getters','@id-docx-go-section-title-background-getters']);
+ const laterBunIds=new Set(['@id-docx-go-table-dimensions-getters','@id-docx-go-table-cell-access','@id-docx-go-table-cell-text-getters','@id-docx-go-table-row-counts','@id-docx-go-new-empty-body','@id-docx-go-roundtrip-table-text','@id-docx-go-core-properties-getters','@id-docx-go-section-title-background-getters','@id-docx-go-paragraph-text-getter']);
  expect(registry.workflows.filter((w:any)=>w.id!==id&&!laterBunIds.has(w.id))).toEqual(prior.workflows.filter((w:any)=>w.id!==id&&!laterBunIds.has(w.id)));
 });
