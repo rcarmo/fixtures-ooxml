@@ -3605,8 +3605,8 @@
           "evidence": "Native execution binding pending"
         },
         "go": {
-          "status": "planned",
-          "evidence": "Native execution binding pending"
+          "status": "implemented",
+          "evidence": "Go published da499fb74f7f170acc37b16f064f226e28a6f8e2 at shared v0.122.0 executes only @id-xml-go-element-removal-refusal: two exact outline rows/six steps in workflows/xml/editing.feature via acceptance/{acceptance,inventory,element_removal_refusal}_test.go. Exact ID/profile/outline name/source/expanded three-step text and unique row lines 85 root and 86 p:a and its nested p:b are guarded; no additional refusal cases selected. Each row parses fresh caller-owned <r xmlns:p=\"u\"><!--keep--><p:a x = '1'><p:b>text</p:b></p:a> gap <p:c /></r> and independently checks source-order expanded names and nested text. Root or ancestor-plus-descendant removal requires a nonnil error AND nil output, with unchanged caller bytes and a still-usable original snapshot; no typed error or message is contracted. Empty removal returns exact original XML; a subsequent valid p:a+p:c removal on the SAME snapshot produces independently coded <r xmlns:p=\"u\"><!--keep--> gap </r> preserving comment and gap, followed by another exact empty result and unchanged caller. These are two canonical refusals separate from earlier custody-case auxiliary controls. A temporary production output-on-refusal mutation made both canonical Then steps fail while first two passed; it was restored byte-for-byte before four-file test/receipt commit. Uncached no-override exact local, independent clean recursive pre-push and fresh GitHub recursive post-push root+acceptance gates each passed 413 cases/1417 steps, refusal 2/6 and prior custody 1/4, zero nonpassed and positive OPC-like comparison/CACHE-001 zero selected. Go has no GitHub Actions CI workflow. No Bun/Python, general XML/schema/ECMA, Office, PPTX or PDF credit."
         },
         "python": {
           "status": "planned",
