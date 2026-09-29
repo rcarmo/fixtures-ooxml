@@ -2455,8 +2455,8 @@
       ],
       "consumers": {
         "bun": {
-          "status": "planned",
-          "evidence": "Existing local bindings passed; canonical-path run tracked separately in consumer"
+          "status": "implemented",
+          "evidence": "Bun 98138f740215c8bca8f94512198824c2b330b269 at shared v0.84.0 executes one exact nine-step broad ZIP32 unsafe-structure refusal case. features/shared.json and tests/acceptance/core.ts build eleven distinct archives (duplicate and ASCII-case names, traversal, encryption, unsupported method, multi-disk, missing ZIP64 records, local-name mismatch, CRC and stored-size mismatch, undeclared trailing byte); the real readZip result for each is a typed OoxmlError with its independent literal code, and the ZIP64 fixture declaration must also match that literal. tests/unit/zip.test.ts and tests/unit/zip32-bindings.test.ts separately exercise the specified samples. Fresh post-push GitHub recursive make check passed 732/732 selected cases and Bun CI 36520289839 succeeded. No Go/Python, pre-expansion allocation timing, ZIP64 acceptance, physical-overlap or general OPC credit."
         },
         "go": {
           "status": "planned",

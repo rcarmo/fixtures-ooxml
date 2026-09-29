@@ -1,3 +1,4 @@
+const unsafeId = new Set(['@id-zip-refuse-unsafe']);
 import { test, expect } from 'bun:test';
 import { execFileSync } from 'node:child_process';
 import { cases } from '../scripts/verify.ts';
@@ -47,6 +48,6 @@ test('Bun executes the two exact ZIP32 positive read/write contracts without cro
     expect(now.consumers.go).toEqual(old.consumers.go); expect(now.consumers.python).toEqual(old.consumers.python);
     const unchanged = structuredClone(now); unchanged.consumers.bun = old.consumers.bun; expect(unchanged).toEqual(old);
   }
-  const changed = new Set(specs.map(s => s.id));
+  const changed = new Set([...specs.map(s => s.id), '@id-zip-refuse-unsafe']);
   expect(ledger.workflows.filter((w: any) => !changed.has(w.id))).toEqual(prior.workflows.filter((w: any) => !changed.has(w.id)));
 });
