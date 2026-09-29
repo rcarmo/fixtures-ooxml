@@ -20,5 +20,5 @@ test('Bun executes exact bounded DOCX effective-formatting resolutions and typed
   const unchanged=structuredClone(now);unchanged.consumers.bun=old.consumers.bun;expect(unchanged).toEqual(old);
  }
  expect(specs.reduce((n,s)=>n+s.kinds.length,0)).toBe(25);expect(specs.reduce((n,s)=>n+s.kinds.reduce((m,k)=>m+s.steps(k).length,0),0)).toBe(84);
- const changed=new Set(specs.map(s=>s.id));expect(ledger.workflows.filter((w:any)=>!changed.has(w.id))).toEqual(prior.workflows.filter((w:any)=>!changed.has(w.id)));
+ const changed=new Set(specs.map(s=>s.id));expect(ledger.workflows.filter((w:any)=>!['@id-docx-final-section-layout','@id-docx-final-section-layout-refusal'].includes(w.id) && !changed.has(w.id))).toEqual(prior.workflows.filter((w:any)=>!['@id-docx-final-section-layout','@id-docx-final-section-layout-refusal'].includes(w.id) && !changed.has(w.id)));
 });

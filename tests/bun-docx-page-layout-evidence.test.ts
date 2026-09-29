@@ -1,0 +1,22 @@
+import {test,expect} from 'bun:test';
+import {execFileSync} from 'node:child_process';
+import {cases} from '../scripts/verify.ts';
+
+const path='workflows/docx/page-layout.feature';
+const specs=[
+ {id:'@id-docx-final-section-layout',kinds:['portrait','landscape','margins','same','aliased','default-namespace','earlier-section','header-reference'],steps:(kind:string)=>[`a native document prepared for page-layout ${kind}`,`the final section page layout is selected for ${kind}`,`saved and reopened page geometry matches ${kind}`,'other section properties, earlier sections and package payloads are unchanged'],marker:'eight four-step'},
+ {id:'@id-docx-final-section-layout-refusal',kinds:['missing-section','duplicate-section','misplaced-section','duplicate-size','missing-margins','wrong-namespace','section-revision','lexical-barrier','invalid-width','negative-margin','no-content-area','invalid-orientation','protected','stale-document'],steps:(kind:string)=>[`an unsafe final-section layout input ${kind}`,'its page-layout change is attempted','page-layout selection refuses without changing archive bytes or handles'],marker:'fourteen three-step'},
+];
+
+test('Bun executes exact final-section DOCX page-layout cases without broader rendering credit',async()=>{
+ const ledger=await Bun.file('ledgers/workflows.json').json(),prior=JSON.parse(execFileSync('git',['show','09519ffdb59e72d755cbba304e47e3e7ae6a4eac:ledgers/workflows.json']).toString()),compiled=cases(path,await Bun.file(path).text());
+ for(const {id,kinds,steps,marker} of specs){const now=ledger.workflows.find((w:any)=>w.id===id),old=prior.workflows.find((w:any)=>w.id===id),rows=compiled.filter((r:any)=>r.scenarioId===id);
+  expect(now.feature).toBe(path);expect(now.expandedCases).toBe(kinds.length);expect(rows.map((r:any)=>r.steps.map((s:any)=>s.text))).toEqual(kinds.map(steps));
+  expect(now.expectedOutcomes).toEqual([...new Set(kinds.flatMap(kind=>steps(kind).slice(2)))]);
+  expect(old.consumers.bun.status).toBe('planned');expect(now.consumers.bun.status).toBe('implemented');
+  for(const m of [marker,'6646c4e650053b0250208e2668347e5cfb0d0384','shared v0.103.0','features/shared.json','22 exact cases/74 steps','tests/acceptance/page-layout.ts','tests/unit/docx-page-layout.test.ts','Fresh post-push GitHub recursive Bun make check','732/732','36538890664','Go/Python'])expect(now.consumers.bun.evidence).toContain(m);
+  expect(now.consumers.go).toEqual(old.consumers.go);expect(now.consumers.python).toEqual(old.consumers.python);const unchanged=structuredClone(now);unchanged.consumers.bun=old.consumers.bun;expect(unchanged).toEqual(old);
+ }
+ expect(specs.reduce((n,s)=>n+s.kinds.length,0)).toBe(22);expect(specs.reduce((n,s)=>n+s.kinds.reduce((m,k)=>m+s.steps(k).length,0),0)).toBe(74);
+ const changed=new Set(specs.map(s=>s.id));expect(ledger.workflows.filter((w:any)=>!changed.has(w.id))).toEqual(prior.workflows.filter((w:any)=>!changed.has(w.id)));
+});

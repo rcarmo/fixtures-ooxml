@@ -20,5 +20,5 @@ test('Go executes thirteen exact canonical direct-range API rows without sibling
   const unchanged=structuredClone(now);unchanged.consumers.go=old.consumers.go;expect(unchanged).toEqual(old);
  }
  expect(compiled.filter((r:any)=>r.scenarioId.startsWith('@id-xlsx-go-')&&!specs.some(([id])=>id===r.scenarioId))).toHaveLength(32);
- expect(ledger.workflows.filter((w:any)=>w.feature !== 'workflows/docx/effective-formatting.feature' && w.feature!=='workflows/docx/tracking-settings.feature'&&!specs.some(([id])=>id===w.id))).toEqual(prior.workflows.filter((w:any)=>w.feature !== 'workflows/docx/effective-formatting.feature' && w.feature!=='workflows/docx/tracking-settings.feature'&&!specs.some(([id])=>id===w.id)));
+ expect(ledger.workflows.filter((w:any)=>!['@id-docx-final-section-layout','@id-docx-final-section-layout-refusal'].includes(w.id) && w.feature !== 'workflows/docx/effective-formatting.feature' && w.feature!=='workflows/docx/tracking-settings.feature'&&!specs.some(([id])=>id===w.id))).toEqual(prior.workflows.filter((w:any)=>!['@id-docx-final-section-layout','@id-docx-final-section-layout-refusal'].includes(w.id) && w.feature !== 'workflows/docx/effective-formatting.feature' && w.feature!=='workflows/docx/tracking-settings.feature'&&!specs.some(([id])=>id===w.id)));
 });

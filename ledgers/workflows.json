@@ -2896,8 +2896,8 @@
       ],
       "consumers": {
         "bun": {
-          "status": "planned",
-          "evidence": "Native candidate binding requires canonical-path run; no cross-language execution credit"
+          "status": "implemented",
+          "evidence": "Bun 6646c4e650053b0250208e2668347e5cfb0d0384 at shared v0.103.0 executes eight four-step final-section page-layout variants (portrait, landscape, margins, same-state, aliased/default namespace, earlier section and header reference) check saved/reopened geometry and change receipt, retained text, section XML outside pgSz/pgMar, unrelated package parts and exact no-op archive bytes. features/shared.json selects only these two page-layout IDs (22 exact cases/74 steps); tests/acceptance/page-layout.ts and tests/unit/docx-page-layout.test.ts bind canonical cases and controls. Fresh post-push GitHub recursive Bun make check passed 732/732 and Bun CI 36538890664 succeeded. Bounded final-section geometry only; not whole-document layout/rendering, Go/Python or cross-consumer execution credit."
         },
         "go": {
           "status": "planned",
@@ -2919,8 +2919,8 @@
       ],
       "consumers": {
         "bun": {
-          "status": "planned",
-          "evidence": "Native candidate binding requires canonical-path run; no cross-language execution credit"
+          "status": "implemented",
+          "evidence": "Bun 6646c4e650053b0250208e2668347e5cfb0d0384 at shared v0.103.0 executes fourteen three-step invalid, ambiguous, protected or stale final-section layout inputs refuse with a typed docx- code and unchanged serialized archive bytes and held paragraph handle. features/shared.json selects only these two page-layout IDs (22 exact cases/74 steps); tests/acceptance/page-layout.ts and tests/unit/docx-page-layout.test.ts bind canonical cases and controls. Fresh post-push GitHub recursive Bun make check passed 732/732 and Bun CI 36538890664 succeeded. Bounded final-section geometry only; not whole-document layout/rendering, Go/Python or cross-consumer execution credit."
         },
         "go": {
           "status": "planned",
