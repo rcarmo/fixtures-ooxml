@@ -61,6 +61,6 @@ test('Bun alone executes twenty exact ZIP32 checksum and typed refusal rows (91 
     expect(unchanged).toEqual(old);
   }
   expect(expected.flat().reduce((n, row) => n + row.length, 0)).toBe(91);
-  const changed = new Set(ids);
+  const changed = new Set([...ids, ...["@id-zip-read-valid","@id-zip-write-deterministic"]]);
   expect(current.workflows.filter((w: any) => !changed.has(w.id))).toEqual(prior.workflows.filter((w: any) => !changed.has(w.id)));
 });

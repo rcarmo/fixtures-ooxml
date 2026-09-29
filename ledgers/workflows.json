@@ -2426,8 +2426,8 @@
       ],
       "consumers": {
         "bun": {
-          "status": "planned",
-          "evidence": "Existing local bindings passed; canonical-path run tracked separately in consumer"
+          "status": "implemented",
+          "evidence": "Bun e4bcf69eb406509dc410d48d97162f89bd710ba4 at shared v0.83.0 executes one exact seven-step canonical ZIP32 read uses stored and raw-deflated OPC members, a zero-byte directory entry, a declared archive comment and a data descriptor; readZip returns file payloads in central-directory order, omits the directory part, and validates expected bytes, lengths and CRCs. features/shared.json and tests/acceptance/core.ts bind every canonical step; tests/unit/zip.test.ts checks deterministic write/read-back. Fresh GitHub recursive make check passed 732/732 selected cases. No Go/Python, broad ZIP32 refusal/bounds, rendering or Office credit."
         },
         "go": {
           "status": "planned",
@@ -2504,8 +2504,8 @@
       ],
       "consumers": {
         "bun": {
-          "status": "planned",
-          "evidence": "Existing local bindings passed; canonical-path run tracked separately in consumer"
+          "status": "implemented",
+          "evidence": "Bun e4bcf69eb406509dc410d48d97162f89bd710ba4 at shared v0.83.0 executes one exact six-step ZIP32 write uses three canonical OPC members; two writeZip calls return byte-identical archives, readZip returns three ordered names, ZIP32 central bounds hold, stored and deflated methods both occur, UTF-8 flags appear in local and central headers, and a case-colliding writer input is refused with typed code. features/shared.json and tests/acceptance/core.ts bind every canonical step; tests/unit/zip.test.ts checks deterministic write/read-back. Fresh GitHub recursive make check passed 732/732 selected cases. No Go/Python, broad ZIP32 refusal/bounds, rendering or Office credit."
         },
         "go": {
           "status": "planned",
