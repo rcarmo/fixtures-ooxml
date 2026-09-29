@@ -6587,8 +6587,8 @@
       ],
       "consumers": {
         "bun": {
-          "status": "planned",
-          "evidence": "Native execution binding pending"
+          "status": "implemented",
+          "evidence": "Bun 4aa1f0960305c9665e500725b693976174bfb104 at shared v0.92.0 executes Three exact five-step pinned, nested and reordered existing-thread inspections verify root/reply membership, parent IDs, bodies and authors, immutable detached records and unchanged package/source archives. features/shared.json, tests/acceptance/comment-threads.ts and tests/unit/comment-thread-outcomes.test.ts bind eight exact IDs with 23 cases/108 steps; mutation controls fail for missing resolved descendants, changed membership receipts and unrelated bytes. Temporary source/output files are cleaned after the run. Fresh post-push GitHub recursive make check passed 732/732 selected cases; Bun CI 36527224163 succeeded. No Go/Python, missing-extension creation, arbitrary new comments, live Word rendering or broad cross-consumer credit."
         },
         "go": {
           "status": "planned",
@@ -6614,8 +6614,8 @@
       ],
       "consumers": {
         "bun": {
-          "status": "planned",
-          "evidence": "Native execution binding pending"
+          "status": "implemented",
+          "evidence": "Bun 4aa1f0960305c9665e500725b693976174bfb104 at shared v0.92.0 executes Three exact seven-step pinned, nested and reordered thread edits resolve selected members, verify root/member/changed-flag receipt, save/reopen with original parents/bodies and root 0 open, preserve all unrelated parts and the source archive, then reopen the selected thread and restore original member bytes. features/shared.json, tests/acceptance/comment-threads.ts and tests/unit/comment-thread-outcomes.test.ts bind eight exact IDs with 23 cases/108 steps; mutation controls fail for missing resolved descendants, changed membership receipts and unrelated bytes. Temporary source/output files are cleaned after the run. Fresh post-push GitHub recursive make check passed 732/732 selected cases; Bun CI 36527224163 succeeded. No Go/Python, missing-extension creation, arbitrary new comments, live Word rendering or broad cross-consumer credit."
         },
         "go": {
           "status": "planned",
@@ -6638,8 +6638,8 @@
       ],
       "consumers": {
         "bun": {
-          "status": "planned",
-          "evidence": "Native execution binding pending"
+          "status": "implemented",
+          "evidence": "Bun 4aa1f0960305c9665e500725b693976174bfb104 at shared v0.92.0 executes One exact four-step thread no-op verifies a single-comment edit leaves the reply open, the first full-thread edit changes one flag, the repeated edit changes zero and preserves current package/source bytes. features/shared.json, tests/acceptance/comment-threads.ts and tests/unit/comment-thread-outcomes.test.ts bind eight exact IDs with 23 cases/108 steps; mutation controls fail for missing resolved descendants, changed membership receipts and unrelated bytes. Temporary source/output files are cleaned after the run. Fresh post-push GitHub recursive make check passed 732/732 selected cases; Bun CI 36527224163 succeeded. No Go/Python, missing-extension creation, arbitrary new comments, live Word rendering or broad cross-consumer credit."
         },
         "go": {
           "status": "planned",
@@ -6662,8 +6662,8 @@
       ],
       "consumers": {
         "bun": {
-          "status": "planned",
-          "evidence": "Native execution binding pending"
+          "status": "implemented",
+          "evidence": "Bun 4aa1f0960305c9665e500725b693976174bfb104 at shared v0.92.0 executes Nine exact four-step defective-thread refusals return typed OoxmlError and no receipt, retaining package/source archive bytes rather than partially editing any thread. features/shared.json, tests/acceptance/comment-threads.ts and tests/unit/comment-thread-outcomes.test.ts bind eight exact IDs with 23 cases/108 steps; mutation controls fail for missing resolved descendants, changed membership receipts and unrelated bytes. Temporary source/output files are cleaned after the run. Fresh post-push GitHub recursive make check passed 732/732 selected cases; Bun CI 36527224163 succeeded. No Go/Python, missing-extension creation, arbitrary new comments, live Word rendering or broad cross-consumer credit."
         },
         "go": {
           "status": "planned",
@@ -6686,8 +6686,8 @@
       ],
       "consumers": {
         "bun": {
-          "status": "planned",
-          "evidence": "Native execution binding pending"
+          "status": "implemented",
+          "evidence": "Bun 4aa1f0960305c9665e500725b693976174bfb104 at shared v0.92.0 executes Two exact five-step injected part-write and serialization failures are reached, return no receipt, and retain the prior unrelated edit with the original thread state and unchanged source archive. features/shared.json, tests/acceptance/comment-threads.ts and tests/unit/comment-thread-outcomes.test.ts bind eight exact IDs with 23 cases/108 steps; mutation controls fail for missing resolved descendants, changed membership receipts and unrelated bytes. Temporary source/output files are cleaned after the run. Fresh post-push GitHub recursive make check passed 732/732 selected cases; Bun CI 36527224163 succeeded. No Go/Python, missing-extension creation, arbitrary new comments, live Word rendering or broad cross-consumer credit."
         },
         "go": {
           "status": "planned",
@@ -6710,8 +6710,8 @@
       ],
       "consumers": {
         "bun": {
-          "status": "planned",
-          "evidence": "Native execution binding pending"
+          "status": "implemented",
+          "evidence": "Bun 4aa1f0960305c9665e500725b693976174bfb104 at shared v0.92.0 executes Three exact four-step UTF-8-BOM, UTF-16LE and UTF-16BE extension edits save/reopen three resolved members, preserve the encoding marker and aliased namespace meaning, and change only selected done flags while retaining source bytes. features/shared.json, tests/acceptance/comment-threads.ts and tests/unit/comment-thread-outcomes.test.ts bind eight exact IDs with 23 cases/108 steps; mutation controls fail for missing resolved descendants, changed membership receipts and unrelated bytes. Temporary source/output files are cleaned after the run. Fresh post-push GitHub recursive make check passed 732/732 selected cases; Bun CI 36527224163 succeeded. No Go/Python, missing-extension creation, arbitrary new comments, live Word rendering or broad cross-consumer credit."
         },
         "go": {
           "status": "planned",
@@ -6735,8 +6735,8 @@
       ],
       "consumers": {
         "bun": {
-          "status": "planned",
-          "evidence": "Native execution binding pending"
+          "status": "implemented",
+          "evidence": "Bun 4aa1f0960305c9665e500725b693976174bfb104 at shared v0.92.0 executes One exact six-step unsupported-body inspection returns two immutable root groups and a nonempty unsupported report; resolving that thread refuses with no receipt and leaves package/source bytes intact. features/shared.json, tests/acceptance/comment-threads.ts and tests/unit/comment-thread-outcomes.test.ts bind eight exact IDs with 23 cases/108 steps; mutation controls fail for missing resolved descendants, changed membership receipts and unrelated bytes. Temporary source/output files are cleaned after the run. Fresh post-push GitHub recursive make check passed 732/732 selected cases; Bun CI 36527224163 succeeded. No Go/Python, missing-extension creation, arbitrary new comments, live Word rendering or broad cross-consumer credit."
         },
         "go": {
           "status": "planned",
@@ -6759,8 +6759,8 @@
       ],
       "consumers": {
         "bun": {
-          "status": "planned",
-          "evidence": "Native execution binding pending"
+          "status": "implemented",
+          "evidence": "Bun 4aa1f0960305c9665e500725b693976174bfb104 at shared v0.92.0 executes One exact four-step 10001-comment limit case makes both thread inspection and resolution return typed docx-comments-limit with no results while package/source bytes stay unchanged. features/shared.json, tests/acceptance/comment-threads.ts and tests/unit/comment-thread-outcomes.test.ts bind eight exact IDs with 23 cases/108 steps; mutation controls fail for missing resolved descendants, changed membership receipts and unrelated bytes. Temporary source/output files are cleaned after the run. Fresh post-push GitHub recursive make check passed 732/732 selected cases; Bun CI 36527224163 succeeded. No Go/Python, missing-extension creation, arbitrary new comments, live Word rendering or broad cross-consumer credit."
         },
         "go": {
           "status": "planned",
