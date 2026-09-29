@@ -1,0 +1,24 @@
+import {test,expect} from 'bun:test';
+import {execFileSync} from 'node:child_process';
+import {cases} from '../scripts/verify.ts';
+
+test('Go executes only the four-step immutable XML leaf seed with snapshot and anti-pass-through controls',async()=>{
+ const id='@id-xml-go-immutable-leaf-seed',feature='workflows/xml/editing.feature';
+ const ledger=await Bun.file('ledgers/workflows.json').json();
+ const prior=JSON.parse(execFileSync('git',['show','fa08cdd9129049f76a265cb000d2fb86605b7eef:ledgers/workflows.json']).toString());
+ const now=ledger.workflows.find((w:any)=>w.id===id),old=prior.workflows.find((w:any)=>w.id===id);
+ const selected=cases(feature,await Bun.file(feature).text()).filter((c:any)=>c.scenarioId===id);
+ expect(now.feature).toBe(feature);expect(now.expandedCases).toBe(1);expect(selected).toHaveLength(1);
+ expect(selected[0].steps.map((s:any)=>s.text)).toEqual([
+  'the XML source is <r><t>hello</t></r>',
+  'the XML editor parses a caller-owned byte slice and performs an empty edit',
+  'the caller input bytes still equal the original XML source',
+  'the empty edit returns the exact original source bytes',
+ ]);
+ expect(old.consumers.go.status).toBe('planned');expect(now.consumers.go.status).toBe('implemented');
+ for(const marker of ['0ca57e7544b54f4a24cdeeadef45c967874d790c','shared v0.114.0','acceptance/{feature_roots,inventory,acceptance,immutable_leaf}_test.go','Edit(nil,nil)','bye &amp; &lt;','temporary pass-through','406 cases/1395 steps','Go has no GitHub Actions workflow'])expect(now.consumers.go.evidence).toContain(marker);
+ expect(now.consumers.bun).toEqual(old.consumers.bun);expect(now.consumers.python).toEqual(old.consumers.python);
+ const unchanged=structuredClone(now);unchanged.consumers.go=old.consumers.go;expect(unchanged).toEqual(old);
+ const positive=ledger.workflows.find((w:any)=>w.id==='@id-xml-comparison-prefix-and-opc-order');expect(positive).toEqual(prior.workflows.find((w:any)=>w.id===positive.id));expect(positive.consumers.go.status).toBe('planned');
+ expect(ledger.workflows.filter((w:any)=>w.id!==id)).toEqual(prior.workflows.filter((w:any)=>w.id!==id));
+});

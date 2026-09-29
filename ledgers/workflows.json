@@ -3676,8 +3676,8 @@
           "evidence": "Native execution binding pending"
         },
         "go": {
-          "status": "planned",
-          "evidence": "Native execution binding pending"
+          "status": "implemented",
+          "evidence": "Go published 0ca57e7544b54f4a24cdeeadef45c967874d790c at shared v0.114.0 executes exactly @id-xml-go-immutable-leaf-seed, one four-step profile-lexical-snapshot-api case from workflows/xml/editing.feature, via acceptance/{feature_roots,inventory,acceptance,immutable_leaf}_test.go with exact ID/name/step/profile guard. Parse accepts caller-owned <r><t>hello</t></r>, verifies root, text-bearing leaf and original caller bytes, then Edit(nil,nil) returns independently expected exact source bytes without changing caller. On the same snapshot, nonempty text edit bye & < yields exactly escaped <r><t>bye &amp; &lt;</t></r> and reparses to decoded text; mutating returned no-op bytes leaves later empty edit and caller unchanged. A separate caller buffer mutated after Parse leaves its parsed snapshot intact. A temporary pass-through production mutation made the target fourth step fail on the nonempty control; it was restored before commit, with a mistaken root-module ./acceptance setup error excluded from behavioural-red evidence. Go-only five-file test/receipt commit adds no native API. Uncached no-override local, independent clean recursive pre-push and fresh GitHub recursive post-push root+acceptance gates each passed 406 cases/1395 steps with exact immutable leaf 1/4, zero nonpassed and defective positive OPC comparison zero selected. Go has no GitHub Actions workflow; no Go CI result claimed. No Bun/Python, broad XML/schema/ECMA, Office, CACHE-001, PPTX or PDF credit."
         },
         "python": {
           "status": "planned",
