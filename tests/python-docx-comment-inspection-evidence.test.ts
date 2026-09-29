@@ -22,5 +22,5 @@ test('Python credits only read-only inspection of the pinned existing comment th
  expect(now.consumers.bun).toEqual(old.consumers.bun);expect(now.consumers.go).toEqual(old.consumers.go);
  const unchanged=structuredClone(now);unchanged.consumers.python=old.consumers.python;expect(unchanged).toEqual(old);
  for(const sibling of ['@id-docx-comments-resolution','@id-docx-comments-noop','@id-docx-comments-refusal'])expect(ledger.workflows.find((w:any)=>w.id===sibling)).toEqual(prior.workflows.find((w:any)=>w.id===sibling));
- expect(ledger.workflows.filter((w:any)=>w.id!=="@id-xml-stylesheet-processing-instruction"&&w.id!==id&&w.id!=='@id-xml-entity-values')).toEqual(prior.workflows.filter((w:any)=>w.id!=="@id-xml-stylesheet-processing-instruction"&&w.id!==id&&w.id!=='@id-xml-entity-values'));
+ expect(ledger.workflows.filter((w:any)=>w.id!=="@id-xml-go-immutable-leaf-seed"&&w.id!=="@id-xml-stylesheet-processing-instruction"&&w.id!==id&&w.id!=='@id-xml-entity-values')).toEqual(prior.workflows.filter((w:any)=>w.id!=="@id-xml-go-immutable-leaf-seed"&&w.id!=="@id-xml-stylesheet-processing-instruction"&&w.id!==id&&w.id!=='@id-xml-entity-values'));
 });

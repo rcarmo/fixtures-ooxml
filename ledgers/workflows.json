@@ -3672,8 +3672,8 @@
       ],
       "consumers": {
         "bun": {
-          "status": "planned",
-          "evidence": "Native execution binding pending"
+          "status": "implemented",
+          "evidence": "Bun published c996c7d6d26a3a0ceb7a8305458d55e961951925 at shared v0.131.0 executes only @id-xml-go-immutable-leaf-seed, one exact four-step case in workflows/xml/editing.feature via features/shared.json, tests/acceptance/{xml-byte-snapshot,steps}.ts and tests/unit/xml-byte-snapshot.test.ts. The historical Go-named profile is a shared scenario label, not a cross-consumer result. The canonical literal <r><t>hello</t></r> is encoded as fresh caller-owned UTF-8 bytes, parsed with XmlByteSnapshot.parse and edited by remove([]); independent checks require caller bytes unchanged and returned bytes exactly equal original source. Exact ID/profile/name/line 107/four step texts are guarded; separate input and output corruption controls each make the canonical case fail. Snapshot reuse after caller mutation, returned no-op output mutation and nonempty leaf removal <r></r> check that the result is not pass-through or aliased; no additional case receives credit. Uncached local and independent clean recursive pre-push and fresh GitHub recursive post-push make check gates each passed 1,112 tests and 732/732 selected acceptance cases, including this exact case 1/4, with 59 still planned. Bun CI check 36618963045, office-oracles 36618963154 and property-campaign 36618963091 succeeded at exact SHA. No Go/Python, general XML/schema/ECMA, OPC/CACHE-001, Office, PPTX or PDF credit."
         },
         "go": {
           "status": "implemented",
