@@ -1,0 +1,30 @@
+import {test,expect} from 'bun:test';
+import {execFileSync} from 'node:child_process';
+import {cases} from '../scripts/verify.ts';
+
+const path='workflows/docx/tracking-settings.feature';
+const specs=[
+ ['persistence',2,10,'true/false'],
+ ['custody',3,15,'custom-prefix, UTF-16 and UTF-8-BOM'],
+ ['no-op',4,16,'zero changed parts'],
+ ['refusal',8,32,'eight four-step'],
+ ['rollback',3,12,'part-write, relationship-write and serialization'],
+ ['plain-edit',1,4,'no revisions'],
+ ['author-refusal',3,12,'blank, XML-control and non-string'],
+] as const;
+
+test('Bun executes exact saved DOCX tracking preferences, custody, refusal and ordinary-edit cases',async()=>{
+ const ledger=await Bun.file('ledgers/workflows.json').json(),prior=JSON.parse(execFileSync('git',['show','c110ab8a61a7c5c7c118c8c9b8b5a0b5fa4b7acf:ledgers/workflows.json']).toString());
+ const compiled=cases(path,await Bun.file(path).text());
+ for(const [suffix,count,steps,scope] of specs){
+  const id='@id-docx-tracking-settings-'+suffix,now=ledger.workflows.find((w:any)=>w.id===id),old=prior.workflows.find((w:any)=>w.id===id),rows=compiled.filter((r:any)=>r.scenarioId===id);
+  expect(now.feature).toBe(path);expect(now.expandedCases).toBe(count);expect(rows).toHaveLength(count);expect(rows.reduce((n:number,r:any)=>n+r.steps.length,0)).toBe(steps);
+  expect(now.expectedOutcomes).toEqual([...new Set(rows.flatMap((r:any)=>r.steps.slice(2).map((s:any)=>s.text)))]);
+  expect(old.consumers.bun.status).toBe('planned');expect(now.consumers.bun.status).toBe('implemented');
+  for(const marker of [scope,'9277d65e7e53e5996801fcecd1d4038f10d9e382','shared v0.101.0','features/shared.json','24 exact cases/101 steps','tests/acceptance/tracking-outcomes.ts','tests/unit/tracking-settings-outcomes.test.ts','Fresh post-push GitHub recursive Bun make check','732/732','36535800920','Go/Python'])expect(now.consumers.bun.evidence).toContain(marker);
+  expect(now.consumers.go).toEqual(old.consumers.go);expect(now.consumers.python).toEqual(old.consumers.python);
+  const unchanged=structuredClone(now);unchanged.consumers.bun=old.consumers.bun;expect(unchanged).toEqual(old);
+ }
+ expect(specs.reduce((n,[,cases])=>n+cases,0)).toBe(24);expect(specs.reduce((n,[,,steps])=>n+steps,0)).toBe(101);
+ expect(ledger.workflows.filter((w:any)=>w.feature!==path&&!['@id-xlsx-go-direct-range-parsing','@id-xlsx-go-direct-range-refusal'].includes(w.id))).toEqual(prior.workflows.filter((w:any)=>w.feature!==path&&!['@id-xlsx-go-direct-range-parsing','@id-xlsx-go-direct-range-refusal'].includes(w.id)));
+});

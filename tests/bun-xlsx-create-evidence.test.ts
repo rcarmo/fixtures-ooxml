@@ -1,3 +1,5 @@
+const trackingIds = new Set(['persistence','custody','no-op','refusal','rollback','plain-edit','author-refusal'].map(name => '@id-docx-tracking-settings-'+name));
+const goDirectRangeIds = new Set(['@id-xlsx-go-direct-range-parsing','@id-xlsx-go-direct-range-refusal']);
 const formulaIds = new Set(["@id-xlsx-go-formula-analysis-counts","@id-xlsx-go-formula-quoted-sheet-flags","@id-xlsx-go-formula-analysis-refusal","@id-xlsx-go-formula-literal-punctuation","@id-xlsx-go-direct-range-parsing","@id-xlsx-go-direct-range-refusal","@id-xlsx-go-static-remap-exact","@id-xlsx-go-static-remap-refusal","@id-xlsx-go-static-reference-properties"]);
 const commentVmlId = '@id-xlsx-comment-vml-existing-graph';
 const cellStyleIds = new Set(["@id-xlsx-cell-style-selection","@id-xlsx-cell-style-refusal"]);
@@ -32,5 +34,5 @@ test('Bun executes seven exact XLSX creation and missing-cell cases without Go/P
   }
   expect(specs.reduce((n, s) => n + s.steps.length, 0)).toBe(29);
   const changed = new Set(specs.map(s => s.id));
-  expect(ledger.workflows.filter((w: any) =>!formulaIds.has(w.id)&&w.id!==commentVmlId&&!cellStyleIds.has(w.id)&& !changed.has(w.id))).toEqual(prior.workflows.filter((w: any) =>!formulaIds.has(w.id)&&w.id!==commentVmlId&&!cellStyleIds.has(w.id)&& !changed.has(w.id)));
+  expect(ledger.workflows.filter((w: any) =>!trackingIds.has(w.id)&&!goDirectRangeIds.has(w.id)&&!formulaIds.has(w.id)&&w.id!==commentVmlId&&!cellStyleIds.has(w.id)&& !changed.has(w.id))).toEqual(prior.workflows.filter((w: any) =>!trackingIds.has(w.id)&&!goDirectRangeIds.has(w.id)&&!formulaIds.has(w.id)&&w.id!==commentVmlId&&!cellStyleIds.has(w.id)&& !changed.has(w.id)));
 });

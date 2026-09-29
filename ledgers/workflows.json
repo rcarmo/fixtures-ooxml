@@ -4072,8 +4072,8 @@
           "evidence": "Bun 9aa63cf33a5b602fed7479748f6922e74d669621 at shared v0.100.0 executes six direct-range examples verify sheet name, axis and first row/column coordinate; no second-endpoint credit from those example steps. features/shared.json selects nine XLSX static-reference scenarios (45 exact cases/152 steps); tests/acceptance/formula-analysis.ts, tests/acceptance/xlsx-range.ts and tests/acceptance/formula-remap.ts bind canonical cases with tests/unit/xlsx-formula-analysis.test.ts, tests/unit/xlsx-range.test.ts and tests/unit/xlsx-formula-remap.test.ts controls. Fresh post-push recursive Bun make check passed 732/732 and Bun CI 36534553649 succeeded. Static API only; no formula evaluation, saved workbook, calculation, Office rendering, Go/Python or cross-consumer execution credit."
         },
         "go": {
-          "status": "planned",
-          "evidence": "Native execution binding pending"
+          "status": "implemented",
+          "evidence": "Go published 4967e0fde69db6248af036d2f6bc472750e7cbae at shared v0.101.0 executes six exact direct-range examples decode JSON sources and assert sheet, axis and first row/column for absolute column, reversed rows, quoted column, reversed rectangle, sheet absolute cell and numeric sheet name. acceptance/direct_range_test.go selects two canonical IDs/13 rows/45 steps with independent row-name, source, expected-field and exact-step guards in acceptance/inventory_test.go; reports/batches/231.md records red undefined and three uncached gates (local, independent pre-push clone, fresh post-push GitHub clone), each 363 selected cases/1244 steps with zero failures/skips. The seven sibling formula-reference IDs/32 cases remain unselected. Static direct-range API only; no formula evaluation, workbook edit/save, Office rendering, Bun/Python or cross-consumer credit."
         },
         "python": {
           "status": "planned",
@@ -4095,8 +4095,8 @@
           "evidence": "Bun 9aa63cf33a5b602fed7479748f6922e74d669621 at shared v0.100.0 executes seven non-direct/unsupported range inputs refuse with xlsx-range-unsupported and no partial parsed range. features/shared.json selects nine XLSX static-reference scenarios (45 exact cases/152 steps); tests/acceptance/formula-analysis.ts, tests/acceptance/xlsx-range.ts and tests/acceptance/formula-remap.ts bind canonical cases with tests/unit/xlsx-formula-analysis.test.ts, tests/unit/xlsx-range.test.ts and tests/unit/xlsx-formula-remap.test.ts controls. Fresh post-push recursive Bun make check passed 732/732 and Bun CI 36534553649 succeeded. Static API only; no formula evaluation, saved workbook, calculation, Office rendering, Go/Python or cross-consumer execution credit."
         },
         "go": {
-          "status": "planned",
-          "evidence": "Native execution binding pending"
+          "status": "implemented",
+          "evidence": "Go published 4967e0fde69db6248af036d2f6bc472750e7cbae at shared v0.101.0 executes seven exact non-direct inputs (mixed endpoint, formula expression, external book, sheet span, spill reference, union, invalid whole axis) return an error. acceptance/direct_range_test.go selects two canonical IDs/13 rows/45 steps with independent row-name, source, expected-field and exact-step guards in acceptance/inventory_test.go; reports/batches/231.md records red undefined and three uncached gates (local, independent pre-push clone, fresh post-push GitHub clone), each 363 selected cases/1244 steps with zero failures/skips. The seven sibling formula-reference IDs/32 cases remain unselected. Static direct-range API only; no formula evaluation, workbook edit/save, Office rendering, Bun/Python or cross-consumer credit."
         },
         "python": {
           "status": "planned",
@@ -5875,8 +5875,8 @@
       ],
       "consumers": {
         "bun": {
-          "status": "planned",
-          "evidence": "Native execution binding pending"
+          "status": "implemented",
+          "evidence": "Bun 9277d65e7e53e5996801fcecd1d4038f10d9e382 at shared v0.101.0 executes two five-step preference save/reopen cases check true/false, empty session author, one internal settings relationship and Word content type, retained text/opaque payload and unchanged source archive. features/shared.json selects only seven canonical DOCX tracking-settings IDs (24 exact cases/101 steps); tests/acceptance/tracking-outcomes.ts and tests/unit/tracking-settings-outcomes.test.ts bind and challenge the canonical path. Fresh post-push GitHub recursive Bun make check passed 732/732, and Bun CI 36535800920 succeeded. No implicit revision generation beyond the explicit plain-edit assertion, Go/Python, Office rendering or cross-consumer execution credit."
         },
         "go": {
           "status": "planned",
@@ -5900,8 +5900,8 @@
       ],
       "consumers": {
         "bun": {
-          "status": "planned",
-          "evidence": "Native execution binding pending"
+          "status": "implemented",
+          "evidence": "Bun 9277d65e7e53e5996801fcecd1d4038f10d9e382 at shared v0.101.0 executes three five-step custom-prefix, UTF-16 and UTF-8-BOM cases retain settings path/encoding, preserve sibling XML after removing only the added trackRevisions element, and leave unrelated members/source archive unchanged. features/shared.json selects only seven canonical DOCX tracking-settings IDs (24 exact cases/101 steps); tests/acceptance/tracking-outcomes.ts and tests/unit/tracking-settings-outcomes.test.ts bind and challenge the canonical path. Fresh post-push GitHub recursive Bun make check passed 732/732, and Bun CI 36535800920 succeeded. No implicit revision generation beyond the explicit plain-edit assertion, Go/Python, Office rendering or cross-consumer execution credit."
         },
         "go": {
           "status": "planned",
@@ -5925,8 +5925,8 @@
       ],
       "consumers": {
         "bun": {
-          "status": "planned",
-          "evidence": "Native execution binding pending"
+          "status": "implemented",
+          "evidence": "Bun 9277d65e7e53e5996801fcecd1d4038f10d9e382 at shared v0.101.0 executes four four-step same-state cases check explicit preference, session author, zero changed parts and identical complete archive. features/shared.json selects only seven canonical DOCX tracking-settings IDs (24 exact cases/101 steps); tests/acceptance/tracking-outcomes.ts and tests/unit/tracking-settings-outcomes.test.ts bind and challenge the canonical path. Fresh post-push GitHub recursive Bun make check passed 732/732, and Bun CI 36535800920 succeeded. No implicit revision generation beyond the explicit plain-edit assertion, Go/Python, Office rendering or cross-consumer execution credit."
         },
         "go": {
           "status": "planned",
@@ -5949,8 +5949,8 @@
       ],
       "consumers": {
         "bun": {
-          "status": "planned",
-          "evidence": "Native execution binding pending"
+          "status": "implemented",
+          "evidence": "Bun 9277d65e7e53e5996801fcecd1d4038f10d9e382 at shared v0.101.0 executes eight four-step protected/ambiguous settings cases refuse both requests and preserve session author, archive, held paragraph text and source bytes. features/shared.json selects only seven canonical DOCX tracking-settings IDs (24 exact cases/101 steps); tests/acceptance/tracking-outcomes.ts and tests/unit/tracking-settings-outcomes.test.ts bind and challenge the canonical path. Fresh post-push GitHub recursive Bun make check passed 732/732, and Bun CI 36535800920 succeeded. No implicit revision generation beyond the explicit plain-edit assertion, Go/Python, Office rendering or cross-consumer execution credit."
         },
         "go": {
           "status": "planned",
@@ -5973,8 +5973,8 @@
       ],
       "consumers": {
         "bun": {
-          "status": "planned",
-          "evidence": "Native execution binding pending"
+          "status": "implemented",
+          "evidence": "Bun 9277d65e7e53e5996801fcecd1d4038f10d9e382 at shared v0.101.0 executes three four-step injected part-write, relationship-write and serialization failures preserve session author, archive and held paragraph text. features/shared.json selects only seven canonical DOCX tracking-settings IDs (24 exact cases/101 steps); tests/acceptance/tracking-outcomes.ts and tests/unit/tracking-settings-outcomes.test.ts bind and challenge the canonical path. Fresh post-push GitHub recursive Bun make check passed 732/732, and Bun CI 36535800920 succeeded. No implicit revision generation beyond the explicit plain-edit assertion, Go/Python, Office rendering or cross-consumer execution credit."
         },
         "go": {
           "status": "planned",
@@ -5997,8 +5997,8 @@
       ],
       "consumers": {
         "bun": {
-          "status": "planned",
-          "evidence": "Native execution binding pending"
+          "status": "implemented",
+          "evidence": "Bun 9277d65e7e53e5996801fcecd1d4038f10d9e382 at shared v0.101.0 executes one four-step ordinary text edit reopens with Explicit plain edit and tracking enabled, no revisions, unchanged opaque payload and source archive. features/shared.json selects only seven canonical DOCX tracking-settings IDs (24 exact cases/101 steps); tests/acceptance/tracking-outcomes.ts and tests/unit/tracking-settings-outcomes.test.ts bind and challenge the canonical path. Fresh post-push GitHub recursive Bun make check passed 732/732, and Bun CI 36535800920 succeeded. No implicit revision generation beyond the explicit plain-edit assertion, Go/Python, Office rendering or cross-consumer execution credit."
         },
         "go": {
           "status": "planned",
@@ -6021,8 +6021,8 @@
       ],
       "consumers": {
         "bun": {
-          "status": "planned",
-          "evidence": "Native execution binding pending"
+          "status": "implemented",
+          "evidence": "Bun 9277d65e7e53e5996801fcecd1d4038f10d9e382 at shared v0.101.0 executes three four-step blank, XML-control and non-string authors refuse without changing session author, archive or held paragraph text. features/shared.json selects only seven canonical DOCX tracking-settings IDs (24 exact cases/101 steps); tests/acceptance/tracking-outcomes.ts and tests/unit/tracking-settings-outcomes.test.ts bind and challenge the canonical path. Fresh post-push GitHub recursive Bun make check passed 732/732, and Bun CI 36535800920 succeeded. No implicit revision generation beyond the explicit plain-edit assertion, Go/Python, Office rendering or cross-consumer execution credit."
         },
         "go": {
           "status": "planned",
