@@ -1923,8 +1923,8 @@
       ],
       "consumers": {
         "bun": {
-          "status": "planned",
-          "evidence": "Existing local bindings passed; canonical-path run tracked separately in consumer"
+          "status": "implemented",
+          "evidence": "Bun 7d5f43dc8ed1edf8109294f5ba6ca8d59c23990e at shared v0.73.0 executes all ten exact table authoring steps in features/shared.json and tests/acceptance/tables-docx.ts. New 2x2 table is saved and reopened; dimensions, escaped boundary-space text, normalized newline, table-before-section placement and XML escaping are checked. Fresh GitHub recursive make check passed 732/732 selected cases; tests/unit/docx-tables.test.ts executes four canonical table scenarios (7 cases) with exported bindings. No Go/Python, rendering or broader table equivalence credit."
         },
         "go": {
           "status": "planned",
@@ -1948,8 +1948,8 @@
       ],
       "consumers": {
         "bun": {
-          "status": "planned",
-          "evidence": "Existing local bindings passed; canonical-path run tracked separately in consumer"
+          "status": "implemented",
+          "evidence": "Bun 7d5f43dc8ed1edf8109294f5ba6ca8d59c23990e at shared v0.73.0 executes all seven exact table cell-update steps in features/shared.json and tests/acceptance/tables-docx.ts. After save/reopen it checks 4x3 dimensions, edited Voltaic battery text and byte-identical docProps/core.xml. Fresh GitHub recursive make check passed 732/732 selected cases; tests/unit/docx-tables.test.ts executes canonical table scope (7 cases). No blanket package-part or Go/Python credit."
         },
         "go": {
           "status": "planned",
@@ -1972,8 +1972,8 @@
       ],
       "consumers": {
         "bun": {
-          "status": "planned",
-          "evidence": "Existing local bindings passed; canonical-path run tracked separately in consumer"
+          "status": "implemented",
+          "evidence": "Bun 7d5f43dc8ed1edf8109294f5ba6ca8d59c23990e at shared v0.73.0 executes all eight exact stale-cell steps in features/shared.json and tests/acceptance/tables-docx.ts. A retained cell handle after an edit refuses with docx-stale-table-cell; post-refusal saved bytes equal the remembered post-edit baseline. Fresh GitHub recursive make check passed 732/732 selected cases; tests/unit/docx-tables.test.ts executes canonical table scope (7 cases). No general saved-byte or Go/Python credit."
         },
         "go": {
           "status": "planned",
@@ -1999,8 +1999,8 @@
       ],
       "consumers": {
         "bun": {
-          "status": "planned",
-          "evidence": "Existing local bindings passed; canonical-path run tracked separately in consumer"
+          "status": "implemented",
+          "evidence": "Bun 7d5f43dc8ed1edf8109294f5ba6ca8d59c23990e at shared v0.73.0 executes four exact five-step table refusal rows in features/shared.json and tests/acceptance/tables-docx.ts. Out-of-range row uses RangeError; merged cell, nested cell and bizarre topology return their distinct OOXML refusal codes; each post-refusal save equals its remembered baseline bytes. Fresh GitHub recursive make check passed 732/732 selected cases; tests/unit/docx-tables.test.ts executes canonical table scope (7 cases). No Go/Python or unselected table-refusal credit."
         },
         "go": {
           "status": "planned",
