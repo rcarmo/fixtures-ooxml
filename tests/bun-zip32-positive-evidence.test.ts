@@ -1,3 +1,4 @@
+const budgetId = new Set(['@id-package-admission-negative-budget']);
 const descriptorId = new Set(['@id-zip-unsigned-descriptor-signature-collision']);
 const boundId = new Set(['@id-zip-bounds']);
 const unsafeId = new Set(['@id-zip-refuse-unsafe']);
@@ -51,5 +52,5 @@ test('Bun executes the two exact ZIP32 positive read/write contracts without cro
     const unchanged = structuredClone(now); unchanged.consumers.bun = old.consumers.bun; expect(unchanged).toEqual(old);
   }
   const changed = new Set([...specs.map(s => s.id), '@id-zip-refuse-unsafe']);
-  expect(ledger.workflows.filter((w: any) =>!descriptorId.has(w.id)&&!boundId.has(w.id)&& !changed.has(w.id))).toEqual(prior.workflows.filter((w: any) =>!descriptorId.has(w.id)&&!boundId.has(w.id)&& !changed.has(w.id)));
+  expect(ledger.workflows.filter((w: any) =>!budgetId.has(w.id)&&!descriptorId.has(w.id)&&!boundId.has(w.id)&& !changed.has(w.id))).toEqual(prior.workflows.filter((w: any) =>!budgetId.has(w.id)&&!descriptorId.has(w.id)&&!boundId.has(w.id)&& !changed.has(w.id)));
 });

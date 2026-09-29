@@ -7633,8 +7633,8 @@
       ],
       "consumers": {
         "bun": {
-          "status": "planned",
-          "evidence": "Native execution binding pending"
+          "status": "implemented",
+          "evidence": "Bun b52d9a282878b0193a857f33e758703698415b54 at shared v0.87.0 executes two exact six-step negative package-admission budget cases: source bytes and entry count each set to -1 on the byte-sealed valid DOCX fixture. features/shared.json and tests/acceptance/package-admission.ts verify the fixture admits by default, then direct admitPackage rejects both configurations with typed package-admission-limit-invalid and no delivered package/parts; a broken one-byte ZIP control also yields the argument code before ZIP parsing, and the caller archive remains byte-identical. The direct byte-input API performs no filesystem source-metadata read; no filesystem preflight claim is inferred. Fresh post-push GitHub recursive make check passed 732/732 selected cases; Bun CI 36523078079 succeeded. No Go/Python, zero-budget, edit-session, rendering or general OPC credit."
         },
         "go": {
           "status": "planned",
