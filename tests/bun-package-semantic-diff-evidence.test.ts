@@ -1,0 +1,24 @@
+import {test,expect} from 'bun:test';
+import {execFileSync} from 'node:child_process';
+import {cases} from '../scripts/verify.ts';
+
+const id='@id-package-diff-equivalent-xml-and-binary-changes',path='workflows/package/semantic-diff.feature';
+const steps=['the original ZIP_STORED package has these ordered UTF-8 members','the modified ZIP_STORED package has these ordered UTF-8 members','the semantic package diff compares original and modified packages','the equivalent_xml member list is ["a.xml"]','the changed member list is ["b.bin"]','the added member list is ["c.bin"]','the removed member list is []'];
+test('Bun executes exact semantic package diff and input custody without Go or Python credit',async()=>{
+ const ledger=await Bun.file('ledgers/workflows.json').json();
+ const prior=JSON.parse(execFileSync('git',['show','c765ddeec81efb6592f87d5e7d1662f01604b44b:ledgers/workflows.json']).toString());
+ const current=ledger.workflows.find((w:any)=>w.id===id),old=prior.workflows.find((w:any)=>w.id===id);
+ expect(current.feature).toBe(path);expect(current.expandedCases).toBe(1);
+ const selected=cases(path,await Bun.file(path).text()).filter((r:any)=>r.scenarioId===id);
+ expect(selected.map((r:any)=>r.steps.map((s:any)=>s.text))).toEqual([steps]);
+ expect(selected[0]!.steps.slice(0,2).map((s:any)=>s.argument?.dataTable?.rows.map((r:any)=>r.cells.map((c:any)=>c.value)))).toEqual([
+  [['member','payload'],['a.xml','<a xmlns="urn:x"/>'],['b.bin','old']],
+  [['member','payload'],['a.xml','<p:a xmlns:p="urn:x"/>'],['b.bin','new'],['c.bin','added']],
+ ]);
+ expect(current.expectedOutcomes).toEqual(steps.slice(-4));
+ expect(old.consumers.bun.status).toBe('planned');expect(current.consumers.bun.status).toBe('implemented');
+ for(const marker of ['9b6a2edb7f69f038b90019840598d9757c5f7008','shared v0.81.0','all seven exact','comparePackageArchives','without changing either caller byte array','tests/unit/package-comparison.test.ts','Fresh GitHub recursive make check','732/732'])expect(current.consumers.bun.evidence).toContain(marker);
+ expect(current.consumers.go).toEqual(old.consumers.go);expect(current.consumers.python).toEqual(old.consumers.python);
+ const unchanged=structuredClone(current);unchanged.consumers.bun=old.consumers.bun;expect(unchanged).toEqual(old);
+ expect(ledger.workflows.filter((w:any)=>w.id!==id)).toEqual(prior.workflows.filter((w:any)=>w.id!==id));
+});

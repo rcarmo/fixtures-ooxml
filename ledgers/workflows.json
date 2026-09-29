@@ -1578,8 +1578,8 @@
       ],
       "consumers": {
         "bun": {
-          "status": "planned",
-          "evidence": "No canonical admission/semantic-diff binding; ZIP reader/writer and byte diff are separate APIs"
+          "status": "implemented",
+          "evidence": "Bun 9b6a2edb7f69f038b90019840598d9757c5f7008 at shared v0.81.0 executes all seven exact semantic package-diff steps in features/shared.json and tests/acceptance/package-comparison.ts. Ordered ZIP_STORED inputs compare through comparePackageArchives without changing either caller byte array; prefix-only a.xml is equivalent_xml, binary b.bin changed, c.bin added and removed empty. tests/unit/package-comparison.test.ts runs the canonical case and distinguishes semantic XML equivalence from OPC byte diff. Fresh GitHub recursive make check passed 732/732 selected cases. No Go/Python, ZIP writing, Office rendering or general package equivalence credit."
         },
         "go": {
           "status": "planned",

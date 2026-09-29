@@ -22,5 +22,5 @@ test('Bun executes thirteen bounded ZIP and XML package-admission refusal rows w
   expect(current.consumers.go).toEqual(old.consumers.go);expect(current.consumers.python).toEqual(old.consumers.python);
   const unchanged=structuredClone(current);unchanged.consumers.bun=old.consumers.bun;expect(unchanged).toEqual(old);
  }
- const ids=new Set(specs.map(s=>s.id));expect(ledger.workflows.filter((w:any)=>!ids.has(w.id))).toEqual(prior.workflows.filter((w:any)=>!ids.has(w.id)));
+ const ids=new Set([...specs.map(s=>s.id),'@id-package-diff-equivalent-xml-and-binary-changes']);expect(ledger.workflows.filter((w:any)=>!ids.has(w.id))).toEqual(prior.workflows.filter((w:any)=>!ids.has(w.id)));
 });
