@@ -3251,8 +3251,8 @@
           "evidence": "Native execution binding pending"
         },
         "python": {
-          "status": "planned",
-          "evidence": "Native execution binding pending"
+          "status": "implemented",
+          "evidence": "Python published 84ecfa9e274530bf95a48dec4cbb2b4abfc6d679 at shared v0.118.0 executes only @id-xml-stylesheet-processing-instruction, one exact three-step case from workflows/xml/parsing.feature SHA256 350edcdfa0dc1206f9f5165cae93ba41c12b6974ee21e71cd3329ed2a82438ff, via tests/xml_stylesheet_pi/{cases,conftest,test_stylesheet}.py. Exact ID/name/step types and JSON source are sealed: UTF-8 <?xml-stylesheet href=\"style.xsl\"?><r/> (39 bytes). Existing tools.xlsx_preservation.parse runs once, yields unqualified root QName r with no namespace and exact preceding processing instruction target xml-stylesheet and text href=\"style.xsl\"; no earlier node, and full tree serialisation retains exact input bytes. The caller source bytes remain unchanged and per-step evidence records the parsed root/PI. Separate no-PI, wrong-target and wrong-href controls all still yield root r and therefore expose root-only vacuity; wrong-root and two malformed PI/XML inputs refuse or fail the expected QName as auxiliary controls. Canonical red observation check failed before binding; targeted seven tests passed. Exact published local, independent recursive pre-push and fresh GitHub recursive post-push full suites each passed 1,380 tests (three existing warnings) with eleven clean-provenance lanes, exact PI 1 case/3 steps; Python CI 36572515564 succeeded on 3.10/3.12/3.13. This is a bounded XLSX-preservation helper parsing observation, not a general XML/PI editing API, DTD refusal, offsets, package/Office conformance, Go, PPTX or PDF credit."
         }
       }
     },

@@ -2,23 +2,23 @@ import {test,expect} from 'bun:test';
 import {execFileSync} from 'node:child_process';
 import {cases} from '../scripts/verify.ts';
 
-test('Python credits only exact XML entity values, not general parsing or DTD refusal',async()=>{
- const id='@id-xml-entity-values',feature='workflows/xml/parsing.feature';
+test('Python credits one exact pre-root stylesheet PI parse, not generic XML handling',async()=>{
+ const id='@id-xml-stylesheet-processing-instruction',feature='workflows/xml/parsing.feature';
  const ledger=await Bun.file('ledgers/workflows.json').json();
- const prior=JSON.parse(execFileSync('git',['show','a21200e44c7ae0d7e9dbb1139a55f39fc2113477:ledgers/workflows.json']).toString());
+ const prior=JSON.parse(execFileSync('git',['show','4e30a8c5078e891cb794c5bd2599faa8db22414b:ledgers/workflows.json']).toString());
  const now=ledger.workflows.find((w:any)=>w.id===id),old=prior.workflows.find((w:any)=>w.id===id);
  const selected=cases(feature,await Bun.file(feature).text()).filter((c:any)=>c.scenarioId===id);
  expect(now.feature).toBe(feature);expect(now.expandedCases).toBe(1);expect(selected).toHaveLength(1);
  expect(selected[0].steps.map((s:any)=>s.text)).toEqual([
-  'XML values input encoded as JSON "<r a=\\"&quot;&apos;\\">&#x41;&#65;&amp;&lt;&gt;</r>"',
+  'XML values input encoded as JSON "<?xml-stylesheet href=\\"style.xsl\\"?><r/>"',
   'the XML values input is parsed',
-  'the root attribute a equals JSON "\\"\'"',
-  'the root text equals JSON "AA&<>"',
+  'the root qualified name equals r',
  ]);
+ expect(now.expectedOutcomes).toEqual(['the root qualified name equals r']);
  expect(old.consumers.python.status).toBe('planned');expect(now.consumers.python.status).toBe('implemented');
- for(const marker of ['9354a5996f1ac3b87a4c9a343894d325ecfe7ecc','shared v0.116.0','tests/xml_entity_values/{cases,conftest,test_entities}.py','48 bytes','AA&<>','Seven separate one-reference mutations','ACCEPTS an internal DTD','1,373 tests','Python CI 36569839564'])expect(now.consumers.python.evidence).toContain(marker);
+ for(const marker of ['84ecfa9e274530bf95a48dec4cbb2b4abfc6d679','shared v0.118.0','tests/xml_stylesheet_pi/{cases,conftest,test_stylesheet}.py','39 bytes','exact preceding processing instruction','no-PI, wrong-target and wrong-href','1,380 tests','Python CI 36572515564'])expect(now.consumers.python.evidence).toContain(marker);
  expect(now.consumers.bun).toEqual(old.consumers.bun);expect(now.consumers.go).toEqual(old.consumers.go);
  const unchanged=structuredClone(now);unchanged.consumers.python=old.consumers.python;expect(unchanged).toEqual(old);
  for(const sibling of ['@id-xml-typed-parse-error','@id-xml-comparison-prefix-and-opc-order','@id-opc-diff-content-type'])expect(ledger.workflows.find((w:any)=>w.id===sibling)).toEqual(prior.workflows.find((w:any)=>w.id===sibling));
- expect(ledger.workflows.filter((w:any)=>w.id!=="@id-xml-stylesheet-processing-instruction"&&w.id!=="@id-xml-go-attribute-batch-refusal"&&w.id!==id)).toEqual(prior.workflows.filter((w:any)=>w.id!=="@id-xml-stylesheet-processing-instruction"&&w.id!=="@id-xml-go-attribute-batch-refusal"&&w.id!==id));
+ expect(ledger.workflows.filter((w:any)=>w.id!==id)).toEqual(prior.workflows.filter((w:any)=>w.id!==id));
 });
