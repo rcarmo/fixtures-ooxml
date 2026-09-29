@@ -3462,8 +3462,8 @@
           "evidence": "Native execution binding pending"
         },
         "go": {
-          "status": "planned",
-          "evidence": "Native execution binding pending"
+          "status": "implemented",
+          "evidence": "Go published 7d9fee551547fa7a761b9797fed91f34b2ba4f3a at shared v0.116.0 executes only @id-xml-go-attribute-splice-custody: three exact Examples rows/nine steps from workflows/xml/editing.feature, selected in acceptance/{acceptance,inventory,attribute_splice}_test.go with exact outline ID/name/profile, row lines 27–29, name/value/source/output and expanded step-text guards. Each row parses caller-owned <r xmlns:p=\"urn:p\"><t a = 'a&amp;b' p:n=\"old\"/><t>text</t></r> and edits first t: a to x'y&z (exact &#39; and &amp; escaping in retained single quotes), expanded {urn:p}n to new, or adds fresh=\"value\" before />. Independent literal full-output bytes, reparsed decoded edited/untouched attributes, second t source bytes/text, source-order names and unchanged caller bytes verify bounded lexical custody. Same snapshot no-op/same-value edits retain original bytes; duplicate-a batch refuses without output, then a valid row still succeeds; mutating returned bytes leaves caller and later no-op snapshot unchanged. This auxiliary duplicate control does NOT select or credit @id-xml-go-attribute-batch-refusal. A temporary attribute pass-through mutation failed all three canonical output-byte steps after their first two steps passed; restored before the four-file test-only commit, no production API change. Uncached no-override exact Go local, independent clean recursive pre-push and fresh GitHub recursive post-push root+acceptance gates each passed 409 cases/1404 steps, exact attribute 3/9, sibling refusal zero and defective positive OPC-like XML comparison zero, with no nonpassed steps. Go has no GitHub Actions workflow or CI result. No Bun/Python, general XML/schema/ECMA, Office, CACHE-001, PPTX or PDF credit."
         },
         "python": {
           "status": "planned",
