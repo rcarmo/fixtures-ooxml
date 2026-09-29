@@ -1635,8 +1635,8 @@
           "evidence": "No equivalent operation binding reviewed; language-specific behaviours remain explicit"
         },
         "python": {
-          "status": "planned",
-          "evidence": "No equivalent operation binding reviewed; creation/body editing are not existing-flag mutation"
+          "status": "implemented",
+          "evidence": "Python published 07d9c019e9709834148783af0bd415980715f5f1 at shared v0.133.0 executes only @id-docx-comments-resolution, one existing-extension case/six exact steps in workflows/docx/comments.feature through tests/docx_comment_resolution/{cases,conftest,test_resolution,test_controls}.py and production tools/word_tools.py plus tools/mutation.py. The manifest-sealed fixture-ccdfb41723d543a8baf3444b16c3f8fa7d8473aead590e13825042ba6119da62 is a 31,618-byte, 21-member DOCX with a 2,824-byte UTF-8 commentsExtended part. Resolving root comment 1 splices only its unique expanded-name w15:done lexical value 0 to 1; threaded readback preserves body and reply 2 parent link, all 20 unrelated package members and source bytes. Reopening sets it to 0 and restores all original member bytes including extension declaration quotes and CRLF. Existing-extension ambiguity, malformed, entity/DTD and encoding inputs refuse with source/destination/staging custody; same-state in-place requests leave the archive exact, distinct output_path no-ops refuse, valid namespace/quote variants and injected write/publication faults are auxiliary controls, not sibling-case credit. A temporary production wrong-state fault produced a restored-red canonical failure. Seven-file native delta was merged without rebase over the v0.133.0 pin; committed local, independent recursive and fresh GitHub recursive suites each passed 1,452 tests with eighteen provenance-clean lanes including exact 1/6; Python CI 36626328058 succeeded on 3.10/3.12/3.13 and Windows CI 36626327878 succeeded. This credits neither whole-thread resolution, general DOCX/OPC/Office/PDF nor the separate no-op/refusal workflows; protected bfd9614 checkout and two untracked PPTX files remain untouched."
         }
       }
     },
