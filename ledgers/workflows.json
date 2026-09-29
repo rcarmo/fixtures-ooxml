@@ -2787,8 +2787,8 @@
       ],
       "consumers": {
         "bun": {
-          "status": "planned",
-          "evidence": "Native candidate binding requires canonical-path run; no cross-language execution credit"
+          "status": "implemented",
+          "evidence": "Bun 4512330b3a81a459d697afb1e6502b5ff7f3a9c6 at shared v0.95.0 executes Eight exact four-step positioned text-box cases save/reopen plain, multiline, empty, formatted, alias/default-namespace, extension-tail and nested-ID inputs; reopened shape ID/name, integer EMU geometry, paragraph text and direct flags match, and original slide shapes/unrelated package payloads remain byte-identical. features/shared.json, tests/acceptance/text-box.ts and tests/unit/pptx-text-box.test.ts bind 23 exact cases/77 steps. Additional unit controls cover stale anchors/tables, rollback, UTF-16LE/BE, lexical shape IDs, namespace shadowing, and disk save without implying generic layout or rendered-fidelity coverage. Fresh post-push GitHub recursive make check passed 732/732 selected cases; Bun CI 36529966166 succeeded. No Go/Python, layout inheritance, live Office rendering or cross-consumer credit."
         },
         "go": {
           "status": "planned",
@@ -2810,8 +2810,8 @@
       ],
       "consumers": {
         "bun": {
-          "status": "planned",
-          "evidence": "Native candidate binding requires canonical-path run; no cross-language execution credit"
+          "status": "implemented",
+          "evidence": "Bun 4512330b3a81a459d697afb1e6502b5ff7f3a9c6 at shared v0.95.0 executes Fifteen exact three-step unsafe text-box refusals span negative/zero/fractional/oversized geometry, invalid text/options, duplicate/malformed/exhausted IDs, ambiguous or malformed shape trees, alternate content, transform and protected presentation; each returns a typed PPTX_/XML_ refusal before changing package bytes or slide version. features/shared.json, tests/acceptance/text-box.ts and tests/unit/pptx-text-box.test.ts bind 23 exact cases/77 steps. Additional unit controls cover stale anchors/tables, rollback, UTF-16LE/BE, lexical shape IDs, namespace shadowing, and disk save without implying generic layout or rendered-fidelity coverage. Fresh post-push GitHub recursive make check passed 732/732 selected cases; Bun CI 36529966166 succeeded. No Go/Python, layout inheritance, live Office rendering or cross-consumer credit."
         },
         "go": {
           "status": "planned",
