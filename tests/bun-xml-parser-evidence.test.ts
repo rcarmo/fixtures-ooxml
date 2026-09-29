@@ -23,5 +23,5 @@ test('Bun executes four exact XML parsing and refusal scenarios without Go or Py
   for(const marker of [...markers,'a85530c6853a0736860e7649f7fe131a9f5e5a41','shared v0.75.0','tests/acceptance/core.ts','Fresh GitHub recursive make check','732/732'])expect(current.consumers.bun.evidence).toContain(marker);
   const unchanged=structuredClone(current);unchanged.consumers.bun=old.consumers.bun;expect(unchanged).toEqual(old);
  }
- const ids=new Set([...specs.map(s=>s.id),'@id-docx-direct-font-size-half-points']);expect(ledger.workflows.filter((w:any)=>!ids.has(w.id))).toEqual(prior.workflows.filter((w:any)=>!ids.has(w.id)));
+ const ids=new Set([...specs.map(s=>s.id),'@id-docx-direct-font-size-half-points','@id-xml-apply-edits']);expect(ledger.workflows.filter((w:any)=>!ids.has(w.id))).toEqual(prior.workflows.filter((w:any)=>!ids.has(w.id)));
 });

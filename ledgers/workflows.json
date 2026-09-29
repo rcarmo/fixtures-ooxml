@@ -1274,8 +1274,8 @@
       ],
       "consumers": {
         "bun": {
-          "status": "planned",
-          "evidence": "Native assertions reviewed; canonical feature binding rerun required"
+          "status": "implemented",
+          "evidence": "Bun 664c581eb4289ffb7952f10aff729f533595d4c3 at shared v0.76.0 executes all four exact XML editing steps in features/shared.json and tests/acceptance/core.ts. Disjoint fragment and escaped-text edits yield a parsed well-formed DTD-free document; overlapping edits refuse with XML_EDIT_OVERLAP, malformed or DTD-bearing outputs with XML_EDIT_UNSAFE before returning edited text. Fresh GitHub recursive make check passed 732/732 selected cases; tests/unit/xml.test.ts independently exercises applyEdits overlap and unsafe refusals. Lexical XML edit only; no Go/Python, OPC package custody or rendering credit."
         },
         "go": {
           "status": "planned",
