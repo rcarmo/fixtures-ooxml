@@ -1179,8 +1179,8 @@
       ],
       "consumers": {
         "bun": {
-          "status": "planned",
-          "evidence": "Native assertions reviewed; canonical feature binding rerun required"
+          "status": "implemented",
+          "evidence": "Bun a85530c6853a0736860e7649f7fe131a9f5e5a41 at shared v0.75.0 executes all four exact XML parsing steps in features/shared.json and tests/acceptance/core.ts. Parsed root and descendants check decoded text/attributes, namespace URIs, UTF-16 source offsets, parent/child/root links and self-closing state. Fresh GitHub recursive make check passed 732/732 selected cases. Lexical parser only; no Go/Python or semantic comparison credit."
         },
         "go": {
           "status": "planned",
@@ -1204,8 +1204,8 @@
       ],
       "consumers": {
         "bun": {
-          "status": "planned",
-          "evidence": "Native assertions reviewed; canonical feature binding rerun required"
+          "status": "implemented",
+          "evidence": "Bun a85530c6853a0736860e7649f7fe131a9f5e5a41 at shared v0.75.0 executes all five exact XML parsing steps in features/shared.json and tests/acceptance/core.ts. Raw CRLF and literal attribute whitespace normalize on decode while referenced carriage returns/whitespace survive and element offsets still index the unmodified source. Fresh GitHub recursive make check passed 732/732 selected cases. No Go/Python or output-serialization credit."
         },
         "go": {
           "status": "planned",
@@ -1227,8 +1227,8 @@
       ],
       "consumers": {
         "bun": {
-          "status": "planned",
-          "evidence": "Native assertions reviewed; canonical feature binding rerun required"
+          "status": "implemented",
+          "evidence": "Bun a85530c6853a0736860e7649f7fe131a9f5e5a41 at shared v0.75.0 executes all six exact XML refusal steps in features/shared.json and tests/acceptance/core.ts. Distinct malformed declaration/PI/comment/attribute, reserved namespace, DTD/entity, duplicate attribute, unbound prefix and tag-mismatch inputs each refuse with their expected stable XML error code and no returned document. Fresh GitHub recursive make check passed 732/732 selected cases. No Go/Python or arbitrary XML rejection credit."
         },
         "go": {
           "status": "planned",
@@ -1250,8 +1250,8 @@
       ],
       "consumers": {
         "bun": {
-          "status": "planned",
-          "evidence": "Native assertions reviewed; canonical feature binding rerun required"
+          "status": "implemented",
+          "evidence": "Bun a85530c6853a0736860e7649f7fe131a9f5e5a41 at shared v0.75.0 executes all three exact XML resource-bound steps in features/shared.json and tests/acceptance/core.ts. Depth, node-count and input-length cases each refuse with their expected error code and no partial parsed document. Fresh GitHub recursive make check passed 732/732 selected cases. No Go/Python or untested resource-limit credit."
         },
         "go": {
           "status": "planned",
@@ -3056,8 +3056,8 @@
           "evidence": "Bun fd658221d642f99b36e707263a5a218521712ab0 at shared v0.74.0 executes the exact six-step direct-font-size scenario in features/shared.json and tests/acceptance/font-size.ts. A real DOCX path is saved/reopened; text is Size sample, its one direct run has exactly one w:sz with w:val 21, and direct size reads 10.5 points. tests/unit/docx-font-size.test.ts executes the canonical case and separately checks invalid half-point values and no-mutation refusals. Fresh GitHub recursive make check passed 732/732 selected cases. No Go/Python, style inheritance or rendering credit."
         },
         "go": {
-          "status": "planned",
-          "evidence": "Binding and execution pending"
+          "status": "implemented",
+          "evidence": "Go 3a9c5aafbff9a8864ed7ecfd603d500080c7bbd2 at shared v0.75.0 binds all six exact steps in acceptance/direct_font_size_test.go. A Size sample single run receives direct 10.5pt, is saved to a real DOCX path and reopened; text, exactly one namespaced direct w:sz with w:val 21 in saved document XML, and reopened direct getter 10.5 are checked. Exact row/step guards and changed XML/getter/text negative controls fail. Fresh post-push GitHub recursive test-batch passed 350 selected cases/1199 steps/0 failures/0 skips; reports/batches/204.md records local and independent gates. w:szCs is not counted as w:sz; no style inheritance, rendering or Python credit."
         },
         "python": {
           "status": "planned",

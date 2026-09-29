@@ -13,7 +13,9 @@ test('Bun executes exact saved half-point direct font size without Go, Python or
  expect(current.expectedOutcomes).toEqual(steps.slice(-3));
  expect(old.consumers.bun.status).toBe('planned');expect(current.consumers.bun.status).toBe('implemented');
  for(const marker of ['fd658221d642f99b36e707263a5a218521712ab0','shared v0.74.0','exact six-step','saved/reopened','exactly one w:sz','w:val 21','10.5 points','tests/unit/docx-font-size.test.ts','Fresh GitHub recursive make check','732/732'])expect(current.consumers.bun.evidence).toContain(marker);
- expect(current.consumers.go).toEqual(old.consumers.go);expect(current.consumers.python).toEqual(old.consumers.python);
- const unchanged=structuredClone(current);unchanged.consumers.bun=old.consumers.bun;expect(unchanged).toEqual(old);
- expect(ledger.workflows.filter((w:any)=>w.id!==id)).toEqual(prior.workflows.filter((w:any)=>w.id!==id));
+ expect(old.consumers.go.status).toBe('planned');expect(current.consumers.go.status).toBe('implemented');
+ for(const marker of ['3a9c5aafbff9a8864ed7ecfd603d500080c7bbd2','shared v0.75.0','acceptance/direct_font_size_test.go','exactly one namespaced direct w:sz','350 selected cases/1199 steps/0 failures/0 skips','reports/batches/204.md','Fresh post-push GitHub recursive test-batch'])expect(current.consumers.go.evidence).toContain(marker);
+ expect(current.consumers.python).toEqual(old.consumers.python);
+ const unchanged=structuredClone(current);unchanged.consumers.bun=old.consumers.bun;unchanged.consumers.go=old.consumers.go;expect(unchanged).toEqual(old);
+ const laterIds=new Set(['@id-xml-parse-offsets','@id-xml-normalise-line-endings','@id-xml-parse-refusals','@id-xml-parse-bounds']);expect(ledger.workflows.filter((w:any)=>w.id!==id&&!laterIds.has(w.id))).toEqual(prior.workflows.filter((w:any)=>w.id!==id&&!laterIds.has(w.id)));
 });
