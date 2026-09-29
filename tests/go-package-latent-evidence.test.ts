@@ -1,0 +1,18 @@
+import {test,expect} from 'bun:test';
+import {execFileSync} from 'node:child_process';
+import {cases} from '../scripts/verify.ts';
+
+const specs=[
+ ['@id-package-admission-negative-budget','workflows/package/admission-limit-configuration.feature',2,12,'d0fb90f8cae10e6882f7d3ef6109306fcb77bb73','reports/batches/157-default.log','acceptance/negative_budget_test.go','04533635094905c42a24c849e06c35a2b0738a5f9a397018945465d5df32a57c'],
+ ['@id-zip-unsigned-descriptor-signature-collision','workflows/package/data-descriptor-integrity.feature',1,8,'5bfee3ebb1a1b95664d074e54256201680a0eda5','reports/batches/158-default.log','acceptance/descriptor_collision_test.go','c9debc24ec19a1f6745e6cc686ba869832ef73c7cd390695ad079c3a1f57bbc5'],
+] as const;
+
+test('Go latent negative-budget and ZIP32 unsigned-descriptor canonical execution corrects planned ledger',async()=>{
+ const ledger=await Bun.file('ledgers/workflows.json').json(),prior=JSON.parse(execFileSync('git',['show','3a1c1220fec98e3f8c1bd9902c723b8e3aceab19:ledgers/workflows.json']).toString());
+ for(const[id,path,count,steps,commit,log,binding,hash]of specs){const now=ledger.workflows.find((w:any)=>w.id===id),old=prior.workflows.find((w:any)=>w.id===id),rows=cases(path,await Bun.file(path).text()).filter((r:any)=>r.scenarioId===id);
+  expect(now.feature).toBe(path);expect(now.expandedCases).toBe(count);expect(rows).toHaveLength(count);expect(rows.reduce((n:number,r:any)=>n+r.steps.length,0)).toBe(steps);expect(now.expectedOutcomes).toEqual([...new Set(rows.flatMap((r:any)=>r.steps.slice(count===2?3:4).map((s:any)=>s.text)))]);
+  expect(old.consumers.go.status).toBe('planned');expect(now.consumers.go.status).toBe('implemented');for(const marker of [commit,log,binding,hash,'fba1b5cd7c45a83eff00b95b85d8cf8a569a0bdf','395 selected cases/1351 passed steps','stale planned ledger state','Go code or selector change'])expect(now.consumers.go.evidence).toContain(marker);
+  expect(now.consumers.bun).toEqual(old.consumers.bun);expect(now.consumers.python).toEqual(old.consumers.python);const unchanged=structuredClone(now);unchanged.consumers.go=old.consumers.go;expect(unchanged).toEqual(old);
+ }
+ const ids=new Set(specs.map(([id])=>id));expect(ledger.workflows.filter((w:any)=>!ids.has(w.id))).toEqual(prior.workflows.filter((w:any)=>!ids.has(w.id)));
+});
