@@ -1,3 +1,4 @@
+const descriptorId = new Set(['@id-zip-unsigned-descriptor-signature-collision']);
 const boundId = new Set(['@id-zip-bounds']);
 const unsafeId = new Set(['@id-zip-refuse-unsafe']);
 import { test, expect } from 'bun:test';
@@ -64,5 +65,5 @@ test('Bun alone executes twenty exact ZIP32 checksum and typed refusal rows (91 
   }
   expect(expected.flat().reduce((n, row) => n + row.length, 0)).toBe(91);
   const changed = new Set([...ids, '@id-zip-read-valid', '@id-zip-write-deterministic', '@id-zip-refuse-unsafe']);
-  expect(current.workflows.filter((w: any) =>!boundId.has(w.id)&& !changed.has(w.id))).toEqual(prior.workflows.filter((w: any) =>!boundId.has(w.id)&& !changed.has(w.id)));
+  expect(current.workflows.filter((w: any) =>!descriptorId.has(w.id)&&!boundId.has(w.id)&& !changed.has(w.id))).toEqual(prior.workflows.filter((w: any) =>!descriptorId.has(w.id)&&!boundId.has(w.id)&& !changed.has(w.id)));
 });

@@ -1,3 +1,4 @@
+const descriptorId = new Set(['@id-zip-unsigned-descriptor-signature-collision']);
 import { test, expect } from 'bun:test';
 import { execFileSync } from 'node:child_process';
 import { cases } from '../scripts/verify.ts';
@@ -21,5 +22,5 @@ test('Bun checks broad ZIP32 limits before invalid DEFLATE without Go/Python or 
   for (const marker of ['7745d19daa9c8f50a34882ff51bc460dde162200', 'shared v0.85.0', 'one exact three-step', 'maxArchiveBytes', 'maxEntries', 'maxEntryBytes', 'maxTotalBytes', 'maxCompressionRatio', 'zip-data-invalid without limits', 'before inflation is attempted', 'caller archive bytes unchanged', 'tests/acceptance/core.ts', 'tests/unit/zip.test.ts', 'Fresh post-push GitHub recursive make check', '732/732', 'No Go/Python', 'not a measured allocator cap']) expect(now.consumers.bun.evidence).toContain(marker);
   expect(now.consumers.go).toEqual(old.consumers.go); expect(now.consumers.python).toEqual(old.consumers.python);
   const unchanged = structuredClone(now); unchanged.consumers.bun = old.consumers.bun; expect(unchanged).toEqual(old);
-  expect(ledger.workflows.filter((w: any) => w.id !== id)).toEqual(prior.workflows.filter((w: any) => w.id !== id));
+  expect(ledger.workflows.filter((w: any) =>!descriptorId.has(w.id)&& w.id !== id)).toEqual(prior.workflows.filter((w: any) =>!descriptorId.has(w.id)&& w.id !== id));
 });

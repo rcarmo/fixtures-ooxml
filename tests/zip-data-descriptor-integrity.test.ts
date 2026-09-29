@@ -18,7 +18,7 @@ test('unsigned descriptor/signature ambiguity keeps geometry, CRC refusal and by
   'no package or member payloads are delivered',
   "the caller's original archive bytes remain unchanged",
  ])expect(steps).toContain(predicate);
- const owner=w.workflows.find((x:any)=>x.id===id);expect(owner.feature).toBe(path);expect(owner.expandedCases).toBe(1);expect(Object.keys(owner.consumers).sort()).toEqual(['bun','go','python']);expect(Object.values(owner.consumers).every((c:any)=>c.status==='planned')).toBe(true);
+ const owner=w.workflows.find((x:any)=>x.id===id);expect(owner.feature).toBe(path);expect(owner.expandedCases).toBe(1);expect(Object.keys(owner.consumers).sort()).toEqual(['bun','go','python']);expect(owner.consumers.bun.status).toBe('implemented');expect(owner.consumers.go.status).toBe('planned');expect(owner.consumers.python.status).toBe('planned');
 });
 
 test('Go source candidate and native observation retain their distinct inputs without borrowed execution',async()=>{

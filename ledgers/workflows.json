@@ -7659,8 +7659,8 @@
       ],
       "consumers": {
         "bun": {
-          "status": "planned",
-          "evidence": "Native execution binding pending"
+          "status": "implemented",
+          "evidence": "Bun 1dcbeed05ba69ec7f20cdc25c90220e4bae51bd4 at shared v0.86.0 executes one exact eight-step unsigned ZIP32 descriptor-signature collision case. features/shared.json and tests/acceptance/data-descriptor-integrity.ts build a one-member DEFLATE archive with an unsigned twelve-byte descriptor and central CRC 08074B50 equal to optional signature bytes; independently inflated payload has CRC 422C6A15, not the declared CRC. The bound scenario verifies physical descriptor and central offsets, readZip returns typed zip-crc-mismatch instead of descriptor-shape mismatch, no package or member output escapes, and the caller archive stays byte-identical. Fresh post-push GitHub recursive make check passed 732/732 selected cases; Bun CI 36522231141 succeeded. No Go/Python, signed descriptor, ZIP64, valid payload, rendering or general OPC credit."
         },
         "go": {
           "status": "planned",
