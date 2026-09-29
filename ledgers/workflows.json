@@ -1602,8 +1602,8 @@
       ],
       "consumers": {
         "bun": {
-          "status": "planned",
-          "evidence": "Existing local bindings passed; canonical-path run tracked separately in consumer"
+          "status": "implemented",
+          "evidence": "Bun bfb7f3e820040bdc8f2f5e4da3db90800fbe29b8 at shared v0.91.0 executes one exact four-step existing-threaded-comment inspection on a pinned Word package verifies all three body strings, authors, dates, IDs and reply parent and leaves the complete archive unchanged. features/shared.json, tests/acceptance/comments-docx.ts and tests/unit/docx-comments.test.ts bind all fourteen selected cases/46 steps; local test also checks additional bounded prefix, multiline, rollback, protected-settings and detached-result controls. Fresh post-push GitHub recursive make check passed 732/732 selected cases; Bun CI 36526183019 succeeded. No Go/Python, creation of missing metadata, arbitrary threaded editing, live Word rendering or broader parity credit."
         },
         "go": {
           "status": "planned",
@@ -1627,8 +1627,8 @@
       ],
       "consumers": {
         "bun": {
-          "status": "planned",
-          "evidence": "Existing local bindings passed; canonical-path run tracked separately in consumer"
+          "status": "implemented",
+          "evidence": "Bun bfb7f3e820040bdc8f2f5e4da3db90800fbe29b8 at shared v0.91.0 executes one exact six-step existing-comment resolution changes comment 1 only, saves/reopens the resolved flag with reply link intact, changes only commentsExtended, then reopens the comment and restores every original member byte. features/shared.json, tests/acceptance/comments-docx.ts and tests/unit/docx-comments.test.ts bind all fourteen selected cases/46 steps; local test also checks additional bounded prefix, multiline, rollback, protected-settings and detached-result controls. Fresh post-push GitHub recursive make check passed 732/732 selected cases; Bun CI 36526183019 succeeded. No Go/Python, creation of missing metadata, arbitrary threaded editing, live Word rendering or broader parity credit."
         },
         "go": {
           "status": "planned",
@@ -1650,8 +1650,8 @@
       ],
       "consumers": {
         "bun": {
-          "status": "planned",
-          "evidence": "Existing local bindings passed; canonical-path run tracked separately in consumer"
+          "status": "implemented",
+          "evidence": "Bun bfb7f3e820040bdc8f2f5e4da3db90800fbe29b8 at shared v0.91.0 executes one exact three-step already-open comment no-op reopens comment 1 with no edits and leaves whole package bytes unchanged. features/shared.json, tests/acceptance/comments-docx.ts and tests/unit/docx-comments.test.ts bind all fourteen selected cases/46 steps; local test also checks additional bounded prefix, multiline, rollback, protected-settings and detached-result controls. Fresh post-push GitHub recursive make check passed 732/732 selected cases; Bun CI 36526183019 succeeded. No Go/Python, creation of missing metadata, arbitrary threaded editing, live Word rendering or broader parity credit."
         },
         "go": {
           "status": "planned",
@@ -1673,8 +1673,8 @@
       ],
       "consumers": {
         "bun": {
-          "status": "planned",
-          "evidence": "Existing local bindings passed; canonical-path run tracked separately in consumer"
+          "status": "implemented",
+          "evidence": "Bun bfb7f3e820040bdc8f2f5e4da3db90800fbe29b8 at shared v0.91.0 executes Eleven exact three-step existing-comment refusal cases (missing extension, duplicate ID/paragraph ID, missing parent, cycle, invalid done, wrong MIME, external link, protected settings, unsupported body and orphan extension entry) return a typed OoxmlError and retain every package byte. features/shared.json, tests/acceptance/comments-docx.ts and tests/unit/docx-comments.test.ts bind all fourteen selected cases/46 steps; local test also checks additional bounded prefix, multiline, rollback, protected-settings and detached-result controls. Fresh post-push GitHub recursive make check passed 732/732 selected cases; Bun CI 36526183019 succeeded. No Go/Python, creation of missing metadata, arbitrary threaded editing, live Word rendering or broader parity credit."
         },
         "go": {
           "status": "planned",

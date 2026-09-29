@@ -1,3 +1,4 @@
+const commentIds = new Set(["@id-docx-comments-inspection","@id-docx-comments-resolution","@id-docx-comments-noop","@id-docx-comments-refusal"]);
 import { test, expect } from 'bun:test';
 import { execFileSync } from 'node:child_process';
 import { cases } from '../scripts/verify.ts';
@@ -33,5 +34,5 @@ test('Bun executes four exact PPTX/XLSX relationship expanded-name cases without
     const unchanged = structuredClone(now); unchanged.consumers.bun = old.consumers.bun; expect(unchanged).toEqual(old);
   }
   const changed = new Set(specs.map(s => s.id));
-  expect(ledger.workflows.filter((w: any) => !changed.has(w.id))).toEqual(prior.workflows.filter((w: any) => !changed.has(w.id)));
+  expect(ledger.workflows.filter((w: any) =>!commentIds.has(w.id)&& !changed.has(w.id))).toEqual(prior.workflows.filter((w: any) =>!commentIds.has(w.id)&& !changed.has(w.id)));
 });
