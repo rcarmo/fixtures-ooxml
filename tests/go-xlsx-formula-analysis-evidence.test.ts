@@ -19,5 +19,5 @@ test('Go executes fourteen exact static formula-analysis rows, leaving other sib
   expect(now.consumers.bun).toEqual(old.consumers.bun);expect(now.consumers.python).toEqual(old.consumers.python);const unchanged=structuredClone(now);unchanged.consumers.go=old.consumers.go;expect(unchanged).toEqual(old);
  }
  expect(specs.reduce((n,[,cases])=>n+cases,0)).toBe(14);expect(specs.reduce((n,[,,steps])=>n+steps,0)).toBe(50);
- const changed=new Set(specs.map(([id])=>id));expect(ledger.workflows.filter((w:any)=>!changed.has(w.id))).toEqual(prior.workflows.filter((w:any)=>!changed.has(w.id)));
+ const changed=new Set(specs.map(([id])=>id));expect(ledger.workflows.filter((w:any)=>!['@id-docx-paragraph-style-authoring','@id-docx-paragraph-style-authoring-refusal'].includes(w.id) && !changed.has(w.id))).toEqual(prior.workflows.filter((w:any)=>!['@id-docx-paragraph-style-authoring','@id-docx-paragraph-style-authoring-refusal'].includes(w.id) && !changed.has(w.id)));
 });

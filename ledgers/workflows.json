@@ -2733,8 +2733,8 @@
       ],
       "consumers": {
         "bun": {
-          "status": "planned",
-          "evidence": "Native candidate binding requires canonical-path run; no cross-language execution credit"
+          "status": "implemented",
+          "evidence": "Bun 105eab90fe0f2e940b327e4916fa11fdb411783f at shared v0.105.0 executes seven five-step style authoring variants (absent, empty, existing, namespace alias/default namespace, base and flags) check one internal styles relationship and content type, exact saved custom definition/base/bold/italic, retained prior definitions and unrelated bytes, then select/reopen the authored style. features/shared.json selects two canonical DOCX style-authoring IDs (24 exact cases/86 steps); tests/acceptance/style-authoring.ts and tests/unit/docx-style-authoring.test.ts bind the canonical cases and direct controls. Fresh post-push GitHub recursive Bun make check passed 732/732; Bun CI 36540848016 succeeded. Bounded explicit paragraph style authoring only; no automatic style synthesis, Office rendering, Go/Python or cross-consumer execution credit."
         },
         "go": {
           "status": "planned",
@@ -2756,8 +2756,8 @@
       ],
       "consumers": {
         "bun": {
-          "status": "planned",
-          "evidence": "Native candidate binding requires canonical-path run; no cross-language execution credit"
+          "status": "implemented",
+          "evidence": "Bun 105eab90fe0f2e940b327e4916fa11fdb411783f at shared v0.105.0 executes seventeen three-step unsafe style-authoring inputs refuse with typed docx- code and unchanged serialized archive bytes, document version and held paragraph handle. features/shared.json selects two canonical DOCX style-authoring IDs (24 exact cases/86 steps); tests/acceptance/style-authoring.ts and tests/unit/docx-style-authoring.test.ts bind the canonical cases and direct controls. Fresh post-push GitHub recursive Bun make check passed 732/732; Bun CI 36540848016 succeeded. Bounded explicit paragraph style authoring only; no automatic style synthesis, Office rendering, Go/Python or cross-consumer execution credit."
         },
         "go": {
           "status": "planned",
