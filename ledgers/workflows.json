@@ -4644,12 +4644,12 @@
       ],
       "consumers": {
         "bun": {
-          "status": "planned",
-          "evidence": "Native execution binding pending"
+          "status": "implemented",
+          "evidence": "Bun 69b6aa23a93b1b2f840f4dad8e8a43a95d0971bf at shared v0.69.0 selects all four exact three-step alignment rows in features/shared.json and tests/acceptance/paragraph-properties.ts, including requested justify read as both. Fresh GitHub recursive make check passed 732/732 selected cases; tests/unit/docx-paragraph-properties.test.ts changes expected alignment to force all four failures. Direct in-memory getter only, not saved paragraph layout."
         },
         "go": {
-          "status": "planned",
-          "evidence": "Native execution binding pending"
+          "status": "implemented",
+          "evidence": "Go c88e8f84c58d5e52591834f42b71cedc0832bd9b at shared v0.69.0 binds all four exact three-step alignment rows, including justify mapped to both, in acceptance/paragraph_value_getters_test.go. Getter mismatches, row changes and duplicates fail negative controls. Fresh post-push GitHub recursive test-batch passed 348 selected cases/1189 steps/0 failures/0 skips; reports/batches/196.md records local and independent gates. In-memory alignment only, not saved layout or rendering."
         },
         "python": {
           "status": "planned",
@@ -4670,12 +4670,12 @@
       ],
       "consumers": {
         "bun": {
-          "status": "planned",
-          "evidence": "Native execution binding pending"
+          "status": "implemented",
+          "evidence": "Bun 69b6aa23a93b1b2f840f4dad8e8a43a95d0971bf at shared v0.69.0 selects four exact three-step twip spacing rows in features/shared.json and tests/acceptance/paragraph-properties.ts. Fresh GitHub recursive make check passed 732/732 selected cases; tests/unit/docx-paragraph-properties.test.ts changes expected before/after values to force all four failures. Direct in-memory getter only, not saved spacing or rendering."
         },
         "go": {
-          "status": "planned",
-          "evidence": "Native execution binding pending"
+          "status": "implemented",
+          "evidence": "Go c88e8f84c58d5e52591834f42b71cedc0832bd9b at shared v0.69.0 binds all four exact three-step spacing rows (0/0, 120/120, 240/240 and 240/120 twips) in acceptance/paragraph_value_getters_test.go. Changed before or after getters, row changes and duplicates fail negative controls. Fresh post-push GitHub recursive test-batch passed 348 selected cases/1189 steps/0 failures/0 skips; reports/batches/196.md records local and independent gates. In-memory getters only, not saved spacing or rendering."
         },
         "python": {
           "status": "planned",
@@ -4693,12 +4693,12 @@
       ],
       "consumers": {
         "bun": {
-          "status": "planned",
-          "evidence": "Native execution binding pending"
+          "status": "implemented",
+          "evidence": "Bun 69b6aa23a93b1b2f840f4dad8e8a43a95d0971bf at shared v0.69.0 selects all three exact steps in features/shared.json and tests/acceptance/paragraph-properties.ts. KeepLines, PageBreakBefore and WidowControl direct getters each read true; tests/unit/docx-paragraph-properties.test.ts makes WidowControl false and requires failure. Fresh GitHub recursive make check passed 732/732 selected cases. In-memory flags only, not saved XML or rendered pagination."
         },
         "go": {
-          "status": "planned",
-          "evidence": "Native execution binding pending"
+          "status": "implemented",
+          "evidence": "Go c88e8f84c58d5e52591834f42b71cedc0832bd9b at shared v0.69.0 binds all three exact flag steps in acceptance/paragraph_value_getters_test.go. KeepLines, PageBreakBefore and WidowControl getters each read true; clearing each flag separately fails its predicate, and altered steps fail guards. Fresh post-push GitHub recursive test-batch passed 348 selected cases/1189 steps/0 failures/0 skips; reports/batches/196.md records local and independent gates. In-memory flags only, not saved XML or rendered pagination."
         },
         "python": {
           "status": "planned",
@@ -4716,12 +4716,12 @@
       ],
       "consumers": {
         "bun": {
-          "status": "planned",
-          "evidence": "Native execution binding pending"
+          "status": "implemented",
+          "evidence": "Bun 69b6aa23a93b1b2f840f4dad8e8a43a95d0971bf at shared v0.69.0 selects all three exact append-run steps in features/shared.json and tests/acceptance/append-run.ts. Three separate runs concatenate to Hello World!; tests/unit/docx-append-run.test.ts executes this shared case in its two-case scope and separately checks distinct native appended runs. Fresh GitHub recursive make check passed 732/732 selected cases. In-memory run count/text only; selected saved formatting has a separate scenario."
         },
         "go": {
-          "status": "planned",
-          "evidence": "Native execution binding pending"
+          "status": "implemented",
+          "evidence": "Go c88e8f84c58d5e52591834f42b71cedc0832bd9b at shared v0.69.0 binds all three exact run steps in acceptance/paragraph_value_getters_test.go. The getter requires three runs and Hello World!; four runs, changed concatenation and an extra saved step fail controls. Fresh post-push GitHub recursive test-batch passed 348 selected cases/1189 steps/0 failures/0 skips; reports/batches/196.md records local and independent gates. In-memory run count/text only, not saved run formatting or rendering."
         },
         "python": {
           "status": "planned",
