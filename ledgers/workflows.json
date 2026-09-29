@@ -2358,8 +2358,8 @@
           "evidence": "Bun edc342eba89bfe62d790059083732ae09f9c043a at shared v0.88.0 executes one exact four-step no-op OPC corpus case enumerates 36 Go-origin and 35 Python-origin fixture archives; tests/acceptance/core.ts opens and serializes each through OpcPackage, reopens the result, and verifies both whole archives are byte-identical to the original (71 total), without claiming execution by the source languages. features/shared.json and tests/acceptance/core.ts bind every exact shared step. Fresh post-push GitHub recursive make check passed 732/732 selected cases; Bun CI 36523797789 succeeded. No Go/Python, schema-valid Office, cross-producer equivalence, rendering or general OPC credit."
         },
         "go": {
-          "status": "planned",
-          "evidence": "No equivalent operation binding reviewed; language-specific behaviours remain explicit"
+          "status": "implemented",
+          "evidence": "Go 0f3d4bec02fe0d9c7d66839fa77e3ce8a294fc38 at shared v0.138.0 binds exactly one four-authored-step @id-opc-package-corpus-noop case in acceptance/{acceptance,inventory,opc_corpus_noop}_test.go; reports/batches/285.md records 36 distinct Go-origin and 35 direct Python testdata-origin OOXML fixture IDs (71 total). Each integrity-checked archive passes public OpenPreserved, WriteTo, reopen, WriteTo with both whole-archive outputs byte-identical to its own input; exact successful counts, omission, invalid-archive and corruption controls pass. Two restored reds reject dropped count and changed bytes; independent end-to-end traversal omission and public WriteTo byte-corruption reds fail the canonical case. Fresh uncached local, independent recursive and postmerge root+acceptance gates passed 427 cases/1479 executed steps; exact remote Go main verified. Go has no GitHub Actions CI. No general OPC/schema, editing, transaction, Office, PDF or Python consumer credit."
         },
         "python": {
           "status": "planned",

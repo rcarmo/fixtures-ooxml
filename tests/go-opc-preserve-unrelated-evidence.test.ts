@@ -21,6 +21,6 @@ test('Go credits only one OPC edit with unrelated binary byte custody',async()=>
  for(const marker of ['7d12c2d2bc2214bd443808dc27c25d66666c13d4','shared v0.136.0','acceptance/{acceptance,feature_roots,inventory,opc_preserve_unrelated}_test.go','reports/batches/281.md','Alpha','Beta','425 cases/1465 steps','Go has no GitHub Actions CI'])expect(now.consumers.go.evidence).toContain(marker);
  expect(now.consumers.bun).toEqual(old.consumers.bun);expect(now.consumers.python).toEqual(old.consumers.python);
  const unchanged=structuredClone(now);unchanged.consumers.go=old.consumers.go;expect(unchanged).toEqual(old);
- for(const sibling of ['@id-opc-package-corpus-noop','@id-opc-package-transaction-rollback','@id-opc-diff-content-type','@id-xml-comparison-prefix-and-opc-order'])expect(ledger.workflows.find((w:any)=>w.id===sibling)).toEqual(prior.workflows.find((w:any)=>w.id===sibling));
- expect(ledger.workflows.filter((w:any)=>w.id!==id&&w.id!=='@id-bun-opc-detached-byte-copies')).toEqual(prior.workflows.filter((w:any)=>w.id!==id&&w.id!=='@id-bun-opc-detached-byte-copies'));
+ for(const sibling of ['@id-opc-package-transaction-rollback','@id-opc-diff-content-type','@id-xml-comparison-prefix-and-opc-order'])expect(ledger.workflows.find((w:any)=>w.id===sibling)).toEqual(prior.workflows.find((w:any)=>w.id===sibling));
+ expect(ledger.workflows.filter((w:any)=>w.id!=='@id-opc-package-corpus-noop'&&w.id!==id&&w.id!=='@id-bun-opc-detached-byte-copies')).toEqual(prior.workflows.filter((w:any)=>w.id!=='@id-opc-package-corpus-noop'&&w.id!==id&&w.id!=='@id-bun-opc-detached-byte-copies'));
 });

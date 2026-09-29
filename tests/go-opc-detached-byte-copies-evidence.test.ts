@@ -25,5 +25,5 @@ test('Go credits one detached OPC byte-custody case, not background cases',async
  expect(now.consumers.bun).toEqual(old.consumers.bun);expect(now.consumers.python).toEqual(old.consumers.python);
  const unchanged=structuredClone(now);unchanged.consumers.go=old.consumers.go;expect(unchanged).toEqual(old);
  for(const sibling of ['@id-bun-opc-open-refusal','@id-bun-opc-preserve-utf16le-edit','@id-opc-package-transaction-rollback','@id-opc-package-preserve-unrelated'])expect(ledger.workflows.find((w:any)=>w.id===sibling)).toEqual(prior.workflows.find((w:any)=>w.id===sibling));
- expect(ledger.workflows.filter((w:any)=>w.id!==id)).toEqual(prior.workflows.filter((w:any)=>w.id!==id));
+ expect(ledger.workflows.filter((w:any)=>w.id!=='@id-opc-package-corpus-noop'&&w.id!==id)).toEqual(prior.workflows.filter((w:any)=>w.id!=='@id-opc-package-corpus-noop'&&w.id!==id));
 });
