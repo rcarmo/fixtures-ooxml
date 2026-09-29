@@ -1,0 +1,25 @@
+import {test,expect} from 'bun:test';
+import {execFileSync} from 'node:child_process';
+import {cases} from '../scripts/verify.ts';
+
+const path='workflows/xml/comparison.feature';
+const specs=[
+ ['@id-xml-comparison-significant-content',3,'three four-step negative pairs'],
+ ['@id-xml-comparison-prefix-attribute-binding',1,'one four-step negative pair'],
+ ['@id-xml-comparison-unsafe-input',2,'two four-step identical DTD-bearing and malformed'],
+ ['@id-xml-comparison-processing-instructions-and-comments',3,'three four-step negative pairs'],
+] as const;
+
+test('Python executes nine exact negative XML Boolean pairs with neutral true control and byte custody',async()=>{
+ const ledger=await Bun.file('ledgers/workflows.json').json(),prior=JSON.parse(execFileSync('git',['show','f95047f7302b2aec277bc54d8aaced5f8b4b1f65:ledgers/workflows.json']).toString()),rows=cases(path,await Bun.file(path).text());
+ for(const[id,count,scope]of specs){const now=ledger.workflows.find((w:any)=>w.id===id),old=prior.workflows.find((w:any)=>w.id===id),actual=rows.filter((r:any)=>r.scenarioId===id);
+  expect(now.feature).toBe(path);expect(now.expandedCases).toBe(count);expect(actual).toHaveLength(count);
+  for(const row of actual){expect(row.steps).toHaveLength(4);expect(row.steps.map((s:any)=>s.text).slice(2)).toEqual(['the conservative XML comparator compares their UTF-8 bytes','the comparison result is false']);}
+  expect(now.expectedOutcomes).toEqual(['the comparison result is false']);expect(old.consumers.python.status).toBe('planned');expect(now.consumers.python.status).toBe('implemented');
+  for(const marker of [scope,'432cec7f990512e757f31496d1cf7d7a58d94366','shared v0.109.0','nine cases/36 steps','tests/xml_comparison/{cases,conftest,test_comparison}.py','tests/xml_comparison/test_neutral_control.py','b700a3da8670cb048aa3f836c193f4533908730c185847f63e167e59c48f5e93','3ac94b514ec3aa8fb8111283bdf1735370dc2cd08dd4f0c8ebdd669dd3d952d9','e87c942b854a67d0780e688e9a9e53d289edbb46b35bc737d8ec5bf7897c4704','1,356 tests','XML 10 cases/40 steps','Python CI 36550767438','Positive @id-xml-comparison-prefix-and-opc-order remains planned','not PDF-verified','no XML canonical output'])expect(now.consumers.python.evidence).toContain(marker);
+  expect(now.consumers.bun).toEqual(old.consumers.bun);expect(now.consumers.go).toEqual(old.consumers.go);const unchanged=structuredClone(now);unchanged.consumers.python=old.consumers.python;expect(unchanged).toEqual(old);
+ }
+ expect(specs.reduce((n,[,count])=>n+count,0)).toBe(9);
+ const positive=ledger.workflows.find((w:any)=>w.id==='@id-xml-comparison-prefix-and-opc-order');expect(positive.consumers.python.status).toBe('planned');expect(positive).toEqual(prior.workflows.find((w:any)=>w.id===positive.id));
+ const changed=new Set(specs.map(([id])=>id));expect(ledger.workflows.filter((w:any)=>!changed.has(w.id))).toEqual(prior.workflows.filter((w:any)=>!changed.has(w.id)));
+});
