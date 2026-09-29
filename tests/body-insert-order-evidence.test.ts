@@ -16,7 +16,7 @@ test('Bun and Go execute exact empty-body insertion counts and order without Pyt
  expect(old.consumers.go.status).toBe('planned');expect(current.consumers.go.status).toBe('implemented');
  for(const marker of ['7f0a6b2e620ece9f1a962c78969dcf7b26ee77c5','shared v0.70.0','acceptance/body_insert_order_test.go','349 selected cases/1193 steps/0 failures/0 skips','reports/batches/198.md','Fresh post-push GitHub recursive test-batch','In-memory'])expect(current.consumers.go.evidence).toContain(marker);
  expect(current.consumers.python).toEqual(old.consumers.python);
- const laterIds=new Set(["@id-docx-format-preserve","@id-docx-xml-space","@id-docx-table-paragraph","@id-docx-stale-span","@id-docx-refuse-topology","@id-docx-create-minimal-package","@id-docx-create-style-validation","@id-docx-create-stale-opaque","@id-docx-create-atomic-refusals","@id-docx-table-create-roundtrip","@id-docx-table-opaque-preserve","@id-docx-table-stale-cell","@id-docx-table-atomic-refusals"]);
+ const laterIds=new Set(["@id-docx-format-preserve","@id-docx-xml-space","@id-docx-table-paragraph","@id-docx-stale-span","@id-docx-refuse-topology","@id-docx-create-minimal-package","@id-docx-create-style-validation","@id-docx-create-stale-opaque","@id-docx-create-atomic-refusals","@id-docx-table-create-roundtrip","@id-docx-table-opaque-preserve","@id-docx-table-stale-cell","@id-docx-table-atomic-refusals","@id-docx-direct-font-size-half-points"]);
  const unchanged=structuredClone(current);unchanged.consumers.bun=old.consumers.bun;unchanged.consumers.go=old.consumers.go;expect(unchanged).toEqual(old);
  expect(ledger.workflows.filter((w:any)=>w.id!==id&&!laterIds.has(w.id))).toEqual(prior.workflows.filter((w:any)=>w.id!==id&&!laterIds.has(w.id)));
 });
