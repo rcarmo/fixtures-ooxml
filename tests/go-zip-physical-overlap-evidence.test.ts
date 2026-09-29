@@ -1,0 +1,15 @@
+import {test,expect} from 'bun:test';
+import {execFileSync} from 'node:child_process';
+import {cases} from '../scripts/verify.ts';
+
+const path='workflows/package/zip-admission.feature',id='@id-zip-physical-member-overlap-refusal';
+
+test('Go canonical ZIP32 physical-overlap execution corrects stale planned ledger without new Go binding',async()=>{
+ const ledger=await Bun.file('ledgers/workflows.json').json(),prior=JSON.parse(execFileSync('git',['show','33f291c4d3263fee760e614287c4415071d35cd1:ledgers/workflows.json']).toString()),compiled=cases(path,await Bun.file(path).text());
+ const now=ledger.workflows.find((w:any)=>w.id===id),old=prior.workflows.find((w:any)=>w.id===id),rows=compiled.filter((r:any)=>r.scenarioId===id);
+ expect(now.feature).toBe(path);expect(now.expandedCases).toBe(1);expect(rows).toHaveLength(1);expect(rows[0].steps).toHaveLength(7);expect(now.expectedOutcomes).toEqual(rows[0].steps.slice(4).map((s:any)=>s.text));
+ expect(old.consumers.go.status).toBe('planned');expect(now.consumers.go.status).toBe('implemented');
+ for(const marker of ['1c78e7c6fd8012e26c1a0b2369e31c38573c1893','shared v0.41.0','seven-step','reports/batches/156.md','reports/batches/156-default.log','291-case/976-step','985bcc4','historically recorded','614e742078c69cef798c268c5347951bedf7d032','dc6b77d2e3680b17baf77d08c2f144fe3b292c579ddc3e3706030afc959ec2bf','acceptance/zip_overlap_test.go','acceptance/acceptance_test.go','395 selected cases/1351 passed steps','149/49/10','d694f44a/32c80458/4daa6380','max entries 4/max total bytes 4096','invalid_package open refusal','stale planned ledger state','No general ZIP64/compressed-overlap'])expect(now.consumers.go.evidence).toContain(marker);
+ expect(now.consumers.bun).toEqual(old.consumers.bun);expect(now.consumers.python).toEqual(old.consumers.python);const unchanged=structuredClone(now);unchanged.consumers.go=old.consumers.go;expect(unchanged).toEqual(old);
+ expect(ledger.workflows.filter((w:any)=>w.id!==id)).toEqual(prior.workflows.filter((w:any)=>w.id!==id));
+});
