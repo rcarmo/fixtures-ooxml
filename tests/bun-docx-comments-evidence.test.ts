@@ -1,3 +1,4 @@
+const pptxNoopId = new Set(['@id-pptx-bun-open-save-noop']);
 const threadIds = new Set(["@id-docx-existing-thread-inspection","@id-docx-existing-thread-resolution","@id-docx-existing-thread-noop","@id-docx-existing-thread-refusal","@id-docx-existing-thread-rollback","@id-docx-existing-thread-encoding","@id-docx-existing-thread-unsupported","@id-docx-existing-thread-limit"]);
 import { test, expect } from 'bun:test';
 import { execFileSync } from 'node:child_process';
@@ -29,5 +30,5 @@ test('Bun executes fourteen exact existing-comment inspection, resolution, noop 
   }
   expect(compiled.filter(r => specs.some(s => s.id === r.scenarioId)).reduce((n, r) => n + r.steps.length, 0)).toBe(46);
   const changed = new Set(specs.map(s => s.id));
-  expect(ledger.workflows.filter((w: any) =>!threadIds.has(w.id)&& !changed.has(w.id))).toEqual(prior.workflows.filter((w: any) =>!threadIds.has(w.id)&& !changed.has(w.id)));
+  expect(ledger.workflows.filter((w: any) =>!pptxNoopId.has(w.id)&&!threadIds.has(w.id)&& !changed.has(w.id))).toEqual(prior.workflows.filter((w: any) =>!pptxNoopId.has(w.id)&&!threadIds.has(w.id)&& !changed.has(w.id)));
 });

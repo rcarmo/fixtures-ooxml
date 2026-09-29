@@ -5801,8 +5801,8 @@
       ],
       "consumers": {
         "bun": {
-          "status": "planned",
-          "evidence": "Native execution binding pending"
+          "status": "implemented",
+          "evidence": "Bun 29348e87fdb34ddfefd6d3fc65ac7df73765738e at shared v0.93.0 executes one exact six-step PPTX no-edit custody case. features/shared.json, tests/acceptance/pptx-custody.ts and tests/unit/pptx-custody-bindings.test.ts independently open the sealed title-slide fixture by path and bytes, assert first paragraph Frankenstein, byte-identical in-memory serialization, save to a temporary new path, reopen and compare destination and source whole-archive bytes to the original. Mutation controls reject wrong text and altered byte-opened, saved or reopened arrays; temporary destination is removed on success and failed save. Fresh post-push GitHub recursive make check passed 732/732 selected cases; Bun CI 36528124239 succeeded. No Go/Python, live PowerPoint rendering, edited output, other PPTX fixtures or broad OPC credit."
         },
         "go": {
           "status": "planned",
