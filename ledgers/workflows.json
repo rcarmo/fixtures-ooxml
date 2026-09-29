@@ -3835,8 +3835,8 @@
       ],
       "consumers": {
         "bun": {
-          "status": "planned",
-          "evidence": "Native execution binding pending"
+          "status": "implemented",
+          "evidence": "Bun 870b697dba4dba1cd89187a6308912674943273e at shared v0.82.0 executes one exact three-step CRC32 standard vector: UTF-8 123456789 produces unsigned checksum CBF43926. features/shared.json and tests/acceptance/zip32.ts bind the exact shared rows; tests/unit/zip32-bindings.test.ts selects four scenarios (20 cases/91 steps) and wrong checksum, code, message, fabricated success, untyped error and caller-buffer mutation controls fail. Fresh GitHub recursive make check passed 732/732 selected cases. No Go/Python or ZIP64/general OPC credit."
         },
         "go": {
           "status": "planned",
@@ -3879,8 +3879,8 @@
       ],
       "consumers": {
         "bun": {
-          "status": "planned",
-          "evidence": "Native execution binding pending"
+          "status": "implemented",
+          "evidence": "Bun 870b697dba4dba1cd89187a6308912674943273e at shared v0.82.0 executes twelve exact five-step ZIP32 reader rows with ordered member names and specified local, central or end-record mutations; readZip rejects each with its exact typed OoxmlError code and message fragment rather than accepting it, and does not mutate the caller's archive bytes. features/shared.json and tests/acceptance/zip32.ts bind the exact shared rows; tests/unit/zip32-bindings.test.ts selects four scenarios (20 cases/91 steps) and wrong checksum, code, message, fabricated success, untyped error and caller-buffer mutation controls fail. Fresh GitHub recursive make check passed 732/732 selected cases. No Go/Python or ZIP64/general OPC credit."
         },
         "go": {
           "status": "planned",
@@ -3905,8 +3905,8 @@
       ],
       "consumers": {
         "bun": {
-          "status": "planned",
-          "evidence": "Native execution binding pending"
+          "status": "implemented",
+          "evidence": "Bun 870b697dba4dba1cd89187a6308912674943273e at shared v0.82.0 executes two exact four-step ZIP32 writer rows rejecting ASCII case-colliding member names and a non-empty directory entry with distinct typed codes/messages while retaining input entries. features/shared.json and tests/acceptance/zip32.ts bind the exact shared rows; tests/unit/zip32-bindings.test.ts selects four scenarios (20 cases/91 steps) and wrong checksum, code, message, fabricated success, untyped error and caller-buffer mutation controls fail. Fresh GitHub recursive make check passed 732/732 selected cases. No Go/Python or ZIP64/general OPC credit."
         },
         "go": {
           "status": "planned",
@@ -3936,8 +3936,8 @@
       ],
       "consumers": {
         "bun": {
-          "status": "planned",
-          "evidence": "Native execution binding pending"
+          "status": "implemented",
+          "evidence": "Bun 870b697dba4dba1cd89187a6308912674943273e at shared v0.82.0 executes five exact four-step ZIP32 bounds rows after separately admitting the unbounded two-entry archive, then rejecting each configured archive-byte, entry-count, entry-byte, total-byte or ratio limit with its specified typed code and message fragment without mutating the caller's archive bytes. features/shared.json and tests/acceptance/zip32.ts bind the exact shared rows; tests/unit/zip32-bindings.test.ts selects four scenarios (20 cases/91 steps) and wrong checksum, code, message, fabricated success, untyped error and caller-buffer mutation controls fail. Fresh GitHub recursive make check passed 732/732 selected cases. No Go/Python or ZIP64/general OPC credit."
         },
         "go": {
           "status": "planned",

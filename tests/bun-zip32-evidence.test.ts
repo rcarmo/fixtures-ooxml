@@ -1,0 +1,66 @@
+import { test, expect } from 'bun:test';
+import { execFileSync } from 'node:child_process';
+import { cases } from '../scripts/verify.ts';
+
+const path = 'workflows/package/zip32.feature';
+const ids = ['@id-zip-crc32-standard-vector', '@id-bun-zip32-reader-refusal', '@id-bun-zip32-writer-refusal', '@id-bun-zip32-configured-bounds'];
+const code = (value: string) => `it throws an OoxmlError with code ${value}`;
+const message = (value: string) => `the error message contains ${value}`;
+const reader: Array<[string[][], string, string, string]> = [
+  [[['word/document.xml', 'one'], ['word/document.xml', 'two']], 'none', 'zip-duplicate-entry', 'duplicate ZIP member'],
+  [[['word/document.xml', 'one'], ['WORD/document.xml', 'two']], 'none', 'zip-case-collision', 'ASCII case-collides'],
+  [[['../word/document.xml', 'bad']], 'none', 'zip-name-invalid', 'noncanonical'],
+  [[['word/document.xml', 'secret']], 'general-purpose bit 0 is set in both headers', 'zip-encryption-unsupported', 'encrypted'],
+  [[['word/document.xml', 'x']], 'both methods are 12 and payload bytes are stored uncompressed', 'zip-method-unsupported', 'compression method'],
+  [[['word/document.xml', 'x']], 'end record disk number is 1', 'zip-multi-disk-unsupported', 'multi-disk'],
+  [[['word/document.xml', 'x']], 'both end-record counts are 65535 without ZIP64 records', 'zip-structure-invalid', 'ZIP64'],
+  [[['word/document.xml', 'x']], 'local name is word/other.xml', 'zip-local-metadata-mismatch', 'local and central'],
+  [[['word/document.xml', 'payload']], 'both CRC fields are hexadecimal DEADBEEF', 'zip-crc-mismatch', 'CRC'],
+  [[['word/document.xml', 'payload']], 'method is STORED and all size fields are 99', 'zip-size-mismatch', 'declared size'],
+  [[['word/document.xml', 'A']], 'payload repeats A 4096 times but both expanded sizes are 32', 'zip-size-mismatch', 'declared size'],
+  [[['word/document.xml', 'x']], 'a newline byte follows the complete uncommented archive', 'zip-end-record-missing', 'end-of-central-directory'],
+];
+const writer: Array<[string[][], string, string]> = [
+  [[['word/document.xml', 'one'], ['WORD/document.xml', 'two']], 'zip-case-collision', 'ASCII case-collides'],
+  [[['word/', 'not empty']], 'zip-directory-entry-invalid', 'must be empty'],
+];
+const bounds: Array<[string, string, string, string]> = [
+  ['maxArchiveBytes', 'archive byte length minus 1', 'zip-archive-too-large', 'archive bytes'],
+  ['maxEntries', '1', 'zip-too-many-entries', 'entry limit'],
+  ['maxEntryBytes', '8', 'zip-entry-too-large', 'entry limit'],
+  ['maxTotalBytes', '8', 'zip-total-too-large', 'total expanded'],
+  ['maxCompressionRatio', '2', 'zip-compression-ratio-exceeded', 'compression ratio'],
+];
+const expected = [
+  [['checksum input is the UTF-8 string "123456789"', 'its ZIP CRC32 is calculated', 'the unsigned checksum equals hexadecimal CBF43926']],
+  reader.map(([pairs, mutation, c, m]) => [
+    `a ZIP32 reader sample with these ordered member and payload pairs encoded as JSON ${JSON.stringify(pairs)}`,
+    `the sample has the mutation ${mutation}`, 'the ZIP reader reads the sample with default limits', code(c), message(m),
+  ]),
+  writer.map(([pairs, c, m]) => [`ordered writer entries are encoded as JSON ${JSON.stringify(pairs)}`, 'the ZIP writer writes the entries with default options', code(c), message(m)]),
+  bounds.map(([limit, value, c, m]) => ['a raw-DEFLATE ZIP32 archive contains a.bin with 4096 A bytes followed by b.bin with two b bytes', `the ZIP reader reads the archive with only ${limit} set to ${value}`, code(c), message(m)]),
+];
+
+test('Bun alone executes twenty exact ZIP32 checksum and typed refusal rows (91 steps)', async () => {
+  const current = await Bun.file('ledgers/workflows.json').json();
+  const prior = JSON.parse(execFileSync('git', ['show', 'c29984984d60a622a358804508dd7ec101137c5e:ledgers/workflows.json']).toString());
+  const compiled = cases(path, await Bun.file(path).text());
+  for (let i = 0; i < ids.length; i++) {
+    const id = ids[i]!, rows = expected[i]!;
+    const now = current.workflows.find((w: any) => w.id === id), old = prior.workflows.find((w: any) => w.id === id);
+    expect(now.feature).toBe(path);
+    expect(now.expandedCases).toBe(rows.length);
+    expect(compiled.filter((row: any) => row.scenarioId === id).map((row: any) => row.steps.map((s: any) => s.text))).toEqual(rows);
+    expect(now.expectedOutcomes).toEqual([...new Set(rows.flatMap(row => row.filter(s => s.startsWith('it throws') || s.startsWith('the error message') || s.startsWith('the unsigned checksum'))))]);
+    expect(old.consumers.bun.status).toBe('planned');
+    expect(now.consumers.bun.status).toBe('implemented');
+    for (const marker of ['870b697dba4dba1cd89187a6308912674943273e', 'shared v0.82.0', 'tests/acceptance/zip32.ts', 'tests/unit/zip32-bindings.test.ts', '20 cases/91 steps', 'Fresh GitHub recursive make check', '732/732', 'No Go/Python']) expect(now.consumers.bun.evidence).toContain(marker);
+    expect(now.consumers.go).toEqual(old.consumers.go);
+    expect(now.consumers.python).toEqual(old.consumers.python);
+    const unchanged = structuredClone(now); unchanged.consumers.bun = old.consumers.bun;
+    expect(unchanged).toEqual(old);
+  }
+  expect(expected.flat().reduce((n, row) => n + row.length, 0)).toBe(91);
+  const changed = new Set(ids);
+  expect(current.workflows.filter((w: any) => !changed.has(w.id))).toEqual(prior.workflows.filter((w: any) => !changed.has(w.id)));
+});

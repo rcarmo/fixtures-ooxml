@@ -20,5 +20,5 @@ test('Bun executes exact semantic package diff and input custody without Go or P
  for(const marker of ['9b6a2edb7f69f038b90019840598d9757c5f7008','shared v0.81.0','all seven exact','comparePackageArchives','without changing either caller byte array','tests/unit/package-comparison.test.ts','Fresh GitHub recursive make check','732/732'])expect(current.consumers.bun.evidence).toContain(marker);
  expect(current.consumers.go).toEqual(old.consumers.go);expect(current.consumers.python).toEqual(old.consumers.python);
  const unchanged=structuredClone(current);unchanged.consumers.bun=old.consumers.bun;expect(unchanged).toEqual(old);
- expect(ledger.workflows.filter((w:any)=>w.id!==id)).toEqual(prior.workflows.filter((w:any)=>w.id!==id));
+ const laterIds=new Set(["@id-zip-crc32-standard-vector","@id-bun-zip32-reader-refusal","@id-bun-zip32-writer-refusal","@id-bun-zip32-configured-bounds"]);expect(ledger.workflows.filter((w:any)=>w.id!==id&&!laterIds.has(w.id))).toEqual(prior.workflows.filter((w:any)=>w.id!==id&&!laterIds.has(w.id)));
 });
