@@ -3079,8 +3079,8 @@
       ],
       "consumers": {
         "bun": {
-          "status": "planned",
-          "evidence": "Binding and execution pending"
+          "status": "implemented",
+          "evidence": "Bun edfb914fcc5c1801253ff5a3b7f2aa87b46e11a3 at shared v0.99.0 executes the exact seven-step existing-graph case: inspectWorksheetComments verifies legacyDrawing anysvml resolves internally to xl/drawings/commentsDrawing1.vml with exact vmlDrawing Type; separate comments relationship resolves internally to xl/comments/comment1.xml; A2 and A3 have the exact scenario text. tests/acceptance/xlsx-comment-vml.ts checks read-only input/package byte custody, distinct IDs and targets; tests/unit/xlsx-comment-vml-bindings.test.ts exercises wrong values, aliases and malformed graph controls. features/shared.json selects only this ID; Bun make check passed 732/732 implemented cases in fresh post-push recursive clone and Bun CI 36533344489 succeeded. Does not credit five preservation-row/limited-number editor scenarios, comment or VML editing, save/reopen, Go/Python, Office rendering or broad VML shape custody."
         },
         "go": {
           "status": "planned",

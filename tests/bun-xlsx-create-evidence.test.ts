@@ -1,3 +1,4 @@
+const commentVmlId = '@id-xlsx-comment-vml-existing-graph';
 const cellStyleIds = new Set(["@id-xlsx-cell-style-selection","@id-xlsx-cell-style-refusal"]);
 import { test, expect } from 'bun:test';
 import { execFileSync } from 'node:child_process';
@@ -30,5 +31,5 @@ test('Bun executes seven exact XLSX creation and missing-cell cases without Go/P
   }
   expect(specs.reduce((n, s) => n + s.steps.length, 0)).toBe(29);
   const changed = new Set(specs.map(s => s.id));
-  expect(ledger.workflows.filter((w: any) =>!cellStyleIds.has(w.id)&& !changed.has(w.id))).toEqual(prior.workflows.filter((w: any) =>!cellStyleIds.has(w.id)&& !changed.has(w.id)));
+  expect(ledger.workflows.filter((w: any) =>w.id!==commentVmlId&&!cellStyleIds.has(w.id)&& !changed.has(w.id))).toEqual(prior.workflows.filter((w: any) =>w.id!==commentVmlId&&!cellStyleIds.has(w.id)&& !changed.has(w.id)));
 });
