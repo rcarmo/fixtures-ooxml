@@ -3418,8 +3418,8 @@
           "evidence": "Native execution binding pending"
         },
         "python": {
-          "status": "planned",
-          "evidence": "Native execution binding pending"
+          "status": "implemented",
+          "evidence": "Python published c43c2ca8dc785533aa138c5c9761ff8c54eb995d at shared v0.125.0 executes only @id-xml-escaping-whitespace-roundtrip: one exact three-step case in workflows/xml/parsing.feature SHA256 350edcdfa0dc1206f9f5165cae93ba41c12b6974ee21e71cd3329ed2a82438ff through tests/xml_whitespace_roundtrip/{cases,conftest,test_roundtrip}.py. Sealed Given and Then JSON decode to x followed by CR, LF, TAB, y (five ASCII/UTF-8 bytes [120,13,10,9,121]); no Examples or table. Production tools.xlsx_preservation.xml(node) separately serializes caller-owned r text and r attribute values, then production parse(bytes) independently reparses both. Serialized text contains referenced CR &#13; and literal LF/TAB, serialized attribute contains referenced CR &#13;, LF &#10; and TAB &#9;; both reparsed values exactly match the original operand, with intended r/text/attribute structure and unchanged operand. Five one-reference/source perturbations and an unescaped-attribute whitespace control detect collapse or wrong values as auxiliary sensitivity only. Temporary production serializer mutation replacing &#13; with raw CR caused canonical action failure (missing required reference); serializer was restored byte-for-byte before four-file test/docs commit. Uncached committed local, independent clean recursive pre-push and fresh GitHub recursive post-push full suites each passed 1,408 tests (three existing warnings), fourteen provenance-clean lanes including exact whitespace case 1/3; Python CI 36590816334 succeeded on 3.10/3.12/3.13. This is writer serialization plus parser roundtrip, NOT a standalone escaping-string API or exact escaped-string spelling claim for neighbouring @id-xml-escaping-values. No offset/DTD/general XML, Go, OPC/Office/PPTX/PDF credit."
         }
       }
     },
@@ -3533,8 +3533,8 @@
           "evidence": "Native execution binding pending"
         },
         "go": {
-          "status": "planned",
-          "evidence": "Native execution binding pending"
+          "status": "implemented",
+          "evidence": "Go published 40eeb71a03b6e3ac6752dd1794a6d7b80b12f2a8 at shared v0.125.0 executes only @id-xml-go-child-insertion-refusal: one exact four-step lexical-snapshot case in workflows/xml/editing.feature via acceptance/{acceptance,inventory,child_insertion_refusal}_test.go and reports/batches/262.md. Exact ID/profile/scenario name/line 45/no-Examples/source/four-step text guarded; prior custody and sibling namespace matrix receive no new credit. Fresh caller-owned <root xmlns=\"u\" xmlns:n1=\"occupied\"><a/><b>keep</b></root> is parsed into one snapshot; root/a/b expanded names and a parent plus b text are checked. One batch targets root AND nested a with distinct nonempty authored children, requiring a nonnil error AND nil output (not a typed error/message). Caller bytes and parsed snapshot stay unchanged; a separate empty batch returns exact original source. A subsequent valid a-only insertion on the SAME snapshot independently reparses root/a/new:x/plain/b expanded names, parent chain, {other}a=v, plain text text, and preserved original prefix and sibling suffix; mutating returned bytes cannot alter a later empty output or caller. A temporary production nested-target output-on-error mutation made canonical Then fail after Given/When passed; production restored byte-for-byte before four-file test/receipt commit. Uncached no-override scoped acceptance, local root+acceptance, independent clean recursive pre-push and fresh GitHub recursive post-push gates each passed 415 cases/1425 steps with refusal 1/4, custody 1/4, zero nonpassed; namespace matrix, positive OPC-like XML and CACHE-001 zero selected. Go has no GitHub Actions CI. No Bun/Python, general XML/schema/ECMA, Office, PPTX or PDF credit."
         },
         "python": {
           "status": "planned",
