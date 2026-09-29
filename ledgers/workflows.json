@@ -2842,8 +2842,8 @@
       ],
       "consumers": {
         "bun": {
-          "status": "planned",
-          "evidence": "Native candidate binding requires canonical-path run; no cross-language execution credit"
+          "status": "implemented",
+          "evidence": "Bun d4b3c351b529ee658a0d90b507b37365b92c2c56 at shared v0.98.0 executes Nine exact four-step XLSX direct-cell style selections cover assign, replace, explicit zero, remove, no-op, absent removal, formula, blank and namespace alias; save/reopen verifies styleId and changed receipt while values, formulas, caches, worksheet neighbours and unrelated package bytes remain unchanged. features/shared.json, tests/acceptance/cell-style.ts and tests/unit/xlsx-cell-style.test.ts bind 27 exact cases/90 steps. Unit controls additionally cover semantic style dependency checks, UTF-16, rollback and disk save without granting broader style-graph parity. Fresh post-push GitHub recursive make check passed 732/732 selected cases; Bun CI 36532457790 succeeded. No Go/Python, style dependency closure, formula recalculation, Office rendering or cross-consumer credit."
         },
         "go": {
           "status": "planned",
@@ -2865,8 +2865,8 @@
       ],
       "consumers": {
         "bun": {
-          "status": "planned",
-          "evidence": "Native candidate binding requires canonical-path run; no cross-language execution credit"
+          "status": "implemented",
+          "evidence": "Bun d4b3c351b529ee658a0d90b507b37365b92c2c56 at shared v0.98.0 executes Eighteen exact three-step XLSX style refusals cover absent cell/index, duplicate/external/wrong-MIME style links, invalid styles root/table/count/font/base/number format, protection, stale worksheet/relationship, malformed prior index and worksheet alias; each typed xlsx- refusal leaves package bytes and cached cell state unchanged. features/shared.json, tests/acceptance/cell-style.ts and tests/unit/xlsx-cell-style.test.ts bind 27 exact cases/90 steps. Unit controls additionally cover semantic style dependency checks, UTF-16, rollback and disk save without granting broader style-graph parity. Fresh post-push GitHub recursive make check passed 732/732 selected cases; Bun CI 36532457790 succeeded. No Go/Python, style dependency closure, formula recalculation, Office rendering or cross-consumer credit."
         },
         "go": {
           "status": "planned",

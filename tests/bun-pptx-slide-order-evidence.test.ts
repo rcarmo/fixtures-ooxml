@@ -1,3 +1,4 @@
+const cellStyleIds = new Set(["@id-xlsx-cell-style-selection","@id-xlsx-cell-style-refusal"]);
 const xlsxCreateIds = new Set(["@id-xlsx-create-native-default","@id-xlsx-create-add-worksheet","@id-xlsx-create-prefixed-missing-cell","@id-xlsx-create-coordinate-boundary","@id-xlsx-create-row-ordering","@id-xlsx-create-invalid-params-atomic","@id-xlsx-create-existing-fixture-append"]);
 import { test, expect } from 'bun:test';
 import { execFileSync } from 'node:child_process';
@@ -36,5 +37,5 @@ test('Bun executes twenty-one exact slide permutation and atomic refusal cases w
   expect(specs.reduce((n, s) => n + s.kinds.length, 0)).toBe(21);
   expect(specs.reduce((n, s) => n + s.kinds.reduce((m, k) => m + s.steps(k).length, 0), 0)).toBe(70);
   const changed = new Set(specs.map(s => s.id));
-  expect(ledger.workflows.filter((w: any) =>!xlsxCreateIds.has(w.id)&& !changed.has(w.id))).toEqual(prior.workflows.filter((w: any) =>!xlsxCreateIds.has(w.id)&& !changed.has(w.id)));
+  expect(ledger.workflows.filter((w: any) =>!cellStyleIds.has(w.id)&&!xlsxCreateIds.has(w.id)&& !changed.has(w.id))).toEqual(prior.workflows.filter((w: any) =>!cellStyleIds.has(w.id)&&!xlsxCreateIds.has(w.id)&& !changed.has(w.id)));
 });
