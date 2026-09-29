@@ -3004,8 +3004,8 @@
       ],
       "consumers": {
         "bun": {
-          "status": "planned",
-          "evidence": "Native candidate binding requires canonical-path run; no cross-language execution credit"
+          "status": "implemented",
+          "evidence": "Bun b8cb75c1fd13342f0ada2927c2ed7a00f663e005 at shared v0.102.0 executes nine four-step plain-body cases resolve effective bold/italic for implicit, defaults, default style, inherited and toggle-chain styles, style-false, direct-off, namespace alias and two-run content. The binding checks exact flags/text and selected provenance (implicit, toggle-chain, direct-off), style ancestry, reopened result, read-only package bytes, version and held paragraph handle; it does not claim every provenance contribution was individually asserted. features/shared.json selects two canonical DOCX effective-formatting IDs (25 exact cases/84 steps); tests/acceptance/effective-formatting.ts and tests/unit/docx-effective-formatting.test.ts bind and challenge the path. Fresh post-push GitHub recursive Bun make check passed 732/732 and Bun CI 36537874042 succeeded. Bounded plain body Latin run inspection only; no broad rendering parity, Go/Python or cross-consumer execution credit."
         },
         "go": {
           "status": "planned",
@@ -3027,8 +3027,8 @@
       ],
       "consumers": {
         "bun": {
-          "status": "planned",
-          "evidence": "Native candidate binding requires canonical-path run; no cross-language execution credit"
+          "status": "implemented",
+          "evidence": "Bun b8cb75c1fd13342f0ada2927c2ed7a00f663e005 at shared v0.102.0 executes sixteen three-step unsupported or ambiguous styles/context/stale-paragraph cases produce a typed docx- refusal with unchanged package bytes; no automatic fallback result. features/shared.json selects two canonical DOCX effective-formatting IDs (25 exact cases/84 steps); tests/acceptance/effective-formatting.ts and tests/unit/docx-effective-formatting.test.ts bind and challenge the path. Fresh post-push GitHub recursive Bun make check passed 732/732 and Bun CI 36537874042 succeeded. Bounded plain body Latin run inspection only; no broad rendering parity, Go/Python or cross-consumer execution credit."
         },
         "go": {
           "status": "planned",

@@ -26,5 +26,5 @@ test('Bun executes exact saved DOCX tracking preferences, custody, refusal and o
   const unchanged=structuredClone(now);unchanged.consumers.bun=old.consumers.bun;expect(unchanged).toEqual(old);
  }
  expect(specs.reduce((n,[,cases])=>n+cases,0)).toBe(24);expect(specs.reduce((n,[,,steps])=>n+steps,0)).toBe(101);
- expect(ledger.workflows.filter((w:any)=>w.feature!==path&&!['@id-xlsx-go-direct-range-parsing','@id-xlsx-go-direct-range-refusal'].includes(w.id))).toEqual(prior.workflows.filter((w:any)=>w.feature!==path&&!['@id-xlsx-go-direct-range-parsing','@id-xlsx-go-direct-range-refusal'].includes(w.id)));
+ expect(ledger.workflows.filter((w:any)=>w.feature !== 'workflows/docx/effective-formatting.feature' && w.feature!==path&&!['@id-xlsx-go-direct-range-parsing','@id-xlsx-go-direct-range-refusal'].includes(w.id))).toEqual(prior.workflows.filter((w:any)=>w.feature !== 'workflows/docx/effective-formatting.feature' && w.feature!==path&&!['@id-xlsx-go-direct-range-parsing','@id-xlsx-go-direct-range-refusal'].includes(w.id)));
 });
