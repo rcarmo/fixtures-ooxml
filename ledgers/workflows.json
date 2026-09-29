@@ -2529,8 +2529,8 @@
       ],
       "consumers": {
         "bun": {
-          "status": "planned",
-          "evidence": "Existing local bindings passed; canonical-path run tracked separately in consumer"
+          "status": "implemented",
+          "evidence": "Bun 529dce0c5909c1fa5e23ce5d742cc1614172094b at shared v0.90.0 executes Two exact four-step PPTX/XLSX alternate-prefix cases edit a shared fixture with link:id, save and reopen, require the requested exact text/cell value and a resolvable OPC package, and retain link:id without an r:id spelling in the main part. features/shared.json and tests/acceptance/relationship-namespaces.ts bind the four canonical cases (16 steps); tests/unit/relationship-namespaces.test.ts also exercises equivalent expanded-name, wrong-URI, local-rebinding and lookalike behaviours. Fresh post-push GitHub recursive make check passed 732/732 selected cases; Bun CI 36525459637 succeeded. No Go/Python, live Office render, unrelated relationship profiles or general XML/OPC parity credit."
         },
         "go": {
           "status": "planned",
@@ -2554,8 +2554,8 @@
       ],
       "consumers": {
         "bun": {
-          "status": "planned",
-          "evidence": "Existing local bindings passed; canonical-path run tracked separately in consumer"
+          "status": "implemented",
+          "evidence": "Bun 529dce0c5909c1fa5e23ce5d742cc1614172094b at shared v0.90.0 executes Two exact four-step PPTX/XLSX wrong-namespace cases bind r to the package relationship URI, require a typed PPTX_PRESENTATION_INVALID or xlsx-workbook-invalid reader refusal respectively, and leave the supplied archive bytes unchanged. features/shared.json and tests/acceptance/relationship-namespaces.ts bind the four canonical cases (16 steps); tests/unit/relationship-namespaces.test.ts also exercises equivalent expanded-name, wrong-URI, local-rebinding and lookalike behaviours. Fresh post-push GitHub recursive make check passed 732/732 selected cases; Bun CI 36525459637 succeeded. No Go/Python, live Office render, unrelated relationship profiles or general XML/OPC parity credit."
         },
         "go": {
           "status": "planned",

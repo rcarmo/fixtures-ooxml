@@ -1,3 +1,4 @@
+const relationshipIds = new Set(["@id-office-relationship-prefix-alias","@id-office-relationship-wrong-uri"]);
 const custodyIds = new Set(["@id-bun-opc-open-refusal","@id-bun-opc-detached-byte-copies","@id-bun-opc-preserve-utf16le-edit","@id-bun-opc-async-transaction-refusal","@id-bun-opc-thenable-transaction-result","@id-bun-opc-save-invalid-target-custody","@id-bun-opc-symlink-destination-refusal"]);
 const coreOpcIds = new Set(["@id-opc-package-corpus-noop","@id-opc-package-transaction-rollback","@id-opc-package-preserve-unrelated"]);
 const budgetId = new Set(['@id-package-admission-negative-budget']);
@@ -33,6 +34,6 @@ test('Bun alone executes broad ZIP32 unsafe structural refusal without bounds or
   for (const marker of ['98138f740215c8bca8f94512198824c2b330b269', 'shared v0.84.0', 'nine-step', 'eleven distinct archives', 'independent literal code', 'tests/acceptance/core.ts', 'tests/unit/zip32-bindings.test.ts', 'Fresh post-push GitHub recursive make check', '732/732', 'No Go/Python']) expect(now.consumers.bun.evidence).toContain(marker);
   expect(now.consumers.go).toEqual(old.consumers.go); expect(now.consumers.python).toEqual(old.consumers.python);
   const unchanged = structuredClone(now); unchanged.consumers.bun = old.consumers.bun; expect(unchanged).toEqual(old);
-  expect(ledger.workflows.filter((w: any) =>!custodyIds.has(w.id)&&!coreOpcIds.has(w.id)&&!budgetId.has(w.id)&&!descriptorId.has(w.id)&& w.id !== id && w.id !== '@id-zip-bounds')).toEqual(prior.workflows.filter((w: any) =>!custodyIds.has(w.id)&&!coreOpcIds.has(w.id)&&!budgetId.has(w.id)&&!descriptorId.has(w.id)&& w.id !== id && w.id !== '@id-zip-bounds'));
+  expect(ledger.workflows.filter((w: any) =>!relationshipIds.has(w.id)&&!custodyIds.has(w.id)&&!coreOpcIds.has(w.id)&&!budgetId.has(w.id)&&!descriptorId.has(w.id)&& w.id !== id && w.id !== '@id-zip-bounds')).toEqual(prior.workflows.filter((w: any) =>!relationshipIds.has(w.id)&&!custodyIds.has(w.id)&&!coreOpcIds.has(w.id)&&!budgetId.has(w.id)&&!descriptorId.has(w.id)&& w.id !== id && w.id !== '@id-zip-bounds'));
   expect(ledger.workflows.find((w: any) => w.id === '@id-zip-bounds').consumers.bun.status).toBe('implemented');
 });

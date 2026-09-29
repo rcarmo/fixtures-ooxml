@@ -1,3 +1,4 @@
+const relationshipIds = new Set(["@id-office-relationship-prefix-alias","@id-office-relationship-wrong-uri"]);
 import { test, expect } from 'bun:test';
 import { execFileSync } from 'node:child_process';
 import { cases } from '../scripts/verify.ts';
@@ -40,5 +41,5 @@ test('Bun executes eleven exact OPC custody and save-path cases without Go/Pytho
   expect(expectedCases.reduce((a, b) => a + b, 0)).toBe(11);
   expect(expectedCases.reduce((sum, count, i) => sum + count * expectedSteps[i]!, 0)).toBe(108);
   const changed = new Set(ids);
-  expect(ledger.workflows.filter((w: any) => !changed.has(w.id))).toEqual(prior.workflows.filter((w: any) => !changed.has(w.id)));
+  expect(ledger.workflows.filter((w: any) =>!relationshipIds.has(w.id)&& !changed.has(w.id))).toEqual(prior.workflows.filter((w: any) =>!relationshipIds.has(w.id)&& !changed.has(w.id)));
 });
