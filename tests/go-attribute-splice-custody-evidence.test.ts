@@ -26,6 +26,7 @@ test('Go credits exactly three lexical attribute splices with complete output by
  for(const marker of ['7d9fee551547fa7a761b9797fed91f34b2ba4f3a','shared v0.116.0','acceptance/{acceptance,inventory,attribute_splice}_test.go','three exact Examples rows/nine steps','row lines 27–29','duplicate-a batch','409 cases/1404 steps','Go has no GitHub Actions workflow'])expect(now.consumers.go.evidence).toContain(marker);
  expect(now.consumers.bun).toEqual(old.consumers.bun);expect(now.consumers.python).toEqual(old.consumers.python);
  const unchanged=structuredClone(now);unchanged.consumers.go=old.consumers.go;expect(unchanged).toEqual(old);
- for(const sibling of ['@id-xml-go-attribute-batch-refusal','@id-xml-comparison-prefix-and-opc-order'])expect(ledger.workflows.find((w:any)=>w.id===sibling)).toEqual(prior.workflows.find((w:any)=>w.id===sibling));
- expect(ledger.workflows.filter((w:any)=>w.id!=="@id-xml-entity-values"&&w.id!==id)).toEqual(prior.workflows.filter((w:any)=>w.id!=="@id-xml-entity-values"&&w.id!==id));
+ for(const sibling of ['@id-xml-comparison-prefix-and-opc-order'])expect(ledger.workflows.find((w:any)=>w.id===sibling)).toEqual(prior.workflows.find((w:any)=>w.id===sibling));
+ const refusal=ledger.workflows.find((w:any)=>w.id==='@id-xml-go-attribute-batch-refusal');expect(refusal.consumers.go.status).toBe('implemented');expect(refusal.consumers.bun.status).toBe('planned');expect(refusal.consumers.python.status).toBe('planned');
+ expect(ledger.workflows.filter((w:any)=>w.id!=="@id-xml-go-attribute-batch-refusal"&&w.id!=="@id-xml-entity-values"&&w.id!==id)).toEqual(prior.workflows.filter((w:any)=>w.id!=="@id-xml-go-attribute-batch-refusal"&&w.id!=="@id-xml-entity-values"&&w.id!==id));
 });

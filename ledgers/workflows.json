@@ -3485,8 +3485,8 @@
           "evidence": "Native execution binding pending"
         },
         "go": {
-          "status": "planned",
-          "evidence": "Native execution binding pending"
+          "status": "implemented",
+          "evidence": "Go published 6463d3f237f34ee1235e1c0dc6cad169e2fa30d5 at shared v0.118.0 executes exactly @id-xml-go-attribute-batch-refusal, one three-step profile-lexical-snapshot-api case from workflows/xml/editing.feature via acceptance/{acceptance,inventory,attribute_refusal}_test.go. The binding guards exact ID/name/line 32/no Examples/three step texts and source <r xmlns:p=\"urn:p\"><t a = 'a&amp;b' p:n=\"old\"/><t>text</t></r>. It parses three source-order elements, checks first t decoded a=a&b and expanded {urn:p}n=old plus second t text/raw bytes, then one Edit batch sets first-t no-namespace a to x and y in order. Exact outcome requires nonnil error AND nil output, with caller bytes and original parsed snapshot unchanged. Empty edit and same-value edit preserve original lexical bytes; a valid first-t a=x edit on the same snapshot yields independently expected full XML bytes and reparsed target/untouched sibling. Reversed duplicate and returned-byte alias checks are auxiliary controls, not extra canonical credit. Temporary duplicate-bypass production mutation made the third canonical step fail after first two passed; restored byte-for-byte before four-file test-only commit. Uncached no-override exact local, independent clean recursive pre-push and fresh GitHub recursive post-push root+acceptance gates each passed 410 cases/1407 steps, exact refusal 1/3, previous splice 3/9 and defective positive OPC-like comparison zero selected; no nonpassed steps. Go has no GitHub Actions workflow or CI result. No Bun/Python, general XML/schema/ECMA, Office, CACHE-001, PPTX or PDF credit."
         },
         "python": {
           "status": "planned",
