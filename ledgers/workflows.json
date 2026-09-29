@@ -5236,12 +5236,12 @@
       ],
       "consumers": {
         "bun": {
-          "status": "planned",
-          "evidence": "Native execution binding pending"
+          "status": "implemented",
+          "evidence": "Bun e6a05f508a447da6d23ff5cc3681a7bccd879332 at shared v0.70.0 selects all four exact body-insertion steps in features/shared.json and tests/acceptance/body-insertion.ts. An initially empty body appends First and Third, inserts Second at index one, observes counts one/two/three and order First/Second/Third. tests/unit/docx-insert-paragraph.test.ts rejects changed counts and each wrong paragraph text, plus corrupted inserted text. Fresh GitHub recursive make check passed 732/732 selected cases. In-memory body order only, not saved XML or rendering."
         },
         "go": {
-          "status": "planned",
-          "evidence": "Native execution binding pending"
+          "status": "implemented",
+          "evidence": "Go 7f0a6b2e620ece9f1a962c78969dcf7b26ee77c5 at shared v0.70.0 binds the exact four body-insertion steps in acceptance/body_insert_order_test.go: initial empty body, append First and Third, insert Second at index one, count after each operation 1/2/3, and ordered text getters. Negative controls change each count, first/middle/last text, paragraph count, scenario name and step wording. Fresh post-push GitHub recursive test-batch passed 349 selected cases/1193 steps/0 failures/0 skips; reports/batches/198.md records local and independent gates. In-memory order only, not saved XML, Office rendering or Python execution."
         },
         "python": {
           "status": "planned",

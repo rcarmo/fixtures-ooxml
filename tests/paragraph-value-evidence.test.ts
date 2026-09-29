@@ -30,5 +30,5 @@ test('four bounded DOCX paragraph value workflows have exact shared steps and se
   expect(current.consumers.python).toEqual(old.consumers.python);
   const unchanged=structuredClone(current);unchanged.consumers.bun=old.consumers.bun;unchanged.consumers.go=old.consumers.go;expect(unchanged).toEqual(old);
  }
- const ids=new Set(specs.map(s=>s.id));expect(ledger.workflows.filter((w:any)=>!ids.has(w.id))).toEqual(prior.workflows.filter((w:any)=>!ids.has(w.id)));
+ const ids=new Set([...specs.map(s=>s.id),'@id-docx-go-body-insert-order']);expect(ledger.workflows.filter((w:any)=>!ids.has(w.id))).toEqual(prior.workflows.filter((w:any)=>!ids.has(w.id)));
 });
