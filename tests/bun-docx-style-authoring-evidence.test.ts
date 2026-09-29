@@ -21,5 +21,5 @@ test('Bun executes exact DOCX paragraph style authoring and atomic refusal cases
   expect(now.consumers.go).toEqual(old.consumers.go);expect(now.consumers.python).toEqual(old.consumers.python);const unchanged=structuredClone(now);unchanged.consumers.bun=old.consumers.bun;expect(unchanged).toEqual(old);
  }
  expect(specs.reduce((n,s)=>n+s.rows.length,0)).toBe(24);expect(specs.reduce((n,s)=>n+s.rows.reduce((m,r)=>m+r.length,0),0)).toBe(86);
- const changed=new Set(specs.map(s=>s.id));expect(ledger.workflows.filter((w:any)=>w.id !== '@id-xlsx-comment-vml-existing-graph' && !changed.has(w.id))).toEqual(prior.workflows.filter((w:any)=>w.id !== '@id-xlsx-comment-vml-existing-graph' && !changed.has(w.id)));
+ const changed=new Set(specs.map(s=>s.id));expect(ledger.workflows.filter((w:any)=>!['@id-xlsx-go-formula-literal-punctuation','@id-xlsx-go-static-remap-exact','@id-xlsx-go-static-remap-refusal','@id-xlsx-go-static-reference-properties'].includes(w.id) && w.id !== '@id-xlsx-comment-vml-existing-graph' && !changed.has(w.id))).toEqual(prior.workflows.filter((w:any)=>!['@id-xlsx-go-formula-literal-punctuation','@id-xlsx-go-static-remap-exact','@id-xlsx-go-static-remap-refusal','@id-xlsx-go-static-reference-properties'].includes(w.id) && w.id !== '@id-xlsx-comment-vml-existing-graph' && !changed.has(w.id)));
 });

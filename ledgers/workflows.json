@@ -4039,8 +4039,8 @@
           "evidence": "Bun 9aa63cf33a5b602fed7479748f6922e74d669621 at shared v0.100.0 executes five punctuation-string examples assert the specified accept/no-error or reject/zero-record outcome, without claiming references for accepted examples. features/shared.json selects nine XLSX static-reference scenarios (45 exact cases/152 steps); tests/acceptance/formula-analysis.ts, tests/acceptance/xlsx-range.ts and tests/acceptance/formula-remap.ts bind canonical cases with tests/unit/xlsx-formula-analysis.test.ts, tests/unit/xlsx-range.test.ts and tests/unit/xlsx-formula-remap.test.ts controls. Fresh post-push recursive Bun make check passed 732/732 and Bun CI 36534553649 succeeded. Static API only; no formula evaluation, saved workbook, calculation, Office rendering, Go/Python or cross-consumer execution credit."
         },
         "go": {
-          "status": "planned",
-          "evidence": "Native execution binding pending"
+          "status": "implemented",
+          "evidence": "Go published c846cb384dc81e015392cefc9a21116bcc870816 at shared v0.106.0 executes five three-step literal-punctuation rows distinguish quoted operator/range refusal with error and zero references from quoted close/percent/equality acceptance without error; no accepted-count claim. Four stable IDs total 18 cases/57 steps. acceptance/{remaining_formula_steps,remaining_formula,canonical_formula_analysis,inventory}_test.go and reports/batches/238.md bind and guard exact canonical row names, complete step text and selected inventory; red checkpoint had 35 undefined steps on 18 cases before binding. Uncached local, independent exact-commit recursive and fresh post-push GitHub recursive make test-batch TEST_JOBS=2 each passed 395 selected cases/1351 steps with zero failed, skipped or undefined. Production formula and workbook code unchanged. Bounded static formula-string analysis/remap API only; no formula evaluation, workbook mutation, Office rendering, ECMA grammar-completeness, Bun/Python or cross-consumer credit. Go CI workflow unavailable; no CI success claimed."
         },
         "python": {
           "status": "planned",
@@ -4122,8 +4122,8 @@
           "evidence": "Bun 9aa63cf33a5b602fed7479748f6922e74d669621 at shared v0.100.0 executes five static row/column insertion examples yield exact replacement expressions, not workbook edits. features/shared.json selects nine XLSX static-reference scenarios (45 exact cases/152 steps); tests/acceptance/formula-analysis.ts, tests/acceptance/xlsx-range.ts and tests/acceptance/formula-remap.ts bind canonical cases with tests/unit/xlsx-formula-analysis.test.ts, tests/unit/xlsx-range.test.ts and tests/unit/xlsx-formula-remap.test.ts controls. Fresh post-push recursive Bun make check passed 732/732 and Bun CI 36534553649 succeeded. Static API only; no formula evaluation, saved workbook, calculation, Office rendering, Go/Python or cross-consumer execution credit."
         },
         "go": {
-          "status": "planned",
-          "evidence": "Native execution binding pending"
+          "status": "implemented",
+          "evidence": "Go published c846cb384dc81e015392cefc9a21116bcc870816 at shared v0.106.0 executes five three-step insertion remaps assert exact whole replacement expressions, preserving literal and foreign-sheet bytes, case-insensitive target sheet and reversed range. Four stable IDs total 18 cases/57 steps. acceptance/{remaining_formula_steps,remaining_formula,canonical_formula_analysis,inventory}_test.go and reports/batches/238.md bind and guard exact canonical row names, complete step text and selected inventory; red checkpoint had 35 undefined steps on 18 cases before binding. Uncached local, independent exact-commit recursive and fresh post-push GitHub recursive make test-batch TEST_JOBS=2 each passed 395 selected cases/1351 steps with zero failed, skipped or undefined. Production formula and workbook code unchanged. Bounded static formula-string analysis/remap API only; no formula evaluation, workbook mutation, Office rendering, ECMA grammar-completeness, Bun/Python or cross-consumer credit. Go CI workflow unavailable; no CI success claimed."
         },
         "python": {
           "status": "planned",
@@ -4145,8 +4145,8 @@
           "evidence": "Bun 9aa63cf33a5b602fed7479748f6922e74d669621 at shared v0.100.0 executes seven invalid/unsupported insertion examples refuse with no partial replacement expression. features/shared.json selects nine XLSX static-reference scenarios (45 exact cases/152 steps); tests/acceptance/formula-analysis.ts, tests/acceptance/xlsx-range.ts and tests/acceptance/formula-remap.ts bind canonical cases with tests/unit/xlsx-formula-analysis.test.ts, tests/unit/xlsx-range.test.ts and tests/unit/xlsx-formula-remap.test.ts controls. Fresh post-push recursive Bun make check passed 732/732 and Bun CI 36534553649 succeeded. Static API only; no formula evaluation, saved workbook, calculation, Office rendering, Go/Python or cross-consumer execution credit."
         },
         "go": {
-          "status": "planned",
-          "evidence": "Native execution binding pending"
+          "status": "implemented",
+          "evidence": "Go published c846cb384dc81e015392cefc9a21116bcc870816 at shared v0.106.0 executes seven three-step bad axis/coordinate/count/sheet/overflow/dynamic-reference inputs refuse with an error and an empty replacement expression. Four stable IDs total 18 cases/57 steps. acceptance/{remaining_formula_steps,remaining_formula,canonical_formula_analysis,inventory}_test.go and reports/batches/238.md bind and guard exact canonical row names, complete step text and selected inventory; red checkpoint had 35 undefined steps on 18 cases before binding. Uncached local, independent exact-commit recursive and fresh post-push GitHub recursive make test-batch TEST_JOBS=2 each passed 395 selected cases/1351 steps with zero failed, skipped or undefined. Production formula and workbook code unchanged. Bounded static formula-string analysis/remap API only; no formula evaluation, workbook mutation, Office rendering, ECMA grammar-completeness, Bun/Python or cross-consumer credit. Go CI workflow unavailable; no CI success claimed."
         },
         "python": {
           "status": "planned",
@@ -4170,8 +4170,8 @@
           "evidence": "Bun 9aa63cf33a5b602fed7479748f6922e74d669621 at shared v0.100.0 executes one 288-expression matrix verifies two reference slices each reparse to the same reference, row-100 insertion leaves source bytes unchanged and SUM wrapping shifts spans exactly. features/shared.json selects nine XLSX static-reference scenarios (45 exact cases/152 steps); tests/acceptance/formula-analysis.ts, tests/acceptance/xlsx-range.ts and tests/acceptance/formula-remap.ts bind canonical cases with tests/unit/xlsx-formula-analysis.test.ts, tests/unit/xlsx-range.test.ts and tests/unit/xlsx-formula-remap.test.ts controls. Fresh post-push recursive Bun make check passed 732/732 and Bun CI 36534553649 succeeded. Static API only; no formula evaluation, saved workbook, calculation, Office rendering, Go/Python or cross-consumer execution credit."
         },
         "go": {
-          "status": "planned",
-          "evidence": "Native execution binding pending"
+          "status": "implemented",
+          "evidence": "Go published c846cb384dc81e015392cefc9a21116bcc870816 at shared v0.106.0 executes one six-step finite 288-expression (3 prefixes x 4 left x 4 right x 6 operators) matrix checks fixed-literal reference endpoints/flags/sheets and byte spans, independent reparsing, row-100 lexical no-op and SUM-wrapped span offset. Four stable IDs total 18 cases/57 steps. acceptance/{remaining_formula_steps,remaining_formula,canonical_formula_analysis,inventory}_test.go and reports/batches/238.md bind and guard exact canonical row names, complete step text and selected inventory; red checkpoint had 35 undefined steps on 18 cases before binding. Uncached local, independent exact-commit recursive and fresh post-push GitHub recursive make test-batch TEST_JOBS=2 each passed 395 selected cases/1351 steps with zero failed, skipped or undefined. Production formula and workbook code unchanged. Bounded static formula-string analysis/remap API only; no formula evaluation, workbook mutation, Office rendering, ECMA grammar-completeness, Bun/Python or cross-consumer credit. Go CI workflow unavailable; no CI success claimed."
         },
         "python": {
           "status": "planned",
