@@ -1325,8 +1325,8 @@
           "evidence": "Bun ee1a099d8a1cd928ddb3814f3b94b35d9adee989 at shared v0.78.0 executes all four exact Unicode QName steps in features/shared.json and tests/acceptance/xml-names.ts. Prefix/local Unicode identity, expanded names and attribute value are checked; UTF-16 source offsets slice the original Unicode child element. tests/unit/xml-names.test.ts runs the canonical feature (6 cases); fresh GitHub recursive make check passed 732/732 selected cases. No Go/Python or general Unicode XML credit."
         },
         "go": {
-          "status": "planned",
-          "evidence": "Partial native assertion overlaps recorded separately; no canonical execution"
+          "status": "implemented",
+          "evidence": "Go published 00fb946349332218bb5ef0935fd705ee34f780d9 at shared v0.113.0 executes exactly one four-step @id-xml-unicode-qname-components case in acceptance/unicode_qname_test.go. An independent UTF-8 75-byte source with two distinct Unicode QName children verifies expanded {urn:one}項 elements and {urn:one}鍵 attributes with distinct 值/値 values; SourceRange() reports half-open original byte offsets [23,47) and [47,71), matching independent byte-indexed slices and copied Raw() bytes. The caller source and parser snapshot remain unchanged after Raw copy mutation; a same-package alias-prefix positive and unbound Unicode prefix refusal are separate controls. The only production addition is read-only Element.SourceRange(), returning (-1,-1) on invalid handles; red checkpoint was a missing-accessor compile failure, NOT a behavioural red test. Uncached exact-revision local, independent clean recursive pre-push and fresh GitHub recursive post-push gates each passed 405 cases/1391 steps, zero nonpassed; the defective positive OPC-like comparison selected zero. No Go GitHub Actions CI is configured. No Python credit, general XML/schema/C14N/ECMA, Office, CACHE-001, PPTX or PDF claim."
         },
         "python": {
           "status": "planned",
@@ -1490,8 +1490,8 @@
           "evidence": "No canonical package-admission binding; native plans/retained ZIP custody are distinct"
         },
         "python": {
-          "status": "planned",
-          "evidence": "Four native declarations reviewed and temporary staging14case pass reported; canonical binding not yet executed"
+          "status": "implemented",
+          "evidence": "Python published b4b3e238b87d2668f68be571799bff0018530fc7 at shared v0.113.0 executes five exact three-step ZIP_STORED unsafe-member cases in tests/package_admission/{cases,conftest,test_profiles}.py bound to workflows/package/zip-admission.feature by the reviewed mapping. Native binding independently re-reads ordered member names, payload bytes and compression for duplicate a.xml, parent ../a.xml, absolute /a.xml, backslash x\\a.xml and directory a/ with bytes; observed typed PackageAdmissionError carries the respective exact duplicate, unsafe-name or directory-payload message, not an unrelated refusal. Default valid and repaired accepted archives provide positive controls; original archive SHA256 before/after proves caller-file byte custody, not generic ZIP or session guarantees. A red test-only control initially failed all 14 package-lane cases before implementation; published local, independent recursive pre-push and fresh GitHub recursive post-push full suites each passed 1,359 tests (three existing warnings), with exact package lane 14 cases/47 steps and clean source provenance. Python CI 36561579079 succeeded on 3.10/3.12/3.13. Shared Gherkin asserts bounded refusal only; no Go credit, Office, broad archive safety or PDF claim."
         }
       }
     },
@@ -1513,8 +1513,8 @@
           "evidence": "No canonical package-admission binding; native plans/retained ZIP custody are distinct"
         },
         "python": {
-          "status": "planned",
-          "evidence": "Four native declarations reviewed and temporary staging14case pass reported; canonical binding not yet executed"
+          "status": "implemented",
+          "evidence": "Python published b4b3e238b87d2668f68be571799bff0018530fc7 at shared v0.113.0 executes four exact three-step ZIP_DEFLATED resource-limit cases in tests/package_admission/{cases,conftest,test_profiles}.py. Independently inspected one 10007-byte <a> + 10000 spaces + </a> member, its compression and source size 143 bytes. The respective max_members=0, max_member_bytes=2, max_total_bytes=2 and max_ratio=1 refusals are typed PackageAdmissionError with exact count, member size, compressed source size and inflation messages, not interchangeable refusals. Canonical max_total_bytes=2 refuses source size 143>2 before member intake; it is NOT evidence of expanded aggregate refusal. A separate noncanonical threshold 144 (>143 source and <10007 inflated) refuses with Package inflation limit exceeded after source preflight. Default and pertinent relaxed-budget controls admit independently inspected inputs; original archive SHA256 remains unchanged. Red test-only missing-controls checkpoint was followed by local, independent recursive pre-push and fresh GitHub recursive post-push full suites each 1,359 tests (three existing warnings); exact package lane 14 cases/47 steps clean. Python CI 36561579079 succeeded on 3.10/3.12/3.13. This is bounded caller-budget policy, not allocation measurements, universal ZIP limits, Go credit or PDF evidence."
         }
       }
     },
@@ -1537,8 +1537,8 @@
           "evidence": "No canonical package-admission binding; native plans/retained ZIP custody are distinct"
         },
         "python": {
-          "status": "planned",
-          "evidence": "Four native declarations reviewed and temporary staging14case pass reported; canonical binding not yet executed"
+          "status": "implemented",
+          "evidence": "Python published b4b3e238b87d2668f68be571799bff0018530fc7 at shared v0.113.0 executes the exact four-step ZIP_BZIP2 a.xml payload <a/> refusal in tests/package_admission/{cases,conftest,test_profiles}.py, with independently read compression method/payload and typed PackageAdmissionError message Unsupported OPC compression method. Default valid ZIP_STORED and repaired ZIP_DEFLATED archives admit; the original source SHA256 stays unchanged. Red test-only controls then local, independent recursive pre-push and fresh GitHub recursive post-push full suites each passed 1,359 tests (three warnings), including package lane 14 cases/47 steps; Python CI 36561579079 succeeded across 3.10/3.12/3.13. No general compression/ZIP64, Go, Office or PDF claim."
         }
       }
     },
@@ -1560,8 +1560,8 @@
           "evidence": "No canonical package-admission binding; native plans/retained ZIP custody are distinct"
         },
         "python": {
-          "status": "planned",
-          "evidence": "Four native declarations reviewed and temporary staging14case pass reported; canonical binding not yet executed"
+          "status": "implemented",
+          "evidence": "Python published b4b3e238b87d2668f68be571799bff0018530fc7 at shared v0.113.0 executes three exact three-step ZIP_STORED XML member refusals in tests/package_admission/{cases,conftest,test_profiles}.py. Native checks independently read a.xml payloads: UTF-8 internal DTD/entity, UTF-16LE BOM DTD and malformed <broken>; observed PackageAdmissionError distinguishes DTD declarations forbidden from Invalid XML member: a.xml. Repaired valid XML including UTF-16LE BOM and default valid archive admit; original source SHA256 unchanged. Red test-only missing-controls checkpoint, local/independent recursive pre-push/fresh GitHub recursive post-push full suites each 1,359 tests (three warnings), exact package lane 14 cases/47 steps with clean provenance; Python CI 36561579079 succeeded 3.10/3.12/3.13. No schema-valid OPC, Go, generic XML acceptance, Office or PDF claim."
         }
       }
     },
@@ -1586,8 +1586,8 @@
           "evidence": "No canonical package-admission binding; native plans/retained ZIP custody are distinct"
         },
         "python": {
-          "status": "planned",
-          "evidence": "Four native declarations reviewed and temporary staging14case pass reported; canonical binding not yet executed"
+          "status": "implemented",
+          "evidence": "Python published b4b3e238b87d2668f68be571799bff0018530fc7 at shared v0.113.0 executes one exact seven-step semantic ZIP_STORED package-diff case in tests/package_admission/{cases,conftest,test_profiles}.py. Independently re-read original ordered a.xml <a xmlns=\"urn:x\"/> and b.bin old, modified a.xml <p:a xmlns:p=\"urn:x\"/>, b.bin new and c.bin added; distinct XML source bytes compare equivalent, exact lists are equivalent_xml [\"a.xml\"], changed [\"b.bin\"], added [\"c.bin\"], removed [], with independent SHA256 for before/after a.xml and b.bin payloads. A namespace-changed XML and removed b.bin counterexample produce changed a.xml and removed b.bin (no equivalent XML), preventing empty-list and always-equivalent vacuity. Original and modified archive SHA256 remain unchanged. Local, independent recursive pre-push and fresh GitHub recursive post-push full suites each 1,359 tests, exact package lane 14 cases/47 steps clean, Python CI 36561579079 succeeded 3.10/3.12/3.13. No ZIP writing, Go, Office rendering or PDF claim."
         }
       }
     },
