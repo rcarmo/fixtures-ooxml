@@ -1,3 +1,4 @@
+const coreOpcIds = new Set(["@id-opc-package-corpus-noop","@id-opc-package-transaction-rollback","@id-opc-package-preserve-unrelated"]);
 import { test, expect } from 'bun:test';
 import { execFileSync } from 'node:child_process';
 import { cases } from '../scripts/verify.ts';
@@ -27,5 +28,5 @@ test('Bun executes two exact negative-budget admission refusals without Go/Pytho
   for (const marker of ['b52d9a282878b0193a857f33e758703698415b54', 'shared v0.87.0', 'two exact six-step', 'source bytes and entry count', 'package-admission-limit-invalid', 'broken one-byte ZIP control', 'byte-identical', 'tests/acceptance/package-admission.ts', 'Fresh post-push GitHub recursive make check', '732/732', 'No Go/Python', 'no filesystem source-metadata read']) expect(now.consumers.bun.evidence).toContain(marker);
   expect(now.consumers.go).toEqual(old.consumers.go); expect(now.consumers.python).toEqual(old.consumers.python);
   const unchanged = structuredClone(now); unchanged.consumers.bun = old.consumers.bun; expect(unchanged).toEqual(old);
-  expect(ledger.workflows.filter((w: any) => w.id !== id)).toEqual(prior.workflows.filter((w: any) => w.id !== id));
+  expect(ledger.workflows.filter((w: any) =>!coreOpcIds.has(w.id)&& w.id !== id)).toEqual(prior.workflows.filter((w: any) =>!coreOpcIds.has(w.id)&& w.id !== id));
 });

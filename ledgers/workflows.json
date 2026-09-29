@@ -2354,8 +2354,8 @@
       ],
       "consumers": {
         "bun": {
-          "status": "planned",
-          "evidence": "Existing local bindings passed; canonical-path run tracked separately in consumer"
+          "status": "implemented",
+          "evidence": "Bun edc342eba89bfe62d790059083732ae09f9c043a at shared v0.88.0 executes one exact four-step no-op OPC corpus case enumerates 36 Go-origin and 35 Python-origin fixture archives; tests/acceptance/core.ts opens and serializes each through OpcPackage, reopens the result, and verifies both whole archives are byte-identical to the original (71 total), without claiming execution by the source languages. features/shared.json and tests/acceptance/core.ts bind every exact shared step. Fresh post-push GitHub recursive make check passed 732/732 selected cases; Bun CI 36523797789 succeeded. No Go/Python, schema-valid Office, cross-producer equivalence, rendering or general OPC credit."
         },
         "go": {
           "status": "planned",
@@ -2377,8 +2377,8 @@
       ],
       "consumers": {
         "bun": {
-          "status": "planned",
-          "evidence": "Existing local bindings passed; canonical-path run tracked separately in consumer"
+          "status": "implemented",
+          "evidence": "Bun edc342eba89bfe62d790059083732ae09f9c043a at shared v0.88.0 executes one exact three-step OPC rollback case uses a synthetic package with XML and opaque binary parts; a transaction changes both then throws a typed synthetic refusal, after which package.toBytes and both part bytes equal their original values. features/shared.json and tests/acceptance/core.ts bind every exact shared step. Fresh post-push GitHub recursive make check passed 732/732 selected cases; Bun CI 36523797789 succeeded. No Go/Python, schema-valid Office, cross-producer equivalence, rendering or general OPC credit."
         },
         "go": {
           "status": "planned",
@@ -2401,8 +2401,8 @@
       ],
       "consumers": {
         "bun": {
-          "status": "planned",
-          "evidence": "Existing local bindings passed; canonical-path run tracked separately in consumer"
+          "status": "implemented",
+          "evidence": "Bun edc342eba89bfe62d790059083732ae09f9c043a at shared v0.88.0 executes one exact four-step OPC edit case changes the main XML text, saves and reopens the package, requires exact updated text and independently checks that unrelated opaque binary payload bytes remain unchanged. features/shared.json and tests/acceptance/core.ts bind every exact shared step. Fresh post-push GitHub recursive make check passed 732/732 selected cases; Bun CI 36523797789 succeeded. No Go/Python, schema-valid Office, cross-producer equivalence, rendering or general OPC credit."
         },
         "go": {
           "status": "planned",

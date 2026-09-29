@@ -1,3 +1,4 @@
+const coreOpcIds = new Set(["@id-opc-package-corpus-noop","@id-opc-package-transaction-rollback","@id-opc-package-preserve-unrelated"]);
 const budgetId = new Set(['@id-package-admission-negative-budget']);
 import { test, expect } from 'bun:test';
 import { execFileSync } from 'node:child_process';
@@ -27,5 +28,5 @@ test('Bun executes unsigned ZIP32 descriptor signature-collision CRC refusal wit
   for (const marker of ['1dcbeed05ba69ec7f20cdc25c90220e4bae51bd4', 'shared v0.86.0', 'one exact eight-step', '08074B50', '422C6A15', 'unsigned twelve-byte descriptor', 'zip-crc-mismatch', 'byte-identical', 'features/shared.json', 'tests/acceptance/data-descriptor-integrity.ts', 'Fresh post-push GitHub recursive make check', '732/732', 'No Go/Python']) expect(now.consumers.bun.evidence).toContain(marker);
   expect(now.consumers.go).toEqual(old.consumers.go); expect(now.consumers.python).toEqual(old.consumers.python);
   const unchanged = structuredClone(now); unchanged.consumers.bun = old.consumers.bun; expect(unchanged).toEqual(old);
-  expect(ledger.workflows.filter((w: any) =>!budgetId.has(w.id)&& w.id !== id)).toEqual(prior.workflows.filter((w: any) =>!budgetId.has(w.id)&& w.id !== id));
+  expect(ledger.workflows.filter((w: any) =>!coreOpcIds.has(w.id)&&!budgetId.has(w.id)&& w.id !== id)).toEqual(prior.workflows.filter((w: any) =>!coreOpcIds.has(w.id)&&!budgetId.has(w.id)&& w.id !== id));
 });
