@@ -1367,8 +1367,8 @@
       ],
       "consumers": {
         "bun": {
-          "status": "planned",
-          "evidence": "No semantic XML comparator API binding"
+          "status": "implemented",
+          "evidence": "Bun 7b5990e63b8ed11aa08ad4ffbd00abfef579d07f at shared v0.79.0 executes One exact four-step positive row compares equivalent OPC relationships despite namespace-prefix spelling and relationship child order, without mutating either UTF-8 input. features/shared.json and tests/acceptance/xml-comparison.ts bind the exact shared steps to xmlEquivalent; tests/unit/xml-comparison.test.ts runs five canonical scenarios (10 cases/40 steps) and bounded extra comparison cases. Fresh GitHub recursive make check passed 732/732 selected cases. Conservative Boolean comparator only, not canonical XML or general package equivalence; Go/Python planned."
         },
         "go": {
           "status": "planned",
@@ -1390,8 +1390,8 @@
       ],
       "consumers": {
         "bun": {
-          "status": "planned",
-          "evidence": "No semantic XML comparator API binding"
+          "status": "implemented",
+          "evidence": "Bun 7b5990e63b8ed11aa08ad4ffbd00abfef579d07f at shared v0.79.0 executes Three exact four-step negative rows distinguish text whitespace, child order and attribute-value changes; neither UTF-8 input mutates. features/shared.json and tests/acceptance/xml-comparison.ts bind the exact shared steps to xmlEquivalent; tests/unit/xml-comparison.test.ts runs five canonical scenarios (10 cases/40 steps) and bounded extra comparison cases. Fresh GitHub recursive make check passed 732/732 selected cases. Conservative Boolean comparator only, not canonical XML or general package equivalence; Go/Python planned."
         },
         "go": {
           "status": "planned",
@@ -1413,8 +1413,8 @@
       ],
       "consumers": {
         "bun": {
-          "status": "planned",
-          "evidence": "No semantic XML comparator API binding"
+          "status": "implemented",
+          "evidence": "Bun 7b5990e63b8ed11aa08ad4ffbd00abfef579d07f at shared v0.79.0 executes One exact four-step negative row preserves significance of a changed prefix-valued attribute namespace binding; input bytes remain unchanged. features/shared.json and tests/acceptance/xml-comparison.ts bind the exact shared steps to xmlEquivalent; tests/unit/xml-comparison.test.ts runs five canonical scenarios (10 cases/40 steps) and bounded extra comparison cases. Fresh GitHub recursive make check passed 732/732 selected cases. Conservative Boolean comparator only, not canonical XML or general package equivalence; Go/Python planned."
         },
         "go": {
           "status": "planned",
@@ -1436,8 +1436,8 @@
       ],
       "consumers": {
         "bun": {
-          "status": "planned",
-          "evidence": "No semantic XML comparator API binding"
+          "status": "implemented",
+          "evidence": "Bun 7b5990e63b8ed11aa08ad4ffbd00abfef579d07f at shared v0.79.0 executes Two exact four-step negative rows return false for identical DTD-bearing and identical malformed XML; input bytes remain unchanged. features/shared.json and tests/acceptance/xml-comparison.ts bind the exact shared steps to xmlEquivalent; tests/unit/xml-comparison.test.ts runs five canonical scenarios (10 cases/40 steps) and bounded extra comparison cases. Fresh GitHub recursive make check passed 732/732 selected cases. Conservative Boolean comparator only, not canonical XML or general package equivalence; Go/Python planned."
         },
         "go": {
           "status": "planned",
@@ -1459,8 +1459,8 @@
       ],
       "consumers": {
         "bun": {
-          "status": "planned",
-          "evidence": "No semantic XML comparator API binding"
+          "status": "implemented",
+          "evidence": "Bun 7b5990e63b8ed11aa08ad4ffbd00abfef579d07f at shared v0.79.0 executes Three exact four-step negative rows distinguish prolog PI target, in-document PI target and prolog comment content changes; input bytes remain unchanged. features/shared.json and tests/acceptance/xml-comparison.ts bind the exact shared steps to xmlEquivalent; tests/unit/xml-comparison.test.ts runs five canonical scenarios (10 cases/40 steps) and bounded extra comparison cases. Fresh GitHub recursive make check passed 732/732 selected cases. Conservative Boolean comparator only, not canonical XML or general package equivalence; Go/Python planned."
         },
         "go": {
           "status": "planned",
