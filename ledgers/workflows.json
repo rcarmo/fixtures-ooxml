@@ -2385,8 +2385,8 @@
           "evidence": "No equivalent operation binding reviewed; language-specific behaviours remain explicit"
         },
         "python": {
-          "status": "planned",
-          "evidence": "No equivalent operation binding reviewed; creation/body editing are not existing-flag mutation"
+          "status": "implemented",
+          "evidence": "Python published 380ea3d47d3cd64faaf3e7fa4e8855c581be9313 at shared v0.127.0 executes only @id-opc-package-transaction-rollback, one exact three-step case in workflows/package/preservation.feature via tests/opc_rollback/{cases,conftest,test_rollback}.py. This is production tools.mutation.stage_patch FILE-PUBLICATION rollback: failure discards a private staged DOCX copy, NOT an in-memory same-object OPC editor transaction. Manifest-sealed blank default DOCX is separately authored with Alpha in word/document.xml and 8,324-byte opaque docProps/thumbnail.jpeg; 17 archive members. Source and separate existing destination initially have distinct original bytes/parts. Callback changes staged XML Alpha→Beta AND flips the opaque first byte, proves both changes and 15 other parts unchanged, then raises before publish. Native result is failed/zero planned+applied commit; source and prior destination remain exact original whole-file bytes and parts (Alpha/Prior after reopen), with staging cleaned up. Separate successful two-part callback publishes both changes, exact two changed-part diff, while source and failed destination stay unchanged; excludes no-op. Sealed ID/title/steps/no Examples guarded. Temporary production exception-handler mutation overwrote destination and made canonical custody fail; restored byte-for-byte. Uncached committed local, independent clean recursive pre-push, fresh GitHub recursive post-push each passed 1,409 tests (three existing warnings), fifteen provenance-clean lanes including rollback 1/3; Python CI 36599493785 and Windows 36599493833 succeeded. No Go, in-memory rollback, broader OPC, positive missing-Type/content-type diff, Office, PPTX, PDF or general XML credit."
         }
       }
     },
@@ -3628,8 +3628,8 @@
           "evidence": "Native execution binding pending"
         },
         "go": {
-          "status": "planned",
-          "evidence": "Native execution binding pending"
+          "status": "implemented",
+          "evidence": "Go published 9294da534ca144d6256ac5650cda0b90696b50c2 at shared v0.127.0 executes only @id-xml-go-element-replacement-custody: one exact three-step lexical-snapshot case in workflows/xml/editing.feature via acceptance/{acceptance,inventory,element_replacement_custody}_test.go and reports/batches/266.md. Exact ID/profile/name/line 89/no Examples/source/action/whole-output literal and drift controls are guarded. Fresh caller-owned source with root {outer}, target {inner}old and surviving parent p=bound is parsed; structured {bound}new text value and unqualified plain replacement yields independently coded exact <root xmlns=\"outer\" xmlns:p=\"bound\"><!--a--><p:new>value</p:new><plain xmlns=\"\"/> tail <last/></root>. Reparse checks expanded names, parent/text, comment/gap/last custody; original caller and snapshot remain unchanged; empty ReplaceElements(nil) after success returns original bytes and returned-output mutation cannot affect repeat edit/no-op. Temporary production parent-scope→removed-target-scope mutation failed canonical Then after Given/When passed and was restored byte-for-byte. Uncached no-override scoped/local, clean recursive pre-push and fresh GitHub recursive post-push gates each passed 417 cases/1434 steps, custody 1/3, sibling replacement refusal/CACHE-001 zero selected. Go has no GitHub Actions CI. No Bun/Python, general XML, Office, PPTX, positive OPC-like or PDF credit."
         },
         "python": {
           "status": "planned",
