@@ -1,3 +1,4 @@
+const slideOrderIds = new Set(["@id-pptx-slide-permutation","@id-pptx-slide-permutation-refusal"]);
 const textBoxIds = new Set(["@id-pptx-text-box-authoring","@id-pptx-text-box-refusal"]);
 const pptxTableIds = new Set(["@id-pptx-table-roundtrip-geometry","@id-pptx-table-formatting","@id-pptx-table-stale-handle","@id-pptx-table-atomic-refusals"]);
 const pptxNoopId = new Set(['@id-pptx-bun-open-save-noop']);
@@ -46,5 +47,5 @@ test('Bun executes eleven exact OPC custody and save-path cases without Go/Pytho
   expect(expectedCases.reduce((a, b) => a + b, 0)).toBe(11);
   expect(expectedCases.reduce((sum, count, i) => sum + count * expectedSteps[i]!, 0)).toBe(108);
   const changed = new Set(ids);
-  expect(ledger.workflows.filter((w: any) =>!textBoxIds.has(w.id)&&!pptxTableIds.has(w.id)&&!pptxNoopId.has(w.id)&&!threadIds.has(w.id)&&!commentIds.has(w.id)&&!relationshipIds.has(w.id)&& !changed.has(w.id))).toEqual(prior.workflows.filter((w: any) =>!textBoxIds.has(w.id)&&!pptxTableIds.has(w.id)&&!pptxNoopId.has(w.id)&&!threadIds.has(w.id)&&!commentIds.has(w.id)&&!relationshipIds.has(w.id)&& !changed.has(w.id)));
+  expect(ledger.workflows.filter((w: any) =>!slideOrderIds.has(w.id)&&!textBoxIds.has(w.id)&&!pptxTableIds.has(w.id)&&!pptxNoopId.has(w.id)&&!threadIds.has(w.id)&&!commentIds.has(w.id)&&!relationshipIds.has(w.id)&& !changed.has(w.id))).toEqual(prior.workflows.filter((w: any) =>!slideOrderIds.has(w.id)&&!textBoxIds.has(w.id)&&!pptxTableIds.has(w.id)&&!pptxNoopId.has(w.id)&&!threadIds.has(w.id)&&!commentIds.has(w.id)&&!relationshipIds.has(w.id)&& !changed.has(w.id)));
 });

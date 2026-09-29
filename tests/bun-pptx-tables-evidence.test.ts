@@ -1,3 +1,4 @@
+const slideOrderIds = new Set(["@id-pptx-slide-permutation","@id-pptx-slide-permutation-refusal"]);
 const textBoxIds = new Set(["@id-pptx-text-box-authoring","@id-pptx-text-box-refusal"]);
 import { test, expect } from 'bun:test';
 import { execFileSync } from 'node:child_process';
@@ -26,5 +27,5 @@ test('Bun executes five exact PPTX table authoring and refusal cases without cro
     const unchanged = structuredClone(now); unchanged.consumers.bun = old.consumers.bun; expect(unchanged).toEqual(old);
   }
   const changed = new Set(specs.map(s => s.id));
-  expect(ledger.workflows.filter((w: any) =>!textBoxIds.has(w.id)&& !changed.has(w.id))).toEqual(prior.workflows.filter((w: any) =>!textBoxIds.has(w.id)&& !changed.has(w.id)));
+  expect(ledger.workflows.filter((w: any) =>!slideOrderIds.has(w.id)&&!textBoxIds.has(w.id)&& !changed.has(w.id))).toEqual(prior.workflows.filter((w: any) =>!slideOrderIds.has(w.id)&&!textBoxIds.has(w.id)&& !changed.has(w.id)));
 });

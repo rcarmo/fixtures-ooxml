@@ -1,3 +1,4 @@
+const slideOrderIds = new Set(["@id-pptx-slide-permutation","@id-pptx-slide-permutation-refusal"]);
 const textBoxIds = new Set(["@id-pptx-text-box-authoring","@id-pptx-text-box-refusal"]);
 const pptxTableIds = new Set(["@id-pptx-table-roundtrip-geometry","@id-pptx-table-formatting","@id-pptx-table-stale-handle","@id-pptx-table-atomic-refusals"]);
 import { test, expect } from 'bun:test';
@@ -26,5 +27,5 @@ test('Bun executes exact PPTX open/save no-op byte custody without Go/Python or 
   for (const marker of ['29348e87fdb34ddfefd6d3fc65ac7df73765738e', 'shared v0.93.0', 'one exact six-step', 'Frankenstein', 'byte-identical in-memory serialization', 'destination and source whole-archive bytes', 'tests/acceptance/pptx-custody.ts', 'tests/unit/pptx-custody-bindings.test.ts', 'Fresh post-push GitHub recursive make check', '732/732', 'No Go/Python']) expect(now.consumers.bun.evidence).toContain(marker);
   expect(now.consumers.go).toEqual(old.consumers.go); expect(now.consumers.python).toEqual(old.consumers.python);
   const unchanged = structuredClone(now); unchanged.consumers.bun = old.consumers.bun; expect(unchanged).toEqual(old);
-  expect(ledger.workflows.filter((w: any) =>!textBoxIds.has(w.id)&&!pptxTableIds.has(w.id)&& w.id !== id)).toEqual(prior.workflows.filter((w: any) =>!textBoxIds.has(w.id)&&!pptxTableIds.has(w.id)&& w.id !== id));
+  expect(ledger.workflows.filter((w: any) =>!slideOrderIds.has(w.id)&&!textBoxIds.has(w.id)&&!pptxTableIds.has(w.id)&& w.id !== id)).toEqual(prior.workflows.filter((w: any) =>!slideOrderIds.has(w.id)&&!textBoxIds.has(w.id)&&!pptxTableIds.has(w.id)&& w.id !== id));
 });

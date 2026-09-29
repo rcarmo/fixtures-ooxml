@@ -2949,8 +2949,8 @@
       ],
       "consumers": {
         "bun": {
-          "status": "planned",
-          "evidence": "Native candidate binding requires canonical-path run; no cross-language execution credit"
+          "status": "implemented",
+          "evidence": "Bun f1081532a5dbe7c44213d590ab8199635525eecd at shared v0.96.0 executes Seven exact four-step slide-order cases reverse, rotate, keep same/empty, alias/default-namespace and retain linked notes; save/reopen checks exact ordered title text and change receipt, while every slide handle/identity and unrelated package part remain intact and the original slide-list XML bytes outside reordered entries are preserved. features/shared.json, tests/acceptance/slide-order.ts and tests/unit/pptx-slide-order.test.ts bind 21 exact cases/70 steps. Unit controls additionally exercise handle identity, stale anchors, rollback, serialization and input validation, without broadening these shared predicates. Fresh post-push GitHub recursive make check passed 732/732 selected cases; Bun CI 36530758792 succeeded. No Go/Python, live Office rendering, unsupported slide composition or cross-consumer credit."
         },
         "go": {
           "status": "planned",
@@ -2972,8 +2972,8 @@
       ],
       "consumers": {
         "bun": {
-          "status": "planned",
-          "evidence": "Native candidate binding requires canonical-path run; no cross-language execution credit"
+          "status": "implemented",
+          "evidence": "Bun f1081532a5dbe7c44213d590ab8199635525eecd at shared v0.96.0 executes Fourteen exact three-step slide-order refusals cover duplicate/missing/out-of-range/fractional indices, duplicate slide IDs or relationship targets, wrong MIME, duplicate list, lexical barrier, custom-show/extension/protection and stale main/relationship inputs; each returns a typed PPTX_ error and leaves archive bytes and slide handles in their original order. features/shared.json, tests/acceptance/slide-order.ts and tests/unit/pptx-slide-order.test.ts bind 21 exact cases/70 steps. Unit controls additionally exercise handle identity, stale anchors, rollback, serialization and input validation, without broadening these shared predicates. Fresh post-push GitHub recursive make check passed 732/732 selected cases; Bun CI 36530758792 succeeded. No Go/Python, live Office rendering, unsupported slide composition or cross-consumer credit."
         },
         "go": {
           "status": "planned",
