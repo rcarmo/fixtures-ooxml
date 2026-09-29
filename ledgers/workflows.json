@@ -3299,8 +3299,8 @@
           "evidence": "Native execution binding pending"
         },
         "python": {
-          "status": "planned",
-          "evidence": "Native execution binding pending"
+          "status": "implemented",
+          "evidence": "Python published 94576f57f8471086fcc140595d357700ee9f2325 at shared v0.122.0 executes only @id-xml-implicit-xml-prefix, one exact five-step case in workflows/xml/parsing.feature SHA256 350edcdfa0dc1206f9f5165cae93ba41c12b6974ee21e71cd3329ed2a82438ff, via tests/xml_implicit_prefix/{cases,conftest,test_prefix}.py. Sealed JSON input is 18 UTF-8 bytes <r xml:lang=\"en\"/> with no explicit xmlns:xml declaration; existing tools.xlsx_preservation.parse is invoked once. The root has no namespace (QName namespace None, XPath namespace-uri(.) empty), while its ONLY attribute has expanded {http://www.w3.org/XML/1998/namespace}lang value en and bare lang is absent. Independent namespace metadata observation requires XPath namespace axis [(xml,http://www.w3.org/XML/1998/namespace)] AND XPath string(@xml:lang) en without a supplied mapping; source bytes remain unchanged with per-step evidence. lxml root.nsmap is empty here, so this does NOT claim a stored explicit nsmap entry. Six separate parseable controls distinguish no attribute, bare lang, wrong URI, wrong value, default-namespaced root and explicit correct xmlns:xml (the latter has identical semantics but fails exact canonical source/no-declaration custody); three malformed binding/unbound-prefix/tag inputs refuse with XMLSyntaxError as auxiliary controls only. Canonical red observation lacked implementation before targeted ten tests passed. Exact published local, independent recursive pre-push and fresh GitHub recursive post-push full suites each passed 1,401 tests (three existing warnings) with thirteen clean-provenance lanes including exact implicit case 1/5; Python CI 36584450241 succeeded on 3.10/3.12/3.13. This is bounded lxml/XPath behaviour for this literal, not general XML parser/DTD/offset/OPC/Office, Go, PPTX or PDF credit."
         }
       }
     },
