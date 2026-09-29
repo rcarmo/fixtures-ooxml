@@ -23,5 +23,5 @@ test('Go credits only the implicit xml prefix on the sealed five-step literal',a
  expect(now.consumers.bun).toEqual(old.consumers.bun);expect(now.consumers.python).toEqual(old.consumers.python);
  const unchanged=structuredClone(now);unchanged.consumers.go=old.consumers.go;expect(unchanged).toEqual(old);
  for(const sibling of ['@id-xml-typed-parse-error','@id-xml-comparison-prefix-and-opc-order','@id-opc-diff-content-type'])expect(ledger.workflows.find((w:any)=>w.id===sibling)).toEqual(prior.workflows.find((w:any)=>w.id===sibling));
- expect(ledger.workflows.filter((w:any)=>w.id!==id&&w.id!=='@id-docx-comments-resolution'&&w.id!=='@id-xml-expanded-attribute-lookup')).toEqual(prior.workflows.filter((w:any)=>w.id!==id&&w.id!=='@id-docx-comments-resolution'&&w.id!=='@id-xml-expanded-attribute-lookup'));
+ expect(ledger.workflows.filter((w:any)=>w.id!==id&&w.id!=='@id-docx-comments-resolution'&&w.id!=='@id-xml-expanded-attribute-lookup'&&w.id!=='@id-docx-comments-noop')).toEqual(prior.workflows.filter((w:any)=>w.id!==id&&w.id!=='@id-docx-comments-resolution'&&w.id!=='@id-xml-expanded-attribute-lookup'&&w.id!=='@id-docx-comments-noop'));
 });

@@ -28,5 +28,5 @@ test('Go credits one exact seven-row expanded attribute lookup case',async()=>{
  expect(now.consumers.bun).toEqual(old.consumers.bun);expect(now.consumers.python).toEqual(old.consumers.python);
  const unchanged=structuredClone(now);unchanged.consumers.go=old.consumers.go;expect(unchanged).toEqual(old);
  for(const sibling of ['@id-xml-implicit-xml-prefix','@id-xml-typed-parse-error','@id-xml-comparison-prefix-and-opc-order','@id-opc-diff-content-type'])expect(ledger.workflows.find((w:any)=>w.id===sibling)).toEqual(prior.workflows.find((w:any)=>w.id===sibling));
- expect(ledger.workflows.filter((w:any)=>w.id!==id)).toEqual(prior.workflows.filter((w:any)=>w.id!==id));
+ expect(ledger.workflows.filter((w:any)=>w.id!==id&&w.id!=='@id-docx-comments-noop')).toEqual(prior.workflows.filter((w:any)=>w.id!==id&&w.id!=='@id-docx-comments-noop'));
 });
