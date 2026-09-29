@@ -1482,8 +1482,8 @@
       ],
       "consumers": {
         "bun": {
-          "status": "planned",
-          "evidence": "No canonical admission/semantic-diff binding; ZIP reader/writer and byte diff are separate APIs"
+          "status": "implemented",
+          "evidence": "Bun 67b8db48ab46cdab07e6722dd25a4dd6e2932e2b at shared v0.80.0 executes Five exact three-step ZIP_STORED rows refuse duplicate member names, parent traversal, absolute name, backslash name, and directory entry with bytes. Each checks its distinct typed refusal code and unchanged caller bytes. features/shared.json and tests/acceptance/package-admission.ts bind the exact shared steps to admitPackage; tests/unit/package-admission.test.ts runs four canonical admission scenarios across two features (13 cases/40 steps), with positive controls. Fresh GitHub recursive make check passed 732/732 selected cases. No Go/Python or blanket ZIP/XML admission credit; physical overlap is a separate case."
         },
         "go": {
           "status": "planned",
@@ -1505,8 +1505,8 @@
       ],
       "consumers": {
         "bun": {
-          "status": "planned",
-          "evidence": "No canonical admission/semantic-diff binding; ZIP reader/writer and byte diff are separate APIs"
+          "status": "implemented",
+          "evidence": "Bun 67b8db48ab46cdab07e6722dd25a4dd6e2932e2b at shared v0.80.0 executes Four exact three-step ZIP_DEFLATED rows refuse max_members=0, max_member_bytes=2, max_total_bytes=2, and max_ratio=1 against the 10000-space XML payload. Each checks its distinct typed limit code and unchanged caller bytes. features/shared.json and tests/acceptance/package-admission.ts bind the exact shared steps to admitPackage; tests/unit/package-admission.test.ts runs four canonical admission scenarios across two features (13 cases/40 steps), with positive controls. Fresh GitHub recursive make check passed 732/732 selected cases. No Go/Python or blanket ZIP/XML admission credit; physical overlap is a separate case."
         },
         "go": {
           "status": "planned",
@@ -1529,8 +1529,8 @@
       ],
       "consumers": {
         "bun": {
-          "status": "planned",
-          "evidence": "No canonical admission/semantic-diff binding; ZIP reader/writer and byte diff are separate APIs"
+          "status": "implemented",
+          "evidence": "Bun 67b8db48ab46cdab07e6722dd25a4dd6e2932e2b at shared v0.80.0 executes One exact four-step ZIP_BZIP2 row refuses with zip-method-unsupported, a compression-bearing message and unchanged caller bytes. features/shared.json and tests/acceptance/package-admission.ts bind the exact shared steps to admitPackage; tests/unit/package-admission.test.ts runs four canonical admission scenarios across two features (13 cases/40 steps), with positive controls. Fresh GitHub recursive make check passed 732/732 selected cases. No Go/Python or blanket ZIP/XML admission credit; physical overlap is a separate case."
         },
         "go": {
           "status": "planned",
@@ -1552,8 +1552,8 @@
       ],
       "consumers": {
         "bun": {
-          "status": "planned",
-          "evidence": "No canonical admission/semantic-diff binding; ZIP reader/writer and byte diff are separate APIs"
+          "status": "implemented",
+          "evidence": "Bun 67b8db48ab46cdab07e6722dd25a4dd6e2932e2b at shared v0.80.0 executes Three exact three-step ZIP_STORED rows refuse UTF-8 internal DTD/entity, UTF-16 DTD with BOM, and malformed XML with their distinct XML_DTD_FORBIDDEN/XML_MALFORMED codes and unchanged caller bytes. features/shared.json and tests/acceptance/package-admission.ts bind the exact shared steps to admitPackage; tests/unit/package-admission.test.ts runs four canonical admission scenarios across two features (13 cases/40 steps), with positive controls. Fresh GitHub recursive make check passed 732/732 selected cases. No Go/Python or blanket ZIP/XML admission credit; physical overlap is a separate case."
         },
         "go": {
           "status": "planned",
