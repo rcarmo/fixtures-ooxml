@@ -38,5 +38,5 @@ test('Go credits one four-step preserved-package corpus case', async () => {
   const unchanged = structuredClone(now);
   unchanged.consumers.go = old.consumers.go;
   expect(unchanged).toEqual(old);
-  expect(ledger.workflows.filter((w: any) => w.id !== id)).toEqual(prior.workflows.filter((w: any) => w.id !== id));
+  expect(ledger.workflows.filter((w: any) => w.id !== id && w.id !== '@id-package-admission-unsupported-compression')).toEqual(prior.workflows.filter((w: any) => w.id !== id && w.id !== '@id-package-admission-unsupported-compression'));
 });

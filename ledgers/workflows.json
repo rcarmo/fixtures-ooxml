@@ -1533,8 +1533,8 @@
           "evidence": "Bun 67b8db48ab46cdab07e6722dd25a4dd6e2932e2b at shared v0.80.0 executes One exact four-step ZIP_BZIP2 row refuses with zip-method-unsupported, a compression-bearing message and unchanged caller bytes. features/shared.json and tests/acceptance/package-admission.ts bind the exact shared steps to admitPackage; tests/unit/package-admission.test.ts runs four canonical admission scenarios across two features (13 cases/40 steps), with positive controls. Fresh GitHub recursive make check passed 732/732 selected cases. No Go/Python or blanket ZIP/XML admission credit; physical overlap is a separate case."
         },
         "go": {
-          "status": "planned",
-          "evidence": "No canonical package-admission binding; native plans/retained ZIP custody are distinct"
+          "status": "implemented",
+          "evidence": "Go 7e65f6ec3964dbd08dddae068de3e5dff79fcd12 at shared v0.139.0 binds exactly one four-authored-step @id-package-admission-unsupported-compression case in acceptance/{acceptance,inventory,bzip_admission}_test.go; reports/batches/286.md records genuine independently generated ZIP_BZIP2 method-12 a.xml payload <a/> with valid local/central geometry, decoded content, CRC and sizes. Public OpenPreserved with default Limits{} refuses with nil session, typed invalid_package/open/a.xml error containing compression and unchanged caller bytes. Same-part Store and Deflate archives admit; malformed-source and restored method-dispatch reds reject vacuity. Independent restored public-message mutation fails the canonical compression step. Fresh uncached local, independent recursive and postmerge root+acceptance gates passed 428 cases/1483 executed steps; exact remote Go main verified. Go has no GitHub Actions CI. No general ZIP/ZIP64, bounded-resource, OPC-edit, Office, PDF or other consumer credit."
         },
         "python": {
           "status": "implemented",
