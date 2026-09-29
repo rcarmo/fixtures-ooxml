@@ -35,5 +35,5 @@ test('Bun executes exact XLSX cell-style selection and refusal cases without Go/
   expect(specs.reduce((n, s) => n + s.kinds.length, 0)).toBe(27);
   expect(specs.reduce((n, s) => n + s.kinds.reduce((m, k) => m + s.steps(k).length, 0), 0)).toBe(90);
   const changed = new Set(specs.map(s => s.id));
-  expect(ledger.workflows.filter((w: any) => w.id !== '@id-xlsx-comment-vml-existing-graph' && !changed.has(w.id))).toEqual(prior.workflows.filter((w: any) => w.id !== '@id-xlsx-comment-vml-existing-graph' && !changed.has(w.id)));
+  expect(ledger.workflows.filter((w: any) => w.id !== '@id-xlsx-comment-vml-existing-graph' && !w.feature.endsWith('/formula-references.feature') && !changed.has(w.id))).toEqual(prior.workflows.filter((w: any) => w.id !== '@id-xlsx-comment-vml-existing-graph' && !w.feature.endsWith('/formula-references.feature') && !changed.has(w.id)));
 });

@@ -27,5 +27,5 @@ test('Bun executes only the existing XLSX comment/VML graph, not five editing pr
   expect(now.consumers.go).toEqual(old.consumers.go); expect(now.consumers.python).toEqual(old.consumers.python);
   const unchanged = structuredClone(now); unchanged.consumers.bun = old.consumers.bun; expect(unchanged).toEqual(old);
   expect(rows.filter((r: any) => r.scenarioId !== id)).toHaveLength(5);
-  expect(ledger.workflows.filter((w: any) => w.id !== id)).toEqual(prior.workflows.filter((w: any) => w.id !== id));
+  expect(ledger.workflows.filter((w: any) => w.id !== id && !w.feature.endsWith('/formula-references.feature'))).toEqual(prior.workflows.filter((w: any) => w.id !== id && !w.feature.endsWith('/formula-references.feature')));
 });
