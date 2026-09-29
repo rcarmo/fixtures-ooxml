@@ -3220,8 +3220,8 @@
       ],
       "consumers": {
         "bun": {
-          "status": "planned",
-          "evidence": "Native execution binding pending"
+          "status": "implemented",
+          "evidence": "Bun 2635a5ff62eab79cc8d12ad1cb013bab9536d38e at shared v0.77.0 executes One exact four-step entity/reference row decodes root attribute to JSON \"\\\"'\" and text to JSON \"AA&<>\". features/shared.json and tests/acceptance/xml-values.ts bind the exact shared steps; tests/unit/xml-values-bindings.test.ts runs all ten canonical XML value scenarios (11 cases/39 steps) and altered expectations or corrupted results fail without undefined/ambiguous bindings. Fresh GitHub recursive make check passed 732/732 selected cases. No Go/Python, OPC package, rendering or unselected XML credit."
         },
         "go": {
           "status": "planned",
@@ -3243,8 +3243,8 @@
       ],
       "consumers": {
         "bun": {
-          "status": "planned",
-          "evidence": "Native execution binding pending"
+          "status": "implemented",
+          "evidence": "Bun 2635a5ff62eab79cc8d12ad1cb013bab9536d38e at shared v0.77.0 executes One exact three-step row preserves root qualified name r after a pre-root xml-stylesheet processing instruction. features/shared.json and tests/acceptance/xml-values.ts bind the exact shared steps; tests/unit/xml-values-bindings.test.ts runs all ten canonical XML value scenarios (11 cases/39 steps) and altered expectations or corrupted results fail without undefined/ambiguous bindings. Fresh GitHub recursive make check passed 732/732 selected cases. No Go/Python, OPC package, rendering or unselected XML credit."
         },
         "go": {
           "status": "planned",
@@ -3266,8 +3266,8 @@
       ],
       "consumers": {
         "bun": {
-          "status": "planned",
-          "evidence": "Native execution binding pending"
+          "status": "implemented",
+          "evidence": "Bun 2635a5ff62eab79cc8d12ad1cb013bab9536d38e at shared v0.77.0 executes One exact attribute-table case resolves expanded names with prefix rebinding to the listed JSON values. features/shared.json and tests/acceptance/xml-values.ts bind the exact shared steps; tests/unit/xml-values-bindings.test.ts runs all ten canonical XML value scenarios (11 cases/39 steps) and altered expectations or corrupted results fail without undefined/ambiguous bindings. Fresh GitHub recursive make check passed 732/732 selected cases. No Go/Python, OPC package, rendering or unselected XML credit."
         },
         "go": {
           "status": "planned",
@@ -3291,8 +3291,8 @@
       ],
       "consumers": {
         "bun": {
-          "status": "planned",
-          "evidence": "Native execution binding pending"
+          "status": "implemented",
+          "evidence": "Bun 2635a5ff62eab79cc8d12ad1cb013bab9536d38e at shared v0.77.0 executes One exact five-step case preserves empty root namespace, xml:lang en and the implicit XML namespace URI. features/shared.json and tests/acceptance/xml-values.ts bind the exact shared steps; tests/unit/xml-values-bindings.test.ts runs all ten canonical XML value scenarios (11 cases/39 steps) and altered expectations or corrupted results fail without undefined/ambiguous bindings. Fresh GitHub recursive make check passed 732/732 selected cases. No Go/Python, OPC package, rendering or unselected XML credit."
         },
         "go": {
           "status": "planned",
@@ -3316,8 +3316,8 @@
       ],
       "consumers": {
         "bun": {
-          "status": "planned",
-          "evidence": "Native execution binding pending"
+          "status": "implemented",
+          "evidence": "Bun 2635a5ff62eab79cc8d12ad1cb013bab9536d38e at shared v0.77.0 executes One exact four-step JavaScript-profile case retains null-prototype attributes and own __proto__/constructor values. features/shared.json and tests/acceptance/xml-values.ts bind the exact shared steps; tests/unit/xml-values-bindings.test.ts runs all ten canonical XML value scenarios (11 cases/39 steps) and altered expectations or corrupted results fail without undefined/ambiguous bindings. Fresh GitHub recursive make check passed 732/732 selected cases. No Go/Python, OPC package, rendering or unselected XML credit."
         },
         "go": {
           "status": "planned",
@@ -3340,8 +3340,8 @@
       ],
       "consumers": {
         "bun": {
-          "status": "planned",
-          "evidence": "Native execution binding pending"
+          "status": "implemented",
+          "evidence": "Bun 2635a5ff62eab79cc8d12ad1cb013bab9536d38e at shared v0.77.0 executes One exact three-step JavaScript-profile case reads a:id namespace urn:a and frozen null-prototype attribute namespace metadata. features/shared.json and tests/acceptance/xml-values.ts bind the exact shared steps; tests/unit/xml-values-bindings.test.ts runs all ten canonical XML value scenarios (11 cases/39 steps) and altered expectations or corrupted results fail without undefined/ambiguous bindings. Fresh GitHub recursive make check passed 732/732 selected cases. No Go/Python, OPC package, rendering or unselected XML credit."
         },
         "go": {
           "status": "planned",
@@ -3364,8 +3364,8 @@
       ],
       "consumers": {
         "bun": {
-          "status": "planned",
-          "evidence": "Native execution binding pending"
+          "status": "implemented",
+          "evidence": "Bun 2635a5ff62eab79cc8d12ad1cb013bab9536d38e at shared v0.77.0 executes Two exact three-step rows escape XML text and XML attribute metacharacters to their separate JSON results. features/shared.json and tests/acceptance/xml-values.ts bind the exact shared steps; tests/unit/xml-values-bindings.test.ts runs all ten canonical XML value scenarios (11 cases/39 steps) and altered expectations or corrupted results fail without undefined/ambiguous bindings. Fresh GitHub recursive make check passed 732/732 selected cases. No Go/Python, OPC package, rendering or unselected XML credit."
         },
         "go": {
           "status": "planned",
@@ -3387,8 +3387,8 @@
       ],
       "consumers": {
         "bun": {
-          "status": "planned",
-          "evidence": "Native execution binding pending"
+          "status": "implemented",
+          "evidence": "Bun 2635a5ff62eab79cc8d12ad1cb013bab9536d38e at shared v0.77.0 executes One exact three-step case rejects U+0001 with an OoxmlError XML_INVALID_CHAR refusal. features/shared.json and tests/acceptance/xml-values.ts bind the exact shared steps; tests/unit/xml-values-bindings.test.ts runs all ten canonical XML value scenarios (11 cases/39 steps) and altered expectations or corrupted results fail without undefined/ambiguous bindings. Fresh GitHub recursive make check passed 732/732 selected cases. No Go/Python, OPC package, rendering or unselected XML credit."
         },
         "go": {
           "status": "planned",
@@ -3410,8 +3410,8 @@
       ],
       "consumers": {
         "bun": {
-          "status": "planned",
-          "evidence": "Native execution binding pending"
+          "status": "implemented",
+          "evidence": "Bun 2635a5ff62eab79cc8d12ad1cb013bab9536d38e at shared v0.77.0 executes One exact three-step case escapes text and attribute input then reparses both to the original JSON x\\r\\n\\ty value. features/shared.json and tests/acceptance/xml-values.ts bind the exact shared steps; tests/unit/xml-values-bindings.test.ts runs all ten canonical XML value scenarios (11 cases/39 steps) and altered expectations or corrupted results fail without undefined/ambiguous bindings. Fresh GitHub recursive make check passed 732/732 selected cases. No Go/Python, OPC package, rendering or unselected XML credit."
         },
         "go": {
           "status": "planned",
@@ -3433,8 +3433,8 @@
       ],
       "consumers": {
         "bun": {
-          "status": "planned",
-          "evidence": "Native execution binding pending"
+          "status": "implemented",
+          "evidence": "Bun 2635a5ff62eab79cc8d12ad1cb013bab9536d38e at shared v0.77.0 executes One exact three-step case requires malformed XML to throw an OoxmlError instance. features/shared.json and tests/acceptance/xml-values.ts bind the exact shared steps; tests/unit/xml-values-bindings.test.ts runs all ten canonical XML value scenarios (11 cases/39 steps) and altered expectations or corrupted results fail without undefined/ambiguous bindings. Fresh GitHub recursive make check passed 732/732 selected cases. No Go/Python, OPC package, rendering or unselected XML credit."
         },
         "go": {
           "status": "planned",
