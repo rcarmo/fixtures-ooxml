@@ -20,5 +20,5 @@ test('Python credits only staged-file OPC transaction rollback, not in-memory ed
  expect(now.consumers.bun).toEqual(old.consumers.bun);expect(now.consumers.go).toEqual(old.consumers.go);
  const unchanged=structuredClone(now);unchanged.consumers.python=old.consumers.python;expect(unchanged).toEqual(old);
  for(const sibling of ['@id-opc-package-preserve-unrelated','@id-opc-diff-content-type','@id-xml-comparison-prefix-and-opc-order'])expect(ledger.workflows.find((w:any)=>w.id===sibling)).toEqual(prior.workflows.find((w:any)=>w.id===sibling));
- expect(ledger.workflows.filter((w:any)=>w.id!==id&&w.id!=='@id-xml-go-element-replacement-custody')).toEqual(prior.workflows.filter((w:any)=>w.id!==id&&w.id!=='@id-xml-go-element-replacement-custody'));
+ expect(ledger.workflows.filter((w:any)=>w.id!=="@id-xlsx-styled-blank-cell-editable"&&w.id!=="@id-xml-go-element-replacement-refusal"&&w.id!==id&&w.id!=='@id-xml-go-element-replacement-custody')).toEqual(prior.workflows.filter((w:any)=>w.id!=="@id-xlsx-styled-blank-cell-editable"&&w.id!=="@id-xml-go-element-replacement-refusal"&&w.id!==id&&w.id!=='@id-xml-go-element-replacement-custody'));
 });

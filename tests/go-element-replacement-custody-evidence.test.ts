@@ -20,6 +20,7 @@ test('Go credits only exact surviving-parent-scope subtree replacement bytes',as
  for(const marker of ['9294da534ca144d6256ac5650cda0b90696b50c2','shared v0.127.0','acceptance/{acceptance,inventory,element_replacement_custody}_test.go','line 89','417 cases/1434 steps','Go has no GitHub Actions CI'])expect(now.consumers.go.evidence).toContain(marker);
  expect(now.consumers.bun).toEqual(old.consumers.bun);expect(now.consumers.python).toEqual(old.consumers.python);
  const unchanged=structuredClone(now);unchanged.consumers.go=old.consumers.go;expect(unchanged).toEqual(old);
- for(const sibling of ['@id-xml-go-element-replacement-refusal','@id-xml-comparison-prefix-and-opc-order'])expect(ledger.workflows.find((w:any)=>w.id===sibling)).toEqual(prior.workflows.find((w:any)=>w.id===sibling));
- expect(ledger.workflows.filter((w:any)=>w.id!==id&&w.id!=='@id-opc-package-transaction-rollback')).toEqual(prior.workflows.filter((w:any)=>w.id!==id&&w.id!=='@id-opc-package-transaction-rollback'));
+ for(const sibling of ['@id-xml-comparison-prefix-and-opc-order'])expect(ledger.workflows.find((w:any)=>w.id===sibling)).toEqual(prior.workflows.find((w:any)=>w.id===sibling));
+ const refusal=ledger.workflows.find((w:any)=>w.id==='@id-xml-go-element-replacement-refusal');expect(refusal.consumers.go.status).toBe('implemented');expect(refusal.consumers.bun.status).toBe('planned');expect(refusal.consumers.python.status).toBe('planned');
+ expect(ledger.workflows.filter((w:any)=>w.id!=="@id-xlsx-styled-blank-cell-editable"&&w.id!=="@id-xml-go-element-replacement-refusal"&&w.id!==id&&w.id!=='@id-opc-package-transaction-rollback')).toEqual(prior.workflows.filter((w:any)=>w.id!=="@id-xlsx-styled-blank-cell-editable"&&w.id!=="@id-xml-go-element-replacement-refusal"&&w.id!==id&&w.id!=='@id-opc-package-transaction-rollback'));
 });

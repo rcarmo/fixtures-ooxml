@@ -1046,8 +1046,8 @@
           "evidence": "not-run: not yet mapped to this common workflow"
         },
         "python": {
-          "status": "planned",
-          "evidence": "not-run: not yet mapped to this common workflow"
+          "status": "implemented",
+          "evidence": "Python published e5489986f7faca698244f6aea4893d6829f28749 at shared v0.128.0 executes only @id-xlsx-styled-blank-cell-editable, one exact four-step case in workflows/xlsx/cells.feature via tests/xlsx_styled_blank/{cases,conftest,test_styled_blank}.py. Sealed feature/ID/title/four steps/no Examples guarded. A synthetic nine-member XLSX is authored in temporary workspace (NOT a sealed prebuilt styled-blank fixture): A1 is blank but has blue fill FF1177CC, bold coloured font FF224466, format 0.00, centred alignment and style ref 1; B1 is guard. Production ExcelAdvancedTools.tool_excel_get_range(A1) returns null/type empty; tool_excel_patch_cell(A1,filled) with distinct output, highlight=False and log_change=False reports old=None/new=filled. Independent openpyxl reopen confirms filled with same style ID/components and B1 guard; raw sheet XML A1 changes from s=1,t=n/no value to s=1,t=inlineStr with filled, while xl/styles.xml and all other eight parts stay byte-identical and source archive bytes/parts unchanged. Auxiliary unstyled, wrong-target, highlight=True and wrong-value alternatives fail intended predicates; not additional cases. Temporary production highlight-on-default mutation made canonical reopened style assertion fail and was restored byte-for-byte before four-file tests/docs commit. Uncached committed local, independent clean recursive pre-push and fresh GitHub recursive post-push suites each passed 1,411 tests (three existing warnings), sixteen provenance-clean lanes including exact styled blank 1/4; Python CI 36602932694 passed on 3.10/3.12/3.13 and Windows 36602932853 passed. No Go, broad XLSX calculation, Office rendering, PPTX/PDF/OPC or protected checkout credit."
         }
       }
     },
@@ -3652,8 +3652,8 @@
           "evidence": "Native execution binding pending"
         },
         "go": {
-          "status": "planned",
-          "evidence": "Native execution binding pending"
+          "status": "implemented",
+          "evidence": "Go published 42ca16f6f742c76cf0b20f93cf63ce4ef583caeb at shared v0.128.0 executes only @id-xml-go-element-replacement-refusal: exact three outline rows/twelve steps in workflows/xml/editing.feature via acceptance/{acceptance,inventory,element_replacement_refusal}_test.go and reports/batches/268.md. Exact ID/profile/outline name/source/four step texts and unique example lines 102 root, 103 p:old twice, 104 p:old and nested p:child are guarded; no other rows selected. Each fresh caller-owned source parses root/{inner}old/child/last with surviving p=bound; one nonempty row-specific replacement batch requires nonnil error AND nil output without typed error/message claim. Caller bytes, original parsed names/parents/attributes/namespace scope stay unchanged; a separate empty ReplaceElements(nil) returns original bytes. Valid old-only retry on SAME snapshot produces independently coded complete <root xmlns=\"outer\" xmlns:p=\"bound\"><!--a--><p:new>value</p:new><plain xmlns=\"\"/> tail <last/></root> and reparses expected names/parents/text; output mutation cannot affect caller, snapshot, further empty or valid retry. Temporary root preflight mutation returned source bytes with existing error: canonical root Then failed after Given/When passed; restored byte-for-byte before four-file test/receipt commit. Uncached no-override scoped/local root+acceptance, clean recursive pre-push and fresh GitHub recursive post-push gates each passed 420 cases/1446 steps, refusal 3/12, CACHE-001 zero selected. Go has no GitHub Actions CI. No custody re-credit, Bun/Python, OPC/Office/PPTX/PDF/general XML credit."
         },
         "python": {
           "status": "planned",
