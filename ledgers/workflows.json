@@ -7616,8 +7616,8 @@
           "evidence": "Canonical physical-overlap admission runner binding pending; native Go ZIP-003 is a weaker historical observation"
         },
         "python": {
-          "status": "planned",
-          "evidence": "Canonical physical-overlap admission runner binding pending; native Go ZIP-003 is a weaker historical observation"
+          "status": "implemented",
+          "evidence": "Python published 3fe8dbfbb1ad5b5f6c5bfe4e14783498cd86ba0c plus CI-only pinned-tag fetch d12df9ee0e576281b37b7487ce6e01ca2304426b at shared v0.106.0 executes the one exact seven-step ZIP32 physical-member-overlap refusal on sealed 483-byte fixture fixture-9286fc07c3f8698f9637cf9b7a0c60461d1f304753ba69b39f655c8c348ea027. tests/package_physical_overlap/{cases,conftest,test_overlap}.py independently verifies three STORED members' local/central offsets, 149/49/10 payload bytes and CRCs d694f44a/32c80458/4daa6380, inner header/payload nested in outer payload, then distinct typed PackageAdmissionError physical-overlap refusal under max_members=4/max_total_bytes=4096, no result/output and unchanged source bytes. tools/package_guard.py adds a <=1 MiB single-disk no-comment ZIP32 STORED extent preflight; ordinary non-overlap admission and independent CRC, duplicate-name and member-limit controls pass. Red canonical step 5 initially observed generic CRC/ZIP structure refusal; green independent recursive review and fresh GitHub post-push full suites each passed 1,355 tests and eight provenance-checked lanes including physical-overlap 1 case/7 steps. Python CI 36546495716 passed 3.10/3.12/3.13 after shallow Actions submodule tag fetch was fixed; no weakened fixture guard. The historical 14-case package mapping is unchanged except implementation hash. This bounded security/admission policy does not assert ZIP64/compressed overlap coverage, ECMA-mandated overlap refusal, Go execution, Office rendering or cross-consumer credit."
         }
       }
     },

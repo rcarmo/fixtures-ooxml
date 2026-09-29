@@ -1,0 +1,16 @@
+import {test,expect} from 'bun:test';
+import {execFileSync} from 'node:child_process';
+import {cases} from '../scripts/verify.ts';
+
+const path='workflows/package/zip-admission.feature',id='@id-zip-physical-member-overlap-refusal',fixture='fixture-9286fc07c3f8698f9637cf9b7a0c60461d1f304753ba69b39f655c8c348ea027';
+const steps=[`fixture ${fixture} has exactly three distinct STORED members [Content_Types].xml, outer.bin and inner.bin`,'an independent ZIP reader opens all three members with declared lengths 149, 49 and 10 bytes and matching CRC32 d694f44a, 32c80458 and 4daa6380',"inner.bin's complete local header and payload lie within outer.bin's physical payload range in this ZIP32 single-disk archive",'bounded package admission checks the unchanged archive with max entries 4 and max total bytes 4096','admission refuses overlapping physical member extents as an invalid package, not a name, CRC or resource refusal','no package session or output archive is delivered',"the caller's source buffer remains byte-identical to the sealed fixture"];
+
+test('Python executes one bounded ZIP32 physical-overlap refusal without broader ZIP or Go credit',async()=>{
+ const ledger=await Bun.file('ledgers/workflows.json').json(),prior=JSON.parse(execFileSync('git',['show','1e3fe83514b97a5882cfcf52e0b6a921c4f8d8e4:ledgers/workflows.json']).toString()),compiled=cases(path,await Bun.file(path).text());
+ const now=ledger.workflows.find((w:any)=>w.id===id),old=prior.workflows.find((w:any)=>w.id===id);
+ expect(now.feature).toBe(path);expect(now.expandedCases).toBe(1);expect(compiled.filter((r:any)=>r.scenarioId===id).map((r:any)=>r.steps.map((s:any)=>s.text))).toEqual([steps]);expect(now.expectedOutcomes).toEqual(steps.slice(4));
+ expect(old.consumers.python.status).toBe('planned');expect(now.consumers.python.status).toBe('implemented');
+ for(const marker of ['3fe8dbfbb1ad5b5f6c5bfe4e14783498cd86ba0c','d12df9ee0e576281b37b7487ce6e01ca2304426b','shared v0.106.0','one exact seven-step ZIP32','483-byte fixture','149/49/10','d694f44a/32c80458/4daa6380','tests/package_physical_overlap/{cases,conftest,test_overlap}.py','tools/package_guard.py','Red canonical step 5','1,355 tests','eight provenance-checked lanes','Python CI 36546495716','single-disk no-comment ZIP32 STORED','does not assert ZIP64/compressed overlap','Go execution'])expect(now.consumers.python.evidence).toContain(marker);
+ expect(now.consumers.bun).toEqual(old.consumers.bun);expect(now.consumers.go).toEqual(old.consumers.go);const unchanged=structuredClone(now);unchanged.consumers.python=old.consumers.python;expect(unchanged).toEqual(old);
+ expect(ledger.workflows.filter((w:any)=>w.id!==id)).toEqual(prior.workflows.filter((w:any)=>w.id!==id));
+});
