@@ -5540,8 +5540,8 @@
           "evidence": "Native execution binding pending"
         },
         "python": {
-          "status": "planned",
-          "evidence": "Native execution binding pending"
+          "status": "implemented",
+          "evidence": "Python published e74f445bca86746d7c5f97a3830877e2a673bfee at shared v0.149.0 binds ONLY @id-python-comments-filter-predicates, one case/eight exact authored steps in workflows/docx/comments.feature via tests/docx_comments_filter_predicates/{cases,conftest,test_filter_predicates}.py and production WordAdvancedTools.tool_word_add_comment plus WordTools.tool_word_resolve_comment/tool_word_get_comments. A saved DOCX has distinct Alpha/Manuel and Beta/Rui Carmo comments with verified range anchors and IDs; the first returned ID is resolved. Its original unfiltered metadata contains done, is_reply, parent_id and para_id. Fresh nonempty open, resolved and mine reads return exactly Beta/open, Alpha/resolved and Beta/Rui respectively; mine uses mixed-case author input. Opposite-ID and missing-ID controls distinguish selection, and source document.xml stays unchanged. Temporary empty-open, wrong-resolved and wrong-mine mutations each failed the exact canonical case and were restored. Clean committed local and independent recursive full suites passed 1,475 tests with exact 8/8 case steps (four existing warnings); Python CI 36668631326 passed 3.10/3.12/3.13 and Windows CI 36668631328 succeeded. No sibling threaded/auto-resolve, existing-extension refusal, general DOCX/Office/PDF/OPC, Bun/Go or protected-checkout credit."
         }
       }
     },

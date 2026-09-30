@@ -31,9 +31,9 @@ test('Python credits only the authored missing-extension creation case',async()=
  expect(now.consumers.bun).toEqual(old.consumers.bun);expect(now.consumers.go).toEqual(old.consumers.go);
  const unchanged=structuredClone(now);unchanged.consumers.python=old.consumers.python;expect(unchanged).toEqual(old);
  expect(ledger.workflows.map((w:any)=>w.id)).toEqual(prior.workflows.map((w:any)=>w.id));
- for(const sibling of ['@id-python-comments-ids-fallback','@id-python-comments-filter-predicates',
+ for(const sibling of ['@id-python-comments-ids-fallback',
   '@id-python-comments-threaded-reply','@id-python-comments-reply-auto-resolve',
   '@id-docx-existing-thread-inspection','@id-docx-comments-refusal'])
   expect(ledger.workflows.find((w:any)=>w.id===sibling)).toEqual(prior.workflows.find((w:any)=>w.id===sibling));
- expect(ledger.workflows.filter((w:any)=>w.id!==id)).toEqual(prior.workflows.filter((w:any)=>w.id!==id));
+ expect(ledger.workflows.filter((w:any)=>w.id!=="@id-python-comments-filter-predicates"&&w.id!==id)).toEqual(prior.workflows.filter((w:any)=>w.id!=="@id-python-comments-filter-predicates"&&w.id!==id));
 });
