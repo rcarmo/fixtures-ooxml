@@ -5487,8 +5487,8 @@
           "evidence": "Native execution binding pending"
         },
         "python": {
-          "status": "planned",
-          "evidence": "Native execution binding pending"
+          "status": "implemented",
+          "evidence": "Python published 0a4bcc1c54ab4c7ef2286e631e482997f92c9ce9 at shared v0.147.0 binds ONLY @id-python-comments-ids-fallback, one case/five exact authored steps in workflows/docx/comments.feature via tests/docx_comments_ids_fallback/{cases,conftest,test_ids_fallback}.py and production WordAdvancedTools.tool_word_add_comment plus WordTools.tool_word_get_comments. The saved authored comment is explicitly given first-paragraph w14:paraId 12345678 and read back, then that attribute is removed; word/commentsIds.xml maps the comment ID to distinct 0F0E0D0C after a positional decoy ABCD1234. A fresh read of the modified package returns 0F0E0D0C for the correct comment ID without changing source bytes. No-map, original-ID precedence and decoy-only controls distinguish direct, explicit and positional lookup. Independent temporary explicit-lookup and wrong-value mutations failed the exact canonical case and were restored. Clean committed local and independent recursive full suites passed 1,469 tests with exact 5/5 case steps (four existing warnings); Python CI 36665518534 passed 3.10/3.12/3.13 and Windows CI 36665518539 succeeded. No sibling comment scenario, general thread editing, existing-extension refusal, DOCX/Office/PDF/OPC, Bun/Go or protected-checkout credit."
         }
       }
     },
