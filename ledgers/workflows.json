@@ -5566,8 +5566,8 @@
           "evidence": "Native execution binding pending"
         },
         "python": {
-          "status": "planned",
-          "evidence": "Native execution binding pending"
+          "status": "implemented",
+          "evidence": "Python published aecbea8acaa5e209cc1e09759d607b83730aabc0 at shared v0.150.0 binds ONLY @id-python-comments-threaded-reply, one case/seven exact authored steps in workflows/docx/comments.feature via tests/docx_comments_threaded_reply/{cases,conftest,test_threaded_reply}.py and production WordAdvancedTools.tool_word_add_comment plus WordTools.tool_word_reply_to_comment/tool_word_get_comments(format='threaded'). A saved root comment anchored to Thread me receives a distinct reply; its w14:paraIdParent points to the root paragraph ID and a flat read reports is_reply true with parent_id equal to the root. A fresh threaded read leaves package bytes unchanged, has a threads field and exact thread_count 1, places the original root ID in the first thread and the added reply ID in its replies. A second-thread control keeps a reply on the second of two roots; an unknown reply target leaves bytes unchanged. Temporary wrong-group and wrong-root mutations each failed the exact canonical case and were restored. Clean committed local and independent recursive full suites passed 1,478 tests with exact 7/7 case steps (four existing warnings); Python CI 36670095219 passed 3.10/3.12/3.13 and Windows CI 36670095275 succeeded. No auto-resolve, complete-thread editing, existing-extension refusal, general DOCX/Office/PDF/OPC, Bun/Go or protected-checkout credit."
         }
       }
     },
