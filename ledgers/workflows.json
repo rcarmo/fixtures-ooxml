@@ -5590,8 +5590,8 @@
           "evidence": "Native execution binding pending"
         },
         "python": {
-          "status": "planned",
-          "evidence": "Native execution binding pending"
+          "status": "implemented",
+          "evidence": "Python published 08557eb531c4a40b4482a796c25da0675df5671f at shared v0.151.0 binds ONLY @id-python-comments-reply-auto-resolve, one case/four exact authored steps in workflows/docx/comments.feature via tests/docx_comments_reply_auto_resolve/{cases,conftest,test_reply_auto_resolve}.py and production WordAdvancedTools.tool_word_add_comment plus WordTools.tool_word_reply_to_comment(auto_resolve=True)/tool_word_resolve_comment/tool_word_get_comments. A saved anchored root receives a distinct reply with w14:paraIdParent pointing to its root; the reply response reports success true, resolved true and the original root ID. A fresh resolved-filter read returns exactly the root ID with done true, while the reply stays open; raw commentsExtended.xml has root w15:done 1. An auto_resolve false control leaves both comments open, second-thread targeting keeps the first root open, and unknown-ID reply leaves source bytes unchanged. Temporary wrong-state, wrong-response-root and first-root-default mutations failed the exact scenario or second-thread control and were restored; passing reply-ID substitution is not a red because native reply resolution intentionally selects the root. Clean committed local and independent recursive full suites passed 1,482 tests with exact 4/4 case steps (four existing warnings); Python CI 36671535751 passed 3.10/3.12/3.13 and Windows CI 36671535660 succeeded. No complete-thread editing, sibling authored cases, existing-extension refusal, general DOCX/Office/PDF/OPC, Bun/Go or protected-checkout credit."
         }
       }
     },

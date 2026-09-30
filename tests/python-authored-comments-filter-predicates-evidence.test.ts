@@ -34,8 +34,7 @@ test('Python credits only the authored comment metadata and filter predicates ca
  const unchanged=structuredClone(now);unchanged.consumers.python=old.consumers.python;expect(unchanged).toEqual(old);
  expect(ledger.workflows.map((w:any)=>w.id)).toEqual(prior.workflows.map((w:any)=>w.id));
  for(const sibling of ['@id-python-comments-ids-fallback','@id-python-comments-create-extension',
-  '@id-python-comments-reply-auto-resolve',
   '@id-docx-existing-thread-inspection','@id-docx-comments-refusal'])
   expect(ledger.workflows.find((w:any)=>w.id===sibling)).toEqual(prior.workflows.find((w:any)=>w.id===sibling));
- expect(ledger.workflows.filter((w:any)=>w.id!=="@id-python-comments-threaded-reply"&&w.id!==id)).toEqual(prior.workflows.filter((w:any)=>w.id!=="@id-python-comments-threaded-reply"&&w.id!==id));
+ expect(ledger.workflows.filter((w:any)=>w.id!=="@id-python-comments-reply-auto-resolve"&&w.id!=="@id-python-comments-threaded-reply"&&w.id!==id)).toEqual(prior.workflows.filter((w:any)=>w.id!=="@id-python-comments-reply-auto-resolve"&&w.id!=="@id-python-comments-threaded-reply"&&w.id!==id));
 });
