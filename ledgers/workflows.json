@@ -5512,8 +5512,8 @@
           "evidence": "Native execution binding pending"
         },
         "python": {
-          "status": "planned",
-          "evidence": "Native execution binding pending"
+          "status": "implemented",
+          "evidence": "Python published f2c7a21d82a73a5ecd3017c7027490ce7baa287e at shared v0.148.0 binds ONLY @id-python-comments-create-extension, one case/six exact authored steps in workflows/docx/comments.feature via tests/docx_comments_create_extension/{cases,conftest,test_create_extension}.py and production WordAdvancedTools.tool_word_add_comment plus WordTools.tool_word_resolve_comment/tool_word_get_comments. A saved authored comment starts without word/commentsExtended.xml; resolving its ID reports success, synthesizes a root w14:paraId when absent and writes a single matching commentEx with w15:done 1. A fresh read of the saved package returns the same ID, nonempty para_id and done true; the new content-type override and document relationship reference the extension part, while document.xml remains unchanged. A second authored comment stays open and an unknown ID leaves the original archive unchanged and without the extension. Temporary wrong-done and wrong-target mutations each failed the exact canonical case and were restored. Clean committed local and independent recursive full suites passed 1,472 tests with exact 6/6 case steps (four existing warnings); Python CI 36667104061 passed 3.10/3.12/3.13 and Windows CI 36667104371 succeeded. No existing-extension editing/refusal, sibling authored comment scenario, general thread editing, DOCX/Office/PDF/OPC, Bun/Go or protected-checkout credit."
         }
       }
     },
