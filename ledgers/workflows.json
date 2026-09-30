@@ -1486,8 +1486,8 @@
           "evidence": "Bun 67b8db48ab46cdab07e6722dd25a4dd6e2932e2b at shared v0.80.0 executes Five exact three-step ZIP_STORED rows refuse duplicate member names, parent traversal, absolute name, backslash name, and directory entry with bytes. Each checks its distinct typed refusal code and unchanged caller bytes. features/shared.json and tests/acceptance/package-admission.ts bind the exact shared steps to admitPackage; tests/unit/package-admission.test.ts runs four canonical admission scenarios across two features (13 cases/40 steps), with positive controls. Fresh GitHub recursive make check passed 732/732 selected cases. No Go/Python or blanket ZIP/XML admission credit; physical overlap is a separate case."
         },
         "go": {
-          "status": "planned",
-          "evidence": "No canonical package-admission binding; native plans/retained ZIP custody are distinct"
+          "status": "implemented",
+          "evidence": "Go e28ecd210437edf2d6ffcbf889740ee2de397ffa at shared v0.140.0 binds exactly five @id-package-admission-unsafe-members cases/15 authored steps in acceptance/{acceptance,bzip_admission,inventory,unsafe_members}_test.go; reports/batches/287.md records the bounded directory-payload admission fix in pkg/packaging/package.go. Independently inspected sound raw ZIP32 STORED headers, ordered JSON names, CRC, sizes and physical bytes cover duplicate a.xml, ../a.xml, /a.xml, Gherkin-unescaped x\\a.xml and a/ with payload. Public OpenPreserved default-limit intake must return nil session, row-specific typed invalid_package refusal and unchanged caller bytes; an ordinary valid OPC package with an empty directory admits and exposes <a/>. Malformed geometry and a restored directory-guard bypass red prevent accidental missing-content-types refusal from passing. Fresh uncached local, independent recursive and postmerge root+acceptance gates passed 433 cases/1498 executed steps; exact remote Go main verified. Go has no GitHub Actions CI. No general ZIP/ZIP64, resource, Office, PDF or other consumer credit."
         },
         "python": {
           "status": "implemented",
