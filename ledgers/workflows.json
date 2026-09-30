@@ -5269,8 +5269,8 @@
           "evidence": "Native execution binding pending"
         },
         "python": {
-          "status": "planned",
-          "evidence": "Native execution binding pending"
+          "status": "implemented",
+          "evidence": "Python published 3c9c20f7ec1c75fdb452a081e80cf4267e2c2d79 at shared v0.152.0 binds ONLY @id-python-word-anchor-headings-paragraphs, one case/five exact authored steps in workflows/docx/anchor-discovery.feature via tests/docx_anchor_headings_paragraphs/{cases,conftest,test_anchors}.py and production WordAdvancedTools.tool_word_list_anchors. A saved DOCX is reread with headings Introduction and Delivery approach and paragraphs Customer context paragraph and Use iterative delivery; a no-query anchor read returns at least four source-ordered entries, including section_heading Introduction and a paragraph containing Customer context. The response count matches entries, paragraph indexes are monotone unique rather than asserting an unrequired absolute base, and reading leaves source bytes unchanged. Supplemental delivery-query, headings-only and unmatched-query controls distinguish defaults without sibling-case credit. Temporary wrong-heading-type and missing-paragraph mutations failed the exact canonical case and were restored. Clean committed local and independent recursive full suites passed 1,484 tests with exact 5/5 case steps (four existing warnings); Python CI 36673418759 passed 3.10/3.12/3.13 and Windows CI 36673418830 succeeded. No query-filter, document-map, anchor insertion, section-hints, general DOCX/Office/PDF/OPC, Bun/Go or protected-checkout credit."
         }
       }
     },

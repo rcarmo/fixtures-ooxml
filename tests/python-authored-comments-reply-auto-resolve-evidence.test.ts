@@ -35,5 +35,5 @@ test('Python credits only the authored reply auto-resolve case',async()=>{
   '@id-python-comments-filter-predicates','@id-python-comments-threaded-reply',
   '@id-docx-existing-thread-inspection','@id-docx-comments-refusal'])
   expect(ledger.workflows.find((w:any)=>w.id===sibling)).toEqual(prior.workflows.find((w:any)=>w.id===sibling));
- expect(ledger.workflows.filter((w:any)=>w.id!==id)).toEqual(prior.workflows.filter((w:any)=>w.id!==id));
+ expect(ledger.workflows.filter((w:any)=>w.id!=="@id-python-word-anchor-headings-paragraphs"&&w.id!==id)).toEqual(prior.workflows.filter((w:any)=>w.id!=="@id-python-word-anchor-headings-paragraphs"&&w.id!==id));
 });
