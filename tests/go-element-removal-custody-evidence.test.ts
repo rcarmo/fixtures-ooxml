@@ -1,10 +1,11 @@
+import {historicalWorkflowLedger} from './xml-generalization-helpers.ts';
 import {test,expect} from 'bun:test';
 import {execFileSync} from 'node:child_process';
 import {cases} from '../scripts/verify.ts';
 
 test('Go credits only exact two-target XML element removal and byte custody',async()=>{
  const id='@id-xml-go-element-removal-custody',feature='workflows/xml/editing.feature';
- const ledger=await Bun.file('ledgers/workflows.json').json();
+ const ledger=await historicalWorkflowLedger();
  const prior=JSON.parse(execFileSync('git',['show','fe6862522c7d7df4836bd034b12a500986c3b63c:ledgers/workflows.json']).toString());
  const now=ledger.workflows.find((w:any)=>w.id===id),old=prior.workflows.find((w:any)=>w.id===id);
  const selected=cases(feature,await Bun.file(feature).text()).filter((c:any)=>c.scenarioId===id);

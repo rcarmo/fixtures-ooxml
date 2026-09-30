@@ -1,3 +1,4 @@
+import {historicalWorkflowLedger} from './xml-generalization-helpers.ts';
 const pythonPackageIds = new Set(['@id-package-admission-negative-budget','@id-zip-unsigned-descriptor-signature-collision']);
 const goXmlNegativeIds = new Set(['@id-xml-comparison-significant-content','@id-xml-comparison-prefix-attribute-binding','@id-xml-comparison-unsafe-input','@id-xml-comparison-processing-instructions-and-comments']);
 const goLatentPackageIds = new Set(['@id-package-admission-negative-budget','@id-zip-unsigned-descriptor-signature-collision']);
@@ -36,7 +37,7 @@ import {cases} from '../scripts/verify.ts';
 const id='@id-package-diff-equivalent-xml-and-binary-changes',path='workflows/package/semantic-diff.feature';
 const steps=['the original ZIP_STORED package has these ordered UTF-8 members','the modified ZIP_STORED package has these ordered UTF-8 members','the semantic package diff compares original and modified packages','the equivalent_xml member list is ["a.xml"]','the changed member list is ["b.bin"]','the added member list is ["c.bin"]','the removed member list is []'];
 test('Bun executes exact semantic package diff and input custody without Go or Python credit',async()=>{
- const ledger=await Bun.file('ledgers/workflows.json').json();
+ const ledger=await historicalWorkflowLedger();
  const prior=JSON.parse(execFileSync('git',['show','c765ddeec81efb6592f87d5e7d1662f01604b44b:ledgers/workflows.json']).toString());
  const current=ledger.workflows.find((w:any)=>w.id===id),old=prior.workflows.find((w:any)=>w.id===id);
  expect(current.feature).toBe(path);expect(current.expandedCases).toBe(1);

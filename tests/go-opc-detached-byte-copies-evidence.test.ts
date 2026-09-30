@@ -1,10 +1,11 @@
+import {historicalWorkflowLedger} from './xml-generalization-helpers.ts';
 import {test,expect} from 'bun:test';
 import {execFileSync} from 'node:child_process';
 import {cases} from '../scripts/verify.ts';
 
 test('Go credits one detached OPC byte-custody case, not background cases',async()=>{
  const id='@id-bun-opc-detached-byte-copies',feature='workflows/package/preservation.feature';
- const ledger=await Bun.file('ledgers/workflows.json').json();
+ const ledger=await historicalWorkflowLedger();
  const prior=JSON.parse(execFileSync('git',['show','1eee21095f53ce30d76db6f04fc3f850b2c68290:ledgers/workflows.json']).toString());
  const now=ledger.workflows.find((w:any)=>w.id===id),old=prior.workflows.find((w:any)=>w.id===id);
  const selected=cases(feature,await Bun.file(feature).text()).filter((c:any)=>c.scenarioId===id);

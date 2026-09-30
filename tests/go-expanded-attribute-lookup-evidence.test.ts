@@ -1,10 +1,11 @@
+import {historicalWorkflowLedger} from './xml-generalization-helpers.ts';
 import {test,expect} from 'bun:test';
 import {execFileSync} from 'node:child_process';
 import {cases} from '../scripts/verify.ts';
 
 test('Go credits one exact seven-row expanded attribute lookup case',async()=>{
  const id='@id-xml-expanded-attribute-lookup',feature='workflows/xml/parsing.feature';
- const ledger=await Bun.file('ledgers/workflows.json').json();
+ const ledger=await historicalWorkflowLedger();
  const prior=JSON.parse(execFileSync('git',['show','93436c63ff0c587021b0f7bc8a7278cc6b37ae84:ledgers/workflows.json']).toString());
  const now=ledger.workflows.find((w:any)=>w.id===id),old=prior.workflows.find((w:any)=>w.id===id);
  const selected=cases(feature,await Bun.file(feature).text()).filter((c:any)=>c.scenarioId===id);

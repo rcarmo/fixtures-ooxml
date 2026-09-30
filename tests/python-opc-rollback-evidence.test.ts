@@ -1,10 +1,11 @@
+import {historicalWorkflowLedger} from './xml-generalization-helpers.ts';
 import {test,expect} from 'bun:test';
 import {execFileSync} from 'node:child_process';
 import {cases} from '../scripts/verify.ts';
 
 test('Python credits only staged-file OPC transaction rollback, not in-memory editor rollback',async()=>{
  const id='@id-opc-package-transaction-rollback',feature='workflows/package/preservation.feature';
- const ledger=await Bun.file('ledgers/workflows.json').json();
+ const ledger=await historicalWorkflowLedger();
  const prior=JSON.parse(execFileSync('git',['show','c327ce64d85c09f4a16c4e4114f937c525818e1a:ledgers/workflows.json']).toString());
  const now=ledger.workflows.find((w:any)=>w.id===id),old=prior.workflows.find((w:any)=>w.id===id);
  const selected=cases(feature,await Bun.file(feature).text()).filter((c:any)=>c.scenarioId===id);

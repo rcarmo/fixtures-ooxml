@@ -1,3 +1,4 @@
+import {historicalWorkflowLedger} from './xml-generalization-helpers.ts';
 import {test,expect} from 'bun:test';
 import {execFileSync} from 'node:child_process';
 import {cases} from '../scripts/verify.ts';
@@ -12,7 +13,7 @@ const specs=[
 ] as const;
 
 test('Go credits exactly three lexical attribute splices with complete output bytes',async()=>{
- const ledger=await Bun.file('ledgers/workflows.json').json();
+ const ledger=await historicalWorkflowLedger();
  const prior=JSON.parse(execFileSync('git',['show','1e5a644ffaf82b010a5598ae3fdefa96c4331fcd:ledgers/workflows.json']).toString());
  const now=ledger.workflows.find((w:any)=>w.id===id),old=prior.workflows.find((w:any)=>w.id===id);
  const selected=cases(feature,await Bun.file(feature).text()).filter((c:any)=>c.scenarioId===id);

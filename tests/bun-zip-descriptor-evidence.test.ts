@@ -1,3 +1,4 @@
+import {historicalWorkflowLedger} from './xml-generalization-helpers.ts';
 const pythonPackageIds = new Set(['@id-package-admission-negative-budget','@id-zip-unsigned-descriptor-signature-collision']);
 const goXmlNegativeIds = new Set(['@id-xml-comparison-significant-content','@id-xml-comparison-prefix-attribute-binding','@id-xml-comparison-unsafe-input','@id-xml-comparison-processing-instructions-and-comments']);
 const goLatentPackageIds = new Set(['@id-package-admission-negative-budget','@id-zip-unsigned-descriptor-signature-collision']);
@@ -43,7 +44,7 @@ const steps = [
 ];
 
 test('Bun executes unsigned ZIP32 descriptor signature-collision CRC refusal without Go/Python credit', async () => {
-  const ledger = await Bun.file('ledgers/workflows.json').json();
+  const ledger = await historicalWorkflowLedger();
   const prior = JSON.parse(execFileSync('git', ['show', '0dc4e5e15e93d584b7cb65eee93afb1302db233b:ledgers/workflows.json']).toString());
   const now = ledger.workflows.find((w: any) => w.id === id), old = prior.workflows.find((w: any) => w.id === id);
   expect(now.feature).toBe(path); expect(now.expandedCases).toBe(1);

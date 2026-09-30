@@ -1,3 +1,4 @@
+import {historicalWorkflowLedger} from './xml-generalization-helpers.ts';
 import {test,expect} from 'bun:test';
 import {execFileSync} from 'node:child_process';
 import {cases} from '../scripts/verify.ts';
@@ -8,7 +9,7 @@ const specs=[
 ] as const;
 
 test('Python executes bounded negative budgets and one ZIP32 descriptor collision with independent controls',async()=>{
- const ledger=await Bun.file('ledgers/workflows.json').json(),prior=JSON.parse(execFileSync('git',['show','ef1e20a4b9e142f9675eb9c79eee0f678bcb87c6:ledgers/workflows.json']).toString());
+ const ledger=await historicalWorkflowLedger(),prior=JSON.parse(execFileSync('git',['show','ef1e20a4b9e142f9675eb9c79eee0f678bcb87c6:ledgers/workflows.json']).toString());
  for(const[id,path,count,steps,scope,binding,seal]of specs){const now=ledger.workflows.find((w:any)=>w.id===id),old=prior.workflows.find((w:any)=>w.id===id),rows=cases(path,await Bun.file(path).text()).filter((r:any)=>r.scenarioId===id);
   expect(now.feature).toBe(path);expect(now.expandedCases).toBe(count);expect(rows).toHaveLength(count);expect(rows.reduce((n:number,r:any)=>n+r.steps.length,0)).toBe(steps);expect(now.expectedOutcomes).toEqual([...new Set(rows.flatMap((r:any)=>r.steps.slice(count===2?3:4).map((s:any)=>s.text)))]);
   expect(old.consumers.python.status).toBe('planned');expect(now.consumers.python.status).toBe('implemented');for(const marker of [scope,'c384e4582b75490e06355b05c4ee1c79252f48a2','shared v0.111.0',binding,seal,'1,359 tests','Python CI 36556335436','No new runtime code'])expect(now.consumers.python.evidence).toContain(marker);

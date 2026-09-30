@@ -1,3 +1,4 @@
+import {historicalWorkflowLedger} from './xml-generalization-helpers.ts';
 const pythonPackageIds = new Set(['@id-package-admission-negative-budget','@id-zip-unsigned-descriptor-signature-collision']);
 const goXmlNegativeIds = new Set(['@id-xml-comparison-significant-content','@id-xml-comparison-prefix-attribute-binding','@id-xml-comparison-unsafe-input','@id-xml-comparison-processing-instructions-and-comments']);
 const goLatentPackageIds = new Set(['@id-package-admission-negative-budget','@id-zip-unsigned-descriptor-signature-collision']);
@@ -36,7 +37,7 @@ import {cases} from '../scripts/verify.ts';
 const id='@id-xml-apply-edits',path='workflows/xml/editing.feature';
 const steps=['a well-formed XML document and source offsets for text or element content','disjoint edits are applied with escaped replacement text or XML fragments','the resulting XML stays well formed and DTD free','overlapping edits or edits that leave malformed or DTD-bearing XML are refused before returning changed text'];
 test('Bun executes exact XML editing success and three refusal predicates without package or cross-consumer credit',async()=>{
- const ledger=await Bun.file('ledgers/workflows.json').json();
+ const ledger=await historicalWorkflowLedger();
  const prior=JSON.parse(execFileSync('git',['show','a2f3ef721fe5bbb5c757b5a3dc2b1108c5f05971:ledgers/workflows.json']).toString());
  const current=ledger.workflows.find((w:any)=>w.id===id),old=prior.workflows.find((w:any)=>w.id===id);
  expect(current.feature).toBe(path);expect(current.expandedCases).toBe(1);

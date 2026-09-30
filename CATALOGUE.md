@@ -112,6 +112,15 @@ fresh consumer results before reference adoption.
 
 ## Runtime-neutrality review
 
+The [feature reuse table](docs/feature-reuse.md) reviews every canonical scenario
+separately from per-consumer execution credit. `ledgers/feature-reuse.json`
+records its category, local evidence, runtime constraints and reviewed feature
+hashes. Every current ID requires a decision; changing feature bytes requires
+reviewing its classifications and updating the recorded hash before regenerating
+`bun scripts/feature-catalogue.ts --write`. `bun run check` rejects missing IDs,
+stale reviews and stale tables. Keep mixed files mixed in the index; a portable
+neighbour does not generalize JavaScript semantics or fill an underspecified input.
+
 The catalogue is shared, but some contracts still encode one runtime's API.
 The format/operation migration preserves exact steps so consumer bindings do
 not silently acquire different semantics.

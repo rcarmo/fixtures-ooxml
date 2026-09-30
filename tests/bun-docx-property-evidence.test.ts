@@ -1,3 +1,4 @@
+import {historicalWorkflowLedger} from './xml-generalization-helpers.ts';
 const pythonPackageIds = new Set(['@id-package-admission-negative-budget','@id-zip-unsigned-descriptor-signature-collision']);
 const goXmlNegativeIds = new Set(['@id-xml-comparison-significant-content','@id-xml-comparison-prefix-attribute-binding','@id-xml-comparison-unsafe-input','@id-xml-comparison-processing-instructions-and-comments']);
 const goLatentPackageIds = new Set(['@id-package-admission-negative-budget','@id-zip-unsigned-descriptor-signature-collision']);
@@ -38,7 +39,7 @@ const specs=[
  {id:'@id-docx-go-section-title-background-getters',path:'workflows/docx/page-layout.feature',steps:['a new Word document with a first section','TitlePage is set true on that section and BackgroundColor to EEEEEE','the section TitlePage getter is true and the document BackgroundColor getter equals EEEEEE']},
 ];
 test('Bun executes exact direct document property getters without broader saved or Python credit',async()=>{
- const registry=await Bun.file('ledgers/workflows.json').json();
+ const registry=await historicalWorkflowLedger();
  const prior=JSON.parse(execFileSync('git',['show','8450367177a03798b8c49b9bb1553ba1df51bd2b:ledgers/workflows.json']).toString());
  for(const {id,path,steps} of specs){
   const entry=registry.workflows.find((w:any)=>w.id===id),former=prior.workflows.find((w:any)=>w.id===id);

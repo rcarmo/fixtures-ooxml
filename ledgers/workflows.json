@@ -3310,22 +3310,22 @@
       "expandedCases": 1,
       "factIds": [],
       "expectedOutcomes": [
-        "the root attribute map has a null prototype",
-        "__proto__ is an own attribute with value polluted",
-        "constructor is an own attribute with value safe"
+        "the root attributes are exactly __proto__=polluted and constructor=safe",
+        "the root remains r with no text and no children",
+        "fresh attribute reads and the original XML source are unchanged"
       ],
       "consumers": {
         "bun": {
-          "status": "implemented",
-          "evidence": "Bun 2635a5ff62eab79cc8d12ad1cb013bab9536d38e at shared v0.77.0 executes One exact four-step JavaScript-profile case retains null-prototype attributes and own __proto__/constructor values. features/shared.json and tests/acceptance/xml-values.ts bind the exact shared steps; tests/unit/xml-values-bindings.test.ts runs all ten canonical XML value scenarios (11 cases/39 steps) and altered expectations or corrupted results fail without undefined/ambiguous bindings. Fresh GitHub recursive make check passed 732/732 selected cases. No Go/Python, OPC package, rendering or unselected XML credit."
+          "status": "planned",
+          "evidence": "Runtime-agnostic XML model/failure contract candidate supersedes literal runtime predicates; historical execution is sealed in ledgers/xml-runtime-generalization.json. Requires fresh exact native and shared-case results for this consumer; no migration credit."
         },
         "go": {
           "status": "planned",
-          "evidence": "Native execution binding pending"
+          "evidence": "Runtime-agnostic XML model/failure contract candidate supersedes literal runtime predicates; historical execution is sealed in ledgers/xml-runtime-generalization.json. Requires fresh exact native and shared-case results for this consumer; no migration credit."
         },
         "python": {
           "status": "planned",
-          "evidence": "Native execution binding pending"
+          "evidence": "Runtime-agnostic XML model/failure contract candidate supersedes literal runtime predicates; historical execution is sealed in ledgers/xml-runtime-generalization.json. Requires fresh exact native and shared-case results for this consumer; no migration credit."
         }
       }
     },
@@ -3336,20 +3336,21 @@
       "factIds": [],
       "expectedOutcomes": [
         "the namespace recorded for a:id is urn:a",
-        "the attribute namespace map is frozen and has a null prototype"
+        "fresh namespace and attribute reads still return urn:a and outer",
+        "the parsed root structure and original XML source are unchanged"
       ],
       "consumers": {
         "bun": {
-          "status": "implemented",
-          "evidence": "Bun 2635a5ff62eab79cc8d12ad1cb013bab9536d38e at shared v0.77.0 executes One exact three-step JavaScript-profile case reads a:id namespace urn:a and frozen null-prototype attribute namespace metadata. features/shared.json and tests/acceptance/xml-values.ts bind the exact shared steps; tests/unit/xml-values-bindings.test.ts runs all ten canonical XML value scenarios (11 cases/39 steps) and altered expectations or corrupted results fail without undefined/ambiguous bindings. Fresh GitHub recursive make check passed 732/732 selected cases. No Go/Python, OPC package, rendering or unselected XML credit."
+          "status": "planned",
+          "evidence": "Runtime-agnostic XML model/failure contract candidate supersedes literal runtime predicates; historical execution is sealed in ledgers/xml-runtime-generalization.json. Requires fresh exact native and shared-case results for this consumer; no migration credit."
         },
         "go": {
           "status": "planned",
-          "evidence": "Native execution binding pending"
+          "evidence": "Runtime-agnostic XML model/failure contract candidate supersedes literal runtime predicates; historical execution is sealed in ledgers/xml-runtime-generalization.json. Requires fresh exact native and shared-case results for this consumer; no migration credit."
         },
         "python": {
           "status": "planned",
-          "evidence": "Native execution binding pending"
+          "evidence": "Runtime-agnostic XML model/failure contract candidate supersedes literal runtime predicates; historical execution is sealed in ledgers/xml-runtime-generalization.json. Requires fresh exact native and shared-case results for this consumer; no migration credit."
         }
       }
     },
@@ -3429,20 +3430,21 @@
       "expandedCases": 1,
       "factIds": [],
       "expectedOutcomes": [
-        "parsing throws an OoxmlError instance"
+        "parsing fails with category malformed-xml and no document result",
+        "the original XML source is unchanged"
       ],
       "consumers": {
         "bun": {
-          "status": "implemented",
-          "evidence": "Bun 2635a5ff62eab79cc8d12ad1cb013bab9536d38e at shared v0.77.0 executes One exact three-step case requires malformed XML to throw an OoxmlError instance. features/shared.json and tests/acceptance/xml-values.ts bind the exact shared steps; tests/unit/xml-values-bindings.test.ts runs all ten canonical XML value scenarios (11 cases/39 steps) and altered expectations or corrupted results fail without undefined/ambiguous bindings. Fresh GitHub recursive make check passed 732/732 selected cases. No Go/Python, OPC package, rendering or unselected XML credit."
+          "status": "planned",
+          "evidence": "Runtime-agnostic XML model/failure contract candidate supersedes literal runtime predicates; historical execution is sealed in ledgers/xml-runtime-generalization.json. Requires fresh exact native and shared-case results for this consumer; no migration credit."
         },
         "go": {
           "status": "planned",
-          "evidence": "Native execution binding pending"
+          "evidence": "Runtime-agnostic XML model/failure contract candidate supersedes literal runtime predicates; historical execution is sealed in ledgers/xml-runtime-generalization.json. Requires fresh exact native and shared-case results for this consumer; no migration credit."
         },
         "python": {
           "status": "planned",
-          "evidence": "Native execution binding pending"
+          "evidence": "Runtime-agnostic XML model/failure contract candidate supersedes literal runtime predicates; historical execution is sealed in ledgers/xml-runtime-generalization.json. Requires fresh exact native and shared-case results for this consumer; no migration credit."
         }
       }
     },

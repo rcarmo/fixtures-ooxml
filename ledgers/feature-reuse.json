@@ -1,0 +1,3780 @@
+{
+  "schemaVersion": 1,
+  "reviewedRevision": "28e492f50979aaec6ab8d8d001cd9c37790e7fc6",
+  "scope": "Canonical contract portability only; no implementation or execution credit. Source staging is separately unreviewed.",
+  "features": [
+    {
+      "path": "workflows/docx/anchor-discovery.feature",
+      "reviewedSha256": "322cf1df8cb454241bf9255cfe62b9f4c84f83042cc27f102b88ef06ff99d911"
+    },
+    {
+      "path": "workflows/docx/comment-content-type.feature",
+      "reviewedSha256": "df53d9f86112756deb5124e0feab7ef9568446c414c596fc185e90677f522d16"
+    },
+    {
+      "path": "workflows/docx/comments.feature",
+      "reviewedSha256": "e1bcda50084acdc4231dc97273da5ae4194f90fa72dbb9a394fda343447001f0"
+    },
+    {
+      "path": "workflows/docx/completion-audit.feature",
+      "reviewedSha256": "b3e838f7823c52b5d0dd8fb498418d4144b39906ff7cce1f015e606f1583f34c"
+    },
+    {
+      "path": "workflows/docx/creation.feature",
+      "reviewedSha256": "b7f4632e576e9e040bdd9b57da3b865f626be9b23928c4a39edeb7363fa9ab94"
+    },
+    {
+      "path": "workflows/docx/effective-formatting.feature",
+      "reviewedSha256": "8f1f31180b9e31dfff4e30ecfd9c9c4596edfaff85561cd53e775135cf748b90"
+    },
+    {
+      "path": "workflows/docx/font-size.feature",
+      "reviewedSha256": "619db55d2fb4cf9092799e21e73b8c8ba45f77ef633d5f326f8dd78a5ba833a2"
+    },
+    {
+      "path": "workflows/docx/mutation-safety.feature",
+      "reviewedSha256": "698761ad41f5ec295f1d9e6d141b2e45509cac4b327a937559d2de4d78cb141d"
+    },
+    {
+      "path": "workflows/docx/page-layout.feature",
+      "reviewedSha256": "8d2e42e828beec30c47698dee64c6bc35380f7d9e0b1a3f3b7aeb36ceb921596"
+    },
+    {
+      "path": "workflows/docx/paragraph-style.feature",
+      "reviewedSha256": "f0a565511a6f1b1ae0b38ddb9dc2332b23f66a5be2cfea214f9d59fe73990971"
+    },
+    {
+      "path": "workflows/docx/paragraphs.feature",
+      "reviewedSha256": "7c448d5863f64ef188b3cb2ec1c9a82fb4a8a2c7c5104058ccf21ad2561e6856"
+    },
+    {
+      "path": "workflows/docx/properties.feature",
+      "reviewedSha256": "59757333a4894b19364fd2b40fd2f1ceaafa19c21f357b4b9ef764bf2197be04"
+    },
+    {
+      "path": "workflows/docx/review-integration.feature",
+      "reviewedSha256": "5b0d1392e1bc836afaf15dcd397fc2e1366035a0475f75b5cf464992f32ceb3e"
+    },
+    {
+      "path": "workflows/docx/revisions.feature",
+      "reviewedSha256": "63e7107eeb754715b943b6d70524e558229c0b4c97427855050ea2888cbeefbd"
+    },
+    {
+      "path": "workflows/docx/run-formatting.feature",
+      "reviewedSha256": "7af8ef3a85775d91a2025e033fd818dbda4bf8799210b294544b4ae1743536a1"
+    },
+    {
+      "path": "workflows/docx/stories.feature",
+      "reviewedSha256": "4ee52f31689348b2a3e453eee6beb4c52fdc7fda196d8af86e811e321bc41e33"
+    },
+    {
+      "path": "workflows/docx/style-authoring.feature",
+      "reviewedSha256": "d4d4224f70d7b18dc963a7bf6e2fd194cf64f5757652e1ce47df9f47ab32502e"
+    },
+    {
+      "path": "workflows/docx/table-merging.feature",
+      "reviewedSha256": "3ea877322e88e4ac5e5d608e4f60cbe06ee04ea1c89e18fcd5650f9ec2c83cd1"
+    },
+    {
+      "path": "workflows/docx/tables.feature",
+      "reviewedSha256": "858a813b0f9ea0ac315ae1034057da288a510c638849f558f242d0ce4aa41f0d"
+    },
+    {
+      "path": "workflows/docx/template-analysis.feature",
+      "reviewedSha256": "433f432d8af73c042d4b5c938450080dbb46811ee24ccee77507a02c809e414e"
+    },
+    {
+      "path": "workflows/docx/template-cache.feature",
+      "reviewedSha256": "2f425f013c2beec9d19f37d54154e10944e25e87ef62f29928c2fb71d9a44576"
+    },
+    {
+      "path": "workflows/docx/text.feature",
+      "reviewedSha256": "27711dc49074796eafded354a478d1ae8068f729b9d8f90a7e124805c459c32d"
+    },
+    {
+      "path": "workflows/docx/tracked-workflow.feature",
+      "reviewedSha256": "f32ad31b4b4e03ad17894a8b246502e6d83f0253ec66abc1c5601764fd551ccd"
+    },
+    {
+      "path": "workflows/docx/tracking-settings.feature",
+      "reviewedSha256": "ba4621e6acd4b892b5a214d57d3d9057b568135d0f21a5ff40fc69b4b6417e9e"
+    },
+    {
+      "path": "workflows/office/full-coverage.feature",
+      "reviewedSha256": "8d74a7b29c6b2993ab13e41de35c9a8156e35feb0eeb5eeddab37bce20d89b6b"
+    },
+    {
+      "path": "workflows/package/admission-limit-configuration.feature",
+      "reviewedSha256": "885083126a39d17a795609bbf5d2e273678b5d8613af9cafdc0fac46396adb8a"
+    },
+    {
+      "path": "workflows/package/data-descriptor-integrity.feature",
+      "reviewedSha256": "c0c855a3f4dd74e15fd59aa03572bb7f8c752544fd9bb64b6f082e14388c9370"
+    },
+    {
+      "path": "workflows/package/graph.feature",
+      "reviewedSha256": "953cab35e20019a234ed4d1aa2f1575a065f3c7768f74fb0a0269bf70b3c4d4e"
+    },
+    {
+      "path": "workflows/package/preservation.feature",
+      "reviewedSha256": "1a2c653871f6bd830da4ca37f2b9c355c3885463234101b55a403786aedbba5a"
+    },
+    {
+      "path": "workflows/package/relationship-namespaces.feature",
+      "reviewedSha256": "25a2b3fb3998a1f8efd9b2d7e8f5fe558517c7e852459ef56394bf5b0249610c"
+    },
+    {
+      "path": "workflows/package/semantic-diff.feature",
+      "reviewedSha256": "eebe822867a6f83d77351a0590dd81d7e929dc13f2d1add0bfcbbc44c5e90ca7"
+    },
+    {
+      "path": "workflows/package/xml-member-admission.feature",
+      "reviewedSha256": "19fa717632d689e7ff4e883fb2af3f31e018373dc79ddb78efecf7742ea14e91"
+    },
+    {
+      "path": "workflows/package/zip-admission.feature",
+      "reviewedSha256": "8fa7b8618fd9797e3470dfdfa1132b76784f180fe31d344f1d9d758f5c30f09c"
+    },
+    {
+      "path": "workflows/package/zip32.feature",
+      "reviewedSha256": "932bdcb2a1fb0866ec07c3e64d92b54b39dafa06f83e4c405fb48e80634ef24c"
+    },
+    {
+      "path": "workflows/package/zip64.feature",
+      "reviewedSha256": "f103ace071e647ffee092085a1c4b58e9b7be2cb4cb7553c3558c53f3be5c69a"
+    },
+    {
+      "path": "workflows/pptx/creation.feature",
+      "reviewedSha256": "564ea5266151ebe9d0ce48eead073ecb4b3f944fca79c97556e8a677b518da55"
+    },
+    {
+      "path": "workflows/pptx/layout-recommendation.feature",
+      "reviewedSha256": "b41b1f3ef7fe9cc022a74113a4b3edbd1fe2d93934ee83225d7e0b99e6b25a75"
+    },
+    {
+      "path": "workflows/pptx/mutation-safety.feature",
+      "reviewedSha256": "e1820e2469f1f6b809d96294b9da04a7e3edcb19ac3b45550a89b4094d73d9b8"
+    },
+    {
+      "path": "workflows/pptx/notes.feature",
+      "reviewedSha256": "181044e6ee3fabbdb8096b626965155e7db97764bb64223e0968dc50dd5e3daa"
+    },
+    {
+      "path": "workflows/pptx/preservation.feature",
+      "reviewedSha256": "c6976d4551ff74b83293b656cceb7490f33f8a1d89ee651784a7a33052493870"
+    },
+    {
+      "path": "workflows/pptx/slide-import.feature",
+      "reviewedSha256": "9797cb84555e97b786f66c9e51f45ccb732004b9f717f75ca484424f6a9c82ac"
+    },
+    {
+      "path": "workflows/pptx/slide-order.feature",
+      "reviewedSha256": "6fd4c56131a68b47e47d91c286967127ab410026966f3132f9caf244bde7369e"
+    },
+    {
+      "path": "workflows/pptx/slide-visibility.feature",
+      "reviewedSha256": "b348743de0c6bc7303811f613761a6d67a8a0f4f57132466238a0c7e752acd78"
+    },
+    {
+      "path": "workflows/pptx/tables.feature",
+      "reviewedSha256": "d9808ba4c51eecbc3b60e0b5c98e16f749f6618237de05010d2968e6cb88aed7"
+    },
+    {
+      "path": "workflows/pptx/text-box.feature",
+      "reviewedSha256": "f1095dc45f85db19d45603fe38938cfc6414c74f3b1f5de63b23f9fd56e880ee"
+    },
+    {
+      "path": "workflows/pptx/text.feature",
+      "reviewedSha256": "30fb7380fc0a133c5b710cd843493ebcaee781d2000c23eabb3bff0290b373a8"
+    },
+    {
+      "path": "workflows/xlsx/cache-completeness.feature",
+      "reviewedSha256": "45f092878a7bed948908a696fa9a45e5d3b5a80a061318d55e0a37a3f2edf092"
+    },
+    {
+      "path": "workflows/xlsx/calculation-chain-lifecycle.feature",
+      "reviewedSha256": "705365c666efd68ae2fc1ac85d86f85511cde77c8fc7644ea04b3978bb56103e"
+    },
+    {
+      "path": "workflows/xlsx/calculation-engine.feature",
+      "reviewedSha256": "683d99ac5847362948945f2377e988537045bca7743b187f3422ddc043f8b1c0"
+    },
+    {
+      "path": "workflows/xlsx/cell-style.feature",
+      "reviewedSha256": "821a4bdda8541d2afd48873221246451c3ebd24273a20184fa8ea14900c76b7a"
+    },
+    {
+      "path": "workflows/xlsx/cells.feature",
+      "reviewedSha256": "cdfcbd99ba3d8aa775306fc9eb2caf879350d50d832d59d9f9034b0666a6d925"
+    },
+    {
+      "path": "workflows/xlsx/comment-vml-custody.feature",
+      "reviewedSha256": "e93331bb775a8c84cd2ca0bf35264b8ef085f5ef9b44578e231c7ff0165e801d"
+    },
+    {
+      "path": "workflows/xlsx/creation.feature",
+      "reviewedSha256": "a7e59080cb34d381552bbb51afff24dfb39b2a3bfad782a2096fcb2983f0171c"
+    },
+    {
+      "path": "workflows/xlsx/formula-cache.feature",
+      "reviewedSha256": "b1b9c2b9cf7f8f6d5e6403ada30493381b7f42e05c72b1c999273eaedbf705f7"
+    },
+    {
+      "path": "workflows/xlsx/formula-references.feature",
+      "reviewedSha256": "03aa16e68b314e3f2743a4c34235803e479809bc8414f3fa5e892934b045720e"
+    },
+    {
+      "path": "workflows/xlsx/mutation-safety.feature",
+      "reviewedSha256": "c481cb5e382476ac12fc7a028ba7db2eda76287b0d9066ccc172cf34213050bc"
+    },
+    {
+      "path": "workflows/xlsx/structural-edits.feature",
+      "reviewedSha256": "6f3e52c41757ca28f46f7ed31994206fe74e8119327f34bf958a2a4e357a8e75"
+    },
+    {
+      "path": "workflows/xlsx/style-readback.feature",
+      "reviewedSha256": "6eb8ab565e59ad767f7e8cf5c87a45523a64d340d95be53a7ee52e00305d4633"
+    },
+    {
+      "path": "workflows/xml/comparison.feature",
+      "reviewedSha256": "b700a3da8670cb048aa3f836c193f4533908730c185847f63e167e59c48f5e93"
+    },
+    {
+      "path": "workflows/xml/editing.feature",
+      "reviewedSha256": "a9c308f9995d7a335b3d96054c2eb8fd8286937c95a46bd07b26428c63292ff3"
+    },
+    {
+      "path": "workflows/xml/names.feature",
+      "reviewedSha256": "032ccd1e7adc03078f17baa55ac0d6aa216790d975e57c797b0d79aacc981ed8"
+    },
+    {
+      "path": "workflows/xml/parsing.feature",
+      "reviewedSha256": "fa342c6f1ac982c6f99b915dab54196501798af745b1cc4db143cecbaea48783"
+    }
+  ],
+  "scenarios": [
+    {
+      "id": "@id-python-word-anchor-headings-paragraphs",
+      "feature": "workflows/docx/anchor-discovery.feature",
+      "category": "profile-specific",
+      "runtimeConstraint": "none",
+      "reason": "Exact response fields, minimum counts and type names select an anchor tool API, not complete traversal.",
+      "evidence": [
+        "workflows/docx/anchor-discovery.feature",
+        "contracts/python-anchor-discovery.md"
+      ]
+    },
+    {
+      "id": "@id-python-word-anchor-text-filter",
+      "feature": "workflows/docx/anchor-discovery.feature",
+      "category": "profile-specific",
+      "runtimeConstraint": "none",
+      "reason": "Exact response fields, minimum counts and type names select an anchor tool API, not complete traversal.",
+      "evidence": [
+        "workflows/docx/anchor-discovery.feature",
+        "contracts/python-anchor-discovery.md"
+      ]
+    },
+    {
+      "id": "@id-python-word-anchor-document-map",
+      "feature": "workflows/docx/anchor-discovery.feature",
+      "category": "profile-specific",
+      "runtimeConstraint": "none",
+      "reason": "Exact response fields, minimum counts and type names select an anchor tool API, not complete traversal.",
+      "evidence": [
+        "workflows/docx/anchor-discovery.feature",
+        "contracts/python-anchor-discovery.md"
+      ]
+    },
+    {
+      "id": "@id-python-word-anchor-discover-insert",
+      "feature": "workflows/docx/anchor-discovery.feature",
+      "category": "profile-specific",
+      "runtimeConstraint": "none",
+      "reason": "Exact response fields, minimum counts and type names select an anchor tool API, not complete traversal.",
+      "evidence": [
+        "workflows/docx/anchor-discovery.feature",
+        "contracts/python-anchor-discovery.md"
+      ]
+    },
+    {
+      "id": "@id-python-word-anchor-section-discovery-hints",
+      "feature": "workflows/docx/anchor-discovery.feature",
+      "category": "profile-specific",
+      "runtimeConstraint": "none",
+      "reason": "Exact word_list_anchors/word_document_map hints select a tool catalogue; equivalent document behaviour alone does not satisfy it.",
+      "evidence": [
+        "workflows/docx/anchor-discovery.feature",
+        "contracts/python-anchor-discovery.md"
+      ]
+    },
+    {
+      "id": "@id-docx-commentsextended-content-type",
+      "feature": "workflows/docx/comment-content-type.feature",
+      "category": "incomplete",
+      "runtimeConstraint": "none",
+      "reason": "An adjudication obligation: no resolved content type, concrete fixture or independent Office receipt is selected here.",
+      "evidence": [
+        "workflows/docx/comment-content-type.feature",
+        "contracts/comment-profiles.md"
+      ]
+    },
+    {
+      "id": "@id-docx-comments-inspection",
+      "feature": "workflows/docx/comments.feature",
+      "category": "generalized",
+      "runtimeConstraint": "none",
+      "reason": "Existing-comment inputs and flag/readback/custody outcomes are shared; single-entry and complete-thread policies remain distinct.",
+      "evidence": [
+        "workflows/docx/comments.feature",
+        "contracts/comment-profiles.md",
+        "contracts/comment-threads.md"
+      ]
+    },
+    {
+      "id": "@id-docx-comments-resolution",
+      "feature": "workflows/docx/comments.feature",
+      "category": "generalized",
+      "runtimeConstraint": "none",
+      "reason": "Existing-comment inputs and flag/readback/custody outcomes are shared; single-entry and complete-thread policies remain distinct.",
+      "evidence": [
+        "workflows/docx/comments.feature",
+        "contracts/comment-profiles.md",
+        "contracts/comment-threads.md"
+      ]
+    },
+    {
+      "id": "@id-docx-comments-noop",
+      "feature": "workflows/docx/comments.feature",
+      "category": "generalized",
+      "runtimeConstraint": "none",
+      "reason": "Existing-comment inputs and flag/readback/custody outcomes are shared; single-entry and complete-thread policies remain distinct.",
+      "evidence": [
+        "workflows/docx/comments.feature",
+        "contracts/comment-profiles.md",
+        "contracts/comment-threads.md"
+      ]
+    },
+    {
+      "id": "@id-docx-comments-refusal",
+      "feature": "workflows/docx/comments.feature",
+      "category": "generalized",
+      "runtimeConstraint": "none",
+      "reason": "Existing-comment inputs and flag/readback/custody outcomes are shared; single-entry and complete-thread policies remain distinct.",
+      "evidence": [
+        "workflows/docx/comments.feature",
+        "contracts/comment-profiles.md",
+        "contracts/comment-threads.md"
+      ]
+    },
+    {
+      "id": "@id-python-comments-mixed-done",
+      "feature": "workflows/docx/comments.feature",
+      "category": "profile-specific",
+      "runtimeConstraint": "none",
+      "reason": "Saved authored comments are portable; exact success/done/filter response fields require this tool API profile.",
+      "evidence": [
+        "workflows/docx/comments.feature",
+        "contracts/comment-profiles.md",
+        "contracts/comment-threads.md"
+      ]
+    },
+    {
+      "id": "@id-python-comments-resolved-filter",
+      "feature": "workflows/docx/comments.feature",
+      "category": "profile-specific",
+      "runtimeConstraint": "none",
+      "reason": "Saved authored comments are portable; exact success/done/filter response fields require this tool API profile.",
+      "evidence": [
+        "workflows/docx/comments.feature",
+        "contracts/comment-profiles.md",
+        "contracts/comment-threads.md"
+      ]
+    },
+    {
+      "id": "@id-python-comments-reopen-filter",
+      "feature": "workflows/docx/comments.feature",
+      "category": "profile-specific",
+      "runtimeConstraint": "none",
+      "reason": "Saved authored comments are portable; exact success/done/filter response fields require this tool API profile.",
+      "evidence": [
+        "workflows/docx/comments.feature",
+        "contracts/comment-profiles.md",
+        "contracts/comment-threads.md"
+      ]
+    },
+    {
+      "id": "@id-python-comments-reply-root-resolution",
+      "feature": "workflows/docx/comments.feature",
+      "category": "profile-specific",
+      "runtimeConstraint": "none",
+      "reason": "Resolving through a reply selects its root and reports tool-specific fields; this differs from complete-thread resolution.",
+      "evidence": [
+        "workflows/docx/comments.feature",
+        "contracts/comment-profiles.md",
+        "contracts/comment-threads.md"
+      ]
+    },
+    {
+      "id": "@id-python-comments-ids-fallback",
+      "feature": "workflows/docx/comments.feature",
+      "category": "profile-specific",
+      "runtimeConstraint": "none",
+      "reason": "commentsIds fallback and para_id response vocabulary are an explicit inspection policy.",
+      "evidence": [
+        "workflows/docx/comments.feature",
+        "contracts/comment-profiles.md",
+        "contracts/comment-threads.md"
+      ]
+    },
+    {
+      "id": "@id-python-comments-create-extension",
+      "feature": "workflows/docx/comments.feature",
+      "category": "profile-specific",
+      "runtimeConstraint": "none",
+      "reason": "Creation of missing extension metadata and returned para_id/success fields are a selected authoring/API policy, not existing-part resolution.",
+      "evidence": [
+        "workflows/docx/comments.feature",
+        "contracts/comment-profiles.md",
+        "contracts/comment-threads.md"
+      ]
+    },
+    {
+      "id": "@id-python-comments-filter-predicates",
+      "feature": "workflows/docx/comments.feature",
+      "category": "profile-specific",
+      "runtimeConstraint": "none",
+      "reason": "Saved authored comments are portable; exact success/done/filter response fields require this tool API profile.",
+      "evidence": [
+        "workflows/docx/comments.feature",
+        "contracts/comment-profiles.md",
+        "contracts/comment-threads.md"
+      ]
+    },
+    {
+      "id": "@id-python-comments-threaded-reply",
+      "feature": "workflows/docx/comments.feature",
+      "category": "profile-specific",
+      "runtimeConstraint": "none",
+      "reason": "Exact threads/thread_count/root/replies response structure requires this tool API profile.",
+      "evidence": [
+        "workflows/docx/comments.feature",
+        "contracts/comment-profiles.md",
+        "contracts/comment-threads.md"
+      ]
+    },
+    {
+      "id": "@id-python-comments-reply-auto-resolve",
+      "feature": "workflows/docx/comments.feature",
+      "category": "profile-specific",
+      "runtimeConstraint": "none",
+      "reason": "Resolving through a reply selects its root and reports tool-specific fields; this differs from complete-thread resolution.",
+      "evidence": [
+        "workflows/docx/comments.feature",
+        "contracts/comment-profiles.md",
+        "contracts/comment-threads.md"
+      ]
+    },
+    {
+      "id": "@id-docx-existing-thread-inspection",
+      "feature": "workflows/docx/comments.feature",
+      "category": "generalized",
+      "runtimeConstraint": "none",
+      "reason": "Existing-comment inputs and flag/readback/custody outcomes are shared; single-entry and complete-thread policies remain distinct.",
+      "evidence": [
+        "workflows/docx/comments.feature",
+        "contracts/comment-profiles.md",
+        "contracts/comment-threads.md"
+      ]
+    },
+    {
+      "id": "@id-docx-existing-thread-resolution",
+      "feature": "workflows/docx/comments.feature",
+      "category": "generalized",
+      "runtimeConstraint": "none",
+      "reason": "Existing-comment inputs and flag/readback/custody outcomes are shared; single-entry and complete-thread policies remain distinct.",
+      "evidence": [
+        "workflows/docx/comments.feature",
+        "contracts/comment-profiles.md",
+        "contracts/comment-threads.md"
+      ]
+    },
+    {
+      "id": "@id-docx-existing-thread-noop",
+      "feature": "workflows/docx/comments.feature",
+      "category": "generalized",
+      "runtimeConstraint": "none",
+      "reason": "Existing-comment inputs and flag/readback/custody outcomes are shared; single-entry and complete-thread policies remain distinct.",
+      "evidence": [
+        "workflows/docx/comments.feature",
+        "contracts/comment-profiles.md",
+        "contracts/comment-threads.md"
+      ]
+    },
+    {
+      "id": "@id-docx-existing-thread-refusal",
+      "feature": "workflows/docx/comments.feature",
+      "category": "generalized",
+      "runtimeConstraint": "none",
+      "reason": "Existing-comment inputs and flag/readback/custody outcomes are shared; single-entry and complete-thread policies remain distinct.",
+      "evidence": [
+        "workflows/docx/comments.feature",
+        "contracts/comment-profiles.md",
+        "contracts/comment-threads.md"
+      ]
+    },
+    {
+      "id": "@id-docx-existing-thread-rollback",
+      "feature": "workflows/docx/comments.feature",
+      "category": "generalized",
+      "runtimeConstraint": "none",
+      "reason": "Existing-comment inputs and flag/readback/custody outcomes are shared; single-entry and complete-thread policies remain distinct.",
+      "evidence": [
+        "workflows/docx/comments.feature",
+        "contracts/comment-profiles.md",
+        "contracts/comment-threads.md"
+      ]
+    },
+    {
+      "id": "@id-docx-existing-thread-encoding",
+      "feature": "workflows/docx/comments.feature",
+      "category": "generalized",
+      "runtimeConstraint": "none",
+      "reason": "Existing-comment inputs and flag/readback/custody outcomes are shared; single-entry and complete-thread policies remain distinct.",
+      "evidence": [
+        "workflows/docx/comments.feature",
+        "contracts/comment-profiles.md",
+        "contracts/comment-threads.md"
+      ]
+    },
+    {
+      "id": "@id-docx-existing-thread-unsupported",
+      "feature": "workflows/docx/comments.feature",
+      "category": "generalized",
+      "runtimeConstraint": "none",
+      "reason": "Existing-comment inputs and flag/readback/custody outcomes are shared; single-entry and complete-thread policies remain distinct.",
+      "evidence": [
+        "workflows/docx/comments.feature",
+        "contracts/comment-profiles.md",
+        "contracts/comment-threads.md"
+      ]
+    },
+    {
+      "id": "@id-docx-existing-thread-limit",
+      "feature": "workflows/docx/comments.feature",
+      "category": "generalized",
+      "runtimeConstraint": "none",
+      "reason": "Existing-comment inputs and flag/readback/custody outcomes are shared; single-entry and complete-thread policies remain distinct.",
+      "evidence": [
+        "workflows/docx/comments.feature",
+        "contracts/comment-profiles.md",
+        "contracts/comment-threads.md"
+      ]
+    },
+    {
+      "id": "@id-docx-audit-completion-read",
+      "feature": "workflows/docx/completion-audit.feature",
+      "category": "profile-specific",
+      "runtimeConstraint": "none",
+      "reason": "Exact score, issues, response shape and next-tool hints are an audit-tool compatibility contract.",
+      "evidence": [
+        "workflows/docx/completion-audit.feature",
+        "ledgers/functional-equivalence.json"
+      ]
+    },
+    {
+      "id": "@id-docx-audit-completion-placeholders",
+      "feature": "workflows/docx/completion-audit.feature",
+      "category": "profile-specific",
+      "runtimeConstraint": "none",
+      "reason": "Exact score, issues, response shape and next-tool hints are an audit-tool compatibility contract.",
+      "evidence": [
+        "workflows/docx/completion-audit.feature",
+        "ledgers/functional-equivalence.json"
+      ]
+    },
+    {
+      "id": "@id-docx-audit-completion-missing-file",
+      "feature": "workflows/docx/completion-audit.feature",
+      "category": "profile-specific",
+      "runtimeConstraint": "none",
+      "reason": "Exact score, issues, response shape and next-tool hints are an audit-tool compatibility contract.",
+      "evidence": [
+        "workflows/docx/completion-audit.feature",
+        "ledgers/functional-equivalence.json"
+      ]
+    },
+    {
+      "id": "@id-docx-create-minimal-package",
+      "feature": "workflows/docx/creation.feature",
+      "category": "generalized",
+      "runtimeConstraint": "none",
+      "reason": "Named fixture or explicit minimal package, literal text and saved/member outcomes are reusable for bounded creation.",
+      "evidence": [
+        "workflows/docx/creation.feature",
+        "contracts/native-profiles.md"
+      ]
+    },
+    {
+      "id": "@id-docx-create-style-validation",
+      "feature": "workflows/docx/creation.feature",
+      "category": "generalized",
+      "runtimeConstraint": "none",
+      "reason": "Named fixture or explicit minimal package, literal text and saved/member outcomes are reusable for bounded creation.",
+      "evidence": [
+        "workflows/docx/creation.feature",
+        "contracts/native-profiles.md"
+      ]
+    },
+    {
+      "id": "@id-docx-create-stale-opaque",
+      "feature": "workflows/docx/creation.feature",
+      "category": "profile-specific",
+      "runtimeConstraint": "none",
+      "reason": "Sealed input and exact custody are concrete, but append invalidates previously held span handles under a particular session policy.",
+      "evidence": [
+        "workflows/docx/creation.feature",
+        "contracts/native-profiles.md"
+      ]
+    },
+    {
+      "id": "@id-docx-create-atomic-refusals",
+      "feature": "workflows/docx/creation.feature",
+      "category": "profile-specific",
+      "runtimeConstraint": "none",
+      "reason": "Wrong-type options and exact refusal codes are a dynamic/API admission profile; typed consumers need a defined boundary adapter.",
+      "evidence": [
+        "workflows/docx/creation.feature",
+        "contracts/native-profiles.md"
+      ]
+    },
+    {
+      "id": "@id-docx-go-new-empty-body",
+      "feature": "workflows/docx/creation.feature",
+      "category": "profile-specific",
+      "runtimeConstraint": "none",
+      "reason": "Named in-memory getters and return conventions require deliberate document-value API adoption; they do not assert saved OOXML.",
+      "evidence": [
+        "workflows/docx/creation.feature",
+        "contracts/native-profiles.md",
+        "contracts/go-document-api.md"
+      ]
+    },
+    {
+      "id": "@id-docx-effective-run-formatting",
+      "feature": "workflows/docx/effective-formatting.feature",
+      "category": "incomplete",
+      "runtimeConstraint": "none",
+      "reason": "The common cascade is documented, but the kind labels do not supply complete style/run inputs and exact per-kind expected contributions in this repo.",
+      "evidence": [
+        "workflows/docx/effective-formatting.feature",
+        "contracts/effective-formatting.md"
+      ]
+    },
+    {
+      "id": "@id-docx-effective-run-formatting-refusal",
+      "feature": "workflows/docx/effective-formatting.feature",
+      "category": "incomplete",
+      "runtimeConstraint": "none",
+      "reason": "The common cascade is documented, but the kind labels do not supply complete style/run inputs and exact per-kind expected contributions in this repo.",
+      "evidence": [
+        "workflows/docx/effective-formatting.feature",
+        "contracts/effective-formatting.md"
+      ]
+    },
+    {
+      "id": "@id-docx-direct-font-size-half-points",
+      "feature": "workflows/docx/font-size.feature",
+      "category": "generalized",
+      "runtimeConstraint": "none",
+      "reason": "Exact direct 10.5-point saved/readback value and w:sz=21 are independent of runtime.",
+      "evidence": [
+        "workflows/docx/font-size.feature",
+        "contracts/go-document-api.md"
+      ]
+    },
+    {
+      "id": "@id-docx-dry-run-no-mutation",
+      "feature": "workflows/docx/mutation-safety.feature",
+      "category": "generalized",
+      "runtimeConstraint": "none",
+      "reason": "Shared mutation fixture contract supplies inputs, destinations and exact byte-preservation/change outcomes.",
+      "evidence": [
+        "workflows/docx/mutation-safety.feature",
+        "contracts/mutation-safety.json"
+      ]
+    },
+    {
+      "id": "@id-docx-strict-batch-per-target-results",
+      "feature": "workflows/docx/mutation-safety.feature",
+      "category": "generalized",
+      "runtimeConstraint": "none",
+      "reason": "Shared mutation fixture contract supplies inputs, destinations and exact byte-preservation/change outcomes.",
+      "evidence": [
+        "workflows/docx/mutation-safety.feature",
+        "contracts/mutation-safety.json"
+      ]
+    },
+    {
+      "id": "@id-office-docx-exact-match-counts",
+      "feature": "workflows/docx/mutation-safety.feature",
+      "category": "generalized",
+      "runtimeConstraint": "none",
+      "reason": "Shared mutation fixture contract supplies inputs, destinations and exact byte-preservation/change outcomes.",
+      "evidence": [
+        "workflows/docx/mutation-safety.feature",
+        "contracts/mutation-safety.json"
+      ]
+    },
+    {
+      "id": "@id-docx-final-section-layout",
+      "feature": "workflows/docx/page-layout.feature",
+      "category": "incomplete",
+      "runtimeConstraint": "none",
+      "reason": "Portrait/landscape/margins and defect labels lack concrete per-row geometry/source recipes here; the prose gives constraints rather than those test vectors.",
+      "evidence": [
+        "workflows/docx/page-layout.feature",
+        "contracts/page-layout.md"
+      ]
+    },
+    {
+      "id": "@id-docx-final-section-layout-refusal",
+      "feature": "workflows/docx/page-layout.feature",
+      "category": "incomplete",
+      "runtimeConstraint": "none",
+      "reason": "Portrait/landscape/margins and defect labels lack concrete per-row geometry/source recipes here; the prose gives constraints rather than those test vectors.",
+      "evidence": [
+        "workflows/docx/page-layout.feature",
+        "contracts/page-layout.md"
+      ]
+    },
+    {
+      "id": "@id-docx-go-section-title-background-getters",
+      "feature": "workflows/docx/page-layout.feature",
+      "category": "profile-specific",
+      "runtimeConstraint": "none",
+      "reason": "Named in-memory getters and return conventions require deliberate document-value API adoption; they do not assert saved OOXML.",
+      "evidence": [
+        "workflows/docx/page-layout.feature",
+        "contracts/page-layout.md",
+        "contracts/go-document-api.md"
+      ]
+    },
+    {
+      "id": "@id-docx-paragraph-style-selection",
+      "feature": "workflows/docx/paragraph-style.feature",
+      "category": "incomplete",
+      "runtimeConstraint": "none",
+      "reason": "Operation/defect labels lack exact per-row source style registries, selected IDs and expected receipts here.",
+      "evidence": [
+        "workflows/docx/paragraph-style.feature",
+        "contracts/paragraph-style.md"
+      ]
+    },
+    {
+      "id": "@id-docx-paragraph-style-refusal",
+      "feature": "workflows/docx/paragraph-style.feature",
+      "category": "incomplete",
+      "runtimeConstraint": "none",
+      "reason": "Operation/defect labels lack exact per-row source style registries, selected IDs and expected receipts here.",
+      "evidence": [
+        "workflows/docx/paragraph-style.feature",
+        "contracts/paragraph-style.md"
+      ]
+    },
+    {
+      "id": "@id-docx-go-paragraph-style-getters",
+      "feature": "workflows/docx/paragraph-style.feature",
+      "category": "profile-specific",
+      "runtimeConstraint": "none",
+      "reason": "Heading classification follows style-ID names and exact flags/levels rather than computed outline inheritance.",
+      "evidence": [
+        "workflows/docx/paragraph-style.feature",
+        "contracts/paragraph-style.md",
+        "contracts/go-document-api.md"
+      ]
+    },
+    {
+      "id": "@id-docx-go-paragraph-text-getter",
+      "feature": "workflows/docx/paragraphs.feature",
+      "category": "profile-specific",
+      "runtimeConstraint": "none",
+      "reason": "Named in-memory getters and return conventions require deliberate document-value API adoption; they do not assert saved OOXML.",
+      "evidence": [
+        "workflows/docx/paragraphs.feature",
+        "contracts/go-document-api.md"
+      ]
+    },
+    {
+      "id": "@id-docx-go-paragraph-alignment-getter",
+      "feature": "workflows/docx/paragraphs.feature",
+      "category": "profile-specific",
+      "runtimeConstraint": "none",
+      "reason": "Named in-memory getters and return conventions require deliberate document-value API adoption; they do not assert saved OOXML.",
+      "evidence": [
+        "workflows/docx/paragraphs.feature",
+        "contracts/go-document-api.md"
+      ]
+    },
+    {
+      "id": "@id-docx-go-paragraph-spacing-getters",
+      "feature": "workflows/docx/paragraphs.feature",
+      "category": "profile-specific",
+      "runtimeConstraint": "none",
+      "reason": "Named in-memory getters and return conventions require deliberate document-value API adoption; they do not assert saved OOXML.",
+      "evidence": [
+        "workflows/docx/paragraphs.feature",
+        "contracts/go-document-api.md"
+      ]
+    },
+    {
+      "id": "@id-docx-go-paragraph-advanced-toggles",
+      "feature": "workflows/docx/paragraphs.feature",
+      "category": "profile-specific",
+      "runtimeConstraint": "none",
+      "reason": "Named in-memory getters and return conventions require deliberate document-value API adoption; they do not assert saved OOXML.",
+      "evidence": [
+        "workflows/docx/paragraphs.feature",
+        "contracts/go-document-api.md"
+      ]
+    },
+    {
+      "id": "@id-docx-go-paragraph-multiple-runs",
+      "feature": "workflows/docx/paragraphs.feature",
+      "category": "profile-specific",
+      "runtimeConstraint": "none",
+      "reason": "Named in-memory getters and return conventions require deliberate document-value API adoption; they do not assert saved OOXML.",
+      "evidence": [
+        "workflows/docx/paragraphs.feature",
+        "contracts/go-document-api.md"
+      ]
+    },
+    {
+      "id": "@id-docx-go-body-insert-order",
+      "feature": "workflows/docx/paragraphs.feature",
+      "category": "profile-specific",
+      "runtimeConstraint": "none",
+      "reason": "Named in-memory getters and return conventions require deliberate document-value API adoption; they do not assert saved OOXML.",
+      "evidence": [
+        "workflows/docx/paragraphs.feature",
+        "contracts/go-document-api.md"
+      ]
+    },
+    {
+      "id": "@id-docx-go-core-properties-getters",
+      "feature": "workflows/docx/properties.feature",
+      "category": "profile-specific",
+      "runtimeConstraint": "none",
+      "reason": "Named in-memory getters and return conventions require deliberate document-value API adoption; they do not assert saved OOXML.",
+      "evidence": [
+        "workflows/docx/properties.feature",
+        "contracts/go-document-api.md"
+      ]
+    },
+    {
+      "id": "@id-docx-review-multistory-resolution",
+      "feature": "workflows/docx/review-integration.feature",
+      "category": "incomplete",
+      "runtimeConstraint": "none",
+      "reason": "Broad review/compare obligation has no enumerated input corpus, selected operations or exact expected revised/original documents.",
+      "evidence": [
+        "workflows/docx/review-integration.feature",
+        "contracts/native-profiles.md"
+      ]
+    },
+    {
+      "id": "@id-parity-docx-review",
+      "feature": "workflows/docx/review-integration.feature",
+      "category": "incomplete",
+      "runtimeConstraint": "none",
+      "reason": "Broad review/compare obligation has no enumerated input corpus, selected operations or exact expected revised/original documents.",
+      "evidence": [
+        "workflows/docx/review-integration.feature",
+        "contracts/native-profiles.md"
+      ]
+    },
+    {
+      "id": "@id-docx-revisions-all-stories",
+      "feature": "workflows/docx/revisions.feature",
+      "category": "incomplete",
+      "runtimeConstraint": "none",
+      "reason": "Named synthetic source or payment phrase is not fully specified locally; exact shared construction and expected bytes are needed before independent reuse.",
+      "evidence": [
+        "workflows/docx/revisions.feature",
+        "contracts/run-property-revisions.md",
+        "contracts/run-move-revisions.md"
+      ]
+    },
+    {
+      "id": "@id-docx-revisions-rollback",
+      "feature": "workflows/docx/revisions.feature",
+      "category": "incomplete",
+      "runtimeConstraint": "none",
+      "reason": "Named synthetic source or payment phrase is not fully specified locally; exact shared construction and expected bytes are needed before independent reuse.",
+      "evidence": [
+        "workflows/docx/revisions.feature",
+        "contracts/run-property-revisions.md",
+        "contracts/run-move-revisions.md"
+      ]
+    },
+    {
+      "id": "@id-docx-revisions-empty-deletion",
+      "feature": "workflows/docx/revisions.feature",
+      "category": "incomplete",
+      "runtimeConstraint": "none",
+      "reason": "Named synthetic source or payment phrase is not fully specified locally; exact shared construction and expected bytes are needed before independent reuse.",
+      "evidence": [
+        "workflows/docx/revisions.feature",
+        "contracts/run-property-revisions.md",
+        "contracts/run-move-revisions.md"
+      ]
+    },
+    {
+      "id": "@id-docx-revisions-protected",
+      "feature": "workflows/docx/revisions.feature",
+      "category": "incomplete",
+      "runtimeConstraint": "none",
+      "reason": "Named synthetic source or payment phrase is not fully specified locally; exact shared construction and expected bytes are needed before independent reuse.",
+      "evidence": [
+        "workflows/docx/revisions.feature",
+        "contracts/run-property-revisions.md",
+        "contracts/run-move-revisions.md"
+      ]
+    },
+    {
+      "id": "@id-docx-tracked-replace-roundtrip",
+      "feature": "workflows/docx/revisions.feature",
+      "category": "incomplete",
+      "runtimeConstraint": "none",
+      "reason": "Named synthetic source or payment phrase is not fully specified locally; exact shared construction and expected bytes are needed before independent reuse.",
+      "evidence": [
+        "workflows/docx/revisions.feature",
+        "contracts/run-property-revisions.md",
+        "contracts/run-move-revisions.md"
+      ]
+    },
+    {
+      "id": "@id-docx-tracked-replace-refusal",
+      "feature": "workflows/docx/revisions.feature",
+      "category": "incomplete",
+      "runtimeConstraint": "none",
+      "reason": "Named synthetic source or payment phrase is not fully specified locally; exact shared construction and expected bytes are needed before independent reuse.",
+      "evidence": [
+        "workflows/docx/revisions.feature",
+        "contracts/run-property-revisions.md",
+        "contracts/run-move-revisions.md"
+      ]
+    },
+    {
+      "id": "@id-docx-run-property-revisions-roundtrip",
+      "feature": "workflows/docx/revisions.feature",
+      "category": "generalized",
+      "runtimeConstraint": "none",
+      "reason": "The shared local contract gives concrete source recipes, expected values, refusal variants, encoding and custody boundaries without language-specific types.",
+      "evidence": [
+        "workflows/docx/revisions.feature",
+        "contracts/run-property-revisions.md",
+        "contracts/run-move-revisions.md"
+      ]
+    },
+    {
+      "id": "@id-docx-run-property-revisions-scope",
+      "feature": "workflows/docx/revisions.feature",
+      "category": "generalized",
+      "runtimeConstraint": "none",
+      "reason": "The shared local contract gives concrete source recipes, expected values, refusal variants, encoding and custody boundaries without language-specific types.",
+      "evidence": [
+        "workflows/docx/revisions.feature",
+        "contracts/run-property-revisions.md",
+        "contracts/run-move-revisions.md"
+      ]
+    },
+    {
+      "id": "@id-docx-run-property-revisions-default",
+      "feature": "workflows/docx/revisions.feature",
+      "category": "generalized",
+      "runtimeConstraint": "none",
+      "reason": "The shared local contract gives concrete source recipes, expected values, refusal variants, encoding and custody boundaries without language-specific types.",
+      "evidence": [
+        "workflows/docx/revisions.feature",
+        "contracts/run-property-revisions.md",
+        "contracts/run-move-revisions.md"
+      ]
+    },
+    {
+      "id": "@id-docx-run-property-revisions-refusal",
+      "feature": "workflows/docx/revisions.feature",
+      "category": "generalized",
+      "runtimeConstraint": "none",
+      "reason": "The shared local contract gives concrete source recipes, expected values, refusal variants, encoding and custody boundaries without language-specific types.",
+      "evidence": [
+        "workflows/docx/revisions.feature",
+        "contracts/run-property-revisions.md",
+        "contracts/run-move-revisions.md"
+      ]
+    },
+    {
+      "id": "@id-docx-run-property-revisions-encoding",
+      "feature": "workflows/docx/revisions.feature",
+      "category": "generalized",
+      "runtimeConstraint": "none",
+      "reason": "The shared local contract gives concrete source recipes, expected values, refusal variants, encoding and custody boundaries without language-specific types.",
+      "evidence": [
+        "workflows/docx/revisions.feature",
+        "contracts/run-property-revisions.md",
+        "contracts/run-move-revisions.md"
+      ]
+    },
+    {
+      "id": "@id-docx-run-property-revisions-rollback",
+      "feature": "workflows/docx/revisions.feature",
+      "category": "generalized",
+      "runtimeConstraint": "none",
+      "reason": "The shared local contract gives concrete source recipes, expected values, refusal variants, encoding and custody boundaries without language-specific types.",
+      "evidence": [
+        "workflows/docx/revisions.feature",
+        "contracts/run-property-revisions.md",
+        "contracts/run-move-revisions.md"
+      ]
+    },
+    {
+      "id": "@id-docx-run-property-revisions-empty",
+      "feature": "workflows/docx/revisions.feature",
+      "category": "generalized",
+      "runtimeConstraint": "none",
+      "reason": "The shared local contract gives concrete source recipes, expected values, refusal variants, encoding and custody boundaries without language-specific types.",
+      "evidence": [
+        "workflows/docx/revisions.feature",
+        "contracts/run-property-revisions.md",
+        "contracts/run-move-revisions.md"
+      ]
+    },
+    {
+      "id": "@id-docx-run-property-revisions-guards",
+      "feature": "workflows/docx/revisions.feature",
+      "category": "generalized",
+      "runtimeConstraint": "none",
+      "reason": "The shared local contract gives concrete source recipes, expected values, refusal variants, encoding and custody boundaries without language-specific types.",
+      "evidence": [
+        "workflows/docx/revisions.feature",
+        "contracts/run-property-revisions.md",
+        "contracts/run-move-revisions.md"
+      ]
+    },
+    {
+      "id": "@id-docx-paired-move-roundtrip",
+      "feature": "workflows/docx/revisions.feature",
+      "category": "generalized",
+      "runtimeConstraint": "none",
+      "reason": "The shared local contract gives concrete source recipes, expected values, refusal variants, encoding and custody boundaries without language-specific types.",
+      "evidence": [
+        "workflows/docx/revisions.feature",
+        "contracts/run-property-revisions.md",
+        "contracts/run-move-revisions.md"
+      ]
+    },
+    {
+      "id": "@id-docx-paired-move-scope",
+      "feature": "workflows/docx/revisions.feature",
+      "category": "generalized",
+      "runtimeConstraint": "none",
+      "reason": "The shared local contract gives concrete source recipes, expected values, refusal variants, encoding and custody boundaries without language-specific types.",
+      "evidence": [
+        "workflows/docx/revisions.feature",
+        "contracts/run-property-revisions.md",
+        "contracts/run-move-revisions.md"
+      ]
+    },
+    {
+      "id": "@id-docx-paired-move-defaults",
+      "feature": "workflows/docx/revisions.feature",
+      "category": "generalized",
+      "runtimeConstraint": "none",
+      "reason": "The shared local contract gives concrete source recipes, expected values, refusal variants, encoding and custody boundaries without language-specific types.",
+      "evidence": [
+        "workflows/docx/revisions.feature",
+        "contracts/run-property-revisions.md",
+        "contracts/run-move-revisions.md"
+      ]
+    },
+    {
+      "id": "@id-docx-paired-move-refusal",
+      "feature": "workflows/docx/revisions.feature",
+      "category": "generalized",
+      "runtimeConstraint": "none",
+      "reason": "The shared local contract gives concrete source recipes, expected values, refusal variants, encoding and custody boundaries without language-specific types.",
+      "evidence": [
+        "workflows/docx/revisions.feature",
+        "contracts/run-property-revisions.md",
+        "contracts/run-move-revisions.md"
+      ]
+    },
+    {
+      "id": "@id-docx-paired-move-encoding",
+      "feature": "workflows/docx/revisions.feature",
+      "category": "generalized",
+      "runtimeConstraint": "none",
+      "reason": "The shared local contract gives concrete source recipes, expected values, refusal variants, encoding and custody boundaries without language-specific types.",
+      "evidence": [
+        "workflows/docx/revisions.feature",
+        "contracts/run-property-revisions.md",
+        "contracts/run-move-revisions.md"
+      ]
+    },
+    {
+      "id": "@id-docx-paired-move-rollback",
+      "feature": "workflows/docx/revisions.feature",
+      "category": "generalized",
+      "runtimeConstraint": "none",
+      "reason": "The shared local contract gives concrete source recipes, expected values, refusal variants, encoding and custody boundaries without language-specific types.",
+      "evidence": [
+        "workflows/docx/revisions.feature",
+        "contracts/run-property-revisions.md",
+        "contracts/run-move-revisions.md"
+      ]
+    },
+    {
+      "id": "@id-docx-paired-move-guards",
+      "feature": "workflows/docx/revisions.feature",
+      "category": "generalized",
+      "runtimeConstraint": "none",
+      "reason": "The shared local contract gives concrete source recipes, expected values, refusal variants, encoding and custody boundaries without language-specific types.",
+      "evidence": [
+        "workflows/docx/revisions.feature",
+        "contracts/run-property-revisions.md",
+        "contracts/run-move-revisions.md"
+      ]
+    },
+    {
+      "id": "@id-docx-paired-move-dates",
+      "feature": "workflows/docx/revisions.feature",
+      "category": "generalized",
+      "runtimeConstraint": "none",
+      "reason": "The shared local contract gives concrete source recipes, expected values, refusal variants, encoding and custody boundaries without language-specific types.",
+      "evidence": [
+        "workflows/docx/revisions.feature",
+        "contracts/run-property-revisions.md",
+        "contracts/run-move-revisions.md"
+      ]
+    },
+    {
+      "id": "@id-docx-paired-move-ordering",
+      "feature": "workflows/docx/revisions.feature",
+      "category": "generalized",
+      "runtimeConstraint": "none",
+      "reason": "The shared local contract gives concrete source recipes, expected values, refusal variants, encoding and custody boundaries without language-specific types.",
+      "evidence": [
+        "workflows/docx/revisions.feature",
+        "contracts/run-property-revisions.md",
+        "contracts/run-move-revisions.md"
+      ]
+    },
+    {
+      "id": "@id-docx-direct-run-formatting",
+      "feature": "workflows/docx/run-formatting.feature",
+      "category": "incomplete",
+      "runtimeConstraint": "none",
+      "reason": "The initial formatting cases use operation/defect labels without concrete run properties and expected per-row results here.",
+      "evidence": [
+        "workflows/docx/run-formatting.feature",
+        "contracts/run-formatting.md"
+      ]
+    },
+    {
+      "id": "@id-docx-direct-formatting-refusal",
+      "feature": "workflows/docx/run-formatting.feature",
+      "category": "incomplete",
+      "runtimeConstraint": "none",
+      "reason": "The initial formatting cases use operation/defect labels without concrete run properties and expected per-row results here.",
+      "evidence": [
+        "workflows/docx/run-formatting.feature",
+        "contracts/run-formatting.md"
+      ]
+    },
+    {
+      "id": "@id-docx-go-run-color-getter",
+      "feature": "workflows/docx/run-formatting.feature",
+      "category": "profile-specific",
+      "runtimeConstraint": "none",
+      "reason": "Named in-memory getters and return conventions require deliberate document-value API adoption; they do not assert saved OOXML.",
+      "evidence": [
+        "workflows/docx/run-formatting.feature",
+        "contracts/run-formatting.md",
+        "contracts/go-document-api.md"
+      ]
+    },
+    {
+      "id": "@id-docx-go-run-boolean-formatting",
+      "feature": "workflows/docx/run-formatting.feature",
+      "category": "profile-specific",
+      "runtimeConstraint": "none",
+      "reason": "Named in-memory getters and return conventions require deliberate document-value API adoption; they do not assert saved OOXML.",
+      "evidence": [
+        "workflows/docx/run-formatting.feature",
+        "contracts/run-formatting.md",
+        "contracts/go-document-api.md"
+      ]
+    },
+    {
+      "id": "@id-docx-go-run-effects-getters",
+      "feature": "workflows/docx/run-formatting.feature",
+      "category": "profile-specific",
+      "runtimeConstraint": "none",
+      "reason": "All eight getters may be true simultaneously; this compatibility predicate is not a valid saved-format recipe.",
+      "evidence": [
+        "workflows/docx/run-formatting.feature",
+        "contracts/run-formatting.md",
+        "contracts/go-document-api.md"
+      ]
+    },
+    {
+      "id": "@id-docx-go-run-underline-style",
+      "feature": "workflows/docx/run-formatting.feature",
+      "category": "profile-specific",
+      "runtimeConstraint": "none",
+      "reason": "Named in-memory getters and return conventions require deliberate document-value API adoption; they do not assert saved OOXML.",
+      "evidence": [
+        "workflows/docx/run-formatting.feature",
+        "contracts/run-formatting.md",
+        "contracts/go-document-api.md"
+      ]
+    },
+    {
+      "id": "@id-docx-go-run-font-name",
+      "feature": "workflows/docx/run-formatting.feature",
+      "category": "profile-specific",
+      "runtimeConstraint": "none",
+      "reason": "Named in-memory getters and return conventions require deliberate document-value API adoption; they do not assert saved OOXML.",
+      "evidence": [
+        "workflows/docx/run-formatting.feature",
+        "contracts/run-formatting.md",
+        "contracts/go-document-api.md"
+      ]
+    },
+    {
+      "id": "@id-docx-go-run-highlight",
+      "feature": "workflows/docx/run-formatting.feature",
+      "category": "profile-specific",
+      "runtimeConstraint": "none",
+      "reason": "Named in-memory getters and return conventions require deliberate document-value API adoption; they do not assert saved OOXML.",
+      "evidence": [
+        "workflows/docx/run-formatting.feature",
+        "contracts/run-formatting.md",
+        "contracts/go-document-api.md"
+      ]
+    },
+    {
+      "id": "@id-docx-go-run-vertical-align",
+      "feature": "workflows/docx/run-formatting.feature",
+      "category": "profile-specific",
+      "runtimeConstraint": "none",
+      "reason": "Named in-memory getters and return conventions require deliberate document-value API adoption; they do not assert saved OOXML.",
+      "evidence": [
+        "workflows/docx/run-formatting.feature",
+        "contracts/run-formatting.md",
+        "contracts/go-document-api.md"
+      ]
+    },
+    {
+      "id": "@id-docx-go-roundtrip-selected-formatting",
+      "feature": "workflows/docx/run-formatting.feature",
+      "category": "profile-specific",
+      "runtimeConstraint": "none",
+      "reason": "Only named positions/properties are checked after reopen; text and complete preservation are outside this selected API profile.",
+      "evidence": [
+        "workflows/docx/run-formatting.feature",
+        "contracts/run-formatting.md",
+        "contracts/go-document-api.md"
+      ]
+    },
+    {
+      "id": "@id-docx-story-parts",
+      "feature": "workflows/docx/stories.feature",
+      "category": "incomplete",
+      "runtimeConstraint": "none",
+      "reason": "Exact expected lists are present, but synthetic-revisions/synthetic-blind package recipes and relationship inputs are not defined locally.",
+      "evidence": [
+        "workflows/docx/stories.feature",
+        "contracts/native-profiles.md"
+      ]
+    },
+    {
+      "id": "@id-docx-story-views",
+      "feature": "workflows/docx/stories.feature",
+      "category": "incomplete",
+      "runtimeConstraint": "none",
+      "reason": "Exact expected lists are present, but synthetic-revisions/synthetic-blind package recipes and relationship inputs are not defined locally.",
+      "evidence": [
+        "workflows/docx/stories.feature",
+        "contracts/native-profiles.md"
+      ]
+    },
+    {
+      "id": "@id-docx-story-blind",
+      "feature": "workflows/docx/stories.feature",
+      "category": "incomplete",
+      "runtimeConstraint": "none",
+      "reason": "Exact expected lists are present, but synthetic-revisions/synthetic-blind package recipes and relationship inputs are not defined locally.",
+      "evidence": [
+        "workflows/docx/stories.feature",
+        "contracts/native-profiles.md"
+      ]
+    },
+    {
+      "id": "@id-docx-paragraph-style-authoring",
+      "feature": "workflows/docx/style-authoring.feature",
+      "category": "incomplete",
+      "runtimeConstraint": "none",
+      "reason": "Authored/refusal kind labels omit exact source style registries, requested definitions and per-row expected outputs.",
+      "evidence": [
+        "workflows/docx/style-authoring.feature",
+        "contracts/style-authoring.md"
+      ]
+    },
+    {
+      "id": "@id-docx-paragraph-style-authoring-refusal",
+      "feature": "workflows/docx/style-authoring.feature",
+      "category": "incomplete",
+      "runtimeConstraint": "none",
+      "reason": "Authored/refusal kind labels omit exact source style registries, requested definitions and per-row expected outputs.",
+      "evidence": [
+        "workflows/docx/style-authoring.feature",
+        "contracts/style-authoring.md"
+      ]
+    },
+    {
+      "id": "@id-docx-horizontal-merge-roundtrip",
+      "feature": "workflows/docx/table-merging.feature",
+      "category": "generalized",
+      "runtimeConstraint": "none",
+      "reason": "The local contract specifies source table geometry, content, every defect, encoding and exact preservation/rollback boundaries.",
+      "evidence": [
+        "workflows/docx/table-merging.feature",
+        "contracts/table-merging.md"
+      ]
+    },
+    {
+      "id": "@id-docx-horizontal-merge-content-refusal",
+      "feature": "workflows/docx/table-merging.feature",
+      "category": "generalized",
+      "runtimeConstraint": "none",
+      "reason": "The local contract specifies source table geometry, content, every defect, encoding and exact preservation/rollback boundaries.",
+      "evidence": [
+        "workflows/docx/table-merging.feature",
+        "contracts/table-merging.md"
+      ]
+    },
+    {
+      "id": "@id-docx-horizontal-merge-structure-refusal",
+      "feature": "workflows/docx/table-merging.feature",
+      "category": "generalized",
+      "runtimeConstraint": "none",
+      "reason": "The local contract specifies source table geometry, content, every defect, encoding and exact preservation/rollback boundaries.",
+      "evidence": [
+        "workflows/docx/table-merging.feature",
+        "contracts/table-merging.md"
+      ]
+    },
+    {
+      "id": "@id-docx-horizontal-merge-coordinate-refusal",
+      "feature": "workflows/docx/table-merging.feature",
+      "category": "generalized",
+      "runtimeConstraint": "none",
+      "reason": "The local contract specifies source table geometry, content, every defect, encoding and exact preservation/rollback boundaries.",
+      "evidence": [
+        "workflows/docx/table-merging.feature",
+        "contracts/table-merging.md"
+      ]
+    },
+    {
+      "id": "@id-docx-horizontal-merge-rollback",
+      "feature": "workflows/docx/table-merging.feature",
+      "category": "generalized",
+      "runtimeConstraint": "none",
+      "reason": "The local contract specifies source table geometry, content, every defect, encoding and exact preservation/rollback boundaries.",
+      "evidence": [
+        "workflows/docx/table-merging.feature",
+        "contracts/table-merging.md"
+      ]
+    },
+    {
+      "id": "@id-docx-horizontal-merge-encoding",
+      "feature": "workflows/docx/table-merging.feature",
+      "category": "generalized",
+      "runtimeConstraint": "none",
+      "reason": "The local contract specifies source table geometry, content, every defect, encoding and exact preservation/rollback boundaries.",
+      "evidence": [
+        "workflows/docx/table-merging.feature",
+        "contracts/table-merging.md"
+      ]
+    },
+    {
+      "id": "@id-docx-horizontal-merge-stale",
+      "feature": "workflows/docx/table-merging.feature",
+      "category": "generalized",
+      "runtimeConstraint": "none",
+      "reason": "The local contract specifies source table geometry, content, every defect, encoding and exact preservation/rollback boundaries.",
+      "evidence": [
+        "workflows/docx/table-merging.feature",
+        "contracts/table-merging.md"
+      ]
+    },
+    {
+      "id": "@id-docx-vertical-merge-roundtrip",
+      "feature": "workflows/docx/table-merging.feature",
+      "category": "generalized",
+      "runtimeConstraint": "none",
+      "reason": "The local contract specifies source table geometry, content, every defect, encoding and exact preservation/rollback boundaries.",
+      "evidence": [
+        "workflows/docx/table-merging.feature",
+        "contracts/table-merging.md"
+      ]
+    },
+    {
+      "id": "@id-docx-vertical-merge-content-refusal",
+      "feature": "workflows/docx/table-merging.feature",
+      "category": "generalized",
+      "runtimeConstraint": "none",
+      "reason": "The local contract specifies source table geometry, content, every defect, encoding and exact preservation/rollback boundaries.",
+      "evidence": [
+        "workflows/docx/table-merging.feature",
+        "contracts/table-merging.md"
+      ]
+    },
+    {
+      "id": "@id-docx-vertical-merge-structure-refusal",
+      "feature": "workflows/docx/table-merging.feature",
+      "category": "generalized",
+      "runtimeConstraint": "none",
+      "reason": "The local contract specifies source table geometry, content, every defect, encoding and exact preservation/rollback boundaries.",
+      "evidence": [
+        "workflows/docx/table-merging.feature",
+        "contracts/table-merging.md"
+      ]
+    },
+    {
+      "id": "@id-docx-vertical-merge-coordinate-refusal",
+      "feature": "workflows/docx/table-merging.feature",
+      "category": "generalized",
+      "runtimeConstraint": "none",
+      "reason": "The local contract specifies source table geometry, content, every defect, encoding and exact preservation/rollback boundaries.",
+      "evidence": [
+        "workflows/docx/table-merging.feature",
+        "contracts/table-merging.md"
+      ]
+    },
+    {
+      "id": "@id-docx-vertical-merge-rollback",
+      "feature": "workflows/docx/table-merging.feature",
+      "category": "generalized",
+      "runtimeConstraint": "none",
+      "reason": "The local contract specifies source table geometry, content, every defect, encoding and exact preservation/rollback boundaries.",
+      "evidence": [
+        "workflows/docx/table-merging.feature",
+        "contracts/table-merging.md"
+      ]
+    },
+    {
+      "id": "@id-docx-vertical-merge-encoding",
+      "feature": "workflows/docx/table-merging.feature",
+      "category": "generalized",
+      "runtimeConstraint": "none",
+      "reason": "The local contract specifies source table geometry, content, every defect, encoding and exact preservation/rollback boundaries.",
+      "evidence": [
+        "workflows/docx/table-merging.feature",
+        "contracts/table-merging.md"
+      ]
+    },
+    {
+      "id": "@id-docx-vertical-merge-stale",
+      "feature": "workflows/docx/table-merging.feature",
+      "category": "generalized",
+      "runtimeConstraint": "none",
+      "reason": "The local contract specifies source table geometry, content, every defect, encoding and exact preservation/rollback boundaries.",
+      "evidence": [
+        "workflows/docx/table-merging.feature",
+        "contracts/table-merging.md"
+      ]
+    },
+    {
+      "id": "@id-docx-table-create-roundtrip",
+      "feature": "workflows/docx/tables.feature",
+      "category": "generalized",
+      "runtimeConstraint": "none",
+      "reason": "Explicit table or sealed fixture inputs, literal values and bounded saved outcomes can be implemented independently.",
+      "evidence": [
+        "workflows/docx/tables.feature",
+        "contracts/native-profiles.md"
+      ]
+    },
+    {
+      "id": "@id-docx-table-opaque-preserve",
+      "feature": "workflows/docx/tables.feature",
+      "category": "generalized",
+      "runtimeConstraint": "none",
+      "reason": "Explicit table or sealed fixture inputs, literal values and bounded saved outcomes can be implemented independently.",
+      "evidence": [
+        "workflows/docx/tables.feature",
+        "contracts/native-profiles.md"
+      ]
+    },
+    {
+      "id": "@id-docx-table-stale-cell",
+      "feature": "workflows/docx/tables.feature",
+      "category": "profile-specific",
+      "runtimeConstraint": "none",
+      "reason": "Every document edit invalidates held cell handles and requires docx-stale-table-cell; this is a session API policy.",
+      "evidence": [
+        "workflows/docx/tables.feature",
+        "contracts/native-profiles.md"
+      ]
+    },
+    {
+      "id": "@id-docx-table-atomic-refusals",
+      "feature": "workflows/docx/tables.feature",
+      "category": "incomplete",
+      "runtimeConstraint": "none",
+      "reason": "Two synthetic merged/nested/grid-before sources and their precise mutations are not defined in the shared feature or contract.",
+      "evidence": [
+        "workflows/docx/tables.feature",
+        "contracts/native-profiles.md"
+      ]
+    },
+    {
+      "id": "@id-docx-go-table-dimensions-getters",
+      "feature": "workflows/docx/tables.feature",
+      "category": "profile-specific",
+      "runtimeConstraint": "none",
+      "reason": "Named in-memory getters and return conventions require deliberate document-value API adoption; they do not assert saved OOXML.",
+      "evidence": [
+        "workflows/docx/tables.feature",
+        "contracts/native-profiles.md",
+        "contracts/go-document-api.md"
+      ]
+    },
+    {
+      "id": "@id-docx-go-table-cell-access",
+      "feature": "workflows/docx/tables.feature",
+      "category": "runtime-specific",
+      "runtimeConstraint": "go-nil-api",
+      "reason": "The literal Cell API requires nonnil/nil results instead of a typed bounds error; no language-neutral absence mapping is defined in the current contract.",
+      "evidence": [
+        "workflows/docx/tables.feature",
+        "contracts/native-profiles.md",
+        "contracts/go-document-api.md"
+      ]
+    },
+    {
+      "id": "@id-docx-go-table-cell-text-getters",
+      "feature": "workflows/docx/tables.feature",
+      "category": "profile-specific",
+      "runtimeConstraint": "none",
+      "reason": "Named in-memory getters and return conventions require deliberate document-value API adoption; they do not assert saved OOXML.",
+      "evidence": [
+        "workflows/docx/tables.feature",
+        "contracts/native-profiles.md",
+        "contracts/go-document-api.md"
+      ]
+    },
+    {
+      "id": "@id-docx-go-table-row-counts",
+      "feature": "workflows/docx/tables.feature",
+      "category": "profile-specific",
+      "runtimeConstraint": "none",
+      "reason": "Named in-memory getters and return conventions require deliberate document-value API adoption; they do not assert saved OOXML.",
+      "evidence": [
+        "workflows/docx/tables.feature",
+        "contracts/native-profiles.md",
+        "contracts/go-document-api.md"
+      ]
+    },
+    {
+      "id": "@id-docx-go-table-merge-properties",
+      "feature": "workflows/docx/tables.feature",
+      "category": "profile-specific",
+      "runtimeConstraint": "none",
+      "reason": "Named in-memory getters and return conventions require deliberate document-value API adoption; they do not assert saved OOXML.",
+      "evidence": [
+        "workflows/docx/tables.feature",
+        "contracts/native-profiles.md",
+        "contracts/go-document-api.md"
+      ]
+    },
+    {
+      "id": "@id-docx-go-table-style-getter",
+      "feature": "workflows/docx/tables.feature",
+      "category": "profile-specific",
+      "runtimeConstraint": "none",
+      "reason": "Named in-memory getters and return conventions require deliberate document-value API adoption; they do not assert saved OOXML.",
+      "evidence": [
+        "workflows/docx/tables.feature",
+        "contracts/native-profiles.md",
+        "contracts/go-document-api.md"
+      ]
+    },
+    {
+      "id": "@id-docx-go-table-header-getter",
+      "feature": "workflows/docx/tables.feature",
+      "category": "profile-specific",
+      "runtimeConstraint": "none",
+      "reason": "Named in-memory getters and return conventions require deliberate document-value API adoption; they do not assert saved OOXML.",
+      "evidence": [
+        "workflows/docx/tables.feature",
+        "contracts/native-profiles.md",
+        "contracts/go-document-api.md"
+      ]
+    },
+    {
+      "id": "@id-docx-go-cell-shading-getter",
+      "feature": "workflows/docx/tables.feature",
+      "category": "profile-specific",
+      "runtimeConstraint": "none",
+      "reason": "Named in-memory getters and return conventions require deliberate document-value API adoption; they do not assert saved OOXML.",
+      "evidence": [
+        "workflows/docx/tables.feature",
+        "contracts/native-profiles.md",
+        "contracts/go-document-api.md"
+      ]
+    },
+    {
+      "id": "@id-docx-go-cell-properties-getters",
+      "feature": "workflows/docx/tables.feature",
+      "category": "incomplete",
+      "runtimeConstraint": "none",
+      "reason": "The border assertion only checks nonnil collection/top border; supplied style/size/colour are not verified.",
+      "evidence": [
+        "workflows/docx/tables.feature",
+        "contracts/native-profiles.md",
+        "contracts/go-document-api.md"
+      ]
+    },
+    {
+      "id": "@id-docx-go-roundtrip-table-text",
+      "feature": "workflows/docx/tables.feature",
+      "category": "profile-specific",
+      "runtimeConstraint": "none",
+      "reason": "Nine exact cell-text getters after reopening are portable but scoped to the selected table-value API.",
+      "evidence": [
+        "workflows/docx/tables.feature",
+        "contracts/native-profiles.md",
+        "contracts/go-document-api.md"
+      ]
+    },
+    {
+      "id": "@id-python-word-template-analysis-sow-response",
+      "feature": "workflows/docx/template-analysis.feature",
+      "category": "incomplete",
+      "runtimeConstraint": "none",
+      "reason": "Dictionary-without-error validates status only; actual sections, placeholders, guidance and table results are unasserted.",
+      "evidence": [
+        "workflows/docx/template-analysis.feature",
+        "contracts/python-template-analysis.md",
+        "contracts/template-inventory.md"
+      ]
+    },
+    {
+      "id": "@id-python-word-template-analysis-placeholder-response",
+      "feature": "workflows/docx/template-analysis.feature",
+      "category": "incomplete",
+      "runtimeConstraint": "none",
+      "reason": "Any dictionary, including an error dictionary, passes; placeholder values and useful analysis are unasserted.",
+      "evidence": [
+        "workflows/docx/template-analysis.feature",
+        "contracts/python-template-analysis.md",
+        "contracts/template-inventory.md"
+      ]
+    },
+    {
+      "id": "@id-python-word-template-analysis-colour-response",
+      "feature": "workflows/docx/template-analysis.feature",
+      "category": "incomplete",
+      "runtimeConstraint": "none",
+      "reason": "Any dictionary, including an error dictionary, passes; guidance/colour classification is unasserted.",
+      "evidence": [
+        "workflows/docx/template-analysis.feature",
+        "contracts/python-template-analysis.md",
+        "contracts/template-inventory.md"
+      ]
+    },
+    {
+      "id": "@id-python-word-template-analysis-plain-response",
+      "feature": "workflows/docx/template-analysis.feature",
+      "category": "incomplete",
+      "runtimeConstraint": "none",
+      "reason": "Any dictionary, including an error dictionary, passes; no useful plain-document analysis is required.",
+      "evidence": [
+        "workflows/docx/template-analysis.feature",
+        "contracts/python-template-analysis.md",
+        "contracts/template-inventory.md"
+      ]
+    },
+    {
+      "id": "@id-python-office-template-analysis-response",
+      "feature": "workflows/docx/template-analysis.feature",
+      "category": "incomplete",
+      "runtimeConstraint": "none",
+      "reason": "Absence of an error member alone does not specify useful template-analysis fields or correctness.",
+      "evidence": [
+        "workflows/docx/template-analysis.feature",
+        "contracts/python-template-analysis.md",
+        "contracts/template-inventory.md"
+      ]
+    },
+    {
+      "id": "@id-python-office-template-analysis-cache",
+      "feature": "workflows/docx/template-analysis.feature",
+      "category": "profile-specific",
+      "runtimeConstraint": "none",
+      "reason": "Stored/hit status and staffing table-purpose classification require the selected metadata API; they are not literal inventory.",
+      "evidence": [
+        "workflows/docx/template-analysis.feature",
+        "contracts/python-template-analysis.md",
+        "contracts/template-inventory.md"
+      ]
+    },
+    {
+      "id": "@id-docx-template-inventory-values",
+      "feature": "workflows/docx/template-analysis.feature",
+      "category": "generalized",
+      "runtimeConstraint": "none",
+      "reason": "The shared local contract gives concrete source recipes, expected values, refusal variants, encoding and custody boundaries without language-specific types.",
+      "evidence": [
+        "workflows/docx/template-analysis.feature",
+        "contracts/python-template-analysis.md",
+        "contracts/template-inventory.md"
+      ]
+    },
+    {
+      "id": "@id-docx-template-inventory-empty",
+      "feature": "workflows/docx/template-analysis.feature",
+      "category": "generalized",
+      "runtimeConstraint": "none",
+      "reason": "The shared local contract gives concrete source recipes, expected values, refusal variants, encoding and custody boundaries without language-specific types.",
+      "evidence": [
+        "workflows/docx/template-analysis.feature",
+        "contracts/python-template-analysis.md",
+        "contracts/template-inventory.md"
+      ]
+    },
+    {
+      "id": "@id-docx-template-inventory-placeholders",
+      "feature": "workflows/docx/template-analysis.feature",
+      "category": "generalized",
+      "runtimeConstraint": "none",
+      "reason": "The shared local contract gives concrete source recipes, expected values, refusal variants, encoding and custody boundaries without language-specific types.",
+      "evidence": [
+        "workflows/docx/template-analysis.feature",
+        "contracts/python-template-analysis.md",
+        "contracts/template-inventory.md"
+      ]
+    },
+    {
+      "id": "@id-docx-template-inventory-refusal",
+      "feature": "workflows/docx/template-analysis.feature",
+      "category": "generalized",
+      "runtimeConstraint": "none",
+      "reason": "The shared local contract gives concrete source recipes, expected values, refusal variants, encoding and custody boundaries without language-specific types.",
+      "evidence": [
+        "workflows/docx/template-analysis.feature",
+        "contracts/python-template-analysis.md",
+        "contracts/template-inventory.md"
+      ]
+    },
+    {
+      "id": "@id-docx-template-inventory-bounds",
+      "feature": "workflows/docx/template-analysis.feature",
+      "category": "generalized",
+      "runtimeConstraint": "none",
+      "reason": "The shared local contract gives concrete source recipes, expected values, refusal variants, encoding and custody boundaries without language-specific types.",
+      "evidence": [
+        "workflows/docx/template-analysis.feature",
+        "contracts/python-template-analysis.md",
+        "contracts/template-inventory.md"
+      ]
+    },
+    {
+      "id": "@id-docx-template-inventory-encoding",
+      "feature": "workflows/docx/template-analysis.feature",
+      "category": "generalized",
+      "runtimeConstraint": "none",
+      "reason": "The shared local contract gives concrete source recipes, expected values, refusal variants, encoding and custody boundaries without language-specific types.",
+      "evidence": [
+        "workflows/docx/template-analysis.feature",
+        "contracts/python-template-analysis.md",
+        "contracts/template-inventory.md"
+      ]
+    },
+    {
+      "id": "@id-docx-template-inventory-snapshot",
+      "feature": "workflows/docx/template-analysis.feature",
+      "category": "generalized",
+      "runtimeConstraint": "none",
+      "reason": "The shared local contract gives concrete source recipes, expected values, refusal variants, encoding and custody boundaries without language-specific types.",
+      "evidence": [
+        "workflows/docx/template-analysis.feature",
+        "contracts/python-template-analysis.md",
+        "contracts/template-inventory.md"
+      ]
+    },
+    {
+      "id": "@id-docx-template-inventory-scope",
+      "feature": "workflows/docx/template-analysis.feature",
+      "category": "generalized",
+      "runtimeConstraint": "none",
+      "reason": "The shared local contract gives concrete source recipes, expected values, refusal variants, encoding and custody boundaries without language-specific types.",
+      "evidence": [
+        "workflows/docx/template-analysis.feature",
+        "contracts/python-template-analysis.md",
+        "contracts/template-inventory.md"
+      ]
+    },
+    {
+      "id": "@id-python-template-cache-key-stable",
+      "feature": "workflows/docx/template-cache.feature",
+      "category": "profile-specific",
+      "runtimeConstraint": "none",
+      "reason": "Cache key/source-metadata/schema conventions and exact stored/hit/stale/corrupt reasons require the cache API profile.",
+      "evidence": [
+        "workflows/docx/template-cache.feature",
+        "contracts/python-template-cache.md"
+      ]
+    },
+    {
+      "id": "@id-python-template-cache-roundtrip",
+      "feature": "workflows/docx/template-cache.feature",
+      "category": "profile-specific",
+      "runtimeConstraint": "none",
+      "reason": "Cache key/source-metadata/schema conventions and exact stored/hit/stale/corrupt reasons require the cache API profile.",
+      "evidence": [
+        "workflows/docx/template-cache.feature",
+        "contracts/python-template-cache.md"
+      ]
+    },
+    {
+      "id": "@id-python-template-cache-source-change",
+      "feature": "workflows/docx/template-cache.feature",
+      "category": "profile-specific",
+      "runtimeConstraint": "none",
+      "reason": "Cache key/source-metadata/schema conventions and exact stored/hit/stale/corrupt reasons require the cache API profile.",
+      "evidence": [
+        "workflows/docx/template-cache.feature",
+        "contracts/python-template-cache.md"
+      ]
+    },
+    {
+      "id": "@id-python-template-cache-corrupt",
+      "feature": "workflows/docx/template-cache.feature",
+      "category": "profile-specific",
+      "runtimeConstraint": "none",
+      "reason": "Cache key/source-metadata/schema conventions and exact stored/hit/stale/corrupt reasons require the cache API profile.",
+      "evidence": [
+        "workflows/docx/template-cache.feature",
+        "contracts/python-template-cache.md"
+      ]
+    },
+    {
+      "id": "@id-python-template-cache-schema-mismatch",
+      "feature": "workflows/docx/template-cache.feature",
+      "category": "profile-specific",
+      "runtimeConstraint": "none",
+      "reason": "Cache key/source-metadata/schema conventions and exact stored/hit/stale/corrupt reasons require the cache API profile.",
+      "evidence": [
+        "workflows/docx/template-cache.feature",
+        "contracts/python-template-cache.md"
+      ]
+    },
+    {
+      "id": "@id-python-template-cache-sow-reuse",
+      "feature": "workflows/docx/template-cache.feature",
+      "category": "profile-specific",
+      "runtimeConstraint": "none",
+      "reason": "Cache key/source-metadata/schema conventions and exact stored/hit/stale/corrupt reasons require the cache API profile.",
+      "evidence": [
+        "workflows/docx/template-cache.feature",
+        "contracts/python-template-cache.md"
+      ]
+    },
+    {
+      "id": "@id-python-template-cache-sow-regenerate",
+      "feature": "workflows/docx/template-cache.feature",
+      "category": "profile-specific",
+      "runtimeConstraint": "none",
+      "reason": "Cache key/source-metadata/schema conventions and exact stored/hit/stale/corrupt reasons require the cache API profile.",
+      "evidence": [
+        "workflows/docx/template-cache.feature",
+        "contracts/python-template-cache.md"
+      ]
+    },
+    {
+      "id": "@id-docx-format-preserve",
+      "feature": "workflows/docx/text.feature",
+      "category": "generalized",
+      "runtimeConstraint": "none",
+      "reason": "Sealed source documents, selected positions, literal changes and refusal/custody predicates are independent of implementation language.",
+      "evidence": [
+        "workflows/docx/text.feature",
+        "contracts/native-profiles.md"
+      ]
+    },
+    {
+      "id": "@id-docx-xml-space",
+      "feature": "workflows/docx/text.feature",
+      "category": "incomplete",
+      "runtimeConstraint": "none",
+      "reason": "The synthetic-whitespace source lacks its exact run split/text-node recipe here.",
+      "evidence": [
+        "workflows/docx/text.feature",
+        "contracts/native-profiles.md"
+      ]
+    },
+    {
+      "id": "@id-docx-table-paragraph",
+      "feature": "workflows/docx/text.feature",
+      "category": "generalized",
+      "runtimeConstraint": "none",
+      "reason": "Sealed source documents, selected positions, literal changes and refusal/custody predicates are independent of implementation language.",
+      "evidence": [
+        "workflows/docx/text.feature",
+        "contracts/native-profiles.md"
+      ]
+    },
+    {
+      "id": "@id-docx-stale-span",
+      "feature": "workflows/docx/text.feature",
+      "category": "profile-specific",
+      "runtimeConstraint": "none",
+      "reason": "Pinned inputs and byte custody are concrete; stale-span lifetime and exact error code select a session API.",
+      "evidence": [
+        "workflows/docx/text.feature",
+        "contracts/native-profiles.md"
+      ]
+    },
+    {
+      "id": "@id-docx-refuse-topology",
+      "feature": "workflows/docx/text.feature",
+      "category": "incomplete",
+      "runtimeConstraint": "none",
+      "reason": "The synthetic-field example lacks exact source XML; pinned SDT rows cannot supply that missing row.",
+      "evidence": [
+        "workflows/docx/text.feature",
+        "contracts/native-profiles.md"
+      ]
+    },
+    {
+      "id": "@id-docx-track-changes-option-outcome",
+      "feature": "workflows/docx/tracked-workflow.feature",
+      "category": "incomplete",
+      "runtimeConstraint": "none",
+      "reason": "Dispatch kind/refusal labels and abstract source package lack a complete shared per-row input recipe, despite exact revision counts.",
+      "evidence": [
+        "workflows/docx/tracked-workflow.feature",
+        "contracts/tracked-workflow.md"
+      ]
+    },
+    {
+      "id": "@id-docx-workflow-tracked-refusal",
+      "feature": "workflows/docx/tracked-workflow.feature",
+      "category": "incomplete",
+      "runtimeConstraint": "none",
+      "reason": "Dispatch kind/refusal labels and abstract source package lack a complete shared per-row input recipe, despite exact revision counts.",
+      "evidence": [
+        "workflows/docx/tracked-workflow.feature",
+        "contracts/tracked-workflow.md"
+      ]
+    },
+    {
+      "id": "@id-docx-go-track-author-toggle",
+      "feature": "workflows/docx/tracked-workflow.feature",
+      "category": "profile-specific",
+      "runtimeConstraint": "none",
+      "reason": "Named in-memory getters and return conventions require deliberate document-value API adoption; they do not assert saved OOXML.",
+      "evidence": [
+        "workflows/docx/tracked-workflow.feature",
+        "contracts/tracked-workflow.md",
+        "contracts/go-document-api.md"
+      ]
+    },
+    {
+      "id": "@id-docx-tracking-settings-persistence",
+      "feature": "workflows/docx/tracking-settings.feature",
+      "category": "generalized",
+      "runtimeConstraint": "none",
+      "reason": "Local settings contract defines literal source, ownership/refusal variants, encodings, saved results and synchronous fault stages.",
+      "evidence": [
+        "workflows/docx/tracking-settings.feature",
+        "contracts/tracking-settings.md"
+      ]
+    },
+    {
+      "id": "@id-docx-tracking-settings-custody",
+      "feature": "workflows/docx/tracking-settings.feature",
+      "category": "generalized",
+      "runtimeConstraint": "none",
+      "reason": "Local settings contract defines literal source, ownership/refusal variants, encodings, saved results and synchronous fault stages.",
+      "evidence": [
+        "workflows/docx/tracking-settings.feature",
+        "contracts/tracking-settings.md"
+      ]
+    },
+    {
+      "id": "@id-docx-tracking-settings-no-op",
+      "feature": "workflows/docx/tracking-settings.feature",
+      "category": "generalized",
+      "runtimeConstraint": "none",
+      "reason": "Local settings contract defines literal source, ownership/refusal variants, encodings, saved results and synchronous fault stages.",
+      "evidence": [
+        "workflows/docx/tracking-settings.feature",
+        "contracts/tracking-settings.md"
+      ]
+    },
+    {
+      "id": "@id-docx-tracking-settings-refusal",
+      "feature": "workflows/docx/tracking-settings.feature",
+      "category": "generalized",
+      "runtimeConstraint": "none",
+      "reason": "Local settings contract defines literal source, ownership/refusal variants, encodings, saved results and synchronous fault stages.",
+      "evidence": [
+        "workflows/docx/tracking-settings.feature",
+        "contracts/tracking-settings.md"
+      ]
+    },
+    {
+      "id": "@id-docx-tracking-settings-rollback",
+      "feature": "workflows/docx/tracking-settings.feature",
+      "category": "generalized",
+      "runtimeConstraint": "none",
+      "reason": "Local settings contract defines literal source, ownership/refusal variants, encodings, saved results and synchronous fault stages.",
+      "evidence": [
+        "workflows/docx/tracking-settings.feature",
+        "contracts/tracking-settings.md"
+      ]
+    },
+    {
+      "id": "@id-docx-tracking-settings-plain-edit",
+      "feature": "workflows/docx/tracking-settings.feature",
+      "category": "generalized",
+      "runtimeConstraint": "none",
+      "reason": "Local settings contract defines literal source, ownership/refusal variants, encodings, saved results and synchronous fault stages.",
+      "evidence": [
+        "workflows/docx/tracking-settings.feature",
+        "contracts/tracking-settings.md"
+      ]
+    },
+    {
+      "id": "@id-docx-tracking-settings-author-refusal",
+      "feature": "workflows/docx/tracking-settings.feature",
+      "category": "generalized",
+      "runtimeConstraint": "none",
+      "reason": "Local settings contract defines literal source, ownership/refusal variants, encodings, saved results and synchronous fault stages.",
+      "evidence": [
+        "workflows/docx/tracking-settings.feature",
+        "contracts/tracking-settings.md"
+      ]
+    },
+    {
+      "id": "@id-parity-inherited",
+      "feature": "workflows/office/full-coverage.feature",
+      "category": "incomplete",
+      "runtimeConstraint": "none",
+      "reason": "Catalogue-wide completion gate is a meta-obligation, not a concrete document operation or self-contained executable input.",
+      "evidence": [
+        "workflows/office/full-coverage.feature",
+        "contracts/workflow-receipts.md"
+      ]
+    },
+    {
+      "id": "@id-package-admission-negative-budget",
+      "feature": "workflows/package/admission-limit-configuration.feature",
+      "category": "generalized",
+      "runtimeConstraint": "none",
+      "reason": "Negative caller budgets, zero control and pre-intake/caller-byte custody define a portable configuration refusal.",
+      "evidence": [
+        "workflows/package/admission-limit-configuration.feature",
+        "contracts/package-profiles.md"
+      ]
+    },
+    {
+      "id": "@id-zip-unsigned-descriptor-signature-collision",
+      "feature": "workflows/package/data-descriptor-integrity.feature",
+      "category": "generalized",
+      "runtimeConstraint": "none",
+      "reason": "Exact descriptor geometry and CRC collision with valid/corrupt controls define a reusable ZIP integrity check.",
+      "evidence": [
+        "workflows/package/data-descriptor-integrity.feature",
+        "contracts/package-profiles.md"
+      ]
+    },
+    {
+      "id": "@id-opc-add-related-part",
+      "feature": "workflows/package/graph.feature",
+      "category": "incomplete",
+      "runtimeConstraint": "none",
+      "reason": "Generic valid/related-part packages and new content types are not given concrete values or graph recipes locally.",
+      "evidence": [
+        "workflows/package/graph.feature",
+        "contracts/package-profiles.md"
+      ]
+    },
+    {
+      "id": "@id-opc-graph-rollback",
+      "feature": "workflows/package/graph.feature",
+      "category": "incomplete",
+      "runtimeConstraint": "none",
+      "reason": "Generic valid/related-part packages and new content types are not given concrete values or graph recipes locally.",
+      "evidence": [
+        "workflows/package/graph.feature",
+        "contracts/package-profiles.md"
+      ]
+    },
+    {
+      "id": "@id-opc-remove-related-part",
+      "feature": "workflows/package/graph.feature",
+      "category": "incomplete",
+      "runtimeConstraint": "none",
+      "reason": "Generic valid/related-part packages and new content types are not given concrete values or graph recipes locally.",
+      "evidence": [
+        "workflows/package/graph.feature",
+        "contracts/package-profiles.md"
+      ]
+    },
+    {
+      "id": "@id-opc-diff-content-type",
+      "feature": "workflows/package/graph.feature",
+      "category": "incomplete",
+      "runtimeConstraint": "none",
+      "reason": "Generic valid/related-part packages and new content types are not given concrete values or graph recipes locally.",
+      "evidence": [
+        "workflows/package/graph.feature",
+        "contracts/package-profiles.md"
+      ]
+    },
+    {
+      "id": "@id-opc-package-corpus-noop",
+      "feature": "workflows/package/preservation.feature",
+      "category": "generalized",
+      "runtimeConstraint": "none",
+      "reason": "Package-level no-op/rollback/custody outcomes do not depend on source-corpus runtime names.",
+      "evidence": [
+        "workflows/package/preservation.feature",
+        "contracts/bun-opc-custody.md"
+      ]
+    },
+    {
+      "id": "@id-opc-package-transaction-rollback",
+      "feature": "workflows/package/preservation.feature",
+      "category": "incomplete",
+      "runtimeConstraint": "none",
+      "reason": "Changed parts, starting bytes and failure point are unspecified for the generic valid-package source.",
+      "evidence": [
+        "workflows/package/preservation.feature",
+        "contracts/bun-opc-custody.md"
+      ]
+    },
+    {
+      "id": "@id-opc-package-preserve-unrelated",
+      "feature": "workflows/package/preservation.feature",
+      "category": "incomplete",
+      "runtimeConstraint": "none",
+      "reason": "The generic source, original/changed main text and opaque payload values are not specified here.",
+      "evidence": [
+        "workflows/package/preservation.feature",
+        "contracts/bun-opc-custody.md"
+      ]
+    },
+    {
+      "id": "@id-bun-opc-open-refusal",
+      "feature": "workflows/package/preservation.feature",
+      "category": "runtime-specific",
+      "runtimeConstraint": "bun-error-api",
+      "reason": "Literal OoxmlError instance/type, code and message predicates preserve the Bun-origin exception API; no cross-language error-type equivalence is defined.",
+      "evidence": [
+        "workflows/package/preservation.feature",
+        "contracts/bun-opc-custody.md"
+      ]
+    },
+    {
+      "id": "@id-bun-opc-detached-byte-copies",
+      "feature": "workflows/package/preservation.feature",
+      "category": "generalized",
+      "runtimeConstraint": "none",
+      "reason": "Package-level no-op/rollback/custody outcomes do not depend on source-corpus runtime names.",
+      "evidence": [
+        "workflows/package/preservation.feature",
+        "contracts/bun-opc-custody.md"
+      ]
+    },
+    {
+      "id": "@id-bun-opc-preserve-utf16le-edit",
+      "feature": "workflows/package/preservation.feature",
+      "category": "generalized",
+      "runtimeConstraint": "none",
+      "reason": "Package-level no-op/rollback/custody outcomes do not depend on source-corpus runtime names.",
+      "evidence": [
+        "workflows/package/preservation.feature",
+        "contracts/bun-opc-custody.md"
+      ]
+    },
+    {
+      "id": "@id-bun-opc-async-transaction-refusal",
+      "feature": "workflows/package/preservation.feature",
+      "category": "runtime-specific",
+      "runtimeConstraint": "javascript",
+      "reason": "Async-function pre-body refusal or thenable object identity/non-invocation requires JavaScript callback semantics.",
+      "evidence": [
+        "workflows/package/preservation.feature",
+        "contracts/bun-opc-custody.md"
+      ]
+    },
+    {
+      "id": "@id-bun-opc-thenable-transaction-result",
+      "feature": "workflows/package/preservation.feature",
+      "category": "runtime-specific",
+      "runtimeConstraint": "javascript",
+      "reason": "Async-function pre-body refusal or thenable object identity/non-invocation requires JavaScript callback semantics.",
+      "evidence": [
+        "workflows/package/preservation.feature",
+        "contracts/bun-opc-custody.md"
+      ]
+    },
+    {
+      "id": "@id-bun-opc-save-invalid-target-custody",
+      "feature": "workflows/package/preservation.feature",
+      "category": "runtime-specific",
+      "runtimeConstraint": "bun-error-api",
+      "reason": "Literal OoxmlError instance/type, code and message predicates preserve the Bun-origin exception API; no cross-language error-type equivalence is defined.",
+      "evidence": [
+        "workflows/package/preservation.feature",
+        "contracts/bun-opc-custody.md"
+      ]
+    },
+    {
+      "id": "@id-bun-opc-symlink-destination-refusal",
+      "feature": "workflows/package/preservation.feature",
+      "category": "runtime-specific",
+      "runtimeConstraint": "bun-error-api",
+      "reason": "Literal OoxmlError instance/type, code and message predicates preserve the Bun-origin exception API; no cross-language error-type equivalence is defined.",
+      "evidence": [
+        "workflows/package/preservation.feature",
+        "contracts/bun-opc-custody.md"
+      ]
+    },
+    {
+      "id": "@id-office-relationship-prefix-alias",
+      "feature": "workflows/package/relationship-namespaces.feature",
+      "category": "incomplete",
+      "runtimeConstraint": "none",
+      "reason": "Alternate-prefix and wrong-URI policy is portable, but synthetic slide/sheet source packages and exact expected names are not supplied here.",
+      "evidence": [
+        "workflows/package/relationship-namespaces.feature",
+        "contracts/native-profiles.md"
+      ]
+    },
+    {
+      "id": "@id-office-relationship-wrong-uri",
+      "feature": "workflows/package/relationship-namespaces.feature",
+      "category": "incomplete",
+      "runtimeConstraint": "none",
+      "reason": "Alternate-prefix and wrong-URI policy is portable, but synthetic slide/sheet source packages and exact expected names are not supplied here.",
+      "evidence": [
+        "workflows/package/relationship-namespaces.feature",
+        "contracts/native-profiles.md"
+      ]
+    },
+    {
+      "id": "@id-package-diff-equivalent-xml-and-binary-changes",
+      "feature": "workflows/package/semantic-diff.feature",
+      "category": "profile-specific",
+      "runtimeConstraint": "none",
+      "reason": "Concrete ZIP operands are reusable, but equivalent_xml/changed/added/removed response lists and comparison policy form a particular diff API.",
+      "evidence": [
+        "workflows/package/semantic-diff.feature",
+        "contracts/package-profiles.md"
+      ]
+    },
+    {
+      "id": "@id-package-admission-unsafe-xml-members",
+      "feature": "workflows/package/xml-member-admission.feature",
+      "category": "generalized",
+      "runtimeConstraint": "none",
+      "reason": "Literal UTF-8/UTF-16LE DTD/entity operands and required admission refusal are reusable security-policy tests.",
+      "evidence": [
+        "workflows/package/xml-member-admission.feature",
+        "contracts/package-profiles.md"
+      ]
+    },
+    {
+      "id": "@id-package-admission-unsafe-members",
+      "feature": "workflows/package/zip-admission.feature",
+      "category": "generalized",
+      "runtimeConstraint": "none",
+      "reason": "Explicit member pairs, compression methods and physical-overlap fixture make admission predicates reusable.",
+      "evidence": [
+        "workflows/package/zip-admission.feature",
+        "contracts/package-profiles.md"
+      ]
+    },
+    {
+      "id": "@id-package-admission-resource-limits",
+      "feature": "workflows/package/zip-admission.feature",
+      "category": "profile-specific",
+      "runtimeConstraint": "none",
+      "reason": "Concrete compressed operand uses exact max_members/max_member_bytes/max_total_bytes/max_ratio keys and zero-means-zero policy; native API mappings must preserve those semantics.",
+      "evidence": [
+        "workflows/package/zip-admission.feature",
+        "contracts/package-profiles.md"
+      ]
+    },
+    {
+      "id": "@id-package-admission-unsupported-compression",
+      "feature": "workflows/package/zip-admission.feature",
+      "category": "generalized",
+      "runtimeConstraint": "none",
+      "reason": "Explicit member pairs, compression methods and physical-overlap fixture make admission predicates reusable.",
+      "evidence": [
+        "workflows/package/zip-admission.feature",
+        "contracts/package-profiles.md"
+      ]
+    },
+    {
+      "id": "@id-zip-physical-member-overlap-refusal",
+      "feature": "workflows/package/zip-admission.feature",
+      "category": "generalized",
+      "runtimeConstraint": "none",
+      "reason": "Explicit member pairs, compression methods and physical-overlap fixture make admission predicates reusable.",
+      "evidence": [
+        "workflows/package/zip-admission.feature",
+        "contracts/package-profiles.md"
+      ]
+    },
+    {
+      "id": "@id-zip-read-valid",
+      "feature": "workflows/package/zip32.feature",
+      "category": "incomplete",
+      "runtimeConstraint": "none",
+      "reason": "Stored/deflated/directory/comment categories lack a fixed ordered archive and exact payload/CRC expectations here.",
+      "evidence": [
+        "workflows/package/zip32.feature",
+        "contracts/bun-zip32-profile.md"
+      ]
+    },
+    {
+      "id": "@id-zip-refuse-unsafe",
+      "feature": "workflows/package/zip32.feature",
+      "category": "incomplete",
+      "runtimeConstraint": "none",
+      "reason": "Refusal categories are listed without concrete corrupt archive recipes for each category.",
+      "evidence": [
+        "workflows/package/zip32.feature",
+        "contracts/bun-zip32-profile.md"
+      ]
+    },
+    {
+      "id": "@id-zip-bounds",
+      "feature": "workflows/package/zip32.feature",
+      "category": "incomplete",
+      "runtimeConstraint": "none",
+      "reason": "No concrete budgets/declared sizes or measurable allocation bound is specified; generic refusal cannot establish the stated resource guarantee.",
+      "evidence": [
+        "workflows/package/zip32.feature",
+        "contracts/bun-zip32-profile.md"
+      ]
+    },
+    {
+      "id": "@id-zip-write-deterministic",
+      "feature": "workflows/package/zip32.feature",
+      "category": "profile-specific",
+      "runtimeConstraint": "none",
+      "reason": "Deterministic ZIP bytes, method choices, UTF-8 flag and ASCII case-collision refusal are an explicit writer policy, not universal ZIP validity.",
+      "evidence": [
+        "workflows/package/zip32.feature",
+        "contracts/bun-zip32-profile.md"
+      ]
+    },
+    {
+      "id": "@id-zip-crc32-standard-vector",
+      "feature": "workflows/package/zip32.feature",
+      "category": "generalized",
+      "runtimeConstraint": "none",
+      "reason": "ZIP format operations, deterministic output, CRC and custody predicates are language-independent; missing vectors are separately flagged.",
+      "evidence": [
+        "workflows/package/zip32.feature",
+        "contracts/bun-zip32-profile.md"
+      ]
+    },
+    {
+      "id": "@id-bun-zip32-reader-refusal",
+      "feature": "workflows/package/zip32.feature",
+      "category": "runtime-specific",
+      "runtimeConstraint": "bun-error-api",
+      "reason": "Literal OoxmlError instance/type, code and message predicates preserve the Bun-origin exception API; no cross-language error-type equivalence is defined.",
+      "evidence": [
+        "workflows/package/zip32.feature",
+        "contracts/bun-zip32-profile.md"
+      ]
+    },
+    {
+      "id": "@id-bun-zip32-writer-refusal",
+      "feature": "workflows/package/zip32.feature",
+      "category": "runtime-specific",
+      "runtimeConstraint": "bun-error-api",
+      "reason": "Literal OoxmlError instance/type, code and message predicates preserve the Bun-origin exception API; no cross-language error-type equivalence is defined.",
+      "evidence": [
+        "workflows/package/zip32.feature",
+        "contracts/bun-zip32-profile.md"
+      ]
+    },
+    {
+      "id": "@id-bun-zip32-configured-bounds",
+      "feature": "workflows/package/zip32.feature",
+      "category": "runtime-specific",
+      "runtimeConstraint": "bun-error-api",
+      "reason": "Literal OoxmlError instance/type, code and message predicates preserve the Bun-origin exception API; no cross-language error-type equivalence is defined.",
+      "evidence": [
+        "workflows/package/zip32.feature",
+        "contracts/bun-zip32-profile.md"
+      ]
+    },
+    {
+      "id": "@id-parity-zip64",
+      "feature": "workflows/package/zip64.feature",
+      "category": "incomplete",
+      "runtimeConstraint": "none",
+      "reason": "Forced-ZIP64 operation lacks concrete member names/content and changed payload; no independent source recipe is selected.",
+      "evidence": [
+        "workflows/package/zip64.feature",
+        "contracts/package-profiles.md"
+      ]
+    },
+    {
+      "id": "@id-zip64-preflight-count",
+      "feature": "workflows/package/zip64.feature",
+      "category": "profile-specific",
+      "runtimeConstraint": "none",
+      "reason": "Exact zip-* codes and selected safe-integer/resource policies require explicit ZIP64 compatibility adoption.",
+      "evidence": [
+        "workflows/package/zip64.feature",
+        "contracts/package-profiles.md"
+      ]
+    },
+    {
+      "id": "@id-zip64-unsafe-offset",
+      "feature": "workflows/package/zip64.feature",
+      "category": "profile-specific",
+      "runtimeConstraint": "none",
+      "reason": "Safe integer range is a JavaScript-derived compatibility cap, not a ZIP64 limit; another runtime can adopt it only as a declared profile.",
+      "evidence": [
+        "workflows/package/zip64.feature",
+        "contracts/package-profiles.md"
+      ]
+    },
+    {
+      "id": "@id-zip64-resource-limit",
+      "feature": "workflows/package/zip64.feature",
+      "category": "profile-specific",
+      "runtimeConstraint": "none",
+      "reason": "Exact zip-* codes and selected safe-integer/resource policies require explicit ZIP64 compatibility adoption.",
+      "evidence": [
+        "workflows/package/zip64.feature",
+        "contracts/package-profiles.md"
+      ]
+    },
+    {
+      "id": "@id-pptx-create-new-minimal",
+      "feature": "workflows/pptx/creation.feature",
+      "category": "incomplete",
+      "runtimeConstraint": "none",
+      "reason": "Minimal deck and refusal-kind names lack exact slide text/layout recipes and per-case expected graph values in this repo.",
+      "evidence": [
+        "workflows/pptx/creation.feature",
+        "contracts/native-profiles.md"
+      ]
+    },
+    {
+      "id": "@id-pptx-create-anchor-preservation",
+      "feature": "workflows/pptx/creation.feature",
+      "category": "incomplete",
+      "runtimeConstraint": "none",
+      "reason": "Minimal deck and refusal-kind names lack exact slide text/layout recipes and per-case expected graph values in this repo.",
+      "evidence": [
+        "workflows/pptx/creation.feature",
+        "contracts/native-profiles.md"
+      ]
+    },
+    {
+      "id": "@id-pptx-create-refusals",
+      "feature": "workflows/pptx/creation.feature",
+      "category": "incomplete",
+      "runtimeConstraint": "none",
+      "reason": "Minimal deck and refusal-kind names lack exact slide text/layout recipes and per-case expected graph values in this repo.",
+      "evidence": [
+        "workflows/pptx/creation.feature",
+        "contracts/native-profiles.md"
+      ]
+    },
+    {
+      "id": "@id-pptx-layout-recommendation-ranked",
+      "feature": "workflows/pptx/layout-recommendation.feature",
+      "category": "profile-specific",
+      "runtimeConstraint": "none",
+      "reason": "Pinned ranking, score/tie order and next-tool hints require the recommendation API.",
+      "evidence": [
+        "workflows/pptx/layout-recommendation.feature",
+        "ledgers/functional-equivalence.json"
+      ]
+    },
+    {
+      "id": "@id-pptx-layout-recommendation-missing-file",
+      "feature": "workflows/pptx/layout-recommendation.feature",
+      "category": "profile-specific",
+      "runtimeConstraint": "none",
+      "reason": "Pinned ranking, score/tie order and next-tool hints require the recommendation API.",
+      "evidence": [
+        "workflows/pptx/layout-recommendation.feature",
+        "ledgers/functional-equivalence.json"
+      ]
+    },
+    {
+      "id": "@id-pptx-dry-run-no-mutation",
+      "feature": "workflows/pptx/mutation-safety.feature",
+      "category": "generalized",
+      "runtimeConstraint": "none",
+      "reason": "Manifest-backed source and mutation contract fix destination policy, exact changed members and atomicity.",
+      "evidence": [
+        "workflows/pptx/mutation-safety.feature",
+        "contracts/mutation-safety.json"
+      ]
+    },
+    {
+      "id": "@id-pptx-batch-output-accumulates",
+      "feature": "workflows/pptx/mutation-safety.feature",
+      "category": "generalized",
+      "runtimeConstraint": "none",
+      "reason": "Manifest-backed source and mutation contract fix destination policy, exact changed members and atomicity.",
+      "evidence": [
+        "workflows/pptx/mutation-safety.feature",
+        "contracts/mutation-safety.json"
+      ]
+    },
+    {
+      "id": "@id-office-preview-details",
+      "feature": "workflows/pptx/mutation-safety.feature",
+      "category": "generalized",
+      "runtimeConstraint": "none",
+      "reason": "Manifest-backed source and mutation contract fix destination policy, exact changed members and atomicity.",
+      "evidence": [
+        "workflows/pptx/mutation-safety.feature",
+        "contracts/mutation-safety.json"
+      ]
+    },
+    {
+      "id": "@id-pptx-order-notes-read",
+      "feature": "workflows/pptx/notes.feature",
+      "category": "incomplete",
+      "runtimeConstraint": "none",
+      "reason": "The ordered-notes fixture label lacks an explicit local permutation/input recipe; do not infer it from an implementation binding.",
+      "evidence": [
+        "workflows/pptx/notes.feature",
+        "contracts/go-notes-editing.md"
+      ]
+    },
+    {
+      "id": "@id-pptx-notes-collection-read",
+      "feature": "workflows/pptx/notes.feature",
+      "category": "profile-specific",
+      "runtimeConstraint": "none",
+      "reason": "One-based numbering, file/notes JSON keys and literal not-found messages require the notes-collection response API.",
+      "evidence": [
+        "workflows/pptx/notes.feature",
+        "contracts/go-notes-editing.md"
+      ]
+    },
+    {
+      "id": "@id-pptx-go-notes-exact-splice",
+      "feature": "workflows/pptx/notes.feature",
+      "category": "profile-specific",
+      "runtimeConstraint": "none",
+      "reason": "Existing-part target ownership, stale-target policy, input restrictions and template fragments require this bounded notes editor profile.",
+      "evidence": [
+        "workflows/pptx/notes.feature",
+        "contracts/go-notes-editing.md"
+      ]
+    },
+    {
+      "id": "@id-pptx-go-notes-refusal-and-noop-custody",
+      "feature": "workflows/pptx/notes.feature",
+      "category": "profile-specific",
+      "runtimeConstraint": "none",
+      "reason": "Existing-part target ownership, stale-target policy, input restrictions and template fragments require this bounded notes editor profile.",
+      "evidence": [
+        "workflows/pptx/notes.feature",
+        "contracts/go-notes-editing.md"
+      ]
+    },
+    {
+      "id": "@id-pptx-go-notes-clear-stale-refill",
+      "feature": "workflows/pptx/notes.feature",
+      "category": "profile-specific",
+      "runtimeConstraint": "none",
+      "reason": "Existing-part target ownership, stale-target policy, input restrictions and template fragments require this bounded notes editor profile.",
+      "evidence": [
+        "workflows/pptx/notes.feature",
+        "contracts/go-notes-editing.md"
+      ]
+    },
+    {
+      "id": "@id-pptx-go-notes-part-fingerprint-refusal",
+      "feature": "workflows/pptx/notes.feature",
+      "category": "profile-specific",
+      "runtimeConstraint": "none",
+      "reason": "Existing-part target ownership, stale-target policy, input restrictions and template fragments require this bounded notes editor profile.",
+      "evidence": [
+        "workflows/pptx/notes.feature",
+        "contracts/go-notes-editing.md"
+      ]
+    },
+    {
+      "id": "@id-pptx-go-notes-self-closing-fill",
+      "feature": "workflows/pptx/notes.feature",
+      "category": "profile-specific",
+      "runtimeConstraint": "none",
+      "reason": "Existing-part target ownership, stale-target policy, input restrictions and template fragments require this bounded notes editor profile.",
+      "evidence": [
+        "workflows/pptx/notes.feature",
+        "contracts/go-notes-editing.md"
+      ]
+    },
+    {
+      "id": "@id-pptx-go-notes-edge-space-preserve",
+      "feature": "workflows/pptx/notes.feature",
+      "category": "profile-specific",
+      "runtimeConstraint": "none",
+      "reason": "Existing-part target ownership, stale-target policy, input restrictions and template fragments require this bounded notes editor profile.",
+      "evidence": [
+        "workflows/pptx/notes.feature",
+        "contracts/go-notes-editing.md"
+      ]
+    },
+    {
+      "id": "@id-pptx-go-notes-multiline-template",
+      "feature": "workflows/pptx/notes.feature",
+      "category": "profile-specific",
+      "runtimeConstraint": "none",
+      "reason": "Existing-part target ownership, stale-target policy, input restrictions and template fragments require this bounded notes editor profile.",
+      "evidence": [
+        "workflows/pptx/notes.feature",
+        "contracts/go-notes-editing.md"
+      ]
+    },
+    {
+      "id": "@id-pptx-go-notes-template-fragments",
+      "feature": "workflows/pptx/notes.feature",
+      "category": "profile-specific",
+      "runtimeConstraint": "none",
+      "reason": "Existing-part target ownership, stale-target policy, input restrictions and template fragments require this bounded notes editor profile.",
+      "evidence": [
+        "workflows/pptx/notes.feature",
+        "contracts/go-notes-editing.md"
+      ]
+    },
+    {
+      "id": "@id-pptx-bun-open-save-noop",
+      "feature": "workflows/pptx/preservation.feature",
+      "category": "generalized",
+      "runtimeConstraint": "none",
+      "reason": "Pinned presentation and exact path/byte-input no-edit archive custody can be checked in any runtime.",
+      "evidence": [
+        "workflows/pptx/preservation.feature",
+        "contracts/bun-pptx.md"
+      ]
+    },
+    {
+      "id": "@id-parity-pptx-composition",
+      "feature": "workflows/pptx/slide-import.feature",
+      "category": "incomplete",
+      "runtimeConstraint": "none",
+      "reason": "The reconciliation policy and input presentations are not selected; no complete graph/appearance oracle is specified.",
+      "evidence": [
+        "workflows/pptx/slide-import.feature",
+        "contracts/native-profiles.md"
+      ]
+    },
+    {
+      "id": "@id-pptx-slide-permutation",
+      "feature": "workflows/pptx/slide-order.feature",
+      "category": "incomplete",
+      "runtimeConstraint": "none",
+      "reason": "Reverse/rotate/notes and refusal labels lack complete source decks, permutation vectors and exact receipts here.",
+      "evidence": [
+        "workflows/pptx/slide-order.feature",
+        "contracts/slide-order.md"
+      ]
+    },
+    {
+      "id": "@id-pptx-slide-permutation-refusal",
+      "feature": "workflows/pptx/slide-order.feature",
+      "category": "incomplete",
+      "runtimeConstraint": "none",
+      "reason": "Reverse/rotate/notes and refusal labels lack complete source decks, permutation vectors and exact receipts here.",
+      "evidence": [
+        "workflows/pptx/slide-order.feature",
+        "contracts/slide-order.md"
+      ]
+    },
+    {
+      "id": "@id-pptx-slide-visibility-retained-inputs",
+      "feature": "workflows/pptx/slide-visibility.feature",
+      "category": "generalized",
+      "runtimeConstraint": "none",
+      "reason": "Sealed source/control identities and explicit namespace-qualified/unqualified visibility predicates are independently reusable.",
+      "evidence": [
+        "workflows/pptx/slide-visibility.feature",
+        "contracts/pptx-slide-visibility.md"
+      ]
+    },
+    {
+      "id": "@id-pptx-office-hidden-slide-positive",
+      "feature": "workflows/pptx/slide-visibility.feature",
+      "category": "incomplete",
+      "runtimeConstraint": "none",
+      "reason": "Requires a not-yet-acquired untouched PowerPoint positive and version/platform reopen evidence; it is application-dependent, not language-runtime-specific.",
+      "evidence": [
+        "workflows/pptx/slide-visibility.feature",
+        "contracts/pptx-slide-visibility.md"
+      ]
+    },
+    {
+      "id": "@id-pptx-table-roundtrip-geometry",
+      "feature": "workflows/pptx/tables.feature",
+      "category": "incomplete",
+      "runtimeConstraint": "none",
+      "reason": "Synthetic table and stale/geometry case labels lack the complete local slide/table recipes and numeric expected results.",
+      "evidence": [
+        "workflows/pptx/tables.feature",
+        "contracts/native-profiles.md"
+      ]
+    },
+    {
+      "id": "@id-pptx-table-formatting",
+      "feature": "workflows/pptx/tables.feature",
+      "category": "incomplete",
+      "runtimeConstraint": "none",
+      "reason": "Synthetic table and stale/geometry case labels lack the complete local slide/table recipes and numeric expected results.",
+      "evidence": [
+        "workflows/pptx/tables.feature",
+        "contracts/native-profiles.md"
+      ]
+    },
+    {
+      "id": "@id-pptx-table-stale-handle",
+      "feature": "workflows/pptx/tables.feature",
+      "category": "incomplete",
+      "runtimeConstraint": "none",
+      "reason": "Synthetic table and stale/geometry case labels lack the complete local slide/table recipes and numeric expected results.",
+      "evidence": [
+        "workflows/pptx/tables.feature",
+        "contracts/native-profiles.md"
+      ]
+    },
+    {
+      "id": "@id-pptx-table-atomic-refusals",
+      "feature": "workflows/pptx/tables.feature",
+      "category": "incomplete",
+      "runtimeConstraint": "none",
+      "reason": "Synthetic table and stale/geometry case labels lack the complete local slide/table recipes and numeric expected results.",
+      "evidence": [
+        "workflows/pptx/tables.feature",
+        "contracts/native-profiles.md"
+      ]
+    },
+    {
+      "id": "@id-pptx-text-box-authoring",
+      "feature": "workflows/pptx/text-box.feature",
+      "category": "incomplete",
+      "runtimeConstraint": "none",
+      "reason": "Plain/multiline/geometry/defect labels lack per-row source decks, actual EMU coordinates, literal text and expected identities.",
+      "evidence": [
+        "workflows/pptx/text-box.feature",
+        "contracts/text-box.md"
+      ]
+    },
+    {
+      "id": "@id-pptx-text-box-refusal",
+      "feature": "workflows/pptx/text-box.feature",
+      "category": "incomplete",
+      "runtimeConstraint": "none",
+      "reason": "Plain/multiline/geometry/defect labels lack per-row source decks, actual EMU coordinates, literal text and expected identities.",
+      "evidence": [
+        "workflows/pptx/text-box.feature",
+        "contracts/text-box.md"
+      ]
+    },
+    {
+      "id": "@id-pptx-readable-unsupported-topology",
+      "feature": "workflows/pptx/text.feature",
+      "category": "incomplete",
+      "runtimeConstraint": "none",
+      "reason": "Synthetic slide, text-anchor and unsupported topology labels need explicit source XML and expected strings before independent reuse.",
+      "evidence": [
+        "workflows/pptx/text.feature",
+        "contracts/native-profiles.md"
+      ]
+    },
+    {
+      "id": "@id-pptx-cross-run-replace",
+      "feature": "workflows/pptx/text.feature",
+      "category": "incomplete",
+      "runtimeConstraint": "none",
+      "reason": "Synthetic slide, text-anchor and unsupported topology labels need explicit source XML and expected strings before independent reuse.",
+      "evidence": [
+        "workflows/pptx/text.feature",
+        "contracts/native-profiles.md"
+      ]
+    },
+    {
+      "id": "@id-pptx-stale-anchor-refusal",
+      "feature": "workflows/pptx/text.feature",
+      "category": "incomplete",
+      "runtimeConstraint": "none",
+      "reason": "Synthetic slide, text-anchor and unsupported topology labels need explicit source XML and expected strings before independent reuse.",
+      "evidence": [
+        "workflows/pptx/text.feature",
+        "contracts/native-profiles.md"
+      ]
+    },
+    {
+      "id": "@id-xlsx-derived-cache-completeness",
+      "feature": "workflows/xlsx/cache-completeness.feature",
+      "category": "incomplete",
+      "runtimeConstraint": "none",
+      "reason": "Broad freshness obligation leaves supported dependencies, input package and exact invalidated/recalculated results unspecified.",
+      "evidence": [
+        "workflows/xlsx/cache-completeness.feature",
+        "contracts/native-profiles.md"
+      ]
+    },
+    {
+      "id": "@id-xlsx-owned-calculation-chain-invalidation",
+      "feature": "workflows/xlsx/calculation-chain-lifecycle.feature",
+      "category": "generalized",
+      "runtimeConstraint": "none",
+      "reason": "Two-sheet literal formulas/caches, owned chain path and exact removal/dependency/custody outcomes define a portable constructed test.",
+      "evidence": [
+        "workflows/xlsx/calculation-chain-lifecycle.feature",
+        "contracts/package-profiles.md"
+      ]
+    },
+    {
+      "id": "@id-parity-native-oracle",
+      "feature": "workflows/xlsx/calculation-engine.feature",
+      "category": "incomplete",
+      "runtimeConstraint": "none",
+      "reason": "The frozen workbook, supported calculation contract, expected values/errors and exclusion corpus are not supplied by this scenario.",
+      "evidence": [
+        "workflows/xlsx/calculation-engine.feature",
+        "contracts/native-profiles.md"
+      ]
+    },
+    {
+      "id": "@id-xlsx-style-dependency-closure",
+      "feature": "workflows/xlsx/cell-style.feature",
+      "category": "generalized",
+      "runtimeConstraint": "none",
+      "reason": "Mutation fixture contract supplies the exact source, multiline value, style bounds, graph closure and custody assertions.",
+      "evidence": [
+        "workflows/xlsx/cell-style.feature",
+        "contracts/cell-style.md"
+      ]
+    },
+    {
+      "id": "@id-xlsx-cell-style-selection",
+      "feature": "workflows/xlsx/cell-style.feature",
+      "category": "incomplete",
+      "runtimeConstraint": "none",
+      "reason": "Style-selection kind labels lack exact source cellXfs and selected indexes/expected per-row receipts here.",
+      "evidence": [
+        "workflows/xlsx/cell-style.feature",
+        "contracts/cell-style.md"
+      ]
+    },
+    {
+      "id": "@id-xlsx-cell-style-refusal",
+      "feature": "workflows/xlsx/cell-style.feature",
+      "category": "incomplete",
+      "runtimeConstraint": "none",
+      "reason": "Style-selection kind labels lack exact source cellXfs and selected indexes/expected per-row receipts here.",
+      "evidence": [
+        "workflows/xlsx/cell-style.feature",
+        "contracts/cell-style.md"
+      ]
+    },
+    {
+      "id": "@id-xlsx-read-rel-linked-shared-strings",
+      "feature": "workflows/xlsx/cells.feature",
+      "category": "incomplete",
+      "runtimeConstraint": "none",
+      "reason": "Synthetic workbook labels omit exact worksheet/relationship/formula inputs and expected values; some fixture-based rows are classified separately.",
+      "evidence": [
+        "workflows/xlsx/cells.feature",
+        "contracts/native-profiles.md"
+      ]
+    },
+    {
+      "id": "@id-xlsx-preserve-styled-cell-edit",
+      "feature": "workflows/xlsx/cells.feature",
+      "category": "generalized",
+      "runtimeConstraint": "none",
+      "reason": "The shared formatting fixture, literal A2 replacement and reopened style/unrelated-member custody define a bounded portable edit.",
+      "evidence": [
+        "workflows/xlsx/cells.feature",
+        "contracts/native-profiles.md"
+      ]
+    },
+    {
+      "id": "@id-xlsx-prefixed-namespace-safe-edits",
+      "feature": "workflows/xlsx/cells.feature",
+      "category": "incomplete",
+      "runtimeConstraint": "none",
+      "reason": "Synthetic workbook labels omit exact worksheet/relationship/formula inputs and expected values; some fixture-based rows are classified separately.",
+      "evidence": [
+        "workflows/xlsx/cells.feature",
+        "contracts/native-profiles.md"
+      ]
+    },
+    {
+      "id": "@id-xlsx-phonetic-guides-excluded",
+      "feature": "workflows/xlsx/cells.feature",
+      "category": "incomplete",
+      "runtimeConstraint": "none",
+      "reason": "Synthetic workbook labels omit exact worksheet/relationship/formula inputs and expected values; some fixture-based rows are classified separately.",
+      "evidence": [
+        "workflows/xlsx/cells.feature",
+        "contracts/native-profiles.md"
+      ]
+    },
+    {
+      "id": "@id-xlsx-styled-blank-cell-editable",
+      "feature": "workflows/xlsx/cells.feature",
+      "category": "incomplete",
+      "runtimeConstraint": "none",
+      "reason": "Synthetic workbook labels omit exact worksheet/relationship/formula inputs and expected values; some fixture-based rows are classified separately.",
+      "evidence": [
+        "workflows/xlsx/cells.feature",
+        "contracts/native-profiles.md"
+      ]
+    },
+    {
+      "id": "@id-xlsx-refuse-shared-formula-overwrite",
+      "feature": "workflows/xlsx/cells.feature",
+      "category": "incomplete",
+      "runtimeConstraint": "none",
+      "reason": "Synthetic workbook labels omit exact worksheet/relationship/formula inputs and expected values; some fixture-based rows are classified separately.",
+      "evidence": [
+        "workflows/xlsx/cells.feature",
+        "contracts/native-profiles.md"
+      ]
+    },
+    {
+      "id": "@id-xlsx-refuse-array-formula-overwrite",
+      "feature": "workflows/xlsx/cells.feature",
+      "category": "incomplete",
+      "runtimeConstraint": "none",
+      "reason": "Synthetic workbook labels omit exact worksheet/relationship/formula inputs and expected values; some fixture-based rows are classified separately.",
+      "evidence": [
+        "workflows/xlsx/cells.feature",
+        "contracts/native-profiles.md"
+      ]
+    },
+    {
+      "id": "@id-xlsx-comment-vml-existing-graph",
+      "feature": "workflows/xlsx/comment-vml-custody.feature",
+      "category": "generalized",
+      "runtimeConstraint": "none",
+      "reason": "Pinned fixture, exact part paths, relationship types and comment text define runtime-neutral graph observations.",
+      "evidence": [
+        "workflows/xlsx/comment-vml-custody.feature",
+        "contracts/python-xlsx-dependencies.md"
+      ]
+    },
+    {
+      "id": "@id-xlsx-comment-vml-disjoint-row-shift",
+      "feature": "workflows/xlsx/comment-vml-custody.feature",
+      "category": "profile-specific",
+      "runtimeConstraint": "none",
+      "reason": "Concrete relationship/VML observations are portable, but preservation-row and limited-number editors deliberately require different admission policies. These are bounded predicates: the control/unknown-shape refusals do not assert full byte custody.",
+      "evidence": [
+        "workflows/xlsx/comment-vml-custody.feature",
+        "contracts/python-xlsx-dependencies.md"
+      ]
+    },
+    {
+      "id": "@id-xlsx-comment-vml-affected-row-refusal",
+      "feature": "workflows/xlsx/comment-vml-custody.feature",
+      "category": "profile-specific",
+      "runtimeConstraint": "none",
+      "reason": "Concrete relationship/VML observations are portable, but preservation-row and limited-number editors deliberately require different admission policies. These are bounded predicates: the control/unknown-shape refusals do not assert full byte custody.",
+      "evidence": [
+        "workflows/xlsx/comment-vml-custody.feature",
+        "contracts/python-xlsx-dependencies.md"
+      ]
+    },
+    {
+      "id": "@id-xlsx-comment-vml-control-shape-refusal",
+      "feature": "workflows/xlsx/comment-vml-custody.feature",
+      "category": "profile-specific",
+      "runtimeConstraint": "none",
+      "reason": "Concrete relationship/VML observations are portable, but preservation-row and limited-number editors deliberately require different admission policies. These are bounded predicates: the control/unknown-shape refusals do not assert full byte custody.",
+      "evidence": [
+        "workflows/xlsx/comment-vml-custody.feature",
+        "contracts/python-xlsx-dependencies.md"
+      ]
+    },
+    {
+      "id": "@id-xlsx-comment-vml-unknown-shape-refusal",
+      "feature": "workflows/xlsx/comment-vml-custody.feature",
+      "category": "profile-specific",
+      "runtimeConstraint": "none",
+      "reason": "Concrete relationship/VML observations are portable, but preservation-row and limited-number editors deliberately require different admission policies. These are bounded predicates: the control/unknown-shape refusals do not assert full byte custody.",
+      "evidence": [
+        "workflows/xlsx/comment-vml-custody.feature",
+        "contracts/python-xlsx-dependencies.md"
+      ]
+    },
+    {
+      "id": "@id-xlsx-comment-vml-limited-editor-refusal",
+      "feature": "workflows/xlsx/comment-vml-custody.feature",
+      "category": "profile-specific",
+      "runtimeConstraint": "none",
+      "reason": "Concrete relationship/VML observations are portable, but preservation-row and limited-number editors deliberately require different admission policies. These are bounded predicates: the control/unknown-shape refusals do not assert full byte custody.",
+      "evidence": [
+        "workflows/xlsx/comment-vml-custody.feature",
+        "contracts/python-xlsx-dependencies.md"
+      ]
+    },
+    {
+      "id": "@id-xlsx-create-native-default",
+      "feature": "workflows/xlsx/creation.feature",
+      "category": "generalized",
+      "runtimeConstraint": "none",
+      "reason": "Literal worksheet/cell operations and saved package/value predicates can be reused within the stated minimal authoring scope.",
+      "evidence": [
+        "workflows/xlsx/creation.feature",
+        "contracts/native-profiles.md"
+      ]
+    },
+    {
+      "id": "@id-xlsx-create-add-worksheet",
+      "feature": "workflows/xlsx/creation.feature",
+      "category": "generalized",
+      "runtimeConstraint": "none",
+      "reason": "Literal worksheet/cell operations and saved package/value predicates can be reused within the stated minimal authoring scope.",
+      "evidence": [
+        "workflows/xlsx/creation.feature",
+        "contracts/native-profiles.md"
+      ]
+    },
+    {
+      "id": "@id-xlsx-create-prefixed-missing-cell",
+      "feature": "workflows/xlsx/creation.feature",
+      "category": "incomplete",
+      "runtimeConstraint": "none",
+      "reason": "The prefixed source is synthetic and lacks exact workbook/worksheet namespace XML in this repository.",
+      "evidence": [
+        "workflows/xlsx/creation.feature",
+        "contracts/native-profiles.md"
+      ]
+    },
+    {
+      "id": "@id-xlsx-create-coordinate-boundary",
+      "feature": "workflows/xlsx/creation.feature",
+      "category": "generalized",
+      "runtimeConstraint": "none",
+      "reason": "Literal worksheet/cell operations and saved package/value predicates can be reused within the stated minimal authoring scope.",
+      "evidence": [
+        "workflows/xlsx/creation.feature",
+        "contracts/native-profiles.md"
+      ]
+    },
+    {
+      "id": "@id-xlsx-create-row-ordering",
+      "feature": "workflows/xlsx/creation.feature",
+      "category": "generalized",
+      "runtimeConstraint": "none",
+      "reason": "Literal worksheet/cell operations and saved package/value predicates can be reused within the stated minimal authoring scope.",
+      "evidence": [
+        "workflows/xlsx/creation.feature",
+        "contracts/native-profiles.md"
+      ]
+    },
+    {
+      "id": "@id-xlsx-create-invalid-params-atomic",
+      "feature": "workflows/xlsx/creation.feature",
+      "category": "incomplete",
+      "runtimeConstraint": "none",
+      "reason": "Invalid coordinates and names are not enumerated, so independent bindings could test different refusal sets.",
+      "evidence": [
+        "workflows/xlsx/creation.feature",
+        "contracts/native-profiles.md"
+      ]
+    },
+    {
+      "id": "@id-xlsx-create-existing-fixture-append",
+      "feature": "workflows/xlsx/creation.feature",
+      "category": "generalized",
+      "runtimeConstraint": "none",
+      "reason": "Literal worksheet/cell operations and saved package/value predicates can be reused within the stated minimal authoring scope.",
+      "evidence": [
+        "workflows/xlsx/creation.feature",
+        "contracts/native-profiles.md"
+      ]
+    },
+    {
+      "id": "@id-xlsx-cross-sheet-cache-invalidation",
+      "feature": "workflows/xlsx/formula-cache.feature",
+      "category": "generalized",
+      "runtimeConstraint": "none",
+      "reason": "Manifest-backed source plus literal input/formula/cached values and destination policy define portable stale-cache invalidation.",
+      "evidence": [
+        "workflows/xlsx/formula-cache.feature",
+        "contracts/mutation-safety.json"
+      ]
+    },
+    {
+      "id": "@id-xlsx-clear-cross-sheet-caches",
+      "feature": "workflows/xlsx/formula-cache.feature",
+      "category": "incomplete",
+      "runtimeConstraint": "none",
+      "reason": "Most synthetic topology/cache labels lack local construction and per-member expected outcomes; the manifest-backed mutation row is separate.",
+      "evidence": [
+        "workflows/xlsx/formula-cache.feature",
+        "contracts/mutation-safety.json"
+      ]
+    },
+    {
+      "id": "@id-xlsx-array-input-refusal",
+      "feature": "workflows/xlsx/formula-cache.feature",
+      "category": "incomplete",
+      "runtimeConstraint": "none",
+      "reason": "Most synthetic topology/cache labels lack local construction and per-member expected outcomes; the manifest-backed mutation row is separate.",
+      "evidence": [
+        "workflows/xlsx/formula-cache.feature",
+        "contracts/mutation-safety.json"
+      ]
+    },
+    {
+      "id": "@id-xlsx-cache-scope-opaque-parts",
+      "feature": "workflows/xlsx/formula-cache.feature",
+      "category": "incomplete",
+      "runtimeConstraint": "none",
+      "reason": "Most synthetic topology/cache labels lack local construction and per-member expected outcomes; the manifest-backed mutation row is separate.",
+      "evidence": [
+        "workflows/xlsx/formula-cache.feature",
+        "contracts/mutation-safety.json"
+      ]
+    },
+    {
+      "id": "@id-xlsx-go-formula-analysis-counts",
+      "feature": "workflows/xlsx/formula-references.feature",
+      "category": "profile-specific",
+      "runtimeConstraint": "none",
+      "reason": "UTF-8 byte spans, zero absent axes, exact rewrite strings and bounded formula grammar require the static-reference API.",
+      "evidence": [
+        "workflows/xlsx/formula-references.feature",
+        "contracts/go-formula-references.md"
+      ]
+    },
+    {
+      "id": "@id-xlsx-go-formula-quoted-sheet-flags",
+      "feature": "workflows/xlsx/formula-references.feature",
+      "category": "profile-specific",
+      "runtimeConstraint": "none",
+      "reason": "UTF-8 byte spans, zero absent axes, exact rewrite strings and bounded formula grammar require the static-reference API.",
+      "evidence": [
+        "workflows/xlsx/formula-references.feature",
+        "contracts/go-formula-references.md"
+      ]
+    },
+    {
+      "id": "@id-xlsx-go-formula-analysis-refusal",
+      "feature": "workflows/xlsx/formula-references.feature",
+      "category": "profile-specific",
+      "runtimeConstraint": "none",
+      "reason": "UTF-8 byte spans, zero absent axes, exact rewrite strings and bounded formula grammar require the static-reference API.",
+      "evidence": [
+        "workflows/xlsx/formula-references.feature",
+        "contracts/go-formula-references.md"
+      ]
+    },
+    {
+      "id": "@id-xlsx-go-formula-literal-punctuation",
+      "feature": "workflows/xlsx/formula-references.feature",
+      "category": "profile-specific",
+      "runtimeConstraint": "none",
+      "reason": "UTF-8 byte spans, zero absent axes, exact rewrite strings and bounded formula grammar require the static-reference API.",
+      "evidence": [
+        "workflows/xlsx/formula-references.feature",
+        "contracts/go-formula-references.md"
+      ]
+    },
+    {
+      "id": "@id-xlsx-go-direct-range-parsing",
+      "feature": "workflows/xlsx/formula-references.feature",
+      "category": "profile-specific",
+      "runtimeConstraint": "none",
+      "reason": "UTF-8 byte spans, zero absent axes, exact rewrite strings and bounded formula grammar require the static-reference API.",
+      "evidence": [
+        "workflows/xlsx/formula-references.feature",
+        "contracts/go-formula-references.md"
+      ]
+    },
+    {
+      "id": "@id-xlsx-go-direct-range-refusal",
+      "feature": "workflows/xlsx/formula-references.feature",
+      "category": "profile-specific",
+      "runtimeConstraint": "none",
+      "reason": "UTF-8 byte spans, zero absent axes, exact rewrite strings and bounded formula grammar require the static-reference API.",
+      "evidence": [
+        "workflows/xlsx/formula-references.feature",
+        "contracts/go-formula-references.md"
+      ]
+    },
+    {
+      "id": "@id-xlsx-go-static-remap-exact",
+      "feature": "workflows/xlsx/formula-references.feature",
+      "category": "profile-specific",
+      "runtimeConstraint": "none",
+      "reason": "UTF-8 byte spans, zero absent axes, exact rewrite strings and bounded formula grammar require the static-reference API.",
+      "evidence": [
+        "workflows/xlsx/formula-references.feature",
+        "contracts/go-formula-references.md"
+      ]
+    },
+    {
+      "id": "@id-xlsx-go-static-remap-refusal",
+      "feature": "workflows/xlsx/formula-references.feature",
+      "category": "profile-specific",
+      "runtimeConstraint": "none",
+      "reason": "UTF-8 byte spans, zero absent axes, exact rewrite strings and bounded formula grammar require the static-reference API.",
+      "evidence": [
+        "workflows/xlsx/formula-references.feature",
+        "contracts/go-formula-references.md"
+      ]
+    },
+    {
+      "id": "@id-xlsx-go-static-reference-properties",
+      "feature": "workflows/xlsx/formula-references.feature",
+      "category": "profile-specific",
+      "runtimeConstraint": "none",
+      "reason": "UTF-8 byte spans, zero absent axes, exact rewrite strings and bounded formula grammar require the static-reference API.",
+      "evidence": [
+        "workflows/xlsx/formula-references.feature",
+        "contracts/go-formula-references.md"
+      ]
+    },
+    {
+      "id": "@id-xlsx-dry-run-no-mutation",
+      "feature": "workflows/xlsx/mutation-safety.feature",
+      "category": "generalized",
+      "runtimeConstraint": "none",
+      "reason": "Manifest-backed source and mutation contract fix exact changed members and destination/refusal custody.",
+      "evidence": [
+        "workflows/xlsx/mutation-safety.feature",
+        "contracts/mutation-safety.json"
+      ]
+    },
+    {
+      "id": "@id-xlsx-strict-batch-atomicity",
+      "feature": "workflows/xlsx/mutation-safety.feature",
+      "category": "generalized",
+      "runtimeConstraint": "none",
+      "reason": "Manifest-backed source and mutation contract fix exact changed members and destination/refusal custody.",
+      "evidence": [
+        "workflows/xlsx/mutation-safety.feature",
+        "contracts/mutation-safety.json"
+      ]
+    },
+    {
+      "id": "@id-parity-xlsx-structure",
+      "feature": "workflows/xlsx/structural-edits.feature",
+      "category": "incomplete",
+      "runtimeConstraint": "none",
+      "reason": "Structural operation, range coordinates, input formula/name/chart corpus and exact remapped outputs are not enumerated.",
+      "evidence": [
+        "workflows/xlsx/structural-edits.feature",
+        "contracts/native-profiles.md"
+      ]
+    },
+    {
+      "id": "@id-office-xlsx-independent-style-reader",
+      "feature": "workflows/xlsx/style-readback.feature",
+      "category": "incomplete",
+      "runtimeConstraint": "none",
+      "reason": "Independent-reader obligation lacks a particular saved workbook/style recipe and exact edited-cell expected value.",
+      "evidence": [
+        "workflows/xlsx/style-readback.feature",
+        "contracts/native-profiles.md"
+      ]
+    },
+    {
+      "id": "@id-xml-comparison-prefix-and-opc-order",
+      "feature": "workflows/xml/comparison.feature",
+      "category": "generalized",
+      "runtimeConstraint": "none",
+      "reason": "Literal XML pairs with exact Boolean outcomes define portable bounded comparison, not C14N.",
+      "evidence": [
+        "workflows/xml/comparison.feature",
+        "contracts/xml-profiles.md"
+      ]
+    },
+    {
+      "id": "@id-xml-comparison-significant-content",
+      "feature": "workflows/xml/comparison.feature",
+      "category": "generalized",
+      "runtimeConstraint": "none",
+      "reason": "Literal XML pairs with exact Boolean outcomes define portable bounded comparison, not C14N.",
+      "evidence": [
+        "workflows/xml/comparison.feature",
+        "contracts/xml-profiles.md"
+      ]
+    },
+    {
+      "id": "@id-xml-comparison-prefix-attribute-binding",
+      "feature": "workflows/xml/comparison.feature",
+      "category": "generalized",
+      "runtimeConstraint": "none",
+      "reason": "Literal XML pairs with exact Boolean outcomes define portable bounded comparison, not C14N.",
+      "evidence": [
+        "workflows/xml/comparison.feature",
+        "contracts/xml-profiles.md"
+      ]
+    },
+    {
+      "id": "@id-xml-comparison-unsafe-input",
+      "feature": "workflows/xml/comparison.feature",
+      "category": "generalized",
+      "runtimeConstraint": "none",
+      "reason": "Literal XML pairs with exact Boolean outcomes define portable bounded comparison, not C14N.",
+      "evidence": [
+        "workflows/xml/comparison.feature",
+        "contracts/xml-profiles.md"
+      ]
+    },
+    {
+      "id": "@id-xml-comparison-processing-instructions-and-comments",
+      "feature": "workflows/xml/comparison.feature",
+      "category": "generalized",
+      "runtimeConstraint": "none",
+      "reason": "Literal XML pairs with exact Boolean outcomes define portable bounded comparison, not C14N.",
+      "evidence": [
+        "workflows/xml/comparison.feature",
+        "contracts/xml-profiles.md"
+      ]
+    },
+    {
+      "id": "@id-xml-apply-edits",
+      "feature": "workflows/xml/editing.feature",
+      "category": "incomplete",
+      "runtimeConstraint": "none",
+      "reason": "Disjoint/overlap/malformed categories lack exact source ranges, replacement vectors and outputs.",
+      "evidence": [
+        "workflows/xml/editing.feature",
+        "contracts/go-lexical-editing.md"
+      ]
+    },
+    {
+      "id": "@id-xml-go-attribute-splice-custody",
+      "feature": "workflows/xml/editing.feature",
+      "category": "profile-specific",
+      "runtimeConstraint": "none",
+      "reason": "Parsed-snapshot ownership and exact source-splice/escape conventions require the lexical editing API.",
+      "evidence": [
+        "workflows/xml/editing.feature",
+        "contracts/go-lexical-editing.md"
+      ]
+    },
+    {
+      "id": "@id-xml-go-attribute-batch-refusal",
+      "feature": "workflows/xml/editing.feature",
+      "category": "profile-specific",
+      "runtimeConstraint": "none",
+      "reason": "Parsed-snapshot ownership and exact source-splice/escape conventions require the lexical editing API.",
+      "evidence": [
+        "workflows/xml/editing.feature",
+        "contracts/go-lexical-editing.md"
+      ]
+    },
+    {
+      "id": "@id-xml-go-child-insertion-custody",
+      "feature": "workflows/xml/editing.feature",
+      "category": "profile-specific",
+      "runtimeConstraint": "none",
+      "reason": "Parsed-snapshot ownership and exact source-splice/escape conventions require the lexical editing API.",
+      "evidence": [
+        "workflows/xml/editing.feature",
+        "contracts/go-lexical-editing.md"
+      ]
+    },
+    {
+      "id": "@id-xml-go-child-insertion-refusal",
+      "feature": "workflows/xml/editing.feature",
+      "category": "profile-specific",
+      "runtimeConstraint": "none",
+      "reason": "Parsed-snapshot ownership and exact source-splice/escape conventions require the lexical editing API.",
+      "evidence": [
+        "workflows/xml/editing.feature",
+        "contracts/go-lexical-editing.md"
+      ]
+    },
+    {
+      "id": "@id-xml-go-child-namespace-matrix",
+      "feature": "workflows/xml/editing.feature",
+      "category": "profile-specific",
+      "runtimeConstraint": "none",
+      "reason": "Parsed-snapshot ownership and exact source-splice/escape conventions require the lexical editing API.",
+      "evidence": [
+        "workflows/xml/editing.feature",
+        "contracts/go-lexical-editing.md"
+      ]
+    },
+    {
+      "id": "@id-xml-go-element-removal-custody",
+      "feature": "workflows/xml/editing.feature",
+      "category": "profile-specific",
+      "runtimeConstraint": "none",
+      "reason": "Parsed-snapshot ownership and exact source-splice/escape conventions require the lexical editing API.",
+      "evidence": [
+        "workflows/xml/editing.feature",
+        "contracts/go-lexical-editing.md"
+      ]
+    },
+    {
+      "id": "@id-xml-go-element-removal-refusal",
+      "feature": "workflows/xml/editing.feature",
+      "category": "profile-specific",
+      "runtimeConstraint": "none",
+      "reason": "Parsed-snapshot ownership and exact source-splice/escape conventions require the lexical editing API.",
+      "evidence": [
+        "workflows/xml/editing.feature",
+        "contracts/go-lexical-editing.md"
+      ]
+    },
+    {
+      "id": "@id-xml-go-element-replacement-custody",
+      "feature": "workflows/xml/editing.feature",
+      "category": "profile-specific",
+      "runtimeConstraint": "none",
+      "reason": "Parsed-snapshot ownership and exact source-splice/escape conventions require the lexical editing API.",
+      "evidence": [
+        "workflows/xml/editing.feature",
+        "contracts/go-lexical-editing.md"
+      ]
+    },
+    {
+      "id": "@id-xml-go-element-replacement-refusal",
+      "feature": "workflows/xml/editing.feature",
+      "category": "profile-specific",
+      "runtimeConstraint": "none",
+      "reason": "Parsed-snapshot ownership and exact source-splice/escape conventions require the lexical editing API.",
+      "evidence": [
+        "workflows/xml/editing.feature",
+        "contracts/go-lexical-editing.md"
+      ]
+    },
+    {
+      "id": "@id-xml-go-immutable-leaf-seed",
+      "feature": "workflows/xml/editing.feature",
+      "category": "profile-specific",
+      "runtimeConstraint": "none",
+      "reason": "Parsed-snapshot ownership and exact source-splice/escape conventions require the lexical editing API.",
+      "evidence": [
+        "workflows/xml/editing.feature",
+        "contracts/go-lexical-editing.md"
+      ]
+    },
+    {
+      "id": "@id-xml-invalid-qname-components",
+      "feature": "workflows/xml/names.feature",
+      "category": "incomplete",
+      "runtimeConstraint": "none",
+      "reason": "QName/NBSP category descriptions omit exact source strings and expected name/offset values for independent bindings.",
+      "evidence": [
+        "workflows/xml/names.feature",
+        "contracts/xml-values.md"
+      ]
+    },
+    {
+      "id": "@id-xml-unicode-qname-components",
+      "feature": "workflows/xml/names.feature",
+      "category": "incomplete",
+      "runtimeConstraint": "none",
+      "reason": "QName/NBSP category descriptions omit exact source strings and expected name/offset values for independent bindings.",
+      "evidence": [
+        "workflows/xml/names.feature",
+        "contracts/xml-values.md"
+      ]
+    },
+    {
+      "id": "@id-xml-outside-root-nbsp",
+      "feature": "workflows/xml/names.feature",
+      "category": "incomplete",
+      "runtimeConstraint": "none",
+      "reason": "QName/NBSP category descriptions omit exact source strings and expected name/offset values for independent bindings.",
+      "evidence": [
+        "workflows/xml/names.feature",
+        "contracts/xml-values.md"
+      ]
+    },
+    {
+      "id": "@id-xml-parse-offsets",
+      "feature": "workflows/xml/parsing.feature",
+      "category": "incomplete",
+      "runtimeConstraint": "none",
+      "reason": "UTF-16 is a portable convention, but the source document and exact offset/node expectations are not supplied here.",
+      "evidence": [
+        "workflows/xml/parsing.feature",
+        "contracts/xml-values.md"
+      ]
+    },
+    {
+      "id": "@id-xml-normalise-line-endings",
+      "feature": "workflows/xml/parsing.feature",
+      "category": "incomplete",
+      "runtimeConstraint": "none",
+      "reason": "Inherited UTF-16 offsets are explicit; exact raw/reference strings and expected offset/value vectors remain unspecified.",
+      "evidence": [
+        "workflows/xml/parsing.feature",
+        "contracts/xml-values.md"
+      ]
+    },
+    {
+      "id": "@id-xml-parse-refusals",
+      "feature": "workflows/xml/parsing.feature",
+      "category": "incomplete",
+      "runtimeConstraint": "none",
+      "reason": "Malformed/unsafe categories and stable-code outcome lack exact source vectors and required codes.",
+      "evidence": [
+        "workflows/xml/parsing.feature",
+        "contracts/xml-values.md"
+      ]
+    },
+    {
+      "id": "@id-xml-parse-bounds",
+      "feature": "workflows/xml/parsing.feature",
+      "category": "incomplete",
+      "runtimeConstraint": "none",
+      "reason": "Exact parser limits, exceeding inputs and bound-edge controls are not supplied.",
+      "evidence": [
+        "workflows/xml/parsing.feature",
+        "contracts/xml-values.md"
+      ]
+    },
+    {
+      "id": "@id-xml-entity-values",
+      "feature": "workflows/xml/parsing.feature",
+      "category": "generalized",
+      "runtimeConstraint": "none",
+      "reason": "Literal XML/JSON operands and exact decoded values or roundtrip/refusal outcomes are portable XML contracts.",
+      "evidence": [
+        "workflows/xml/parsing.feature",
+        "contracts/xml-values.md"
+      ]
+    },
+    {
+      "id": "@id-xml-stylesheet-processing-instruction",
+      "feature": "workflows/xml/parsing.feature",
+      "category": "generalized",
+      "runtimeConstraint": "none",
+      "reason": "Literal XML/JSON operands and exact decoded values or roundtrip/refusal outcomes are portable XML contracts.",
+      "evidence": [
+        "workflows/xml/parsing.feature",
+        "contracts/xml-values.md"
+      ]
+    },
+    {
+      "id": "@id-xml-expanded-attribute-lookup",
+      "feature": "workflows/xml/parsing.feature",
+      "category": "generalized",
+      "runtimeConstraint": "none",
+      "reason": "Literal XML/JSON operands and exact decoded values or roundtrip/refusal outcomes are portable XML contracts.",
+      "evidence": [
+        "workflows/xml/parsing.feature",
+        "contracts/xml-values.md"
+      ]
+    },
+    {
+      "id": "@id-xml-implicit-xml-prefix",
+      "feature": "workflows/xml/parsing.feature",
+      "category": "generalized",
+      "runtimeConstraint": "none",
+      "reason": "Literal XML/JSON operands and exact decoded values or roundtrip/refusal outcomes are portable XML contracts.",
+      "evidence": [
+        "workflows/xml/parsing.feature",
+        "contracts/xml-values.md"
+      ]
+    },
+    {
+      "id": "@id-xml-prototype-safe-attributes",
+      "feature": "workflows/xml/parsing.feature",
+      "category": "generalized",
+      "runtimeConstraint": "none",
+      "reason": "Exact literal attribute set/values and unchanged root/source replace language-specific prototype checks; native guards remain required.",
+      "evidence": [
+        "workflows/xml/parsing.feature",
+        "contracts/xml-values.md"
+      ]
+    },
+    {
+      "id": "@id-xml-immutable-namespace-metadata",
+      "feature": "workflows/xml/parsing.feature",
+      "category": "generalized",
+      "runtimeConstraint": "none",
+      "reason": "Mutating returned namespace metadata cannot affect fresh reads from the same model; read-only or detached native snapshots implement this portable isolation contract.",
+      "evidence": [
+        "workflows/xml/parsing.feature",
+        "contracts/xml-values.md"
+      ]
+    },
+    {
+      "id": "@id-xml-escaping-values",
+      "feature": "workflows/xml/parsing.feature",
+      "category": "profile-specific",
+      "runtimeConstraint": "none",
+      "reason": "Exact named entity spelling is a compatibility profile; other XML-valid spellings preserve the same values.",
+      "evidence": [
+        "workflows/xml/parsing.feature",
+        "contracts/xml-values.md"
+      ]
+    },
+    {
+      "id": "@id-xml-escaping-invalid-character",
+      "feature": "workflows/xml/parsing.feature",
+      "category": "generalized",
+      "runtimeConstraint": "none",
+      "reason": "Literal XML/JSON operands and exact decoded values or roundtrip/refusal outcomes are portable XML contracts.",
+      "evidence": [
+        "workflows/xml/parsing.feature",
+        "contracts/xml-values.md"
+      ]
+    },
+    {
+      "id": "@id-xml-escaping-whitespace-roundtrip",
+      "feature": "workflows/xml/parsing.feature",
+      "category": "generalized",
+      "runtimeConstraint": "none",
+      "reason": "Literal XML/JSON operands and exact decoded values or roundtrip/refusal outcomes are portable XML contracts.",
+      "evidence": [
+        "workflows/xml/parsing.feature",
+        "contracts/xml-values.md"
+      ]
+    },
+    {
+      "id": "@id-xml-typed-parse-error",
+      "feature": "workflows/xml/parsing.feature",
+      "category": "generalized",
+      "runtimeConstraint": "none",
+      "reason": "Documented native syntax-failure category, no partial result and source custody replace literal exception-class identity.",
+      "evidence": [
+        "workflows/xml/parsing.feature",
+        "contracts/xml-values.md"
+      ]
+    }
+  ],
+  "evidenceSha256": {
+    "contracts/bun-opc-custody.md": "93f7efc32f25f6af2ababbe1a89a3fc9b1bb9be4d066a7f27a43e83db3bc1729",
+    "contracts/bun-pptx.md": "bf9612bc4d8507047bae164c5a74302486043ab7f79ef0abba5484f3c4e4379b",
+    "contracts/bun-zip32-profile.md": "d0b4f6fc82b9fa59f4bf423df4dca8cd11a33444dbf52e4d48c697288e36ee90",
+    "contracts/cell-style.md": "8926740dd9500b255229b863e7f244fed1f967211be00d8e4c4f0c63f967032b",
+    "contracts/comment-profiles.md": "fed776f9901a4db9a8f4672a04ba00ea8b405cbe25cf3bf284ef68f18aa27004",
+    "contracts/comment-threads.md": "fc03b4a10748ca3e93e0559a8c612eb08b59eb3987e2f718faaac25a4979de94",
+    "contracts/effective-formatting.md": "4832dca2820e46b48c14db3b000aac760738548cbb048b42092988cf237dc34b",
+    "contracts/go-document-api.md": "2660da7d8b07c61588c2d4c60fc70338b0d1d6d1bd75d296008708a748ccc960",
+    "contracts/go-formula-references.md": "7bd708e58948e1cad00796d3e92957fb74aa9e5e0070bb388365c82b2f94a7b1",
+    "contracts/go-lexical-editing.md": "fd909f7181f6a68859e80f9a37236a6812e7f425d1e850d6213c4c5df42c4097",
+    "contracts/go-notes-editing.md": "62a2c3dc5b5781e9a184a94434ca2cfccc06c186ed9527afab905ca538516df8",
+    "contracts/mutation-safety.json": "ae485fbd690e81c0db3c761365155975e3100c392e272922a23080001f2ef66c",
+    "contracts/native-profiles.md": "6906a18744ccbd3ce4c1d0410bd4283ad7715f0f54c00942be888d026187fee8",
+    "contracts/package-profiles.md": "7e61bb1a93ef916a71f041afeb382335d565293cded09bd0ecf3b5f213a9f0fe",
+    "contracts/page-layout.md": "c893f6fa76b3ac9f189788ac4de4da3f88ae28aa8d126c456278ef17e91afc62",
+    "contracts/paragraph-style.md": "db73f30dc7a47f440750849b80309971119af72397410c4a21ff1bb3d51914f2",
+    "contracts/pptx-slide-visibility.md": "993d0f45e95c7f391cc68ced177e0ba907e1118065bd8a1ebbc1776080833cd9",
+    "contracts/python-anchor-discovery.md": "d52ab5ddcf3e38d303270ed370a8e374b05b21e518fa850ecaf01452905910df",
+    "contracts/python-template-analysis.md": "0cacf20b5a8708cb22ff675cb7092d1e04353227f7f1e2de38dfe0ed5960033f",
+    "contracts/python-template-cache.md": "61212210a8d0940f26fd912baabf60f75eb4bb0bb72237ec54c7098faaed0bea",
+    "contracts/python-xlsx-dependencies.md": "207ef696d46333740659dcd6a84b8a7156ee93e158635222097451571886ac0d",
+    "contracts/run-formatting.md": "1eb11c2dde4f865694f32907f933ad561de267eec0550039e54e6896c2a00be2",
+    "contracts/run-move-revisions.md": "2ed80309499531f9527995b0d30e18b2bbe3c73b68ed06c9206e6c47cdeeb9cb",
+    "contracts/run-property-revisions.md": "c4aff46dba131cc42cb0c4773d1b3bbe6bc2dd05bfa78600c6de59859b6fd54c",
+    "contracts/slide-order.md": "6f9231d81dfbc80f2a2424643ca622f149d01b6a32475d1773b737a64a1661d9",
+    "contracts/style-authoring.md": "b679b2a5318675732328d21d5c2041bd23877d12053112828e910f6dca76bd7a",
+    "contracts/table-merging.md": "b974224fa83a0f3593ca210b23e61d1919c4ed3c49dd85acb319bdae505e4dea",
+    "contracts/template-inventory.md": "0e444485809c2bfe06d90de5276077421a70c1ea2248e347c0b518f0d05eff4d",
+    "contracts/text-box.md": "cfaa08d29c7892a619cac4b5be7d6524f3e31d1931892203e829cf71c7806ddd",
+    "contracts/tracked-workflow.md": "964041692402ef92b83b282e257bf8e24a1d54ca6f5d7074bb4325d093bd2808",
+    "contracts/tracking-settings.md": "57aebc8f3c84d799a7303cd77b081abedd15f78b1a389b04e0c518e42bd6b917",
+    "contracts/workflow-receipts.md": "2d0337355138799ca88929b1d00ffa5834512d069e05626ec6d732449adb36a0",
+    "contracts/xml-profiles.md": "9c840865e317693c68cc62782d6d5aa0ad33690d7ebccae0b0ca80287a3a7892",
+    "contracts/xml-values.md": "fee52bb80f221a1ccb04eba1211fec7e188f3682f3ad5c12253e49836d0a9b62",
+    "ledgers/functional-equivalence.json": "c6daaa4094fb9cdd277421acce408d0e7dc206097ef8cd462460c58e4a97f851",
+    "workflows/docx/anchor-discovery.feature": "322cf1df8cb454241bf9255cfe62b9f4c84f83042cc27f102b88ef06ff99d911",
+    "workflows/docx/comment-content-type.feature": "df53d9f86112756deb5124e0feab7ef9568446c414c596fc185e90677f522d16",
+    "workflows/docx/comments.feature": "e1bcda50084acdc4231dc97273da5ae4194f90fa72dbb9a394fda343447001f0",
+    "workflows/docx/completion-audit.feature": "b3e838f7823c52b5d0dd8fb498418d4144b39906ff7cce1f015e606f1583f34c",
+    "workflows/docx/creation.feature": "b7f4632e576e9e040bdd9b57da3b865f626be9b23928c4a39edeb7363fa9ab94",
+    "workflows/docx/effective-formatting.feature": "8f1f31180b9e31dfff4e30ecfd9c9c4596edfaff85561cd53e775135cf748b90",
+    "workflows/docx/font-size.feature": "619db55d2fb4cf9092799e21e73b8c8ba45f77ef633d5f326f8dd78a5ba833a2",
+    "workflows/docx/mutation-safety.feature": "698761ad41f5ec295f1d9e6d141b2e45509cac4b327a937559d2de4d78cb141d",
+    "workflows/docx/page-layout.feature": "8d2e42e828beec30c47698dee64c6bc35380f7d9e0b1a3f3b7aeb36ceb921596",
+    "workflows/docx/paragraph-style.feature": "f0a565511a6f1b1ae0b38ddb9dc2332b23f66a5be2cfea214f9d59fe73990971",
+    "workflows/docx/paragraphs.feature": "7c448d5863f64ef188b3cb2ec1c9a82fb4a8a2c7c5104058ccf21ad2561e6856",
+    "workflows/docx/properties.feature": "59757333a4894b19364fd2b40fd2f1ceaafa19c21f357b4b9ef764bf2197be04",
+    "workflows/docx/review-integration.feature": "5b0d1392e1bc836afaf15dcd397fc2e1366035a0475f75b5cf464992f32ceb3e",
+    "workflows/docx/revisions.feature": "63e7107eeb754715b943b6d70524e558229c0b4c97427855050ea2888cbeefbd",
+    "workflows/docx/run-formatting.feature": "7af8ef3a85775d91a2025e033fd818dbda4bf8799210b294544b4ae1743536a1",
+    "workflows/docx/stories.feature": "4ee52f31689348b2a3e453eee6beb4c52fdc7fda196d8af86e811e321bc41e33",
+    "workflows/docx/style-authoring.feature": "d4d4224f70d7b18dc963a7bf6e2fd194cf64f5757652e1ce47df9f47ab32502e",
+    "workflows/docx/table-merging.feature": "3ea877322e88e4ac5e5d608e4f60cbe06ee04ea1c89e18fcd5650f9ec2c83cd1",
+    "workflows/docx/tables.feature": "858a813b0f9ea0ac315ae1034057da288a510c638849f558f242d0ce4aa41f0d",
+    "workflows/docx/template-analysis.feature": "433f432d8af73c042d4b5c938450080dbb46811ee24ccee77507a02c809e414e",
+    "workflows/docx/template-cache.feature": "2f425f013c2beec9d19f37d54154e10944e25e87ef62f29928c2fb71d9a44576",
+    "workflows/docx/text.feature": "27711dc49074796eafded354a478d1ae8068f729b9d8f90a7e124805c459c32d",
+    "workflows/docx/tracked-workflow.feature": "f32ad31b4b4e03ad17894a8b246502e6d83f0253ec66abc1c5601764fd551ccd",
+    "workflows/docx/tracking-settings.feature": "ba4621e6acd4b892b5a214d57d3d9057b568135d0f21a5ff40fc69b4b6417e9e",
+    "workflows/office/full-coverage.feature": "8d74a7b29c6b2993ab13e41de35c9a8156e35feb0eeb5eeddab37bce20d89b6b",
+    "workflows/package/admission-limit-configuration.feature": "885083126a39d17a795609bbf5d2e273678b5d8613af9cafdc0fac46396adb8a",
+    "workflows/package/data-descriptor-integrity.feature": "c0c855a3f4dd74e15fd59aa03572bb7f8c752544fd9bb64b6f082e14388c9370",
+    "workflows/package/graph.feature": "953cab35e20019a234ed4d1aa2f1575a065f3c7768f74fb0a0269bf70b3c4d4e",
+    "workflows/package/preservation.feature": "1a2c653871f6bd830da4ca37f2b9c355c3885463234101b55a403786aedbba5a",
+    "workflows/package/relationship-namespaces.feature": "25a2b3fb3998a1f8efd9b2d7e8f5fe558517c7e852459ef56394bf5b0249610c",
+    "workflows/package/semantic-diff.feature": "eebe822867a6f83d77351a0590dd81d7e929dc13f2d1add0bfcbbc44c5e90ca7",
+    "workflows/package/xml-member-admission.feature": "19fa717632d689e7ff4e883fb2af3f31e018373dc79ddb78efecf7742ea14e91",
+    "workflows/package/zip-admission.feature": "8fa7b8618fd9797e3470dfdfa1132b76784f180fe31d344f1d9d758f5c30f09c",
+    "workflows/package/zip32.feature": "932bdcb2a1fb0866ec07c3e64d92b54b39dafa06f83e4c405fb48e80634ef24c",
+    "workflows/package/zip64.feature": "f103ace071e647ffee092085a1c4b58e9b7be2cb4cb7553c3558c53f3be5c69a",
+    "workflows/pptx/creation.feature": "564ea5266151ebe9d0ce48eead073ecb4b3f944fca79c97556e8a677b518da55",
+    "workflows/pptx/layout-recommendation.feature": "b41b1f3ef7fe9cc022a74113a4b3edbd1fe2d93934ee83225d7e0b99e6b25a75",
+    "workflows/pptx/mutation-safety.feature": "e1820e2469f1f6b809d96294b9da04a7e3edcb19ac3b45550a89b4094d73d9b8",
+    "workflows/pptx/notes.feature": "181044e6ee3fabbdb8096b626965155e7db97764bb64223e0968dc50dd5e3daa",
+    "workflows/pptx/preservation.feature": "c6976d4551ff74b83293b656cceb7490f33f8a1d89ee651784a7a33052493870",
+    "workflows/pptx/slide-import.feature": "9797cb84555e97b786f66c9e51f45ccb732004b9f717f75ca484424f6a9c82ac",
+    "workflows/pptx/slide-order.feature": "6fd4c56131a68b47e47d91c286967127ab410026966f3132f9caf244bde7369e",
+    "workflows/pptx/slide-visibility.feature": "b348743de0c6bc7303811f613761a6d67a8a0f4f57132466238a0c7e752acd78",
+    "workflows/pptx/tables.feature": "d9808ba4c51eecbc3b60e0b5c98e16f749f6618237de05010d2968e6cb88aed7",
+    "workflows/pptx/text-box.feature": "f1095dc45f85db19d45603fe38938cfc6414c74f3b1f5de63b23f9fd56e880ee",
+    "workflows/pptx/text.feature": "30fb7380fc0a133c5b710cd843493ebcaee781d2000c23eabb3bff0290b373a8",
+    "workflows/xlsx/cache-completeness.feature": "45f092878a7bed948908a696fa9a45e5d3b5a80a061318d55e0a37a3f2edf092",
+    "workflows/xlsx/calculation-chain-lifecycle.feature": "705365c666efd68ae2fc1ac85d86f85511cde77c8fc7644ea04b3978bb56103e",
+    "workflows/xlsx/calculation-engine.feature": "683d99ac5847362948945f2377e988537045bca7743b187f3422ddc043f8b1c0",
+    "workflows/xlsx/cell-style.feature": "821a4bdda8541d2afd48873221246451c3ebd24273a20184fa8ea14900c76b7a",
+    "workflows/xlsx/cells.feature": "cdfcbd99ba3d8aa775306fc9eb2caf879350d50d832d59d9f9034b0666a6d925",
+    "workflows/xlsx/comment-vml-custody.feature": "e93331bb775a8c84cd2ca0bf35264b8ef085f5ef9b44578e231c7ff0165e801d",
+    "workflows/xlsx/creation.feature": "a7e59080cb34d381552bbb51afff24dfb39b2a3bfad782a2096fcb2983f0171c",
+    "workflows/xlsx/formula-cache.feature": "b1b9c2b9cf7f8f6d5e6403ada30493381b7f42e05c72b1c999273eaedbf705f7",
+    "workflows/xlsx/formula-references.feature": "03aa16e68b314e3f2743a4c34235803e479809bc8414f3fa5e892934b045720e",
+    "workflows/xlsx/mutation-safety.feature": "c481cb5e382476ac12fc7a028ba7db2eda76287b0d9066ccc172cf34213050bc",
+    "workflows/xlsx/structural-edits.feature": "6f3e52c41757ca28f46f7ed31994206fe74e8119327f34bf958a2a4e357a8e75",
+    "workflows/xlsx/style-readback.feature": "6eb8ab565e59ad767f7e8cf5c87a45523a64d340d95be53a7ee52e00305d4633",
+    "workflows/xml/comparison.feature": "b700a3da8670cb048aa3f836c193f4533908730c185847f63e167e59c48f5e93",
+    "workflows/xml/editing.feature": "a9c308f9995d7a335b3d96054c2eb8fd8286937c95a46bd07b26428c63292ff3",
+    "workflows/xml/names.feature": "032ccd1e7adc03078f17baa55ac0d6aa216790d975e57c797b0d79aacc981ed8",
+    "workflows/xml/parsing.feature": "fa342c6f1ac982c6f99b915dab54196501798af745b1cc4db143cecbaea48783"
+  }
+}

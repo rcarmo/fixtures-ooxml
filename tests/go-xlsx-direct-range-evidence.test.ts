@@ -1,3 +1,4 @@
+import {historicalWorkflowLedger} from './xml-generalization-helpers.ts';
 import {test,expect} from 'bun:test';
 import {execFileSync} from 'node:child_process';
 import {cases} from '../scripts/verify.ts';
@@ -9,7 +10,7 @@ const specs=[
 ] as const;
 
 test('Go executes thirteen exact canonical direct-range API rows without sibling formula credit',async()=>{
- const ledger=await Bun.file('ledgers/workflows.json').json(),prior=JSON.parse(execFileSync('git',['show','c110ab8a61a7c5c7c118c8c9b8b5a0b5fa4b7acf:ledgers/workflows.json']).toString()),compiled=cases(path,await Bun.file(path).text());
+ const ledger=await historicalWorkflowLedger(),prior=JSON.parse(execFileSync('git',['show','c110ab8a61a7c5c7c118c8c9b8b5a0b5fa4b7acf:ledgers/workflows.json']).toString()),compiled=cases(path,await Bun.file(path).text());
  for(const [id,count,steps,scope] of specs){
   const now=ledger.workflows.find((w:any)=>w.id===id),old=prior.workflows.find((w:any)=>w.id===id),rows=compiled.filter((r:any)=>r.scenarioId===id);
   expect(now.feature).toBe(path);expect(now.expandedCases).toBe(count);expect(rows).toHaveLength(count);expect(rows.reduce((n:number,r:any)=>n+r.steps.length,0)).toBe(steps);

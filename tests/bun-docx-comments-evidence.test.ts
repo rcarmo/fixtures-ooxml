@@ -1,3 +1,4 @@
+import {historicalWorkflowLedger} from './xml-generalization-helpers.ts';
 const pythonPackageIds = new Set(['@id-package-admission-negative-budget','@id-zip-unsigned-descriptor-signature-collision']);
 const goXmlNegativeIds = new Set(['@id-xml-comparison-significant-content','@id-xml-comparison-prefix-attribute-binding','@id-xml-comparison-unsafe-input','@id-xml-comparison-processing-instructions-and-comments']);
 const goLatentPackageIds = new Set(['@id-package-admission-negative-budget','@id-zip-unsigned-descriptor-signature-collision']);
@@ -33,7 +34,7 @@ const specs = [
 ];
 
 test('Bun executes fourteen exact existing-comment inspection, resolution, noop and refusal cases', async () => {
-  const ledger = await Bun.file('ledgers/workflows.json').json();
+  const ledger = await historicalWorkflowLedger();
   const prior = JSON.parse(execFileSync('git', ['show', 'af04b1d42b787f76b88f21009ac105888b9d16bd:ledgers/workflows.json']).toString());
   const compiled = cases(path, await Bun.file(path).text());
   for (const { id, names, markers } of specs) {

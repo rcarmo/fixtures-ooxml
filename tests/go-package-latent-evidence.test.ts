@@ -1,3 +1,4 @@
+import {historicalWorkflowLedger} from './xml-generalization-helpers.ts';
 import {test,expect} from 'bun:test';
 import {execFileSync} from 'node:child_process';
 import {cases} from '../scripts/verify.ts';
@@ -8,7 +9,7 @@ const specs=[
 ] as const;
 
 test('Go latent negative-budget and ZIP32 unsigned-descriptor canonical execution corrects planned ledger',async()=>{
- const ledger=await Bun.file('ledgers/workflows.json').json(),prior=JSON.parse(execFileSync('git',['show','3a1c1220fec98e3f8c1bd9902c723b8e3aceab19:ledgers/workflows.json']).toString());
+ const ledger=await historicalWorkflowLedger(),prior=JSON.parse(execFileSync('git',['show','3a1c1220fec98e3f8c1bd9902c723b8e3aceab19:ledgers/workflows.json']).toString());
  for(const[id,path,count,steps,commit,log,binding,hash]of specs){const now=ledger.workflows.find((w:any)=>w.id===id),old=prior.workflows.find((w:any)=>w.id===id),rows=cases(path,await Bun.file(path).text()).filter((r:any)=>r.scenarioId===id);
   expect(now.feature).toBe(path);expect(now.expandedCases).toBe(count);expect(rows).toHaveLength(count);expect(rows.reduce((n:number,r:any)=>n+r.steps.length,0)).toBe(steps);expect(now.expectedOutcomes).toEqual([...new Set(rows.flatMap((r:any)=>r.steps.slice(count===2?3:4).map((s:any)=>s.text)))]);
   expect(old.consumers.go.status).toBe('planned');expect(now.consumers.go.status).toBe('implemented');for(const marker of [commit,log,binding,hash,'fba1b5cd7c45a83eff00b95b85d8cf8a569a0bdf','395 selected cases/1351 passed steps','stale planned ledger state','Go code or selector change'])expect(now.consumers.go.evidence).toContain(marker);

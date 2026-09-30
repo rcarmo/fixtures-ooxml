@@ -1,3 +1,4 @@
+import {historicalWorkflowLedger} from './xml-generalization-helpers.ts';
 import {test,expect} from 'bun:test';
 import {execFileSync} from 'node:child_process';
 import {cases} from '../scripts/verify.ts';
@@ -11,7 +12,7 @@ const specs=[
 ] as const;
 
 test('Go executes nine bounded negative XML Boolean pairs without positive OPC or broad schema credit',async()=>{
- const ledger=await Bun.file('ledgers/workflows.json').json(),prior=JSON.parse(execFileSync('git',['show','f767fa76873a3ae84366294f1b68e09262f7e182:ledgers/workflows.json']).toString()),rows=cases(path,await Bun.file(path).text());
+ const ledger=await historicalWorkflowLedger(),prior=JSON.parse(execFileSync('git',['show','f767fa76873a3ae84366294f1b68e09262f7e182:ledgers/workflows.json']).toString()),rows=cases(path,await Bun.file(path).text());
  for(const[id,count,scope]of specs){const now=ledger.workflows.find((w:any)=>w.id===id),old=prior.workflows.find((w:any)=>w.id===id),actual=rows.filter((r:any)=>r.scenarioId===id);
   expect(now.feature).toBe(path);expect(now.expandedCases).toBe(count);expect(actual).toHaveLength(count);
   for(const row of actual){expect(row.steps).toHaveLength(4);expect(row.steps.map((s:any)=>s.text).slice(2)).toEqual(['the conservative XML comparator compares their UTF-8 bytes','the comparison result is false']);}

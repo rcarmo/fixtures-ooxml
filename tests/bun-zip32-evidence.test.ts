@@ -1,3 +1,4 @@
+import {historicalWorkflowLedger} from './xml-generalization-helpers.ts';
 const pythonPackageIds = new Set(['@id-package-admission-negative-budget','@id-zip-unsigned-descriptor-signature-collision']);
 const goXmlNegativeIds = new Set(['@id-xml-comparison-significant-content','@id-xml-comparison-prefix-attribute-binding','@id-xml-comparison-unsafe-input','@id-xml-comparison-processing-instructions-and-comments']);
 const goLatentPackageIds = new Set(['@id-package-admission-negative-budget','@id-zip-unsigned-descriptor-signature-collision']);
@@ -72,7 +73,7 @@ const expected = [
 ];
 
 test('Bun alone executes twenty exact ZIP32 checksum and typed refusal rows (91 steps)', async () => {
-  const current = await Bun.file('ledgers/workflows.json').json();
+  const current = await historicalWorkflowLedger();
   const prior = JSON.parse(execFileSync('git', ['show', 'c29984984d60a622a358804508dd7ec101137c5e:ledgers/workflows.json']).toString());
   const compiled = cases(path, await Bun.file(path).text());
   for (let i = 0; i < ids.length; i++) {

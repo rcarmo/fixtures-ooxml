@@ -1,3 +1,4 @@
+import {historicalWorkflowLedger} from './xml-generalization-helpers.ts';
 const pythonPackageIds = new Set(['@id-package-admission-negative-budget','@id-zip-unsigned-descriptor-signature-collision']);
 const goXmlNegativeIds = new Set(['@id-xml-comparison-significant-content','@id-xml-comparison-prefix-attribute-binding','@id-xml-comparison-unsafe-input','@id-xml-comparison-processing-instructions-and-comments']);
 const goLatentPackageIds = new Set(['@id-package-admission-negative-budget','@id-zip-unsigned-descriptor-signature-collision']);
@@ -36,7 +37,7 @@ const specs = [
 ];
 
 test('Bun executes twenty-one exact slide permutation and atomic refusal cases without Go/Python credit', async () => {
-  const ledger = await Bun.file('ledgers/workflows.json').json();
+  const ledger = await historicalWorkflowLedger();
   const prior = JSON.parse(execFileSync('git', ['show', 'b4a74ce5659a14f5d67990f54de6af7822f5d83d:ledgers/workflows.json']).toString());
   const compiled = cases(path, await Bun.file(path).text());
   for (const { id, kinds, steps, markers } of specs) {

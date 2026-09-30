@@ -1,3 +1,4 @@
+import {historicalWorkflowLedger} from './xml-generalization-helpers.ts';
 const pythonPackageIds = new Set(['@id-package-admission-negative-budget','@id-zip-unsigned-descriptor-signature-collision']);
 const goXmlNegativeIds = new Set(['@id-xml-comparison-significant-content','@id-xml-comparison-prefix-attribute-binding','@id-xml-comparison-unsafe-input','@id-xml-comparison-processing-instructions-and-comments']);
 const goLatentPackageIds = new Set(['@id-package-admission-negative-budget','@id-zip-unsigned-descriptor-signature-collision']);
@@ -45,7 +46,7 @@ const specs=[
  {id:'@id-docx-go-table-row-counts',steps:[['a new Word table with two rows and three columns','one row is appended, one is inserted at index one, and index one is deleted','row counts after each step are three, four and three respectively','deletion at index ten returns an error']]},
 ];
 test('Go executes exact table value rows without extending saved or Python credit',async()=>{
- const registry=await Bun.file('ledgers/workflows.json').json();
+ const registry=await historicalWorkflowLedger();
  const prior=JSON.parse(execFileSync('git',['show','0f0b56c6744c5ef7e6c5c5a8fd750da3f6227fc1:ledgers/workflows.json']).toString());
  const compiled=cases(path,await Bun.file(path).text());
  for(const {id,steps} of specs){

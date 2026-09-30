@@ -6,6 +6,12 @@ Most remain byte-identical. The ledger seals original source bytes and records
 any reviewed merge separately from the manifest's current file hash. Use them to reconcile
 native behaviour against the [canonical workflows](../workflows/README.md).
 
+The [complete feature table](../docs/feature-reuse.md#staged-source-candidates--separate-inventory)
+and [CSV](../docs/feature-reuse.csv) index every staged file separately. These rows
+are `staged-unreviewed` for portability; a source runtime or an implemented source
+tag does not adjudicate whether the contract is reusable. Canonical classifications
+and execution status use separate ledgers.
+
 - `go/features/` retains 55 native executable/planned/external feature sources,
   including original tags and IDs. Go's consumer inventory and runner may load
   these from a pinned reference root after its migration. Execution status is

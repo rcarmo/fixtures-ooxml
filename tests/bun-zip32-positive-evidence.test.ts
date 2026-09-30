@@ -1,3 +1,4 @@
+import {historicalWorkflowLedger} from './xml-generalization-helpers.ts';
 const pythonPackageIds = new Set(['@id-package-admission-negative-budget','@id-zip-unsigned-descriptor-signature-collision']);
 const goXmlNegativeIds = new Set(['@id-xml-comparison-significant-content','@id-xml-comparison-prefix-attribute-binding','@id-xml-comparison-unsafe-input','@id-xml-comparison-processing-instructions-and-comments']);
 const goLatentPackageIds = new Set(['@id-package-admission-negative-budget','@id-zip-unsigned-descriptor-signature-collision']);
@@ -64,7 +65,7 @@ const specs = [
 ];
 
 test('Bun executes the two exact ZIP32 positive read/write contracts without cross-consumer credit', async () => {
-  const ledger = await Bun.file('ledgers/workflows.json').json();
+  const ledger = await historicalWorkflowLedger();
   const prior = JSON.parse(execFileSync('git', ['show', '151b022133d2aefe60db860ee502f5812348b0dc:ledgers/workflows.json']).toString());
   const compiled = cases(path, await Bun.file(path).text());
   for (const { id, steps, outcomes, markers } of specs) {

@@ -1,3 +1,4 @@
+import {historicalWorkflowLedger} from './xml-generalization-helpers.ts';
 const pythonPackageIds = new Set(['@id-package-admission-negative-budget','@id-zip-unsigned-descriptor-signature-collision']);
 const goXmlNegativeIds = new Set(['@id-xml-comparison-significant-content','@id-xml-comparison-prefix-attribute-binding','@id-xml-comparison-unsafe-input','@id-xml-comparison-processing-instructions-and-comments']);
 const goLatentPackageIds = new Set(['@id-package-admission-negative-budget','@id-zip-unsigned-descriptor-signature-collision']);
@@ -47,7 +48,7 @@ const outcomes = (rows: Array<{ steps: Array<{ text: string }> }>) => [...new Se
 )))];
 
 test('Bun executes eleven exact OPC custody and save-path cases without Go/Python credit', async () => {
-  const ledger = await Bun.file('ledgers/workflows.json').json();
+  const ledger = await historicalWorkflowLedger();
   const prior = JSON.parse(execFileSync('git', ['show', '57555eeed6204e0a8fa2266b29a4fed838a5bf8e:ledgers/workflows.json']).toString());
   const compiled = cases(path, await Bun.file(path).text());
   for (let i = 0; i < ids.length; i++) {

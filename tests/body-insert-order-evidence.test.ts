@@ -1,3 +1,4 @@
+import {historicalWorkflowLedger} from './xml-generalization-helpers.ts';
 const pythonPackageIds = new Set(['@id-package-admission-negative-budget','@id-zip-unsigned-descriptor-signature-collision']);
 const goXmlNegativeIds = new Set(['@id-xml-comparison-significant-content','@id-xml-comparison-prefix-attribute-binding','@id-xml-comparison-unsafe-input','@id-xml-comparison-processing-instructions-and-comments']);
 const goLatentPackageIds = new Set(['@id-package-admission-negative-budget','@id-zip-unsigned-descriptor-signature-collision']);
@@ -36,7 +37,7 @@ import {cases} from '../scripts/verify.ts';
 const id='@id-docx-go-body-insert-order',path='workflows/docx/paragraphs.feature';
 const steps=['a new Word body with no elements','First and Third paragraphs are appended, then Second is inserted at index one','element counts after each operation are one, two and three','paragraph texts in order equal First, Second and Third'];
 test('Bun and Go execute exact empty-body insertion counts and order without Python or saved credit',async()=>{
- const ledger=await Bun.file('ledgers/workflows.json').json();
+ const ledger=await historicalWorkflowLedger();
  const prior=JSON.parse(execFileSync('git',['show','779415af623f7d7536a8bce5d4b3b7204193d653:ledgers/workflows.json']).toString());
  const current=ledger.workflows.find((w:any)=>w.id===id),old=prior.workflows.find((w:any)=>w.id===id);
  expect(current.feature).toBe(path);expect(current.expandedCases).toBe(1);

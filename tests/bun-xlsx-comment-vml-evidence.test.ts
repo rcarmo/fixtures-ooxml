@@ -1,3 +1,4 @@
+import {historicalWorkflowLedger} from './xml-generalization-helpers.ts';
 import { test, expect } from 'bun:test';
 import { execFileSync } from 'node:child_process';
 import { cases } from '../scripts/verify.ts';
@@ -15,7 +16,7 @@ const steps = [
 ];
 
 test('Bun executes only the existing XLSX comment/VML graph, not five editing profiles', async () => {
-  const ledger = await Bun.file('ledgers/workflows.json').json();
+  const ledger = await historicalWorkflowLedger();
   const prior = JSON.parse(execFileSync('git', ['show', '279042ea89365318b03097bc7883e80148978090:ledgers/workflows.json']).toString());
   const rows = cases(path, await Bun.file(path).text());
   const now = ledger.workflows.find((w: any) => w.id === id), old = prior.workflows.find((w: any) => w.id === id);

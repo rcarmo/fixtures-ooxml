@@ -1,3 +1,4 @@
+import {historicalWorkflowLedger} from './xml-generalization-helpers.ts';
 const pythonPackageIds = new Set(['@id-package-admission-negative-budget','@id-zip-unsigned-descriptor-signature-collision']);
 const goXmlNegativeIds = new Set(['@id-xml-comparison-significant-content','@id-xml-comparison-prefix-attribute-binding','@id-xml-comparison-unsafe-input','@id-xml-comparison-processing-instructions-and-comments']);
 const goLatentPackageIds = new Set(['@id-package-admission-negative-budget','@id-zip-unsigned-descriptor-signature-collision']);
@@ -35,7 +36,7 @@ import {cases} from '../scripts/verify.ts';
 
 const id='@id-docx-go-run-effects-getters',path='workflows/docx/run-formatting.feature';
 test('Go runs only the eight in-memory run-effect getter predicates',async()=>{
- const registry=await Bun.file('ledgers/workflows.json').json(),previous=JSON.parse(execFileSync('git',['show','12d878a6f3500f4c53b5792da7f8b1f390181ad5:ledgers/workflows.json']).toString());
+ const registry=await historicalWorkflowLedger(),previous=JSON.parse(execFileSync('git',['show','12d878a6f3500f4c53b5792da7f8b1f390181ad5:ledgers/workflows.json']).toString());
  const entry=registry.workflows.find((w:any)=>w.id===id),prior=previous.workflows.find((w:any)=>w.id===id);
  expect(entry.feature).toBe(path);expect(entry.expandedCases).toBe(1);
  const rows=cases(path,await Bun.file(path).text()).filter(row=>row.scenarioId===id);

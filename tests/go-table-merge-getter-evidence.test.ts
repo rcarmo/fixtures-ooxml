@@ -1,3 +1,4 @@
+import {historicalWorkflowLedger} from './xml-generalization-helpers.ts';
 const pythonPackageIds = new Set(['@id-package-admission-negative-budget','@id-zip-unsigned-descriptor-signature-collision']);
 const goXmlNegativeIds = new Set(['@id-xml-comparison-significant-content','@id-xml-comparison-prefix-attribute-binding','@id-xml-comparison-unsafe-input','@id-xml-comparison-processing-instructions-and-comments']);
 const goLatentPackageIds = new Set(['@id-package-admission-negative-budget','@id-zip-unsigned-descriptor-signature-collision']);
@@ -35,7 +36,7 @@ import {cases} from '../scripts/verify.ts';
 
 const id='@id-docx-go-table-merge-properties',path='workflows/docx/tables.feature';
 test('Go checks direct span and vertical-merge values without physical topology credit',async()=>{
- const registry=await Bun.file('ledgers/workflows.json').json(),prior=JSON.parse(execFileSync('git',['show','f8c2736194fd70594b33e2091334a3ebbceea9f6:ledgers/workflows.json']).toString());
+ const registry=await historicalWorkflowLedger(),prior=JSON.parse(execFileSync('git',['show','f8c2736194fd70594b33e2091334a3ebbceea9f6:ledgers/workflows.json']).toString());
  const entry=registry.workflows.find((w:any)=>w.id===id),former=prior.workflows.find((w:any)=>w.id===id);
  expect(entry.feature).toBe(path);expect(entry.expandedCases).toBe(1);
  expect(cases(path,await Bun.file(path).text()).filter((row:any)=>row.scenarioId===id).map((row:any)=>row.steps.map((step:any)=>step.text))).toEqual([[

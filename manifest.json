@@ -2649,10 +2649,10 @@
       "aliases": []
     },
     {
-      "id": "asset-c2782cf93ac9d98382b87aa46d01178e59c65bbe2a993e2c76ce80e57c9eed01",
+      "id": "asset-fee52bb80f221a1ccb04eba1211fec7e188f3682f3ad5c12253e49836d0a9b62",
       "path": "contracts/xml-values.md",
-      "bytes": 1530,
-      "sha256": "c2782cf93ac9d98382b87aa46d01178e59c65bbe2a993e2c76ce80e57c9eed01",
+      "bytes": 3687,
+      "sha256": "fee52bb80f221a1ccb04eba1211fec7e188f3682f3ad5c12253e49836d0a9b62",
       "role": "workflow-contract",
       "origins": [
         {
@@ -2919,10 +2919,10 @@
       "aliases": []
     },
     {
-      "id": "asset-350edcdfa0dc1206f9f5165cae93ba41c12b6974ee21e71cd3329ed2a82438ff",
+      "id": "asset-fa342c6f1ac982c6f99b915dab54196501798af745b1cc4db143cecbaea48783",
       "path": "workflows/xml/parsing.feature",
-      "bytes": 6818,
-      "sha256": "350edcdfa0dc1206f9f5165cae93ba41c12b6974ee21e71cd3329ed2a82438ff",
+      "bytes": 7138,
+      "sha256": "fa342c6f1ac982c6f99b915dab54196501798af745b1cc4db143cecbaea48783",
       "role": "workflow",
       "origins": [
         {

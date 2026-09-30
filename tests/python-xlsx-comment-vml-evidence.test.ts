@@ -1,3 +1,4 @@
+import {historicalWorkflowLedger} from './xml-generalization-helpers.ts';
 import {test,expect} from 'bun:test';
 import {execFileSync} from 'node:child_process';
 import {cases} from '../scripts/verify.ts';
@@ -14,7 +15,7 @@ const steps=[
 ];
 
 test('Python executes only exact seven-step existing XLSX comment/VML read graph',async()=>{
- const ledger=await Bun.file('ledgers/workflows.json').json(),prior=JSON.parse(execFileSync('git',['show','8312404125486650956807f940a1e5ab583f79c3:ledgers/workflows.json']).toString()),compiled=cases(path,await Bun.file(path).text());
+ const ledger=await historicalWorkflowLedger(),prior=JSON.parse(execFileSync('git',['show','8312404125486650956807f940a1e5ab583f79c3:ledgers/workflows.json']).toString()),compiled=cases(path,await Bun.file(path).text());
  const now=ledger.workflows.find((w:any)=>w.id===id),old=prior.workflows.find((w:any)=>w.id===id);
  expect(now.feature).toBe(path);expect(now.expandedCases).toBe(1);expect(compiled.filter((r:any)=>r.scenarioId===id).map((r:any)=>r.steps.map((s:any)=>s.text))).toEqual([steps]);expect(now.expectedOutcomes).toEqual(steps.slice(2));
  expect(old.consumers.python.status).toBe('planned');expect(now.consumers.python.status).toBe('implemented');

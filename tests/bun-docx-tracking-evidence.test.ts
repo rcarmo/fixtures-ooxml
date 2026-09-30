@@ -1,3 +1,4 @@
+import {historicalWorkflowLedger} from './xml-generalization-helpers.ts';
 import {test,expect} from 'bun:test';
 import {execFileSync} from 'node:child_process';
 import {cases} from '../scripts/verify.ts';
@@ -14,7 +15,7 @@ const specs=[
 ] as const;
 
 test('Bun executes exact saved DOCX tracking preferences, custody, refusal and ordinary-edit cases',async()=>{
- const ledger=await Bun.file('ledgers/workflows.json').json(),prior=JSON.parse(execFileSync('git',['show','c110ab8a61a7c5c7c118c8c9b8b5a0b5fa4b7acf:ledgers/workflows.json']).toString());
+ const ledger=await historicalWorkflowLedger(),prior=JSON.parse(execFileSync('git',['show','c110ab8a61a7c5c7c118c8c9b8b5a0b5fa4b7acf:ledgers/workflows.json']).toString());
  const compiled=cases(path,await Bun.file(path).text());
  for(const [suffix,count,steps,scope] of specs){
   const id='@id-docx-tracking-settings-'+suffix,now=ledger.workflows.find((w:any)=>w.id===id),old=prior.workflows.find((w:any)=>w.id===id),rows=compiled.filter((r:any)=>r.scenarioId===id);

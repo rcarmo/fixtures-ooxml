@@ -1,3 +1,4 @@
+import {historicalWorkflowLedger, historicalXmlFeature} from './xml-generalization-helpers.ts';
 const pythonPackageIds = new Set(['@id-package-admission-negative-budget','@id-zip-unsigned-descriptor-signature-collision']);
 const goXmlNegativeIds = new Set(['@id-xml-comparison-significant-content','@id-xml-comparison-prefix-attribute-binding','@id-xml-comparison-unsafe-input','@id-xml-comparison-processing-instructions-and-comments']);
 const goLatentPackageIds = new Set(['@id-package-admission-negative-budget','@id-zip-unsigned-descriptor-signature-collision']);
@@ -46,10 +47,10 @@ const specs=[
  {id:'@id-xml-escaping-whitespace-roundtrip',inputs:['x\r\n\ty'],outcomes:['the decoded text and attribute both equal JSON "x\\r\\n\\ty"'],type:'escape'},
  {id:'@id-xml-typed-parse-error',inputs:['<a></b>'],outcomes:['parsing throws an OoxmlError instance'],type:'parse'},
 ];
-test('Bun executes eleven exact XML value cases with bounded type, namespace and escaping evidence',async()=>{
- const ledger=await Bun.file('ledgers/workflows.json').json();
+test('historical v0.78 Bun XML evidence retains original predicates; generalized contracts require fresh receipts',async()=>{
+ const ledger=await historicalWorkflowLedger();
  const prior=JSON.parse(execFileSync('git',['show','2b536be951104422513d819e54ada017d93bbed9:ledgers/workflows.json']).toString());
- const rows=cases(path,await Bun.file(path).text());
+ const rows=cases(path,historicalXmlFeature(path,await Bun.file(path).text()));
  for(const {id,inputs,outcomes,type} of specs){
   const current=ledger.workflows.find((w:any)=>w.id===id),old=prior.workflows.find((w:any)=>w.id===id);
   expect(current.feature).toBe(path);expect(current.expandedCases).toBe(inputs.length);expect(current.expectedOutcomes).toEqual(outcomes);

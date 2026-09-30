@@ -1,3 +1,4 @@
+import {historicalWorkflowLedger} from './xml-generalization-helpers.ts';
 import { test, expect } from 'bun:test';
 import { execFileSync } from 'node:child_process';
 import { cases } from '../scripts/verify.ts';
@@ -19,7 +20,7 @@ const specs = [
 ];
 
 test('Bun executes exact XLSX cell-style selection and refusal cases without Go/Python credit', async () => {
-  const ledger = await Bun.file('ledgers/workflows.json').json();
+  const ledger = await historicalWorkflowLedger();
   const prior = JSON.parse(execFileSync('git', ['show', '8c5ff348937951701da07b44a05acaf88fdada1a:ledgers/workflows.json']).toString());
   const compiled = cases(path, await Bun.file(path).text());
   for (const { id, kinds, steps, markers } of specs) {

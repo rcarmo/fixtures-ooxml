@@ -1,3 +1,4 @@
+import {historicalWorkflowLedger} from './xml-generalization-helpers.ts';
 import {test,expect} from 'bun:test';
 import {execFileSync} from 'node:child_process';
 import {cases} from '../scripts/verify.ts';
@@ -9,7 +10,7 @@ const specs=[
 ];
 
 test('Bun executes exact final-section DOCX page-layout cases without broader rendering credit',async()=>{
- const ledger=await Bun.file('ledgers/workflows.json').json(),prior=JSON.parse(execFileSync('git',['show','09519ffdb59e72d755cbba304e47e3e7ae6a4eac:ledgers/workflows.json']).toString()),compiled=cases(path,await Bun.file(path).text());
+ const ledger=await historicalWorkflowLedger(),prior=JSON.parse(execFileSync('git',['show','09519ffdb59e72d755cbba304e47e3e7ae6a4eac:ledgers/workflows.json']).toString()),compiled=cases(path,await Bun.file(path).text());
  for(const {id,kinds,steps,marker} of specs){const now=ledger.workflows.find((w:any)=>w.id===id),old=prior.workflows.find((w:any)=>w.id===id),rows=compiled.filter((r:any)=>r.scenarioId===id);
   expect(now.feature).toBe(path);expect(now.expandedCases).toBe(kinds.length);expect(rows.map((r:any)=>r.steps.map((s:any)=>s.text))).toEqual(kinds.map(steps));
   expect(now.expectedOutcomes).toEqual([...new Set(kinds.flatMap(kind=>steps(kind).slice(2)))]);

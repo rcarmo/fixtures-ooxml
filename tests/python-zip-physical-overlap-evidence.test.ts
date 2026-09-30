@@ -1,3 +1,4 @@
+import {historicalWorkflowLedger} from './xml-generalization-helpers.ts';
 import {test,expect} from 'bun:test';
 import {execFileSync} from 'node:child_process';
 import {cases} from '../scripts/verify.ts';
@@ -6,7 +7,7 @@ const path='workflows/package/zip-admission.feature',id='@id-zip-physical-member
 const steps=[`fixture ${fixture} has exactly three distinct STORED members [Content_Types].xml, outer.bin and inner.bin`,'an independent ZIP reader opens all three members with declared lengths 149, 49 and 10 bytes and matching CRC32 d694f44a, 32c80458 and 4daa6380',"inner.bin's complete local header and payload lie within outer.bin's physical payload range in this ZIP32 single-disk archive",'bounded package admission checks the unchanged archive with max entries 4 and max total bytes 4096','admission refuses overlapping physical member extents as an invalid package, not a name, CRC or resource refusal','no package session or output archive is delivered',"the caller's source buffer remains byte-identical to the sealed fixture"];
 
 test('Python executes one bounded ZIP32 physical-overlap refusal without broader ZIP or Go credit',async()=>{
- const ledger=await Bun.file('ledgers/workflows.json').json(),prior=JSON.parse(execFileSync('git',['show','1e3fe83514b97a5882cfcf52e0b6a921c4f8d8e4:ledgers/workflows.json']).toString()),compiled=cases(path,await Bun.file(path).text());
+ const ledger=await historicalWorkflowLedger(),prior=JSON.parse(execFileSync('git',['show','1e3fe83514b97a5882cfcf52e0b6a921c4f8d8e4:ledgers/workflows.json']).toString()),compiled=cases(path,await Bun.file(path).text());
  const now=ledger.workflows.find((w:any)=>w.id===id),old=prior.workflows.find((w:any)=>w.id===id);
  expect(now.feature).toBe(path);expect(now.expandedCases).toBe(1);expect(compiled.filter((r:any)=>r.scenarioId===id).map((r:any)=>r.steps.map((s:any)=>s.text))).toEqual([steps]);expect(now.expectedOutcomes).toEqual(steps.slice(4));
  expect(old.consumers.python.status).toBe('planned');expect(now.consumers.python.status).toBe('implemented');

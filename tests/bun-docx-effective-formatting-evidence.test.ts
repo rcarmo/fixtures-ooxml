@@ -1,3 +1,4 @@
+import {historicalWorkflowLedger} from './xml-generalization-helpers.ts';
 import {test,expect} from 'bun:test';
 import {execFileSync} from 'node:child_process';
 import {cases} from '../scripts/verify.ts';
@@ -9,7 +10,7 @@ const specs=[
 ];
 
 test('Bun executes exact bounded DOCX effective-formatting resolutions and typed refusals',async()=>{
- const ledger=await Bun.file('ledgers/workflows.json').json(),prior=JSON.parse(execFileSync('git',['show','a041e642b5afd9093c8d34773db90c40a27f8592:ledgers/workflows.json']).toString()),compiled=cases(path,await Bun.file(path).text());
+ const ledger=await historicalWorkflowLedger(),prior=JSON.parse(execFileSync('git',['show','a041e642b5afd9093c8d34773db90c40a27f8592:ledgers/workflows.json']).toString()),compiled=cases(path,await Bun.file(path).text());
  for(const {id,kinds,steps,marker} of specs){
   const now=ledger.workflows.find((w:any)=>w.id===id),old=prior.workflows.find((w:any)=>w.id===id),rows=compiled.filter((r:any)=>r.scenarioId===id);
   expect(now.feature).toBe(path);expect(now.expandedCases).toBe(kinds.length);expect(rows.map((r:any)=>r.steps.map((s:any)=>s.text))).toEqual(kinds.map(steps));

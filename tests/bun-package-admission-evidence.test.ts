@@ -1,3 +1,4 @@
+import {historicalWorkflowLedger} from './xml-generalization-helpers.ts';
 const pythonPackageIds = new Set(['@id-package-admission-negative-budget','@id-zip-unsigned-descriptor-signature-collision']);
 const goXmlNegativeIds = new Set(['@id-xml-comparison-significant-content','@id-xml-comparison-prefix-attribute-binding','@id-xml-comparison-unsafe-input','@id-xml-comparison-processing-instructions-and-comments']);
 const goLatentPackageIds = new Set(['@id-package-admission-negative-budget','@id-zip-unsigned-descriptor-signature-collision']);
@@ -42,7 +43,7 @@ const specs=[
  {id:'@id-package-admission-unsafe-xml-members',path:xml,steps:[['UTF-8','<!DOCTYPE a [<!ENTITY e "text">]><a>&e;</a>'],['UTF-16 with BOM','<!DOCTYPE a><a/>'],['UTF-8','<broken>']].map(([encoding,text])=>[`a ZIP_STORED archive contains a.xml with ${encoding} text ${text}`,defaultCheck,refusal]),outcomes:[refusal],markers:['Three exact three-step','XML_DTD_FORBIDDEN/XML_MALFORMED']},
 ];
 test('Bun executes thirteen bounded ZIP and XML package-admission refusal rows without cross-consumer credit',async()=>{
- const ledger=await Bun.file('ledgers/workflows.json').json();
+ const ledger=await historicalWorkflowLedger();
  const prior=JSON.parse(execFileSync('git',['show','5c871881e36d6a9c899b82d9ec5c97b1c47ff587:ledgers/workflows.json']).toString());
  for(const {id,path,steps,outcomes,markers} of specs){
   const current=ledger.workflows.find((w:any)=>w.id===id),old=prior.workflows.find((w:any)=>w.id===id);

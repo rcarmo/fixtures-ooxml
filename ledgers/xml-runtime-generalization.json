@@ -1,0 +1,345 @@
+{
+  "schemaVersion": 1,
+  "sourceRevision": "28e492f50979aaec6ab8d8d001cd9c37790e7fc6",
+  "path": "workflows/xml/parsing.feature",
+  "beforeText": "@planned\nFeature: XML parsing and value inspection\n\n  Rule: Strict XML parsing and offset-safe edits\n    XML parts are parsed natively with preserved UTF-16 source offsets so OPC code\n    can inspect and patch OOXML parts without losing untouched bytes.\n\n    @id-xml-parse-offsets\n    Scenario: Parse namespaces, mixed content and preserved offsets\n      Given an XML document with a declaration, comments, processing instructions and namespaces\n      When the document is parsed\n      Then the root element and descendants expose decoded text, decoded attributes and namespace URIs\n      And each element exposes UTF-16 source offsets, parent links, child links, root links and self-closing state\n\n    @id-xml-normalise-line-endings\n    Scenario: Decode XML line endings without changing source offsets\n      Given XML text and attributes containing raw CRLF and character references\n      When that XML is parsed without rewriting the source\n      Then decoded text normalises raw line endings but preserves referenced carriage returns\n      And decoded attributes normalise literal whitespace while preserving referenced whitespace\n      And element offsets still address the original source string\n\n    @id-xml-parse-refusals\n    Scenario: Refuse malformed or unsafe XML constructs\n      Given XML containing a malformed declaration or processing instruction\n      And XML containing invalid comment termination or missing attribute whitespace\n      And XML containing reserved namespace misuse, a DTD or an undeclared entity\n      And XML containing a duplicate attribute, an unbound prefix or a mismatched tag\n      When the document is parsed\n      Then parsing is refused with a stable XML error code\n\n    @id-xml-parse-bounds\n    Scenario: Bound untrusted XML resources\n      Given XML whose nesting depth, node count or input length exceeds the configured parser limits\n      When the document is parsed\n      Then parsing is refused before returning a partial tree\n\n  Rule: XML values, namespace lookup and safe escaping\n    XML 1.0 sections 2.6, 2.11, 3.3.3 and 4.6 define processing instructions,\n    line endings, attribute normalisation and predefined entities.\n    Namespaces in XML defines expanded attribute names and the implicit xml prefix.\n    JSON arguments preserve the distinction between literal characters and references.\n\n    @id-xml-entity-values\n    Scenario: Decode predefined entities and decimal and hexadecimal references\n      Given XML values input encoded as JSON \"<r a=\\\"&quot;&apos;\\\">&#x41;&#65;&amp;&lt;&gt;</r>\"\n      When the XML values input is parsed\n      Then the root attribute a equals JSON \"\\\"'\"\n      And the root text equals JSON \"AA&<>\"\n\n    @id-xml-stylesheet-processing-instruction\n    Scenario: Accept a stylesheet processing instruction before the root\n      Given XML values input encoded as JSON \"<?xml-stylesheet href=\\\"style.xsl\\\"?><r/>\"\n      When the XML values input is parsed\n      Then the root qualified name equals r\n\n    @id-xml-expanded-attribute-lookup\n    Scenario: Attribute lookup respects local prefix rebinding and unqualified names\n      Given XML values input encoded as JSON \"<r xmlns=\\\"urn:default\\\" xmlns:a=\\\"urn:a\\\" xmlns:r=\\\"urn:a\\\" id=\\\"plain\\\" a:id=\\\"outer\\\"><child xmlns:r=\\\"urn:b\\\" r:id=\\\"inner\\\" xml:lang=\\\"en\\\"/><other r:id=\\\"sibling\\\"/></r>\"\n      When the XML values input is parsed\n      Then expanded attribute lookups return these JSON values\n        | element | local | namespace                                      | value_json |\n        | root    | id    |                                                | \"plain\"    |\n        | root    | id    | urn:default                                    | null       |\n        | root    | id    | urn:a                                          | \"outer\"    |\n        | child   | id    | urn:b                                          | \"inner\"    |\n        | child   | id    | urn:a                                          | null       |\n        | other   | id    | urn:a                                          | \"sibling\"  |\n        | child   | lang  | http://www.w3.org/XML/1998/namespace             | \"en\"       |\n\n    @id-xml-implicit-xml-prefix\n    Scenario: The xml prefix is bound without a namespace declaration\n      Given XML values input encoded as JSON \"<r xml:lang=\\\"en\\\"/>\"\n      When the XML values input is parsed\n      Then the root namespace URI equals JSON \"\"\n      And the root attribute xml:lang equals JSON \"en\"\n      And the implicit xml namespace URI is http://www.w3.org/XML/1998/namespace\n\n    @profile-javascript-xml-model @id-xml-prototype-safe-attributes\n    Scenario: XML attribute names cannot set an object's prototype\n      Given XML values input encoded as JSON \"<r __proto__=\\\"polluted\\\" constructor=\\\"safe\\\"/>\"\n      When the XML values input is parsed\n      Then the root attribute map has a null prototype\n      And __proto__ is an own attribute with value polluted\n      And constructor is an own attribute with value safe\n\n    @profile-javascript-xml-model @id-xml-immutable-namespace-metadata\n    Scenario: Attribute namespace metadata is detached from JavaScript prototypes\n      Given XML values input encoded as JSON \"<r xmlns:a=\\\"urn:a\\\" a:id=\\\"outer\\\"/>\"\n      When the XML values input is parsed\n      Then the namespace recorded for a:id is urn:a\n      And the attribute namespace map is frozen and has a null prototype\n\n    @profile-xml-escaping-api @id-xml-escaping-values\n    Scenario Outline: Escape <context> content without changing its value\n      Given an XML escaping value encoded as JSON <input_json>\n      When the value is escaped for XML <context> content\n      Then the escaped string equals JSON <escaped_json>\n      Examples:\n        | context   | input_json | escaped_json                         |\n        | text      | \"5 < 7 & 9 > 4\" | \"5 &lt; 7 &amp; 9 &gt; 4\"       |\n        | attribute | \"'\\\"<&>\" | \"&apos;&quot;&lt;&amp;&gt;\"         |\n\n    @id-xml-escaping-invalid-character\n    Scenario: Refuse an invalid XML character rather than emit it\n      Given an XML escaping value encoded as JSON \"\\u0001\"\n      When the value is escaped for XML text content\n      Then escaping refuses the invalid XML character\n\n    @id-xml-escaping-whitespace-roundtrip\n    Scenario: Escaped whitespace survives text and attribute parsing\n      Given an XML escaping value encoded as JSON \"x\\r\\n\\ty\"\n      When the value is escaped separately as text and as an attribute and both are parsed\n      Then the decoded text and attribute both equal JSON \"x\\r\\n\\ty\"\n\n    @profile-xml-error-api @id-xml-typed-parse-error\n    Scenario: Malformed XML returns the documented error type\n      Given XML values input encoded as JSON \"<a></b>\"\n      When the XML values input is parsed\n      Then parsing throws an OoxmlError instance\n",
+  "beforeSha256": "350edcdfa0dc1206f9f5165cae93ba41c12b6974ee21e71cd3329ed2a82438ff",
+  "afterSha256": "fa342c6f1ac982c6f99b915dab54196501798af745b1cc4db143cecbaea48783",
+  "retiredScenarioIds": [],
+  "executionCredit": false,
+  "scenarios": [
+    {
+      "id": "@id-xml-prototype-safe-attributes",
+      "before": [
+        {
+          "scenarioId": "@id-xml-prototype-safe-attributes",
+          "name": "XML attribute names cannot set an object's prototype",
+          "steps": [
+            {
+              "text": "XML values input encoded as JSON \"<r __proto__=\\\"polluted\\\" constructor=\\\"safe\\\"/>\"",
+              "argument": null
+            },
+            {
+              "text": "the XML values input is parsed",
+              "argument": null
+            },
+            {
+              "text": "the root attribute map has a null prototype",
+              "argument": null
+            },
+            {
+              "text": "__proto__ is an own attribute with value polluted",
+              "argument": null
+            },
+            {
+              "text": "constructor is an own attribute with value safe",
+              "argument": null
+            }
+          ]
+        }
+      ],
+      "after": [
+        {
+          "scenarioId": "@id-xml-prototype-safe-attributes",
+          "name": "Special-looking attribute names remain ordinary XML data",
+          "steps": [
+            {
+              "text": "XML values input encoded as JSON \"<r __proto__=\\\"polluted\\\" constructor=\\\"safe\\\"/>\"",
+              "argument": null
+            },
+            {
+              "text": "the XML values input is parsed",
+              "argument": null
+            },
+            {
+              "text": "the root attributes are exactly __proto__=polluted and constructor=safe",
+              "argument": null
+            },
+            {
+              "text": "the root remains r with no text and no children",
+              "argument": null
+            },
+            {
+              "text": "fresh attribute reads and the original XML source are unchanged",
+              "argument": null
+            }
+          ]
+        }
+      ],
+      "beforeProfiles": [
+        "@profile-javascript-xml-model"
+      ],
+      "afterProfiles": [
+        "@profile-xml-model-safety"
+      ]
+    },
+    {
+      "id": "@id-xml-immutable-namespace-metadata",
+      "before": [
+        {
+          "scenarioId": "@id-xml-immutable-namespace-metadata",
+          "name": "Attribute namespace metadata is detached from JavaScript prototypes",
+          "steps": [
+            {
+              "text": "XML values input encoded as JSON \"<r xmlns:a=\\\"urn:a\\\" a:id=\\\"outer\\\"/>\"",
+              "argument": null
+            },
+            {
+              "text": "the XML values input is parsed",
+              "argument": null
+            },
+            {
+              "text": "the namespace recorded for a:id is urn:a",
+              "argument": null
+            },
+            {
+              "text": "the attribute namespace map is frozen and has a null prototype",
+              "argument": null
+            }
+          ]
+        }
+      ],
+      "after": [
+        {
+          "scenarioId": "@id-xml-immutable-namespace-metadata",
+          "name": "Returned namespace metadata cannot corrupt the parsed XML model",
+          "steps": [
+            {
+              "text": "XML values input encoded as JSON \"<r xmlns:a=\\\"urn:a\\\" a:id=\\\"outer\\\"/>\"",
+              "argument": null
+            },
+            {
+              "text": "the XML values input is parsed",
+              "argument": null
+            },
+            {
+              "text": "the namespace recorded for a:id is urn:a",
+              "argument": null
+            },
+            {
+              "text": "changing a returned namespace snapshot to urn:changed and deleting a:id are attempted",
+              "argument": null
+            },
+            {
+              "text": "fresh namespace and attribute reads still return urn:a and outer",
+              "argument": null
+            },
+            {
+              "text": "the parsed root structure and original XML source are unchanged",
+              "argument": null
+            }
+          ]
+        }
+      ],
+      "beforeProfiles": [
+        "@profile-javascript-xml-model"
+      ],
+      "afterProfiles": [
+        "@profile-xml-model-safety"
+      ]
+    },
+    {
+      "id": "@id-xml-typed-parse-error",
+      "before": [
+        {
+          "scenarioId": "@id-xml-typed-parse-error",
+          "name": "Malformed XML returns the documented error type",
+          "steps": [
+            {
+              "text": "XML values input encoded as JSON \"<a></b>\"",
+              "argument": null
+            },
+            {
+              "text": "the XML values input is parsed",
+              "argument": null
+            },
+            {
+              "text": "parsing throws an OoxmlError instance",
+              "argument": null
+            }
+          ]
+        }
+      ],
+      "after": [
+        {
+          "scenarioId": "@id-xml-typed-parse-error",
+          "name": "Malformed XML returns a documented failure category without a partial document",
+          "steps": [
+            {
+              "text": "XML values input encoded as JSON \"<a></b>\"",
+              "argument": null
+            },
+            {
+              "text": "the XML values input is parsed",
+              "argument": null
+            },
+            {
+              "text": "parsing fails with category malformed-xml and no document result",
+              "argument": null
+            },
+            {
+              "text": "the original XML source is unchanged",
+              "argument": null
+            }
+          ]
+        }
+      ],
+      "beforeProfiles": [
+        "@profile-xml-error-api"
+      ],
+      "afterProfiles": [
+        "@profile-xml-failure-category"
+      ]
+    }
+  ],
+  "beforeLedgerRows": [
+    {
+      "id": "@id-xml-prototype-safe-attributes",
+      "feature": "workflows/xml/parsing.feature",
+      "expandedCases": 1,
+      "factIds": [],
+      "expectedOutcomes": [
+        "the root attribute map has a null prototype",
+        "__proto__ is an own attribute with value polluted",
+        "constructor is an own attribute with value safe"
+      ],
+      "consumers": {
+        "bun": {
+          "status": "implemented",
+          "evidence": "Bun 2635a5ff62eab79cc8d12ad1cb013bab9536d38e at shared v0.77.0 executes One exact four-step JavaScript-profile case retains null-prototype attributes and own __proto__/constructor values. features/shared.json and tests/acceptance/xml-values.ts bind the exact shared steps; tests/unit/xml-values-bindings.test.ts runs all ten canonical XML value scenarios (11 cases/39 steps) and altered expectations or corrupted results fail without undefined/ambiguous bindings. Fresh GitHub recursive make check passed 732/732 selected cases. No Go/Python, OPC package, rendering or unselected XML credit."
+        },
+        "go": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        },
+        "python": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        }
+      }
+    },
+    {
+      "id": "@id-xml-immutable-namespace-metadata",
+      "feature": "workflows/xml/parsing.feature",
+      "expandedCases": 1,
+      "factIds": [],
+      "expectedOutcomes": [
+        "the namespace recorded for a:id is urn:a",
+        "the attribute namespace map is frozen and has a null prototype"
+      ],
+      "consumers": {
+        "bun": {
+          "status": "implemented",
+          "evidence": "Bun 2635a5ff62eab79cc8d12ad1cb013bab9536d38e at shared v0.77.0 executes One exact three-step JavaScript-profile case reads a:id namespace urn:a and frozen null-prototype attribute namespace metadata. features/shared.json and tests/acceptance/xml-values.ts bind the exact shared steps; tests/unit/xml-values-bindings.test.ts runs all ten canonical XML value scenarios (11 cases/39 steps) and altered expectations or corrupted results fail without undefined/ambiguous bindings. Fresh GitHub recursive make check passed 732/732 selected cases. No Go/Python, OPC package, rendering or unselected XML credit."
+        },
+        "go": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        },
+        "python": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        }
+      }
+    },
+    {
+      "id": "@id-xml-typed-parse-error",
+      "feature": "workflows/xml/parsing.feature",
+      "expandedCases": 1,
+      "factIds": [],
+      "expectedOutcomes": [
+        "parsing throws an OoxmlError instance"
+      ],
+      "consumers": {
+        "bun": {
+          "status": "implemented",
+          "evidence": "Bun 2635a5ff62eab79cc8d12ad1cb013bab9536d38e at shared v0.77.0 executes One exact three-step case requires malformed XML to throw an OoxmlError instance. features/shared.json and tests/acceptance/xml-values.ts bind the exact shared steps; tests/unit/xml-values-bindings.test.ts runs all ten canonical XML value scenarios (11 cases/39 steps) and altered expectations or corrupted results fail without undefined/ambiguous bindings. Fresh GitHub recursive make check passed 732/732 selected cases. No Go/Python, OPC package, rendering or unselected XML credit."
+        },
+        "go": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        },
+        "python": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        }
+      }
+    }
+  ],
+  "afterLedgerRows": [
+    {
+      "id": "@id-xml-prototype-safe-attributes",
+      "feature": "workflows/xml/parsing.feature",
+      "expandedCases": 1,
+      "factIds": [],
+      "expectedOutcomes": [
+        "the root attributes are exactly __proto__=polluted and constructor=safe",
+        "the root remains r with no text and no children",
+        "fresh attribute reads and the original XML source are unchanged"
+      ],
+      "consumers": {
+        "bun": {
+          "status": "planned",
+          "evidence": "Runtime-agnostic XML model/failure contract candidate supersedes literal runtime predicates; historical execution is sealed in ledgers/xml-runtime-generalization.json. Requires fresh exact native and shared-case results for this consumer; no migration credit."
+        },
+        "go": {
+          "status": "planned",
+          "evidence": "Runtime-agnostic XML model/failure contract candidate supersedes literal runtime predicates; historical execution is sealed in ledgers/xml-runtime-generalization.json. Requires fresh exact native and shared-case results for this consumer; no migration credit."
+        },
+        "python": {
+          "status": "planned",
+          "evidence": "Runtime-agnostic XML model/failure contract candidate supersedes literal runtime predicates; historical execution is sealed in ledgers/xml-runtime-generalization.json. Requires fresh exact native and shared-case results for this consumer; no migration credit."
+        }
+      }
+    },
+    {
+      "id": "@id-xml-immutable-namespace-metadata",
+      "feature": "workflows/xml/parsing.feature",
+      "expandedCases": 1,
+      "factIds": [],
+      "expectedOutcomes": [
+        "the namespace recorded for a:id is urn:a",
+        "fresh namespace and attribute reads still return urn:a and outer",
+        "the parsed root structure and original XML source are unchanged"
+      ],
+      "consumers": {
+        "bun": {
+          "status": "planned",
+          "evidence": "Runtime-agnostic XML model/failure contract candidate supersedes literal runtime predicates; historical execution is sealed in ledgers/xml-runtime-generalization.json. Requires fresh exact native and shared-case results for this consumer; no migration credit."
+        },
+        "go": {
+          "status": "planned",
+          "evidence": "Runtime-agnostic XML model/failure contract candidate supersedes literal runtime predicates; historical execution is sealed in ledgers/xml-runtime-generalization.json. Requires fresh exact native and shared-case results for this consumer; no migration credit."
+        },
+        "python": {
+          "status": "planned",
+          "evidence": "Runtime-agnostic XML model/failure contract candidate supersedes literal runtime predicates; historical execution is sealed in ledgers/xml-runtime-generalization.json. Requires fresh exact native and shared-case results for this consumer; no migration credit."
+        }
+      }
+    },
+    {
+      "id": "@id-xml-typed-parse-error",
+      "feature": "workflows/xml/parsing.feature",
+      "expandedCases": 1,
+      "factIds": [],
+      "expectedOutcomes": [
+        "parsing fails with category malformed-xml and no document result",
+        "the original XML source is unchanged"
+      ],
+      "consumers": {
+        "bun": {
+          "status": "planned",
+          "evidence": "Runtime-agnostic XML model/failure contract candidate supersedes literal runtime predicates; historical execution is sealed in ledgers/xml-runtime-generalization.json. Requires fresh exact native and shared-case results for this consumer; no migration credit."
+        },
+        "go": {
+          "status": "planned",
+          "evidence": "Runtime-agnostic XML model/failure contract candidate supersedes literal runtime predicates; historical execution is sealed in ledgers/xml-runtime-generalization.json. Requires fresh exact native and shared-case results for this consumer; no migration credit."
+        },
+        "python": {
+          "status": "planned",
+          "evidence": "Runtime-agnostic XML model/failure contract candidate supersedes literal runtime predicates; historical execution is sealed in ledgers/xml-runtime-generalization.json. Requires fresh exact native and shared-case results for this consumer; no migration credit."
+        }
+      }
+    }
+  ]
+}

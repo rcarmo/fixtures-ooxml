@@ -1,3 +1,4 @@
+import {historicalWorkflowLedger} from './xml-generalization-helpers.ts';
 const pythonPackageIds = new Set(['@id-package-admission-negative-budget','@id-zip-unsigned-descriptor-signature-collision']);
 const goXmlNegativeIds = new Set(['@id-xml-comparison-significant-content','@id-xml-comparison-prefix-attribute-binding','@id-xml-comparison-unsafe-input','@id-xml-comparison-processing-instructions-and-comments']);
 const goLatentPackageIds = new Set(['@id-package-admission-negative-budget','@id-zip-unsigned-descriptor-signature-collision']);
@@ -42,7 +43,7 @@ const specs=[
  {id:'@id-docx-refuse-topology',steps:[...['fixture-e3c5159fbf254f4d5423354773ae83a5535cb3cef8f603f1adca6d18adab11f2|1|amazing','fixture-e4f051ec2eb5f48b9b8299e931abb2bca1fa86ca5007865b3b2f9b83ba16676f|2|[Enter Title Here]','synthetic-field|1|2026-01-01'].map(row=>{const [fixture,index,query]=row.split('|');return [`DOCX slice fixture "${fixture}" is opened`,`DOCX slice paragraph ${index} exact search for "${query}" is attempted`,'DOCX slice refusal code equals "docx-unsupported-topology"']})],markers:['three exact','docx-unsupported-topology']},
 ];
 test('Bun executes seven exact DOCX text slice rows without Go or Python credit',async()=>{
- const ledger=await Bun.file('ledgers/workflows.json').json();
+ const ledger=await historicalWorkflowLedger();
  const prior=JSON.parse(execFileSync('git',['show','e8ff3e752e19c8a935089c7efac0de57ec577fa5:ledgers/workflows.json']).toString());
  const rows=cases(path,await Bun.file(path).text());
  for(const {id,steps,markers} of specs){

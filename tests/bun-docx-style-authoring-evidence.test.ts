@@ -1,3 +1,4 @@
+import {historicalWorkflowLedger} from './xml-generalization-helpers.ts';
 import {test,expect} from 'bun:test';
 import {execFileSync} from 'node:child_process';
 import {cases} from '../scripts/verify.ts';
@@ -12,7 +13,7 @@ const specs=[
 ];
 
 test('Bun executes exact DOCX paragraph style authoring and atomic refusal cases',async()=>{
- const ledger=await Bun.file('ledgers/workflows.json').json(),prior=JSON.parse(execFileSync('git',['show','8312404125486650956807f940a1e5ab583f79c3:ledgers/workflows.json']).toString()),compiled=cases(path,await Bun.file(path).text());
+ const ledger=await historicalWorkflowLedger(),prior=JSON.parse(execFileSync('git',['show','8312404125486650956807f940a1e5ab583f79c3:ledgers/workflows.json']).toString()),compiled=cases(path,await Bun.file(path).text());
  for(const{id,rows,marker}of specs){const now=ledger.workflows.find((w:any)=>w.id===id),old=prior.workflows.find((w:any)=>w.id===id),actual=compiled.filter((r:any)=>r.scenarioId===id);
   expect(now.feature).toBe(path);expect(now.expandedCases).toBe(rows.length);expect(actual.map((r:any)=>r.steps.map((s:any)=>s.text))).toEqual(rows);
   expect(now.expectedOutcomes).toEqual([...new Set(rows.flatMap(row=>row.slice(2)))]);

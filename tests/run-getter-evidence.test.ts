@@ -1,3 +1,4 @@
+import {historicalWorkflowLedger} from './xml-generalization-helpers.ts';
 const pythonPackageIds = new Set(['@id-package-admission-negative-budget','@id-zip-unsigned-descriptor-signature-collision']);
 const goXmlNegativeIds = new Set(['@id-xml-comparison-significant-content','@id-xml-comparison-prefix-attribute-binding','@id-xml-comparison-unsafe-input','@id-xml-comparison-processing-instructions-and-comments']);
 const goLatentPackageIds = new Set(['@id-package-admission-negative-budget','@id-zip-unsigned-descriptor-signature-collision']);
@@ -40,7 +41,7 @@ const expected=[
  {id:ids[1],values:['Arial','Times New Roman','Calibri','Courier New','Georgia','Verdana'],when:(v:string)=>`its font name is set to ${v}`,then:(v:string)=>`its font-name getter equals ${v}`},
 ];
 test('exact underline and font getter rows record Bun and Go execution without Python credit',async()=>{
- const registry=await Bun.file('ledgers/workflows.json').json();
+ const registry=await historicalWorkflowLedger();
  const prior=JSON.parse(execFileSync('git',['show','7502c11d5fbf98af56b9360031609bd96f20cce8:ledgers/workflows.json']).toString());
  const compiled=cases(path,await Bun.file(path).text());
  for(const spec of expected){

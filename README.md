@@ -11,7 +11,7 @@ Office application output help find differences; they do not override the spec.
 | [`specs/ecma-376/`](specs/ecma-376/README.md) | Unmodified ECMA documents, extracts and separately identified notes |
 | `facts/` | Content types, namespaces, relationship types and constants with source references |
 | `fixtures/<format>/<scenario-group>/` | Reusable documents and images |
-| `workflows/` | Gherkin scenarios for package, XML and document operations |
+| [`workflows/`](workflows/README.md) | Format/operation feature table with reuse tags |
 | `contracts/` | Operation semantics and limitations |
 | `ledgers/` | Scenario indexes and test-to-requirement mappings |
 | `notices/` | Original licence texts and asset attribution |
@@ -41,6 +41,15 @@ OOXML conformance.
 Add new scenarios and source-test mappings directly here using the
 [catalogue contribution guide](CATALOGUE.md). A feature, its mapping and registry
 updates are committed together; validation rejects orphan feature files.
+
+The [reuse review](docs/feature-reuse.md) covers every canonical feature and
+scenario, with staged source candidates listed separately. It distinguishes
+language-neutral contracts, API profiles, literal runtime dependencies and
+incomplete inputs/outcomes. Download the [feature table](docs/feature-reuse.csv)
+and [scenario table](docs/scenario-reuse.csv). Reuse tags grant no implementation
+or execution credit. Regenerate tables after a reviewed change with
+`bun scripts/feature-catalogue.ts --write`; `bun run check` rejects stale tables
+or unreviewed feature-byte changes.
 
 See [reference formats](REFERENCE.md), [XML operations](contracts/xml-profiles.md),
 [package operations](contracts/package-profiles.md) and

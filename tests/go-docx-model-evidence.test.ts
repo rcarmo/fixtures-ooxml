@@ -1,3 +1,4 @@
+import {historicalWorkflowLedger} from './xml-generalization-helpers.ts';
 const pythonPackageIds = new Set(['@id-package-admission-negative-budget','@id-zip-unsigned-descriptor-signature-collision']);
 const goXmlNegativeIds = new Set(['@id-xml-comparison-significant-content','@id-xml-comparison-prefix-attribute-binding','@id-xml-comparison-unsafe-input','@id-xml-comparison-processing-instructions-and-comments']);
 const goLatentPackageIds = new Set(['@id-package-admission-negative-budget','@id-zip-unsigned-descriptor-signature-collision']);
@@ -38,7 +39,7 @@ const specs=[
  {id:'@id-docx-go-roundtrip-table-text',path:'workflows/docx/tables.feature',steps:['a new Word table with three rows and three columns','its cells contain Header1, Header2, Header3, A1, B1, C1, A2, B2 and C2 in row order','the document is saved and reopened','exactly one table is readable','all nine cell text getters equal their original row-order values']},
 ];
 test('Go executes exact empty-body and saved nine-cell table predicates without Python credit',async()=>{
- const registry=await Bun.file('ledgers/workflows.json').json();
+ const registry=await historicalWorkflowLedger();
  const prior=JSON.parse(execFileSync('git',['show','78612e1447921af26f640a97ec4591463ba872e9:ledgers/workflows.json']).toString());
  for(const {id,path,steps} of specs){
   const entry=registry.workflows.find((w:any)=>w.id===id),former=prior.workflows.find((w:any)=>w.id===id);

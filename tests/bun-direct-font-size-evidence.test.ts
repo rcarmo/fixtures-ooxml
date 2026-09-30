@@ -1,3 +1,4 @@
+import {historicalWorkflowLedger} from './xml-generalization-helpers.ts';
 const pythonPackageIds = new Set(['@id-package-admission-negative-budget','@id-zip-unsigned-descriptor-signature-collision']);
 const goXmlNegativeIds = new Set(['@id-xml-comparison-significant-content','@id-xml-comparison-prefix-attribute-binding','@id-xml-comparison-unsafe-input','@id-xml-comparison-processing-instructions-and-comments']);
 const goLatentPackageIds = new Set(['@id-package-admission-negative-budget','@id-zip-unsigned-descriptor-signature-collision']);
@@ -36,7 +37,7 @@ import {cases} from '../scripts/verify.ts';
 const id='@id-docx-direct-font-size-half-points',path='workflows/docx/font-size.feature';
 const steps=['a new Word document with one body paragraph and one run containing "Size sample"',"that run's direct font size is set to 10.5 points",'the Word document is saved and reopened','the paragraph text is "Size sample"','the run has exactly one direct WordprocessingML w:sz element with w:val "21"',"the reopened run's direct font size is 10.5 points"];
 test('Bun executes exact saved half-point direct font size without Go, Python or rendering credit',async()=>{
- const ledger=await Bun.file('ledgers/workflows.json').json();
+ const ledger=await historicalWorkflowLedger();
  const prior=JSON.parse(execFileSync('git',['show','39f6fd8b7e77273fd310ee56e217b15130a939c2:ledgers/workflows.json']).toString());
  const current=ledger.workflows.find((w:any)=>w.id===id),old=prior.workflows.find((w:any)=>w.id===id);
  expect(current.feature).toBe(path);expect(current.expandedCases).toBe(1);

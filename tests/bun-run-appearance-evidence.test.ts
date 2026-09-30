@@ -1,3 +1,4 @@
+import {historicalWorkflowLedger} from './xml-generalization-helpers.ts';
 const pythonPackageIds = new Set(['@id-package-admission-negative-budget','@id-zip-unsigned-descriptor-signature-collision']);
 const goXmlNegativeIds = new Set(['@id-xml-comparison-significant-content','@id-xml-comparison-prefix-attribute-binding','@id-xml-comparison-unsafe-input','@id-xml-comparison-processing-instructions-and-comments']);
 const goLatentPackageIds = new Set(['@id-package-admission-negative-budget','@id-zip-unsigned-descriptor-signature-collision']);
@@ -45,7 +46,7 @@ const specs=[
  {id:'@id-docx-go-roundtrip-selected-formatting',steps:[['a new Word paragraph with three runs Bold-space, Italic-space and Colored','the first run is bold, the second italic, and the third has colour FF0000, font size 14 and font Arial','the document is saved and reopened','at least one paragraph and three runs are readable','the first run is bold and the second italic','the third run reports colour FF0000, font size 14 and font Arial']]},
 ];
 test('Bun executes exact direct appearance and selected saved-formatting rows without Go or Python credit',async()=>{
- const registry=await Bun.file('ledgers/workflows.json').json();
+ const registry=await historicalWorkflowLedger();
  const prior=JSON.parse(execFileSync('git',['show','d983be75704bc5a531cddf97d4b2405ee82b9c08:ledgers/workflows.json']).toString());
  const compiled=cases(path,await Bun.file(path).text());
  for(const {id,steps} of specs){

@@ -1,3 +1,4 @@
+import {historicalWorkflowLedger} from './xml-generalization-helpers.ts';
 const pythonPackageIds = new Set(['@id-package-admission-negative-budget','@id-zip-unsigned-descriptor-signature-collision']);
 const goXmlNegativeIds = new Set(['@id-xml-comparison-significant-content','@id-xml-comparison-prefix-attribute-binding','@id-xml-comparison-unsafe-input','@id-xml-comparison-processing-instructions-and-comments']);
 const goLatentPackageIds = new Set(['@id-package-admission-negative-budget','@id-zip-unsigned-descriptor-signature-collision']);
@@ -43,7 +44,7 @@ const specs=[
  {id:'@id-docx-go-paragraph-multiple-runs',rows:[{name:'Three added runs concatenate in paragraph text',steps:['a new Word paragraph','runs containing Hello-space, World and exclamation are appended in order','the paragraph has three runs and its text equals Hello World!']}],markers:['three exact','three','Hello World!']},
 ];
 test('four bounded DOCX paragraph value workflows have exact shared steps and separate Bun/Go receipts',async()=>{
- const ledger=await Bun.file('ledgers/workflows.json').json();
+ const ledger=await historicalWorkflowLedger();
  const prior=JSON.parse(execFileSync('git',['show','df3950c79dc3c688027b1e715eb8557e541d4a7c:ledgers/workflows.json']).toString());
  const rows=cases(path,await Bun.file(path).text());
  for(const {id,rows:expected,markers} of specs){

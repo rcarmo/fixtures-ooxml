@@ -1,3 +1,4 @@
+import {historicalWorkflowLedger} from './xml-generalization-helpers.ts';
 const pythonPackageIds = new Set(['@id-package-admission-negative-budget','@id-zip-unsigned-descriptor-signature-collision']);
 const goXmlNegativeIds = new Set(['@id-xml-comparison-significant-content','@id-xml-comparison-prefix-attribute-binding','@id-xml-comparison-unsafe-input','@id-xml-comparison-processing-instructions-and-comments']);
 const goLatentPackageIds = new Set(['@id-package-admission-negative-budget','@id-zip-unsigned-descriptor-signature-collision']);
@@ -42,7 +43,7 @@ const specs=[
  {id:'@id-docx-create-atomic-refusals',steps:['text-number|new-document|docx-invalid-argument','options-string|new-document|docx-invalid-argument','bold-string|new-document|docx-invalid-argument','style-without-styles-part|new-document|docx-style-unsupported',`unknown-style|${fixture}|docx-style-missing`].map(line=>{const [name,source,code]=line.split('|');return [`DOCX create source "${source}" is prepared`,'DOCX create current saved bytes are remembered',`DOCX create append refusal "${name}" is attempted`,`DOCX create refusal code equals "${code}"`,'DOCX create saved bytes equal the remembered bytes']}),outcomes:0,markers:['five exact five-step','docx-style-unsupported','docx-style-missing']},
 ];
 test('Bun executes eight exact DOCX creation cases without Go or Python credit',async()=>{
- const ledger=await Bun.file('ledgers/workflows.json').json();
+ const ledger=await historicalWorkflowLedger();
  const prior=JSON.parse(execFileSync('git',['show','6c06b047d4e36b0aa27bd30a8d7443180e46c7a6:ledgers/workflows.json']).toString());
  const rows=cases(path,await Bun.file(path).text());
  for(const {id,steps,outcomes,markers} of specs){

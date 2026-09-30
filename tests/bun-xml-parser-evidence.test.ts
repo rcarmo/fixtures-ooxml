@@ -1,3 +1,4 @@
+import {historicalWorkflowLedger} from './xml-generalization-helpers.ts';
 const pythonPackageIds = new Set(['@id-package-admission-negative-budget','@id-zip-unsigned-descriptor-signature-collision']);
 const goXmlNegativeIds = new Set(['@id-xml-comparison-significant-content','@id-xml-comparison-prefix-attribute-binding','@id-xml-comparison-unsafe-input','@id-xml-comparison-processing-instructions-and-comments']);
 const goLatentPackageIds = new Set(['@id-package-admission-negative-budget','@id-zip-unsigned-descriptor-signature-collision']);
@@ -41,7 +42,7 @@ const specs=[
  {id:'@id-xml-parse-bounds',steps:['XML whose nesting depth, node count or input length exceeds the configured parser limits','the document is parsed','parsing is refused before returning a partial tree'],outcomes:1,markers:['three exact','no partial parsed document']},
 ];
 test('Bun executes four exact XML parsing and refusal scenarios without Go or Python credit',async()=>{
- const ledger=await Bun.file('ledgers/workflows.json').json();
+ const ledger=await historicalWorkflowLedger();
  const prior=JSON.parse(execFileSync('git',['show','8789e30b55f34ff7c0b04b6a5c9fe538d5fe4f65:ledgers/workflows.json']).toString());
  const rows=cases(path,await Bun.file(path).text());
  for(const {id,steps,outcomes,markers} of specs){

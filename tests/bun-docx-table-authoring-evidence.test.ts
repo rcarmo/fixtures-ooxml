@@ -1,3 +1,4 @@
+import {historicalWorkflowLedger} from './xml-generalization-helpers.ts';
 const pythonPackageIds = new Set(['@id-package-admission-negative-budget','@id-zip-unsigned-descriptor-signature-collision']);
 const goXmlNegativeIds = new Set(['@id-xml-comparison-significant-content','@id-xml-comparison-prefix-attribute-binding','@id-xml-comparison-unsafe-input','@id-xml-comparison-processing-instructions-and-comments']);
 const goLatentPackageIds = new Set(['@id-package-admission-negative-budget','@id-zip-unsigned-descriptor-signature-collision']);
@@ -41,7 +42,7 @@ const specs=[
  {id:'@id-docx-table-atomic-refusals',steps:[`${fixture}|row-oob|range`,'native-merged-nested|merged-cell|docx-table-merged-cell','native-merged-nested|nested-cell|docx-table-cell-unsupported','synthetic-grid-before|bizarre|docx-table-unsupported'].map(line=>{const [source,name,code]=line.split('|');return [`DOCX table source "${source}" is prepared`,'DOCX table current saved bytes are remembered',`DOCX table refusal "${name}" is attempted`,`DOCX table refusal code equals "${code}"`,'DOCX table saved bytes equal the remembered bytes']}),outcomes:0,markers:['four exact five-step','RangeError','baseline bytes']},
 ];
 test('Bun executes seven exact DOCX table authoring cases without Go or Python credit',async()=>{
- const ledger=await Bun.file('ledgers/workflows.json').json();
+ const ledger=await historicalWorkflowLedger();
  const prior=JSON.parse(execFileSync('git',['show','a3d7f069e7ecf44e7ad856140419ab762a525629:ledgers/workflows.json']).toString());
  const rows=cases(path,await Bun.file(path).text());
  for(const {id,steps,outcomes,markers} of specs){

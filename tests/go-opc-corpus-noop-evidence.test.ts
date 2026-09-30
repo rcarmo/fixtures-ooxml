@@ -1,3 +1,4 @@
+import {historicalWorkflowLedger} from './xml-generalization-helpers.ts';
 import { test, expect } from 'bun:test';
 import { execFileSync } from 'node:child_process';
 import { cases } from '../scripts/verify.ts';
@@ -5,7 +6,7 @@ import { cases } from '../scripts/verify.ts';
 test('Go credits one four-step preserved-package corpus case', async () => {
   const id = '@id-opc-package-corpus-noop';
   const feature = 'workflows/package/preservation.feature';
-  const ledger = await Bun.file('ledgers/workflows.json').json();
+  const ledger = await historicalWorkflowLedger();
   const prior = JSON.parse(execFileSync('git', ['show', '2ab5f6c91cd3434d3d63fe0282a627d1ee628513:ledgers/workflows.json']).toString());
   const now = ledger.workflows.find((w: any) => w.id === id);
   const old = prior.workflows.find((w: any) => w.id === id);

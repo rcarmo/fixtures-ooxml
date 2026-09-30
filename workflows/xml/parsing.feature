@@ -76,20 +76,22 @@ Feature: XML parsing and value inspection
       And the root attribute xml:lang equals JSON "en"
       And the implicit xml namespace URI is http://www.w3.org/XML/1998/namespace
 
-    @profile-javascript-xml-model @id-xml-prototype-safe-attributes
-    Scenario: XML attribute names cannot set an object's prototype
+    @profile-xml-model-safety @id-xml-prototype-safe-attributes
+    Scenario: Special-looking attribute names remain ordinary XML data
       Given XML values input encoded as JSON "<r __proto__=\"polluted\" constructor=\"safe\"/>"
       When the XML values input is parsed
-      Then the root attribute map has a null prototype
-      And __proto__ is an own attribute with value polluted
-      And constructor is an own attribute with value safe
+      Then the root attributes are exactly __proto__=polluted and constructor=safe
+      And the root remains r with no text and no children
+      And fresh attribute reads and the original XML source are unchanged
 
-    @profile-javascript-xml-model @id-xml-immutable-namespace-metadata
-    Scenario: Attribute namespace metadata is detached from JavaScript prototypes
+    @profile-xml-model-safety @id-xml-immutable-namespace-metadata
+    Scenario: Returned namespace metadata cannot corrupt the parsed XML model
       Given XML values input encoded as JSON "<r xmlns:a=\"urn:a\" a:id=\"outer\"/>"
       When the XML values input is parsed
       Then the namespace recorded for a:id is urn:a
-      And the attribute namespace map is frozen and has a null prototype
+      When changing a returned namespace snapshot to urn:changed and deleting a:id are attempted
+      Then fresh namespace and attribute reads still return urn:a and outer
+      And the parsed root structure and original XML source are unchanged
 
     @profile-xml-escaping-api @id-xml-escaping-values
     Scenario Outline: Escape <context> content without changing its value
@@ -113,8 +115,9 @@ Feature: XML parsing and value inspection
       When the value is escaped separately as text and as an attribute and both are parsed
       Then the decoded text and attribute both equal JSON "x\r\n\ty"
 
-    @profile-xml-error-api @id-xml-typed-parse-error
-    Scenario: Malformed XML returns the documented error type
+    @profile-xml-failure-category @id-xml-typed-parse-error
+    Scenario: Malformed XML returns a documented failure category without a partial document
       Given XML values input encoded as JSON "<a></b>"
       When the XML values input is parsed
-      Then parsing throws an OoxmlError instance
+      Then parsing fails with category malformed-xml and no document result
+      And the original XML source is unchanged

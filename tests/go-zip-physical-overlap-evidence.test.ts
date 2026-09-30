@@ -1,3 +1,4 @@
+import {historicalWorkflowLedger} from './xml-generalization-helpers.ts';
 import {test,expect} from 'bun:test';
 import {execFileSync} from 'node:child_process';
 import {cases} from '../scripts/verify.ts';
@@ -5,7 +6,7 @@ import {cases} from '../scripts/verify.ts';
 const path='workflows/package/zip-admission.feature',id='@id-zip-physical-member-overlap-refusal';
 
 test('Go canonical ZIP32 physical-overlap execution corrects stale planned ledger without new Go binding',async()=>{
- const ledger=await Bun.file('ledgers/workflows.json').json(),prior=JSON.parse(execFileSync('git',['show','33f291c4d3263fee760e614287c4415071d35cd1:ledgers/workflows.json']).toString()),compiled=cases(path,await Bun.file(path).text());
+ const ledger=await historicalWorkflowLedger(),prior=JSON.parse(execFileSync('git',['show','33f291c4d3263fee760e614287c4415071d35cd1:ledgers/workflows.json']).toString()),compiled=cases(path,await Bun.file(path).text());
  const now=ledger.workflows.find((w:any)=>w.id===id),old=prior.workflows.find((w:any)=>w.id===id),rows=compiled.filter((r:any)=>r.scenarioId===id);
  expect(now.feature).toBe(path);expect(now.expandedCases).toBe(1);expect(rows).toHaveLength(1);expect(rows[0].steps).toHaveLength(7);expect(now.expectedOutcomes).toEqual(rows[0].steps.slice(4).map((s:any)=>s.text));
  expect(old.consumers.go.status).toBe('planned');expect(now.consumers.go.status).toBe('implemented');

@@ -1,3 +1,4 @@
+import {historicalWorkflowLedger} from './xml-generalization-helpers.ts';
 const pythonPackageIds = new Set(['@id-package-admission-negative-budget','@id-zip-unsigned-descriptor-signature-collision']);
 const goXmlNegativeIds = new Set(['@id-xml-comparison-significant-content','@id-xml-comparison-prefix-attribute-binding','@id-xml-comparison-unsafe-input','@id-xml-comparison-processing-instructions-and-comments']);
 const goLatentPackageIds = new Set(['@id-package-admission-negative-budget','@id-zip-unsigned-descriptor-signature-collision']);
@@ -41,7 +42,7 @@ const specs=[
  {id:'@id-docx-go-cell-properties-getters',steps:['cell zero-zero of a new Word one-by-one table','width is set to 2400 dxa, vertical alignment center and text direction tbRl','a top border with single style, size eight and colour 000000 is assigned','width equals 2400, width type dxa, alignment center and direction tbRl','the border collection and top border are nonnil']},
 ];
 test('Bun executes four exact table and cell direct getter cases without Go or Python credit',async()=>{
- const registry=await Bun.file('ledgers/workflows.json').json();
+ const registry=await historicalWorkflowLedger();
  const prior=JSON.parse(execFileSync('git',['show','11f21b29c3c4c93db03fd04a47eb1e92c21e2456:ledgers/workflows.json']).toString());
  const compiled=cases(path,await Bun.file(path).text());
  for(const {id,steps} of specs){

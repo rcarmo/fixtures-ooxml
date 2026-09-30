@@ -1,3 +1,4 @@
+import {historicalWorkflowLedger} from './xml-generalization-helpers.ts';
 const pythonPackageIds = new Set(['@id-package-admission-negative-budget','@id-zip-unsigned-descriptor-signature-collision']);
 const goXmlNegativeIds = new Set(['@id-xml-comparison-significant-content','@id-xml-comparison-prefix-attribute-binding','@id-xml-comparison-unsafe-input','@id-xml-comparison-processing-instructions-and-comments']);
 const goLatentPackageIds = new Set(['@id-package-admission-negative-budget','@id-zip-unsigned-descriptor-signature-collision']);
@@ -34,7 +35,7 @@ import {cases} from '../scripts/verify.ts';
 
 const id='@id-office-xlsx-independent-style-reader',path='workflows/xlsx/style-readback.feature';
 test('independent XLSX style readback records one Bun execution without assigning Go or Python credit',async()=>{
- const registry=await Bun.file('ledgers/workflows.json').json(),entry=registry.workflows.find((w:any)=>w.id===id);
+ const registry=await historicalWorkflowLedger(),entry=registry.workflows.find((w:any)=>w.id===id);
  expect(cases(path,await Bun.file(path).text()).filter(row=>row.scenarioId===id)).toHaveLength(1);
  expect(entry.feature).toBe(path);expect(entry.expandedCases).toBe(1);
  expect(entry.consumers.bun.status).toBe('implemented');
