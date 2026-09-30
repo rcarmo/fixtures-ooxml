@@ -21,7 +21,7 @@ test('Python credits only the authored reply-to-root resolution case',async()=>{
  ]);
  expect(now.expectedOutcomes).toEqual(selected[0].steps.slice(4).map((s:any)=>s.text));
  expect(old.consumers.python.status).toBe('planned');expect(now.consumers.python.status).toBe('implemented');
- for(const marker of ['f74d17d40fd896c9bac68bec2c37a89fd70d2753','shared v0.145.0',
+ for(const marker of ['f74d17d40fd896c9bac68bec2c37a89fd70d2753','shared v0.146.0',
   'tests/docx_comments_reply_root/{cases,conftest,test_reply_root}.py','seven exact authored steps',
   'w14:paraIdParent bound to the root','root done true, reply done false',
   'second of two separate threads','wrong-target and wrong-state test mutations','1,466 tests',
