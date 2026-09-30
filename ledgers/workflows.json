@@ -5439,8 +5439,8 @@
           "evidence": "Native execution binding pending"
         },
         "python": {
-          "status": "planned",
-          "evidence": "Native execution binding pending"
+          "status": "implemented",
+          "evidence": "Python published f9c640d17230de2bc4d0e6b7dff909ca643367d2 at shared v0.144.0 binds ONLY @id-python-comments-reopen-filter, one case/eight exact authored steps in workflows/docx/comments.feature through tests/docx_comments_reopen_filter/{cases,conftest,test_reopen_filter}.py and production WordAdvancedTools.tool_word_add_comment plus WordTools.tool_word_resolve_comment/tool_word_get_comments. A saved DOCX holds Manuel and Rui Carmo comments on individually verified Alpha/Beta paragraph anchors; the first returned ID is resolved and read through the resolved filter, then reopened with success true and done false. A fresh open-filter read contains that original ID with done false while the resolved filter is empty. Independent controls resolve/reopen the opposite ID, prove an already-open repeat is an archive byte no-op, and refuse an unknown ID without publication. Temporary wrong-ID reopen and wrong-final-filter test mutations each made the canonical case fail and were restored. Committed local and independent recursive full suites passed 1,462 tests with exact 8/8 case steps (four existing warnings); Python CI 36661042394 passed 3.10/3.12/3.13 and Windows CI 36661042448 succeeded. No mixed-done or resolved-filter re-credit, complete-thread, sibling authored scenario, general DOCX/Office/PDF/OPC, Bun/Go or protected-checkout credit."
         }
       }
     },
