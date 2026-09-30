@@ -1,3 +1,4 @@
+import {historicalWorkflowLedger} from './xml-generalization-helpers.ts';
 const pythonPackageIds = new Set(['@id-package-admission-negative-budget','@id-zip-unsigned-descriptor-signature-collision']);
 const goXmlNegativeIds = new Set(['@id-xml-comparison-significant-content','@id-xml-comparison-prefix-attribute-binding','@id-xml-comparison-unsafe-input','@id-xml-comparison-processing-instructions-and-comments']);
 const goLatentPackageIds = new Set(['@id-package-admission-negative-budget','@id-zip-unsigned-descriptor-signature-collision']);
@@ -37,7 +38,7 @@ const id='@id-xlsx-owned-calculation-chain-invalidation';
 test('the owned-chain case has one bounded identity; Bun default refusal is separate from opt-in success',async()=>{
  const text=await Bun.file(path).text(),rows=cases(path,text);
  expect(rows).toHaveLength(1);expect(rows[0]?.scenarioId).toBe(id);
- const registry=await Bun.file('ledgers/workflows.json').json(),entry=registry.workflows.find((w:any)=>w.id===id);
+ const registry=await historicalWorkflowLedger(),entry=registry.workflows.find((w:any)=>w.id===id);
  expect(registry.features.filter((p:string)=>p===path)).toHaveLength(1);
  expect(entry?.feature).toBe(path);expect(entry?.expandedCases).toBe(1);
  expect(entry?.consumers.bun.status).toBe('implemented');

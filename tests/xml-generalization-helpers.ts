@@ -3,8 +3,30 @@ import cellMigration from '../ledgers/cell-runtime-generalization.json';
 import packageMigration from '../ledgers/package-runtime-generalization.json';
 import transactionMigration from '../ledgers/transaction-runtime-generalization.json';
 import lexicalAlignment from '../ledgers/xml-lexical-alignment.json';
+import packageAlignment from '../ledgers/package-alignment.json';
+export function beforePackageAlignmentFeature(path:string,text:string):string {
+  const m=packageAlignment.files.find(f=>f.path===path);if(!m)return text;
+  if(text===m.beforeText)return text;
+  for(const s of m.scenarios)if(JSON.stringify(cases(path,text).filter(c=>c.scenarioId===s.id))!==JSON.stringify(s.after))throw Error('Unreviewed package alignment predicates: '+s.id);
+  if(new Bun.CryptoHasher('sha256').update(text).digest('hex')!==m.afterSha256)throw Error('Unreviewed package alignment feature bytes');
+  return m.beforeText;
+}
+export function beforePackageAlignmentCase<T extends {scenarioId:string;steps:unknown[]}>(row:T):T {
+  const f=packageAlignment.files.find(f=>f.scenarios.some(s=>s.id===row.scenarioId));
+  const s=f?.scenarios.find(s=>s.id===row.scenarioId);
+  const n=s?.after.findIndex(c=>JSON.stringify(c)===JSON.stringify(row))??-1;
+  return n<0?row:{...row,...cases(f!.path,f!.beforeText).filter(c=>c.scenarioId===row.scenarioId)[n]} as T;
+}
+export function beforePackageAlignmentLedger(ledger:any){
+  return {...ledger,workflows:ledger.workflows.map((row:any)=>{
+    const current=packageAlignment.files.flatMap(m=>m.afterLedgerRows).find(r=>r.id===row.id);if(!current)return row;
+    if(JSON.stringify(row)!==JSON.stringify(current))throw Error('Unreviewed package alignment ledger: '+row.id);
+    return packageAlignment.files.flatMap(m=>m.beforeLedgerRows).find(r=>r.id===row.id)!;
+  })};
+}
 /** Undo only the exact reviewed next-layer contract completion for historical checks. */
 export function beforeLexicalAlignmentFeature(path: string, text: string): string {
+  text=beforePackageAlignmentFeature(path,text);
   const m = lexicalAlignment.files.find(f => f.path === path);
   if (!m) return text;
   for (const s of m.scenarios) if (JSON.stringify(cases(path,text).filter(c=>c.scenarioId===s.id)) !== JSON.stringify(s.after)) throw Error('Unreviewed lexical alignment predicates: '+s.id);
@@ -12,11 +34,13 @@ export function beforeLexicalAlignmentFeature(path: string, text: string): strin
   return m.beforeText;
 }
 export function beforeLexicalAlignmentCase<T extends {scenarioId: string; steps: unknown[]}>(row:T):T {
+  row=beforePackageAlignmentCase(row);
   const s=lexicalAlignment.files.flatMap(f=>f.scenarios).find(s=>s.id===row.scenarioId);
   const n=s?.after.findIndex(c=>JSON.stringify(c)===JSON.stringify(row))??-1;
   return n<0?row:{...row,...s!.before[n]} as T;
 }
 export function beforeLexicalAlignmentLedger(ledger:any) {
+  ledger=beforePackageAlignmentLedger(ledger);
   const ms=lexicalAlignment.files;
   return {...ledger,workflows:ledger.workflows.map((row:any)=>{
     const current=ms.flatMap(m=>m.afterLedgerRows).find(r=>r.id===row.id);if(!current)return row;
@@ -45,6 +69,7 @@ export function beforeXmlGeneralizationTags(id: string, tags: string[]): string[
  * migration. Unknown predicate changes fail instead of being hidden by this helper. */
 export function beforeTransactionFeature(path: string, text: string): string {
   if(path!==transactionMigration.path)return text;
+  text=beforePackageAlignmentFeature(path,text);
   for(const s of transactionMigration.scenarios)if(!exact(cases(path,text).filter(r=>r.scenarioId===s.id),s.after))throw Error('Unreviewed transaction predicates: '+s.id);
   if(new Bun.CryptoHasher('sha256').update(text).digest('hex')!==transactionMigration.afterSha256)throw Error('Unreviewed transaction feature bytes');
   return transactionMigration.beforeText;

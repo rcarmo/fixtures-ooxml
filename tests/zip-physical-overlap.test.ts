@@ -1,3 +1,4 @@
+import {historicalWorkflowLedger} from './xml-generalization-helpers.ts';
 const pythonPackageIds = new Set(['@id-package-admission-negative-budget','@id-zip-unsigned-descriptor-signature-collision']);
 const goXmlNegativeIds = new Set(['@id-xml-comparison-significant-content','@id-xml-comparison-prefix-attribute-binding','@id-xml-comparison-unsafe-input','@id-xml-comparison-processing-instructions-and-comments']);
 const goLatentPackageIds = new Set(['@id-package-admission-negative-budget','@id-zip-unsigned-descriptor-signature-collision']);
@@ -36,7 +37,7 @@ const id='@id-zip-physical-member-overlap-refusal';
 const path='workflows/package/zip-admission.feature';
 const fixture='fixture-9286fc07c3f8698f9637cf9b7a0c60461d1f304753ba69b39f655c8c348ea027';
 test('one bounded physical-overlap outcome preserves Go source identities and independently readable fixture bytes',async()=>{
- const r=await Bun.file('ledgers/functional-equivalence.json').json(),g=r.goPhysicalOverlapMerge,m=await Bun.file('manifest.json').json(),l=await Bun.file('ledgers/feature-source-consolidation.json').json(),w=await Bun.file('ledgers/workflows.json').json();
+ const r=await Bun.file('ledgers/functional-equivalence.json').json(),g=r.goPhysicalOverlapMerge,m=await Bun.file('manifest.json').json(),l=await Bun.file('ledgers/feature-source-consolidation.json').json(),w=await historicalWorkflowLedger();
  expect(g.canonicalId).toBe(id);expect(g.canonicalFeature).toBe(path);expect(g.executionCredit).toBe(false);expect(g.sourceRows.map((x:any)=>x.sourceId)).toEqual(['@ZIP-003','@candidate-go-archive-007']);
  for(const row of g.sourceRows){const c=l.candidates.find((x:any)=>x.path===row.path);expect(row.historicalSourceSha256).toBe(c.historicalSourceSha256);expect(row.currentCandidateSha256).toBe(c.sha256);expect((await Bun.file(row.path).text())).not.toContain(row.sourceId);expect(c.executionCredit).toBe(false);}
  const asset=m.files.find((x:any)=>x.id===fixture);expect(asset.path).toBe('fixtures/zip/physical-overlap/overlapping-stored-members-9286fc07c3f8.zip');expect(asset.sha256).toBe(fixture.slice('fixture-'.length));expect(asset.bytes).toBe(483);expect(asset.format).toBe('zip');expect(asset.scenarioIds).toEqual([id]);

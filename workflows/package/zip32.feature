@@ -6,40 +6,47 @@ Feature: ZIP32 reading, writing and bounded admission
     unambiguous ZIP32 interpretation and stay within bounded resources.
     @id-zip-read-valid
     Scenario: Read a valid ZIP32 archive with stored, deflated, and directory entries
-      Given a ZIP archive with canonical OPC member names
-      And the archive contains stored and deflated file entries
-      And the archive may contain zero-byte directory entries and a declared archive comment
-      When the archive is read through the shared ZIP module
-      Then file entries are returned in central-directory order
-      And directory entries do not become package parts
-      And each returned payload matches its declared CRC and size
+      Given a single-disk UTF-8 ZIP32 archive has these central-directory ordered members and no data descriptors
+        | member | method   | payload_json |
+        | z.bin  | STORED   | "z-last"     |
+        | dir/   | STORED   | ""           |
+        | a.xml  | DEFLATED | "<a/>"       |
+        | m.bin  | STORED   | "middle"     |
+      And its declared archive comment is JSON "kept as declared ZIP comment" and all CRC32 and sizes agree with the exact UTF-8 payloads
+      When the production ZIP reader reads the archive with default limits
+      Then returned file names are exactly ["z.bin","a.xml","m.bin"] in central-directory order and dir/ is absent
+      And the three returned payloads equal their declared strings with lengths 6, 4 and 6 and matching independent CRC32 values
+      And the caller's source archive bytes remain unchanged
 
     @id-zip-refuse-unsafe
     Scenario: Refuse ambiguous or unsafe ZIP structure
-      Given a ZIP archive whose structure has no single safe reading
-      When the archive is read through the shared ZIP module
-      Then the module refuses duplicate member names
-      And the module refuses ASCII case-colliding member names
-      And the module refuses noncanonical member paths
-      And the module refuses encrypted or unsupported-compression members
-      And the module refuses multi-disk archives and ZIP64 sentinels without valid end records
-      And the module refuses local-header metadata that disagrees with the central directory
-      And the module refuses CRC failures, size mismatches, and undeclared trailing structure
+      Given the eleven strict ZIP32 unsafe-structure recipes duplicate, case-collision, traversal, encryption, method, multi-disk, missing-ZIP64, local-name, CRC, stored-size and trailing-byte
+      When the production ZIP reader checks every recipe with default limits
+      Then each recipe refuses with its exact documented zip reason and no member result
+      And duplicate and case-collision refuse as zip-duplicate-entry and zip-case-collision
+      And traversal refuses as zip-name-invalid
+      And encryption and method refuse as zip-encryption-unsupported and zip-method-unsupported
+      And multi-disk and missing-ZIP64 refuse as zip-multi-disk-unsupported and zip-structure-invalid
+      And local-name refuses as zip-local-metadata-mismatch
+      And CRC, stored-size and trailing-byte refuse as zip-crc-mismatch, zip-size-mismatch and zip-end-record-missing with every caller archive unchanged
 
     @id-zip-bounds
     Scenario: Refuse archives that exceed configured bounds before expansion
-      Given a ZIP archive whose declared archive size, entry count, entry size, total expanded size, or compression ratio exceeds the configured limit
-      When the archive is read through the shared ZIP module
-      Then the module refuses before allocating unbounded output
+      Given a raw-DEFLATE ZIP32 budget archive contains a.bin with 4096 A bytes followed by b.bin with two b bytes
+      And a sibling archive retains that declared geometry but replaces the compressed a.bin body with eight FF bytes
+      When each archive is read separately with one limit maxArchiveBytes length-minus-one, maxEntries 1, maxEntryBytes 8, maxTotalBytes 8 or maxCompressionRatio 2
+      Then both archives refuse the same respective reasons zip-archive-too-large, zip-too-many-entries, zip-entry-too-large, zip-total-too-large and zip-compression-ratio-exceeded before member output
+      And default reading of the valid archive returns the two exact payloads and default reading of the invalid-DEFLATE sibling refuses a payload error
+      And every caller archive remains unchanged
 
     @id-zip-write-deterministic
     Scenario: Write deterministic UTF-8 ZIP32 output
-      Given a map of canonical OPC member names and bytes
-      When the map is written through the shared ZIP module twice
-      Then both outputs are byte-identical ZIP32 archives
-      And file entries use stored or deflated encoding
-      And names are emitted with the UTF-8 ZIP flag
-      And writer input that would collide by ASCII case is refused
+      Given ordered ZIP writer members are [Content_Types].xml with UTF-8 JSON "<Types/>", custom/data.bin with bytes 00 through FF and word/document.xml with UTF-8 <w:document> followed by 2048 A characters and </w:document>
+      When the production ZIP writer writes the same members twice using its deterministic ZIP32 profile
+      Then both outputs are byte-identical ZIP32 archives and reopen with the three exact member names and payloads
+      And every file uses STORED or DEFLATED encoding and this input emits at least one of each method
+      And every local and central member name uses the UTF-8 ZIP flag
+      And an independent writer input word/document.xml=one and WORD/document.xml=two refuses as zip-case-collision with no archive and unchanged caller members
 
   Rule: ZIP32 checksums and structured refusal policy
     Machine-readable refusal reasons and resource semantics belong to the shared

@@ -48,14 +48,14 @@ portable API profile; the scenario reason records the gap.
 | DOCX | 24 | 158 | 482 | 69 | 56 | 0 | 33 |
 | PPTX | 11 | 33 | 82 | 5 | 11 | 0 | 17 |
 | XLSX | 12 | 43 | 109 | 12 | 14 | 0 | 17 |
-| PACKAGE | 10 | 36 | 68 | 18 | 6 | 0 | 12 |
+| PACKAGE | 10 | 36 | 68 | 29 | 6 | 0 | 1 |
 | XML | 4 | 33 | 47 | 22 | 11 | 0 | 0 |
 | OFFICE | 1 | 1 | 3 | 0 | 0 | 0 | 1 |
-| ALL | 62 | 304 | 791 | 126 | 98 | 0 | 80 |
+| ALL | 62 | 304 | 791 | 137 | 98 | 0 | 69 |
 
-13 of 62 canonical feature files are fully generalized throughout.
+16 of 62 canonical feature files are fully generalized throughout.
 The remaining files contain profile-specific, runtime-specific or incomplete
-scenarios; 23 files mix categories and require ID-level selection.
+scenarios; 22 files mix categories and require ID-level selection.
 The four category columns count scenario IDs, not expanded example cases.
 A complete [feature-level table](../workflows/README.md) and downloadable
 [205-file CSV](feature-reuse.csv) accompany the [scenario CSV](scenario-reuse.csv).
@@ -643,40 +643,40 @@ ZIP data-descriptor integrity with ambiguous signature bytes — **generalized**
 
 ### package/graph.feature
 
-Package relationship graph editing and payload differences — **incomplete**; fully generalized: **no**.
+Package relationship graph editing and payload differences — **generalized**; fully generalized: **yes**.
 
 | ID / source | Cases | Tag | Profiles | Reason / local evidence |
 |---|---:|---|---|---|
-| [@id-opc-add-related-part](../workflows/package/graph.feature#L8) | 1 | incomplete | — | Generic valid/related-part packages and new content types are not given concrete values or graph recipes locally. [package-profiles.md](../contracts/package-profiles.md) |
-| [@id-opc-graph-rollback](../workflows/package/graph.feature#L15) | 1 | incomplete | — | Generic valid/related-part packages and new content types are not given concrete values or graph recipes locally. [package-profiles.md](../contracts/package-profiles.md) |
-| [@id-opc-remove-related-part](../workflows/package/graph.feature#L22) | 1 | incomplete | — | Generic valid/related-part packages and new content types are not given concrete values or graph recipes locally. [package-profiles.md](../contracts/package-profiles.md) |
-| [@id-opc-diff-content-type](../workflows/package/graph.feature#L29) | 1 | incomplete | — | Generic valid/related-part packages and new content types are not given concrete values or graph recipes locally. [package-profiles.md](../contracts/package-profiles.md) |
+| [@id-opc-add-related-part](../workflows/package/graph.feature#L8) | 1 | generalized | — | Concrete fixture/recipe or valid Type-bearing comparison operands; exact payload/order/MIME/relationship/refusal and source-custody predicates are reusable, with fresh native production evidence required. [package-alignment.md](../contracts/package-alignment.md) |
+| [@id-opc-graph-rollback](../workflows/package/graph.feature#L15) | 1 | generalized | — | Concrete fixture/recipe or valid Type-bearing comparison operands; exact payload/order/MIME/relationship/refusal and source-custody predicates are reusable, with fresh native production evidence required. [package-alignment.md](../contracts/package-alignment.md) |
+| [@id-opc-remove-related-part](../workflows/package/graph.feature#L22) | 1 | generalized | — | Concrete fixture/recipe or valid Type-bearing comparison operands; exact payload/order/MIME/relationship/refusal and source-custody predicates are reusable, with fresh native production evidence required. [package-alignment.md](../contracts/package-alignment.md) |
+| [@id-opc-diff-content-type](../workflows/package/graph.feature#L29) | 1 | generalized | — | Concrete fixture/recipe or valid Type-bearing comparison operands; exact payload/order/MIME/relationship/refusal and source-custody predicates are reusable, with fresh native production evidence required. [package-alignment.md](../contracts/package-alignment.md) |
 
 ### package/preservation.feature
 
-OPC package custody, transactions and save destinations — **mixed**; fully generalized: **no**.
+OPC package custody, transactions and save destinations — **generalized**; fully generalized: **yes**.
 
 | ID / source | Cases | Tag | Profiles | Reason / local evidence |
 |---|---:|---|---|---|
 | [@id-opc-package-corpus-noop](../workflows/package/preservation.feature#L8) | 1 | generalized | — | Package-level no-op/rollback/custody outcomes do not depend on source-corpus runtime names. [bun-opc-custody.md](../contracts/bun-opc-custody.md) |
-| [@id-opc-package-transaction-rollback](../workflows/package/preservation.feature#L15) | 1 | incomplete | — | Changed parts, starting bytes and failure point are unspecified for the generic valid-package source. [bun-opc-custody.md](../contracts/bun-opc-custody.md) |
-| [@id-opc-package-preserve-unrelated](../workflows/package/preservation.feature#L21) | 1 | incomplete | — | The generic source, original/changed main text and opaque payload values are not specified here. [bun-opc-custody.md](../contracts/bun-opc-custody.md) |
-| [@id-bun-opc-open-refusal](../workflows/package/preservation.feature#L46) | 5 | generalized | @profile-package-refusal-reasons | Concrete archive/envelope mutations, structured reason-specific refusals and exact caller/destination custody replace exception identity and diagnostic wording; native semantic limit mappings are explicit. [bun-opc-custody.md](../contracts/bun-opc-custody.md) |
-| [@id-bun-opc-detached-byte-copies](../workflows/package/preservation.feature#L60) | 1 | generalized | @profile-opc-byte-custody | Package-level no-op/rollback/custody outcomes do not depend on source-corpus runtime names. [bun-opc-custody.md](../contracts/bun-opc-custody.md) |
-| [@id-bun-opc-preserve-utf16le-edit](../workflows/package/preservation.feature#L68) | 1 | generalized | @profile-opc-byte-custody | Package-level no-op/rollback/custody outcomes do not depend on source-corpus runtime names. [bun-opc-custody.md](../contracts/bun-opc-custody.md) |
-| [@id-bun-opc-async-transaction-refusal](../workflows/package/preservation.feature#L76) | 1 | generalized | @profile-portable-transactions | Explicit deferred-mode pre-body refusal, immediate opaque-token identity/non-evaluation, and archive/readback custody are native-language-neutral; runtime async protocols remain supplemental safeguards. [bun-opc-custody.md](../contracts/bun-opc-custody.md) |
-| [@id-bun-opc-thenable-transaction-result](../workflows/package/preservation.feature#L84) | 1 | generalized | @profile-portable-transactions | Explicit deferred-mode pre-body refusal, immediate opaque-token identity/non-evaluation, and archive/readback custody are native-language-neutral; runtime async protocols remain supplemental safeguards. [bun-opc-custody.md](../contracts/bun-opc-custody.md) |
-| [@id-bun-opc-save-invalid-target-custody](../workflows/package/preservation.feature#L92) | 1 | generalized | @profile-package-refusal-reasons | Concrete archive/envelope mutations, structured reason-specific refusals and exact caller/destination custody replace exception identity and diagnostic wording; native semantic limit mappings are explicit. [bun-opc-custody.md](../contracts/bun-opc-custody.md) |
-| [@id-bun-opc-symlink-destination-refusal](../workflows/package/preservation.feature#L101) | 1 | generalized | @profile-package-refusal-reasons | Concrete archive/envelope mutations, structured reason-specific refusals and exact caller/destination custody replace exception identity and diagnostic wording; native semantic limit mappings are explicit. [bun-opc-custody.md](../contracts/bun-opc-custody.md) |
+| [@id-opc-package-transaction-rollback](../workflows/package/preservation.feature#L15) | 1 | generalized | — | Concrete fixture/recipe or valid Type-bearing comparison operands; exact payload/order/MIME/relationship/refusal and source-custody predicates are reusable, with fresh native production evidence required. [package-alignment.md](../contracts/package-alignment.md) |
+| [@id-opc-package-preserve-unrelated](../workflows/package/preservation.feature#L22) | 1 | generalized | — | Concrete fixture/recipe or valid Type-bearing comparison operands; exact payload/order/MIME/relationship/refusal and source-custody predicates are reusable, with fresh native production evidence required. [package-alignment.md](../contracts/package-alignment.md) |
+| [@id-bun-opc-open-refusal](../workflows/package/preservation.feature#L47) | 5 | generalized | @profile-package-refusal-reasons | Concrete archive/envelope mutations, structured reason-specific refusals and exact caller/destination custody replace exception identity and diagnostic wording; native semantic limit mappings are explicit. [bun-opc-custody.md](../contracts/bun-opc-custody.md) |
+| [@id-bun-opc-detached-byte-copies](../workflows/package/preservation.feature#L61) | 1 | generalized | @profile-opc-byte-custody | Package-level no-op/rollback/custody outcomes do not depend on source-corpus runtime names. [bun-opc-custody.md](../contracts/bun-opc-custody.md) |
+| [@id-bun-opc-preserve-utf16le-edit](../workflows/package/preservation.feature#L69) | 1 | generalized | @profile-opc-byte-custody | Package-level no-op/rollback/custody outcomes do not depend on source-corpus runtime names. [bun-opc-custody.md](../contracts/bun-opc-custody.md) |
+| [@id-bun-opc-async-transaction-refusal](../workflows/package/preservation.feature#L77) | 1 | generalized | @profile-portable-transactions | Explicit deferred-mode pre-body refusal, immediate opaque-token identity/non-evaluation, and archive/readback custody are native-language-neutral; runtime async protocols remain supplemental safeguards. [bun-opc-custody.md](../contracts/bun-opc-custody.md) |
+| [@id-bun-opc-thenable-transaction-result](../workflows/package/preservation.feature#L85) | 1 | generalized | @profile-portable-transactions | Explicit deferred-mode pre-body refusal, immediate opaque-token identity/non-evaluation, and archive/readback custody are native-language-neutral; runtime async protocols remain supplemental safeguards. [bun-opc-custody.md](../contracts/bun-opc-custody.md) |
+| [@id-bun-opc-save-invalid-target-custody](../workflows/package/preservation.feature#L93) | 1 | generalized | @profile-package-refusal-reasons | Concrete archive/envelope mutations, structured reason-specific refusals and exact caller/destination custody replace exception identity and diagnostic wording; native semantic limit mappings are explicit. [bun-opc-custody.md](../contracts/bun-opc-custody.md) |
+| [@id-bun-opc-symlink-destination-refusal](../workflows/package/preservation.feature#L102) | 1 | generalized | @profile-package-refusal-reasons | Concrete archive/envelope mutations, structured reason-specific refusals and exact caller/destination custody replace exception identity and diagnostic wording; native semantic limit mappings are explicit. [bun-opc-custody.md](../contracts/bun-opc-custody.md) |
 
 ### package/relationship-namespaces.feature
 
-Office relationship attributes use expanded XML names — **incomplete**; fully generalized: **no**.
+Office relationship attributes use expanded XML names — **generalized**; fully generalized: **yes**.
 
 | ID / source | Cases | Tag | Profiles | Reason / local evidence |
 |---|---:|---|---|---|
-| [@id-office-relationship-prefix-alias](../workflows/package/relationship-namespaces.feature#L7) | 2 | incomplete | — | Alternate-prefix and wrong-URI policy is portable, but synthetic slide/sheet source packages and exact expected names are not supplied here. [native-profiles.md](../contracts/native-profiles.md) |
-| [@id-office-relationship-wrong-uri](../workflows/package/relationship-namespaces.feature#L18) | 2 | incomplete | — | Alternate-prefix and wrong-URI policy is portable, but synthetic slide/sheet source packages and exact expected names are not supplied here. [native-profiles.md](../contracts/native-profiles.md) |
+| [@id-office-relationship-prefix-alias](../workflows/package/relationship-namespaces.feature#L7) | 2 | generalized | — | Concrete fixture/recipe or valid Type-bearing comparison operands; exact payload/order/MIME/relationship/refusal and source-custody predicates are reusable, with fresh native production evidence required. [package-alignment.md](../contracts/package-alignment.md) |
+| [@id-office-relationship-wrong-uri](../workflows/package/relationship-namespaces.feature#L18) | 2 | generalized | — | Concrete fixture/recipe or valid Type-bearing comparison operands; exact payload/order/MIME/relationship/refusal and source-custody predicates are reusable, with fresh native production evidence required. [package-alignment.md](../contracts/package-alignment.md) |
 
 ### package/semantic-diff.feature
 
@@ -711,14 +711,14 @@ ZIP32 reading, writing and bounded admission — **mixed**; fully generalized: *
 
 | ID / source | Cases | Tag | Profiles | Reason / local evidence |
 |---|---:|---|---|---|
-| [@id-zip-read-valid](../workflows/package/zip32.feature#L8) | 1 | incomplete | — | Stored/deflated/directory/comment categories lack a fixed ordered archive and exact payload/CRC expectations here. [bun-zip32-profile.md](../contracts/bun-zip32-profile.md) |
-| [@id-zip-refuse-unsafe](../workflows/package/zip32.feature#L18) | 1 | incomplete | — | Refusal categories are listed without concrete corrupt archive recipes for each category. [bun-zip32-profile.md](../contracts/bun-zip32-profile.md) |
-| [@id-zip-bounds](../workflows/package/zip32.feature#L30) | 1 | incomplete | — | No concrete budgets/declared sizes or measurable allocation bound is specified; generic refusal cannot establish the stated resource guarantee. [bun-zip32-profile.md](../contracts/bun-zip32-profile.md) |
-| [@id-zip-write-deterministic](../workflows/package/zip32.feature#L36) | 1 | profile-specific | — | Deterministic ZIP bytes, method choices, UTF-8 flag and ASCII case-collision refusal are an explicit writer policy, not universal ZIP validity. [bun-zip32-profile.md](../contracts/bun-zip32-profile.md) |
-| [@id-zip-crc32-standard-vector](../workflows/package/zip32.feature#L53) | 1 | generalized | — | ZIP format operations, deterministic output, CRC and custody predicates are language-independent; missing vectors are separately flagged. [bun-zip32-profile.md](../contracts/bun-zip32-profile.md) |
-| [@id-bun-zip32-reader-refusal](../workflows/package/zip32.feature#L59) | 12 | generalized | @profile-zip32-refusal-reasons | Concrete archive/envelope mutations, structured reason-specific refusals and exact caller/destination custody replace exception identity and diagnostic wording; native semantic limit mappings are explicit. [bun-zip32-profile.md](../contracts/bun-zip32-profile.md) |
-| [@id-bun-zip32-writer-refusal](../workflows/package/zip32.feature#L81) | 2 | generalized | @profile-zip32-refusal-reasons | Concrete archive/envelope mutations, structured reason-specific refusals and exact caller/destination custody replace exception identity and diagnostic wording; native semantic limit mappings are explicit. [bun-zip32-profile.md](../contracts/bun-zip32-profile.md) |
-| [@id-bun-zip32-configured-bounds](../workflows/package/zip32.feature#L92) | 5 | generalized | @profile-zip32-refusal-reasons | Concrete archive/envelope mutations, structured reason-specific refusals and exact caller/destination custody replace exception identity and diagnostic wording; native semantic limit mappings are explicit. [bun-zip32-profile.md](../contracts/bun-zip32-profile.md) |
+| [@id-zip-read-valid](../workflows/package/zip32.feature#L8) | 1 | generalized | — | Concrete fixture/recipe or valid Type-bearing comparison operands; exact payload/order/MIME/relationship/refusal and source-custody predicates are reusable, with fresh native production evidence required. [package-alignment.md](../contracts/package-alignment.md) |
+| [@id-zip-refuse-unsafe](../workflows/package/zip32.feature#L22) | 1 | generalized | — | Concrete fixture/recipe or valid Type-bearing comparison operands; exact payload/order/MIME/relationship/refusal and source-custody predicates are reusable, with fresh native production evidence required. [package-alignment.md](../contracts/package-alignment.md) |
+| [@id-zip-bounds](../workflows/package/zip32.feature#L34) | 1 | generalized | — | Concrete fixture/recipe or valid Type-bearing comparison operands; exact payload/order/MIME/relationship/refusal and source-custody predicates are reusable, with fresh native production evidence required. [package-alignment.md](../contracts/package-alignment.md) |
+| [@id-zip-write-deterministic](../workflows/package/zip32.feature#L43) | 1 | profile-specific | — | Explicit ordered entries and mixed Store/Deflate deterministic ZIP32 policy; byte-equality is the repeated-write API predicate, not a generated golden hash. Requires deliberate native profile adoption. [package-alignment.md](../contracts/package-alignment.md) |
+| [@id-zip-crc32-standard-vector](../workflows/package/zip32.feature#L60) | 1 | generalized | — | ZIP format operations, deterministic output, CRC and custody predicates are language-independent; missing vectors are separately flagged. [bun-zip32-profile.md](../contracts/bun-zip32-profile.md) |
+| [@id-bun-zip32-reader-refusal](../workflows/package/zip32.feature#L66) | 12 | generalized | @profile-zip32-refusal-reasons | Concrete archive/envelope mutations, structured reason-specific refusals and exact caller/destination custody replace exception identity and diagnostic wording; native semantic limit mappings are explicit. [bun-zip32-profile.md](../contracts/bun-zip32-profile.md) |
+| [@id-bun-zip32-writer-refusal](../workflows/package/zip32.feature#L88) | 2 | generalized | @profile-zip32-refusal-reasons | Concrete archive/envelope mutations, structured reason-specific refusals and exact caller/destination custody replace exception identity and diagnostic wording; native semantic limit mappings are explicit. [bun-zip32-profile.md](../contracts/bun-zip32-profile.md) |
+| [@id-bun-zip32-configured-bounds](../workflows/package/zip32.feature#L99) | 5 | generalized | @profile-zip32-refusal-reasons | Concrete archive/envelope mutations, structured reason-specific refusals and exact caller/destination custody replace exception identity and diagnostic wording; native semantic limit mappings are explicit. [bun-zip32-profile.md](../contracts/bun-zip32-profile.md) |
 
 ### package/zip64.feature
 
@@ -737,7 +737,7 @@ Conservative XML comparison for package preservation — **generalized**; fully 
 
 | ID / source | Cases | Tag | Profiles | Reason / local evidence |
 |---|---:|---|---|---|
-| [@id-xml-comparison-prefix-and-opc-order](../workflows/xml/comparison.feature#L8) | 1 | generalized | — | Literal XML pairs with exact Boolean outcomes define portable bounded comparison, not C14N. [xml-profiles.md](../contracts/xml-profiles.md) |
+| [@id-xml-comparison-prefix-and-opc-order](../workflows/xml/comparison.feature#L8) | 1 | generalized | — | Concrete fixture/recipe or valid Type-bearing comparison operands; exact payload/order/MIME/relationship/refusal and source-custody predicates are reusable, with fresh native production evidence required. [package-alignment.md](../contracts/package-alignment.md) |
 | [@id-xml-comparison-significant-content](../workflows/xml/comparison.feature#L15) | 3 | generalized | — | Literal XML pairs with exact Boolean outcomes define portable bounded comparison, not C14N. [xml-profiles.md](../contracts/xml-profiles.md) |
 | [@id-xml-comparison-prefix-attribute-binding](../workflows/xml/comparison.feature#L28) | 1 | generalized | — | Literal XML pairs with exact Boolean outcomes define portable bounded comparison, not C14N. [xml-profiles.md](../contracts/xml-profiles.md) |
 | [@id-xml-comparison-unsafe-input](../workflows/xml/comparison.feature#L35) | 2 | generalized | — | Literal XML pairs with exact Boolean outcomes define portable bounded comparison, not C14N. [xml-profiles.md](../contracts/xml-profiles.md) |

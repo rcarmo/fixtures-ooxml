@@ -1,4 +1,4 @@
-import {historicalWorkflowLedger} from './xml-generalization-helpers.ts';
+import {historicalWorkflowLedger, beforePackageAlignmentFeature} from './xml-generalization-helpers.ts';
 const pythonPackageIds = new Set(['@id-package-admission-negative-budget','@id-zip-unsigned-descriptor-signature-collision']);
 const goXmlNegativeIds = new Set(['@id-xml-comparison-significant-content','@id-xml-comparison-prefix-attribute-binding','@id-xml-comparison-unsafe-input','@id-xml-comparison-processing-instructions-and-comments']);
 const goLatentPackageIds = new Set(['@id-package-admission-negative-budget','@id-zip-unsigned-descriptor-signature-collision']);
@@ -50,7 +50,7 @@ const specs = [
 test('Bun executes three exact OPC corpus, rollback and unrelated-payload preservation cases', async () => {
   const ledger = await historicalWorkflowLedger();
   const prior = JSON.parse(execFileSync('git', ['show', 'f4a15b68615220686620529f7469a8e5aa801a48:ledgers/workflows.json']).toString());
-  const compiled = cases(path, await Bun.file(path).text());
+  const compiled = cases(path, beforePackageAlignmentFeature(path,await Bun.file(path).text()));
   for (const { id, steps, markers } of specs) {
     const now = ledger.workflows.find((w: any) => w.id === id), old = prior.workflows.find((w: any) => w.id === id);
     expect(now.feature).toBe(path); expect(now.expandedCases).toBe(1);

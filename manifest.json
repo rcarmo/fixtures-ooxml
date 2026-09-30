@@ -2203,10 +2203,10 @@
       "aliases": []
     },
     {
-      "id": "asset-25a2b3fb3998a1f8efd9b2d7e8f5fe558517c7e852459ef56394bf5b0249610c",
+      "id": "asset-0bd5577c68c4f1d8812949ececd4ab622909c3a9b9c4b8844344660a20e87974",
       "path": "workflows/package/relationship-namespaces.feature",
-      "bytes": 1207,
-      "sha256": "25a2b3fb3998a1f8efd9b2d7e8f5fe558517c7e852459ef56394bf5b0249610c",
+      "bytes": 2190,
+      "sha256": "0bd5577c68c4f1d8812949ececd4ab622909c3a9b9c4b8844344660a20e87974",
       "role": "workflow",
       "origins": [
         {
@@ -2214,6 +2214,12 @@
           "revision": "13ead381f22f19a000dfd557514369cf1b646454",
           "path": "features/opc/relationship-namespaces.feature",
           "change": "Lifecycle tags only; existing scenario IDs, input examples and step text retained"
+        },
+        {
+          "repository": "https://github.com/rcarmo/fixtures-ooxml",
+          "revision": "6b601a4252a90759c2e73c31cc9d8d10e6bca0bd",
+          "path": "workflows/package/relationship-namespaces.feature",
+          "transformation": "Concrete package alignment recipes; stable IDs and exact historical seal retained."
         }
       ],
       "aliases": []
@@ -2365,10 +2371,10 @@
       "aliases": []
     },
     {
-      "id": "asset-b700a3da8670cb048aa3f836c193f4533908730c185847f63e167e59c48f5e93",
+      "id": "asset-eb6440d3a548ba0d86ff576fc65a97d57df68c423ae17abf779eef8c423c9233",
       "path": "workflows/xml/comparison.feature",
-      "bytes": 3078,
-      "sha256": "b700a3da8670cb048aa3f836c193f4533908730c185847f63e167e59c48f5e93",
+      "bytes": 3150,
+      "sha256": "eb6440d3a548ba0d86ff576fc65a97d57df68c423ae17abf779eef8c423c9233",
       "role": "workflow",
       "origins": [
         {
@@ -2376,6 +2382,12 @@
           "revision": "7175e5d079713910410bdcdbbcd4bfb29456ae8f",
           "path": "docs/catalogue-staging/workflows/xml/comparison.feature",
           "change": "Name the operation without a Python symbol; all XML inputs, Boolean outcomes and scenario IDs retained"
+        },
+        {
+          "repository": "https://github.com/rcarmo/fixtures-ooxml",
+          "revision": "6b601a4252a90759c2e73c31cc9d8d10e6bca0bd",
+          "path": "workflows/xml/comparison.feature",
+          "transformation": "Concrete package alignment recipes; stable IDs and exact historical seal retained."
         }
       ],
       "aliases": []
@@ -2951,31 +2963,43 @@
       "aliases": []
     },
     {
-      "id": "asset-ecf7356093c73b6d170177e30df4c63ea449788c285583a32dbea41942ccf4da",
+      "id": "asset-8db7070f38041a107a27f2114280971dd29a890c82387dbe31342df7909513ca",
       "path": "workflows/package/zip32.feature",
-      "bytes": 8785,
-      "sha256": "ecf7356093c73b6d170177e30df4c63ea449788c285583a32dbea41942ccf4da",
+      "bytes": 10383,
+      "sha256": "8db7070f38041a107a27f2114280971dd29a890c82387dbe31342df7909513ca",
       "role": "workflow",
       "origins": [
         {
           "repository": "https://github.com/rcarmo/fixtures-ooxml",
           "path": "workflows/package/zip32.feature",
           "basis": "Consolidated operation family; exact source case fingerprints and path migration in ledgers/feature-consolidation.json"
+        },
+        {
+          "repository": "https://github.com/rcarmo/fixtures-ooxml",
+          "revision": "6b601a4252a90759c2e73c31cc9d8d10e6bca0bd",
+          "path": "workflows/package/zip32.feature",
+          "transformation": "Concrete package alignment recipes; stable IDs and exact historical seal retained."
         }
       ],
       "aliases": []
     },
     {
-      "id": "asset-0232a5f99dbb48d2e03fbb36adf3e5b22b7f0da448d3046b4e90dcdcc2a4e90b",
+      "id": "asset-89ea7dbf321a87bbadac00eae8bcebed89364756f1ec449379dd0080afa8dff6",
       "path": "workflows/package/preservation.feature",
-      "bytes": 8141,
-      "sha256": "0232a5f99dbb48d2e03fbb36adf3e5b22b7f0da448d3046b4e90dcdcc2a4e90b",
+      "bytes": 8760,
+      "sha256": "89ea7dbf321a87bbadac00eae8bcebed89364756f1ec449379dd0080afa8dff6",
       "role": "workflow",
       "origins": [
         {
           "repository": "https://github.com/rcarmo/fixtures-ooxml",
           "path": "workflows/package/preservation.feature",
           "basis": "Consolidated operation family; exact source case fingerprints and path migration in ledgers/feature-consolidation.json"
+        },
+        {
+          "repository": "https://github.com/rcarmo/fixtures-ooxml",
+          "revision": "6b601a4252a90759c2e73c31cc9d8d10e6bca0bd",
+          "path": "workflows/package/preservation.feature",
+          "transformation": "Concrete package alignment recipes; stable IDs and exact historical seal retained."
         }
       ],
       "aliases": []
@@ -3256,16 +3280,22 @@
       "aliases": []
     },
     {
-      "id": "asset-953cab35e20019a234ed4d1aa2f1575a065f3c7768f74fb0a0269bf70b3c4d4e",
+      "id": "asset-76148d827e7cdc4ee5b4529dd093e3f0ca066b00fad63b3431db5c0c574c5ecd",
       "path": "workflows/package/graph.feature",
-      "bytes": 1637,
-      "sha256": "953cab35e20019a234ed4d1aa2f1575a065f3c7768f74fb0a0269bf70b3c4d4e",
+      "bytes": 2933,
+      "sha256": "76148d827e7cdc4ee5b4529dd093e3f0ca066b00fad63b3431db5c0c574c5ecd",
       "role": "workflow",
       "origins": [
         {
           "repository": "https://github.com/rcarmo/fixtures-ooxml",
           "path": "workflows/package/graph.feature",
           "basis": "Format/operation regrouping from d07ee96; exact scenario fingerprints and source paths in ledgers/workflow-layout-migration.json"
+        },
+        {
+          "repository": "https://github.com/rcarmo/fixtures-ooxml",
+          "revision": "6b601a4252a90759c2e73c31cc9d8d10e6bca0bd",
+          "path": "workflows/package/graph.feature",
+          "transformation": "Concrete package alignment recipes; stable IDs and exact historical seal retained."
         }
       ],
       "aliases": []
@@ -6201,6 +6231,23 @@
           "revision": "0df43857b6a497fb37a9052ee66172754fe15cf2",
           "path": "contracts/xml-lexical-alignment.md",
           "transformation": "Authored bounded lexical alignment policy from existing canonical and production evidence."
+        }
+      ]
+    },
+    {
+      "id": "asset-8bb5cc06289154c691225299548f93acc0c13cb3ace9031b92bfffc015d3483f",
+      "path": "contracts/package-alignment.md",
+      "role": "contract",
+      "format": "md",
+      "bytes": 11374,
+      "sha256": "8bb5cc06289154c691225299548f93acc0c13cb3ace9031b92bfffc015d3483f",
+      "aliases": [],
+      "origins": [
+        {
+          "repository": "https://github.com/rcarmo/fixtures-ooxml",
+          "revision": "6b601a4252a90759c2e73c31cc9d8d10e6bca0bd",
+          "path": "contracts/package-alignment.md",
+          "transformation": "Authored bounded package/comparison alignment from canonical and production evidence."
         }
       ]
     }

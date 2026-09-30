@@ -1,4 +1,4 @@
-import {historicalWorkflowLedger} from './xml-generalization-helpers.ts';
+import {historicalWorkflowLedger, beforePackageAlignmentFeature} from './xml-generalization-helpers.ts';
 const pythonPackageIds = new Set(['@id-package-admission-negative-budget','@id-zip-unsigned-descriptor-signature-collision']);
 const goXmlNegativeIds = new Set(['@id-xml-comparison-significant-content','@id-xml-comparison-prefix-attribute-binding','@id-xml-comparison-unsafe-input','@id-xml-comparison-processing-instructions-and-comments']);
 const goLatentPackageIds = new Set(['@id-package-admission-negative-budget','@id-zip-unsigned-descriptor-signature-collision']);
@@ -48,7 +48,7 @@ test('Bun alone executes broad ZIP32 unsafe structural refusal without bounds or
   const prior = JSON.parse(execFileSync('git', ['show', '423398e552dd737bd7dc1d89707165927d894d75:ledgers/workflows.json']).toString());
   const now = ledger.workflows.find((w: any) => w.id === id), old = prior.workflows.find((w: any) => w.id === id);
   expect(now.feature).toBe(path); expect(now.expandedCases).toBe(1);
-  expect(cases(path, await Bun.file(path).text()).filter((r: any) => r.scenarioId === id).map((r: any) => r.steps.map((s: any) => s.text))).toEqual([[
+  expect(cases(path, beforePackageAlignmentFeature(path,await Bun.file(path).text())).filter((r: any) => r.scenarioId === id).map((r: any) => r.steps.map((s: any) => s.text))).toEqual([[
     'a ZIP archive whose structure has no single safe reading',
     'the archive is read through the shared ZIP module',
     ...outcomes,

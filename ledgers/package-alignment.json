@@ -1,0 +1,1670 @@
+{
+  "schemaVersion": 1,
+  "sourceRevision": "6b601a4252a90759c2e73c31cc9d8d10e6bca0bd",
+  "executionCredit": false,
+  "retiredScenarioIds": [],
+  "scope": "Second20-ID package/comparison alignment; historical predicates/credit remain historical. ZIP64 excluded.",
+  "selectedIds": [
+    "@id-zip-crc32-standard-vector",
+    "@id-zip-read-valid",
+    "@id-zip-refuse-unsafe",
+    "@id-zip-bounds",
+    "@id-zip-write-deterministic",
+    "@id-package-admission-resource-limits",
+    "@id-package-admission-unsafe-xml-members",
+    "@id-opc-package-corpus-noop",
+    "@id-bun-opc-detached-byte-copies",
+    "@id-bun-opc-preserve-utf16le-edit",
+    "@id-opc-package-transaction-rollback",
+    "@id-opc-package-preserve-unrelated",
+    "@id-opc-add-related-part",
+    "@id-opc-graph-rollback",
+    "@id-opc-remove-related-part",
+    "@id-opc-diff-content-type",
+    "@id-xml-comparison-prefix-and-opc-order",
+    "@id-package-diff-equivalent-xml-and-binary-changes",
+    "@id-office-relationship-prefix-alias",
+    "@id-office-relationship-wrong-uri"
+  ],
+  "expandedCases": 27,
+  "compiledSteps": 127,
+  "files": [
+    {
+      "path": "workflows/package/zip32.feature",
+      "beforeSha256": "ecf7356093c73b6d170177e30df4c63ea449788c285583a32dbea41942ccf4da",
+      "afterSha256": "8db7070f38041a107a27f2114280971dd29a890c82387dbe31342df7909513ca",
+      "beforeText": "@planned\nFeature: ZIP32 reading, writing and bounded admission\n\n  Rule: Strict ZIP custody for OPC packages\n    The shared ZIP layer reads OOXML package archives only when they have one\n    unambiguous ZIP32 interpretation and stay within bounded resources.\n    @id-zip-read-valid\n    Scenario: Read a valid ZIP32 archive with stored, deflated, and directory entries\n      Given a ZIP archive with canonical OPC member names\n      And the archive contains stored and deflated file entries\n      And the archive may contain zero-byte directory entries and a declared archive comment\n      When the archive is read through the shared ZIP module\n      Then file entries are returned in central-directory order\n      And directory entries do not become package parts\n      And each returned payload matches its declared CRC and size\n\n    @id-zip-refuse-unsafe\n    Scenario: Refuse ambiguous or unsafe ZIP structure\n      Given a ZIP archive whose structure has no single safe reading\n      When the archive is read through the shared ZIP module\n      Then the module refuses duplicate member names\n      And the module refuses ASCII case-colliding member names\n      And the module refuses noncanonical member paths\n      And the module refuses encrypted or unsupported-compression members\n      And the module refuses multi-disk archives and ZIP64 sentinels without valid end records\n      And the module refuses local-header metadata that disagrees with the central directory\n      And the module refuses CRC failures, size mismatches, and undeclared trailing structure\n\n    @id-zip-bounds\n    Scenario: Refuse archives that exceed configured bounds before expansion\n      Given a ZIP archive whose declared archive size, entry count, entry size, total expanded size, or compression ratio exceeds the configured limit\n      When the archive is read through the shared ZIP module\n      Then the module refuses before allocating unbounded output\n\n    @id-zip-write-deterministic\n    Scenario: Write deterministic UTF-8 ZIP32 output\n      Given a map of canonical OPC member names and bytes\n      When the map is written through the shared ZIP module twice\n      Then both outputs are byte-identical ZIP32 archives\n      And file entries use stored or deflated encoding\n      And names are emitted with the UTF-8 ZIP flag\n      And writer input that would collide by ASCII case is refused\n\n  Rule: ZIP32 checksums and structured refusal policy\n    Machine-readable refusal reasons and resource semantics belong to the shared\n    ZIP32 admission profile. Bindings map the named limits to native options;\n    exception class names, diagnostic wording and native option spellings vary. CRC32 uses the standard check vector without an API profile.\n    Valid reading and deterministic writing use the existing ZIP32 workflow.\n    Unless overridden, reader samples use UTF-8 names, raw DEFLATE and one disk.\n    CRCs, sizes, offsets and directory records agree except for the named mutation.\n    JSON payload strings are encoded as UTF-8 before building the archive.\n    @id-zip-crc32-standard-vector\n    Scenario: CRC32 matches the standard check value\n      Given checksum input is the UTF-8 string \"123456789\"\n      When its ZIP CRC32 is calculated\n      Then the unsigned checksum equals hexadecimal CBF43926\n\n    @profile-zip32-refusal-reasons @id-bun-zip32-reader-refusal\n    Scenario Outline: Refuse <variant> with its structured ZIP32 reason\n      Given a ZIP32 reader sample with these ordered member and payload pairs encoded as JSON <entries_json>\n      And the sample has the mutation <mutation>\n      When the ZIP reader reads the sample with default limits\n      Then reading refuses with reason <code> and no member payload result\n      And the caller's original archive bytes remain unchanged\n      Examples:\n        | variant                  | entries_json                                                        | mutation                                                    | code                        | message                  |\n        | duplicate names          | [[\"word/document.xml\",\"one\"],[\"word/document.xml\",\"two\"]]           | none                                                        | zip-duplicate-entry         | duplicate ZIP member     |\n        | ASCII case collision     | [[\"word/document.xml\",\"one\"],[\"WORD/document.xml\",\"two\"]]           | none                                                        | zip-case-collision          | ASCII case-collides      |\n        | parent traversal         | [[\"../word/document.xml\",\"bad\"]]                                    | none                                                        | zip-name-invalid            | noncanonical             |\n        | encryption flag          | [[\"word/document.xml\",\"secret\"]]                                    | general-purpose bit 0 is set in both headers                 | zip-encryption-unsupported  | encrypted                |\n        | unsupported method       | [[\"word/document.xml\",\"x\"]]                                         | both methods are 12 and payload bytes are stored uncompressed | zip-method-unsupported      | compression method       |\n        | multiple disks           | [[\"word/document.xml\",\"x\"]]                                         | end record disk number is 1                                 | zip-multi-disk-unsupported   | multi-disk               |\n        | missing ZIP64 records    | [[\"word/document.xml\",\"x\"]]                                         | both end-record counts are 65535 without ZIP64 records       | zip-structure-invalid       | ZIP64                    |\n        | local name mismatch      | [[\"word/document.xml\",\"x\"]]                                         | local name is word/other.xml                                | zip-local-metadata-mismatch | local and central        |\n        | CRC mismatch             | [[\"word/document.xml\",\"payload\"]]                                   | both CRC fields are hexadecimal DEADBEEF                     | zip-crc-mismatch            | CRC                      |\n        | stored size mismatch     | [[\"word/document.xml\",\"payload\"]]                                   | method is STORED and all size fields are 99                  | zip-size-mismatch           | declared size            |\n        | deflate size overrun     | [[\"word/document.xml\",\"A\"]]                                         | payload repeats A 4096 times but both expanded sizes are 32  | zip-size-mismatch           | declared size            |\n        | undeclared trailing byte | [[\"word/document.xml\",\"x\"]]                                         | a newline byte follows the complete uncommented archive     | zip-end-record-missing      | end-of-central-directory |\n\n    @profile-zip32-refusal-reasons @id-bun-zip32-writer-refusal\n    Scenario Outline: Refuse <variant> before returning an archive\n      Given ordered writer entries are encoded as JSON <entries_json>\n      When the ZIP writer writes the entries with default options\n      Then writing refuses with reason <code> and no archive result\n      And the ordered caller entry names and payload bytes remain unchanged\n      Examples:\n        | variant                   | entries_json                                              | code                        | message             |\n        | ASCII case collision      | [[\"word/document.xml\",\"one\"],[\"WORD/document.xml\",\"two\"]] | zip-case-collision          | ASCII case-collides |\n        | non-empty directory entry | [[\"word/\",\"not empty\"]]                                  | zip-directory-entry-invalid | must be empty       |\n\n    @profile-zip32-refusal-reasons @id-bun-zip32-configured-bounds\n    Scenario Outline: Refuse the configured <limit> threshold\n      Given a raw-DEFLATE ZIP32 archive contains a.bin with 4096 A bytes followed by b.bin with two b bytes\n      When the ZIP reader reads the archive with only <limit> set to <value>\n      Then reading refuses with reason <code> and no member payload result\n      And the caller's original archive bytes remain unchanged\n      Examples:\n        | limit               | value                      | code                           | message         |\n        | maxArchiveBytes     | archive byte length minus 1 | zip-archive-too-large          | archive bytes   |\n        | maxEntries          | 1                           | zip-too-many-entries           | entry limit     |\n        | maxEntryBytes       | 8                           | zip-entry-too-large            | entry limit     |\n        | maxTotalBytes       | 8                           | zip-total-too-large            | total expanded  |\n        | maxCompressionRatio | 2                           | zip-compression-ratio-exceeded | compression ratio |\n",
+      "scenarios": [
+        {
+          "id": "@id-zip-read-valid",
+          "before": [
+            {
+              "scenarioId": "@id-zip-read-valid",
+              "name": "Read a valid ZIP32 archive with stored, deflated, and directory entries",
+              "steps": [
+                {
+                  "text": "a ZIP archive with canonical OPC member names",
+                  "argument": null
+                },
+                {
+                  "text": "the archive contains stored and deflated file entries",
+                  "argument": null
+                },
+                {
+                  "text": "the archive may contain zero-byte directory entries and a declared archive comment",
+                  "argument": null
+                },
+                {
+                  "text": "the archive is read through the shared ZIP module",
+                  "argument": null
+                },
+                {
+                  "text": "file entries are returned in central-directory order",
+                  "argument": null
+                },
+                {
+                  "text": "directory entries do not become package parts",
+                  "argument": null
+                },
+                {
+                  "text": "each returned payload matches its declared CRC and size",
+                  "argument": null
+                }
+              ]
+            }
+          ],
+          "after": [
+            {
+              "scenarioId": "@id-zip-read-valid",
+              "name": "Read a valid ZIP32 archive with stored, deflated, and directory entries",
+              "steps": [
+                {
+                  "text": "a single-disk UTF-8 ZIP32 archive has these central-directory ordered members and no data descriptors",
+                  "argument": {
+                    "dataTable": {
+                      "rows": [
+                        {
+                          "cells": [
+                            {
+                              "value": "member"
+                            },
+                            {
+                              "value": "method"
+                            },
+                            {
+                              "value": "payload_json"
+                            }
+                          ]
+                        },
+                        {
+                          "cells": [
+                            {
+                              "value": "z.bin"
+                            },
+                            {
+                              "value": "STORED"
+                            },
+                            {
+                              "value": "\"z-last\""
+                            }
+                          ]
+                        },
+                        {
+                          "cells": [
+                            {
+                              "value": "dir/"
+                            },
+                            {
+                              "value": "STORED"
+                            },
+                            {
+                              "value": "\"\""
+                            }
+                          ]
+                        },
+                        {
+                          "cells": [
+                            {
+                              "value": "a.xml"
+                            },
+                            {
+                              "value": "DEFLATED"
+                            },
+                            {
+                              "value": "\"<a/>\""
+                            }
+                          ]
+                        },
+                        {
+                          "cells": [
+                            {
+                              "value": "m.bin"
+                            },
+                            {
+                              "value": "STORED"
+                            },
+                            {
+                              "value": "\"middle\""
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  }
+                },
+                {
+                  "text": "its declared archive comment is JSON \"kept as declared ZIP comment\" and all CRC32 and sizes agree with the exact UTF-8 payloads",
+                  "argument": null
+                },
+                {
+                  "text": "the production ZIP reader reads the archive with default limits",
+                  "argument": null
+                },
+                {
+                  "text": "returned file names are exactly [\"z.bin\",\"a.xml\",\"m.bin\"] in central-directory order and dir/ is absent",
+                  "argument": null
+                },
+                {
+                  "text": "the three returned payloads equal their declared strings with lengths 6, 4 and 6 and matching independent CRC32 values",
+                  "argument": null
+                },
+                {
+                  "text": "the caller's source archive bytes remain unchanged",
+                  "argument": null
+                }
+              ]
+            }
+          ],
+          "beforeProfiles": [],
+          "afterProfiles": []
+        },
+        {
+          "id": "@id-zip-refuse-unsafe",
+          "before": [
+            {
+              "scenarioId": "@id-zip-refuse-unsafe",
+              "name": "Refuse ambiguous or unsafe ZIP structure",
+              "steps": [
+                {
+                  "text": "a ZIP archive whose structure has no single safe reading",
+                  "argument": null
+                },
+                {
+                  "text": "the archive is read through the shared ZIP module",
+                  "argument": null
+                },
+                {
+                  "text": "the module refuses duplicate member names",
+                  "argument": null
+                },
+                {
+                  "text": "the module refuses ASCII case-colliding member names",
+                  "argument": null
+                },
+                {
+                  "text": "the module refuses noncanonical member paths",
+                  "argument": null
+                },
+                {
+                  "text": "the module refuses encrypted or unsupported-compression members",
+                  "argument": null
+                },
+                {
+                  "text": "the module refuses multi-disk archives and ZIP64 sentinels without valid end records",
+                  "argument": null
+                },
+                {
+                  "text": "the module refuses local-header metadata that disagrees with the central directory",
+                  "argument": null
+                },
+                {
+                  "text": "the module refuses CRC failures, size mismatches, and undeclared trailing structure",
+                  "argument": null
+                }
+              ]
+            }
+          ],
+          "after": [
+            {
+              "scenarioId": "@id-zip-refuse-unsafe",
+              "name": "Refuse ambiguous or unsafe ZIP structure",
+              "steps": [
+                {
+                  "text": "the eleven strict ZIP32 unsafe-structure recipes duplicate, case-collision, traversal, encryption, method, multi-disk, missing-ZIP64, local-name, CRC, stored-size and trailing-byte",
+                  "argument": null
+                },
+                {
+                  "text": "the production ZIP reader checks every recipe with default limits",
+                  "argument": null
+                },
+                {
+                  "text": "each recipe refuses with its exact documented zip reason and no member result",
+                  "argument": null
+                },
+                {
+                  "text": "duplicate and case-collision refuse as zip-duplicate-entry and zip-case-collision",
+                  "argument": null
+                },
+                {
+                  "text": "traversal refuses as zip-name-invalid",
+                  "argument": null
+                },
+                {
+                  "text": "encryption and method refuse as zip-encryption-unsupported and zip-method-unsupported",
+                  "argument": null
+                },
+                {
+                  "text": "multi-disk and missing-ZIP64 refuse as zip-multi-disk-unsupported and zip-structure-invalid",
+                  "argument": null
+                },
+                {
+                  "text": "local-name refuses as zip-local-metadata-mismatch",
+                  "argument": null
+                },
+                {
+                  "text": "CRC, stored-size and trailing-byte refuse as zip-crc-mismatch, zip-size-mismatch and zip-end-record-missing with every caller archive unchanged",
+                  "argument": null
+                }
+              ]
+            }
+          ],
+          "beforeProfiles": [],
+          "afterProfiles": []
+        },
+        {
+          "id": "@id-zip-bounds",
+          "before": [
+            {
+              "scenarioId": "@id-zip-bounds",
+              "name": "Refuse archives that exceed configured bounds before expansion",
+              "steps": [
+                {
+                  "text": "a ZIP archive whose declared archive size, entry count, entry size, total expanded size, or compression ratio exceeds the configured limit",
+                  "argument": null
+                },
+                {
+                  "text": "the archive is read through the shared ZIP module",
+                  "argument": null
+                },
+                {
+                  "text": "the module refuses before allocating unbounded output",
+                  "argument": null
+                }
+              ]
+            }
+          ],
+          "after": [
+            {
+              "scenarioId": "@id-zip-bounds",
+              "name": "Refuse archives that exceed configured bounds before expansion",
+              "steps": [
+                {
+                  "text": "a raw-DEFLATE ZIP32 budget archive contains a.bin with 4096 A bytes followed by b.bin with two b bytes",
+                  "argument": null
+                },
+                {
+                  "text": "a sibling archive retains that declared geometry but replaces the compressed a.bin body with eight FF bytes",
+                  "argument": null
+                },
+                {
+                  "text": "each archive is read separately with one limit maxArchiveBytes length-minus-one, maxEntries 1, maxEntryBytes 8, maxTotalBytes 8 or maxCompressionRatio 2",
+                  "argument": null
+                },
+                {
+                  "text": "both archives refuse the same respective reasons zip-archive-too-large, zip-too-many-entries, zip-entry-too-large, zip-total-too-large and zip-compression-ratio-exceeded before member output",
+                  "argument": null
+                },
+                {
+                  "text": "default reading of the valid archive returns the two exact payloads and default reading of the invalid-DEFLATE sibling refuses a payload error",
+                  "argument": null
+                },
+                {
+                  "text": "every caller archive remains unchanged",
+                  "argument": null
+                }
+              ]
+            }
+          ],
+          "beforeProfiles": [],
+          "afterProfiles": []
+        },
+        {
+          "id": "@id-zip-write-deterministic",
+          "before": [
+            {
+              "scenarioId": "@id-zip-write-deterministic",
+              "name": "Write deterministic UTF-8 ZIP32 output",
+              "steps": [
+                {
+                  "text": "a map of canonical OPC member names and bytes",
+                  "argument": null
+                },
+                {
+                  "text": "the map is written through the shared ZIP module twice",
+                  "argument": null
+                },
+                {
+                  "text": "both outputs are byte-identical ZIP32 archives",
+                  "argument": null
+                },
+                {
+                  "text": "file entries use stored or deflated encoding",
+                  "argument": null
+                },
+                {
+                  "text": "names are emitted with the UTF-8 ZIP flag",
+                  "argument": null
+                },
+                {
+                  "text": "writer input that would collide by ASCII case is refused",
+                  "argument": null
+                }
+              ]
+            }
+          ],
+          "after": [
+            {
+              "scenarioId": "@id-zip-write-deterministic",
+              "name": "Write deterministic UTF-8 ZIP32 output",
+              "steps": [
+                {
+                  "text": "ordered ZIP writer members are [Content_Types].xml with UTF-8 JSON \"<Types/>\", custom/data.bin with bytes 00 through FF and word/document.xml with UTF-8 <w:document> followed by 2048 A characters and </w:document>",
+                  "argument": null
+                },
+                {
+                  "text": "the production ZIP writer writes the same members twice using its deterministic ZIP32 profile",
+                  "argument": null
+                },
+                {
+                  "text": "both outputs are byte-identical ZIP32 archives and reopen with the three exact member names and payloads",
+                  "argument": null
+                },
+                {
+                  "text": "every file uses STORED or DEFLATED encoding and this input emits at least one of each method",
+                  "argument": null
+                },
+                {
+                  "text": "every local and central member name uses the UTF-8 ZIP flag",
+                  "argument": null
+                },
+                {
+                  "text": "an independent writer input word/document.xml=one and WORD/document.xml=two refuses as zip-case-collision with no archive and unchanged caller members",
+                  "argument": null
+                }
+              ]
+            }
+          ],
+          "beforeProfiles": [],
+          "afterProfiles": []
+        }
+      ],
+      "beforeLedgerRows": [
+        {
+          "id": "@id-zip-read-valid",
+          "feature": "workflows/package/zip32.feature",
+          "expandedCases": 1,
+          "factIds": [],
+          "expectedOutcomes": [
+            "file entries are returned in central-directory order",
+            "directory entries do not become package parts",
+            "each returned payload matches its declared CRC and size"
+          ],
+          "consumers": {
+            "bun": {
+              "status": "implemented",
+              "evidence": "Bun e4bcf69eb406509dc410d48d97162f89bd710ba4 at shared v0.83.0 executes one exact seven-step canonical ZIP32 read uses stored and raw-deflated OPC members, a zero-byte directory entry, a declared archive comment and a data descriptor; readZip returns file payloads in central-directory order, omits the directory part, and validates expected bytes, lengths and CRCs. features/shared.json and tests/acceptance/core.ts bind every canonical step; tests/unit/zip.test.ts checks deterministic write/read-back. Fresh GitHub recursive make check passed 732/732 selected cases. No Go/Python, broad ZIP32 refusal/bounds, rendering or Office credit."
+            },
+            "go": {
+              "status": "planned",
+              "evidence": "No equivalent operation binding reviewed; language-specific behaviours remain explicit"
+            },
+            "python": {
+              "status": "planned",
+              "evidence": "No equivalent operation binding reviewed; creation/body editing are not existing-flag mutation"
+            }
+          }
+        },
+        {
+          "id": "@id-zip-refuse-unsafe",
+          "feature": "workflows/package/zip32.feature",
+          "expandedCases": 1,
+          "factIds": [],
+          "expectedOutcomes": [
+            "the module refuses duplicate member names",
+            "the module refuses ASCII case-colliding member names",
+            "the module refuses noncanonical member paths",
+            "the module refuses encrypted or unsupported-compression members",
+            "the module refuses multi-disk archives and ZIP64 sentinels without valid end records",
+            "the module refuses local-header metadata that disagrees with the central directory",
+            "the module refuses CRC failures, size mismatches, and undeclared trailing structure"
+          ],
+          "consumers": {
+            "bun": {
+              "status": "implemented",
+              "evidence": "Bun 98138f740215c8bca8f94512198824c2b330b269 at shared v0.84.0 executes one exact nine-step broad ZIP32 unsafe-structure refusal case. features/shared.json and tests/acceptance/core.ts build eleven distinct archives (duplicate and ASCII-case names, traversal, encryption, unsupported method, multi-disk, missing ZIP64 records, local-name mismatch, CRC and stored-size mismatch, undeclared trailing byte); the real readZip result for each is a typed OoxmlError with its independent literal code, and the ZIP64 fixture declaration must also match that literal. tests/unit/zip.test.ts and tests/unit/zip32-bindings.test.ts separately exercise the specified samples. Fresh post-push GitHub recursive make check passed 732/732 selected cases and Bun CI 36520289839 succeeded. No Go/Python, pre-expansion allocation timing, ZIP64 acceptance, physical-overlap or general OPC credit."
+            },
+            "go": {
+              "status": "planned",
+              "evidence": "No equivalent operation binding reviewed; language-specific behaviours remain explicit"
+            },
+            "python": {
+              "status": "planned",
+              "evidence": "No equivalent operation binding reviewed; creation/body editing are not existing-flag mutation"
+            }
+          }
+        },
+        {
+          "id": "@id-zip-bounds",
+          "feature": "workflows/package/zip32.feature",
+          "expandedCases": 1,
+          "factIds": [],
+          "expectedOutcomes": [
+            "the module refuses before allocating unbounded output"
+          ],
+          "consumers": {
+            "bun": {
+              "status": "implemented",
+              "evidence": "Bun 7745d19daa9c8f50a34882ff51bc460dde162200 at shared v0.85.0 executes one exact three-step broad ZIP32 configured-bounds case. features/shared.json and tests/acceptance/core.ts build a two-entry raw-DEFLATE archive and require typed codes for maxArchiveBytes, maxEntries, maxEntryBytes, maxTotalBytes and maxCompressionRatio. Independent invalid-DEFLATE control on the same declared expanded payload fails zip-data-invalid without limits; each configured threshold instead returns its distinct limit OoxmlError before inflation is attempted, with caller archive bytes unchanged. tests/unit/zip.test.ts checks the five codes/messages; tests/unit/zip32-bindings.test.ts executes five separate exact configured-bound rows. Fresh post-push GitHub recursive make check passed 732/732 selected cases and Bun CI 36521702825 succeeded. No Go/Python; this is not a measured allocator cap, ZIP64 admission, rendering or general OPC credit."
+            },
+            "go": {
+              "status": "planned",
+              "evidence": "No equivalent operation binding reviewed; language-specific behaviours remain explicit"
+            },
+            "python": {
+              "status": "planned",
+              "evidence": "No equivalent operation binding reviewed; creation/body editing are not existing-flag mutation"
+            }
+          }
+        },
+        {
+          "id": "@id-zip-write-deterministic",
+          "feature": "workflows/package/zip32.feature",
+          "expandedCases": 1,
+          "factIds": [],
+          "expectedOutcomes": [
+            "both outputs are byte-identical ZIP32 archives",
+            "file entries use stored or deflated encoding",
+            "names are emitted with the UTF-8 ZIP flag",
+            "writer input that would collide by ASCII case is refused"
+          ],
+          "consumers": {
+            "bun": {
+              "status": "implemented",
+              "evidence": "Bun e4bcf69eb406509dc410d48d97162f89bd710ba4 at shared v0.83.0 executes one exact six-step ZIP32 write uses three canonical OPC members; two writeZip calls return byte-identical archives, readZip returns three ordered names, ZIP32 central bounds hold, stored and deflated methods both occur, UTF-8 flags appear in local and central headers, and a case-colliding writer input is refused with typed code. features/shared.json and tests/acceptance/core.ts bind every canonical step; tests/unit/zip.test.ts checks deterministic write/read-back. Fresh GitHub recursive make check passed 732/732 selected cases. No Go/Python, broad ZIP32 refusal/bounds, rendering or Office credit."
+            },
+            "go": {
+              "status": "planned",
+              "evidence": "No equivalent operation binding reviewed; language-specific behaviours remain explicit"
+            },
+            "python": {
+              "status": "planned",
+              "evidence": "No equivalent operation binding reviewed; creation/body editing are not existing-flag mutation"
+            }
+          }
+        }
+      ],
+      "afterLedgerRows": [
+        {
+          "id": "@id-zip-read-valid",
+          "feature": "workflows/package/zip32.feature",
+          "expandedCases": 1,
+          "factIds": [],
+          "expectedOutcomes": [
+            "returned file names are exactly [\"z.bin\",\"a.xml\",\"m.bin\"] in central-directory order and dir/ is absent",
+            "the three returned payloads equal their declared strings with lengths 6, 4 and 6 and matching independent CRC32 values",
+            "the caller's source archive bytes remain unchanged"
+          ],
+          "consumers": {
+            "bun": {
+              "status": "planned",
+              "evidence": "Concrete package alignment changes operands or predicates; fresh exact production receipts are required. Historical evidence retained in ledgers/package-alignment.json. No bun credit from wording migration."
+            },
+            "go": {
+              "status": "planned",
+              "evidence": "Concrete package alignment changes operands or predicates; fresh exact production receipts are required. Historical evidence retained in ledgers/package-alignment.json. No go credit from wording migration."
+            },
+            "python": {
+              "status": "planned",
+              "evidence": "Concrete package alignment changes operands or predicates; fresh exact production receipts are required. Historical evidence retained in ledgers/package-alignment.json. No python credit from wording migration."
+            }
+          }
+        },
+        {
+          "id": "@id-zip-refuse-unsafe",
+          "feature": "workflows/package/zip32.feature",
+          "expandedCases": 1,
+          "factIds": [],
+          "expectedOutcomes": [
+            "each recipe refuses with its exact documented zip reason and no member result",
+            "duplicate and case-collision refuse as zip-duplicate-entry and zip-case-collision",
+            "traversal refuses as zip-name-invalid",
+            "encryption and method refuse as zip-encryption-unsupported and zip-method-unsupported",
+            "multi-disk and missing-ZIP64 refuse as zip-multi-disk-unsupported and zip-structure-invalid",
+            "local-name refuses as zip-local-metadata-mismatch",
+            "CRC, stored-size and trailing-byte refuse as zip-crc-mismatch, zip-size-mismatch and zip-end-record-missing with every caller archive unchanged"
+          ],
+          "consumers": {
+            "bun": {
+              "status": "planned",
+              "evidence": "Concrete package alignment changes operands or predicates; fresh exact production receipts are required. Historical evidence retained in ledgers/package-alignment.json. No bun credit from wording migration."
+            },
+            "go": {
+              "status": "planned",
+              "evidence": "Concrete package alignment changes operands or predicates; fresh exact production receipts are required. Historical evidence retained in ledgers/package-alignment.json. No go credit from wording migration."
+            },
+            "python": {
+              "status": "planned",
+              "evidence": "Concrete package alignment changes operands or predicates; fresh exact production receipts are required. Historical evidence retained in ledgers/package-alignment.json. No python credit from wording migration."
+            }
+          }
+        },
+        {
+          "id": "@id-zip-bounds",
+          "feature": "workflows/package/zip32.feature",
+          "expandedCases": 1,
+          "factIds": [],
+          "expectedOutcomes": [
+            "both archives refuse the same respective reasons zip-archive-too-large, zip-too-many-entries, zip-entry-too-large, zip-total-too-large and zip-compression-ratio-exceeded before member output",
+            "default reading of the valid archive returns the two exact payloads and default reading of the invalid-DEFLATE sibling refuses a payload error",
+            "every caller archive remains unchanged"
+          ],
+          "consumers": {
+            "bun": {
+              "status": "planned",
+              "evidence": "Concrete package alignment changes operands or predicates; fresh exact production receipts are required. Historical evidence retained in ledgers/package-alignment.json. No bun credit from wording migration."
+            },
+            "go": {
+              "status": "planned",
+              "evidence": "Concrete package alignment changes operands or predicates; fresh exact production receipts are required. Historical evidence retained in ledgers/package-alignment.json. No go credit from wording migration."
+            },
+            "python": {
+              "status": "planned",
+              "evidence": "Concrete package alignment changes operands or predicates; fresh exact production receipts are required. Historical evidence retained in ledgers/package-alignment.json. No python credit from wording migration."
+            }
+          }
+        },
+        {
+          "id": "@id-zip-write-deterministic",
+          "feature": "workflows/package/zip32.feature",
+          "expandedCases": 1,
+          "factIds": [],
+          "expectedOutcomes": [
+            "both outputs are byte-identical ZIP32 archives and reopen with the three exact member names and payloads",
+            "every file uses STORED or DEFLATED encoding and this input emits at least one of each method",
+            "every local and central member name uses the UTF-8 ZIP flag",
+            "an independent writer input word/document.xml=one and WORD/document.xml=two refuses as zip-case-collision with no archive and unchanged caller members"
+          ],
+          "consumers": {
+            "bun": {
+              "status": "planned",
+              "evidence": "Concrete package alignment changes operands or predicates; fresh exact production receipts are required. Historical evidence retained in ledgers/package-alignment.json. No bun credit from wording migration."
+            },
+            "go": {
+              "status": "planned",
+              "evidence": "Concrete package alignment changes operands or predicates; fresh exact production receipts are required. Historical evidence retained in ledgers/package-alignment.json. No go credit from wording migration."
+            },
+            "python": {
+              "status": "planned",
+              "evidence": "Concrete package alignment changes operands or predicates; fresh exact production receipts are required. Historical evidence retained in ledgers/package-alignment.json. No python credit from wording migration."
+            }
+          }
+        }
+      ]
+    },
+    {
+      "path": "workflows/package/preservation.feature",
+      "beforeSha256": "0232a5f99dbb48d2e03fbb36adf3e5b22b7f0da448d3046b4e90dcdcc2a4e90b",
+      "afterSha256": "89ea7dbf321a87bbadac00eae8bcebed89364756f1ec449379dd0080afa8dff6",
+      "beforeText": "@planned\nFeature: OPC package custody, transactions and save destinations\n\n  Rule: OPC package custody and transactional part edits\n    The shared OPC layer preserves whole-archive bytes on no-op saves, rolls back\n    failed transactional edits, and keeps unrelated payload bytes opaque.\n    @id-opc-package-corpus-noop\n    Scenario: Opening and reopening the fixture corpora without edits preserves whole archives\n      Given the go-ooxml and python-office-mcp-server fixture corpora are enumerated\n      When each OOXML fixture package is opened and serialized without edits through the OPC layer\n      Then every reopened package matches its original whole-archive bytes\n      And both fixture corpora contribute their exact known nonzero fixture counts\n\n    @id-opc-package-transaction-rollback\n    Scenario: A failed transactional edit rolls back every changed part\n      Given a valid OPC package with XML and opaque payload parts\n      When a transactional edit changes multiple parts and then fails\n      Then the package reverts to the original bytes and parts after the refusal\n\n    @id-opc-package-preserve-unrelated\n    Scenario: Changing one part preserves unrelated payload after reopen\n      Given a valid OPC package with a main XML part and an unrelated binary payload\n      When the main XML part text is changed and the package is reopened\n      Then the edited part contains the new text after reopen\n      And the unrelated payload bytes remain unchanged\n\n  Rule: OPC byte custody, transaction callbacks and safe save destinations\n    These examples define package API behaviour without asserting Word schema validity.\n    The base package has three members, UTF-8 XML declarations and no extra payloads.\n    Structured refusal reasons use the shared package-failure profile.\n    Historical diagnostic fragments in Examples do not prescribe exception wording.\n    Explicit immediate/deferred execution and opaque results use a portable\n    transaction profile; these are API policies, not general OPC format requirements.\n    Background:\n      Given a ZIP contains word/document.xml with UTF-8 XML text <?xml version=\"1.0\" encoding=\"UTF-8\"?><document>Alpha</document>\n      And its content types use namespace http://schemas.openxmlformats.org/package/2006/content-types\n      And its content types have these defaults and overrides\n        | kind     | key                | content_type                                                            |\n        | Default  | rels               | application/vnd.openxmlformats-package.relationships+xml                 |\n        | Default  | xml                | application/xml                                                         |\n        | Override | /word/document.xml | application/vnd.openxmlformats-officedocument.wordprocessingml.document.main+xml |\n      And _rels/.rels uses namespace http://schemas.openxmlformats.org/package/2006/relationships\n      And its root relationship is rId1 of type http://schemas.openxmlformats.org/officeDocument/2006/relationships/officeDocument targeting word/document.xml\n\n    @profile-package-refusal-reasons @id-bun-opc-open-refusal\n    Scenario Outline: Reject <variant> with its structured validation reason\n      Given the base package has the mutation <mutation>\n      When the package editor opens its archive bytes\n      Then opening refuses with reason <code> and no package result\n      And the caller's original archive bytes remain unchanged\n      Examples:\n        | variant               | mutation                                                                   | code                            | message                            |\n        | escaped part name     | rename the document, content-type override and relationship target to word/%66oo.xml | opc-part-name-invalid   | Noncanonical part name             |\n        | escaped target        | change only the root relationship target to word/%66oo.xml                 | opc-target-invalid              | Percent-encoded                    |\n        | duplicate default     | replace the xml default with a second rels default of type application/xml  | opc-content-types-invalid       | Duplicate/missing default extension |\n        | missing target        | change only the root relationship target to word/missing.xml               | opc-relationship-target-missing  | Missing target                     |\n        | duplicate relation ID | duplicate the complete rId1 root relationship                              | opc-relationship-duplicate       | Duplicate relationship id          |\n\n    @profile-opc-byte-custody @id-bun-opc-detached-byte-copies\n    Scenario: Caller and returned byte arrays cannot modify an opened package\n      When the package editor opens the base archive bytes\n      And every byte in the caller's original archive array is overwritten with zero\n      And every byte in the array returned by get for word/document.xml is overwritten with zero\n      Then a fresh get of word/document.xml contains the UTF-8 text Alpha\n      And serializing the package returns the exact original archive bytes\n\n    @profile-opc-byte-custody @id-bun-opc-preserve-utf16le-edit\n    Scenario: Writing edited text preserves the original UTF-16 encoding\n      Given word/document.xml instead has a little-endian BOM and UTF-16LE text <?xml version=\"1.0\" encoding=\"UTF-16\"?><document>Alpha</document>\n      When the package editor opens the package and sets word/document.xml to its decoded text with Alpha replaced by Beta\n      And its serialized archive is read through the ZIP layer\n      Then the saved document member starts with hexadecimal bytes FF FE\n      And decoding the member as UTF-16LE contains Beta and encoding=\"UTF-16\"\n\n    @profile-portable-transactions @id-bun-opc-async-transaction-refusal\n    Scenario: Deferred transactions refuse before invoking the edit callback\n      Given the package editor has opened the base archive bytes\n      When a deferred transaction is requested with a callback that would replace Alpha with Beta and set a ran flag\n      Then the transaction refuses with reason opc-deferred-transaction and no result\n      And the ran flag is false and the document text still contains Alpha\n      And the current package archive and caller source bytes remain unchanged\n\n    @profile-portable-transactions @id-bun-opc-thenable-transaction-result\n    Scenario: An immediate transaction returns its opaque token without evaluating it\n      Given the package editor has opened the base archive bytes\n      And an opaque token has an evaluation hook that throws if invoked\n      When an immediate transaction replaces Alpha with Beta and returns that token\n      Then the returned token has the original identity and its evaluation count is zero\n      And saving and reopening reads Beta with every unrelated member payload unchanged\n\n    @profile-package-refusal-reasons @id-bun-opc-save-invalid-target-custody\n    Scenario: A failed validation leaves an existing output file untouched\n      Given an existing destination file contains the base package archive bytes\n      And the package editor has opened those bytes and deleted word/document.xml\n      When the package is saved to the existing destination\n      Then saving refuses with reason opc-relationship-target-missing before destination replacement\n      And no successful save receipt is returned\n      And the destination file bytes equal the original archive bytes\n\n    @profile-package-refusal-reasons @id-bun-opc-symlink-destination-refusal\n    Scenario: A symlink destination is refused without changing its target\n      Given a regular destination file contains the base package archive bytes\n      And a symlink points to that file\n      And the package editor has opened the base archive bytes\n      When the unchanged package is saved through the symlink path\n      Then saving refuses with reason opc-symlink-destination before destination replacement\n      And the symlink still points to the original regular destination without a successful save receipt\n      And the regular destination file bytes equal the original archive bytes\n",
+      "scenarios": [
+        {
+          "id": "@id-opc-package-transaction-rollback",
+          "before": [
+            {
+              "scenarioId": "@id-opc-package-transaction-rollback",
+              "name": "A failed transactional edit rolls back every changed part",
+              "steps": [
+                {
+                  "text": "a valid OPC package with XML and opaque payload parts",
+                  "argument": null
+                },
+                {
+                  "text": "a transactional edit changes multiple parts and then fails",
+                  "argument": null
+                },
+                {
+                  "text": "the package reverts to the original bytes and parts after the refusal",
+                  "argument": null
+                }
+              ]
+            }
+          ],
+          "after": [
+            {
+              "scenarioId": "@id-opc-package-transaction-rollback",
+              "name": "A failed transactional edit rolls back every changed part",
+              "steps": [
+                {
+                  "text": "the custody envelope contains main XML part doc/main.xml with decoded text Original and opaque custom/data.bin payload hexadecimal 00FF01FE02FD",
+                  "argument": null
+                },
+                {
+                  "text": "an immediate production transaction sets main XML text to rolled back, sets custom/data.bin to hexadecimal 09080706 and then raises callback-failure after both writes",
+                  "argument": null
+                },
+                {
+                  "text": "callback-failure propagates with no transaction result and the whole current archive equals its original bytes",
+                  "argument": null
+                },
+                {
+                  "text": "doc/main.xml still decodes to Original, custom/data.bin is exactly 00FF01FE02FD and every original member remains present",
+                  "argument": null
+                }
+              ]
+            }
+          ],
+          "beforeProfiles": [],
+          "afterProfiles": []
+        },
+        {
+          "id": "@id-opc-package-preserve-unrelated",
+          "before": [
+            {
+              "scenarioId": "@id-opc-package-preserve-unrelated",
+              "name": "Changing one part preserves unrelated payload after reopen",
+              "steps": [
+                {
+                  "text": "a valid OPC package with a main XML part and an unrelated binary payload",
+                  "argument": null
+                },
+                {
+                  "text": "the main XML part text is changed and the package is reopened",
+                  "argument": null
+                },
+                {
+                  "text": "the edited part contains the new text after reopen",
+                  "argument": null
+                },
+                {
+                  "text": "the unrelated payload bytes remain unchanged",
+                  "argument": null
+                }
+              ]
+            }
+          ],
+          "after": [
+            {
+              "scenarioId": "@id-opc-package-preserve-unrelated",
+              "name": "Changing one part preserves unrelated payload after reopen",
+              "steps": [
+                {
+                  "text": "the custody envelope contains main XML part doc/main.xml with decoded text Original and opaque custom/data.bin payload hexadecimal 00FF01FE02FD",
+                  "argument": null
+                },
+                {
+                  "text": "a production text edit sets doc/main.xml value text to JSON \"Updated <value>\" and saves then reopens the package",
+                  "argument": null
+                },
+                {
+                  "text": "doc/main.xml decodes to JSON \"Updated <value>\" and custom/data.bin is exactly 00FF01FE02FD",
+                  "argument": null
+                },
+                {
+                  "text": "the member-name set is unchanged, every other member payload is unchanged and the caller's original archive bytes remain unchanged",
+                  "argument": null
+                }
+              ]
+            }
+          ],
+          "beforeProfiles": [],
+          "afterProfiles": []
+        }
+      ],
+      "beforeLedgerRows": [
+        {
+          "id": "@id-opc-package-transaction-rollback",
+          "feature": "workflows/package/preservation.feature",
+          "expandedCases": 1,
+          "factIds": [],
+          "expectedOutcomes": [
+            "the package reverts to the original bytes and parts after the refusal"
+          ],
+          "consumers": {
+            "bun": {
+              "status": "implemented",
+              "evidence": "Bun edc342eba89bfe62d790059083732ae09f9c043a at shared v0.88.0 executes one exact three-step OPC rollback case uses a synthetic package with XML and opaque binary parts; a transaction changes both then throws a typed synthetic refusal, after which package.toBytes and both part bytes equal their original values. features/shared.json and tests/acceptance/core.ts bind every exact shared step. Fresh post-push GitHub recursive make check passed 732/732 selected cases; Bun CI 36523797789 succeeded. No Go/Python, schema-valid Office, cross-producer equivalence, rendering or general OPC credit."
+            },
+            "go": {
+              "status": "planned",
+              "evidence": "No equivalent operation binding reviewed; language-specific behaviours remain explicit"
+            },
+            "python": {
+              "status": "implemented",
+              "evidence": "Python published 380ea3d47d3cd64faaf3e7fa4e8855c581be9313 at shared v0.127.0 executes only @id-opc-package-transaction-rollback, one exact three-step case in workflows/package/preservation.feature via tests/opc_rollback/{cases,conftest,test_rollback}.py. This is production tools.mutation.stage_patch FILE-PUBLICATION rollback: failure discards a private staged DOCX copy, NOT an in-memory same-object OPC editor transaction. Manifest-sealed blank default DOCX is separately authored with Alpha in word/document.xml and 8,324-byte opaque docProps/thumbnail.jpeg; 17 archive members. Source and separate existing destination initially have distinct original bytes/parts. Callback changes staged XML Alpha→Beta AND flips the opaque first byte, proves both changes and 15 other parts unchanged, then raises before publish. Native result is failed/zero planned+applied commit; source and prior destination remain exact original whole-file bytes and parts (Alpha/Prior after reopen), with staging cleaned up. Separate successful two-part callback publishes both changes, exact two changed-part diff, while source and failed destination stay unchanged; excludes no-op. Sealed ID/title/steps/no Examples guarded. Temporary production exception-handler mutation overwrote destination and made canonical custody fail; restored byte-for-byte. Uncached committed local, independent clean recursive pre-push, fresh GitHub recursive post-push each passed 1,409 tests (three existing warnings), fifteen provenance-clean lanes including rollback 1/3; Python CI 36599493785 and Windows 36599493833 succeeded. No Go, in-memory rollback, broader OPC, positive missing-Type/content-type diff, Office, PPTX, PDF or general XML credit."
+            }
+          }
+        },
+        {
+          "id": "@id-opc-package-preserve-unrelated",
+          "feature": "workflows/package/preservation.feature",
+          "expandedCases": 1,
+          "factIds": [],
+          "expectedOutcomes": [
+            "the edited part contains the new text after reopen",
+            "the unrelated payload bytes remain unchanged"
+          ],
+          "consumers": {
+            "bun": {
+              "status": "implemented",
+              "evidence": "Bun edc342eba89bfe62d790059083732ae09f9c043a at shared v0.88.0 executes one exact four-step OPC edit case changes the main XML text, saves and reopens the package, requires exact updated text and independently checks that unrelated opaque binary payload bytes remain unchanged. features/shared.json and tests/acceptance/core.ts bind every exact shared step. Fresh post-push GitHub recursive make check passed 732/732 selected cases; Bun CI 36523797789 succeeded. No Go/Python, schema-valid Office, cross-producer equivalence, rendering or general OPC credit."
+            },
+            "go": {
+              "status": "implemented",
+              "evidence": "Go published 7d12c2d2bc2214bd443808dc27c25d66666c13d4 at shared v0.136.0 binds ONLY @id-opc-package-preserve-unrelated one case/four exact steps in workflows/package/preservation.feature:20–25 through acceptance/{acceptance,feature_roots,inventory,opc_preserve_unrelated}_test.go and reports/batches/281.md. An independent archive/zip writer builds a fixed valid four-member OPC package with main XML Alpha, content types/root relationship and unrelated opaque binary. Public packaging.OpenPreserved/Part/fingerprint-guarded Replace/WriteTo/OpenPreserved changes main text to Beta. Independent encoding/xml reads reopened semantic text; independent ZIP reader verifies unrelated binary and registry member bytes remain unchanged and caller source bytes are intact. Stale fingerprint refusal/valid retry is auxiliary. Two narrow temporary production mutations restored byte-for-byte made canonical Given/When pass but edited-text Then fail (dropped staged change), and Given/When/Then pass but unrelated-byte And fail (CRC-valid opaque corruption). Published Go main and fresh recursive GitHub clone passed uncached no-override root and acceptance gates: 425 cases/1465 steps, zero nonpassed; CACHE-001 selected zero. Go has no GitHub Actions CI. No generated-archive hash acceptance, whole-archive identity after edit, OPC graph/transaction, Office/PDF/CACHE/PPTX or cross-consumer credit."
+            },
+            "python": {
+              "status": "implemented",
+              "evidence": "Python published exact integration 98e3f013df10ef57129407f34b6d12b48438a8bf (first parent v0.115 pin bbfd43060351e925886ce17914d7035006a67074, second parent test-only 2735ace620e39587d6fa691b5032d42767d73a8e) at shared v0.115.0 executes only @id-opc-package-preserve-unrelated, one canonical four-step case in workflows/package/preservation.feature SHA256 1a2c653871f6bd830da4ca37f2b9c355c3885463234101b55a403786aedbba5a, via tests/opc_preservation/{cases,conftest,test_preservation}.py. From sealed blank fixture fixture-d9d6a313182a71a73d75a26a0ff3b7826dbd2e300e1d202114ec9f8fb018fda5, test authors a local valid 17-member DOCX with word/document.xml paragraph Alpha before sectPr, independently checks source ZIP/docx reopen and root officeDocument/thumbnail relationships/content types. It verifies sealed-origin thumbnail docProps/thumbnail.jpeg is 8324 literal bytes with fixture-provenance SHA256 96367138dc44ce09bf2c8f0f8e49348a1478d2c5c0af69bbc2bbc38b63cdcead; this is NOT a claim that the authored source itself is sealed. tools/mutation.py::stage_patch strict requested 1 commits python-docx Alpha→Beta in a private staged DOCX; independent ZIP and docx.Document reopen confirms one Beta and no Alpha, main XML only changed, no members added or removed, all other member payload bytes including thumbnail unchanged and caller source whole bytes unchanged. Separate no-op, thumbnail-tamper and failed-callback controls expose vacuous edit/byte-custody/commit predicates but do not earn sibling no-op or rollback credit. A red canonical edit/custody check failed before real binding; targeted green four tests passed. Published exact 98e3f013 local, independent recursive pre-push and fresh GitHub recursive post-push full suites each passed 1,363 tests (three existing warnings); nine clean-provenance lanes include exact OPC 1 case/4 steps. Python CI 36566873654 succeeded on 3.10/3.12/3.13. This credits the Python staged DOCX edit profile only: no generic OPC setter, whole-archive equality, Go, schema-valid Office/rendering, ECMA clause, PPTX or PDF claim."
+            }
+          }
+        }
+      ],
+      "afterLedgerRows": [
+        {
+          "id": "@id-opc-package-transaction-rollback",
+          "feature": "workflows/package/preservation.feature",
+          "expandedCases": 1,
+          "factIds": [],
+          "expectedOutcomes": [
+            "callback-failure propagates with no transaction result and the whole current archive equals its original bytes",
+            "doc/main.xml still decodes to Original, custom/data.bin is exactly 00FF01FE02FD and every original member remains present"
+          ],
+          "consumers": {
+            "bun": {
+              "status": "planned",
+              "evidence": "Concrete package alignment changes operands or predicates; fresh exact production receipts are required. Historical evidence retained in ledgers/package-alignment.json. No bun credit from wording migration."
+            },
+            "go": {
+              "status": "planned",
+              "evidence": "Concrete package alignment changes operands or predicates; fresh exact production receipts are required. Historical evidence retained in ledgers/package-alignment.json. No go credit from wording migration."
+            },
+            "python": {
+              "status": "planned",
+              "evidence": "Concrete package alignment changes operands or predicates; fresh exact production receipts are required. Historical evidence retained in ledgers/package-alignment.json. No python credit from wording migration."
+            }
+          }
+        },
+        {
+          "id": "@id-opc-package-preserve-unrelated",
+          "feature": "workflows/package/preservation.feature",
+          "expandedCases": 1,
+          "factIds": [],
+          "expectedOutcomes": [
+            "doc/main.xml decodes to JSON \"Updated <value>\" and custom/data.bin is exactly 00FF01FE02FD",
+            "the member-name set is unchanged, every other member payload is unchanged and the caller's original archive bytes remain unchanged"
+          ],
+          "consumers": {
+            "bun": {
+              "status": "planned",
+              "evidence": "Concrete package alignment changes operands or predicates; fresh exact production receipts are required. Historical evidence retained in ledgers/package-alignment.json. No bun credit from wording migration."
+            },
+            "go": {
+              "status": "planned",
+              "evidence": "Concrete package alignment changes operands or predicates; fresh exact production receipts are required. Historical evidence retained in ledgers/package-alignment.json. No go credit from wording migration."
+            },
+            "python": {
+              "status": "planned",
+              "evidence": "Concrete package alignment changes operands or predicates; fresh exact production receipts are required. Historical evidence retained in ledgers/package-alignment.json. No python credit from wording migration."
+            }
+          }
+        }
+      ]
+    },
+    {
+      "path": "workflows/package/graph.feature",
+      "beforeSha256": "953cab35e20019a234ed4d1aa2f1575a065f3c7768f74fb0a0269bf70b3c4d4e",
+      "afterSha256": "76148d827e7cdc4ee5b4529dd093e3f0ca066b00fad63b3431db5c0c574c5ecd",
+      "beforeText": "@planned\nFeature: Package relationship graph editing and payload differences\n\n  Rule: OPC graph edits retain package custody\n    Part and relationship edits validate before commit and never discard unrelated members.\n\n    @id-opc-add-related-part\n    Scenario: Add an opaque part with an exact content type and relationship\n      Given the shared DOCX package for graph editing\n      When an opaque part and internal root relationship are added\n      Then the saved package reopens with the new part and its exact content type\n      And unrelated original payloads retain their exact bytes\n\n    @id-opc-graph-rollback\n    Scenario: A referenced part cannot be removed alone\n      Given the shared DOCX package with an additional related opaque part\n      When removal of the referenced part is attempted\n      Then graph editing refuses with code \"opc-part-referenced\"\n      And the package bytes are unchanged after the refusal\n\n    @id-opc-remove-related-part\n    Scenario: Explicitly detach then remove an opaque part\n      Given the shared DOCX package with an additional related opaque part\n      When its unreferenced root relationship and part are removed\n      Then the saved package no longer contains the part or its content-type override\n      And all retained relationship targets resolve\n\n    @id-opc-diff-content-type\n    Scenario: A type-only change appears in the package diff\n      Given the shared DOCX package for graph editing\n      When only a part content type is changed\n      Then the package diff identifies the part despite identical payload hashes\n      And the diff reports no unrelated additions or removals\n",
+      "scenarios": [
+        {
+          "id": "@id-opc-add-related-part",
+          "before": [
+            {
+              "scenarioId": "@id-opc-add-related-part",
+              "name": "Add an opaque part with an exact content type and relationship",
+              "steps": [
+                {
+                  "text": "the shared DOCX package for graph editing",
+                  "argument": null
+                },
+                {
+                  "text": "an opaque part and internal root relationship are added",
+                  "argument": null
+                },
+                {
+                  "text": "the saved package reopens with the new part and its exact content type",
+                  "argument": null
+                },
+                {
+                  "text": "unrelated original payloads retain their exact bytes",
+                  "argument": null
+                }
+              ]
+            }
+          ],
+          "after": [
+            {
+              "scenarioId": "@id-opc-add-related-part",
+              "name": "Add an opaque part with an exact content type and relationship",
+              "steps": [
+                {
+                  "text": "graph fixture fixture-535910216e3531e4f70959cccf83038f1c51febbf4a149f9f46abfbfa8667d90 is opened through the production package editor",
+                  "argument": null
+                },
+                {
+                  "text": "custom/data.bin with hexadecimal payload 070809 and type application/octet-stream is added with internal root relationship rIdData of type urn:test/data",
+                  "argument": null
+                },
+                {
+                  "text": "saving and reopening returns custom/data.bin with exact payload 070809, effective type application/octet-stream and root edge rIdData resolving to custom/data.bin",
+                  "argument": null
+                },
+                {
+                  "text": "every original member except [Content_Types].xml and _rels/.rels retains its exact payload and no other member is added or removed",
+                  "argument": null
+                }
+              ]
+            }
+          ],
+          "beforeProfiles": [],
+          "afterProfiles": []
+        },
+        {
+          "id": "@id-opc-graph-rollback",
+          "before": [
+            {
+              "scenarioId": "@id-opc-graph-rollback",
+              "name": "A referenced part cannot be removed alone",
+              "steps": [
+                {
+                  "text": "the shared DOCX package with an additional related opaque part",
+                  "argument": null
+                },
+                {
+                  "text": "removal of the referenced part is attempted",
+                  "argument": null
+                },
+                {
+                  "text": "graph editing refuses with code \"opc-part-referenced\"",
+                  "argument": null
+                },
+                {
+                  "text": "the package bytes are unchanged after the refusal",
+                  "argument": null
+                }
+              ]
+            }
+          ],
+          "after": [
+            {
+              "scenarioId": "@id-opc-graph-rollback",
+              "name": "A referenced part cannot be removed alone",
+              "steps": [
+                {
+                  "text": "graph fixture fixture-535910216e3531e4f70959cccf83038f1c51febbf4a149f9f46abfbfa8667d90 has custom/data.bin payload 070809 with type application/octet-stream and internal root edge rIdData of type urn:test/data",
+                  "argument": null
+                },
+                {
+                  "text": "removal of custom/data.bin is attempted without detaching rIdData",
+                  "argument": null
+                },
+                {
+                  "text": "graph editing refuses with code \"opc-part-referenced\" and no successful edit result",
+                  "argument": null
+                },
+                {
+                  "text": "the whole current archive and every current part remain exactly unchanged after the refusal",
+                  "argument": null
+                }
+              ]
+            }
+          ],
+          "beforeProfiles": [],
+          "afterProfiles": []
+        },
+        {
+          "id": "@id-opc-remove-related-part",
+          "before": [
+            {
+              "scenarioId": "@id-opc-remove-related-part",
+              "name": "Explicitly detach then remove an opaque part",
+              "steps": [
+                {
+                  "text": "the shared DOCX package with an additional related opaque part",
+                  "argument": null
+                },
+                {
+                  "text": "its unreferenced root relationship and part are removed",
+                  "argument": null
+                },
+                {
+                  "text": "the saved package no longer contains the part or its content-type override",
+                  "argument": null
+                },
+                {
+                  "text": "all retained relationship targets resolve",
+                  "argument": null
+                }
+              ]
+            }
+          ],
+          "after": [
+            {
+              "scenarioId": "@id-opc-remove-related-part",
+              "name": "Explicitly detach then remove an opaque part",
+              "steps": [
+                {
+                  "text": "graph fixture fixture-535910216e3531e4f70959cccf83038f1c51febbf4a149f9f46abfbfa8667d90 has custom/data.bin payload 070809 with type application/octet-stream and internal root edge rIdData of type urn:test/data",
+                  "argument": null
+                },
+                {
+                  "text": "root relationship rIdData is explicitly detached and custom/data.bin is removed",
+                  "argument": null
+                },
+                {
+                  "text": "saving and reopening has no custom/data.bin, no /custom/data.bin content-type override and no rIdData root edge",
+                  "argument": null
+                },
+                {
+                  "text": "every retained internal relationship target resolves and every original non-registry member retains its exact payload",
+                  "argument": null
+                }
+              ]
+            }
+          ],
+          "beforeProfiles": [],
+          "afterProfiles": []
+        },
+        {
+          "id": "@id-opc-diff-content-type",
+          "before": [
+            {
+              "scenarioId": "@id-opc-diff-content-type",
+              "name": "A type-only change appears in the package diff",
+              "steps": [
+                {
+                  "text": "the shared DOCX package for graph editing",
+                  "argument": null
+                },
+                {
+                  "text": "only a part content type is changed",
+                  "argument": null
+                },
+                {
+                  "text": "the package diff identifies the part despite identical payload hashes",
+                  "argument": null
+                },
+                {
+                  "text": "the diff reports no unrelated additions or removals",
+                  "argument": null
+                }
+              ]
+            }
+          ],
+          "after": [
+            {
+              "scenarioId": "@id-opc-diff-content-type",
+              "name": "A type-only change appears in the package diff",
+              "steps": [
+                {
+                  "text": "graph fixture fixture-535910216e3531e4f70959cccf83038f1c51febbf4a149f9f46abfbfa8667d90 is opened twice as independent package snapshots",
+                  "argument": null
+                },
+                {
+                  "text": "only the effective content type of word/document.xml in the second snapshot is set to application/vnd.test.document+xml",
+                  "argument": null
+                },
+                {
+                  "text": "the production payload-and-content-type diff reports changed members [\"[Content_Types].xml\",\"word/document.xml\"] and no added or removed members",
+                  "argument": null
+                },
+                {
+                  "text": "word/document.xml retains identical payload bytes and its original MIME changes to application/vnd.test.document+xml",
+                  "argument": null
+                },
+                {
+                  "text": "all unrelated payloads, the first snapshot and caller input bytes remain unchanged",
+                  "argument": null
+                }
+              ]
+            }
+          ],
+          "beforeProfiles": [],
+          "afterProfiles": []
+        }
+      ],
+      "beforeLedgerRows": [
+        {
+          "id": "@id-opc-add-related-part",
+          "feature": "workflows/package/graph.feature",
+          "expandedCases": 1,
+          "factIds": [],
+          "expectedOutcomes": [
+            "the shared DOCX package for graph editing",
+            "an opaque part and internal root relationship are added",
+            "the saved package reopens with the new part and its exact content type",
+            "unrelated original payloads retain their exact bytes"
+          ],
+          "consumers": {
+            "bun": {
+              "status": "implemented",
+              "evidence": "Historical consumer acceptance; rerun required after migration"
+            },
+            "go": {
+              "status": "planned",
+              "evidence": "not-run: not yet mapped to this common workflow"
+            },
+            "python": {
+              "status": "planned",
+              "evidence": "not-run: not yet mapped to this common workflow"
+            }
+          }
+        },
+        {
+          "id": "@id-opc-graph-rollback",
+          "feature": "workflows/package/graph.feature",
+          "expandedCases": 1,
+          "factIds": [],
+          "expectedOutcomes": [
+            "the shared DOCX package with an additional related opaque part",
+            "removal of the referenced part is attempted",
+            "graph editing refuses with code \"opc-part-referenced\"",
+            "the package bytes are unchanged after the refusal"
+          ],
+          "consumers": {
+            "bun": {
+              "status": "implemented",
+              "evidence": "Historical consumer acceptance; rerun required after migration"
+            },
+            "go": {
+              "status": "planned",
+              "evidence": "not-run: not yet mapped to this common workflow"
+            },
+            "python": {
+              "status": "planned",
+              "evidence": "not-run: not yet mapped to this common workflow"
+            }
+          }
+        },
+        {
+          "id": "@id-opc-remove-related-part",
+          "feature": "workflows/package/graph.feature",
+          "expandedCases": 1,
+          "factIds": [],
+          "expectedOutcomes": [
+            "the shared DOCX package with an additional related opaque part",
+            "its unreferenced root relationship and part are removed",
+            "the saved package no longer contains the part or its content-type override",
+            "all retained relationship targets resolve"
+          ],
+          "consumers": {
+            "bun": {
+              "status": "implemented",
+              "evidence": "Historical consumer acceptance; rerun required after migration"
+            },
+            "go": {
+              "status": "planned",
+              "evidence": "not-run: not yet mapped to this common workflow"
+            },
+            "python": {
+              "status": "planned",
+              "evidence": "not-run: not yet mapped to this common workflow"
+            }
+          }
+        },
+        {
+          "id": "@id-opc-diff-content-type",
+          "feature": "workflows/package/graph.feature",
+          "expandedCases": 1,
+          "factIds": [],
+          "expectedOutcomes": [
+            "the shared DOCX package for graph editing",
+            "only a part content type is changed",
+            "the package diff identifies the part despite identical payload hashes",
+            "the diff reports no unrelated additions or removals"
+          ],
+          "consumers": {
+            "bun": {
+              "status": "implemented",
+              "evidence": "Historical consumer acceptance; rerun required after migration"
+            },
+            "go": {
+              "status": "planned",
+              "evidence": "not-run: not yet mapped to this common workflow"
+            },
+            "python": {
+              "status": "planned",
+              "evidence": "not-run: not yet mapped to this common workflow"
+            }
+          }
+        }
+      ],
+      "afterLedgerRows": [
+        {
+          "id": "@id-opc-add-related-part",
+          "feature": "workflows/package/graph.feature",
+          "expandedCases": 1,
+          "factIds": [],
+          "expectedOutcomes": [
+            "saving and reopening returns custom/data.bin with exact payload 070809, effective type application/octet-stream and root edge rIdData resolving to custom/data.bin",
+            "every original member except [Content_Types].xml and _rels/.rels retains its exact payload and no other member is added or removed"
+          ],
+          "consumers": {
+            "bun": {
+              "status": "planned",
+              "evidence": "Concrete package alignment changes operands or predicates; fresh exact production receipts are required. Historical evidence retained in ledgers/package-alignment.json. No bun credit from wording migration."
+            },
+            "go": {
+              "status": "planned",
+              "evidence": "Concrete package alignment changes operands or predicates; fresh exact production receipts are required. Historical evidence retained in ledgers/package-alignment.json. No go credit from wording migration."
+            },
+            "python": {
+              "status": "planned",
+              "evidence": "Concrete package alignment changes operands or predicates; fresh exact production receipts are required. Historical evidence retained in ledgers/package-alignment.json. No python credit from wording migration."
+            }
+          }
+        },
+        {
+          "id": "@id-opc-graph-rollback",
+          "feature": "workflows/package/graph.feature",
+          "expandedCases": 1,
+          "factIds": [],
+          "expectedOutcomes": [
+            "graph editing refuses with code \"opc-part-referenced\" and no successful edit result",
+            "the whole current archive and every current part remain exactly unchanged after the refusal"
+          ],
+          "consumers": {
+            "bun": {
+              "status": "planned",
+              "evidence": "Concrete package alignment changes operands or predicates; fresh exact production receipts are required. Historical evidence retained in ledgers/package-alignment.json. No bun credit from wording migration."
+            },
+            "go": {
+              "status": "planned",
+              "evidence": "Concrete package alignment changes operands or predicates; fresh exact production receipts are required. Historical evidence retained in ledgers/package-alignment.json. No go credit from wording migration."
+            },
+            "python": {
+              "status": "planned",
+              "evidence": "Concrete package alignment changes operands or predicates; fresh exact production receipts are required. Historical evidence retained in ledgers/package-alignment.json. No python credit from wording migration."
+            }
+          }
+        },
+        {
+          "id": "@id-opc-remove-related-part",
+          "feature": "workflows/package/graph.feature",
+          "expandedCases": 1,
+          "factIds": [],
+          "expectedOutcomes": [
+            "saving and reopening has no custom/data.bin, no /custom/data.bin content-type override and no rIdData root edge",
+            "every retained internal relationship target resolves and every original non-registry member retains its exact payload"
+          ],
+          "consumers": {
+            "bun": {
+              "status": "planned",
+              "evidence": "Concrete package alignment changes operands or predicates; fresh exact production receipts are required. Historical evidence retained in ledgers/package-alignment.json. No bun credit from wording migration."
+            },
+            "go": {
+              "status": "planned",
+              "evidence": "Concrete package alignment changes operands or predicates; fresh exact production receipts are required. Historical evidence retained in ledgers/package-alignment.json. No go credit from wording migration."
+            },
+            "python": {
+              "status": "planned",
+              "evidence": "Concrete package alignment changes operands or predicates; fresh exact production receipts are required. Historical evidence retained in ledgers/package-alignment.json. No python credit from wording migration."
+            }
+          }
+        },
+        {
+          "id": "@id-opc-diff-content-type",
+          "feature": "workflows/package/graph.feature",
+          "expandedCases": 1,
+          "factIds": [],
+          "expectedOutcomes": [
+            "the production payload-and-content-type diff reports changed members [\"[Content_Types].xml\",\"word/document.xml\"] and no added or removed members",
+            "word/document.xml retains identical payload bytes and its original MIME changes to application/vnd.test.document+xml",
+            "all unrelated payloads, the first snapshot and caller input bytes remain unchanged"
+          ],
+          "consumers": {
+            "bun": {
+              "status": "planned",
+              "evidence": "Concrete package alignment changes operands or predicates; fresh exact production receipts are required. Historical evidence retained in ledgers/package-alignment.json. No bun credit from wording migration."
+            },
+            "go": {
+              "status": "planned",
+              "evidence": "Concrete package alignment changes operands or predicates; fresh exact production receipts are required. Historical evidence retained in ledgers/package-alignment.json. No go credit from wording migration."
+            },
+            "python": {
+              "status": "planned",
+              "evidence": "Concrete package alignment changes operands or predicates; fresh exact production receipts are required. Historical evidence retained in ledgers/package-alignment.json. No python credit from wording migration."
+            }
+          }
+        }
+      ]
+    },
+    {
+      "path": "workflows/package/relationship-namespaces.feature",
+      "beforeSha256": "25a2b3fb3998a1f8efd9b2d7e8f5fe558517c7e852459ef56394bf5b0249610c",
+      "afterSha256": "0bd5577c68c4f1d8812949ececd4ab622909c3a9b9c4b8844344660a20e87974",
+      "beforeText": "@planned\nFeature: Office relationship attributes use expanded XML names\n  Package relationship elements and officeDocument relationship attributes use\n  different namespace URIs. Prefix spellings never establish attribute identity.\n\n  @id-office-relationship-prefix-alias\n  Scenario Outline: A valid alternate relationship prefix survives <format> editing\n    Given the shared <format> fixture with its relationship prefix changed to link\n    When the document editor opens it edits its text and saves then reopens it\n    Then the requested <format> value survives and all relationship targets resolve\n    And the original relationship attribute spelling is preserved\n    Examples:\n      | format |\n      | pptx   |\n      | xlsx   |\n\n  @id-office-relationship-wrong-uri\n  Scenario Outline: A relationship attribute in the wrong namespace refuses for <format>\n    Given the shared <format> fixture with r bound to package relationships\n    When the document reader attempts to open the namespace-mismatched Office document\n    Then the <format> reader refuses with its structural error code\n    And the supplied archive bytes remain unchanged\n    Examples:\n      | format |\n      | pptx   |\n      | xlsx   |\n",
+      "scenarios": [
+        {
+          "id": "@id-office-relationship-prefix-alias",
+          "before": [
+            {
+              "scenarioId": "@id-office-relationship-prefix-alias",
+              "name": "A valid alternate relationship prefix survives pptx editing",
+              "steps": [
+                {
+                  "text": "the shared pptx fixture with its relationship prefix changed to link",
+                  "argument": null
+                },
+                {
+                  "text": "the document editor opens it edits its text and saves then reopens it",
+                  "argument": null
+                },
+                {
+                  "text": "the requested pptx value survives and all relationship targets resolve",
+                  "argument": null
+                },
+                {
+                  "text": "the original relationship attribute spelling is preserved",
+                  "argument": null
+                }
+              ]
+            },
+            {
+              "scenarioId": "@id-office-relationship-prefix-alias",
+              "name": "A valid alternate relationship prefix survives xlsx editing",
+              "steps": [
+                {
+                  "text": "the shared xlsx fixture with its relationship prefix changed to link",
+                  "argument": null
+                },
+                {
+                  "text": "the document editor opens it edits its text and saves then reopens it",
+                  "argument": null
+                },
+                {
+                  "text": "the requested xlsx value survives and all relationship targets resolve",
+                  "argument": null
+                },
+                {
+                  "text": "the original relationship attribute spelling is preserved",
+                  "argument": null
+                }
+              ]
+            }
+          ],
+          "after": [
+            {
+              "scenarioId": "@id-office-relationship-prefix-alias",
+              "name": "A valid alternate relationship prefix survives pptx editing",
+              "steps": [
+                {
+                  "text": "Office relationship fixture fixture-2aec94471f93c300d56ca4789106a974411085d1588f3424155362a06dd043f3 for pptx has its main-part officeDocument relationship prefix renamed from r to link without changing the namespace URI",
+                  "argument": null
+                },
+                {
+                  "text": "the production pptx editor sets first slide first text to JSON \"Edited title\" and saves then reopens",
+                  "argument": null
+                },
+                {
+                  "text": "the exact value JSON \"Edited title\" is read at first slide first text and every internal relationship target resolves",
+                  "argument": null
+                },
+                {
+                  "text": "the saved main part retains link:id attributes without r:id attributes and the caller's archive bytes remain unchanged",
+                  "argument": null
+                }
+              ]
+            },
+            {
+              "scenarioId": "@id-office-relationship-prefix-alias",
+              "name": "A valid alternate relationship prefix survives xlsx editing",
+              "steps": [
+                {
+                  "text": "Office relationship fixture fixture-38c2ed936696179d3b2359e9107ad2b8d62d71d69296f8f60bdfe1fe8f7f2439 for xlsx has its main-part officeDocument relationship prefix renamed from r to link without changing the namespace URI",
+                  "argument": null
+                },
+                {
+                  "text": "the production xlsx editor sets Sheet!A1 with wrap text to JSON \"Edited\ncell\" and saves then reopens",
+                  "argument": null
+                },
+                {
+                  "text": "the exact value JSON \"Edited\ncell\" is read at Sheet!A1 with wrap text and every internal relationship target resolves",
+                  "argument": null
+                },
+                {
+                  "text": "the saved main part retains link:id attributes without r:id attributes and the caller's archive bytes remain unchanged",
+                  "argument": null
+                }
+              ]
+            }
+          ],
+          "beforeProfiles": [],
+          "afterProfiles": []
+        },
+        {
+          "id": "@id-office-relationship-wrong-uri",
+          "before": [
+            {
+              "scenarioId": "@id-office-relationship-wrong-uri",
+              "name": "A relationship attribute in the wrong namespace refuses for pptx",
+              "steps": [
+                {
+                  "text": "the shared pptx fixture with r bound to package relationships",
+                  "argument": null
+                },
+                {
+                  "text": "the document reader attempts to open the namespace-mismatched Office document",
+                  "argument": null
+                },
+                {
+                  "text": "the pptx reader refuses with its structural error code",
+                  "argument": null
+                },
+                {
+                  "text": "the supplied archive bytes remain unchanged",
+                  "argument": null
+                }
+              ]
+            },
+            {
+              "scenarioId": "@id-office-relationship-wrong-uri",
+              "name": "A relationship attribute in the wrong namespace refuses for xlsx",
+              "steps": [
+                {
+                  "text": "the shared xlsx fixture with r bound to package relationships",
+                  "argument": null
+                },
+                {
+                  "text": "the document reader attempts to open the namespace-mismatched Office document",
+                  "argument": null
+                },
+                {
+                  "text": "the xlsx reader refuses with its structural error code",
+                  "argument": null
+                },
+                {
+                  "text": "the supplied archive bytes remain unchanged",
+                  "argument": null
+                }
+              ]
+            }
+          ],
+          "after": [
+            {
+              "scenarioId": "@id-office-relationship-wrong-uri",
+              "name": "A relationship attribute in the wrong namespace refuses for pptx",
+              "steps": [
+                {
+                  "text": "Office relationship fixture fixture-2aec94471f93c300d56ca4789106a974411085d1588f3424155362a06dd043f3 for pptx has only the main-part r namespace URI changed from officeDocument relationships to package relationships",
+                  "argument": null
+                },
+                {
+                  "text": "the production pptx reader attempts to open the namespace-mismatched document",
+                  "argument": null
+                },
+                {
+                  "text": "the reader refuses with structured reason PPTX_PRESENTATION_INVALID and no document result",
+                  "argument": null
+                },
+                {
+                  "text": "the supplied archive bytes remain unchanged",
+                  "argument": null
+                }
+              ]
+            },
+            {
+              "scenarioId": "@id-office-relationship-wrong-uri",
+              "name": "A relationship attribute in the wrong namespace refuses for xlsx",
+              "steps": [
+                {
+                  "text": "Office relationship fixture fixture-38c2ed936696179d3b2359e9107ad2b8d62d71d69296f8f60bdfe1fe8f7f2439 for xlsx has only the main-part r namespace URI changed from officeDocument relationships to package relationships",
+                  "argument": null
+                },
+                {
+                  "text": "the production xlsx reader attempts to open the namespace-mismatched document",
+                  "argument": null
+                },
+                {
+                  "text": "the reader refuses with structured reason xlsx-workbook-invalid and no document result",
+                  "argument": null
+                },
+                {
+                  "text": "the supplied archive bytes remain unchanged",
+                  "argument": null
+                }
+              ]
+            }
+          ],
+          "beforeProfiles": [],
+          "afterProfiles": []
+        }
+      ],
+      "beforeLedgerRows": [
+        {
+          "id": "@id-office-relationship-prefix-alias",
+          "feature": "workflows/package/relationship-namespaces.feature",
+          "expandedCases": 2,
+          "factIds": [],
+          "expectedOutcomes": [
+            "the requested pptx value survives and all relationship targets resolve",
+            "the original relationship attribute spelling is preserved",
+            "the requested xlsx value survives and all relationship targets resolve"
+          ],
+          "consumers": {
+            "bun": {
+              "status": "implemented",
+              "evidence": "Bun 529dce0c5909c1fa5e23ce5d742cc1614172094b at shared v0.90.0 executes Two exact four-step PPTX/XLSX alternate-prefix cases edit a shared fixture with link:id, save and reopen, require the requested exact text/cell value and a resolvable OPC package, and retain link:id without an r:id spelling in the main part. features/shared.json and tests/acceptance/relationship-namespaces.ts bind the four canonical cases (16 steps); tests/unit/relationship-namespaces.test.ts also exercises equivalent expanded-name, wrong-URI, local-rebinding and lookalike behaviours. Fresh post-push GitHub recursive make check passed 732/732 selected cases; Bun CI 36525459637 succeeded. No Go/Python, live Office render, unrelated relationship profiles or general XML/OPC parity credit."
+            },
+            "go": {
+              "status": "planned",
+              "evidence": "No equivalent operation binding reviewed; language-specific behaviours remain explicit"
+            },
+            "python": {
+              "status": "planned",
+              "evidence": "No equivalent operation binding reviewed; creation/body editing are not existing-flag mutation"
+            }
+          }
+        },
+        {
+          "id": "@id-office-relationship-wrong-uri",
+          "feature": "workflows/package/relationship-namespaces.feature",
+          "expandedCases": 2,
+          "factIds": [],
+          "expectedOutcomes": [
+            "the pptx reader refuses with its structural error code",
+            "the supplied archive bytes remain unchanged",
+            "the xlsx reader refuses with its structural error code"
+          ],
+          "consumers": {
+            "bun": {
+              "status": "implemented",
+              "evidence": "Bun 529dce0c5909c1fa5e23ce5d742cc1614172094b at shared v0.90.0 executes Two exact four-step PPTX/XLSX wrong-namespace cases bind r to the package relationship URI, require a typed PPTX_PRESENTATION_INVALID or xlsx-workbook-invalid reader refusal respectively, and leave the supplied archive bytes unchanged. features/shared.json and tests/acceptance/relationship-namespaces.ts bind the four canonical cases (16 steps); tests/unit/relationship-namespaces.test.ts also exercises equivalent expanded-name, wrong-URI, local-rebinding and lookalike behaviours. Fresh post-push GitHub recursive make check passed 732/732 selected cases; Bun CI 36525459637 succeeded. No Go/Python, live Office render, unrelated relationship profiles or general XML/OPC parity credit."
+            },
+            "go": {
+              "status": "planned",
+              "evidence": "No equivalent operation binding reviewed; language-specific behaviours remain explicit"
+            },
+            "python": {
+              "status": "planned",
+              "evidence": "No equivalent operation binding reviewed; creation/body editing are not existing-flag mutation"
+            }
+          }
+        }
+      ],
+      "afterLedgerRows": [
+        {
+          "id": "@id-office-relationship-prefix-alias",
+          "feature": "workflows/package/relationship-namespaces.feature",
+          "expandedCases": 2,
+          "factIds": [],
+          "expectedOutcomes": [
+            "the exact value JSON \"Edited title\" is read at first slide first text and every internal relationship target resolves",
+            "the saved main part retains link:id attributes without r:id attributes and the caller's archive bytes remain unchanged",
+            "the exact value JSON \"Edited\ncell\" is read at Sheet!A1 with wrap text and every internal relationship target resolves"
+          ],
+          "consumers": {
+            "bun": {
+              "status": "planned",
+              "evidence": "Concrete package alignment changes operands or predicates; fresh exact production receipts are required. Historical evidence retained in ledgers/package-alignment.json. No bun credit from wording migration."
+            },
+            "go": {
+              "status": "planned",
+              "evidence": "Concrete package alignment changes operands or predicates; fresh exact production receipts are required. Historical evidence retained in ledgers/package-alignment.json. No go credit from wording migration."
+            },
+            "python": {
+              "status": "planned",
+              "evidence": "Concrete package alignment changes operands or predicates; fresh exact production receipts are required. Historical evidence retained in ledgers/package-alignment.json. No python credit from wording migration."
+            }
+          }
+        },
+        {
+          "id": "@id-office-relationship-wrong-uri",
+          "feature": "workflows/package/relationship-namespaces.feature",
+          "expandedCases": 2,
+          "factIds": [],
+          "expectedOutcomes": [
+            "the reader refuses with structured reason PPTX_PRESENTATION_INVALID and no document result",
+            "the supplied archive bytes remain unchanged",
+            "the reader refuses with structured reason xlsx-workbook-invalid and no document result"
+          ],
+          "consumers": {
+            "bun": {
+              "status": "planned",
+              "evidence": "Concrete package alignment changes operands or predicates; fresh exact production receipts are required. Historical evidence retained in ledgers/package-alignment.json. No bun credit from wording migration."
+            },
+            "go": {
+              "status": "planned",
+              "evidence": "Concrete package alignment changes operands or predicates; fresh exact production receipts are required. Historical evidence retained in ledgers/package-alignment.json. No go credit from wording migration."
+            },
+            "python": {
+              "status": "planned",
+              "evidence": "Concrete package alignment changes operands or predicates; fresh exact production receipts are required. Historical evidence retained in ledgers/package-alignment.json. No python credit from wording migration."
+            }
+          }
+        }
+      ]
+    },
+    {
+      "path": "workflows/xml/comparison.feature",
+      "beforeSha256": "b700a3da8670cb048aa3f836c193f4533908730c185847f63e167e59c48f5e93",
+      "afterSha256": "eb6440d3a548ba0d86ff576fc65a97d57df68c423ae17abf779eef8c423c9233",
+      "beforeText": "@planned\nFeature: Conservative XML comparison for package preservation\n  Compare two XML byte sequences for the bounded preservation decisions covered\n  by the native comparison tests. This operation returns a Boolean; it does not emit\n  canonical XML or define a general lexical-parser acceptance contract.\n\n  @id-xml-comparison-prefix-and-opc-order\n  Scenario: Prefix spelling and OPC relationship order compare equivalent\n    Given the left XML is <Relationships xmlns=\"http://schemas.openxmlformats.org/package/2006/relationships\"><Relationship Id=\"a\" Target=\"a.xml\"/><Relationship Id=\"b\" Target=\"b.xml\"/></Relationships>\n    And the right XML is <r:Relationships xmlns:r=\"http://schemas.openxmlformats.org/package/2006/relationships\"><r:Relationship Target=\"b.xml\" Id=\"b\"/><r:Relationship Target=\"a.xml\" Id=\"a\"/></r:Relationships>\n    When the conservative XML comparator compares their UTF-8 bytes\n    Then the comparison result is true\n\n  @id-xml-comparison-significant-content\n  Scenario Outline: XML content change to <variant> compares different\n    Given the left XML is <left>\n    And the right XML is <right>\n    When the conservative XML comparator compares their UTF-8 bytes\n    Then the comparison result is false\n\n    Examples:\n      | variant         | left                  | right                |\n      | text whitespace | <a><b> x </b></a>      | <a><b>x</b></a>       |\n      | child order     | <a><b/><c/></a>        | <a><c/><b/></a>       |\n      | attribute value | <a v=\"1\"/>            | <a v=\"2\"/>           |\n\n  @id-xml-comparison-prefix-attribute-binding\n  Scenario: A prefix-valued attribute retains its namespace binding\n    Given the left XML is <a xmlns:p=\"urn:one\" value=\"p:x\"/>\n    And the right XML is <a xmlns:p=\"urn:two\" value=\"p:x\"/>\n    When the conservative XML comparator compares their UTF-8 bytes\n    Then the comparison result is false\n\n  @id-xml-comparison-unsafe-input\n  Scenario Outline: Identical <variant> inputs do not compare equivalent\n    Given the left XML is <input>\n    And the right XML is <input>\n    When the conservative XML comparator compares their UTF-8 bytes\n    Then the comparison result is false\n\n    Examples:\n      | variant       | input                                             |\n      | DTD-bearing   | <!DOCTYPE a [<!ENTITY e \"text\">]><a>&e;</a>          |\n      | malformed XML | broken                                            |\n\n  @id-xml-comparison-processing-instructions-and-comments\n  Scenario Outline: XML markup change to <variant> compares different\n    Given the left XML is <left>\n    And the right XML is <right>\n    When the conservative XML comparator compares their UTF-8 bytes\n    Then the comparison result is false\n\n    Examples:\n      | variant                     | left                  | right                 |\n      | prolog PI target            | <?one x?><a/>         | <?two x?><a/>         |\n      | in-document PI target       | <a><?one x?></a>       | <a><?two x?></a>       |\n      | prolog comment content      | <!--old--><a/>        | <!--new--><a/>        |\n",
+      "scenarios": [
+        {
+          "id": "@id-xml-comparison-prefix-and-opc-order",
+          "before": [
+            {
+              "scenarioId": "@id-xml-comparison-prefix-and-opc-order",
+              "name": "Prefix spelling and OPC relationship order compare equivalent",
+              "steps": [
+                {
+                  "text": "the left XML is <Relationships xmlns=\"http://schemas.openxmlformats.org/package/2006/relationships\"><Relationship Id=\"a\" Target=\"a.xml\"/><Relationship Id=\"b\" Target=\"b.xml\"/></Relationships>",
+                  "argument": null
+                },
+                {
+                  "text": "the right XML is <r:Relationships xmlns:r=\"http://schemas.openxmlformats.org/package/2006/relationships\"><r:Relationship Target=\"b.xml\" Id=\"b\"/><r:Relationship Target=\"a.xml\" Id=\"a\"/></r:Relationships>",
+                  "argument": null
+                },
+                {
+                  "text": "the conservative XML comparator compares their UTF-8 bytes",
+                  "argument": null
+                },
+                {
+                  "text": "the comparison result is true",
+                  "argument": null
+                }
+              ]
+            }
+          ],
+          "after": [
+            {
+              "scenarioId": "@id-xml-comparison-prefix-and-opc-order",
+              "name": "Prefix spelling and OPC relationship order compare equivalent",
+              "steps": [
+                {
+                  "text": "the left XML is <Relationships xmlns=\"http://schemas.openxmlformats.org/package/2006/relationships\"><Relationship Id=\"a\" Type=\"urn:test/a\" Target=\"a.xml\"/><Relationship Id=\"b\" Type=\"urn:test/b\" Target=\"b.xml\"/></Relationships>",
+                  "argument": null
+                },
+                {
+                  "text": "the right XML is <r:Relationships xmlns:r=\"http://schemas.openxmlformats.org/package/2006/relationships\"><r:Relationship Target=\"b.xml\" Type=\"urn:test/b\" Id=\"b\"/><r:Relationship Target=\"a.xml\" Type=\"urn:test/a\" Id=\"a\"/></r:Relationships>",
+                  "argument": null
+                },
+                {
+                  "text": "the conservative XML comparator compares their UTF-8 bytes",
+                  "argument": null
+                },
+                {
+                  "text": "the comparison result is true",
+                  "argument": null
+                }
+              ]
+            }
+          ],
+          "beforeProfiles": [],
+          "afterProfiles": []
+        }
+      ],
+      "beforeLedgerRows": [
+        {
+          "id": "@id-xml-comparison-prefix-and-opc-order",
+          "feature": "workflows/xml/comparison.feature",
+          "expandedCases": 1,
+          "factIds": [],
+          "expectedOutcomes": [
+            "the comparison result is true"
+          ],
+          "consumers": {
+            "bun": {
+              "status": "implemented",
+              "evidence": "Bun 7b5990e63b8ed11aa08ad4ffbd00abfef579d07f at shared v0.79.0 executes One exact four-step positive row compares equivalent OPC relationships despite namespace-prefix spelling and relationship child order, without mutating either UTF-8 input. features/shared.json and tests/acceptance/xml-comparison.ts bind the exact shared steps to xmlEquivalent; tests/unit/xml-comparison.test.ts runs five canonical scenarios (10 cases/40 steps) and bounded extra comparison cases. Fresh GitHub recursive make check passed 732/732 selected cases. Conservative Boolean comparator only, not canonical XML or general package equivalence; Go/Python planned."
+            },
+            "go": {
+              "status": "planned",
+              "evidence": "Lexical parser/edit API is not this comparison operation"
+            },
+            "python": {
+              "status": "planned",
+              "evidence": "Local staging binding ran ten exact variants; canonical-path binding pending"
+            }
+          }
+        }
+      ],
+      "afterLedgerRows": [
+        {
+          "id": "@id-xml-comparison-prefix-and-opc-order",
+          "feature": "workflows/xml/comparison.feature",
+          "expandedCases": 1,
+          "factIds": [],
+          "expectedOutcomes": [
+            "the comparison result is true"
+          ],
+          "consumers": {
+            "bun": {
+              "status": "planned",
+              "evidence": "Concrete package alignment changes operands or predicates; fresh exact production receipts are required. Historical evidence retained in ledgers/package-alignment.json. No bun credit from wording migration."
+            },
+            "go": {
+              "status": "planned",
+              "evidence": "Concrete package alignment changes operands or predicates; fresh exact production receipts are required. Historical evidence retained in ledgers/package-alignment.json. No go credit from wording migration."
+            },
+            "python": {
+              "status": "planned",
+              "evidence": "Concrete package alignment changes operands or predicates; fresh exact production receipts are required. Historical evidence retained in ledgers/package-alignment.json. No python credit from wording migration."
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

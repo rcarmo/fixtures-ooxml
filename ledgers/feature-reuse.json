@@ -113,15 +113,15 @@
     },
     {
       "path": "workflows/package/graph.feature",
-      "reviewedSha256": "953cab35e20019a234ed4d1aa2f1575a065f3c7768f74fb0a0269bf70b3c4d4e"
+      "reviewedSha256": "76148d827e7cdc4ee5b4529dd093e3f0ca066b00fad63b3431db5c0c574c5ecd"
     },
     {
       "path": "workflows/package/preservation.feature",
-      "reviewedSha256": "0232a5f99dbb48d2e03fbb36adf3e5b22b7f0da448d3046b4e90dcdcc2a4e90b"
+      "reviewedSha256": "89ea7dbf321a87bbadac00eae8bcebed89364756f1ec449379dd0080afa8dff6"
     },
     {
       "path": "workflows/package/relationship-namespaces.feature",
-      "reviewedSha256": "25a2b3fb3998a1f8efd9b2d7e8f5fe558517c7e852459ef56394bf5b0249610c"
+      "reviewedSha256": "0bd5577c68c4f1d8812949ececd4ab622909c3a9b9c4b8844344660a20e87974"
     },
     {
       "path": "workflows/package/semantic-diff.feature",
@@ -137,7 +137,7 @@
     },
     {
       "path": "workflows/package/zip32.feature",
-      "reviewedSha256": "ecf7356093c73b6d170177e30df4c63ea449788c285583a32dbea41942ccf4da"
+      "reviewedSha256": "8db7070f38041a107a27f2114280971dd29a890c82387dbe31342df7909513ca"
     },
     {
       "path": "workflows/package/zip64.feature",
@@ -237,7 +237,7 @@
     },
     {
       "path": "workflows/xml/comparison.feature",
-      "reviewedSha256": "b700a3da8670cb048aa3f836c193f4533908730c185847f63e167e59c48f5e93"
+      "reviewedSha256": "eb6440d3a548ba0d86ff576fc65a97d57df68c423ae17abf779eef8c423c9233"
     },
     {
       "path": "workflows/xml/editing.feature",
@@ -2107,45 +2107,45 @@
     {
       "id": "@id-opc-add-related-part",
       "feature": "workflows/package/graph.feature",
-      "category": "incomplete",
+      "category": "generalized",
       "runtimeConstraint": "none",
-      "reason": "Generic valid/related-part packages and new content types are not given concrete values or graph recipes locally.",
+      "reason": "Concrete fixture/recipe or valid Type-bearing comparison operands; exact payload/order/MIME/relationship/refusal and source-custody predicates are reusable, with fresh native production evidence required.",
       "evidence": [
         "workflows/package/graph.feature",
-        "contracts/package-profiles.md"
+        "contracts/package-alignment.md"
       ]
     },
     {
       "id": "@id-opc-graph-rollback",
       "feature": "workflows/package/graph.feature",
-      "category": "incomplete",
+      "category": "generalized",
       "runtimeConstraint": "none",
-      "reason": "Generic valid/related-part packages and new content types are not given concrete values or graph recipes locally.",
+      "reason": "Concrete fixture/recipe or valid Type-bearing comparison operands; exact payload/order/MIME/relationship/refusal and source-custody predicates are reusable, with fresh native production evidence required.",
       "evidence": [
         "workflows/package/graph.feature",
-        "contracts/package-profiles.md"
+        "contracts/package-alignment.md"
       ]
     },
     {
       "id": "@id-opc-remove-related-part",
       "feature": "workflows/package/graph.feature",
-      "category": "incomplete",
+      "category": "generalized",
       "runtimeConstraint": "none",
-      "reason": "Generic valid/related-part packages and new content types are not given concrete values or graph recipes locally.",
+      "reason": "Concrete fixture/recipe or valid Type-bearing comparison operands; exact payload/order/MIME/relationship/refusal and source-custody predicates are reusable, with fresh native production evidence required.",
       "evidence": [
         "workflows/package/graph.feature",
-        "contracts/package-profiles.md"
+        "contracts/package-alignment.md"
       ]
     },
     {
       "id": "@id-opc-diff-content-type",
       "feature": "workflows/package/graph.feature",
-      "category": "incomplete",
+      "category": "generalized",
       "runtimeConstraint": "none",
-      "reason": "Generic valid/related-part packages and new content types are not given concrete values or graph recipes locally.",
+      "reason": "Concrete fixture/recipe or valid Type-bearing comparison operands; exact payload/order/MIME/relationship/refusal and source-custody predicates are reusable, with fresh native production evidence required.",
       "evidence": [
         "workflows/package/graph.feature",
-        "contracts/package-profiles.md"
+        "contracts/package-alignment.md"
       ]
     },
     {
@@ -2162,23 +2162,23 @@
     {
       "id": "@id-opc-package-transaction-rollback",
       "feature": "workflows/package/preservation.feature",
-      "category": "incomplete",
+      "category": "generalized",
       "runtimeConstraint": "none",
-      "reason": "Changed parts, starting bytes and failure point are unspecified for the generic valid-package source.",
+      "reason": "Concrete fixture/recipe or valid Type-bearing comparison operands; exact payload/order/MIME/relationship/refusal and source-custody predicates are reusable, with fresh native production evidence required.",
       "evidence": [
         "workflows/package/preservation.feature",
-        "contracts/bun-opc-custody.md"
+        "contracts/package-alignment.md"
       ]
     },
     {
       "id": "@id-opc-package-preserve-unrelated",
       "feature": "workflows/package/preservation.feature",
-      "category": "incomplete",
+      "category": "generalized",
       "runtimeConstraint": "none",
-      "reason": "The generic source, original/changed main text and opaque payload values are not specified here.",
+      "reason": "Concrete fixture/recipe or valid Type-bearing comparison operands; exact payload/order/MIME/relationship/refusal and source-custody predicates are reusable, with fresh native production evidence required.",
       "evidence": [
         "workflows/package/preservation.feature",
-        "contracts/bun-opc-custody.md"
+        "contracts/package-alignment.md"
       ]
     },
     {
@@ -2261,23 +2261,23 @@
     {
       "id": "@id-office-relationship-prefix-alias",
       "feature": "workflows/package/relationship-namespaces.feature",
-      "category": "incomplete",
+      "category": "generalized",
       "runtimeConstraint": "none",
-      "reason": "Alternate-prefix and wrong-URI policy is portable, but synthetic slide/sheet source packages and exact expected names are not supplied here.",
+      "reason": "Concrete fixture/recipe or valid Type-bearing comparison operands; exact payload/order/MIME/relationship/refusal and source-custody predicates are reusable, with fresh native production evidence required.",
       "evidence": [
         "workflows/package/relationship-namespaces.feature",
-        "contracts/native-profiles.md"
+        "contracts/package-alignment.md"
       ]
     },
     {
       "id": "@id-office-relationship-wrong-uri",
       "feature": "workflows/package/relationship-namespaces.feature",
-      "category": "incomplete",
+      "category": "generalized",
       "runtimeConstraint": "none",
-      "reason": "Alternate-prefix and wrong-URI policy is portable, but synthetic slide/sheet source packages and exact expected names are not supplied here.",
+      "reason": "Concrete fixture/recipe or valid Type-bearing comparison operands; exact payload/order/MIME/relationship/refusal and source-custody predicates are reusable, with fresh native production evidence required.",
       "evidence": [
         "workflows/package/relationship-namespaces.feature",
-        "contracts/native-profiles.md"
+        "contracts/package-alignment.md"
       ]
     },
     {
@@ -2349,34 +2349,34 @@
     {
       "id": "@id-zip-read-valid",
       "feature": "workflows/package/zip32.feature",
-      "category": "incomplete",
+      "category": "generalized",
       "runtimeConstraint": "none",
-      "reason": "Stored/deflated/directory/comment categories lack a fixed ordered archive and exact payload/CRC expectations here.",
+      "reason": "Concrete fixture/recipe or valid Type-bearing comparison operands; exact payload/order/MIME/relationship/refusal and source-custody predicates are reusable, with fresh native production evidence required.",
       "evidence": [
         "workflows/package/zip32.feature",
-        "contracts/bun-zip32-profile.md"
+        "contracts/package-alignment.md"
       ]
     },
     {
       "id": "@id-zip-refuse-unsafe",
       "feature": "workflows/package/zip32.feature",
-      "category": "incomplete",
+      "category": "generalized",
       "runtimeConstraint": "none",
-      "reason": "Refusal categories are listed without concrete corrupt archive recipes for each category.",
+      "reason": "Concrete fixture/recipe or valid Type-bearing comparison operands; exact payload/order/MIME/relationship/refusal and source-custody predicates are reusable, with fresh native production evidence required.",
       "evidence": [
         "workflows/package/zip32.feature",
-        "contracts/bun-zip32-profile.md"
+        "contracts/package-alignment.md"
       ]
     },
     {
       "id": "@id-zip-bounds",
       "feature": "workflows/package/zip32.feature",
-      "category": "incomplete",
+      "category": "generalized",
       "runtimeConstraint": "none",
-      "reason": "No concrete budgets/declared sizes or measurable allocation bound is specified; generic refusal cannot establish the stated resource guarantee.",
+      "reason": "Concrete fixture/recipe or valid Type-bearing comparison operands; exact payload/order/MIME/relationship/refusal and source-custody predicates are reusable, with fresh native production evidence required.",
       "evidence": [
         "workflows/package/zip32.feature",
-        "contracts/bun-zip32-profile.md"
+        "contracts/package-alignment.md"
       ]
     },
     {
@@ -2384,10 +2384,10 @@
       "feature": "workflows/package/zip32.feature",
       "category": "profile-specific",
       "runtimeConstraint": "none",
-      "reason": "Deterministic ZIP bytes, method choices, UTF-8 flag and ASCII case-collision refusal are an explicit writer policy, not universal ZIP validity.",
+      "reason": "Explicit ordered entries and mixed Store/Deflate deterministic ZIP32 policy; byte-equality is the repeated-write API predicate, not a generated golden hash. Requires deliberate native profile adoption.",
       "evidence": [
         "workflows/package/zip32.feature",
-        "contracts/bun-zip32-profile.md"
+        "contracts/package-alignment.md"
       ]
     },
     {
@@ -3319,10 +3319,10 @@
       "feature": "workflows/xml/comparison.feature",
       "category": "generalized",
       "runtimeConstraint": "none",
-      "reason": "Literal XML pairs with exact Boolean outcomes define portable bounded comparison, not C14N.",
+      "reason": "Concrete fixture/recipe or valid Type-bearing comparison operands; exact payload/order/MIME/relationship/refusal and source-custody predicates are reusable, with fresh native production evidence required.",
       "evidence": [
         "workflows/xml/comparison.feature",
-        "contracts/xml-profiles.md"
+        "contracts/package-alignment.md"
       ]
     },
     {
@@ -3728,14 +3728,15 @@
     "workflows/package/admission-limit-configuration.feature": "885083126a39d17a795609bbf5d2e273678b5d8613af9cafdc0fac46396adb8a",
     "contracts/package-profiles.md": "7e61bb1a93ef916a71f041afeb382335d565293cded09bd0ecf3b5f213a9f0fe",
     "workflows/package/data-descriptor-integrity.feature": "c0c855a3f4dd74e15fd59aa03572bb7f8c752544fd9bb64b6f082e14388c9370",
-    "workflows/package/graph.feature": "953cab35e20019a234ed4d1aa2f1575a065f3c7768f74fb0a0269bf70b3c4d4e",
-    "workflows/package/preservation.feature": "0232a5f99dbb48d2e03fbb36adf3e5b22b7f0da448d3046b4e90dcdcc2a4e90b",
+    "workflows/package/graph.feature": "76148d827e7cdc4ee5b4529dd093e3f0ca066b00fad63b3431db5c0c574c5ecd",
+    "contracts/package-alignment.md": "8bb5cc06289154c691225299548f93acc0c13cb3ace9031b92bfffc015d3483f",
+    "workflows/package/preservation.feature": "89ea7dbf321a87bbadac00eae8bcebed89364756f1ec449379dd0080afa8dff6",
     "contracts/bun-opc-custody.md": "6fc82c265d78f16056a98a3303c430769ff66010a675444a466b71b9629367a4",
-    "workflows/package/relationship-namespaces.feature": "25a2b3fb3998a1f8efd9b2d7e8f5fe558517c7e852459ef56394bf5b0249610c",
+    "workflows/package/relationship-namespaces.feature": "0bd5577c68c4f1d8812949ececd4ab622909c3a9b9c4b8844344660a20e87974",
     "workflows/package/semantic-diff.feature": "eebe822867a6f83d77351a0590dd81d7e929dc13f2d1add0bfcbbc44c5e90ca7",
     "workflows/package/xml-member-admission.feature": "19fa717632d689e7ff4e883fb2af3f31e018373dc79ddb78efecf7742ea14e91",
     "workflows/package/zip-admission.feature": "8fa7b8618fd9797e3470dfdfa1132b76784f180fe31d344f1d9d758f5c30f09c",
-    "workflows/package/zip32.feature": "ecf7356093c73b6d170177e30df4c63ea449788c285583a32dbea41942ccf4da",
+    "workflows/package/zip32.feature": "8db7070f38041a107a27f2114280971dd29a890c82387dbe31342df7909513ca",
     "contracts/bun-zip32-profile.md": "891b36e48ad4b83694cc345dc8243ccfae047b04f39f68befcdb949199a3a34c",
     "workflows/package/zip64.feature": "f103ace071e647ffee092085a1c4b58e9b7be2cb4cb7553c3558c53f3be5c69a",
     "workflows/pptx/creation.feature": "564ea5266151ebe9d0ce48eead073ecb4b3f944fca79c97556e8a677b518da55",
@@ -3769,7 +3770,7 @@
     "workflows/xlsx/mutation-safety.feature": "c481cb5e382476ac12fc7a028ba7db2eda76287b0d9066ccc172cf34213050bc",
     "workflows/xlsx/structural-edits.feature": "6f3e52c41757ca28f46f7ed31994206fe74e8119327f34bf958a2a4e357a8e75",
     "workflows/xlsx/style-readback.feature": "6eb8ab565e59ad767f7e8cf5c87a45523a64d340d95be53a7ee52e00305d4633",
-    "workflows/xml/comparison.feature": "b700a3da8670cb048aa3f836c193f4533908730c185847f63e167e59c48f5e93",
+    "workflows/xml/comparison.feature": "eb6440d3a548ba0d86ff576fc65a97d57df68c423ae17abf779eef8c423c9233",
     "contracts/xml-profiles.md": "9c840865e317693c68cc62782d6d5aa0ad33690d7ebccae0b0ca80287a3a7892",
     "workflows/xml/editing.feature": "0f7b19a36ba4fd7f47f1b2d692afe7f745210a073f29b26d0056909457353769",
     "contracts/xml-lexical-alignment.md": "bfd6d169793ce17423f850b4b553d7d061f8bb3bac090d7df5520f4868ed889b",

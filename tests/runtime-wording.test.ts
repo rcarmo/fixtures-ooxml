@@ -1,3 +1,4 @@
+import {beforePackageAlignmentFeature} from './xml-generalization-helpers.ts';
 import {test,expect} from 'bun:test';
 import {cases} from '../scripts/verify.ts';
 import {beforeWordingCase} from './runtime-wording-helpers.ts';
@@ -20,7 +21,7 @@ test('runtime wording migration explicitly preserves source IDs inputs and obser
  expect(migration.sourceRevision).toBe('048dac539886751c414d3ab075aa1fc37e2e051d');expect(migration.files.map((f:any)=>f.path)).toEqual(paths);
  expect(migration.retiredScenarioIds).toEqual([]);expect(migration.executionCredit).toBe(false);
  expect(migration.files.flatMap((f:any)=>f.scenarios)).toHaveLength(16);
- for(const file of migration.files){const text=await Bun.file(file.path).text();
+ for(const file of migration.files){const text=beforePackageAlignmentFeature(file.path,await Bun.file(file.path).text());
   // notes.feature gained a separate collection profile after this sealed wording pass.
   // Preserve every historical scenario's case hash below without resealing history.
   if(file.path==='workflows/pptx/notes.feature'){

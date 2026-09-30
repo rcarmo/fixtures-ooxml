@@ -1,3 +1,4 @@
+import {beforePackageAlignmentFeature} from './xml-generalization-helpers.ts';
 import {test,expect} from 'bun:test';
 import {validateConsumerMappings} from '../scripts/verify.ts';
 
@@ -26,7 +27,7 @@ test('unknown IDs, omitted gaps, duplicate native identities and implicit credit
 test('comparison feature retains exact native XML arguments and Boolean outcomes',async()=>{
  const {cases}=await import('../scripts/verify.ts');
  const ledger=await Bun.file('ledgers/consumers/python-xml.json').json();
- const expanded=cases('workflows/xml/comparison.feature',await Bun.file('workflows/xml/comparison.feature').text());
+ const expanded=cases('workflows/xml/comparison.feature',beforePackageAlignmentFeature('workflows/xml/comparison.feature',await Bun.file('workflows/xml/comparison.feature').text()));
  expect(expanded).toHaveLength(10);
  const expected=ledger.mappings.flatMap((m:any)=>m.variants.map((v:any)=>({scenarioId:m.scenarioIds[0],left:v.leftUtf8,right:v.rightUtf8,result:String(v.expectedBoolean)})));
  const actual=expanded.map(c=>({scenarioId:c.scenarioId,left:c.steps.find(s=>s.text.startsWith('the left XML is '))!.text.slice(16),right:c.steps.find(s=>s.text.startsWith('the right XML is '))!.text.slice(17),result:c.steps.find(s=>s.text.startsWith('the comparison result is '))!.text.slice(25)}));

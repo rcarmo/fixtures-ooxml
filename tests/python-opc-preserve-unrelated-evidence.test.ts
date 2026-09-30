@@ -1,4 +1,4 @@
-import {historicalWorkflowLedger} from './xml-generalization-helpers.ts';
+import {historicalWorkflowLedger, beforePackageAlignmentFeature} from './xml-generalization-helpers.ts';
 import {test,expect} from 'bun:test';
 import {execFileSync} from 'node:child_process';
 import {cases} from '../scripts/verify.ts';
@@ -8,7 +8,7 @@ test('Python credits only one staged DOCX OPC unrelated-payload preservation cas
  const ledger=await historicalWorkflowLedger();
  const prior=JSON.parse(execFileSync('git',['show','9e0883aa75d46a5c9ac709b7cb3503347c00310d:ledgers/workflows.json']).toString());
  const now=ledger.workflows.find((w:any)=>w.id===id),old=prior.workflows.find((w:any)=>w.id===id);
- const selected=cases(feature,await Bun.file(feature).text()).filter((c:any)=>c.scenarioId===id);
+ const selected=cases(feature,beforePackageAlignmentFeature(feature,await Bun.file(feature).text())).filter((c:any)=>c.scenarioId===id);
  expect(now.feature).toBe(feature);expect(now.expandedCases).toBe(1);expect(selected).toHaveLength(1);
  expect(selected[0].steps.map((s:any)=>s.text)).toEqual([
   'a valid OPC package with a main XML part and an unrelated binary payload',

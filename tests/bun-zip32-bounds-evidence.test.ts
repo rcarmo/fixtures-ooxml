@@ -1,4 +1,4 @@
-import {historicalWorkflowLedger} from './xml-generalization-helpers.ts';
+import {historicalWorkflowLedger, beforePackageAlignmentFeature} from './xml-generalization-helpers.ts';
 const pythonPackageIds = new Set(['@id-package-admission-negative-budget','@id-zip-unsigned-descriptor-signature-collision']);
 const goXmlNegativeIds = new Set(['@id-xml-comparison-significant-content','@id-xml-comparison-prefix-attribute-binding','@id-xml-comparison-unsafe-input','@id-xml-comparison-processing-instructions-and-comments']);
 const goLatentPackageIds = new Set(['@id-package-admission-negative-budget','@id-zip-unsigned-descriptor-signature-collision']);
@@ -44,7 +44,7 @@ test('Bun checks broad ZIP32 limits before invalid DEFLATE without Go/Python or 
   const prior = JSON.parse(execFileSync('git', ['show', 'f1104579f56526b50e155ab4550a91050768a373:ledgers/workflows.json']).toString());
   const now = ledger.workflows.find((w: any) => w.id === id), old = prior.workflows.find((w: any) => w.id === id);
   expect(now.feature).toBe(path); expect(now.expandedCases).toBe(1);
-  expect(cases(path, await Bun.file(path).text()).filter((r: any) => r.scenarioId === id).map((r: any) => r.steps.map((s: any) => s.text))).toEqual([steps]);
+  expect(cases(path, beforePackageAlignmentFeature(path,await Bun.file(path).text())).filter((r: any) => r.scenarioId === id).map((r: any) => r.steps.map((s: any) => s.text))).toEqual([steps]);
   expect(now.expectedOutcomes).toEqual(steps.slice(-1));
   expect(old.consumers.bun.status).toBe('planned'); expect(now.consumers.bun.status).toBe('implemented');
   for (const marker of ['7745d19daa9c8f50a34882ff51bc460dde162200', 'shared v0.85.0', 'one exact three-step', 'maxArchiveBytes', 'maxEntries', 'maxEntryBytes', 'maxTotalBytes', 'maxCompressionRatio', 'zip-data-invalid without limits', 'before inflation is attempted', 'caller archive bytes unchanged', 'tests/acceptance/core.ts', 'tests/unit/zip.test.ts', 'Fresh post-push GitHub recursive make check', '732/732', 'No Go/Python', 'not a measured allocator cap']) expect(now.consumers.bun.evidence).toContain(marker);

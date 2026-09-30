@@ -568,23 +568,21 @@
       "expandedCases": 1,
       "factIds": [],
       "expectedOutcomes": [
-        "the shared DOCX package for graph editing",
-        "an opaque part and internal root relationship are added",
-        "the saved package reopens with the new part and its exact content type",
-        "unrelated original payloads retain their exact bytes"
+        "saving and reopening returns custom/data.bin with exact payload 070809, effective type application/octet-stream and root edge rIdData resolving to custom/data.bin",
+        "every original member except [Content_Types].xml and _rels/.rels retains its exact payload and no other member is added or removed"
       ],
       "consumers": {
         "bun": {
-          "status": "implemented",
-          "evidence": "Historical consumer acceptance; rerun required after migration"
+          "status": "planned",
+          "evidence": "Concrete package alignment changes operands or predicates; fresh exact production receipts are required. Historical evidence retained in ledgers/package-alignment.json. No bun credit from wording migration."
         },
         "go": {
           "status": "planned",
-          "evidence": "not-run: not yet mapped to this common workflow"
+          "evidence": "Concrete package alignment changes operands or predicates; fresh exact production receipts are required. Historical evidence retained in ledgers/package-alignment.json. No go credit from wording migration."
         },
         "python": {
           "status": "planned",
-          "evidence": "not-run: not yet mapped to this common workflow"
+          "evidence": "Concrete package alignment changes operands or predicates; fresh exact production receipts are required. Historical evidence retained in ledgers/package-alignment.json. No python credit from wording migration."
         }
       }
     },
@@ -594,23 +592,21 @@
       "expandedCases": 1,
       "factIds": [],
       "expectedOutcomes": [
-        "the shared DOCX package with an additional related opaque part",
-        "removal of the referenced part is attempted",
-        "graph editing refuses with code \"opc-part-referenced\"",
-        "the package bytes are unchanged after the refusal"
+        "graph editing refuses with code \"opc-part-referenced\" and no successful edit result",
+        "the whole current archive and every current part remain exactly unchanged after the refusal"
       ],
       "consumers": {
         "bun": {
-          "status": "implemented",
-          "evidence": "Historical consumer acceptance; rerun required after migration"
+          "status": "planned",
+          "evidence": "Concrete package alignment changes operands or predicates; fresh exact production receipts are required. Historical evidence retained in ledgers/package-alignment.json. No bun credit from wording migration."
         },
         "go": {
           "status": "planned",
-          "evidence": "not-run: not yet mapped to this common workflow"
+          "evidence": "Concrete package alignment changes operands or predicates; fresh exact production receipts are required. Historical evidence retained in ledgers/package-alignment.json. No go credit from wording migration."
         },
         "python": {
           "status": "planned",
-          "evidence": "not-run: not yet mapped to this common workflow"
+          "evidence": "Concrete package alignment changes operands or predicates; fresh exact production receipts are required. Historical evidence retained in ledgers/package-alignment.json. No python credit from wording migration."
         }
       }
     },
@@ -620,23 +616,21 @@
       "expandedCases": 1,
       "factIds": [],
       "expectedOutcomes": [
-        "the shared DOCX package with an additional related opaque part",
-        "its unreferenced root relationship and part are removed",
-        "the saved package no longer contains the part or its content-type override",
-        "all retained relationship targets resolve"
+        "saving and reopening has no custom/data.bin, no /custom/data.bin content-type override and no rIdData root edge",
+        "every retained internal relationship target resolves and every original non-registry member retains its exact payload"
       ],
       "consumers": {
         "bun": {
-          "status": "implemented",
-          "evidence": "Historical consumer acceptance; rerun required after migration"
+          "status": "planned",
+          "evidence": "Concrete package alignment changes operands or predicates; fresh exact production receipts are required. Historical evidence retained in ledgers/package-alignment.json. No bun credit from wording migration."
         },
         "go": {
           "status": "planned",
-          "evidence": "not-run: not yet mapped to this common workflow"
+          "evidence": "Concrete package alignment changes operands or predicates; fresh exact production receipts are required. Historical evidence retained in ledgers/package-alignment.json. No go credit from wording migration."
         },
         "python": {
           "status": "planned",
-          "evidence": "not-run: not yet mapped to this common workflow"
+          "evidence": "Concrete package alignment changes operands or predicates; fresh exact production receipts are required. Historical evidence retained in ledgers/package-alignment.json. No python credit from wording migration."
         }
       }
     },
@@ -646,23 +640,22 @@
       "expandedCases": 1,
       "factIds": [],
       "expectedOutcomes": [
-        "the shared DOCX package for graph editing",
-        "only a part content type is changed",
-        "the package diff identifies the part despite identical payload hashes",
-        "the diff reports no unrelated additions or removals"
+        "the production payload-and-content-type diff reports changed members [\"[Content_Types].xml\",\"word/document.xml\"] and no added or removed members",
+        "word/document.xml retains identical payload bytes and its original MIME changes to application/vnd.test.document+xml",
+        "all unrelated payloads, the first snapshot and caller input bytes remain unchanged"
       ],
       "consumers": {
         "bun": {
-          "status": "implemented",
-          "evidence": "Historical consumer acceptance; rerun required after migration"
+          "status": "planned",
+          "evidence": "Concrete package alignment changes operands or predicates; fresh exact production receipts are required. Historical evidence retained in ledgers/package-alignment.json. No bun credit from wording migration."
         },
         "go": {
           "status": "planned",
-          "evidence": "not-run: not yet mapped to this common workflow"
+          "evidence": "Concrete package alignment changes operands or predicates; fresh exact production receipts are required. Historical evidence retained in ledgers/package-alignment.json. No go credit from wording migration."
         },
         "python": {
           "status": "planned",
-          "evidence": "not-run: not yet mapped to this common workflow"
+          "evidence": "Concrete package alignment changes operands or predicates; fresh exact production receipts are required. Historical evidence retained in ledgers/package-alignment.json. No python credit from wording migration."
         }
       }
     },
@@ -1375,16 +1368,16 @@
       ],
       "consumers": {
         "bun": {
-          "status": "implemented",
-          "evidence": "Bun 7b5990e63b8ed11aa08ad4ffbd00abfef579d07f at shared v0.79.0 executes One exact four-step positive row compares equivalent OPC relationships despite namespace-prefix spelling and relationship child order, without mutating either UTF-8 input. features/shared.json and tests/acceptance/xml-comparison.ts bind the exact shared steps to xmlEquivalent; tests/unit/xml-comparison.test.ts runs five canonical scenarios (10 cases/40 steps) and bounded extra comparison cases. Fresh GitHub recursive make check passed 732/732 selected cases. Conservative Boolean comparator only, not canonical XML or general package equivalence; Go/Python planned."
+          "status": "planned",
+          "evidence": "Concrete package alignment changes operands or predicates; fresh exact production receipts are required. Historical evidence retained in ledgers/package-alignment.json. No bun credit from wording migration."
         },
         "go": {
           "status": "planned",
-          "evidence": "Lexical parser/edit API is not this comparison operation"
+          "evidence": "Concrete package alignment changes operands or predicates; fresh exact production receipts are required. Historical evidence retained in ledgers/package-alignment.json. No go credit from wording migration."
         },
         "python": {
           "status": "planned",
-          "evidence": "Local staging binding ran ten exact variants; canonical-path binding pending"
+          "evidence": "Concrete package alignment changes operands or predicates; fresh exact production receipts are required. Historical evidence retained in ledgers/package-alignment.json. No python credit from wording migration."
         }
       }
     },
@@ -2381,20 +2374,21 @@
       "expandedCases": 1,
       "factIds": [],
       "expectedOutcomes": [
-        "the package reverts to the original bytes and parts after the refusal"
+        "callback-failure propagates with no transaction result and the whole current archive equals its original bytes",
+        "doc/main.xml still decodes to Original, custom/data.bin is exactly 00FF01FE02FD and every original member remains present"
       ],
       "consumers": {
         "bun": {
-          "status": "implemented",
-          "evidence": "Bun edc342eba89bfe62d790059083732ae09f9c043a at shared v0.88.0 executes one exact three-step OPC rollback case uses a synthetic package with XML and opaque binary parts; a transaction changes both then throws a typed synthetic refusal, after which package.toBytes and both part bytes equal their original values. features/shared.json and tests/acceptance/core.ts bind every exact shared step. Fresh post-push GitHub recursive make check passed 732/732 selected cases; Bun CI 36523797789 succeeded. No Go/Python, schema-valid Office, cross-producer equivalence, rendering or general OPC credit."
+          "status": "planned",
+          "evidence": "Concrete package alignment changes operands or predicates; fresh exact production receipts are required. Historical evidence retained in ledgers/package-alignment.json. No bun credit from wording migration."
         },
         "go": {
           "status": "planned",
-          "evidence": "No equivalent operation binding reviewed; language-specific behaviours remain explicit"
+          "evidence": "Concrete package alignment changes operands or predicates; fresh exact production receipts are required. Historical evidence retained in ledgers/package-alignment.json. No go credit from wording migration."
         },
         "python": {
-          "status": "implemented",
-          "evidence": "Python published 380ea3d47d3cd64faaf3e7fa4e8855c581be9313 at shared v0.127.0 executes only @id-opc-package-transaction-rollback, one exact three-step case in workflows/package/preservation.feature via tests/opc_rollback/{cases,conftest,test_rollback}.py. This is production tools.mutation.stage_patch FILE-PUBLICATION rollback: failure discards a private staged DOCX copy, NOT an in-memory same-object OPC editor transaction. Manifest-sealed blank default DOCX is separately authored with Alpha in word/document.xml and 8,324-byte opaque docProps/thumbnail.jpeg; 17 archive members. Source and separate existing destination initially have distinct original bytes/parts. Callback changes staged XML Alpha→Beta AND flips the opaque first byte, proves both changes and 15 other parts unchanged, then raises before publish. Native result is failed/zero planned+applied commit; source and prior destination remain exact original whole-file bytes and parts (Alpha/Prior after reopen), with staging cleaned up. Separate successful two-part callback publishes both changes, exact two changed-part diff, while source and failed destination stay unchanged; excludes no-op. Sealed ID/title/steps/no Examples guarded. Temporary production exception-handler mutation overwrote destination and made canonical custody fail; restored byte-for-byte. Uncached committed local, independent clean recursive pre-push, fresh GitHub recursive post-push each passed 1,409 tests (three existing warnings), fifteen provenance-clean lanes including rollback 1/3; Python CI 36599493785 and Windows 36599493833 succeeded. No Go, in-memory rollback, broader OPC, positive missing-Type/content-type diff, Office, PPTX, PDF or general XML credit."
+          "status": "planned",
+          "evidence": "Concrete package alignment changes operands or predicates; fresh exact production receipts are required. Historical evidence retained in ledgers/package-alignment.json. No python credit from wording migration."
         }
       }
     },
@@ -2404,21 +2398,21 @@
       "expandedCases": 1,
       "factIds": [],
       "expectedOutcomes": [
-        "the edited part contains the new text after reopen",
-        "the unrelated payload bytes remain unchanged"
+        "doc/main.xml decodes to JSON \"Updated <value>\" and custom/data.bin is exactly 00FF01FE02FD",
+        "the member-name set is unchanged, every other member payload is unchanged and the caller's original archive bytes remain unchanged"
       ],
       "consumers": {
         "bun": {
-          "status": "implemented",
-          "evidence": "Bun edc342eba89bfe62d790059083732ae09f9c043a at shared v0.88.0 executes one exact four-step OPC edit case changes the main XML text, saves and reopens the package, requires exact updated text and independently checks that unrelated opaque binary payload bytes remain unchanged. features/shared.json and tests/acceptance/core.ts bind every exact shared step. Fresh post-push GitHub recursive make check passed 732/732 selected cases; Bun CI 36523797789 succeeded. No Go/Python, schema-valid Office, cross-producer equivalence, rendering or general OPC credit."
+          "status": "planned",
+          "evidence": "Concrete package alignment changes operands or predicates; fresh exact production receipts are required. Historical evidence retained in ledgers/package-alignment.json. No bun credit from wording migration."
         },
         "go": {
-          "status": "implemented",
-          "evidence": "Go published 7d12c2d2bc2214bd443808dc27c25d66666c13d4 at shared v0.136.0 binds ONLY @id-opc-package-preserve-unrelated one case/four exact steps in workflows/package/preservation.feature:20–25 through acceptance/{acceptance,feature_roots,inventory,opc_preserve_unrelated}_test.go and reports/batches/281.md. An independent archive/zip writer builds a fixed valid four-member OPC package with main XML Alpha, content types/root relationship and unrelated opaque binary. Public packaging.OpenPreserved/Part/fingerprint-guarded Replace/WriteTo/OpenPreserved changes main text to Beta. Independent encoding/xml reads reopened semantic text; independent ZIP reader verifies unrelated binary and registry member bytes remain unchanged and caller source bytes are intact. Stale fingerprint refusal/valid retry is auxiliary. Two narrow temporary production mutations restored byte-for-byte made canonical Given/When pass but edited-text Then fail (dropped staged change), and Given/When/Then pass but unrelated-byte And fail (CRC-valid opaque corruption). Published Go main and fresh recursive GitHub clone passed uncached no-override root and acceptance gates: 425 cases/1465 steps, zero nonpassed; CACHE-001 selected zero. Go has no GitHub Actions CI. No generated-archive hash acceptance, whole-archive identity after edit, OPC graph/transaction, Office/PDF/CACHE/PPTX or cross-consumer credit."
+          "status": "planned",
+          "evidence": "Concrete package alignment changes operands or predicates; fresh exact production receipts are required. Historical evidence retained in ledgers/package-alignment.json. No go credit from wording migration."
         },
         "python": {
-          "status": "implemented",
-          "evidence": "Python published exact integration 98e3f013df10ef57129407f34b6d12b48438a8bf (first parent v0.115 pin bbfd43060351e925886ce17914d7035006a67074, second parent test-only 2735ace620e39587d6fa691b5032d42767d73a8e) at shared v0.115.0 executes only @id-opc-package-preserve-unrelated, one canonical four-step case in workflows/package/preservation.feature SHA256 1a2c653871f6bd830da4ca37f2b9c355c3885463234101b55a403786aedbba5a, via tests/opc_preservation/{cases,conftest,test_preservation}.py. From sealed blank fixture fixture-d9d6a313182a71a73d75a26a0ff3b7826dbd2e300e1d202114ec9f8fb018fda5, test authors a local valid 17-member DOCX with word/document.xml paragraph Alpha before sectPr, independently checks source ZIP/docx reopen and root officeDocument/thumbnail relationships/content types. It verifies sealed-origin thumbnail docProps/thumbnail.jpeg is 8324 literal bytes with fixture-provenance SHA256 96367138dc44ce09bf2c8f0f8e49348a1478d2c5c0af69bbc2bbc38b63cdcead; this is NOT a claim that the authored source itself is sealed. tools/mutation.py::stage_patch strict requested 1 commits python-docx Alpha→Beta in a private staged DOCX; independent ZIP and docx.Document reopen confirms one Beta and no Alpha, main XML only changed, no members added or removed, all other member payload bytes including thumbnail unchanged and caller source whole bytes unchanged. Separate no-op, thumbnail-tamper and failed-callback controls expose vacuous edit/byte-custody/commit predicates but do not earn sibling no-op or rollback credit. A red canonical edit/custody check failed before real binding; targeted green four tests passed. Published exact 98e3f013 local, independent recursive pre-push and fresh GitHub recursive post-push full suites each passed 1,363 tests (three existing warnings); nine clean-provenance lanes include exact OPC 1 case/4 steps. Python CI 36566873654 succeeded on 3.10/3.12/3.13. This credits the Python staged DOCX edit profile only: no generic OPC setter, whole-archive equality, Go, schema-valid Office/rendering, ECMA clause, PPTX or PDF claim."
+          "status": "planned",
+          "evidence": "Concrete package alignment changes operands or predicates; fresh exact production receipts are required. Historical evidence retained in ledgers/package-alignment.json. No python credit from wording migration."
         }
       }
     },
@@ -2428,22 +2422,22 @@
       "expandedCases": 1,
       "factIds": [],
       "expectedOutcomes": [
-        "file entries are returned in central-directory order",
-        "directory entries do not become package parts",
-        "each returned payload matches its declared CRC and size"
+        "returned file names are exactly [\"z.bin\",\"a.xml\",\"m.bin\"] in central-directory order and dir/ is absent",
+        "the three returned payloads equal their declared strings with lengths 6, 4 and 6 and matching independent CRC32 values",
+        "the caller's source archive bytes remain unchanged"
       ],
       "consumers": {
         "bun": {
-          "status": "implemented",
-          "evidence": "Bun e4bcf69eb406509dc410d48d97162f89bd710ba4 at shared v0.83.0 executes one exact seven-step canonical ZIP32 read uses stored and raw-deflated OPC members, a zero-byte directory entry, a declared archive comment and a data descriptor; readZip returns file payloads in central-directory order, omits the directory part, and validates expected bytes, lengths and CRCs. features/shared.json and tests/acceptance/core.ts bind every canonical step; tests/unit/zip.test.ts checks deterministic write/read-back. Fresh GitHub recursive make check passed 732/732 selected cases. No Go/Python, broad ZIP32 refusal/bounds, rendering or Office credit."
+          "status": "planned",
+          "evidence": "Concrete package alignment changes operands or predicates; fresh exact production receipts are required. Historical evidence retained in ledgers/package-alignment.json. No bun credit from wording migration."
         },
         "go": {
           "status": "planned",
-          "evidence": "No equivalent operation binding reviewed; language-specific behaviours remain explicit"
+          "evidence": "Concrete package alignment changes operands or predicates; fresh exact production receipts are required. Historical evidence retained in ledgers/package-alignment.json. No go credit from wording migration."
         },
         "python": {
           "status": "planned",
-          "evidence": "No equivalent operation binding reviewed; creation/body editing are not existing-flag mutation"
+          "evidence": "Concrete package alignment changes operands or predicates; fresh exact production receipts are required. Historical evidence retained in ledgers/package-alignment.json. No python credit from wording migration."
         }
       }
     },
@@ -2453,26 +2447,26 @@
       "expandedCases": 1,
       "factIds": [],
       "expectedOutcomes": [
-        "the module refuses duplicate member names",
-        "the module refuses ASCII case-colliding member names",
-        "the module refuses noncanonical member paths",
-        "the module refuses encrypted or unsupported-compression members",
-        "the module refuses multi-disk archives and ZIP64 sentinels without valid end records",
-        "the module refuses local-header metadata that disagrees with the central directory",
-        "the module refuses CRC failures, size mismatches, and undeclared trailing structure"
+        "each recipe refuses with its exact documented zip reason and no member result",
+        "duplicate and case-collision refuse as zip-duplicate-entry and zip-case-collision",
+        "traversal refuses as zip-name-invalid",
+        "encryption and method refuse as zip-encryption-unsupported and zip-method-unsupported",
+        "multi-disk and missing-ZIP64 refuse as zip-multi-disk-unsupported and zip-structure-invalid",
+        "local-name refuses as zip-local-metadata-mismatch",
+        "CRC, stored-size and trailing-byte refuse as zip-crc-mismatch, zip-size-mismatch and zip-end-record-missing with every caller archive unchanged"
       ],
       "consumers": {
         "bun": {
-          "status": "implemented",
-          "evidence": "Bun 98138f740215c8bca8f94512198824c2b330b269 at shared v0.84.0 executes one exact nine-step broad ZIP32 unsafe-structure refusal case. features/shared.json and tests/acceptance/core.ts build eleven distinct archives (duplicate and ASCII-case names, traversal, encryption, unsupported method, multi-disk, missing ZIP64 records, local-name mismatch, CRC and stored-size mismatch, undeclared trailing byte); the real readZip result for each is a typed OoxmlError with its independent literal code, and the ZIP64 fixture declaration must also match that literal. tests/unit/zip.test.ts and tests/unit/zip32-bindings.test.ts separately exercise the specified samples. Fresh post-push GitHub recursive make check passed 732/732 selected cases and Bun CI 36520289839 succeeded. No Go/Python, pre-expansion allocation timing, ZIP64 acceptance, physical-overlap or general OPC credit."
+          "status": "planned",
+          "evidence": "Concrete package alignment changes operands or predicates; fresh exact production receipts are required. Historical evidence retained in ledgers/package-alignment.json. No bun credit from wording migration."
         },
         "go": {
           "status": "planned",
-          "evidence": "No equivalent operation binding reviewed; language-specific behaviours remain explicit"
+          "evidence": "Concrete package alignment changes operands or predicates; fresh exact production receipts are required. Historical evidence retained in ledgers/package-alignment.json. No go credit from wording migration."
         },
         "python": {
           "status": "planned",
-          "evidence": "No equivalent operation binding reviewed; creation/body editing are not existing-flag mutation"
+          "evidence": "Concrete package alignment changes operands or predicates; fresh exact production receipts are required. Historical evidence retained in ledgers/package-alignment.json. No python credit from wording migration."
         }
       }
     },
@@ -2482,20 +2476,22 @@
       "expandedCases": 1,
       "factIds": [],
       "expectedOutcomes": [
-        "the module refuses before allocating unbounded output"
+        "both archives refuse the same respective reasons zip-archive-too-large, zip-too-many-entries, zip-entry-too-large, zip-total-too-large and zip-compression-ratio-exceeded before member output",
+        "default reading of the valid archive returns the two exact payloads and default reading of the invalid-DEFLATE sibling refuses a payload error",
+        "every caller archive remains unchanged"
       ],
       "consumers": {
         "bun": {
-          "status": "implemented",
-          "evidence": "Bun 7745d19daa9c8f50a34882ff51bc460dde162200 at shared v0.85.0 executes one exact three-step broad ZIP32 configured-bounds case. features/shared.json and tests/acceptance/core.ts build a two-entry raw-DEFLATE archive and require typed codes for maxArchiveBytes, maxEntries, maxEntryBytes, maxTotalBytes and maxCompressionRatio. Independent invalid-DEFLATE control on the same declared expanded payload fails zip-data-invalid without limits; each configured threshold instead returns its distinct limit OoxmlError before inflation is attempted, with caller archive bytes unchanged. tests/unit/zip.test.ts checks the five codes/messages; tests/unit/zip32-bindings.test.ts executes five separate exact configured-bound rows. Fresh post-push GitHub recursive make check passed 732/732 selected cases and Bun CI 36521702825 succeeded. No Go/Python; this is not a measured allocator cap, ZIP64 admission, rendering or general OPC credit."
+          "status": "planned",
+          "evidence": "Concrete package alignment changes operands or predicates; fresh exact production receipts are required. Historical evidence retained in ledgers/package-alignment.json. No bun credit from wording migration."
         },
         "go": {
           "status": "planned",
-          "evidence": "No equivalent operation binding reviewed; language-specific behaviours remain explicit"
+          "evidence": "Concrete package alignment changes operands or predicates; fresh exact production receipts are required. Historical evidence retained in ledgers/package-alignment.json. No go credit from wording migration."
         },
         "python": {
           "status": "planned",
-          "evidence": "No equivalent operation binding reviewed; creation/body editing are not existing-flag mutation"
+          "evidence": "Concrete package alignment changes operands or predicates; fresh exact production receipts are required. Historical evidence retained in ledgers/package-alignment.json. No python credit from wording migration."
         }
       }
     },
@@ -2505,23 +2501,23 @@
       "expandedCases": 1,
       "factIds": [],
       "expectedOutcomes": [
-        "both outputs are byte-identical ZIP32 archives",
-        "file entries use stored or deflated encoding",
-        "names are emitted with the UTF-8 ZIP flag",
-        "writer input that would collide by ASCII case is refused"
+        "both outputs are byte-identical ZIP32 archives and reopen with the three exact member names and payloads",
+        "every file uses STORED or DEFLATED encoding and this input emits at least one of each method",
+        "every local and central member name uses the UTF-8 ZIP flag",
+        "an independent writer input word/document.xml=one and WORD/document.xml=two refuses as zip-case-collision with no archive and unchanged caller members"
       ],
       "consumers": {
         "bun": {
-          "status": "implemented",
-          "evidence": "Bun e4bcf69eb406509dc410d48d97162f89bd710ba4 at shared v0.83.0 executes one exact six-step ZIP32 write uses three canonical OPC members; two writeZip calls return byte-identical archives, readZip returns three ordered names, ZIP32 central bounds hold, stored and deflated methods both occur, UTF-8 flags appear in local and central headers, and a case-colliding writer input is refused with typed code. features/shared.json and tests/acceptance/core.ts bind every canonical step; tests/unit/zip.test.ts checks deterministic write/read-back. Fresh GitHub recursive make check passed 732/732 selected cases. No Go/Python, broad ZIP32 refusal/bounds, rendering or Office credit."
+          "status": "planned",
+          "evidence": "Concrete package alignment changes operands or predicates; fresh exact production receipts are required. Historical evidence retained in ledgers/package-alignment.json. No bun credit from wording migration."
         },
         "go": {
           "status": "planned",
-          "evidence": "No equivalent operation binding reviewed; language-specific behaviours remain explicit"
+          "evidence": "Concrete package alignment changes operands or predicates; fresh exact production receipts are required. Historical evidence retained in ledgers/package-alignment.json. No go credit from wording migration."
         },
         "python": {
           "status": "planned",
-          "evidence": "No equivalent operation binding reviewed; creation/body editing are not existing-flag mutation"
+          "evidence": "Concrete package alignment changes operands or predicates; fresh exact production receipts are required. Historical evidence retained in ledgers/package-alignment.json. No python credit from wording migration."
         }
       }
     },
@@ -2531,22 +2527,22 @@
       "expandedCases": 2,
       "factIds": [],
       "expectedOutcomes": [
-        "the requested pptx value survives and all relationship targets resolve",
-        "the original relationship attribute spelling is preserved",
-        "the requested xlsx value survives and all relationship targets resolve"
+        "the exact value JSON \"Edited title\" is read at first slide first text and every internal relationship target resolves",
+        "the saved main part retains link:id attributes without r:id attributes and the caller's archive bytes remain unchanged",
+        "the exact value JSON \"Edited\ncell\" is read at Sheet!A1 with wrap text and every internal relationship target resolves"
       ],
       "consumers": {
         "bun": {
-          "status": "implemented",
-          "evidence": "Bun 529dce0c5909c1fa5e23ce5d742cc1614172094b at shared v0.90.0 executes Two exact four-step PPTX/XLSX alternate-prefix cases edit a shared fixture with link:id, save and reopen, require the requested exact text/cell value and a resolvable OPC package, and retain link:id without an r:id spelling in the main part. features/shared.json and tests/acceptance/relationship-namespaces.ts bind the four canonical cases (16 steps); tests/unit/relationship-namespaces.test.ts also exercises equivalent expanded-name, wrong-URI, local-rebinding and lookalike behaviours. Fresh post-push GitHub recursive make check passed 732/732 selected cases; Bun CI 36525459637 succeeded. No Go/Python, live Office render, unrelated relationship profiles or general XML/OPC parity credit."
+          "status": "planned",
+          "evidence": "Concrete package alignment changes operands or predicates; fresh exact production receipts are required. Historical evidence retained in ledgers/package-alignment.json. No bun credit from wording migration."
         },
         "go": {
           "status": "planned",
-          "evidence": "No equivalent operation binding reviewed; language-specific behaviours remain explicit"
+          "evidence": "Concrete package alignment changes operands or predicates; fresh exact production receipts are required. Historical evidence retained in ledgers/package-alignment.json. No go credit from wording migration."
         },
         "python": {
           "status": "planned",
-          "evidence": "No equivalent operation binding reviewed; creation/body editing are not existing-flag mutation"
+          "evidence": "Concrete package alignment changes operands or predicates; fresh exact production receipts are required. Historical evidence retained in ledgers/package-alignment.json. No python credit from wording migration."
         }
       }
     },
@@ -2556,22 +2552,22 @@
       "expandedCases": 2,
       "factIds": [],
       "expectedOutcomes": [
-        "the pptx reader refuses with its structural error code",
+        "the reader refuses with structured reason PPTX_PRESENTATION_INVALID and no document result",
         "the supplied archive bytes remain unchanged",
-        "the xlsx reader refuses with its structural error code"
+        "the reader refuses with structured reason xlsx-workbook-invalid and no document result"
       ],
       "consumers": {
         "bun": {
-          "status": "implemented",
-          "evidence": "Bun 529dce0c5909c1fa5e23ce5d742cc1614172094b at shared v0.90.0 executes Two exact four-step PPTX/XLSX wrong-namespace cases bind r to the package relationship URI, require a typed PPTX_PRESENTATION_INVALID or xlsx-workbook-invalid reader refusal respectively, and leave the supplied archive bytes unchanged. features/shared.json and tests/acceptance/relationship-namespaces.ts bind the four canonical cases (16 steps); tests/unit/relationship-namespaces.test.ts also exercises equivalent expanded-name, wrong-URI, local-rebinding and lookalike behaviours. Fresh post-push GitHub recursive make check passed 732/732 selected cases; Bun CI 36525459637 succeeded. No Go/Python, live Office render, unrelated relationship profiles or general XML/OPC parity credit."
+          "status": "planned",
+          "evidence": "Concrete package alignment changes operands or predicates; fresh exact production receipts are required. Historical evidence retained in ledgers/package-alignment.json. No bun credit from wording migration."
         },
         "go": {
           "status": "planned",
-          "evidence": "No equivalent operation binding reviewed; language-specific behaviours remain explicit"
+          "evidence": "Concrete package alignment changes operands or predicates; fresh exact production receipts are required. Historical evidence retained in ledgers/package-alignment.json. No go credit from wording migration."
         },
         "python": {
           "status": "planned",
-          "evidence": "No equivalent operation binding reviewed; creation/body editing are not existing-flag mutation"
+          "evidence": "Concrete package alignment changes operands or predicates; fresh exact production receipts are required. Historical evidence retained in ledgers/package-alignment.json. No python credit from wording migration."
         }
       }
     },

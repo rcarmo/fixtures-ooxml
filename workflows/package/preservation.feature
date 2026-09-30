@@ -13,16 +13,17 @@ Feature: OPC package custody, transactions and save destinations
 
     @id-opc-package-transaction-rollback
     Scenario: A failed transactional edit rolls back every changed part
-      Given a valid OPC package with XML and opaque payload parts
-      When a transactional edit changes multiple parts and then fails
-      Then the package reverts to the original bytes and parts after the refusal
+      Given the custody envelope contains main XML part doc/main.xml with decoded text Original and opaque custom/data.bin payload hexadecimal 00FF01FE02FD
+      When an immediate production transaction sets main XML text to rolled back, sets custom/data.bin to hexadecimal 09080706 and then raises callback-failure after both writes
+      Then callback-failure propagates with no transaction result and the whole current archive equals its original bytes
+      And doc/main.xml still decodes to Original, custom/data.bin is exactly 00FF01FE02FD and every original member remains present
 
     @id-opc-package-preserve-unrelated
     Scenario: Changing one part preserves unrelated payload after reopen
-      Given a valid OPC package with a main XML part and an unrelated binary payload
-      When the main XML part text is changed and the package is reopened
-      Then the edited part contains the new text after reopen
-      And the unrelated payload bytes remain unchanged
+      Given the custody envelope contains main XML part doc/main.xml with decoded text Original and opaque custom/data.bin payload hexadecimal 00FF01FE02FD
+      When a production text edit sets doc/main.xml value text to JSON "Updated <value>" and saves then reopens the package
+      Then doc/main.xml decodes to JSON "Updated <value>" and custom/data.bin is exactly 00FF01FE02FD
+      And the member-name set is unchanged, every other member payload is unchanged and the caller's original archive bytes remain unchanged
 
   Rule: OPC byte custody, transaction callbacks and safe save destinations
     These examples define package API behaviour without asserting Word schema validity.

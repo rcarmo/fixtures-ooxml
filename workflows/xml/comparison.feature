@@ -6,8 +6,8 @@ Feature: Conservative XML comparison for package preservation
 
   @id-xml-comparison-prefix-and-opc-order
   Scenario: Prefix spelling and OPC relationship order compare equivalent
-    Given the left XML is <Relationships xmlns="http://schemas.openxmlformats.org/package/2006/relationships"><Relationship Id="a" Target="a.xml"/><Relationship Id="b" Target="b.xml"/></Relationships>
-    And the right XML is <r:Relationships xmlns:r="http://schemas.openxmlformats.org/package/2006/relationships"><r:Relationship Target="b.xml" Id="b"/><r:Relationship Target="a.xml" Id="a"/></r:Relationships>
+    Given the left XML is <Relationships xmlns="http://schemas.openxmlformats.org/package/2006/relationships"><Relationship Id="a" Type="urn:test/a" Target="a.xml"/><Relationship Id="b" Type="urn:test/b" Target="b.xml"/></Relationships>
+    And the right XML is <r:Relationships xmlns:r="http://schemas.openxmlformats.org/package/2006/relationships"><r:Relationship Target="b.xml" Type="urn:test/b" Id="b"/><r:Relationship Target="a.xml" Type="urn:test/a" Id="a"/></r:Relationships>
     When the conservative XML comparator compares their UTF-8 bytes
     Then the comparison result is true
 
