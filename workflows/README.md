@@ -34,7 +34,7 @@ candidate file; those candidates are not canonical or presumed portable.
 | DOCX | [stories.feature](docx/stories.feature) | 3 | 3 | incomplete: 3 | no |
 | DOCX | [style-authoring.feature](docx/style-authoring.feature) | 2 | 24 | incomplete: 2 | no |
 | DOCX | [table-merging.feature](docx/table-merging.feature) | 14 | 52 | generalized: 14 | yes |
-| DOCX | [tables.feature](docx/tables.feature) | 14 | 24 | generalized: 2; profile-specific: 9; runtime-specific: 1; incomplete: 2 | no |
+| DOCX | [tables.feature](docx/tables.feature) | 14 | 24 | generalized: 3; profile-specific: 9; incomplete: 2 | no |
 | DOCX | [template-analysis.feature](docx/template-analysis.feature) | 14 | 28 | generalized: 8; profile-specific: 1; incomplete: 5 | no |
 | DOCX | [template-cache.feature](docx/template-cache.feature) | 7 | 7 | profile-specific: 7 | no |
 | DOCX | [text.feature](docx/text.feature) | 5 | 7 | generalized: 2; profile-specific: 1; incomplete: 2 | no |

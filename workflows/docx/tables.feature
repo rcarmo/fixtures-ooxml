@@ -75,12 +75,27 @@ Feature: Word tables and cell properties
         | 10   | 3    |
         | 3    | 10   |
 
-    @profile-nullable-cell-api @id-docx-go-table-cell-access
-    Scenario: A three-by-three table returns cells only at in-range coordinates
-      Given a new Word table with three rows and three columns
-      When its Cell getter is called for all nine coordinates from zero through two
-      Then each of those nine calls returns a nonnil cell
-      And calls for row or column negative one or three at the tested boundary coordinates return nil
+    @profile-bounded-cell-lookup @id-docx-go-table-cell-access
+    Scenario: A three-by-three table reports exact cell presence without out-of-range aliasing
+      Given a new Word table has three rows and three columns with texts by row A1,B1,C1 then A2,B2,C2 then A3,B3,C3
+      When cells are looked up at these zero-based coordinates
+        | row | column | present | text |
+        | 0   | 0      | true    | A1   |
+        | 0   | 1      | true    | B1   |
+        | 0   | 2      | true    | C1   |
+        | 1   | 0      | true    | A2   |
+        | 1   | 1      | true    | B2   |
+        | 1   | 2      | true    | C2   |
+        | 2   | 0      | true    | A3   |
+        | 2   | 1      | true    | B3   |
+        | 2   | 2      | true    | C3   |
+        | -1  | 0      | false   |      |
+        | 0   | -1     | false   |      |
+        | 3   | 0      | false   |      |
+        | 0   | 3      | false   |      |
+        | 3   | 3      | false   |      |
+      Then each lookup returns the listed presence and exact text without an exception
+      And the table still has three rows and three columns with its original texts and unchanged document XML
 
     @profile-document-value-api @id-docx-go-table-cell-text-getters
     Scenario: A two-by-two table reads four assigned texts and its first row

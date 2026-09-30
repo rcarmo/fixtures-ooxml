@@ -14,7 +14,13 @@ The narrower profiles make compatibility limits explicit:
 
 - `heading-classification-api`: style-ID-based `IsHeading` and `HeadingLevel`,
   without computed outline inheritance.
-- `nullable-cell-api`: boundary access returns nil, rather than throwing.
+- `bounded-cell-lookup`: zero-based lookup returns presence/absence without
+  throwing for the fourteen listed integer coordinates. Go `nil`, Bun `null`
+  and Python `None` are native absence representations; no language spelling
+  is required. The nine distinct labelled cells must return their exact text,
+  rejecting row/column aliasing as well as out-of-range selection. Lookup leaves
+  the 3×3 grid, all texts and document XML unchanged. This replaces the historical
+  `nullable-cell-api` profile while retaining its ID and every original coordinate.
 - `in-memory-effects-api`: all eight flags read true even though some pairs are
   mutually exclusive in saved WordprocessingML. This is not a valid-file recipe.
 - `selected-formatting-readback` and `table-text-readback`: only the stated
@@ -27,7 +33,7 @@ Weak presence/count predicates remain explicit gaps for stronger contracts.
 
 A new document exposes a nonnil body and empty paragraph/table collections. Setter/getter examples compare paragraph text, style classification, alignment, spacing, direct flags and multiple-run concatenation. Selected run examples compare direct colours, bold/italic/strike, effects, underline styles, font names, highlights and opposite superscript/subscript flags on two different runs. Neither a setter nor a getter proves disk persistence unless the feature explicitly saves and reopens.
 
-The table examples compare dimensions, cell access bounds, four assigned cell texts, row counts, span/merge properties, direct style, header flag, shading and selected cell properties. A border-presence assertion checks only that a top border object exists; it does not check its style, size or colour. Row insert/delete examples check counts and an out-of-bounds error, not the identity or contents of shifted rows.
+The table examples compare dimensions, cell access bounds, four assigned cell texts, row counts, span/merge properties, direct style, header flag, shading and selected cell properties. The bounded lookup scenario strengthens the old nonnil-only check with A1/B1/C1, A2/B2/C2 and A3/B3/C3 texts, all nine present coordinates and five absent coordinates (-1,0), (0,-1), (3,0), (0,3), (3,3). Initialise those labels before recording input XML. Only the lookup operation must preserve that XML. A valid-format integer outside either independent axis bound returns absence without an exception; invalid non-integer arguments, merged grids, stale handles and saved readback require separate profiles. A production callable lookup must enforce the boundary; a test-side guard around an aliasing native call does not satisfy it. A border-presence assertion checks only that a top border object exists; it does not check its style, size or colour. Row insert/delete examples check counts and an out-of-bounds error, not the identity or contents of shifted rows.
 
 ## Saved and reopened documents
 

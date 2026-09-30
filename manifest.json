@@ -2146,10 +2146,10 @@
       "aliases": []
     },
     {
-      "id": "asset-858a813b0f9ea0ac315ae1034057da288a510c638849f558f242d0ce4aa41f0d",
+      "id": "asset-89446d3c98ce6ae75a7ff887f0964cf4cc0f4cfcca1f36edabf43762de353aae",
       "path": "workflows/docx/tables.feature",
-      "bytes": 7619,
-      "sha256": "858a813b0f9ea0ac315ae1034057da288a510c638849f558f242d0ce4aa41f0d",
+      "bytes": 8336,
+      "sha256": "89446d3c98ce6ae75a7ff887f0964cf4cc0f4cfcca1f36edabf43762de353aae",
       "role": "workflow",
       "origins": [
         {
@@ -2874,10 +2874,10 @@
       "aliases": []
     },
     {
-      "id": "asset-2660da7d8b07c61588c2d4c60fc70338b0d1d6d1bd75d296008708a748ccc960",
+      "id": "asset-c56f760f7cfab988387f5f1dddbb65c08d69b46701c58c9248ee8c806f731cad",
       "path": "contracts/go-document-api.md",
-      "bytes": 3578,
-      "sha256": "2660da7d8b07c61588c2d4c60fc70338b0d1d6d1bd75d296008708a748ccc960",
+      "bytes": 4697,
+      "sha256": "c56f760f7cfab988387f5f1dddbb65c08d69b46701c58c9248ee8c806f731cad",
       "role": "workflow-contract",
       "origins": [
         {

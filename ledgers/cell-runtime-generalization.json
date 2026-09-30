@@ -1,0 +1,366 @@
+{
+  "schemaVersion": 1,
+  "sourceRevision": "ee47f750184bf3dc0bc396632a5373f3d673b563",
+  "path": "workflows/docx/tables.feature",
+  "beforeText": "@planned\nFeature: Word tables and cell properties\n\n  Rule: DOCX native rectangular tables\n    Native DOCX table authoring and rectangular cell text updates use direct XML,\n    preserve unrelated package parts, and refuse unsafe table structures.\n\n    @id-docx-table-create-roundtrip\n    Scenario: DOCX table authoring round-trips escaped text, boundary spaces, and normalized newlines\n      Given DOCX table source \"new-document\" is prepared\n      When DOCX table 2x2 is appended\n      And DOCX table 1 cell (0,0) text is set to \"  <Alpha & Beta>  \"\n      And DOCX table 1 cell (1,1) text is set to \"line 1\\r\\nline 2\"\n      And DOCX table document is saved and reopened\n      Then DOCX table 1 has 2 rows and 2 columns\n      And DOCX table 1 cell (0,0) text equals \"  <Alpha & Beta>  \"\n      And DOCX table 1 cell (1,1) text equals \"line 1\\nline 2\"\n      And DOCX table 1 is stored before the section properties\n      And DOCX table 1 cell (0,0) XML preserves boundary spaces and escapes special characters\n\n    @id-docx-table-opaque-preserve\n    Scenario: DOCX table cell updates preserve opaque package parts after save and reopen\n      Given DOCX table source \"fixture-8192955ef935f09eb61a9fe6805d4996c811efcf54c0c966f52d983e38e0a79c\" is prepared\n      And DOCX table opaque part \"docProps/core.xml\" bytes are remembered\n      When DOCX table 1 cell (1,0) text is set to \"Voltaic battery\"\n      And DOCX table document is saved and reopened\n      Then DOCX table 1 has 4 rows and 3 columns\n      And DOCX table 1 cell (1,0) text equals \"Voltaic battery\"\n      And DOCX table opaque part \"docProps/core.xml\" bytes are unchanged\n\n    @id-docx-table-stale-cell\n    Scenario: DOCX table cell handles go stale after any document edit and refuse atomically\n      Given DOCX table source \"new-document\" is prepared\n      And DOCX table 1x1 is appended\n      And DOCX table 1 cell (0,0) is remembered\n      When DOCX table 1x1 is appended\n      And DOCX table current saved bytes are remembered\n      And DOCX table stale text set to \"stale write\" is attempted on the remembered cell\n      Then DOCX table refusal code equals \"docx-stale-table-cell\"\n      And DOCX table saved bytes equal the remembered bytes\n\n    @id-docx-table-atomic-refusals\n    Scenario Outline: DOCX table refuses <case> atomically\n      Given DOCX table source \"<source>\" is prepared\n      And DOCX table current saved bytes are remembered\n      When DOCX table refusal \"<case>\" is attempted\n      Then DOCX table refusal code equals \"<code>\"\n      And DOCX table saved bytes equal the remembered bytes\n\n      Examples:\n        | source                                                                                         | case        | code                         |\n        | fixture-8192955ef935f09eb61a9fe6805d4996c811efcf54c0c966f52d983e38e0a79c            | row-oob     | range                        |\n        | native-merged-nested  | merged-cell | docx-table-merged-cell       |\n        | native-merged-nested  | nested-cell | docx-table-cell-unsupported  |\n        | synthetic-grid-before                                                                          | bizarre     | docx-table-unsupported       |\n\n  Rule: Document value API and selected save-reopen predicates\n    The in-memory operations below check selected getters. Only scenarios that say\n    save and reopen assert disk readback. Getter names and return conventions are\n    API compatibility predicates, not general OOXML validity or rendering rules.\n\n    @profile-document-value-api @id-docx-go-table-dimensions-getters\n    Scenario Outline: A newly added <rows> by <cols> table reports its dimensions\n      Given a new Word document\n      When a table with <rows> rows and <cols> columns is added\n      Then RowCount equals <rows> and ColumnCount equals <cols> in memory\n      Examples:\n        | rows | cols |\n        | 1    | 1    |\n        | 1    | 5    |\n        | 5    | 1    |\n        | 2    | 2    |\n        | 3    | 3    |\n        | 5    | 5    |\n        | 10   | 3    |\n        | 3    | 10   |\n\n    @profile-nullable-cell-api @id-docx-go-table-cell-access\n    Scenario: A three-by-three table returns cells only at in-range coordinates\n      Given a new Word table with three rows and three columns\n      When its Cell getter is called for all nine coordinates from zero through two\n      Then each of those nine calls returns a nonnil cell\n      And calls for row or column negative one or three at the tested boundary coordinates return nil\n\n    @profile-document-value-api @id-docx-go-table-cell-text-getters\n    Scenario: A two-by-two table reads four assigned texts and its first row\n      Given a new Word table with two rows and two columns\n      When its cells are set by row to A1, B1, A2 and B2\n      Then the four cell text getters equal A1, B1, A2 and B2 in those positions\n      And FirstRowText returns exactly A1 and B1\n\n    @profile-document-value-api @id-docx-go-table-row-counts\n    Scenario: Adding, inserting and deleting rows changes table count in memory\n      Given a new Word table with two rows and three columns\n      When one row is appended, one is inserted at index one, and index one is deleted\n      Then row counts after each step are three, four and three respectively\n      And deletion at index ten returns an error\n\n    @profile-document-value-api @id-docx-go-table-merge-properties\n    Scenario: A cell span and two vertical-merge flags read back directly\n      Given a new Word table with three rows and four columns\n      When cell zero-zero gets GridSpan three and first-column rows one and two get restart and continue\n      Then GridSpan at zero-zero equals three\n      And VerticalMerge at row one is restart and at row two is continue\n\n    @profile-document-value-api @id-docx-go-table-style-getter\n    Scenario: A table style getter changes from empty to TableGrid\n      Given a new Word two-by-two table\n      When its style is read, then set to TableGrid and read again\n      Then the first style is empty and the second style is TableGrid\n\n    @profile-document-value-api @id-docx-go-table-header-getter\n    Scenario: A row header getter changes from false to true\n      Given the first row of a new Word three-by-two table\n      When IsHeader is read, SetHeader true is applied and IsHeader is read again\n      Then the first result is false and the second is true\n\n    @profile-document-value-api @id-docx-go-cell-shading-getter\n    Scenario: A cell shading getter reads direct colour FFFF00\n      Given cell zero-zero of a new Word two-by-two table\n      When its shading is set to FFFF00\n      Then its shading getter equals FFFF00\n\n    @profile-document-value-api @id-docx-go-cell-properties-getters\n    Scenario: A table cell reads selected width, alignment, direction and border presence\n      Given cell zero-zero of a new Word one-by-one table\n      When width is set to 2400 dxa, vertical alignment center and text direction tbRl\n      And a top border with single style, size eight and colour 000000 is assigned\n      Then width equals 2400, width type dxa, alignment center and direction tbRl\n      And the border collection and top border are nonnil\n\n    @profile-table-text-readback @id-docx-go-roundtrip-table-text\n    Scenario: Nine table cell texts survive save and reopen\n      Given a new Word table with three rows and three columns\n      And its cells contain Header1, Header2, Header3, A1, B1, C1, A2, B2 and C2 in row order\n      When the document is saved and reopened\n      Then exactly one table is readable\n      And all nine cell text getters equal their original row-order values\n",
+  "beforeSha256": "858a813b0f9ea0ac315ae1034057da288a510c638849f558f242d0ce4aa41f0d",
+  "afterSha256": "89446d3c98ce6ae75a7ff887f0964cf4cc0f4cfcca1f36edabf43762de353aae",
+  "retiredScenarioIds": [],
+  "executionCredit": false,
+  "scenarios": [
+    {
+      "id": "@id-docx-go-table-cell-access",
+      "before": [
+        {
+          "scenarioId": "@id-docx-go-table-cell-access",
+          "name": "A three-by-three table returns cells only at in-range coordinates",
+          "steps": [
+            {
+              "text": "a new Word table with three rows and three columns",
+              "argument": null
+            },
+            {
+              "text": "its Cell getter is called for all nine coordinates from zero through two",
+              "argument": null
+            },
+            {
+              "text": "each of those nine calls returns a nonnil cell",
+              "argument": null
+            },
+            {
+              "text": "calls for row or column negative one or three at the tested boundary coordinates return nil",
+              "argument": null
+            }
+          ]
+        }
+      ],
+      "after": [
+        {
+          "scenarioId": "@id-docx-go-table-cell-access",
+          "name": "A three-by-three table reports exact cell presence without out-of-range aliasing",
+          "steps": [
+            {
+              "text": "a new Word table has three rows and three columns with texts by row A1,B1,C1 then A2,B2,C2 then A3,B3,C3",
+              "argument": null
+            },
+            {
+              "text": "cells are looked up at these zero-based coordinates",
+              "argument": {
+                "dataTable": {
+                  "rows": [
+                    {
+                      "cells": [
+                        {
+                          "value": "row"
+                        },
+                        {
+                          "value": "column"
+                        },
+                        {
+                          "value": "present"
+                        },
+                        {
+                          "value": "text"
+                        }
+                      ]
+                    },
+                    {
+                      "cells": [
+                        {
+                          "value": "0"
+                        },
+                        {
+                          "value": "0"
+                        },
+                        {
+                          "value": "true"
+                        },
+                        {
+                          "value": "A1"
+                        }
+                      ]
+                    },
+                    {
+                      "cells": [
+                        {
+                          "value": "0"
+                        },
+                        {
+                          "value": "1"
+                        },
+                        {
+                          "value": "true"
+                        },
+                        {
+                          "value": "B1"
+                        }
+                      ]
+                    },
+                    {
+                      "cells": [
+                        {
+                          "value": "0"
+                        },
+                        {
+                          "value": "2"
+                        },
+                        {
+                          "value": "true"
+                        },
+                        {
+                          "value": "C1"
+                        }
+                      ]
+                    },
+                    {
+                      "cells": [
+                        {
+                          "value": "1"
+                        },
+                        {
+                          "value": "0"
+                        },
+                        {
+                          "value": "true"
+                        },
+                        {
+                          "value": "A2"
+                        }
+                      ]
+                    },
+                    {
+                      "cells": [
+                        {
+                          "value": "1"
+                        },
+                        {
+                          "value": "1"
+                        },
+                        {
+                          "value": "true"
+                        },
+                        {
+                          "value": "B2"
+                        }
+                      ]
+                    },
+                    {
+                      "cells": [
+                        {
+                          "value": "1"
+                        },
+                        {
+                          "value": "2"
+                        },
+                        {
+                          "value": "true"
+                        },
+                        {
+                          "value": "C2"
+                        }
+                      ]
+                    },
+                    {
+                      "cells": [
+                        {
+                          "value": "2"
+                        },
+                        {
+                          "value": "0"
+                        },
+                        {
+                          "value": "true"
+                        },
+                        {
+                          "value": "A3"
+                        }
+                      ]
+                    },
+                    {
+                      "cells": [
+                        {
+                          "value": "2"
+                        },
+                        {
+                          "value": "1"
+                        },
+                        {
+                          "value": "true"
+                        },
+                        {
+                          "value": "B3"
+                        }
+                      ]
+                    },
+                    {
+                      "cells": [
+                        {
+                          "value": "2"
+                        },
+                        {
+                          "value": "2"
+                        },
+                        {
+                          "value": "true"
+                        },
+                        {
+                          "value": "C3"
+                        }
+                      ]
+                    },
+                    {
+                      "cells": [
+                        {
+                          "value": "-1"
+                        },
+                        {
+                          "value": "0"
+                        },
+                        {
+                          "value": "false"
+                        },
+                        {
+                          "value": ""
+                        }
+                      ]
+                    },
+                    {
+                      "cells": [
+                        {
+                          "value": "0"
+                        },
+                        {
+                          "value": "-1"
+                        },
+                        {
+                          "value": "false"
+                        },
+                        {
+                          "value": ""
+                        }
+                      ]
+                    },
+                    {
+                      "cells": [
+                        {
+                          "value": "3"
+                        },
+                        {
+                          "value": "0"
+                        },
+                        {
+                          "value": "false"
+                        },
+                        {
+                          "value": ""
+                        }
+                      ]
+                    },
+                    {
+                      "cells": [
+                        {
+                          "value": "0"
+                        },
+                        {
+                          "value": "3"
+                        },
+                        {
+                          "value": "false"
+                        },
+                        {
+                          "value": ""
+                        }
+                      ]
+                    },
+                    {
+                      "cells": [
+                        {
+                          "value": "3"
+                        },
+                        {
+                          "value": "3"
+                        },
+                        {
+                          "value": "false"
+                        },
+                        {
+                          "value": ""
+                        }
+                      ]
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "text": "each lookup returns the listed presence and exact text without an exception",
+              "argument": null
+            },
+            {
+              "text": "the table still has three rows and three columns with its original texts and unchanged document XML",
+              "argument": null
+            }
+          ]
+        }
+      ],
+      "beforeProfiles": [
+        "@profile-nullable-cell-api"
+      ],
+      "afterProfiles": [
+        "@profile-bounded-cell-lookup"
+      ]
+    }
+  ],
+  "beforeLedgerRows": [
+    {
+      "id": "@id-docx-go-table-cell-access",
+      "feature": "workflows/docx/tables.feature",
+      "expandedCases": 1,
+      "factIds": [],
+      "expectedOutcomes": [
+        "each of those nine calls returns a nonnil cell",
+        "calls for row or column negative one or three at the tested boundary coordinates return nil"
+      ],
+      "consumers": {
+        "bun": {
+          "status": "implemented",
+          "evidence": "Bun 34ba675cd78e8fe44fce9c6ca91ca5b3b3b22d49 at shared v0.65.0 selects the exact four-step nullable cell case in features/shared.json and tests/acceptance/nullable-cell.ts. All nine in-range results are nonnil and four boundary calls return null; tests/unit/docx-nullable-cell.test.ts corrupts an in-range result and fabricates a nonnil boundary result to force failure. Fresh GitHub recursive make check passed 732/732 selected cases. Nullable API convention only, not general merged-cell semantics."
+        },
+        "go": {
+          "status": "implemented",
+          "evidence": "Go 7ffcec37a34a3cbc1aa7e12313fa966bb66aaa7c binds the exact four-step 3x3 cell-access case: all nine in-range coordinates nonnil and tested negative/three boundary coordinates nil. Missing/available-cell negative controls fail the predicates. Published Go 970296224e0c79758fbe2140113a34eeca80833f at shared v0.65.0 passed 329 selected cases/1126 steps/0 failures in a fresh GitHub recursive clone; reports/batches/188.md. Nullable API convention only, not general merged-cell semantics."
+        },
+        "python": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        }
+      }
+    }
+  ],
+  "afterLedgerRows": [
+    {
+      "id": "@id-docx-go-table-cell-access",
+      "feature": "workflows/docx/tables.feature",
+      "expandedCases": 1,
+      "factIds": [],
+      "expectedOutcomes": [
+        "each lookup returns the listed presence and exact text without an exception",
+        "the table still has three rows and three columns with its original texts and unchanged document XML"
+      ],
+      "consumers": {
+        "bun": {
+          "status": "planned",
+          "evidence": "Runtime-agnostic bounded cell presence/text/custody candidate supersedes nil/nonnil profile; original credit sealed in ledgers/cell-runtime-generalization.json. Requires exact native and shared receipts; no migration credit."
+        },
+        "go": {
+          "status": "planned",
+          "evidence": "Runtime-agnostic bounded cell presence/text/custody candidate supersedes nil/nonnil profile; original credit sealed in ledgers/cell-runtime-generalization.json. Requires exact native and shared receipts; no migration credit."
+        },
+        "python": {
+          "status": "planned",
+          "evidence": "Runtime-agnostic bounded cell presence/text/custody candidate supersedes nil/nonnil profile; original credit sealed in ledgers/cell-runtime-generalization.json. Requires exact native and shared receipts; no migration credit."
+        }
+      }
+    }
+  ]
+}

@@ -1,4 +1,4 @@
-import {historicalWorkflowLedger} from './xml-generalization-helpers.ts';
+import {historicalWorkflowLedger,historicalXmlFeature} from './xml-generalization-helpers.ts';
 const pythonPackageIds = new Set(['@id-package-admission-negative-budget','@id-zip-unsigned-descriptor-signature-collision']);
 const goXmlNegativeIds = new Set(['@id-xml-comparison-significant-content','@id-xml-comparison-prefix-attribute-binding','@id-xml-comparison-unsafe-input','@id-xml-comparison-processing-instructions-and-comments']);
 const goLatentPackageIds = new Set(['@id-package-admission-negative-budget','@id-zip-unsigned-descriptor-signature-collision']);
@@ -48,7 +48,7 @@ const specs=[
 test('Bun executes exact dimension, nullable cell, cell-text and row-count cases without Go or Python credit',async()=>{
  const registry=await historicalWorkflowLedger();
  const prior=JSON.parse(execFileSync('git',['show','0f0b56c6744c5ef7e6c5c5a8fd750da3f6227fc1:ledgers/workflows.json']).toString());
- const compiled=cases(path,await Bun.file(path).text());
+ const compiled=cases(path,historicalXmlFeature(path,await Bun.file(path).text()));
  for(const {id,steps} of specs){
   const entry=registry.workflows.find((w:any)=>w.id===id),former=prior.workflows.find((w:any)=>w.id===id);
   expect(entry.feature).toBe(path);expect(entry.expandedCases).toBe(steps.length);

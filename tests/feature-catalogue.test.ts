@@ -33,9 +33,9 @@ test('literal JavaScript and named error-class contracts remain runtime-specific
   expect(row('xml-go-child-namespace-matrix').category).toBe('profile-specific');
   expect(row('python-comments-filter-predicates').category).toBe('profile-specific');
   expect(row('xlsx-go-formula-quoted-sheet-flags').category).toBe('profile-specific');
-  expect(row('docx-go-table-cell-access').category).toBe('runtime-specific');
-  expect(row('docx-go-table-cell-access').runtimeConstraint).toBe('go-nil-api');
-  expect(row('docx-go-table-cell-access').reason).toContain('no language-neutral absence mapping');
+  expect(row('docx-go-table-cell-access').category).toBe('generalized');
+  expect(row('docx-go-table-cell-access').runtimeConstraint).toBe('none');
+  expect(row('docx-go-table-cell-access').reason).toContain('presence/absence');
 });
 test('weak analysis, broad obligations and unavailable Office positives cannot be labelled fully generalized', async () => {
   const {features} = await load(), rows = features.flatMap(f => f.rows);

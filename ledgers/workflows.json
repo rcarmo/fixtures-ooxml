@@ -4948,21 +4948,21 @@
       "expandedCases": 1,
       "factIds": [],
       "expectedOutcomes": [
-        "each of those nine calls returns a nonnil cell",
-        "calls for row or column negative one or three at the tested boundary coordinates return nil"
+        "each lookup returns the listed presence and exact text without an exception",
+        "the table still has three rows and three columns with its original texts and unchanged document XML"
       ],
       "consumers": {
         "bun": {
-          "status": "implemented",
-          "evidence": "Bun 34ba675cd78e8fe44fce9c6ca91ca5b3b3b22d49 at shared v0.65.0 selects the exact four-step nullable cell case in features/shared.json and tests/acceptance/nullable-cell.ts. All nine in-range results are nonnil and four boundary calls return null; tests/unit/docx-nullable-cell.test.ts corrupts an in-range result and fabricates a nonnil boundary result to force failure. Fresh GitHub recursive make check passed 732/732 selected cases. Nullable API convention only, not general merged-cell semantics."
+          "status": "planned",
+          "evidence": "Runtime-agnostic bounded cell presence/text/custody candidate supersedes nil/nonnil profile; original credit sealed in ledgers/cell-runtime-generalization.json. Requires exact native and shared receipts; no migration credit."
         },
         "go": {
-          "status": "implemented",
-          "evidence": "Go 7ffcec37a34a3cbc1aa7e12313fa966bb66aaa7c binds the exact four-step 3x3 cell-access case: all nine in-range coordinates nonnil and tested negative/three boundary coordinates nil. Missing/available-cell negative controls fail the predicates. Published Go 970296224e0c79758fbe2140113a34eeca80833f at shared v0.65.0 passed 329 selected cases/1126 steps/0 failures in a fresh GitHub recursive clone; reports/batches/188.md. Nullable API convention only, not general merged-cell semantics."
+          "status": "planned",
+          "evidence": "Runtime-agnostic bounded cell presence/text/custody candidate supersedes nil/nonnil profile; original credit sealed in ledgers/cell-runtime-generalization.json. Requires exact native and shared receipts; no migration credit."
         },
         "python": {
           "status": "planned",
-          "evidence": "Native execution binding pending"
+          "evidence": "Runtime-agnostic bounded cell presence/text/custody candidate supersedes nil/nonnil profile; original credit sealed in ledgers/cell-runtime-generalization.json. Requires exact native and shared receipts; no migration credit."
         }
       }
     },
