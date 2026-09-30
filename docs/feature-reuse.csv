@@ -49,7 +49,7 @@
 "canonical","package","workflows/package/admission-limit-configuration.feature","Package admission validates caller resource budgets","1","2","generalized","true","1","0","0","0","","See scenario-reuse.csv for all reasons"
 "canonical","package","workflows/package/data-descriptor-integrity.feature","ZIP data-descriptor integrity with ambiguous signature bytes","1","1","generalized","true","1","0","0","0","","See scenario-reuse.csv for all reasons"
 "canonical","package","workflows/package/graph.feature","Package relationship graph editing and payload differences","4","4","incomplete","false","0","0","0","4","","See scenario-reuse.csv for all reasons"
-"canonical","package","workflows/package/preservation.feature","OPC package custody, transactions and save destinations","10","14","mixed","false","6","0","2","2","javascript","See scenario-reuse.csv for all reasons"
+"canonical","package","workflows/package/preservation.feature","OPC package custody, transactions and save destinations","10","14","mixed","false","8","0","0","2","","See scenario-reuse.csv for all reasons"
 "canonical","package","workflows/package/relationship-namespaces.feature","Office relationship attributes use expanded XML names","2","4","incomplete","false","0","0","0","2","","See scenario-reuse.csv for all reasons"
 "canonical","package","workflows/package/semantic-diff.feature","Package diff separates equivalent XML from changed binary members","1","1","profile-specific","false","0","1","0","0","","See scenario-reuse.csv for all reasons"
 "canonical","package","workflows/package/xml-member-admission.feature","Package admission refuses DTD-bearing or malformed XML members","1","3","generalized","true","1","0","0","0","","See scenario-reuse.csv for all reasons"

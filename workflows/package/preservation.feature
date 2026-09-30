@@ -29,8 +29,8 @@ Feature: OPC package custody, transactions and save destinations
     The base package has three members, UTF-8 XML declarations and no extra payloads.
     Structured refusal reasons use the shared package-failure profile.
     Historical diagnostic fragments in Examples do not prescribe exception wording.
-    Async callbacks and thenable identity use a JavaScript-specific transaction
-    profile; these are API policies, not general OPC format requirements.
+    Explicit immediate/deferred execution and opaque results use a portable
+    transaction profile; these are API policies, not general OPC format requirements.
     Background:
       Given a ZIP contains word/document.xml with UTF-8 XML text <?xml version="1.0" encoding="UTF-8"?><document>Alpha</document>
       And its content types use namespace http://schemas.openxmlformats.org/package/2006/content-types
@@ -72,21 +72,21 @@ Feature: OPC package custody, transactions and save destinations
       Then the saved document member starts with hexadecimal bytes FF FE
       And decoding the member as UTF-16LE contains Beta and encoding="UTF-16"
 
-    @profile-javascript-sync-transactions @profile-ooxml-error-api @id-bun-opc-async-transaction-refusal
-    Scenario: Async callbacks are rejected before their body runs
+    @profile-portable-transactions @id-bun-opc-async-transaction-refusal
+    Scenario: Deferred transactions refuse before invoking the edit callback
       Given the package editor has opened the base archive bytes
-      When its transaction is called with an async callback that would replace Alpha with Beta and set a ran flag
-      Then it throws an OoxmlError with code opc-async-transaction
-      And the error message contains synchronous edits
+      When a deferred transaction is requested with a callback that would replace Alpha with Beta and set a ran flag
+      Then the transaction refuses with reason opc-deferred-transaction and no result
       And the ran flag is false and the document text still contains Alpha
+      And the current package archive and caller source bytes remain unchanged
 
-    @profile-javascript-sync-transactions @id-bun-opc-thenable-transaction-result
-    Scenario: A synchronous callback returns its thenable unchanged
+    @profile-portable-transactions @id-bun-opc-thenable-transaction-result
+    Scenario: An immediate transaction returns its opaque token without evaluating it
       Given the package editor has opened the base archive bytes
-      And a thenable object has a then function that throws if invoked
-      When a synchronous transaction replaces Alpha with Beta and returns that thenable object
-      Then the transaction returns the same object by identity without invoking then
-      And the document text contains Beta
+      And an opaque token has an evaluation hook that throws if invoked
+      When an immediate transaction replaces Alpha with Beta and returns that token
+      Then the returned token has the original identity and its evaluation count is zero
+      And saving and reopening reads Beta with every unrelated member payload unchanged
 
     @profile-package-refusal-reasons @id-bun-opc-save-invalid-target-custody
     Scenario: A failed validation leaves an existing output file untouched

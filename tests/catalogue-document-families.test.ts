@@ -9,7 +9,7 @@ test('Bun package API scenarios isolate callback semantics and exact destination
  expect(refusals.map(r=>r.steps.find(s=>s.text.startsWith('opening refuses'))!.text)).toEqual([
  'opening refuses with reason opc-part-name-invalid and no package result','opening refuses with reason opc-target-invalid and no package result','opening refuses with reason opc-content-types-invalid and no package result','opening refuses with reason opc-relationship-target-missing and no package result','opening refuses with reason opc-relationship-duplicate and no package result']);
  const thenable=rows.find(r=>r.scenarioId==='@id-bun-opc-thenable-transaction-result')!;
- expect(thenable.steps.map(s=>s.text)).toContain('the transaction returns the same object by identity without invoking then');
+ expect(thenable.steps.map(s=>s.text)).toContain('the returned token has the original identity and its evaluation count is zero');
  const mapping=await Bun.file('ledgers/consumers/bun-opc-custody.json').json();expect(mapping.declarationCount).toBe(9);
  expect(mapping.mappings.map((r:any)=>r.nativeId)).toEqual(mapping.sourceFiles[0].declarations);
  const corpus=mapping.mappings.find((r:any)=>r.nativeId.includes('every no-op fixture archive'));

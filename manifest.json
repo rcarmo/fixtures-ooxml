@@ -2844,10 +2844,10 @@
       "aliases": []
     },
     {
-      "id": "asset-8a03cf2c442ffaeebd6b1f49800d02dfdbc501fa51d55ef9dbc9cb6685afc79c",
+      "id": "asset-6fc82c265d78f16056a98a3303c430769ff66010a675444a466b71b9629367a4",
       "path": "contracts/bun-opc-custody.md",
-      "bytes": 2984,
-      "sha256": "8a03cf2c442ffaeebd6b1f49800d02dfdbc501fa51d55ef9dbc9cb6685afc79c",
+      "bytes": 4310,
+      "sha256": "6fc82c265d78f16056a98a3303c430769ff66010a675444a466b71b9629367a4",
       "role": "workflow-contract",
       "origins": [
         {
@@ -2954,10 +2954,10 @@
       "aliases": []
     },
     {
-      "id": "asset-b5d8b7930bbfea66482053c5a80874dcf1a7fd6bed3fa53ad45b36144737e27a",
+      "id": "asset-0232a5f99dbb48d2e03fbb36adf3e5b22b7f0da448d3046b4e90dcdcc2a4e90b",
       "path": "workflows/package/preservation.feature",
-      "bytes": 8057,
-      "sha256": "b5d8b7930bbfea66482053c5a80874dcf1a7fd6bed3fa53ad45b36144737e27a",
+      "bytes": 8141,
+      "sha256": "0232a5f99dbb48d2e03fbb36adf3e5b22b7f0da448d3046b4e90dcdcc2a4e90b",
       "role": "workflow",
       "origins": [
         {

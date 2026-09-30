@@ -1,7 +1,8 @@
 import xmlMigration from '../ledgers/xml-runtime-generalization.json';
 import cellMigration from '../ledgers/cell-runtime-generalization.json';
 import packageMigration from '../ledgers/package-runtime-generalization.json';
-const migrations = [xmlMigration, cellMigration, ...packageMigration.files];
+import transactionMigration from '../ledgers/transaction-runtime-generalization.json';
+const migrations = [xmlMigration, cellMigration, ...packageMigration.files, transactionMigration];
 const migration = {scenarios: migrations.flatMap(m=>m.scenarios), beforeLedgerRows: migrations.flatMap(m=>m.beforeLedgerRows), afterLedgerRows: migrations.flatMap(m=>m.afterLedgerRows)};
 import {cases} from '../scripts/verify.ts';
 const exact = (a: unknown, b: unknown) => JSON.stringify(a) === JSON.stringify(b);
@@ -19,7 +20,14 @@ export function beforeXmlGeneralizationTags(id: string, tags: string[]): string[
 }
 /** Reconstruct the old file only when the changed cases exactly match the reviewed
  * migration. Unknown predicate changes fail instead of being hidden by this helper. */
+export function beforeTransactionFeature(path: string, text: string): string {
+  if(path!==transactionMigration.path)return text;
+  for(const s of transactionMigration.scenarios)if(!exact(cases(path,text).filter(r=>r.scenarioId===s.id),s.after))throw Error('Unreviewed transaction predicates: '+s.id);
+  if(new Bun.CryptoHasher('sha256').update(text).digest('hex')!==transactionMigration.afterSha256)throw Error('Unreviewed transaction feature bytes');
+  return transactionMigration.beforeText;
+}
 export function historicalXmlFeature(path: string, text: string): string {
+  text=beforeTransactionFeature(path,text);
   const fileMigration = migrations.find(m=>m.path===path);
   if (!fileMigration) return text;
   for (const s of fileMigration.scenarios) {

@@ -117,7 +117,7 @@
     },
     {
       "path": "workflows/package/preservation.feature",
-      "reviewedSha256": "b5d8b7930bbfea66482053c5a80874dcf1a7fd6bed3fa53ad45b36144737e27a"
+      "reviewedSha256": "0232a5f99dbb48d2e03fbb36adf3e5b22b7f0da448d3046b4e90dcdcc2a4e90b"
     },
     {
       "path": "workflows/package/relationship-namespaces.feature",
@@ -2217,9 +2217,9 @@
     {
       "id": "@id-bun-opc-async-transaction-refusal",
       "feature": "workflows/package/preservation.feature",
-      "category": "runtime-specific",
-      "runtimeConstraint": "javascript",
-      "reason": "Async-function pre-body refusal or thenable object identity/non-invocation requires JavaScript callback semantics.",
+      "category": "generalized",
+      "runtimeConstraint": "none",
+      "reason": "Explicit deferred-mode pre-body refusal, immediate opaque-token identity/non-evaluation, and archive/readback custody are native-language-neutral; runtime async protocols remain supplemental safeguards.",
       "evidence": [
         "workflows/package/preservation.feature",
         "contracts/bun-opc-custody.md"
@@ -2228,9 +2228,9 @@
     {
       "id": "@id-bun-opc-thenable-transaction-result",
       "feature": "workflows/package/preservation.feature",
-      "category": "runtime-specific",
-      "runtimeConstraint": "javascript",
-      "reason": "Async-function pre-body refusal or thenable object identity/non-invocation requires JavaScript callback semantics.",
+      "category": "generalized",
+      "runtimeConstraint": "none",
+      "reason": "Explicit deferred-mode pre-body refusal, immediate opaque-token identity/non-evaluation, and archive/readback custody are native-language-neutral; runtime async protocols remain supplemental safeguards.",
       "evidence": [
         "workflows/package/preservation.feature",
         "contracts/bun-opc-custody.md"
@@ -3679,7 +3679,7 @@
     }
   ],
   "evidenceSha256": {
-    "contracts/bun-opc-custody.md": "8a03cf2c442ffaeebd6b1f49800d02dfdbc501fa51d55ef9dbc9cb6685afc79c",
+    "contracts/bun-opc-custody.md": "6fc82c265d78f16056a98a3303c430769ff66010a675444a466b71b9629367a4",
     "contracts/bun-pptx.md": "bf9612bc4d8507047bae164c5a74302486043ab7f79ef0abba5484f3c4e4379b",
     "contracts/bun-zip32-profile.md": "891b36e48ad4b83694cc345dc8243ccfae047b04f39f68befcdb949199a3a34c",
     "contracts/cell-style.md": "8926740dd9500b255229b863e7f244fed1f967211be00d8e4c4f0c63f967032b",
@@ -3742,7 +3742,7 @@
     "workflows/package/admission-limit-configuration.feature": "885083126a39d17a795609bbf5d2e273678b5d8613af9cafdc0fac46396adb8a",
     "workflows/package/data-descriptor-integrity.feature": "c0c855a3f4dd74e15fd59aa03572bb7f8c752544fd9bb64b6f082e14388c9370",
     "workflows/package/graph.feature": "953cab35e20019a234ed4d1aa2f1575a065f3c7768f74fb0a0269bf70b3c4d4e",
-    "workflows/package/preservation.feature": "b5d8b7930bbfea66482053c5a80874dcf1a7fd6bed3fa53ad45b36144737e27a",
+    "workflows/package/preservation.feature": "0232a5f99dbb48d2e03fbb36adf3e5b22b7f0da448d3046b4e90dcdcc2a4e90b",
     "workflows/package/relationship-namespaces.feature": "25a2b3fb3998a1f8efd9b2d7e8f5fe558517c7e852459ef56394bf5b0249610c",
     "workflows/package/semantic-diff.feature": "eebe822867a6f83d77351a0590dd81d7e929dc13f2d1add0bfcbbc44c5e90ca7",
     "workflows/package/xml-member-admission.feature": "19fa717632d689e7ff4e883fb2af3f31e018373dc79ddb78efecf7742ea14e91",

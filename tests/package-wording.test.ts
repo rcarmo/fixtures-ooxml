@@ -16,12 +16,12 @@ test('package wording allowlist retains all inputs refusal strings callbacks and
  const prior=await Bun.file('ledgers/runtime-wording-migration.json').json(),ids=[...prior.files,...m.files].flatMap((f:any)=>f.scenarios.map((r:any)=>r.id));expect(ids).toHaveLength(34);expect(new Set(ids).size).toBe(34);
 });
 test('API errors and callback results cannot be hidden by actor normalization',async()=>{
- const rows=cases(paths[0]!,await Bun.file(paths[0]!).text()),row=rows.find(r=>r.scenarioId==='@id-bun-opc-async-transaction-refusal')!,baseline=beforeWordingCase(row);
+ const rows=cases(paths[0]!,historicalXmlFeature(paths[0]!,await Bun.file(paths[0]!).text())),row=rows.find(r=>r.scenarioId==='@id-bun-opc-async-transaction-refusal')!,baseline=beforeWordingCase(row);
  for(const [a,b]of [['opc-async-transaction','wrong-code'],['ran flag is false','ran flag is true'],['OoxmlError','Error']]){const bad=structuredClone(row);for(const s of bad.steps)s.text=s.text.replace(a!,b!);expect(beforeWordingCase(bad)).not.toEqual(baseline);}
 });
 test('package and ZIP actors are portable while API-specific profiles remain explicit',async()=>{
  for(const path of paths){const text=await Bun.file(path).text();for(const row of cases(path,text))for(const step of row.steps)expect(step.text).not.toMatch(/\bBun\b/);expect(text).not.toMatch(/@profile-bun-/);}
  const custody=await Bun.file(paths[0]!).text(),zip=await Bun.file(paths[1]!).text();
- expect(custody).toContain('@profile-javascript-sync-transactions');expect(custody).toContain('@profile-ooxml-error-api');expect(custody).toContain('@profile-opc-byte-custody');expect(zip).toContain('@profile-zip32-refusal-reasons');
- expect(custody).toContain('it throws an OoxmlError with code');expect(zip).not.toContain('it throws an OoxmlError with code');expect(zip).toContain('reading refuses with reason');expect(custody).toContain('go-ooxml and python-office-mcp-server fixture corpora');
+ expect(custody).toContain('@profile-portable-transactions');expect(custody).not.toContain('@profile-ooxml-error-api');expect(custody).toContain('@profile-opc-byte-custody');expect(zip).toContain('@profile-zip32-refusal-reasons');
+ expect(custody).not.toContain('it throws an OoxmlError with code');expect(zip).not.toContain('it throws an OoxmlError with code');expect(zip).toContain('reading refuses with reason');expect(custody).toContain('go-ooxml and python-office-mcp-server fixture corpora');
 });

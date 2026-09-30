@@ -48,10 +48,10 @@ portable API profile; the scenario reason records the gap.
 | DOCX | 24 | 158 | 482 | 69 | 56 | 0 | 33 |
 | PPTX | 11 | 33 | 82 | 5 | 11 | 0 | 17 |
 | XLSX | 12 | 43 | 109 | 12 | 14 | 0 | 17 |
-| PACKAGE | 10 | 36 | 68 | 16 | 6 | 2 | 12 |
+| PACKAGE | 10 | 36 | 68 | 18 | 6 | 0 | 12 |
 | XML | 4 | 33 | 47 | 14 | 11 | 0 | 8 |
 | OFFICE | 1 | 1 | 3 | 0 | 0 | 0 | 1 |
-| ALL | 62 | 304 | 791 | 116 | 98 | 2 | 88 |
+| ALL | 62 | 304 | 791 | 118 | 98 | 0 | 88 |
 
 12 of 62 canonical feature files are fully generalized throughout.
 The remaining files contain profile-specific, runtime-specific or incomplete
@@ -664,8 +664,8 @@ OPC package custody, transactions and save destinations — **mixed**; fully gen
 | [@id-bun-opc-open-refusal](../workflows/package/preservation.feature#L46) | 5 | generalized | @profile-package-refusal-reasons | Concrete archive/envelope mutations, structured reason-specific refusals and exact caller/destination custody replace exception identity and diagnostic wording; native semantic limit mappings are explicit. [bun-opc-custody.md](../contracts/bun-opc-custody.md) |
 | [@id-bun-opc-detached-byte-copies](../workflows/package/preservation.feature#L60) | 1 | generalized | @profile-opc-byte-custody | Package-level no-op/rollback/custody outcomes do not depend on source-corpus runtime names. [bun-opc-custody.md](../contracts/bun-opc-custody.md) |
 | [@id-bun-opc-preserve-utf16le-edit](../workflows/package/preservation.feature#L68) | 1 | generalized | @profile-opc-byte-custody | Package-level no-op/rollback/custody outcomes do not depend on source-corpus runtime names. [bun-opc-custody.md](../contracts/bun-opc-custody.md) |
-| [@id-bun-opc-async-transaction-refusal](../workflows/package/preservation.feature#L76) | 1 | runtime-specific | @profile-javascript-sync-transactions, @profile-ooxml-error-api | Async-function pre-body refusal or thenable object identity/non-invocation requires JavaScript callback semantics. [bun-opc-custody.md](../contracts/bun-opc-custody.md) |
-| [@id-bun-opc-thenable-transaction-result](../workflows/package/preservation.feature#L84) | 1 | runtime-specific | @profile-javascript-sync-transactions | Async-function pre-body refusal or thenable object identity/non-invocation requires JavaScript callback semantics. [bun-opc-custody.md](../contracts/bun-opc-custody.md) |
+| [@id-bun-opc-async-transaction-refusal](../workflows/package/preservation.feature#L76) | 1 | generalized | @profile-portable-transactions | Explicit deferred-mode pre-body refusal, immediate opaque-token identity/non-evaluation, and archive/readback custody are native-language-neutral; runtime async protocols remain supplemental safeguards. [bun-opc-custody.md](../contracts/bun-opc-custody.md) |
+| [@id-bun-opc-thenable-transaction-result](../workflows/package/preservation.feature#L84) | 1 | generalized | @profile-portable-transactions | Explicit deferred-mode pre-body refusal, immediate opaque-token identity/non-evaluation, and archive/readback custody are native-language-neutral; runtime async protocols remain supplemental safeguards. [bun-opc-custody.md](../contracts/bun-opc-custody.md) |
 | [@id-bun-opc-save-invalid-target-custody](../workflows/package/preservation.feature#L92) | 1 | generalized | @profile-package-refusal-reasons | Concrete archive/envelope mutations, structured reason-specific refusals and exact caller/destination custody replace exception identity and diagnostic wording; native semantic limit mappings are explicit. [bun-opc-custody.md](../contracts/bun-opc-custody.md) |
 | [@id-bun-opc-symlink-destination-refusal](../workflows/package/preservation.feature#L101) | 1 | generalized | @profile-package-refusal-reasons | Concrete archive/envelope mutations, structured reason-specific refusals and exact caller/destination custody replace exception identity and diagnostic wording; native semantic limit mappings are explicit. [bun-opc-custody.md](../contracts/bun-opc-custody.md) |
 

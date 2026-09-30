@@ -19,8 +19,8 @@ test('literal JavaScript and named error-class contracts remain runtime-specific
   const {features} = await load();
   const rows = features.flatMap(f => f.rows), row = (id: string) => rows.find(r => r.id === '@id-' + id)!;
   for (const id of ['bun-opc-async-transaction-refusal', 'bun-opc-thenable-transaction-result']) {
-    expect(row(id).category).toBe('runtime-specific');
-    expect(row(id).runtimeConstraint).toBe('javascript');
+    expect(row(id).category).toBe('generalized');
+    expect(row(id).runtimeConstraint).toBe('none');
   }
   for (const id of ['bun-opc-open-refusal', 'bun-zip32-configured-bounds']) {
     expect(row(id).category).toBe('generalized');
@@ -58,8 +58,8 @@ test('new/duplicate/moved/unreviewed IDs and changed feature bytes fail closed',
   change(r => r.scenarios[0].category = 'unknown', 'Invalid reuse classification');
   change(r => r.scenarios[0].reason = '', 'Invalid reuse classification');
   change(r => r.features[0].reviewedSha256 = '0'.repeat(64), 'changed since reuse review');
-  const js = review.scenarios.findIndex((r: any) => r.id === '@id-bun-opc-thenable-transaction-result');
-  change(r => {r.scenarios[js].category = 'generalized'; r.scenarios[js].runtimeConstraint = 'none';}, 'JavaScript profile');
+  const first = review.scenarios.findIndex((r: any) => r.id === '@id-bun-opc-thenable-transaction-result');
+  change(r => {r.scenarios[first].category = 'runtime-specific'; r.scenarios[first].runtimeConstraint = 'none';}, 'Runtime classification mismatch');
   change(r => r.scenarios[0].runtimeConstraint = 'javascript', 'Runtime classification mismatch');
 });
 test('changing or dropping local classification evidence requires a new review', async () => {
