@@ -19,7 +19,7 @@ The catalogue retains 304 IDs / 791 cases and unchanged fixture bytes.
 | `@id-docx-go-table-cell-access` | 1 | 4 | passed | passed | passed |
 | `@id-bun-opc-open-refusal` | 5 | 45 | passed | passed | passed |
 | `@id-bun-opc-save-invalid-target-custody` | 1 | 11 | passed | passed | passed |
-| `@id-bun-opc-symlink-destination-refusal` | 1 | 13 | passed | passed | passed |
+| `@id-bun-opc-symlink-destination-refusal` | 1 | 12 | passed | passed | passed |
 | `@id-bun-zip32-reader-refusal` | 12 | 60 | passed | passed | passed |
 | `@id-bun-zip32-writer-refusal` | 2 | 8 | passed | passed | passed |
 | `@id-bun-zip32-configured-bounds` | 5 | 20 | passed | passed | passed |
