@@ -5464,8 +5464,8 @@
           "evidence": "Native execution binding pending"
         },
         "python": {
-          "status": "planned",
-          "evidence": "Native execution binding pending"
+          "status": "implemented",
+          "evidence": "Python published f74d17d40fd896c9bac68bec2c37a89fd70d2753 at shared v0.145.0 binds ONLY @id-python-comments-reply-root-resolution, one case/seven exact authored steps in workflows/docx/comments.feature through tests/docx_comments_reply_root/{cases,conftest,test_reply_root}.py and production WordAdvancedTools.tool_word_add_comment plus WordTools.tool_word_reply_to_comment/tool_word_resolve_comment/tool_word_get_comments. A saved DOCX receives a root comment and a distinct reply with w14:paraIdParent bound to the root; resolving the reply ID returns success and the original root comment ID. A fresh unfiltered read reports the root done true, reply done false, intact parent ID and the root w15:done 1. Independent controls resolve the root directly, refuse an unknown ID without publication, and select the second of two separate threads so first-root defaulting fails. Temporary wrong-target and wrong-state test mutations each failed the exact canonical case and were restored. Committed local and independent recursive full suites passed 1,466 tests with exact 7/7 case steps (four existing warnings); Python CI 36662921637 passed 3.10/3.12/3.13 and Windows CI 36662921784 succeeded. No complete-thread editor, auto-resolve, existing-extension refusal, sibling authored case, general DOCX/Office/PDF/OPC, Bun/Go or protected-checkout credit."
         }
       }
     },
