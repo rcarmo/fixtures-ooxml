@@ -1,72 +1,106 @@
-# Runtime generalization progress
+# Runtime generalization completed locally
 
-Three of the twelve runtime-specific scenario IDs have neutral contracts and
-verified Bun, Go and Python candidate bindings. Nine IDs still need work.
+All twelve formerly runtime-specific scenario IDs now have runtime-neutral
+contracts and passing Bun, Go and Python candidate bindings: **32 cases and
+195 compiled steps in each runtime**. No target ID remains runtime-specific in
+the reuse review. Runtime-specific native safeguards remain as supplemental tests.
 
-## XML batch — locally verified
+Verified shared candidate: `bb1ae7d8859963c1699fed45453f7d1ff2999222`.
+Manifest seal: `9d3ebdcfa686e04dcacc13bc11b062126135beb8bbd5046e47edc2f898b8212e`.
+The catalogue retains 304 IDs / 791 cases and unchanged fixture bytes.
 
-Shared candidate `ee47f750184bf3dc0bc396632a5373f3d673b563` retains all three IDs
-and exact XML inputs. It changes the observable outcomes from JavaScript
-prototype/freeze semantics and exception identity to literal attribute safety,
-same-model namespace snapshot isolation and documented malformed-XML failures.
-See [the contract](../contracts/xml-values.md) and
-[the migration](../ledgers/xml-runtime-generalization.json).
+## Exact shared results
 
-| Scenario ID | Cases / steps | Bun | Go | Python |
-|---|---:|---|---|---|
-| `@id-xml-prototype-safe-attributes` | 1 / 5 | passed | passed | passed |
-| `@id-xml-immutable-namespace-metadata` | 1 / 6 | passed | passed | passed |
-| `@id-xml-typed-parse-error` | 1 / 4 | passed | passed | passed |
+| Scenario ID | Cases | Compiled steps | Bun | Go | Python |
+|---|---:|---:|---|---|---|
+| `@id-xml-prototype-safe-attributes` | 1 | 5 | passed | passed | passed |
+| `@id-xml-immutable-namespace-metadata` | 1 | 6 | passed | passed | passed |
+| `@id-xml-typed-parse-error` | 1 | 4 | passed | passed | passed |
+| `@id-docx-go-table-cell-access` | 1 | 4 | passed | passed | passed |
+| `@id-bun-opc-open-refusal` | 5 | 45 | passed | passed | passed |
+| `@id-bun-opc-save-invalid-target-custody` | 1 | 11 | passed | passed | passed |
+| `@id-bun-opc-symlink-destination-refusal` | 1 | 13 | passed | passed | passed |
+| `@id-bun-zip32-reader-refusal` | 12 | 60 | passed | passed | passed |
+| `@id-bun-zip32-writer-refusal` | 2 | 8 | passed | passed | passed |
+| `@id-bun-zip32-configured-bounds` | 5 | 20 | passed | passed | passed |
+| `@id-bun-opc-async-transaction-refusal` | 1 | 10 | passed | passed | passed |
+| `@id-bun-opc-thenable-transaction-result` | 1 | 10 | passed | passed | passed |
+| **Total** | **32** | **195** | **passed** | **passed** | **passed** |
 
-Native local commits:
+Step totals include the five OPC-envelope Background steps in each relevant case.
+Each scenario selects the actual production API. No acceptance-only model,
+input-derived error classifier or weaker success/error predicate supplies credit.
 
-- Bun `f380fa44ed5933479c20847cc467de4f87e76a4a`.
-- Go `58f54e67cfc05a6634690b3aee0edf64fcdabf13`.
-- Python `3e949ad37d8f653efd525456a39ce81535215dee`, preserving its preceding
-  unpushed text-filter commit `01133dc`.
+## What changed
 
-The shared candidate is clean and sealed. All consumer gitlinks/default pins
-still select published v0.152.0 / `28e492f`. The shared execution ledger marks
-these three changed contracts planned until release adoption and fresh final
-receipts; historical execution is recorded separately. No push or tag occurred.
+- XML special-looking keys are ordinary data with exact values and unchanged
+  structure/source. Namespace metadata uses read-only or detached snapshots;
+  mutating a returned map cannot affect fresh reads from the same parsed model.
+  Malformed XML returns a documented machine-readable category, no partial
+  document and unchanged source; exception class spelling is not prescribed.
+- Cell lookup checks all nine distinct A1–C3 values and five explicit boundary
+  absences without exceptions or negative-index aliasing. Grid, texts and
+  document XML remain unchanged.
+- ZIP32 and OPC refusal reasons retain all 26 concrete input variants and budget
+  thresholds. Structured native reasons replace exception identity and diagnostic
+  text. Reads/writes deliver no partial results; caller entries/bytes, existing
+  destination and symlink target/link retain exact custody.
+- Transactions use explicit immediate/deferred modes. Deferred callbacks are
+  rejected before invocation. Immediate callbacks return their original opaque
+  token without evaluating/awaiting it; saved readback contains Beta and retains
+  every unrelated member. Callback/validation rollback and working-copy isolation
+  are checked independently.
 
-## Verification
+Historical IDs and input operands remain intact. The explicit
+[XML](../ledgers/xml-runtime-generalization.json),
+[cell](../ledgers/cell-runtime-generalization.json),
+[package](../ledgers/package-runtime-generalization.json) and
+[transaction](../ledgers/transaction-runtime-generalization.json) migrations retain
+old predicates and execution evidence. Stronger cases require fresh results;
+wording migration alone grants none.
 
-- Shared candidate: reference validation and 235 tests passed; 304 IDs / 791
-  cases and original fixture bytes retained.
-- Bun: default and explicit clean candidate `make check` passed; candidate
-  1,115 unit tests and 732 implemented acceptance cases. Scoped three-ID run
-  independently passed 3 cases / 15 steps.
-- Go: uncached root plus separate acceptance module passed for default
-  434 cases / 1,501 steps and candidate 437 / 1,516. Candidate's three selected
-  cases / 15 steps all passed.
-- Python: uncached default 1,489 passed / three candidate skips; explicit
-  candidate 1,494 passed. Four existing warnings in each full suite. Independent
-  scoped candidate review passed five tests, including 3 cases / 15 steps.
-- Native and binding fault controls rejected dropped literal attributes,
-  mutable namespace metadata and missing/wrong failure classification; code
-  was restored before green runs. Wrong candidate seals/identities fail closed.
+## Native commits and full gates
 
-Workspace evidence (local review records, outside distributed contracts):
+| Consumer | Final local commit | Published/default gate | Latest candidate gate |
+|---|---|---|---|
+| Bun | `3e57ea3fb73cdc5f6b35664d4b746296d2fbd623` | `make check` passed; 732 implemented acceptance cases | `make check`: 1,120 tests, 732/732 implemented acceptance; exact target 32/195 passed |
+| Go | `26b5d540f5e26151ebac049049086b1f9c5e3eee` | Uncached root + acceptance: 434 cases / 1,501 steps passed | Uncached root + acceptance: 465 cases / 1,692 steps passed; exact target 32/195 passed |
+| Python | `5574a2e9433a9d3384138733325c0f8a0f3daee4` | Uncached 1,489 passed, 9 candidate tests skipped; 30 clean provenance reports | Uncached 1,526 passed; 34 clean provenance reports; exact target 32/195 passed |
 
-- `/workspace/evidence/bun-xml-model-safety-ee47f75.json`
-- `/workspace/analysis/go-ooxml-batch1/full-candidate-report/`
-- `/workspace/analysis/go-ooxml-batch1/full-default-report/`
-- `/workspace/analysis/go-ooxml-batch1/acceptance-{classifier,namespace,literal-loss}-red.log`
-- `/workspace/evidence/python-xml-model-safety-ee47f75.json`
-- `/workspace/evidence/python-xml-model-{default,candidate}-20260930.log`
+Python retains four existing warnings in both full runs. Its preceding unpushed
+text-filter commit `01133dc` remains in history. The owner independently ran the
+four new Python lanes (37 tests passed) and inspected the exact Go report; Bun's
+owner run executed all twelve IDs together. Shared validation and 238 tests passed.
 
-## Remaining IDs
+Controls removed literal attributes, aliased namespace maps, suppressed failure
+categories, selected wrong/out-of-range cells, corrupted current XML, changed
+refusal reasons, bypassed source/destination validation, executed deferred
+callbacks, replaced/evaluated opaque tokens and mutated deferred archive state.
+Each selected fault failed; implementations were restored before final green
+runs. Secure DTD handling, malformed directory names, finite ZIP defaults,
+ASCII-only name folding and retained Go working-copy isolation were strengthened
+following source review. Invalid candidate identities/seals still fail closed.
 
-| Family | IDs | Work required |
-|---|---|---|
-| Nullable table cells | `@id-docx-go-table-cell-access` | Exact bounded cell presence/absence, native absence mapping and source custody |
-| OPC validation/save errors | `@id-bun-opc-open-refusal`, `@id-bun-opc-save-invalid-target-custody`, `@id-bun-opc-symlink-destination-refusal` | Runtime-neutral structured reasons, graph validation and safe destination handling |
-| ZIP32 reader/writer/budgets | `@id-bun-zip32-reader-refusal`, `@id-bun-zip32-writer-refusal`, `@id-bun-zip32-configured-bounds` | Distinct native failure reasons for all 19 example cases; strict ZIP geometry and writer/admission APIs |
-| Transactions | `@id-bun-opc-async-transaction-refusal`, `@id-bun-opc-thenable-transaction-result` | Deferred-operation pre-body refusal and opaque-result non-evaluation/identity with equivalent native APIs |
+## Local evidence
 
-Neutral wording alone does not close these gaps. Python's initial read-only
-survey found missing OPC graph-validation, symlink refusal and strict ZIP writer
-interfaces. It also found conflated ZIP refusal reasons. Those require production
-changes and exact controls before passing shared cases. Go's corresponding survey
-is pending. No unsupported operation receives migration credit.
+These paths are review records in the workspace, not distributed contract assets:
+
+- `/workspace/evidence/bun-all-runtime-generalized-bb1ae7d.json`
+- `/workspace/analysis/go-ooxml-transactions/full-candidate-report/`
+- `/workspace/analysis/go-ooxml-transactions/full-default-report/`
+- `/workspace/analysis/go-ooxml-transactions/full-{candidate,default}-final.log`
+- `/workspace/evidence/python-{xml-model-safety,docx-bounded-cell-lookup,package-value-reasons,opc-portable-transactions}-bb1ae7d.json`
+- `/workspace/evidence/python-opc-transactions-{candidate,default}-20260930.log`
+- Owner Python scoped receipt: `/workspace/evidence/python-transactions-owner-bb1ae7d.json`
+
+## Release state
+
+All four repositories retain this work in local commits. No push, tag or
+consumer pin change occurred. Default consumer gitlinks still select published
+v0.152.0 / `28e492f50979aaec6ab8d8d001cd9c37790e7fc6`. The shared execution ledger
+keeps the twelve changed contracts planned pending release adoption and final
+published receipts. The table above records local candidate success separately.
+The generated reuse catalogue now has 118 generalized, 98 profile-specific and
+88 incomplete IDs, with zero runtime-specific IDs among the canonical workflows.
+Unreviewed staging and unrelated incomplete/profile-specific contracts are outside
+this completed twelve-ID task.
