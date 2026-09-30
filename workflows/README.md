@@ -81,12 +81,12 @@ candidate file; those candidates are not canonical or presumed portable.
 | PACKAGE | [admission-limit-configuration.feature](package/admission-limit-configuration.feature) | 1 | 2 | generalized: 1 | yes |
 | PACKAGE | [data-descriptor-integrity.feature](package/data-descriptor-integrity.feature) | 1 | 1 | generalized: 1 | yes |
 | PACKAGE | [graph.feature](package/graph.feature) | 4 | 4 | incomplete: 4 | no |
-| PACKAGE | [preservation.feature](package/preservation.feature) | 10 | 14 | generalized: 3; runtime-specific: 5; incomplete: 2 | no |
+| PACKAGE | [preservation.feature](package/preservation.feature) | 10 | 14 | generalized: 6; runtime-specific: 2; incomplete: 2 | no |
 | PACKAGE | [relationship-namespaces.feature](package/relationship-namespaces.feature) | 2 | 4 | incomplete: 2 | no |
 | PACKAGE | [semantic-diff.feature](package/semantic-diff.feature) | 1 | 1 | profile-specific: 1 | no |
 | PACKAGE | [xml-member-admission.feature](package/xml-member-admission.feature) | 1 | 3 | generalized: 1 | yes |
 | PACKAGE | [zip-admission.feature](package/zip-admission.feature) | 4 | 11 | generalized: 3; profile-specific: 1 | no |
-| PACKAGE | [zip32.feature](package/zip32.feature) | 8 | 24 | generalized: 1; profile-specific: 1; runtime-specific: 3; incomplete: 3 | no |
+| PACKAGE | [zip32.feature](package/zip32.feature) | 8 | 24 | generalized: 4; profile-specific: 1; incomplete: 3 | no |
 | PACKAGE | [zip64.feature](package/zip64.feature) | 4 | 4 | profile-specific: 3; incomplete: 1 | no |
 
 ## XML

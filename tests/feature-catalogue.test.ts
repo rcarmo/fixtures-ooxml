@@ -23,8 +23,8 @@ test('literal JavaScript and named error-class contracts remain runtime-specific
     expect(row(id).runtimeConstraint).toBe('javascript');
   }
   for (const id of ['bun-opc-open-refusal', 'bun-zip32-configured-bounds']) {
-    expect(row(id).category).toBe('runtime-specific');
-    expect(row(id).runtimeConstraint).toBe('bun-error-api');
+    expect(row(id).category).toBe('generalized');
+    expect(row(id).runtimeConstraint).toBe('none');
   }
   for (const id of ['xml-prototype-safe-attributes', 'xml-immutable-namespace-metadata', 'xml-typed-parse-error']) {
     expect(row(id).category).toBe('generalized'); expect(row(id).runtimeConstraint).toBe('none');

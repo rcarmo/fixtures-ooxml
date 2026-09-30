@@ -6,8 +6,8 @@ test('Bun package API scenarios isolate callback semantics and exact destination
  const p='workflows/package/preservation.feature',rows=await sourceCases(p,'workflows/package/bun-opc-custody.feature');
  expect(rows).toHaveLength(11);expect(new Set(rows.map(r=>r.scenarioId)).size).toBe(7);
  const refusals=rows.filter(r=>r.scenarioId==='@id-bun-opc-open-refusal');expect(refusals).toHaveLength(5);
- expect(refusals.map(r=>r.steps.find(s=>s.text.startsWith('it throws'))!.text)).toEqual([
- 'it throws an OoxmlError with code opc-part-name-invalid','it throws an OoxmlError with code opc-target-invalid','it throws an OoxmlError with code opc-content-types-invalid','it throws an OoxmlError with code opc-relationship-target-missing','it throws an OoxmlError with code opc-relationship-duplicate']);
+ expect(refusals.map(r=>r.steps.find(s=>s.text.startsWith('opening refuses'))!.text)).toEqual([
+ 'opening refuses with reason opc-part-name-invalid and no package result','opening refuses with reason opc-target-invalid and no package result','opening refuses with reason opc-content-types-invalid and no package result','opening refuses with reason opc-relationship-target-missing and no package result','opening refuses with reason opc-relationship-duplicate and no package result']);
  const thenable=rows.find(r=>r.scenarioId==='@id-bun-opc-thenable-transaction-result')!;
  expect(thenable.steps.map(s=>s.text)).toContain('the transaction returns the same object by identity without invoking then');
  const mapping=await Bun.file('ledgers/consumers/bun-opc-custody.json').json();expect(mapping.declarationCount).toBe(9);

@@ -41,10 +41,10 @@ Feature: ZIP32 reading, writing and bounded admission
       And names are emitted with the UTF-8 ZIP flag
       And writer input that would collide by ASCII case is refused
 
-  Rule: ZIP32 checksums and typed refusal policy
-    Exact OoxmlError, code/message strings and resource-option names belong to
-    the ZIP32 error API profile. They are compatibility policies, not ZIP format
-    requirements. CRC32 uses the standard check vector without an API profile.
+  Rule: ZIP32 checksums and structured refusal policy
+    Machine-readable refusal reasons and resource semantics belong to the shared
+    ZIP32 admission profile. Bindings map the named limits to native options;
+    exception class names, diagnostic wording and native option spellings vary. CRC32 uses the standard check vector without an API profile.
     Valid reading and deterministic writing use the existing ZIP32 workflow.
     Unless overridden, reader samples use UTF-8 names, raw DEFLATE and one disk.
     CRCs, sizes, offsets and directory records agree except for the named mutation.
@@ -55,13 +55,13 @@ Feature: ZIP32 reading, writing and bounded admission
       When its ZIP CRC32 is calculated
       Then the unsigned checksum equals hexadecimal CBF43926
 
-    @profile-zip32-error-api @id-bun-zip32-reader-refusal
-    Scenario Outline: Refuse <variant> with the documented error
+    @profile-zip32-refusal-reasons @id-bun-zip32-reader-refusal
+    Scenario Outline: Refuse <variant> with its structured ZIP32 reason
       Given a ZIP32 reader sample with these ordered member and payload pairs encoded as JSON <entries_json>
       And the sample has the mutation <mutation>
       When the ZIP reader reads the sample with default limits
-      Then it throws an OoxmlError with code <code>
-      And the error message contains <message>
+      Then reading refuses with reason <code> and no member payload result
+      And the caller's original archive bytes remain unchanged
       Examples:
         | variant                  | entries_json                                                        | mutation                                                    | code                        | message                  |
         | duplicate names          | [["word/document.xml","one"],["word/document.xml","two"]]           | none                                                        | zip-duplicate-entry         | duplicate ZIP member     |
@@ -77,23 +77,23 @@ Feature: ZIP32 reading, writing and bounded admission
         | deflate size overrun     | [["word/document.xml","A"]]                                         | payload repeats A 4096 times but both expanded sizes are 32  | zip-size-mismatch           | declared size            |
         | undeclared trailing byte | [["word/document.xml","x"]]                                         | a newline byte follows the complete uncommented archive     | zip-end-record-missing      | end-of-central-directory |
 
-    @profile-zip32-error-api @id-bun-zip32-writer-refusal
+    @profile-zip32-refusal-reasons @id-bun-zip32-writer-refusal
     Scenario Outline: Refuse <variant> before returning an archive
       Given ordered writer entries are encoded as JSON <entries_json>
       When the ZIP writer writes the entries with default options
-      Then it throws an OoxmlError with code <code>
-      And the error message contains <message>
+      Then writing refuses with reason <code> and no archive result
+      And the ordered caller entry names and payload bytes remain unchanged
       Examples:
         | variant                   | entries_json                                              | code                        | message             |
         | ASCII case collision      | [["word/document.xml","one"],["WORD/document.xml","two"]] | zip-case-collision          | ASCII case-collides |
         | non-empty directory entry | [["word/","not empty"]]                                  | zip-directory-entry-invalid | must be empty       |
 
-    @profile-zip32-error-api @id-bun-zip32-configured-bounds
+    @profile-zip32-refusal-reasons @id-bun-zip32-configured-bounds
     Scenario Outline: Refuse the configured <limit> threshold
       Given a raw-DEFLATE ZIP32 archive contains a.bin with 4096 A bytes followed by b.bin with two b bytes
       When the ZIP reader reads the archive with only <limit> set to <value>
-      Then it throws an OoxmlError with code <code>
-      And the error message contains <message>
+      Then reading refuses with reason <code> and no member payload result
+      And the caller's original archive bytes remain unchanged
       Examples:
         | limit               | value                      | code                           | message         |
         | maxArchiveBytes     | archive byte length minus 1 | zip-archive-too-large          | archive bytes   |

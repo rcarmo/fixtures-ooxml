@@ -3856,41 +3856,31 @@
       "expandedCases": 12,
       "factIds": [],
       "expectedOutcomes": [
-        "it throws an OoxmlError with code zip-duplicate-entry",
-        "the error message contains duplicate ZIP member",
-        "it throws an OoxmlError with code zip-case-collision",
-        "the error message contains ASCII case-collides",
-        "it throws an OoxmlError with code zip-name-invalid",
-        "the error message contains noncanonical",
-        "it throws an OoxmlError with code zip-encryption-unsupported",
-        "the error message contains encrypted",
-        "it throws an OoxmlError with code zip-method-unsupported",
-        "the error message contains compression method",
-        "it throws an OoxmlError with code zip-multi-disk-unsupported",
-        "the error message contains multi-disk",
-        "it throws an OoxmlError with code zip-structure-invalid",
-        "the error message contains ZIP64",
-        "it throws an OoxmlError with code zip-local-metadata-mismatch",
-        "the error message contains local and central",
-        "it throws an OoxmlError with code zip-crc-mismatch",
-        "the error message contains CRC",
-        "it throws an OoxmlError with code zip-size-mismatch",
-        "the error message contains declared size",
-        "it throws an OoxmlError with code zip-end-record-missing",
-        "the error message contains end-of-central-directory"
+        "reading refuses with reason zip-duplicate-entry and no member payload result",
+        "the caller's original archive bytes remain unchanged",
+        "reading refuses with reason zip-case-collision and no member payload result",
+        "reading refuses with reason zip-name-invalid and no member payload result",
+        "reading refuses with reason zip-encryption-unsupported and no member payload result",
+        "reading refuses with reason zip-method-unsupported and no member payload result",
+        "reading refuses with reason zip-multi-disk-unsupported and no member payload result",
+        "reading refuses with reason zip-structure-invalid and no member payload result",
+        "reading refuses with reason zip-local-metadata-mismatch and no member payload result",
+        "reading refuses with reason zip-crc-mismatch and no member payload result",
+        "reading refuses with reason zip-size-mismatch and no member payload result",
+        "reading refuses with reason zip-end-record-missing and no member payload result"
       ],
       "consumers": {
         "bun": {
-          "status": "implemented",
-          "evidence": "Bun 870b697dba4dba1cd89187a6308912674943273e at shared v0.82.0 executes twelve exact five-step ZIP32 reader rows with ordered member names and specified local, central or end-record mutations; readZip rejects each with its exact typed OoxmlError code and message fragment rather than accepting it, and does not mutate the caller's archive bytes. features/shared.json and tests/acceptance/zip32.ts bind the exact shared rows; tests/unit/zip32-bindings.test.ts selects four scenarios (20 cases/91 steps) and wrong checksum, code, message, fabricated success, untyped error and caller-buffer mutation controls fail. Fresh GitHub recursive make check passed 732/732 selected cases. No Go/Python or ZIP64/general OPC credit."
+          "status": "planned",
+          "evidence": "Structured runtime-neutral OPC/ZIP32 reason and custody candidate supersedes literal exception-class/message profile; historical credit retained in ledgers/package-runtime-generalization.json. Requires exact native cases and discriminators; no migration credit."
         },
         "go": {
           "status": "planned",
-          "evidence": "Native execution binding pending"
+          "evidence": "Structured runtime-neutral OPC/ZIP32 reason and custody candidate supersedes literal exception-class/message profile; historical credit retained in ledgers/package-runtime-generalization.json. Requires exact native cases and discriminators; no migration credit."
         },
         "python": {
           "status": "planned",
-          "evidence": "Native execution binding pending"
+          "evidence": "Structured runtime-neutral OPC/ZIP32 reason and custody candidate supersedes literal exception-class/message profile; historical credit retained in ledgers/package-runtime-generalization.json. Requires exact native cases and discriminators; no migration credit."
         }
       }
     },
@@ -3900,23 +3890,22 @@
       "expandedCases": 2,
       "factIds": [],
       "expectedOutcomes": [
-        "it throws an OoxmlError with code zip-case-collision",
-        "the error message contains ASCII case-collides",
-        "it throws an OoxmlError with code zip-directory-entry-invalid",
-        "the error message contains must be empty"
+        "writing refuses with reason zip-case-collision and no archive result",
+        "the ordered caller entry names and payload bytes remain unchanged",
+        "writing refuses with reason zip-directory-entry-invalid and no archive result"
       ],
       "consumers": {
         "bun": {
-          "status": "implemented",
-          "evidence": "Bun 870b697dba4dba1cd89187a6308912674943273e at shared v0.82.0 executes two exact four-step ZIP32 writer rows rejecting ASCII case-colliding member names and a non-empty directory entry with distinct typed codes/messages while retaining input entries. features/shared.json and tests/acceptance/zip32.ts bind the exact shared rows; tests/unit/zip32-bindings.test.ts selects four scenarios (20 cases/91 steps) and wrong checksum, code, message, fabricated success, untyped error and caller-buffer mutation controls fail. Fresh GitHub recursive make check passed 732/732 selected cases. No Go/Python or ZIP64/general OPC credit."
+          "status": "planned",
+          "evidence": "Structured runtime-neutral OPC/ZIP32 reason and custody candidate supersedes literal exception-class/message profile; historical credit retained in ledgers/package-runtime-generalization.json. Requires exact native cases and discriminators; no migration credit."
         },
         "go": {
           "status": "planned",
-          "evidence": "Native execution binding pending"
+          "evidence": "Structured runtime-neutral OPC/ZIP32 reason and custody candidate supersedes literal exception-class/message profile; historical credit retained in ledgers/package-runtime-generalization.json. Requires exact native cases and discriminators; no migration credit."
         },
         "python": {
           "status": "planned",
-          "evidence": "Native execution binding pending"
+          "evidence": "Structured runtime-neutral OPC/ZIP32 reason and custody candidate supersedes literal exception-class/message profile; historical credit retained in ledgers/package-runtime-generalization.json. Requires exact native cases and discriminators; no migration credit."
         }
       }
     },
@@ -3926,28 +3915,25 @@
       "expandedCases": 5,
       "factIds": [],
       "expectedOutcomes": [
-        "it throws an OoxmlError with code zip-archive-too-large",
-        "the error message contains archive bytes",
-        "it throws an OoxmlError with code zip-too-many-entries",
-        "the error message contains entry limit",
-        "it throws an OoxmlError with code zip-entry-too-large",
-        "it throws an OoxmlError with code zip-total-too-large",
-        "the error message contains total expanded",
-        "it throws an OoxmlError with code zip-compression-ratio-exceeded",
-        "the error message contains compression ratio"
+        "reading refuses with reason zip-archive-too-large and no member payload result",
+        "the caller's original archive bytes remain unchanged",
+        "reading refuses with reason zip-too-many-entries and no member payload result",
+        "reading refuses with reason zip-entry-too-large and no member payload result",
+        "reading refuses with reason zip-total-too-large and no member payload result",
+        "reading refuses with reason zip-compression-ratio-exceeded and no member payload result"
       ],
       "consumers": {
         "bun": {
-          "status": "implemented",
-          "evidence": "Bun 870b697dba4dba1cd89187a6308912674943273e at shared v0.82.0 executes five exact four-step ZIP32 bounds rows after separately admitting the unbounded two-entry archive, then rejecting each configured archive-byte, entry-count, entry-byte, total-byte or ratio limit with its specified typed code and message fragment without mutating the caller's archive bytes. features/shared.json and tests/acceptance/zip32.ts bind the exact shared rows; tests/unit/zip32-bindings.test.ts selects four scenarios (20 cases/91 steps) and wrong checksum, code, message, fabricated success, untyped error and caller-buffer mutation controls fail. Fresh GitHub recursive make check passed 732/732 selected cases. No Go/Python or ZIP64/general OPC credit."
+          "status": "planned",
+          "evidence": "Structured runtime-neutral OPC/ZIP32 reason and custody candidate supersedes literal exception-class/message profile; historical credit retained in ledgers/package-runtime-generalization.json. Requires exact native cases and discriminators; no migration credit."
         },
         "go": {
           "status": "planned",
-          "evidence": "Native execution binding pending"
+          "evidence": "Structured runtime-neutral OPC/ZIP32 reason and custody candidate supersedes literal exception-class/message profile; historical credit retained in ledgers/package-runtime-generalization.json. Requires exact native cases and discriminators; no migration credit."
         },
         "python": {
           "status": "planned",
-          "evidence": "Native execution binding pending"
+          "evidence": "Structured runtime-neutral OPC/ZIP32 reason and custody candidate supersedes literal exception-class/message profile; historical credit retained in ledgers/package-runtime-generalization.json. Requires exact native cases and discriminators; no migration credit."
         }
       }
     },
@@ -4356,29 +4342,25 @@
       "expandedCases": 5,
       "factIds": [],
       "expectedOutcomes": [
-        "it throws an OoxmlError with code opc-part-name-invalid",
-        "the error message contains Noncanonical part name",
-        "it throws an OoxmlError with code opc-target-invalid",
-        "the error message contains Percent-encoded",
-        "it throws an OoxmlError with code opc-content-types-invalid",
-        "the error message contains Duplicate/missing default extension",
-        "it throws an OoxmlError with code opc-relationship-target-missing",
-        "the error message contains Missing target",
-        "it throws an OoxmlError with code opc-relationship-duplicate",
-        "the error message contains Duplicate relationship id"
+        "opening refuses with reason opc-part-name-invalid and no package result",
+        "the caller's original archive bytes remain unchanged",
+        "opening refuses with reason opc-target-invalid and no package result",
+        "opening refuses with reason opc-content-types-invalid and no package result",
+        "opening refuses with reason opc-relationship-target-missing and no package result",
+        "opening refuses with reason opc-relationship-duplicate and no package result"
       ],
       "consumers": {
         "bun": {
-          "status": "implemented",
-          "evidence": "Bun d71b9b673304b7437a6d5ce9c745ce42ab23792a at shared v0.89.0 executes Five exact nine-step OPC open refusals: noncanonical part name, percent-encoded relationship target, duplicate/missing default content type, missing relationship target and duplicate relationship ID each return the specified typed OoxmlError code/message without a package result. The unit binding test independently inspects ordered ZIP member and XML background mutations. features/shared.json, tests/acceptance/opc-custody.ts, tests/acceptance/refusal-outcomes.ts and tests/unit/opc-custody-bindings.test.ts execute eleven exact cases/108 compiled steps across seven IDs, with mutation controls for error codes, messages, byte custody, callback flags, thenable identity, saved members and destination/symlink integrity plus temporary-file cleanup. Fresh post-push GitHub recursive make check passed 732/732 selected cases; Bun CI 36524662142 succeeded. No Go/Python, Office schema/rendering, other OPC profiles or cross-consumer credit."
+          "status": "planned",
+          "evidence": "Structured runtime-neutral OPC/ZIP32 reason and custody candidate supersedes literal exception-class/message profile; historical credit retained in ledgers/package-runtime-generalization.json. Requires exact native cases and discriminators; no migration credit."
         },
         "go": {
           "status": "planned",
-          "evidence": "Native execution binding pending"
+          "evidence": "Structured runtime-neutral OPC/ZIP32 reason and custody candidate supersedes literal exception-class/message profile; historical credit retained in ledgers/package-runtime-generalization.json. Requires exact native cases and discriminators; no migration credit."
         },
         "python": {
           "status": "planned",
-          "evidence": "Native execution binding pending"
+          "evidence": "Structured runtime-neutral OPC/ZIP32 reason and custody candidate supersedes literal exception-class/message profile; historical credit retained in ledgers/package-runtime-generalization.json. Requires exact native cases and discriminators; no migration credit."
         }
       }
     },
@@ -4485,22 +4467,22 @@
       "expandedCases": 1,
       "factIds": [],
       "expectedOutcomes": [
-        "it throws an OoxmlError with code opc-relationship-target-missing",
-        "the error message contains Missing target",
+        "saving refuses with reason opc-relationship-target-missing before destination replacement",
+        "no successful save receipt is returned",
         "the destination file bytes equal the original archive bytes"
       ],
       "consumers": {
         "bun": {
-          "status": "implemented",
-          "evidence": "Bun d71b9b673304b7437a6d5ce9c745ce42ab23792a at shared v0.89.0 executes One exact eleven-step save case deletes the relationship target in memory; validation returns typed opc-relationship-target-missing with Missing target message, while an existing destination file still contains the original package bytes after failure. features/shared.json, tests/acceptance/opc-custody.ts, tests/acceptance/refusal-outcomes.ts and tests/unit/opc-custody-bindings.test.ts execute eleven exact cases/108 compiled steps across seven IDs, with mutation controls for error codes, messages, byte custody, callback flags, thenable identity, saved members and destination/symlink integrity plus temporary-file cleanup. Fresh post-push GitHub recursive make check passed 732/732 selected cases; Bun CI 36524662142 succeeded. No Go/Python, Office schema/rendering, other OPC profiles or cross-consumer credit."
+          "status": "planned",
+          "evidence": "Structured runtime-neutral OPC/ZIP32 reason and custody candidate supersedes literal exception-class/message profile; historical credit retained in ledgers/package-runtime-generalization.json. Requires exact native cases and discriminators; no migration credit."
         },
         "go": {
           "status": "planned",
-          "evidence": "Native execution binding pending"
+          "evidence": "Structured runtime-neutral OPC/ZIP32 reason and custody candidate supersedes literal exception-class/message profile; historical credit retained in ledgers/package-runtime-generalization.json. Requires exact native cases and discriminators; no migration credit."
         },
         "python": {
           "status": "planned",
-          "evidence": "Native execution binding pending"
+          "evidence": "Structured runtime-neutral OPC/ZIP32 reason and custody candidate supersedes literal exception-class/message profile; historical credit retained in ledgers/package-runtime-generalization.json. Requires exact native cases and discriminators; no migration credit."
         }
       }
     },
@@ -4510,22 +4492,22 @@
       "expandedCases": 1,
       "factIds": [],
       "expectedOutcomes": [
-        "it throws an OoxmlError with code opc-symlink-destination",
-        "the error message contains Symlink",
+        "saving refuses with reason opc-symlink-destination before destination replacement",
+        "the symlink still points to the original regular destination without a successful save receipt",
         "the regular destination file bytes equal the original archive bytes"
       ],
       "consumers": {
         "bun": {
-          "status": "implemented",
-          "evidence": "Bun d71b9b673304b7437a6d5ce9c745ce42ab23792a at shared v0.89.0 executes One exact twelve-step save case refuses a symlink destination with typed opc-symlink-destination and Symlink message while the regular target file and symlink identity/target remain unchanged. features/shared.json, tests/acceptance/opc-custody.ts, tests/acceptance/refusal-outcomes.ts and tests/unit/opc-custody-bindings.test.ts execute eleven exact cases/108 compiled steps across seven IDs, with mutation controls for error codes, messages, byte custody, callback flags, thenable identity, saved members and destination/symlink integrity plus temporary-file cleanup. Fresh post-push GitHub recursive make check passed 732/732 selected cases; Bun CI 36524662142 succeeded. No Go/Python, Office schema/rendering, other OPC profiles or cross-consumer credit."
+          "status": "planned",
+          "evidence": "Structured runtime-neutral OPC/ZIP32 reason and custody candidate supersedes literal exception-class/message profile; historical credit retained in ledgers/package-runtime-generalization.json. Requires exact native cases and discriminators; no migration credit."
         },
         "go": {
           "status": "planned",
-          "evidence": "Native execution binding pending"
+          "evidence": "Structured runtime-neutral OPC/ZIP32 reason and custody candidate supersedes literal exception-class/message profile; historical credit retained in ledgers/package-runtime-generalization.json. Requires exact native cases and discriminators; no migration credit."
         },
         "python": {
           "status": "planned",
-          "evidence": "Native execution binding pending"
+          "evidence": "Structured runtime-neutral OPC/ZIP32 reason and custody candidate supersedes literal exception-class/message profile; historical credit retained in ledgers/package-runtime-generalization.json. Requires exact native cases and discriminators; no migration credit."
         }
       }
     },

@@ -1,0 +1,2816 @@
+{
+  "schemaVersion": 1,
+  "sourceRevision": "e8d54150c8836fcf04526e02f15588509b5739d8",
+  "executionCredit": false,
+  "retiredScenarioIds": [],
+  "files": [
+    {
+      "path": "workflows/package/preservation.feature",
+      "beforeText": "@planned\nFeature: OPC package custody, transactions and save destinations\n\n  Rule: OPC package custody and transactional part edits\n    The shared OPC layer preserves whole-archive bytes on no-op saves, rolls back\n    failed transactional edits, and keeps unrelated payload bytes opaque.\n    @id-opc-package-corpus-noop\n    Scenario: Opening and reopening the fixture corpora without edits preserves whole archives\n      Given the go-ooxml and python-office-mcp-server fixture corpora are enumerated\n      When each OOXML fixture package is opened and serialized without edits through the OPC layer\n      Then every reopened package matches its original whole-archive bytes\n      And both fixture corpora contribute their exact known nonzero fixture counts\n\n    @id-opc-package-transaction-rollback\n    Scenario: A failed transactional edit rolls back every changed part\n      Given a valid OPC package with XML and opaque payload parts\n      When a transactional edit changes multiple parts and then fails\n      Then the package reverts to the original bytes and parts after the refusal\n\n    @id-opc-package-preserve-unrelated\n    Scenario: Changing one part preserves unrelated payload after reopen\n      Given a valid OPC package with a main XML part and an unrelated binary payload\n      When the main XML part text is changed and the package is reopened\n      Then the edited part contains the new text after reopen\n      And the unrelated payload bytes remain unchanged\n\n  Rule: OPC byte custody, transaction callbacks and safe save destinations\n    These examples define package API behaviour without asserting Word schema validity.\n    The base package has three members, UTF-8 XML declarations and no extra payloads.\n    Exact OoxmlError, code and message predicates use the error API profile.\n    Async callbacks and thenable identity use a JavaScript-specific transaction\n    profile; these are API policies, not general OPC format requirements.\n    Background:\n      Given a ZIP contains word/document.xml with UTF-8 XML text <?xml version=\"1.0\" encoding=\"UTF-8\"?><document>Alpha</document>\n      And its content types use namespace http://schemas.openxmlformats.org/package/2006/content-types\n      And its content types have these defaults and overrides\n        | kind     | key                | content_type                                                            |\n        | Default  | rels               | application/vnd.openxmlformats-package.relationships+xml                 |\n        | Default  | xml                | application/xml                                                         |\n        | Override | /word/document.xml | application/vnd.openxmlformats-officedocument.wordprocessingml.document.main+xml |\n      And _rels/.rels uses namespace http://schemas.openxmlformats.org/package/2006/relationships\n      And its root relationship is rId1 of type http://schemas.openxmlformats.org/officeDocument/2006/relationships/officeDocument targeting word/document.xml\n\n    @profile-ooxml-error-api @id-bun-opc-open-refusal\n    Scenario Outline: Reject <variant> with the documented error\n      Given the base package has the mutation <mutation>\n      When the package editor opens its archive bytes\n      Then it throws an OoxmlError with code <code>\n      And the error message contains <message>\n      Examples:\n        | variant               | mutation                                                                   | code                            | message                            |\n        | escaped part name     | rename the document, content-type override and relationship target to word/%66oo.xml | opc-part-name-invalid   | Noncanonical part name             |\n        | escaped target        | change only the root relationship target to word/%66oo.xml                 | opc-target-invalid              | Percent-encoded                    |\n        | duplicate default     | replace the xml default with a second rels default of type application/xml  | opc-content-types-invalid       | Duplicate/missing default extension |\n        | missing target        | change only the root relationship target to word/missing.xml               | opc-relationship-target-missing  | Missing target                     |\n        | duplicate relation ID | duplicate the complete rId1 root relationship                              | opc-relationship-duplicate       | Duplicate relationship id          |\n\n    @profile-opc-byte-custody @id-bun-opc-detached-byte-copies\n    Scenario: Caller and returned byte arrays cannot modify an opened package\n      When the package editor opens the base archive bytes\n      And every byte in the caller's original archive array is overwritten with zero\n      And every byte in the array returned by get for word/document.xml is overwritten with zero\n      Then a fresh get of word/document.xml contains the UTF-8 text Alpha\n      And serializing the package returns the exact original archive bytes\n\n    @profile-opc-byte-custody @id-bun-opc-preserve-utf16le-edit\n    Scenario: Writing edited text preserves the original UTF-16 encoding\n      Given word/document.xml instead has a little-endian BOM and UTF-16LE text <?xml version=\"1.0\" encoding=\"UTF-16\"?><document>Alpha</document>\n      When the package editor opens the package and sets word/document.xml to its decoded text with Alpha replaced by Beta\n      And its serialized archive is read through the ZIP layer\n      Then the saved document member starts with hexadecimal bytes FF FE\n      And decoding the member as UTF-16LE contains Beta and encoding=\"UTF-16\"\n\n    @profile-javascript-sync-transactions @profile-ooxml-error-api @id-bun-opc-async-transaction-refusal\n    Scenario: Async callbacks are rejected before their body runs\n      Given the package editor has opened the base archive bytes\n      When its transaction is called with an async callback that would replace Alpha with Beta and set a ran flag\n      Then it throws an OoxmlError with code opc-async-transaction\n      And the error message contains synchronous edits\n      And the ran flag is false and the document text still contains Alpha\n\n    @profile-javascript-sync-transactions @id-bun-opc-thenable-transaction-result\n    Scenario: A synchronous callback returns its thenable unchanged\n      Given the package editor has opened the base archive bytes\n      And a thenable object has a then function that throws if invoked\n      When a synchronous transaction replaces Alpha with Beta and returns that thenable object\n      Then the transaction returns the same object by identity without invoking then\n      And the document text contains Beta\n\n    @profile-ooxml-error-api @id-bun-opc-save-invalid-target-custody\n    Scenario: A failed validation leaves an existing output file untouched\n      Given an existing destination file contains the base package archive bytes\n      And the package editor has opened those bytes and deleted word/document.xml\n      When the package is saved to the existing destination\n      Then it throws an OoxmlError with code opc-relationship-target-missing\n      And the error message contains Missing target\n      And the destination file bytes equal the original archive bytes\n\n    @profile-ooxml-error-api @id-bun-opc-symlink-destination-refusal\n    Scenario: A symlink destination is refused without changing its target\n      Given a regular destination file contains the base package archive bytes\n      And a symlink points to that file\n      And the package editor has opened the base archive bytes\n      When the unchanged package is saved through the symlink path\n      Then it throws an OoxmlError with code opc-symlink-destination\n      And the error message contains Symlink\n      And the regular destination file bytes equal the original archive bytes\n",
+      "beforeSha256": "1a2c653871f6bd830da4ca37f2b9c355c3885463234101b55a403786aedbba5a",
+      "afterSha256": "b5d8b7930bbfea66482053c5a80874dcf1a7fd6bed3fa53ad45b36144737e27a",
+      "scenarios": [
+        {
+          "id": "@id-bun-opc-open-refusal",
+          "before": [
+            {
+              "scenarioId": "@id-bun-opc-open-refusal",
+              "name": "Reject escaped part name with the documented error",
+              "steps": [
+                {
+                  "text": "a ZIP contains word/document.xml with UTF-8 XML text <?xml version=\"1.0\" encoding=\"UTF-8\"?><document>Alpha</document>",
+                  "argument": null
+                },
+                {
+                  "text": "its content types use namespace http://schemas.openxmlformats.org/package/2006/content-types",
+                  "argument": null
+                },
+                {
+                  "text": "its content types have these defaults and overrides",
+                  "argument": {
+                    "dataTable": {
+                      "rows": [
+                        {
+                          "cells": [
+                            {
+                              "value": "kind"
+                            },
+                            {
+                              "value": "key"
+                            },
+                            {
+                              "value": "content_type"
+                            }
+                          ]
+                        },
+                        {
+                          "cells": [
+                            {
+                              "value": "Default"
+                            },
+                            {
+                              "value": "rels"
+                            },
+                            {
+                              "value": "application/vnd.openxmlformats-package.relationships+xml"
+                            }
+                          ]
+                        },
+                        {
+                          "cells": [
+                            {
+                              "value": "Default"
+                            },
+                            {
+                              "value": "xml"
+                            },
+                            {
+                              "value": "application/xml"
+                            }
+                          ]
+                        },
+                        {
+                          "cells": [
+                            {
+                              "value": "Override"
+                            },
+                            {
+                              "value": "/word/document.xml"
+                            },
+                            {
+                              "value": "application/vnd.openxmlformats-officedocument.wordprocessingml.document.main+xml"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  }
+                },
+                {
+                  "text": "_rels/.rels uses namespace http://schemas.openxmlformats.org/package/2006/relationships",
+                  "argument": null
+                },
+                {
+                  "text": "its root relationship is rId1 of type http://schemas.openxmlformats.org/officeDocument/2006/relationships/officeDocument targeting word/document.xml",
+                  "argument": null
+                },
+                {
+                  "text": "the base package has the mutation rename the document, content-type override and relationship target to word/%66oo.xml",
+                  "argument": null
+                },
+                {
+                  "text": "the package editor opens its archive bytes",
+                  "argument": null
+                },
+                {
+                  "text": "it throws an OoxmlError with code opc-part-name-invalid",
+                  "argument": null
+                },
+                {
+                  "text": "the error message contains Noncanonical part name",
+                  "argument": null
+                }
+              ]
+            },
+            {
+              "scenarioId": "@id-bun-opc-open-refusal",
+              "name": "Reject escaped target with the documented error",
+              "steps": [
+                {
+                  "text": "a ZIP contains word/document.xml with UTF-8 XML text <?xml version=\"1.0\" encoding=\"UTF-8\"?><document>Alpha</document>",
+                  "argument": null
+                },
+                {
+                  "text": "its content types use namespace http://schemas.openxmlformats.org/package/2006/content-types",
+                  "argument": null
+                },
+                {
+                  "text": "its content types have these defaults and overrides",
+                  "argument": {
+                    "dataTable": {
+                      "rows": [
+                        {
+                          "cells": [
+                            {
+                              "value": "kind"
+                            },
+                            {
+                              "value": "key"
+                            },
+                            {
+                              "value": "content_type"
+                            }
+                          ]
+                        },
+                        {
+                          "cells": [
+                            {
+                              "value": "Default"
+                            },
+                            {
+                              "value": "rels"
+                            },
+                            {
+                              "value": "application/vnd.openxmlformats-package.relationships+xml"
+                            }
+                          ]
+                        },
+                        {
+                          "cells": [
+                            {
+                              "value": "Default"
+                            },
+                            {
+                              "value": "xml"
+                            },
+                            {
+                              "value": "application/xml"
+                            }
+                          ]
+                        },
+                        {
+                          "cells": [
+                            {
+                              "value": "Override"
+                            },
+                            {
+                              "value": "/word/document.xml"
+                            },
+                            {
+                              "value": "application/vnd.openxmlformats-officedocument.wordprocessingml.document.main+xml"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  }
+                },
+                {
+                  "text": "_rels/.rels uses namespace http://schemas.openxmlformats.org/package/2006/relationships",
+                  "argument": null
+                },
+                {
+                  "text": "its root relationship is rId1 of type http://schemas.openxmlformats.org/officeDocument/2006/relationships/officeDocument targeting word/document.xml",
+                  "argument": null
+                },
+                {
+                  "text": "the base package has the mutation change only the root relationship target to word/%66oo.xml",
+                  "argument": null
+                },
+                {
+                  "text": "the package editor opens its archive bytes",
+                  "argument": null
+                },
+                {
+                  "text": "it throws an OoxmlError with code opc-target-invalid",
+                  "argument": null
+                },
+                {
+                  "text": "the error message contains Percent-encoded",
+                  "argument": null
+                }
+              ]
+            },
+            {
+              "scenarioId": "@id-bun-opc-open-refusal",
+              "name": "Reject duplicate default with the documented error",
+              "steps": [
+                {
+                  "text": "a ZIP contains word/document.xml with UTF-8 XML text <?xml version=\"1.0\" encoding=\"UTF-8\"?><document>Alpha</document>",
+                  "argument": null
+                },
+                {
+                  "text": "its content types use namespace http://schemas.openxmlformats.org/package/2006/content-types",
+                  "argument": null
+                },
+                {
+                  "text": "its content types have these defaults and overrides",
+                  "argument": {
+                    "dataTable": {
+                      "rows": [
+                        {
+                          "cells": [
+                            {
+                              "value": "kind"
+                            },
+                            {
+                              "value": "key"
+                            },
+                            {
+                              "value": "content_type"
+                            }
+                          ]
+                        },
+                        {
+                          "cells": [
+                            {
+                              "value": "Default"
+                            },
+                            {
+                              "value": "rels"
+                            },
+                            {
+                              "value": "application/vnd.openxmlformats-package.relationships+xml"
+                            }
+                          ]
+                        },
+                        {
+                          "cells": [
+                            {
+                              "value": "Default"
+                            },
+                            {
+                              "value": "xml"
+                            },
+                            {
+                              "value": "application/xml"
+                            }
+                          ]
+                        },
+                        {
+                          "cells": [
+                            {
+                              "value": "Override"
+                            },
+                            {
+                              "value": "/word/document.xml"
+                            },
+                            {
+                              "value": "application/vnd.openxmlformats-officedocument.wordprocessingml.document.main+xml"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  }
+                },
+                {
+                  "text": "_rels/.rels uses namespace http://schemas.openxmlformats.org/package/2006/relationships",
+                  "argument": null
+                },
+                {
+                  "text": "its root relationship is rId1 of type http://schemas.openxmlformats.org/officeDocument/2006/relationships/officeDocument targeting word/document.xml",
+                  "argument": null
+                },
+                {
+                  "text": "the base package has the mutation replace the xml default with a second rels default of type application/xml",
+                  "argument": null
+                },
+                {
+                  "text": "the package editor opens its archive bytes",
+                  "argument": null
+                },
+                {
+                  "text": "it throws an OoxmlError with code opc-content-types-invalid",
+                  "argument": null
+                },
+                {
+                  "text": "the error message contains Duplicate/missing default extension",
+                  "argument": null
+                }
+              ]
+            },
+            {
+              "scenarioId": "@id-bun-opc-open-refusal",
+              "name": "Reject missing target with the documented error",
+              "steps": [
+                {
+                  "text": "a ZIP contains word/document.xml with UTF-8 XML text <?xml version=\"1.0\" encoding=\"UTF-8\"?><document>Alpha</document>",
+                  "argument": null
+                },
+                {
+                  "text": "its content types use namespace http://schemas.openxmlformats.org/package/2006/content-types",
+                  "argument": null
+                },
+                {
+                  "text": "its content types have these defaults and overrides",
+                  "argument": {
+                    "dataTable": {
+                      "rows": [
+                        {
+                          "cells": [
+                            {
+                              "value": "kind"
+                            },
+                            {
+                              "value": "key"
+                            },
+                            {
+                              "value": "content_type"
+                            }
+                          ]
+                        },
+                        {
+                          "cells": [
+                            {
+                              "value": "Default"
+                            },
+                            {
+                              "value": "rels"
+                            },
+                            {
+                              "value": "application/vnd.openxmlformats-package.relationships+xml"
+                            }
+                          ]
+                        },
+                        {
+                          "cells": [
+                            {
+                              "value": "Default"
+                            },
+                            {
+                              "value": "xml"
+                            },
+                            {
+                              "value": "application/xml"
+                            }
+                          ]
+                        },
+                        {
+                          "cells": [
+                            {
+                              "value": "Override"
+                            },
+                            {
+                              "value": "/word/document.xml"
+                            },
+                            {
+                              "value": "application/vnd.openxmlformats-officedocument.wordprocessingml.document.main+xml"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  }
+                },
+                {
+                  "text": "_rels/.rels uses namespace http://schemas.openxmlformats.org/package/2006/relationships",
+                  "argument": null
+                },
+                {
+                  "text": "its root relationship is rId1 of type http://schemas.openxmlformats.org/officeDocument/2006/relationships/officeDocument targeting word/document.xml",
+                  "argument": null
+                },
+                {
+                  "text": "the base package has the mutation change only the root relationship target to word/missing.xml",
+                  "argument": null
+                },
+                {
+                  "text": "the package editor opens its archive bytes",
+                  "argument": null
+                },
+                {
+                  "text": "it throws an OoxmlError with code opc-relationship-target-missing",
+                  "argument": null
+                },
+                {
+                  "text": "the error message contains Missing target",
+                  "argument": null
+                }
+              ]
+            },
+            {
+              "scenarioId": "@id-bun-opc-open-refusal",
+              "name": "Reject duplicate relation ID with the documented error",
+              "steps": [
+                {
+                  "text": "a ZIP contains word/document.xml with UTF-8 XML text <?xml version=\"1.0\" encoding=\"UTF-8\"?><document>Alpha</document>",
+                  "argument": null
+                },
+                {
+                  "text": "its content types use namespace http://schemas.openxmlformats.org/package/2006/content-types",
+                  "argument": null
+                },
+                {
+                  "text": "its content types have these defaults and overrides",
+                  "argument": {
+                    "dataTable": {
+                      "rows": [
+                        {
+                          "cells": [
+                            {
+                              "value": "kind"
+                            },
+                            {
+                              "value": "key"
+                            },
+                            {
+                              "value": "content_type"
+                            }
+                          ]
+                        },
+                        {
+                          "cells": [
+                            {
+                              "value": "Default"
+                            },
+                            {
+                              "value": "rels"
+                            },
+                            {
+                              "value": "application/vnd.openxmlformats-package.relationships+xml"
+                            }
+                          ]
+                        },
+                        {
+                          "cells": [
+                            {
+                              "value": "Default"
+                            },
+                            {
+                              "value": "xml"
+                            },
+                            {
+                              "value": "application/xml"
+                            }
+                          ]
+                        },
+                        {
+                          "cells": [
+                            {
+                              "value": "Override"
+                            },
+                            {
+                              "value": "/word/document.xml"
+                            },
+                            {
+                              "value": "application/vnd.openxmlformats-officedocument.wordprocessingml.document.main+xml"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  }
+                },
+                {
+                  "text": "_rels/.rels uses namespace http://schemas.openxmlformats.org/package/2006/relationships",
+                  "argument": null
+                },
+                {
+                  "text": "its root relationship is rId1 of type http://schemas.openxmlformats.org/officeDocument/2006/relationships/officeDocument targeting word/document.xml",
+                  "argument": null
+                },
+                {
+                  "text": "the base package has the mutation duplicate the complete rId1 root relationship",
+                  "argument": null
+                },
+                {
+                  "text": "the package editor opens its archive bytes",
+                  "argument": null
+                },
+                {
+                  "text": "it throws an OoxmlError with code opc-relationship-duplicate",
+                  "argument": null
+                },
+                {
+                  "text": "the error message contains Duplicate relationship id",
+                  "argument": null
+                }
+              ]
+            }
+          ],
+          "after": [
+            {
+              "scenarioId": "@id-bun-opc-open-refusal",
+              "name": "Reject escaped part name with its structured validation reason",
+              "steps": [
+                {
+                  "text": "a ZIP contains word/document.xml with UTF-8 XML text <?xml version=\"1.0\" encoding=\"UTF-8\"?><document>Alpha</document>",
+                  "argument": null
+                },
+                {
+                  "text": "its content types use namespace http://schemas.openxmlformats.org/package/2006/content-types",
+                  "argument": null
+                },
+                {
+                  "text": "its content types have these defaults and overrides",
+                  "argument": {
+                    "dataTable": {
+                      "rows": [
+                        {
+                          "cells": [
+                            {
+                              "value": "kind"
+                            },
+                            {
+                              "value": "key"
+                            },
+                            {
+                              "value": "content_type"
+                            }
+                          ]
+                        },
+                        {
+                          "cells": [
+                            {
+                              "value": "Default"
+                            },
+                            {
+                              "value": "rels"
+                            },
+                            {
+                              "value": "application/vnd.openxmlformats-package.relationships+xml"
+                            }
+                          ]
+                        },
+                        {
+                          "cells": [
+                            {
+                              "value": "Default"
+                            },
+                            {
+                              "value": "xml"
+                            },
+                            {
+                              "value": "application/xml"
+                            }
+                          ]
+                        },
+                        {
+                          "cells": [
+                            {
+                              "value": "Override"
+                            },
+                            {
+                              "value": "/word/document.xml"
+                            },
+                            {
+                              "value": "application/vnd.openxmlformats-officedocument.wordprocessingml.document.main+xml"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  }
+                },
+                {
+                  "text": "_rels/.rels uses namespace http://schemas.openxmlformats.org/package/2006/relationships",
+                  "argument": null
+                },
+                {
+                  "text": "its root relationship is rId1 of type http://schemas.openxmlformats.org/officeDocument/2006/relationships/officeDocument targeting word/document.xml",
+                  "argument": null
+                },
+                {
+                  "text": "the base package has the mutation rename the document, content-type override and relationship target to word/%66oo.xml",
+                  "argument": null
+                },
+                {
+                  "text": "the package editor opens its archive bytes",
+                  "argument": null
+                },
+                {
+                  "text": "opening refuses with reason opc-part-name-invalid and no package result",
+                  "argument": null
+                },
+                {
+                  "text": "the caller's original archive bytes remain unchanged",
+                  "argument": null
+                }
+              ]
+            },
+            {
+              "scenarioId": "@id-bun-opc-open-refusal",
+              "name": "Reject escaped target with its structured validation reason",
+              "steps": [
+                {
+                  "text": "a ZIP contains word/document.xml with UTF-8 XML text <?xml version=\"1.0\" encoding=\"UTF-8\"?><document>Alpha</document>",
+                  "argument": null
+                },
+                {
+                  "text": "its content types use namespace http://schemas.openxmlformats.org/package/2006/content-types",
+                  "argument": null
+                },
+                {
+                  "text": "its content types have these defaults and overrides",
+                  "argument": {
+                    "dataTable": {
+                      "rows": [
+                        {
+                          "cells": [
+                            {
+                              "value": "kind"
+                            },
+                            {
+                              "value": "key"
+                            },
+                            {
+                              "value": "content_type"
+                            }
+                          ]
+                        },
+                        {
+                          "cells": [
+                            {
+                              "value": "Default"
+                            },
+                            {
+                              "value": "rels"
+                            },
+                            {
+                              "value": "application/vnd.openxmlformats-package.relationships+xml"
+                            }
+                          ]
+                        },
+                        {
+                          "cells": [
+                            {
+                              "value": "Default"
+                            },
+                            {
+                              "value": "xml"
+                            },
+                            {
+                              "value": "application/xml"
+                            }
+                          ]
+                        },
+                        {
+                          "cells": [
+                            {
+                              "value": "Override"
+                            },
+                            {
+                              "value": "/word/document.xml"
+                            },
+                            {
+                              "value": "application/vnd.openxmlformats-officedocument.wordprocessingml.document.main+xml"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  }
+                },
+                {
+                  "text": "_rels/.rels uses namespace http://schemas.openxmlformats.org/package/2006/relationships",
+                  "argument": null
+                },
+                {
+                  "text": "its root relationship is rId1 of type http://schemas.openxmlformats.org/officeDocument/2006/relationships/officeDocument targeting word/document.xml",
+                  "argument": null
+                },
+                {
+                  "text": "the base package has the mutation change only the root relationship target to word/%66oo.xml",
+                  "argument": null
+                },
+                {
+                  "text": "the package editor opens its archive bytes",
+                  "argument": null
+                },
+                {
+                  "text": "opening refuses with reason opc-target-invalid and no package result",
+                  "argument": null
+                },
+                {
+                  "text": "the caller's original archive bytes remain unchanged",
+                  "argument": null
+                }
+              ]
+            },
+            {
+              "scenarioId": "@id-bun-opc-open-refusal",
+              "name": "Reject duplicate default with its structured validation reason",
+              "steps": [
+                {
+                  "text": "a ZIP contains word/document.xml with UTF-8 XML text <?xml version=\"1.0\" encoding=\"UTF-8\"?><document>Alpha</document>",
+                  "argument": null
+                },
+                {
+                  "text": "its content types use namespace http://schemas.openxmlformats.org/package/2006/content-types",
+                  "argument": null
+                },
+                {
+                  "text": "its content types have these defaults and overrides",
+                  "argument": {
+                    "dataTable": {
+                      "rows": [
+                        {
+                          "cells": [
+                            {
+                              "value": "kind"
+                            },
+                            {
+                              "value": "key"
+                            },
+                            {
+                              "value": "content_type"
+                            }
+                          ]
+                        },
+                        {
+                          "cells": [
+                            {
+                              "value": "Default"
+                            },
+                            {
+                              "value": "rels"
+                            },
+                            {
+                              "value": "application/vnd.openxmlformats-package.relationships+xml"
+                            }
+                          ]
+                        },
+                        {
+                          "cells": [
+                            {
+                              "value": "Default"
+                            },
+                            {
+                              "value": "xml"
+                            },
+                            {
+                              "value": "application/xml"
+                            }
+                          ]
+                        },
+                        {
+                          "cells": [
+                            {
+                              "value": "Override"
+                            },
+                            {
+                              "value": "/word/document.xml"
+                            },
+                            {
+                              "value": "application/vnd.openxmlformats-officedocument.wordprocessingml.document.main+xml"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  }
+                },
+                {
+                  "text": "_rels/.rels uses namespace http://schemas.openxmlformats.org/package/2006/relationships",
+                  "argument": null
+                },
+                {
+                  "text": "its root relationship is rId1 of type http://schemas.openxmlformats.org/officeDocument/2006/relationships/officeDocument targeting word/document.xml",
+                  "argument": null
+                },
+                {
+                  "text": "the base package has the mutation replace the xml default with a second rels default of type application/xml",
+                  "argument": null
+                },
+                {
+                  "text": "the package editor opens its archive bytes",
+                  "argument": null
+                },
+                {
+                  "text": "opening refuses with reason opc-content-types-invalid and no package result",
+                  "argument": null
+                },
+                {
+                  "text": "the caller's original archive bytes remain unchanged",
+                  "argument": null
+                }
+              ]
+            },
+            {
+              "scenarioId": "@id-bun-opc-open-refusal",
+              "name": "Reject missing target with its structured validation reason",
+              "steps": [
+                {
+                  "text": "a ZIP contains word/document.xml with UTF-8 XML text <?xml version=\"1.0\" encoding=\"UTF-8\"?><document>Alpha</document>",
+                  "argument": null
+                },
+                {
+                  "text": "its content types use namespace http://schemas.openxmlformats.org/package/2006/content-types",
+                  "argument": null
+                },
+                {
+                  "text": "its content types have these defaults and overrides",
+                  "argument": {
+                    "dataTable": {
+                      "rows": [
+                        {
+                          "cells": [
+                            {
+                              "value": "kind"
+                            },
+                            {
+                              "value": "key"
+                            },
+                            {
+                              "value": "content_type"
+                            }
+                          ]
+                        },
+                        {
+                          "cells": [
+                            {
+                              "value": "Default"
+                            },
+                            {
+                              "value": "rels"
+                            },
+                            {
+                              "value": "application/vnd.openxmlformats-package.relationships+xml"
+                            }
+                          ]
+                        },
+                        {
+                          "cells": [
+                            {
+                              "value": "Default"
+                            },
+                            {
+                              "value": "xml"
+                            },
+                            {
+                              "value": "application/xml"
+                            }
+                          ]
+                        },
+                        {
+                          "cells": [
+                            {
+                              "value": "Override"
+                            },
+                            {
+                              "value": "/word/document.xml"
+                            },
+                            {
+                              "value": "application/vnd.openxmlformats-officedocument.wordprocessingml.document.main+xml"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  }
+                },
+                {
+                  "text": "_rels/.rels uses namespace http://schemas.openxmlformats.org/package/2006/relationships",
+                  "argument": null
+                },
+                {
+                  "text": "its root relationship is rId1 of type http://schemas.openxmlformats.org/officeDocument/2006/relationships/officeDocument targeting word/document.xml",
+                  "argument": null
+                },
+                {
+                  "text": "the base package has the mutation change only the root relationship target to word/missing.xml",
+                  "argument": null
+                },
+                {
+                  "text": "the package editor opens its archive bytes",
+                  "argument": null
+                },
+                {
+                  "text": "opening refuses with reason opc-relationship-target-missing and no package result",
+                  "argument": null
+                },
+                {
+                  "text": "the caller's original archive bytes remain unchanged",
+                  "argument": null
+                }
+              ]
+            },
+            {
+              "scenarioId": "@id-bun-opc-open-refusal",
+              "name": "Reject duplicate relation ID with its structured validation reason",
+              "steps": [
+                {
+                  "text": "a ZIP contains word/document.xml with UTF-8 XML text <?xml version=\"1.0\" encoding=\"UTF-8\"?><document>Alpha</document>",
+                  "argument": null
+                },
+                {
+                  "text": "its content types use namespace http://schemas.openxmlformats.org/package/2006/content-types",
+                  "argument": null
+                },
+                {
+                  "text": "its content types have these defaults and overrides",
+                  "argument": {
+                    "dataTable": {
+                      "rows": [
+                        {
+                          "cells": [
+                            {
+                              "value": "kind"
+                            },
+                            {
+                              "value": "key"
+                            },
+                            {
+                              "value": "content_type"
+                            }
+                          ]
+                        },
+                        {
+                          "cells": [
+                            {
+                              "value": "Default"
+                            },
+                            {
+                              "value": "rels"
+                            },
+                            {
+                              "value": "application/vnd.openxmlformats-package.relationships+xml"
+                            }
+                          ]
+                        },
+                        {
+                          "cells": [
+                            {
+                              "value": "Default"
+                            },
+                            {
+                              "value": "xml"
+                            },
+                            {
+                              "value": "application/xml"
+                            }
+                          ]
+                        },
+                        {
+                          "cells": [
+                            {
+                              "value": "Override"
+                            },
+                            {
+                              "value": "/word/document.xml"
+                            },
+                            {
+                              "value": "application/vnd.openxmlformats-officedocument.wordprocessingml.document.main+xml"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  }
+                },
+                {
+                  "text": "_rels/.rels uses namespace http://schemas.openxmlformats.org/package/2006/relationships",
+                  "argument": null
+                },
+                {
+                  "text": "its root relationship is rId1 of type http://schemas.openxmlformats.org/officeDocument/2006/relationships/officeDocument targeting word/document.xml",
+                  "argument": null
+                },
+                {
+                  "text": "the base package has the mutation duplicate the complete rId1 root relationship",
+                  "argument": null
+                },
+                {
+                  "text": "the package editor opens its archive bytes",
+                  "argument": null
+                },
+                {
+                  "text": "opening refuses with reason opc-relationship-duplicate and no package result",
+                  "argument": null
+                },
+                {
+                  "text": "the caller's original archive bytes remain unchanged",
+                  "argument": null
+                }
+              ]
+            }
+          ],
+          "beforeProfiles": [
+            "@profile-ooxml-error-api"
+          ],
+          "afterProfiles": [
+            "@profile-package-refusal-reasons"
+          ]
+        },
+        {
+          "id": "@id-bun-opc-save-invalid-target-custody",
+          "before": [
+            {
+              "scenarioId": "@id-bun-opc-save-invalid-target-custody",
+              "name": "A failed validation leaves an existing output file untouched",
+              "steps": [
+                {
+                  "text": "a ZIP contains word/document.xml with UTF-8 XML text <?xml version=\"1.0\" encoding=\"UTF-8\"?><document>Alpha</document>",
+                  "argument": null
+                },
+                {
+                  "text": "its content types use namespace http://schemas.openxmlformats.org/package/2006/content-types",
+                  "argument": null
+                },
+                {
+                  "text": "its content types have these defaults and overrides",
+                  "argument": {
+                    "dataTable": {
+                      "rows": [
+                        {
+                          "cells": [
+                            {
+                              "value": "kind"
+                            },
+                            {
+                              "value": "key"
+                            },
+                            {
+                              "value": "content_type"
+                            }
+                          ]
+                        },
+                        {
+                          "cells": [
+                            {
+                              "value": "Default"
+                            },
+                            {
+                              "value": "rels"
+                            },
+                            {
+                              "value": "application/vnd.openxmlformats-package.relationships+xml"
+                            }
+                          ]
+                        },
+                        {
+                          "cells": [
+                            {
+                              "value": "Default"
+                            },
+                            {
+                              "value": "xml"
+                            },
+                            {
+                              "value": "application/xml"
+                            }
+                          ]
+                        },
+                        {
+                          "cells": [
+                            {
+                              "value": "Override"
+                            },
+                            {
+                              "value": "/word/document.xml"
+                            },
+                            {
+                              "value": "application/vnd.openxmlformats-officedocument.wordprocessingml.document.main+xml"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  }
+                },
+                {
+                  "text": "_rels/.rels uses namespace http://schemas.openxmlformats.org/package/2006/relationships",
+                  "argument": null
+                },
+                {
+                  "text": "its root relationship is rId1 of type http://schemas.openxmlformats.org/officeDocument/2006/relationships/officeDocument targeting word/document.xml",
+                  "argument": null
+                },
+                {
+                  "text": "an existing destination file contains the base package archive bytes",
+                  "argument": null
+                },
+                {
+                  "text": "the package editor has opened those bytes and deleted word/document.xml",
+                  "argument": null
+                },
+                {
+                  "text": "the package is saved to the existing destination",
+                  "argument": null
+                },
+                {
+                  "text": "it throws an OoxmlError with code opc-relationship-target-missing",
+                  "argument": null
+                },
+                {
+                  "text": "the error message contains Missing target",
+                  "argument": null
+                },
+                {
+                  "text": "the destination file bytes equal the original archive bytes",
+                  "argument": null
+                }
+              ]
+            }
+          ],
+          "after": [
+            {
+              "scenarioId": "@id-bun-opc-save-invalid-target-custody",
+              "name": "A failed validation leaves an existing output file untouched",
+              "steps": [
+                {
+                  "text": "a ZIP contains word/document.xml with UTF-8 XML text <?xml version=\"1.0\" encoding=\"UTF-8\"?><document>Alpha</document>",
+                  "argument": null
+                },
+                {
+                  "text": "its content types use namespace http://schemas.openxmlformats.org/package/2006/content-types",
+                  "argument": null
+                },
+                {
+                  "text": "its content types have these defaults and overrides",
+                  "argument": {
+                    "dataTable": {
+                      "rows": [
+                        {
+                          "cells": [
+                            {
+                              "value": "kind"
+                            },
+                            {
+                              "value": "key"
+                            },
+                            {
+                              "value": "content_type"
+                            }
+                          ]
+                        },
+                        {
+                          "cells": [
+                            {
+                              "value": "Default"
+                            },
+                            {
+                              "value": "rels"
+                            },
+                            {
+                              "value": "application/vnd.openxmlformats-package.relationships+xml"
+                            }
+                          ]
+                        },
+                        {
+                          "cells": [
+                            {
+                              "value": "Default"
+                            },
+                            {
+                              "value": "xml"
+                            },
+                            {
+                              "value": "application/xml"
+                            }
+                          ]
+                        },
+                        {
+                          "cells": [
+                            {
+                              "value": "Override"
+                            },
+                            {
+                              "value": "/word/document.xml"
+                            },
+                            {
+                              "value": "application/vnd.openxmlformats-officedocument.wordprocessingml.document.main+xml"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  }
+                },
+                {
+                  "text": "_rels/.rels uses namespace http://schemas.openxmlformats.org/package/2006/relationships",
+                  "argument": null
+                },
+                {
+                  "text": "its root relationship is rId1 of type http://schemas.openxmlformats.org/officeDocument/2006/relationships/officeDocument targeting word/document.xml",
+                  "argument": null
+                },
+                {
+                  "text": "an existing destination file contains the base package archive bytes",
+                  "argument": null
+                },
+                {
+                  "text": "the package editor has opened those bytes and deleted word/document.xml",
+                  "argument": null
+                },
+                {
+                  "text": "the package is saved to the existing destination",
+                  "argument": null
+                },
+                {
+                  "text": "saving refuses with reason opc-relationship-target-missing before destination replacement",
+                  "argument": null
+                },
+                {
+                  "text": "no successful save receipt is returned",
+                  "argument": null
+                },
+                {
+                  "text": "the destination file bytes equal the original archive bytes",
+                  "argument": null
+                }
+              ]
+            }
+          ],
+          "beforeProfiles": [
+            "@profile-ooxml-error-api"
+          ],
+          "afterProfiles": [
+            "@profile-package-refusal-reasons"
+          ]
+        },
+        {
+          "id": "@id-bun-opc-symlink-destination-refusal",
+          "before": [
+            {
+              "scenarioId": "@id-bun-opc-symlink-destination-refusal",
+              "name": "A symlink destination is refused without changing its target",
+              "steps": [
+                {
+                  "text": "a ZIP contains word/document.xml with UTF-8 XML text <?xml version=\"1.0\" encoding=\"UTF-8\"?><document>Alpha</document>",
+                  "argument": null
+                },
+                {
+                  "text": "its content types use namespace http://schemas.openxmlformats.org/package/2006/content-types",
+                  "argument": null
+                },
+                {
+                  "text": "its content types have these defaults and overrides",
+                  "argument": {
+                    "dataTable": {
+                      "rows": [
+                        {
+                          "cells": [
+                            {
+                              "value": "kind"
+                            },
+                            {
+                              "value": "key"
+                            },
+                            {
+                              "value": "content_type"
+                            }
+                          ]
+                        },
+                        {
+                          "cells": [
+                            {
+                              "value": "Default"
+                            },
+                            {
+                              "value": "rels"
+                            },
+                            {
+                              "value": "application/vnd.openxmlformats-package.relationships+xml"
+                            }
+                          ]
+                        },
+                        {
+                          "cells": [
+                            {
+                              "value": "Default"
+                            },
+                            {
+                              "value": "xml"
+                            },
+                            {
+                              "value": "application/xml"
+                            }
+                          ]
+                        },
+                        {
+                          "cells": [
+                            {
+                              "value": "Override"
+                            },
+                            {
+                              "value": "/word/document.xml"
+                            },
+                            {
+                              "value": "application/vnd.openxmlformats-officedocument.wordprocessingml.document.main+xml"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  }
+                },
+                {
+                  "text": "_rels/.rels uses namespace http://schemas.openxmlformats.org/package/2006/relationships",
+                  "argument": null
+                },
+                {
+                  "text": "its root relationship is rId1 of type http://schemas.openxmlformats.org/officeDocument/2006/relationships/officeDocument targeting word/document.xml",
+                  "argument": null
+                },
+                {
+                  "text": "a regular destination file contains the base package archive bytes",
+                  "argument": null
+                },
+                {
+                  "text": "a symlink points to that file",
+                  "argument": null
+                },
+                {
+                  "text": "the package editor has opened the base archive bytes",
+                  "argument": null
+                },
+                {
+                  "text": "the unchanged package is saved through the symlink path",
+                  "argument": null
+                },
+                {
+                  "text": "it throws an OoxmlError with code opc-symlink-destination",
+                  "argument": null
+                },
+                {
+                  "text": "the error message contains Symlink",
+                  "argument": null
+                },
+                {
+                  "text": "the regular destination file bytes equal the original archive bytes",
+                  "argument": null
+                }
+              ]
+            }
+          ],
+          "after": [
+            {
+              "scenarioId": "@id-bun-opc-symlink-destination-refusal",
+              "name": "A symlink destination is refused without changing its target",
+              "steps": [
+                {
+                  "text": "a ZIP contains word/document.xml with UTF-8 XML text <?xml version=\"1.0\" encoding=\"UTF-8\"?><document>Alpha</document>",
+                  "argument": null
+                },
+                {
+                  "text": "its content types use namespace http://schemas.openxmlformats.org/package/2006/content-types",
+                  "argument": null
+                },
+                {
+                  "text": "its content types have these defaults and overrides",
+                  "argument": {
+                    "dataTable": {
+                      "rows": [
+                        {
+                          "cells": [
+                            {
+                              "value": "kind"
+                            },
+                            {
+                              "value": "key"
+                            },
+                            {
+                              "value": "content_type"
+                            }
+                          ]
+                        },
+                        {
+                          "cells": [
+                            {
+                              "value": "Default"
+                            },
+                            {
+                              "value": "rels"
+                            },
+                            {
+                              "value": "application/vnd.openxmlformats-package.relationships+xml"
+                            }
+                          ]
+                        },
+                        {
+                          "cells": [
+                            {
+                              "value": "Default"
+                            },
+                            {
+                              "value": "xml"
+                            },
+                            {
+                              "value": "application/xml"
+                            }
+                          ]
+                        },
+                        {
+                          "cells": [
+                            {
+                              "value": "Override"
+                            },
+                            {
+                              "value": "/word/document.xml"
+                            },
+                            {
+                              "value": "application/vnd.openxmlformats-officedocument.wordprocessingml.document.main+xml"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  }
+                },
+                {
+                  "text": "_rels/.rels uses namespace http://schemas.openxmlformats.org/package/2006/relationships",
+                  "argument": null
+                },
+                {
+                  "text": "its root relationship is rId1 of type http://schemas.openxmlformats.org/officeDocument/2006/relationships/officeDocument targeting word/document.xml",
+                  "argument": null
+                },
+                {
+                  "text": "a regular destination file contains the base package archive bytes",
+                  "argument": null
+                },
+                {
+                  "text": "a symlink points to that file",
+                  "argument": null
+                },
+                {
+                  "text": "the package editor has opened the base archive bytes",
+                  "argument": null
+                },
+                {
+                  "text": "the unchanged package is saved through the symlink path",
+                  "argument": null
+                },
+                {
+                  "text": "saving refuses with reason opc-symlink-destination before destination replacement",
+                  "argument": null
+                },
+                {
+                  "text": "the symlink still points to the original regular destination without a successful save receipt",
+                  "argument": null
+                },
+                {
+                  "text": "the regular destination file bytes equal the original archive bytes",
+                  "argument": null
+                }
+              ]
+            }
+          ],
+          "beforeProfiles": [
+            "@profile-ooxml-error-api"
+          ],
+          "afterProfiles": [
+            "@profile-package-refusal-reasons"
+          ]
+        }
+      ],
+      "beforeLedgerRows": [
+        {
+          "id": "@id-bun-opc-open-refusal",
+          "feature": "workflows/package/preservation.feature",
+          "expandedCases": 5,
+          "factIds": [],
+          "expectedOutcomes": [
+            "it throws an OoxmlError with code opc-part-name-invalid",
+            "the error message contains Noncanonical part name",
+            "it throws an OoxmlError with code opc-target-invalid",
+            "the error message contains Percent-encoded",
+            "it throws an OoxmlError with code opc-content-types-invalid",
+            "the error message contains Duplicate/missing default extension",
+            "it throws an OoxmlError with code opc-relationship-target-missing",
+            "the error message contains Missing target",
+            "it throws an OoxmlError with code opc-relationship-duplicate",
+            "the error message contains Duplicate relationship id"
+          ],
+          "consumers": {
+            "bun": {
+              "status": "implemented",
+              "evidence": "Bun d71b9b673304b7437a6d5ce9c745ce42ab23792a at shared v0.89.0 executes Five exact nine-step OPC open refusals: noncanonical part name, percent-encoded relationship target, duplicate/missing default content type, missing relationship target and duplicate relationship ID each return the specified typed OoxmlError code/message without a package result. The unit binding test independently inspects ordered ZIP member and XML background mutations. features/shared.json, tests/acceptance/opc-custody.ts, tests/acceptance/refusal-outcomes.ts and tests/unit/opc-custody-bindings.test.ts execute eleven exact cases/108 compiled steps across seven IDs, with mutation controls for error codes, messages, byte custody, callback flags, thenable identity, saved members and destination/symlink integrity plus temporary-file cleanup. Fresh post-push GitHub recursive make check passed 732/732 selected cases; Bun CI 36524662142 succeeded. No Go/Python, Office schema/rendering, other OPC profiles or cross-consumer credit."
+            },
+            "go": {
+              "status": "planned",
+              "evidence": "Native execution binding pending"
+            },
+            "python": {
+              "status": "planned",
+              "evidence": "Native execution binding pending"
+            }
+          }
+        },
+        {
+          "id": "@id-bun-opc-save-invalid-target-custody",
+          "feature": "workflows/package/preservation.feature",
+          "expandedCases": 1,
+          "factIds": [],
+          "expectedOutcomes": [
+            "it throws an OoxmlError with code opc-relationship-target-missing",
+            "the error message contains Missing target",
+            "the destination file bytes equal the original archive bytes"
+          ],
+          "consumers": {
+            "bun": {
+              "status": "implemented",
+              "evidence": "Bun d71b9b673304b7437a6d5ce9c745ce42ab23792a at shared v0.89.0 executes One exact eleven-step save case deletes the relationship target in memory; validation returns typed opc-relationship-target-missing with Missing target message, while an existing destination file still contains the original package bytes after failure. features/shared.json, tests/acceptance/opc-custody.ts, tests/acceptance/refusal-outcomes.ts and tests/unit/opc-custody-bindings.test.ts execute eleven exact cases/108 compiled steps across seven IDs, with mutation controls for error codes, messages, byte custody, callback flags, thenable identity, saved members and destination/symlink integrity plus temporary-file cleanup. Fresh post-push GitHub recursive make check passed 732/732 selected cases; Bun CI 36524662142 succeeded. No Go/Python, Office schema/rendering, other OPC profiles or cross-consumer credit."
+            },
+            "go": {
+              "status": "planned",
+              "evidence": "Native execution binding pending"
+            },
+            "python": {
+              "status": "planned",
+              "evidence": "Native execution binding pending"
+            }
+          }
+        },
+        {
+          "id": "@id-bun-opc-symlink-destination-refusal",
+          "feature": "workflows/package/preservation.feature",
+          "expandedCases": 1,
+          "factIds": [],
+          "expectedOutcomes": [
+            "it throws an OoxmlError with code opc-symlink-destination",
+            "the error message contains Symlink",
+            "the regular destination file bytes equal the original archive bytes"
+          ],
+          "consumers": {
+            "bun": {
+              "status": "implemented",
+              "evidence": "Bun d71b9b673304b7437a6d5ce9c745ce42ab23792a at shared v0.89.0 executes One exact twelve-step save case refuses a symlink destination with typed opc-symlink-destination and Symlink message while the regular target file and symlink identity/target remain unchanged. features/shared.json, tests/acceptance/opc-custody.ts, tests/acceptance/refusal-outcomes.ts and tests/unit/opc-custody-bindings.test.ts execute eleven exact cases/108 compiled steps across seven IDs, with mutation controls for error codes, messages, byte custody, callback flags, thenable identity, saved members and destination/symlink integrity plus temporary-file cleanup. Fresh post-push GitHub recursive make check passed 732/732 selected cases; Bun CI 36524662142 succeeded. No Go/Python, Office schema/rendering, other OPC profiles or cross-consumer credit."
+            },
+            "go": {
+              "status": "planned",
+              "evidence": "Native execution binding pending"
+            },
+            "python": {
+              "status": "planned",
+              "evidence": "Native execution binding pending"
+            }
+          }
+        }
+      ],
+      "afterLedgerRows": [
+        {
+          "id": "@id-bun-opc-open-refusal",
+          "feature": "workflows/package/preservation.feature",
+          "expandedCases": 5,
+          "factIds": [],
+          "expectedOutcomes": [
+            "opening refuses with reason opc-part-name-invalid and no package result",
+            "the caller's original archive bytes remain unchanged",
+            "opening refuses with reason opc-target-invalid and no package result",
+            "opening refuses with reason opc-content-types-invalid and no package result",
+            "opening refuses with reason opc-relationship-target-missing and no package result",
+            "opening refuses with reason opc-relationship-duplicate and no package result"
+          ],
+          "consumers": {
+            "bun": {
+              "status": "planned",
+              "evidence": "Structured runtime-neutral OPC/ZIP32 reason and custody candidate supersedes literal exception-class/message profile; historical credit retained in ledgers/package-runtime-generalization.json. Requires exact native cases and discriminators; no migration credit."
+            },
+            "go": {
+              "status": "planned",
+              "evidence": "Structured runtime-neutral OPC/ZIP32 reason and custody candidate supersedes literal exception-class/message profile; historical credit retained in ledgers/package-runtime-generalization.json. Requires exact native cases and discriminators; no migration credit."
+            },
+            "python": {
+              "status": "planned",
+              "evidence": "Structured runtime-neutral OPC/ZIP32 reason and custody candidate supersedes literal exception-class/message profile; historical credit retained in ledgers/package-runtime-generalization.json. Requires exact native cases and discriminators; no migration credit."
+            }
+          }
+        },
+        {
+          "id": "@id-bun-opc-save-invalid-target-custody",
+          "feature": "workflows/package/preservation.feature",
+          "expandedCases": 1,
+          "factIds": [],
+          "expectedOutcomes": [
+            "saving refuses with reason opc-relationship-target-missing before destination replacement",
+            "no successful save receipt is returned",
+            "the destination file bytes equal the original archive bytes"
+          ],
+          "consumers": {
+            "bun": {
+              "status": "planned",
+              "evidence": "Structured runtime-neutral OPC/ZIP32 reason and custody candidate supersedes literal exception-class/message profile; historical credit retained in ledgers/package-runtime-generalization.json. Requires exact native cases and discriminators; no migration credit."
+            },
+            "go": {
+              "status": "planned",
+              "evidence": "Structured runtime-neutral OPC/ZIP32 reason and custody candidate supersedes literal exception-class/message profile; historical credit retained in ledgers/package-runtime-generalization.json. Requires exact native cases and discriminators; no migration credit."
+            },
+            "python": {
+              "status": "planned",
+              "evidence": "Structured runtime-neutral OPC/ZIP32 reason and custody candidate supersedes literal exception-class/message profile; historical credit retained in ledgers/package-runtime-generalization.json. Requires exact native cases and discriminators; no migration credit."
+            }
+          }
+        },
+        {
+          "id": "@id-bun-opc-symlink-destination-refusal",
+          "feature": "workflows/package/preservation.feature",
+          "expandedCases": 1,
+          "factIds": [],
+          "expectedOutcomes": [
+            "saving refuses with reason opc-symlink-destination before destination replacement",
+            "the symlink still points to the original regular destination without a successful save receipt",
+            "the regular destination file bytes equal the original archive bytes"
+          ],
+          "consumers": {
+            "bun": {
+              "status": "planned",
+              "evidence": "Structured runtime-neutral OPC/ZIP32 reason and custody candidate supersedes literal exception-class/message profile; historical credit retained in ledgers/package-runtime-generalization.json. Requires exact native cases and discriminators; no migration credit."
+            },
+            "go": {
+              "status": "planned",
+              "evidence": "Structured runtime-neutral OPC/ZIP32 reason and custody candidate supersedes literal exception-class/message profile; historical credit retained in ledgers/package-runtime-generalization.json. Requires exact native cases and discriminators; no migration credit."
+            },
+            "python": {
+              "status": "planned",
+              "evidence": "Structured runtime-neutral OPC/ZIP32 reason and custody candidate supersedes literal exception-class/message profile; historical credit retained in ledgers/package-runtime-generalization.json. Requires exact native cases and discriminators; no migration credit."
+            }
+          }
+        }
+      ]
+    },
+    {
+      "path": "workflows/package/zip32.feature",
+      "beforeText": "@planned\nFeature: ZIP32 reading, writing and bounded admission\n\n  Rule: Strict ZIP custody for OPC packages\n    The shared ZIP layer reads OOXML package archives only when they have one\n    unambiguous ZIP32 interpretation and stay within bounded resources.\n    @id-zip-read-valid\n    Scenario: Read a valid ZIP32 archive with stored, deflated, and directory entries\n      Given a ZIP archive with canonical OPC member names\n      And the archive contains stored and deflated file entries\n      And the archive may contain zero-byte directory entries and a declared archive comment\n      When the archive is read through the shared ZIP module\n      Then file entries are returned in central-directory order\n      And directory entries do not become package parts\n      And each returned payload matches its declared CRC and size\n\n    @id-zip-refuse-unsafe\n    Scenario: Refuse ambiguous or unsafe ZIP structure\n      Given a ZIP archive whose structure has no single safe reading\n      When the archive is read through the shared ZIP module\n      Then the module refuses duplicate member names\n      And the module refuses ASCII case-colliding member names\n      And the module refuses noncanonical member paths\n      And the module refuses encrypted or unsupported-compression members\n      And the module refuses multi-disk archives and ZIP64 sentinels without valid end records\n      And the module refuses local-header metadata that disagrees with the central directory\n      And the module refuses CRC failures, size mismatches, and undeclared trailing structure\n\n    @id-zip-bounds\n    Scenario: Refuse archives that exceed configured bounds before expansion\n      Given a ZIP archive whose declared archive size, entry count, entry size, total expanded size, or compression ratio exceeds the configured limit\n      When the archive is read through the shared ZIP module\n      Then the module refuses before allocating unbounded output\n\n    @id-zip-write-deterministic\n    Scenario: Write deterministic UTF-8 ZIP32 output\n      Given a map of canonical OPC member names and bytes\n      When the map is written through the shared ZIP module twice\n      Then both outputs are byte-identical ZIP32 archives\n      And file entries use stored or deflated encoding\n      And names are emitted with the UTF-8 ZIP flag\n      And writer input that would collide by ASCII case is refused\n\n  Rule: ZIP32 checksums and typed refusal policy\n    Exact OoxmlError, code/message strings and resource-option names belong to\n    the ZIP32 error API profile. They are compatibility policies, not ZIP format\n    requirements. CRC32 uses the standard check vector without an API profile.\n    Valid reading and deterministic writing use the existing ZIP32 workflow.\n    Unless overridden, reader samples use UTF-8 names, raw DEFLATE and one disk.\n    CRCs, sizes, offsets and directory records agree except for the named mutation.\n    JSON payload strings are encoded as UTF-8 before building the archive.\n    @id-zip-crc32-standard-vector\n    Scenario: CRC32 matches the standard check value\n      Given checksum input is the UTF-8 string \"123456789\"\n      When its ZIP CRC32 is calculated\n      Then the unsigned checksum equals hexadecimal CBF43926\n\n    @profile-zip32-error-api @id-bun-zip32-reader-refusal\n    Scenario Outline: Refuse <variant> with the documented error\n      Given a ZIP32 reader sample with these ordered member and payload pairs encoded as JSON <entries_json>\n      And the sample has the mutation <mutation>\n      When the ZIP reader reads the sample with default limits\n      Then it throws an OoxmlError with code <code>\n      And the error message contains <message>\n      Examples:\n        | variant                  | entries_json                                                        | mutation                                                    | code                        | message                  |\n        | duplicate names          | [[\"word/document.xml\",\"one\"],[\"word/document.xml\",\"two\"]]           | none                                                        | zip-duplicate-entry         | duplicate ZIP member     |\n        | ASCII case collision     | [[\"word/document.xml\",\"one\"],[\"WORD/document.xml\",\"two\"]]           | none                                                        | zip-case-collision          | ASCII case-collides      |\n        | parent traversal         | [[\"../word/document.xml\",\"bad\"]]                                    | none                                                        | zip-name-invalid            | noncanonical             |\n        | encryption flag          | [[\"word/document.xml\",\"secret\"]]                                    | general-purpose bit 0 is set in both headers                 | zip-encryption-unsupported  | encrypted                |\n        | unsupported method       | [[\"word/document.xml\",\"x\"]]                                         | both methods are 12 and payload bytes are stored uncompressed | zip-method-unsupported      | compression method       |\n        | multiple disks           | [[\"word/document.xml\",\"x\"]]                                         | end record disk number is 1                                 | zip-multi-disk-unsupported   | multi-disk               |\n        | missing ZIP64 records    | [[\"word/document.xml\",\"x\"]]                                         | both end-record counts are 65535 without ZIP64 records       | zip-structure-invalid       | ZIP64                    |\n        | local name mismatch      | [[\"word/document.xml\",\"x\"]]                                         | local name is word/other.xml                                | zip-local-metadata-mismatch | local and central        |\n        | CRC mismatch             | [[\"word/document.xml\",\"payload\"]]                                   | both CRC fields are hexadecimal DEADBEEF                     | zip-crc-mismatch            | CRC                      |\n        | stored size mismatch     | [[\"word/document.xml\",\"payload\"]]                                   | method is STORED and all size fields are 99                  | zip-size-mismatch           | declared size            |\n        | deflate size overrun     | [[\"word/document.xml\",\"A\"]]                                         | payload repeats A 4096 times but both expanded sizes are 32  | zip-size-mismatch           | declared size            |\n        | undeclared trailing byte | [[\"word/document.xml\",\"x\"]]                                         | a newline byte follows the complete uncommented archive     | zip-end-record-missing      | end-of-central-directory |\n\n    @profile-zip32-error-api @id-bun-zip32-writer-refusal\n    Scenario Outline: Refuse <variant> before returning an archive\n      Given ordered writer entries are encoded as JSON <entries_json>\n      When the ZIP writer writes the entries with default options\n      Then it throws an OoxmlError with code <code>\n      And the error message contains <message>\n      Examples:\n        | variant                   | entries_json                                              | code                        | message             |\n        | ASCII case collision      | [[\"word/document.xml\",\"one\"],[\"WORD/document.xml\",\"two\"]] | zip-case-collision          | ASCII case-collides |\n        | non-empty directory entry | [[\"word/\",\"not empty\"]]                                  | zip-directory-entry-invalid | must be empty       |\n\n    @profile-zip32-error-api @id-bun-zip32-configured-bounds\n    Scenario Outline: Refuse the configured <limit> threshold\n      Given a raw-DEFLATE ZIP32 archive contains a.bin with 4096 A bytes followed by b.bin with two b bytes\n      When the ZIP reader reads the archive with only <limit> set to <value>\n      Then it throws an OoxmlError with code <code>\n      And the error message contains <message>\n      Examples:\n        | limit               | value                      | code                           | message         |\n        | maxArchiveBytes     | archive byte length minus 1 | zip-archive-too-large          | archive bytes   |\n        | maxEntries          | 1                           | zip-too-many-entries           | entry limit     |\n        | maxEntryBytes       | 8                           | zip-entry-too-large            | entry limit     |\n        | maxTotalBytes       | 8                           | zip-total-too-large            | total expanded  |\n        | maxCompressionRatio | 2                           | zip-compression-ratio-exceeded | compression ratio |\n",
+      "beforeSha256": "932bdcb2a1fb0866ec07c3e64d92b54b39dafa06f83e4c405fb48e80634ef24c",
+      "afterSha256": "ecf7356093c73b6d170177e30df4c63ea449788c285583a32dbea41942ccf4da",
+      "scenarios": [
+        {
+          "id": "@id-bun-zip32-reader-refusal",
+          "before": [
+            {
+              "scenarioId": "@id-bun-zip32-reader-refusal",
+              "name": "Refuse duplicate names with the documented error",
+              "steps": [
+                {
+                  "text": "a ZIP32 reader sample with these ordered member and payload pairs encoded as JSON [[\"word/document.xml\",\"one\"],[\"word/document.xml\",\"two\"]]",
+                  "argument": null
+                },
+                {
+                  "text": "the sample has the mutation none",
+                  "argument": null
+                },
+                {
+                  "text": "the ZIP reader reads the sample with default limits",
+                  "argument": null
+                },
+                {
+                  "text": "it throws an OoxmlError with code zip-duplicate-entry",
+                  "argument": null
+                },
+                {
+                  "text": "the error message contains duplicate ZIP member",
+                  "argument": null
+                }
+              ]
+            },
+            {
+              "scenarioId": "@id-bun-zip32-reader-refusal",
+              "name": "Refuse ASCII case collision with the documented error",
+              "steps": [
+                {
+                  "text": "a ZIP32 reader sample with these ordered member and payload pairs encoded as JSON [[\"word/document.xml\",\"one\"],[\"WORD/document.xml\",\"two\"]]",
+                  "argument": null
+                },
+                {
+                  "text": "the sample has the mutation none",
+                  "argument": null
+                },
+                {
+                  "text": "the ZIP reader reads the sample with default limits",
+                  "argument": null
+                },
+                {
+                  "text": "it throws an OoxmlError with code zip-case-collision",
+                  "argument": null
+                },
+                {
+                  "text": "the error message contains ASCII case-collides",
+                  "argument": null
+                }
+              ]
+            },
+            {
+              "scenarioId": "@id-bun-zip32-reader-refusal",
+              "name": "Refuse parent traversal with the documented error",
+              "steps": [
+                {
+                  "text": "a ZIP32 reader sample with these ordered member and payload pairs encoded as JSON [[\"../word/document.xml\",\"bad\"]]",
+                  "argument": null
+                },
+                {
+                  "text": "the sample has the mutation none",
+                  "argument": null
+                },
+                {
+                  "text": "the ZIP reader reads the sample with default limits",
+                  "argument": null
+                },
+                {
+                  "text": "it throws an OoxmlError with code zip-name-invalid",
+                  "argument": null
+                },
+                {
+                  "text": "the error message contains noncanonical",
+                  "argument": null
+                }
+              ]
+            },
+            {
+              "scenarioId": "@id-bun-zip32-reader-refusal",
+              "name": "Refuse encryption flag with the documented error",
+              "steps": [
+                {
+                  "text": "a ZIP32 reader sample with these ordered member and payload pairs encoded as JSON [[\"word/document.xml\",\"secret\"]]",
+                  "argument": null
+                },
+                {
+                  "text": "the sample has the mutation general-purpose bit 0 is set in both headers",
+                  "argument": null
+                },
+                {
+                  "text": "the ZIP reader reads the sample with default limits",
+                  "argument": null
+                },
+                {
+                  "text": "it throws an OoxmlError with code zip-encryption-unsupported",
+                  "argument": null
+                },
+                {
+                  "text": "the error message contains encrypted",
+                  "argument": null
+                }
+              ]
+            },
+            {
+              "scenarioId": "@id-bun-zip32-reader-refusal",
+              "name": "Refuse unsupported method with the documented error",
+              "steps": [
+                {
+                  "text": "a ZIP32 reader sample with these ordered member and payload pairs encoded as JSON [[\"word/document.xml\",\"x\"]]",
+                  "argument": null
+                },
+                {
+                  "text": "the sample has the mutation both methods are 12 and payload bytes are stored uncompressed",
+                  "argument": null
+                },
+                {
+                  "text": "the ZIP reader reads the sample with default limits",
+                  "argument": null
+                },
+                {
+                  "text": "it throws an OoxmlError with code zip-method-unsupported",
+                  "argument": null
+                },
+                {
+                  "text": "the error message contains compression method",
+                  "argument": null
+                }
+              ]
+            },
+            {
+              "scenarioId": "@id-bun-zip32-reader-refusal",
+              "name": "Refuse multiple disks with the documented error",
+              "steps": [
+                {
+                  "text": "a ZIP32 reader sample with these ordered member and payload pairs encoded as JSON [[\"word/document.xml\",\"x\"]]",
+                  "argument": null
+                },
+                {
+                  "text": "the sample has the mutation end record disk number is 1",
+                  "argument": null
+                },
+                {
+                  "text": "the ZIP reader reads the sample with default limits",
+                  "argument": null
+                },
+                {
+                  "text": "it throws an OoxmlError with code zip-multi-disk-unsupported",
+                  "argument": null
+                },
+                {
+                  "text": "the error message contains multi-disk",
+                  "argument": null
+                }
+              ]
+            },
+            {
+              "scenarioId": "@id-bun-zip32-reader-refusal",
+              "name": "Refuse missing ZIP64 records with the documented error",
+              "steps": [
+                {
+                  "text": "a ZIP32 reader sample with these ordered member and payload pairs encoded as JSON [[\"word/document.xml\",\"x\"]]",
+                  "argument": null
+                },
+                {
+                  "text": "the sample has the mutation both end-record counts are 65535 without ZIP64 records",
+                  "argument": null
+                },
+                {
+                  "text": "the ZIP reader reads the sample with default limits",
+                  "argument": null
+                },
+                {
+                  "text": "it throws an OoxmlError with code zip-structure-invalid",
+                  "argument": null
+                },
+                {
+                  "text": "the error message contains ZIP64",
+                  "argument": null
+                }
+              ]
+            },
+            {
+              "scenarioId": "@id-bun-zip32-reader-refusal",
+              "name": "Refuse local name mismatch with the documented error",
+              "steps": [
+                {
+                  "text": "a ZIP32 reader sample with these ordered member and payload pairs encoded as JSON [[\"word/document.xml\",\"x\"]]",
+                  "argument": null
+                },
+                {
+                  "text": "the sample has the mutation local name is word/other.xml",
+                  "argument": null
+                },
+                {
+                  "text": "the ZIP reader reads the sample with default limits",
+                  "argument": null
+                },
+                {
+                  "text": "it throws an OoxmlError with code zip-local-metadata-mismatch",
+                  "argument": null
+                },
+                {
+                  "text": "the error message contains local and central",
+                  "argument": null
+                }
+              ]
+            },
+            {
+              "scenarioId": "@id-bun-zip32-reader-refusal",
+              "name": "Refuse CRC mismatch with the documented error",
+              "steps": [
+                {
+                  "text": "a ZIP32 reader sample with these ordered member and payload pairs encoded as JSON [[\"word/document.xml\",\"payload\"]]",
+                  "argument": null
+                },
+                {
+                  "text": "the sample has the mutation both CRC fields are hexadecimal DEADBEEF",
+                  "argument": null
+                },
+                {
+                  "text": "the ZIP reader reads the sample with default limits",
+                  "argument": null
+                },
+                {
+                  "text": "it throws an OoxmlError with code zip-crc-mismatch",
+                  "argument": null
+                },
+                {
+                  "text": "the error message contains CRC",
+                  "argument": null
+                }
+              ]
+            },
+            {
+              "scenarioId": "@id-bun-zip32-reader-refusal",
+              "name": "Refuse stored size mismatch with the documented error",
+              "steps": [
+                {
+                  "text": "a ZIP32 reader sample with these ordered member and payload pairs encoded as JSON [[\"word/document.xml\",\"payload\"]]",
+                  "argument": null
+                },
+                {
+                  "text": "the sample has the mutation method is STORED and all size fields are 99",
+                  "argument": null
+                },
+                {
+                  "text": "the ZIP reader reads the sample with default limits",
+                  "argument": null
+                },
+                {
+                  "text": "it throws an OoxmlError with code zip-size-mismatch",
+                  "argument": null
+                },
+                {
+                  "text": "the error message contains declared size",
+                  "argument": null
+                }
+              ]
+            },
+            {
+              "scenarioId": "@id-bun-zip32-reader-refusal",
+              "name": "Refuse deflate size overrun with the documented error",
+              "steps": [
+                {
+                  "text": "a ZIP32 reader sample with these ordered member and payload pairs encoded as JSON [[\"word/document.xml\",\"A\"]]",
+                  "argument": null
+                },
+                {
+                  "text": "the sample has the mutation payload repeats A 4096 times but both expanded sizes are 32",
+                  "argument": null
+                },
+                {
+                  "text": "the ZIP reader reads the sample with default limits",
+                  "argument": null
+                },
+                {
+                  "text": "it throws an OoxmlError with code zip-size-mismatch",
+                  "argument": null
+                },
+                {
+                  "text": "the error message contains declared size",
+                  "argument": null
+                }
+              ]
+            },
+            {
+              "scenarioId": "@id-bun-zip32-reader-refusal",
+              "name": "Refuse undeclared trailing byte with the documented error",
+              "steps": [
+                {
+                  "text": "a ZIP32 reader sample with these ordered member and payload pairs encoded as JSON [[\"word/document.xml\",\"x\"]]",
+                  "argument": null
+                },
+                {
+                  "text": "the sample has the mutation a newline byte follows the complete uncommented archive",
+                  "argument": null
+                },
+                {
+                  "text": "the ZIP reader reads the sample with default limits",
+                  "argument": null
+                },
+                {
+                  "text": "it throws an OoxmlError with code zip-end-record-missing",
+                  "argument": null
+                },
+                {
+                  "text": "the error message contains end-of-central-directory",
+                  "argument": null
+                }
+              ]
+            }
+          ],
+          "after": [
+            {
+              "scenarioId": "@id-bun-zip32-reader-refusal",
+              "name": "Refuse duplicate names with its structured ZIP32 reason",
+              "steps": [
+                {
+                  "text": "a ZIP32 reader sample with these ordered member and payload pairs encoded as JSON [[\"word/document.xml\",\"one\"],[\"word/document.xml\",\"two\"]]",
+                  "argument": null
+                },
+                {
+                  "text": "the sample has the mutation none",
+                  "argument": null
+                },
+                {
+                  "text": "the ZIP reader reads the sample with default limits",
+                  "argument": null
+                },
+                {
+                  "text": "reading refuses with reason zip-duplicate-entry and no member payload result",
+                  "argument": null
+                },
+                {
+                  "text": "the caller's original archive bytes remain unchanged",
+                  "argument": null
+                }
+              ]
+            },
+            {
+              "scenarioId": "@id-bun-zip32-reader-refusal",
+              "name": "Refuse ASCII case collision with its structured ZIP32 reason",
+              "steps": [
+                {
+                  "text": "a ZIP32 reader sample with these ordered member and payload pairs encoded as JSON [[\"word/document.xml\",\"one\"],[\"WORD/document.xml\",\"two\"]]",
+                  "argument": null
+                },
+                {
+                  "text": "the sample has the mutation none",
+                  "argument": null
+                },
+                {
+                  "text": "the ZIP reader reads the sample with default limits",
+                  "argument": null
+                },
+                {
+                  "text": "reading refuses with reason zip-case-collision and no member payload result",
+                  "argument": null
+                },
+                {
+                  "text": "the caller's original archive bytes remain unchanged",
+                  "argument": null
+                }
+              ]
+            },
+            {
+              "scenarioId": "@id-bun-zip32-reader-refusal",
+              "name": "Refuse parent traversal with its structured ZIP32 reason",
+              "steps": [
+                {
+                  "text": "a ZIP32 reader sample with these ordered member and payload pairs encoded as JSON [[\"../word/document.xml\",\"bad\"]]",
+                  "argument": null
+                },
+                {
+                  "text": "the sample has the mutation none",
+                  "argument": null
+                },
+                {
+                  "text": "the ZIP reader reads the sample with default limits",
+                  "argument": null
+                },
+                {
+                  "text": "reading refuses with reason zip-name-invalid and no member payload result",
+                  "argument": null
+                },
+                {
+                  "text": "the caller's original archive bytes remain unchanged",
+                  "argument": null
+                }
+              ]
+            },
+            {
+              "scenarioId": "@id-bun-zip32-reader-refusal",
+              "name": "Refuse encryption flag with its structured ZIP32 reason",
+              "steps": [
+                {
+                  "text": "a ZIP32 reader sample with these ordered member and payload pairs encoded as JSON [[\"word/document.xml\",\"secret\"]]",
+                  "argument": null
+                },
+                {
+                  "text": "the sample has the mutation general-purpose bit 0 is set in both headers",
+                  "argument": null
+                },
+                {
+                  "text": "the ZIP reader reads the sample with default limits",
+                  "argument": null
+                },
+                {
+                  "text": "reading refuses with reason zip-encryption-unsupported and no member payload result",
+                  "argument": null
+                },
+                {
+                  "text": "the caller's original archive bytes remain unchanged",
+                  "argument": null
+                }
+              ]
+            },
+            {
+              "scenarioId": "@id-bun-zip32-reader-refusal",
+              "name": "Refuse unsupported method with its structured ZIP32 reason",
+              "steps": [
+                {
+                  "text": "a ZIP32 reader sample with these ordered member and payload pairs encoded as JSON [[\"word/document.xml\",\"x\"]]",
+                  "argument": null
+                },
+                {
+                  "text": "the sample has the mutation both methods are 12 and payload bytes are stored uncompressed",
+                  "argument": null
+                },
+                {
+                  "text": "the ZIP reader reads the sample with default limits",
+                  "argument": null
+                },
+                {
+                  "text": "reading refuses with reason zip-method-unsupported and no member payload result",
+                  "argument": null
+                },
+                {
+                  "text": "the caller's original archive bytes remain unchanged",
+                  "argument": null
+                }
+              ]
+            },
+            {
+              "scenarioId": "@id-bun-zip32-reader-refusal",
+              "name": "Refuse multiple disks with its structured ZIP32 reason",
+              "steps": [
+                {
+                  "text": "a ZIP32 reader sample with these ordered member and payload pairs encoded as JSON [[\"word/document.xml\",\"x\"]]",
+                  "argument": null
+                },
+                {
+                  "text": "the sample has the mutation end record disk number is 1",
+                  "argument": null
+                },
+                {
+                  "text": "the ZIP reader reads the sample with default limits",
+                  "argument": null
+                },
+                {
+                  "text": "reading refuses with reason zip-multi-disk-unsupported and no member payload result",
+                  "argument": null
+                },
+                {
+                  "text": "the caller's original archive bytes remain unchanged",
+                  "argument": null
+                }
+              ]
+            },
+            {
+              "scenarioId": "@id-bun-zip32-reader-refusal",
+              "name": "Refuse missing ZIP64 records with its structured ZIP32 reason",
+              "steps": [
+                {
+                  "text": "a ZIP32 reader sample with these ordered member and payload pairs encoded as JSON [[\"word/document.xml\",\"x\"]]",
+                  "argument": null
+                },
+                {
+                  "text": "the sample has the mutation both end-record counts are 65535 without ZIP64 records",
+                  "argument": null
+                },
+                {
+                  "text": "the ZIP reader reads the sample with default limits",
+                  "argument": null
+                },
+                {
+                  "text": "reading refuses with reason zip-structure-invalid and no member payload result",
+                  "argument": null
+                },
+                {
+                  "text": "the caller's original archive bytes remain unchanged",
+                  "argument": null
+                }
+              ]
+            },
+            {
+              "scenarioId": "@id-bun-zip32-reader-refusal",
+              "name": "Refuse local name mismatch with its structured ZIP32 reason",
+              "steps": [
+                {
+                  "text": "a ZIP32 reader sample with these ordered member and payload pairs encoded as JSON [[\"word/document.xml\",\"x\"]]",
+                  "argument": null
+                },
+                {
+                  "text": "the sample has the mutation local name is word/other.xml",
+                  "argument": null
+                },
+                {
+                  "text": "the ZIP reader reads the sample with default limits",
+                  "argument": null
+                },
+                {
+                  "text": "reading refuses with reason zip-local-metadata-mismatch and no member payload result",
+                  "argument": null
+                },
+                {
+                  "text": "the caller's original archive bytes remain unchanged",
+                  "argument": null
+                }
+              ]
+            },
+            {
+              "scenarioId": "@id-bun-zip32-reader-refusal",
+              "name": "Refuse CRC mismatch with its structured ZIP32 reason",
+              "steps": [
+                {
+                  "text": "a ZIP32 reader sample with these ordered member and payload pairs encoded as JSON [[\"word/document.xml\",\"payload\"]]",
+                  "argument": null
+                },
+                {
+                  "text": "the sample has the mutation both CRC fields are hexadecimal DEADBEEF",
+                  "argument": null
+                },
+                {
+                  "text": "the ZIP reader reads the sample with default limits",
+                  "argument": null
+                },
+                {
+                  "text": "reading refuses with reason zip-crc-mismatch and no member payload result",
+                  "argument": null
+                },
+                {
+                  "text": "the caller's original archive bytes remain unchanged",
+                  "argument": null
+                }
+              ]
+            },
+            {
+              "scenarioId": "@id-bun-zip32-reader-refusal",
+              "name": "Refuse stored size mismatch with its structured ZIP32 reason",
+              "steps": [
+                {
+                  "text": "a ZIP32 reader sample with these ordered member and payload pairs encoded as JSON [[\"word/document.xml\",\"payload\"]]",
+                  "argument": null
+                },
+                {
+                  "text": "the sample has the mutation method is STORED and all size fields are 99",
+                  "argument": null
+                },
+                {
+                  "text": "the ZIP reader reads the sample with default limits",
+                  "argument": null
+                },
+                {
+                  "text": "reading refuses with reason zip-size-mismatch and no member payload result",
+                  "argument": null
+                },
+                {
+                  "text": "the caller's original archive bytes remain unchanged",
+                  "argument": null
+                }
+              ]
+            },
+            {
+              "scenarioId": "@id-bun-zip32-reader-refusal",
+              "name": "Refuse deflate size overrun with its structured ZIP32 reason",
+              "steps": [
+                {
+                  "text": "a ZIP32 reader sample with these ordered member and payload pairs encoded as JSON [[\"word/document.xml\",\"A\"]]",
+                  "argument": null
+                },
+                {
+                  "text": "the sample has the mutation payload repeats A 4096 times but both expanded sizes are 32",
+                  "argument": null
+                },
+                {
+                  "text": "the ZIP reader reads the sample with default limits",
+                  "argument": null
+                },
+                {
+                  "text": "reading refuses with reason zip-size-mismatch and no member payload result",
+                  "argument": null
+                },
+                {
+                  "text": "the caller's original archive bytes remain unchanged",
+                  "argument": null
+                }
+              ]
+            },
+            {
+              "scenarioId": "@id-bun-zip32-reader-refusal",
+              "name": "Refuse undeclared trailing byte with its structured ZIP32 reason",
+              "steps": [
+                {
+                  "text": "a ZIP32 reader sample with these ordered member and payload pairs encoded as JSON [[\"word/document.xml\",\"x\"]]",
+                  "argument": null
+                },
+                {
+                  "text": "the sample has the mutation a newline byte follows the complete uncommented archive",
+                  "argument": null
+                },
+                {
+                  "text": "the ZIP reader reads the sample with default limits",
+                  "argument": null
+                },
+                {
+                  "text": "reading refuses with reason zip-end-record-missing and no member payload result",
+                  "argument": null
+                },
+                {
+                  "text": "the caller's original archive bytes remain unchanged",
+                  "argument": null
+                }
+              ]
+            }
+          ],
+          "beforeProfiles": [
+            "@profile-zip32-error-api"
+          ],
+          "afterProfiles": [
+            "@profile-zip32-refusal-reasons"
+          ]
+        },
+        {
+          "id": "@id-bun-zip32-writer-refusal",
+          "before": [
+            {
+              "scenarioId": "@id-bun-zip32-writer-refusal",
+              "name": "Refuse ASCII case collision before returning an archive",
+              "steps": [
+                {
+                  "text": "ordered writer entries are encoded as JSON [[\"word/document.xml\",\"one\"],[\"WORD/document.xml\",\"two\"]]",
+                  "argument": null
+                },
+                {
+                  "text": "the ZIP writer writes the entries with default options",
+                  "argument": null
+                },
+                {
+                  "text": "it throws an OoxmlError with code zip-case-collision",
+                  "argument": null
+                },
+                {
+                  "text": "the error message contains ASCII case-collides",
+                  "argument": null
+                }
+              ]
+            },
+            {
+              "scenarioId": "@id-bun-zip32-writer-refusal",
+              "name": "Refuse non-empty directory entry before returning an archive",
+              "steps": [
+                {
+                  "text": "ordered writer entries are encoded as JSON [[\"word/\",\"not empty\"]]",
+                  "argument": null
+                },
+                {
+                  "text": "the ZIP writer writes the entries with default options",
+                  "argument": null
+                },
+                {
+                  "text": "it throws an OoxmlError with code zip-directory-entry-invalid",
+                  "argument": null
+                },
+                {
+                  "text": "the error message contains must be empty",
+                  "argument": null
+                }
+              ]
+            }
+          ],
+          "after": [
+            {
+              "scenarioId": "@id-bun-zip32-writer-refusal",
+              "name": "Refuse ASCII case collision before returning an archive",
+              "steps": [
+                {
+                  "text": "ordered writer entries are encoded as JSON [[\"word/document.xml\",\"one\"],[\"WORD/document.xml\",\"two\"]]",
+                  "argument": null
+                },
+                {
+                  "text": "the ZIP writer writes the entries with default options",
+                  "argument": null
+                },
+                {
+                  "text": "writing refuses with reason zip-case-collision and no archive result",
+                  "argument": null
+                },
+                {
+                  "text": "the ordered caller entry names and payload bytes remain unchanged",
+                  "argument": null
+                }
+              ]
+            },
+            {
+              "scenarioId": "@id-bun-zip32-writer-refusal",
+              "name": "Refuse non-empty directory entry before returning an archive",
+              "steps": [
+                {
+                  "text": "ordered writer entries are encoded as JSON [[\"word/\",\"not empty\"]]",
+                  "argument": null
+                },
+                {
+                  "text": "the ZIP writer writes the entries with default options",
+                  "argument": null
+                },
+                {
+                  "text": "writing refuses with reason zip-directory-entry-invalid and no archive result",
+                  "argument": null
+                },
+                {
+                  "text": "the ordered caller entry names and payload bytes remain unchanged",
+                  "argument": null
+                }
+              ]
+            }
+          ],
+          "beforeProfiles": [
+            "@profile-zip32-error-api"
+          ],
+          "afterProfiles": [
+            "@profile-zip32-refusal-reasons"
+          ]
+        },
+        {
+          "id": "@id-bun-zip32-configured-bounds",
+          "before": [
+            {
+              "scenarioId": "@id-bun-zip32-configured-bounds",
+              "name": "Refuse the configured maxArchiveBytes threshold",
+              "steps": [
+                {
+                  "text": "a raw-DEFLATE ZIP32 archive contains a.bin with 4096 A bytes followed by b.bin with two b bytes",
+                  "argument": null
+                },
+                {
+                  "text": "the ZIP reader reads the archive with only maxArchiveBytes set to archive byte length minus 1",
+                  "argument": null
+                },
+                {
+                  "text": "it throws an OoxmlError with code zip-archive-too-large",
+                  "argument": null
+                },
+                {
+                  "text": "the error message contains archive bytes",
+                  "argument": null
+                }
+              ]
+            },
+            {
+              "scenarioId": "@id-bun-zip32-configured-bounds",
+              "name": "Refuse the configured maxEntries threshold",
+              "steps": [
+                {
+                  "text": "a raw-DEFLATE ZIP32 archive contains a.bin with 4096 A bytes followed by b.bin with two b bytes",
+                  "argument": null
+                },
+                {
+                  "text": "the ZIP reader reads the archive with only maxEntries set to 1",
+                  "argument": null
+                },
+                {
+                  "text": "it throws an OoxmlError with code zip-too-many-entries",
+                  "argument": null
+                },
+                {
+                  "text": "the error message contains entry limit",
+                  "argument": null
+                }
+              ]
+            },
+            {
+              "scenarioId": "@id-bun-zip32-configured-bounds",
+              "name": "Refuse the configured maxEntryBytes threshold",
+              "steps": [
+                {
+                  "text": "a raw-DEFLATE ZIP32 archive contains a.bin with 4096 A bytes followed by b.bin with two b bytes",
+                  "argument": null
+                },
+                {
+                  "text": "the ZIP reader reads the archive with only maxEntryBytes set to 8",
+                  "argument": null
+                },
+                {
+                  "text": "it throws an OoxmlError with code zip-entry-too-large",
+                  "argument": null
+                },
+                {
+                  "text": "the error message contains entry limit",
+                  "argument": null
+                }
+              ]
+            },
+            {
+              "scenarioId": "@id-bun-zip32-configured-bounds",
+              "name": "Refuse the configured maxTotalBytes threshold",
+              "steps": [
+                {
+                  "text": "a raw-DEFLATE ZIP32 archive contains a.bin with 4096 A bytes followed by b.bin with two b bytes",
+                  "argument": null
+                },
+                {
+                  "text": "the ZIP reader reads the archive with only maxTotalBytes set to 8",
+                  "argument": null
+                },
+                {
+                  "text": "it throws an OoxmlError with code zip-total-too-large",
+                  "argument": null
+                },
+                {
+                  "text": "the error message contains total expanded",
+                  "argument": null
+                }
+              ]
+            },
+            {
+              "scenarioId": "@id-bun-zip32-configured-bounds",
+              "name": "Refuse the configured maxCompressionRatio threshold",
+              "steps": [
+                {
+                  "text": "a raw-DEFLATE ZIP32 archive contains a.bin with 4096 A bytes followed by b.bin with two b bytes",
+                  "argument": null
+                },
+                {
+                  "text": "the ZIP reader reads the archive with only maxCompressionRatio set to 2",
+                  "argument": null
+                },
+                {
+                  "text": "it throws an OoxmlError with code zip-compression-ratio-exceeded",
+                  "argument": null
+                },
+                {
+                  "text": "the error message contains compression ratio",
+                  "argument": null
+                }
+              ]
+            }
+          ],
+          "after": [
+            {
+              "scenarioId": "@id-bun-zip32-configured-bounds",
+              "name": "Refuse the configured maxArchiveBytes threshold",
+              "steps": [
+                {
+                  "text": "a raw-DEFLATE ZIP32 archive contains a.bin with 4096 A bytes followed by b.bin with two b bytes",
+                  "argument": null
+                },
+                {
+                  "text": "the ZIP reader reads the archive with only maxArchiveBytes set to archive byte length minus 1",
+                  "argument": null
+                },
+                {
+                  "text": "reading refuses with reason zip-archive-too-large and no member payload result",
+                  "argument": null
+                },
+                {
+                  "text": "the caller's original archive bytes remain unchanged",
+                  "argument": null
+                }
+              ]
+            },
+            {
+              "scenarioId": "@id-bun-zip32-configured-bounds",
+              "name": "Refuse the configured maxEntries threshold",
+              "steps": [
+                {
+                  "text": "a raw-DEFLATE ZIP32 archive contains a.bin with 4096 A bytes followed by b.bin with two b bytes",
+                  "argument": null
+                },
+                {
+                  "text": "the ZIP reader reads the archive with only maxEntries set to 1",
+                  "argument": null
+                },
+                {
+                  "text": "reading refuses with reason zip-too-many-entries and no member payload result",
+                  "argument": null
+                },
+                {
+                  "text": "the caller's original archive bytes remain unchanged",
+                  "argument": null
+                }
+              ]
+            },
+            {
+              "scenarioId": "@id-bun-zip32-configured-bounds",
+              "name": "Refuse the configured maxEntryBytes threshold",
+              "steps": [
+                {
+                  "text": "a raw-DEFLATE ZIP32 archive contains a.bin with 4096 A bytes followed by b.bin with two b bytes",
+                  "argument": null
+                },
+                {
+                  "text": "the ZIP reader reads the archive with only maxEntryBytes set to 8",
+                  "argument": null
+                },
+                {
+                  "text": "reading refuses with reason zip-entry-too-large and no member payload result",
+                  "argument": null
+                },
+                {
+                  "text": "the caller's original archive bytes remain unchanged",
+                  "argument": null
+                }
+              ]
+            },
+            {
+              "scenarioId": "@id-bun-zip32-configured-bounds",
+              "name": "Refuse the configured maxTotalBytes threshold",
+              "steps": [
+                {
+                  "text": "a raw-DEFLATE ZIP32 archive contains a.bin with 4096 A bytes followed by b.bin with two b bytes",
+                  "argument": null
+                },
+                {
+                  "text": "the ZIP reader reads the archive with only maxTotalBytes set to 8",
+                  "argument": null
+                },
+                {
+                  "text": "reading refuses with reason zip-total-too-large and no member payload result",
+                  "argument": null
+                },
+                {
+                  "text": "the caller's original archive bytes remain unchanged",
+                  "argument": null
+                }
+              ]
+            },
+            {
+              "scenarioId": "@id-bun-zip32-configured-bounds",
+              "name": "Refuse the configured maxCompressionRatio threshold",
+              "steps": [
+                {
+                  "text": "a raw-DEFLATE ZIP32 archive contains a.bin with 4096 A bytes followed by b.bin with two b bytes",
+                  "argument": null
+                },
+                {
+                  "text": "the ZIP reader reads the archive with only maxCompressionRatio set to 2",
+                  "argument": null
+                },
+                {
+                  "text": "reading refuses with reason zip-compression-ratio-exceeded and no member payload result",
+                  "argument": null
+                },
+                {
+                  "text": "the caller's original archive bytes remain unchanged",
+                  "argument": null
+                }
+              ]
+            }
+          ],
+          "beforeProfiles": [
+            "@profile-zip32-error-api"
+          ],
+          "afterProfiles": [
+            "@profile-zip32-refusal-reasons"
+          ]
+        }
+      ],
+      "beforeLedgerRows": [
+        {
+          "id": "@id-bun-zip32-reader-refusal",
+          "feature": "workflows/package/zip32.feature",
+          "expandedCases": 12,
+          "factIds": [],
+          "expectedOutcomes": [
+            "it throws an OoxmlError with code zip-duplicate-entry",
+            "the error message contains duplicate ZIP member",
+            "it throws an OoxmlError with code zip-case-collision",
+            "the error message contains ASCII case-collides",
+            "it throws an OoxmlError with code zip-name-invalid",
+            "the error message contains noncanonical",
+            "it throws an OoxmlError with code zip-encryption-unsupported",
+            "the error message contains encrypted",
+            "it throws an OoxmlError with code zip-method-unsupported",
+            "the error message contains compression method",
+            "it throws an OoxmlError with code zip-multi-disk-unsupported",
+            "the error message contains multi-disk",
+            "it throws an OoxmlError with code zip-structure-invalid",
+            "the error message contains ZIP64",
+            "it throws an OoxmlError with code zip-local-metadata-mismatch",
+            "the error message contains local and central",
+            "it throws an OoxmlError with code zip-crc-mismatch",
+            "the error message contains CRC",
+            "it throws an OoxmlError with code zip-size-mismatch",
+            "the error message contains declared size",
+            "it throws an OoxmlError with code zip-end-record-missing",
+            "the error message contains end-of-central-directory"
+          ],
+          "consumers": {
+            "bun": {
+              "status": "implemented",
+              "evidence": "Bun 870b697dba4dba1cd89187a6308912674943273e at shared v0.82.0 executes twelve exact five-step ZIP32 reader rows with ordered member names and specified local, central or end-record mutations; readZip rejects each with its exact typed OoxmlError code and message fragment rather than accepting it, and does not mutate the caller's archive bytes. features/shared.json and tests/acceptance/zip32.ts bind the exact shared rows; tests/unit/zip32-bindings.test.ts selects four scenarios (20 cases/91 steps) and wrong checksum, code, message, fabricated success, untyped error and caller-buffer mutation controls fail. Fresh GitHub recursive make check passed 732/732 selected cases. No Go/Python or ZIP64/general OPC credit."
+            },
+            "go": {
+              "status": "planned",
+              "evidence": "Native execution binding pending"
+            },
+            "python": {
+              "status": "planned",
+              "evidence": "Native execution binding pending"
+            }
+          }
+        },
+        {
+          "id": "@id-bun-zip32-writer-refusal",
+          "feature": "workflows/package/zip32.feature",
+          "expandedCases": 2,
+          "factIds": [],
+          "expectedOutcomes": [
+            "it throws an OoxmlError with code zip-case-collision",
+            "the error message contains ASCII case-collides",
+            "it throws an OoxmlError with code zip-directory-entry-invalid",
+            "the error message contains must be empty"
+          ],
+          "consumers": {
+            "bun": {
+              "status": "implemented",
+              "evidence": "Bun 870b697dba4dba1cd89187a6308912674943273e at shared v0.82.0 executes two exact four-step ZIP32 writer rows rejecting ASCII case-colliding member names and a non-empty directory entry with distinct typed codes/messages while retaining input entries. features/shared.json and tests/acceptance/zip32.ts bind the exact shared rows; tests/unit/zip32-bindings.test.ts selects four scenarios (20 cases/91 steps) and wrong checksum, code, message, fabricated success, untyped error and caller-buffer mutation controls fail. Fresh GitHub recursive make check passed 732/732 selected cases. No Go/Python or ZIP64/general OPC credit."
+            },
+            "go": {
+              "status": "planned",
+              "evidence": "Native execution binding pending"
+            },
+            "python": {
+              "status": "planned",
+              "evidence": "Native execution binding pending"
+            }
+          }
+        },
+        {
+          "id": "@id-bun-zip32-configured-bounds",
+          "feature": "workflows/package/zip32.feature",
+          "expandedCases": 5,
+          "factIds": [],
+          "expectedOutcomes": [
+            "it throws an OoxmlError with code zip-archive-too-large",
+            "the error message contains archive bytes",
+            "it throws an OoxmlError with code zip-too-many-entries",
+            "the error message contains entry limit",
+            "it throws an OoxmlError with code zip-entry-too-large",
+            "it throws an OoxmlError with code zip-total-too-large",
+            "the error message contains total expanded",
+            "it throws an OoxmlError with code zip-compression-ratio-exceeded",
+            "the error message contains compression ratio"
+          ],
+          "consumers": {
+            "bun": {
+              "status": "implemented",
+              "evidence": "Bun 870b697dba4dba1cd89187a6308912674943273e at shared v0.82.0 executes five exact four-step ZIP32 bounds rows after separately admitting the unbounded two-entry archive, then rejecting each configured archive-byte, entry-count, entry-byte, total-byte or ratio limit with its specified typed code and message fragment without mutating the caller's archive bytes. features/shared.json and tests/acceptance/zip32.ts bind the exact shared rows; tests/unit/zip32-bindings.test.ts selects four scenarios (20 cases/91 steps) and wrong checksum, code, message, fabricated success, untyped error and caller-buffer mutation controls fail. Fresh GitHub recursive make check passed 732/732 selected cases. No Go/Python or ZIP64/general OPC credit."
+            },
+            "go": {
+              "status": "planned",
+              "evidence": "Native execution binding pending"
+            },
+            "python": {
+              "status": "planned",
+              "evidence": "Native execution binding pending"
+            }
+          }
+        }
+      ],
+      "afterLedgerRows": [
+        {
+          "id": "@id-bun-zip32-reader-refusal",
+          "feature": "workflows/package/zip32.feature",
+          "expandedCases": 12,
+          "factIds": [],
+          "expectedOutcomes": [
+            "reading refuses with reason zip-duplicate-entry and no member payload result",
+            "the caller's original archive bytes remain unchanged",
+            "reading refuses with reason zip-case-collision and no member payload result",
+            "reading refuses with reason zip-name-invalid and no member payload result",
+            "reading refuses with reason zip-encryption-unsupported and no member payload result",
+            "reading refuses with reason zip-method-unsupported and no member payload result",
+            "reading refuses with reason zip-multi-disk-unsupported and no member payload result",
+            "reading refuses with reason zip-structure-invalid and no member payload result",
+            "reading refuses with reason zip-local-metadata-mismatch and no member payload result",
+            "reading refuses with reason zip-crc-mismatch and no member payload result",
+            "reading refuses with reason zip-size-mismatch and no member payload result",
+            "reading refuses with reason zip-end-record-missing and no member payload result"
+          ],
+          "consumers": {
+            "bun": {
+              "status": "planned",
+              "evidence": "Structured runtime-neutral OPC/ZIP32 reason and custody candidate supersedes literal exception-class/message profile; historical credit retained in ledgers/package-runtime-generalization.json. Requires exact native cases and discriminators; no migration credit."
+            },
+            "go": {
+              "status": "planned",
+              "evidence": "Structured runtime-neutral OPC/ZIP32 reason and custody candidate supersedes literal exception-class/message profile; historical credit retained in ledgers/package-runtime-generalization.json. Requires exact native cases and discriminators; no migration credit."
+            },
+            "python": {
+              "status": "planned",
+              "evidence": "Structured runtime-neutral OPC/ZIP32 reason and custody candidate supersedes literal exception-class/message profile; historical credit retained in ledgers/package-runtime-generalization.json. Requires exact native cases and discriminators; no migration credit."
+            }
+          }
+        },
+        {
+          "id": "@id-bun-zip32-writer-refusal",
+          "feature": "workflows/package/zip32.feature",
+          "expandedCases": 2,
+          "factIds": [],
+          "expectedOutcomes": [
+            "writing refuses with reason zip-case-collision and no archive result",
+            "the ordered caller entry names and payload bytes remain unchanged",
+            "writing refuses with reason zip-directory-entry-invalid and no archive result"
+          ],
+          "consumers": {
+            "bun": {
+              "status": "planned",
+              "evidence": "Structured runtime-neutral OPC/ZIP32 reason and custody candidate supersedes literal exception-class/message profile; historical credit retained in ledgers/package-runtime-generalization.json. Requires exact native cases and discriminators; no migration credit."
+            },
+            "go": {
+              "status": "planned",
+              "evidence": "Structured runtime-neutral OPC/ZIP32 reason and custody candidate supersedes literal exception-class/message profile; historical credit retained in ledgers/package-runtime-generalization.json. Requires exact native cases and discriminators; no migration credit."
+            },
+            "python": {
+              "status": "planned",
+              "evidence": "Structured runtime-neutral OPC/ZIP32 reason and custody candidate supersedes literal exception-class/message profile; historical credit retained in ledgers/package-runtime-generalization.json. Requires exact native cases and discriminators; no migration credit."
+            }
+          }
+        },
+        {
+          "id": "@id-bun-zip32-configured-bounds",
+          "feature": "workflows/package/zip32.feature",
+          "expandedCases": 5,
+          "factIds": [],
+          "expectedOutcomes": [
+            "reading refuses with reason zip-archive-too-large and no member payload result",
+            "the caller's original archive bytes remain unchanged",
+            "reading refuses with reason zip-too-many-entries and no member payload result",
+            "reading refuses with reason zip-entry-too-large and no member payload result",
+            "reading refuses with reason zip-total-too-large and no member payload result",
+            "reading refuses with reason zip-compression-ratio-exceeded and no member payload result"
+          ],
+          "consumers": {
+            "bun": {
+              "status": "planned",
+              "evidence": "Structured runtime-neutral OPC/ZIP32 reason and custody candidate supersedes literal exception-class/message profile; historical credit retained in ledgers/package-runtime-generalization.json. Requires exact native cases and discriminators; no migration credit."
+            },
+            "go": {
+              "status": "planned",
+              "evidence": "Structured runtime-neutral OPC/ZIP32 reason and custody candidate supersedes literal exception-class/message profile; historical credit retained in ledgers/package-runtime-generalization.json. Requires exact native cases and discriminators; no migration credit."
+            },
+            "python": {
+              "status": "planned",
+              "evidence": "Structured runtime-neutral OPC/ZIP32 reason and custody candidate supersedes literal exception-class/message profile; historical credit retained in ledgers/package-runtime-generalization.json. Requires exact native cases and discriminators; no migration credit."
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

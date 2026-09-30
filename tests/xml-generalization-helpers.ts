@@ -1,6 +1,7 @@
 import xmlMigration from '../ledgers/xml-runtime-generalization.json';
 import cellMigration from '../ledgers/cell-runtime-generalization.json';
-const migrations = [xmlMigration, cellMigration];
+import packageMigration from '../ledgers/package-runtime-generalization.json';
+const migrations = [xmlMigration, cellMigration, ...packageMigration.files];
 const migration = {scenarios: migrations.flatMap(m=>m.scenarios), beforeLedgerRows: migrations.flatMap(m=>m.beforeLedgerRows), afterLedgerRows: migrations.flatMap(m=>m.afterLedgerRows)};
 import {cases} from '../scripts/verify.ts';
 const exact = (a: unknown, b: unknown) => JSON.stringify(a) === JSON.stringify(b);
@@ -36,10 +37,9 @@ export async function historicalWorkflowLedger() {
   return {...ledger, workflows: ledger.workflows.map((row: any) => {
     const s = migration.scenarios.find(r => r.id === row.id);
     if (!s) return row;
-    const expected = s.id === '@id-docx-go-table-cell-access' ? s.after[0]!.steps.slice(2).map(x=>x.text) : s.after[0]!.steps.filter(x => !/^XML values input|^the XML values input is parsed$|^changing a returned/.test(x.text)).map(x => x.text);
-    if (!exact(row.expectedOutcomes, expected)) throw Error('Unreviewed XML ledger outcome change: ' + row.id);
-    const old = migration.beforeLedgerRows.find(r => r.id === row.id)!;
     const current = migration.afterLedgerRows.find(r => r.id === row.id)!;
+    if (!exact(row.expectedOutcomes, current.expectedOutcomes)) throw Error('Unreviewed generalized ledger outcome change: ' + row.id);
+    const old = migration.beforeLedgerRows.find(r => r.id === row.id)!;
     if (!exact(row.consumers, current.consumers)) throw Error('Unreviewed current XML consumer evidence: ' + row.id);
     return {...row, expectedOutcomes: old.expectedOutcomes, consumers: old.consumers};
   })};

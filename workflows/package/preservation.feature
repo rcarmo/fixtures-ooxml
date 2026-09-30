@@ -27,7 +27,8 @@ Feature: OPC package custody, transactions and save destinations
   Rule: OPC byte custody, transaction callbacks and safe save destinations
     These examples define package API behaviour without asserting Word schema validity.
     The base package has three members, UTF-8 XML declarations and no extra payloads.
-    Exact OoxmlError, code and message predicates use the error API profile.
+    Structured refusal reasons use the shared package-failure profile.
+    Historical diagnostic fragments in Examples do not prescribe exception wording.
     Async callbacks and thenable identity use a JavaScript-specific transaction
     profile; these are API policies, not general OPC format requirements.
     Background:
@@ -41,12 +42,12 @@ Feature: OPC package custody, transactions and save destinations
       And _rels/.rels uses namespace http://schemas.openxmlformats.org/package/2006/relationships
       And its root relationship is rId1 of type http://schemas.openxmlformats.org/officeDocument/2006/relationships/officeDocument targeting word/document.xml
 
-    @profile-ooxml-error-api @id-bun-opc-open-refusal
-    Scenario Outline: Reject <variant> with the documented error
+    @profile-package-refusal-reasons @id-bun-opc-open-refusal
+    Scenario Outline: Reject <variant> with its structured validation reason
       Given the base package has the mutation <mutation>
       When the package editor opens its archive bytes
-      Then it throws an OoxmlError with code <code>
-      And the error message contains <message>
+      Then opening refuses with reason <code> and no package result
+      And the caller's original archive bytes remain unchanged
       Examples:
         | variant               | mutation                                                                   | code                            | message                            |
         | escaped part name     | rename the document, content-type override and relationship target to word/%66oo.xml | opc-part-name-invalid   | Noncanonical part name             |
@@ -87,21 +88,21 @@ Feature: OPC package custody, transactions and save destinations
       Then the transaction returns the same object by identity without invoking then
       And the document text contains Beta
 
-    @profile-ooxml-error-api @id-bun-opc-save-invalid-target-custody
+    @profile-package-refusal-reasons @id-bun-opc-save-invalid-target-custody
     Scenario: A failed validation leaves an existing output file untouched
       Given an existing destination file contains the base package archive bytes
       And the package editor has opened those bytes and deleted word/document.xml
       When the package is saved to the existing destination
-      Then it throws an OoxmlError with code opc-relationship-target-missing
-      And the error message contains Missing target
+      Then saving refuses with reason opc-relationship-target-missing before destination replacement
+      And no successful save receipt is returned
       And the destination file bytes equal the original archive bytes
 
-    @profile-ooxml-error-api @id-bun-opc-symlink-destination-refusal
+    @profile-package-refusal-reasons @id-bun-opc-symlink-destination-refusal
     Scenario: A symlink destination is refused without changing its target
       Given a regular destination file contains the base package archive bytes
       And a symlink points to that file
       And the package editor has opened the base archive bytes
       When the unchanged package is saved through the symlink path
-      Then it throws an OoxmlError with code opc-symlink-destination
-      And the error message contains Symlink
+      Then saving refuses with reason opc-symlink-destination before destination replacement
+      And the symlink still points to the original regular destination without a successful save receipt
       And the regular destination file bytes equal the original archive bytes

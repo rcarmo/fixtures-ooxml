@@ -117,7 +117,7 @@
     },
     {
       "path": "workflows/package/preservation.feature",
-      "reviewedSha256": "1a2c653871f6bd830da4ca37f2b9c355c3885463234101b55a403786aedbba5a"
+      "reviewedSha256": "b5d8b7930bbfea66482053c5a80874dcf1a7fd6bed3fa53ad45b36144737e27a"
     },
     {
       "path": "workflows/package/relationship-namespaces.feature",
@@ -137,7 +137,7 @@
     },
     {
       "path": "workflows/package/zip32.feature",
-      "reviewedSha256": "932bdcb2a1fb0866ec07c3e64d92b54b39dafa06f83e4c405fb48e80634ef24c"
+      "reviewedSha256": "ecf7356093c73b6d170177e30df4c63ea449788c285583a32dbea41942ccf4da"
     },
     {
       "path": "workflows/package/zip64.feature",
@@ -2184,9 +2184,9 @@
     {
       "id": "@id-bun-opc-open-refusal",
       "feature": "workflows/package/preservation.feature",
-      "category": "runtime-specific",
-      "runtimeConstraint": "bun-error-api",
-      "reason": "Literal OoxmlError instance/type, code and message predicates preserve the Bun-origin exception API; no cross-language error-type equivalence is defined.",
+      "category": "generalized",
+      "runtimeConstraint": "none",
+      "reason": "Concrete archive/envelope mutations, structured reason-specific refusals and exact caller/destination custody replace exception identity and diagnostic wording; native semantic limit mappings are explicit.",
       "evidence": [
         "workflows/package/preservation.feature",
         "contracts/bun-opc-custody.md"
@@ -2239,9 +2239,9 @@
     {
       "id": "@id-bun-opc-save-invalid-target-custody",
       "feature": "workflows/package/preservation.feature",
-      "category": "runtime-specific",
-      "runtimeConstraint": "bun-error-api",
-      "reason": "Literal OoxmlError instance/type, code and message predicates preserve the Bun-origin exception API; no cross-language error-type equivalence is defined.",
+      "category": "generalized",
+      "runtimeConstraint": "none",
+      "reason": "Concrete archive/envelope mutations, structured reason-specific refusals and exact caller/destination custody replace exception identity and diagnostic wording; native semantic limit mappings are explicit.",
       "evidence": [
         "workflows/package/preservation.feature",
         "contracts/bun-opc-custody.md"
@@ -2250,9 +2250,9 @@
     {
       "id": "@id-bun-opc-symlink-destination-refusal",
       "feature": "workflows/package/preservation.feature",
-      "category": "runtime-specific",
-      "runtimeConstraint": "bun-error-api",
-      "reason": "Literal OoxmlError instance/type, code and message predicates preserve the Bun-origin exception API; no cross-language error-type equivalence is defined.",
+      "category": "generalized",
+      "runtimeConstraint": "none",
+      "reason": "Concrete archive/envelope mutations, structured reason-specific refusals and exact caller/destination custody replace exception identity and diagnostic wording; native semantic limit mappings are explicit.",
       "evidence": [
         "workflows/package/preservation.feature",
         "contracts/bun-opc-custody.md"
@@ -2404,9 +2404,9 @@
     {
       "id": "@id-bun-zip32-reader-refusal",
       "feature": "workflows/package/zip32.feature",
-      "category": "runtime-specific",
-      "runtimeConstraint": "bun-error-api",
-      "reason": "Literal OoxmlError instance/type, code and message predicates preserve the Bun-origin exception API; no cross-language error-type equivalence is defined.",
+      "category": "generalized",
+      "runtimeConstraint": "none",
+      "reason": "Concrete archive/envelope mutations, structured reason-specific refusals and exact caller/destination custody replace exception identity and diagnostic wording; native semantic limit mappings are explicit.",
       "evidence": [
         "workflows/package/zip32.feature",
         "contracts/bun-zip32-profile.md"
@@ -2415,9 +2415,9 @@
     {
       "id": "@id-bun-zip32-writer-refusal",
       "feature": "workflows/package/zip32.feature",
-      "category": "runtime-specific",
-      "runtimeConstraint": "bun-error-api",
-      "reason": "Literal OoxmlError instance/type, code and message predicates preserve the Bun-origin exception API; no cross-language error-type equivalence is defined.",
+      "category": "generalized",
+      "runtimeConstraint": "none",
+      "reason": "Concrete archive/envelope mutations, structured reason-specific refusals and exact caller/destination custody replace exception identity and diagnostic wording; native semantic limit mappings are explicit.",
       "evidence": [
         "workflows/package/zip32.feature",
         "contracts/bun-zip32-profile.md"
@@ -2426,9 +2426,9 @@
     {
       "id": "@id-bun-zip32-configured-bounds",
       "feature": "workflows/package/zip32.feature",
-      "category": "runtime-specific",
-      "runtimeConstraint": "bun-error-api",
-      "reason": "Literal OoxmlError instance/type, code and message predicates preserve the Bun-origin exception API; no cross-language error-type equivalence is defined.",
+      "category": "generalized",
+      "runtimeConstraint": "none",
+      "reason": "Concrete archive/envelope mutations, structured reason-specific refusals and exact caller/destination custody replace exception identity and diagnostic wording; native semantic limit mappings are explicit.",
       "evidence": [
         "workflows/package/zip32.feature",
         "contracts/bun-zip32-profile.md"
@@ -3679,9 +3679,9 @@
     }
   ],
   "evidenceSha256": {
-    "contracts/bun-opc-custody.md": "93f7efc32f25f6af2ababbe1a89a3fc9b1bb9be4d066a7f27a43e83db3bc1729",
+    "contracts/bun-opc-custody.md": "8a03cf2c442ffaeebd6b1f49800d02dfdbc501fa51d55ef9dbc9cb6685afc79c",
     "contracts/bun-pptx.md": "bf9612bc4d8507047bae164c5a74302486043ab7f79ef0abba5484f3c4e4379b",
-    "contracts/bun-zip32-profile.md": "d0b4f6fc82b9fa59f4bf423df4dca8cd11a33444dbf52e4d48c697288e36ee90",
+    "contracts/bun-zip32-profile.md": "891b36e48ad4b83694cc345dc8243ccfae047b04f39f68befcdb949199a3a34c",
     "contracts/cell-style.md": "8926740dd9500b255229b863e7f244fed1f967211be00d8e4c4f0c63f967032b",
     "contracts/comment-profiles.md": "fed776f9901a4db9a8f4672a04ba00ea8b405cbe25cf3bf284ef68f18aa27004",
     "contracts/comment-threads.md": "fc03b4a10748ca3e93e0559a8c612eb08b59eb3987e2f718faaac25a4979de94",
@@ -3742,12 +3742,12 @@
     "workflows/package/admission-limit-configuration.feature": "885083126a39d17a795609bbf5d2e273678b5d8613af9cafdc0fac46396adb8a",
     "workflows/package/data-descriptor-integrity.feature": "c0c855a3f4dd74e15fd59aa03572bb7f8c752544fd9bb64b6f082e14388c9370",
     "workflows/package/graph.feature": "953cab35e20019a234ed4d1aa2f1575a065f3c7768f74fb0a0269bf70b3c4d4e",
-    "workflows/package/preservation.feature": "1a2c653871f6bd830da4ca37f2b9c355c3885463234101b55a403786aedbba5a",
+    "workflows/package/preservation.feature": "b5d8b7930bbfea66482053c5a80874dcf1a7fd6bed3fa53ad45b36144737e27a",
     "workflows/package/relationship-namespaces.feature": "25a2b3fb3998a1f8efd9b2d7e8f5fe558517c7e852459ef56394bf5b0249610c",
     "workflows/package/semantic-diff.feature": "eebe822867a6f83d77351a0590dd81d7e929dc13f2d1add0bfcbbc44c5e90ca7",
     "workflows/package/xml-member-admission.feature": "19fa717632d689e7ff4e883fb2af3f31e018373dc79ddb78efecf7742ea14e91",
     "workflows/package/zip-admission.feature": "8fa7b8618fd9797e3470dfdfa1132b76784f180fe31d344f1d9d758f5c30f09c",
-    "workflows/package/zip32.feature": "932bdcb2a1fb0866ec07c3e64d92b54b39dafa06f83e4c405fb48e80634ef24c",
+    "workflows/package/zip32.feature": "ecf7356093c73b6d170177e30df4c63ea449788c285583a32dbea41942ccf4da",
     "workflows/package/zip64.feature": "f103ace071e647ffee092085a1c4b58e9b7be2cb4cb7553c3558c53f3be5c69a",
     "workflows/pptx/creation.feature": "564ea5266151ebe9d0ce48eead073ecb4b3f944fca79c97556e8a677b518da55",
     "workflows/pptx/layout-recommendation.feature": "b41b1f3ef7fe9cc022a74113a4b3edbd1fe2d93934ee83225d7e0b99e6b25a75",
