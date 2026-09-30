@@ -3414,8 +3414,8 @@
           "evidence": "Bun 2635a5ff62eab79cc8d12ad1cb013bab9536d38e at shared v0.77.0 executes One exact three-step case escapes text and attribute input then reparses both to the original JSON x\\r\\n\\ty value. features/shared.json and tests/acceptance/xml-values.ts bind the exact shared steps; tests/unit/xml-values-bindings.test.ts runs all ten canonical XML value scenarios (11 cases/39 steps) and altered expectations or corrupted results fail without undefined/ambiguous bindings. Fresh GitHub recursive make check passed 732/732 selected cases. No Go/Python, OPC package, rendering or unselected XML credit."
         },
         "go": {
-          "status": "planned",
-          "evidence": "Native execution binding pending"
+          "status": "implemented",
+          "evidence": "Go f6ac9c076187fb3a9d6e82c8000823df3e81fc2b at shared v0.141.0 binds exactly one three-authored-step @id-xml-escaping-whitespace-roundtrip case in acceptance/{acceptance,inventory,xml_whitespace_roundtrip}_test.go; reports/batches/288.md records public utils.MarshalXMLWithHeader and utils.UnmarshalXML roundtrip of ONE JSON-decoded x\\r\\n\\ty operand as both r text and a attribute. Independent public reparse yields both original values, unchanged caller input, CR reference in text and CR/LF/TAB references in attribute without byte-exact generated-output comparison. Ordinary-string positive and four isolated reference-to-different-character sensitivity controls pass. Restored attribute-context red and separate text-context red fail the canonical Then step with the other context intact. Fresh uncached local, independent recursive and postmerge root+acceptance gates passed 434 cases/1501 executed steps; exact remote Go main verified. Go has no GitHub Actions CI. No standalone escaping API, raw-attribute-normalization, general XML, OPC, Office or Python re-credit."
         },
         "python": {
           "status": "implemented",
