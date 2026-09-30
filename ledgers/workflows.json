@@ -5413,8 +5413,8 @@
           "evidence": "Native execution binding pending"
         },
         "python": {
-          "status": "planned",
-          "evidence": "Native execution binding pending"
+          "status": "implemented",
+          "evidence": "Python published 0ccc95b10fdce18243500636ca4eb9653f955aa0 at shared v0.143.0 binds ONLY @id-python-comments-resolved-filter, one case/five exact authored steps in workflows/docx/comments.feature through tests/docx_comments_resolved_filter/{cases,conftest,test_resolved_filter}.py and production WordAdvancedTools.tool_word_add_comment plus WordTools.tool_word_resolve_comment/tool_word_get_comments. A real saved DOCX has Manuel and Rui Carmo comments with individually verified Alpha/Beta paragraph anchors. The first returned ID is selected, resolved, and its response reports success true and done true; a fresh resolved-filter read returns only that ID with done true. Unfiltered/member readback corroborates the selected ID and original comment bodies. Separate controls reject a vacuous filter with no resolved comments, resolve the opposite ID with complementary open-filter result, preserve the repeated same-state archive, and refuse an unknown ID without publication. A temporary resolved-to-open filter mutation failed the exact canonical outcome and was restored. Committed local and independent recursive full suites passed 1,459 tests with exact 5/5 case steps (four existing warnings); Python CI 36659454106 passed 3.10/3.12/3.13 and Windows CI 36659454125 succeeded. No mixed-done re-credit, reopen-filter, existing-extension refusal, complete-thread, sibling authored scenario, general DOCX/Office/PDF/OPC, Bun/Go or protected-checkout credit."
         }
       }
     },

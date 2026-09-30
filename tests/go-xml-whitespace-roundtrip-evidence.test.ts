@@ -21,5 +21,5 @@ test('Go credits only the shared three-step XML whitespace writer/reparser round
  for(const marker of ['f6ac9c076187fb3a9d6e82c8000823df3e81fc2b','shared v0.141.0','acceptance/{acceptance,inventory,xml_whitespace_roundtrip}_test.go','reports/batches/288.md','utils.MarshalXMLWithHeader','utils.UnmarshalXML','434 cases/1501 executed steps','Go has no GitHub Actions CI'])expect(now.consumers.go.evidence).toContain(marker);
  expect(now.consumers.bun).toEqual(old.consumers.bun);expect(now.consumers.python).toEqual(old.consumers.python);
  const unchanged=structuredClone(now);unchanged.consumers.go=old.consumers.go;expect(unchanged).toEqual(old);
- expect(ledger.workflows.filter((w:any)=>w.id!=="@id-python-comments-mixed-done"&&w.id!==id)).toEqual(prior.workflows.filter((w:any)=>w.id!=="@id-python-comments-mixed-done"&&w.id!==id));
+ expect(ledger.workflows.filter((w:any)=>w.id!=="@id-python-comments-resolved-filter"&&w.id!=="@id-python-comments-mixed-done"&&w.id!==id)).toEqual(prior.workflows.filter((w:any)=>w.id!=="@id-python-comments-resolved-filter"&&w.id!=="@id-python-comments-mixed-done"&&w.id!==id));
 });

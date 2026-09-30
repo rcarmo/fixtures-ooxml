@@ -38,5 +38,5 @@ test('Go credits one four-step preserved-package corpus case', async () => {
   const unchanged = structuredClone(now);
   unchanged.consumers.go = old.consumers.go;
   expect(unchanged).toEqual(old);
-  expect(ledger.workflows.filter((w: any) => w.id !== '@id-python-comments-mixed-done' && w.id !== id && w.id !== '@id-package-admission-unsupported-compression' && w.id !== '@id-package-admission-unsafe-members' && w.id !== '@id-xml-escaping-whitespace-roundtrip')).toEqual(prior.workflows.filter((w: any) => w.id !== '@id-python-comments-mixed-done' && w.id !== id && w.id !== '@id-package-admission-unsupported-compression' && w.id !== '@id-package-admission-unsafe-members' && w.id !== '@id-xml-escaping-whitespace-roundtrip'));
+  expect(ledger.workflows.filter((w: any) => w.id !== '@id-python-comments-resolved-filter' && w.id !== '@id-python-comments-mixed-done' && w.id !== id && w.id !== '@id-package-admission-unsupported-compression' && w.id !== '@id-package-admission-unsafe-members' && w.id !== '@id-xml-escaping-whitespace-roundtrip')).toEqual(prior.workflows.filter((w: any) => w.id !== '@id-python-comments-resolved-filter' && w.id !== '@id-python-comments-mixed-done' && w.id !== id && w.id !== '@id-package-admission-unsupported-compression' && w.id !== '@id-package-admission-unsafe-members' && w.id !== '@id-xml-escaping-whitespace-roundtrip'));
 });

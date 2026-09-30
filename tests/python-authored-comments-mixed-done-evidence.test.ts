@@ -29,8 +29,8 @@ test('Python credits only the authored two-comment mixed done-state case',async(
  const unchanged=structuredClone(now);unchanged.consumers.python=old.consumers.python;expect(unchanged).toEqual(old);
  expect(ledger.workflows.map((w:any)=>w.id)).toEqual(prior.workflows.map((w:any)=>w.id));
  for(const sibling of ['@id-docx-comments-inspection','@id-docx-comments-resolution','@id-docx-comments-noop',
-   '@id-docx-comments-refusal','@id-python-comments-resolved-filter','@id-python-comments-reopen-filter',
+   '@id-docx-comments-refusal','@id-python-comments-reopen-filter',
    '@id-python-comments-reply-root-resolution','@id-docx-existing-thread-inspection'])
   expect(ledger.workflows.find((w:any)=>w.id===sibling)).toEqual(prior.workflows.find((w:any)=>w.id===sibling));
- expect(ledger.workflows.filter((w:any)=>w.id!==id)).toEqual(prior.workflows.filter((w:any)=>w.id!==id));
+ expect(ledger.workflows.filter((w:any)=>w.id!=="@id-python-comments-resolved-filter"&&w.id!==id)).toEqual(prior.workflows.filter((w:any)=>w.id!=="@id-python-comments-resolved-filter"&&w.id!==id));
 });
