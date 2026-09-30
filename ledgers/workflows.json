@@ -5389,8 +5389,8 @@
           "evidence": "Native execution binding pending"
         },
         "python": {
-          "status": "planned",
-          "evidence": "Native execution binding pending"
+          "status": "implemented",
+          "evidence": "Python published ec7359daca5beae2054bd3799248570b518e4258 at shared v0.142.0 binds ONLY @id-python-comments-mixed-done, one case/six exact authored steps in workflows/docx/comments.feature through tests/docx_comments_mixed_done/{cases,conftest,test_mixed_done}.py and production WordAdvancedTools.tool_word_add_comment plus WordTools.tool_word_resolve_comment/tool_word_get_comments. A real saved DOCX gets two comments on independently checked Alpha/Beta paragraph anchors; returned distinct IDs select the first for resolution. The response reports success true and a fresh unfiltered read binds first done true, second done false. Separate controls resolve the second ID to the opposite state, prove repeated same-state archive byte no-op, and reject an unknown ID without publication. A temporary first-to-second-ID test mutation failed the exact canonical response predicate and was restored. Committed local and independent recursive full suites passed 1,456 tests with exact 6/6 case steps (four existing warnings); Python CI 36657300112 passed 3.10/3.12/3.13 and Windows CI 36657300071 succeeded. No existing-extension refusal, complete-thread, sibling authored scenario, general DOCX/Office/PDF/OPC, Bun/Go or protected-checkout credit."
         }
       }
     },

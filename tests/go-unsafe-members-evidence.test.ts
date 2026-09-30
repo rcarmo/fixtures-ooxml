@@ -30,5 +30,5 @@ test('Go credits five exact unsafe ZIP member refusal rows',async()=>{
  for(const marker of ['e28ecd210437edf2d6ffcbf889740ee2de397ffa','shared v0.140.0','acceptance/{acceptance,bzip_admission,inventory,unsafe_members}_test.go','reports/batches/287.md','pkg/packaging/package.go','433 cases/1498 executed steps','Go has no GitHub Actions CI'])expect(now.consumers.go.evidence).toContain(marker);
  expect(now.consumers.bun).toEqual(old.consumers.bun);expect(now.consumers.python).toEqual(old.consumers.python);
  const unchanged=structuredClone(now);unchanged.consumers.go=old.consumers.go;expect(unchanged).toEqual(old);
- expect(ledger.workflows.filter((w:any)=>w.id!=='@id-xml-escaping-whitespace-roundtrip'&&w.id!==id)).toEqual(prior.workflows.filter((w:any)=>w.id!=='@id-xml-escaping-whitespace-roundtrip'&&w.id!==id));
+ expect(ledger.workflows.filter((w:any)=>w.id!=="@id-python-comments-mixed-done"&&w.id!=='@id-xml-escaping-whitespace-roundtrip'&&w.id!==id)).toEqual(prior.workflows.filter((w:any)=>w.id!=="@id-python-comments-mixed-done"&&w.id!=='@id-xml-escaping-whitespace-roundtrip'&&w.id!==id));
 });
