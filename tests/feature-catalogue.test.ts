@@ -39,11 +39,12 @@ test('literal JavaScript and named error-class contracts remain runtime-specific
 });
 test('weak analysis, broad obligations and unavailable Office positives cannot be labelled fully generalized', async () => {
   const {features} = await load(), rows = features.flatMap(f => f.rows);
-  for (const id of ['python-word-template-analysis-plain-response', 'python-word-template-analysis-sow-response', 'parity-inherited', 'pptx-office-hidden-slide-positive', 'xml-parse-bounds']) expect(rows.find(r => r.id === '@id-' + id)?.category).toBe('incomplete');
+  for (const id of ['python-word-template-analysis-plain-response', 'python-word-template-analysis-sow-response', 'parity-inherited', 'pptx-office-hidden-slide-positive']) expect(rows.find(r => r.id === '@id-' + id)?.category).toBe('incomplete');
   for (const f of features) {
     expect(f.fullyGeneralized).toBe(f.rows.every(r => r.category === 'generalized'));
     expect(Object.values(f.counts).reduce((n: number, v: any) => n + v, 0)).toBe(f.scenarios.length);
   }
+  expect(rows.find(r=>r.id==='@id-xml-parse-bounds')?.category).toBe('generalized');
   const parsing = features.find(f => f.path === 'workflows/xml/parsing.feature')!;
   expect(parsing.category).toBe('mixed');
   expect(parsing.fullyGeneralized).toBe(false);

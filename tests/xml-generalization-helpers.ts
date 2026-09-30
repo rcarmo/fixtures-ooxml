@@ -2,12 +2,35 @@ import xmlMigration from '../ledgers/xml-runtime-generalization.json';
 import cellMigration from '../ledgers/cell-runtime-generalization.json';
 import packageMigration from '../ledgers/package-runtime-generalization.json';
 import transactionMigration from '../ledgers/transaction-runtime-generalization.json';
+import lexicalAlignment from '../ledgers/xml-lexical-alignment.json';
+/** Undo only the exact reviewed next-layer contract completion for historical checks. */
+export function beforeLexicalAlignmentFeature(path: string, text: string): string {
+  const m = lexicalAlignment.files.find(f => f.path === path);
+  if (!m) return text;
+  for (const s of m.scenarios) if (JSON.stringify(cases(path,text).filter(c=>c.scenarioId===s.id)) !== JSON.stringify(s.after)) throw Error('Unreviewed lexical alignment predicates: '+s.id);
+  if (new Bun.CryptoHasher('sha256').update(text).digest('hex') !== m.afterSha256) throw Error('Unreviewed lexical alignment feature bytes');
+  return m.beforeText;
+}
+export function beforeLexicalAlignmentCase<T extends {scenarioId: string; steps: unknown[]}>(row:T):T {
+  const s=lexicalAlignment.files.flatMap(f=>f.scenarios).find(s=>s.id===row.scenarioId);
+  const n=s?.after.findIndex(c=>JSON.stringify(c)===JSON.stringify(row))??-1;
+  return n<0?row:{...row,...s!.before[n]} as T;
+}
+export function beforeLexicalAlignmentLedger(ledger:any) {
+  const ms=lexicalAlignment.files;
+  return {...ledger,workflows:ledger.workflows.map((row:any)=>{
+    const current=ms.flatMap(m=>m.afterLedgerRows).find(r=>r.id===row.id);if(!current)return row;
+    if(JSON.stringify(row)!==JSON.stringify(current))throw Error('Unreviewed lexical alignment ledger: '+row.id);
+    return ms.flatMap(m=>m.beforeLedgerRows).find(r=>r.id===row.id)!;
+  })};
+}
 const migrations = [xmlMigration, cellMigration, ...packageMigration.files, transactionMigration];
 const migration = {scenarios: migrations.flatMap(m=>m.scenarios), beforeLedgerRows: migrations.flatMap(m=>m.beforeLedgerRows), afterLedgerRows: migrations.flatMap(m=>m.afterLedgerRows)};
 import {cases} from '../scripts/verify.ts';
 const exact = (a: unknown, b: unknown) => JSON.stringify(a) === JSON.stringify(b);
 /** Explicit historical comparison only. Never used by an execution binding. */
 export function beforeXmlGeneralizationCase<T extends {scenarioId: string; steps: unknown[]}>(row: T): T {
+  row = beforeLexicalAlignmentCase(row);
   const s = migration.scenarios.find(r => r.id === row.scenarioId);
   const n = s?.after.findIndex(r => exact(r, row)) ?? -1;
   return n < 0 ? row : {...row, ...s!.before[n]} as T;
@@ -27,6 +50,7 @@ export function beforeTransactionFeature(path: string, text: string): string {
   return transactionMigration.beforeText;
 }
 export function historicalXmlFeature(path: string, text: string): string {
+  text=beforeLexicalAlignmentFeature(path,text);
   text=beforeTransactionFeature(path,text);
   const fileMigration = migrations.find(m=>m.path===path);
   if (!fileMigration) return text;
@@ -41,7 +65,7 @@ export function historicalXmlFeature(path: string, text: string): string {
  * every other row. Reviewed migrated rows must match their exact planned state;
  * their original predicates/credit are reconstructed solely for historical tests. */
 export async function historicalWorkflowLedger() {
-  const ledger = await Bun.file('ledgers/workflows.json').json();
+  const ledger = beforeLexicalAlignmentLedger(await Bun.file('ledgers/workflows.json').json());
   return {...ledger, workflows: ledger.workflows.map((row: any) => {
     const s = migration.scenarios.find(r => r.id === row.id);
     if (!s) return row;

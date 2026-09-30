@@ -94,9 +94,9 @@ candidate file; those candidates are not canonical or presumed portable.
 | Group | Feature | IDs | Cases | Tags (scenario counts) | Fully generalized? |
 |---|---|---:|---:|---|---|
 | XML | [comparison.feature](xml/comparison.feature) | 5 | 10 | generalized: 5 | yes |
-| XML | [editing.feature](xml/editing.feature) | 11 | 16 | profile-specific: 10; incomplete: 1 | no |
-| XML | [names.feature](xml/names.feature) | 3 | 6 | incomplete: 3 | no |
-| XML | [parsing.feature](xml/parsing.feature) | 14 | 15 | generalized: 9; profile-specific: 1; incomplete: 4 | no |
+| XML | [editing.feature](xml/editing.feature) | 11 | 16 | generalized: 1; profile-specific: 10 | no |
+| XML | [names.feature](xml/names.feature) | 3 | 6 | generalized: 3 | yes |
+| XML | [parsing.feature](xml/parsing.feature) | 14 | 15 | generalized: 13; profile-specific: 1 | no |
 
 ## OFFICE
 

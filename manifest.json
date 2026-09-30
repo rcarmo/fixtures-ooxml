@@ -2381,10 +2381,10 @@
       "aliases": []
     },
     {
-      "id": "asset-032ccd1e7adc03078f17baa55ac0d6aa216790d975e57c797b0d79aacc981ed8",
+      "id": "asset-7b3f71e3c806eb1fc50274bd5c9442324b6e4cc16c6994cd85842129f5ef3a3a",
       "path": "workflows/xml/names.feature",
-      "bytes": 1226,
-      "sha256": "032ccd1e7adc03078f17baa55ac0d6aa216790d975e57c797b0d79aacc981ed8",
+      "bytes": 1810,
+      "sha256": "7b3f71e3c806eb1fc50274bd5c9442324b6e4cc16c6994cd85842129f5ef3a3a",
       "role": "workflow",
       "origins": [
         {
@@ -2392,6 +2392,12 @@
           "revision": "9e39177ca69f60988328c189b62894845501b4db",
           "path": "features/opc/xml-names.feature",
           "change": "Lifecycle tag only; original scenario IDs and step text retained"
+        },
+        {
+          "repository": "https://github.com/rcarmo/fixtures-ooxml",
+          "revision": "0df43857b6a497fb37a9052ee66172754fe15cf2",
+          "path": "workflows/xml/names.feature",
+          "transformation": "Concrete lexical XML alignment; stable IDs and historical contract seal retained."
         }
       ],
       "aliases": []
@@ -2919,10 +2925,10 @@
       "aliases": []
     },
     {
-      "id": "asset-fa342c6f1ac982c6f99b915dab54196501798af745b1cc4db143cecbaea48783",
+      "id": "asset-e5f72d944248f84a89f60cf498d1cba642217259c362486ab279eef697a61b90",
       "path": "workflows/xml/parsing.feature",
-      "bytes": 7138,
-      "sha256": "fa342c6f1ac982c6f99b915dab54196501798af745b1cc4db143cecbaea48783",
+      "bytes": 10479,
+      "sha256": "e5f72d944248f84a89f60cf498d1cba642217259c362486ab279eef697a61b90",
       "role": "workflow",
       "origins": [
         {
@@ -2934,6 +2940,12 @@
           "repository": "https://github.com/rcarmo/fixtures-ooxml",
           "path": "workflows/xml/parsing.feature",
           "basis": "Format/operation regrouping from d07ee96; exact scenario fingerprints and source paths in ledgers/workflow-layout-migration.json"
+        },
+        {
+          "repository": "https://github.com/rcarmo/fixtures-ooxml",
+          "revision": "0df43857b6a497fb37a9052ee66172754fe15cf2",
+          "path": "workflows/xml/parsing.feature",
+          "transformation": "Concrete lexical XML alignment; stable IDs and historical contract seal retained."
         }
       ],
       "aliases": []
@@ -3334,16 +3346,22 @@
       "aliases": []
     },
     {
-      "id": "asset-a9c308f9995d7a335b3d96054c2eb8fd8286937c95a46bd07b26428c63292ff3",
+      "id": "asset-0f7b19a36ba4fd7f47f1b2d692afe7f745210a073f29b26d0056909457353769",
       "path": "workflows/xml/editing.feature",
-      "bytes": 7484,
-      "sha256": "a9c308f9995d7a335b3d96054c2eb8fd8286937c95a46bd07b26428c63292ff3",
+      "bytes": 8216,
+      "sha256": "0f7b19a36ba4fd7f47f1b2d692afe7f745210a073f29b26d0056909457353769",
       "role": "workflow",
       "origins": [
         {
           "repository": "https://github.com/rcarmo/fixtures-ooxml",
           "path": "workflows/xml/editing.feature",
           "basis": "Format/operation regrouping from d07ee96; exact scenario fingerprints and source paths in ledgers/workflow-layout-migration.json"
+        },
+        {
+          "repository": "https://github.com/rcarmo/fixtures-ooxml",
+          "revision": "0df43857b6a497fb37a9052ee66172754fe15cf2",
+          "path": "workflows/xml/editing.feature",
+          "transformation": "Concrete lexical XML alignment; stable IDs and historical contract seal retained."
         }
       ],
       "aliases": []
@@ -6168,6 +6186,23 @@
         }
       ],
       "aliases": []
+    },
+    {
+      "id": "asset-bfd6d169793ce17423f850b4b553d7d061f8bb3bac090d7df5520f4868ed889b",
+      "path": "contracts/xml-lexical-alignment.md",
+      "role": "contract",
+      "format": "md",
+      "bytes": 6924,
+      "sha256": "bfd6d169793ce17423f850b4b553d7d061f8bb3bac090d7df5520f4868ed889b",
+      "aliases": [],
+      "origins": [
+        {
+          "repository": "https://github.com/rcarmo/fixtures-ooxml",
+          "revision": "0df43857b6a497fb37a9052ee66172754fe15cf2",
+          "path": "contracts/xml-lexical-alignment.md",
+          "transformation": "Authored bounded lexical alignment policy from existing canonical and production evidence."
+        }
+      ]
     }
   ]
 }

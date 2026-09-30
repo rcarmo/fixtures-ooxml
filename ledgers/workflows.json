@@ -1174,21 +1174,23 @@
       "expandedCases": 1,
       "factIds": [],
       "expectedOutcomes": [
-        "the root element and descendants expose decoded text, decoded attributes and namespace URIs",
-        "each element exposes UTF-16 source offsets, parent links, child links, root links and self-closing state"
+        "exactly two elements expose these decoded values and UTF-16 half-open offsets",
+        "the root attribute a equals JSON \"1 & 2\" and the child expanded attribute urn:x/b equals JSON \"v\"",
+        "the root has no parent, its sole child links back to it, and both root links identify that same root",
+        "slicing the original source at each returned range yields its exact element markup and the source is unchanged"
       ],
       "consumers": {
         "bun": {
-          "status": "implemented",
-          "evidence": "Bun a85530c6853a0736860e7649f7fe131a9f5e5a41 at shared v0.75.0 executes all four exact XML parsing steps in features/shared.json and tests/acceptance/core.ts. Parsed root and descendants check decoded text/attributes, namespace URIs, UTF-16 source offsets, parent/child/root links and self-closing state. Fresh GitHub recursive make check passed 732/732 selected cases. Lexical parser only; no Go/Python or semantic comparison credit."
+          "status": "planned",
+          "evidence": "Concrete lexical XML alignment supersedes underspecified predicates; fresh exact production receipts are required. Historical evidence retained in ledgers/xml-lexical-alignment.json. No bun execution credit from contract migration."
         },
         "go": {
           "status": "planned",
-          "evidence": "Partial native assertion overlaps recorded separately; no canonical execution"
+          "evidence": "Concrete lexical XML alignment supersedes underspecified predicates; fresh exact production receipts are required. Historical evidence retained in ledgers/xml-lexical-alignment.json. No go execution credit from contract migration."
         },
         "python": {
           "status": "planned",
-          "evidence": "Lexical parsing and semantic comparison remain distinct; no canonical execution"
+          "evidence": "Concrete lexical XML alignment supersedes underspecified predicates; fresh exact production receipts are required. Historical evidence retained in ledgers/xml-lexical-alignment.json. No python execution credit from contract migration."
         }
       }
     },
@@ -1198,22 +1200,23 @@
       "expandedCases": 1,
       "factIds": [],
       "expectedOutcomes": [
-        "decoded text normalises raw line endings but preserves referenced carriage returns",
-        "decoded attributes normalise literal whitespace while preserving referenced whitespace",
-        "element offsets still address the original source string"
+        "the root decoded text equals JSON \"u\\nv\\nw\\rc\\nd\"",
+        "the root attribute a equals JSON \"x y z\\r\\n\\t\"",
+        "the child s range is UTF-16 [65,69) and slices the original source to JSON \"<s/>\"",
+        "the original source including its raw line endings is unchanged"
       ],
       "consumers": {
         "bun": {
-          "status": "implemented",
-          "evidence": "Bun a85530c6853a0736860e7649f7fe131a9f5e5a41 at shared v0.75.0 executes all five exact XML parsing steps in features/shared.json and tests/acceptance/core.ts. Raw CRLF and literal attribute whitespace normalize on decode while referenced carriage returns/whitespace survive and element offsets still index the unmodified source. Fresh GitHub recursive make check passed 732/732 selected cases. No Go/Python or output-serialization credit."
+          "status": "planned",
+          "evidence": "Concrete lexical XML alignment supersedes underspecified predicates; fresh exact production receipts are required. Historical evidence retained in ledgers/xml-lexical-alignment.json. No bun execution credit from contract migration."
         },
         "go": {
           "status": "planned",
-          "evidence": "Partial native assertion overlaps recorded separately; no canonical execution"
+          "evidence": "Concrete lexical XML alignment supersedes underspecified predicates; fresh exact production receipts are required. Historical evidence retained in ledgers/xml-lexical-alignment.json. No go execution credit from contract migration."
         },
         "python": {
           "status": "planned",
-          "evidence": "Lexical parsing and semantic comparison remain distinct; no canonical execution"
+          "evidence": "Concrete lexical XML alignment supersedes underspecified predicates; fresh exact production receipts are required. Historical evidence retained in ledgers/xml-lexical-alignment.json. No python execution credit from contract migration."
         }
       }
     },
@@ -1223,20 +1226,21 @@
       "expandedCases": 1,
       "factIds": [],
       "expectedOutcomes": [
-        "parsing is refused with a stable XML error code"
+        "every input returns its documented category with no document result",
+        "every original source remains unchanged"
       ],
       "consumers": {
         "bun": {
-          "status": "implemented",
-          "evidence": "Bun a85530c6853a0736860e7649f7fe131a9f5e5a41 at shared v0.75.0 executes all six exact XML refusal steps in features/shared.json and tests/acceptance/core.ts. Distinct malformed declaration/PI/comment/attribute, reserved namespace, DTD/entity, duplicate attribute, unbound prefix and tag-mismatch inputs each refuse with their expected stable XML error code and no returned document. Fresh GitHub recursive make check passed 732/732 selected cases. No Go/Python or arbitrary XML rejection credit."
+          "status": "planned",
+          "evidence": "Concrete lexical XML alignment supersedes underspecified predicates; fresh exact production receipts are required. Historical evidence retained in ledgers/xml-lexical-alignment.json. No bun execution credit from contract migration."
         },
         "go": {
           "status": "planned",
-          "evidence": "Partial native assertion overlaps recorded separately; no canonical execution"
+          "evidence": "Concrete lexical XML alignment supersedes underspecified predicates; fresh exact production receipts are required. Historical evidence retained in ledgers/xml-lexical-alignment.json. No go execution credit from contract migration."
         },
         "python": {
           "status": "planned",
-          "evidence": "Lexical parsing and semantic comparison remain distinct; no canonical execution"
+          "evidence": "Concrete lexical XML alignment supersedes underspecified predicates; fresh exact production receipts are required. Historical evidence retained in ledgers/xml-lexical-alignment.json. No python execution credit from contract migration."
         }
       }
     },
@@ -1246,20 +1250,22 @@
       "expandedCases": 1,
       "factIds": [],
       "expectedOutcomes": [
-        "parsing is refused before returning a partial tree"
+        "every recipe returns its documented category with no partial document",
+        "independent depth-four, six-node and sixty-four-source-unit controls each parse successfully",
+        "every original source remains unchanged"
       ],
       "consumers": {
         "bun": {
-          "status": "implemented",
-          "evidence": "Bun a85530c6853a0736860e7649f7fe131a9f5e5a41 at shared v0.75.0 executes all three exact XML resource-bound steps in features/shared.json and tests/acceptance/core.ts. Depth, node-count and input-length cases each refuse with their expected error code and no partial parsed document. Fresh GitHub recursive make check passed 732/732 selected cases. No Go/Python or untested resource-limit credit."
+          "status": "planned",
+          "evidence": "Concrete lexical XML alignment supersedes underspecified predicates; fresh exact production receipts are required. Historical evidence retained in ledgers/xml-lexical-alignment.json. No bun execution credit from contract migration."
         },
         "go": {
           "status": "planned",
-          "evidence": "Partial native assertion overlaps recorded separately; no canonical execution"
+          "evidence": "Concrete lexical XML alignment supersedes underspecified predicates; fresh exact production receipts are required. Historical evidence retained in ledgers/xml-lexical-alignment.json. No go execution credit from contract migration."
         },
         "python": {
           "status": "planned",
-          "evidence": "Lexical parsing and semantic comparison remain distinct; no canonical execution"
+          "evidence": "Concrete lexical XML alignment supersedes underspecified predicates; fresh exact production receipts are required. Historical evidence retained in ledgers/xml-lexical-alignment.json. No python execution credit from contract migration."
         }
       }
     },
@@ -1269,21 +1275,22 @@
       "expandedCases": 1,
       "factIds": [],
       "expectedOutcomes": [
-        "the resulting XML stays well formed and DTD free",
-        "overlapping edits or edits that leave malformed or DTD-bearing XML are refused before returning changed text"
+        "the complete output equals JSON \"<r>1 &lt; 2 <x/></r>\" and reparses to root text JSON \"1 < 2 \" with sole child x",
+        "these independent edit batches refuse with no changed text",
+        "every original source and replacement list remains unchanged"
       ],
       "consumers": {
         "bun": {
-          "status": "implemented",
-          "evidence": "Bun 664c581eb4289ffb7952f10aff729f533595d4c3 at shared v0.76.0 executes all four exact XML editing steps in features/shared.json and tests/acceptance/core.ts. Disjoint fragment and escaped-text edits yield a parsed well-formed DTD-free document; overlapping edits refuse with XML_EDIT_OVERLAP, malformed or DTD-bearing outputs with XML_EDIT_UNSAFE before returning edited text. Fresh GitHub recursive make check passed 732/732 selected cases; tests/unit/xml.test.ts independently exercises applyEdits overlap and unsafe refusals. Lexical XML edit only; no Go/Python, OPC package custody or rendering credit."
+          "status": "planned",
+          "evidence": "Concrete lexical XML alignment supersedes underspecified predicates; fresh exact production receipts are required. Historical evidence retained in ledgers/xml-lexical-alignment.json. No bun execution credit from contract migration."
         },
         "go": {
           "status": "planned",
-          "evidence": "Partial native assertion overlaps recorded separately; no canonical execution"
+          "evidence": "Concrete lexical XML alignment supersedes underspecified predicates; fresh exact production receipts are required. Historical evidence retained in ledgers/xml-lexical-alignment.json. No go execution credit from contract migration."
         },
         "python": {
           "status": "planned",
-          "evidence": "Lexical parsing and semantic comparison remain distinct; no canonical execution"
+          "evidence": "Concrete lexical XML alignment supersedes underspecified predicates; fresh exact production receipts are required. Historical evidence retained in ledgers/xml-lexical-alignment.json. No python execution credit from contract migration."
         }
       }
     },
@@ -1293,20 +1300,20 @@
       "expandedCases": 3,
       "factIds": [],
       "expectedOutcomes": [
-        "parsing refuses with the malformed XML code"
+        "parsing returns category malformed-xml with no document result and unchanged source"
       ],
       "consumers": {
         "bun": {
-          "status": "implemented",
-          "evidence": "Bun ee1a099d8a1cd928ddb3814f3b94b35d9adee989 at shared v0.78.0 executes all three exact three-step invalid QName rows in features/shared.json and tests/acceptance/xml-names.ts. Numeric-leading element-local, attribute-local and declared-prefix components each refuse with XML_MALFORMED and no parsed document. tests/unit/xml-names.test.ts runs the canonical feature (6 cases) with exported bindings; fresh GitHub recursive make check passed 732/732 selected cases. No Go/Python or unselected XML admission credit."
+          "status": "planned",
+          "evidence": "Concrete lexical XML alignment supersedes underspecified predicates; fresh exact production receipts are required. Historical evidence retained in ledgers/xml-lexical-alignment.json. No bun execution credit from contract migration."
         },
         "go": {
           "status": "planned",
-          "evidence": "Partial native assertion overlaps recorded separately; no canonical execution"
+          "evidence": "Concrete lexical XML alignment supersedes underspecified predicates; fresh exact production receipts are required. Historical evidence retained in ledgers/xml-lexical-alignment.json. No go execution credit from contract migration."
         },
         "python": {
           "status": "planned",
-          "evidence": "Lexical parsing and semantic comparison remain distinct; no canonical execution"
+          "evidence": "Concrete lexical XML alignment supersedes underspecified predicates; fresh exact production receipts are required. Historical evidence retained in ledgers/xml-lexical-alignment.json. No python execution credit from contract migration."
         }
       }
     },
@@ -1316,21 +1323,22 @@
       "expandedCases": 1,
       "factIds": [],
       "expectedOutcomes": [
-        "expanded element and attribute names retain their Unicode identity",
-        "source offsets still address the original Unicode element"
+        "the root expanded name is urn:unicode/名 and its expanded attribute urn:unicode/é equals JSON \"value\"",
+        "its sole child expanded name is urn:unicode/𐐀 with UTF-16 range [39,46) slicing to JSON \"<π:𐐀/>\"",
+        "the root UTF-16 range is [0,52) and the original source is unchanged"
       ],
       "consumers": {
         "bun": {
-          "status": "implemented",
-          "evidence": "Bun ee1a099d8a1cd928ddb3814f3b94b35d9adee989 at shared v0.78.0 executes all four exact Unicode QName steps in features/shared.json and tests/acceptance/xml-names.ts. Prefix/local Unicode identity, expanded names and attribute value are checked; UTF-16 source offsets slice the original Unicode child element. tests/unit/xml-names.test.ts runs the canonical feature (6 cases); fresh GitHub recursive make check passed 732/732 selected cases. No Go/Python or general Unicode XML credit."
+          "status": "planned",
+          "evidence": "Concrete lexical XML alignment supersedes underspecified predicates; fresh exact production receipts are required. Historical evidence retained in ledgers/xml-lexical-alignment.json. No bun execution credit from contract migration."
         },
         "go": {
-          "status": "implemented",
-          "evidence": "Go published 00fb946349332218bb5ef0935fd705ee34f780d9 at shared v0.113.0 executes exactly one four-step @id-xml-unicode-qname-components case in acceptance/unicode_qname_test.go. An independent UTF-8 75-byte source with two distinct Unicode QName children verifies expanded {urn:one}項 elements and {urn:one}鍵 attributes with distinct 值/値 values; SourceRange() reports half-open original byte offsets [23,47) and [47,71), matching independent byte-indexed slices and copied Raw() bytes. The caller source and parser snapshot remain unchanged after Raw copy mutation; a same-package alias-prefix positive and unbound Unicode prefix refusal are separate controls. The only production addition is read-only Element.SourceRange(), returning (-1,-1) on invalid handles; red checkpoint was a missing-accessor compile failure, NOT a behavioural red test. Uncached exact-revision local, independent clean recursive pre-push and fresh GitHub recursive post-push gates each passed 405 cases/1391 steps, zero nonpassed; the defective positive OPC-like comparison selected zero. No Go GitHub Actions CI is configured. No Python credit, general XML/schema/C14N/ECMA, Office, CACHE-001, PPTX or PDF claim."
+          "status": "planned",
+          "evidence": "Concrete lexical XML alignment supersedes underspecified predicates; fresh exact production receipts are required. Historical evidence retained in ledgers/xml-lexical-alignment.json. No go execution credit from contract migration."
         },
         "python": {
           "status": "planned",
-          "evidence": "Lexical parsing and semantic comparison remain distinct; no canonical execution"
+          "evidence": "Concrete lexical XML alignment supersedes underspecified predicates; fresh exact production receipts are required. Historical evidence retained in ledgers/xml-lexical-alignment.json. No python execution credit from contract migration."
         }
       }
     },
@@ -1340,20 +1348,20 @@
       "expandedCases": 2,
       "factIds": [],
       "expectedOutcomes": [
-        "parsing refuses with the malformed XML code"
+        "parsing returns category malformed-xml with no document result and unchanged source"
       ],
       "consumers": {
         "bun": {
-          "status": "implemented",
-          "evidence": "Bun ee1a099d8a1cd928ddb3814f3b94b35d9adee989 at shared v0.78.0 executes both exact three-step NBSP rows in features/shared.json and tests/acceptance/xml-names.ts. A non-breaking space before or after the root refuses with XML_MALFORMED and no returned document. tests/unit/xml-names.test.ts runs the canonical feature (6 cases); fresh GitHub recursive make check passed 732/732 selected cases. No Go/Python or unrelated XML whitespace credit."
+          "status": "planned",
+          "evidence": "Concrete lexical XML alignment supersedes underspecified predicates; fresh exact production receipts are required. Historical evidence retained in ledgers/xml-lexical-alignment.json. No bun execution credit from contract migration."
         },
         "go": {
           "status": "planned",
-          "evidence": "Partial native assertion overlaps recorded separately; no canonical execution"
+          "evidence": "Concrete lexical XML alignment supersedes underspecified predicates; fresh exact production receipts are required. Historical evidence retained in ledgers/xml-lexical-alignment.json. No go execution credit from contract migration."
         },
         "python": {
           "status": "planned",
-          "evidence": "Lexical parsing and semantic comparison remain distinct; no canonical execution"
+          "evidence": "Concrete lexical XML alignment supersedes underspecified predicates; fresh exact production receipts are required. Historical evidence retained in ledgers/xml-lexical-alignment.json. No python execution credit from contract migration."
         }
       }
     },

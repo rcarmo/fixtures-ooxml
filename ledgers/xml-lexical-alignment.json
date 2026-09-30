@@ -1,0 +1,1480 @@
+{
+  "schemaVersion": 1,
+  "sourceRevision": "0df43857b6a497fb37a9052ee66172754fe15cf2",
+  "executionCredit": false,
+  "retiredScenarioIds": [],
+  "scope": "Eight concrete contract completions within twenty-ID alignment; unchanged lexical/escaping profile predicates retain current historical credit.",
+  "selectedIds": [
+    "@id-xml-parse-offsets",
+    "@id-xml-normalise-line-endings",
+    "@id-xml-invalid-qname-components",
+    "@id-xml-unicode-qname-components",
+    "@id-xml-outside-root-nbsp",
+    "@id-xml-parse-refusals",
+    "@id-xml-parse-bounds",
+    "@id-xml-escaping-values",
+    "@id-xml-escaping-invalid-character",
+    "@id-xml-apply-edits",
+    "@id-xml-go-immutable-leaf-seed",
+    "@id-xml-go-attribute-splice-custody",
+    "@id-xml-go-attribute-batch-refusal",
+    "@id-xml-go-element-removal-custody",
+    "@id-xml-go-element-removal-refusal",
+    "@id-xml-go-child-insertion-custody",
+    "@id-xml-go-child-insertion-refusal",
+    "@id-xml-go-child-namespace-matrix",
+    "@id-xml-go-element-replacement-custody",
+    "@id-xml-go-element-replacement-refusal"
+  ],
+  "expandedCases": 29,
+  "files": [
+    {
+      "path": "workflows/xml/parsing.feature",
+      "beforeSha256": "fa342c6f1ac982c6f99b915dab54196501798af745b1cc4db143cecbaea48783",
+      "afterSha256": "e5f72d944248f84a89f60cf498d1cba642217259c362486ab279eef697a61b90",
+      "beforeText": "@planned\nFeature: XML parsing and value inspection\n\n  Rule: Strict XML parsing and offset-safe edits\n    XML parts are parsed natively with preserved UTF-16 source offsets so OPC code\n    can inspect and patch OOXML parts without losing untouched bytes.\n\n    @id-xml-parse-offsets\n    Scenario: Parse namespaces, mixed content and preserved offsets\n      Given an XML document with a declaration, comments, processing instructions and namespaces\n      When the document is parsed\n      Then the root element and descendants expose decoded text, decoded attributes and namespace URIs\n      And each element exposes UTF-16 source offsets, parent links, child links, root links and self-closing state\n\n    @id-xml-normalise-line-endings\n    Scenario: Decode XML line endings without changing source offsets\n      Given XML text and attributes containing raw CRLF and character references\n      When that XML is parsed without rewriting the source\n      Then decoded text normalises raw line endings but preserves referenced carriage returns\n      And decoded attributes normalise literal whitespace while preserving referenced whitespace\n      And element offsets still address the original source string\n\n    @id-xml-parse-refusals\n    Scenario: Refuse malformed or unsafe XML constructs\n      Given XML containing a malformed declaration or processing instruction\n      And XML containing invalid comment termination or missing attribute whitespace\n      And XML containing reserved namespace misuse, a DTD or an undeclared entity\n      And XML containing a duplicate attribute, an unbound prefix or a mismatched tag\n      When the document is parsed\n      Then parsing is refused with a stable XML error code\n\n    @id-xml-parse-bounds\n    Scenario: Bound untrusted XML resources\n      Given XML whose nesting depth, node count or input length exceeds the configured parser limits\n      When the document is parsed\n      Then parsing is refused before returning a partial tree\n\n  Rule: XML values, namespace lookup and safe escaping\n    XML 1.0 sections 2.6, 2.11, 3.3.3 and 4.6 define processing instructions,\n    line endings, attribute normalisation and predefined entities.\n    Namespaces in XML defines expanded attribute names and the implicit xml prefix.\n    JSON arguments preserve the distinction between literal characters and references.\n\n    @id-xml-entity-values\n    Scenario: Decode predefined entities and decimal and hexadecimal references\n      Given XML values input encoded as JSON \"<r a=\\\"&quot;&apos;\\\">&#x41;&#65;&amp;&lt;&gt;</r>\"\n      When the XML values input is parsed\n      Then the root attribute a equals JSON \"\\\"'\"\n      And the root text equals JSON \"AA&<>\"\n\n    @id-xml-stylesheet-processing-instruction\n    Scenario: Accept a stylesheet processing instruction before the root\n      Given XML values input encoded as JSON \"<?xml-stylesheet href=\\\"style.xsl\\\"?><r/>\"\n      When the XML values input is parsed\n      Then the root qualified name equals r\n\n    @id-xml-expanded-attribute-lookup\n    Scenario: Attribute lookup respects local prefix rebinding and unqualified names\n      Given XML values input encoded as JSON \"<r xmlns=\\\"urn:default\\\" xmlns:a=\\\"urn:a\\\" xmlns:r=\\\"urn:a\\\" id=\\\"plain\\\" a:id=\\\"outer\\\"><child xmlns:r=\\\"urn:b\\\" r:id=\\\"inner\\\" xml:lang=\\\"en\\\"/><other r:id=\\\"sibling\\\"/></r>\"\n      When the XML values input is parsed\n      Then expanded attribute lookups return these JSON values\n        | element | local | namespace                                      | value_json |\n        | root    | id    |                                                | \"plain\"    |\n        | root    | id    | urn:default                                    | null       |\n        | root    | id    | urn:a                                          | \"outer\"    |\n        | child   | id    | urn:b                                          | \"inner\"    |\n        | child   | id    | urn:a                                          | null       |\n        | other   | id    | urn:a                                          | \"sibling\"  |\n        | child   | lang  | http://www.w3.org/XML/1998/namespace             | \"en\"       |\n\n    @id-xml-implicit-xml-prefix\n    Scenario: The xml prefix is bound without a namespace declaration\n      Given XML values input encoded as JSON \"<r xml:lang=\\\"en\\\"/>\"\n      When the XML values input is parsed\n      Then the root namespace URI equals JSON \"\"\n      And the root attribute xml:lang equals JSON \"en\"\n      And the implicit xml namespace URI is http://www.w3.org/XML/1998/namespace\n\n    @profile-xml-model-safety @id-xml-prototype-safe-attributes\n    Scenario: Special-looking attribute names remain ordinary XML data\n      Given XML values input encoded as JSON \"<r __proto__=\\\"polluted\\\" constructor=\\\"safe\\\"/>\"\n      When the XML values input is parsed\n      Then the root attributes are exactly __proto__=polluted and constructor=safe\n      And the root remains r with no text and no children\n      And fresh attribute reads and the original XML source are unchanged\n\n    @profile-xml-model-safety @id-xml-immutable-namespace-metadata\n    Scenario: Returned namespace metadata cannot corrupt the parsed XML model\n      Given XML values input encoded as JSON \"<r xmlns:a=\\\"urn:a\\\" a:id=\\\"outer\\\"/>\"\n      When the XML values input is parsed\n      Then the namespace recorded for a:id is urn:a\n      When changing a returned namespace snapshot to urn:changed and deleting a:id are attempted\n      Then fresh namespace and attribute reads still return urn:a and outer\n      And the parsed root structure and original XML source are unchanged\n\n    @profile-xml-escaping-api @id-xml-escaping-values\n    Scenario Outline: Escape <context> content without changing its value\n      Given an XML escaping value encoded as JSON <input_json>\n      When the value is escaped for XML <context> content\n      Then the escaped string equals JSON <escaped_json>\n      Examples:\n        | context   | input_json | escaped_json                         |\n        | text      | \"5 < 7 & 9 > 4\" | \"5 &lt; 7 &amp; 9 &gt; 4\"       |\n        | attribute | \"'\\\"<&>\" | \"&apos;&quot;&lt;&amp;&gt;\"         |\n\n    @id-xml-escaping-invalid-character\n    Scenario: Refuse an invalid XML character rather than emit it\n      Given an XML escaping value encoded as JSON \"\\u0001\"\n      When the value is escaped for XML text content\n      Then escaping refuses the invalid XML character\n\n    @id-xml-escaping-whitespace-roundtrip\n    Scenario: Escaped whitespace survives text and attribute parsing\n      Given an XML escaping value encoded as JSON \"x\\r\\n\\ty\"\n      When the value is escaped separately as text and as an attribute and both are parsed\n      Then the decoded text and attribute both equal JSON \"x\\r\\n\\ty\"\n\n    @profile-xml-failure-category @id-xml-typed-parse-error\n    Scenario: Malformed XML returns a documented failure category without a partial document\n      Given XML values input encoded as JSON \"<a></b>\"\n      When the XML values input is parsed\n      Then parsing fails with category malformed-xml and no document result\n      And the original XML source is unchanged\n",
+      "scenarios": [
+        {
+          "id": "@id-xml-parse-offsets",
+          "before": [
+            {
+              "scenarioId": "@id-xml-parse-offsets",
+              "name": "Parse namespaces, mixed content and preserved offsets",
+              "steps": [
+                {
+                  "text": "an XML document with a declaration, comments, processing instructions and namespaces",
+                  "argument": null
+                },
+                {
+                  "text": "the document is parsed",
+                  "argument": null
+                },
+                {
+                  "text": "the root element and descendants expose decoded text, decoded attributes and namespace URIs",
+                  "argument": null
+                },
+                {
+                  "text": "each element exposes UTF-16 source offsets, parent links, child links, root links and self-closing state",
+                  "argument": null
+                }
+              ]
+            }
+          ],
+          "after": [
+            {
+              "scenarioId": "@id-xml-parse-offsets",
+              "name": "Parse namespaces, mixed content and preserved offsets",
+              "steps": [
+                {
+                  "text": "the lexical XML input is JSON \"<?xml version=\\\"1.0\\\"?><!--😀--><?pi ok?><p:r xmlns=\\\"urn:default\\\" xmlns:p=\\\"urn:p\\\" xmlns:x=\\\"urn:x\\\" a=\\\"1 &amp; 2\\\">pre😀<x:c x:b=\\\"v\\\"/>mid<![CDATA[<tail>]]></p:r><!--after-->\"",
+                  "argument": null
+                },
+                {
+                  "text": "the lexical XML input is parsed without rewriting its source",
+                  "argument": null
+                },
+                {
+                  "text": "exactly two elements expose these decoded values and UTF-16 half-open offsets",
+                  "argument": {
+                    "dataTable": {
+                      "rows": [
+                        {
+                          "cells": [
+                            {
+                              "value": "element"
+                            },
+                            {
+                              "value": "qualified_name"
+                            },
+                            {
+                              "value": "local_name"
+                            },
+                            {
+                              "value": "namespace_uri"
+                            },
+                            {
+                              "value": "text_json"
+                            },
+                            {
+                              "value": "start"
+                            },
+                            {
+                              "value": "open_end"
+                            },
+                            {
+                              "value": "close_start"
+                            },
+                            {
+                              "value": "end"
+                            },
+                            {
+                              "value": "self_closing"
+                            }
+                          ]
+                        },
+                        {
+                          "cells": [
+                            {
+                              "value": "root"
+                            },
+                            {
+                              "value": "p:r"
+                            },
+                            {
+                              "value": "r"
+                            },
+                            {
+                              "value": "urn:p"
+                            },
+                            {
+                              "value": "\"pre😀mid<tail>\""
+                            },
+                            {
+                              "value": "39"
+                            },
+                            {
+                              "value": "110"
+                            },
+                            {
+                              "value": "150"
+                            },
+                            {
+                              "value": "156"
+                            },
+                            {
+                              "value": "false"
+                            }
+                          ]
+                        },
+                        {
+                          "cells": [
+                            {
+                              "value": "child"
+                            },
+                            {
+                              "value": "x:c"
+                            },
+                            {
+                              "value": "c"
+                            },
+                            {
+                              "value": "urn:x"
+                            },
+                            {
+                              "value": "\"\""
+                            },
+                            {
+                              "value": "115"
+                            },
+                            {
+                              "value": "129"
+                            },
+                            {
+                              "value": "129"
+                            },
+                            {
+                              "value": "129"
+                            },
+                            {
+                              "value": "true"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  }
+                },
+                {
+                  "text": "the root attribute a equals JSON \"1 & 2\" and the child expanded attribute urn:x/b equals JSON \"v\"",
+                  "argument": null
+                },
+                {
+                  "text": "the root has no parent, its sole child links back to it, and both root links identify that same root",
+                  "argument": null
+                },
+                {
+                  "text": "slicing the original source at each returned range yields its exact element markup and the source is unchanged",
+                  "argument": null
+                }
+              ]
+            }
+          ],
+          "beforeProfiles": [],
+          "afterProfiles": []
+        },
+        {
+          "id": "@id-xml-normalise-line-endings",
+          "before": [
+            {
+              "scenarioId": "@id-xml-normalise-line-endings",
+              "name": "Decode XML line endings without changing source offsets",
+              "steps": [
+                {
+                  "text": "XML text and attributes containing raw CRLF and character references",
+                  "argument": null
+                },
+                {
+                  "text": "that XML is parsed without rewriting the source",
+                  "argument": null
+                },
+                {
+                  "text": "decoded text normalises raw line endings but preserves referenced carriage returns",
+                  "argument": null
+                },
+                {
+                  "text": "decoded attributes normalise literal whitespace while preserving referenced whitespace",
+                  "argument": null
+                },
+                {
+                  "text": "element offsets still address the original source string",
+                  "argument": null
+                }
+              ]
+            }
+          ],
+          "after": [
+            {
+              "scenarioId": "@id-xml-normalise-line-endings",
+              "name": "Decode XML line endings without changing source offsets",
+              "steps": [
+                {
+                  "text": "the lexical XML input is JSON \"<!--😀--><r a=\\\"x\\r\\ny\\tz&#xD;&#xA;&#x9;\\\">u\\r\\nv\\rw&#xD;<![CDATA[c\\r\\nd]]><s/></r>\"",
+                  "argument": null
+                },
+                {
+                  "text": "the lexical XML input is parsed without rewriting its source",
+                  "argument": null
+                },
+                {
+                  "text": "the root decoded text equals JSON \"u\\nv\\nw\\rc\\nd\"",
+                  "argument": null
+                },
+                {
+                  "text": "the root attribute a equals JSON \"x y z\\r\\n\\t\"",
+                  "argument": null
+                },
+                {
+                  "text": "the child s range is UTF-16 [65,69) and slices the original source to JSON \"<s/>\"",
+                  "argument": null
+                },
+                {
+                  "text": "the original source including its raw line endings is unchanged",
+                  "argument": null
+                }
+              ]
+            }
+          ],
+          "beforeProfiles": [],
+          "afterProfiles": []
+        },
+        {
+          "id": "@id-xml-parse-refusals",
+          "before": [
+            {
+              "scenarioId": "@id-xml-parse-refusals",
+              "name": "Refuse malformed or unsafe XML constructs",
+              "steps": [
+                {
+                  "text": "XML containing a malformed declaration or processing instruction",
+                  "argument": null
+                },
+                {
+                  "text": "XML containing invalid comment termination or missing attribute whitespace",
+                  "argument": null
+                },
+                {
+                  "text": "XML containing reserved namespace misuse, a DTD or an undeclared entity",
+                  "argument": null
+                },
+                {
+                  "text": "XML containing a duplicate attribute, an unbound prefix or a mismatched tag",
+                  "argument": null
+                },
+                {
+                  "text": "the document is parsed",
+                  "argument": null
+                },
+                {
+                  "text": "parsing is refused with a stable XML error code",
+                  "argument": null
+                }
+              ]
+            }
+          ],
+          "after": [
+            {
+              "scenarioId": "@id-xml-parse-refusals",
+              "name": "Refuse malformed or unsafe XML constructs",
+              "steps": [
+                {
+                  "text": "these exact XML refusal inputs and documented categories",
+                  "argument": {
+                    "dataTable": {
+                      "rows": [
+                        {
+                          "cells": [
+                            {
+                              "value": "variant"
+                            },
+                            {
+                              "value": "source_json"
+                            },
+                            {
+                              "value": "category"
+                            }
+                          ]
+                        },
+                        {
+                          "cells": [
+                            {
+                              "value": "declaration extra"
+                            },
+                            {
+                              "value": "\"<?xml version=\\\"1.0\\\" extra=\\\"x\\\"?><r/>\""
+                            },
+                            {
+                              "value": "malformed-xml"
+                            }
+                          ]
+                        },
+                        {
+                          "cells": [
+                            {
+                              "value": "invalid standalone"
+                            },
+                            {
+                              "value": "\"<?xml version=\\\"1.0\\\" standalone=\\\"maybe\\\"?><r/>\""
+                            },
+                            {
+                              "value": "malformed-xml"
+                            }
+                          ]
+                        },
+                        {
+                          "cells": [
+                            {
+                              "value": "processing instruction"
+                            },
+                            {
+                              "value": "\"<?pi/?><r/>\""
+                            },
+                            {
+                              "value": "malformed-xml"
+                            }
+                          ]
+                        },
+                        {
+                          "cells": [
+                            {
+                              "value": "comment interior"
+                            },
+                            {
+                              "value": "\"<r><!-- bad -- --></r>\""
+                            },
+                            {
+                              "value": "malformed-xml"
+                            }
+                          ]
+                        },
+                        {
+                          "cells": [
+                            {
+                              "value": "comment termination"
+                            },
+                            {
+                              "value": "\"<r><!--bad---></r>\""
+                            },
+                            {
+                              "value": "malformed-xml"
+                            }
+                          ]
+                        },
+                        {
+                          "cells": [
+                            {
+                              "value": "attribute whitespace"
+                            },
+                            {
+                              "value": "\"<r a='1'b='2'/>\""
+                            },
+                            {
+                              "value": "malformed-xml"
+                            }
+                          ]
+                        },
+                        {
+                          "cells": [
+                            {
+                              "value": "reserved element prefix"
+                            },
+                            {
+                              "value": "\"<xmlns:r/>\""
+                            },
+                            {
+                              "value": "malformed-xml"
+                            }
+                          ]
+                        },
+                        {
+                          "cells": [
+                            {
+                              "value": "reserved default namespace"
+                            },
+                            {
+                              "value": "\"<r xmlns=\\\"http://www.w3.org/XML/1998/namespace\\\"/>\""
+                            },
+                            {
+                              "value": "malformed-xml"
+                            }
+                          ]
+                        },
+                        {
+                          "cells": [
+                            {
+                              "value": "DTD"
+                            },
+                            {
+                              "value": "\"<!DOCTYPE r><r/>\""
+                            },
+                            {
+                              "value": "dtd-forbidden"
+                            }
+                          ]
+                        },
+                        {
+                          "cells": [
+                            {
+                              "value": "undeclared entity"
+                            },
+                            {
+                              "value": "\"<r>&custom;</r>\""
+                            },
+                            {
+                              "value": "entity-forbidden"
+                            }
+                          ]
+                        },
+                        {
+                          "cells": [
+                            {
+                              "value": "lexical duplicate"
+                            },
+                            {
+                              "value": "\"<r a='1' a='2'/>\""
+                            },
+                            {
+                              "value": "duplicate-attribute"
+                            }
+                          ]
+                        },
+                        {
+                          "cells": [
+                            {
+                              "value": "expanded duplicate"
+                            },
+                            {
+                              "value": "\"<r xmlns:x=\\\"u\\\" xmlns:y=\\\"u\\\" x:a=\\\"1\\\" y:a=\\\"2\\\"/>\""
+                            },
+                            {
+                              "value": "duplicate-attribute"
+                            }
+                          ]
+                        },
+                        {
+                          "cells": [
+                            {
+                              "value": "unbound prefix"
+                            },
+                            {
+                              "value": "\"<x:r/>\""
+                            },
+                            {
+                              "value": "unbound-prefix"
+                            }
+                          ]
+                        },
+                        {
+                          "cells": [
+                            {
+                              "value": "mismatched tag"
+                            },
+                            {
+                              "value": "\"<a></b>\""
+                            },
+                            {
+                              "value": "mismatched-tag"
+                            }
+                          ]
+                        },
+                        {
+                          "cells": [
+                            {
+                              "value": "invalid character"
+                            },
+                            {
+                              "value": "\"<r>\\u0001</r>\""
+                            },
+                            {
+                              "value": "invalid-character"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  }
+                },
+                {
+                  "text": "every refusal input is parsed through the production lexical XML API",
+                  "argument": null
+                },
+                {
+                  "text": "every input returns its documented category with no document result",
+                  "argument": null
+                },
+                {
+                  "text": "every original source remains unchanged",
+                  "argument": null
+                }
+              ]
+            }
+          ],
+          "beforeProfiles": [],
+          "afterProfiles": []
+        },
+        {
+          "id": "@id-xml-parse-bounds",
+          "before": [
+            {
+              "scenarioId": "@id-xml-parse-bounds",
+              "name": "Bound untrusted XML resources",
+              "steps": [
+                {
+                  "text": "XML whose nesting depth, node count or input length exceeds the configured parser limits",
+                  "argument": null
+                },
+                {
+                  "text": "the document is parsed",
+                  "argument": null
+                },
+                {
+                  "text": "parsing is refused before returning a partial tree",
+                  "argument": null
+                }
+              ]
+            }
+          ],
+          "after": [
+            {
+              "scenarioId": "@id-xml-parse-bounds",
+              "name": "Bound untrusted XML resources",
+              "steps": [
+                {
+                  "text": "XML parser limits maxDepth 4, maxNodes 6 and maxSourceUnits 64 measured in UTF-16 units",
+                  "argument": null
+                },
+                {
+                  "text": "these exact XML resource-limit recipes",
+                  "argument": {
+                    "dataTable": {
+                      "rows": [
+                        {
+                          "cells": [
+                            {
+                              "value": "recipe"
+                            },
+                            {
+                              "value": "category"
+                            }
+                          ]
+                        },
+                        {
+                          "cells": [
+                            {
+                              "value": "five nested n elements"
+                            },
+                            {
+                              "value": "depth-limit"
+                            }
+                          ]
+                        },
+                        {
+                          "cells": [
+                            {
+                              "value": "root r with six self-closing n children"
+                            },
+                            {
+                              "value": "node-limit"
+                            }
+                          ]
+                        },
+                        {
+                          "cells": [
+                            {
+                              "value": "root r containing fifty-eight x characters"
+                            },
+                            {
+                              "value": "input-too-large"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  }
+                },
+                {
+                  "text": "every recipe is parsed through the production lexical XML API with those limits",
+                  "argument": null
+                },
+                {
+                  "text": "every recipe returns its documented category with no partial document",
+                  "argument": null
+                },
+                {
+                  "text": "independent depth-four, six-node and sixty-four-source-unit controls each parse successfully",
+                  "argument": null
+                },
+                {
+                  "text": "every original source remains unchanged",
+                  "argument": null
+                }
+              ]
+            }
+          ],
+          "beforeProfiles": [],
+          "afterProfiles": []
+        }
+      ],
+      "beforeLedgerRows": [
+        {
+          "id": "@id-xml-parse-offsets",
+          "feature": "workflows/xml/parsing.feature",
+          "expandedCases": 1,
+          "factIds": [],
+          "expectedOutcomes": [
+            "the root element and descendants expose decoded text, decoded attributes and namespace URIs",
+            "each element exposes UTF-16 source offsets, parent links, child links, root links and self-closing state"
+          ],
+          "consumers": {
+            "bun": {
+              "status": "implemented",
+              "evidence": "Bun a85530c6853a0736860e7649f7fe131a9f5e5a41 at shared v0.75.0 executes all four exact XML parsing steps in features/shared.json and tests/acceptance/core.ts. Parsed root and descendants check decoded text/attributes, namespace URIs, UTF-16 source offsets, parent/child/root links and self-closing state. Fresh GitHub recursive make check passed 732/732 selected cases. Lexical parser only; no Go/Python or semantic comparison credit."
+            },
+            "go": {
+              "status": "planned",
+              "evidence": "Partial native assertion overlaps recorded separately; no canonical execution"
+            },
+            "python": {
+              "status": "planned",
+              "evidence": "Lexical parsing and semantic comparison remain distinct; no canonical execution"
+            }
+          }
+        },
+        {
+          "id": "@id-xml-normalise-line-endings",
+          "feature": "workflows/xml/parsing.feature",
+          "expandedCases": 1,
+          "factIds": [],
+          "expectedOutcomes": [
+            "decoded text normalises raw line endings but preserves referenced carriage returns",
+            "decoded attributes normalise literal whitespace while preserving referenced whitespace",
+            "element offsets still address the original source string"
+          ],
+          "consumers": {
+            "bun": {
+              "status": "implemented",
+              "evidence": "Bun a85530c6853a0736860e7649f7fe131a9f5e5a41 at shared v0.75.0 executes all five exact XML parsing steps in features/shared.json and tests/acceptance/core.ts. Raw CRLF and literal attribute whitespace normalize on decode while referenced carriage returns/whitespace survive and element offsets still index the unmodified source. Fresh GitHub recursive make check passed 732/732 selected cases. No Go/Python or output-serialization credit."
+            },
+            "go": {
+              "status": "planned",
+              "evidence": "Partial native assertion overlaps recorded separately; no canonical execution"
+            },
+            "python": {
+              "status": "planned",
+              "evidence": "Lexical parsing and semantic comparison remain distinct; no canonical execution"
+            }
+          }
+        },
+        {
+          "id": "@id-xml-parse-refusals",
+          "feature": "workflows/xml/parsing.feature",
+          "expandedCases": 1,
+          "factIds": [],
+          "expectedOutcomes": [
+            "parsing is refused with a stable XML error code"
+          ],
+          "consumers": {
+            "bun": {
+              "status": "implemented",
+              "evidence": "Bun a85530c6853a0736860e7649f7fe131a9f5e5a41 at shared v0.75.0 executes all six exact XML refusal steps in features/shared.json and tests/acceptance/core.ts. Distinct malformed declaration/PI/comment/attribute, reserved namespace, DTD/entity, duplicate attribute, unbound prefix and tag-mismatch inputs each refuse with their expected stable XML error code and no returned document. Fresh GitHub recursive make check passed 732/732 selected cases. No Go/Python or arbitrary XML rejection credit."
+            },
+            "go": {
+              "status": "planned",
+              "evidence": "Partial native assertion overlaps recorded separately; no canonical execution"
+            },
+            "python": {
+              "status": "planned",
+              "evidence": "Lexical parsing and semantic comparison remain distinct; no canonical execution"
+            }
+          }
+        },
+        {
+          "id": "@id-xml-parse-bounds",
+          "feature": "workflows/xml/parsing.feature",
+          "expandedCases": 1,
+          "factIds": [],
+          "expectedOutcomes": [
+            "parsing is refused before returning a partial tree"
+          ],
+          "consumers": {
+            "bun": {
+              "status": "implemented",
+              "evidence": "Bun a85530c6853a0736860e7649f7fe131a9f5e5a41 at shared v0.75.0 executes all three exact XML resource-bound steps in features/shared.json and tests/acceptance/core.ts. Depth, node-count and input-length cases each refuse with their expected error code and no partial parsed document. Fresh GitHub recursive make check passed 732/732 selected cases. No Go/Python or untested resource-limit credit."
+            },
+            "go": {
+              "status": "planned",
+              "evidence": "Partial native assertion overlaps recorded separately; no canonical execution"
+            },
+            "python": {
+              "status": "planned",
+              "evidence": "Lexical parsing and semantic comparison remain distinct; no canonical execution"
+            }
+          }
+        }
+      ],
+      "afterLedgerRows": [
+        {
+          "id": "@id-xml-parse-offsets",
+          "feature": "workflows/xml/parsing.feature",
+          "expandedCases": 1,
+          "factIds": [],
+          "expectedOutcomes": [
+            "exactly two elements expose these decoded values and UTF-16 half-open offsets",
+            "the root attribute a equals JSON \"1 & 2\" and the child expanded attribute urn:x/b equals JSON \"v\"",
+            "the root has no parent, its sole child links back to it, and both root links identify that same root",
+            "slicing the original source at each returned range yields its exact element markup and the source is unchanged"
+          ],
+          "consumers": {
+            "bun": {
+              "status": "planned",
+              "evidence": "Concrete lexical XML alignment supersedes underspecified predicates; fresh exact production receipts are required. Historical evidence retained in ledgers/xml-lexical-alignment.json. No bun execution credit from contract migration."
+            },
+            "go": {
+              "status": "planned",
+              "evidence": "Concrete lexical XML alignment supersedes underspecified predicates; fresh exact production receipts are required. Historical evidence retained in ledgers/xml-lexical-alignment.json. No go execution credit from contract migration."
+            },
+            "python": {
+              "status": "planned",
+              "evidence": "Concrete lexical XML alignment supersedes underspecified predicates; fresh exact production receipts are required. Historical evidence retained in ledgers/xml-lexical-alignment.json. No python execution credit from contract migration."
+            }
+          }
+        },
+        {
+          "id": "@id-xml-normalise-line-endings",
+          "feature": "workflows/xml/parsing.feature",
+          "expandedCases": 1,
+          "factIds": [],
+          "expectedOutcomes": [
+            "the root decoded text equals JSON \"u\\nv\\nw\\rc\\nd\"",
+            "the root attribute a equals JSON \"x y z\\r\\n\\t\"",
+            "the child s range is UTF-16 [65,69) and slices the original source to JSON \"<s/>\"",
+            "the original source including its raw line endings is unchanged"
+          ],
+          "consumers": {
+            "bun": {
+              "status": "planned",
+              "evidence": "Concrete lexical XML alignment supersedes underspecified predicates; fresh exact production receipts are required. Historical evidence retained in ledgers/xml-lexical-alignment.json. No bun execution credit from contract migration."
+            },
+            "go": {
+              "status": "planned",
+              "evidence": "Concrete lexical XML alignment supersedes underspecified predicates; fresh exact production receipts are required. Historical evidence retained in ledgers/xml-lexical-alignment.json. No go execution credit from contract migration."
+            },
+            "python": {
+              "status": "planned",
+              "evidence": "Concrete lexical XML alignment supersedes underspecified predicates; fresh exact production receipts are required. Historical evidence retained in ledgers/xml-lexical-alignment.json. No python execution credit from contract migration."
+            }
+          }
+        },
+        {
+          "id": "@id-xml-parse-refusals",
+          "feature": "workflows/xml/parsing.feature",
+          "expandedCases": 1,
+          "factIds": [],
+          "expectedOutcomes": [
+            "every input returns its documented category with no document result",
+            "every original source remains unchanged"
+          ],
+          "consumers": {
+            "bun": {
+              "status": "planned",
+              "evidence": "Concrete lexical XML alignment supersedes underspecified predicates; fresh exact production receipts are required. Historical evidence retained in ledgers/xml-lexical-alignment.json. No bun execution credit from contract migration."
+            },
+            "go": {
+              "status": "planned",
+              "evidence": "Concrete lexical XML alignment supersedes underspecified predicates; fresh exact production receipts are required. Historical evidence retained in ledgers/xml-lexical-alignment.json. No go execution credit from contract migration."
+            },
+            "python": {
+              "status": "planned",
+              "evidence": "Concrete lexical XML alignment supersedes underspecified predicates; fresh exact production receipts are required. Historical evidence retained in ledgers/xml-lexical-alignment.json. No python execution credit from contract migration."
+            }
+          }
+        },
+        {
+          "id": "@id-xml-parse-bounds",
+          "feature": "workflows/xml/parsing.feature",
+          "expandedCases": 1,
+          "factIds": [],
+          "expectedOutcomes": [
+            "every recipe returns its documented category with no partial document",
+            "independent depth-four, six-node and sixty-four-source-unit controls each parse successfully",
+            "every original source remains unchanged"
+          ],
+          "consumers": {
+            "bun": {
+              "status": "planned",
+              "evidence": "Concrete lexical XML alignment supersedes underspecified predicates; fresh exact production receipts are required. Historical evidence retained in ledgers/xml-lexical-alignment.json. No bun execution credit from contract migration."
+            },
+            "go": {
+              "status": "planned",
+              "evidence": "Concrete lexical XML alignment supersedes underspecified predicates; fresh exact production receipts are required. Historical evidence retained in ledgers/xml-lexical-alignment.json. No go execution credit from contract migration."
+            },
+            "python": {
+              "status": "planned",
+              "evidence": "Concrete lexical XML alignment supersedes underspecified predicates; fresh exact production receipts are required. Historical evidence retained in ledgers/xml-lexical-alignment.json. No python execution credit from contract migration."
+            }
+          }
+        }
+      ]
+    },
+    {
+      "path": "workflows/xml/names.feature",
+      "beforeSha256": "032ccd1e7adc03078f17baa55ac0d6aa216790d975e57c797b0d79aacc981ed8",
+      "afterSha256": "7b3f71e3c806eb1fc50274bd5c9442324b6e4cc16c6994cd85842129f5ef3a3a",
+      "beforeText": "@planned\nFeature: XML namespace names require valid prefix and local components\n  XML Name scanning alone cannot establish that both QName components are NCNames.\n\n  @id-xml-invalid-qname-components\n  Scenario Outline: Invalid <component> namespace names refuse\n    Given XML with a numeric-leading <component> QName component\n    When the namespace-name fixture is parsed\n    Then parsing refuses with the malformed XML code\n    Examples:\n      | component       |\n      | element-local   |\n      | attribute-local |\n      | declared-prefix |\n\n  @id-xml-unicode-qname-components\n  Scenario: Unicode prefix and local names remain valid\n    Given XML with valid Unicode prefix and local name components\n    When the namespace-name fixture is parsed\n    Then expanded element and attribute names retain their Unicode identity\n    And source offsets still address the original Unicode element\n\n  @id-xml-outside-root-nbsp\n  Scenario Outline: A non-breaking space <position> the root refuses\n    Given XML with a non-breaking space <position> the root element\n    When the namespace-name fixture is parsed\n    Then parsing refuses with the malformed XML code\n    Examples:\n      | position |\n      | before   |\n      | after    |\n",
+      "scenarios": [
+        {
+          "id": "@id-xml-invalid-qname-components",
+          "before": [
+            {
+              "scenarioId": "@id-xml-invalid-qname-components",
+              "name": "Invalid element-local namespace names refuse",
+              "steps": [
+                {
+                  "text": "XML with a numeric-leading element-local QName component",
+                  "argument": null
+                },
+                {
+                  "text": "the namespace-name fixture is parsed",
+                  "argument": null
+                },
+                {
+                  "text": "parsing refuses with the malformed XML code",
+                  "argument": null
+                }
+              ]
+            },
+            {
+              "scenarioId": "@id-xml-invalid-qname-components",
+              "name": "Invalid attribute-local namespace names refuse",
+              "steps": [
+                {
+                  "text": "XML with a numeric-leading attribute-local QName component",
+                  "argument": null
+                },
+                {
+                  "text": "the namespace-name fixture is parsed",
+                  "argument": null
+                },
+                {
+                  "text": "parsing refuses with the malformed XML code",
+                  "argument": null
+                }
+              ]
+            },
+            {
+              "scenarioId": "@id-xml-invalid-qname-components",
+              "name": "Invalid declared-prefix namespace names refuse",
+              "steps": [
+                {
+                  "text": "XML with a numeric-leading declared-prefix QName component",
+                  "argument": null
+                },
+                {
+                  "text": "the namespace-name fixture is parsed",
+                  "argument": null
+                },
+                {
+                  "text": "parsing refuses with the malformed XML code",
+                  "argument": null
+                }
+              ]
+            }
+          ],
+          "after": [
+            {
+              "scenarioId": "@id-xml-invalid-qname-components",
+              "name": "Invalid element-local namespace names refuse",
+              "steps": [
+                {
+                  "text": "the lexical XML input is JSON \"<p:1 xmlns:p=\\\"urn:test\\\"/>\"",
+                  "argument": null
+                },
+                {
+                  "text": "the lexical XML input is parsed without rewriting its source",
+                  "argument": null
+                },
+                {
+                  "text": "parsing returns category malformed-xml with no document result and unchanged source",
+                  "argument": null
+                }
+              ]
+            },
+            {
+              "scenarioId": "@id-xml-invalid-qname-components",
+              "name": "Invalid attribute-local namespace names refuse",
+              "steps": [
+                {
+                  "text": "the lexical XML input is JSON \"<r xmlns:p=\\\"urn:test\\\" p:1=\\\"x\\\"/>\"",
+                  "argument": null
+                },
+                {
+                  "text": "the lexical XML input is parsed without rewriting its source",
+                  "argument": null
+                },
+                {
+                  "text": "parsing returns category malformed-xml with no document result and unchanged source",
+                  "argument": null
+                }
+              ]
+            },
+            {
+              "scenarioId": "@id-xml-invalid-qname-components",
+              "name": "Invalid declared-prefix namespace names refuse",
+              "steps": [
+                {
+                  "text": "the lexical XML input is JSON \"<r xmlns:1=\\\"urn:test\\\"/>\"",
+                  "argument": null
+                },
+                {
+                  "text": "the lexical XML input is parsed without rewriting its source",
+                  "argument": null
+                },
+                {
+                  "text": "parsing returns category malformed-xml with no document result and unchanged source",
+                  "argument": null
+                }
+              ]
+            }
+          ],
+          "beforeProfiles": [],
+          "afterProfiles": []
+        },
+        {
+          "id": "@id-xml-unicode-qname-components",
+          "before": [
+            {
+              "scenarioId": "@id-xml-unicode-qname-components",
+              "name": "Unicode prefix and local names remain valid",
+              "steps": [
+                {
+                  "text": "XML with valid Unicode prefix and local name components",
+                  "argument": null
+                },
+                {
+                  "text": "the namespace-name fixture is parsed",
+                  "argument": null
+                },
+                {
+                  "text": "expanded element and attribute names retain their Unicode identity",
+                  "argument": null
+                },
+                {
+                  "text": "source offsets still address the original Unicode element",
+                  "argument": null
+                }
+              ]
+            }
+          ],
+          "after": [
+            {
+              "scenarioId": "@id-xml-unicode-qname-components",
+              "name": "Unicode prefix and local names remain valid",
+              "steps": [
+                {
+                  "text": "the lexical XML input is JSON \"<π:名 xmlns:π=\\\"urn:unicode\\\" π:é=\\\"value\\\"><π:𐐀/></π:名>\"",
+                  "argument": null
+                },
+                {
+                  "text": "the lexical XML input is parsed without rewriting its source",
+                  "argument": null
+                },
+                {
+                  "text": "the root expanded name is urn:unicode/名 and its expanded attribute urn:unicode/é equals JSON \"value\"",
+                  "argument": null
+                },
+                {
+                  "text": "its sole child expanded name is urn:unicode/𐐀 with UTF-16 range [39,46) slicing to JSON \"<π:𐐀/>\"",
+                  "argument": null
+                },
+                {
+                  "text": "the root UTF-16 range is [0,52) and the original source is unchanged",
+                  "argument": null
+                }
+              ]
+            }
+          ],
+          "beforeProfiles": [],
+          "afterProfiles": []
+        },
+        {
+          "id": "@id-xml-outside-root-nbsp",
+          "before": [
+            {
+              "scenarioId": "@id-xml-outside-root-nbsp",
+              "name": "A non-breaking space before the root refuses",
+              "steps": [
+                {
+                  "text": "XML with a non-breaking space before the root element",
+                  "argument": null
+                },
+                {
+                  "text": "the namespace-name fixture is parsed",
+                  "argument": null
+                },
+                {
+                  "text": "parsing refuses with the malformed XML code",
+                  "argument": null
+                }
+              ]
+            },
+            {
+              "scenarioId": "@id-xml-outside-root-nbsp",
+              "name": "A non-breaking space after the root refuses",
+              "steps": [
+                {
+                  "text": "XML with a non-breaking space after the root element",
+                  "argument": null
+                },
+                {
+                  "text": "the namespace-name fixture is parsed",
+                  "argument": null
+                },
+                {
+                  "text": "parsing refuses with the malformed XML code",
+                  "argument": null
+                }
+              ]
+            }
+          ],
+          "after": [
+            {
+              "scenarioId": "@id-xml-outside-root-nbsp",
+              "name": "A non-breaking space before the root refuses",
+              "steps": [
+                {
+                  "text": "the lexical XML input is JSON \"\\u00a0<r/>\"",
+                  "argument": null
+                },
+                {
+                  "text": "the lexical XML input is parsed without rewriting its source",
+                  "argument": null
+                },
+                {
+                  "text": "parsing returns category malformed-xml with no document result and unchanged source",
+                  "argument": null
+                }
+              ]
+            },
+            {
+              "scenarioId": "@id-xml-outside-root-nbsp",
+              "name": "A non-breaking space after the root refuses",
+              "steps": [
+                {
+                  "text": "the lexical XML input is JSON \"<r/>\\u00a0\"",
+                  "argument": null
+                },
+                {
+                  "text": "the lexical XML input is parsed without rewriting its source",
+                  "argument": null
+                },
+                {
+                  "text": "parsing returns category malformed-xml with no document result and unchanged source",
+                  "argument": null
+                }
+              ]
+            }
+          ],
+          "beforeProfiles": [],
+          "afterProfiles": []
+        }
+      ],
+      "beforeLedgerRows": [
+        {
+          "id": "@id-xml-invalid-qname-components",
+          "feature": "workflows/xml/names.feature",
+          "expandedCases": 3,
+          "factIds": [],
+          "expectedOutcomes": [
+            "parsing refuses with the malformed XML code"
+          ],
+          "consumers": {
+            "bun": {
+              "status": "implemented",
+              "evidence": "Bun ee1a099d8a1cd928ddb3814f3b94b35d9adee989 at shared v0.78.0 executes all three exact three-step invalid QName rows in features/shared.json and tests/acceptance/xml-names.ts. Numeric-leading element-local, attribute-local and declared-prefix components each refuse with XML_MALFORMED and no parsed document. tests/unit/xml-names.test.ts runs the canonical feature (6 cases) with exported bindings; fresh GitHub recursive make check passed 732/732 selected cases. No Go/Python or unselected XML admission credit."
+            },
+            "go": {
+              "status": "planned",
+              "evidence": "Partial native assertion overlaps recorded separately; no canonical execution"
+            },
+            "python": {
+              "status": "planned",
+              "evidence": "Lexical parsing and semantic comparison remain distinct; no canonical execution"
+            }
+          }
+        },
+        {
+          "id": "@id-xml-unicode-qname-components",
+          "feature": "workflows/xml/names.feature",
+          "expandedCases": 1,
+          "factIds": [],
+          "expectedOutcomes": [
+            "expanded element and attribute names retain their Unicode identity",
+            "source offsets still address the original Unicode element"
+          ],
+          "consumers": {
+            "bun": {
+              "status": "implemented",
+              "evidence": "Bun ee1a099d8a1cd928ddb3814f3b94b35d9adee989 at shared v0.78.0 executes all four exact Unicode QName steps in features/shared.json and tests/acceptance/xml-names.ts. Prefix/local Unicode identity, expanded names and attribute value are checked; UTF-16 source offsets slice the original Unicode child element. tests/unit/xml-names.test.ts runs the canonical feature (6 cases); fresh GitHub recursive make check passed 732/732 selected cases. No Go/Python or general Unicode XML credit."
+            },
+            "go": {
+              "status": "implemented",
+              "evidence": "Go published 00fb946349332218bb5ef0935fd705ee34f780d9 at shared v0.113.0 executes exactly one four-step @id-xml-unicode-qname-components case in acceptance/unicode_qname_test.go. An independent UTF-8 75-byte source with two distinct Unicode QName children verifies expanded {urn:one}項 elements and {urn:one}鍵 attributes with distinct 值/値 values; SourceRange() reports half-open original byte offsets [23,47) and [47,71), matching independent byte-indexed slices and copied Raw() bytes. The caller source and parser snapshot remain unchanged after Raw copy mutation; a same-package alias-prefix positive and unbound Unicode prefix refusal are separate controls. The only production addition is read-only Element.SourceRange(), returning (-1,-1) on invalid handles; red checkpoint was a missing-accessor compile failure, NOT a behavioural red test. Uncached exact-revision local, independent clean recursive pre-push and fresh GitHub recursive post-push gates each passed 405 cases/1391 steps, zero nonpassed; the defective positive OPC-like comparison selected zero. No Go GitHub Actions CI is configured. No Python credit, general XML/schema/C14N/ECMA, Office, CACHE-001, PPTX or PDF claim."
+            },
+            "python": {
+              "status": "planned",
+              "evidence": "Lexical parsing and semantic comparison remain distinct; no canonical execution"
+            }
+          }
+        },
+        {
+          "id": "@id-xml-outside-root-nbsp",
+          "feature": "workflows/xml/names.feature",
+          "expandedCases": 2,
+          "factIds": [],
+          "expectedOutcomes": [
+            "parsing refuses with the malformed XML code"
+          ],
+          "consumers": {
+            "bun": {
+              "status": "implemented",
+              "evidence": "Bun ee1a099d8a1cd928ddb3814f3b94b35d9adee989 at shared v0.78.0 executes both exact three-step NBSP rows in features/shared.json and tests/acceptance/xml-names.ts. A non-breaking space before or after the root refuses with XML_MALFORMED and no returned document. tests/unit/xml-names.test.ts runs the canonical feature (6 cases); fresh GitHub recursive make check passed 732/732 selected cases. No Go/Python or unrelated XML whitespace credit."
+            },
+            "go": {
+              "status": "planned",
+              "evidence": "Partial native assertion overlaps recorded separately; no canonical execution"
+            },
+            "python": {
+              "status": "planned",
+              "evidence": "Lexical parsing and semantic comparison remain distinct; no canonical execution"
+            }
+          }
+        }
+      ],
+      "afterLedgerRows": [
+        {
+          "id": "@id-xml-invalid-qname-components",
+          "feature": "workflows/xml/names.feature",
+          "expandedCases": 3,
+          "factIds": [],
+          "expectedOutcomes": [
+            "parsing returns category malformed-xml with no document result and unchanged source"
+          ],
+          "consumers": {
+            "bun": {
+              "status": "planned",
+              "evidence": "Concrete lexical XML alignment supersedes underspecified predicates; fresh exact production receipts are required. Historical evidence retained in ledgers/xml-lexical-alignment.json. No bun execution credit from contract migration."
+            },
+            "go": {
+              "status": "planned",
+              "evidence": "Concrete lexical XML alignment supersedes underspecified predicates; fresh exact production receipts are required. Historical evidence retained in ledgers/xml-lexical-alignment.json. No go execution credit from contract migration."
+            },
+            "python": {
+              "status": "planned",
+              "evidence": "Concrete lexical XML alignment supersedes underspecified predicates; fresh exact production receipts are required. Historical evidence retained in ledgers/xml-lexical-alignment.json. No python execution credit from contract migration."
+            }
+          }
+        },
+        {
+          "id": "@id-xml-unicode-qname-components",
+          "feature": "workflows/xml/names.feature",
+          "expandedCases": 1,
+          "factIds": [],
+          "expectedOutcomes": [
+            "the root expanded name is urn:unicode/名 and its expanded attribute urn:unicode/é equals JSON \"value\"",
+            "its sole child expanded name is urn:unicode/𐐀 with UTF-16 range [39,46) slicing to JSON \"<π:𐐀/>\"",
+            "the root UTF-16 range is [0,52) and the original source is unchanged"
+          ],
+          "consumers": {
+            "bun": {
+              "status": "planned",
+              "evidence": "Concrete lexical XML alignment supersedes underspecified predicates; fresh exact production receipts are required. Historical evidence retained in ledgers/xml-lexical-alignment.json. No bun execution credit from contract migration."
+            },
+            "go": {
+              "status": "planned",
+              "evidence": "Concrete lexical XML alignment supersedes underspecified predicates; fresh exact production receipts are required. Historical evidence retained in ledgers/xml-lexical-alignment.json. No go execution credit from contract migration."
+            },
+            "python": {
+              "status": "planned",
+              "evidence": "Concrete lexical XML alignment supersedes underspecified predicates; fresh exact production receipts are required. Historical evidence retained in ledgers/xml-lexical-alignment.json. No python execution credit from contract migration."
+            }
+          }
+        },
+        {
+          "id": "@id-xml-outside-root-nbsp",
+          "feature": "workflows/xml/names.feature",
+          "expandedCases": 2,
+          "factIds": [],
+          "expectedOutcomes": [
+            "parsing returns category malformed-xml with no document result and unchanged source"
+          ],
+          "consumers": {
+            "bun": {
+              "status": "planned",
+              "evidence": "Concrete lexical XML alignment supersedes underspecified predicates; fresh exact production receipts are required. Historical evidence retained in ledgers/xml-lexical-alignment.json. No bun execution credit from contract migration."
+            },
+            "go": {
+              "status": "planned",
+              "evidence": "Concrete lexical XML alignment supersedes underspecified predicates; fresh exact production receipts are required. Historical evidence retained in ledgers/xml-lexical-alignment.json. No go execution credit from contract migration."
+            },
+            "python": {
+              "status": "planned",
+              "evidence": "Concrete lexical XML alignment supersedes underspecified predicates; fresh exact production receipts are required. Historical evidence retained in ledgers/xml-lexical-alignment.json. No python execution credit from contract migration."
+            }
+          }
+        }
+      ]
+    },
+    {
+      "path": "workflows/xml/editing.feature",
+      "beforeSha256": "a9c308f9995d7a335b3d96054c2eb8fd8286937c95a46bd07b26428c63292ff3",
+      "afterSha256": "0f7b19a36ba4fd7f47f1b2d692afe7f745210a073f29b26d0056909457353769",
+      "beforeText": "@planned\nFeature: XML lexical editing and byte custody\n\n  Rule: Strict XML parsing and offset-safe edits\n    XML parts are parsed natively with preserved UTF-16 source offsets so OPC code\n    can inspect and patch OOXML parts without losing untouched bytes.\n\n    @id-xml-apply-edits\n    Scenario: Apply only disjoint edits that preserve full-document safety\n      Given a well-formed XML document and source offsets for text or element content\n      When disjoint edits are applied with escaped replacement text or XML fragments\n      Then the resulting XML stays well formed and DTD free\n      But overlapping edits or edits that leave malformed or DTD-bearing XML are refused before returning changed text\n\n  Rule: Lexical XML edits preserve untouched source and refuse ambiguous targets\n    Parsing, QName, line-ending and value-escaping operations have separate workflows.\n    Exact quote/escape spellings and snapshot ownership are lexical API policies.\n    These edits do not establish package custody, schema validity or rendering.\n\n    @profile-lexical-snapshot-api @id-xml-go-attribute-splice-custody\n    Scenario Outline: Update one attribute without reserialising its neighbours\n      Given the XML source is <source>\n      When a lexical edit sets the attribute <name> of the first t element to <value>\n      Then the complete output bytes equal <output>\n      Examples:\n        | name   | value | source                                                   | output                                                           |\n        | a      | x'y&z | <r xmlns:p=\"urn:p\"><t a = 'a&amp;b' p:n=\"old\"/><t>text</t></r> | <r xmlns:p=\"urn:p\"><t a = 'x&#39;y&amp;z' p:n=\"old\"/><t>text</t></r> |\n        | p:n    | new   | <r xmlns:p=\"urn:p\"><t a = 'a&amp;b' p:n=\"old\"/><t>text</t></r> | <r xmlns:p=\"urn:p\"><t a = 'a&amp;b' p:n=\"new\"/><t>text</t></r>    |\n        | fresh  | value | <r xmlns:p=\"urn:p\"><t a = 'a&amp;b' p:n=\"old\"/><t>text</t></r> | <r xmlns:p=\"urn:p\"><t a = 'a&amp;b' p:n=\"old\" fresh=\"value\"/><t>text</t></r> |\n\n    @profile-lexical-snapshot-api @id-xml-go-attribute-batch-refusal\n    Scenario: Duplicate edits to one attribute refuse the batch\n      Given the XML source is <r xmlns:p=\"urn:p\"><t a = 'a&amp;b' p:n=\"old\"/><t>text</t></r>\n      When one lexical edit batch sets a of the first t element to x and to y\n      Then the edit returns an error instead of accepting that batch\n\n    @profile-lexical-snapshot-api @id-xml-go-child-insertion-custody\n    Scenario: Insert a child with independently scoped element and attribute names\n      Given the XML source is <root xmlns=\"u\" xmlns:n1=\"occupied\"><a/><b>keep</b></root>\n      When a structured edit inserts a new-namespace x child with an other-namespace a attribute and a plain text child under the existing a element\n      Then reparsing finds expanded element names new/x and empty-namespace plain\n      And the unedited sibling bytes <b>keep</b> remain in the output\n\n    @profile-lexical-snapshot-api @id-xml-go-child-insertion-refusal\n    Scenario: Overlapping insertion targets refuse and a separate no-op preserves bytes\n      Given the XML source is <root xmlns=\"u\" xmlns:n1=\"occupied\"><a/><b>keep</b></root>\n      When one structured insertion batch targets both the root and its nested a element\n      Then the insertion returns an error\n      But a separate empty insertion batch returns the exact original source bytes\n\n    @profile-lexical-snapshot-api @id-xml-go-child-namespace-matrix\n    Scenario: Inserted element and attribute meanings survive a bounded namespace matrix\n      Given these four XML root sources, each interpreted as a JSON string\n        | source_json                                                    |\n        | \"<r/>\"                                                        |\n        | \"<r xmlns=\\\"u\\\"/>\"                                           |\n        | \"<p:r xmlns:p=\\\"u\\\"/>\"                                       |\n        | \"<r xmlns=\\\"u\\\" xmlns:n1=\\\"v\\\" xmlns:n2=\\\"occupied\\\"/>\"  |\n      And these five namespace URI choices independently for each child element and flag attribute\n        | namespace_uri                            |\n        |                                          |\n        | u                                        |\n        | v                                        |\n        | fresh                                    |\n        | http://www.w3.org/XML/1998/namespace     |\n      When the XML editor inserts child with a flag attribute of JSON value \"\\t\\r\\n & 😀\" and a plain grandchild of JSON text \"x\\ry\\nz\" for all 4 by 5 by 5 choices\n      Then reparsing preserves the root child and grandchild expanded names and the child attribute name and value for every choice\n      And the grandchild text equals JSON \"x\\ry\\nz\" for every choice\n      And a separate empty edit returns each exact original root source\n\n    @profile-lexical-snapshot-api @id-xml-go-element-removal-custody\n    Scenario: Remove two disjoint children without rewriting a comment or gap\n      Given the XML source is <r xmlns:p=\"u\"><!--keep--><p:a x = '1'><p:b>text</p:b></p:a> gap <p:c /></r>\n      When the XML editor removes the p:a subtree and the p:c element from one parsed snapshot\n      Then the complete output bytes equal <r xmlns:p=\"u\"><!--keep--> gap </r>\n      And a separate empty removal returns the exact original source bytes\n\n    @profile-lexical-snapshot-api @id-xml-go-element-removal-refusal\n    Scenario Outline: A <selection> removal refuses\n      Given the XML source is <r xmlns:p=\"u\"><!--keep--><p:a x = '1'><p:b>text</p:b></p:a> gap <p:c /></r>\n      When a removal batch selects <selection>\n      Then the removal returns an error\n      Examples:\n        | selection                  |\n        | root                       |\n        | p:a and its nested p:b     |\n\n    @profile-lexical-snapshot-api @id-xml-go-element-replacement-custody\n    Scenario: Replace one subtree using its surviving parent namespace scope\n      Given the XML source is <root xmlns=\"outer\" xmlns:p=\"bound\"><!--a--><p:old xmlns:p=\"inner\" x='1'><p:child/></p:old> tail <last/></root>\n      When the XML editor replaces p:old with a bound-namespace new element containing value and an empty-namespace plain element\n      Then the complete output bytes equal <root xmlns=\"outer\" xmlns:p=\"bound\"><!--a--><p:new>value</p:new><plain xmlns=\"\"/> tail <last/></root>\n\n    @profile-lexical-snapshot-api @id-xml-go-element-replacement-refusal\n    Scenario Outline: A <selection> subtree replacement refuses without output\n      Given the XML source is <root xmlns=\"outer\" xmlns:p=\"bound\"><!--a--><p:old xmlns:p=\"inner\" x='1'><p:child/></p:old> tail <last/></root>\n      When a replacement batch selects <selection>\n      Then replacement returns an error and no edited output\n      And a separate empty replacement returns the exact original source bytes\n      Examples:\n        | selection                    |\n        | root                         |\n        | p:old twice                  |\n        | p:old and its nested p:child |\n\n    @profile-lexical-snapshot-api @id-xml-go-immutable-leaf-seed\n    Scenario: A seeded immutable parse and no-op leave the caller bytes and parsed snapshot intact\n      Given the XML source is <r><t>hello</t></r>\n      When the XML editor parses a caller-owned byte slice and performs an empty edit\n      Then the caller input bytes still equal the original XML source\n      And the empty edit returns the exact original source bytes\n",
+      "scenarios": [
+        {
+          "id": "@id-xml-apply-edits",
+          "before": [
+            {
+              "scenarioId": "@id-xml-apply-edits",
+              "name": "Apply only disjoint edits that preserve full-document safety",
+              "steps": [
+                {
+                  "text": "a well-formed XML document and source offsets for text or element content",
+                  "argument": null
+                },
+                {
+                  "text": "disjoint edits are applied with escaped replacement text or XML fragments",
+                  "argument": null
+                },
+                {
+                  "text": "the resulting XML stays well formed and DTD free",
+                  "argument": null
+                },
+                {
+                  "text": "overlapping edits or edits that leave malformed or DTD-bearing XML are refused before returning changed text",
+                  "argument": null
+                }
+              ]
+            }
+          ],
+          "after": [
+            {
+              "scenarioId": "@id-xml-apply-edits",
+              "name": "Apply only disjoint edits that preserve full-document safety",
+              "steps": [
+                {
+                  "text": "the lexical XML input is JSON \"<r>one two</r>\"",
+                  "argument": null
+                },
+                {
+                  "text": "these disjoint UTF-16 half-open replacements in reverse source order",
+                  "argument": {
+                    "dataTable": {
+                      "rows": [
+                        {
+                          "cells": [
+                            {
+                              "value": "start"
+                            },
+                            {
+                              "value": "end"
+                            },
+                            {
+                              "value": "value_json"
+                            }
+                          ]
+                        },
+                        {
+                          "cells": [
+                            {
+                              "value": "7"
+                            },
+                            {
+                              "value": "10"
+                            },
+                            {
+                              "value": "\"<x/>\""
+                            }
+                          ]
+                        },
+                        {
+                          "cells": [
+                            {
+                              "value": "3"
+                            },
+                            {
+                              "value": "6"
+                            },
+                            {
+                              "value": "\"1 &lt; 2\""
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  }
+                },
+                {
+                  "text": "the production XML editor applies those replacements atomically",
+                  "argument": null
+                },
+                {
+                  "text": "the complete output equals JSON \"<r>1 &lt; 2 <x/></r>\" and reparses to root text JSON \"1 < 2 \" with sole child x",
+                  "argument": null
+                },
+                {
+                  "text": "these independent edit batches refuse with no changed text",
+                  "argument": {
+                    "dataTable": {
+                      "rows": [
+                        {
+                          "cells": [
+                            {
+                              "value": "source_json"
+                            },
+                            {
+                              "value": "edits_json"
+                            },
+                            {
+                              "value": "category"
+                            }
+                          ]
+                        },
+                        {
+                          "cells": [
+                            {
+                              "value": "\"<r>text</r>\""
+                            },
+                            {
+                              "value": "\"[{\\\"start\\\":3,\\\"end\\\":5,\\\"value\\\":\\\"a\\\"},{\\\"start\\\":4,\\\"end\\\":6,\\\"value\\\":\\\"b\\\"}]\""
+                            },
+                            {
+                              "value": "edit-overlap"
+                            }
+                          ]
+                        },
+                        {
+                          "cells": [
+                            {
+                              "value": "\"<r>text</r>\""
+                            },
+                            {
+                              "value": "\"[{\\\"start\\\":3,\\\"end\\\":7,\\\"value\\\":\\\"<x>\\\"}]\""
+                            },
+                            {
+                              "value": "edit-unsafe"
+                            }
+                          ]
+                        },
+                        {
+                          "cells": [
+                            {
+                              "value": "\"<r>text</r>\""
+                            },
+                            {
+                              "value": "\"[{\\\"start\\\":3,\\\"end\\\":7,\\\"value\\\":\\\"<!DOCTYPE x><x/>\\\"}]\""
+                            },
+                            {
+                              "value": "edit-unsafe"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  }
+                },
+                {
+                  "text": "every original source and replacement list remains unchanged",
+                  "argument": null
+                }
+              ]
+            }
+          ],
+          "beforeProfiles": [],
+          "afterProfiles": []
+        }
+      ],
+      "beforeLedgerRows": [
+        {
+          "id": "@id-xml-apply-edits",
+          "feature": "workflows/xml/editing.feature",
+          "expandedCases": 1,
+          "factIds": [],
+          "expectedOutcomes": [
+            "the resulting XML stays well formed and DTD free",
+            "overlapping edits or edits that leave malformed or DTD-bearing XML are refused before returning changed text"
+          ],
+          "consumers": {
+            "bun": {
+              "status": "implemented",
+              "evidence": "Bun 664c581eb4289ffb7952f10aff729f533595d4c3 at shared v0.76.0 executes all four exact XML editing steps in features/shared.json and tests/acceptance/core.ts. Disjoint fragment and escaped-text edits yield a parsed well-formed DTD-free document; overlapping edits refuse with XML_EDIT_OVERLAP, malformed or DTD-bearing outputs with XML_EDIT_UNSAFE before returning edited text. Fresh GitHub recursive make check passed 732/732 selected cases; tests/unit/xml.test.ts independently exercises applyEdits overlap and unsafe refusals. Lexical XML edit only; no Go/Python, OPC package custody or rendering credit."
+            },
+            "go": {
+              "status": "planned",
+              "evidence": "Partial native assertion overlaps recorded separately; no canonical execution"
+            },
+            "python": {
+              "status": "planned",
+              "evidence": "Lexical parsing and semantic comparison remain distinct; no canonical execution"
+            }
+          }
+        }
+      ],
+      "afterLedgerRows": [
+        {
+          "id": "@id-xml-apply-edits",
+          "feature": "workflows/xml/editing.feature",
+          "expandedCases": 1,
+          "factIds": [],
+          "expectedOutcomes": [
+            "the complete output equals JSON \"<r>1 &lt; 2 <x/></r>\" and reparses to root text JSON \"1 < 2 \" with sole child x",
+            "these independent edit batches refuse with no changed text",
+            "every original source and replacement list remains unchanged"
+          ],
+          "consumers": {
+            "bun": {
+              "status": "planned",
+              "evidence": "Concrete lexical XML alignment supersedes underspecified predicates; fresh exact production receipts are required. Historical evidence retained in ledgers/xml-lexical-alignment.json. No bun execution credit from contract migration."
+            },
+            "go": {
+              "status": "planned",
+              "evidence": "Concrete lexical XML alignment supersedes underspecified predicates; fresh exact production receipts are required. Historical evidence retained in ledgers/xml-lexical-alignment.json. No go execution credit from contract migration."
+            },
+            "python": {
+              "status": "planned",
+              "evidence": "Concrete lexical XML alignment supersedes underspecified predicates; fresh exact production receipts are required. Historical evidence retained in ledgers/xml-lexical-alignment.json. No python execution credit from contract migration."
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

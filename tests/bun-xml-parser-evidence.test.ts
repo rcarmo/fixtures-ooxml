@@ -1,4 +1,4 @@
-import {historicalWorkflowLedger} from './xml-generalization-helpers.ts';
+import {historicalWorkflowLedger, beforeLexicalAlignmentFeature} from './xml-generalization-helpers.ts';
 const pythonPackageIds = new Set(['@id-package-admission-negative-budget','@id-zip-unsigned-descriptor-signature-collision']);
 const goXmlNegativeIds = new Set(['@id-xml-comparison-significant-content','@id-xml-comparison-prefix-attribute-binding','@id-xml-comparison-unsafe-input','@id-xml-comparison-processing-instructions-and-comments']);
 const goLatentPackageIds = new Set(['@id-package-admission-negative-budget','@id-zip-unsigned-descriptor-signature-collision']);
@@ -44,7 +44,7 @@ const specs=[
 test('Bun executes four exact XML parsing and refusal scenarios without Go or Python credit',async()=>{
  const ledger=await historicalWorkflowLedger();
  const prior=JSON.parse(execFileSync('git',['show','8789e30b55f34ff7c0b04b6a5c9fe538d5fe4f65:ledgers/workflows.json']).toString());
- const rows=cases(path,await Bun.file(path).text());
+ const rows=cases(path,beforeLexicalAlignmentFeature(path,await Bun.file(path).text()));
  for(const {id,steps,outcomes,markers} of specs){
   const current=ledger.workflows.find((w:any)=>w.id===id),old=prior.workflows.find((w:any)=>w.id===id);
   expect(current.feature).toBe(path);expect(current.expandedCases).toBe(1);

@@ -1,4 +1,4 @@
-import {historicalWorkflowLedger} from './xml-generalization-helpers.ts';
+import {historicalWorkflowLedger, beforeLexicalAlignmentFeature} from './xml-generalization-helpers.ts';
 const pythonPackageIds = new Set(['@id-package-admission-negative-budget','@id-zip-unsigned-descriptor-signature-collision']);
 const goXmlNegativeIds = new Set(['@id-xml-comparison-significant-content','@id-xml-comparison-prefix-attribute-binding','@id-xml-comparison-unsafe-input','@id-xml-comparison-processing-instructions-and-comments']);
 const goLatentPackageIds = new Set(['@id-package-admission-negative-budget','@id-zip-unsigned-descriptor-signature-collision']);
@@ -43,7 +43,7 @@ const specs=[
 test('Bun executes six exact XML QName and outside-root NBSP cases without Go or Python credit',async()=>{
  const ledger=await historicalWorkflowLedger();
  const prior=JSON.parse(execFileSync('git',['show','dd2984e9ad175261fd33d2c120b8cd2da8b4e881:ledgers/workflows.json']).toString());
- const rows=cases(path,await Bun.file(path).text());
+ const rows=cases(path,beforeLexicalAlignmentFeature(path,await Bun.file(path).text()));
  for(const {id,steps,outcomes,markers} of specs){
   const current=ledger.workflows.find((w:any)=>w.id===id),old=prior.workflows.find((w:any)=>w.id===id);
   expect(current.feature).toBe(path);expect(current.expandedCases).toBe(steps.length);expect(current.expectedOutcomes).toEqual(outcomes);

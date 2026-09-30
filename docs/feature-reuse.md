@@ -49,11 +49,11 @@ portable API profile; the scenario reason records the gap.
 | PPTX | 11 | 33 | 82 | 5 | 11 | 0 | 17 |
 | XLSX | 12 | 43 | 109 | 12 | 14 | 0 | 17 |
 | PACKAGE | 10 | 36 | 68 | 18 | 6 | 0 | 12 |
-| XML | 4 | 33 | 47 | 14 | 11 | 0 | 8 |
+| XML | 4 | 33 | 47 | 22 | 11 | 0 | 0 |
 | OFFICE | 1 | 1 | 3 | 0 | 0 | 0 | 1 |
-| ALL | 62 | 304 | 791 | 118 | 98 | 0 | 88 |
+| ALL | 62 | 304 | 791 | 126 | 98 | 0 | 80 |
 
-12 of 62 canonical feature files are fully generalized throughout.
+13 of 62 canonical feature files are fully generalized throughout.
 The remaining files contain profile-specific, runtime-specific or incomplete
 scenarios; 23 files mix categories and require ID-level selection.
 The four category columns count scenario IDs, not expanded example cases.
@@ -749,27 +749,27 @@ XML lexical editing and byte custody — **mixed**; fully generalized: **no**.
 
 | ID / source | Cases | Tag | Profiles | Reason / local evidence |
 |---|---:|---|---|---|
-| [@id-xml-apply-edits](../workflows/xml/editing.feature#L9) | 1 | incomplete | — | Disjoint/overlap/malformed categories lack exact source ranges, replacement vectors and outputs. [go-lexical-editing.md](../contracts/go-lexical-editing.md) |
-| [@id-xml-go-attribute-splice-custody](../workflows/xml/editing.feature#L21) | 3 | profile-specific | @profile-lexical-snapshot-api | Parsed-snapshot ownership and exact source-splice/escape conventions require the lexical editing API. [go-lexical-editing.md](../contracts/go-lexical-editing.md) |
-| [@id-xml-go-attribute-batch-refusal](../workflows/xml/editing.feature#L32) | 1 | profile-specific | @profile-lexical-snapshot-api | Parsed-snapshot ownership and exact source-splice/escape conventions require the lexical editing API. [go-lexical-editing.md](../contracts/go-lexical-editing.md) |
-| [@id-xml-go-child-insertion-custody](../workflows/xml/editing.feature#L38) | 1 | profile-specific | @profile-lexical-snapshot-api | Parsed-snapshot ownership and exact source-splice/escape conventions require the lexical editing API. [go-lexical-editing.md](../contracts/go-lexical-editing.md) |
-| [@id-xml-go-child-insertion-refusal](../workflows/xml/editing.feature#L45) | 1 | profile-specific | @profile-lexical-snapshot-api | Parsed-snapshot ownership and exact source-splice/escape conventions require the lexical editing API. [go-lexical-editing.md](../contracts/go-lexical-editing.md) |
-| [@id-xml-go-child-namespace-matrix](../workflows/xml/editing.feature#L52) | 1 | profile-specific | @profile-lexical-snapshot-api | Parsed-snapshot ownership and exact source-splice/escape conventions require the lexical editing API. [go-lexical-editing.md](../contracts/go-lexical-editing.md) |
-| [@id-xml-go-element-removal-custody](../workflows/xml/editing.feature#L72) | 1 | profile-specific | @profile-lexical-snapshot-api | Parsed-snapshot ownership and exact source-splice/escape conventions require the lexical editing API. [go-lexical-editing.md](../contracts/go-lexical-editing.md) |
-| [@id-xml-go-element-removal-refusal](../workflows/xml/editing.feature#L79) | 2 | profile-specific | @profile-lexical-snapshot-api | Parsed-snapshot ownership and exact source-splice/escape conventions require the lexical editing API. [go-lexical-editing.md](../contracts/go-lexical-editing.md) |
-| [@id-xml-go-element-replacement-custody](../workflows/xml/editing.feature#L89) | 1 | profile-specific | @profile-lexical-snapshot-api | Parsed-snapshot ownership and exact source-splice/escape conventions require the lexical editing API. [go-lexical-editing.md](../contracts/go-lexical-editing.md) |
-| [@id-xml-go-element-replacement-refusal](../workflows/xml/editing.feature#L95) | 3 | profile-specific | @profile-lexical-snapshot-api | Parsed-snapshot ownership and exact source-splice/escape conventions require the lexical editing API. [go-lexical-editing.md](../contracts/go-lexical-editing.md) |
-| [@id-xml-go-immutable-leaf-seed](../workflows/xml/editing.feature#L107) | 1 | profile-specific | @profile-lexical-snapshot-api | Parsed-snapshot ownership and exact source-splice/escape conventions require the lexical editing API. [go-lexical-editing.md](../contracts/go-lexical-editing.md) |
+| [@id-xml-apply-edits](../workflows/xml/editing.feature#L9) | 1 | generalized | — | Concrete JSON inputs, independent expected UTF-16 coordinates/decoded values or structured refusal/resource/edit recipes; exact source custody and no partial result. All runtimes require fresh production bindings. [xml-lexical-alignment.md](../contracts/xml-lexical-alignment.md) |
+| [@id-xml-go-attribute-splice-custody](../workflows/xml/editing.feature#L30) | 3 | profile-specific | @profile-lexical-snapshot-api | Parsed-snapshot ownership and exact source-splice/escape conventions require the lexical editing API. [go-lexical-editing.md](../contracts/go-lexical-editing.md) |
+| [@id-xml-go-attribute-batch-refusal](../workflows/xml/editing.feature#L41) | 1 | profile-specific | @profile-lexical-snapshot-api | Parsed-snapshot ownership and exact source-splice/escape conventions require the lexical editing API. [go-lexical-editing.md](../contracts/go-lexical-editing.md) |
+| [@id-xml-go-child-insertion-custody](../workflows/xml/editing.feature#L47) | 1 | profile-specific | @profile-lexical-snapshot-api | Parsed-snapshot ownership and exact source-splice/escape conventions require the lexical editing API. [go-lexical-editing.md](../contracts/go-lexical-editing.md) |
+| [@id-xml-go-child-insertion-refusal](../workflows/xml/editing.feature#L54) | 1 | profile-specific | @profile-lexical-snapshot-api | Parsed-snapshot ownership and exact source-splice/escape conventions require the lexical editing API. [go-lexical-editing.md](../contracts/go-lexical-editing.md) |
+| [@id-xml-go-child-namespace-matrix](../workflows/xml/editing.feature#L61) | 1 | profile-specific | @profile-lexical-snapshot-api | Parsed-snapshot ownership and exact source-splice/escape conventions require the lexical editing API. [go-lexical-editing.md](../contracts/go-lexical-editing.md) |
+| [@id-xml-go-element-removal-custody](../workflows/xml/editing.feature#L81) | 1 | profile-specific | @profile-lexical-snapshot-api | Parsed-snapshot ownership and exact source-splice/escape conventions require the lexical editing API. [go-lexical-editing.md](../contracts/go-lexical-editing.md) |
+| [@id-xml-go-element-removal-refusal](../workflows/xml/editing.feature#L88) | 2 | profile-specific | @profile-lexical-snapshot-api | Parsed-snapshot ownership and exact source-splice/escape conventions require the lexical editing API. [go-lexical-editing.md](../contracts/go-lexical-editing.md) |
+| [@id-xml-go-element-replacement-custody](../workflows/xml/editing.feature#L98) | 1 | profile-specific | @profile-lexical-snapshot-api | Parsed-snapshot ownership and exact source-splice/escape conventions require the lexical editing API. [go-lexical-editing.md](../contracts/go-lexical-editing.md) |
+| [@id-xml-go-element-replacement-refusal](../workflows/xml/editing.feature#L104) | 3 | profile-specific | @profile-lexical-snapshot-api | Parsed-snapshot ownership and exact source-splice/escape conventions require the lexical editing API. [go-lexical-editing.md](../contracts/go-lexical-editing.md) |
+| [@id-xml-go-immutable-leaf-seed](../workflows/xml/editing.feature#L116) | 1 | profile-specific | @profile-lexical-snapshot-api | Parsed-snapshot ownership and exact source-splice/escape conventions require the lexical editing API. [go-lexical-editing.md](../contracts/go-lexical-editing.md) |
 
 ### xml/names.feature
 
-XML namespace names require valid prefix and local components — **incomplete**; fully generalized: **no**.
+XML namespace names require valid prefix and local components — **generalized**; fully generalized: **yes**.
 
 | ID / source | Cases | Tag | Profiles | Reason / local evidence |
 |---|---:|---|---|---|
-| [@id-xml-invalid-qname-components](../workflows/xml/names.feature#L6) | 3 | incomplete | — | QName/NBSP category descriptions omit exact source strings and expected name/offset values for independent bindings. [xml-values.md](../contracts/xml-values.md) |
-| [@id-xml-unicode-qname-components](../workflows/xml/names.feature#L17) | 1 | incomplete | — | QName/NBSP category descriptions omit exact source strings and expected name/offset values for independent bindings. [xml-values.md](../contracts/xml-values.md) |
-| [@id-xml-outside-root-nbsp](../workflows/xml/names.feature#L24) | 2 | incomplete | — | QName/NBSP category descriptions omit exact source strings and expected name/offset values for independent bindings. [xml-values.md](../contracts/xml-values.md) |
+| [@id-xml-invalid-qname-components](../workflows/xml/names.feature#L6) | 3 | generalized | — | Concrete JSON inputs, independent expected UTF-16 coordinates/decoded values or structured refusal/resource/edit recipes; exact source custody and no partial result. All runtimes require fresh production bindings. [xml-lexical-alignment.md](../contracts/xml-lexical-alignment.md) |
+| [@id-xml-unicode-qname-components](../workflows/xml/names.feature#L17) | 1 | generalized | — | Concrete JSON inputs, independent expected UTF-16 coordinates/decoded values or structured refusal/resource/edit recipes; exact source custody and no partial result. All runtimes require fresh production bindings. [xml-lexical-alignment.md](../contracts/xml-lexical-alignment.md) |
+| [@id-xml-outside-root-nbsp](../workflows/xml/names.feature#L25) | 2 | generalized | — | Concrete JSON inputs, independent expected UTF-16 coordinates/decoded values or structured refusal/resource/edit recipes; exact source custody and no partial result. All runtimes require fresh production bindings. [xml-lexical-alignment.md](../contracts/xml-lexical-alignment.md) |
 
 ### xml/parsing.feature
 
@@ -777,20 +777,20 @@ XML parsing and value inspection — **mixed**; fully generalized: **no**.
 
 | ID / source | Cases | Tag | Profiles | Reason / local evidence |
 |---|---:|---|---|---|
-| [@id-xml-parse-offsets](../workflows/xml/parsing.feature#L9) | 1 | incomplete | — | UTF-16 is a portable convention, but the source document and exact offset/node expectations are not supplied here. [xml-values.md](../contracts/xml-values.md) |
-| [@id-xml-normalise-line-endings](../workflows/xml/parsing.feature#L16) | 1 | incomplete | — | Inherited UTF-16 offsets are explicit; exact raw/reference strings and expected offset/value vectors remain unspecified. [xml-values.md](../contracts/xml-values.md) |
-| [@id-xml-parse-refusals](../workflows/xml/parsing.feature#L24) | 1 | incomplete | — | Malformed/unsafe categories and stable-code outcome lack exact source vectors and required codes. [xml-values.md](../contracts/xml-values.md) |
-| [@id-xml-parse-bounds](../workflows/xml/parsing.feature#L33) | 1 | incomplete | — | Exact parser limits, exceeding inputs and bound-edge controls are not supplied. [xml-values.md](../contracts/xml-values.md) |
-| [@id-xml-entity-values](../workflows/xml/parsing.feature#L45) | 1 | generalized | — | Literal XML/JSON operands and exact decoded values or roundtrip/refusal outcomes are portable XML contracts. [xml-values.md](../contracts/xml-values.md) |
-| [@id-xml-stylesheet-processing-instruction](../workflows/xml/parsing.feature#L52) | 1 | generalized | — | Literal XML/JSON operands and exact decoded values or roundtrip/refusal outcomes are portable XML contracts. [xml-values.md](../contracts/xml-values.md) |
-| [@id-xml-expanded-attribute-lookup](../workflows/xml/parsing.feature#L58) | 1 | generalized | — | Literal XML/JSON operands and exact decoded values or roundtrip/refusal outcomes are portable XML contracts. [xml-values.md](../contracts/xml-values.md) |
-| [@id-xml-implicit-xml-prefix](../workflows/xml/parsing.feature#L72) | 1 | generalized | — | Literal XML/JSON operands and exact decoded values or roundtrip/refusal outcomes are portable XML contracts. [xml-values.md](../contracts/xml-values.md) |
-| [@id-xml-prototype-safe-attributes](../workflows/xml/parsing.feature#L80) | 1 | generalized | @profile-xml-model-safety | Exact literal attribute set/values and unchanged root/source replace language-specific prototype checks; native guards remain required. [xml-values.md](../contracts/xml-values.md) |
-| [@id-xml-immutable-namespace-metadata](../workflows/xml/parsing.feature#L88) | 1 | generalized | @profile-xml-model-safety | Mutating returned namespace metadata cannot affect fresh reads from the same model; read-only or detached native snapshots implement this portable isolation contract. [xml-values.md](../contracts/xml-values.md) |
-| [@id-xml-escaping-values](../workflows/xml/parsing.feature#L97) | 2 | profile-specific | @profile-xml-escaping-api | Exact named entity spelling is a compatibility profile; other XML-valid spellings preserve the same values. [xml-values.md](../contracts/xml-values.md) |
-| [@id-xml-escaping-invalid-character](../workflows/xml/parsing.feature#L107) | 1 | generalized | — | Literal XML/JSON operands and exact decoded values or roundtrip/refusal outcomes are portable XML contracts. [xml-values.md](../contracts/xml-values.md) |
-| [@id-xml-escaping-whitespace-roundtrip](../workflows/xml/parsing.feature#L113) | 1 | generalized | — | Literal XML/JSON operands and exact decoded values or roundtrip/refusal outcomes are portable XML contracts. [xml-values.md](../contracts/xml-values.md) |
-| [@id-xml-typed-parse-error](../workflows/xml/parsing.feature#L119) | 1 | generalized | @profile-xml-failure-category | Documented native syntax-failure category, no partial result and source custody replace literal exception-class identity. [xml-values.md](../contracts/xml-values.md) |
+| [@id-xml-parse-offsets](../workflows/xml/parsing.feature#L9) | 1 | generalized | — | Concrete JSON inputs, independent expected UTF-16 coordinates/decoded values or structured refusal/resource/edit recipes; exact source custody and no partial result. All runtimes require fresh production bindings. [xml-lexical-alignment.md](../contracts/xml-lexical-alignment.md) |
+| [@id-xml-normalise-line-endings](../workflows/xml/parsing.feature#L21) | 1 | generalized | — | Concrete JSON inputs, independent expected UTF-16 coordinates/decoded values or structured refusal/resource/edit recipes; exact source custody and no partial result. All runtimes require fresh production bindings. [xml-lexical-alignment.md](../contracts/xml-lexical-alignment.md) |
+| [@id-xml-parse-refusals](../workflows/xml/parsing.feature#L30) | 1 | generalized | — | Concrete JSON inputs, independent expected UTF-16 coordinates/decoded values or structured refusal/resource/edit recipes; exact source custody and no partial result. All runtimes require fresh production bindings. [xml-lexical-alignment.md](../contracts/xml-lexical-alignment.md) |
+| [@id-xml-parse-bounds](../workflows/xml/parsing.feature#L53) | 1 | generalized | — | Concrete JSON inputs, independent expected UTF-16 coordinates/decoded values or structured refusal/resource/edit recipes; exact source custody and no partial result. All runtimes require fresh production bindings. [xml-lexical-alignment.md](../contracts/xml-lexical-alignment.md) |
+| [@id-xml-entity-values](../workflows/xml/parsing.feature#L72) | 1 | generalized | — | Literal XML/JSON operands and exact decoded values or roundtrip/refusal outcomes are portable XML contracts. [xml-values.md](../contracts/xml-values.md) |
+| [@id-xml-stylesheet-processing-instruction](../workflows/xml/parsing.feature#L79) | 1 | generalized | — | Literal XML/JSON operands and exact decoded values or roundtrip/refusal outcomes are portable XML contracts. [xml-values.md](../contracts/xml-values.md) |
+| [@id-xml-expanded-attribute-lookup](../workflows/xml/parsing.feature#L85) | 1 | generalized | — | Literal XML/JSON operands and exact decoded values or roundtrip/refusal outcomes are portable XML contracts. [xml-values.md](../contracts/xml-values.md) |
+| [@id-xml-implicit-xml-prefix](../workflows/xml/parsing.feature#L99) | 1 | generalized | — | Literal XML/JSON operands and exact decoded values or roundtrip/refusal outcomes are portable XML contracts. [xml-values.md](../contracts/xml-values.md) |
+| [@id-xml-prototype-safe-attributes](../workflows/xml/parsing.feature#L107) | 1 | generalized | @profile-xml-model-safety | Exact literal attribute set/values and unchanged root/source replace language-specific prototype checks; native guards remain required. [xml-values.md](../contracts/xml-values.md) |
+| [@id-xml-immutable-namespace-metadata](../workflows/xml/parsing.feature#L115) | 1 | generalized | @profile-xml-model-safety | Mutating returned namespace metadata cannot affect fresh reads from the same model; read-only or detached native snapshots implement this portable isolation contract. [xml-values.md](../contracts/xml-values.md) |
+| [@id-xml-escaping-values](../workflows/xml/parsing.feature#L124) | 2 | profile-specific | @profile-xml-escaping-api | Exact named entity spelling is a compatibility profile; other XML-valid spellings preserve the same values. [xml-values.md](../contracts/xml-values.md) |
+| [@id-xml-escaping-invalid-character](../workflows/xml/parsing.feature#L134) | 1 | generalized | — | Literal XML/JSON operands and exact decoded values or roundtrip/refusal outcomes are portable XML contracts. [xml-values.md](../contracts/xml-values.md) |
+| [@id-xml-escaping-whitespace-roundtrip](../workflows/xml/parsing.feature#L140) | 1 | generalized | — | Literal XML/JSON operands and exact decoded values or roundtrip/refusal outcomes are portable XML contracts. [xml-values.md](../contracts/xml-values.md) |
+| [@id-xml-typed-parse-error](../workflows/xml/parsing.feature#L146) | 1 | generalized | @profile-xml-failure-category | Documented native syntax-failure category, no partial result and source custody replace literal exception-class identity. [xml-values.md](../contracts/xml-values.md) |
 
 ### office/full-coverage.feature
 

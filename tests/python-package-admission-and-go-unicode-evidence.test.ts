@@ -1,4 +1,4 @@
-import {historicalWorkflowLedger} from './xml-generalization-helpers.ts';
+import {historicalWorkflowLedger, beforeLexicalAlignmentFeature} from './xml-generalization-helpers.ts';
 import {test,expect} from 'bun:test';
 import {execFileSync} from 'node:child_process';
 import {cases} from '../scripts/verify.ts';
@@ -17,7 +17,7 @@ test('Python package lane credits only five exact canonical IDs after native con
  const prior=JSON.parse(execFileSync('git',['show',`${previous}:ledgers/workflows.json`]).toString());
  for(const[id,feature,count,steps,...markers]of python){
   const now=ledger.workflows.find((w:any)=>w.id===id),old=prior.workflows.find((w:any)=>w.id===id);
-  const rows=cases(feature,await Bun.file(feature).text()).filter((c:any)=>c.scenarioId===id);
+  const rows=cases(feature,beforeLexicalAlignmentFeature(feature,await Bun.file(feature).text())).filter((c:any)=>c.scenarioId===id);
   expect(now.feature).toBe(feature);expect(now.expandedCases).toBe(count);
   expect(rows).toHaveLength(count);expect(rows.reduce((n:number,c:any)=>n+c.steps.length,0)).toBe(steps);
   expect(old.consumers.python.status).toBe('planned');expect(now.consumers.python.status).toBe('implemented');
@@ -32,7 +32,7 @@ test('Go Unicode QName credit requires four exact steps and independent UTF-8 so
  const id='@id-xml-unicode-qname-components',feature='workflows/xml/names.feature';
  const ledger=await historicalWorkflowLedger(),prior=JSON.parse(execFileSync('git',['show',`${previous}:ledgers/workflows.json`]).toString());
  const now=ledger.workflows.find((w:any)=>w.id===id),old=prior.workflows.find((w:any)=>w.id===id);
- const rows=cases(feature,await Bun.file(feature).text()).filter((c:any)=>c.scenarioId===id);
+ const rows=cases(feature,beforeLexicalAlignmentFeature(feature,await Bun.file(feature).text())).filter((c:any)=>c.scenarioId===id);
  expect(now.feature).toBe(feature);expect(rows).toHaveLength(1);expect(rows[0].steps.map((s:any)=>s.text)).toEqual([
   'XML with valid Unicode prefix and local name components','the namespace-name fixture is parsed',
   'expanded element and attribute names retain their Unicode identity','source offsets still address the original Unicode element',

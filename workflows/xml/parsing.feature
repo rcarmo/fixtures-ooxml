@@ -7,33 +7,60 @@ Feature: XML parsing and value inspection
 
     @id-xml-parse-offsets
     Scenario: Parse namespaces, mixed content and preserved offsets
-      Given an XML document with a declaration, comments, processing instructions and namespaces
-      When the document is parsed
-      Then the root element and descendants expose decoded text, decoded attributes and namespace URIs
-      And each element exposes UTF-16 source offsets, parent links, child links, root links and self-closing state
+      Given the lexical XML input is JSON "<?xml version=\"1.0\"?><!--😀--><?pi ok?><p:r xmlns=\"urn:default\" xmlns:p=\"urn:p\" xmlns:x=\"urn:x\" a=\"1 &amp; 2\">pre😀<x:c x:b=\"v\"/>mid<![CDATA[<tail>]]></p:r><!--after-->"
+      When the lexical XML input is parsed without rewriting its source
+      Then exactly two elements expose these decoded values and UTF-16 half-open offsets
+        | element | qualified_name | local_name | namespace_uri | text_json          | start | open_end | close_start | end | self_closing |
+        | root    | p:r            | r          | urn:p         | "pre😀mid<tail>"   | 39    | 110      | 150         | 156 | false        |
+        | child   | x:c            | c          | urn:x         | ""                 | 115   | 129      | 129         | 129 | true         |
+      And the root attribute a equals JSON "1 & 2" and the child expanded attribute urn:x/b equals JSON "v"
+      And the root has no parent, its sole child links back to it, and both root links identify that same root
+      And slicing the original source at each returned range yields its exact element markup and the source is unchanged
 
     @id-xml-normalise-line-endings
     Scenario: Decode XML line endings without changing source offsets
-      Given XML text and attributes containing raw CRLF and character references
-      When that XML is parsed without rewriting the source
-      Then decoded text normalises raw line endings but preserves referenced carriage returns
-      And decoded attributes normalise literal whitespace while preserving referenced whitespace
-      And element offsets still address the original source string
+      Given the lexical XML input is JSON "<!--😀--><r a=\"x\r\ny\tz&#xD;&#xA;&#x9;\">u\r\nv\rw&#xD;<![CDATA[c\r\nd]]><s/></r>"
+      When the lexical XML input is parsed without rewriting its source
+      Then the root decoded text equals JSON "u\nv\nw\rc\nd"
+      And the root attribute a equals JSON "x y z\r\n\t"
+      And the child s range is UTF-16 [65,69) and slices the original source to JSON "<s/>"
+      And the original source including its raw line endings is unchanged
 
     @id-xml-parse-refusals
     Scenario: Refuse malformed or unsafe XML constructs
-      Given XML containing a malformed declaration or processing instruction
-      And XML containing invalid comment termination or missing attribute whitespace
-      And XML containing reserved namespace misuse, a DTD or an undeclared entity
-      And XML containing a duplicate attribute, an unbound prefix or a mismatched tag
-      When the document is parsed
-      Then parsing is refused with a stable XML error code
+      Given these exact XML refusal inputs and documented categories
+        | variant                    | source_json                                                     | category             |
+        | declaration extra          | "<?xml version=\"1.0\" extra=\"x\"?><r/>"                  | malformed-xml        |
+        | invalid standalone         | "<?xml version=\"1.0\" standalone=\"maybe\"?><r/>"          | malformed-xml        |
+        | processing instruction     | "<?pi/?><r/>"                                                  | malformed-xml        |
+        | comment interior           | "<r><!-- bad -- --></r>"                                        | malformed-xml        |
+        | comment termination        | "<r><!--bad---></r>"                                            | malformed-xml        |
+        | attribute whitespace       | "<r a='1'b='2'/>"                                              | malformed-xml        |
+        | reserved element prefix    | "<xmlns:r/>"                                                   | malformed-xml        |
+        | reserved default namespace | "<r xmlns=\"http://www.w3.org/XML/1998/namespace\"/>"          | malformed-xml        |
+        | DTD                        | "<!DOCTYPE r><r/>"                                             | dtd-forbidden        |
+        | undeclared entity          | "<r>&custom;</r>"                                               | entity-forbidden     |
+        | lexical duplicate          | "<r a='1' a='2'/>"                                              | duplicate-attribute  |
+        | expanded duplicate         | "<r xmlns:x=\"u\" xmlns:y=\"u\" x:a=\"1\" y:a=\"2\"/>" | duplicate-attribute  |
+        | unbound prefix             | "<x:r/>"                                                       | unbound-prefix       |
+        | mismatched tag             | "<a></b>"                                                      | mismatched-tag       |
+        | invalid character          | "<r>\u0001</r>"                                                | invalid-character    |
+      When every refusal input is parsed through the production lexical XML API
+      Then every input returns its documented category with no document result
+      And every original source remains unchanged
 
     @id-xml-parse-bounds
     Scenario: Bound untrusted XML resources
-      Given XML whose nesting depth, node count or input length exceeds the configured parser limits
-      When the document is parsed
-      Then parsing is refused before returning a partial tree
+      Given XML parser limits maxDepth 4, maxNodes 6 and maxSourceUnits 64 measured in UTF-16 units
+      And these exact XML resource-limit recipes
+        | recipe                                     | category        |
+        | five nested n elements                     | depth-limit     |
+        | root r with six self-closing n children     | node-limit      |
+        | root r containing fifty-eight x characters | input-too-large |
+      When every recipe is parsed through the production lexical XML API with those limits
+      Then every recipe returns its documented category with no partial document
+      And independent depth-four, six-node and sixty-four-source-unit controls each parse successfully
+      And every original source remains unchanged
 
   Rule: XML values, namespace lookup and safe escaping
     XML 1.0 sections 2.6, 2.11, 3.3.3 and 4.6 define processing instructions,

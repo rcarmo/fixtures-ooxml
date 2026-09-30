@@ -1,4 +1,4 @@
-import {historicalWorkflowLedger} from './xml-generalization-helpers.ts';
+import {historicalWorkflowLedger, beforeLexicalAlignmentFeature} from './xml-generalization-helpers.ts';
 const pythonPackageIds = new Set(['@id-package-admission-negative-budget','@id-zip-unsigned-descriptor-signature-collision']);
 const goXmlNegativeIds = new Set(['@id-xml-comparison-significant-content','@id-xml-comparison-prefix-attribute-binding','@id-xml-comparison-unsafe-input','@id-xml-comparison-processing-instructions-and-comments']);
 const goLatentPackageIds = new Set(['@id-package-admission-negative-budget','@id-zip-unsigned-descriptor-signature-collision']);
@@ -41,7 +41,7 @@ test('Bun executes exact XML editing success and three refusal predicates withou
  const prior=JSON.parse(execFileSync('git',['show','a2f3ef721fe5bbb5c757b5a3dc2b1108c5f05971:ledgers/workflows.json']).toString());
  const current=ledger.workflows.find((w:any)=>w.id===id),old=prior.workflows.find((w:any)=>w.id===id);
  expect(current.feature).toBe(path);expect(current.expandedCases).toBe(1);
- expect(cases(path,await Bun.file(path).text()).filter((r:any)=>r.scenarioId===id).map((r:any)=>r.steps.map((s:any)=>s.text))).toEqual([steps]);
+ expect(cases(path,beforeLexicalAlignmentFeature(path,await Bun.file(path).text())).filter((r:any)=>r.scenarioId===id).map((r:any)=>r.steps.map((s:any)=>s.text))).toEqual([steps]);
  expect(current.expectedOutcomes).toEqual(steps.slice(-2));
  expect(old.consumers.bun.status).toBe('planned');expect(current.consumers.bun.status).toBe('implemented');
  for(const marker of ['664c581eb4289ffb7952f10aff729f533595d4c3','shared v0.76.0','all four exact','tests/acceptance/core.ts','XML_EDIT_OVERLAP','XML_EDIT_UNSAFE','Fresh GitHub recursive make check','732/732','Lexical XML edit only'])expect(current.consumers.bun.evidence).toContain(marker);

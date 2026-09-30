@@ -7,10 +7,19 @@ Feature: XML lexical editing and byte custody
 
     @id-xml-apply-edits
     Scenario: Apply only disjoint edits that preserve full-document safety
-      Given a well-formed XML document and source offsets for text or element content
-      When disjoint edits are applied with escaped replacement text or XML fragments
-      Then the resulting XML stays well formed and DTD free
-      But overlapping edits or edits that leave malformed or DTD-bearing XML are refused before returning changed text
+      Given the lexical XML input is JSON "<r>one two</r>"
+      And these disjoint UTF-16 half-open replacements in reverse source order
+        | start | end | value_json    |
+        | 7     | 10  | "<x/>"        |
+        | 3     | 6   | "1 &lt; 2"    |
+      When the production XML editor applies those replacements atomically
+      Then the complete output equals JSON "<r>1 &lt; 2 <x/></r>" and reparses to root text JSON "1 < 2 " with sole child x
+      And these independent edit batches refuse with no changed text
+        | source_json       | edits_json                                                                    | category      |
+        | "<r>text</r>"    | "[{\"start\":3,\"end\":5,\"value\":\"a\"},{\"start\":4,\"end\":6,\"value\":\"b\"}]" | edit-overlap |
+        | "<r>text</r>"    | "[{\"start\":3,\"end\":7,\"value\":\"<x>\"}]"                       | edit-unsafe  |
+        | "<r>text</r>"    | "[{\"start\":3,\"end\":7,\"value\":\"<!DOCTYPE x><x/>\"}]"           | edit-unsafe  |
+      And every original source and replacement list remains unchanged
 
   Rule: Lexical XML edits preserve untouched source and refuse ambiguous targets
     Parsing, QName, line-ending and value-escaping operations have separate workflows.
