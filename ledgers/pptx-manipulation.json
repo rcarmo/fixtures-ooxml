@@ -1,0 +1,2457 @@
+{
+  "schemaVersion": 1,
+  "sourceRevision": "14a7bf7ad72baa41028ff140802cbbfdbbd8a845",
+  "bunPredecessor": "69c8169a2241cf09dc769c71023dd2b7d5006354",
+  "executionCredit": false,
+  "retiredScenarioIds": [],
+  "baselineCounts": {
+    "features": 62,
+    "scenarios": 304,
+    "cases": 791,
+    "assets": 346
+  },
+  "fixture": {
+    "id": "fixture-5ad4b68acc5a926c020dbc94154c95fa6c40c7353a55b2f82504879b392e9a45",
+    "sha256": "5ad4b68acc5a926c020dbc94154c95fa6c40c7353a55b2f82504879b392e9a45",
+    "bytes": 8464,
+    "titles": [
+      "Alpha",
+      "Beta",
+      "Gamma"
+    ],
+    "subtitle": "Subtitle",
+    "body": {
+      "slide": 2,
+      "shapeId": 4,
+      "name": "Body",
+      "text": "Existing"
+    },
+    "notes": {
+      "slide": 1,
+      "part": "ppt/notesSlides/notesSlide1.xml",
+      "text": "Original notes"
+    },
+    "members": [
+      {
+        "name": "[Content_Types].xml",
+        "sha256": "0ea5dffa5ef577fc4836dc6e7db06cb14fa9be167c44412103f4555a16b4076c"
+      },
+      {
+        "name": "_rels/.rels",
+        "sha256": "8b42f92c6731d3af946843a1ee6f37ec2615985a268233ad763740cdc0c83344"
+      },
+      {
+        "name": "custom/custody.bin",
+        "sha256": "25fee5ceeba61ed5ad8071083c797bd5b2163ea4056fed0117c2b781776703d7"
+      },
+      {
+        "name": "ppt/_rels/presentation.xml.rels",
+        "sha256": "ecf2945afd128a742def3a0f5d8f4c2dca470f2916a0389d3776a705475088be"
+      },
+      {
+        "name": "ppt/notesSlides/notesSlide1.xml",
+        "sha256": "b9a6d70496ebe2ed0ec9f5325f440aa588be249c8d12a458d4e456e96b662267"
+      },
+      {
+        "name": "ppt/presProps.xml",
+        "sha256": "5d9c2103ba081ee7148c43c3f94e076c39fd422954e8f655c6dd39bf878f71a5"
+      },
+      {
+        "name": "ppt/presentation.xml",
+        "sha256": "5e1898659b62728727cf5af5c5dea721de1b5ecf90271f444790d9eb47e191b5"
+      },
+      {
+        "name": "ppt/slideLayouts/_rels/slideLayout1.xml.rels",
+        "sha256": "d870e5b1929e28c09916452072c7cbe08ef6ec528c3cf95727dae087693a730a"
+      },
+      {
+        "name": "ppt/slideLayouts/slideLayout1.xml",
+        "sha256": "1db0197dfcb034a66662903fc7382e73105175952b9501723ae798d94e66ddbf"
+      },
+      {
+        "name": "ppt/slideMasters/_rels/slideMaster1.xml.rels",
+        "sha256": "d96b772ebc700dbba5facc22e41f4873e7e7a61bf06c6314a18248165ca8e140"
+      },
+      {
+        "name": "ppt/slideMasters/slideMaster1.xml",
+        "sha256": "70c99611867232e82efee4ce56e414ab490979437acbb69ef3f7dbbfecda3e83"
+      },
+      {
+        "name": "ppt/slides/_rels/slide1.xml.rels",
+        "sha256": "12f15cfb031d9ff395085e6982424f341ca6419217c7ced2ec666b146a0d9bc5"
+      },
+      {
+        "name": "ppt/slides/_rels/slide2.xml.rels",
+        "sha256": "562fb46c4cdee80120ded021cc49f857af91bd6f2ef24be0d17e651e38a1021f"
+      },
+      {
+        "name": "ppt/slides/_rels/slide3.xml.rels",
+        "sha256": "562fb46c4cdee80120ded021cc49f857af91bd6f2ef24be0d17e651e38a1021f"
+      },
+      {
+        "name": "ppt/slides/slide1.xml",
+        "sha256": "30b0a133f1228a335f68b1004c8046ec957e0ce6d5078003748f822e45c47b2c"
+      },
+      {
+        "name": "ppt/slides/slide2.xml",
+        "sha256": "06958f0331d8f306a7f614fc45f6fed45792ae8da769c19df8e3bea5e7694150"
+      },
+      {
+        "name": "ppt/slides/slide3.xml",
+        "sha256": "d67cf6f04553cf0e7cf2f46616397348b9b7c66228f40bb6ee957faf5595cad0"
+      },
+      {
+        "name": "ppt/tableStyles.xml",
+        "sha256": "eeab2b2783c9f2d1cb550147000113548dcf41147afd9c795ab5e566159eefce"
+      },
+      {
+        "name": "ppt/theme/theme1.xml",
+        "sha256": "abf8b2675786078bcd479fc13e8f91774069381ae6dcb61f0ec1f1face88c55f"
+      },
+      {
+        "name": "ppt/viewProps.xml",
+        "sha256": "437f609a7ae4cb972cba7b79e6d01a2346b13dcb86d206ad232e41b29e97806f"
+      }
+    ],
+    "path": "fixtures/pptx/manipulation/manipulation-5ad4b68acc5a.pptx",
+    "origin": {
+      "repository": "https://github.com/rcarmo/bun-ooxml",
+      "revision": "69c8169a2241cf09dc769c71023dd2b7d5006354",
+      "path": "src/pptx/index.ts",
+      "recipe": "import {Presentation} from '/workspace/projects/bun-ooxml/src/pptx/index.ts';\nimport {addPart,addRelationship} from '/workspace/projects/bun-ooxml/src/opc/index.ts';\nconst out='/workspace/analysis/ooxml-pptx-crossruntime20-20261001';\nconst P='http://schemas.openxmlformats.org/presentationml/2006/main',A='http://schemas.openxmlformats.org/drawingml/2006/main',R='http://schemas.openxmlformats.org/officeDocument/2006/relationships';\nconst d=Presentation.create();for(const title of ['Alpha','Beta','Gamma'])d.addTextSlide(title,'Subtitle');d.slides[1]!.addTextBox('Existing',{x:1,y:2,width:1000,height:1000},{name:'Body'});\nconst notes=`<p:notes xmlns:p=\"${P}\" xmlns:a=\"${A}\"><p:cSld><p:spTree><p:sp><p:nvSpPr><p:cNvPr id=\"2\" name=\"Notes\"/><p:cNvSpPr/><p:nvPr><p:ph type=\"body\"/></p:nvPr></p:nvSpPr><p:spPr/><p:txBody><a:bodyPr/><a:lstStyle/><a:p><a:r><a:t>Original notes</a:t></a:r></a:p></p:txBody></p:sp></p:spTree></p:cSld></p:notes>`;\naddPart(d.package,'ppt/notesSlides/notesSlide1.xml',notes,'application/vnd.openxmlformats-officedocument.presentationml.notesSlide+xml');addRelationship(d.package,d.slides[0]!.partName,R+'/notesSlide','../notesSlides/notesSlide1.xml');addPart(d.package,'custom/custody.bin',Uint8Array.of(0,255,1,254,2,253),'application/octet-stream');\nconst bytes=d.package.toBytes(),hash=new Bun.CryptoHasher('sha256').update(bytes).digest('hex');\nawait Bun.write(out+'/pptx-manipulation-input.pptx',bytes);await Bun.write(out+'/fixture.json',JSON.stringify({id:'fixture-'+hash,sha256:hash,bytes:bytes.length,titles:['Alpha','Beta','Gamma'],subtitle:'Subtitle',body:{slide:2,shapeId:4,name:'Body',text:'Existing'},notes:{slide:1,part:'ppt/notesSlides/notesSlide1.xml',text:'Original notes'},members:d.package.names().map(name=>({name,sha256:new Bun.CryptoHasher('sha256').update(d.package.get(name)!).digest('hex')}))},null,2)+'\\n');console.log(hash,bytes.length);\n"
+    }
+  },
+  "records": [
+    {
+      "id": "@id-pptx-manipulation-patch-title",
+      "kind": "patch-title",
+      "feature": "workflows/pptx/text.feature",
+      "sourceId": "@candidate-python-pptx-advanced-tools-2978ea684e",
+      "localId": "@id-bun-pptx-next20-patch-title",
+      "sourceFeature": "staging/python/features/test_pptx_advanced_tools.feature",
+      "sourceLine": 136,
+      "sourceSha256": "a80ebe6fa15c079bd178ded56b5e5d84f37cd1735722aea2da031e733f106591",
+      "sourceBlock": "  @candidate-python-pptx-advanced-tools-2978ea684e\n  # Native: tests/test_pptx_advanced_tools.py::TestPatchShape::test_updates_title\n  Scenario: Native check: updates title [TestPatchShape]\n    Given Create an instance of PresentationAdvancedTools.\n    And Create a test presentation with multiple slides.\n    And an isolated writable temporary directory\n    And output is prepared as temp dir under \"patched.pptx\"\n    When pptx advanced tools.tool pptx patch shape using str representation of sample pptx; 1; \"title\"; new text \"New Title\"; output path str representation of temp dir under \"patched.pptx\"\n    Then result field \"success\" is true\n    And the result of Presentation with temp dir under \"patched.pptx\" slides at 0 shapes title text equals \"New Title\"",
+      "sourceBlockSha256": "b583e2aabf01b335872525e41e76c35a9b2b4178fa19959560c3b9cf1a23fb14",
+      "fixtureId": "fixture-5ad4b68acc5a926c020dbc94154c95fa6c40c7353a55b2f82504879b392e9a45",
+      "target": "slide 1 shape ID 2",
+      "operation": "replace all text with JSON \"New Title\"",
+      "expected": {
+        "text": "New Title",
+        "paragraphs": [
+          "New Title"
+        ]
+      },
+      "changedMembers": [
+        "ppt/slides/slide1.xml"
+      ],
+      "additionPolicy": "no additions or removals",
+      "executionCredit": false,
+      "overlapReview": "Anchored cross-run replacement preserves formatting; these whole-frame operations use unique shape IDs and paragraph reset/append.",
+      "sourceProvenance": {
+        "repository": "https://github.com/rcarmo/python-office-mcp-server",
+        "revision": "0c5de7a4ce69c13a06e215e9233954bf2df805d5",
+        "path": "docs/catalogue-staging/python-native/features/test_pptx_advanced_tools.feature",
+        "stagedPath": "staging/python/features/test_pptx_advanced_tools.feature",
+        "sourceFileSha256": "a80ebe6fa15c079bd178ded56b5e5d84f37cd1735722aea2da031e733f106591"
+      }
+    },
+    {
+      "id": "@id-pptx-manipulation-patch-body",
+      "kind": "patch-body",
+      "feature": "workflows/pptx/text.feature",
+      "sourceId": "@candidate-python-pptx-advanced-tools-6b32b859c7",
+      "localId": "@id-bun-pptx-next20-patch-body",
+      "sourceFeature": "staging/python/features/test_pptx_advanced_tools.feature",
+      "sourceLine": 147,
+      "sourceSha256": "a80ebe6fa15c079bd178ded56b5e5d84f37cd1735722aea2da031e733f106591",
+      "sourceBlock": "  @candidate-python-pptx-advanced-tools-6b32b859c7\n  # Native: tests/test_pptx_advanced_tools.py::TestPatchShape::test_updates_body\n  Scenario: Native check: updates body [TestPatchShape]\n    Given Create an instance of PresentationAdvancedTools.\n    And Create a test presentation with multiple slides.\n    And an isolated writable temporary directory\n    And output is prepared as temp dir under \"patched_body.pptx\"\n    When pptx advanced tools.tool pptx patch shape using str representation of sample pptx; 2; \"body\"; new text \"Updated bullet\"; output path str representation of temp dir under \"patched_body.pptx\"\n    Then result field \"success\" is true",
+      "sourceBlockSha256": "0564afb725be3bf49dfca12ce4c8b0cf0a3092751bdc94ae1e9a9f851957938b",
+      "fixtureId": "fixture-5ad4b68acc5a926c020dbc94154c95fa6c40c7353a55b2f82504879b392e9a45",
+      "target": "slide 2 shape ID 4",
+      "operation": "replace all text with JSON \"Updated bullet\"",
+      "expected": {
+        "text": "Updated bullet",
+        "paragraphs": [
+          "Updated bullet"
+        ]
+      },
+      "changedMembers": [
+        "ppt/slides/slide2.xml"
+      ],
+      "additionPolicy": "no additions or removals",
+      "executionCredit": false,
+      "overlapReview": "Anchored cross-run replacement preserves formatting; these whole-frame operations use unique shape IDs and paragraph reset/append.",
+      "sourceProvenance": {
+        "repository": "https://github.com/rcarmo/python-office-mcp-server",
+        "revision": "0c5de7a4ce69c13a06e215e9233954bf2df805d5",
+        "path": "docs/catalogue-staging/python-native/features/test_pptx_advanced_tools.feature",
+        "stagedPath": "staging/python/features/test_pptx_advanced_tools.feature",
+        "sourceFileSha256": "a80ebe6fa15c079bd178ded56b5e5d84f37cd1735722aea2da031e733f106591"
+      }
+    },
+    {
+      "id": "@id-pptx-manipulation-patch-subtitle",
+      "kind": "patch-subtitle",
+      "feature": "workflows/pptx/text.feature",
+      "sourceId": "@candidate-python-pptx-coverage-d416dd3f35",
+      "localId": "@id-bun-pptx-next20-patch-subtitle",
+      "sourceFeature": "staging/python/features/test_pptx_coverage.feature",
+      "sourceLine": 37,
+      "sourceSha256": "771c49cb9346dd742b03f3176b1f4d0d7dd693e02b2702fb9d7e1e6d0b694756",
+      "sourceBlock": "  @candidate-python-pptx-coverage-d416dd3f35\n  # Native: tests/test_pptx_coverage.py::TestPatchShapeVariations::test_patch_subtitle\n  Scenario: Native check: patch subtitle [TestPatchShapeVariations]\n    Given Create an instance of PresentationAdvancedTools.\n    And Create a basic presentation.\n    And an isolated writable temporary directory\n    And output is prepared as temp dir under \"patched_subtitle.pptx\"\n    When pptx advanced tools.tool pptx patch shape using str representation of basic presentation; slide number 1; shape identifier \"subtitle\"; new text \"New Subtitle\"; output path str representation of temp dir under \"patched_subtitle.pptx\"\n    Then result has type dict",
+      "sourceBlockSha256": "fbd83130e49f299151c2a0ac7935781ab3cffa5098eb84be77c8bb98a96d2a16",
+      "fixtureId": "fixture-5ad4b68acc5a926c020dbc94154c95fa6c40c7353a55b2f82504879b392e9a45",
+      "target": "slide 1 shape ID 3",
+      "operation": "replace all text with JSON \"New Subtitle\"",
+      "expected": {
+        "text": "New Subtitle",
+        "paragraphs": [
+          "New Subtitle"
+        ]
+      },
+      "changedMembers": [
+        "ppt/slides/slide1.xml"
+      ],
+      "additionPolicy": "no additions or removals",
+      "executionCredit": false,
+      "overlapReview": "Anchored cross-run replacement preserves formatting; these whole-frame operations use unique shape IDs and paragraph reset/append.",
+      "sourceProvenance": {
+        "repository": "https://github.com/rcarmo/python-office-mcp-server",
+        "revision": "0c5de7a4ce69c13a06e215e9233954bf2df805d5",
+        "path": "docs/catalogue-staging/python-native/features/test_pptx_coverage.feature",
+        "stagedPath": "staging/python/features/test_pptx_coverage.feature",
+        "sourceFileSha256": "771c49cb9346dd742b03f3176b1f4d0d7dd693e02b2702fb9d7e1e6d0b694756"
+      }
+    },
+    {
+      "id": "@id-pptx-manipulation-append-title",
+      "kind": "append-title",
+      "feature": "workflows/pptx/text.feature",
+      "sourceId": "@candidate-python-pptx-coverage-eaffd532fb",
+      "localId": "@id-bun-pptx-next20-append-title",
+      "sourceFeature": "staging/python/features/test_pptx_coverage.feature",
+      "sourceLine": 47,
+      "sourceSha256": "771c49cb9346dd742b03f3176b1f4d0d7dd693e02b2702fb9d7e1e6d0b694756",
+      "sourceBlock": "  @candidate-python-pptx-coverage-eaffd532fb\n  # Native: tests/test_pptx_coverage.py::TestPatchShapeVariations::test_patch_with_append\n  Scenario: Native check: patch with append [TestPatchShapeVariations]\n    Given Create an instance of PresentationAdvancedTools.\n    And Create a basic presentation.\n    And an isolated writable temporary directory\n    And output is prepared as temp dir under \"appended.pptx\"\n    When pptx advanced tools.tool pptx patch shape using str representation of basic presentation; slide number 1; shape identifier \"title\"; new text \" - Appended\"; append true; output path str representation of temp dir under \"appended.pptx\"\n    Then result field \"success\" is true",
+      "sourceBlockSha256": "bb120d1a67ebad04d97622c0d363444271aa20cba01cdbc59c8c87bac7321194",
+      "fixtureId": "fixture-5ad4b68acc5a926c020dbc94154c95fa6c40c7353a55b2f82504879b392e9a45",
+      "target": "slide 1 shape ID 2",
+      "operation": "append JSON \" - Appended\" as a new paragraph",
+      "expected": {
+        "text": "Alpha\n - Appended",
+        "paragraphs": [
+          "Alpha",
+          " - Appended"
+        ]
+      },
+      "changedMembers": [
+        "ppt/slides/slide1.xml"
+      ],
+      "additionPolicy": "no additions or removals",
+      "executionCredit": false,
+      "overlapReview": "Anchored cross-run replacement preserves formatting; these whole-frame operations use unique shape IDs and paragraph reset/append.",
+      "sourceProvenance": {
+        "repository": "https://github.com/rcarmo/python-office-mcp-server",
+        "revision": "0c5de7a4ce69c13a06e215e9233954bf2df805d5",
+        "path": "docs/catalogue-staging/python-native/features/test_pptx_coverage.feature",
+        "stagedPath": "staging/python/features/test_pptx_coverage.feature",
+        "sourceFileSha256": "771c49cb9346dd742b03f3176b1f4d0d7dd693e02b2702fb9d7e1e6d0b694756"
+      }
+    },
+    {
+      "id": "@id-pptx-manipulation-bullet-default",
+      "kind": "bullet-default",
+      "feature": "workflows/pptx/bullets.feature",
+      "sourceId": "@candidate-python-pptx-advanced-tools-f8284125fc",
+      "localId": "@id-bun-pptx-next20-bullet-default",
+      "sourceFeature": "staging/python/features/test_pptx_advanced_tools.feature",
+      "sourceLine": 341,
+      "sourceSha256": "a80ebe6fa15c079bd178ded56b5e5d84f37cd1735722aea2da031e733f106591",
+      "sourceBlock": "  @candidate-python-pptx-advanced-tools-f8284125fc\n  # Native: tests/test_pptx_advanced_tools.py::TestBullets::test_add_bullet\n  Scenario: Native check: add bullet [TestBullets]\n    Given Create an instance of PresentationAdvancedTools.\n    And Create a test presentation with multiple slides.\n    And an isolated writable temporary directory\n    And output is prepared as temp dir under \"bullet.pptx\"\n    When pptx advanced tools.tool pptx add bullet using str representation of sample pptx; 2; \"New bullet point\"; output path str representation of temp dir under \"bullet.pptx\"\n    Then result field \"success\" is true",
+      "sourceBlockSha256": "d994d203b8536a08790ee35abf7ad02106701beca5a897bdde5042acd2ecf130",
+      "fixtureId": "fixture-5ad4b68acc5a926c020dbc94154c95fa6c40c7353a55b2f82504879b392e9a45",
+      "target": "slide 2 shape ID 4",
+      "operation": "append bullet JSON \"New bullet point\" at level 0",
+      "expected": {
+        "text": "Existing\nNew bullet point",
+        "paragraphs": [
+          "Existing",
+          "New bullet point"
+        ],
+        "bullet": {
+          "character": "•",
+          "level": 0
+        }
+      },
+      "changedMembers": [
+        "ppt/slides/slide2.xml"
+      ],
+      "additionPolicy": "no additions or removals",
+      "executionCredit": false,
+      "overlapReview": "No existing canonical bullet/clear cases.",
+      "sourceProvenance": {
+        "repository": "https://github.com/rcarmo/python-office-mcp-server",
+        "revision": "0c5de7a4ce69c13a06e215e9233954bf2df805d5",
+        "path": "docs/catalogue-staging/python-native/features/test_pptx_advanced_tools.feature",
+        "stagedPath": "staging/python/features/test_pptx_advanced_tools.feature",
+        "sourceFileSha256": "a80ebe6fa15c079bd178ded56b5e5d84f37cd1735722aea2da031e733f106591"
+      }
+    },
+    {
+      "id": "@id-pptx-manipulation-bullet-sequence",
+      "kind": "bullet-sequence",
+      "feature": "workflows/pptx/bullets.feature",
+      "sourceId": "@candidate-python-pptx-coverage-574504134e",
+      "localId": "@id-bun-pptx-next20-bullet-sequence",
+      "sourceFeature": "staging/python/features/test_pptx_coverage.feature",
+      "sourceLine": 67,
+      "sourceSha256": "771c49cb9346dd742b03f3176b1f4d0d7dd693e02b2702fb9d7e1e6d0b694756",
+      "sourceBlock": "  @candidate-python-pptx-coverage-574504134e\n  # Native: tests/test_pptx_coverage.py::TestClearAndAddBullets::test_add_multiple_bullets\n  Scenario: Native check: add multiple bullets [TestClearAndAddBullets]\n    Given Create an instance of PresentationAdvancedTools.\n    And Create a basic presentation.\n    And an isolated writable temporary directory\n    And output1 is prepared as temp dir under \"bullet1.pptx\"\n    When pptx advanced tools.tool pptx add bullet using str representation of basic presentation; slide number 2; text \"First bullet\"; output path str representation of temp dir under \"bullet1.pptx\"\n    And pptx advanced tools.tool pptx add bullet using str representation of temp dir under \"bullet1.pptx\"; slide number 2; text \"Second bullet\"; output path str representation of temp dir under \"bullet2.pptx\"\n    Then result field \"success\" is true",
+      "sourceBlockSha256": "5b18d04c9e26ad16e6a401741a3238b8641de528991742ffea0455953238b51a",
+      "fixtureId": "fixture-5ad4b68acc5a926c020dbc94154c95fa6c40c7353a55b2f82504879b392e9a45",
+      "target": "slide 2 shape ID 4",
+      "operation": "clear text, append bullet JSON \"First bullet\", then append bullet JSON \"Second bullet\", both at level 0",
+      "expected": {
+        "text": "First bullet\nSecond bullet",
+        "paragraphs": [
+          "First bullet",
+          "Second bullet"
+        ],
+        "bullets": [
+          {
+            "character": "•",
+            "level": 0
+          },
+          {
+            "character": "•",
+            "level": 0
+          }
+        ]
+      },
+      "changedMembers": [
+        "ppt/slides/slide2.xml"
+      ],
+      "additionPolicy": "no additions or removals",
+      "executionCredit": false,
+      "overlapReview": "No existing canonical bullet/clear cases.",
+      "sourceProvenance": {
+        "repository": "https://github.com/rcarmo/python-office-mcp-server",
+        "revision": "0c5de7a4ce69c13a06e215e9233954bf2df805d5",
+        "path": "docs/catalogue-staging/python-native/features/test_pptx_coverage.feature",
+        "stagedPath": "staging/python/features/test_pptx_coverage.feature",
+        "sourceFileSha256": "771c49cb9346dd742b03f3176b1f4d0d7dd693e02b2702fb9d7e1e6d0b694756"
+      }
+    },
+    {
+      "id": "@id-pptx-manipulation-bullet-level",
+      "kind": "bullet-level",
+      "feature": "workflows/pptx/bullets.feature",
+      "sourceId": "@candidate-python-pptx-advanced-tools-extended-190ce8dfa3",
+      "localId": "@id-bun-pptx-next20-bullet-level",
+      "sourceFeature": "staging/python/features/test_pptx_advanced_tools_extended.feature",
+      "sourceLine": 199,
+      "sourceSha256": "dce4f9fe8d5ac0e353db2d359c2173b0671750c5239c37384d24969bbabe7d61",
+      "sourceBlock": "  @candidate-python-pptx-advanced-tools-extended-190ce8dfa3\n  # Native: tests/test_pptx_advanced_tools_extended.py::TestAdvancedBulletOperations::test_add_bullet_with_level\n  Scenario: Native check: add bullet with level [TestAdvancedBulletOperations]\n    Given Create an instance of PresentationAdvancedTools.\n    And Create presentation with multiple slides.\n    And an isolated writable temporary directory\n    And output is prepared as temp dir under \"indented.pptx\"\n    When pptx advanced tools.tool pptx add bullet using str representation of multi slide presentation; slide number 2; text \"Sub-point item\"; level 1; output path str representation of temp dir under \"indented.pptx\"\n    Then result field \"success\" is true",
+      "sourceBlockSha256": "42df7b9719a2bae09a5a824ae8eb69f61836fabcdf250ef230575a733dfd8361",
+      "fixtureId": "fixture-5ad4b68acc5a926c020dbc94154c95fa6c40c7353a55b2f82504879b392e9a45",
+      "target": "slide 2 shape ID 4",
+      "operation": "append bullet JSON \"Sub-bullet point\" at level 1",
+      "expected": {
+        "text": "Existing\nSub-bullet point",
+        "paragraphs": [
+          "Existing",
+          "Sub-bullet point"
+        ],
+        "bullet": {
+          "character": "•",
+          "level": 1
+        }
+      },
+      "changedMembers": [
+        "ppt/slides/slide2.xml"
+      ],
+      "additionPolicy": "no additions or removals",
+      "executionCredit": false,
+      "overlapReview": "No existing canonical bullet/clear cases.",
+      "sourceProvenance": {
+        "repository": "https://github.com/rcarmo/python-office-mcp-server",
+        "revision": "0c5de7a4ce69c13a06e215e9233954bf2df805d5",
+        "path": "docs/catalogue-staging/python-native/features/test_pptx_advanced_tools_extended.feature",
+        "stagedPath": "staging/python/features/test_pptx_advanced_tools_extended.feature",
+        "sourceFileSha256": "dce4f9fe8d5ac0e353db2d359c2173b0671750c5239c37384d24969bbabe7d61"
+      }
+    },
+    {
+      "id": "@id-pptx-manipulation-bullet-bold-label",
+      "kind": "bullet-bold-label",
+      "feature": "workflows/pptx/bullets.feature",
+      "sourceId": "@candidate-python-pptx-advanced-tools-extended-e255895bfd",
+      "localId": "@id-bun-pptx-next20-bullet-bold-label",
+      "sourceFeature": "staging/python/features/test_pptx_advanced_tools_extended.feature",
+      "sourceLine": 209,
+      "sourceSha256": "dce4f9fe8d5ac0e353db2d359c2173b0671750c5239c37384d24969bbabe7d61",
+      "sourceBlock": "  @candidate-python-pptx-advanced-tools-extended-e255895bfd\n  # Native: tests/test_pptx_advanced_tools_extended.py::TestAdvancedBulletOperations::test_add_bullet_with_bold_label\n  Scenario: Native check: add bullet with bold label [TestAdvancedBulletOperations]\n    Given Create an instance of PresentationAdvancedTools.\n    And Create presentation with multiple slides.\n    And an isolated writable temporary directory\n    And output is prepared as temp dir under \"bold_label.pptx\"\n    When pptx advanced tools.tool pptx add bullet using str representation of multi slide presentation; slide number 2; text \"Some detail text\"; bold label \"Key Point\"; output path str representation of temp dir under \"bold_label.pptx\"\n    Then result field \"success\" is true",
+      "sourceBlockSha256": "c6ba1c2f323850d81b63db4997085c004be6030353ce0007423663eca1777b72",
+      "fixtureId": "fixture-5ad4b68acc5a926c020dbc94154c95fa6c40c7353a55b2f82504879b392e9a45",
+      "target": "slide 2 shape ID 4",
+      "operation": "append a level-0 bullet with bold label JSON \"Key Point\" and description JSON \"This is the description\"",
+      "expected": {
+        "text": "Existing\nKey Point: This is the description",
+        "paragraphs": [
+          "Existing",
+          "Key Point: This is the description"
+        ],
+        "bullet": {
+          "character": "•",
+          "level": 0
+        },
+        "runs": [
+          {
+            "text": "Key Point: ",
+            "bold": true
+          },
+          {
+            "text": "This is the description",
+            "bold": false
+          }
+        ]
+      },
+      "changedMembers": [
+        "ppt/slides/slide2.xml"
+      ],
+      "additionPolicy": "no additions or removals",
+      "executionCredit": false,
+      "overlapReview": "No existing canonical bullet/clear cases.",
+      "sourceProvenance": {
+        "repository": "https://github.com/rcarmo/python-office-mcp-server",
+        "revision": "0c5de7a4ce69c13a06e215e9233954bf2df805d5",
+        "path": "docs/catalogue-staging/python-native/features/test_pptx_advanced_tools_extended.feature",
+        "stagedPath": "staging/python/features/test_pptx_advanced_tools_extended.feature",
+        "sourceFileSha256": "dce4f9fe8d5ac0e353db2d359c2173b0671750c5239c37384d24969bbabe7d61"
+      }
+    },
+    {
+      "id": "@id-pptx-manipulation-clear-bullets",
+      "kind": "clear-bullets",
+      "feature": "workflows/pptx/bullets.feature",
+      "sourceId": "@candidate-python-pptx-coverage-107f971923",
+      "localId": "@id-bun-pptx-next20-clear-bullets",
+      "sourceFeature": "staging/python/features/test_pptx_coverage.feature",
+      "sourceLine": 57,
+      "sourceSha256": "771c49cb9346dd742b03f3176b1f4d0d7dd693e02b2702fb9d7e1e6d0b694756",
+      "sourceBlock": "  @candidate-python-pptx-coverage-107f971923\n  # Native: tests/test_pptx_coverage.py::TestClearAndAddBullets::test_clear_bullets\n  Scenario: Native check: clear bullets [TestClearAndAddBullets]\n    Given Create an instance of PresentationAdvancedTools.\n    And Create a basic presentation.\n    And an isolated writable temporary directory\n    And output is prepared as temp dir under \"cleared.pptx\"\n    When pptx advanced tools.tool pptx clear bullets using str representation of basic presentation; slide number 2; output path str representation of temp dir under \"cleared.pptx\"\n    Then result has type dict",
+      "sourceBlockSha256": "09ee4390b1267f1f57ed04811478f32f76818f7133ac42a22fb327179a6c45bb",
+      "fixtureId": "fixture-5ad4b68acc5a926c020dbc94154c95fa6c40c7353a55b2f82504879b392e9a45",
+      "target": "slide 2 shape ID 4",
+      "operation": "clear all text and bullet properties",
+      "expected": {
+        "text": "",
+        "paragraphs": [
+          ""
+        ],
+        "bulletCount": 0
+      },
+      "changedMembers": [
+        "ppt/slides/slide2.xml"
+      ],
+      "additionPolicy": "no additions or removals",
+      "executionCredit": false,
+      "overlapReview": "No existing canonical bullet/clear cases.",
+      "sourceProvenance": {
+        "repository": "https://github.com/rcarmo/python-office-mcp-server",
+        "revision": "0c5de7a4ce69c13a06e215e9233954bf2df805d5",
+        "path": "docs/catalogue-staging/python-native/features/test_pptx_coverage.feature",
+        "stagedPath": "staging/python/features/test_pptx_coverage.feature",
+        "sourceFileSha256": "771c49cb9346dd742b03f3176b1f4d0d7dd693e02b2702fb9d7e1e6d0b694756"
+      }
+    },
+    {
+      "id": "@id-pptx-manipulation-autofit-shrink",
+      "kind": "autofit-shrink",
+      "feature": "workflows/pptx/text-autofit.feature",
+      "sourceId": "@candidate-python-pptx-advanced-tools-extended-7e0c39b72e",
+      "localId": "@id-bun-pptx-next20-autofit-shrink",
+      "sourceFeature": "staging/python/features/test_pptx_advanced_tools_extended.feature",
+      "sourceLine": 112,
+      "sourceSha256": "dce4f9fe8d5ac0e353db2d359c2173b0671750c5239c37384d24969bbabe7d61",
+      "sourceBlock": "  @candidate-python-pptx-advanced-tools-extended-7e0c39b72e\n  # Native: tests/test_pptx_advanced_tools_extended.py::TestTextAutofit::test_set_autofit_shrink\n  Scenario: Native check: set autofit shrink [TestTextAutofit]\n    Given Create an instance of PresentationAdvancedTools.\n    And Create presentation with multiple slides.\n    And an isolated writable temporary directory\n    And output is prepared as temp dir under \"autofit.pptx\"\n    When pptx advanced tools.tool pptx set text autofit using str representation of multi slide presentation; slide number 1; shape identifier \"title\"; autofit type \"shrink\"; output path str representation of temp dir under \"autofit.pptx\"\n    Then result field \"success\" is true",
+      "sourceBlockSha256": "128a721345453e86f0f9bff85f118fa9269e937883e171a332b86ecae0a12271",
+      "fixtureId": "fixture-5ad4b68acc5a926c020dbc94154c95fa6c40c7353a55b2f82504879b392e9a45",
+      "target": "slide 1 shape ID 2",
+      "operation": "set autofit to shrink",
+      "expected": {
+        "text": "Alpha",
+        "autofit": "normAutofit",
+        "fitChildCount": 1
+      },
+      "changedMembers": [
+        "ppt/slides/slide1.xml"
+      ],
+      "additionPolicy": "no additions or removals",
+      "executionCredit": false,
+      "overlapReview": "No existing canonical mutually-exclusive autofit cases.",
+      "sourceProvenance": {
+        "repository": "https://github.com/rcarmo/python-office-mcp-server",
+        "revision": "0c5de7a4ce69c13a06e215e9233954bf2df805d5",
+        "path": "docs/catalogue-staging/python-native/features/test_pptx_advanced_tools_extended.feature",
+        "stagedPath": "staging/python/features/test_pptx_advanced_tools_extended.feature",
+        "sourceFileSha256": "dce4f9fe8d5ac0e353db2d359c2173b0671750c5239c37384d24969bbabe7d61"
+      }
+    },
+    {
+      "id": "@id-pptx-manipulation-autofit-none",
+      "kind": "autofit-none",
+      "feature": "workflows/pptx/text-autofit.feature",
+      "sourceId": "@candidate-python-pptx-coverage-19ee72b28b",
+      "localId": "@id-bun-pptx-next20-autofit-none",
+      "sourceFeature": "staging/python/features/test_pptx_coverage.feature",
+      "sourceLine": 186,
+      "sourceSha256": "771c49cb9346dd742b03f3176b1f4d0d7dd693e02b2702fb9d7e1e6d0b694756",
+      "sourceBlock": "  @candidate-python-pptx-coverage-19ee72b28b\n  # Native: tests/test_pptx_coverage.py::TestTextAutofit::test_autofit_none\n  Scenario: Native check: autofit none [TestTextAutofit]\n    Given Create an instance of PresentationAdvancedTools.\n    And Create a basic presentation.\n    And an isolated writable temporary directory\n    And output is prepared as temp dir under \"autofit_none.pptx\"\n    When pptx advanced tools.tool pptx set text autofit using str representation of basic presentation; slide number 1; shape identifier \"title\"; autofit type \"none\"; output path str representation of temp dir under \"autofit_none.pptx\"\n    Then result field \"success\" is true",
+      "sourceBlockSha256": "6c674b810cb37dae6e353151f452f0d3d0483c349b76c65e0d7912bbb038bdf6",
+      "fixtureId": "fixture-5ad4b68acc5a926c020dbc94154c95fa6c40c7353a55b2f82504879b392e9a45",
+      "target": "slide 1 shape ID 2",
+      "operation": "set autofit to none",
+      "expected": {
+        "text": "Alpha",
+        "autofit": "noAutofit",
+        "fitChildCount": 1
+      },
+      "changedMembers": [
+        "ppt/slides/slide1.xml"
+      ],
+      "additionPolicy": "no additions or removals",
+      "executionCredit": false,
+      "overlapReview": "No existing canonical mutually-exclusive autofit cases.",
+      "sourceProvenance": {
+        "repository": "https://github.com/rcarmo/python-office-mcp-server",
+        "revision": "0c5de7a4ce69c13a06e215e9233954bf2df805d5",
+        "path": "docs/catalogue-staging/python-native/features/test_pptx_coverage.feature",
+        "stagedPath": "staging/python/features/test_pptx_coverage.feature",
+        "sourceFileSha256": "771c49cb9346dd742b03f3176b1f4d0d7dd693e02b2702fb9d7e1e6d0b694756"
+      }
+    },
+    {
+      "id": "@id-pptx-manipulation-autofit-resize",
+      "kind": "autofit-resize",
+      "feature": "workflows/pptx/text-autofit.feature",
+      "sourceId": "@candidate-python-pptx-coverage-2196c941f8",
+      "localId": "@id-bun-pptx-next20-autofit-resize",
+      "sourceFeature": "staging/python/features/test_pptx_coverage.feature",
+      "sourceLine": 196,
+      "sourceSha256": "771c49cb9346dd742b03f3176b1f4d0d7dd693e02b2702fb9d7e1e6d0b694756",
+      "sourceBlock": "  @candidate-python-pptx-coverage-2196c941f8\n  # Native: tests/test_pptx_coverage.py::TestTextAutofit::test_autofit_resize\n  Scenario: Native check: autofit resize [TestTextAutofit]\n    Given Create an instance of PresentationAdvancedTools.\n    And Create a basic presentation.\n    And an isolated writable temporary directory\n    And output is prepared as temp dir under \"autofit_resize.pptx\"\n    When pptx advanced tools.tool pptx set text autofit using str representation of basic presentation; slide number 1; shape identifier \"title\"; autofit type \"resize\"; output path str representation of temp dir under \"autofit_resize.pptx\"\n    Then result field \"success\" is true",
+      "sourceBlockSha256": "54d18e162c0b303a1f2044593dca14b00dd8be31961d7029589d83a9e4e9b4a5",
+      "fixtureId": "fixture-5ad4b68acc5a926c020dbc94154c95fa6c40c7353a55b2f82504879b392e9a45",
+      "target": "slide 1 shape ID 2",
+      "operation": "set autofit to resize",
+      "expected": {
+        "text": "Alpha",
+        "autofit": "spAutoFit",
+        "fitChildCount": 1
+      },
+      "changedMembers": [
+        "ppt/slides/slide1.xml"
+      ],
+      "additionPolicy": "no additions or removals",
+      "executionCredit": false,
+      "overlapReview": "No existing canonical mutually-exclusive autofit cases.",
+      "sourceProvenance": {
+        "repository": "https://github.com/rcarmo/python-office-mcp-server",
+        "revision": "0c5de7a4ce69c13a06e215e9233954bf2df805d5",
+        "path": "docs/catalogue-staging/python-native/features/test_pptx_coverage.feature",
+        "stagedPath": "staging/python/features/test_pptx_coverage.feature",
+        "sourceFileSha256": "771c49cb9346dd742b03f3176b1f4d0d7dd693e02b2702fb9d7e1e6d0b694756"
+      }
+    },
+    {
+      "id": "@id-pptx-manipulation-insert-start",
+      "kind": "insert-start",
+      "feature": "workflows/pptx/creation.feature",
+      "sourceId": "@candidate-python-pptx-coverage-c8b3a3643d",
+      "localId": "@id-bun-pptx-next20-insert-start",
+      "sourceFeature": "staging/python/features/test_pptx_coverage.feature",
+      "sourceLine": 7,
+      "sourceSha256": "771c49cb9346dd742b03f3176b1f4d0d7dd693e02b2702fb9d7e1e6d0b694756",
+      "sourceBlock": "  @candidate-python-pptx-coverage-c8b3a3643d\n  # Native: tests/test_pptx_coverage.py::TestAddSlideVariations::test_add_slide_at_start\n  Scenario: Native check: add slide at start [TestAddSlideVariations]\n    Given Create an instance of PresentationAdvancedTools.\n    And Create a basic presentation.\n    And an isolated writable temporary directory\n    And output is prepared as temp dir under \"start_slide.pptx\"\n    When pptx advanced tools.tool pptx add slide using str representation of basic presentation; layout index 1; title \"First Slide\"; position \"start\"; output path str representation of temp dir under \"start_slide.pptx\"\n    Then result field \"success\" is true",
+      "sourceBlockSha256": "bb7843860f4e67281c398cc9d8e578dba9f41756775a01a77245b2479a5e0bb8",
+      "fixtureId": "fixture-5ad4b68acc5a926c020dbc94154c95fa6c40c7353a55b2f82504879b392e9a45",
+      "target": "the presentation slide list",
+      "operation": "insert a title slide at zero-based index 0 with title JSON \"First Slide\" and subtitle JSON \"Inserted subtitle\"",
+      "expected": {
+        "titles": [
+          "First Slide",
+          "Alpha",
+          "Beta",
+          "Gamma"
+        ],
+        "insertedSubtitle": "Inserted subtitle",
+        "oldSlideIdentityOrder": [
+          1,
+          2,
+          3
+        ]
+      },
+      "changedMembers": [
+        "ppt/presentation.xml",
+        "ppt/_rels/presentation.xml.rels",
+        "[Content_Types].xml"
+      ],
+      "additionPolicy": "one new slide XML and its one layout relationship part; no other additions",
+      "executionCredit": false,
+      "overlapReview": "Existing new-deck and append/edit profiles do not define positioned insertion on this retained three-slide graph.",
+      "sourceProvenance": {
+        "repository": "https://github.com/rcarmo/python-office-mcp-server",
+        "revision": "0c5de7a4ce69c13a06e215e9233954bf2df805d5",
+        "path": "docs/catalogue-staging/python-native/features/test_pptx_coverage.feature",
+        "stagedPath": "staging/python/features/test_pptx_coverage.feature",
+        "sourceFileSha256": "771c49cb9346dd742b03f3176b1f4d0d7dd693e02b2702fb9d7e1e6d0b694756"
+      }
+    },
+    {
+      "id": "@id-pptx-manipulation-insert-middle",
+      "kind": "insert-middle",
+      "feature": "workflows/pptx/creation.feature",
+      "sourceId": "@candidate-python-pptx-coverage-93b49d5212",
+      "localId": "@id-bun-pptx-next20-insert-middle",
+      "sourceFeature": "staging/python/features/test_pptx_coverage.feature",
+      "sourceLine": 17,
+      "sourceSha256": "771c49cb9346dd742b03f3176b1f4d0d7dd693e02b2702fb9d7e1e6d0b694756",
+      "sourceBlock": "  @candidate-python-pptx-coverage-93b49d5212\n  # Native: tests/test_pptx_coverage.py::TestAddSlideVariations::test_add_slide_at_position\n  Scenario: Native check: add slide at position [TestAddSlideVariations]\n    Given Create an instance of PresentationAdvancedTools.\n    And Create a basic presentation.\n    And an isolated writable temporary directory\n    And output is prepared as temp dir under \"positioned.pptx\"\n    When pptx advanced tools.tool pptx add slide using str representation of basic presentation; layout index 1; title \"Middle Slide\"; position \"1\"; output path str representation of temp dir under \"positioned.pptx\"\n    Then result field \"success\" is true",
+      "sourceBlockSha256": "3493ad33ec6b72e65d505703b1a3a1984932c7d9899d82f6bd3fd59f6f8181d5",
+      "fixtureId": "fixture-5ad4b68acc5a926c020dbc94154c95fa6c40c7353a55b2f82504879b392e9a45",
+      "target": "the presentation slide list",
+      "operation": "insert a title slide at zero-based index 1 with title JSON \"Middle Slide\" and subtitle JSON \"Inserted subtitle\"",
+      "expected": {
+        "titles": [
+          "Alpha",
+          "Middle Slide",
+          "Beta",
+          "Gamma"
+        ],
+        "insertedSubtitle": "Inserted subtitle",
+        "oldSlideIdentityOrder": [
+          1,
+          2,
+          3
+        ]
+      },
+      "changedMembers": [
+        "ppt/presentation.xml",
+        "ppt/_rels/presentation.xml.rels",
+        "[Content_Types].xml"
+      ],
+      "additionPolicy": "one new slide XML and its one layout relationship part; no other additions",
+      "executionCredit": false,
+      "overlapReview": "Existing new-deck and append/edit profiles do not define positioned insertion on this retained three-slide graph.",
+      "sourceProvenance": {
+        "repository": "https://github.com/rcarmo/python-office-mcp-server",
+        "revision": "0c5de7a4ce69c13a06e215e9233954bf2df805d5",
+        "path": "docs/catalogue-staging/python-native/features/test_pptx_coverage.feature",
+        "stagedPath": "staging/python/features/test_pptx_coverage.feature",
+        "sourceFileSha256": "771c49cb9346dd742b03f3176b1f4d0d7dd693e02b2702fb9d7e1e6d0b694756"
+      }
+    },
+    {
+      "id": "@id-pptx-manipulation-reorder",
+      "kind": "reorder",
+      "feature": "workflows/pptx/slide-order.feature",
+      "sourceId": "@candidate-python-pptx-advanced-tools-extended-9077938164",
+      "localId": "@id-bun-pptx-next20-reorder",
+      "sourceFeature": "staging/python/features/test_pptx_advanced_tools_extended.feature",
+      "sourceLine": 7,
+      "sourceSha256": "dce4f9fe8d5ac0e353db2d359c2173b0671750c5239c37384d24969bbabe7d61",
+      "sourceBlock": "  @candidate-python-pptx-advanced-tools-extended-9077938164\n  # Native: tests/test_pptx_advanced_tools_extended.py::TestReorderSlides::test_reorder_slides\n  Scenario: Native check: reorder slides [TestReorderSlides]\n    Given Create an instance of PresentationAdvancedTools.\n    And Create presentation with multiple slides.\n    And an isolated writable temporary directory\n    And output is prepared as temp dir under \"reordered.pptx\"\n    When pptx advanced tools.tool pptx reorder slides using str representation of multi slide presentation; [1, 3, 2, 4]; output path str representation of temp dir under \"reordered.pptx\"\n    Then result field \"success\" is true",
+      "sourceBlockSha256": "837722ff624885d404631f2a5ef437596aaf02fa98e74c00da670d4636f37b8c",
+      "fixtureId": "fixture-5ad4b68acc5a926c020dbc94154c95fa6c40c7353a55b2f82504879b392e9a45",
+      "target": "the presentation slide list",
+      "operation": "apply zero-based permutation [0,2,1]",
+      "expected": {
+        "titles": [
+          "Alpha",
+          "Gamma",
+          "Beta"
+        ],
+        "originalSlideIdentityOrder": [
+          1,
+          3,
+          2
+        ]
+      },
+      "changedMembers": [
+        "ppt/presentation.xml"
+      ],
+      "additionPolicy": "no additions or removals",
+      "executionCredit": false,
+      "overlapReview": "Existing outline uses distinct native deck recipes/permutations; this exact fixture and invalid six-index input are additional concrete profiles.",
+      "sourceProvenance": {
+        "repository": "https://github.com/rcarmo/python-office-mcp-server",
+        "revision": "0c5de7a4ce69c13a06e215e9233954bf2df805d5",
+        "path": "docs/catalogue-staging/python-native/features/test_pptx_advanced_tools_extended.feature",
+        "stagedPath": "staging/python/features/test_pptx_advanced_tools_extended.feature",
+        "sourceFileSha256": "dce4f9fe8d5ac0e353db2d359c2173b0671750c5239c37384d24969bbabe7d61"
+      }
+    },
+    {
+      "id": "@id-pptx-manipulation-reorder-refusal",
+      "kind": "reorder-refusal",
+      "feature": "workflows/pptx/slide-order.feature",
+      "sourceId": "@candidate-python-pptx-advanced-tools-extended-59251c1cbd",
+      "localId": "@id-bun-pptx-next20-reorder-refusal",
+      "sourceFeature": "staging/python/features/test_pptx_advanced_tools_extended.feature",
+      "sourceLine": 17,
+      "sourceSha256": "dce4f9fe8d5ac0e353db2d359c2173b0671750c5239c37384d24969bbabe7d61",
+      "sourceBlock": "  @candidate-python-pptx-advanced-tools-extended-59251c1cbd\n  # Native: tests/test_pptx_advanced_tools_extended.py::TestReorderSlides::test_reorder_invalid_order\n  Scenario: Native check: reorder invalid order [TestReorderSlides]\n    Given Create an instance of PresentationAdvancedTools.\n    And Create presentation with multiple slides.\n    When pptx advanced tools.tool pptx reorder slides using str representation of multi slide presentation; [1, 2, 3, 4, 5, 6]\n    Then result has type dict",
+      "sourceBlockSha256": "788023e0775219522aecc3dbc653eebf42e311f788b493cecc839a8944c4e538",
+      "fixtureId": "fixture-5ad4b68acc5a926c020dbc94154c95fa6c40c7353a55b2f82504879b392e9a45",
+      "target": "the presentation slide list",
+      "operation": "attempt zero-based permutation [0,1,2,3,4,5]",
+      "expected": {
+        "refusal": true,
+        "reason": "invalid-permutation",
+        "titles": [
+          "Alpha",
+          "Beta",
+          "Gamma"
+        ],
+        "unchangedSession": true,
+        "unchangedHandles": true
+      },
+      "changedMembers": [],
+      "additionPolicy": "no additions or removals",
+      "executionCredit": false,
+      "overlapReview": "Existing outline uses distinct native deck recipes/permutations; this exact fixture and invalid six-index input are additional concrete profiles.",
+      "sourceProvenance": {
+        "repository": "https://github.com/rcarmo/python-office-mcp-server",
+        "revision": "0c5de7a4ce69c13a06e215e9233954bf2df805d5",
+        "path": "docs/catalogue-staging/python-native/features/test_pptx_advanced_tools_extended.feature",
+        "stagedPath": "staging/python/features/test_pptx_advanced_tools_extended.feature",
+        "sourceFileSha256": "dce4f9fe8d5ac0e353db2d359c2173b0671750c5239c37384d24969bbabe7d61"
+      }
+    },
+    {
+      "id": "@id-pptx-manipulation-table-values",
+      "kind": "table-values",
+      "feature": "workflows/pptx/tables.feature",
+      "sourceId": "@candidate-python-pptx-advanced-tools-dec2108fa9",
+      "localId": "@id-bun-pptx-next20-table-values",
+      "sourceFeature": "staging/python/features/test_pptx_advanced_tools.feature",
+      "sourceLine": 285,
+      "sourceSha256": "a80ebe6fa15c079bd178ded56b5e5d84f37cd1735722aea2da031e733f106591",
+      "sourceBlock": "  @candidate-python-pptx-advanced-tools-dec2108fa9\n  # Native: tests/test_pptx_advanced_tools.py::TestTables::test_add_table\n  Scenario: Native check: add table [TestTables]\n    Given Create an instance of PresentationAdvancedTools.\n    And Create a test presentation with multiple slides.\n    And an isolated writable temporary directory\n    And output is prepared as temp dir under \"new_table.pptx\"\n    When pptx advanced tools.tool pptx add table using str representation of sample pptx; 2; headers [\"Col1\", \"Col2\", \"Col3\"]; rows [[\"A\", \"B\", \"C\"], [\"D\", \"E\", \"F\"]]; output path str representation of temp dir under \"new_table.pptx\"\n    Then result field \"success\" is true\n    And result field \"rows\" equals 3\n    And result field \"columns\" equals 3",
+      "sourceBlockSha256": "d364d6ae25f340b9f580c2de3bc8e54cf118cfcdb2bf627e1730b72e4e8536f5",
+      "fixtureId": "fixture-5ad4b68acc5a926c020dbc94154c95fa6c40c7353a55b2f82504879b392e9a45",
+      "target": "slide 1",
+      "operation": "author a 3-row 3-column table at EMU x=914400 y=1828800 width=10058400 height=2743200 with rows [[\"Name\",\"Value\",\"Status\"],[\"Item 1\",\"100\",\"OK\"],[\"Item 2\",\"200\",\"Pending\"]]",
+      "expected": {
+        "cells": [
+          [
+            "Name",
+            "Value",
+            "Status"
+          ],
+          [
+            "Item 1",
+            "100",
+            "OK"
+          ],
+          [
+            "Item 2",
+            "200",
+            "Pending"
+          ]
+        ],
+        "rows": 3,
+        "columns": 3,
+        "x": 914400,
+        "y": 1828800,
+        "width": 10058400,
+        "height": 2743200
+      },
+      "changedMembers": [
+        "ppt/slides/slide1.xml"
+      ],
+      "additionPolicy": "no additions or removals",
+      "executionCredit": false,
+      "overlapReview": "Existing new-presentation geometry recipe has no concrete 3x3 values or this retained fixture; these cases add exact values and geometry with custody.",
+      "sourceProvenance": {
+        "repository": "https://github.com/rcarmo/python-office-mcp-server",
+        "revision": "0c5de7a4ce69c13a06e215e9233954bf2df805d5",
+        "path": "docs/catalogue-staging/python-native/features/test_pptx_advanced_tools.feature",
+        "stagedPath": "staging/python/features/test_pptx_advanced_tools.feature",
+        "sourceFileSha256": "a80ebe6fa15c079bd178ded56b5e5d84f37cd1735722aea2da031e733f106591"
+      }
+    },
+    {
+      "id": "@id-pptx-manipulation-table-geometry",
+      "kind": "table-geometry",
+      "feature": "workflows/pptx/tables.feature",
+      "sourceId": "@candidate-python-pptx-advanced-tools-f082c66869",
+      "localId": "@id-bun-pptx-next20-table-geometry",
+      "sourceFeature": "staging/python/features/test_pptx_advanced_tools.feature",
+      "sourceLine": 297,
+      "sourceSha256": "a80ebe6fa15c079bd178ded56b5e5d84f37cd1735722aea2da031e733f106591",
+      "sourceBlock": "  @candidate-python-pptx-advanced-tools-f082c66869\n  # Native: tests/test_pptx_advanced_tools.py::TestTables::test_table_positioning\n  Scenario: Native check: table positioning [TestTables]\n    Given Create an instance of PresentationAdvancedTools.\n    And Create a test presentation with multiple slides.\n    And an isolated writable temporary directory\n    And output is prepared as temp dir under \"table_pos.pptx\"\n    When pptx advanced tools.tool pptx add table using str representation of sample pptx; 2; headers [\"A\", \"B\"]; left 1.0; top 2.0; width 11.0; height 3.0; output path str representation of temp dir under \"table_pos.pptx\"\n    Then result field \"success\" is true\n    And when shape has table, shape left joined with shape width is at most the result of Presentation with temp dir under \"table_pos.pptx\" slide width\n    And when shape has table, shape top joined with shape height is at most the result of Presentation with temp dir under \"table_pos.pptx\" slide height",
+      "sourceBlockSha256": "b2640f998f92a561e531052d36646484862294f3864a63093cc6654cb6ed9283",
+      "fixtureId": "fixture-5ad4b68acc5a926c020dbc94154c95fa6c40c7353a55b2f82504879b392e9a45",
+      "target": "slide 1",
+      "operation": "author a 2-row 2-column table at EMU x=914400 y=1828800 width=10058400 height=2743200",
+      "expected": {
+        "rows": 2,
+        "columns": 2,
+        "cells": [
+          [
+            "",
+            ""
+          ],
+          [
+            "",
+            ""
+          ]
+        ],
+        "x": 914400,
+        "y": 1828800,
+        "width": 10058400,
+        "height": 2743200,
+        "columnWidths": [
+          5029200,
+          5029200
+        ],
+        "rowHeights": [
+          1371600,
+          1371600
+        ]
+      },
+      "changedMembers": [
+        "ppt/slides/slide1.xml"
+      ],
+      "additionPolicy": "no additions or removals",
+      "executionCredit": false,
+      "overlapReview": "Existing new-presentation geometry recipe has no concrete 3x3 values or this retained fixture; these cases add exact values and geometry with custody.",
+      "sourceProvenance": {
+        "repository": "https://github.com/rcarmo/python-office-mcp-server",
+        "revision": "0c5de7a4ce69c13a06e215e9233954bf2df805d5",
+        "path": "docs/catalogue-staging/python-native/features/test_pptx_advanced_tools.feature",
+        "stagedPath": "staging/python/features/test_pptx_advanced_tools.feature",
+        "sourceFileSha256": "a80ebe6fa15c079bd178ded56b5e5d84f37cd1735722aea2da031e733f106591"
+      }
+    },
+    {
+      "id": "@id-pptx-manipulation-set-notes",
+      "kind": "set-notes",
+      "feature": "workflows/pptx/notes.feature",
+      "sourceId": "@candidate-python-pptx-advanced-tools-fa6b261e45",
+      "localId": "@id-bun-pptx-next20-set-notes",
+      "sourceFeature": "staging/python/features/test_pptx_advanced_tools.feature",
+      "sourceLine": 157,
+      "sourceSha256": "a80ebe6fa15c079bd178ded56b5e5d84f37cd1735722aea2da031e733f106591",
+      "sourceBlock": "  @candidate-python-pptx-advanced-tools-fa6b261e45\n  # Native: tests/test_pptx_advanced_tools.py::TestNotes::test_set_notes\n  Scenario: Native check: set notes [TestNotes]\n    Given Create an instance of PresentationAdvancedTools.\n    And Create a test presentation with multiple slides.\n    And an isolated writable temporary directory\n    And output is prepared as temp dir under \"notes.pptx\"\n    When pptx advanced tools.tool pptx set notes using str representation of sample pptx; 1; \"These are speaker notes\"; output path str representation of temp dir under \"notes.pptx\"\n    Then result field \"success\" is true",
+      "sourceBlockSha256": "09c5e65c67e60d7624ad16eb652c0094838a05b19f82a83926f7fde0c8ef74d9",
+      "fixtureId": "fixture-5ad4b68acc5a926c020dbc94154c95fa6c40c7353a55b2f82504879b392e9a45",
+      "target": "slide 1 existing notes body",
+      "operation": "replace notes with JSON \"These are speaker notes\"",
+      "expected": {
+        "text": "These are speaker notes",
+        "paragraphs": [
+          "These are speaker notes"
+        ]
+      },
+      "changedMembers": [
+        "ppt/notesSlides/notesSlide1.xml"
+      ],
+      "additionPolicy": "no additions or removals",
+      "executionCredit": false,
+      "overlapReview": "Existing splice uses a different specimen/text/template; these concrete ordinary-body and multiline recipes retain that stronger profile separately.",
+      "sourceProvenance": {
+        "repository": "https://github.com/rcarmo/python-office-mcp-server",
+        "revision": "0c5de7a4ce69c13a06e215e9233954bf2df805d5",
+        "path": "docs/catalogue-staging/python-native/features/test_pptx_advanced_tools.feature",
+        "stagedPath": "staging/python/features/test_pptx_advanced_tools.feature",
+        "sourceFileSha256": "a80ebe6fa15c079bd178ded56b5e5d84f37cd1735722aea2da031e733f106591"
+      }
+    },
+    {
+      "id": "@id-pptx-manipulation-notes-readback",
+      "kind": "notes-readback",
+      "feature": "workflows/pptx/notes.feature",
+      "sourceId": "@candidate-python-pptx-coverage-6c1a01c0a5",
+      "localId": "@id-bun-pptx-next20-notes-readback",
+      "sourceFeature": "staging/python/features/test_pptx_coverage.feature",
+      "sourceLine": 86,
+      "sourceSha256": "771c49cb9346dd742b03f3176b1f4d0d7dd693e02b2702fb9d7e1e6d0b694756",
+      "sourceBlock": "  @candidate-python-pptx-coverage-6c1a01c0a5\n  # Native: tests/test_pptx_coverage.py::TestNotesOperations::test_set_and_get_notes\n  Scenario: Native check: set and get notes [TestNotesOperations]\n    Given Create an instance of PresentationAdvancedTools.\n    And Create a basic presentation.\n    And an isolated writable temporary directory\n    And output is prepared as temp dir under \"with_notes.pptx\"\n    When pptx advanced tools.tool pptx set notes using str representation of basic presentation; slide number 1; notes text \"Speaker notes content\"; output path str representation of temp dir under \"with_notes.pptx\"\n    And pptx advanced tools.tool pptx get notes using str representation of temp dir under \"with_notes.pptx\"; slide number 1\n    Then result has type dict",
+      "sourceBlockSha256": "ea10feff55eb66ff219a2c98afc4562d170df5207a0924117eb00eb72f4b4e1b",
+      "fixtureId": "fixture-5ad4b68acc5a926c020dbc94154c95fa6c40c7353a55b2f82504879b392e9a45",
+      "target": "slide 1 existing notes body",
+      "operation": "replace notes with JSON \"Speaker notes content\\nsecond line\"",
+      "expected": {
+        "text": "Speaker notes content\nsecond line",
+        "paragraphs": [
+          "Speaker notes content",
+          "second line"
+        ]
+      },
+      "changedMembers": [
+        "ppt/notesSlides/notesSlide1.xml"
+      ],
+      "additionPolicy": "no additions or removals",
+      "executionCredit": false,
+      "overlapReview": "Existing splice uses a different specimen/text/template; these concrete ordinary-body and multiline recipes retain that stronger profile separately.",
+      "sourceProvenance": {
+        "repository": "https://github.com/rcarmo/python-office-mcp-server",
+        "revision": "0c5de7a4ce69c13a06e215e9233954bf2df805d5",
+        "path": "docs/catalogue-staging/python-native/features/test_pptx_coverage.feature",
+        "stagedPath": "staging/python/features/test_pptx_coverage.feature",
+        "sourceFileSha256": "771c49cb9346dd742b03f3176b1f4d0d7dd693e02b2702fb9d7e1e6d0b694756"
+      }
+    }
+  ],
+  "files": [
+    {
+      "path": "workflows/pptx/text.feature",
+      "beforeText": "@planned\nFeature: Presentation anchored text editing\n\n  Rule: PPTX relationship-ordered reads and anchored text replacement\n    The first PPTX slice opens real packages, reads existing notes without creating\n    missing notes parts, and performs exact anchored text replacement across runs.\n\n    @id-pptx-readable-unsupported-topology\n    Scenario: Read line breaks and field text faithfully but refuse editing that topology\n      Given PPTX line-break and field text fixture is prepared from a real template\n      When PPTX inspects the paragraph text and attempts an anchored edit on that topology\n      Then PPTX exposes line breaks and field text faithfully and refuses the unsupported edit without mutation\n\n    @id-pptx-cross-run-replace\n    Scenario: Replace exact anchored text across runs and preserve unrelated members after reopen\n      Given PPTX fragmented title fixture is prepared from a real template and an untouched ZIP member\n      When PPTX replaces anchored cross-run text and saves then reopens the package\n      Then PPTX preserves the replacement text, the starting run formatting, and unrelated ZIP member bytes\n\n    @id-pptx-stale-anchor-refusal\n    Scenario: Refuse a stale anchored replacement without mutation\n      Given PPTX stale-anchor fixture is prepared from a real template\n      When PPTX replaces anchored text once and retries with the stale anchor\n      Then PPTX refuses the stale anchor and keeps the post-success bytes unchanged\n",
+      "beforeSha256": "30fb7380fc0a133c5b710cd843493ebcaee781d2000c23eabb3bff0290b373a8",
+      "afterSha256": "42dae34ee08a7783b17e27bc5a5a8e906ed2ca06bf77fcecedfc3fa087dc5608",
+      "scenarios": [
+        {
+          "id": "@id-pptx-manipulation-patch-title",
+          "after": [
+            {
+              "scenarioId": "@id-pptx-manipulation-patch-title",
+              "name": "title replacement",
+              "steps": [
+                {
+                  "text": "the sealed PPTX fixture fixture-5ad4b68acc5a926c020dbc94154c95fa6c40c7353a55b2f82504879b392e9a45 with ordered titles [\"Alpha\",\"Beta\",\"Gamma\"]",
+                  "argument": null
+                },
+                {
+                  "text": "slide 1 shape ID 2 is selected by its original part and unique identity",
+                  "argument": null
+                },
+                {
+                  "text": "production presentation editing APIs replace all text with JSON \"New Title\"",
+                  "argument": null
+                },
+                {
+                  "text": "the resulting presentation is saved to a new path and independently parsed and reopened",
+                  "argument": null
+                },
+                {
+                  "text": "the saved slide 1 shape ID 2 has exact properties JSON {\"text\":\"New Title\",\"paragraphs\":[\"New Title\"]}",
+                  "argument": null
+                },
+                {
+                  "text": "only original member payloads [\"ppt/slides/slide1.xml\"] may change",
+                  "argument": null
+                },
+                {
+                  "text": "the original member name set is unchanged",
+                  "argument": null
+                },
+                {
+                  "text": "the supplied archive, unrelated member payloads and unaffected lexical XML spans retain their original bytes",
+                  "argument": null
+                },
+                {
+                  "text": "all pre-existing slides retain their original IDs, relationship IDs, targets, layout links and notes links",
+                  "argument": null
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "@id-pptx-manipulation-patch-body",
+          "after": [
+            {
+              "scenarioId": "@id-pptx-manipulation-patch-body",
+              "name": "body replacement",
+              "steps": [
+                {
+                  "text": "the sealed PPTX fixture fixture-5ad4b68acc5a926c020dbc94154c95fa6c40c7353a55b2f82504879b392e9a45 with ordered titles [\"Alpha\",\"Beta\",\"Gamma\"]",
+                  "argument": null
+                },
+                {
+                  "text": "slide 2 shape ID 4 is selected by its original part and unique identity",
+                  "argument": null
+                },
+                {
+                  "text": "production presentation editing APIs replace all text with JSON \"Updated bullet\"",
+                  "argument": null
+                },
+                {
+                  "text": "the resulting presentation is saved to a new path and independently parsed and reopened",
+                  "argument": null
+                },
+                {
+                  "text": "the saved slide 2 shape ID 4 has exact properties JSON {\"text\":\"Updated bullet\",\"paragraphs\":[\"Updated bullet\"]}",
+                  "argument": null
+                },
+                {
+                  "text": "only original member payloads [\"ppt/slides/slide2.xml\"] may change",
+                  "argument": null
+                },
+                {
+                  "text": "the original member name set is unchanged",
+                  "argument": null
+                },
+                {
+                  "text": "the supplied archive, unrelated member payloads and unaffected lexical XML spans retain their original bytes",
+                  "argument": null
+                },
+                {
+                  "text": "all pre-existing slides retain their original IDs, relationship IDs, targets, layout links and notes links",
+                  "argument": null
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "@id-pptx-manipulation-patch-subtitle",
+          "after": [
+            {
+              "scenarioId": "@id-pptx-manipulation-patch-subtitle",
+              "name": "subtitle replacement",
+              "steps": [
+                {
+                  "text": "the sealed PPTX fixture fixture-5ad4b68acc5a926c020dbc94154c95fa6c40c7353a55b2f82504879b392e9a45 with ordered titles [\"Alpha\",\"Beta\",\"Gamma\"]",
+                  "argument": null
+                },
+                {
+                  "text": "slide 1 shape ID 3 is selected by its original part and unique identity",
+                  "argument": null
+                },
+                {
+                  "text": "production presentation editing APIs replace all text with JSON \"New Subtitle\"",
+                  "argument": null
+                },
+                {
+                  "text": "the resulting presentation is saved to a new path and independently parsed and reopened",
+                  "argument": null
+                },
+                {
+                  "text": "the saved slide 1 shape ID 3 has exact properties JSON {\"text\":\"New Subtitle\",\"paragraphs\":[\"New Subtitle\"]}",
+                  "argument": null
+                },
+                {
+                  "text": "only original member payloads [\"ppt/slides/slide1.xml\"] may change",
+                  "argument": null
+                },
+                {
+                  "text": "the original member name set is unchanged",
+                  "argument": null
+                },
+                {
+                  "text": "the supplied archive, unrelated member payloads and unaffected lexical XML spans retain their original bytes",
+                  "argument": null
+                },
+                {
+                  "text": "all pre-existing slides retain their original IDs, relationship IDs, targets, layout links and notes links",
+                  "argument": null
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "@id-pptx-manipulation-append-title",
+          "after": [
+            {
+              "scenarioId": "@id-pptx-manipulation-append-title",
+              "name": "append title text",
+              "steps": [
+                {
+                  "text": "the sealed PPTX fixture fixture-5ad4b68acc5a926c020dbc94154c95fa6c40c7353a55b2f82504879b392e9a45 with ordered titles [\"Alpha\",\"Beta\",\"Gamma\"]",
+                  "argument": null
+                },
+                {
+                  "text": "slide 1 shape ID 2 is selected by its original part and unique identity",
+                  "argument": null
+                },
+                {
+                  "text": "production presentation editing APIs append JSON \" - Appended\" as a new paragraph",
+                  "argument": null
+                },
+                {
+                  "text": "the resulting presentation is saved to a new path and independently parsed and reopened",
+                  "argument": null
+                },
+                {
+                  "text": "the saved slide 1 shape ID 2 has exact properties JSON {\"text\":\"Alpha\\n - Appended\",\"paragraphs\":[\"Alpha\",\" - Appended\"]}",
+                  "argument": null
+                },
+                {
+                  "text": "only original member payloads [\"ppt/slides/slide1.xml\"] may change",
+                  "argument": null
+                },
+                {
+                  "text": "the original member name set is unchanged",
+                  "argument": null
+                },
+                {
+                  "text": "the supplied archive, unrelated member payloads and unaffected lexical XML spans retain their original bytes",
+                  "argument": null
+                },
+                {
+                  "text": "all pre-existing slides retain their original IDs, relationship IDs, targets, layout links and notes links",
+                  "argument": null
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "afterLedgerRows": [
+        {
+          "id": "@id-pptx-manipulation-patch-title",
+          "feature": "workflows/pptx/text.feature",
+          "expandedCases": 1,
+          "factIds": [],
+          "expectedOutcomes": [
+            "the saved slide 1 shape ID 2 has exact properties JSON {\"text\":\"New Title\",\"paragraphs\":[\"New Title\"]}",
+            "only original member payloads [\"ppt/slides/slide1.xml\"] may change",
+            "the original member name set is unchanged",
+            "the supplied archive, unrelated member payloads and unaffected lexical XML spans retain their original bytes",
+            "all pre-existing slides retain their original IDs, relationship IDs, targets, layout links and notes links"
+          ],
+          "consumers": {
+            "bun": {
+              "status": "planned",
+              "evidence": []
+            },
+            "go": {
+              "status": "planned",
+              "evidence": []
+            },
+            "python": {
+              "status": "planned",
+              "evidence": []
+            }
+          }
+        },
+        {
+          "id": "@id-pptx-manipulation-patch-body",
+          "feature": "workflows/pptx/text.feature",
+          "expandedCases": 1,
+          "factIds": [],
+          "expectedOutcomes": [
+            "the saved slide 2 shape ID 4 has exact properties JSON {\"text\":\"Updated bullet\",\"paragraphs\":[\"Updated bullet\"]}",
+            "only original member payloads [\"ppt/slides/slide2.xml\"] may change",
+            "the original member name set is unchanged",
+            "the supplied archive, unrelated member payloads and unaffected lexical XML spans retain their original bytes",
+            "all pre-existing slides retain their original IDs, relationship IDs, targets, layout links and notes links"
+          ],
+          "consumers": {
+            "bun": {
+              "status": "planned",
+              "evidence": []
+            },
+            "go": {
+              "status": "planned",
+              "evidence": []
+            },
+            "python": {
+              "status": "planned",
+              "evidence": []
+            }
+          }
+        },
+        {
+          "id": "@id-pptx-manipulation-patch-subtitle",
+          "feature": "workflows/pptx/text.feature",
+          "expandedCases": 1,
+          "factIds": [],
+          "expectedOutcomes": [
+            "the saved slide 1 shape ID 3 has exact properties JSON {\"text\":\"New Subtitle\",\"paragraphs\":[\"New Subtitle\"]}",
+            "only original member payloads [\"ppt/slides/slide1.xml\"] may change",
+            "the original member name set is unchanged",
+            "the supplied archive, unrelated member payloads and unaffected lexical XML spans retain their original bytes",
+            "all pre-existing slides retain their original IDs, relationship IDs, targets, layout links and notes links"
+          ],
+          "consumers": {
+            "bun": {
+              "status": "planned",
+              "evidence": []
+            },
+            "go": {
+              "status": "planned",
+              "evidence": []
+            },
+            "python": {
+              "status": "planned",
+              "evidence": []
+            }
+          }
+        },
+        {
+          "id": "@id-pptx-manipulation-append-title",
+          "feature": "workflows/pptx/text.feature",
+          "expandedCases": 1,
+          "factIds": [],
+          "expectedOutcomes": [
+            "the saved slide 1 shape ID 2 has exact properties JSON {\"text\":\"Alpha\\n - Appended\",\"paragraphs\":[\"Alpha\",\" - Appended\"]}",
+            "only original member payloads [\"ppt/slides/slide1.xml\"] may change",
+            "the original member name set is unchanged",
+            "the supplied archive, unrelated member payloads and unaffected lexical XML spans retain their original bytes",
+            "all pre-existing slides retain their original IDs, relationship IDs, targets, layout links and notes links"
+          ],
+          "consumers": {
+            "bun": {
+              "status": "planned",
+              "evidence": []
+            },
+            "go": {
+              "status": "planned",
+              "evidence": []
+            },
+            "python": {
+              "status": "planned",
+              "evidence": []
+            }
+          }
+        }
+      ]
+    },
+    {
+      "path": "workflows/pptx/bullets.feature",
+      "beforeText": "",
+      "beforeSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "afterSha256": "f26843b74b4b48b81631139cd907de3ddd37940034f1d9332df86df519bcb93f",
+      "scenarios": [
+        {
+          "id": "@id-pptx-manipulation-bullet-default",
+          "after": [
+            {
+              "scenarioId": "@id-pptx-manipulation-bullet-default",
+              "name": "append body bullet",
+              "steps": [
+                {
+                  "text": "the sealed PPTX fixture fixture-5ad4b68acc5a926c020dbc94154c95fa6c40c7353a55b2f82504879b392e9a45 with ordered titles [\"Alpha\",\"Beta\",\"Gamma\"]",
+                  "argument": null
+                },
+                {
+                  "text": "slide 2 shape ID 4 is selected by its original part and unique identity",
+                  "argument": null
+                },
+                {
+                  "text": "production presentation editing APIs append bullet JSON \"New bullet point\" at level 0",
+                  "argument": null
+                },
+                {
+                  "text": "the resulting presentation is saved to a new path and independently parsed and reopened",
+                  "argument": null
+                },
+                {
+                  "text": "the saved slide 2 shape ID 4 has exact properties JSON {\"text\":\"Existing\\nNew bullet point\",\"paragraphs\":[\"Existing\",\"New bullet point\"],\"bullet\":{\"character\":\"•\",\"level\":0}}",
+                  "argument": null
+                },
+                {
+                  "text": "only original member payloads [\"ppt/slides/slide2.xml\"] may change",
+                  "argument": null
+                },
+                {
+                  "text": "the original member name set is unchanged",
+                  "argument": null
+                },
+                {
+                  "text": "the supplied archive, unrelated member payloads and unaffected lexical XML spans retain their original bytes",
+                  "argument": null
+                },
+                {
+                  "text": "all pre-existing slides retain their original IDs, relationship IDs, targets, layout links and notes links",
+                  "argument": null
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "@id-pptx-manipulation-bullet-sequence",
+          "after": [
+            {
+              "scenarioId": "@id-pptx-manipulation-bullet-sequence",
+              "name": "append two ordered bullets",
+              "steps": [
+                {
+                  "text": "the sealed PPTX fixture fixture-5ad4b68acc5a926c020dbc94154c95fa6c40c7353a55b2f82504879b392e9a45 with ordered titles [\"Alpha\",\"Beta\",\"Gamma\"]",
+                  "argument": null
+                },
+                {
+                  "text": "slide 2 shape ID 4 is selected by its original part and unique identity",
+                  "argument": null
+                },
+                {
+                  "text": "production presentation editing APIs clear text, append bullet JSON \"First bullet\", then append bullet JSON \"Second bullet\", both at level 0",
+                  "argument": null
+                },
+                {
+                  "text": "the resulting presentation is saved to a new path and independently parsed and reopened",
+                  "argument": null
+                },
+                {
+                  "text": "the saved slide 2 shape ID 4 has exact properties JSON {\"text\":\"First bullet\\nSecond bullet\",\"paragraphs\":[\"First bullet\",\"Second bullet\"],\"bullets\":[{\"character\":\"•\",\"level\":0},{\"character\":\"•\",\"level\":0}]}",
+                  "argument": null
+                },
+                {
+                  "text": "only original member payloads [\"ppt/slides/slide2.xml\"] may change",
+                  "argument": null
+                },
+                {
+                  "text": "the original member name set is unchanged",
+                  "argument": null
+                },
+                {
+                  "text": "the supplied archive, unrelated member payloads and unaffected lexical XML spans retain their original bytes",
+                  "argument": null
+                },
+                {
+                  "text": "all pre-existing slides retain their original IDs, relationship IDs, targets, layout links and notes links",
+                  "argument": null
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "@id-pptx-manipulation-bullet-level",
+          "after": [
+            {
+              "scenarioId": "@id-pptx-manipulation-bullet-level",
+              "name": "direct bullet indentation",
+              "steps": [
+                {
+                  "text": "the sealed PPTX fixture fixture-5ad4b68acc5a926c020dbc94154c95fa6c40c7353a55b2f82504879b392e9a45 with ordered titles [\"Alpha\",\"Beta\",\"Gamma\"]",
+                  "argument": null
+                },
+                {
+                  "text": "slide 2 shape ID 4 is selected by its original part and unique identity",
+                  "argument": null
+                },
+                {
+                  "text": "production presentation editing APIs append bullet JSON \"Sub-bullet point\" at level 1",
+                  "argument": null
+                },
+                {
+                  "text": "the resulting presentation is saved to a new path and independently parsed and reopened",
+                  "argument": null
+                },
+                {
+                  "text": "the saved slide 2 shape ID 4 has exact properties JSON {\"text\":\"Existing\\nSub-bullet point\",\"paragraphs\":[\"Existing\",\"Sub-bullet point\"],\"bullet\":{\"character\":\"•\",\"level\":1}}",
+                  "argument": null
+                },
+                {
+                  "text": "only original member payloads [\"ppt/slides/slide2.xml\"] may change",
+                  "argument": null
+                },
+                {
+                  "text": "the original member name set is unchanged",
+                  "argument": null
+                },
+                {
+                  "text": "the supplied archive, unrelated member payloads and unaffected lexical XML spans retain their original bytes",
+                  "argument": null
+                },
+                {
+                  "text": "all pre-existing slides retain their original IDs, relationship IDs, targets, layout links and notes links",
+                  "argument": null
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "@id-pptx-manipulation-bullet-bold-label",
+          "after": [
+            {
+              "scenarioId": "@id-pptx-manipulation-bullet-bold-label",
+              "name": "bold label only",
+              "steps": [
+                {
+                  "text": "the sealed PPTX fixture fixture-5ad4b68acc5a926c020dbc94154c95fa6c40c7353a55b2f82504879b392e9a45 with ordered titles [\"Alpha\",\"Beta\",\"Gamma\"]",
+                  "argument": null
+                },
+                {
+                  "text": "slide 2 shape ID 4 is selected by its original part and unique identity",
+                  "argument": null
+                },
+                {
+                  "text": "production presentation editing APIs append a level-0 bullet with bold label JSON \"Key Point\" and description JSON \"This is the description\"",
+                  "argument": null
+                },
+                {
+                  "text": "the resulting presentation is saved to a new path and independently parsed and reopened",
+                  "argument": null
+                },
+                {
+                  "text": "the saved slide 2 shape ID 4 has exact properties JSON {\"text\":\"Existing\\nKey Point: This is the description\",\"paragraphs\":[\"Existing\",\"Key Point: This is the description\"],\"bullet\":{\"character\":\"•\",\"level\":0},\"runs\":[{\"text\":\"Key Point: \",\"bold\":true},{\"text\":\"This is the description\",\"bold\":false}]}",
+                  "argument": null
+                },
+                {
+                  "text": "only original member payloads [\"ppt/slides/slide2.xml\"] may change",
+                  "argument": null
+                },
+                {
+                  "text": "the original member name set is unchanged",
+                  "argument": null
+                },
+                {
+                  "text": "the supplied archive, unrelated member payloads and unaffected lexical XML spans retain their original bytes",
+                  "argument": null
+                },
+                {
+                  "text": "all pre-existing slides retain their original IDs, relationship IDs, targets, layout links and notes links",
+                  "argument": null
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "@id-pptx-manipulation-clear-bullets",
+          "after": [
+            {
+              "scenarioId": "@id-pptx-manipulation-clear-bullets",
+              "name": "clear body paragraphs",
+              "steps": [
+                {
+                  "text": "the sealed PPTX fixture fixture-5ad4b68acc5a926c020dbc94154c95fa6c40c7353a55b2f82504879b392e9a45 with ordered titles [\"Alpha\",\"Beta\",\"Gamma\"]",
+                  "argument": null
+                },
+                {
+                  "text": "slide 2 shape ID 4 is selected by its original part and unique identity",
+                  "argument": null
+                },
+                {
+                  "text": "production presentation editing APIs clear all text and bullet properties",
+                  "argument": null
+                },
+                {
+                  "text": "the resulting presentation is saved to a new path and independently parsed and reopened",
+                  "argument": null
+                },
+                {
+                  "text": "the saved slide 2 shape ID 4 has exact properties JSON {\"text\":\"\",\"paragraphs\":[\"\"],\"bulletCount\":0}",
+                  "argument": null
+                },
+                {
+                  "text": "only original member payloads [\"ppt/slides/slide2.xml\"] may change",
+                  "argument": null
+                },
+                {
+                  "text": "the original member name set is unchanged",
+                  "argument": null
+                },
+                {
+                  "text": "the supplied archive, unrelated member payloads and unaffected lexical XML spans retain their original bytes",
+                  "argument": null
+                },
+                {
+                  "text": "all pre-existing slides retain their original IDs, relationship IDs, targets, layout links and notes links",
+                  "argument": null
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "afterLedgerRows": [
+        {
+          "id": "@id-pptx-manipulation-bullet-default",
+          "feature": "workflows/pptx/bullets.feature",
+          "expandedCases": 1,
+          "factIds": [],
+          "expectedOutcomes": [
+            "the saved slide 2 shape ID 4 has exact properties JSON {\"text\":\"Existing\\nNew bullet point\",\"paragraphs\":[\"Existing\",\"New bullet point\"],\"bullet\":{\"character\":\"•\",\"level\":0}}",
+            "only original member payloads [\"ppt/slides/slide2.xml\"] may change",
+            "the original member name set is unchanged",
+            "the supplied archive, unrelated member payloads and unaffected lexical XML spans retain their original bytes",
+            "all pre-existing slides retain their original IDs, relationship IDs, targets, layout links and notes links"
+          ],
+          "consumers": {
+            "bun": {
+              "status": "planned",
+              "evidence": []
+            },
+            "go": {
+              "status": "planned",
+              "evidence": []
+            },
+            "python": {
+              "status": "planned",
+              "evidence": []
+            }
+          }
+        },
+        {
+          "id": "@id-pptx-manipulation-bullet-sequence",
+          "feature": "workflows/pptx/bullets.feature",
+          "expandedCases": 1,
+          "factIds": [],
+          "expectedOutcomes": [
+            "the saved slide 2 shape ID 4 has exact properties JSON {\"text\":\"First bullet\\nSecond bullet\",\"paragraphs\":[\"First bullet\",\"Second bullet\"],\"bullets\":[{\"character\":\"•\",\"level\":0},{\"character\":\"•\",\"level\":0}]}",
+            "only original member payloads [\"ppt/slides/slide2.xml\"] may change",
+            "the original member name set is unchanged",
+            "the supplied archive, unrelated member payloads and unaffected lexical XML spans retain their original bytes",
+            "all pre-existing slides retain their original IDs, relationship IDs, targets, layout links and notes links"
+          ],
+          "consumers": {
+            "bun": {
+              "status": "planned",
+              "evidence": []
+            },
+            "go": {
+              "status": "planned",
+              "evidence": []
+            },
+            "python": {
+              "status": "planned",
+              "evidence": []
+            }
+          }
+        },
+        {
+          "id": "@id-pptx-manipulation-bullet-level",
+          "feature": "workflows/pptx/bullets.feature",
+          "expandedCases": 1,
+          "factIds": [],
+          "expectedOutcomes": [
+            "the saved slide 2 shape ID 4 has exact properties JSON {\"text\":\"Existing\\nSub-bullet point\",\"paragraphs\":[\"Existing\",\"Sub-bullet point\"],\"bullet\":{\"character\":\"•\",\"level\":1}}",
+            "only original member payloads [\"ppt/slides/slide2.xml\"] may change",
+            "the original member name set is unchanged",
+            "the supplied archive, unrelated member payloads and unaffected lexical XML spans retain their original bytes",
+            "all pre-existing slides retain their original IDs, relationship IDs, targets, layout links and notes links"
+          ],
+          "consumers": {
+            "bun": {
+              "status": "planned",
+              "evidence": []
+            },
+            "go": {
+              "status": "planned",
+              "evidence": []
+            },
+            "python": {
+              "status": "planned",
+              "evidence": []
+            }
+          }
+        },
+        {
+          "id": "@id-pptx-manipulation-bullet-bold-label",
+          "feature": "workflows/pptx/bullets.feature",
+          "expandedCases": 1,
+          "factIds": [],
+          "expectedOutcomes": [
+            "the saved slide 2 shape ID 4 has exact properties JSON {\"text\":\"Existing\\nKey Point: This is the description\",\"paragraphs\":[\"Existing\",\"Key Point: This is the description\"],\"bullet\":{\"character\":\"•\",\"level\":0},\"runs\":[{\"text\":\"Key Point: \",\"bold\":true},{\"text\":\"This is the description\",\"bold\":false}]}",
+            "only original member payloads [\"ppt/slides/slide2.xml\"] may change",
+            "the original member name set is unchanged",
+            "the supplied archive, unrelated member payloads and unaffected lexical XML spans retain their original bytes",
+            "all pre-existing slides retain their original IDs, relationship IDs, targets, layout links and notes links"
+          ],
+          "consumers": {
+            "bun": {
+              "status": "planned",
+              "evidence": []
+            },
+            "go": {
+              "status": "planned",
+              "evidence": []
+            },
+            "python": {
+              "status": "planned",
+              "evidence": []
+            }
+          }
+        },
+        {
+          "id": "@id-pptx-manipulation-clear-bullets",
+          "feature": "workflows/pptx/bullets.feature",
+          "expandedCases": 1,
+          "factIds": [],
+          "expectedOutcomes": [
+            "the saved slide 2 shape ID 4 has exact properties JSON {\"text\":\"\",\"paragraphs\":[\"\"],\"bulletCount\":0}",
+            "only original member payloads [\"ppt/slides/slide2.xml\"] may change",
+            "the original member name set is unchanged",
+            "the supplied archive, unrelated member payloads and unaffected lexical XML spans retain their original bytes",
+            "all pre-existing slides retain their original IDs, relationship IDs, targets, layout links and notes links"
+          ],
+          "consumers": {
+            "bun": {
+              "status": "planned",
+              "evidence": []
+            },
+            "go": {
+              "status": "planned",
+              "evidence": []
+            },
+            "python": {
+              "status": "planned",
+              "evidence": []
+            }
+          }
+        }
+      ]
+    },
+    {
+      "path": "workflows/pptx/text-autofit.feature",
+      "beforeText": "",
+      "beforeSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "afterSha256": "811920664e09be2622d9966d81fbdb33dd1299b0badf29c63243514cf913967f",
+      "scenarios": [
+        {
+          "id": "@id-pptx-manipulation-autofit-shrink",
+          "after": [
+            {
+              "scenarioId": "@id-pptx-manipulation-autofit-shrink",
+              "name": "shrink autofit",
+              "steps": [
+                {
+                  "text": "the sealed PPTX fixture fixture-5ad4b68acc5a926c020dbc94154c95fa6c40c7353a55b2f82504879b392e9a45 with ordered titles [\"Alpha\",\"Beta\",\"Gamma\"]",
+                  "argument": null
+                },
+                {
+                  "text": "slide 1 shape ID 2 is selected by its original part and unique identity",
+                  "argument": null
+                },
+                {
+                  "text": "production presentation editing APIs set autofit to shrink",
+                  "argument": null
+                },
+                {
+                  "text": "the resulting presentation is saved to a new path and independently parsed and reopened",
+                  "argument": null
+                },
+                {
+                  "text": "the saved slide 1 shape ID 2 has exact properties JSON {\"text\":\"Alpha\",\"autofit\":\"normAutofit\",\"fitChildCount\":1}",
+                  "argument": null
+                },
+                {
+                  "text": "only original member payloads [\"ppt/slides/slide1.xml\"] may change",
+                  "argument": null
+                },
+                {
+                  "text": "the original member name set is unchanged",
+                  "argument": null
+                },
+                {
+                  "text": "the supplied archive, unrelated member payloads and unaffected lexical XML spans retain their original bytes",
+                  "argument": null
+                },
+                {
+                  "text": "all pre-existing slides retain their original IDs, relationship IDs, targets, layout links and notes links",
+                  "argument": null
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "@id-pptx-manipulation-autofit-none",
+          "after": [
+            {
+              "scenarioId": "@id-pptx-manipulation-autofit-none",
+              "name": "disable autofit",
+              "steps": [
+                {
+                  "text": "the sealed PPTX fixture fixture-5ad4b68acc5a926c020dbc94154c95fa6c40c7353a55b2f82504879b392e9a45 with ordered titles [\"Alpha\",\"Beta\",\"Gamma\"]",
+                  "argument": null
+                },
+                {
+                  "text": "slide 1 shape ID 2 is selected by its original part and unique identity",
+                  "argument": null
+                },
+                {
+                  "text": "production presentation editing APIs set autofit to none",
+                  "argument": null
+                },
+                {
+                  "text": "the resulting presentation is saved to a new path and independently parsed and reopened",
+                  "argument": null
+                },
+                {
+                  "text": "the saved slide 1 shape ID 2 has exact properties JSON {\"text\":\"Alpha\",\"autofit\":\"noAutofit\",\"fitChildCount\":1}",
+                  "argument": null
+                },
+                {
+                  "text": "only original member payloads [\"ppt/slides/slide1.xml\"] may change",
+                  "argument": null
+                },
+                {
+                  "text": "the original member name set is unchanged",
+                  "argument": null
+                },
+                {
+                  "text": "the supplied archive, unrelated member payloads and unaffected lexical XML spans retain their original bytes",
+                  "argument": null
+                },
+                {
+                  "text": "all pre-existing slides retain their original IDs, relationship IDs, targets, layout links and notes links",
+                  "argument": null
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "@id-pptx-manipulation-autofit-resize",
+          "after": [
+            {
+              "scenarioId": "@id-pptx-manipulation-autofit-resize",
+              "name": "resize shape autofit",
+              "steps": [
+                {
+                  "text": "the sealed PPTX fixture fixture-5ad4b68acc5a926c020dbc94154c95fa6c40c7353a55b2f82504879b392e9a45 with ordered titles [\"Alpha\",\"Beta\",\"Gamma\"]",
+                  "argument": null
+                },
+                {
+                  "text": "slide 1 shape ID 2 is selected by its original part and unique identity",
+                  "argument": null
+                },
+                {
+                  "text": "production presentation editing APIs set autofit to resize",
+                  "argument": null
+                },
+                {
+                  "text": "the resulting presentation is saved to a new path and independently parsed and reopened",
+                  "argument": null
+                },
+                {
+                  "text": "the saved slide 1 shape ID 2 has exact properties JSON {\"text\":\"Alpha\",\"autofit\":\"spAutoFit\",\"fitChildCount\":1}",
+                  "argument": null
+                },
+                {
+                  "text": "only original member payloads [\"ppt/slides/slide1.xml\"] may change",
+                  "argument": null
+                },
+                {
+                  "text": "the original member name set is unchanged",
+                  "argument": null
+                },
+                {
+                  "text": "the supplied archive, unrelated member payloads and unaffected lexical XML spans retain their original bytes",
+                  "argument": null
+                },
+                {
+                  "text": "all pre-existing slides retain their original IDs, relationship IDs, targets, layout links and notes links",
+                  "argument": null
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "afterLedgerRows": [
+        {
+          "id": "@id-pptx-manipulation-autofit-shrink",
+          "feature": "workflows/pptx/text-autofit.feature",
+          "expandedCases": 1,
+          "factIds": [],
+          "expectedOutcomes": [
+            "the saved slide 1 shape ID 2 has exact properties JSON {\"text\":\"Alpha\",\"autofit\":\"normAutofit\",\"fitChildCount\":1}",
+            "only original member payloads [\"ppt/slides/slide1.xml\"] may change",
+            "the original member name set is unchanged",
+            "the supplied archive, unrelated member payloads and unaffected lexical XML spans retain their original bytes",
+            "all pre-existing slides retain their original IDs, relationship IDs, targets, layout links and notes links"
+          ],
+          "consumers": {
+            "bun": {
+              "status": "planned",
+              "evidence": []
+            },
+            "go": {
+              "status": "planned",
+              "evidence": []
+            },
+            "python": {
+              "status": "planned",
+              "evidence": []
+            }
+          }
+        },
+        {
+          "id": "@id-pptx-manipulation-autofit-none",
+          "feature": "workflows/pptx/text-autofit.feature",
+          "expandedCases": 1,
+          "factIds": [],
+          "expectedOutcomes": [
+            "the saved slide 1 shape ID 2 has exact properties JSON {\"text\":\"Alpha\",\"autofit\":\"noAutofit\",\"fitChildCount\":1}",
+            "only original member payloads [\"ppt/slides/slide1.xml\"] may change",
+            "the original member name set is unchanged",
+            "the supplied archive, unrelated member payloads and unaffected lexical XML spans retain their original bytes",
+            "all pre-existing slides retain their original IDs, relationship IDs, targets, layout links and notes links"
+          ],
+          "consumers": {
+            "bun": {
+              "status": "planned",
+              "evidence": []
+            },
+            "go": {
+              "status": "planned",
+              "evidence": []
+            },
+            "python": {
+              "status": "planned",
+              "evidence": []
+            }
+          }
+        },
+        {
+          "id": "@id-pptx-manipulation-autofit-resize",
+          "feature": "workflows/pptx/text-autofit.feature",
+          "expandedCases": 1,
+          "factIds": [],
+          "expectedOutcomes": [
+            "the saved slide 1 shape ID 2 has exact properties JSON {\"text\":\"Alpha\",\"autofit\":\"spAutoFit\",\"fitChildCount\":1}",
+            "only original member payloads [\"ppt/slides/slide1.xml\"] may change",
+            "the original member name set is unchanged",
+            "the supplied archive, unrelated member payloads and unaffected lexical XML spans retain their original bytes",
+            "all pre-existing slides retain their original IDs, relationship IDs, targets, layout links and notes links"
+          ],
+          "consumers": {
+            "bun": {
+              "status": "planned",
+              "evidence": []
+            },
+            "go": {
+              "status": "planned",
+              "evidence": []
+            },
+            "python": {
+              "status": "planned",
+              "evidence": []
+            }
+          }
+        }
+      ]
+    },
+    {
+      "path": "workflows/pptx/creation.feature",
+      "beforeText": "@planned\nFeature: PPTX native title-slide authoring\n  This slice authors conservative OOXML title slides that reopen through the\n  native reader with validated relationships and content types. It does not\n  claim visual or Office rendering validation.\n\n  @id-pptx-create-new-minimal\n  Scenario: Create a minimal presentation and reopen two authored text slides in order\n    Given a new native PPTX presentation is created from scratch\n    When PPTX adds two text slides and saves then reopens the package\n    Then PPTX reopens both slides in order with title and subtitle placeholder text and valid minimal relationships\n\n  @id-pptx-create-anchor-preservation\n  Scenario: Append to a compatible existing deck without invalidating untouched slide anchors\n    Given a compatible existing PPTX title-slide deck is prepared\n    When PPTX appends a new text slide and edits the original title through its earlier anchor\n    Then PPTX keeps the original slide content ordered and preserved except for the anchored edit and gives the new slide independent relationships\n\n  @id-pptx-create-refusals\n  Scenario: Refuse invalid arguments and unsafe existing layouts without mutation\n    Given invalid-argument and unsafe-layout PPTX fixtures are prepared\n    When PPTX attempts unsupported creation edits on those fixtures\n    Then PPTX refuses both requests with rollback and leaves their package bytes unchanged\n",
+      "beforeSha256": "564ea5266151ebe9d0ce48eead073ecb4b3f944fca79c97556e8a677b518da55",
+      "afterSha256": "c4e9b456aa07ba8d82f1b9e76807defd507a91ca899703a20aebffc80f9dff9f",
+      "scenarios": [
+        {
+          "id": "@id-pptx-manipulation-insert-start",
+          "after": [
+            {
+              "scenarioId": "@id-pptx-manipulation-insert-start",
+              "name": "insert title slide at start",
+              "steps": [
+                {
+                  "text": "the sealed PPTX fixture fixture-5ad4b68acc5a926c020dbc94154c95fa6c40c7353a55b2f82504879b392e9a45 with ordered titles [\"Alpha\",\"Beta\",\"Gamma\"]",
+                  "argument": null
+                },
+                {
+                  "text": "the presentation slide list is selected by its original part and unique identity",
+                  "argument": null
+                },
+                {
+                  "text": "production presentation editing APIs insert a title slide at zero-based index 0 with title JSON \"First Slide\" and subtitle JSON \"Inserted subtitle\"",
+                  "argument": null
+                },
+                {
+                  "text": "the resulting presentation is saved to a new path and independently parsed and reopened",
+                  "argument": null
+                },
+                {
+                  "text": "the saved the presentation slide list has exact properties JSON {\"titles\":[\"First Slide\",\"Alpha\",\"Beta\",\"Gamma\"],\"insertedSubtitle\":\"Inserted subtitle\",\"oldSlideIdentityOrder\":[1,2,3]}",
+                  "argument": null
+                },
+                {
+                  "text": "only original member payloads [\"ppt/presentation.xml\",\"ppt/_rels/presentation.xml.rels\",\"[Content_Types].xml\"] may change",
+                  "argument": null
+                },
+                {
+                  "text": "exactly one slide XML part and its one layout relationship part are added with valid unique IDs and a resolved original layout; no members are removed",
+                  "argument": null
+                },
+                {
+                  "text": "the supplied archive, unrelated member payloads and unaffected lexical XML spans retain their original bytes",
+                  "argument": null
+                },
+                {
+                  "text": "all pre-existing slides retain their original IDs, relationship IDs, targets, layout links and notes links",
+                  "argument": null
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "@id-pptx-manipulation-insert-middle",
+          "after": [
+            {
+              "scenarioId": "@id-pptx-manipulation-insert-middle",
+              "name": "insert title slide at index one",
+              "steps": [
+                {
+                  "text": "the sealed PPTX fixture fixture-5ad4b68acc5a926c020dbc94154c95fa6c40c7353a55b2f82504879b392e9a45 with ordered titles [\"Alpha\",\"Beta\",\"Gamma\"]",
+                  "argument": null
+                },
+                {
+                  "text": "the presentation slide list is selected by its original part and unique identity",
+                  "argument": null
+                },
+                {
+                  "text": "production presentation editing APIs insert a title slide at zero-based index 1 with title JSON \"Middle Slide\" and subtitle JSON \"Inserted subtitle\"",
+                  "argument": null
+                },
+                {
+                  "text": "the resulting presentation is saved to a new path and independently parsed and reopened",
+                  "argument": null
+                },
+                {
+                  "text": "the saved the presentation slide list has exact properties JSON {\"titles\":[\"Alpha\",\"Middle Slide\",\"Beta\",\"Gamma\"],\"insertedSubtitle\":\"Inserted subtitle\",\"oldSlideIdentityOrder\":[1,2,3]}",
+                  "argument": null
+                },
+                {
+                  "text": "only original member payloads [\"ppt/presentation.xml\",\"ppt/_rels/presentation.xml.rels\",\"[Content_Types].xml\"] may change",
+                  "argument": null
+                },
+                {
+                  "text": "exactly one slide XML part and its one layout relationship part are added with valid unique IDs and a resolved original layout; no members are removed",
+                  "argument": null
+                },
+                {
+                  "text": "the supplied archive, unrelated member payloads and unaffected lexical XML spans retain their original bytes",
+                  "argument": null
+                },
+                {
+                  "text": "all pre-existing slides retain their original IDs, relationship IDs, targets, layout links and notes links",
+                  "argument": null
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "afterLedgerRows": [
+        {
+          "id": "@id-pptx-manipulation-insert-start",
+          "feature": "workflows/pptx/creation.feature",
+          "expandedCases": 1,
+          "factIds": [],
+          "expectedOutcomes": [
+            "the saved the presentation slide list has exact properties JSON {\"titles\":[\"First Slide\",\"Alpha\",\"Beta\",\"Gamma\"],\"insertedSubtitle\":\"Inserted subtitle\",\"oldSlideIdentityOrder\":[1,2,3]}",
+            "only original member payloads [\"ppt/presentation.xml\",\"ppt/_rels/presentation.xml.rels\",\"[Content_Types].xml\"] may change",
+            "exactly one slide XML part and its one layout relationship part are added with valid unique IDs and a resolved original layout; no members are removed",
+            "the supplied archive, unrelated member payloads and unaffected lexical XML spans retain their original bytes",
+            "all pre-existing slides retain their original IDs, relationship IDs, targets, layout links and notes links"
+          ],
+          "consumers": {
+            "bun": {
+              "status": "planned",
+              "evidence": []
+            },
+            "go": {
+              "status": "planned",
+              "evidence": []
+            },
+            "python": {
+              "status": "planned",
+              "evidence": []
+            }
+          }
+        },
+        {
+          "id": "@id-pptx-manipulation-insert-middle",
+          "feature": "workflows/pptx/creation.feature",
+          "expandedCases": 1,
+          "factIds": [],
+          "expectedOutcomes": [
+            "the saved the presentation slide list has exact properties JSON {\"titles\":[\"Alpha\",\"Middle Slide\",\"Beta\",\"Gamma\"],\"insertedSubtitle\":\"Inserted subtitle\",\"oldSlideIdentityOrder\":[1,2,3]}",
+            "only original member payloads [\"ppt/presentation.xml\",\"ppt/_rels/presentation.xml.rels\",\"[Content_Types].xml\"] may change",
+            "exactly one slide XML part and its one layout relationship part are added with valid unique IDs and a resolved original layout; no members are removed",
+            "the supplied archive, unrelated member payloads and unaffected lexical XML spans retain their original bytes",
+            "all pre-existing slides retain their original IDs, relationship IDs, targets, layout links and notes links"
+          ],
+          "consumers": {
+            "bun": {
+              "status": "planned",
+              "evidence": []
+            },
+            "go": {
+              "status": "planned",
+              "evidence": []
+            },
+            "python": {
+              "status": "planned",
+              "evidence": []
+            }
+          }
+        }
+      ]
+    },
+    {
+      "path": "workflows/pptx/slide-order.feature",
+      "beforeText": "@planned\nFeature: Reorder existing slides by an exact permutation\n  Reordering changes only presentation slide-list order. IDs, relationships,\n  slide parts and other payloads are retained. Slide handles retain identity.\n  This does not clone, delete, import or reconcile layout/theme metadata.\n\n  @id-pptx-slide-permutation\n  Scenario Outline: Reorder slides for <kind>\n    Given a native deck prepared for slide-order <kind>\n    When its slides are reordered for <kind>\n    Then reopened slide order and change receipt match <kind>\n    And slide identities and unrelated package bytes are retained\n    Examples:\n      | kind |\n      | reverse |\n      | rotate |\n      | same |\n      | empty |\n      | aliased |\n      | default-namespace |\n      | notes |\n\n  @id-pptx-slide-permutation-refusal\n  Scenario Outline: Refuse unsafe slide order for <kind>\n    Given an unsafe slide-order input <kind>\n    When its slide permutation is attempted\n    Then slide-order refusal preserves archive bytes and handle order\n    Examples:\n      | kind |\n      | duplicate-index |\n      | missing-index |\n      | out-of-range |\n      | fractional-index |\n      | duplicate-id |\n      | duplicate-target |\n      | wrong-mime |\n      | duplicate-list |\n      | lexical-barrier |\n      | custom-show |\n      | extension-metadata |\n      | protected |\n      | stale-main |\n      | stale-relationships |\n",
+      "beforeSha256": "6fd4c56131a68b47e47d91c286967127ab410026966f3132f9caf244bde7369e",
+      "afterSha256": "c05b9cffb791fd1e526ae2c931b795456bca35a74584641a781ed2cfa9222e52",
+      "scenarios": [
+        {
+          "id": "@id-pptx-manipulation-reorder",
+          "after": [
+            {
+              "scenarioId": "@id-pptx-manipulation-reorder",
+              "name": "relationship-ordered slides",
+              "steps": [
+                {
+                  "text": "the sealed PPTX fixture fixture-5ad4b68acc5a926c020dbc94154c95fa6c40c7353a55b2f82504879b392e9a45 with ordered titles [\"Alpha\",\"Beta\",\"Gamma\"]",
+                  "argument": null
+                },
+                {
+                  "text": "the presentation slide list is selected by its original part and unique identity",
+                  "argument": null
+                },
+                {
+                  "text": "production presentation editing APIs apply zero-based permutation [0,2,1]",
+                  "argument": null
+                },
+                {
+                  "text": "the resulting presentation is saved to a new path and independently parsed and reopened",
+                  "argument": null
+                },
+                {
+                  "text": "the saved the presentation slide list has exact properties JSON {\"titles\":[\"Alpha\",\"Gamma\",\"Beta\"],\"originalSlideIdentityOrder\":[1,3,2]}",
+                  "argument": null
+                },
+                {
+                  "text": "only original member payloads [\"ppt/presentation.xml\"] may change",
+                  "argument": null
+                },
+                {
+                  "text": "the original member name set is unchanged",
+                  "argument": null
+                },
+                {
+                  "text": "the supplied archive, unrelated member payloads and unaffected lexical XML spans retain their original bytes",
+                  "argument": null
+                },
+                {
+                  "text": "all pre-existing slides retain their original IDs, relationship IDs, targets, layout links and notes links",
+                  "argument": null
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "@id-pptx-manipulation-reorder-refusal",
+          "after": [
+            {
+              "scenarioId": "@id-pptx-manipulation-reorder-refusal",
+              "name": "invalid permutation atomic refusal",
+              "steps": [
+                {
+                  "text": "the sealed PPTX fixture fixture-5ad4b68acc5a926c020dbc94154c95fa6c40c7353a55b2f82504879b392e9a45 with ordered titles [\"Alpha\",\"Beta\",\"Gamma\"]",
+                  "argument": null
+                },
+                {
+                  "text": "the presentation slide list is selected by its original part and unique identity",
+                  "argument": null
+                },
+                {
+                  "text": "production presentation editing APIs attempt zero-based permutation [0,1,2,3,4,5]",
+                  "argument": null
+                },
+                {
+                  "text": "the resulting presentation is saved to a new path and independently parsed and reopened",
+                  "argument": null
+                },
+                {
+                  "text": "the saved the presentation slide list has exact properties JSON {\"refusal\":true,\"reason\":\"invalid-permutation\",\"titles\":[\"Alpha\",\"Beta\",\"Gamma\"],\"unchangedSession\":true,\"unchangedHandles\":true}",
+                  "argument": null
+                },
+                {
+                  "text": "only original member payloads [] may change",
+                  "argument": null
+                },
+                {
+                  "text": "the original member name set is unchanged",
+                  "argument": null
+                },
+                {
+                  "text": "the supplied archive, unrelated member payloads and unaffected lexical XML spans retain their original bytes, and the refusal returns invalid-permutation without changing session or handles",
+                  "argument": null
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "afterLedgerRows": [
+        {
+          "id": "@id-pptx-manipulation-reorder",
+          "feature": "workflows/pptx/slide-order.feature",
+          "expandedCases": 1,
+          "factIds": [],
+          "expectedOutcomes": [
+            "the saved the presentation slide list has exact properties JSON {\"titles\":[\"Alpha\",\"Gamma\",\"Beta\"],\"originalSlideIdentityOrder\":[1,3,2]}",
+            "only original member payloads [\"ppt/presentation.xml\"] may change",
+            "the original member name set is unchanged",
+            "the supplied archive, unrelated member payloads and unaffected lexical XML spans retain their original bytes",
+            "all pre-existing slides retain their original IDs, relationship IDs, targets, layout links and notes links"
+          ],
+          "consumers": {
+            "bun": {
+              "status": "planned",
+              "evidence": []
+            },
+            "go": {
+              "status": "planned",
+              "evidence": []
+            },
+            "python": {
+              "status": "planned",
+              "evidence": []
+            }
+          }
+        },
+        {
+          "id": "@id-pptx-manipulation-reorder-refusal",
+          "feature": "workflows/pptx/slide-order.feature",
+          "expandedCases": 1,
+          "factIds": [],
+          "expectedOutcomes": [
+            "the saved the presentation slide list has exact properties JSON {\"refusal\":true,\"reason\":\"invalid-permutation\",\"titles\":[\"Alpha\",\"Beta\",\"Gamma\"],\"unchangedSession\":true,\"unchangedHandles\":true}",
+            "only original member payloads [] may change",
+            "the original member name set is unchanged",
+            "the supplied archive, unrelated member payloads and unaffected lexical XML spans retain their original bytes, and the refusal returns invalid-permutation without changing session or handles"
+          ],
+          "consumers": {
+            "bun": {
+              "status": "planned",
+              "evidence": []
+            },
+            "go": {
+              "status": "planned",
+              "evidence": []
+            },
+            "python": {
+              "status": "planned",
+              "evidence": []
+            }
+          }
+        }
+      ]
+    },
+    {
+      "path": "workflows/pptx/tables.feature",
+      "beforeText": "@planned\nFeature: PPTX native rectangular tables\n  Native PPTX table authoring preserves geometry, conservative cell formatting,\n  and refusal atomicity for stale and unsupported table topologies.\n\n  @id-pptx-table-roundtrip-geometry\n  Scenario: Save and reopen an authored table while keeping exact geometry sums\n    Given PPTX table round-trip scenario is prepared from a new presentation\n    When PPTX authors a rectangular table and saves then reopens it\n    Then PPTX preserves the table size, exact grid sums, and cell text after reopen\n\n  @id-pptx-table-formatting\n  Scenario: Preserve simple table cell formatting across update and reopen\n    Given PPTX styled table fixture is prepared\n    When PPTX replaces a styled table cell and saves then reopens the presentation\n    Then PPTX preserves table cell formatting across the update and reopen\n\n  @id-pptx-table-stale-handle\n  Scenario: Refuse stale table cell handles atomically after slide mutation\n    Given PPTX stale table handle scenario is prepared from a new presentation\n    When PPTX mutates the slide and retries a stale table cell handle\n    Then PPTX refuses the stale table handle without mutating the package\n\n  @id-pptx-table-atomic-refusals\n  Scenario Outline: Refuse unsupported table topology <case> atomically\n    Given PPTX table refusal scenario \"<case>\" is prepared\n    When PPTX attempts the table refusal \"<case>\"\n    Then PPTX refusal \"<code>\" is returned atomically for table refusal \"<case>\"\n\n    Examples:\n      | case            | code                           |\n      | merged-cell     | PPTX_TABLE_MERGE_UNSUPPORTED   |\n      | malformed-merge | PPTX_TABLE_STRUCTURE_UNSUPPORTED |\n",
+      "beforeSha256": "d9808ba4c51eecbc3b60e0b5c98e16f749f6618237de05010d2968e6cb88aed7",
+      "afterSha256": "f0b94c529d06814fab2a0792afd353a581424efb124636f51abcb200502d6f29",
+      "scenarios": [
+        {
+          "id": "@id-pptx-manipulation-table-values",
+          "after": [
+            {
+              "scenarioId": "@id-pptx-manipulation-table-values",
+              "name": "author exact 3x3 table values",
+              "steps": [
+                {
+                  "text": "the sealed PPTX fixture fixture-5ad4b68acc5a926c020dbc94154c95fa6c40c7353a55b2f82504879b392e9a45 with ordered titles [\"Alpha\",\"Beta\",\"Gamma\"]",
+                  "argument": null
+                },
+                {
+                  "text": "slide 1 is selected by its original part and unique identity",
+                  "argument": null
+                },
+                {
+                  "text": "production presentation editing APIs author a 3-row 3-column table at EMU x=914400 y=1828800 width=10058400 height=2743200 with rows [[\"Name\",\"Value\",\"Status\"],[\"Item 1\",\"100\",\"OK\"],[\"Item 2\",\"200\",\"Pending\"]]",
+                  "argument": null
+                },
+                {
+                  "text": "the resulting presentation is saved to a new path and independently parsed and reopened",
+                  "argument": null
+                },
+                {
+                  "text": "the saved slide 1 has exact properties JSON {\"cells\":[[\"Name\",\"Value\",\"Status\"],[\"Item 1\",\"100\",\"OK\"],[\"Item 2\",\"200\",\"Pending\"]],\"rows\":3,\"columns\":3,\"x\":914400,\"y\":1828800,\"width\":10058400,\"height\":2743200}",
+                  "argument": null
+                },
+                {
+                  "text": "only original member payloads [\"ppt/slides/slide1.xml\"] may change",
+                  "argument": null
+                },
+                {
+                  "text": "the original member name set is unchanged",
+                  "argument": null
+                },
+                {
+                  "text": "the supplied archive, unrelated member payloads and unaffected lexical XML spans retain their original bytes",
+                  "argument": null
+                },
+                {
+                  "text": "all pre-existing slides retain their original IDs, relationship IDs, targets, layout links and notes links",
+                  "argument": null
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "@id-pptx-manipulation-table-geometry",
+          "after": [
+            {
+              "scenarioId": "@id-pptx-manipulation-table-geometry",
+              "name": "EMU geometry and grid sums",
+              "steps": [
+                {
+                  "text": "the sealed PPTX fixture fixture-5ad4b68acc5a926c020dbc94154c95fa6c40c7353a55b2f82504879b392e9a45 with ordered titles [\"Alpha\",\"Beta\",\"Gamma\"]",
+                  "argument": null
+                },
+                {
+                  "text": "slide 1 is selected by its original part and unique identity",
+                  "argument": null
+                },
+                {
+                  "text": "production presentation editing APIs author a 2-row 2-column table at EMU x=914400 y=1828800 width=10058400 height=2743200",
+                  "argument": null
+                },
+                {
+                  "text": "the resulting presentation is saved to a new path and independently parsed and reopened",
+                  "argument": null
+                },
+                {
+                  "text": "the saved slide 1 has exact properties JSON {\"rows\":2,\"columns\":2,\"cells\":[[\"\",\"\"],[\"\",\"\"]],\"x\":914400,\"y\":1828800,\"width\":10058400,\"height\":2743200,\"columnWidths\":[5029200,5029200],\"rowHeights\":[1371600,1371600]}",
+                  "argument": null
+                },
+                {
+                  "text": "only original member payloads [\"ppt/slides/slide1.xml\"] may change",
+                  "argument": null
+                },
+                {
+                  "text": "the original member name set is unchanged",
+                  "argument": null
+                },
+                {
+                  "text": "the supplied archive, unrelated member payloads and unaffected lexical XML spans retain their original bytes",
+                  "argument": null
+                },
+                {
+                  "text": "all pre-existing slides retain their original IDs, relationship IDs, targets, layout links and notes links",
+                  "argument": null
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "afterLedgerRows": [
+        {
+          "id": "@id-pptx-manipulation-table-values",
+          "feature": "workflows/pptx/tables.feature",
+          "expandedCases": 1,
+          "factIds": [],
+          "expectedOutcomes": [
+            "the saved slide 1 has exact properties JSON {\"cells\":[[\"Name\",\"Value\",\"Status\"],[\"Item 1\",\"100\",\"OK\"],[\"Item 2\",\"200\",\"Pending\"]],\"rows\":3,\"columns\":3,\"x\":914400,\"y\":1828800,\"width\":10058400,\"height\":2743200}",
+            "only original member payloads [\"ppt/slides/slide1.xml\"] may change",
+            "the original member name set is unchanged",
+            "the supplied archive, unrelated member payloads and unaffected lexical XML spans retain their original bytes",
+            "all pre-existing slides retain their original IDs, relationship IDs, targets, layout links and notes links"
+          ],
+          "consumers": {
+            "bun": {
+              "status": "planned",
+              "evidence": []
+            },
+            "go": {
+              "status": "planned",
+              "evidence": []
+            },
+            "python": {
+              "status": "planned",
+              "evidence": []
+            }
+          }
+        },
+        {
+          "id": "@id-pptx-manipulation-table-geometry",
+          "feature": "workflows/pptx/tables.feature",
+          "expandedCases": 1,
+          "factIds": [],
+          "expectedOutcomes": [
+            "the saved slide 1 has exact properties JSON {\"rows\":2,\"columns\":2,\"cells\":[[\"\",\"\"],[\"\",\"\"]],\"x\":914400,\"y\":1828800,\"width\":10058400,\"height\":2743200,\"columnWidths\":[5029200,5029200],\"rowHeights\":[1371600,1371600]}",
+            "only original member payloads [\"ppt/slides/slide1.xml\"] may change",
+            "the original member name set is unchanged",
+            "the supplied archive, unrelated member payloads and unaffected lexical XML spans retain their original bytes",
+            "all pre-existing slides retain their original IDs, relationship IDs, targets, layout links and notes links"
+          ],
+          "consumers": {
+            "bun": {
+              "status": "planned",
+              "evidence": []
+            },
+            "go": {
+              "status": "planned",
+              "evidence": []
+            },
+            "python": {
+              "status": "planned",
+              "evidence": []
+            }
+          }
+        }
+      ]
+    },
+    {
+      "path": "workflows/pptx/notes.feature",
+      "beforeText": "@planned\nFeature: Presentation notes inspection and editing\n\n  Rule: PPTX relationship-ordered reads and anchored text replacement\n    These reads follow presentation relationships and retain existing notes.\n    Reading missing notes does not create a notes part.\n\n    @id-pptx-order-notes-read\n    Scenario: Follow presentation relationships and keep notes reads non-mutating\n      Given PPTX ordered notes fixtures are prepared\n      When PPTX opens the reordered notes fixture and probes notes reads\n      Then PPTX keeps slide order, notes blank lines, and notes reads non-mutating without creating missing notes parts\n\n  Rule: Read an authored collection without creating notes for a slide that lacks them\n    This collection profile returns nonempty speaker notes in presentation order.\n    It does not cover relationship permutations or preserving blank lines inside notes.\n\n    @profile-notes-collection @id-pptx-notes-collection-read\n    Scenario Outline: Read three notes and one absent note from a <variant> four-slide presentation\n      Given the sealed blank presentation fixture-c54a7b746c0328fc1930525edd91387eedbbca69a6f388f7ec024150187b6bab has no slides\n      And a temporary copy has four slides appended in order using layout index 1\n      And slides 1, 2 and 3 have notes text \"Notes for slide 1\", \"Notes for slide 2\" and \"Notes for slide 3\" respectively\n      And the four slide title placeholders contain <titles>; slide 4 has no notes slide or notes relationship\n      And this authored copy is saved and reopened before its archive SHA-256 and every member payload are recorded\n      When all-slide notes, each slide's notes, and out-of-range slides 0 and 5 are read without writing\n      Then the all-slide result equals {\"file\":\"notes-collection.pptx\",\"slides_with_notes\":3,\"total_slides\":4,\"notes\":[{\"slide_number\":1,\"notes\":\"Notes for slide 1\"},{\"slide_number\":2,\"notes\":\"Notes for slide 2\"},{\"slide_number\":3,\"notes\":\"Notes for slide 3\"}]}\n      And slides 1, 2 and 3 each return their exact one-based slide number, has_notes true and matching literal notes\n      And slide 4 returns {\"file\":\"notes-collection.pptx\",\"slide_number\":4,\"has_notes\":false,\"notes\":\"\"}\n      And slides 0 and 5 return exactly \"Slide 0 not found. Presentation has 4 slides.\" and \"Slide 5 not found. Presentation has 4 slides.\" as errors\n      And after every read or refusal the authored source archive SHA-256, bytes, every member payload and relationship equal the recorded values\n      And no slide-4 notes part or slide-4 notes relationship has been created\n      And the sealed blank presentation fixture bytes remain unchanged\n\n      Examples:\n        | variant  | titles                                |\n        | untitled | [\"\",\"\",\"\",\"\"]                       |\n        | titled   | [\"Slide 1\",\"Slide 2\",\"Slide 3\",\"Slide 4\"] |\n\n  Rule: Edit existing slide notes while retaining unrelated presentation payloads\n    An existing notes slide is selected by its related slide part. Notes edits and\n    refusals use existing-part targets; creating a notes part is outside this profile.\n\n    @profile-existing-notes @id-pptx-go-notes-exact-splice\n    Scenario: Replace existing speaker text with one changed notes part after save and reopen\n      Given fixture fixture-04faba67841dda25dc3ff9e3e6e345e6feeeef1cf25a6b9065bf5fbdc83163dc\n      And the notes for ppt/slides/slide1.xml read Remember to emphasize the Gothic elements\n      When those notes are replaced with Updated speaker notes and saved to a new PPTX path\n      Then the in-memory ppt/notesSlides/notesSlide1.xml payload equals one replacement of the original speaker text\n      And the save receipt lists exactly ppt/notesSlides/notesSlide1.xml as its only changed part\n      And every other part in the original package graph has the same delivered payload bytes\n      And reopening the saved PPTX reads Updated speaker notes for ppt/slides/slide1.xml\n\n    @profile-existing-notes @id-pptx-go-notes-refusal-and-noop-custody\n    Scenario: Foreign and invalid notes writes refuse before an identical-text no-op\n      Given two presentation edit sessions open fixture fixture-04faba67841dda25dc3ff9e3e6e345e6feeeef1cf25a6b9065bf5fbdc83163dc\n      And the first session holds notes for ppt/slides/slide1.xml\n      When the other session attempts to write foreign through that target\n      And the first session attempts JSON notes text \"bad\\u0000\", one invalid UTF-8 byte FF, and JSON text \"two\\tcolumns\"\n      Then each foreign or invalid write returns an error\n      And replacing through the held target with its unchanged text succeeds\n      And serialising the first session at that point gives the exact original fixture archive bytes\n\n    @profile-existing-notes @id-pptx-go-notes-clear-stale-refill\n    Scenario: Clear existing notes and refuse another held target before refilling\n      Given a presentation edit session holds a notes target for ppt/slides/slide1.xml from fixture fixture-04faba67841dda25dc3ff9e3e6e345e6feeeef1cf25a6b9065bf5fbdc83163dc\n      And a second notes target is found in the same session before clearing\n      When the first target replaces its notes with the empty string\n      Then replacement through the second held target with stale returns an error\n      And a newly found notes target reads the empty string\n      And replacing through that fresh target with refilled succeeds\n\n    @profile-existing-notes @id-pptx-go-notes-part-fingerprint-refusal\n    Scenario: A changed notes-part fingerprint refuses a held target\n      Given a presentation edit session holds notes for ppt/slides/slide1.xml from fixture fixture-04faba67841dda25dc3ff9e3e6e345e6feeeef1cf25a6b9065bf5fbdc83163dc\n      When the session's retained ppt/notesSlides/notesSlide1.xml payload is directly replaced by changing Gothic to Victorian\n      And the older target attempts to replace notes with stale\n      Then that notes replacement returns an error\n\n    @profile-existing-notes @id-pptx-go-notes-self-closing-fill\n    Scenario: Fill a self-closing notes text leaf and read back the result\n      Given the pinned notes fixture's first notes paragraph is replaced in memory by <a:p><a:r><a:rPr b=\"1\"/><a:t/></a:r></a:p>\n      When the editor replaces its notes with filled\n      Then a newly found notes target for ppt/slides/slide1.xml reads filled\n\n    @profile-existing-notes @id-pptx-go-notes-edge-space-preserve\n    Scenario: Edge-spaced notes text receives xml:space preserve in the notes XML\n      Given the pinned notes fixture's first notes paragraph is replaced in memory by <a:p><a:r><a:t xml:space=\"default\">old</a:t></a:r></a:p>\n      When the editor replaces its notes with JSON \" leading \"\n      Then the parsed ppt/notesSlides/notesSlide1.xml has a DrawingML text leaf equal to JSON \" leading \"\n      And that same text leaf has an XML-namespace space attribute equal to preserve\n\n    @profile-existing-notes @id-pptx-go-notes-multiline-template\n    Scenario: A multiline replacement retains boundary empty paragraphs without borrowing later bold\n      Given the pinned notes fixture's first notes paragraph is replaced in memory by <a:p><a:pPr algn=\"ctr\"/><a:r><a:t>one</a:t></a:r><a:r><a:rPr b=\"1\"/><a:t>two</a:t></a:r></a:p>\n      When an identical-text replacement is applied to that notes target\n      Then the notes part payload bytes are unchanged\n      When the editor replaces through that target with JSON \"\\n A&B \\n雪\\n\"\n      Then a newly found notes target reads JSON \"\\n A&B \\n雪\\n\" across four paragraphs\n      And the complete notes part has no literal b=\"1\" attribute\n\n    @profile-existing-notes @id-pptx-go-notes-template-fragments\n    Scenario: A two-line replacement repeats only the selected template property fragments\n      Given the pinned notes fixture's first notes paragraph is replaced in memory by <a:p><a:pPr algn=\"ctr\"><a:buChar char=\"•\"/><a:defRPr sz=\"1200\"/></a:pPr><a:r><a:rPr b=\"1\"><a:solidFill><a:srgbClr val=\"112233\"/></a:solidFill><a:latin typeface=\"F&amp;F\"/></a:rPr><a:t>old</a:t></a:r><a:endParaRPr lang=\"en-US\"/></a:p>\n      When the editor replaces its notes with JSON \"a\\nb\"\n      Then the notes XML contains exactly two copies each of val=\"112233\", typeface=\"F&amp;F\", lang=\"en-US\" and char=\"•\"\n",
+      "beforeSha256": "181044e6ee3fabbdb8096b626965155e7db97764bb64223e0968dc50dd5e3daa",
+      "afterSha256": "edde465c627e5fef5f048d8ad9da72db6a5e030b73838b14e056c87b3c2cbafd",
+      "scenarios": [
+        {
+          "id": "@id-pptx-manipulation-set-notes",
+          "after": [
+            {
+              "scenarioId": "@id-pptx-manipulation-set-notes",
+              "name": "edit existing speaker text",
+              "steps": [
+                {
+                  "text": "the sealed PPTX fixture fixture-5ad4b68acc5a926c020dbc94154c95fa6c40c7353a55b2f82504879b392e9a45 with ordered titles [\"Alpha\",\"Beta\",\"Gamma\"]",
+                  "argument": null
+                },
+                {
+                  "text": "slide 1 existing notes body is selected by its original part and unique identity",
+                  "argument": null
+                },
+                {
+                  "text": "production presentation editing APIs replace notes with JSON \"These are speaker notes\"",
+                  "argument": null
+                },
+                {
+                  "text": "the resulting presentation is saved to a new path and independently parsed and reopened",
+                  "argument": null
+                },
+                {
+                  "text": "the saved slide 1 existing notes body has exact properties JSON {\"text\":\"These are speaker notes\",\"paragraphs\":[\"These are speaker notes\"]}",
+                  "argument": null
+                },
+                {
+                  "text": "only original member payloads [\"ppt/notesSlides/notesSlide1.xml\"] may change",
+                  "argument": null
+                },
+                {
+                  "text": "the original member name set is unchanged",
+                  "argument": null
+                },
+                {
+                  "text": "the supplied archive, unrelated member payloads and unaffected lexical XML spans retain their original bytes",
+                  "argument": null
+                },
+                {
+                  "text": "all pre-existing slides retain their original IDs, relationship IDs, targets, layout links and notes links",
+                  "argument": null
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "@id-pptx-manipulation-notes-readback",
+          "after": [
+            {
+              "scenarioId": "@id-pptx-manipulation-notes-readback",
+              "name": "multiline notes save/reopen",
+              "steps": [
+                {
+                  "text": "the sealed PPTX fixture fixture-5ad4b68acc5a926c020dbc94154c95fa6c40c7353a55b2f82504879b392e9a45 with ordered titles [\"Alpha\",\"Beta\",\"Gamma\"]",
+                  "argument": null
+                },
+                {
+                  "text": "slide 1 existing notes body is selected by its original part and unique identity",
+                  "argument": null
+                },
+                {
+                  "text": "production presentation editing APIs replace notes with JSON \"Speaker notes content\\nsecond line\"",
+                  "argument": null
+                },
+                {
+                  "text": "the resulting presentation is saved to a new path and independently parsed and reopened",
+                  "argument": null
+                },
+                {
+                  "text": "the saved slide 1 existing notes body has exact properties JSON {\"text\":\"Speaker notes content\\nsecond line\",\"paragraphs\":[\"Speaker notes content\",\"second line\"]}",
+                  "argument": null
+                },
+                {
+                  "text": "only original member payloads [\"ppt/notesSlides/notesSlide1.xml\"] may change",
+                  "argument": null
+                },
+                {
+                  "text": "the original member name set is unchanged",
+                  "argument": null
+                },
+                {
+                  "text": "the supplied archive, unrelated member payloads and unaffected lexical XML spans retain their original bytes",
+                  "argument": null
+                },
+                {
+                  "text": "all pre-existing slides retain their original IDs, relationship IDs, targets, layout links and notes links",
+                  "argument": null
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "afterLedgerRows": [
+        {
+          "id": "@id-pptx-manipulation-set-notes",
+          "feature": "workflows/pptx/notes.feature",
+          "expandedCases": 1,
+          "factIds": [],
+          "expectedOutcomes": [
+            "the saved slide 1 existing notes body has exact properties JSON {\"text\":\"These are speaker notes\",\"paragraphs\":[\"These are speaker notes\"]}",
+            "only original member payloads [\"ppt/notesSlides/notesSlide1.xml\"] may change",
+            "the original member name set is unchanged",
+            "the supplied archive, unrelated member payloads and unaffected lexical XML spans retain their original bytes",
+            "all pre-existing slides retain their original IDs, relationship IDs, targets, layout links and notes links"
+          ],
+          "consumers": {
+            "bun": {
+              "status": "planned",
+              "evidence": []
+            },
+            "go": {
+              "status": "planned",
+              "evidence": []
+            },
+            "python": {
+              "status": "planned",
+              "evidence": []
+            }
+          }
+        },
+        {
+          "id": "@id-pptx-manipulation-notes-readback",
+          "feature": "workflows/pptx/notes.feature",
+          "expandedCases": 1,
+          "factIds": [],
+          "expectedOutcomes": [
+            "the saved slide 1 existing notes body has exact properties JSON {\"text\":\"Speaker notes content\\nsecond line\",\"paragraphs\":[\"Speaker notes content\",\"second line\"]}",
+            "only original member payloads [\"ppt/notesSlides/notesSlide1.xml\"] may change",
+            "the original member name set is unchanged",
+            "the supplied archive, unrelated member payloads and unaffected lexical XML spans retain their original bytes",
+            "all pre-existing slides retain their original IDs, relationship IDs, targets, layout links and notes links"
+          ],
+          "consumers": {
+            "bun": {
+              "status": "planned",
+              "evidence": []
+            },
+            "go": {
+              "status": "planned",
+              "evidence": []
+            },
+            "python": {
+              "status": "planned",
+              "evidence": []
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

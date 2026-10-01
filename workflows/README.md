@@ -45,17 +45,19 @@ candidate file; those candidates are not canonical or presumed portable.
 
 | Group | Feature | IDs | Cases | Tags (scenario counts) | Fully generalized? |
 |---|---|---:|---:|---|---|
-| PPTX | [creation.feature](pptx/creation.feature) | 3 | 3 | incomplete: 3 | no |
+| PPTX | [bullets.feature](pptx/bullets.feature) | 5 | 5 | generalized: 5 | yes |
+| PPTX | [creation.feature](pptx/creation.feature) | 5 | 5 | generalized: 2; incomplete: 3 | no |
 | PPTX | [layout-recommendation.feature](pptx/layout-recommendation.feature) | 2 | 6 | profile-specific: 2 | no |
 | PPTX | [mutation-safety.feature](pptx/mutation-safety.feature) | 3 | 6 | generalized: 3 | yes |
-| PPTX | [notes.feature](pptx/notes.feature) | 10 | 11 | profile-specific: 9; incomplete: 1 | no |
+| PPTX | [notes.feature](pptx/notes.feature) | 12 | 13 | generalized: 2; profile-specific: 9; incomplete: 1 | no |
 | PPTX | [preservation.feature](pptx/preservation.feature) | 1 | 1 | generalized: 1 | yes |
 | PPTX | [slide-import.feature](pptx/slide-import.feature) | 1 | 1 | incomplete: 1 | no |
-| PPTX | [slide-order.feature](pptx/slide-order.feature) | 2 | 21 | incomplete: 2 | no |
+| PPTX | [slide-order.feature](pptx/slide-order.feature) | 4 | 23 | generalized: 2; incomplete: 2 | no |
 | PPTX | [slide-visibility.feature](pptx/slide-visibility.feature) | 2 | 2 | generalized: 1; incomplete: 1 | no |
-| PPTX | [tables.feature](pptx/tables.feature) | 4 | 5 | incomplete: 4 | no |
+| PPTX | [tables.feature](pptx/tables.feature) | 6 | 7 | generalized: 2; incomplete: 4 | no |
+| PPTX | [text-autofit.feature](pptx/text-autofit.feature) | 3 | 3 | generalized: 3 | yes |
 | PPTX | [text-box.feature](pptx/text-box.feature) | 2 | 23 | incomplete: 2 | no |
-| PPTX | [text.feature](pptx/text.feature) | 3 | 3 | incomplete: 3 | no |
+| PPTX | [text.feature](pptx/text.feature) | 7 | 7 | generalized: 4; incomplete: 3 | no |
 
 ## XLSX
 

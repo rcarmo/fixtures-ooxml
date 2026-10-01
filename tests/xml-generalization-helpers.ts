@@ -1,3 +1,17 @@
+import pptxManipulation from '../ledgers/pptx-manipulation.json';
+/** Remove only the exact reviewed additive PPTX profiles for historical receipts. */
+export function beforePptxManipulationFeature(path:string,text:string):string {
+  const f=pptxManipulation.files.find(f=>f.path===path);if(!f)return text;
+  if(text===f.beforeText)return text;
+  if(new Bun.CryptoHasher('sha256').update(text).digest('hex')!==f.afterSha256)throw Error('Unreviewed PPTX manipulation feature bytes');
+  for(const s of f.scenarios)if(JSON.stringify(cases(path,text).filter(c=>c.scenarioId===s.id))!==JSON.stringify(s.after))throw Error('Unreviewed PPTX manipulation predicates: '+s.id);
+  return f.beforeText;
+}
+export function beforePptxManipulationLedger(ledger:any){
+  const added=pptxManipulation.files.flatMap(f=>f.afterLedgerRows);
+  for(const row of added){const current=ledger.workflows.find((r:any)=>r.id===row.id);if(JSON.stringify(current)!==JSON.stringify(row))throw Error('Unreviewed PPTX manipulation ledger: '+row.id);}
+  return {...ledger,features:ledger.features.filter((p:string)=>!pptxManipulation.files.some(f=>f.path===p&&!f.beforeText)),workflows:ledger.workflows.filter((r:any)=>!added.some(s=>s.id===r.id))};
+}
 import xmlMigration from '../ledgers/xml-runtime-generalization.json';
 import cellMigration from '../ledgers/cell-runtime-generalization.json';
 import packageMigration from '../ledgers/package-runtime-generalization.json';
@@ -5,6 +19,7 @@ import transactionMigration from '../ledgers/transaction-runtime-generalization.
 import lexicalAlignment from '../ledgers/xml-lexical-alignment.json';
 import packageAlignment from '../ledgers/package-alignment.json';
 export function beforePackageAlignmentFeature(path:string,text:string):string {
+  text=beforePptxManipulationFeature(path,text);
   const m=packageAlignment.files.find(f=>f.path===path);if(!m)return text;
   if(text===m.beforeText)return text;
   for(const s of m.scenarios)if(JSON.stringify(cases(path,text).filter(c=>c.scenarioId===s.id))!==JSON.stringify(s.after))throw Error('Unreviewed package alignment predicates: '+s.id);
@@ -18,6 +33,7 @@ export function beforePackageAlignmentCase<T extends {scenarioId:string;steps:un
   return n<0?row:{...row,...cases(f!.path,f!.beforeText).filter(c=>c.scenarioId===row.scenarioId)[n]} as T;
 }
 export function beforePackageAlignmentLedger(ledger:any){
+  ledger=beforePptxManipulationLedger(ledger);
   return {...ledger,workflows:ledger.workflows.map((row:any)=>{
     const current=packageAlignment.files.flatMap(m=>m.afterLedgerRows).find(r=>r.id===row.id);if(!current)return row;
     if(JSON.stringify(row)!==JSON.stringify(current))throw Error('Unreviewed package alignment ledger: '+row.id);

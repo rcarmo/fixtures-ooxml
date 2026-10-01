@@ -4,6 +4,7 @@ import {registerWorkflow} from '../scripts/register-workflow.ts';
 import {Parser,AstBuilder,GherkinClassicTokenMatcher,compile} from '@cucumber/gherkin';
 import {IdGenerator} from '@cucumber/messages';
 import {beforeWordingCase,beforeWordingTags} from './runtime-wording-helpers.ts';
+import {beforePptxManipulationFeature} from './xml-generalization-helpers.ts';
 
 test('every canonical feature belongs to a format or common package/XML operation family',async()=>{
  const ledger=await Bun.file('ledgers/workflows.json').json();
@@ -26,10 +27,10 @@ test('format migration preserves every scenario and compiled case with no retire
  const baseline=migration.scenarios.map(({id,from,sourceSha256,caseSha256,tags}:any)=>({id,from,sourceSha256,caseSha256,tags}));
  expect(new Bun.CryptoHasher('sha256').update(JSON.stringify(baseline)).digest('hex')).toBe('49ad0c905402375a2852854085c0175a88c8e965d91c34be98fd849e8bedc63d');
  const actual=new Map<string,{path:string,hashes:string[]}>();
- for(const path of ledger.features)for(const row of cases(path,await Bun.file(path).text())){
+ for(const path of ledger.features){const historical=beforePptxManipulationFeature(path,await Bun.file(path).text());if(!historical)continue;for(const row of cases(path,historical)){
   const record=actual.get(row.scenarioId)??{path,hashes:[]};expect(record.path).toBe(path);
   record.hashes.push(new Bun.CryptoHasher('sha256').update(JSON.stringify(beforeWordingCase(row))).digest('hex'));actual.set(row.scenarioId,record);
- }
+ }}
  expect([...actual.values()].reduce((n,r)=>n+r.hashes.length,0)).toBe(791);expect(actual.size).toBe(304);
  const added=[...actual.keys()].filter(id=>!migration.scenarios.some((s:any)=>s.id===id));expect(added.sort()).toEqual([...['author-refusal','custody','no-op','persistence','plain-edit','refusal','rollback'].map(n=>'@id-docx-tracking-settings-'+n),...['roundtrip','content-refusal','structure-refusal','coordinate-refusal','rollback','encoding','stale'].map(n=>'@id-docx-horizontal-merge-'+n),...['roundtrip','content-refusal','structure-refusal','coordinate-refusal','rollback','encoding','stale'].map(n=>'@id-docx-vertical-merge-'+n),...['values','empty','placeholders','refusal','bounds','encoding','snapshot','scope'].map(n=>'@id-docx-template-inventory-'+n),...['inspection','resolution','noop','refusal','rollback','encoding','unsupported','limit'].map(n=>'@id-docx-existing-thread-'+n),...['roundtrip','scope','default','refusal','encoding','rollback','empty','guards'].map(n=>'@id-docx-run-property-revisions-'+n),...['roundtrip','scope','defaults','refusal','encoding','rollback','guards','dates','ordering'].map(n=>'@id-docx-paired-move-'+n),...['@id-zip-unsigned-descriptor-signature-collision','@id-package-admission-negative-budget','@id-zip-physical-member-overlap-refusal','@id-docx-audit-completion-read','@id-docx-audit-completion-placeholders','@id-docx-audit-completion-missing-file','@id-pptx-notes-collection-read','@id-pptx-layout-recommendation-ranked','@id-pptx-layout-recommendation-missing-file','@id-docx-review-multistory-resolution','@id-parity-docx-review','@id-docx-commentsextended-content-type','@id-xlsx-derived-cache-completeness','@id-xlsx-owned-calculation-chain-invalidation','@id-pptx-slide-visibility-retained-inputs','@id-pptx-office-hidden-slide-positive','@id-parity-inherited','@id-parity-pptx-composition','@id-parity-xlsx-structure','@id-parity-native-oracle','@id-office-xlsx-independent-style-reader']].sort());
  expect(migration.scenarios.reduce((n:number,s:any)=>n+actual.get(s.id)!.hashes.length,0)).toBe(562);

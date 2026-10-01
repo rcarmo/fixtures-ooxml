@@ -46,19 +46,19 @@ portable API profile; the scenario reason records the gap.
 | Group | Features | IDs | Cases | generalized | profile-specific | runtime-specific | incomplete |
 |---|---:|---:|---:|---:|---:|---:|---:|
 | DOCX | 24 | 158 | 482 | 69 | 56 | 0 | 33 |
-| PPTX | 11 | 33 | 82 | 5 | 11 | 0 | 17 |
+| PPTX | 13 | 53 | 102 | 25 | 11 | 0 | 17 |
 | XLSX | 12 | 43 | 109 | 12 | 14 | 0 | 17 |
 | PACKAGE | 10 | 36 | 68 | 29 | 6 | 0 | 1 |
 | XML | 4 | 33 | 47 | 22 | 11 | 0 | 0 |
 | OFFICE | 1 | 1 | 3 | 0 | 0 | 0 | 1 |
-| ALL | 62 | 304 | 791 | 137 | 98 | 0 | 69 |
+| ALL | 64 | 324 | 811 | 157 | 98 | 0 | 69 |
 
-16 of 62 canonical feature files are fully generalized throughout.
+18 of 64 canonical feature files are fully generalized throughout.
 The remaining files contain profile-specific, runtime-specific or incomplete
-scenarios; 22 files mix categories and require ID-level selection.
+scenarios; 26 files mix categories and require ID-level selection.
 The four category columns count scenario IDs, not expanded example cases.
 A complete [feature-level table](../workflows/README.md) and downloadable
-[205-file CSV](feature-reuse.csv) accompany the [scenario CSV](scenario-reuse.csv).
+[207-file CSV](feature-reuse.csv) accompany the [scenario CSV](scenario-reuse.csv).
 
 ## Scenario decisions
 
@@ -388,15 +388,29 @@ Word tracking preference persistence and preservation — **generalized**; fully
 | [@id-docx-tracking-settings-plain-edit](../workflows/docx/tracking-settings.feature#L77) | 1 | generalized | @profile-preserving-settings-editor | Local settings contract defines literal source, ownership/refusal variants, encodings, saved results and synchronous fault stages. [tracking-settings.md](../contracts/tracking-settings.md) |
 | [@id-docx-tracking-settings-author-refusal](../workflows/docx/tracking-settings.feature#L84) | 3 | generalized | @profile-preserving-settings-editor | Local settings contract defines literal source, ownership/refusal variants, encodings, saved results and synchronous fault stages. [tracking-settings.md](../contracts/tracking-settings.md) |
 
+### pptx/bullets.feature
+
+PPTX bullets — **generalized**; fully generalized: **yes**.
+
+| ID / source | Cases | Tag | Profiles | Reason / local evidence |
+|---|---:|---|---|---|
+| [@id-pptx-manipulation-bullet-default](../workflows/pptx/bullets.feature#L5) | 1 | generalized | @profile-retained-manipulation | Concrete immutable input, literal operation/values, independent saved XML readback and exact unrelated-payload custody; implementation planned in every runtime. [pptx-manipulation.md](../contracts/pptx-manipulation.md) |
+| [@id-pptx-manipulation-bullet-sequence](../workflows/pptx/bullets.feature#L17) | 1 | generalized | @profile-retained-manipulation | Concrete immutable input, literal operation/values, independent saved XML readback and exact unrelated-payload custody; implementation planned in every runtime. [pptx-manipulation.md](../contracts/pptx-manipulation.md) |
+| [@id-pptx-manipulation-bullet-level](../workflows/pptx/bullets.feature#L29) | 1 | generalized | @profile-retained-manipulation | Concrete immutable input, literal operation/values, independent saved XML readback and exact unrelated-payload custody; implementation planned in every runtime. [pptx-manipulation.md](../contracts/pptx-manipulation.md) |
+| [@id-pptx-manipulation-bullet-bold-label](../workflows/pptx/bullets.feature#L41) | 1 | generalized | @profile-retained-manipulation | Concrete immutable input, literal operation/values, independent saved XML readback and exact unrelated-payload custody; implementation planned in every runtime. [pptx-manipulation.md](../contracts/pptx-manipulation.md) |
+| [@id-pptx-manipulation-clear-bullets](../workflows/pptx/bullets.feature#L53) | 1 | generalized | @profile-retained-manipulation | Concrete immutable input, literal operation/values, independent saved XML readback and exact unrelated-payload custody; implementation planned in every runtime. [pptx-manipulation.md](../contracts/pptx-manipulation.md) |
+
 ### pptx/creation.feature
 
-PPTX native title-slide authoring — **incomplete**; fully generalized: **no**.
+PPTX native title-slide authoring — **mixed**; fully generalized: **no**.
 
 | ID / source | Cases | Tag | Profiles | Reason / local evidence |
 |---|---:|---|---|---|
 | [@id-pptx-create-new-minimal](../workflows/pptx/creation.feature#L8) | 1 | incomplete | — | Minimal deck and refusal-kind names lack exact slide text/layout recipes and per-case expected graph values in this repo. [native-profiles.md](../contracts/native-profiles.md) |
 | [@id-pptx-create-anchor-preservation](../workflows/pptx/creation.feature#L14) | 1 | incomplete | — | Minimal deck and refusal-kind names lack exact slide text/layout recipes and per-case expected graph values in this repo. [native-profiles.md](../contracts/native-profiles.md) |
 | [@id-pptx-create-refusals](../workflows/pptx/creation.feature#L20) | 1 | incomplete | — | Minimal deck and refusal-kind names lack exact slide text/layout recipes and per-case expected graph values in this repo. [native-profiles.md](../contracts/native-profiles.md) |
+| [@id-pptx-manipulation-insert-start](../workflows/pptx/creation.feature#L26) | 1 | generalized | @profile-retained-manipulation | Concrete immutable input, literal operation/values, independent saved XML readback and exact unrelated-payload custody; implementation planned in every runtime. [pptx-manipulation.md](../contracts/pptx-manipulation.md) |
+| [@id-pptx-manipulation-insert-middle](../workflows/pptx/creation.feature#L38) | 1 | generalized | @profile-retained-manipulation | Concrete immutable input, literal operation/values, independent saved XML readback and exact unrelated-payload custody; implementation planned in every runtime. [pptx-manipulation.md](../contracts/pptx-manipulation.md) |
 
 ### pptx/layout-recommendation.feature
 
@@ -433,6 +447,8 @@ Presentation notes inspection and editing — **mixed**; fully generalized: **no
 | [@id-pptx-go-notes-edge-space-preserve](../workflows/pptx/notes.feature#L86) | 1 | profile-specific | @profile-existing-notes | Existing-part target ownership, stale-target policy, input restrictions and template fragments require this bounded notes editor profile. [go-notes-editing.md](../contracts/go-notes-editing.md) |
 | [@id-pptx-go-notes-multiline-template](../workflows/pptx/notes.feature#L93) | 1 | profile-specific | @profile-existing-notes | Existing-part target ownership, stale-target policy, input restrictions and template fragments require this bounded notes editor profile. [go-notes-editing.md](../contracts/go-notes-editing.md) |
 | [@id-pptx-go-notes-template-fragments](../workflows/pptx/notes.feature#L102) | 1 | profile-specific | @profile-existing-notes | Existing-part target ownership, stale-target policy, input restrictions and template fragments require this bounded notes editor profile. [go-notes-editing.md](../contracts/go-notes-editing.md) |
+| [@id-pptx-manipulation-set-notes](../workflows/pptx/notes.feature#L108) | 1 | generalized | @profile-retained-manipulation | Concrete immutable input, literal operation/values, independent saved XML readback and exact unrelated-payload custody; implementation planned in every runtime. [pptx-manipulation.md](../contracts/pptx-manipulation.md) |
+| [@id-pptx-manipulation-notes-readback](../workflows/pptx/notes.feature#L120) | 1 | generalized | @profile-retained-manipulation | Concrete immutable input, literal operation/values, independent saved XML readback and exact unrelated-payload custody; implementation planned in every runtime. [pptx-manipulation.md](../contracts/pptx-manipulation.md) |
 
 ### pptx/preservation.feature
 
@@ -452,12 +468,14 @@ PPTX slide import obligations — **incomplete**; fully generalized: **no**.
 
 ### pptx/slide-order.feature
 
-Reorder existing slides by an exact permutation — **incomplete**; fully generalized: **no**.
+Reorder existing slides by an exact permutation — **mixed**; fully generalized: **no**.
 
 | ID / source | Cases | Tag | Profiles | Reason / local evidence |
 |---|---:|---|---|---|
 | [@id-pptx-slide-permutation](../workflows/pptx/slide-order.feature#L8) | 7 | incomplete | — | Reverse/rotate/notes and refusal labels lack complete source decks, permutation vectors and exact receipts here. [slide-order.md](../contracts/slide-order.md) |
 | [@id-pptx-slide-permutation-refusal](../workflows/pptx/slide-order.feature#L24) | 14 | incomplete | — | Reverse/rotate/notes and refusal labels lack complete source decks, permutation vectors and exact receipts here. [slide-order.md](../contracts/slide-order.md) |
+| [@id-pptx-manipulation-reorder](../workflows/pptx/slide-order.feature#L46) | 1 | generalized | @profile-retained-manipulation | Concrete immutable input, literal operation/values, independent saved XML readback and exact unrelated-payload custody; implementation planned in every runtime. [pptx-manipulation.md](../contracts/pptx-manipulation.md) |
+| [@id-pptx-manipulation-reorder-refusal](../workflows/pptx/slide-order.feature#L58) | 1 | generalized | @profile-retained-manipulation | Concrete immutable input, literal operation/values, independent saved XML readback and exact unrelated-payload custody; implementation planned in every runtime. [pptx-manipulation.md](../contracts/pptx-manipulation.md) |
 
 ### pptx/slide-visibility.feature
 
@@ -470,7 +488,7 @@ PowerPoint slide visibility by slide identity — **mixed**; fully generalized: 
 
 ### pptx/tables.feature
 
-PPTX native rectangular tables — **incomplete**; fully generalized: **no**.
+PPTX native rectangular tables — **mixed**; fully generalized: **no**.
 
 | ID / source | Cases | Tag | Profiles | Reason / local evidence |
 |---|---:|---|---|---|
@@ -478,6 +496,18 @@ PPTX native rectangular tables — **incomplete**; fully generalized: **no**.
 | [@id-pptx-table-formatting](../workflows/pptx/tables.feature#L13) | 1 | incomplete | — | Synthetic table and stale/geometry case labels lack the complete local slide/table recipes and numeric expected results. [native-profiles.md](../contracts/native-profiles.md) |
 | [@id-pptx-table-stale-handle](../workflows/pptx/tables.feature#L19) | 1 | incomplete | — | Synthetic table and stale/geometry case labels lack the complete local slide/table recipes and numeric expected results. [native-profiles.md](../contracts/native-profiles.md) |
 | [@id-pptx-table-atomic-refusals](../workflows/pptx/tables.feature#L25) | 2 | incomplete | — | Synthetic table and stale/geometry case labels lack the complete local slide/table recipes and numeric expected results. [native-profiles.md](../contracts/native-profiles.md) |
+| [@id-pptx-manipulation-table-values](../workflows/pptx/tables.feature#L36) | 1 | generalized | @profile-retained-manipulation | Concrete immutable input, literal operation/values, independent saved XML readback and exact unrelated-payload custody; implementation planned in every runtime. [pptx-manipulation.md](../contracts/pptx-manipulation.md) |
+| [@id-pptx-manipulation-table-geometry](../workflows/pptx/tables.feature#L48) | 1 | generalized | @profile-retained-manipulation | Concrete immutable input, literal operation/values, independent saved XML readback and exact unrelated-payload custody; implementation planned in every runtime. [pptx-manipulation.md](../contracts/pptx-manipulation.md) |
+
+### pptx/text-autofit.feature
+
+PPTX text autofit — **generalized**; fully generalized: **yes**.
+
+| ID / source | Cases | Tag | Profiles | Reason / local evidence |
+|---|---:|---|---|---|
+| [@id-pptx-manipulation-autofit-shrink](../workflows/pptx/text-autofit.feature#L5) | 1 | generalized | @profile-retained-manipulation | Concrete immutable input, literal operation/values, independent saved XML readback and exact unrelated-payload custody; implementation planned in every runtime. [pptx-manipulation.md](../contracts/pptx-manipulation.md) |
+| [@id-pptx-manipulation-autofit-none](../workflows/pptx/text-autofit.feature#L17) | 1 | generalized | @profile-retained-manipulation | Concrete immutable input, literal operation/values, independent saved XML readback and exact unrelated-payload custody; implementation planned in every runtime. [pptx-manipulation.md](../contracts/pptx-manipulation.md) |
+| [@id-pptx-manipulation-autofit-resize](../workflows/pptx/text-autofit.feature#L29) | 1 | generalized | @profile-retained-manipulation | Concrete immutable input, literal operation/values, independent saved XML readback and exact unrelated-payload custody; implementation planned in every runtime. [pptx-manipulation.md](../contracts/pptx-manipulation.md) |
 
 ### pptx/text-box.feature
 
@@ -490,13 +520,17 @@ Positioned text-box authoring on existing slides — **incomplete**; fully gener
 
 ### pptx/text.feature
 
-Presentation anchored text editing — **incomplete**; fully generalized: **no**.
+Presentation anchored text editing — **mixed**; fully generalized: **no**.
 
 | ID / source | Cases | Tag | Profiles | Reason / local evidence |
 |---|---:|---|---|---|
 | [@id-pptx-readable-unsupported-topology](../workflows/pptx/text.feature#L9) | 1 | incomplete | — | Synthetic slide, text-anchor and unsupported topology labels need explicit source XML and expected strings before independent reuse. [native-profiles.md](../contracts/native-profiles.md) |
 | [@id-pptx-cross-run-replace](../workflows/pptx/text.feature#L15) | 1 | incomplete | — | Synthetic slide, text-anchor and unsupported topology labels need explicit source XML and expected strings before independent reuse. [native-profiles.md](../contracts/native-profiles.md) |
 | [@id-pptx-stale-anchor-refusal](../workflows/pptx/text.feature#L21) | 1 | incomplete | — | Synthetic slide, text-anchor and unsupported topology labels need explicit source XML and expected strings before independent reuse. [native-profiles.md](../contracts/native-profiles.md) |
+| [@id-pptx-manipulation-patch-title](../workflows/pptx/text.feature#L30) | 1 | generalized | @profile-retained-manipulation | Concrete immutable input, literal operation/values, independent saved XML readback and exact unrelated-payload custody; implementation planned in every runtime. [pptx-manipulation.md](../contracts/pptx-manipulation.md) |
+| [@id-pptx-manipulation-patch-body](../workflows/pptx/text.feature#L42) | 1 | generalized | @profile-retained-manipulation | Concrete immutable input, literal operation/values, independent saved XML readback and exact unrelated-payload custody; implementation planned in every runtime. [pptx-manipulation.md](../contracts/pptx-manipulation.md) |
+| [@id-pptx-manipulation-patch-subtitle](../workflows/pptx/text.feature#L54) | 1 | generalized | @profile-retained-manipulation | Concrete immutable input, literal operation/values, independent saved XML readback and exact unrelated-payload custody; implementation planned in every runtime. [pptx-manipulation.md](../contracts/pptx-manipulation.md) |
+| [@id-pptx-manipulation-append-title](../workflows/pptx/text.feature#L66) | 1 | generalized | @profile-retained-manipulation | Concrete immutable input, literal operation/values, independent saved XML readback and exact unrelated-payload custody; implementation planned in every runtime. [pptx-manipulation.md](../contracts/pptx-manipulation.md) |
 
 ### xlsx/cache-completeness.feature
 

@@ -2273,10 +2273,10 @@
       "aliases": []
     },
     {
-      "id": "asset-564ea5266151ebe9d0ce48eead073ecb4b3f944fca79c97556e8a677b518da55",
+      "id": "asset-c4e9b456aa07ba8d82f1b9e76807defd507a91ca899703a20aebffc80f9dff9f",
       "path": "workflows/pptx/creation.feature",
-      "bytes": 1404,
-      "sha256": "564ea5266151ebe9d0ce48eead073ecb4b3f944fca79c97556e8a677b518da55",
+      "bytes": 4047,
+      "sha256": "c4e9b456aa07ba8d82f1b9e76807defd507a91ca899703a20aebffc80f9dff9f",
       "role": "workflow",
       "origins": [
         {
@@ -2284,30 +2284,42 @@
           "revision": "13ead381f22f19a000dfd557514369cf1b646454",
           "path": "features/pptx/create.feature",
           "change": "Lifecycle tags only; existing scenario IDs, input examples and step text retained"
+        },
+        {
+          "kind": "project-authored",
+          "repository": "https://github.com/rcarmo/fixtures-ooxml",
+          "revision": "14a7bf7ad72baa41028ff140802cbbfdbbd8a845",
+          "path": "workflows/pptx/creation.feature"
         }
       ],
       "aliases": []
     },
     {
-      "id": "asset-6fd4c56131a68b47e47d91c286967127ab410026966f3132f9caf244bde7369e",
+      "id": "asset-c05b9cffb791fd1e526ae2c931b795456bca35a74584641a781ed2cfa9222e52",
       "path": "workflows/pptx/slide-order.feature",
-      "bytes": 1384,
-      "sha256": "6fd4c56131a68b47e47d91c286967127ab410026966f3132f9caf244bde7369e",
+      "bytes": 3460,
+      "sha256": "c05b9cffb791fd1e526ae2c931b795456bca35a74584641a781ed2cfa9222e52",
       "role": "workflow",
       "origins": [
         {
           "repository": "https://github.com/rcarmo/fixtures-ooxml",
           "path": "workflows/pptx/slide-order.feature",
           "basis": "Language-neutral exact existing slide permutation contract; native save/reopen and refusal assertions remain consumer-local"
+        },
+        {
+          "kind": "project-authored",
+          "repository": "https://github.com/rcarmo/fixtures-ooxml",
+          "revision": "14a7bf7ad72baa41028ff140802cbbfdbbd8a845",
+          "path": "workflows/pptx/slide-order.feature"
         }
       ],
       "aliases": []
     },
     {
-      "id": "asset-d9808ba4c51eecbc3b60e0b5c98e16f749f6618237de05010d2968e6cb88aed7",
+      "id": "asset-f0b94c529d06814fab2a0792afd353a581424efb124636f51abcb200502d6f29",
       "path": "workflows/pptx/tables.feature",
-      "bytes": 1673,
-      "sha256": "d9808ba4c51eecbc3b60e0b5c98e16f749f6618237de05010d2968e6cb88aed7",
+      "bytes": 4034,
+      "sha256": "f0b94c529d06814fab2a0792afd353a581424efb124636f51abcb200502d6f29",
       "role": "workflow",
       "origins": [
         {
@@ -2315,6 +2327,12 @@
           "revision": "13ead381f22f19a000dfd557514369cf1b646454",
           "path": "features/pptx/tables.feature",
           "change": "Lifecycle tags only; existing scenario IDs, input examples and step text retained"
+        },
+        {
+          "kind": "project-authored",
+          "repository": "https://github.com/rcarmo/fixtures-ooxml",
+          "revision": "14a7bf7ad72baa41028ff140802cbbfdbbd8a845",
+          "path": "workflows/pptx/tables.feature"
         }
       ],
       "aliases": []
@@ -3316,31 +3334,43 @@
       "aliases": []
     },
     {
-      "id": "asset-181044e6ee3fabbdb8096b626965155e7db97764bb64223e0968dc50dd5e3daa",
+      "id": "asset-edde465c627e5fef5f048d8ad9da72db6a5e030b73838b14e056c87b3c2cbafd",
       "path": "workflows/pptx/notes.feature",
-      "bytes": 8247,
-      "sha256": "181044e6ee3fabbdb8096b626965155e7db97764bb64223e0968dc50dd5e3daa",
+      "bytes": 10395,
+      "sha256": "edde465c627e5fef5f048d8ad9da72db6a5e030b73838b14e056c87b3c2cbafd",
       "role": "workflow",
       "origins": [
         {
           "repository": "https://github.com/rcarmo/fixtures-ooxml",
           "path": "workflows/pptx/notes.feature",
           "basis": "Format/operation regrouping from d07ee96; exact scenario fingerprints and source paths in ledgers/workflow-layout-migration.json"
+        },
+        {
+          "kind": "project-authored",
+          "repository": "https://github.com/rcarmo/fixtures-ooxml",
+          "revision": "14a7bf7ad72baa41028ff140802cbbfdbbd8a845",
+          "path": "workflows/pptx/notes.feature"
         }
       ],
       "aliases": []
     },
     {
-      "id": "asset-30fb7380fc0a133c5b710cd843493ebcaee781d2000c23eabb3bff0290b373a8",
+      "id": "asset-42dae34ee08a7783b17e27bc5a5a8e906ed2ca06bf77fcecedfc3fa087dc5608",
       "path": "workflows/pptx/text.feature",
-      "bytes": 1472,
-      "sha256": "30fb7380fc0a133c5b710cd843493ebcaee781d2000c23eabb3bff0290b373a8",
+      "bytes": 5601,
+      "sha256": "42dae34ee08a7783b17e27bc5a5a8e906ed2ca06bf77fcecedfc3fa087dc5608",
       "role": "workflow",
       "origins": [
         {
           "repository": "https://github.com/rcarmo/fixtures-ooxml",
           "path": "workflows/pptx/text.feature",
           "basis": "Format/operation regrouping from d07ee96; exact scenario fingerprints and source paths in ledgers/workflow-layout-migration.json"
+        },
+        {
+          "kind": "project-authored",
+          "repository": "https://github.com/rcarmo/fixtures-ooxml",
+          "revision": "14a7bf7ad72baa41028ff140802cbbfdbbd8a845",
+          "path": "workflows/pptx/text.feature"
         }
       ],
       "aliases": []
@@ -6248,6 +6278,110 @@
           "revision": "6b601a4252a90759c2e73c31cc9d8d10e6bca0bd",
           "path": "contracts/package-alignment.md",
           "transformation": "Authored bounded package/comparison alignment from canonical and production evidence."
+        }
+      ]
+    },
+    {
+      "id": "asset-f26843b74b4b48b81631139cd907de3ddd37940034f1d9332df86df519bcb93f",
+      "path": "workflows/pptx/bullets.feature",
+      "role": "workflow",
+      "bytes": 5572,
+      "sha256": "f26843b74b4b48b81631139cd907de3ddd37940034f1d9332df86df519bcb93f",
+      "origins": [
+        {
+          "kind": "project-authored",
+          "repository": "https://github.com/rcarmo/fixtures-ooxml",
+          "revision": "14a7bf7ad72baa41028ff140802cbbfdbbd8a845",
+          "path": "workflows/pptx/bullets.feature"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "id": "asset-811920664e09be2622d9966d81fbdb33dd1299b0badf29c63243514cf913967f",
+      "path": "workflows/pptx/text-autofit.feature",
+      "role": "workflow",
+      "bytes": 2957,
+      "sha256": "811920664e09be2622d9966d81fbdb33dd1299b0badf29c63243514cf913967f",
+      "origins": [
+        {
+          "kind": "project-authored",
+          "repository": "https://github.com/rcarmo/fixtures-ooxml",
+          "revision": "14a7bf7ad72baa41028ff140802cbbfdbbd8a845",
+          "path": "workflows/pptx/text-autofit.feature"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "id": "asset-d050e7cba596d580c4153365d93c35c67dbc862c4c5ac6816801288ea6ebc044",
+      "path": "contracts/pptx-manipulation.md",
+      "role": "contract",
+      "bytes": 3518,
+      "sha256": "d050e7cba596d580c4153365d93c35c67dbc862c4c5ac6816801288ea6ebc044",
+      "origins": [
+        {
+          "kind": "project-authored",
+          "repository": "https://github.com/rcarmo/fixtures-ooxml",
+          "revision": "14a7bf7ad72baa41028ff140802cbbfdbbd8a845",
+          "path": "contracts/pptx-manipulation.md"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "id": "asset-9ef1cc19667d28c03b60c0844011d958bbdca28ac678a359e49f8a121e71ae2e",
+      "path": "ledgers/pptx-manipulation.json",
+      "role": "reconciliation-ledger",
+      "bytes": 138412,
+      "sha256": "9ef1cc19667d28c03b60c0844011d958bbdca28ac678a359e49f8a121e71ae2e",
+      "origins": [
+        {
+          "kind": "project-authored",
+          "repository": "https://github.com/rcarmo/fixtures-ooxml",
+          "revision": "14a7bf7ad72baa41028ff140802cbbfdbbd8a845",
+          "path": "ledgers/pptx-manipulation.json"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "id": "fixture-5ad4b68acc5a926c020dbc94154c95fa6c40c7353a55b2f82504879b392e9a45",
+      "path": "fixtures/pptx/manipulation/manipulation-5ad4b68acc5a.pptx",
+      "role": "fixture",
+      "format": "pptx",
+      "scenarioGroup": "manipulation",
+      "bytes": 8464,
+      "sha256": "5ad4b68acc5a926c020dbc94154c95fa6c40c7353a55b2f82504879b392e9a45",
+      "scenarioIds": [
+        "@id-pptx-manipulation-patch-title",
+        "@id-pptx-manipulation-patch-body",
+        "@id-pptx-manipulation-patch-subtitle",
+        "@id-pptx-manipulation-append-title",
+        "@id-pptx-manipulation-bullet-default",
+        "@id-pptx-manipulation-bullet-sequence",
+        "@id-pptx-manipulation-bullet-level",
+        "@id-pptx-manipulation-bullet-bold-label",
+        "@id-pptx-manipulation-clear-bullets",
+        "@id-pptx-manipulation-autofit-shrink",
+        "@id-pptx-manipulation-autofit-none",
+        "@id-pptx-manipulation-autofit-resize",
+        "@id-pptx-manipulation-insert-start",
+        "@id-pptx-manipulation-insert-middle",
+        "@id-pptx-manipulation-reorder",
+        "@id-pptx-manipulation-reorder-refusal",
+        "@id-pptx-manipulation-table-values",
+        "@id-pptx-manipulation-table-geometry",
+        "@id-pptx-manipulation-set-notes",
+        "@id-pptx-manipulation-notes-readback"
+      ],
+      "aliases": [],
+      "origins": [
+        {
+          "kind": "project-authored",
+          "repository": "https://github.com/rcarmo/bun-ooxml",
+          "revision": "69c8169a2241cf09dc769c71023dd2b7d5006354",
+          "path": "src/pptx/index.ts"
         }
       ]
     }

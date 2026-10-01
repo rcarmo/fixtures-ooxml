@@ -1,7 +1,7 @@
 import {test,expect} from 'bun:test';
 import {sourceCases} from './catalogue-helpers.ts';
 import {cases,verify,validateFixtureLayout,validateMutationContract} from '../scripts/verify.ts';
-test('all pinned references and contract links verify',async()=>{const r=await verify();expect(r.assets).toBe(346);expect(r.facts).toBe(149);expect(r.workflows).toBe(304);expect(r.cases).toBe(791);});
+test('all pinned references and contract links verify',async()=>{const r=await verify();expect(r.assets).toBe(351);expect(r.facts).toBe(149);expect(r.workflows).toBe(324);expect(r.cases).toBe(811);});
 test('official Gherkin compilation expands shared cases',async()=>{const {sourceCases}=await import('./catalogue-helpers.ts');const result=await sourceCases('workflows/mutation-safety.feature');expect(result).toHaveLength(19);expect(new Set(result.map(r=>r.scenarioId)).size).toBe(8);});
 test('workflow identity is required',()=>{expect(()=>cases('bad.feature','Feature: Bad\n Scenario: unnamed\n  Given input\n')).toThrow();});
 test('canonical scenario IDs cannot be reused within a feature, including Rule blocks',()=>{
@@ -18,8 +18,8 @@ test('outline rows legitimately share a scenario ID',()=>{
 test('fixture IDs are stored once, grouped by format and scenario purpose',async()=>{
  const manifest=await Bun.file('manifest.json').json();
  const fixtures=manifest.files.filter((f:any)=>f.role==='fixture');
- expect(fixtures).toHaveLength(79);
- expect(new Set(fixtures.map((f:any)=>f.sha256)).size).toBe(79);
+ expect(fixtures).toHaveLength(80);
+ expect(new Set(fixtures.map((f:any)=>f.sha256)).size).toBe(80);
  expect(()=>validateFixtureLayout(manifest)).not.toThrow();
  for(const path of ['testdata/a.docx','fixtures/a.docx','fixtures/pptx/comments/a.docx','fixtures/docx/comments/deeper/a.docx']){
   const copy=structuredClone(manifest);copy.files.find((f:any)=>f.role==='fixture').path=path;
@@ -105,7 +105,7 @@ test('final section layout separates preserved geometry changes from unsafe inpu
 });
 
 test('slide permutations retain seven positive and fourteen refusal variants',async()=>{
- const path='workflows/pptx/slide-order.feature',rows=cases(path,await Bun.file(path).text());expect(rows).toHaveLength(21);expect(rows.filter(r=>r.scenarioId==='@id-pptx-slide-permutation')).toHaveLength(7);expect(rows.filter(r=>r.scenarioId==='@id-pptx-slide-permutation-refusal')).toHaveLength(14);
+ const path='workflows/pptx/slide-order.feature',rows=cases(path,await Bun.file(path).text());expect(rows).toHaveLength(23);expect(rows.filter(r=>r.scenarioId==='@id-pptx-slide-permutation')).toHaveLength(7);expect(rows.filter(r=>r.scenarioId==='@id-pptx-slide-permutation-refusal')).toHaveLength(14);
 });
 
 test('effective formatting distinguishes nine inspected outcomes and sixteen refusals',async()=>{

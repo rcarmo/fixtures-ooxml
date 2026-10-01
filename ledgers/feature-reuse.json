@@ -145,7 +145,7 @@
     },
     {
       "path": "workflows/pptx/creation.feature",
-      "reviewedSha256": "564ea5266151ebe9d0ce48eead073ecb4b3f944fca79c97556e8a677b518da55"
+      "reviewedSha256": "c4e9b456aa07ba8d82f1b9e76807defd507a91ca899703a20aebffc80f9dff9f"
     },
     {
       "path": "workflows/pptx/layout-recommendation.feature",
@@ -157,7 +157,7 @@
     },
     {
       "path": "workflows/pptx/notes.feature",
-      "reviewedSha256": "181044e6ee3fabbdb8096b626965155e7db97764bb64223e0968dc50dd5e3daa"
+      "reviewedSha256": "edde465c627e5fef5f048d8ad9da72db6a5e030b73838b14e056c87b3c2cbafd"
     },
     {
       "path": "workflows/pptx/preservation.feature",
@@ -169,7 +169,7 @@
     },
     {
       "path": "workflows/pptx/slide-order.feature",
-      "reviewedSha256": "6fd4c56131a68b47e47d91c286967127ab410026966f3132f9caf244bde7369e"
+      "reviewedSha256": "c05b9cffb791fd1e526ae2c931b795456bca35a74584641a781ed2cfa9222e52"
     },
     {
       "path": "workflows/pptx/slide-visibility.feature",
@@ -177,7 +177,7 @@
     },
     {
       "path": "workflows/pptx/tables.feature",
-      "reviewedSha256": "d9808ba4c51eecbc3b60e0b5c98e16f749f6618237de05010d2968e6cb88aed7"
+      "reviewedSha256": "f0b94c529d06814fab2a0792afd353a581424efb124636f51abcb200502d6f29"
     },
     {
       "path": "workflows/pptx/text-box.feature",
@@ -185,7 +185,7 @@
     },
     {
       "path": "workflows/pptx/text.feature",
-      "reviewedSha256": "30fb7380fc0a133c5b710cd843493ebcaee781d2000c23eabb3bff0290b373a8"
+      "reviewedSha256": "42dae34ee08a7783b17e27bc5a5a8e906ed2ca06bf77fcecedfc3fa087dc5608"
     },
     {
       "path": "workflows/xlsx/cache-completeness.feature",
@@ -250,6 +250,14 @@
     {
       "path": "workflows/xml/parsing.feature",
       "reviewedSha256": "e5f72d944248f84a89f60cf498d1cba642217259c362486ab279eef697a61b90"
+    },
+    {
+      "path": "workflows/pptx/bullets.feature",
+      "reviewedSha256": "f26843b74b4b48b81631139cd907de3ddd37940034f1d9332df86df519bcb93f"
+    },
+    {
+      "path": "workflows/pptx/text-autofit.feature",
+      "reviewedSha256": "811920664e09be2622d9966d81fbdb33dd1299b0badf29c63243514cf913967f"
     }
   ],
   "scenarios": [
@@ -3676,6 +3684,226 @@
         "workflows/xml/parsing.feature",
         "contracts/xml-values.md"
       ]
+    },
+    {
+      "id": "@id-pptx-manipulation-append-title",
+      "feature": "workflows/pptx/text.feature",
+      "category": "generalized",
+      "runtimeConstraint": "none",
+      "reason": "Concrete immutable input, literal operation/values, independent saved XML readback and exact unrelated-payload custody; implementation planned in every runtime.",
+      "evidence": [
+        "workflows/pptx/text.feature",
+        "contracts/pptx-manipulation.md"
+      ]
+    },
+    {
+      "id": "@id-pptx-manipulation-autofit-none",
+      "feature": "workflows/pptx/text-autofit.feature",
+      "category": "generalized",
+      "runtimeConstraint": "none",
+      "reason": "Concrete immutable input, literal operation/values, independent saved XML readback and exact unrelated-payload custody; implementation planned in every runtime.",
+      "evidence": [
+        "workflows/pptx/text-autofit.feature",
+        "contracts/pptx-manipulation.md"
+      ]
+    },
+    {
+      "id": "@id-pptx-manipulation-autofit-resize",
+      "feature": "workflows/pptx/text-autofit.feature",
+      "category": "generalized",
+      "runtimeConstraint": "none",
+      "reason": "Concrete immutable input, literal operation/values, independent saved XML readback and exact unrelated-payload custody; implementation planned in every runtime.",
+      "evidence": [
+        "workflows/pptx/text-autofit.feature",
+        "contracts/pptx-manipulation.md"
+      ]
+    },
+    {
+      "id": "@id-pptx-manipulation-autofit-shrink",
+      "feature": "workflows/pptx/text-autofit.feature",
+      "category": "generalized",
+      "runtimeConstraint": "none",
+      "reason": "Concrete immutable input, literal operation/values, independent saved XML readback and exact unrelated-payload custody; implementation planned in every runtime.",
+      "evidence": [
+        "workflows/pptx/text-autofit.feature",
+        "contracts/pptx-manipulation.md"
+      ]
+    },
+    {
+      "id": "@id-pptx-manipulation-bullet-bold-label",
+      "feature": "workflows/pptx/bullets.feature",
+      "category": "generalized",
+      "runtimeConstraint": "none",
+      "reason": "Concrete immutable input, literal operation/values, independent saved XML readback and exact unrelated-payload custody; implementation planned in every runtime.",
+      "evidence": [
+        "workflows/pptx/bullets.feature",
+        "contracts/pptx-manipulation.md"
+      ]
+    },
+    {
+      "id": "@id-pptx-manipulation-bullet-default",
+      "feature": "workflows/pptx/bullets.feature",
+      "category": "generalized",
+      "runtimeConstraint": "none",
+      "reason": "Concrete immutable input, literal operation/values, independent saved XML readback and exact unrelated-payload custody; implementation planned in every runtime.",
+      "evidence": [
+        "workflows/pptx/bullets.feature",
+        "contracts/pptx-manipulation.md"
+      ]
+    },
+    {
+      "id": "@id-pptx-manipulation-bullet-level",
+      "feature": "workflows/pptx/bullets.feature",
+      "category": "generalized",
+      "runtimeConstraint": "none",
+      "reason": "Concrete immutable input, literal operation/values, independent saved XML readback and exact unrelated-payload custody; implementation planned in every runtime.",
+      "evidence": [
+        "workflows/pptx/bullets.feature",
+        "contracts/pptx-manipulation.md"
+      ]
+    },
+    {
+      "id": "@id-pptx-manipulation-bullet-sequence",
+      "feature": "workflows/pptx/bullets.feature",
+      "category": "generalized",
+      "runtimeConstraint": "none",
+      "reason": "Concrete immutable input, literal operation/values, independent saved XML readback and exact unrelated-payload custody; implementation planned in every runtime.",
+      "evidence": [
+        "workflows/pptx/bullets.feature",
+        "contracts/pptx-manipulation.md"
+      ]
+    },
+    {
+      "id": "@id-pptx-manipulation-clear-bullets",
+      "feature": "workflows/pptx/bullets.feature",
+      "category": "generalized",
+      "runtimeConstraint": "none",
+      "reason": "Concrete immutable input, literal operation/values, independent saved XML readback and exact unrelated-payload custody; implementation planned in every runtime.",
+      "evidence": [
+        "workflows/pptx/bullets.feature",
+        "contracts/pptx-manipulation.md"
+      ]
+    },
+    {
+      "id": "@id-pptx-manipulation-insert-middle",
+      "feature": "workflows/pptx/creation.feature",
+      "category": "generalized",
+      "runtimeConstraint": "none",
+      "reason": "Concrete immutable input, literal operation/values, independent saved XML readback and exact unrelated-payload custody; implementation planned in every runtime.",
+      "evidence": [
+        "workflows/pptx/creation.feature",
+        "contracts/pptx-manipulation.md"
+      ]
+    },
+    {
+      "id": "@id-pptx-manipulation-insert-start",
+      "feature": "workflows/pptx/creation.feature",
+      "category": "generalized",
+      "runtimeConstraint": "none",
+      "reason": "Concrete immutable input, literal operation/values, independent saved XML readback and exact unrelated-payload custody; implementation planned in every runtime.",
+      "evidence": [
+        "workflows/pptx/creation.feature",
+        "contracts/pptx-manipulation.md"
+      ]
+    },
+    {
+      "id": "@id-pptx-manipulation-notes-readback",
+      "feature": "workflows/pptx/notes.feature",
+      "category": "generalized",
+      "runtimeConstraint": "none",
+      "reason": "Concrete immutable input, literal operation/values, independent saved XML readback and exact unrelated-payload custody; implementation planned in every runtime.",
+      "evidence": [
+        "workflows/pptx/notes.feature",
+        "contracts/pptx-manipulation.md"
+      ]
+    },
+    {
+      "id": "@id-pptx-manipulation-patch-body",
+      "feature": "workflows/pptx/text.feature",
+      "category": "generalized",
+      "runtimeConstraint": "none",
+      "reason": "Concrete immutable input, literal operation/values, independent saved XML readback and exact unrelated-payload custody; implementation planned in every runtime.",
+      "evidence": [
+        "workflows/pptx/text.feature",
+        "contracts/pptx-manipulation.md"
+      ]
+    },
+    {
+      "id": "@id-pptx-manipulation-patch-subtitle",
+      "feature": "workflows/pptx/text.feature",
+      "category": "generalized",
+      "runtimeConstraint": "none",
+      "reason": "Concrete immutable input, literal operation/values, independent saved XML readback and exact unrelated-payload custody; implementation planned in every runtime.",
+      "evidence": [
+        "workflows/pptx/text.feature",
+        "contracts/pptx-manipulation.md"
+      ]
+    },
+    {
+      "id": "@id-pptx-manipulation-patch-title",
+      "feature": "workflows/pptx/text.feature",
+      "category": "generalized",
+      "runtimeConstraint": "none",
+      "reason": "Concrete immutable input, literal operation/values, independent saved XML readback and exact unrelated-payload custody; implementation planned in every runtime.",
+      "evidence": [
+        "workflows/pptx/text.feature",
+        "contracts/pptx-manipulation.md"
+      ]
+    },
+    {
+      "id": "@id-pptx-manipulation-reorder",
+      "feature": "workflows/pptx/slide-order.feature",
+      "category": "generalized",
+      "runtimeConstraint": "none",
+      "reason": "Concrete immutable input, literal operation/values, independent saved XML readback and exact unrelated-payload custody; implementation planned in every runtime.",
+      "evidence": [
+        "workflows/pptx/slide-order.feature",
+        "contracts/pptx-manipulation.md"
+      ]
+    },
+    {
+      "id": "@id-pptx-manipulation-reorder-refusal",
+      "feature": "workflows/pptx/slide-order.feature",
+      "category": "generalized",
+      "runtimeConstraint": "none",
+      "reason": "Concrete immutable input, literal operation/values, independent saved XML readback and exact unrelated-payload custody; implementation planned in every runtime.",
+      "evidence": [
+        "workflows/pptx/slide-order.feature",
+        "contracts/pptx-manipulation.md"
+      ]
+    },
+    {
+      "id": "@id-pptx-manipulation-set-notes",
+      "feature": "workflows/pptx/notes.feature",
+      "category": "generalized",
+      "runtimeConstraint": "none",
+      "reason": "Concrete immutable input, literal operation/values, independent saved XML readback and exact unrelated-payload custody; implementation planned in every runtime.",
+      "evidence": [
+        "workflows/pptx/notes.feature",
+        "contracts/pptx-manipulation.md"
+      ]
+    },
+    {
+      "id": "@id-pptx-manipulation-table-geometry",
+      "feature": "workflows/pptx/tables.feature",
+      "category": "generalized",
+      "runtimeConstraint": "none",
+      "reason": "Concrete immutable input, literal operation/values, independent saved XML readback and exact unrelated-payload custody; implementation planned in every runtime.",
+      "evidence": [
+        "workflows/pptx/tables.feature",
+        "contracts/pptx-manipulation.md"
+      ]
+    },
+    {
+      "id": "@id-pptx-manipulation-table-values",
+      "feature": "workflows/pptx/tables.feature",
+      "category": "generalized",
+      "runtimeConstraint": "none",
+      "reason": "Concrete immutable input, literal operation/values, independent saved XML readback and exact unrelated-payload custody; implementation planned in every runtime.",
+      "evidence": [
+        "workflows/pptx/tables.feature",
+        "contracts/pptx-manipulation.md"
+      ]
     }
   ],
   "evidenceSha256": {
@@ -3739,22 +3967,22 @@
     "workflows/package/zip32.feature": "8db7070f38041a107a27f2114280971dd29a890c82387dbe31342df7909513ca",
     "contracts/bun-zip32-profile.md": "891b36e48ad4b83694cc345dc8243ccfae047b04f39f68befcdb949199a3a34c",
     "workflows/package/zip64.feature": "f103ace071e647ffee092085a1c4b58e9b7be2cb4cb7553c3558c53f3be5c69a",
-    "workflows/pptx/creation.feature": "564ea5266151ebe9d0ce48eead073ecb4b3f944fca79c97556e8a677b518da55",
+    "workflows/pptx/creation.feature": "c4e9b456aa07ba8d82f1b9e76807defd507a91ca899703a20aebffc80f9dff9f",
     "workflows/pptx/layout-recommendation.feature": "b41b1f3ef7fe9cc022a74113a4b3edbd1fe2d93934ee83225d7e0b99e6b25a75",
     "workflows/pptx/mutation-safety.feature": "e1820e2469f1f6b809d96294b9da04a7e3edcb19ac3b45550a89b4094d73d9b8",
-    "workflows/pptx/notes.feature": "181044e6ee3fabbdb8096b626965155e7db97764bb64223e0968dc50dd5e3daa",
+    "workflows/pptx/notes.feature": "edde465c627e5fef5f048d8ad9da72db6a5e030b73838b14e056c87b3c2cbafd",
     "contracts/go-notes-editing.md": "62a2c3dc5b5781e9a184a94434ca2cfccc06c186ed9527afab905ca538516df8",
     "workflows/pptx/preservation.feature": "c6976d4551ff74b83293b656cceb7490f33f8a1d89ee651784a7a33052493870",
     "contracts/bun-pptx.md": "bf9612bc4d8507047bae164c5a74302486043ab7f79ef0abba5484f3c4e4379b",
     "workflows/pptx/slide-import.feature": "9797cb84555e97b786f66c9e51f45ccb732004b9f717f75ca484424f6a9c82ac",
-    "workflows/pptx/slide-order.feature": "6fd4c56131a68b47e47d91c286967127ab410026966f3132f9caf244bde7369e",
+    "workflows/pptx/slide-order.feature": "c05b9cffb791fd1e526ae2c931b795456bca35a74584641a781ed2cfa9222e52",
     "contracts/slide-order.md": "6f9231d81dfbc80f2a2424643ca622f149d01b6a32475d1773b737a64a1661d9",
     "workflows/pptx/slide-visibility.feature": "b348743de0c6bc7303811f613761a6d67a8a0f4f57132466238a0c7e752acd78",
     "contracts/pptx-slide-visibility.md": "993d0f45e95c7f391cc68ced177e0ba907e1118065bd8a1ebbc1776080833cd9",
-    "workflows/pptx/tables.feature": "d9808ba4c51eecbc3b60e0b5c98e16f749f6618237de05010d2968e6cb88aed7",
+    "workflows/pptx/tables.feature": "f0b94c529d06814fab2a0792afd353a581424efb124636f51abcb200502d6f29",
     "workflows/pptx/text-box.feature": "f1095dc45f85db19d45603fe38938cfc6414c74f3b1f5de63b23f9fd56e880ee",
     "contracts/text-box.md": "cfaa08d29c7892a619cac4b5be7d6524f3e31d1931892203e829cf71c7806ddd",
-    "workflows/pptx/text.feature": "30fb7380fc0a133c5b710cd843493ebcaee781d2000c23eabb3bff0290b373a8",
+    "workflows/pptx/text.feature": "42dae34ee08a7783b17e27bc5a5a8e906ed2ca06bf77fcecedfc3fa087dc5608",
     "workflows/xlsx/cache-completeness.feature": "45f092878a7bed948908a696fa9a45e5d3b5a80a061318d55e0a37a3f2edf092",
     "workflows/xlsx/calculation-chain-lifecycle.feature": "705365c666efd68ae2fc1ac85d86f85511cde77c8fc7644ea04b3978bb56103e",
     "workflows/xlsx/calculation-engine.feature": "683d99ac5847362948945f2377e988537045bca7743b187f3422ddc043f8b1c0",
@@ -3777,6 +4005,9 @@
     "contracts/go-lexical-editing.md": "fd909f7181f6a68859e80f9a37236a6812e7f425d1e850d6213c4c5df42c4097",
     "workflows/xml/names.feature": "7b3f71e3c806eb1fc50274bd5c9442324b6e4cc16c6994cd85842129f5ef3a3a",
     "workflows/xml/parsing.feature": "e5f72d944248f84a89f60cf498d1cba642217259c362486ab279eef697a61b90",
-    "contracts/xml-values.md": "fee52bb80f221a1ccb04eba1211fec7e188f3682f3ad5c12253e49836d0a9b62"
+    "contracts/xml-values.md": "fee52bb80f221a1ccb04eba1211fec7e188f3682f3ad5c12253e49836d0a9b62",
+    "contracts/pptx-manipulation.md": "d050e7cba596d580c4153365d93c35c67dbc862c4c5ac6816801288ea6ebc044",
+    "workflows/pptx/text-autofit.feature": "811920664e09be2622d9966d81fbdb33dd1299b0badf29c63243514cf913967f",
+    "workflows/pptx/bullets.feature": "f26843b74b4b48b81631139cd907de3ddd37940034f1d9332df86df519bcb93f"
   }
 }

@@ -103,3 +103,27 @@ Feature: Presentation notes inspection and editing
       Given the pinned notes fixture's first notes paragraph is replaced in memory by <a:p><a:pPr algn="ctr"><a:buChar char="•"/><a:defRPr sz="1200"/></a:pPr><a:r><a:rPr b="1"><a:solidFill><a:srgbClr val="112233"/></a:solidFill><a:latin typeface="F&amp;F"/></a:rPr><a:t>old</a:t></a:r><a:endParaRPr lang="en-US"/></a:p>
       When the editor replaces its notes with JSON "a\nb"
       Then the notes XML contains exactly two copies each of val="112233", typeface="F&amp;F", lang="en-US" and char="•"
+
+  @profile-retained-manipulation @id-pptx-manipulation-set-notes
+  Scenario: edit existing speaker text
+    Given the sealed PPTX fixture fixture-5ad4b68acc5a926c020dbc94154c95fa6c40c7353a55b2f82504879b392e9a45 with ordered titles ["Alpha","Beta","Gamma"]
+    And slide 1 existing notes body is selected by its original part and unique identity
+    When production presentation editing APIs replace notes with JSON "These are speaker notes"
+    And the resulting presentation is saved to a new path and independently parsed and reopened
+    Then the saved slide 1 existing notes body has exact properties JSON {"text":"These are speaker notes","paragraphs":["These are speaker notes"]}
+    And only original member payloads ["ppt/notesSlides/notesSlide1.xml"] may change
+    And the original member name set is unchanged
+    And the supplied archive, unrelated member payloads and unaffected lexical XML spans retain their original bytes
+    And all pre-existing slides retain their original IDs, relationship IDs, targets, layout links and notes links
+
+  @profile-retained-manipulation @id-pptx-manipulation-notes-readback
+  Scenario: multiline notes save/reopen
+    Given the sealed PPTX fixture fixture-5ad4b68acc5a926c020dbc94154c95fa6c40c7353a55b2f82504879b392e9a45 with ordered titles ["Alpha","Beta","Gamma"]
+    And slide 1 existing notes body is selected by its original part and unique identity
+    When production presentation editing APIs replace notes with JSON "Speaker notes content\nsecond line"
+    And the resulting presentation is saved to a new path and independently parsed and reopened
+    Then the saved slide 1 existing notes body has exact properties JSON {"text":"Speaker notes content\nsecond line","paragraphs":["Speaker notes content","second line"]}
+    And only original member payloads ["ppt/notesSlides/notesSlide1.xml"] may change
+    And the original member name set is unchanged
+    And the supplied archive, unrelated member payloads and unaffected lexical XML spans retain their original bytes
+    And all pre-existing slides retain their original IDs, relationship IDs, targets, layout links and notes links

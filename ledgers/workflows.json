@@ -62,7 +62,9 @@
     "workflows/package/admission-limit-configuration.feature",
     "workflows/package/data-descriptor-integrity.feature",
     "workflows/xlsx/calculation-chain-lifecycle.feature",
-    "workflows/pptx/slide-visibility.feature"
+    "workflows/pptx/slide-visibility.feature",
+    "workflows/pptx/bullets.feature",
+    "workflows/pptx/text-autofit.feature"
   ],
   "executionCredit": "Only local executed assertions count; reports here do not run consumers.",
   "workflows": [
@@ -7741,6 +7743,545 @@
         "python": {
           "status": "planned",
           "evidence": "Native execution binding pending"
+        }
+      }
+    },
+    {
+      "id": "@id-pptx-manipulation-patch-title",
+      "feature": "workflows/pptx/text.feature",
+      "expandedCases": 1,
+      "factIds": [],
+      "expectedOutcomes": [
+        "the saved slide 1 shape ID 2 has exact properties JSON {\"text\":\"New Title\",\"paragraphs\":[\"New Title\"]}",
+        "only original member payloads [\"ppt/slides/slide1.xml\"] may change",
+        "the original member name set is unchanged",
+        "the supplied archive, unrelated member payloads and unaffected lexical XML spans retain their original bytes",
+        "all pre-existing slides retain their original IDs, relationship IDs, targets, layout links and notes links"
+      ],
+      "consumers": {
+        "bun": {
+          "status": "planned",
+          "evidence": []
+        },
+        "go": {
+          "status": "planned",
+          "evidence": []
+        },
+        "python": {
+          "status": "planned",
+          "evidence": []
+        }
+      }
+    },
+    {
+      "id": "@id-pptx-manipulation-patch-body",
+      "feature": "workflows/pptx/text.feature",
+      "expandedCases": 1,
+      "factIds": [],
+      "expectedOutcomes": [
+        "the saved slide 2 shape ID 4 has exact properties JSON {\"text\":\"Updated bullet\",\"paragraphs\":[\"Updated bullet\"]}",
+        "only original member payloads [\"ppt/slides/slide2.xml\"] may change",
+        "the original member name set is unchanged",
+        "the supplied archive, unrelated member payloads and unaffected lexical XML spans retain their original bytes",
+        "all pre-existing slides retain their original IDs, relationship IDs, targets, layout links and notes links"
+      ],
+      "consumers": {
+        "bun": {
+          "status": "planned",
+          "evidence": []
+        },
+        "go": {
+          "status": "planned",
+          "evidence": []
+        },
+        "python": {
+          "status": "planned",
+          "evidence": []
+        }
+      }
+    },
+    {
+      "id": "@id-pptx-manipulation-patch-subtitle",
+      "feature": "workflows/pptx/text.feature",
+      "expandedCases": 1,
+      "factIds": [],
+      "expectedOutcomes": [
+        "the saved slide 1 shape ID 3 has exact properties JSON {\"text\":\"New Subtitle\",\"paragraphs\":[\"New Subtitle\"]}",
+        "only original member payloads [\"ppt/slides/slide1.xml\"] may change",
+        "the original member name set is unchanged",
+        "the supplied archive, unrelated member payloads and unaffected lexical XML spans retain their original bytes",
+        "all pre-existing slides retain their original IDs, relationship IDs, targets, layout links and notes links"
+      ],
+      "consumers": {
+        "bun": {
+          "status": "planned",
+          "evidence": []
+        },
+        "go": {
+          "status": "planned",
+          "evidence": []
+        },
+        "python": {
+          "status": "planned",
+          "evidence": []
+        }
+      }
+    },
+    {
+      "id": "@id-pptx-manipulation-append-title",
+      "feature": "workflows/pptx/text.feature",
+      "expandedCases": 1,
+      "factIds": [],
+      "expectedOutcomes": [
+        "the saved slide 1 shape ID 2 has exact properties JSON {\"text\":\"Alpha\\n - Appended\",\"paragraphs\":[\"Alpha\",\" - Appended\"]}",
+        "only original member payloads [\"ppt/slides/slide1.xml\"] may change",
+        "the original member name set is unchanged",
+        "the supplied archive, unrelated member payloads and unaffected lexical XML spans retain their original bytes",
+        "all pre-existing slides retain their original IDs, relationship IDs, targets, layout links and notes links"
+      ],
+      "consumers": {
+        "bun": {
+          "status": "planned",
+          "evidence": []
+        },
+        "go": {
+          "status": "planned",
+          "evidence": []
+        },
+        "python": {
+          "status": "planned",
+          "evidence": []
+        }
+      }
+    },
+    {
+      "id": "@id-pptx-manipulation-bullet-default",
+      "feature": "workflows/pptx/bullets.feature",
+      "expandedCases": 1,
+      "factIds": [],
+      "expectedOutcomes": [
+        "the saved slide 2 shape ID 4 has exact properties JSON {\"text\":\"Existing\\nNew bullet point\",\"paragraphs\":[\"Existing\",\"New bullet point\"],\"bullet\":{\"character\":\"•\",\"level\":0}}",
+        "only original member payloads [\"ppt/slides/slide2.xml\"] may change",
+        "the original member name set is unchanged",
+        "the supplied archive, unrelated member payloads and unaffected lexical XML spans retain their original bytes",
+        "all pre-existing slides retain their original IDs, relationship IDs, targets, layout links and notes links"
+      ],
+      "consumers": {
+        "bun": {
+          "status": "planned",
+          "evidence": []
+        },
+        "go": {
+          "status": "planned",
+          "evidence": []
+        },
+        "python": {
+          "status": "planned",
+          "evidence": []
+        }
+      }
+    },
+    {
+      "id": "@id-pptx-manipulation-bullet-sequence",
+      "feature": "workflows/pptx/bullets.feature",
+      "expandedCases": 1,
+      "factIds": [],
+      "expectedOutcomes": [
+        "the saved slide 2 shape ID 4 has exact properties JSON {\"text\":\"First bullet\\nSecond bullet\",\"paragraphs\":[\"First bullet\",\"Second bullet\"],\"bullets\":[{\"character\":\"•\",\"level\":0},{\"character\":\"•\",\"level\":0}]}",
+        "only original member payloads [\"ppt/slides/slide2.xml\"] may change",
+        "the original member name set is unchanged",
+        "the supplied archive, unrelated member payloads and unaffected lexical XML spans retain their original bytes",
+        "all pre-existing slides retain their original IDs, relationship IDs, targets, layout links and notes links"
+      ],
+      "consumers": {
+        "bun": {
+          "status": "planned",
+          "evidence": []
+        },
+        "go": {
+          "status": "planned",
+          "evidence": []
+        },
+        "python": {
+          "status": "planned",
+          "evidence": []
+        }
+      }
+    },
+    {
+      "id": "@id-pptx-manipulation-bullet-level",
+      "feature": "workflows/pptx/bullets.feature",
+      "expandedCases": 1,
+      "factIds": [],
+      "expectedOutcomes": [
+        "the saved slide 2 shape ID 4 has exact properties JSON {\"text\":\"Existing\\nSub-bullet point\",\"paragraphs\":[\"Existing\",\"Sub-bullet point\"],\"bullet\":{\"character\":\"•\",\"level\":1}}",
+        "only original member payloads [\"ppt/slides/slide2.xml\"] may change",
+        "the original member name set is unchanged",
+        "the supplied archive, unrelated member payloads and unaffected lexical XML spans retain their original bytes",
+        "all pre-existing slides retain their original IDs, relationship IDs, targets, layout links and notes links"
+      ],
+      "consumers": {
+        "bun": {
+          "status": "planned",
+          "evidence": []
+        },
+        "go": {
+          "status": "planned",
+          "evidence": []
+        },
+        "python": {
+          "status": "planned",
+          "evidence": []
+        }
+      }
+    },
+    {
+      "id": "@id-pptx-manipulation-bullet-bold-label",
+      "feature": "workflows/pptx/bullets.feature",
+      "expandedCases": 1,
+      "factIds": [],
+      "expectedOutcomes": [
+        "the saved slide 2 shape ID 4 has exact properties JSON {\"text\":\"Existing\\nKey Point: This is the description\",\"paragraphs\":[\"Existing\",\"Key Point: This is the description\"],\"bullet\":{\"character\":\"•\",\"level\":0},\"runs\":[{\"text\":\"Key Point: \",\"bold\":true},{\"text\":\"This is the description\",\"bold\":false}]}",
+        "only original member payloads [\"ppt/slides/slide2.xml\"] may change",
+        "the original member name set is unchanged",
+        "the supplied archive, unrelated member payloads and unaffected lexical XML spans retain their original bytes",
+        "all pre-existing slides retain their original IDs, relationship IDs, targets, layout links and notes links"
+      ],
+      "consumers": {
+        "bun": {
+          "status": "planned",
+          "evidence": []
+        },
+        "go": {
+          "status": "planned",
+          "evidence": []
+        },
+        "python": {
+          "status": "planned",
+          "evidence": []
+        }
+      }
+    },
+    {
+      "id": "@id-pptx-manipulation-clear-bullets",
+      "feature": "workflows/pptx/bullets.feature",
+      "expandedCases": 1,
+      "factIds": [],
+      "expectedOutcomes": [
+        "the saved slide 2 shape ID 4 has exact properties JSON {\"text\":\"\",\"paragraphs\":[\"\"],\"bulletCount\":0}",
+        "only original member payloads [\"ppt/slides/slide2.xml\"] may change",
+        "the original member name set is unchanged",
+        "the supplied archive, unrelated member payloads and unaffected lexical XML spans retain their original bytes",
+        "all pre-existing slides retain their original IDs, relationship IDs, targets, layout links and notes links"
+      ],
+      "consumers": {
+        "bun": {
+          "status": "planned",
+          "evidence": []
+        },
+        "go": {
+          "status": "planned",
+          "evidence": []
+        },
+        "python": {
+          "status": "planned",
+          "evidence": []
+        }
+      }
+    },
+    {
+      "id": "@id-pptx-manipulation-autofit-shrink",
+      "feature": "workflows/pptx/text-autofit.feature",
+      "expandedCases": 1,
+      "factIds": [],
+      "expectedOutcomes": [
+        "the saved slide 1 shape ID 2 has exact properties JSON {\"text\":\"Alpha\",\"autofit\":\"normAutofit\",\"fitChildCount\":1}",
+        "only original member payloads [\"ppt/slides/slide1.xml\"] may change",
+        "the original member name set is unchanged",
+        "the supplied archive, unrelated member payloads and unaffected lexical XML spans retain their original bytes",
+        "all pre-existing slides retain their original IDs, relationship IDs, targets, layout links and notes links"
+      ],
+      "consumers": {
+        "bun": {
+          "status": "planned",
+          "evidence": []
+        },
+        "go": {
+          "status": "planned",
+          "evidence": []
+        },
+        "python": {
+          "status": "planned",
+          "evidence": []
+        }
+      }
+    },
+    {
+      "id": "@id-pptx-manipulation-autofit-none",
+      "feature": "workflows/pptx/text-autofit.feature",
+      "expandedCases": 1,
+      "factIds": [],
+      "expectedOutcomes": [
+        "the saved slide 1 shape ID 2 has exact properties JSON {\"text\":\"Alpha\",\"autofit\":\"noAutofit\",\"fitChildCount\":1}",
+        "only original member payloads [\"ppt/slides/slide1.xml\"] may change",
+        "the original member name set is unchanged",
+        "the supplied archive, unrelated member payloads and unaffected lexical XML spans retain their original bytes",
+        "all pre-existing slides retain their original IDs, relationship IDs, targets, layout links and notes links"
+      ],
+      "consumers": {
+        "bun": {
+          "status": "planned",
+          "evidence": []
+        },
+        "go": {
+          "status": "planned",
+          "evidence": []
+        },
+        "python": {
+          "status": "planned",
+          "evidence": []
+        }
+      }
+    },
+    {
+      "id": "@id-pptx-manipulation-autofit-resize",
+      "feature": "workflows/pptx/text-autofit.feature",
+      "expandedCases": 1,
+      "factIds": [],
+      "expectedOutcomes": [
+        "the saved slide 1 shape ID 2 has exact properties JSON {\"text\":\"Alpha\",\"autofit\":\"spAutoFit\",\"fitChildCount\":1}",
+        "only original member payloads [\"ppt/slides/slide1.xml\"] may change",
+        "the original member name set is unchanged",
+        "the supplied archive, unrelated member payloads and unaffected lexical XML spans retain their original bytes",
+        "all pre-existing slides retain their original IDs, relationship IDs, targets, layout links and notes links"
+      ],
+      "consumers": {
+        "bun": {
+          "status": "planned",
+          "evidence": []
+        },
+        "go": {
+          "status": "planned",
+          "evidence": []
+        },
+        "python": {
+          "status": "planned",
+          "evidence": []
+        }
+      }
+    },
+    {
+      "id": "@id-pptx-manipulation-insert-start",
+      "feature": "workflows/pptx/creation.feature",
+      "expandedCases": 1,
+      "factIds": [],
+      "expectedOutcomes": [
+        "the saved the presentation slide list has exact properties JSON {\"titles\":[\"First Slide\",\"Alpha\",\"Beta\",\"Gamma\"],\"insertedSubtitle\":\"Inserted subtitle\",\"oldSlideIdentityOrder\":[1,2,3]}",
+        "only original member payloads [\"ppt/presentation.xml\",\"ppt/_rels/presentation.xml.rels\",\"[Content_Types].xml\"] may change",
+        "exactly one slide XML part and its one layout relationship part are added with valid unique IDs and a resolved original layout; no members are removed",
+        "the supplied archive, unrelated member payloads and unaffected lexical XML spans retain their original bytes",
+        "all pre-existing slides retain their original IDs, relationship IDs, targets, layout links and notes links"
+      ],
+      "consumers": {
+        "bun": {
+          "status": "planned",
+          "evidence": []
+        },
+        "go": {
+          "status": "planned",
+          "evidence": []
+        },
+        "python": {
+          "status": "planned",
+          "evidence": []
+        }
+      }
+    },
+    {
+      "id": "@id-pptx-manipulation-insert-middle",
+      "feature": "workflows/pptx/creation.feature",
+      "expandedCases": 1,
+      "factIds": [],
+      "expectedOutcomes": [
+        "the saved the presentation slide list has exact properties JSON {\"titles\":[\"Alpha\",\"Middle Slide\",\"Beta\",\"Gamma\"],\"insertedSubtitle\":\"Inserted subtitle\",\"oldSlideIdentityOrder\":[1,2,3]}",
+        "only original member payloads [\"ppt/presentation.xml\",\"ppt/_rels/presentation.xml.rels\",\"[Content_Types].xml\"] may change",
+        "exactly one slide XML part and its one layout relationship part are added with valid unique IDs and a resolved original layout; no members are removed",
+        "the supplied archive, unrelated member payloads and unaffected lexical XML spans retain their original bytes",
+        "all pre-existing slides retain their original IDs, relationship IDs, targets, layout links and notes links"
+      ],
+      "consumers": {
+        "bun": {
+          "status": "planned",
+          "evidence": []
+        },
+        "go": {
+          "status": "planned",
+          "evidence": []
+        },
+        "python": {
+          "status": "planned",
+          "evidence": []
+        }
+      }
+    },
+    {
+      "id": "@id-pptx-manipulation-reorder",
+      "feature": "workflows/pptx/slide-order.feature",
+      "expandedCases": 1,
+      "factIds": [],
+      "expectedOutcomes": [
+        "the saved the presentation slide list has exact properties JSON {\"titles\":[\"Alpha\",\"Gamma\",\"Beta\"],\"originalSlideIdentityOrder\":[1,3,2]}",
+        "only original member payloads [\"ppt/presentation.xml\"] may change",
+        "the original member name set is unchanged",
+        "the supplied archive, unrelated member payloads and unaffected lexical XML spans retain their original bytes",
+        "all pre-existing slides retain their original IDs, relationship IDs, targets, layout links and notes links"
+      ],
+      "consumers": {
+        "bun": {
+          "status": "planned",
+          "evidence": []
+        },
+        "go": {
+          "status": "planned",
+          "evidence": []
+        },
+        "python": {
+          "status": "planned",
+          "evidence": []
+        }
+      }
+    },
+    {
+      "id": "@id-pptx-manipulation-reorder-refusal",
+      "feature": "workflows/pptx/slide-order.feature",
+      "expandedCases": 1,
+      "factIds": [],
+      "expectedOutcomes": [
+        "the saved the presentation slide list has exact properties JSON {\"refusal\":true,\"reason\":\"invalid-permutation\",\"titles\":[\"Alpha\",\"Beta\",\"Gamma\"],\"unchangedSession\":true,\"unchangedHandles\":true}",
+        "only original member payloads [] may change",
+        "the original member name set is unchanged",
+        "the supplied archive, unrelated member payloads and unaffected lexical XML spans retain their original bytes, and the refusal returns invalid-permutation without changing session or handles"
+      ],
+      "consumers": {
+        "bun": {
+          "status": "planned",
+          "evidence": []
+        },
+        "go": {
+          "status": "planned",
+          "evidence": []
+        },
+        "python": {
+          "status": "planned",
+          "evidence": []
+        }
+      }
+    },
+    {
+      "id": "@id-pptx-manipulation-table-values",
+      "feature": "workflows/pptx/tables.feature",
+      "expandedCases": 1,
+      "factIds": [],
+      "expectedOutcomes": [
+        "the saved slide 1 has exact properties JSON {\"cells\":[[\"Name\",\"Value\",\"Status\"],[\"Item 1\",\"100\",\"OK\"],[\"Item 2\",\"200\",\"Pending\"]],\"rows\":3,\"columns\":3,\"x\":914400,\"y\":1828800,\"width\":10058400,\"height\":2743200}",
+        "only original member payloads [\"ppt/slides/slide1.xml\"] may change",
+        "the original member name set is unchanged",
+        "the supplied archive, unrelated member payloads and unaffected lexical XML spans retain their original bytes",
+        "all pre-existing slides retain their original IDs, relationship IDs, targets, layout links and notes links"
+      ],
+      "consumers": {
+        "bun": {
+          "status": "planned",
+          "evidence": []
+        },
+        "go": {
+          "status": "planned",
+          "evidence": []
+        },
+        "python": {
+          "status": "planned",
+          "evidence": []
+        }
+      }
+    },
+    {
+      "id": "@id-pptx-manipulation-table-geometry",
+      "feature": "workflows/pptx/tables.feature",
+      "expandedCases": 1,
+      "factIds": [],
+      "expectedOutcomes": [
+        "the saved slide 1 has exact properties JSON {\"rows\":2,\"columns\":2,\"cells\":[[\"\",\"\"],[\"\",\"\"]],\"x\":914400,\"y\":1828800,\"width\":10058400,\"height\":2743200,\"columnWidths\":[5029200,5029200],\"rowHeights\":[1371600,1371600]}",
+        "only original member payloads [\"ppt/slides/slide1.xml\"] may change",
+        "the original member name set is unchanged",
+        "the supplied archive, unrelated member payloads and unaffected lexical XML spans retain their original bytes",
+        "all pre-existing slides retain their original IDs, relationship IDs, targets, layout links and notes links"
+      ],
+      "consumers": {
+        "bun": {
+          "status": "planned",
+          "evidence": []
+        },
+        "go": {
+          "status": "planned",
+          "evidence": []
+        },
+        "python": {
+          "status": "planned",
+          "evidence": []
+        }
+      }
+    },
+    {
+      "id": "@id-pptx-manipulation-set-notes",
+      "feature": "workflows/pptx/notes.feature",
+      "expandedCases": 1,
+      "factIds": [],
+      "expectedOutcomes": [
+        "the saved slide 1 existing notes body has exact properties JSON {\"text\":\"These are speaker notes\",\"paragraphs\":[\"These are speaker notes\"]}",
+        "only original member payloads [\"ppt/notesSlides/notesSlide1.xml\"] may change",
+        "the original member name set is unchanged",
+        "the supplied archive, unrelated member payloads and unaffected lexical XML spans retain their original bytes",
+        "all pre-existing slides retain their original IDs, relationship IDs, targets, layout links and notes links"
+      ],
+      "consumers": {
+        "bun": {
+          "status": "planned",
+          "evidence": []
+        },
+        "go": {
+          "status": "planned",
+          "evidence": []
+        },
+        "python": {
+          "status": "planned",
+          "evidence": []
+        }
+      }
+    },
+    {
+      "id": "@id-pptx-manipulation-notes-readback",
+      "feature": "workflows/pptx/notes.feature",
+      "expandedCases": 1,
+      "factIds": [],
+      "expectedOutcomes": [
+        "the saved slide 1 existing notes body has exact properties JSON {\"text\":\"Speaker notes content\\nsecond line\",\"paragraphs\":[\"Speaker notes content\",\"second line\"]}",
+        "only original member payloads [\"ppt/notesSlides/notesSlide1.xml\"] may change",
+        "the original member name set is unchanged",
+        "the supplied archive, unrelated member payloads and unaffected lexical XML spans retain their original bytes",
+        "all pre-existing slides retain their original IDs, relationship IDs, targets, layout links and notes links"
+      ],
+      "consumers": {
+        "bun": {
+          "status": "planned",
+          "evidence": []
+        },
+        "go": {
+          "status": "planned",
+          "evidence": []
+        },
+        "python": {
+          "status": "planned",
+          "evidence": []
         }
       }
     }
