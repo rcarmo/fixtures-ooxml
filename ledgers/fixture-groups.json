@@ -387,6 +387,35 @@
         "@id-pptx-manipulation-set-notes",
         "@id-pptx-manipulation-notes-readback"
       ]
+    },
+    {
+      "format": "pptx",
+      "scenarioGroup": "formatting",
+      "fixtureIds": [
+        "fixture-84e7a8a3681d0e43d4c8a29c37e68386721dfb5df13a36b8bd17a3ebc1fb1fb2"
+      ],
+      "scenarioIds": [
+        "@id-pptx-formatting-hide",
+        "@id-pptx-formatting-unhide",
+        "@id-pptx-formatting-visibility-order",
+        "@id-pptx-formatting-visibility-refusal",
+        "@id-pptx-formatting-move",
+        "@id-pptx-formatting-resize",
+        "@id-pptx-formatting-transform",
+        "@id-pptx-formatting-geometry-refusal",
+        "@id-pptx-formatting-run-bold",
+        "@id-pptx-formatting-run-unbold",
+        "@id-pptx-formatting-run-italic",
+        "@id-pptx-formatting-run-underline",
+        "@id-pptx-formatting-run-size",
+        "@id-pptx-formatting-run-font",
+        "@id-pptx-formatting-run-color",
+        "@id-pptx-formatting-run-inherit",
+        "@id-pptx-formatting-paragraph-align",
+        "@id-pptx-formatting-paragraph-indent",
+        "@id-pptx-formatting-paragraph-spacing",
+        "@id-pptx-formatting-paragraph-line"
+      ]
     }
   ]
 }

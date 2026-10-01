@@ -46,19 +46,19 @@ portable API profile; the scenario reason records the gap.
 | Group | Features | IDs | Cases | generalized | profile-specific | runtime-specific | incomplete |
 |---|---:|---:|---:|---:|---:|---:|---:|
 | DOCX | 24 | 158 | 482 | 69 | 56 | 0 | 33 |
-| PPTX | 13 | 53 | 102 | 25 | 11 | 0 | 17 |
+| PPTX | 16 | 73 | 122 | 45 | 11 | 0 | 17 |
 | XLSX | 12 | 43 | 109 | 12 | 14 | 0 | 17 |
 | PACKAGE | 10 | 36 | 68 | 29 | 6 | 0 | 1 |
 | XML | 4 | 33 | 47 | 22 | 11 | 0 | 0 |
 | OFFICE | 1 | 1 | 3 | 0 | 0 | 0 | 1 |
-| ALL | 64 | 324 | 811 | 157 | 98 | 0 | 69 |
+| ALL | 67 | 344 | 831 | 177 | 98 | 0 | 69 |
 
-18 of 64 canonical feature files are fully generalized throughout.
+21 of 67 canonical feature files are fully generalized throughout.
 The remaining files contain profile-specific, runtime-specific or incomplete
 scenarios; 26 files mix categories and require ID-level selection.
 The four category columns count scenario IDs, not expanded example cases.
 A complete [feature-level table](../workflows/README.md) and downloadable
-[207-file CSV](feature-reuse.csv) accompany the [scenario CSV](scenario-reuse.csv).
+[210-file CSV](feature-reuse.csv) accompany the [scenario CSV](scenario-reuse.csv).
 
 ## Scenario decisions
 
@@ -450,6 +450,17 @@ Presentation notes inspection and editing — **mixed**; fully generalized: **no
 | [@id-pptx-manipulation-set-notes](../workflows/pptx/notes.feature#L108) | 1 | generalized | @profile-retained-manipulation | Concrete immutable input, literal operation/values, independent saved XML readback and exact unrelated-payload custody; implementation planned in every runtime. [pptx-manipulation.md](../contracts/pptx-manipulation.md) |
 | [@id-pptx-manipulation-notes-readback](../workflows/pptx/notes.feature#L120) | 1 | generalized | @profile-retained-manipulation | Concrete immutable input, literal operation/values, independent saved XML readback and exact unrelated-payload custody; implementation planned in every runtime. [pptx-manipulation.md](../contracts/pptx-manipulation.md) |
 
+### pptx/paragraph-formatting.feature
+
+Retained PPTX paragraph formatting editing — **generalized**; fully generalized: **yes**.
+
+| ID / source | Cases | Tag | Profiles | Reason / local evidence |
+|---|---:|---|---|---|
+| [@id-pptx-formatting-paragraph-align](../workflows/pptx/paragraph-formatting.feature#L5) | 1 | generalized | @profile-retained-formatting | Exactretainedinput/directpropertyvalues/lexicalcustody/refusal independent savedchecks; allruntimesplanned. [pptx-formatting.md](../contracts/pptx-formatting.md) |
+| [@id-pptx-formatting-paragraph-indent](../workflows/pptx/paragraph-formatting.feature#L17) | 1 | generalized | @profile-retained-formatting | Exactretainedinput/directpropertyvalues/lexicalcustody/refusal independent savedchecks; allruntimesplanned. [pptx-formatting.md](../contracts/pptx-formatting.md) |
+| [@id-pptx-formatting-paragraph-spacing](../workflows/pptx/paragraph-formatting.feature#L29) | 1 | generalized | @profile-retained-formatting | Exactretainedinput/directpropertyvalues/lexicalcustody/refusal independent savedchecks; allruntimesplanned. [pptx-formatting.md](../contracts/pptx-formatting.md) |
+| [@id-pptx-formatting-paragraph-line](../workflows/pptx/paragraph-formatting.feature#L41) | 1 | generalized | @profile-retained-formatting | Exactretainedinput/directpropertyvalues/lexicalcustody/refusal independent savedchecks; allruntimesplanned. [pptx-formatting.md](../contracts/pptx-formatting.md) |
+
 ### pptx/preservation.feature
 
 Presentation archive preservation — **generalized**; fully generalized: **yes**.
@@ -457,6 +468,17 @@ Presentation archive preservation — **generalized**; fully generalized: **yes*
 | ID / source | Cases | Tag | Profiles | Reason / local evidence |
 |---|---:|---|---|---|
 | [@id-pptx-bun-open-save-noop](../workflows/pptx/preservation.feature#L8) | 1 | generalized | @profile-archive-noop | Pinned presentation and exact path/byte-input no-edit archive custody can be checked in any runtime. [bun-pptx.md](../contracts/bun-pptx.md) |
+
+### pptx/shape-geometry.feature
+
+Retained PPTX shape geometry editing — **generalized**; fully generalized: **yes**.
+
+| ID / source | Cases | Tag | Profiles | Reason / local evidence |
+|---|---:|---|---|---|
+| [@id-pptx-formatting-move](../workflows/pptx/shape-geometry.feature#L5) | 1 | generalized | @profile-retained-formatting | Exactretainedinput/directpropertyvalues/lexicalcustody/refusal independent savedchecks; allruntimesplanned. [pptx-formatting.md](../contracts/pptx-formatting.md) |
+| [@id-pptx-formatting-resize](../workflows/pptx/shape-geometry.feature#L17) | 1 | generalized | @profile-retained-formatting | Exactretainedinput/directpropertyvalues/lexicalcustody/refusal independent savedchecks; allruntimesplanned. [pptx-formatting.md](../contracts/pptx-formatting.md) |
+| [@id-pptx-formatting-transform](../workflows/pptx/shape-geometry.feature#L29) | 1 | generalized | @profile-retained-formatting | Exactretainedinput/directpropertyvalues/lexicalcustody/refusal independent savedchecks; allruntimesplanned. [pptx-formatting.md](../contracts/pptx-formatting.md) |
+| [@id-pptx-formatting-geometry-refusal](../workflows/pptx/shape-geometry.feature#L41) | 1 | generalized | @profile-retained-formatting | Exactretainedinput/directpropertyvalues/lexicalcustody/refusal independent savedchecks; allruntimesplanned. [pptx-formatting.md](../contracts/pptx-formatting.md) |
 
 ### pptx/slide-import.feature
 
@@ -485,6 +507,10 @@ PowerPoint slide visibility by slide identity — **mixed**; fully generalized: 
 |---|---:|---|---|---|
 | [@id-pptx-slide-visibility-retained-inputs](../workflows/pptx/slide-visibility.feature#L9) | 1 | generalized | — | Sealed source/control identities and explicit namespace-qualified/unqualified visibility predicates are independently reusable. [pptx-slide-visibility.md](../contracts/pptx-slide-visibility.md) |
 | [@id-pptx-office-hidden-slide-positive](../workflows/pptx/slide-visibility.feature#L21) | 1 | incomplete | — | Requires a not-yet-acquired untouched PowerPoint positive and version/platform reopen evidence; it is application-dependent, not language-runtime-specific. [pptx-slide-visibility.md](../contracts/pptx-slide-visibility.md) |
+| [@id-pptx-formatting-hide](../workflows/pptx/slide-visibility.feature#L34) | 1 | generalized | @profile-retained-formatting | Exactretainedinput/directpropertyvalues/lexicalcustody/refusal independent savedchecks; allruntimesplanned. [pptx-formatting.md](../contracts/pptx-formatting.md) |
+| [@id-pptx-formatting-unhide](../workflows/pptx/slide-visibility.feature#L46) | 1 | generalized | @profile-retained-formatting | Exactretainedinput/directpropertyvalues/lexicalcustody/refusal independent savedchecks; allruntimesplanned. [pptx-formatting.md](../contracts/pptx-formatting.md) |
+| [@id-pptx-formatting-visibility-order](../workflows/pptx/slide-visibility.feature#L58) | 1 | generalized | @profile-retained-formatting | Exactretainedinput/directpropertyvalues/lexicalcustody/refusal independent savedchecks; allruntimesplanned. [pptx-formatting.md](../contracts/pptx-formatting.md) |
+| [@id-pptx-formatting-visibility-refusal](../workflows/pptx/slide-visibility.feature#L70) | 1 | generalized | @profile-retained-formatting | Exactretainedinput/directpropertyvalues/lexicalcustody/refusal independent savedchecks; allruntimesplanned. [pptx-formatting.md](../contracts/pptx-formatting.md) |
 
 ### pptx/tables.feature
 
@@ -517,6 +543,21 @@ Positioned text-box authoring on existing slides — **incomplete**; fully gener
 |---|---:|---|---|---|
 | [@id-pptx-text-box-authoring](../workflows/pptx/text-box.feature#L8) | 8 | incomplete | — | Plain/multiline/geometry/defect labels lack per-row source decks, actual EMU coordinates, literal text and expected identities. [text-box.md](../contracts/text-box.md) |
 | [@id-pptx-text-box-refusal](../workflows/pptx/text-box.feature#L25) | 15 | incomplete | — | Plain/multiline/geometry/defect labels lack per-row source decks, actual EMU coordinates, literal text and expected identities. [text-box.md](../contracts/text-box.md) |
+
+### pptx/text-formatting.feature
+
+Retained PPTX text formatting editing — **generalized**; fully generalized: **yes**.
+
+| ID / source | Cases | Tag | Profiles | Reason / local evidence |
+|---|---:|---|---|---|
+| [@id-pptx-formatting-run-bold](../workflows/pptx/text-formatting.feature#L5) | 1 | generalized | @profile-retained-formatting | Exactretainedinput/directpropertyvalues/lexicalcustody/refusal independent savedchecks; allruntimesplanned. [pptx-formatting.md](../contracts/pptx-formatting.md) |
+| [@id-pptx-formatting-run-unbold](../workflows/pptx/text-formatting.feature#L17) | 1 | generalized | @profile-retained-formatting | Exactretainedinput/directpropertyvalues/lexicalcustody/refusal independent savedchecks; allruntimesplanned. [pptx-formatting.md](../contracts/pptx-formatting.md) |
+| [@id-pptx-formatting-run-italic](../workflows/pptx/text-formatting.feature#L29) | 1 | generalized | @profile-retained-formatting | Exactretainedinput/directpropertyvalues/lexicalcustody/refusal independent savedchecks; allruntimesplanned. [pptx-formatting.md](../contracts/pptx-formatting.md) |
+| [@id-pptx-formatting-run-underline](../workflows/pptx/text-formatting.feature#L41) | 1 | generalized | @profile-retained-formatting | Exactretainedinput/directpropertyvalues/lexicalcustody/refusal independent savedchecks; allruntimesplanned. [pptx-formatting.md](../contracts/pptx-formatting.md) |
+| [@id-pptx-formatting-run-size](../workflows/pptx/text-formatting.feature#L53) | 1 | generalized | @profile-retained-formatting | Exactretainedinput/directpropertyvalues/lexicalcustody/refusal independent savedchecks; allruntimesplanned. [pptx-formatting.md](../contracts/pptx-formatting.md) |
+| [@id-pptx-formatting-run-font](../workflows/pptx/text-formatting.feature#L65) | 1 | generalized | @profile-retained-formatting | Exactretainedinput/directpropertyvalues/lexicalcustody/refusal independent savedchecks; allruntimesplanned. [pptx-formatting.md](../contracts/pptx-formatting.md) |
+| [@id-pptx-formatting-run-color](../workflows/pptx/text-formatting.feature#L77) | 1 | generalized | @profile-retained-formatting | Exactretainedinput/directpropertyvalues/lexicalcustody/refusal independent savedchecks; allruntimesplanned. [pptx-formatting.md](../contracts/pptx-formatting.md) |
+| [@id-pptx-formatting-run-inherit](../workflows/pptx/text-formatting.feature#L89) | 1 | generalized | @profile-retained-formatting | Exactretainedinput/directpropertyvalues/lexicalcustody/refusal independent savedchecks; allruntimesplanned. [pptx-formatting.md](../contracts/pptx-formatting.md) |
 
 ### pptx/text.feature
 

@@ -6158,16 +6158,22 @@
       "aliases": []
     },
     {
-      "id": "asset-b348743de0c6bc7303811f613761a6d67a8a0f4f57132466238a0c7e752acd78",
+      "id": "asset-4d597d15d4227bc7ed153ef3cd1060d8319134ca08b499c602fc964c1511af19",
       "path": "workflows/pptx/slide-visibility.feature",
-      "bytes": 2098,
-      "sha256": "b348743de0c6bc7303811f613761a6d67a8a0f4f57132466238a0c7e752acd78",
+      "bytes": 7028,
+      "sha256": "4d597d15d4227bc7ed153ef3cd1060d8319134ca08b499c602fc964c1511af19",
       "role": "workflow",
       "origins": [
         {
           "repository": "https://github.com/rcarmo/fixtures-ooxml",
           "path": "workflows/pptx/slide-visibility.feature",
           "basis": "Project-owned behaviour contract or source assertion mapping"
+        },
+        {
+          "kind": "project-authored",
+          "repository": "https://github.com/rcarmo/fixtures-ooxml",
+          "revision": "5dc02ae970e2eaf5ed3e261324ae3961e08bb1c9",
+          "path": "workflows/pptx/slide-visibility.feature"
         }
       ],
       "aliases": []
@@ -6382,6 +6388,135 @@
           "repository": "https://github.com/rcarmo/bun-ooxml",
           "revision": "69c8169a2241cf09dc769c71023dd2b7d5006354",
           "path": "src/pptx/index.ts"
+        }
+      ]
+    },
+    {
+      "id": "asset-6cf9dad38adca997ec91ac4371bb05f19bd2a4ef547e05664755a5099ddabb17",
+      "path": "workflows/pptx/shape-geometry.feature",
+      "role": "workflow",
+      "bytes": 4880,
+      "sha256": "6cf9dad38adca997ec91ac4371bb05f19bd2a4ef547e05664755a5099ddabb17",
+      "aliases": [],
+      "origins": [
+        {
+          "kind": "project-authored",
+          "repository": "https://github.com/rcarmo/fixtures-ooxml",
+          "revision": "5dc02ae970e2eaf5ed3e261324ae3961e08bb1c9",
+          "path": "workflows/pptx/shape-geometry.feature"
+        }
+      ]
+    },
+    {
+      "id": "asset-adcd0463dabd5a539e7d3feef58b4c0699ad2f51ff7038114570fb7a24423384",
+      "path": "workflows/pptx/text-formatting.feature",
+      "role": "workflow",
+      "bytes": 9466,
+      "sha256": "adcd0463dabd5a539e7d3feef58b4c0699ad2f51ff7038114570fb7a24423384",
+      "aliases": [],
+      "origins": [
+        {
+          "kind": "project-authored",
+          "repository": "https://github.com/rcarmo/fixtures-ooxml",
+          "revision": "5dc02ae970e2eaf5ed3e261324ae3961e08bb1c9",
+          "path": "workflows/pptx/text-formatting.feature"
+        }
+      ]
+    },
+    {
+      "id": "asset-5be8c0cb29b61a50abd8b280b1517a771503c3c2349691931881176b491a16a4",
+      "path": "workflows/pptx/paragraph-formatting.feature",
+      "role": "workflow",
+      "bytes": 4837,
+      "sha256": "5be8c0cb29b61a50abd8b280b1517a771503c3c2349691931881176b491a16a4",
+      "aliases": [],
+      "origins": [
+        {
+          "kind": "project-authored",
+          "repository": "https://github.com/rcarmo/fixtures-ooxml",
+          "revision": "5dc02ae970e2eaf5ed3e261324ae3961e08bb1c9",
+          "path": "workflows/pptx/paragraph-formatting.feature"
+        }
+      ]
+    },
+    {
+      "id": "asset-04a65bac1e710d9911c63f8df6ea790354a69907a38df87428cc1f5dac2c9e67",
+      "path": "contracts/pptx-formatting.md",
+      "role": "contract",
+      "bytes": 6023,
+      "sha256": "04a65bac1e710d9911c63f8df6ea790354a69907a38df87428cc1f5dac2c9e67",
+      "aliases": [],
+      "origins": [
+        {
+          "kind": "project-authored",
+          "repository": "https://github.com/rcarmo/fixtures-ooxml",
+          "revision": "5dc02ae970e2eaf5ed3e261324ae3961e08bb1c9",
+          "path": "contracts/pptx-formatting.md"
+        }
+      ]
+    },
+    {
+      "id": "asset-6027f9d33f55ec1e838a43e33ff38dbb89ddf8bf90ae4209fb6fa64e7fc3aeb1",
+      "path": "ledgers/pptx-formatting.json",
+      "role": "reconciliation-ledger",
+      "bytes": 111890,
+      "sha256": "6027f9d33f55ec1e838a43e33ff38dbb89ddf8bf90ae4209fb6fa64e7fc3aeb1",
+      "aliases": [],
+      "origins": [
+        {
+          "kind": "project-authored",
+          "repository": "https://github.com/rcarmo/fixtures-ooxml",
+          "revision": "5dc02ae970e2eaf5ed3e261324ae3961e08bb1c9",
+          "path": "ledgers/pptx-formatting.json"
+        }
+      ]
+    },
+    {
+      "id": "fixture-84e7a8a3681d0e43d4c8a29c37e68386721dfb5df13a36b8bd17a3ebc1fb1fb2",
+      "path": "fixtures/pptx/formatting/formatting-84e7a8a3681d.pptx",
+      "role": "fixture",
+      "format": "pptx",
+      "scenarioGroup": "formatting",
+      "bytes": 8634,
+      "sha256": "84e7a8a3681d0e43d4c8a29c37e68386721dfb5df13a36b8bd17a3ebc1fb1fb2",
+      "scenarioIds": [
+        "@id-pptx-formatting-hide",
+        "@id-pptx-formatting-unhide",
+        "@id-pptx-formatting-visibility-order",
+        "@id-pptx-formatting-visibility-refusal",
+        "@id-pptx-formatting-move",
+        "@id-pptx-formatting-resize",
+        "@id-pptx-formatting-transform",
+        "@id-pptx-formatting-geometry-refusal",
+        "@id-pptx-formatting-run-bold",
+        "@id-pptx-formatting-run-unbold",
+        "@id-pptx-formatting-run-italic",
+        "@id-pptx-formatting-run-underline",
+        "@id-pptx-formatting-run-size",
+        "@id-pptx-formatting-run-font",
+        "@id-pptx-formatting-run-color",
+        "@id-pptx-formatting-run-inherit",
+        "@id-pptx-formatting-paragraph-align",
+        "@id-pptx-formatting-paragraph-indent",
+        "@id-pptx-formatting-paragraph-spacing",
+        "@id-pptx-formatting-paragraph-line"
+      ],
+      "aliases": [],
+      "origins": [
+        {
+          "kind": "project-authored",
+          "repository": "https://github.com/rcarmo/fixtures-ooxml",
+          "revision": "5dc02ae970e2eaf5ed3e261324ae3961e08bb1c9",
+          "path": "fixtures/pptx/formatting/formatting-84e7a8a3681d.pptx"
+        },
+        {
+          "kind": "derived-from",
+          "assetId": "fixture-5ad4b68acc5a926c020dbc94154c95fa6c40c7353a55b2f82504879b392e9a45",
+          "sha256": "5ad4b68acc5a926c020dbc94154c95fa6c40c7353a55b2f82504879b392e9a45",
+          "repository": "https://github.com/rcarmo/bun-ooxml",
+          "revision": "69c8169a2241cf09dc769c71023dd2b7d5006354",
+          "path": "src/pptx/index.ts",
+          "transformation": "Replace only slide2 Body paragraphs with two paragraphs/two first-paragraph runs and explicit direct properties; keep every other member byte-identical."
         }
       ]
     }

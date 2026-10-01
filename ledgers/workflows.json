@@ -64,7 +64,10 @@
     "workflows/xlsx/calculation-chain-lifecycle.feature",
     "workflows/pptx/slide-visibility.feature",
     "workflows/pptx/bullets.feature",
-    "workflows/pptx/text-autofit.feature"
+    "workflows/pptx/text-autofit.feature",
+    "workflows/pptx/shape-geometry.feature",
+    "workflows/pptx/text-formatting.feature",
+    "workflows/pptx/paragraph-formatting.feature"
   ],
   "executionCredit": "Only local executed assertions count; reports here do not run consumers.",
   "workflows": [
@@ -8269,6 +8272,548 @@
         "the original member name set is unchanged",
         "the supplied archive, unrelated member payloads and unaffected lexical XML spans retain their original bytes",
         "all pre-existing slides retain their original IDs, relationship IDs, targets, layout links and notes links"
+      ],
+      "consumers": {
+        "bun": {
+          "status": "planned",
+          "evidence": []
+        },
+        "go": {
+          "status": "planned",
+          "evidence": []
+        },
+        "python": {
+          "status": "planned",
+          "evidence": []
+        }
+      }
+    },
+    {
+      "id": "@id-pptx-formatting-hide",
+      "feature": "workflows/pptx/slide-visibility.feature",
+      "expandedCases": 1,
+      "factIds": [],
+      "expectedOutcomes": [
+        "formatting target slide 2 root has exact saved properties JSON {\"show\":\"0\",\"hidden\":true}",
+        "the exact changed original member set is [\"ppt/slides/slide2.xml\"] with no additions or removals",
+        "every original text leaf, unselected run, paragraph, shape and unrelated member retains its original bytes",
+        "only the selected property span may change and all unpatched attributes and child fragments retain their exact bytes",
+        "caller archive, original slide IDs, relationship IDs, targets, layout and notes links retain custody"
+      ],
+      "consumers": {
+        "bun": {
+          "status": "planned",
+          "evidence": []
+        },
+        "go": {
+          "status": "planned",
+          "evidence": []
+        },
+        "python": {
+          "status": "planned",
+          "evidence": []
+        }
+      }
+    },
+    {
+      "id": "@id-pptx-formatting-unhide",
+      "feature": "workflows/pptx/slide-visibility.feature",
+      "expandedCases": 1,
+      "factIds": [],
+      "expectedOutcomes": [
+        "formatting target slide 2 root has exact saved properties JSON {\"show\":\"1\",\"hidden\":false}",
+        "the exact changed original member set is [\"ppt/slides/slide2.xml\"] with no additions or removals",
+        "every original text leaf, unselected run, paragraph, shape and unrelated member retains its original bytes",
+        "only the selected property span may change and all unpatched attributes and child fragments retain their exact bytes",
+        "caller archive, original slide IDs, relationship IDs, targets, layout and notes links retain custody"
+      ],
+      "consumers": {
+        "bun": {
+          "status": "planned",
+          "evidence": []
+        },
+        "go": {
+          "status": "planned",
+          "evidence": []
+        },
+        "python": {
+          "status": "planned",
+          "evidence": []
+        }
+      }
+    },
+    {
+      "id": "@id-pptx-formatting-visibility-order",
+      "feature": "workflows/pptx/slide-visibility.feature",
+      "expandedCases": 1,
+      "factIds": [],
+      "expectedOutcomes": [
+        "formatting target ordered slide identities has exact saved properties JSON {\"titles\":[\"Gamma\",\"Alpha\",\"Beta\"],\"hiddenParts\":[\"ppt/slides/slide2.xml\"],\"hiddenOrdinals\":[3]}",
+        "the exact changed original member set is [\"ppt/slides/slide2.xml\",\"ppt/presentation.xml\"] with no additions or removals",
+        "every original text leaf, unselected run, paragraph, shape and unrelated member retains its original bytes",
+        "only the selected property span may change and all unpatched attributes and child fragments retain their exact bytes",
+        "caller archive, original slide IDs, relationship IDs, targets, layout and notes links retain custody"
+      ],
+      "consumers": {
+        "bun": {
+          "status": "planned",
+          "evidence": []
+        },
+        "go": {
+          "status": "planned",
+          "evidence": []
+        },
+        "python": {
+          "status": "planned",
+          "evidence": []
+        }
+      }
+    },
+    {
+      "id": "@id-pptx-formatting-visibility-refusal",
+      "feature": "workflows/pptx/slide-visibility.feature",
+      "expandedCases": 1,
+      "factIds": [],
+      "expectedOutcomes": [
+        "formatting target slide 2 root has exact saved properties JSON {\"refusal\":\"invalid-visibility\"}",
+        "the exact changed original member set is [] with no additions or removals",
+        "every original text leaf, unselected run, paragraph, shape and unrelated member retains its original bytes",
+        "only the selected property span may change and all unpatched attributes and child fragments retain their exact bytes",
+        "caller archive, original slide IDs, relationship IDs, targets, layout and notes links retain custody",
+        "refusal reason invalid-visibility leaves session bytes and held identities unchanged before save"
+      ],
+      "consumers": {
+        "bun": {
+          "status": "planned",
+          "evidence": []
+        },
+        "go": {
+          "status": "planned",
+          "evidence": []
+        },
+        "python": {
+          "status": "planned",
+          "evidence": []
+        }
+      }
+    },
+    {
+      "id": "@id-pptx-formatting-move",
+      "feature": "workflows/pptx/shape-geometry.feature",
+      "expandedCases": 1,
+      "factIds": [],
+      "expectedOutcomes": [
+        "formatting target slide 2 shape ID 4 has exact saved properties JSON {\"x\":914400,\"y\":1828800,\"width\":1000,\"height\":1000}",
+        "the exact changed original member set is [\"ppt/slides/slide2.xml\"] with no additions or removals",
+        "every original text leaf, unselected run, paragraph, shape and unrelated member retains its original bytes",
+        "only the selected property span may change and all unpatched attributes and child fragments retain their exact bytes",
+        "caller archive, original slide IDs, relationship IDs, targets, layout and notes links retain custody"
+      ],
+      "consumers": {
+        "bun": {
+          "status": "planned",
+          "evidence": []
+        },
+        "go": {
+          "status": "planned",
+          "evidence": []
+        },
+        "python": {
+          "status": "planned",
+          "evidence": []
+        }
+      }
+    },
+    {
+      "id": "@id-pptx-formatting-resize",
+      "feature": "workflows/pptx/shape-geometry.feature",
+      "expandedCases": 1,
+      "factIds": [],
+      "expectedOutcomes": [
+        "formatting target slide 2 shape ID 4 has exact saved properties JSON {\"x\":1,\"y\":2,\"width\":3657600,\"height\":1828800}",
+        "the exact changed original member set is [\"ppt/slides/slide2.xml\"] with no additions or removals",
+        "every original text leaf, unselected run, paragraph, shape and unrelated member retains its original bytes",
+        "only the selected property span may change and all unpatched attributes and child fragments retain their exact bytes",
+        "caller archive, original slide IDs, relationship IDs, targets, layout and notes links retain custody"
+      ],
+      "consumers": {
+        "bun": {
+          "status": "planned",
+          "evidence": []
+        },
+        "go": {
+          "status": "planned",
+          "evidence": []
+        },
+        "python": {
+          "status": "planned",
+          "evidence": []
+        }
+      }
+    },
+    {
+      "id": "@id-pptx-formatting-transform",
+      "feature": "workflows/pptx/shape-geometry.feature",
+      "expandedCases": 1,
+      "factIds": [],
+      "expectedOutcomes": [
+        "formatting target slide 2 shape ID 4 has exact saved properties JSON {\"rotation\":5400000,\"flipH\":true,\"flipV\":false,\"x\":1,\"y\":2,\"width\":1000,\"height\":1000}",
+        "the exact changed original member set is [\"ppt/slides/slide2.xml\"] with no additions or removals",
+        "every original text leaf, unselected run, paragraph, shape and unrelated member retains its original bytes",
+        "only the selected property span may change and all unpatched attributes and child fragments retain their exact bytes",
+        "caller archive, original slide IDs, relationship IDs, targets, layout and notes links retain custody"
+      ],
+      "consumers": {
+        "bun": {
+          "status": "planned",
+          "evidence": []
+        },
+        "go": {
+          "status": "planned",
+          "evidence": []
+        },
+        "python": {
+          "status": "planned",
+          "evidence": []
+        }
+      }
+    },
+    {
+      "id": "@id-pptx-formatting-geometry-refusal",
+      "feature": "workflows/pptx/shape-geometry.feature",
+      "expandedCases": 1,
+      "factIds": [],
+      "expectedOutcomes": [
+        "formatting target slide 2 shape ID 4 has exact saved properties JSON {\"refusal\":\"invalid-geometry\"}",
+        "the exact changed original member set is [] with no additions or removals",
+        "every original text leaf, unselected run, paragraph, shape and unrelated member retains its original bytes",
+        "only the selected property span may change and all unpatched attributes and child fragments retain their exact bytes",
+        "caller archive, original slide IDs, relationship IDs, targets, layout and notes links retain custody",
+        "refusal reason invalid-geometry leaves session bytes and held identities unchanged before save"
+      ],
+      "consumers": {
+        "bun": {
+          "status": "planned",
+          "evidence": []
+        },
+        "go": {
+          "status": "planned",
+          "evidence": []
+        },
+        "python": {
+          "status": "planned",
+          "evidence": []
+        }
+      }
+    },
+    {
+      "id": "@id-pptx-formatting-run-bold",
+      "feature": "workflows/pptx/text-formatting.feature",
+      "expandedCases": 1,
+      "factIds": [],
+      "expectedOutcomes": [
+        "formatting target slide 2 shape ID 4 paragraph 0 run 1 has exact saved properties JSON {\"b\":\"1\"}",
+        "the exact changed original member set is [\"ppt/slides/slide2.xml\"] with no additions or removals",
+        "every original text leaf, unselected run, paragraph, shape and unrelated member retains its original bytes",
+        "only the selected property span may change and all unpatched attributes and child fragments retain their exact bytes",
+        "caller archive, original slide IDs, relationship IDs, targets, layout and notes links retain custody"
+      ],
+      "consumers": {
+        "bun": {
+          "status": "planned",
+          "evidence": []
+        },
+        "go": {
+          "status": "planned",
+          "evidence": []
+        },
+        "python": {
+          "status": "planned",
+          "evidence": []
+        }
+      }
+    },
+    {
+      "id": "@id-pptx-formatting-run-unbold",
+      "feature": "workflows/pptx/text-formatting.feature",
+      "expandedCases": 1,
+      "factIds": [],
+      "expectedOutcomes": [
+        "formatting target slide 2 shape ID 4 paragraph 0 run 0 has exact saved properties JSON {\"b\":\"0\"}",
+        "the exact changed original member set is [\"ppt/slides/slide2.xml\"] with no additions or removals",
+        "every original text leaf, unselected run, paragraph, shape and unrelated member retains its original bytes",
+        "only the selected property span may change and all unpatched attributes and child fragments retain their exact bytes",
+        "caller archive, original slide IDs, relationship IDs, targets, layout and notes links retain custody"
+      ],
+      "consumers": {
+        "bun": {
+          "status": "planned",
+          "evidence": []
+        },
+        "go": {
+          "status": "planned",
+          "evidence": []
+        },
+        "python": {
+          "status": "planned",
+          "evidence": []
+        }
+      }
+    },
+    {
+      "id": "@id-pptx-formatting-run-italic",
+      "feature": "workflows/pptx/text-formatting.feature",
+      "expandedCases": 1,
+      "factIds": [],
+      "expectedOutcomes": [
+        "formatting target slide 2 shape ID 4 paragraph 0 run 0 has exact saved properties JSON {\"i\":\"1\"}",
+        "the exact changed original member set is [\"ppt/slides/slide2.xml\"] with no additions or removals",
+        "every original text leaf, unselected run, paragraph, shape and unrelated member retains its original bytes",
+        "only the selected property span may change and all unpatched attributes and child fragments retain their exact bytes",
+        "caller archive, original slide IDs, relationship IDs, targets, layout and notes links retain custody"
+      ],
+      "consumers": {
+        "bun": {
+          "status": "planned",
+          "evidence": []
+        },
+        "go": {
+          "status": "planned",
+          "evidence": []
+        },
+        "python": {
+          "status": "planned",
+          "evidence": []
+        }
+      }
+    },
+    {
+      "id": "@id-pptx-formatting-run-underline",
+      "feature": "workflows/pptx/text-formatting.feature",
+      "expandedCases": 1,
+      "factIds": [],
+      "expectedOutcomes": [
+        "formatting target slide 2 shape ID 4 paragraph 0 run 0 has exact saved properties JSON {\"u\":\"none\"}",
+        "the exact changed original member set is [\"ppt/slides/slide2.xml\"] with no additions or removals",
+        "every original text leaf, unselected run, paragraph, shape and unrelated member retains its original bytes",
+        "only the selected property span may change and all unpatched attributes and child fragments retain their exact bytes",
+        "caller archive, original slide IDs, relationship IDs, targets, layout and notes links retain custody"
+      ],
+      "consumers": {
+        "bun": {
+          "status": "planned",
+          "evidence": []
+        },
+        "go": {
+          "status": "planned",
+          "evidence": []
+        },
+        "python": {
+          "status": "planned",
+          "evidence": []
+        }
+      }
+    },
+    {
+      "id": "@id-pptx-formatting-run-size",
+      "feature": "workflows/pptx/text-formatting.feature",
+      "expandedCases": 1,
+      "factIds": [],
+      "expectedOutcomes": [
+        "formatting target slide 2 shape ID 4 paragraph 0 run 0 has exact saved properties JSON {\"sz\":\"2400\"}",
+        "the exact changed original member set is [\"ppt/slides/slide2.xml\"] with no additions or removals",
+        "every original text leaf, unselected run, paragraph, shape and unrelated member retains its original bytes",
+        "only the selected property span may change and all unpatched attributes and child fragments retain their exact bytes",
+        "caller archive, original slide IDs, relationship IDs, targets, layout and notes links retain custody"
+      ],
+      "consumers": {
+        "bun": {
+          "status": "planned",
+          "evidence": []
+        },
+        "go": {
+          "status": "planned",
+          "evidence": []
+        },
+        "python": {
+          "status": "planned",
+          "evidence": []
+        }
+      }
+    },
+    {
+      "id": "@id-pptx-formatting-run-font",
+      "feature": "workflows/pptx/text-formatting.feature",
+      "expandedCases": 1,
+      "factIds": [],
+      "expectedOutcomes": [
+        "formatting target slide 2 shape ID 4 paragraph 0 run 0 has exact saved properties JSON {\"typeface\":\"Aptos Display\"}",
+        "the exact changed original member set is [\"ppt/slides/slide2.xml\"] with no additions or removals",
+        "every original text leaf, unselected run, paragraph, shape and unrelated member retains its original bytes",
+        "only the selected property span may change and all unpatched attributes and child fragments retain their exact bytes",
+        "caller archive, original slide IDs, relationship IDs, targets, layout and notes links retain custody"
+      ],
+      "consumers": {
+        "bun": {
+          "status": "planned",
+          "evidence": []
+        },
+        "go": {
+          "status": "planned",
+          "evidence": []
+        },
+        "python": {
+          "status": "planned",
+          "evidence": []
+        }
+      }
+    },
+    {
+      "id": "@id-pptx-formatting-run-color",
+      "feature": "workflows/pptx/text-formatting.feature",
+      "expandedCases": 1,
+      "factIds": [],
+      "expectedOutcomes": [
+        "formatting target slide 2 shape ID 4 paragraph 0 run 0 has exact saved properties JSON {\"color\":\"A1B2C3\"}",
+        "the exact changed original member set is [\"ppt/slides/slide2.xml\"] with no additions or removals",
+        "every original text leaf, unselected run, paragraph, shape and unrelated member retains its original bytes",
+        "only the selected property span may change and all unpatched attributes and child fragments retain their exact bytes",
+        "caller archive, original slide IDs, relationship IDs, targets, layout and notes links retain custody"
+      ],
+      "consumers": {
+        "bun": {
+          "status": "planned",
+          "evidence": []
+        },
+        "go": {
+          "status": "planned",
+          "evidence": []
+        },
+        "python": {
+          "status": "planned",
+          "evidence": []
+        }
+      }
+    },
+    {
+      "id": "@id-pptx-formatting-run-inherit",
+      "feature": "workflows/pptx/text-formatting.feature",
+      "expandedCases": 1,
+      "factIds": [],
+      "expectedOutcomes": [
+        "formatting target slide 2 shape ID 4 paragraph 0 run 0 has exact saved properties JSON {\"absent\":[\"b\",\"i\",\"u\",\"sz\",\"latin\",\"solidFill\"],\"retainedLanguage\":\"en-US\"}",
+        "the exact changed original member set is [\"ppt/slides/slide2.xml\"] with no additions or removals",
+        "every original text leaf, unselected run, paragraph, shape and unrelated member retains its original bytes",
+        "only the selected property span may change and all unpatched attributes and child fragments retain their exact bytes",
+        "caller archive, original slide IDs, relationship IDs, targets, layout and notes links retain custody"
+      ],
+      "consumers": {
+        "bun": {
+          "status": "planned",
+          "evidence": []
+        },
+        "go": {
+          "status": "planned",
+          "evidence": []
+        },
+        "python": {
+          "status": "planned",
+          "evidence": []
+        }
+      }
+    },
+    {
+      "id": "@id-pptx-formatting-paragraph-align",
+      "feature": "workflows/pptx/paragraph-formatting.feature",
+      "expandedCases": 1,
+      "factIds": [],
+      "expectedOutcomes": [
+        "formatting target slide 2 shape ID 4 paragraph 0 has exact saved properties JSON {\"algn\":\"ctr\"}",
+        "the exact changed original member set is [\"ppt/slides/slide2.xml\"] with no additions or removals",
+        "every original text leaf, unselected run, paragraph, shape and unrelated member retains its original bytes",
+        "only the selected property span may change and all unpatched attributes and child fragments retain their exact bytes",
+        "caller archive, original slide IDs, relationship IDs, targets, layout and notes links retain custody"
+      ],
+      "consumers": {
+        "bun": {
+          "status": "planned",
+          "evidence": []
+        },
+        "go": {
+          "status": "planned",
+          "evidence": []
+        },
+        "python": {
+          "status": "planned",
+          "evidence": []
+        }
+      }
+    },
+    {
+      "id": "@id-pptx-formatting-paragraph-indent",
+      "feature": "workflows/pptx/paragraph-formatting.feature",
+      "expandedCases": 1,
+      "factIds": [],
+      "expectedOutcomes": [
+        "formatting target slide 2 shape ID 4 paragraph 0 has exact saved properties JSON {\"marL\":\"457200\",\"indent\":\"-228600\"}",
+        "the exact changed original member set is [\"ppt/slides/slide2.xml\"] with no additions or removals",
+        "every original text leaf, unselected run, paragraph, shape and unrelated member retains its original bytes",
+        "only the selected property span may change and all unpatched attributes and child fragments retain their exact bytes",
+        "caller archive, original slide IDs, relationship IDs, targets, layout and notes links retain custody"
+      ],
+      "consumers": {
+        "bun": {
+          "status": "planned",
+          "evidence": []
+        },
+        "go": {
+          "status": "planned",
+          "evidence": []
+        },
+        "python": {
+          "status": "planned",
+          "evidence": []
+        }
+      }
+    },
+    {
+      "id": "@id-pptx-formatting-paragraph-spacing",
+      "feature": "workflows/pptx/paragraph-formatting.feature",
+      "expandedCases": 1,
+      "factIds": [],
+      "expectedOutcomes": [
+        "formatting target slide 2 shape ID 4 paragraph 0 has exact saved properties JSON {\"before\":1200,\"after\":600}",
+        "the exact changed original member set is [\"ppt/slides/slide2.xml\"] with no additions or removals",
+        "every original text leaf, unselected run, paragraph, shape and unrelated member retains its original bytes",
+        "only the selected property span may change and all unpatched attributes and child fragments retain their exact bytes",
+        "caller archive, original slide IDs, relationship IDs, targets, layout and notes links retain custody"
+      ],
+      "consumers": {
+        "bun": {
+          "status": "planned",
+          "evidence": []
+        },
+        "go": {
+          "status": "planned",
+          "evidence": []
+        },
+        "python": {
+          "status": "planned",
+          "evidence": []
+        }
+      }
+    },
+    {
+      "id": "@id-pptx-formatting-paragraph-line",
+      "feature": "workflows/pptx/paragraph-formatting.feature",
+      "expandedCases": 1,
+      "factIds": [],
+      "expectedOutcomes": [
+        "formatting target slide 2 shape ID 4 paragraph 0 has exact saved properties JSON {\"linePercent\":150000}",
+        "the exact changed original member set is [\"ppt/slides/slide2.xml\"] with no additions or removals",
+        "every original text leaf, unselected run, paragraph, shape and unrelated member retains its original bytes",
+        "only the selected property span may change and all unpatched attributes and child fragments retain their exact bytes",
+        "caller archive, original slide IDs, relationship IDs, targets, layout and notes links retain custody"
       ],
       "consumers": {
         "bun": {

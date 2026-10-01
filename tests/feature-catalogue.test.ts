@@ -4,14 +4,14 @@ import {buildCatalogue, verifyFeatureCatalogue, validateReview, validateEvidence
 const load = () => buildCatalogue();
 test('every canonical and staged feature has exactly one generated table row', async () => {
   const result = await verifyFeatureCatalogue();
-  expect(result.features).toHaveLength(64);
+  expect(result.features).toHaveLength(67);
   expect(result.staged).toHaveLength(143);
-  expect(new Set([...result.features, ...result.staged].map(f => f.path)).size).toBe(207);
-  expect(result.features.flatMap(f => f.rows)).toHaveLength(324);
-  expect(result.features.reduce((n, f) => n + f.cases, 0)).toBe(811);
+  expect(new Set([...result.features, ...result.staged].map(f => f.path)).size).toBe(210);
+  expect(result.features.flatMap(f => f.rows)).toHaveLength(344);
+  expect(result.features.reduce((n, f) => n + f.cases, 0)).toBe(831);
   expect(result.staged.reduce((n, f) => n + f.cases, 0)).toBe(1532);
-  expect(result.outputs['docs/feature-reuse.csv'].trim().split('\n')).toHaveLength(208);
-  expect(result.outputs['docs/scenario-reuse.csv'].trim().split('\n')).toHaveLength(325);
+  expect(result.outputs['docs/feature-reuse.csv'].trim().split('\n')).toHaveLength(211);
+  expect(result.outputs['docs/scenario-reuse.csv'].trim().split('\n')).toHaveLength(345);
   expect(result.features.map(f => f.path)).toEqual(result.features.map(f => f.path).sort((a, b) => families.indexOf(a.split('/')[1]!) - families.indexOf(b.split('/')[1]!) || a.localeCompare(b)));
   expect(result.staged.every(f => f.category === 'staged-unreviewed')).toBe(true);
 });

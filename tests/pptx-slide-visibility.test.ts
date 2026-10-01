@@ -1,4 +1,5 @@
 import {test,expect} from 'bun:test';
+import {beforePptxFormattingFeature} from './xml-generalization-helpers.ts';
 import {execFileSync} from 'node:child_process';
 import {cases,validateConsumerMappings} from '../scripts/verify.ts';
 
@@ -8,7 +9,7 @@ const feature='workflows/pptx/slide-visibility.feature';
 const ids={source:'fixture-e01ded1106a28f94a3439e8368f9a12ec360891f4a9e2810f6504c4c328ed79c',control:'fixture-fa245a3df00fef7f7bf4739921ee840194040161e06490589e3d52cc9fa7a71d'};
 
 test('retained PPTX inputs distinguish a namespaced marker from CT_Slide visibility',async()=>{
- const rows=cases(feature,await Bun.file(feature).text());expect(rows.map(r=>r.scenarioId)).toEqual([retained,office]);
+ const rows=cases(feature,beforePptxFormattingFeature(feature,await Bun.file(feature).text()));expect(rows.map(r=>r.scenarioId)).toEqual([retained,office]);
  const manifest=await Bun.file('manifest.json').json(),groups=await Bun.file('ledgers/fixture-groups.json').json();
  const group=groups.groups.find((g:any)=>g.format==='pptx'&&g.scenarioGroup==='slides');
  expect(group.fixtureIds).toEqual([ids.source,ids.control]);expect(group.scenarioIds).toEqual([retained]);

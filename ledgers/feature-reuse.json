@@ -173,7 +173,7 @@
     },
     {
       "path": "workflows/pptx/slide-visibility.feature",
-      "reviewedSha256": "b348743de0c6bc7303811f613761a6d67a8a0f4f57132466238a0c7e752acd78"
+      "reviewedSha256": "4d597d15d4227bc7ed153ef3cd1060d8319134ca08b499c602fc964c1511af19"
     },
     {
       "path": "workflows/pptx/tables.feature",
@@ -258,6 +258,18 @@
     {
       "path": "workflows/pptx/text-autofit.feature",
       "reviewedSha256": "811920664e09be2622d9966d81fbdb33dd1299b0badf29c63243514cf913967f"
+    },
+    {
+      "path": "workflows/pptx/shape-geometry.feature",
+      "reviewedSha256": "6cf9dad38adca997ec91ac4371bb05f19bd2a4ef547e05664755a5099ddabb17"
+    },
+    {
+      "path": "workflows/pptx/text-formatting.feature",
+      "reviewedSha256": "adcd0463dabd5a539e7d3feef58b4c0699ad2f51ff7038114570fb7a24423384"
+    },
+    {
+      "path": "workflows/pptx/paragraph-formatting.feature",
+      "reviewedSha256": "5be8c0cb29b61a50abd8b280b1517a771503c3c2349691931881176b491a16a4"
     }
   ],
   "scenarios": [
@@ -3904,6 +3916,226 @@
         "workflows/pptx/tables.feature",
         "contracts/pptx-manipulation.md"
       ]
+    },
+    {
+      "id": "@id-pptx-formatting-hide",
+      "feature": "workflows/pptx/slide-visibility.feature",
+      "category": "generalized",
+      "runtimeConstraint": "none",
+      "reason": "Exactretainedinput/directpropertyvalues/lexicalcustody/refusal independent savedchecks; allruntimesplanned.",
+      "evidence": [
+        "workflows/pptx/slide-visibility.feature",
+        "contracts/pptx-formatting.md"
+      ]
+    },
+    {
+      "id": "@id-pptx-formatting-unhide",
+      "feature": "workflows/pptx/slide-visibility.feature",
+      "category": "generalized",
+      "runtimeConstraint": "none",
+      "reason": "Exactretainedinput/directpropertyvalues/lexicalcustody/refusal independent savedchecks; allruntimesplanned.",
+      "evidence": [
+        "workflows/pptx/slide-visibility.feature",
+        "contracts/pptx-formatting.md"
+      ]
+    },
+    {
+      "id": "@id-pptx-formatting-visibility-order",
+      "feature": "workflows/pptx/slide-visibility.feature",
+      "category": "generalized",
+      "runtimeConstraint": "none",
+      "reason": "Exactretainedinput/directpropertyvalues/lexicalcustody/refusal independent savedchecks; allruntimesplanned.",
+      "evidence": [
+        "workflows/pptx/slide-visibility.feature",
+        "contracts/pptx-formatting.md"
+      ]
+    },
+    {
+      "id": "@id-pptx-formatting-visibility-refusal",
+      "feature": "workflows/pptx/slide-visibility.feature",
+      "category": "generalized",
+      "runtimeConstraint": "none",
+      "reason": "Exactretainedinput/directpropertyvalues/lexicalcustody/refusal independent savedchecks; allruntimesplanned.",
+      "evidence": [
+        "workflows/pptx/slide-visibility.feature",
+        "contracts/pptx-formatting.md"
+      ]
+    },
+    {
+      "id": "@id-pptx-formatting-move",
+      "feature": "workflows/pptx/shape-geometry.feature",
+      "category": "generalized",
+      "runtimeConstraint": "none",
+      "reason": "Exactretainedinput/directpropertyvalues/lexicalcustody/refusal independent savedchecks; allruntimesplanned.",
+      "evidence": [
+        "workflows/pptx/shape-geometry.feature",
+        "contracts/pptx-formatting.md"
+      ]
+    },
+    {
+      "id": "@id-pptx-formatting-resize",
+      "feature": "workflows/pptx/shape-geometry.feature",
+      "category": "generalized",
+      "runtimeConstraint": "none",
+      "reason": "Exactretainedinput/directpropertyvalues/lexicalcustody/refusal independent savedchecks; allruntimesplanned.",
+      "evidence": [
+        "workflows/pptx/shape-geometry.feature",
+        "contracts/pptx-formatting.md"
+      ]
+    },
+    {
+      "id": "@id-pptx-formatting-transform",
+      "feature": "workflows/pptx/shape-geometry.feature",
+      "category": "generalized",
+      "runtimeConstraint": "none",
+      "reason": "Exactretainedinput/directpropertyvalues/lexicalcustody/refusal independent savedchecks; allruntimesplanned.",
+      "evidence": [
+        "workflows/pptx/shape-geometry.feature",
+        "contracts/pptx-formatting.md"
+      ]
+    },
+    {
+      "id": "@id-pptx-formatting-geometry-refusal",
+      "feature": "workflows/pptx/shape-geometry.feature",
+      "category": "generalized",
+      "runtimeConstraint": "none",
+      "reason": "Exactretainedinput/directpropertyvalues/lexicalcustody/refusal independent savedchecks; allruntimesplanned.",
+      "evidence": [
+        "workflows/pptx/shape-geometry.feature",
+        "contracts/pptx-formatting.md"
+      ]
+    },
+    {
+      "id": "@id-pptx-formatting-run-bold",
+      "feature": "workflows/pptx/text-formatting.feature",
+      "category": "generalized",
+      "runtimeConstraint": "none",
+      "reason": "Exactretainedinput/directpropertyvalues/lexicalcustody/refusal independent savedchecks; allruntimesplanned.",
+      "evidence": [
+        "workflows/pptx/text-formatting.feature",
+        "contracts/pptx-formatting.md"
+      ]
+    },
+    {
+      "id": "@id-pptx-formatting-run-unbold",
+      "feature": "workflows/pptx/text-formatting.feature",
+      "category": "generalized",
+      "runtimeConstraint": "none",
+      "reason": "Exactretainedinput/directpropertyvalues/lexicalcustody/refusal independent savedchecks; allruntimesplanned.",
+      "evidence": [
+        "workflows/pptx/text-formatting.feature",
+        "contracts/pptx-formatting.md"
+      ]
+    },
+    {
+      "id": "@id-pptx-formatting-run-italic",
+      "feature": "workflows/pptx/text-formatting.feature",
+      "category": "generalized",
+      "runtimeConstraint": "none",
+      "reason": "Exactretainedinput/directpropertyvalues/lexicalcustody/refusal independent savedchecks; allruntimesplanned.",
+      "evidence": [
+        "workflows/pptx/text-formatting.feature",
+        "contracts/pptx-formatting.md"
+      ]
+    },
+    {
+      "id": "@id-pptx-formatting-run-underline",
+      "feature": "workflows/pptx/text-formatting.feature",
+      "category": "generalized",
+      "runtimeConstraint": "none",
+      "reason": "Exactretainedinput/directpropertyvalues/lexicalcustody/refusal independent savedchecks; allruntimesplanned.",
+      "evidence": [
+        "workflows/pptx/text-formatting.feature",
+        "contracts/pptx-formatting.md"
+      ]
+    },
+    {
+      "id": "@id-pptx-formatting-run-size",
+      "feature": "workflows/pptx/text-formatting.feature",
+      "category": "generalized",
+      "runtimeConstraint": "none",
+      "reason": "Exactretainedinput/directpropertyvalues/lexicalcustody/refusal independent savedchecks; allruntimesplanned.",
+      "evidence": [
+        "workflows/pptx/text-formatting.feature",
+        "contracts/pptx-formatting.md"
+      ]
+    },
+    {
+      "id": "@id-pptx-formatting-run-font",
+      "feature": "workflows/pptx/text-formatting.feature",
+      "category": "generalized",
+      "runtimeConstraint": "none",
+      "reason": "Exactretainedinput/directpropertyvalues/lexicalcustody/refusal independent savedchecks; allruntimesplanned.",
+      "evidence": [
+        "workflows/pptx/text-formatting.feature",
+        "contracts/pptx-formatting.md"
+      ]
+    },
+    {
+      "id": "@id-pptx-formatting-run-color",
+      "feature": "workflows/pptx/text-formatting.feature",
+      "category": "generalized",
+      "runtimeConstraint": "none",
+      "reason": "Exactretainedinput/directpropertyvalues/lexicalcustody/refusal independent savedchecks; allruntimesplanned.",
+      "evidence": [
+        "workflows/pptx/text-formatting.feature",
+        "contracts/pptx-formatting.md"
+      ]
+    },
+    {
+      "id": "@id-pptx-formatting-run-inherit",
+      "feature": "workflows/pptx/text-formatting.feature",
+      "category": "generalized",
+      "runtimeConstraint": "none",
+      "reason": "Exactretainedinput/directpropertyvalues/lexicalcustody/refusal independent savedchecks; allruntimesplanned.",
+      "evidence": [
+        "workflows/pptx/text-formatting.feature",
+        "contracts/pptx-formatting.md"
+      ]
+    },
+    {
+      "id": "@id-pptx-formatting-paragraph-align",
+      "feature": "workflows/pptx/paragraph-formatting.feature",
+      "category": "generalized",
+      "runtimeConstraint": "none",
+      "reason": "Exactretainedinput/directpropertyvalues/lexicalcustody/refusal independent savedchecks; allruntimesplanned.",
+      "evidence": [
+        "workflows/pptx/paragraph-formatting.feature",
+        "contracts/pptx-formatting.md"
+      ]
+    },
+    {
+      "id": "@id-pptx-formatting-paragraph-indent",
+      "feature": "workflows/pptx/paragraph-formatting.feature",
+      "category": "generalized",
+      "runtimeConstraint": "none",
+      "reason": "Exactretainedinput/directpropertyvalues/lexicalcustody/refusal independent savedchecks; allruntimesplanned.",
+      "evidence": [
+        "workflows/pptx/paragraph-formatting.feature",
+        "contracts/pptx-formatting.md"
+      ]
+    },
+    {
+      "id": "@id-pptx-formatting-paragraph-spacing",
+      "feature": "workflows/pptx/paragraph-formatting.feature",
+      "category": "generalized",
+      "runtimeConstraint": "none",
+      "reason": "Exactretainedinput/directpropertyvalues/lexicalcustody/refusal independent savedchecks; allruntimesplanned.",
+      "evidence": [
+        "workflows/pptx/paragraph-formatting.feature",
+        "contracts/pptx-formatting.md"
+      ]
+    },
+    {
+      "id": "@id-pptx-formatting-paragraph-line",
+      "feature": "workflows/pptx/paragraph-formatting.feature",
+      "category": "generalized",
+      "runtimeConstraint": "none",
+      "reason": "Exactretainedinput/directpropertyvalues/lexicalcustody/refusal independent savedchecks; allruntimesplanned.",
+      "evidence": [
+        "workflows/pptx/paragraph-formatting.feature",
+        "contracts/pptx-formatting.md"
+      ]
     }
   ],
   "evidenceSha256": {
@@ -3977,7 +4209,7 @@
     "workflows/pptx/slide-import.feature": "9797cb84555e97b786f66c9e51f45ccb732004b9f717f75ca484424f6a9c82ac",
     "workflows/pptx/slide-order.feature": "c05b9cffb791fd1e526ae2c931b795456bca35a74584641a781ed2cfa9222e52",
     "contracts/slide-order.md": "6f9231d81dfbc80f2a2424643ca622f149d01b6a32475d1773b737a64a1661d9",
-    "workflows/pptx/slide-visibility.feature": "b348743de0c6bc7303811f613761a6d67a8a0f4f57132466238a0c7e752acd78",
+    "workflows/pptx/slide-visibility.feature": "4d597d15d4227bc7ed153ef3cd1060d8319134ca08b499c602fc964c1511af19",
     "contracts/pptx-slide-visibility.md": "993d0f45e95c7f391cc68ced177e0ba907e1118065bd8a1ebbc1776080833cd9",
     "workflows/pptx/tables.feature": "f0b94c529d06814fab2a0792afd353a581424efb124636f51abcb200502d6f29",
     "workflows/pptx/text-box.feature": "f1095dc45f85db19d45603fe38938cfc6414c74f3b1f5de63b23f9fd56e880ee",
@@ -4008,6 +4240,10 @@
     "contracts/xml-values.md": "fee52bb80f221a1ccb04eba1211fec7e188f3682f3ad5c12253e49836d0a9b62",
     "contracts/pptx-manipulation.md": "d050e7cba596d580c4153365d93c35c67dbc862c4c5ac6816801288ea6ebc044",
     "workflows/pptx/text-autofit.feature": "811920664e09be2622d9966d81fbdb33dd1299b0badf29c63243514cf913967f",
-    "workflows/pptx/bullets.feature": "f26843b74b4b48b81631139cd907de3ddd37940034f1d9332df86df519bcb93f"
+    "workflows/pptx/bullets.feature": "f26843b74b4b48b81631139cd907de3ddd37940034f1d9332df86df519bcb93f",
+    "contracts/pptx-formatting.md": "04a65bac1e710d9911c63f8df6ea790354a69907a38df87428cc1f5dac2c9e67",
+    "workflows/pptx/shape-geometry.feature": "6cf9dad38adca997ec91ac4371bb05f19bd2a4ef547e05664755a5099ddabb17",
+    "workflows/pptx/text-formatting.feature": "adcd0463dabd5a539e7d3feef58b4c0699ad2f51ff7038114570fb7a24423384",
+    "workflows/pptx/paragraph-formatting.feature": "5be8c0cb29b61a50abd8b280b1517a771503c3c2349691931881176b491a16a4"
   }
 }

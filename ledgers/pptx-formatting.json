@@ -1,0 +1,2514 @@
+{
+  "schemaVersion": 1,
+  "sourceRevision": "5dc02ae970e2eaf5ed3e261324ae3961e08bb1c9",
+  "baseline": {
+    "shared": "5dc02ae970e2eaf5ed3e261324ae3961e08bb1c9",
+    "bun": "c9d0c51bce80f4a1a136f4bab20ad294a5740c89",
+    "go": "13ed736d265b2dd7e76beda9272b72a521cef59d",
+    "python": "71f04a37e7cdf8787e68a573cb6f2ed34d56253e"
+  },
+  "baselineCounts": {
+    "features": 64,
+    "scenarios": 324,
+    "cases": 811,
+    "assets": 351
+  },
+  "executionCredit": false,
+  "retiredScenarioIds": [],
+  "specification": {
+    "repository": "https://github.com/rcarmo/fixtures-ooxml",
+    "revision": "5dc02ae970e2eaf5ed3e261324ae3961e08bb1c9",
+    "path": "specs/ecma-376/part-1/ECMA-376-Part1-Fundamentals.pdf",
+    "edition": "ECMA-376-1:2016",
+    "clauses": [
+      "19.3.1.38",
+      "20.1.7.6",
+      "20.1.2.3.32",
+      "20.1.8.54",
+      "21.1.2.3.7",
+      "21.1.2.3.9",
+      "21.1.2.2.7",
+      "21.1.2.2.9",
+      "21.1.2.2.10",
+      "21.1.2.2.11",
+      "21.1.2.2.12"
+    ],
+    "sha256": "7cccfd0ad0e2ef89316acece15e44a8a088d0603ce4bba4e7b0361b50d13a37d"
+  },
+  "fixture": {
+    "id": "fixture-84e7a8a3681d0e43d4c8a29c37e68386721dfb5df13a36b8bd17a3ebc1fb1fb2",
+    "sha256": "84e7a8a3681d0e43d4c8a29c37e68386721dfb5df13a36b8bd17a3ebc1fb1fb2",
+    "bytes": 8634,
+    "path": "fixtures/pptx/formatting/formatting-84e7a8a3681d.pptx",
+    "derivedFrom": {
+      "path": "fixtures/pptx/manipulation/manipulation-5ad4b68acc5a.pptx",
+      "sha256": "5ad4b68acc5a926c020dbc94154c95fa6c40c7353a55b2f82504879b392e9a45",
+      "transformation": "Replace only slide2 Body paragraphs with two paragraphs/two first-paragraph runs and explicit direct properties; keep every other member byte-identical.",
+      "beforeParagraph": "<a:p><a:r><a:t xml:space=\"preserve\">Existing</a:t></a:r></a:p>",
+      "afterParagraph": "<a:p xmlns:a=\"http://schemas.openxmlformats.org/drawingml/2006/main\"><a:pPr algn=\"l\" marL=\"0\" indent=\"0\"><a:lnSpc><a:spcPct val=\"100000\"/></a:lnSpc><a:spcBef><a:spcPts val=\"0\"/></a:spcBef><a:spcAft><a:spcPts val=\"0\"/></a:spcAft></a:pPr><a:r><a:rPr lang=\"en-US\" b=\"1\" i=\"0\" u=\"sng\" sz=\"1800\"><a:solidFill><a:srgbClr val=\"112233\"/></a:solidFill><a:latin typeface=\"Arial\"/></a:rPr><a:t xml:space=\"preserve\">Existing</a:t></a:r><a:r><a:t xml:space=\"preserve\"> suffix</a:t></a:r></a:p><a:p xmlns:a=\"http://schemas.openxmlformats.org/drawingml/2006/main\"><a:r><a:rPr lang=\"pt-PT\" b=\"0\"/><a:t>Second paragraph</a:t></a:r></a:p>"
+    },
+    "members": [
+      {
+        "name": "[Content_Types].xml",
+        "sha256": "0ea5dffa5ef577fc4836dc6e7db06cb14fa9be167c44412103f4555a16b4076c"
+      },
+      {
+        "name": "_rels/.rels",
+        "sha256": "8b42f92c6731d3af946843a1ee6f37ec2615985a268233ad763740cdc0c83344"
+      },
+      {
+        "name": "custom/custody.bin",
+        "sha256": "25fee5ceeba61ed5ad8071083c797bd5b2163ea4056fed0117c2b781776703d7"
+      },
+      {
+        "name": "ppt/_rels/presentation.xml.rels",
+        "sha256": "ecf2945afd128a742def3a0f5d8f4c2dca470f2916a0389d3776a705475088be"
+      },
+      {
+        "name": "ppt/notesSlides/notesSlide1.xml",
+        "sha256": "b9a6d70496ebe2ed0ec9f5325f440aa588be249c8d12a458d4e456e96b662267"
+      },
+      {
+        "name": "ppt/presProps.xml",
+        "sha256": "5d9c2103ba081ee7148c43c3f94e076c39fd422954e8f655c6dd39bf878f71a5"
+      },
+      {
+        "name": "ppt/presentation.xml",
+        "sha256": "5e1898659b62728727cf5af5c5dea721de1b5ecf90271f444790d9eb47e191b5"
+      },
+      {
+        "name": "ppt/slideLayouts/_rels/slideLayout1.xml.rels",
+        "sha256": "d870e5b1929e28c09916452072c7cbe08ef6ec528c3cf95727dae087693a730a"
+      },
+      {
+        "name": "ppt/slideLayouts/slideLayout1.xml",
+        "sha256": "1db0197dfcb034a66662903fc7382e73105175952b9501723ae798d94e66ddbf"
+      },
+      {
+        "name": "ppt/slideMasters/_rels/slideMaster1.xml.rels",
+        "sha256": "d96b772ebc700dbba5facc22e41f4873e7e7a61bf06c6314a18248165ca8e140"
+      },
+      {
+        "name": "ppt/slideMasters/slideMaster1.xml",
+        "sha256": "70c99611867232e82efee4ce56e414ab490979437acbb69ef3f7dbbfecda3e83"
+      },
+      {
+        "name": "ppt/slides/_rels/slide1.xml.rels",
+        "sha256": "12f15cfb031d9ff395085e6982424f341ca6419217c7ced2ec666b146a0d9bc5"
+      },
+      {
+        "name": "ppt/slides/_rels/slide2.xml.rels",
+        "sha256": "562fb46c4cdee80120ded021cc49f857af91bd6f2ef24be0d17e651e38a1021f"
+      },
+      {
+        "name": "ppt/slides/_rels/slide3.xml.rels",
+        "sha256": "562fb46c4cdee80120ded021cc49f857af91bd6f2ef24be0d17e651e38a1021f"
+      },
+      {
+        "name": "ppt/slides/slide1.xml",
+        "sha256": "30b0a133f1228a335f68b1004c8046ec957e0ce6d5078003748f822e45c47b2c"
+      },
+      {
+        "name": "ppt/slides/slide2.xml",
+        "sha256": "212cfad48c3e1fea130395372a4398581f0d705dadb48edae04f122c37745c23"
+      },
+      {
+        "name": "ppt/slides/slide3.xml",
+        "sha256": "d67cf6f04553cf0e7cf2f46616397348b9b7c66228f40bb6ee957faf5595cad0"
+      },
+      {
+        "name": "ppt/tableStyles.xml",
+        "sha256": "eeab2b2783c9f2d1cb550147000113548dcf41147afd9c795ab5e566159eefce"
+      },
+      {
+        "name": "ppt/theme/theme1.xml",
+        "sha256": "abf8b2675786078bcd479fc13e8f91774069381ae6dcb61f0ec1f1face88c55f"
+      },
+      {
+        "name": "ppt/viewProps.xml",
+        "sha256": "437f609a7ae4cb972cba7b79e6d01a2346b13dcb86d206ad232e41b29e97806f"
+      }
+    ]
+  },
+  "records": [
+    {
+      "id": "@id-pptx-formatting-hide",
+      "kind": "hide",
+      "family": "slide-visibility",
+      "target": "slide 2 root",
+      "operation": "set slide visibility to hidden",
+      "expected": {
+        "show": "0",
+        "hidden": true
+      },
+      "changedMembers": [
+        "ppt/slides/slide2.xml"
+      ],
+      "sourceId": "@candidate-python-pptx-advanced-tools-extended-3d00e1150b",
+      "provenanceKind": "stronger-retained-input-profile",
+      "executionCredit": false,
+      "sourceFeature": "staging/python/features/test_pptx_advanced_tools_extended.feature",
+      "sourceLine": 94,
+      "sourceSha256": "dce4f9fe8d5ac0e353db2d359c2173b0671750c5239c37384d24969bbabe7d61",
+      "sourceBlock": "  @candidate-python-pptx-advanced-tools-extended-3d00e1150b\n  # Native: tests/test_pptx_advanced_tools_extended.py::TestHiddenSlides::test_hide_slide\n  Scenario: Native check: hide slide [TestHiddenSlides]\n    Given Create an instance of PresentationAdvancedTools.\n    And Create presentation with multiple slides.\n    And an isolated writable temporary directory\n    And output is prepared as temp dir under \"with_hidden.pptx\"\n    When pptx advanced tools.tool pptx hide slide using str representation of multi slide presentation; slide number 2; hidden true; output path str representation of temp dir under \"with_hidden.pptx\"\n    Then result field \"success\" is true or result field \"hidden\" is true",
+      "overlap": "Existing Office-positive requires real PowerPoint evidence; this new profile asserts OOXML unqualified show value and exact editing custody, not rendered or application-confirmed hidden state.",
+      "feature": "workflows/pptx/slide-visibility.feature",
+      "fixtureId": "fixture-84e7a8a3681d0e43d4c8a29c37e68386721dfb5df13a36b8bd17a3ebc1fb1fb2",
+      "specification": {
+        "repository": "https://github.com/rcarmo/fixtures-ooxml",
+        "revision": "5dc02ae970e2eaf5ed3e261324ae3961e08bb1c9",
+        "path": "specs/ecma-376/part-1/ECMA-376-Part1-Fundamentals.pdf",
+        "edition": "ECMA-376-1:2016",
+        "clauses": [
+          "19.3.1.38",
+          "20.1.7.6",
+          "20.1.2.3.32",
+          "20.1.8.54",
+          "21.1.2.3.7",
+          "21.1.2.3.9",
+          "21.1.2.2.7",
+          "21.1.2.2.9",
+          "21.1.2.2.10",
+          "21.1.2.2.11",
+          "21.1.2.2.12"
+        ],
+        "sha256": "7cccfd0ad0e2ef89316acece15e44a8a088d0603ce4bba4e7b0361b50d13a37d"
+      },
+      "sourceBlockSha256": "2ebfe6a1fa210acf7517c4ebd941a6b950ece3268370617755c5da47dcc7fc3a",
+      "overlapReview": "Separate bounded OOXML unqualifiedshow edit/orderedidentity profile; olderretainednamespaced/Officepositive unchanged.",
+      "sourceProvenance": {
+        "repository": "https://github.com/rcarmo/python-office-mcp-server",
+        "revision": "0c5de7a4ce69c13a06e215e9233954bf2df805d5",
+        "path": "docs/catalogue-staging/python-native/features/test_pptx_advanced_tools_extended.feature",
+        "sha256": "dce4f9fe8d5ac0e353db2d359c2173b0671750c5239c37384d24969bbabe7d61"
+      }
+    },
+    {
+      "id": "@id-pptx-formatting-unhide",
+      "kind": "unhide",
+      "family": "slide-visibility",
+      "target": "slide 2 root",
+      "operation": "set slide visibility to hidden then visible",
+      "expected": {
+        "show": "1",
+        "hidden": false
+      },
+      "changedMembers": [
+        "ppt/slides/slide2.xml"
+      ],
+      "sourceId": "@candidate-python-pptx-coverage-3bbbdbd737",
+      "provenanceKind": "stronger-retained-input-profile",
+      "executionCredit": false,
+      "sourceFeature": "staging/python/features/test_pptx_coverage.feature",
+      "sourceLine": 175,
+      "sourceSha256": "771c49cb9346dd742b03f3176b1f4d0d7dd693e02b2702fb9d7e1e6d0b694756",
+      "sourceBlock": "  @candidate-python-pptx-coverage-3bbbdbd737\n  # Native: tests/test_pptx_coverage.py::TestSlideHiding::test_unhide_slide\n  Scenario: Native check: unhide slide [TestSlideHiding]\n    Given Create an instance of PresentationAdvancedTools.\n    And Create a basic presentation.\n    And an isolated writable temporary directory\n    And output1 is prepared as temp dir under \"hidden.pptx\"\n    When pptx advanced tools.tool pptx hide slide using str representation of basic presentation; slide number 2; hidden true; output path str representation of temp dir under \"hidden.pptx\"\n    And pptx advanced tools.tool pptx hide slide using str representation of temp dir under \"hidden.pptx\"; slide number 2; hidden false; output path str representation of temp dir under \"unhidden.pptx\"\n    Then result has type dict",
+      "overlap": "Existing Office-positive requires real PowerPoint evidence; this new profile asserts OOXML unqualified show value and exact editing custody, not rendered or application-confirmed hidden state.",
+      "feature": "workflows/pptx/slide-visibility.feature",
+      "fixtureId": "fixture-84e7a8a3681d0e43d4c8a29c37e68386721dfb5df13a36b8bd17a3ebc1fb1fb2",
+      "specification": {
+        "repository": "https://github.com/rcarmo/fixtures-ooxml",
+        "revision": "5dc02ae970e2eaf5ed3e261324ae3961e08bb1c9",
+        "path": "specs/ecma-376/part-1/ECMA-376-Part1-Fundamentals.pdf",
+        "edition": "ECMA-376-1:2016",
+        "clauses": [
+          "19.3.1.38",
+          "20.1.7.6",
+          "20.1.2.3.32",
+          "20.1.8.54",
+          "21.1.2.3.7",
+          "21.1.2.3.9",
+          "21.1.2.2.7",
+          "21.1.2.2.9",
+          "21.1.2.2.10",
+          "21.1.2.2.11",
+          "21.1.2.2.12"
+        ],
+        "sha256": "7cccfd0ad0e2ef89316acece15e44a8a088d0603ce4bba4e7b0361b50d13a37d"
+      },
+      "sourceBlockSha256": "ed030ee40b1e353bfea374c1bd521d4ccd6ffb37d70ac631a2e71562ed45e189",
+      "overlapReview": "Separate bounded OOXML unqualifiedshow edit/orderedidentity profile; olderretainednamespaced/Officepositive unchanged.",
+      "sourceProvenance": {
+        "repository": "https://github.com/rcarmo/python-office-mcp-server",
+        "revision": "0c5de7a4ce69c13a06e215e9233954bf2df805d5",
+        "path": "docs/catalogue-staging/python-native/features/test_pptx_coverage.feature",
+        "sha256": "771c49cb9346dd742b03f3176b1f4d0d7dd693e02b2702fb9d7e1e6d0b694756"
+      }
+    },
+    {
+      "id": "@id-pptx-formatting-visibility-order",
+      "kind": "visibility-order",
+      "family": "slide-visibility",
+      "target": "ordered slide identities",
+      "operation": "hide slide 2 then reorder by zero-based permutation [2,0,1] and read hidden identities",
+      "expected": {
+        "titles": [
+          "Gamma",
+          "Alpha",
+          "Beta"
+        ],
+        "hiddenParts": [
+          "ppt/slides/slide2.xml"
+        ],
+        "hiddenOrdinals": [
+          3
+        ]
+      },
+      "changedMembers": [
+        "ppt/slides/slide2.xml",
+        "ppt/presentation.xml"
+      ],
+      "sourceId": "@candidate-python-pptx-advanced-tools-extended-644d9aba3b",
+      "provenanceKind": "stronger-retained-input-profile",
+      "executionCredit": false,
+      "sourceFeature": "staging/python/features/test_pptx_advanced_tools_extended.feature",
+      "sourceLine": 104,
+      "sourceSha256": "dce4f9fe8d5ac0e353db2d359c2173b0671750c5239c37384d24969bbabe7d61",
+      "sourceBlock": "  @candidate-python-pptx-advanced-tools-extended-644d9aba3b\n  # Native: tests/test_pptx_advanced_tools_extended.py::TestHiddenSlides::test_get_hidden_slides\n  Scenario: Native check: get hidden slides [TestHiddenSlides]\n    Given Create an instance of PresentationAdvancedTools.\n    And Create presentation with multiple slides.\n    When pptx advanced tools.tool pptx get hidden slides using str representation of multi slide presentation\n    Then result field \"hidden_slides\", defaulting to result field \"slides\", defaulting to [] has type list",
+      "overlap": "Existing Office-positive requires real PowerPoint evidence; this new profile asserts OOXML unqualified show value and exact editing custody, not rendered or application-confirmed hidden state.",
+      "feature": "workflows/pptx/slide-visibility.feature",
+      "fixtureId": "fixture-84e7a8a3681d0e43d4c8a29c37e68386721dfb5df13a36b8bd17a3ebc1fb1fb2",
+      "specification": {
+        "repository": "https://github.com/rcarmo/fixtures-ooxml",
+        "revision": "5dc02ae970e2eaf5ed3e261324ae3961e08bb1c9",
+        "path": "specs/ecma-376/part-1/ECMA-376-Part1-Fundamentals.pdf",
+        "edition": "ECMA-376-1:2016",
+        "clauses": [
+          "19.3.1.38",
+          "20.1.7.6",
+          "20.1.2.3.32",
+          "20.1.8.54",
+          "21.1.2.3.7",
+          "21.1.2.3.9",
+          "21.1.2.2.7",
+          "21.1.2.2.9",
+          "21.1.2.2.10",
+          "21.1.2.2.11",
+          "21.1.2.2.12"
+        ],
+        "sha256": "7cccfd0ad0e2ef89316acece15e44a8a088d0603ce4bba4e7b0361b50d13a37d"
+      },
+      "sourceBlockSha256": "eb88b62ae495b6b7a3e0f4b8488db330f85bc18baf49609ff5f65c6ecd29c81c",
+      "overlapReview": "Separate bounded OOXML unqualifiedshow edit/orderedidentity profile; olderretainednamespaced/Officepositive unchanged.",
+      "sourceProvenance": {
+        "repository": "https://github.com/rcarmo/python-office-mcp-server",
+        "revision": "0c5de7a4ce69c13a06e215e9233954bf2df805d5",
+        "path": "docs/catalogue-staging/python-native/features/test_pptx_advanced_tools_extended.feature",
+        "sha256": "dce4f9fe8d5ac0e353db2d359c2173b0671750c5239c37384d24969bbabe7d61"
+      }
+    },
+    {
+      "id": "@id-pptx-formatting-visibility-refusal",
+      "kind": "visibility-refusal",
+      "family": "slide-visibility",
+      "target": "slide 2 root",
+      "operation": "attempt visibility value JSON \"hidden\"",
+      "expected": {
+        "refusal": "invalid-visibility"
+      },
+      "changedMembers": [],
+      "sourceId": null,
+      "provenanceKind": "new-project-authored-production-contract",
+      "executionCredit": false,
+      "feature": "workflows/pptx/slide-visibility.feature",
+      "fixtureId": "fixture-84e7a8a3681d0e43d4c8a29c37e68386721dfb5df13a36b8bd17a3ebc1fb1fb2",
+      "specification": {
+        "repository": "https://github.com/rcarmo/fixtures-ooxml",
+        "revision": "5dc02ae970e2eaf5ed3e261324ae3961e08bb1c9",
+        "path": "specs/ecma-376/part-1/ECMA-376-Part1-Fundamentals.pdf",
+        "edition": "ECMA-376-1:2016",
+        "clauses": [
+          "19.3.1.38",
+          "20.1.7.6",
+          "20.1.2.3.32",
+          "20.1.8.54",
+          "21.1.2.3.7",
+          "21.1.2.3.9",
+          "21.1.2.2.7",
+          "21.1.2.2.9",
+          "21.1.2.2.10",
+          "21.1.2.2.11",
+          "21.1.2.2.12"
+        ],
+        "sha256": "7cccfd0ad0e2ef89316acece15e44a8a088d0603ce4bba4e7b0361b50d13a37d"
+      },
+      "overlapReview": "Separate bounded OOXML unqualifiedshow edit/orderedidentity profile; olderretainednamespaced/Officepositive unchanged."
+    },
+    {
+      "id": "@id-pptx-formatting-move",
+      "kind": "move",
+      "family": "shape-geometry",
+      "target": "slide 2 shape ID 4",
+      "operation": "set shape position to EMU x=914400 y=1828800",
+      "expected": {
+        "x": 914400,
+        "y": 1828800,
+        "width": 1000,
+        "height": 1000
+      },
+      "changedMembers": [
+        "ppt/slides/slide2.xml"
+      ],
+      "sourceId": null,
+      "provenanceKind": "new-project-authored-production-contract",
+      "executionCredit": false,
+      "feature": "workflows/pptx/shape-geometry.feature",
+      "fixtureId": "fixture-84e7a8a3681d0e43d4c8a29c37e68386721dfb5df13a36b8bd17a3ebc1fb1fb2",
+      "specification": {
+        "repository": "https://github.com/rcarmo/fixtures-ooxml",
+        "revision": "5dc02ae970e2eaf5ed3e261324ae3961e08bb1c9",
+        "path": "specs/ecma-376/part-1/ECMA-376-Part1-Fundamentals.pdf",
+        "edition": "ECMA-376-1:2016",
+        "clauses": [
+          "19.3.1.38",
+          "20.1.7.6",
+          "20.1.2.3.32",
+          "20.1.8.54",
+          "21.1.2.3.7",
+          "21.1.2.3.9",
+          "21.1.2.2.7",
+          "21.1.2.2.9",
+          "21.1.2.2.10",
+          "21.1.2.2.11",
+          "21.1.2.2.12"
+        ],
+        "sha256": "7cccfd0ad0e2ef89316acece15e44a8a088d0603ce4bba4e7b0361b50d13a37d"
+      },
+      "overlapReview": "Existingtext-boxauthoring allocatesnewshape; thesecaseseditexistingID4geometry only."
+    },
+    {
+      "id": "@id-pptx-formatting-resize",
+      "kind": "resize",
+      "family": "shape-geometry",
+      "target": "slide 2 shape ID 4",
+      "operation": "set shape extent to EMU width=3657600 height=1828800",
+      "expected": {
+        "x": 1,
+        "y": 2,
+        "width": 3657600,
+        "height": 1828800
+      },
+      "changedMembers": [
+        "ppt/slides/slide2.xml"
+      ],
+      "sourceId": null,
+      "provenanceKind": "new-project-authored-production-contract",
+      "executionCredit": false,
+      "feature": "workflows/pptx/shape-geometry.feature",
+      "fixtureId": "fixture-84e7a8a3681d0e43d4c8a29c37e68386721dfb5df13a36b8bd17a3ebc1fb1fb2",
+      "specification": {
+        "repository": "https://github.com/rcarmo/fixtures-ooxml",
+        "revision": "5dc02ae970e2eaf5ed3e261324ae3961e08bb1c9",
+        "path": "specs/ecma-376/part-1/ECMA-376-Part1-Fundamentals.pdf",
+        "edition": "ECMA-376-1:2016",
+        "clauses": [
+          "19.3.1.38",
+          "20.1.7.6",
+          "20.1.2.3.32",
+          "20.1.8.54",
+          "21.1.2.3.7",
+          "21.1.2.3.9",
+          "21.1.2.2.7",
+          "21.1.2.2.9",
+          "21.1.2.2.10",
+          "21.1.2.2.11",
+          "21.1.2.2.12"
+        ],
+        "sha256": "7cccfd0ad0e2ef89316acece15e44a8a088d0603ce4bba4e7b0361b50d13a37d"
+      },
+      "overlapReview": "Existingtext-boxauthoring allocatesnewshape; thesecaseseditexistingID4geometry only."
+    },
+    {
+      "id": "@id-pptx-formatting-transform",
+      "kind": "transform",
+      "family": "shape-geometry",
+      "target": "slide 2 shape ID 4",
+      "operation": "set shape rotation to 5400000 angle units and flipH=true flipV=false",
+      "expected": {
+        "rotation": 5400000,
+        "flipH": true,
+        "flipV": false,
+        "x": 1,
+        "y": 2,
+        "width": 1000,
+        "height": 1000
+      },
+      "changedMembers": [
+        "ppt/slides/slide2.xml"
+      ],
+      "sourceId": null,
+      "provenanceKind": "new-project-authored-production-contract",
+      "executionCredit": false,
+      "feature": "workflows/pptx/shape-geometry.feature",
+      "fixtureId": "fixture-84e7a8a3681d0e43d4c8a29c37e68386721dfb5df13a36b8bd17a3ebc1fb1fb2",
+      "specification": {
+        "repository": "https://github.com/rcarmo/fixtures-ooxml",
+        "revision": "5dc02ae970e2eaf5ed3e261324ae3961e08bb1c9",
+        "path": "specs/ecma-376/part-1/ECMA-376-Part1-Fundamentals.pdf",
+        "edition": "ECMA-376-1:2016",
+        "clauses": [
+          "19.3.1.38",
+          "20.1.7.6",
+          "20.1.2.3.32",
+          "20.1.8.54",
+          "21.1.2.3.7",
+          "21.1.2.3.9",
+          "21.1.2.2.7",
+          "21.1.2.2.9",
+          "21.1.2.2.10",
+          "21.1.2.2.11",
+          "21.1.2.2.12"
+        ],
+        "sha256": "7cccfd0ad0e2ef89316acece15e44a8a088d0603ce4bba4e7b0361b50d13a37d"
+      },
+      "overlapReview": "Existingtext-boxauthoring allocatesnewshape; thesecaseseditexistingID4geometry only."
+    },
+    {
+      "id": "@id-pptx-formatting-geometry-refusal",
+      "kind": "geometry-refusal",
+      "family": "shape-geometry",
+      "target": "slide 2 shape ID 4",
+      "operation": "attempt atomic shape position x=914400 and extent width=-1",
+      "expected": {
+        "refusal": "invalid-geometry"
+      },
+      "changedMembers": [],
+      "sourceId": null,
+      "provenanceKind": "new-project-authored-production-contract",
+      "executionCredit": false,
+      "feature": "workflows/pptx/shape-geometry.feature",
+      "fixtureId": "fixture-84e7a8a3681d0e43d4c8a29c37e68386721dfb5df13a36b8bd17a3ebc1fb1fb2",
+      "specification": {
+        "repository": "https://github.com/rcarmo/fixtures-ooxml",
+        "revision": "5dc02ae970e2eaf5ed3e261324ae3961e08bb1c9",
+        "path": "specs/ecma-376/part-1/ECMA-376-Part1-Fundamentals.pdf",
+        "edition": "ECMA-376-1:2016",
+        "clauses": [
+          "19.3.1.38",
+          "20.1.7.6",
+          "20.1.2.3.32",
+          "20.1.8.54",
+          "21.1.2.3.7",
+          "21.1.2.3.9",
+          "21.1.2.2.7",
+          "21.1.2.2.9",
+          "21.1.2.2.10",
+          "21.1.2.2.11",
+          "21.1.2.2.12"
+        ],
+        "sha256": "7cccfd0ad0e2ef89316acece15e44a8a088d0603ce4bba4e7b0361b50d13a37d"
+      },
+      "overlapReview": "Existingtext-boxauthoring allocatesnewshape; thesecaseseditexistingID4geometry only."
+    },
+    {
+      "id": "@id-pptx-formatting-run-bold",
+      "kind": "run-bold",
+      "family": "text-formatting",
+      "target": "slide 2 shape ID 4 paragraph 0 run 1",
+      "operation": "set direct run bold=true",
+      "expected": {
+        "b": "1"
+      },
+      "changedMembers": [
+        "ppt/slides/slide2.xml"
+      ],
+      "sourceId": null,
+      "provenanceKind": "new-project-authored-production-contract",
+      "executionCredit": false,
+      "feature": "workflows/pptx/text-formatting.feature",
+      "fixtureId": "fixture-84e7a8a3681d0e43d4c8a29c37e68386721dfb5df13a36b8bd17a3ebc1fb1fb2",
+      "specification": {
+        "repository": "https://github.com/rcarmo/fixtures-ooxml",
+        "revision": "5dc02ae970e2eaf5ed3e261324ae3961e08bb1c9",
+        "path": "specs/ecma-376/part-1/ECMA-376-Part1-Fundamentals.pdf",
+        "edition": "ECMA-376-1:2016",
+        "clauses": [
+          "19.3.1.38",
+          "20.1.7.6",
+          "20.1.2.3.32",
+          "20.1.8.54",
+          "21.1.2.3.7",
+          "21.1.2.3.9",
+          "21.1.2.2.7",
+          "21.1.2.2.9",
+          "21.1.2.2.10",
+          "21.1.2.2.11",
+          "21.1.2.2.12"
+        ],
+        "sha256": "7cccfd0ad0e2ef89316acece15e44a8a088d0603ce4bba4e7b0361b50d13a37d"
+      },
+      "overlapReview": "No priorcanonicaldirectrun/paragraphformattingedit onretainedPPTX; previousmanipulationresetformat/text APIs areseparate."
+    },
+    {
+      "id": "@id-pptx-formatting-run-unbold",
+      "kind": "run-unbold",
+      "family": "text-formatting",
+      "target": "slide 2 shape ID 4 paragraph 0 run 0",
+      "operation": "set direct run bold=false",
+      "expected": {
+        "b": "0"
+      },
+      "changedMembers": [
+        "ppt/slides/slide2.xml"
+      ],
+      "sourceId": null,
+      "provenanceKind": "new-project-authored-production-contract",
+      "executionCredit": false,
+      "feature": "workflows/pptx/text-formatting.feature",
+      "fixtureId": "fixture-84e7a8a3681d0e43d4c8a29c37e68386721dfb5df13a36b8bd17a3ebc1fb1fb2",
+      "specification": {
+        "repository": "https://github.com/rcarmo/fixtures-ooxml",
+        "revision": "5dc02ae970e2eaf5ed3e261324ae3961e08bb1c9",
+        "path": "specs/ecma-376/part-1/ECMA-376-Part1-Fundamentals.pdf",
+        "edition": "ECMA-376-1:2016",
+        "clauses": [
+          "19.3.1.38",
+          "20.1.7.6",
+          "20.1.2.3.32",
+          "20.1.8.54",
+          "21.1.2.3.7",
+          "21.1.2.3.9",
+          "21.1.2.2.7",
+          "21.1.2.2.9",
+          "21.1.2.2.10",
+          "21.1.2.2.11",
+          "21.1.2.2.12"
+        ],
+        "sha256": "7cccfd0ad0e2ef89316acece15e44a8a088d0603ce4bba4e7b0361b50d13a37d"
+      },
+      "overlapReview": "No priorcanonicaldirectrun/paragraphformattingedit onretainedPPTX; previousmanipulationresetformat/text APIs areseparate."
+    },
+    {
+      "id": "@id-pptx-formatting-run-italic",
+      "kind": "run-italic",
+      "family": "text-formatting",
+      "target": "slide 2 shape ID 4 paragraph 0 run 0",
+      "operation": "set direct run italic=true",
+      "expected": {
+        "i": "1"
+      },
+      "changedMembers": [
+        "ppt/slides/slide2.xml"
+      ],
+      "sourceId": null,
+      "provenanceKind": "new-project-authored-production-contract",
+      "executionCredit": false,
+      "feature": "workflows/pptx/text-formatting.feature",
+      "fixtureId": "fixture-84e7a8a3681d0e43d4c8a29c37e68386721dfb5df13a36b8bd17a3ebc1fb1fb2",
+      "specification": {
+        "repository": "https://github.com/rcarmo/fixtures-ooxml",
+        "revision": "5dc02ae970e2eaf5ed3e261324ae3961e08bb1c9",
+        "path": "specs/ecma-376/part-1/ECMA-376-Part1-Fundamentals.pdf",
+        "edition": "ECMA-376-1:2016",
+        "clauses": [
+          "19.3.1.38",
+          "20.1.7.6",
+          "20.1.2.3.32",
+          "20.1.8.54",
+          "21.1.2.3.7",
+          "21.1.2.3.9",
+          "21.1.2.2.7",
+          "21.1.2.2.9",
+          "21.1.2.2.10",
+          "21.1.2.2.11",
+          "21.1.2.2.12"
+        ],
+        "sha256": "7cccfd0ad0e2ef89316acece15e44a8a088d0603ce4bba4e7b0361b50d13a37d"
+      },
+      "overlapReview": "No priorcanonicaldirectrun/paragraphformattingedit onretainedPPTX; previousmanipulationresetformat/text APIs areseparate."
+    },
+    {
+      "id": "@id-pptx-formatting-run-underline",
+      "kind": "run-underline",
+      "family": "text-formatting",
+      "target": "slide 2 shape ID 4 paragraph 0 run 0",
+      "operation": "set direct run underline=none",
+      "expected": {
+        "u": "none"
+      },
+      "changedMembers": [
+        "ppt/slides/slide2.xml"
+      ],
+      "sourceId": null,
+      "provenanceKind": "new-project-authored-production-contract",
+      "executionCredit": false,
+      "feature": "workflows/pptx/text-formatting.feature",
+      "fixtureId": "fixture-84e7a8a3681d0e43d4c8a29c37e68386721dfb5df13a36b8bd17a3ebc1fb1fb2",
+      "specification": {
+        "repository": "https://github.com/rcarmo/fixtures-ooxml",
+        "revision": "5dc02ae970e2eaf5ed3e261324ae3961e08bb1c9",
+        "path": "specs/ecma-376/part-1/ECMA-376-Part1-Fundamentals.pdf",
+        "edition": "ECMA-376-1:2016",
+        "clauses": [
+          "19.3.1.38",
+          "20.1.7.6",
+          "20.1.2.3.32",
+          "20.1.8.54",
+          "21.1.2.3.7",
+          "21.1.2.3.9",
+          "21.1.2.2.7",
+          "21.1.2.2.9",
+          "21.1.2.2.10",
+          "21.1.2.2.11",
+          "21.1.2.2.12"
+        ],
+        "sha256": "7cccfd0ad0e2ef89316acece15e44a8a088d0603ce4bba4e7b0361b50d13a37d"
+      },
+      "overlapReview": "No priorcanonicaldirectrun/paragraphformattingedit onretainedPPTX; previousmanipulationresetformat/text APIs areseparate."
+    },
+    {
+      "id": "@id-pptx-formatting-run-size",
+      "kind": "run-size",
+      "family": "text-formatting",
+      "target": "slide 2 shape ID 4 paragraph 0 run 0",
+      "operation": "set direct run font size to 2400 hundredths of a point",
+      "expected": {
+        "sz": "2400"
+      },
+      "changedMembers": [
+        "ppt/slides/slide2.xml"
+      ],
+      "sourceId": null,
+      "provenanceKind": "new-project-authored-production-contract",
+      "executionCredit": false,
+      "feature": "workflows/pptx/text-formatting.feature",
+      "fixtureId": "fixture-84e7a8a3681d0e43d4c8a29c37e68386721dfb5df13a36b8bd17a3ebc1fb1fb2",
+      "specification": {
+        "repository": "https://github.com/rcarmo/fixtures-ooxml",
+        "revision": "5dc02ae970e2eaf5ed3e261324ae3961e08bb1c9",
+        "path": "specs/ecma-376/part-1/ECMA-376-Part1-Fundamentals.pdf",
+        "edition": "ECMA-376-1:2016",
+        "clauses": [
+          "19.3.1.38",
+          "20.1.7.6",
+          "20.1.2.3.32",
+          "20.1.8.54",
+          "21.1.2.3.7",
+          "21.1.2.3.9",
+          "21.1.2.2.7",
+          "21.1.2.2.9",
+          "21.1.2.2.10",
+          "21.1.2.2.11",
+          "21.1.2.2.12"
+        ],
+        "sha256": "7cccfd0ad0e2ef89316acece15e44a8a088d0603ce4bba4e7b0361b50d13a37d"
+      },
+      "overlapReview": "No priorcanonicaldirectrun/paragraphformattingedit onretainedPPTX; previousmanipulationresetformat/text APIs areseparate."
+    },
+    {
+      "id": "@id-pptx-formatting-run-font",
+      "kind": "run-font",
+      "family": "text-formatting",
+      "target": "slide 2 shape ID 4 paragraph 0 run 0",
+      "operation": "set direct Latin typeface to JSON \"Aptos Display\"",
+      "expected": {
+        "typeface": "Aptos Display"
+      },
+      "changedMembers": [
+        "ppt/slides/slide2.xml"
+      ],
+      "sourceId": null,
+      "provenanceKind": "new-project-authored-production-contract",
+      "executionCredit": false,
+      "feature": "workflows/pptx/text-formatting.feature",
+      "fixtureId": "fixture-84e7a8a3681d0e43d4c8a29c37e68386721dfb5df13a36b8bd17a3ebc1fb1fb2",
+      "specification": {
+        "repository": "https://github.com/rcarmo/fixtures-ooxml",
+        "revision": "5dc02ae970e2eaf5ed3e261324ae3961e08bb1c9",
+        "path": "specs/ecma-376/part-1/ECMA-376-Part1-Fundamentals.pdf",
+        "edition": "ECMA-376-1:2016",
+        "clauses": [
+          "19.3.1.38",
+          "20.1.7.6",
+          "20.1.2.3.32",
+          "20.1.8.54",
+          "21.1.2.3.7",
+          "21.1.2.3.9",
+          "21.1.2.2.7",
+          "21.1.2.2.9",
+          "21.1.2.2.10",
+          "21.1.2.2.11",
+          "21.1.2.2.12"
+        ],
+        "sha256": "7cccfd0ad0e2ef89316acece15e44a8a088d0603ce4bba4e7b0361b50d13a37d"
+      },
+      "overlapReview": "No priorcanonicaldirectrun/paragraphformattingedit onretainedPPTX; previousmanipulationresetformat/text APIs areseparate."
+    },
+    {
+      "id": "@id-pptx-formatting-run-color",
+      "kind": "run-color",
+      "family": "text-formatting",
+      "target": "slide 2 shape ID 4 paragraph 0 run 0",
+      "operation": "set direct sRGB text color to A1B2C3",
+      "expected": {
+        "color": "A1B2C3"
+      },
+      "changedMembers": [
+        "ppt/slides/slide2.xml"
+      ],
+      "sourceId": null,
+      "provenanceKind": "new-project-authored-production-contract",
+      "executionCredit": false,
+      "feature": "workflows/pptx/text-formatting.feature",
+      "fixtureId": "fixture-84e7a8a3681d0e43d4c8a29c37e68386721dfb5df13a36b8bd17a3ebc1fb1fb2",
+      "specification": {
+        "repository": "https://github.com/rcarmo/fixtures-ooxml",
+        "revision": "5dc02ae970e2eaf5ed3e261324ae3961e08bb1c9",
+        "path": "specs/ecma-376/part-1/ECMA-376-Part1-Fundamentals.pdf",
+        "edition": "ECMA-376-1:2016",
+        "clauses": [
+          "19.3.1.38",
+          "20.1.7.6",
+          "20.1.2.3.32",
+          "20.1.8.54",
+          "21.1.2.3.7",
+          "21.1.2.3.9",
+          "21.1.2.2.7",
+          "21.1.2.2.9",
+          "21.1.2.2.10",
+          "21.1.2.2.11",
+          "21.1.2.2.12"
+        ],
+        "sha256": "7cccfd0ad0e2ef89316acece15e44a8a088d0603ce4bba4e7b0361b50d13a37d"
+      },
+      "overlapReview": "No priorcanonicaldirectrun/paragraphformattingedit onretainedPPTX; previousmanipulationresetformat/text APIs areseparate."
+    },
+    {
+      "id": "@id-pptx-formatting-run-inherit",
+      "kind": "run-inherit",
+      "family": "text-formatting",
+      "target": "slide 2 shape ID 4 paragraph 0 run 0",
+      "operation": "remove direct bold italic underline size Latin typeface and solid color",
+      "expected": {
+        "absent": [
+          "b",
+          "i",
+          "u",
+          "sz",
+          "latin",
+          "solidFill"
+        ],
+        "retainedLanguage": "en-US"
+      },
+      "changedMembers": [
+        "ppt/slides/slide2.xml"
+      ],
+      "sourceId": null,
+      "provenanceKind": "new-project-authored-production-contract",
+      "executionCredit": false,
+      "feature": "workflows/pptx/text-formatting.feature",
+      "fixtureId": "fixture-84e7a8a3681d0e43d4c8a29c37e68386721dfb5df13a36b8bd17a3ebc1fb1fb2",
+      "specification": {
+        "repository": "https://github.com/rcarmo/fixtures-ooxml",
+        "revision": "5dc02ae970e2eaf5ed3e261324ae3961e08bb1c9",
+        "path": "specs/ecma-376/part-1/ECMA-376-Part1-Fundamentals.pdf",
+        "edition": "ECMA-376-1:2016",
+        "clauses": [
+          "19.3.1.38",
+          "20.1.7.6",
+          "20.1.2.3.32",
+          "20.1.8.54",
+          "21.1.2.3.7",
+          "21.1.2.3.9",
+          "21.1.2.2.7",
+          "21.1.2.2.9",
+          "21.1.2.2.10",
+          "21.1.2.2.11",
+          "21.1.2.2.12"
+        ],
+        "sha256": "7cccfd0ad0e2ef89316acece15e44a8a088d0603ce4bba4e7b0361b50d13a37d"
+      },
+      "overlapReview": "No priorcanonicaldirectrun/paragraphformattingedit onretainedPPTX; previousmanipulationresetformat/text APIs areseparate."
+    },
+    {
+      "id": "@id-pptx-formatting-paragraph-align",
+      "kind": "paragraph-align",
+      "family": "paragraph-formatting",
+      "target": "slide 2 shape ID 4 paragraph 0",
+      "operation": "set direct paragraph alignment to center",
+      "expected": {
+        "algn": "ctr"
+      },
+      "changedMembers": [
+        "ppt/slides/slide2.xml"
+      ],
+      "sourceId": null,
+      "provenanceKind": "new-project-authored-production-contract",
+      "executionCredit": false,
+      "feature": "workflows/pptx/paragraph-formatting.feature",
+      "fixtureId": "fixture-84e7a8a3681d0e43d4c8a29c37e68386721dfb5df13a36b8bd17a3ebc1fb1fb2",
+      "specification": {
+        "repository": "https://github.com/rcarmo/fixtures-ooxml",
+        "revision": "5dc02ae970e2eaf5ed3e261324ae3961e08bb1c9",
+        "path": "specs/ecma-376/part-1/ECMA-376-Part1-Fundamentals.pdf",
+        "edition": "ECMA-376-1:2016",
+        "clauses": [
+          "19.3.1.38",
+          "20.1.7.6",
+          "20.1.2.3.32",
+          "20.1.8.54",
+          "21.1.2.3.7",
+          "21.1.2.3.9",
+          "21.1.2.2.7",
+          "21.1.2.2.9",
+          "21.1.2.2.10",
+          "21.1.2.2.11",
+          "21.1.2.2.12"
+        ],
+        "sha256": "7cccfd0ad0e2ef89316acece15e44a8a088d0603ce4bba4e7b0361b50d13a37d"
+      },
+      "overlapReview": "No priorcanonicaldirectrun/paragraphformattingedit onretainedPPTX; previousmanipulationresetformat/text APIs areseparate."
+    },
+    {
+      "id": "@id-pptx-formatting-paragraph-indent",
+      "kind": "paragraph-indent",
+      "family": "paragraph-formatting",
+      "target": "slide 2 shape ID 4 paragraph 0",
+      "operation": "set paragraph left margin=457200 and hanging indent=-228600 EMU",
+      "expected": {
+        "marL": "457200",
+        "indent": "-228600"
+      },
+      "changedMembers": [
+        "ppt/slides/slide2.xml"
+      ],
+      "sourceId": null,
+      "provenanceKind": "new-project-authored-production-contract",
+      "executionCredit": false,
+      "feature": "workflows/pptx/paragraph-formatting.feature",
+      "fixtureId": "fixture-84e7a8a3681d0e43d4c8a29c37e68386721dfb5df13a36b8bd17a3ebc1fb1fb2",
+      "specification": {
+        "repository": "https://github.com/rcarmo/fixtures-ooxml",
+        "revision": "5dc02ae970e2eaf5ed3e261324ae3961e08bb1c9",
+        "path": "specs/ecma-376/part-1/ECMA-376-Part1-Fundamentals.pdf",
+        "edition": "ECMA-376-1:2016",
+        "clauses": [
+          "19.3.1.38",
+          "20.1.7.6",
+          "20.1.2.3.32",
+          "20.1.8.54",
+          "21.1.2.3.7",
+          "21.1.2.3.9",
+          "21.1.2.2.7",
+          "21.1.2.2.9",
+          "21.1.2.2.10",
+          "21.1.2.2.11",
+          "21.1.2.2.12"
+        ],
+        "sha256": "7cccfd0ad0e2ef89316acece15e44a8a088d0603ce4bba4e7b0361b50d13a37d"
+      },
+      "overlapReview": "No priorcanonicaldirectrun/paragraphformattingedit onretainedPPTX; previousmanipulationresetformat/text APIs areseparate."
+    },
+    {
+      "id": "@id-pptx-formatting-paragraph-spacing",
+      "kind": "paragraph-spacing",
+      "family": "paragraph-formatting",
+      "target": "slide 2 shape ID 4 paragraph 0",
+      "operation": "set space-before=1200 and space-after=600 hundredths of a point",
+      "expected": {
+        "before": 1200,
+        "after": 600
+      },
+      "changedMembers": [
+        "ppt/slides/slide2.xml"
+      ],
+      "sourceId": null,
+      "provenanceKind": "new-project-authored-production-contract",
+      "executionCredit": false,
+      "feature": "workflows/pptx/paragraph-formatting.feature",
+      "fixtureId": "fixture-84e7a8a3681d0e43d4c8a29c37e68386721dfb5df13a36b8bd17a3ebc1fb1fb2",
+      "specification": {
+        "repository": "https://github.com/rcarmo/fixtures-ooxml",
+        "revision": "5dc02ae970e2eaf5ed3e261324ae3961e08bb1c9",
+        "path": "specs/ecma-376/part-1/ECMA-376-Part1-Fundamentals.pdf",
+        "edition": "ECMA-376-1:2016",
+        "clauses": [
+          "19.3.1.38",
+          "20.1.7.6",
+          "20.1.2.3.32",
+          "20.1.8.54",
+          "21.1.2.3.7",
+          "21.1.2.3.9",
+          "21.1.2.2.7",
+          "21.1.2.2.9",
+          "21.1.2.2.10",
+          "21.1.2.2.11",
+          "21.1.2.2.12"
+        ],
+        "sha256": "7cccfd0ad0e2ef89316acece15e44a8a088d0603ce4bba4e7b0361b50d13a37d"
+      },
+      "overlapReview": "No priorcanonicaldirectrun/paragraphformattingedit onretainedPPTX; previousmanipulationresetformat/text APIs areseparate."
+    },
+    {
+      "id": "@id-pptx-formatting-paragraph-line",
+      "kind": "paragraph-line",
+      "family": "paragraph-formatting",
+      "target": "slide 2 shape ID 4 paragraph 0",
+      "operation": "set line spacing to 150000 thousandths of a percent",
+      "expected": {
+        "linePercent": 150000
+      },
+      "changedMembers": [
+        "ppt/slides/slide2.xml"
+      ],
+      "sourceId": null,
+      "provenanceKind": "new-project-authored-production-contract",
+      "executionCredit": false,
+      "feature": "workflows/pptx/paragraph-formatting.feature",
+      "fixtureId": "fixture-84e7a8a3681d0e43d4c8a29c37e68386721dfb5df13a36b8bd17a3ebc1fb1fb2",
+      "specification": {
+        "repository": "https://github.com/rcarmo/fixtures-ooxml",
+        "revision": "5dc02ae970e2eaf5ed3e261324ae3961e08bb1c9",
+        "path": "specs/ecma-376/part-1/ECMA-376-Part1-Fundamentals.pdf",
+        "edition": "ECMA-376-1:2016",
+        "clauses": [
+          "19.3.1.38",
+          "20.1.7.6",
+          "20.1.2.3.32",
+          "20.1.8.54",
+          "21.1.2.3.7",
+          "21.1.2.3.9",
+          "21.1.2.2.7",
+          "21.1.2.2.9",
+          "21.1.2.2.10",
+          "21.1.2.2.11",
+          "21.1.2.2.12"
+        ],
+        "sha256": "7cccfd0ad0e2ef89316acece15e44a8a088d0603ce4bba4e7b0361b50d13a37d"
+      },
+      "overlapReview": "No priorcanonicaldirectrun/paragraphformattingedit onretainedPPTX; previousmanipulationresetformat/text APIs areseparate."
+    }
+  ],
+  "files": [
+    {
+      "path": "workflows/pptx/slide-visibility.feature",
+      "beforeText": "@planned\nFeature: PowerPoint slide visibility by slide identity\n  Slide order and visibility are separate properties. The retained source has\n  a namespaced p:show marker, while CT_Slide defines unqualified show. Its\n  application-visible hidden state is unproved; an Office-positive requires\n  an untouched PowerPoint export and reopen evidence.\n\n  @id-pptx-slide-visibility-retained-inputs\n  Scenario: Retained four-slide inputs distinguish a namespaced marker from a visible control\n    Given the committed fixture fixture-e01ded1106a28f94a3439e8368f9a12ec360891f4a9e2810f6504c4c328ed79c is loaded without editing\n    And the committed fixture fixture-fa245a3df00fef7f7bf4739921ee840194040161e06490589e3d52cc9fa7a71d is loaded as a visible control\n    When their four ordered slide identities and root visibility attributes are inspected\n    Then the source fixture has exactly four slides with slide 3 marked namespaced p:show=\"0\" and slides 1, 2 and 4 unmarked\n    And the source fixture's four slides lack an unqualified show attribute\n    And the visible control has exactly four slides without a hidden visibility attribute\n    And no slide in either retained input is counted as an application-confirmed hidden slide\n    And both source archive bytes remain unchanged\n    And the reported slide numbers refer to the same slide relationships as the inspected parts\n\n  @id-pptx-office-hidden-slide-positive\n  Scenario: An untouched PowerPoint export confirms hidden slide 3 of four on reopen\n    Given an untouched PowerPoint-authored four-slide presentation with slide 3 hidden is registered with version and platform provenance\n    And a separately visible control is registered with original bytes\n    When both originals are reopened in PowerPoint and inspected through an independent OOXML reader\n    Then slide 3 alone is hidden in the original presentation and slides 1, 2 and 4 remain visible\n    And every control slide remains visible\n    And the identity of each visible or hidden slide matches its slide relationship and part\n    And both original archive bytes remain unchanged\n",
+      "beforeSha256": "b348743de0c6bc7303811f613761a6d67a8a0f4f57132466238a0c7e752acd78",
+      "afterSha256": "4d597d15d4227bc7ed153ef3cd1060d8319134ca08b499c602fc964c1511af19",
+      "scenarios": [
+        {
+          "id": "@id-pptx-formatting-hide",
+          "after": [
+            {
+              "scenarioId": "@id-pptx-formatting-hide",
+              "name": "hide preserves direct properties and package custody",
+              "steps": [
+                {
+                  "text": "retained formatting fixture fixture-84e7a8a3681d0e43d4c8a29c37e68386721dfb5df13a36b8bd17a3ebc1fb1fb2 has ordered slides [\"Alpha\",\"Beta\",\"Gamma\"]",
+                  "argument": null
+                },
+                {
+                  "text": "formatting target slide 2 root has the exact original direct properties and lexical snapshot",
+                  "argument": null
+                },
+                {
+                  "text": "production PPTX formatting APIs set slide visibility to hidden",
+                  "argument": null
+                },
+                {
+                  "text": "the result or unchanged refusal session is saved to a new path and independently parsed and reopened",
+                  "argument": null
+                },
+                {
+                  "text": "formatting target slide 2 root has exact saved properties JSON {\"show\":\"0\",\"hidden\":true}",
+                  "argument": null
+                },
+                {
+                  "text": "the exact changed original member set is [\"ppt/slides/slide2.xml\"] with no additions or removals",
+                  "argument": null
+                },
+                {
+                  "text": "every original text leaf, unselected run, paragraph, shape and unrelated member retains its original bytes",
+                  "argument": null
+                },
+                {
+                  "text": "only the selected property span may change and all unpatched attributes and child fragments retain their exact bytes",
+                  "argument": null
+                },
+                {
+                  "text": "caller archive, original slide IDs, relationship IDs, targets, layout and notes links retain custody",
+                  "argument": null
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "@id-pptx-formatting-unhide",
+          "after": [
+            {
+              "scenarioId": "@id-pptx-formatting-unhide",
+              "name": "unhide preserves direct properties and package custody",
+              "steps": [
+                {
+                  "text": "retained formatting fixture fixture-84e7a8a3681d0e43d4c8a29c37e68386721dfb5df13a36b8bd17a3ebc1fb1fb2 has ordered slides [\"Alpha\",\"Beta\",\"Gamma\"]",
+                  "argument": null
+                },
+                {
+                  "text": "formatting target slide 2 root has the exact original direct properties and lexical snapshot",
+                  "argument": null
+                },
+                {
+                  "text": "production PPTX formatting APIs set slide visibility to hidden then visible",
+                  "argument": null
+                },
+                {
+                  "text": "the result or unchanged refusal session is saved to a new path and independently parsed and reopened",
+                  "argument": null
+                },
+                {
+                  "text": "formatting target slide 2 root has exact saved properties JSON {\"show\":\"1\",\"hidden\":false}",
+                  "argument": null
+                },
+                {
+                  "text": "the exact changed original member set is [\"ppt/slides/slide2.xml\"] with no additions or removals",
+                  "argument": null
+                },
+                {
+                  "text": "every original text leaf, unselected run, paragraph, shape and unrelated member retains its original bytes",
+                  "argument": null
+                },
+                {
+                  "text": "only the selected property span may change and all unpatched attributes and child fragments retain their exact bytes",
+                  "argument": null
+                },
+                {
+                  "text": "caller archive, original slide IDs, relationship IDs, targets, layout and notes links retain custody",
+                  "argument": null
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "@id-pptx-formatting-visibility-order",
+          "after": [
+            {
+              "scenarioId": "@id-pptx-formatting-visibility-order",
+              "name": "visibility order preserves direct properties and package custody",
+              "steps": [
+                {
+                  "text": "retained formatting fixture fixture-84e7a8a3681d0e43d4c8a29c37e68386721dfb5df13a36b8bd17a3ebc1fb1fb2 has ordered slides [\"Alpha\",\"Beta\",\"Gamma\"]",
+                  "argument": null
+                },
+                {
+                  "text": "formatting target ordered slide identities has the exact original direct properties and lexical snapshot",
+                  "argument": null
+                },
+                {
+                  "text": "production PPTX formatting APIs hide slide 2 then reorder by zero-based permutation [2,0,1] and read hidden identities",
+                  "argument": null
+                },
+                {
+                  "text": "the result or unchanged refusal session is saved to a new path and independently parsed and reopened",
+                  "argument": null
+                },
+                {
+                  "text": "formatting target ordered slide identities has exact saved properties JSON {\"titles\":[\"Gamma\",\"Alpha\",\"Beta\"],\"hiddenParts\":[\"ppt/slides/slide2.xml\"],\"hiddenOrdinals\":[3]}",
+                  "argument": null
+                },
+                {
+                  "text": "the exact changed original member set is [\"ppt/slides/slide2.xml\",\"ppt/presentation.xml\"] with no additions or removals",
+                  "argument": null
+                },
+                {
+                  "text": "every original text leaf, unselected run, paragraph, shape and unrelated member retains its original bytes",
+                  "argument": null
+                },
+                {
+                  "text": "only the selected property span may change and all unpatched attributes and child fragments retain their exact bytes",
+                  "argument": null
+                },
+                {
+                  "text": "caller archive, original slide IDs, relationship IDs, targets, layout and notes links retain custody",
+                  "argument": null
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "@id-pptx-formatting-visibility-refusal",
+          "after": [
+            {
+              "scenarioId": "@id-pptx-formatting-visibility-refusal",
+              "name": "visibility refusal preserves direct properties and package custody",
+              "steps": [
+                {
+                  "text": "retained formatting fixture fixture-84e7a8a3681d0e43d4c8a29c37e68386721dfb5df13a36b8bd17a3ebc1fb1fb2 has ordered slides [\"Alpha\",\"Beta\",\"Gamma\"]",
+                  "argument": null
+                },
+                {
+                  "text": "formatting target slide 2 root has the exact original direct properties and lexical snapshot",
+                  "argument": null
+                },
+                {
+                  "text": "production PPTX formatting APIs attempt visibility value JSON \"hidden\"",
+                  "argument": null
+                },
+                {
+                  "text": "the result or unchanged refusal session is saved to a new path and independently parsed and reopened",
+                  "argument": null
+                },
+                {
+                  "text": "formatting target slide 2 root has exact saved properties JSON {\"refusal\":\"invalid-visibility\"}",
+                  "argument": null
+                },
+                {
+                  "text": "the exact changed original member set is [] with no additions or removals",
+                  "argument": null
+                },
+                {
+                  "text": "every original text leaf, unselected run, paragraph, shape and unrelated member retains its original bytes",
+                  "argument": null
+                },
+                {
+                  "text": "only the selected property span may change and all unpatched attributes and child fragments retain their exact bytes",
+                  "argument": null
+                },
+                {
+                  "text": "caller archive, original slide IDs, relationship IDs, targets, layout and notes links retain custody",
+                  "argument": null
+                },
+                {
+                  "text": "refusal reason invalid-visibility leaves session bytes and held identities unchanged before save",
+                  "argument": null
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "afterLedgerRows": [
+        {
+          "id": "@id-pptx-formatting-hide",
+          "feature": "workflows/pptx/slide-visibility.feature",
+          "expandedCases": 1,
+          "factIds": [],
+          "expectedOutcomes": [
+            "formatting target slide 2 root has exact saved properties JSON {\"show\":\"0\",\"hidden\":true}",
+            "the exact changed original member set is [\"ppt/slides/slide2.xml\"] with no additions or removals",
+            "every original text leaf, unselected run, paragraph, shape and unrelated member retains its original bytes",
+            "only the selected property span may change and all unpatched attributes and child fragments retain their exact bytes",
+            "caller archive, original slide IDs, relationship IDs, targets, layout and notes links retain custody"
+          ],
+          "consumers": {
+            "bun": {
+              "status": "planned",
+              "evidence": []
+            },
+            "go": {
+              "status": "planned",
+              "evidence": []
+            },
+            "python": {
+              "status": "planned",
+              "evidence": []
+            }
+          }
+        },
+        {
+          "id": "@id-pptx-formatting-unhide",
+          "feature": "workflows/pptx/slide-visibility.feature",
+          "expandedCases": 1,
+          "factIds": [],
+          "expectedOutcomes": [
+            "formatting target slide 2 root has exact saved properties JSON {\"show\":\"1\",\"hidden\":false}",
+            "the exact changed original member set is [\"ppt/slides/slide2.xml\"] with no additions or removals",
+            "every original text leaf, unselected run, paragraph, shape and unrelated member retains its original bytes",
+            "only the selected property span may change and all unpatched attributes and child fragments retain their exact bytes",
+            "caller archive, original slide IDs, relationship IDs, targets, layout and notes links retain custody"
+          ],
+          "consumers": {
+            "bun": {
+              "status": "planned",
+              "evidence": []
+            },
+            "go": {
+              "status": "planned",
+              "evidence": []
+            },
+            "python": {
+              "status": "planned",
+              "evidence": []
+            }
+          }
+        },
+        {
+          "id": "@id-pptx-formatting-visibility-order",
+          "feature": "workflows/pptx/slide-visibility.feature",
+          "expandedCases": 1,
+          "factIds": [],
+          "expectedOutcomes": [
+            "formatting target ordered slide identities has exact saved properties JSON {\"titles\":[\"Gamma\",\"Alpha\",\"Beta\"],\"hiddenParts\":[\"ppt/slides/slide2.xml\"],\"hiddenOrdinals\":[3]}",
+            "the exact changed original member set is [\"ppt/slides/slide2.xml\",\"ppt/presentation.xml\"] with no additions or removals",
+            "every original text leaf, unselected run, paragraph, shape and unrelated member retains its original bytes",
+            "only the selected property span may change and all unpatched attributes and child fragments retain their exact bytes",
+            "caller archive, original slide IDs, relationship IDs, targets, layout and notes links retain custody"
+          ],
+          "consumers": {
+            "bun": {
+              "status": "planned",
+              "evidence": []
+            },
+            "go": {
+              "status": "planned",
+              "evidence": []
+            },
+            "python": {
+              "status": "planned",
+              "evidence": []
+            }
+          }
+        },
+        {
+          "id": "@id-pptx-formatting-visibility-refusal",
+          "feature": "workflows/pptx/slide-visibility.feature",
+          "expandedCases": 1,
+          "factIds": [],
+          "expectedOutcomes": [
+            "formatting target slide 2 root has exact saved properties JSON {\"refusal\":\"invalid-visibility\"}",
+            "the exact changed original member set is [] with no additions or removals",
+            "every original text leaf, unselected run, paragraph, shape and unrelated member retains its original bytes",
+            "only the selected property span may change and all unpatched attributes and child fragments retain their exact bytes",
+            "caller archive, original slide IDs, relationship IDs, targets, layout and notes links retain custody",
+            "refusal reason invalid-visibility leaves session bytes and held identities unchanged before save"
+          ],
+          "consumers": {
+            "bun": {
+              "status": "planned",
+              "evidence": []
+            },
+            "go": {
+              "status": "planned",
+              "evidence": []
+            },
+            "python": {
+              "status": "planned",
+              "evidence": []
+            }
+          }
+        }
+      ]
+    },
+    {
+      "path": "workflows/pptx/shape-geometry.feature",
+      "beforeText": "",
+      "beforeSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "afterSha256": "6cf9dad38adca997ec91ac4371bb05f19bd2a4ef547e05664755a5099ddabb17",
+      "scenarios": [
+        {
+          "id": "@id-pptx-formatting-move",
+          "after": [
+            {
+              "scenarioId": "@id-pptx-formatting-move",
+              "name": "move preserves direct properties and package custody",
+              "steps": [
+                {
+                  "text": "retained formatting fixture fixture-84e7a8a3681d0e43d4c8a29c37e68386721dfb5df13a36b8bd17a3ebc1fb1fb2 has ordered slides [\"Alpha\",\"Beta\",\"Gamma\"]",
+                  "argument": null
+                },
+                {
+                  "text": "formatting target slide 2 shape ID 4 has the exact original direct properties and lexical snapshot",
+                  "argument": null
+                },
+                {
+                  "text": "production PPTX formatting APIs set shape position to EMU x=914400 y=1828800",
+                  "argument": null
+                },
+                {
+                  "text": "the result or unchanged refusal session is saved to a new path and independently parsed and reopened",
+                  "argument": null
+                },
+                {
+                  "text": "formatting target slide 2 shape ID 4 has exact saved properties JSON {\"x\":914400,\"y\":1828800,\"width\":1000,\"height\":1000}",
+                  "argument": null
+                },
+                {
+                  "text": "the exact changed original member set is [\"ppt/slides/slide2.xml\"] with no additions or removals",
+                  "argument": null
+                },
+                {
+                  "text": "every original text leaf, unselected run, paragraph, shape and unrelated member retains its original bytes",
+                  "argument": null
+                },
+                {
+                  "text": "only the selected property span may change and all unpatched attributes and child fragments retain their exact bytes",
+                  "argument": null
+                },
+                {
+                  "text": "caller archive, original slide IDs, relationship IDs, targets, layout and notes links retain custody",
+                  "argument": null
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "@id-pptx-formatting-resize",
+          "after": [
+            {
+              "scenarioId": "@id-pptx-formatting-resize",
+              "name": "resize preserves direct properties and package custody",
+              "steps": [
+                {
+                  "text": "retained formatting fixture fixture-84e7a8a3681d0e43d4c8a29c37e68386721dfb5df13a36b8bd17a3ebc1fb1fb2 has ordered slides [\"Alpha\",\"Beta\",\"Gamma\"]",
+                  "argument": null
+                },
+                {
+                  "text": "formatting target slide 2 shape ID 4 has the exact original direct properties and lexical snapshot",
+                  "argument": null
+                },
+                {
+                  "text": "production PPTX formatting APIs set shape extent to EMU width=3657600 height=1828800",
+                  "argument": null
+                },
+                {
+                  "text": "the result or unchanged refusal session is saved to a new path and independently parsed and reopened",
+                  "argument": null
+                },
+                {
+                  "text": "formatting target slide 2 shape ID 4 has exact saved properties JSON {\"x\":1,\"y\":2,\"width\":3657600,\"height\":1828800}",
+                  "argument": null
+                },
+                {
+                  "text": "the exact changed original member set is [\"ppt/slides/slide2.xml\"] with no additions or removals",
+                  "argument": null
+                },
+                {
+                  "text": "every original text leaf, unselected run, paragraph, shape and unrelated member retains its original bytes",
+                  "argument": null
+                },
+                {
+                  "text": "only the selected property span may change and all unpatched attributes and child fragments retain their exact bytes",
+                  "argument": null
+                },
+                {
+                  "text": "caller archive, original slide IDs, relationship IDs, targets, layout and notes links retain custody",
+                  "argument": null
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "@id-pptx-formatting-transform",
+          "after": [
+            {
+              "scenarioId": "@id-pptx-formatting-transform",
+              "name": "transform preserves direct properties and package custody",
+              "steps": [
+                {
+                  "text": "retained formatting fixture fixture-84e7a8a3681d0e43d4c8a29c37e68386721dfb5df13a36b8bd17a3ebc1fb1fb2 has ordered slides [\"Alpha\",\"Beta\",\"Gamma\"]",
+                  "argument": null
+                },
+                {
+                  "text": "formatting target slide 2 shape ID 4 has the exact original direct properties and lexical snapshot",
+                  "argument": null
+                },
+                {
+                  "text": "production PPTX formatting APIs set shape rotation to 5400000 angle units and flipH=true flipV=false",
+                  "argument": null
+                },
+                {
+                  "text": "the result or unchanged refusal session is saved to a new path and independently parsed and reopened",
+                  "argument": null
+                },
+                {
+                  "text": "formatting target slide 2 shape ID 4 has exact saved properties JSON {\"rotation\":5400000,\"flipH\":true,\"flipV\":false,\"x\":1,\"y\":2,\"width\":1000,\"height\":1000}",
+                  "argument": null
+                },
+                {
+                  "text": "the exact changed original member set is [\"ppt/slides/slide2.xml\"] with no additions or removals",
+                  "argument": null
+                },
+                {
+                  "text": "every original text leaf, unselected run, paragraph, shape and unrelated member retains its original bytes",
+                  "argument": null
+                },
+                {
+                  "text": "only the selected property span may change and all unpatched attributes and child fragments retain their exact bytes",
+                  "argument": null
+                },
+                {
+                  "text": "caller archive, original slide IDs, relationship IDs, targets, layout and notes links retain custody",
+                  "argument": null
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "@id-pptx-formatting-geometry-refusal",
+          "after": [
+            {
+              "scenarioId": "@id-pptx-formatting-geometry-refusal",
+              "name": "geometry refusal preserves direct properties and package custody",
+              "steps": [
+                {
+                  "text": "retained formatting fixture fixture-84e7a8a3681d0e43d4c8a29c37e68386721dfb5df13a36b8bd17a3ebc1fb1fb2 has ordered slides [\"Alpha\",\"Beta\",\"Gamma\"]",
+                  "argument": null
+                },
+                {
+                  "text": "formatting target slide 2 shape ID 4 has the exact original direct properties and lexical snapshot",
+                  "argument": null
+                },
+                {
+                  "text": "production PPTX formatting APIs attempt atomic shape position x=914400 and extent width=-1",
+                  "argument": null
+                },
+                {
+                  "text": "the result or unchanged refusal session is saved to a new path and independently parsed and reopened",
+                  "argument": null
+                },
+                {
+                  "text": "formatting target slide 2 shape ID 4 has exact saved properties JSON {\"refusal\":\"invalid-geometry\"}",
+                  "argument": null
+                },
+                {
+                  "text": "the exact changed original member set is [] with no additions or removals",
+                  "argument": null
+                },
+                {
+                  "text": "every original text leaf, unselected run, paragraph, shape and unrelated member retains its original bytes",
+                  "argument": null
+                },
+                {
+                  "text": "only the selected property span may change and all unpatched attributes and child fragments retain their exact bytes",
+                  "argument": null
+                },
+                {
+                  "text": "caller archive, original slide IDs, relationship IDs, targets, layout and notes links retain custody",
+                  "argument": null
+                },
+                {
+                  "text": "refusal reason invalid-geometry leaves session bytes and held identities unchanged before save",
+                  "argument": null
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "afterLedgerRows": [
+        {
+          "id": "@id-pptx-formatting-move",
+          "feature": "workflows/pptx/shape-geometry.feature",
+          "expandedCases": 1,
+          "factIds": [],
+          "expectedOutcomes": [
+            "formatting target slide 2 shape ID 4 has exact saved properties JSON {\"x\":914400,\"y\":1828800,\"width\":1000,\"height\":1000}",
+            "the exact changed original member set is [\"ppt/slides/slide2.xml\"] with no additions or removals",
+            "every original text leaf, unselected run, paragraph, shape and unrelated member retains its original bytes",
+            "only the selected property span may change and all unpatched attributes and child fragments retain their exact bytes",
+            "caller archive, original slide IDs, relationship IDs, targets, layout and notes links retain custody"
+          ],
+          "consumers": {
+            "bun": {
+              "status": "planned",
+              "evidence": []
+            },
+            "go": {
+              "status": "planned",
+              "evidence": []
+            },
+            "python": {
+              "status": "planned",
+              "evidence": []
+            }
+          }
+        },
+        {
+          "id": "@id-pptx-formatting-resize",
+          "feature": "workflows/pptx/shape-geometry.feature",
+          "expandedCases": 1,
+          "factIds": [],
+          "expectedOutcomes": [
+            "formatting target slide 2 shape ID 4 has exact saved properties JSON {\"x\":1,\"y\":2,\"width\":3657600,\"height\":1828800}",
+            "the exact changed original member set is [\"ppt/slides/slide2.xml\"] with no additions or removals",
+            "every original text leaf, unselected run, paragraph, shape and unrelated member retains its original bytes",
+            "only the selected property span may change and all unpatched attributes and child fragments retain their exact bytes",
+            "caller archive, original slide IDs, relationship IDs, targets, layout and notes links retain custody"
+          ],
+          "consumers": {
+            "bun": {
+              "status": "planned",
+              "evidence": []
+            },
+            "go": {
+              "status": "planned",
+              "evidence": []
+            },
+            "python": {
+              "status": "planned",
+              "evidence": []
+            }
+          }
+        },
+        {
+          "id": "@id-pptx-formatting-transform",
+          "feature": "workflows/pptx/shape-geometry.feature",
+          "expandedCases": 1,
+          "factIds": [],
+          "expectedOutcomes": [
+            "formatting target slide 2 shape ID 4 has exact saved properties JSON {\"rotation\":5400000,\"flipH\":true,\"flipV\":false,\"x\":1,\"y\":2,\"width\":1000,\"height\":1000}",
+            "the exact changed original member set is [\"ppt/slides/slide2.xml\"] with no additions or removals",
+            "every original text leaf, unselected run, paragraph, shape and unrelated member retains its original bytes",
+            "only the selected property span may change and all unpatched attributes and child fragments retain their exact bytes",
+            "caller archive, original slide IDs, relationship IDs, targets, layout and notes links retain custody"
+          ],
+          "consumers": {
+            "bun": {
+              "status": "planned",
+              "evidence": []
+            },
+            "go": {
+              "status": "planned",
+              "evidence": []
+            },
+            "python": {
+              "status": "planned",
+              "evidence": []
+            }
+          }
+        },
+        {
+          "id": "@id-pptx-formatting-geometry-refusal",
+          "feature": "workflows/pptx/shape-geometry.feature",
+          "expandedCases": 1,
+          "factIds": [],
+          "expectedOutcomes": [
+            "formatting target slide 2 shape ID 4 has exact saved properties JSON {\"refusal\":\"invalid-geometry\"}",
+            "the exact changed original member set is [] with no additions or removals",
+            "every original text leaf, unselected run, paragraph, shape and unrelated member retains its original bytes",
+            "only the selected property span may change and all unpatched attributes and child fragments retain their exact bytes",
+            "caller archive, original slide IDs, relationship IDs, targets, layout and notes links retain custody",
+            "refusal reason invalid-geometry leaves session bytes and held identities unchanged before save"
+          ],
+          "consumers": {
+            "bun": {
+              "status": "planned",
+              "evidence": []
+            },
+            "go": {
+              "status": "planned",
+              "evidence": []
+            },
+            "python": {
+              "status": "planned",
+              "evidence": []
+            }
+          }
+        }
+      ]
+    },
+    {
+      "path": "workflows/pptx/text-formatting.feature",
+      "beforeText": "",
+      "beforeSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "afterSha256": "adcd0463dabd5a539e7d3feef58b4c0699ad2f51ff7038114570fb7a24423384",
+      "scenarios": [
+        {
+          "id": "@id-pptx-formatting-run-bold",
+          "after": [
+            {
+              "scenarioId": "@id-pptx-formatting-run-bold",
+              "name": "run bold preserves direct properties and package custody",
+              "steps": [
+                {
+                  "text": "retained formatting fixture fixture-84e7a8a3681d0e43d4c8a29c37e68386721dfb5df13a36b8bd17a3ebc1fb1fb2 has ordered slides [\"Alpha\",\"Beta\",\"Gamma\"]",
+                  "argument": null
+                },
+                {
+                  "text": "formatting target slide 2 shape ID 4 paragraph 0 run 1 has the exact original direct properties and lexical snapshot",
+                  "argument": null
+                },
+                {
+                  "text": "production PPTX formatting APIs set direct run bold=true",
+                  "argument": null
+                },
+                {
+                  "text": "the result or unchanged refusal session is saved to a new path and independently parsed and reopened",
+                  "argument": null
+                },
+                {
+                  "text": "formatting target slide 2 shape ID 4 paragraph 0 run 1 has exact saved properties JSON {\"b\":\"1\"}",
+                  "argument": null
+                },
+                {
+                  "text": "the exact changed original member set is [\"ppt/slides/slide2.xml\"] with no additions or removals",
+                  "argument": null
+                },
+                {
+                  "text": "every original text leaf, unselected run, paragraph, shape and unrelated member retains its original bytes",
+                  "argument": null
+                },
+                {
+                  "text": "only the selected property span may change and all unpatched attributes and child fragments retain their exact bytes",
+                  "argument": null
+                },
+                {
+                  "text": "caller archive, original slide IDs, relationship IDs, targets, layout and notes links retain custody",
+                  "argument": null
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "@id-pptx-formatting-run-unbold",
+          "after": [
+            {
+              "scenarioId": "@id-pptx-formatting-run-unbold",
+              "name": "run unbold preserves direct properties and package custody",
+              "steps": [
+                {
+                  "text": "retained formatting fixture fixture-84e7a8a3681d0e43d4c8a29c37e68386721dfb5df13a36b8bd17a3ebc1fb1fb2 has ordered slides [\"Alpha\",\"Beta\",\"Gamma\"]",
+                  "argument": null
+                },
+                {
+                  "text": "formatting target slide 2 shape ID 4 paragraph 0 run 0 has the exact original direct properties and lexical snapshot",
+                  "argument": null
+                },
+                {
+                  "text": "production PPTX formatting APIs set direct run bold=false",
+                  "argument": null
+                },
+                {
+                  "text": "the result or unchanged refusal session is saved to a new path and independently parsed and reopened",
+                  "argument": null
+                },
+                {
+                  "text": "formatting target slide 2 shape ID 4 paragraph 0 run 0 has exact saved properties JSON {\"b\":\"0\"}",
+                  "argument": null
+                },
+                {
+                  "text": "the exact changed original member set is [\"ppt/slides/slide2.xml\"] with no additions or removals",
+                  "argument": null
+                },
+                {
+                  "text": "every original text leaf, unselected run, paragraph, shape and unrelated member retains its original bytes",
+                  "argument": null
+                },
+                {
+                  "text": "only the selected property span may change and all unpatched attributes and child fragments retain their exact bytes",
+                  "argument": null
+                },
+                {
+                  "text": "caller archive, original slide IDs, relationship IDs, targets, layout and notes links retain custody",
+                  "argument": null
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "@id-pptx-formatting-run-italic",
+          "after": [
+            {
+              "scenarioId": "@id-pptx-formatting-run-italic",
+              "name": "run italic preserves direct properties and package custody",
+              "steps": [
+                {
+                  "text": "retained formatting fixture fixture-84e7a8a3681d0e43d4c8a29c37e68386721dfb5df13a36b8bd17a3ebc1fb1fb2 has ordered slides [\"Alpha\",\"Beta\",\"Gamma\"]",
+                  "argument": null
+                },
+                {
+                  "text": "formatting target slide 2 shape ID 4 paragraph 0 run 0 has the exact original direct properties and lexical snapshot",
+                  "argument": null
+                },
+                {
+                  "text": "production PPTX formatting APIs set direct run italic=true",
+                  "argument": null
+                },
+                {
+                  "text": "the result or unchanged refusal session is saved to a new path and independently parsed and reopened",
+                  "argument": null
+                },
+                {
+                  "text": "formatting target slide 2 shape ID 4 paragraph 0 run 0 has exact saved properties JSON {\"i\":\"1\"}",
+                  "argument": null
+                },
+                {
+                  "text": "the exact changed original member set is [\"ppt/slides/slide2.xml\"] with no additions or removals",
+                  "argument": null
+                },
+                {
+                  "text": "every original text leaf, unselected run, paragraph, shape and unrelated member retains its original bytes",
+                  "argument": null
+                },
+                {
+                  "text": "only the selected property span may change and all unpatched attributes and child fragments retain their exact bytes",
+                  "argument": null
+                },
+                {
+                  "text": "caller archive, original slide IDs, relationship IDs, targets, layout and notes links retain custody",
+                  "argument": null
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "@id-pptx-formatting-run-underline",
+          "after": [
+            {
+              "scenarioId": "@id-pptx-formatting-run-underline",
+              "name": "run underline preserves direct properties and package custody",
+              "steps": [
+                {
+                  "text": "retained formatting fixture fixture-84e7a8a3681d0e43d4c8a29c37e68386721dfb5df13a36b8bd17a3ebc1fb1fb2 has ordered slides [\"Alpha\",\"Beta\",\"Gamma\"]",
+                  "argument": null
+                },
+                {
+                  "text": "formatting target slide 2 shape ID 4 paragraph 0 run 0 has the exact original direct properties and lexical snapshot",
+                  "argument": null
+                },
+                {
+                  "text": "production PPTX formatting APIs set direct run underline=none",
+                  "argument": null
+                },
+                {
+                  "text": "the result or unchanged refusal session is saved to a new path and independently parsed and reopened",
+                  "argument": null
+                },
+                {
+                  "text": "formatting target slide 2 shape ID 4 paragraph 0 run 0 has exact saved properties JSON {\"u\":\"none\"}",
+                  "argument": null
+                },
+                {
+                  "text": "the exact changed original member set is [\"ppt/slides/slide2.xml\"] with no additions or removals",
+                  "argument": null
+                },
+                {
+                  "text": "every original text leaf, unselected run, paragraph, shape and unrelated member retains its original bytes",
+                  "argument": null
+                },
+                {
+                  "text": "only the selected property span may change and all unpatched attributes and child fragments retain their exact bytes",
+                  "argument": null
+                },
+                {
+                  "text": "caller archive, original slide IDs, relationship IDs, targets, layout and notes links retain custody",
+                  "argument": null
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "@id-pptx-formatting-run-size",
+          "after": [
+            {
+              "scenarioId": "@id-pptx-formatting-run-size",
+              "name": "run size preserves direct properties and package custody",
+              "steps": [
+                {
+                  "text": "retained formatting fixture fixture-84e7a8a3681d0e43d4c8a29c37e68386721dfb5df13a36b8bd17a3ebc1fb1fb2 has ordered slides [\"Alpha\",\"Beta\",\"Gamma\"]",
+                  "argument": null
+                },
+                {
+                  "text": "formatting target slide 2 shape ID 4 paragraph 0 run 0 has the exact original direct properties and lexical snapshot",
+                  "argument": null
+                },
+                {
+                  "text": "production PPTX formatting APIs set direct run font size to 2400 hundredths of a point",
+                  "argument": null
+                },
+                {
+                  "text": "the result or unchanged refusal session is saved to a new path and independently parsed and reopened",
+                  "argument": null
+                },
+                {
+                  "text": "formatting target slide 2 shape ID 4 paragraph 0 run 0 has exact saved properties JSON {\"sz\":\"2400\"}",
+                  "argument": null
+                },
+                {
+                  "text": "the exact changed original member set is [\"ppt/slides/slide2.xml\"] with no additions or removals",
+                  "argument": null
+                },
+                {
+                  "text": "every original text leaf, unselected run, paragraph, shape and unrelated member retains its original bytes",
+                  "argument": null
+                },
+                {
+                  "text": "only the selected property span may change and all unpatched attributes and child fragments retain their exact bytes",
+                  "argument": null
+                },
+                {
+                  "text": "caller archive, original slide IDs, relationship IDs, targets, layout and notes links retain custody",
+                  "argument": null
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "@id-pptx-formatting-run-font",
+          "after": [
+            {
+              "scenarioId": "@id-pptx-formatting-run-font",
+              "name": "run font preserves direct properties and package custody",
+              "steps": [
+                {
+                  "text": "retained formatting fixture fixture-84e7a8a3681d0e43d4c8a29c37e68386721dfb5df13a36b8bd17a3ebc1fb1fb2 has ordered slides [\"Alpha\",\"Beta\",\"Gamma\"]",
+                  "argument": null
+                },
+                {
+                  "text": "formatting target slide 2 shape ID 4 paragraph 0 run 0 has the exact original direct properties and lexical snapshot",
+                  "argument": null
+                },
+                {
+                  "text": "production PPTX formatting APIs set direct Latin typeface to JSON \"Aptos Display\"",
+                  "argument": null
+                },
+                {
+                  "text": "the result or unchanged refusal session is saved to a new path and independently parsed and reopened",
+                  "argument": null
+                },
+                {
+                  "text": "formatting target slide 2 shape ID 4 paragraph 0 run 0 has exact saved properties JSON {\"typeface\":\"Aptos Display\"}",
+                  "argument": null
+                },
+                {
+                  "text": "the exact changed original member set is [\"ppt/slides/slide2.xml\"] with no additions or removals",
+                  "argument": null
+                },
+                {
+                  "text": "every original text leaf, unselected run, paragraph, shape and unrelated member retains its original bytes",
+                  "argument": null
+                },
+                {
+                  "text": "only the selected property span may change and all unpatched attributes and child fragments retain their exact bytes",
+                  "argument": null
+                },
+                {
+                  "text": "caller archive, original slide IDs, relationship IDs, targets, layout and notes links retain custody",
+                  "argument": null
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "@id-pptx-formatting-run-color",
+          "after": [
+            {
+              "scenarioId": "@id-pptx-formatting-run-color",
+              "name": "run color preserves direct properties and package custody",
+              "steps": [
+                {
+                  "text": "retained formatting fixture fixture-84e7a8a3681d0e43d4c8a29c37e68386721dfb5df13a36b8bd17a3ebc1fb1fb2 has ordered slides [\"Alpha\",\"Beta\",\"Gamma\"]",
+                  "argument": null
+                },
+                {
+                  "text": "formatting target slide 2 shape ID 4 paragraph 0 run 0 has the exact original direct properties and lexical snapshot",
+                  "argument": null
+                },
+                {
+                  "text": "production PPTX formatting APIs set direct sRGB text color to A1B2C3",
+                  "argument": null
+                },
+                {
+                  "text": "the result or unchanged refusal session is saved to a new path and independently parsed and reopened",
+                  "argument": null
+                },
+                {
+                  "text": "formatting target slide 2 shape ID 4 paragraph 0 run 0 has exact saved properties JSON {\"color\":\"A1B2C3\"}",
+                  "argument": null
+                },
+                {
+                  "text": "the exact changed original member set is [\"ppt/slides/slide2.xml\"] with no additions or removals",
+                  "argument": null
+                },
+                {
+                  "text": "every original text leaf, unselected run, paragraph, shape and unrelated member retains its original bytes",
+                  "argument": null
+                },
+                {
+                  "text": "only the selected property span may change and all unpatched attributes and child fragments retain their exact bytes",
+                  "argument": null
+                },
+                {
+                  "text": "caller archive, original slide IDs, relationship IDs, targets, layout and notes links retain custody",
+                  "argument": null
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "@id-pptx-formatting-run-inherit",
+          "after": [
+            {
+              "scenarioId": "@id-pptx-formatting-run-inherit",
+              "name": "run inherit preserves direct properties and package custody",
+              "steps": [
+                {
+                  "text": "retained formatting fixture fixture-84e7a8a3681d0e43d4c8a29c37e68386721dfb5df13a36b8bd17a3ebc1fb1fb2 has ordered slides [\"Alpha\",\"Beta\",\"Gamma\"]",
+                  "argument": null
+                },
+                {
+                  "text": "formatting target slide 2 shape ID 4 paragraph 0 run 0 has the exact original direct properties and lexical snapshot",
+                  "argument": null
+                },
+                {
+                  "text": "production PPTX formatting APIs remove direct bold italic underline size Latin typeface and solid color",
+                  "argument": null
+                },
+                {
+                  "text": "the result or unchanged refusal session is saved to a new path and independently parsed and reopened",
+                  "argument": null
+                },
+                {
+                  "text": "formatting target slide 2 shape ID 4 paragraph 0 run 0 has exact saved properties JSON {\"absent\":[\"b\",\"i\",\"u\",\"sz\",\"latin\",\"solidFill\"],\"retainedLanguage\":\"en-US\"}",
+                  "argument": null
+                },
+                {
+                  "text": "the exact changed original member set is [\"ppt/slides/slide2.xml\"] with no additions or removals",
+                  "argument": null
+                },
+                {
+                  "text": "every original text leaf, unselected run, paragraph, shape and unrelated member retains its original bytes",
+                  "argument": null
+                },
+                {
+                  "text": "only the selected property span may change and all unpatched attributes and child fragments retain their exact bytes",
+                  "argument": null
+                },
+                {
+                  "text": "caller archive, original slide IDs, relationship IDs, targets, layout and notes links retain custody",
+                  "argument": null
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "afterLedgerRows": [
+        {
+          "id": "@id-pptx-formatting-run-bold",
+          "feature": "workflows/pptx/text-formatting.feature",
+          "expandedCases": 1,
+          "factIds": [],
+          "expectedOutcomes": [
+            "formatting target slide 2 shape ID 4 paragraph 0 run 1 has exact saved properties JSON {\"b\":\"1\"}",
+            "the exact changed original member set is [\"ppt/slides/slide2.xml\"] with no additions or removals",
+            "every original text leaf, unselected run, paragraph, shape and unrelated member retains its original bytes",
+            "only the selected property span may change and all unpatched attributes and child fragments retain their exact bytes",
+            "caller archive, original slide IDs, relationship IDs, targets, layout and notes links retain custody"
+          ],
+          "consumers": {
+            "bun": {
+              "status": "planned",
+              "evidence": []
+            },
+            "go": {
+              "status": "planned",
+              "evidence": []
+            },
+            "python": {
+              "status": "planned",
+              "evidence": []
+            }
+          }
+        },
+        {
+          "id": "@id-pptx-formatting-run-unbold",
+          "feature": "workflows/pptx/text-formatting.feature",
+          "expandedCases": 1,
+          "factIds": [],
+          "expectedOutcomes": [
+            "formatting target slide 2 shape ID 4 paragraph 0 run 0 has exact saved properties JSON {\"b\":\"0\"}",
+            "the exact changed original member set is [\"ppt/slides/slide2.xml\"] with no additions or removals",
+            "every original text leaf, unselected run, paragraph, shape and unrelated member retains its original bytes",
+            "only the selected property span may change and all unpatched attributes and child fragments retain their exact bytes",
+            "caller archive, original slide IDs, relationship IDs, targets, layout and notes links retain custody"
+          ],
+          "consumers": {
+            "bun": {
+              "status": "planned",
+              "evidence": []
+            },
+            "go": {
+              "status": "planned",
+              "evidence": []
+            },
+            "python": {
+              "status": "planned",
+              "evidence": []
+            }
+          }
+        },
+        {
+          "id": "@id-pptx-formatting-run-italic",
+          "feature": "workflows/pptx/text-formatting.feature",
+          "expandedCases": 1,
+          "factIds": [],
+          "expectedOutcomes": [
+            "formatting target slide 2 shape ID 4 paragraph 0 run 0 has exact saved properties JSON {\"i\":\"1\"}",
+            "the exact changed original member set is [\"ppt/slides/slide2.xml\"] with no additions or removals",
+            "every original text leaf, unselected run, paragraph, shape and unrelated member retains its original bytes",
+            "only the selected property span may change and all unpatched attributes and child fragments retain their exact bytes",
+            "caller archive, original slide IDs, relationship IDs, targets, layout and notes links retain custody"
+          ],
+          "consumers": {
+            "bun": {
+              "status": "planned",
+              "evidence": []
+            },
+            "go": {
+              "status": "planned",
+              "evidence": []
+            },
+            "python": {
+              "status": "planned",
+              "evidence": []
+            }
+          }
+        },
+        {
+          "id": "@id-pptx-formatting-run-underline",
+          "feature": "workflows/pptx/text-formatting.feature",
+          "expandedCases": 1,
+          "factIds": [],
+          "expectedOutcomes": [
+            "formatting target slide 2 shape ID 4 paragraph 0 run 0 has exact saved properties JSON {\"u\":\"none\"}",
+            "the exact changed original member set is [\"ppt/slides/slide2.xml\"] with no additions or removals",
+            "every original text leaf, unselected run, paragraph, shape and unrelated member retains its original bytes",
+            "only the selected property span may change and all unpatched attributes and child fragments retain their exact bytes",
+            "caller archive, original slide IDs, relationship IDs, targets, layout and notes links retain custody"
+          ],
+          "consumers": {
+            "bun": {
+              "status": "planned",
+              "evidence": []
+            },
+            "go": {
+              "status": "planned",
+              "evidence": []
+            },
+            "python": {
+              "status": "planned",
+              "evidence": []
+            }
+          }
+        },
+        {
+          "id": "@id-pptx-formatting-run-size",
+          "feature": "workflows/pptx/text-formatting.feature",
+          "expandedCases": 1,
+          "factIds": [],
+          "expectedOutcomes": [
+            "formatting target slide 2 shape ID 4 paragraph 0 run 0 has exact saved properties JSON {\"sz\":\"2400\"}",
+            "the exact changed original member set is [\"ppt/slides/slide2.xml\"] with no additions or removals",
+            "every original text leaf, unselected run, paragraph, shape and unrelated member retains its original bytes",
+            "only the selected property span may change and all unpatched attributes and child fragments retain their exact bytes",
+            "caller archive, original slide IDs, relationship IDs, targets, layout and notes links retain custody"
+          ],
+          "consumers": {
+            "bun": {
+              "status": "planned",
+              "evidence": []
+            },
+            "go": {
+              "status": "planned",
+              "evidence": []
+            },
+            "python": {
+              "status": "planned",
+              "evidence": []
+            }
+          }
+        },
+        {
+          "id": "@id-pptx-formatting-run-font",
+          "feature": "workflows/pptx/text-formatting.feature",
+          "expandedCases": 1,
+          "factIds": [],
+          "expectedOutcomes": [
+            "formatting target slide 2 shape ID 4 paragraph 0 run 0 has exact saved properties JSON {\"typeface\":\"Aptos Display\"}",
+            "the exact changed original member set is [\"ppt/slides/slide2.xml\"] with no additions or removals",
+            "every original text leaf, unselected run, paragraph, shape and unrelated member retains its original bytes",
+            "only the selected property span may change and all unpatched attributes and child fragments retain their exact bytes",
+            "caller archive, original slide IDs, relationship IDs, targets, layout and notes links retain custody"
+          ],
+          "consumers": {
+            "bun": {
+              "status": "planned",
+              "evidence": []
+            },
+            "go": {
+              "status": "planned",
+              "evidence": []
+            },
+            "python": {
+              "status": "planned",
+              "evidence": []
+            }
+          }
+        },
+        {
+          "id": "@id-pptx-formatting-run-color",
+          "feature": "workflows/pptx/text-formatting.feature",
+          "expandedCases": 1,
+          "factIds": [],
+          "expectedOutcomes": [
+            "formatting target slide 2 shape ID 4 paragraph 0 run 0 has exact saved properties JSON {\"color\":\"A1B2C3\"}",
+            "the exact changed original member set is [\"ppt/slides/slide2.xml\"] with no additions or removals",
+            "every original text leaf, unselected run, paragraph, shape and unrelated member retains its original bytes",
+            "only the selected property span may change and all unpatched attributes and child fragments retain their exact bytes",
+            "caller archive, original slide IDs, relationship IDs, targets, layout and notes links retain custody"
+          ],
+          "consumers": {
+            "bun": {
+              "status": "planned",
+              "evidence": []
+            },
+            "go": {
+              "status": "planned",
+              "evidence": []
+            },
+            "python": {
+              "status": "planned",
+              "evidence": []
+            }
+          }
+        },
+        {
+          "id": "@id-pptx-formatting-run-inherit",
+          "feature": "workflows/pptx/text-formatting.feature",
+          "expandedCases": 1,
+          "factIds": [],
+          "expectedOutcomes": [
+            "formatting target slide 2 shape ID 4 paragraph 0 run 0 has exact saved properties JSON {\"absent\":[\"b\",\"i\",\"u\",\"sz\",\"latin\",\"solidFill\"],\"retainedLanguage\":\"en-US\"}",
+            "the exact changed original member set is [\"ppt/slides/slide2.xml\"] with no additions or removals",
+            "every original text leaf, unselected run, paragraph, shape and unrelated member retains its original bytes",
+            "only the selected property span may change and all unpatched attributes and child fragments retain their exact bytes",
+            "caller archive, original slide IDs, relationship IDs, targets, layout and notes links retain custody"
+          ],
+          "consumers": {
+            "bun": {
+              "status": "planned",
+              "evidence": []
+            },
+            "go": {
+              "status": "planned",
+              "evidence": []
+            },
+            "python": {
+              "status": "planned",
+              "evidence": []
+            }
+          }
+        }
+      ]
+    },
+    {
+      "path": "workflows/pptx/paragraph-formatting.feature",
+      "beforeText": "",
+      "beforeSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "afterSha256": "5be8c0cb29b61a50abd8b280b1517a771503c3c2349691931881176b491a16a4",
+      "scenarios": [
+        {
+          "id": "@id-pptx-formatting-paragraph-align",
+          "after": [
+            {
+              "scenarioId": "@id-pptx-formatting-paragraph-align",
+              "name": "paragraph align preserves direct properties and package custody",
+              "steps": [
+                {
+                  "text": "retained formatting fixture fixture-84e7a8a3681d0e43d4c8a29c37e68386721dfb5df13a36b8bd17a3ebc1fb1fb2 has ordered slides [\"Alpha\",\"Beta\",\"Gamma\"]",
+                  "argument": null
+                },
+                {
+                  "text": "formatting target slide 2 shape ID 4 paragraph 0 has the exact original direct properties and lexical snapshot",
+                  "argument": null
+                },
+                {
+                  "text": "production PPTX formatting APIs set direct paragraph alignment to center",
+                  "argument": null
+                },
+                {
+                  "text": "the result or unchanged refusal session is saved to a new path and independently parsed and reopened",
+                  "argument": null
+                },
+                {
+                  "text": "formatting target slide 2 shape ID 4 paragraph 0 has exact saved properties JSON {\"algn\":\"ctr\"}",
+                  "argument": null
+                },
+                {
+                  "text": "the exact changed original member set is [\"ppt/slides/slide2.xml\"] with no additions or removals",
+                  "argument": null
+                },
+                {
+                  "text": "every original text leaf, unselected run, paragraph, shape and unrelated member retains its original bytes",
+                  "argument": null
+                },
+                {
+                  "text": "only the selected property span may change and all unpatched attributes and child fragments retain their exact bytes",
+                  "argument": null
+                },
+                {
+                  "text": "caller archive, original slide IDs, relationship IDs, targets, layout and notes links retain custody",
+                  "argument": null
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "@id-pptx-formatting-paragraph-indent",
+          "after": [
+            {
+              "scenarioId": "@id-pptx-formatting-paragraph-indent",
+              "name": "paragraph indent preserves direct properties and package custody",
+              "steps": [
+                {
+                  "text": "retained formatting fixture fixture-84e7a8a3681d0e43d4c8a29c37e68386721dfb5df13a36b8bd17a3ebc1fb1fb2 has ordered slides [\"Alpha\",\"Beta\",\"Gamma\"]",
+                  "argument": null
+                },
+                {
+                  "text": "formatting target slide 2 shape ID 4 paragraph 0 has the exact original direct properties and lexical snapshot",
+                  "argument": null
+                },
+                {
+                  "text": "production PPTX formatting APIs set paragraph left margin=457200 and hanging indent=-228600 EMU",
+                  "argument": null
+                },
+                {
+                  "text": "the result or unchanged refusal session is saved to a new path and independently parsed and reopened",
+                  "argument": null
+                },
+                {
+                  "text": "formatting target slide 2 shape ID 4 paragraph 0 has exact saved properties JSON {\"marL\":\"457200\",\"indent\":\"-228600\"}",
+                  "argument": null
+                },
+                {
+                  "text": "the exact changed original member set is [\"ppt/slides/slide2.xml\"] with no additions or removals",
+                  "argument": null
+                },
+                {
+                  "text": "every original text leaf, unselected run, paragraph, shape and unrelated member retains its original bytes",
+                  "argument": null
+                },
+                {
+                  "text": "only the selected property span may change and all unpatched attributes and child fragments retain their exact bytes",
+                  "argument": null
+                },
+                {
+                  "text": "caller archive, original slide IDs, relationship IDs, targets, layout and notes links retain custody",
+                  "argument": null
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "@id-pptx-formatting-paragraph-spacing",
+          "after": [
+            {
+              "scenarioId": "@id-pptx-formatting-paragraph-spacing",
+              "name": "paragraph spacing preserves direct properties and package custody",
+              "steps": [
+                {
+                  "text": "retained formatting fixture fixture-84e7a8a3681d0e43d4c8a29c37e68386721dfb5df13a36b8bd17a3ebc1fb1fb2 has ordered slides [\"Alpha\",\"Beta\",\"Gamma\"]",
+                  "argument": null
+                },
+                {
+                  "text": "formatting target slide 2 shape ID 4 paragraph 0 has the exact original direct properties and lexical snapshot",
+                  "argument": null
+                },
+                {
+                  "text": "production PPTX formatting APIs set space-before=1200 and space-after=600 hundredths of a point",
+                  "argument": null
+                },
+                {
+                  "text": "the result or unchanged refusal session is saved to a new path and independently parsed and reopened",
+                  "argument": null
+                },
+                {
+                  "text": "formatting target slide 2 shape ID 4 paragraph 0 has exact saved properties JSON {\"before\":1200,\"after\":600}",
+                  "argument": null
+                },
+                {
+                  "text": "the exact changed original member set is [\"ppt/slides/slide2.xml\"] with no additions or removals",
+                  "argument": null
+                },
+                {
+                  "text": "every original text leaf, unselected run, paragraph, shape and unrelated member retains its original bytes",
+                  "argument": null
+                },
+                {
+                  "text": "only the selected property span may change and all unpatched attributes and child fragments retain their exact bytes",
+                  "argument": null
+                },
+                {
+                  "text": "caller archive, original slide IDs, relationship IDs, targets, layout and notes links retain custody",
+                  "argument": null
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "@id-pptx-formatting-paragraph-line",
+          "after": [
+            {
+              "scenarioId": "@id-pptx-formatting-paragraph-line",
+              "name": "paragraph line preserves direct properties and package custody",
+              "steps": [
+                {
+                  "text": "retained formatting fixture fixture-84e7a8a3681d0e43d4c8a29c37e68386721dfb5df13a36b8bd17a3ebc1fb1fb2 has ordered slides [\"Alpha\",\"Beta\",\"Gamma\"]",
+                  "argument": null
+                },
+                {
+                  "text": "formatting target slide 2 shape ID 4 paragraph 0 has the exact original direct properties and lexical snapshot",
+                  "argument": null
+                },
+                {
+                  "text": "production PPTX formatting APIs set line spacing to 150000 thousandths of a percent",
+                  "argument": null
+                },
+                {
+                  "text": "the result or unchanged refusal session is saved to a new path and independently parsed and reopened",
+                  "argument": null
+                },
+                {
+                  "text": "formatting target slide 2 shape ID 4 paragraph 0 has exact saved properties JSON {\"linePercent\":150000}",
+                  "argument": null
+                },
+                {
+                  "text": "the exact changed original member set is [\"ppt/slides/slide2.xml\"] with no additions or removals",
+                  "argument": null
+                },
+                {
+                  "text": "every original text leaf, unselected run, paragraph, shape and unrelated member retains its original bytes",
+                  "argument": null
+                },
+                {
+                  "text": "only the selected property span may change and all unpatched attributes and child fragments retain their exact bytes",
+                  "argument": null
+                },
+                {
+                  "text": "caller archive, original slide IDs, relationship IDs, targets, layout and notes links retain custody",
+                  "argument": null
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "afterLedgerRows": [
+        {
+          "id": "@id-pptx-formatting-paragraph-align",
+          "feature": "workflows/pptx/paragraph-formatting.feature",
+          "expandedCases": 1,
+          "factIds": [],
+          "expectedOutcomes": [
+            "formatting target slide 2 shape ID 4 paragraph 0 has exact saved properties JSON {\"algn\":\"ctr\"}",
+            "the exact changed original member set is [\"ppt/slides/slide2.xml\"] with no additions or removals",
+            "every original text leaf, unselected run, paragraph, shape and unrelated member retains its original bytes",
+            "only the selected property span may change and all unpatched attributes and child fragments retain their exact bytes",
+            "caller archive, original slide IDs, relationship IDs, targets, layout and notes links retain custody"
+          ],
+          "consumers": {
+            "bun": {
+              "status": "planned",
+              "evidence": []
+            },
+            "go": {
+              "status": "planned",
+              "evidence": []
+            },
+            "python": {
+              "status": "planned",
+              "evidence": []
+            }
+          }
+        },
+        {
+          "id": "@id-pptx-formatting-paragraph-indent",
+          "feature": "workflows/pptx/paragraph-formatting.feature",
+          "expandedCases": 1,
+          "factIds": [],
+          "expectedOutcomes": [
+            "formatting target slide 2 shape ID 4 paragraph 0 has exact saved properties JSON {\"marL\":\"457200\",\"indent\":\"-228600\"}",
+            "the exact changed original member set is [\"ppt/slides/slide2.xml\"] with no additions or removals",
+            "every original text leaf, unselected run, paragraph, shape and unrelated member retains its original bytes",
+            "only the selected property span may change and all unpatched attributes and child fragments retain their exact bytes",
+            "caller archive, original slide IDs, relationship IDs, targets, layout and notes links retain custody"
+          ],
+          "consumers": {
+            "bun": {
+              "status": "planned",
+              "evidence": []
+            },
+            "go": {
+              "status": "planned",
+              "evidence": []
+            },
+            "python": {
+              "status": "planned",
+              "evidence": []
+            }
+          }
+        },
+        {
+          "id": "@id-pptx-formatting-paragraph-spacing",
+          "feature": "workflows/pptx/paragraph-formatting.feature",
+          "expandedCases": 1,
+          "factIds": [],
+          "expectedOutcomes": [
+            "formatting target slide 2 shape ID 4 paragraph 0 has exact saved properties JSON {\"before\":1200,\"after\":600}",
+            "the exact changed original member set is [\"ppt/slides/slide2.xml\"] with no additions or removals",
+            "every original text leaf, unselected run, paragraph, shape and unrelated member retains its original bytes",
+            "only the selected property span may change and all unpatched attributes and child fragments retain their exact bytes",
+            "caller archive, original slide IDs, relationship IDs, targets, layout and notes links retain custody"
+          ],
+          "consumers": {
+            "bun": {
+              "status": "planned",
+              "evidence": []
+            },
+            "go": {
+              "status": "planned",
+              "evidence": []
+            },
+            "python": {
+              "status": "planned",
+              "evidence": []
+            }
+          }
+        },
+        {
+          "id": "@id-pptx-formatting-paragraph-line",
+          "feature": "workflows/pptx/paragraph-formatting.feature",
+          "expandedCases": 1,
+          "factIds": [],
+          "expectedOutcomes": [
+            "formatting target slide 2 shape ID 4 paragraph 0 has exact saved properties JSON {\"linePercent\":150000}",
+            "the exact changed original member set is [\"ppt/slides/slide2.xml\"] with no additions or removals",
+            "every original text leaf, unselected run, paragraph, shape and unrelated member retains its original bytes",
+            "only the selected property span may change and all unpatched attributes and child fragments retain their exact bytes",
+            "caller archive, original slide IDs, relationship IDs, targets, layout and notes links retain custody"
+          ],
+          "consumers": {
+            "bun": {
+              "status": "planned",
+              "evidence": []
+            },
+            "go": {
+              "status": "planned",
+              "evidence": []
+            },
+            "python": {
+              "status": "planned",
+              "evidence": []
+            }
+          }
+        }
+      ]
+    }
+  ]
+}
