@@ -416,6 +416,64 @@
         "@id-pptx-formatting-paragraph-spacing",
         "@id-pptx-formatting-paragraph-line"
       ]
+    },
+    {
+      "format": "pptx",
+      "scenarioGroup": "shape-style",
+      "fixtureIds": [
+        "fixture-b4e7fd03880f9a392038fa81b8f646ab03c45992f5a1852211779473f954ee3d"
+      ],
+      "scenarioIds": [
+        "@id-pptx-retained-shape-solid-fill",
+        "@id-pptx-retained-shape-no-fill",
+        "@id-pptx-retained-shape-inherit-fill",
+        "@id-pptx-retained-line-color",
+        "@id-pptx-retained-line-width",
+        "@id-pptx-retained-line-dash",
+        "@id-pptx-retained-line-no-fill",
+        "@id-pptx-retained-body-anchor",
+        "@id-pptx-retained-body-direction",
+        "@id-pptx-retained-body-wrap",
+        "@id-pptx-retained-body-insets",
+        "@id-pptx-retained-body-anchor-center",
+        "@id-pptx-retained-body-rotation",
+        "@id-pptx-retained-body-columns",
+        "@id-pptx-retained-body-rtl-columns",
+        "@id-pptx-retained-run-strike",
+        "@id-pptx-retained-run-caps",
+        "@id-pptx-retained-run-baseline",
+        "@id-pptx-retained-run-tracking",
+        "@id-pptx-retained-style-refusal"
+      ]
+    },
+    {
+      "format": "docx",
+      "scenarioGroup": "direct-formatting",
+      "fixtureIds": [
+        "fixture-2d32cedb722efc62866a97e6d9f335d68977fcb270d0d241e60f0fc84bd55fd2"
+      ],
+      "scenarioIds": [
+        "@id-docx-retained-run-strike",
+        "@id-docx-retained-run-underline",
+        "@id-docx-retained-run-color",
+        "@id-docx-retained-run-highlight",
+        "@id-docx-retained-run-size",
+        "@id-docx-retained-run-font",
+        "@id-docx-retained-run-superscript",
+        "@id-docx-retained-run-subscript",
+        "@id-docx-retained-run-caps",
+        "@id-docx-retained-run-small-caps",
+        "@id-docx-retained-run-hidden",
+        "@id-docx-retained-run-inherit",
+        "@id-docx-retained-paragraph-justify",
+        "@id-docx-retained-paragraph-spacing",
+        "@id-docx-retained-paragraph-indent",
+        "@id-docx-retained-paragraph-line",
+        "@id-docx-retained-paragraph-keep-lines",
+        "@id-docx-retained-paragraph-keep-next",
+        "@id-docx-retained-paragraph-page-break",
+        "@id-docx-retained-paragraph-outline"
+      ]
     }
   ]
 }

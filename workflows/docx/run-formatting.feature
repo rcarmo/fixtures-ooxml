@@ -131,3 +131,162 @@ Feature: Word direct run formatting
       Then at least one paragraph and three runs are readable
       And the first run is bold and the second italic
       And the third run reports colour FF0000, font size 14 and font Arial
+
+  Rule: Guarded retained single-target edits with full custody
+    Exact direct values are checked after save and reopen; inherited rendering is outside this profile.
+
+    @profile-retained-style-word @id-docx-retained-run-strike
+    Scenario: docx run strike changes only its selected direct properties
+      Given retained docx input fixture-2d32cedb722efc62866a97e6d9f335d68977fcb270d0d241e60f0fc84bd55fd2 has its sealed original property and identity snapshot
+      And retained edit target body paragraph 0 run 0 is uniquely selected with a held identity
+      When production retained docx editing applies run-strike patch JSON {"strike":true}
+      And the result or unchanged refusal session is saved and independently parsed and reopened
+      Then retained target body paragraph 0 run 0 has exact saved properties JSON {"strike":true}
+      And saved direct property children remain in schema order
+      And the exact changed original member set is ["word/document.xml"] with no additions or removals
+      And every unpatched selected-property attribute and child retains its literal original bytes
+      And all other XML spans, text leaves, runs, paragraphs and unrelated member payloads retain custody
+      And actual caller input, original identities, relationships and content-type graph are unchanged
+
+    @profile-retained-style-word @id-docx-retained-run-underline
+    Scenario: docx run underline changes only its selected direct properties
+      Given retained docx input fixture-2d32cedb722efc62866a97e6d9f335d68977fcb270d0d241e60f0fc84bd55fd2 has its sealed original property and identity snapshot
+      And retained edit target body paragraph 0 run 0 is uniquely selected with a held identity
+      When production retained docx editing applies run-underline patch JSON {"underline":"double"}
+      And the result or unchanged refusal session is saved and independently parsed and reopened
+      Then retained target body paragraph 0 run 0 has exact saved properties JSON {"underline":"double"}
+      And saved direct property children remain in schema order
+      And the exact changed original member set is ["word/document.xml"] with no additions or removals
+      And every unpatched selected-property attribute and child retains its literal original bytes
+      And all other XML spans, text leaves, runs, paragraphs and unrelated member payloads retain custody
+      And actual caller input, original identities, relationships and content-type graph are unchanged
+
+    @profile-retained-style-word @id-docx-retained-run-color
+    Scenario: docx run color changes only its selected direct properties
+      Given retained docx input fixture-2d32cedb722efc62866a97e6d9f335d68977fcb270d0d241e60f0fc84bd55fd2 has its sealed original property and identity snapshot
+      And retained edit target body paragraph 0 run 0 is uniquely selected with a held identity
+      When production retained docx editing applies run-color patch JSON {"color":"A1B2C3"}
+      And the result or unchanged refusal session is saved and independently parsed and reopened
+      Then retained target body paragraph 0 run 0 has exact saved properties JSON {"color":"A1B2C3"}
+      And saved direct property children remain in schema order
+      And the exact changed original member set is ["word/document.xml"] with no additions or removals
+      And every unpatched selected-property attribute and child retains its literal original bytes
+      And all other XML spans, text leaves, runs, paragraphs and unrelated member payloads retain custody
+      And actual caller input, original identities, relationships and content-type graph are unchanged
+
+    @profile-retained-style-word @id-docx-retained-run-highlight
+    Scenario: docx run highlight changes only its selected direct properties
+      Given retained docx input fixture-2d32cedb722efc62866a97e6d9f335d68977fcb270d0d241e60f0fc84bd55fd2 has its sealed original property and identity snapshot
+      And retained edit target body paragraph 0 run 0 is uniquely selected with a held identity
+      When production retained docx editing applies run-highlight patch JSON {"highlight":"yellow"}
+      And the result or unchanged refusal session is saved and independently parsed and reopened
+      Then retained target body paragraph 0 run 0 has exact saved properties JSON {"highlight":"yellow"}
+      And saved direct property children remain in schema order
+      And the exact changed original member set is ["word/document.xml"] with no additions or removals
+      And every unpatched selected-property attribute and child retains its literal original bytes
+      And all other XML spans, text leaves, runs, paragraphs and unrelated member payloads retain custody
+      And actual caller input, original identities, relationships and content-type graph are unchanged
+
+    @profile-retained-style-word @id-docx-retained-run-size
+    Scenario: docx run size changes only its selected direct properties
+      Given retained docx input fixture-2d32cedb722efc62866a97e6d9f335d68977fcb270d0d241e60f0fc84bd55fd2 has its sealed original property and identity snapshot
+      And retained edit target body paragraph 0 run 0 is uniquely selected with a held identity
+      When production retained docx editing applies run-size patch JSON {"sizeHalfPoints":21}
+      And the result or unchanged refusal session is saved and independently parsed and reopened
+      Then retained target body paragraph 0 run 0 has exact saved properties JSON {"sizeHalfPoints":21}
+      And saved direct property children remain in schema order
+      And the exact changed original member set is ["word/document.xml"] with no additions or removals
+      And every unpatched selected-property attribute and child retains its literal original bytes
+      And all other XML spans, text leaves, runs, paragraphs and unrelated member payloads retain custody
+      And actual caller input, original identities, relationships and content-type graph are unchanged
+
+    @profile-retained-style-word @id-docx-retained-run-font
+    Scenario: docx run font changes only its selected direct properties
+      Given retained docx input fixture-2d32cedb722efc62866a97e6d9f335d68977fcb270d0d241e60f0fc84bd55fd2 has its sealed original property and identity snapshot
+      And retained edit target body paragraph 0 run 0 is uniquely selected with a held identity
+      When production retained docx editing applies run-font patch JSON {"font":"Aptos"}
+      And the result or unchanged refusal session is saved and independently parsed and reopened
+      Then retained target body paragraph 0 run 0 has exact saved properties JSON {"ascii":"Aptos","hAnsi":"Aptos"}
+      And saved direct property children remain in schema order
+      And the exact changed original member set is ["word/document.xml"] with no additions or removals
+      And every unpatched selected-property attribute and child retains its literal original bytes
+      And all other XML spans, text leaves, runs, paragraphs and unrelated member payloads retain custody
+      And actual caller input, original identities, relationships and content-type graph are unchanged
+
+    @profile-retained-style-word @id-docx-retained-run-superscript
+    Scenario: docx run superscript changes only its selected direct properties
+      Given retained docx input fixture-2d32cedb722efc62866a97e6d9f335d68977fcb270d0d241e60f0fc84bd55fd2 has its sealed original property and identity snapshot
+      And retained edit target body paragraph 0 run 0 is uniquely selected with a held identity
+      When production retained docx editing applies run-superscript patch JSON {"verticalAlign":"superscript"}
+      And the result or unchanged refusal session is saved and independently parsed and reopened
+      Then retained target body paragraph 0 run 0 has exact saved properties JSON {"verticalAlign":"superscript"}
+      And saved direct property children remain in schema order
+      And the exact changed original member set is ["word/document.xml"] with no additions or removals
+      And every unpatched selected-property attribute and child retains its literal original bytes
+      And all other XML spans, text leaves, runs, paragraphs and unrelated member payloads retain custody
+      And actual caller input, original identities, relationships and content-type graph are unchanged
+
+    @profile-retained-style-word @id-docx-retained-run-subscript
+    Scenario: docx run subscript changes only its selected direct properties
+      Given retained docx input fixture-2d32cedb722efc62866a97e6d9f335d68977fcb270d0d241e60f0fc84bd55fd2 has its sealed original property and identity snapshot
+      And retained edit target body paragraph 0 run 0 is uniquely selected with a held identity
+      When production retained docx editing applies run-subscript patch JSON {"verticalAlign":"subscript"}
+      And the result or unchanged refusal session is saved and independently parsed and reopened
+      Then retained target body paragraph 0 run 0 has exact saved properties JSON {"verticalAlign":"subscript"}
+      And saved direct property children remain in schema order
+      And the exact changed original member set is ["word/document.xml"] with no additions or removals
+      And every unpatched selected-property attribute and child retains its literal original bytes
+      And all other XML spans, text leaves, runs, paragraphs and unrelated member payloads retain custody
+      And actual caller input, original identities, relationships and content-type graph are unchanged
+
+    @profile-retained-style-word @id-docx-retained-run-caps
+    Scenario: docx run caps changes only its selected direct properties
+      Given retained docx input fixture-2d32cedb722efc62866a97e6d9f335d68977fcb270d0d241e60f0fc84bd55fd2 has its sealed original property and identity snapshot
+      And retained edit target body paragraph 0 run 0 is uniquely selected with a held identity
+      When production retained docx editing applies run-caps patch JSON {"caps":true}
+      And the result or unchanged refusal session is saved and independently parsed and reopened
+      Then retained target body paragraph 0 run 0 has exact saved properties JSON {"caps":true}
+      And saved direct property children remain in schema order
+      And the exact changed original member set is ["word/document.xml"] with no additions or removals
+      And every unpatched selected-property attribute and child retains its literal original bytes
+      And all other XML spans, text leaves, runs, paragraphs and unrelated member payloads retain custody
+      And actual caller input, original identities, relationships and content-type graph are unchanged
+
+    @profile-retained-style-word @id-docx-retained-run-small-caps
+    Scenario: docx run small caps changes only its selected direct properties
+      Given retained docx input fixture-2d32cedb722efc62866a97e6d9f335d68977fcb270d0d241e60f0fc84bd55fd2 has its sealed original property and identity snapshot
+      And retained edit target body paragraph 0 run 0 is uniquely selected with a held identity
+      When production retained docx editing applies run-small-caps patch JSON {"smallCaps":true}
+      And the result or unchanged refusal session is saved and independently parsed and reopened
+      Then retained target body paragraph 0 run 0 has exact saved properties JSON {"smallCaps":true}
+      And saved direct property children remain in schema order
+      And the exact changed original member set is ["word/document.xml"] with no additions or removals
+      And every unpatched selected-property attribute and child retains its literal original bytes
+      And all other XML spans, text leaves, runs, paragraphs and unrelated member payloads retain custody
+      And actual caller input, original identities, relationships and content-type graph are unchanged
+
+    @profile-retained-style-word @id-docx-retained-run-hidden
+    Scenario: docx run hidden changes only its selected direct properties
+      Given retained docx input fixture-2d32cedb722efc62866a97e6d9f335d68977fcb270d0d241e60f0fc84bd55fd2 has its sealed original property and identity snapshot
+      And retained edit target body paragraph 0 run 0 is uniquely selected with a held identity
+      When production retained docx editing applies run-hidden patch JSON {"vanish":true}
+      And the result or unchanged refusal session is saved and independently parsed and reopened
+      Then retained target body paragraph 0 run 0 has exact saved properties JSON {"vanish":true}
+      And saved direct property children remain in schema order
+      And the exact changed original member set is ["word/document.xml"] with no additions or removals
+      And every unpatched selected-property attribute and child retains its literal original bytes
+      And all other XML spans, text leaves, runs, paragraphs and unrelated member payloads retain custody
+      And actual caller input, original identities, relationships and content-type graph are unchanged
+
+    @profile-retained-style-word @id-docx-retained-run-inherit
+    Scenario: docx run inherit changes only its selected direct properties
+      Given retained docx input fixture-2d32cedb722efc62866a97e6d9f335d68977fcb270d0d241e60f0fc84bd55fd2 has its sealed original property and identity snapshot
+      And retained edit target body paragraph 0 run 0 is uniquely selected with a held identity
+      When production retained docx editing applies run-inherit patch JSON {"remove":["color","sz","highlight","u","vertAlign","rFonts"]}
+      And the result or unchanged refusal session is saved and independently parsed and reopened
+      Then retained target body paragraph 0 run 0 has exact saved properties JSON {"absent":["color","sz","highlight","u","vertAlign","rFonts"],"retained":["b","i","lang"]}
+      And saved direct property children remain in schema order
+      And the exact changed original member set is ["word/document.xml"] with no additions or removals
+      And every unpatched selected-property attribute and child retains its literal original bytes
+      And all other XML spans, text leaves, runs, paragraphs and unrelated member payloads retain custody
+      And actual caller input, original identities, relationships and content-type graph are unchanged

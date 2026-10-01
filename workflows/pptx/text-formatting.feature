@@ -96,3 +96,58 @@ Feature: Retained PPTX text formatting editing
     And every original text leaf, unselected run, paragraph, shape and unrelated member retains its original bytes
     And only the selected property span may change and all unpatched attributes and child fragments retain their exact bytes
     And caller archive, original slide IDs, relationship IDs, targets, layout and notes links retain custody
+
+  Rule: Guarded retained single-target edits with full custody
+    Exact direct values are checked after save and reopen; inherited rendering is outside this profile.
+
+    @profile-retained-style-word @id-pptx-retained-run-strike
+    Scenario: pptx run strike changes only its selected direct properties
+      Given retained pptx input fixture-b4e7fd03880f9a392038fa81b8f646ab03c45992f5a1852211779473f954ee3d has its sealed original property and identity snapshot
+      And retained edit target slide 2 shape ID 4 paragraph 0 run 0 is uniquely selected with a held identity
+      When production retained pptx editing applies run-strike patch JSON {"strike":"sngStrike"}
+      And the result or unchanged refusal session is saved and independently parsed and reopened
+      Then retained target slide 2 shape ID 4 paragraph 0 run 0 has exact saved properties JSON {"strike":"sngStrike"}
+      And saved direct property children remain in schema order
+      And the exact changed original member set is ["ppt/slides/slide2.xml"] with no additions or removals
+      And every unpatched selected-property attribute and child retains its literal original bytes
+      And all other XML spans, text leaves, runs, paragraphs and unrelated member payloads retain custody
+      And actual caller input, original identities, relationships and content-type graph are unchanged
+
+    @profile-retained-style-word @id-pptx-retained-run-caps
+    Scenario: pptx run caps changes only its selected direct properties
+      Given retained pptx input fixture-b4e7fd03880f9a392038fa81b8f646ab03c45992f5a1852211779473f954ee3d has its sealed original property and identity snapshot
+      And retained edit target slide 2 shape ID 4 paragraph 0 run 0 is uniquely selected with a held identity
+      When production retained pptx editing applies run-caps patch JSON {"cap":"small"}
+      And the result or unchanged refusal session is saved and independently parsed and reopened
+      Then retained target slide 2 shape ID 4 paragraph 0 run 0 has exact saved properties JSON {"cap":"small"}
+      And saved direct property children remain in schema order
+      And the exact changed original member set is ["ppt/slides/slide2.xml"] with no additions or removals
+      And every unpatched selected-property attribute and child retains its literal original bytes
+      And all other XML spans, text leaves, runs, paragraphs and unrelated member payloads retain custody
+      And actual caller input, original identities, relationships and content-type graph are unchanged
+
+    @profile-retained-style-word @id-pptx-retained-run-baseline
+    Scenario: pptx run baseline changes only its selected direct properties
+      Given retained pptx input fixture-b4e7fd03880f9a392038fa81b8f646ab03c45992f5a1852211779473f954ee3d has its sealed original property and identity snapshot
+      And retained edit target slide 2 shape ID 4 paragraph 0 run 0 is uniquely selected with a held identity
+      When production retained pptx editing applies run-baseline patch JSON {"baseline":30000}
+      And the result or unchanged refusal session is saved and independently parsed and reopened
+      Then retained target slide 2 shape ID 4 paragraph 0 run 0 has exact saved properties JSON {"baseline":30000}
+      And saved direct property children remain in schema order
+      And the exact changed original member set is ["ppt/slides/slide2.xml"] with no additions or removals
+      And every unpatched selected-property attribute and child retains its literal original bytes
+      And all other XML spans, text leaves, runs, paragraphs and unrelated member payloads retain custody
+      And actual caller input, original identities, relationships and content-type graph are unchanged
+
+    @profile-retained-style-word @id-pptx-retained-run-tracking
+    Scenario: pptx run tracking changes only its selected direct properties
+      Given retained pptx input fixture-b4e7fd03880f9a392038fa81b8f646ab03c45992f5a1852211779473f954ee3d has its sealed original property and identity snapshot
+      And retained edit target slide 2 shape ID 4 paragraph 0 run 0 is uniquely selected with a held identity
+      When production retained pptx editing applies run-tracking patch JSON {"spc":100}
+      And the result or unchanged refusal session is saved and independently parsed and reopened
+      Then retained target slide 2 shape ID 4 paragraph 0 run 0 has exact saved properties JSON {"spc":100}
+      And saved direct property children remain in schema order
+      And the exact changed original member set is ["ppt/slides/slide2.xml"] with no additions or removals
+      And every unpatched selected-property attribute and child retains its literal original bytes
+      And all other XML spans, text leaves, runs, paragraphs and unrelated member payloads retain custody
+      And actual caller input, original identities, relationships and content-type graph are unchanged

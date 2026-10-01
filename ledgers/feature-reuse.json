@@ -45,7 +45,7 @@
     },
     {
       "path": "workflows/docx/paragraphs.feature",
-      "reviewedSha256": "7c448d5863f64ef188b3cb2ec1c9a82fb4a8a2c7c5104058ccf21ad2561e6856"
+      "reviewedSha256": "f79050eb42d870be02aed473e74e2479c0c9054e0c1c53ebbdf4f6a93f5b530f"
     },
     {
       "path": "workflows/docx/properties.feature",
@@ -61,7 +61,7 @@
     },
     {
       "path": "workflows/docx/run-formatting.feature",
-      "reviewedSha256": "7af8ef3a85775d91a2025e033fd818dbda4bf8799210b294544b4ae1743536a1"
+      "reviewedSha256": "7e8ee86821bccfd14e6f33d290cb9fd809c11c1791d4eaa3f654fc3f38d90614"
     },
     {
       "path": "workflows/docx/stories.feature",
@@ -265,11 +265,19 @@
     },
     {
       "path": "workflows/pptx/text-formatting.feature",
-      "reviewedSha256": "adcd0463dabd5a539e7d3feef58b4c0699ad2f51ff7038114570fb7a24423384"
+      "reviewedSha256": "2ae3c5823732d240a860f04580c310c3e14276195b1be9c1c60209bd26518557"
     },
     {
       "path": "workflows/pptx/paragraph-formatting.feature",
       "reviewedSha256": "5be8c0cb29b61a50abd8b280b1517a771503c3c2349691931881176b491a16a4"
+    },
+    {
+      "path": "workflows/pptx/shape-style.feature",
+      "reviewedSha256": "17e9b7f2cae435ec48f11dfb932cfc9582b499d369b4167970b091ad8397135f"
+    },
+    {
+      "path": "workflows/pptx/text-frame-properties.feature",
+      "reviewedSha256": "7c9396fbde5af9fd51ea1b5631f4d683be94b02ad35e72045c8c9ae5ceb56562"
     }
   ],
   "scenarios": [
@@ -4136,6 +4144,446 @@
         "workflows/pptx/paragraph-formatting.feature",
         "contracts/pptx-formatting.md"
       ]
+    },
+    {
+      "id": "@id-pptx-retained-shape-solid-fill",
+      "feature": "workflows/pptx/shape-style.feature",
+      "category": "generalized",
+      "runtimeConstraint": "none",
+      "reason": "Project-authoredretainededitcontract;exacttargetdirectvalues/save-reopen/source-bytecustodyandatomicerrors,allconsumersplanned.",
+      "evidence": [
+        "workflows/pptx/shape-style.feature",
+        "contracts/retained-style-word.md"
+      ]
+    },
+    {
+      "id": "@id-pptx-retained-shape-no-fill",
+      "feature": "workflows/pptx/shape-style.feature",
+      "category": "generalized",
+      "runtimeConstraint": "none",
+      "reason": "Project-authoredretainededitcontract;exacttargetdirectvalues/save-reopen/source-bytecustodyandatomicerrors,allconsumersplanned.",
+      "evidence": [
+        "workflows/pptx/shape-style.feature",
+        "contracts/retained-style-word.md"
+      ]
+    },
+    {
+      "id": "@id-pptx-retained-shape-inherit-fill",
+      "feature": "workflows/pptx/shape-style.feature",
+      "category": "generalized",
+      "runtimeConstraint": "none",
+      "reason": "Project-authoredretainededitcontract;exacttargetdirectvalues/save-reopen/source-bytecustodyandatomicerrors,allconsumersplanned.",
+      "evidence": [
+        "workflows/pptx/shape-style.feature",
+        "contracts/retained-style-word.md"
+      ]
+    },
+    {
+      "id": "@id-pptx-retained-line-color",
+      "feature": "workflows/pptx/shape-style.feature",
+      "category": "generalized",
+      "runtimeConstraint": "none",
+      "reason": "Project-authoredretainededitcontract;exacttargetdirectvalues/save-reopen/source-bytecustodyandatomicerrors,allconsumersplanned.",
+      "evidence": [
+        "workflows/pptx/shape-style.feature",
+        "contracts/retained-style-word.md"
+      ]
+    },
+    {
+      "id": "@id-pptx-retained-line-width",
+      "feature": "workflows/pptx/shape-style.feature",
+      "category": "generalized",
+      "runtimeConstraint": "none",
+      "reason": "Project-authoredretainededitcontract;exacttargetdirectvalues/save-reopen/source-bytecustodyandatomicerrors,allconsumersplanned.",
+      "evidence": [
+        "workflows/pptx/shape-style.feature",
+        "contracts/retained-style-word.md"
+      ]
+    },
+    {
+      "id": "@id-pptx-retained-line-dash",
+      "feature": "workflows/pptx/shape-style.feature",
+      "category": "generalized",
+      "runtimeConstraint": "none",
+      "reason": "Project-authoredretainededitcontract;exacttargetdirectvalues/save-reopen/source-bytecustodyandatomicerrors,allconsumersplanned.",
+      "evidence": [
+        "workflows/pptx/shape-style.feature",
+        "contracts/retained-style-word.md"
+      ]
+    },
+    {
+      "id": "@id-pptx-retained-line-no-fill",
+      "feature": "workflows/pptx/shape-style.feature",
+      "category": "generalized",
+      "runtimeConstraint": "none",
+      "reason": "Project-authoredretainededitcontract;exacttargetdirectvalues/save-reopen/source-bytecustodyandatomicerrors,allconsumersplanned.",
+      "evidence": [
+        "workflows/pptx/shape-style.feature",
+        "contracts/retained-style-word.md"
+      ]
+    },
+    {
+      "id": "@id-pptx-retained-style-refusal",
+      "feature": "workflows/pptx/shape-style.feature",
+      "category": "generalized",
+      "runtimeConstraint": "none",
+      "reason": "Project-authoredretainededitcontract;exacttargetdirectvalues/save-reopen/source-bytecustodyandatomicerrors,allconsumersplanned.",
+      "evidence": [
+        "workflows/pptx/shape-style.feature",
+        "contracts/retained-style-word.md"
+      ]
+    },
+    {
+      "id": "@id-pptx-retained-body-anchor",
+      "feature": "workflows/pptx/text-frame-properties.feature",
+      "category": "generalized",
+      "runtimeConstraint": "none",
+      "reason": "Project-authoredretainededitcontract;exacttargetdirectvalues/save-reopen/source-bytecustodyandatomicerrors,allconsumersplanned.",
+      "evidence": [
+        "workflows/pptx/text-frame-properties.feature",
+        "contracts/retained-style-word.md"
+      ]
+    },
+    {
+      "id": "@id-pptx-retained-body-direction",
+      "feature": "workflows/pptx/text-frame-properties.feature",
+      "category": "generalized",
+      "runtimeConstraint": "none",
+      "reason": "Project-authoredretainededitcontract;exacttargetdirectvalues/save-reopen/source-bytecustodyandatomicerrors,allconsumersplanned.",
+      "evidence": [
+        "workflows/pptx/text-frame-properties.feature",
+        "contracts/retained-style-word.md"
+      ]
+    },
+    {
+      "id": "@id-pptx-retained-body-wrap",
+      "feature": "workflows/pptx/text-frame-properties.feature",
+      "category": "generalized",
+      "runtimeConstraint": "none",
+      "reason": "Project-authoredretainededitcontract;exacttargetdirectvalues/save-reopen/source-bytecustodyandatomicerrors,allconsumersplanned.",
+      "evidence": [
+        "workflows/pptx/text-frame-properties.feature",
+        "contracts/retained-style-word.md"
+      ]
+    },
+    {
+      "id": "@id-pptx-retained-body-insets",
+      "feature": "workflows/pptx/text-frame-properties.feature",
+      "category": "generalized",
+      "runtimeConstraint": "none",
+      "reason": "Project-authoredretainededitcontract;exacttargetdirectvalues/save-reopen/source-bytecustodyandatomicerrors,allconsumersplanned.",
+      "evidence": [
+        "workflows/pptx/text-frame-properties.feature",
+        "contracts/retained-style-word.md"
+      ]
+    },
+    {
+      "id": "@id-pptx-retained-body-anchor-center",
+      "feature": "workflows/pptx/text-frame-properties.feature",
+      "category": "generalized",
+      "runtimeConstraint": "none",
+      "reason": "Project-authoredretainededitcontract;exacttargetdirectvalues/save-reopen/source-bytecustodyandatomicerrors,allconsumersplanned.",
+      "evidence": [
+        "workflows/pptx/text-frame-properties.feature",
+        "contracts/retained-style-word.md"
+      ]
+    },
+    {
+      "id": "@id-pptx-retained-body-rotation",
+      "feature": "workflows/pptx/text-frame-properties.feature",
+      "category": "generalized",
+      "runtimeConstraint": "none",
+      "reason": "Project-authoredretainededitcontract;exacttargetdirectvalues/save-reopen/source-bytecustodyandatomicerrors,allconsumersplanned.",
+      "evidence": [
+        "workflows/pptx/text-frame-properties.feature",
+        "contracts/retained-style-word.md"
+      ]
+    },
+    {
+      "id": "@id-pptx-retained-body-columns",
+      "feature": "workflows/pptx/text-frame-properties.feature",
+      "category": "generalized",
+      "runtimeConstraint": "none",
+      "reason": "Project-authoredretainededitcontract;exacttargetdirectvalues/save-reopen/source-bytecustodyandatomicerrors,allconsumersplanned.",
+      "evidence": [
+        "workflows/pptx/text-frame-properties.feature",
+        "contracts/retained-style-word.md"
+      ]
+    },
+    {
+      "id": "@id-pptx-retained-body-rtl-columns",
+      "feature": "workflows/pptx/text-frame-properties.feature",
+      "category": "generalized",
+      "runtimeConstraint": "none",
+      "reason": "Project-authoredretainededitcontract;exacttargetdirectvalues/save-reopen/source-bytecustodyandatomicerrors,allconsumersplanned.",
+      "evidence": [
+        "workflows/pptx/text-frame-properties.feature",
+        "contracts/retained-style-word.md"
+      ]
+    },
+    {
+      "id": "@id-pptx-retained-run-strike",
+      "feature": "workflows/pptx/text-formatting.feature",
+      "category": "generalized",
+      "runtimeConstraint": "none",
+      "reason": "Project-authoredretainededitcontract;exacttargetdirectvalues/save-reopen/source-bytecustodyandatomicerrors,allconsumersplanned.",
+      "evidence": [
+        "workflows/pptx/text-formatting.feature",
+        "contracts/retained-style-word.md"
+      ]
+    },
+    {
+      "id": "@id-pptx-retained-run-caps",
+      "feature": "workflows/pptx/text-formatting.feature",
+      "category": "generalized",
+      "runtimeConstraint": "none",
+      "reason": "Project-authoredretainededitcontract;exacttargetdirectvalues/save-reopen/source-bytecustodyandatomicerrors,allconsumersplanned.",
+      "evidence": [
+        "workflows/pptx/text-formatting.feature",
+        "contracts/retained-style-word.md"
+      ]
+    },
+    {
+      "id": "@id-pptx-retained-run-baseline",
+      "feature": "workflows/pptx/text-formatting.feature",
+      "category": "generalized",
+      "runtimeConstraint": "none",
+      "reason": "Project-authoredretainededitcontract;exacttargetdirectvalues/save-reopen/source-bytecustodyandatomicerrors,allconsumersplanned.",
+      "evidence": [
+        "workflows/pptx/text-formatting.feature",
+        "contracts/retained-style-word.md"
+      ]
+    },
+    {
+      "id": "@id-pptx-retained-run-tracking",
+      "feature": "workflows/pptx/text-formatting.feature",
+      "category": "generalized",
+      "runtimeConstraint": "none",
+      "reason": "Project-authoredretainededitcontract;exacttargetdirectvalues/save-reopen/source-bytecustodyandatomicerrors,allconsumersplanned.",
+      "evidence": [
+        "workflows/pptx/text-formatting.feature",
+        "contracts/retained-style-word.md"
+      ]
+    },
+    {
+      "id": "@id-docx-retained-run-strike",
+      "feature": "workflows/docx/run-formatting.feature",
+      "category": "generalized",
+      "runtimeConstraint": "none",
+      "reason": "Project-authoredretainededitcontract;exacttargetdirectvalues/save-reopen/source-bytecustodyandatomicerrors,allconsumersplanned.",
+      "evidence": [
+        "workflows/docx/run-formatting.feature",
+        "contracts/retained-style-word.md"
+      ]
+    },
+    {
+      "id": "@id-docx-retained-run-underline",
+      "feature": "workflows/docx/run-formatting.feature",
+      "category": "generalized",
+      "runtimeConstraint": "none",
+      "reason": "Project-authoredretainededitcontract;exacttargetdirectvalues/save-reopen/source-bytecustodyandatomicerrors,allconsumersplanned.",
+      "evidence": [
+        "workflows/docx/run-formatting.feature",
+        "contracts/retained-style-word.md"
+      ]
+    },
+    {
+      "id": "@id-docx-retained-run-color",
+      "feature": "workflows/docx/run-formatting.feature",
+      "category": "generalized",
+      "runtimeConstraint": "none",
+      "reason": "Project-authoredretainededitcontract;exacttargetdirectvalues/save-reopen/source-bytecustodyandatomicerrors,allconsumersplanned.",
+      "evidence": [
+        "workflows/docx/run-formatting.feature",
+        "contracts/retained-style-word.md"
+      ]
+    },
+    {
+      "id": "@id-docx-retained-run-highlight",
+      "feature": "workflows/docx/run-formatting.feature",
+      "category": "generalized",
+      "runtimeConstraint": "none",
+      "reason": "Project-authoredretainededitcontract;exacttargetdirectvalues/save-reopen/source-bytecustodyandatomicerrors,allconsumersplanned.",
+      "evidence": [
+        "workflows/docx/run-formatting.feature",
+        "contracts/retained-style-word.md"
+      ]
+    },
+    {
+      "id": "@id-docx-retained-run-size",
+      "feature": "workflows/docx/run-formatting.feature",
+      "category": "generalized",
+      "runtimeConstraint": "none",
+      "reason": "Project-authoredretainededitcontract;exacttargetdirectvalues/save-reopen/source-bytecustodyandatomicerrors,allconsumersplanned.",
+      "evidence": [
+        "workflows/docx/run-formatting.feature",
+        "contracts/retained-style-word.md"
+      ]
+    },
+    {
+      "id": "@id-docx-retained-run-font",
+      "feature": "workflows/docx/run-formatting.feature",
+      "category": "generalized",
+      "runtimeConstraint": "none",
+      "reason": "Project-authoredretainededitcontract;exacttargetdirectvalues/save-reopen/source-bytecustodyandatomicerrors,allconsumersplanned.",
+      "evidence": [
+        "workflows/docx/run-formatting.feature",
+        "contracts/retained-style-word.md"
+      ]
+    },
+    {
+      "id": "@id-docx-retained-run-superscript",
+      "feature": "workflows/docx/run-formatting.feature",
+      "category": "generalized",
+      "runtimeConstraint": "none",
+      "reason": "Project-authoredretainededitcontract;exacttargetdirectvalues/save-reopen/source-bytecustodyandatomicerrors,allconsumersplanned.",
+      "evidence": [
+        "workflows/docx/run-formatting.feature",
+        "contracts/retained-style-word.md"
+      ]
+    },
+    {
+      "id": "@id-docx-retained-run-subscript",
+      "feature": "workflows/docx/run-formatting.feature",
+      "category": "generalized",
+      "runtimeConstraint": "none",
+      "reason": "Project-authoredretainededitcontract;exacttargetdirectvalues/save-reopen/source-bytecustodyandatomicerrors,allconsumersplanned.",
+      "evidence": [
+        "workflows/docx/run-formatting.feature",
+        "contracts/retained-style-word.md"
+      ]
+    },
+    {
+      "id": "@id-docx-retained-run-caps",
+      "feature": "workflows/docx/run-formatting.feature",
+      "category": "generalized",
+      "runtimeConstraint": "none",
+      "reason": "Project-authoredretainededitcontract;exacttargetdirectvalues/save-reopen/source-bytecustodyandatomicerrors,allconsumersplanned.",
+      "evidence": [
+        "workflows/docx/run-formatting.feature",
+        "contracts/retained-style-word.md"
+      ]
+    },
+    {
+      "id": "@id-docx-retained-run-small-caps",
+      "feature": "workflows/docx/run-formatting.feature",
+      "category": "generalized",
+      "runtimeConstraint": "none",
+      "reason": "Project-authoredretainededitcontract;exacttargetdirectvalues/save-reopen/source-bytecustodyandatomicerrors,allconsumersplanned.",
+      "evidence": [
+        "workflows/docx/run-formatting.feature",
+        "contracts/retained-style-word.md"
+      ]
+    },
+    {
+      "id": "@id-docx-retained-run-hidden",
+      "feature": "workflows/docx/run-formatting.feature",
+      "category": "generalized",
+      "runtimeConstraint": "none",
+      "reason": "Project-authoredretainededitcontract;exacttargetdirectvalues/save-reopen/source-bytecustodyandatomicerrors,allconsumersplanned.",
+      "evidence": [
+        "workflows/docx/run-formatting.feature",
+        "contracts/retained-style-word.md"
+      ]
+    },
+    {
+      "id": "@id-docx-retained-run-inherit",
+      "feature": "workflows/docx/run-formatting.feature",
+      "category": "generalized",
+      "runtimeConstraint": "none",
+      "reason": "Project-authoredretainededitcontract;exacttargetdirectvalues/save-reopen/source-bytecustodyandatomicerrors,allconsumersplanned.",
+      "evidence": [
+        "workflows/docx/run-formatting.feature",
+        "contracts/retained-style-word.md"
+      ]
+    },
+    {
+      "id": "@id-docx-retained-paragraph-justify",
+      "feature": "workflows/docx/paragraphs.feature",
+      "category": "generalized",
+      "runtimeConstraint": "none",
+      "reason": "Project-authoredretainededitcontract;exacttargetdirectvalues/save-reopen/source-bytecustodyandatomicerrors,allconsumersplanned.",
+      "evidence": [
+        "workflows/docx/paragraphs.feature",
+        "contracts/retained-style-word.md"
+      ]
+    },
+    {
+      "id": "@id-docx-retained-paragraph-spacing",
+      "feature": "workflows/docx/paragraphs.feature",
+      "category": "generalized",
+      "runtimeConstraint": "none",
+      "reason": "Project-authoredretainededitcontract;exacttargetdirectvalues/save-reopen/source-bytecustodyandatomicerrors,allconsumersplanned.",
+      "evidence": [
+        "workflows/docx/paragraphs.feature",
+        "contracts/retained-style-word.md"
+      ]
+    },
+    {
+      "id": "@id-docx-retained-paragraph-indent",
+      "feature": "workflows/docx/paragraphs.feature",
+      "category": "generalized",
+      "runtimeConstraint": "none",
+      "reason": "Project-authoredretainededitcontract;exacttargetdirectvalues/save-reopen/source-bytecustodyandatomicerrors,allconsumersplanned.",
+      "evidence": [
+        "workflows/docx/paragraphs.feature",
+        "contracts/retained-style-word.md"
+      ]
+    },
+    {
+      "id": "@id-docx-retained-paragraph-line",
+      "feature": "workflows/docx/paragraphs.feature",
+      "category": "generalized",
+      "runtimeConstraint": "none",
+      "reason": "Project-authoredretainededitcontract;exacttargetdirectvalues/save-reopen/source-bytecustodyandatomicerrors,allconsumersplanned.",
+      "evidence": [
+        "workflows/docx/paragraphs.feature",
+        "contracts/retained-style-word.md"
+      ]
+    },
+    {
+      "id": "@id-docx-retained-paragraph-keep-lines",
+      "feature": "workflows/docx/paragraphs.feature",
+      "category": "generalized",
+      "runtimeConstraint": "none",
+      "reason": "Project-authoredretainededitcontract;exacttargetdirectvalues/save-reopen/source-bytecustodyandatomicerrors,allconsumersplanned.",
+      "evidence": [
+        "workflows/docx/paragraphs.feature",
+        "contracts/retained-style-word.md"
+      ]
+    },
+    {
+      "id": "@id-docx-retained-paragraph-keep-next",
+      "feature": "workflows/docx/paragraphs.feature",
+      "category": "generalized",
+      "runtimeConstraint": "none",
+      "reason": "Project-authoredretainededitcontract;exacttargetdirectvalues/save-reopen/source-bytecustodyandatomicerrors,allconsumersplanned.",
+      "evidence": [
+        "workflows/docx/paragraphs.feature",
+        "contracts/retained-style-word.md"
+      ]
+    },
+    {
+      "id": "@id-docx-retained-paragraph-page-break",
+      "feature": "workflows/docx/paragraphs.feature",
+      "category": "generalized",
+      "runtimeConstraint": "none",
+      "reason": "Project-authoredretainededitcontract;exacttargetdirectvalues/save-reopen/source-bytecustodyandatomicerrors,allconsumersplanned.",
+      "evidence": [
+        "workflows/docx/paragraphs.feature",
+        "contracts/retained-style-word.md"
+      ]
+    },
+    {
+      "id": "@id-docx-retained-paragraph-outline",
+      "feature": "workflows/docx/paragraphs.feature",
+      "category": "generalized",
+      "runtimeConstraint": "none",
+      "reason": "Project-authoredretainededitcontract;exacttargetdirectvalues/save-reopen/source-bytecustodyandatomicerrors,allconsumersplanned.",
+      "evidence": [
+        "workflows/docx/paragraphs.feature",
+        "contracts/retained-style-word.md"
+      ]
     }
   ],
   "evidenceSha256": {
@@ -4159,13 +4607,13 @@
     "contracts/page-layout.md": "c893f6fa76b3ac9f189788ac4de4da3f88ae28aa8d126c456278ef17e91afc62",
     "workflows/docx/paragraph-style.feature": "f0a565511a6f1b1ae0b38ddb9dc2332b23f66a5be2cfea214f9d59fe73990971",
     "contracts/paragraph-style.md": "db73f30dc7a47f440750849b80309971119af72397410c4a21ff1bb3d51914f2",
-    "workflows/docx/paragraphs.feature": "7c448d5863f64ef188b3cb2ec1c9a82fb4a8a2c7c5104058ccf21ad2561e6856",
+    "workflows/docx/paragraphs.feature": "f79050eb42d870be02aed473e74e2479c0c9054e0c1c53ebbdf4f6a93f5b530f",
     "workflows/docx/properties.feature": "59757333a4894b19364fd2b40fd2f1ceaafa19c21f357b4b9ef764bf2197be04",
     "workflows/docx/review-integration.feature": "5b0d1392e1bc836afaf15dcd397fc2e1366035a0475f75b5cf464992f32ceb3e",
     "workflows/docx/revisions.feature": "63e7107eeb754715b943b6d70524e558229c0b4c97427855050ea2888cbeefbd",
     "contracts/run-property-revisions.md": "c4aff46dba131cc42cb0c4773d1b3bbe6bc2dd05bfa78600c6de59859b6fd54c",
     "contracts/run-move-revisions.md": "2ed80309499531f9527995b0d30e18b2bbe3c73b68ed06c9206e6c47cdeeb9cb",
-    "workflows/docx/run-formatting.feature": "7af8ef3a85775d91a2025e033fd818dbda4bf8799210b294544b4ae1743536a1",
+    "workflows/docx/run-formatting.feature": "7e8ee86821bccfd14e6f33d290cb9fd809c11c1791d4eaa3f654fc3f38d90614",
     "contracts/run-formatting.md": "1eb11c2dde4f865694f32907f933ad561de267eec0550039e54e6896c2a00be2",
     "workflows/docx/stories.feature": "4ee52f31689348b2a3e453eee6beb4c52fdc7fda196d8af86e811e321bc41e33",
     "workflows/docx/style-authoring.feature": "d4d4224f70d7b18dc963a7bf6e2fd194cf64f5757652e1ce47df9f47ab32502e",
@@ -4243,7 +4691,10 @@
     "workflows/pptx/bullets.feature": "f26843b74b4b48b81631139cd907de3ddd37940034f1d9332df86df519bcb93f",
     "contracts/pptx-formatting.md": "04a65bac1e710d9911c63f8df6ea790354a69907a38df87428cc1f5dac2c9e67",
     "workflows/pptx/shape-geometry.feature": "6cf9dad38adca997ec91ac4371bb05f19bd2a4ef547e05664755a5099ddabb17",
-    "workflows/pptx/text-formatting.feature": "adcd0463dabd5a539e7d3feef58b4c0699ad2f51ff7038114570fb7a24423384",
-    "workflows/pptx/paragraph-formatting.feature": "5be8c0cb29b61a50abd8b280b1517a771503c3c2349691931881176b491a16a4"
+    "workflows/pptx/text-formatting.feature": "2ae3c5823732d240a860f04580c310c3e14276195b1be9c1c60209bd26518557",
+    "workflows/pptx/paragraph-formatting.feature": "5be8c0cb29b61a50abd8b280b1517a771503c3c2349691931881176b491a16a4",
+    "workflows/pptx/shape-style.feature": "17e9b7f2cae435ec48f11dfb932cfc9582b499d369b4167970b091ad8397135f",
+    "contracts/retained-style-word.md": "143e5c03e420cde0f428a20cadbfe30278112d2cd394867901c363ec26acc086",
+    "workflows/pptx/text-frame-properties.feature": "7c9396fbde5af9fd51ea1b5631f4d683be94b02ad35e72045c8c9ae5ceb56562"
   }
 }

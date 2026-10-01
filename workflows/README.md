@@ -26,11 +26,11 @@ candidate file; those candidates are not canonical or presumed portable.
 | DOCX | [mutation-safety.feature](docx/mutation-safety.feature) | 3 | 7 | generalized: 3 | yes |
 | DOCX | [page-layout.feature](docx/page-layout.feature) | 3 | 23 | profile-specific: 1; incomplete: 2 | no |
 | DOCX | [paragraph-style.feature](docx/paragraph-style.feature) | 3 | 24 | profile-specific: 1; incomplete: 2 | no |
-| DOCX | [paragraphs.feature](docx/paragraphs.feature) | 6 | 16 | profile-specific: 6 | no |
+| DOCX | [paragraphs.feature](docx/paragraphs.feature) | 14 | 24 | generalized: 8; profile-specific: 6 | no |
 | DOCX | [properties.feature](docx/properties.feature) | 1 | 1 | profile-specific: 1 | no |
 | DOCX | [review-integration.feature](docx/review-integration.feature) | 2 | 2 | incomplete: 2 | no |
 | DOCX | [revisions.feature](docx/revisions.feature) | 23 | 88 | generalized: 17; incomplete: 6 | no |
-| DOCX | [run-formatting.feature](docx/run-formatting.feature) | 10 | 43 | profile-specific: 8; incomplete: 2 | no |
+| DOCX | [run-formatting.feature](docx/run-formatting.feature) | 22 | 55 | generalized: 12; profile-specific: 8; incomplete: 2 | no |
 | DOCX | [stories.feature](docx/stories.feature) | 3 | 3 | incomplete: 3 | no |
 | DOCX | [style-authoring.feature](docx/style-authoring.feature) | 2 | 24 | incomplete: 2 | no |
 | DOCX | [table-merging.feature](docx/table-merging.feature) | 14 | 52 | generalized: 14 | yes |
@@ -53,13 +53,15 @@ candidate file; those candidates are not canonical or presumed portable.
 | PPTX | [paragraph-formatting.feature](pptx/paragraph-formatting.feature) | 4 | 4 | generalized: 4 | yes |
 | PPTX | [preservation.feature](pptx/preservation.feature) | 1 | 1 | generalized: 1 | yes |
 | PPTX | [shape-geometry.feature](pptx/shape-geometry.feature) | 4 | 4 | generalized: 4 | yes |
+| PPTX | [shape-style.feature](pptx/shape-style.feature) | 8 | 8 | generalized: 8 | yes |
 | PPTX | [slide-import.feature](pptx/slide-import.feature) | 1 | 1 | incomplete: 1 | no |
 | PPTX | [slide-order.feature](pptx/slide-order.feature) | 4 | 23 | generalized: 2; incomplete: 2 | no |
 | PPTX | [slide-visibility.feature](pptx/slide-visibility.feature) | 6 | 6 | generalized: 5; incomplete: 1 | no |
 | PPTX | [tables.feature](pptx/tables.feature) | 6 | 7 | generalized: 2; incomplete: 4 | no |
 | PPTX | [text-autofit.feature](pptx/text-autofit.feature) | 3 | 3 | generalized: 3 | yes |
 | PPTX | [text-box.feature](pptx/text-box.feature) | 2 | 23 | incomplete: 2 | no |
-| PPTX | [text-formatting.feature](pptx/text-formatting.feature) | 8 | 8 | generalized: 8 | yes |
+| PPTX | [text-formatting.feature](pptx/text-formatting.feature) | 12 | 12 | generalized: 12 | yes |
+| PPTX | [text-frame-properties.feature](pptx/text-frame-properties.feature) | 8 | 8 | generalized: 8 | yes |
 | PPTX | [text.feature](pptx/text.feature) | 7 | 7 | generalized: 4; incomplete: 3 | no |
 
 ## XLSX

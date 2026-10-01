@@ -45,20 +45,20 @@ portable API profile; the scenario reason records the gap.
 
 | Group | Features | IDs | Cases | generalized | profile-specific | runtime-specific | incomplete |
 |---|---:|---:|---:|---:|---:|---:|---:|
-| DOCX | 24 | 158 | 482 | 69 | 56 | 0 | 33 |
-| PPTX | 16 | 73 | 122 | 45 | 11 | 0 | 17 |
+| DOCX | 24 | 178 | 502 | 89 | 56 | 0 | 33 |
+| PPTX | 18 | 93 | 142 | 65 | 11 | 0 | 17 |
 | XLSX | 12 | 43 | 109 | 12 | 14 | 0 | 17 |
 | PACKAGE | 10 | 36 | 68 | 29 | 6 | 0 | 1 |
 | XML | 4 | 33 | 47 | 22 | 11 | 0 | 0 |
 | OFFICE | 1 | 1 | 3 | 0 | 0 | 0 | 1 |
-| ALL | 67 | 344 | 831 | 177 | 98 | 0 | 69 |
+| ALL | 69 | 384 | 871 | 217 | 98 | 0 | 69 |
 
-21 of 67 canonical feature files are fully generalized throughout.
+23 of 69 canonical feature files are fully generalized throughout.
 The remaining files contain profile-specific, runtime-specific or incomplete
-scenarios; 26 files mix categories and require ID-level selection.
+scenarios; 27 files mix categories and require ID-level selection.
 The four category columns count scenario IDs, not expanded example cases.
 A complete [feature-level table](../workflows/README.md) and downloadable
-[210-file CSV](feature-reuse.csv) accompany the [scenario CSV](scenario-reuse.csv).
+[212-file CSV](feature-reuse.csv) accompany the [scenario CSV](scenario-reuse.csv).
 
 ## Scenario decisions
 
@@ -181,7 +181,7 @@ Word paragraph style selection — **mixed**; fully generalized: **no**.
 
 ### docx/paragraphs.feature
 
-Word paragraph text, properties and body order — **profile-specific**; fully generalized: **no**.
+Word paragraph text, properties and body order — **mixed**; fully generalized: **no**.
 
 | ID / source | Cases | Tag | Profiles | Reason / local evidence |
 |---|---:|---|---|---|
@@ -191,6 +191,14 @@ Word paragraph text, properties and body order — **profile-specific**; fully g
 | [@id-docx-go-paragraph-advanced-toggles](../workflows/docx/paragraphs.feature#L47) | 1 | profile-specific | @profile-document-value-api | Named in-memory getters and return conventions require deliberate document-value API adoption; they do not assert saved OOXML. [go-document-api.md](../contracts/go-document-api.md) |
 | [@id-docx-go-paragraph-multiple-runs](../workflows/docx/paragraphs.feature#L53) | 1 | profile-specific | @profile-document-value-api | Named in-memory getters and return conventions require deliberate document-value API adoption; they do not assert saved OOXML. [go-document-api.md](../contracts/go-document-api.md) |
 | [@id-docx-go-body-insert-order](../workflows/docx/paragraphs.feature#L59) | 1 | profile-specific | @profile-document-value-api | Named in-memory getters and return conventions require deliberate document-value API adoption; they do not assert saved OOXML. [go-document-api.md](../contracts/go-document-api.md) |
+| [@id-docx-retained-paragraph-justify](../workflows/docx/paragraphs.feature#L69) | 1 | generalized | @profile-retained-style-word | Project-authoredretainededitcontract;exacttargetdirectvalues/save-reopen/source-bytecustodyandatomicerrors,allconsumersplanned. [retained-style-word.md](../contracts/retained-style-word.md) |
+| [@id-docx-retained-paragraph-spacing](../workflows/docx/paragraphs.feature#L82) | 1 | generalized | @profile-retained-style-word | Project-authoredretainededitcontract;exacttargetdirectvalues/save-reopen/source-bytecustodyandatomicerrors,allconsumersplanned. [retained-style-word.md](../contracts/retained-style-word.md) |
+| [@id-docx-retained-paragraph-indent](../workflows/docx/paragraphs.feature#L95) | 1 | generalized | @profile-retained-style-word | Project-authoredretainededitcontract;exacttargetdirectvalues/save-reopen/source-bytecustodyandatomicerrors,allconsumersplanned. [retained-style-word.md](../contracts/retained-style-word.md) |
+| [@id-docx-retained-paragraph-line](../workflows/docx/paragraphs.feature#L108) | 1 | generalized | @profile-retained-style-word | Project-authoredretainededitcontract;exacttargetdirectvalues/save-reopen/source-bytecustodyandatomicerrors,allconsumersplanned. [retained-style-word.md](../contracts/retained-style-word.md) |
+| [@id-docx-retained-paragraph-keep-lines](../workflows/docx/paragraphs.feature#L121) | 1 | generalized | @profile-retained-style-word | Project-authoredretainededitcontract;exacttargetdirectvalues/save-reopen/source-bytecustodyandatomicerrors,allconsumersplanned. [retained-style-word.md](../contracts/retained-style-word.md) |
+| [@id-docx-retained-paragraph-keep-next](../workflows/docx/paragraphs.feature#L134) | 1 | generalized | @profile-retained-style-word | Project-authoredretainededitcontract;exacttargetdirectvalues/save-reopen/source-bytecustodyandatomicerrors,allconsumersplanned. [retained-style-word.md](../contracts/retained-style-word.md) |
+| [@id-docx-retained-paragraph-page-break](../workflows/docx/paragraphs.feature#L147) | 1 | generalized | @profile-retained-style-word | Project-authoredretainededitcontract;exacttargetdirectvalues/save-reopen/source-bytecustodyandatomicerrors,allconsumersplanned. [retained-style-word.md](../contracts/retained-style-word.md) |
+| [@id-docx-retained-paragraph-outline](../workflows/docx/paragraphs.feature#L160) | 1 | generalized | @profile-retained-style-word | Project-authoredretainededitcontract;exacttargetdirectvalues/save-reopen/source-bytecustodyandatomicerrors,allconsumersplanned. [retained-style-word.md](../contracts/retained-style-word.md) |
 
 ### docx/properties.feature
 
@@ -255,6 +263,18 @@ Word direct run formatting — **mixed**; fully generalized: **no**.
 | [@id-docx-go-run-highlight](../workflows/docx/run-formatting.feature#L107) | 5 | profile-specific | @profile-document-value-api | Named in-memory getters and return conventions require deliberate document-value API adoption; they do not assert saved OOXML. [run-formatting.md](../contracts/run-formatting.md) [go-document-api.md](../contracts/go-document-api.md) |
 | [@id-docx-go-run-vertical-align](../workflows/docx/run-formatting.feature#L120) | 1 | profile-specific | @profile-document-value-api | Named in-memory getters and return conventions require deliberate document-value API adoption; they do not assert saved OOXML. [run-formatting.md](../contracts/run-formatting.md) [go-document-api.md](../contracts/go-document-api.md) |
 | [@id-docx-go-roundtrip-selected-formatting](../workflows/docx/run-formatting.feature#L127) | 1 | profile-specific | @profile-selected-formatting-readback | Only named positions/properties are checked after reopen; text and complete preservation are outside this selected API profile. [run-formatting.md](../contracts/run-formatting.md) [go-document-api.md](../contracts/go-document-api.md) |
+| [@id-docx-retained-run-strike](../workflows/docx/run-formatting.feature#L139) | 1 | generalized | @profile-retained-style-word | Project-authoredretainededitcontract;exacttargetdirectvalues/save-reopen/source-bytecustodyandatomicerrors,allconsumersplanned. [retained-style-word.md](../contracts/retained-style-word.md) |
+| [@id-docx-retained-run-underline](../workflows/docx/run-formatting.feature#L152) | 1 | generalized | @profile-retained-style-word | Project-authoredretainededitcontract;exacttargetdirectvalues/save-reopen/source-bytecustodyandatomicerrors,allconsumersplanned. [retained-style-word.md](../contracts/retained-style-word.md) |
+| [@id-docx-retained-run-color](../workflows/docx/run-formatting.feature#L165) | 1 | generalized | @profile-retained-style-word | Project-authoredretainededitcontract;exacttargetdirectvalues/save-reopen/source-bytecustodyandatomicerrors,allconsumersplanned. [retained-style-word.md](../contracts/retained-style-word.md) |
+| [@id-docx-retained-run-highlight](../workflows/docx/run-formatting.feature#L178) | 1 | generalized | @profile-retained-style-word | Project-authoredretainededitcontract;exacttargetdirectvalues/save-reopen/source-bytecustodyandatomicerrors,allconsumersplanned. [retained-style-word.md](../contracts/retained-style-word.md) |
+| [@id-docx-retained-run-size](../workflows/docx/run-formatting.feature#L191) | 1 | generalized | @profile-retained-style-word | Project-authoredretainededitcontract;exacttargetdirectvalues/save-reopen/source-bytecustodyandatomicerrors,allconsumersplanned. [retained-style-word.md](../contracts/retained-style-word.md) |
+| [@id-docx-retained-run-font](../workflows/docx/run-formatting.feature#L204) | 1 | generalized | @profile-retained-style-word | Project-authoredretainededitcontract;exacttargetdirectvalues/save-reopen/source-bytecustodyandatomicerrors,allconsumersplanned. [retained-style-word.md](../contracts/retained-style-word.md) |
+| [@id-docx-retained-run-superscript](../workflows/docx/run-formatting.feature#L217) | 1 | generalized | @profile-retained-style-word | Project-authoredretainededitcontract;exacttargetdirectvalues/save-reopen/source-bytecustodyandatomicerrors,allconsumersplanned. [retained-style-word.md](../contracts/retained-style-word.md) |
+| [@id-docx-retained-run-subscript](../workflows/docx/run-formatting.feature#L230) | 1 | generalized | @profile-retained-style-word | Project-authoredretainededitcontract;exacttargetdirectvalues/save-reopen/source-bytecustodyandatomicerrors,allconsumersplanned. [retained-style-word.md](../contracts/retained-style-word.md) |
+| [@id-docx-retained-run-caps](../workflows/docx/run-formatting.feature#L243) | 1 | generalized | @profile-retained-style-word | Project-authoredretainededitcontract;exacttargetdirectvalues/save-reopen/source-bytecustodyandatomicerrors,allconsumersplanned. [retained-style-word.md](../contracts/retained-style-word.md) |
+| [@id-docx-retained-run-small-caps](../workflows/docx/run-formatting.feature#L256) | 1 | generalized | @profile-retained-style-word | Project-authoredretainededitcontract;exacttargetdirectvalues/save-reopen/source-bytecustodyandatomicerrors,allconsumersplanned. [retained-style-word.md](../contracts/retained-style-word.md) |
+| [@id-docx-retained-run-hidden](../workflows/docx/run-formatting.feature#L269) | 1 | generalized | @profile-retained-style-word | Project-authoredretainededitcontract;exacttargetdirectvalues/save-reopen/source-bytecustodyandatomicerrors,allconsumersplanned. [retained-style-word.md](../contracts/retained-style-word.md) |
+| [@id-docx-retained-run-inherit](../workflows/docx/run-formatting.feature#L282) | 1 | generalized | @profile-retained-style-word | Project-authoredretainededitcontract;exacttargetdirectvalues/save-reopen/source-bytecustodyandatomicerrors,allconsumersplanned. [retained-style-word.md](../contracts/retained-style-word.md) |
 
 ### docx/stories.feature
 
@@ -480,6 +500,21 @@ Retained PPTX shape geometry editing — **generalized**; fully generalized: **y
 | [@id-pptx-formatting-transform](../workflows/pptx/shape-geometry.feature#L29) | 1 | generalized | @profile-retained-formatting | Exactretainedinput/directpropertyvalues/lexicalcustody/refusal independent savedchecks; allruntimesplanned. [pptx-formatting.md](../contracts/pptx-formatting.md) |
 | [@id-pptx-formatting-geometry-refusal](../workflows/pptx/shape-geometry.feature#L41) | 1 | generalized | @profile-retained-formatting | Exactretainedinput/directpropertyvalues/lexicalcustody/refusal independent savedchecks; allruntimesplanned. [pptx-formatting.md](../contracts/pptx-formatting.md) |
 
+### pptx/shape-style.feature
+
+Retained PowerPoint shape style editing — **generalized**; fully generalized: **yes**.
+
+| ID / source | Cases | Tag | Profiles | Reason / local evidence |
+|---|---:|---|---|---|
+| [@id-pptx-retained-shape-solid-fill](../workflows/pptx/shape-style.feature#L8) | 1 | generalized | @profile-retained-style-word | Project-authoredretainededitcontract;exacttargetdirectvalues/save-reopen/source-bytecustodyandatomicerrors,allconsumersplanned. [retained-style-word.md](../contracts/retained-style-word.md) |
+| [@id-pptx-retained-shape-no-fill](../workflows/pptx/shape-style.feature#L21) | 1 | generalized | @profile-retained-style-word | Project-authoredretainededitcontract;exacttargetdirectvalues/save-reopen/source-bytecustodyandatomicerrors,allconsumersplanned. [retained-style-word.md](../contracts/retained-style-word.md) |
+| [@id-pptx-retained-shape-inherit-fill](../workflows/pptx/shape-style.feature#L34) | 1 | generalized | @profile-retained-style-word | Project-authoredretainededitcontract;exacttargetdirectvalues/save-reopen/source-bytecustodyandatomicerrors,allconsumersplanned. [retained-style-word.md](../contracts/retained-style-word.md) |
+| [@id-pptx-retained-line-color](../workflows/pptx/shape-style.feature#L47) | 1 | generalized | @profile-retained-style-word | Project-authoredretainededitcontract;exacttargetdirectvalues/save-reopen/source-bytecustodyandatomicerrors,allconsumersplanned. [retained-style-word.md](../contracts/retained-style-word.md) |
+| [@id-pptx-retained-line-width](../workflows/pptx/shape-style.feature#L60) | 1 | generalized | @profile-retained-style-word | Project-authoredretainededitcontract;exacttargetdirectvalues/save-reopen/source-bytecustodyandatomicerrors,allconsumersplanned. [retained-style-word.md](../contracts/retained-style-word.md) |
+| [@id-pptx-retained-line-dash](../workflows/pptx/shape-style.feature#L73) | 1 | generalized | @profile-retained-style-word | Project-authoredretainededitcontract;exacttargetdirectvalues/save-reopen/source-bytecustodyandatomicerrors,allconsumersplanned. [retained-style-word.md](../contracts/retained-style-word.md) |
+| [@id-pptx-retained-line-no-fill](../workflows/pptx/shape-style.feature#L86) | 1 | generalized | @profile-retained-style-word | Project-authoredretainededitcontract;exacttargetdirectvalues/save-reopen/source-bytecustodyandatomicerrors,allconsumersplanned. [retained-style-word.md](../contracts/retained-style-word.md) |
+| [@id-pptx-retained-style-refusal](../workflows/pptx/shape-style.feature#L99) | 1 | generalized | @profile-retained-style-word | Project-authoredretainededitcontract;exacttargetdirectvalues/save-reopen/source-bytecustodyandatomicerrors,allconsumersplanned. [retained-style-word.md](../contracts/retained-style-word.md) |
+
 ### pptx/slide-import.feature
 
 PPTX slide import obligations — **incomplete**; fully generalized: **no**.
@@ -558,6 +593,25 @@ Retained PPTX text formatting editing — **generalized**; fully generalized: **
 | [@id-pptx-formatting-run-font](../workflows/pptx/text-formatting.feature#L65) | 1 | generalized | @profile-retained-formatting | Exactretainedinput/directpropertyvalues/lexicalcustody/refusal independent savedchecks; allruntimesplanned. [pptx-formatting.md](../contracts/pptx-formatting.md) |
 | [@id-pptx-formatting-run-color](../workflows/pptx/text-formatting.feature#L77) | 1 | generalized | @profile-retained-formatting | Exactretainedinput/directpropertyvalues/lexicalcustody/refusal independent savedchecks; allruntimesplanned. [pptx-formatting.md](../contracts/pptx-formatting.md) |
 | [@id-pptx-formatting-run-inherit](../workflows/pptx/text-formatting.feature#L89) | 1 | generalized | @profile-retained-formatting | Exactretainedinput/directpropertyvalues/lexicalcustody/refusal independent savedchecks; allruntimesplanned. [pptx-formatting.md](../contracts/pptx-formatting.md) |
+| [@id-pptx-retained-run-strike](../workflows/pptx/text-formatting.feature#L104) | 1 | generalized | @profile-retained-style-word | Project-authoredretainededitcontract;exacttargetdirectvalues/save-reopen/source-bytecustodyandatomicerrors,allconsumersplanned. [retained-style-word.md](../contracts/retained-style-word.md) |
+| [@id-pptx-retained-run-caps](../workflows/pptx/text-formatting.feature#L117) | 1 | generalized | @profile-retained-style-word | Project-authoredretainededitcontract;exacttargetdirectvalues/save-reopen/source-bytecustodyandatomicerrors,allconsumersplanned. [retained-style-word.md](../contracts/retained-style-word.md) |
+| [@id-pptx-retained-run-baseline](../workflows/pptx/text-formatting.feature#L130) | 1 | generalized | @profile-retained-style-word | Project-authoredretainededitcontract;exacttargetdirectvalues/save-reopen/source-bytecustodyandatomicerrors,allconsumersplanned. [retained-style-word.md](../contracts/retained-style-word.md) |
+| [@id-pptx-retained-run-tracking](../workflows/pptx/text-formatting.feature#L143) | 1 | generalized | @profile-retained-style-word | Project-authoredretainededitcontract;exacttargetdirectvalues/save-reopen/source-bytecustodyandatomicerrors,allconsumersplanned. [retained-style-word.md](../contracts/retained-style-word.md) |
+
+### pptx/text-frame-properties.feature
+
+Retained PowerPoint text frame properties editing — **generalized**; fully generalized: **yes**.
+
+| ID / source | Cases | Tag | Profiles | Reason / local evidence |
+|---|---:|---|---|---|
+| [@id-pptx-retained-body-anchor](../workflows/pptx/text-frame-properties.feature#L8) | 1 | generalized | @profile-retained-style-word | Project-authoredretainededitcontract;exacttargetdirectvalues/save-reopen/source-bytecustodyandatomicerrors,allconsumersplanned. [retained-style-word.md](../contracts/retained-style-word.md) |
+| [@id-pptx-retained-body-direction](../workflows/pptx/text-frame-properties.feature#L21) | 1 | generalized | @profile-retained-style-word | Project-authoredretainededitcontract;exacttargetdirectvalues/save-reopen/source-bytecustodyandatomicerrors,allconsumersplanned. [retained-style-word.md](../contracts/retained-style-word.md) |
+| [@id-pptx-retained-body-wrap](../workflows/pptx/text-frame-properties.feature#L34) | 1 | generalized | @profile-retained-style-word | Project-authoredretainededitcontract;exacttargetdirectvalues/save-reopen/source-bytecustodyandatomicerrors,allconsumersplanned. [retained-style-word.md](../contracts/retained-style-word.md) |
+| [@id-pptx-retained-body-insets](../workflows/pptx/text-frame-properties.feature#L47) | 1 | generalized | @profile-retained-style-word | Project-authoredretainededitcontract;exacttargetdirectvalues/save-reopen/source-bytecustodyandatomicerrors,allconsumersplanned. [retained-style-word.md](../contracts/retained-style-word.md) |
+| [@id-pptx-retained-body-anchor-center](../workflows/pptx/text-frame-properties.feature#L60) | 1 | generalized | @profile-retained-style-word | Project-authoredretainededitcontract;exacttargetdirectvalues/save-reopen/source-bytecustodyandatomicerrors,allconsumersplanned. [retained-style-word.md](../contracts/retained-style-word.md) |
+| [@id-pptx-retained-body-rotation](../workflows/pptx/text-frame-properties.feature#L73) | 1 | generalized | @profile-retained-style-word | Project-authoredretainededitcontract;exacttargetdirectvalues/save-reopen/source-bytecustodyandatomicerrors,allconsumersplanned. [retained-style-word.md](../contracts/retained-style-word.md) |
+| [@id-pptx-retained-body-columns](../workflows/pptx/text-frame-properties.feature#L86) | 1 | generalized | @profile-retained-style-word | Project-authoredretainededitcontract;exacttargetdirectvalues/save-reopen/source-bytecustodyandatomicerrors,allconsumersplanned. [retained-style-word.md](../contracts/retained-style-word.md) |
+| [@id-pptx-retained-body-rtl-columns](../workflows/pptx/text-frame-properties.feature#L99) | 1 | generalized | @profile-retained-style-word | Project-authoredretainededitcontract;exacttargetdirectvalues/save-reopen/source-bytecustodyandatomicerrors,allconsumersplanned. [retained-style-word.md](../contracts/retained-style-word.md) |
 
 ### pptx/text.feature
 
