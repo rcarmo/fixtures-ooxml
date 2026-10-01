@@ -2152,10 +2152,10 @@
       "aliases": []
     },
     {
-      "id": "asset-89446d3c98ce6ae75a7ff887f0964cf4cc0f4cfcca1f36edabf43762de353aae",
+      "id": "asset-31148e56a491e9713c1912a92d8ce32a1f3da1dc41579cc5ded7c71609ce2471",
       "path": "workflows/docx/tables.feature",
-      "bytes": 8336,
-      "sha256": "89446d3c98ce6ae75a7ff887f0964cf4cc0f4cfcca1f36edabf43762de353aae",
+      "bytes": 32783,
+      "sha256": "31148e56a491e9713c1912a92d8ce32a1f3da1dc41579cc5ded7c71609ce2471",
       "role": "workflow",
       "origins": [
         {
@@ -2168,6 +2168,12 @@
           "repository": "https://github.com/rcarmo/fixtures-ooxml",
           "path": "workflows/docx/tables.feature",
           "basis": "Format/operation regrouping from d07ee96; exact scenario fingerprints and source paths in ledgers/workflow-layout-migration.json"
+        },
+        {
+          "kind": "project-authored",
+          "repository": "https://github.com/rcarmo/fixtures-ooxml",
+          "revision": "7f9a3469d335b01d30b6bbd8acdecc490bc9f0d0",
+          "path": "workflows/docx/tables.feature"
         }
       ],
       "aliases": []
@@ -2322,10 +2328,10 @@
       "aliases": []
     },
     {
-      "id": "asset-f0b94c529d06814fab2a0792afd353a581424efb124636f51abcb200502d6f29",
+      "id": "asset-17db743ecaafeff1ee88bc8c5d6635d299a2d22abbb008e3284d5d706850f15c",
       "path": "workflows/pptx/tables.feature",
-      "bytes": 4034,
-      "sha256": "f0b94c529d06814fab2a0792afd353a581424efb124636f51abcb200502d6f29",
+      "bytes": 29127,
+      "sha256": "17db743ecaafeff1ee88bc8c5d6635d299a2d22abbb008e3284d5d706850f15c",
       "role": "workflow",
       "origins": [
         {
@@ -2338,6 +2344,12 @@
           "kind": "project-authored",
           "repository": "https://github.com/rcarmo/fixtures-ooxml",
           "revision": "14a7bf7ad72baa41028ff140802cbbfdbbd8a845",
+          "path": "workflows/pptx/tables.feature"
+        },
+        {
+          "kind": "project-authored",
+          "repository": "https://github.com/rcarmo/fixtures-ooxml",
+          "revision": "7f9a3469d335b01d30b6bbd8acdecc490bc9f0d0",
           "path": "workflows/pptx/tables.feature"
         }
       ],
@@ -6697,6 +6709,136 @@
           "repository": "https://github.com/rcarmo/fixtures-ooxml",
           "revision": "f174097e68e4133ebbfb58daf0f336480d75f210",
           "path": "ledgers/retained-style-word.json"
+        }
+      ]
+    },
+    {
+      "id": "fixture-ce68a5cbf3d3c25053ecc9b327b6776b35267f5b134346366e4b351ffda66abf",
+      "path": "fixtures/pptx/table-properties/table-properties-ce68a5cbf3d3.pptx",
+      "role": "fixture",
+      "format": "pptx",
+      "scenarioGroup": "table-properties",
+      "bytes": 28860,
+      "sha256": "ce68a5cbf3d3c25053ecc9b327b6776b35267f5b134346366e4b351ffda66abf",
+      "scenarioIds": [
+        "@id-pptx-table-properties-cell-fill",
+        "@id-pptx-table-properties-cell-no-fill",
+        "@id-pptx-table-properties-cell-inherit-fill",
+        "@id-pptx-table-properties-border-left",
+        "@id-pptx-table-properties-border-right",
+        "@id-pptx-table-properties-border-top",
+        "@id-pptx-table-properties-border-bottom",
+        "@id-pptx-table-properties-border-no-fill",
+        "@id-pptx-table-properties-border-remove",
+        "@id-pptx-table-properties-cell-margins",
+        "@id-pptx-table-properties-cell-anchor",
+        "@id-pptx-table-properties-cell-direction",
+        "@id-pptx-table-properties-cell-anchor-center",
+        "@id-pptx-table-properties-column-width",
+        "@id-pptx-table-properties-row-height",
+        "@id-pptx-table-properties-first-row-off",
+        "@id-pptx-table-properties-band-row-off",
+        "@id-pptx-table-properties-frame-position",
+        "@id-pptx-table-properties-cell-unbold",
+        "@id-pptx-table-properties-refusal"
+      ],
+      "aliases": [],
+      "origins": [
+        {
+          "kind": "project-authored",
+          "repository": "https://github.com/rcarmo/fixtures-ooxml",
+          "revision": "7f9a3469d335b01d30b6bbd8acdecc490bc9f0d0",
+          "path": "fixtures/pptx/table-properties/table-properties-ce68a5cbf3d3.pptx"
+        },
+        {
+          "kind": "derived-from",
+          "assetId": "fixture-3465194945a0f8084084ceb843c219d59a4ad92b25a271d66182587d637db0be",
+          "sha256": "3465194945a0f8084084ceb843c219d59a4ad92b25a271d66182587d637db0be",
+          "repository": "https://github.com/rcarmo/go-ooxml",
+          "revision": "43eda6edfe45db20da5879ba332ec6a25d598efa",
+          "path": "testdata/pptx/tables.pptx",
+          "transformation": "Replace only selectedcell0,0 tcPr with explicitborders/margins/verticaldefaults and insertrun0rPrb1; allotherXML/37members unchanged."
+        }
+      ]
+    },
+    {
+      "id": "fixture-ea4dfb625197cf2ca259472419933c5c164ca733ccd765c48410d5547e0ab14f",
+      "path": "fixtures/docx/table-properties/table-properties-ea4dfb625197.docx",
+      "role": "fixture",
+      "format": "docx",
+      "scenarioGroup": "table-properties",
+      "bytes": 23761,
+      "sha256": "ea4dfb625197cf2ca259472419933c5c164ca733ccd765c48410d5547e0ab14f",
+      "scenarioIds": [
+        "@id-docx-table-properties-cell-shading",
+        "@id-docx-table-properties-cell-inherit-shading",
+        "@id-docx-table-properties-cell-anchor",
+        "@id-docx-table-properties-cell-direction",
+        "@id-docx-table-properties-cell-margins",
+        "@id-docx-table-properties-border-top",
+        "@id-docx-table-properties-border-left",
+        "@id-docx-table-properties-border-bottom",
+        "@id-docx-table-properties-border-right",
+        "@id-docx-table-properties-border-remove",
+        "@id-docx-table-properties-cell-no-wrap",
+        "@id-docx-table-properties-cell-fit-text",
+        "@id-docx-table-properties-cell-width",
+        "@id-docx-table-properties-row-header",
+        "@id-docx-table-properties-row-cant-split",
+        "@id-docx-table-properties-row-height",
+        "@id-docx-table-properties-table-alignment",
+        "@id-docx-table-properties-table-indent",
+        "@id-docx-table-properties-cell-hide-mark",
+        "@id-docx-table-properties-refusal"
+      ],
+      "aliases": [],
+      "origins": [
+        {
+          "kind": "project-authored",
+          "repository": "https://github.com/rcarmo/fixtures-ooxml",
+          "revision": "7f9a3469d335b01d30b6bbd8acdecc490bc9f0d0",
+          "path": "fixtures/docx/table-properties/table-properties-ea4dfb625197.docx"
+        },
+        {
+          "kind": "derived-from",
+          "assetId": "fixture-8192955ef935f09eb61a9fe6805d4996c811efcf54c0c966f52d983e38e0a79c",
+          "sha256": "8192955ef935f09eb61a9fe6805d4996c811efcf54c0c966f52d983e38e0a79c",
+          "repository": "https://github.com/rcarmo/python-office-mcp-server",
+          "revision": "36ac406ad9d4bd3e7538b4bcc7aa2fb0e51cc943",
+          "path": "tests/_templates/testdata/word/simple_table.docx",
+          "transformation": "Replaceonlycell0,0tcPr; insertrow0trPr andtable0jc/tblInd beforetblLook; allotherXML/15members unchanged."
+        }
+      ]
+    },
+    {
+      "id": "asset-ca5305ef7813ba933b19e255c850a065ecf8a542988abd1dea953537c036bb80",
+      "path": "contracts/retained-table-properties.md",
+      "role": "contract",
+      "bytes": 9992,
+      "sha256": "ca5305ef7813ba933b19e255c850a065ecf8a542988abd1dea953537c036bb80",
+      "aliases": [],
+      "origins": [
+        {
+          "kind": "project-authored",
+          "repository": "https://github.com/rcarmo/fixtures-ooxml",
+          "revision": "7f9a3469d335b01d30b6bbd8acdecc490bc9f0d0",
+          "path": "contracts/retained-table-properties.md"
+        }
+      ]
+    },
+    {
+      "id": "asset-2a7696c9d2b89728e9e1129f11de03970c85903c415e750b3013c2acdf719774",
+      "path": "ledgers/retained-table-properties.json",
+      "role": "reconciliation-ledger",
+      "bytes": 223443,
+      "sha256": "2a7696c9d2b89728e9e1129f11de03970c85903c415e750b3013c2acdf719774",
+      "aliases": [],
+      "origins": [
+        {
+          "kind": "project-authored",
+          "repository": "https://github.com/rcarmo/fixtures-ooxml",
+          "revision": "7f9a3469d335b01d30b6bbd8acdecc490bc9f0d0",
+          "path": "ledgers/retained-table-properties.json"
         }
       ]
     }

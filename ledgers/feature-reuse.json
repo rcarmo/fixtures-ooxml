@@ -77,7 +77,7 @@
     },
     {
       "path": "workflows/docx/tables.feature",
-      "reviewedSha256": "89446d3c98ce6ae75a7ff887f0964cf4cc0f4cfcca1f36edabf43762de353aae"
+      "reviewedSha256": "31148e56a491e9713c1912a92d8ce32a1f3da1dc41579cc5ded7c71609ce2471"
     },
     {
       "path": "workflows/docx/template-analysis.feature",
@@ -177,7 +177,7 @@
     },
     {
       "path": "workflows/pptx/tables.feature",
-      "reviewedSha256": "f0b94c529d06814fab2a0792afd353a581424efb124636f51abcb200502d6f29"
+      "reviewedSha256": "17db743ecaafeff1ee88bc8c5d6635d299a2d22abbb008e3284d5d706850f15c"
     },
     {
       "path": "workflows/pptx/text-box.feature",
@@ -4584,6 +4584,446 @@
         "workflows/docx/paragraphs.feature",
         "contracts/retained-style-word.md"
       ]
+    },
+    {
+      "id": "@id-pptx-table-properties-cell-fill",
+      "feature": "workflows/pptx/tables.feature",
+      "category": "generalized",
+      "runtimeConstraint": "none",
+      "reason": "Project-authoredretainededitcontract;exacttargetdirectvalues/save-reopen/source-bytecustodyandatomicerrors,allconsumersplanned.",
+      "evidence": [
+        "workflows/pptx/tables.feature",
+        "contracts/retained-table-properties.md"
+      ]
+    },
+    {
+      "id": "@id-pptx-table-properties-cell-no-fill",
+      "feature": "workflows/pptx/tables.feature",
+      "category": "generalized",
+      "runtimeConstraint": "none",
+      "reason": "Project-authoredretainededitcontract;exacttargetdirectvalues/save-reopen/source-bytecustodyandatomicerrors,allconsumersplanned.",
+      "evidence": [
+        "workflows/pptx/tables.feature",
+        "contracts/retained-table-properties.md"
+      ]
+    },
+    {
+      "id": "@id-pptx-table-properties-cell-inherit-fill",
+      "feature": "workflows/pptx/tables.feature",
+      "category": "generalized",
+      "runtimeConstraint": "none",
+      "reason": "Project-authoredretainededitcontract;exacttargetdirectvalues/save-reopen/source-bytecustodyandatomicerrors,allconsumersplanned.",
+      "evidence": [
+        "workflows/pptx/tables.feature",
+        "contracts/retained-table-properties.md"
+      ]
+    },
+    {
+      "id": "@id-pptx-table-properties-border-left",
+      "feature": "workflows/pptx/tables.feature",
+      "category": "generalized",
+      "runtimeConstraint": "none",
+      "reason": "Project-authoredretainededitcontract;exacttargetdirectvalues/save-reopen/source-bytecustodyandatomicerrors,allconsumersplanned.",
+      "evidence": [
+        "workflows/pptx/tables.feature",
+        "contracts/retained-table-properties.md"
+      ]
+    },
+    {
+      "id": "@id-pptx-table-properties-border-right",
+      "feature": "workflows/pptx/tables.feature",
+      "category": "generalized",
+      "runtimeConstraint": "none",
+      "reason": "Project-authoredretainededitcontract;exacttargetdirectvalues/save-reopen/source-bytecustodyandatomicerrors,allconsumersplanned.",
+      "evidence": [
+        "workflows/pptx/tables.feature",
+        "contracts/retained-table-properties.md"
+      ]
+    },
+    {
+      "id": "@id-pptx-table-properties-border-top",
+      "feature": "workflows/pptx/tables.feature",
+      "category": "generalized",
+      "runtimeConstraint": "none",
+      "reason": "Project-authoredretainededitcontract;exacttargetdirectvalues/save-reopen/source-bytecustodyandatomicerrors,allconsumersplanned.",
+      "evidence": [
+        "workflows/pptx/tables.feature",
+        "contracts/retained-table-properties.md"
+      ]
+    },
+    {
+      "id": "@id-pptx-table-properties-border-bottom",
+      "feature": "workflows/pptx/tables.feature",
+      "category": "generalized",
+      "runtimeConstraint": "none",
+      "reason": "Project-authoredretainededitcontract;exacttargetdirectvalues/save-reopen/source-bytecustodyandatomicerrors,allconsumersplanned.",
+      "evidence": [
+        "workflows/pptx/tables.feature",
+        "contracts/retained-table-properties.md"
+      ]
+    },
+    {
+      "id": "@id-pptx-table-properties-border-no-fill",
+      "feature": "workflows/pptx/tables.feature",
+      "category": "generalized",
+      "runtimeConstraint": "none",
+      "reason": "Project-authoredretainededitcontract;exacttargetdirectvalues/save-reopen/source-bytecustodyandatomicerrors,allconsumersplanned.",
+      "evidence": [
+        "workflows/pptx/tables.feature",
+        "contracts/retained-table-properties.md"
+      ]
+    },
+    {
+      "id": "@id-pptx-table-properties-border-remove",
+      "feature": "workflows/pptx/tables.feature",
+      "category": "generalized",
+      "runtimeConstraint": "none",
+      "reason": "Project-authoredretainededitcontract;exacttargetdirectvalues/save-reopen/source-bytecustodyandatomicerrors,allconsumersplanned.",
+      "evidence": [
+        "workflows/pptx/tables.feature",
+        "contracts/retained-table-properties.md"
+      ]
+    },
+    {
+      "id": "@id-pptx-table-properties-cell-margins",
+      "feature": "workflows/pptx/tables.feature",
+      "category": "generalized",
+      "runtimeConstraint": "none",
+      "reason": "Project-authoredretainededitcontract;exacttargetdirectvalues/save-reopen/source-bytecustodyandatomicerrors,allconsumersplanned.",
+      "evidence": [
+        "workflows/pptx/tables.feature",
+        "contracts/retained-table-properties.md"
+      ]
+    },
+    {
+      "id": "@id-pptx-table-properties-cell-anchor",
+      "feature": "workflows/pptx/tables.feature",
+      "category": "generalized",
+      "runtimeConstraint": "none",
+      "reason": "Project-authoredretainededitcontract;exacttargetdirectvalues/save-reopen/source-bytecustodyandatomicerrors,allconsumersplanned.",
+      "evidence": [
+        "workflows/pptx/tables.feature",
+        "contracts/retained-table-properties.md"
+      ]
+    },
+    {
+      "id": "@id-pptx-table-properties-cell-direction",
+      "feature": "workflows/pptx/tables.feature",
+      "category": "generalized",
+      "runtimeConstraint": "none",
+      "reason": "Project-authoredretainededitcontract;exacttargetdirectvalues/save-reopen/source-bytecustodyandatomicerrors,allconsumersplanned.",
+      "evidence": [
+        "workflows/pptx/tables.feature",
+        "contracts/retained-table-properties.md"
+      ]
+    },
+    {
+      "id": "@id-pptx-table-properties-cell-anchor-center",
+      "feature": "workflows/pptx/tables.feature",
+      "category": "generalized",
+      "runtimeConstraint": "none",
+      "reason": "Project-authoredretainededitcontract;exacttargetdirectvalues/save-reopen/source-bytecustodyandatomicerrors,allconsumersplanned.",
+      "evidence": [
+        "workflows/pptx/tables.feature",
+        "contracts/retained-table-properties.md"
+      ]
+    },
+    {
+      "id": "@id-pptx-table-properties-column-width",
+      "feature": "workflows/pptx/tables.feature",
+      "category": "generalized",
+      "runtimeConstraint": "none",
+      "reason": "Project-authoredretainededitcontract;exacttargetdirectvalues/save-reopen/source-bytecustodyandatomicerrors,allconsumersplanned.",
+      "evidence": [
+        "workflows/pptx/tables.feature",
+        "contracts/retained-table-properties.md"
+      ]
+    },
+    {
+      "id": "@id-pptx-table-properties-row-height",
+      "feature": "workflows/pptx/tables.feature",
+      "category": "generalized",
+      "runtimeConstraint": "none",
+      "reason": "Project-authoredretainededitcontract;exacttargetdirectvalues/save-reopen/source-bytecustodyandatomicerrors,allconsumersplanned.",
+      "evidence": [
+        "workflows/pptx/tables.feature",
+        "contracts/retained-table-properties.md"
+      ]
+    },
+    {
+      "id": "@id-pptx-table-properties-first-row-off",
+      "feature": "workflows/pptx/tables.feature",
+      "category": "generalized",
+      "runtimeConstraint": "none",
+      "reason": "Project-authoredretainededitcontract;exacttargetdirectvalues/save-reopen/source-bytecustodyandatomicerrors,allconsumersplanned.",
+      "evidence": [
+        "workflows/pptx/tables.feature",
+        "contracts/retained-table-properties.md"
+      ]
+    },
+    {
+      "id": "@id-pptx-table-properties-band-row-off",
+      "feature": "workflows/pptx/tables.feature",
+      "category": "generalized",
+      "runtimeConstraint": "none",
+      "reason": "Project-authoredretainededitcontract;exacttargetdirectvalues/save-reopen/source-bytecustodyandatomicerrors,allconsumersplanned.",
+      "evidence": [
+        "workflows/pptx/tables.feature",
+        "contracts/retained-table-properties.md"
+      ]
+    },
+    {
+      "id": "@id-pptx-table-properties-frame-position",
+      "feature": "workflows/pptx/tables.feature",
+      "category": "generalized",
+      "runtimeConstraint": "none",
+      "reason": "Project-authoredretainededitcontract;exacttargetdirectvalues/save-reopen/source-bytecustodyandatomicerrors,allconsumersplanned.",
+      "evidence": [
+        "workflows/pptx/tables.feature",
+        "contracts/retained-table-properties.md"
+      ]
+    },
+    {
+      "id": "@id-pptx-table-properties-cell-unbold",
+      "feature": "workflows/pptx/tables.feature",
+      "category": "generalized",
+      "runtimeConstraint": "none",
+      "reason": "Project-authoredretainededitcontract;exacttargetdirectvalues/save-reopen/source-bytecustodyandatomicerrors,allconsumersplanned.",
+      "evidence": [
+        "workflows/pptx/tables.feature",
+        "contracts/retained-table-properties.md"
+      ]
+    },
+    {
+      "id": "@id-pptx-table-properties-refusal",
+      "feature": "workflows/pptx/tables.feature",
+      "category": "generalized",
+      "runtimeConstraint": "none",
+      "reason": "Project-authoredretainededitcontract;exacttargetdirectvalues/save-reopen/source-bytecustodyandatomicerrors,allconsumersplanned.",
+      "evidence": [
+        "workflows/pptx/tables.feature",
+        "contracts/retained-table-properties.md"
+      ]
+    },
+    {
+      "id": "@id-docx-table-properties-cell-shading",
+      "feature": "workflows/docx/tables.feature",
+      "category": "generalized",
+      "runtimeConstraint": "none",
+      "reason": "Project-authoredretainededitcontract;exacttargetdirectvalues/save-reopen/source-bytecustodyandatomicerrors,allconsumersplanned.",
+      "evidence": [
+        "workflows/docx/tables.feature",
+        "contracts/retained-table-properties.md"
+      ]
+    },
+    {
+      "id": "@id-docx-table-properties-cell-inherit-shading",
+      "feature": "workflows/docx/tables.feature",
+      "category": "generalized",
+      "runtimeConstraint": "none",
+      "reason": "Project-authoredretainededitcontract;exacttargetdirectvalues/save-reopen/source-bytecustodyandatomicerrors,allconsumersplanned.",
+      "evidence": [
+        "workflows/docx/tables.feature",
+        "contracts/retained-table-properties.md"
+      ]
+    },
+    {
+      "id": "@id-docx-table-properties-cell-anchor",
+      "feature": "workflows/docx/tables.feature",
+      "category": "generalized",
+      "runtimeConstraint": "none",
+      "reason": "Project-authoredretainededitcontract;exacttargetdirectvalues/save-reopen/source-bytecustodyandatomicerrors,allconsumersplanned.",
+      "evidence": [
+        "workflows/docx/tables.feature",
+        "contracts/retained-table-properties.md"
+      ]
+    },
+    {
+      "id": "@id-docx-table-properties-cell-direction",
+      "feature": "workflows/docx/tables.feature",
+      "category": "generalized",
+      "runtimeConstraint": "none",
+      "reason": "Project-authoredretainededitcontract;exacttargetdirectvalues/save-reopen/source-bytecustodyandatomicerrors,allconsumersplanned.",
+      "evidence": [
+        "workflows/docx/tables.feature",
+        "contracts/retained-table-properties.md"
+      ]
+    },
+    {
+      "id": "@id-docx-table-properties-cell-margins",
+      "feature": "workflows/docx/tables.feature",
+      "category": "generalized",
+      "runtimeConstraint": "none",
+      "reason": "Project-authoredretainededitcontract;exacttargetdirectvalues/save-reopen/source-bytecustodyandatomicerrors,allconsumersplanned.",
+      "evidence": [
+        "workflows/docx/tables.feature",
+        "contracts/retained-table-properties.md"
+      ]
+    },
+    {
+      "id": "@id-docx-table-properties-border-top",
+      "feature": "workflows/docx/tables.feature",
+      "category": "generalized",
+      "runtimeConstraint": "none",
+      "reason": "Project-authoredretainededitcontract;exacttargetdirectvalues/save-reopen/source-bytecustodyandatomicerrors,allconsumersplanned.",
+      "evidence": [
+        "workflows/docx/tables.feature",
+        "contracts/retained-table-properties.md"
+      ]
+    },
+    {
+      "id": "@id-docx-table-properties-border-left",
+      "feature": "workflows/docx/tables.feature",
+      "category": "generalized",
+      "runtimeConstraint": "none",
+      "reason": "Project-authoredretainededitcontract;exacttargetdirectvalues/save-reopen/source-bytecustodyandatomicerrors,allconsumersplanned.",
+      "evidence": [
+        "workflows/docx/tables.feature",
+        "contracts/retained-table-properties.md"
+      ]
+    },
+    {
+      "id": "@id-docx-table-properties-border-bottom",
+      "feature": "workflows/docx/tables.feature",
+      "category": "generalized",
+      "runtimeConstraint": "none",
+      "reason": "Project-authoredretainededitcontract;exacttargetdirectvalues/save-reopen/source-bytecustodyandatomicerrors,allconsumersplanned.",
+      "evidence": [
+        "workflows/docx/tables.feature",
+        "contracts/retained-table-properties.md"
+      ]
+    },
+    {
+      "id": "@id-docx-table-properties-border-right",
+      "feature": "workflows/docx/tables.feature",
+      "category": "generalized",
+      "runtimeConstraint": "none",
+      "reason": "Project-authoredretainededitcontract;exacttargetdirectvalues/save-reopen/source-bytecustodyandatomicerrors,allconsumersplanned.",
+      "evidence": [
+        "workflows/docx/tables.feature",
+        "contracts/retained-table-properties.md"
+      ]
+    },
+    {
+      "id": "@id-docx-table-properties-border-remove",
+      "feature": "workflows/docx/tables.feature",
+      "category": "generalized",
+      "runtimeConstraint": "none",
+      "reason": "Project-authoredretainededitcontract;exacttargetdirectvalues/save-reopen/source-bytecustodyandatomicerrors,allconsumersplanned.",
+      "evidence": [
+        "workflows/docx/tables.feature",
+        "contracts/retained-table-properties.md"
+      ]
+    },
+    {
+      "id": "@id-docx-table-properties-cell-no-wrap",
+      "feature": "workflows/docx/tables.feature",
+      "category": "generalized",
+      "runtimeConstraint": "none",
+      "reason": "Project-authoredretainededitcontract;exacttargetdirectvalues/save-reopen/source-bytecustodyandatomicerrors,allconsumersplanned.",
+      "evidence": [
+        "workflows/docx/tables.feature",
+        "contracts/retained-table-properties.md"
+      ]
+    },
+    {
+      "id": "@id-docx-table-properties-cell-fit-text",
+      "feature": "workflows/docx/tables.feature",
+      "category": "generalized",
+      "runtimeConstraint": "none",
+      "reason": "Project-authoredretainededitcontract;exacttargetdirectvalues/save-reopen/source-bytecustodyandatomicerrors,allconsumersplanned.",
+      "evidence": [
+        "workflows/docx/tables.feature",
+        "contracts/retained-table-properties.md"
+      ]
+    },
+    {
+      "id": "@id-docx-table-properties-cell-width",
+      "feature": "workflows/docx/tables.feature",
+      "category": "generalized",
+      "runtimeConstraint": "none",
+      "reason": "Project-authoredretainededitcontract;exacttargetdirectvalues/save-reopen/source-bytecustodyandatomicerrors,allconsumersplanned.",
+      "evidence": [
+        "workflows/docx/tables.feature",
+        "contracts/retained-table-properties.md"
+      ]
+    },
+    {
+      "id": "@id-docx-table-properties-row-header",
+      "feature": "workflows/docx/tables.feature",
+      "category": "generalized",
+      "runtimeConstraint": "none",
+      "reason": "Project-authoredretainededitcontract;exacttargetdirectvalues/save-reopen/source-bytecustodyandatomicerrors,allconsumersplanned.",
+      "evidence": [
+        "workflows/docx/tables.feature",
+        "contracts/retained-table-properties.md"
+      ]
+    },
+    {
+      "id": "@id-docx-table-properties-row-cant-split",
+      "feature": "workflows/docx/tables.feature",
+      "category": "generalized",
+      "runtimeConstraint": "none",
+      "reason": "Project-authoredretainededitcontract;exacttargetdirectvalues/save-reopen/source-bytecustodyandatomicerrors,allconsumersplanned.",
+      "evidence": [
+        "workflows/docx/tables.feature",
+        "contracts/retained-table-properties.md"
+      ]
+    },
+    {
+      "id": "@id-docx-table-properties-row-height",
+      "feature": "workflows/docx/tables.feature",
+      "category": "generalized",
+      "runtimeConstraint": "none",
+      "reason": "Project-authoredretainededitcontract;exacttargetdirectvalues/save-reopen/source-bytecustodyandatomicerrors,allconsumersplanned.",
+      "evidence": [
+        "workflows/docx/tables.feature",
+        "contracts/retained-table-properties.md"
+      ]
+    },
+    {
+      "id": "@id-docx-table-properties-table-alignment",
+      "feature": "workflows/docx/tables.feature",
+      "category": "generalized",
+      "runtimeConstraint": "none",
+      "reason": "Project-authoredretainededitcontract;exacttargetdirectvalues/save-reopen/source-bytecustodyandatomicerrors,allconsumersplanned.",
+      "evidence": [
+        "workflows/docx/tables.feature",
+        "contracts/retained-table-properties.md"
+      ]
+    },
+    {
+      "id": "@id-docx-table-properties-table-indent",
+      "feature": "workflows/docx/tables.feature",
+      "category": "generalized",
+      "runtimeConstraint": "none",
+      "reason": "Project-authoredretainededitcontract;exacttargetdirectvalues/save-reopen/source-bytecustodyandatomicerrors,allconsumersplanned.",
+      "evidence": [
+        "workflows/docx/tables.feature",
+        "contracts/retained-table-properties.md"
+      ]
+    },
+    {
+      "id": "@id-docx-table-properties-cell-hide-mark",
+      "feature": "workflows/docx/tables.feature",
+      "category": "generalized",
+      "runtimeConstraint": "none",
+      "reason": "Project-authoredretainededitcontract;exacttargetdirectvalues/save-reopen/source-bytecustodyandatomicerrors,allconsumersplanned.",
+      "evidence": [
+        "workflows/docx/tables.feature",
+        "contracts/retained-table-properties.md"
+      ]
+    },
+    {
+      "id": "@id-docx-table-properties-refusal",
+      "feature": "workflows/docx/tables.feature",
+      "category": "generalized",
+      "runtimeConstraint": "none",
+      "reason": "Project-authoredretainededitcontract;exacttargetdirectvalues/save-reopen/source-bytecustodyandatomicerrors,allconsumersplanned.",
+      "evidence": [
+        "workflows/docx/tables.feature",
+        "contracts/retained-table-properties.md"
+      ]
     }
   ],
   "evidenceSha256": {
@@ -4620,7 +5060,7 @@
     "contracts/style-authoring.md": "b679b2a5318675732328d21d5c2041bd23877d12053112828e910f6dca76bd7a",
     "workflows/docx/table-merging.feature": "3ea877322e88e4ac5e5d608e4f60cbe06ee04ea1c89e18fcd5650f9ec2c83cd1",
     "contracts/table-merging.md": "b974224fa83a0f3593ca210b23e61d1919c4ed3c49dd85acb319bdae505e4dea",
-    "workflows/docx/tables.feature": "89446d3c98ce6ae75a7ff887f0964cf4cc0f4cfcca1f36edabf43762de353aae",
+    "workflows/docx/tables.feature": "31148e56a491e9713c1912a92d8ce32a1f3da1dc41579cc5ded7c71609ce2471",
     "workflows/docx/template-analysis.feature": "433f432d8af73c042d4b5c938450080dbb46811ee24ccee77507a02c809e414e",
     "contracts/python-template-analysis.md": "0cacf20b5a8708cb22ff675cb7092d1e04353227f7f1e2de38dfe0ed5960033f",
     "contracts/template-inventory.md": "0e444485809c2bfe06d90de5276077421a70c1ea2248e347c0b518f0d05eff4d",
@@ -4659,7 +5099,7 @@
     "contracts/slide-order.md": "6f9231d81dfbc80f2a2424643ca622f149d01b6a32475d1773b737a64a1661d9",
     "workflows/pptx/slide-visibility.feature": "4d597d15d4227bc7ed153ef3cd1060d8319134ca08b499c602fc964c1511af19",
     "contracts/pptx-slide-visibility.md": "993d0f45e95c7f391cc68ced177e0ba907e1118065bd8a1ebbc1776080833cd9",
-    "workflows/pptx/tables.feature": "f0b94c529d06814fab2a0792afd353a581424efb124636f51abcb200502d6f29",
+    "workflows/pptx/tables.feature": "17db743ecaafeff1ee88bc8c5d6635d299a2d22abbb008e3284d5d706850f15c",
     "workflows/pptx/text-box.feature": "f1095dc45f85db19d45603fe38938cfc6414c74f3b1f5de63b23f9fd56e880ee",
     "contracts/text-box.md": "cfaa08d29c7892a619cac4b5be7d6524f3e31d1931892203e829cf71c7806ddd",
     "workflows/pptx/text.feature": "42dae34ee08a7783b17e27bc5a5a8e906ed2ca06bf77fcecedfc3fa087dc5608",
@@ -4695,6 +5135,7 @@
     "workflows/pptx/paragraph-formatting.feature": "5be8c0cb29b61a50abd8b280b1517a771503c3c2349691931881176b491a16a4",
     "workflows/pptx/shape-style.feature": "17e9b7f2cae435ec48f11dfb932cfc9582b499d369b4167970b091ad8397135f",
     "contracts/retained-style-word.md": "143e5c03e420cde0f428a20cadbfe30278112d2cd394867901c363ec26acc086",
-    "workflows/pptx/text-frame-properties.feature": "7c9396fbde5af9fd51ea1b5631f4d683be94b02ad35e72045c8c9ae5ceb56562"
+    "workflows/pptx/text-frame-properties.feature": "7c9396fbde5af9fd51ea1b5631f4d683be94b02ad35e72045c8c9ae5ceb56562",
+    "contracts/retained-table-properties.md": "ca5305ef7813ba933b19e255c850a065ecf8a542988abd1dea953537c036bb80"
   }
 }

@@ -474,6 +474,64 @@
         "@id-docx-retained-paragraph-page-break",
         "@id-docx-retained-paragraph-outline"
       ]
+    },
+    {
+      "format": "pptx",
+      "scenarioGroup": "table-properties",
+      "fixtureIds": [
+        "fixture-ce68a5cbf3d3c25053ecc9b327b6776b35267f5b134346366e4b351ffda66abf"
+      ],
+      "scenarioIds": [
+        "@id-pptx-table-properties-cell-fill",
+        "@id-pptx-table-properties-cell-no-fill",
+        "@id-pptx-table-properties-cell-inherit-fill",
+        "@id-pptx-table-properties-border-left",
+        "@id-pptx-table-properties-border-right",
+        "@id-pptx-table-properties-border-top",
+        "@id-pptx-table-properties-border-bottom",
+        "@id-pptx-table-properties-border-no-fill",
+        "@id-pptx-table-properties-border-remove",
+        "@id-pptx-table-properties-cell-margins",
+        "@id-pptx-table-properties-cell-anchor",
+        "@id-pptx-table-properties-cell-direction",
+        "@id-pptx-table-properties-cell-anchor-center",
+        "@id-pptx-table-properties-column-width",
+        "@id-pptx-table-properties-row-height",
+        "@id-pptx-table-properties-first-row-off",
+        "@id-pptx-table-properties-band-row-off",
+        "@id-pptx-table-properties-frame-position",
+        "@id-pptx-table-properties-cell-unbold",
+        "@id-pptx-table-properties-refusal"
+      ]
+    },
+    {
+      "format": "docx",
+      "scenarioGroup": "table-properties",
+      "fixtureIds": [
+        "fixture-ea4dfb625197cf2ca259472419933c5c164ca733ccd765c48410d5547e0ab14f"
+      ],
+      "scenarioIds": [
+        "@id-docx-table-properties-cell-shading",
+        "@id-docx-table-properties-cell-inherit-shading",
+        "@id-docx-table-properties-cell-anchor",
+        "@id-docx-table-properties-cell-direction",
+        "@id-docx-table-properties-cell-margins",
+        "@id-docx-table-properties-border-top",
+        "@id-docx-table-properties-border-left",
+        "@id-docx-table-properties-border-bottom",
+        "@id-docx-table-properties-border-right",
+        "@id-docx-table-properties-border-remove",
+        "@id-docx-table-properties-cell-no-wrap",
+        "@id-docx-table-properties-cell-fit-text",
+        "@id-docx-table-properties-cell-width",
+        "@id-docx-table-properties-row-header",
+        "@id-docx-table-properties-row-cant-split",
+        "@id-docx-table-properties-row-height",
+        "@id-docx-table-properties-table-alignment",
+        "@id-docx-table-properties-table-indent",
+        "@id-docx-table-properties-cell-hide-mark",
+        "@id-docx-table-properties-refusal"
+      ]
     }
   ]
 }

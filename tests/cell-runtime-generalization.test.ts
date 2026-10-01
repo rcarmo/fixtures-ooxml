@@ -1,9 +1,9 @@
 import {test,expect} from 'bun:test';
 import {execFileSync} from 'node:child_process';
 import {cases} from '../scripts/verify.ts';
-import {beforeXmlGeneralizationCase,historicalXmlFeature} from './xml-generalization-helpers.ts';
+import {beforeXmlGeneralizationCase,historicalXmlFeature,beforeRetainedTableFeature} from './xml-generalization-helpers.ts';
 test('bounded cell lookup retains every coordinate and adds text/custody controls with no runtime spelling',async()=>{
- const m=await Bun.file('ledgers/cell-runtime-generalization.json').json(),text=await Bun.file(m.path).text();
+ const m=await Bun.file('ledgers/cell-runtime-generalization.json').json(),text=beforeRetainedTableFeature(m.path,await Bun.file(m.path).text());
  expect(m.beforeText).toBe(execFileSync('git',['show',m.sourceRevision+':'+m.path],{encoding:'utf8'}));
  const rows=cases(m.path,text),old=cases(m.path,m.beforeText),row=rows.find(r=>r.scenarioId==='@id-docx-go-table-cell-access')!;
  expect(rows.map(beforeXmlGeneralizationCase)).toEqual(old);expect(historicalXmlFeature(m.path,text)).toBe(m.beforeText);

@@ -11,7 +11,7 @@ test('the retained ZIP fixtures have unique decompressed member sets and exactly
   'fixture-1780cc7a1c0ee45df6c78afcea721d995bdb67846f6bdfb78cfe78c27e28b897',
   'fixture-9726b477472ddb7595875c9f30493df2577e587416b18418d0dc7221046690fe',
  ]);
- expect(await verifyFixtureContents(process.cwd(),manifest)).toEqual({archives:82,uniqueContents:82,retired:2});
+ expect(await verifyFixtureContents(process.cwd(),manifest)).toEqual({archives:84,uniqueContents:84,retired:2});
  for(const r of ledger.retired){
   // Immutable published Git objects preserve the *different* historical ZIP bytes.
   const old=execFileSync('git',['show',`${oldRef}:${r.path}`],{maxBuffer:1024*1024});

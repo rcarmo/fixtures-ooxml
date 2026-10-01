@@ -2,14 +2,14 @@ import {test,expect} from 'bun:test';
 import {execFileSync} from 'node:child_process';
 import {cases} from '../scripts/verify.ts';
 import {inspectFixtureArchive} from '../scripts/fixture-content.ts';
-import {beforePptxManipulationFeature,beforePptxManipulationLedger} from './xml-generalization-helpers.ts';
+import {beforePptxManipulationFeature,beforePptxManipulationLedger,beforeRetainedTableFeature} from './xml-generalization-helpers.ts';
 const digest=(v:string|Uint8Array)=>new Bun.CryptoHasher('sha256').update(v).digest('hex');
 const load=()=>Bun.file('ledgers/pptx-manipulation.json').json();
 test('PPTX manipulation adds exactly20 concrete cases without retiring or crediting the predecessor captures',async()=>{
  const s=await load(),m=await Bun.file('manifest.json').json(),l=await Bun.file('ledgers/workflows.json').json(),all=[];
  expect(s.sourceRevision).toBe('14a7bf7ad72baa41028ff140802cbbfdbbd8a845');expect(s.bunPredecessor).toBe('69c8169a2241cf09dc769c71023dd2b7d5006354');expect(s.executionCredit).toBe(false);expect(s.retiredScenarioIds).toEqual([]);
  expect(s.baselineCounts).toEqual({features:62,scenarios:304,cases:791,assets:346});expect(s.records).toHaveLength(20);expect(new Set(s.records.map((r:any)=>r.id)).size).toBe(20);expect(new Set(s.records.map((r:any)=>r.sourceId)).size).toBe(20);
- for(const f of s.files){const text=await Bun.file(f.path).text();expect(digest(text)).toBe(f.afterSha256);const rows=cases(f.path,text).filter(c=>s.records.some((r:any)=>r.id===c.scenarioId));all.push(...rows);expect(rows).toEqual(f.scenarios.flatMap((r:any)=>r.after));expect(beforePptxManipulationFeature(f.path,text)).toBe(f.beforeText);
+ for(const f of s.files){const text=beforeRetainedTableFeature(f.path,await Bun.file(f.path).text());expect(digest(text)).toBe(f.afterSha256);const rows=cases(f.path,text).filter(c=>s.records.some((r:any)=>r.id===c.scenarioId));all.push(...rows);expect(rows).toEqual(f.scenarios.flatMap((r:any)=>r.after));expect(beforePptxManipulationFeature(f.path,text)).toBe(f.beforeText);
   if(f.beforeText){const old=execFileSync('git',['show',`${s.sourceRevision}:${f.path}`],{stdio:['pipe','pipe','ignore']});expect(old.toString()).toBe(f.beforeText);}else expect(f.path).toMatch(/\/(bullets|text-autofit)\.feature$/);
  }
  expect(all).toHaveLength(20);expect(all.reduce((n,r)=>n+r.steps.length,0)).toBe(179);

@@ -151,3 +151,267 @@ Feature: Word tables and cell properties
       When the document is saved and reopened
       Then exactly one table is readable
       And all nine cell text getters equal their original row-order values
+
+  Rule: Guarded retained table-target edits with full custody
+    Exact direct values are checked after save and reopen; inherited rendering is outside this profile.
+
+    @profile-retained-table-properties @id-docx-table-properties-cell-shading
+    Scenario: docx cell shading changes only its selected direct properties
+      Given retained docx input fixture-ea4dfb625197cf2ca259472419933c5c164ca733ccd765c48410d5547e0ab14f has its sealed original property and identity snapshot
+      And retained edit target table 0 row 0 cell 0 is uniquely selected with a held identity
+      When production retained docx editing applies cell-shading patch JSON {"shading":"A1B2C3"}
+      And the result or unchanged refusal session is saved and independently parsed and reopened
+      Then retained target table 0 row 0 cell 0 has exact saved properties JSON {"shading":"A1B2C3","pattern":"clear","color":"auto"}
+      And saved direct property children remain in schema order
+      And the exact changed original member set is ["word/document.xml"] with no additions or removals
+      And every unpatched selected-property attribute and child retains its literal original bytes
+      And all other XML spans, text leaves, runs, paragraphs and unrelated member payloads retain custody
+      And actual caller input, original identities, relationships and content-type graph are unchanged
+
+    @profile-retained-table-properties @id-docx-table-properties-cell-inherit-shading
+    Scenario: docx cell inherit shading changes only its selected direct properties
+      Given retained docx input fixture-ea4dfb625197cf2ca259472419933c5c164ca733ccd765c48410d5547e0ab14f has its sealed original property and identity snapshot
+      And retained edit target table 0 row 0 cell 0 is uniquely selected with a held identity
+      When production retained docx editing applies cell-inherit-shading patch JSON {"shading":null}
+      And the result or unchanged refusal session is saved and independently parsed and reopened
+      Then retained target table 0 row 0 cell 0 has exact saved properties JSON {"absent":["shd"]}
+      And saved direct property children remain in schema order
+      And the exact changed original member set is ["word/document.xml"] with no additions or removals
+      And every unpatched selected-property attribute and child retains its literal original bytes
+      And all other XML spans, text leaves, runs, paragraphs and unrelated member payloads retain custody
+      And actual caller input, original identities, relationships and content-type graph are unchanged
+
+    @profile-retained-table-properties @id-docx-table-properties-cell-anchor
+    Scenario: docx cell anchor changes only its selected direct properties
+      Given retained docx input fixture-ea4dfb625197cf2ca259472419933c5c164ca733ccd765c48410d5547e0ab14f has its sealed original property and identity snapshot
+      And retained edit target table 0 row 0 cell 0 is uniquely selected with a held identity
+      When production retained docx editing applies cell-anchor patch JSON {"verticalAlign":"center"}
+      And the result or unchanged refusal session is saved and independently parsed and reopened
+      Then retained target table 0 row 0 cell 0 has exact saved properties JSON {"verticalAlign":"center"}
+      And saved direct property children remain in schema order
+      And the exact changed original member set is ["word/document.xml"] with no additions or removals
+      And every unpatched selected-property attribute and child retains its literal original bytes
+      And all other XML spans, text leaves, runs, paragraphs and unrelated member payloads retain custody
+      And actual caller input, original identities, relationships and content-type graph are unchanged
+
+    @profile-retained-table-properties @id-docx-table-properties-cell-direction
+    Scenario: docx cell direction changes only its selected direct properties
+      Given retained docx input fixture-ea4dfb625197cf2ca259472419933c5c164ca733ccd765c48410d5547e0ab14f has its sealed original property and identity snapshot
+      And retained edit target table 0 row 0 cell 0 is uniquely selected with a held identity
+      When production retained docx editing applies cell-direction patch JSON {"textDirection":"tbRl"}
+      And the result or unchanged refusal session is saved and independently parsed and reopened
+      Then retained target table 0 row 0 cell 0 has exact saved properties JSON {"textDirection":"tbRl"}
+      And saved direct property children remain in schema order
+      And the exact changed original member set is ["word/document.xml"] with no additions or removals
+      And every unpatched selected-property attribute and child retains its literal original bytes
+      And all other XML spans, text leaves, runs, paragraphs and unrelated member payloads retain custody
+      And actual caller input, original identities, relationships and content-type graph are unchanged
+
+    @profile-retained-table-properties @id-docx-table-properties-cell-margins
+    Scenario: docx cell margins changes only its selected direct properties
+      Given retained docx input fixture-ea4dfb625197cf2ca259472419933c5c164ca733ccd765c48410d5547e0ab14f has its sealed original property and identity snapshot
+      And retained edit target table 0 row 0 cell 0 is uniquely selected with a held identity
+      When production retained docx editing applies cell-margins patch JSON {"margins":{"top":120,"left":240,"bottom":120,"right":240}}
+      And the result or unchanged refusal session is saved and independently parsed and reopened
+      Then retained target table 0 row 0 cell 0 has exact saved properties JSON {"margins":{"top":120,"left":240,"bottom":120,"right":240,"type":"dxa"}}
+      And saved direct property children remain in schema order
+      And the exact changed original member set is ["word/document.xml"] with no additions or removals
+      And every unpatched selected-property attribute and child retains its literal original bytes
+      And all other XML spans, text leaves, runs, paragraphs and unrelated member payloads retain custody
+      And actual caller input, original identities, relationships and content-type graph are unchanged
+
+    @profile-retained-table-properties @id-docx-table-properties-border-top
+    Scenario: docx border top changes only its selected direct properties
+      Given retained docx input fixture-ea4dfb625197cf2ca259472419933c5c164ca733ccd765c48410d5547e0ab14f has its sealed original property and identity snapshot
+      And retained edit target table 0 row 0 cell 0 is uniquely selected with a held identity
+      When production retained docx editing applies border-top patch JSON {"border":{"side":"top","style":"single","size":8,"color":"334455"}}
+      And the result or unchanged refusal session is saved and independently parsed and reopened
+      Then retained target table 0 row 0 cell 0 has exact saved properties JSON {"border":{"side":"top","style":"single","size":8,"color":"334455"}}
+      And saved direct property children remain in schema order
+      And the exact changed original member set is ["word/document.xml"] with no additions or removals
+      And every unpatched selected-property attribute and child retains its literal original bytes
+      And all other XML spans, text leaves, runs, paragraphs and unrelated member payloads retain custody
+      And actual caller input, original identities, relationships and content-type graph are unchanged
+
+    @profile-retained-table-properties @id-docx-table-properties-border-left
+    Scenario: docx border left changes only its selected direct properties
+      Given retained docx input fixture-ea4dfb625197cf2ca259472419933c5c164ca733ccd765c48410d5547e0ab14f has its sealed original property and identity snapshot
+      And retained edit target table 0 row 0 cell 0 is uniquely selected with a held identity
+      When production retained docx editing applies border-left patch JSON {"border":{"side":"left","style":"single","size":8,"color":"334455"}}
+      And the result or unchanged refusal session is saved and independently parsed and reopened
+      Then retained target table 0 row 0 cell 0 has exact saved properties JSON {"border":{"side":"left","style":"single","size":8,"color":"334455"}}
+      And saved direct property children remain in schema order
+      And the exact changed original member set is ["word/document.xml"] with no additions or removals
+      And every unpatched selected-property attribute and child retains its literal original bytes
+      And all other XML spans, text leaves, runs, paragraphs and unrelated member payloads retain custody
+      And actual caller input, original identities, relationships and content-type graph are unchanged
+
+    @profile-retained-table-properties @id-docx-table-properties-border-bottom
+    Scenario: docx border bottom changes only its selected direct properties
+      Given retained docx input fixture-ea4dfb625197cf2ca259472419933c5c164ca733ccd765c48410d5547e0ab14f has its sealed original property and identity snapshot
+      And retained edit target table 0 row 0 cell 0 is uniquely selected with a held identity
+      When production retained docx editing applies border-bottom patch JSON {"border":{"side":"bottom","style":"single","size":8,"color":"334455"}}
+      And the result or unchanged refusal session is saved and independently parsed and reopened
+      Then retained target table 0 row 0 cell 0 has exact saved properties JSON {"border":{"side":"bottom","style":"single","size":8,"color":"334455"}}
+      And saved direct property children remain in schema order
+      And the exact changed original member set is ["word/document.xml"] with no additions or removals
+      And every unpatched selected-property attribute and child retains its literal original bytes
+      And all other XML spans, text leaves, runs, paragraphs and unrelated member payloads retain custody
+      And actual caller input, original identities, relationships and content-type graph are unchanged
+
+    @profile-retained-table-properties @id-docx-table-properties-border-right
+    Scenario: docx border right changes only its selected direct properties
+      Given retained docx input fixture-ea4dfb625197cf2ca259472419933c5c164ca733ccd765c48410d5547e0ab14f has its sealed original property and identity snapshot
+      And retained edit target table 0 row 0 cell 0 is uniquely selected with a held identity
+      When production retained docx editing applies border-right patch JSON {"border":{"side":"right","style":"single","size":8,"color":"334455"}}
+      And the result or unchanged refusal session is saved and independently parsed and reopened
+      Then retained target table 0 row 0 cell 0 has exact saved properties JSON {"border":{"side":"right","style":"single","size":8,"color":"334455"}}
+      And saved direct property children remain in schema order
+      And the exact changed original member set is ["word/document.xml"] with no additions or removals
+      And every unpatched selected-property attribute and child retains its literal original bytes
+      And all other XML spans, text leaves, runs, paragraphs and unrelated member payloads retain custody
+      And actual caller input, original identities, relationships and content-type graph are unchanged
+
+    @profile-retained-table-properties @id-docx-table-properties-border-remove
+    Scenario: docx border remove changes only its selected direct properties
+      Given retained docx input fixture-ea4dfb625197cf2ca259472419933c5c164ca733ccd765c48410d5547e0ab14f has its sealed original property and identity snapshot
+      And retained edit target table 0 row 0 cell 0 is uniquely selected with a held identity
+      When production retained docx editing applies border-remove patch JSON {"border":{"side":"top","remove":true}}
+      And the result or unchanged refusal session is saved and independently parsed and reopened
+      Then retained target table 0 row 0 cell 0 has exact saved properties JSON {"absentBorder":["top"]}
+      And saved direct property children remain in schema order
+      And the exact changed original member set is ["word/document.xml"] with no additions or removals
+      And every unpatched selected-property attribute and child retains its literal original bytes
+      And all other XML spans, text leaves, runs, paragraphs and unrelated member payloads retain custody
+      And actual caller input, original identities, relationships and content-type graph are unchanged
+
+    @profile-retained-table-properties @id-docx-table-properties-cell-no-wrap
+    Scenario: docx cell no wrap changes only its selected direct properties
+      Given retained docx input fixture-ea4dfb625197cf2ca259472419933c5c164ca733ccd765c48410d5547e0ab14f has its sealed original property and identity snapshot
+      And retained edit target table 0 row 0 cell 0 is uniquely selected with a held identity
+      When production retained docx editing applies cell-no-wrap patch JSON {"noWrap":true}
+      And the result or unchanged refusal session is saved and independently parsed and reopened
+      Then retained target table 0 row 0 cell 0 has exact saved properties JSON {"noWrap":true}
+      And saved direct property children remain in schema order
+      And the exact changed original member set is ["word/document.xml"] with no additions or removals
+      And every unpatched selected-property attribute and child retains its literal original bytes
+      And all other XML spans, text leaves, runs, paragraphs and unrelated member payloads retain custody
+      And actual caller input, original identities, relationships and content-type graph are unchanged
+
+    @profile-retained-table-properties @id-docx-table-properties-cell-fit-text
+    Scenario: docx cell fit text changes only its selected direct properties
+      Given retained docx input fixture-ea4dfb625197cf2ca259472419933c5c164ca733ccd765c48410d5547e0ab14f has its sealed original property and identity snapshot
+      And retained edit target table 0 row 0 cell 0 is uniquely selected with a held identity
+      When production retained docx editing applies cell-fit-text patch JSON {"tcFitText":true}
+      And the result or unchanged refusal session is saved and independently parsed and reopened
+      Then retained target table 0 row 0 cell 0 has exact saved properties JSON {"tcFitText":true}
+      And saved direct property children remain in schema order
+      And the exact changed original member set is ["word/document.xml"] with no additions or removals
+      And every unpatched selected-property attribute and child retains its literal original bytes
+      And all other XML spans, text leaves, runs, paragraphs and unrelated member payloads retain custody
+      And actual caller input, original identities, relationships and content-type graph are unchanged
+
+    @profile-retained-table-properties @id-docx-table-properties-cell-width
+    Scenario: docx cell width changes only its selected direct properties
+      Given retained docx input fixture-ea4dfb625197cf2ca259472419933c5c164ca733ccd765c48410d5547e0ab14f has its sealed original property and identity snapshot
+      And retained edit target table 0 row 0 cell 0 is uniquely selected with a held identity
+      When production retained docx editing applies cell-width patch JSON {"width":2400}
+      And the result or unchanged refusal session is saved and independently parsed and reopened
+      Then retained target table 0 row 0 cell 0 has exact saved properties JSON {"width":2400,"widthType":"dxa","grid":[2880,2880,2880]}
+      And saved direct property children remain in schema order
+      And the exact changed original member set is ["word/document.xml"] with no additions or removals
+      And every unpatched selected-property attribute and child retains its literal original bytes
+      And all other XML spans, text leaves, runs, paragraphs and unrelated member payloads retain custody
+      And actual caller input, original identities, relationships and content-type graph are unchanged
+
+    @profile-retained-table-properties @id-docx-table-properties-row-header
+    Scenario: docx row header changes only its selected direct properties
+      Given retained docx input fixture-ea4dfb625197cf2ca259472419933c5c164ca733ccd765c48410d5547e0ab14f has its sealed original property and identity snapshot
+      And retained edit target table 0 row 0 is uniquely selected with a held identity
+      When production retained docx editing applies row-header patch JSON {"tblHeader":true}
+      And the result or unchanged refusal session is saved and independently parsed and reopened
+      Then retained target table 0 row 0 has exact saved properties JSON {"tblHeader":true}
+      And saved direct property children remain in schema order
+      And the exact changed original member set is ["word/document.xml"] with no additions or removals
+      And every unpatched selected-property attribute and child retains its literal original bytes
+      And all other XML spans, text leaves, runs, paragraphs and unrelated member payloads retain custody
+      And actual caller input, original identities, relationships and content-type graph are unchanged
+
+    @profile-retained-table-properties @id-docx-table-properties-row-cant-split
+    Scenario: docx row cant split changes only its selected direct properties
+      Given retained docx input fixture-ea4dfb625197cf2ca259472419933c5c164ca733ccd765c48410d5547e0ab14f has its sealed original property and identity snapshot
+      And retained edit target table 0 row 0 is uniquely selected with a held identity
+      When production retained docx editing applies row-cant-split patch JSON {"cantSplit":true}
+      And the result or unchanged refusal session is saved and independently parsed and reopened
+      Then retained target table 0 row 0 has exact saved properties JSON {"cantSplit":true}
+      And saved direct property children remain in schema order
+      And the exact changed original member set is ["word/document.xml"] with no additions or removals
+      And every unpatched selected-property attribute and child retains its literal original bytes
+      And all other XML spans, text leaves, runs, paragraphs and unrelated member payloads retain custody
+      And actual caller input, original identities, relationships and content-type graph are unchanged
+
+    @profile-retained-table-properties @id-docx-table-properties-row-height
+    Scenario: docx row height changes only its selected direct properties
+      Given retained docx input fixture-ea4dfb625197cf2ca259472419933c5c164ca733ccd765c48410d5547e0ab14f has its sealed original property and identity snapshot
+      And retained edit target table 0 row 0 is uniquely selected with a held identity
+      When production retained docx editing applies row-height patch JSON {"height":480,"heightRule":"exact"}
+      And the result or unchanged refusal session is saved and independently parsed and reopened
+      Then retained target table 0 row 0 has exact saved properties JSON {"height":480,"heightRule":"exact"}
+      And saved direct property children remain in schema order
+      And the exact changed original member set is ["word/document.xml"] with no additions or removals
+      And every unpatched selected-property attribute and child retains its literal original bytes
+      And all other XML spans, text leaves, runs, paragraphs and unrelated member payloads retain custody
+      And actual caller input, original identities, relationships and content-type graph are unchanged
+
+    @profile-retained-table-properties @id-docx-table-properties-table-alignment
+    Scenario: docx table alignment changes only its selected direct properties
+      Given retained docx input fixture-ea4dfb625197cf2ca259472419933c5c164ca733ccd765c48410d5547e0ab14f has its sealed original property and identity snapshot
+      And retained edit target table 0 is uniquely selected with a held identity
+      When production retained docx editing applies table-alignment patch JSON {"alignment":"center"}
+      And the result or unchanged refusal session is saved and independently parsed and reopened
+      Then retained target table 0 has exact saved properties JSON {"alignment":"center"}
+      And saved direct property children remain in schema order
+      And the exact changed original member set is ["word/document.xml"] with no additions or removals
+      And every unpatched selected-property attribute and child retains its literal original bytes
+      And all other XML spans, text leaves, runs, paragraphs and unrelated member payloads retain custody
+      And actual caller input, original identities, relationships and content-type graph are unchanged
+
+    @profile-retained-table-properties @id-docx-table-properties-table-indent
+    Scenario: docx table indent changes only its selected direct properties
+      Given retained docx input fixture-ea4dfb625197cf2ca259472419933c5c164ca733ccd765c48410d5547e0ab14f has its sealed original property and identity snapshot
+      And retained edit target table 0 is uniquely selected with a held identity
+      When production retained docx editing applies table-indent patch JSON {"indent":720}
+      And the result or unchanged refusal session is saved and independently parsed and reopened
+      Then retained target table 0 has exact saved properties JSON {"indent":720,"indentType":"dxa"}
+      And saved direct property children remain in schema order
+      And the exact changed original member set is ["word/document.xml"] with no additions or removals
+      And every unpatched selected-property attribute and child retains its literal original bytes
+      And all other XML spans, text leaves, runs, paragraphs and unrelated member payloads retain custody
+      And actual caller input, original identities, relationships and content-type graph are unchanged
+
+    @profile-retained-table-properties @id-docx-table-properties-cell-hide-mark
+    Scenario: docx cell hide mark changes only its selected direct properties
+      Given retained docx input fixture-ea4dfb625197cf2ca259472419933c5c164ca733ccd765c48410d5547e0ab14f has its sealed original property and identity snapshot
+      And retained edit target table 0 row 0 cell 0 is uniquely selected with a held identity
+      When production retained docx editing applies cell-hide-mark patch JSON {"hideMark":true}
+      And the result or unchanged refusal session is saved and independently parsed and reopened
+      Then retained target table 0 row 0 cell 0 has exact saved properties JSON {"hideMark":true}
+      And saved direct property children remain in schema order
+      And the exact changed original member set is ["word/document.xml"] with no additions or removals
+      And every unpatched selected-property attribute and child retains its literal original bytes
+      And all other XML spans, text leaves, runs, paragraphs and unrelated member payloads retain custody
+      And actual caller input, original identities, relationships and content-type graph are unchanged
+
+    @profile-retained-table-properties @id-docx-table-properties-refusal
+    Scenario: docx refusal changes only its selected direct properties
+      Given retained docx input fixture-ea4dfb625197cf2ca259472419933c5c164ca733ccd765c48410d5547e0ab14f has its sealed original property and identity snapshot
+      And retained edit target table 0 row 0 cell 0 is uniquely selected with a held identity
+      When production retained docx editing applies refusal patch JSON {"shading":"A1B2C3","border":{"side":"top","style":"single","size":97,"color":"334455"}}
+      And the result or unchanged refusal session is saved and independently parsed and reopened
+      Then retained target table 0 row 0 cell 0 has exact saved properties JSON {"refusal":"invalid-table-properties"}
+      And saved direct property children remain in schema order
+      And the exact changed original member set is [] with no additions or removals
+      And every unpatched selected-property attribute and child retains its literal original bytes
+      And all other XML spans, text leaves, runs, paragraphs and unrelated member payloads retain custody
+      And actual caller input, original identities, relationships and content-type graph are unchanged
+      And refusal reason invalid-table-properties preserves session bytes and held target usability before save

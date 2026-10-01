@@ -1,5 +1,13 @@
+import retainedTable from '../ledgers/retained-table-properties.json';
+export function beforeRetainedTableFeature(path:string,text:string):string{
+ const f=retainedTable.files.find(f=>f.path===path);if(!f||text===f.beforeText)return text;
+ if(new Bun.CryptoHasher('sha256').update(text).digest('hex')!==f.afterSha256)throw Error('Unreviewed retained table feature hash');
+ if(JSON.stringify(cases(path,text).filter(c=>retainedTable.records.some(r=>r.id===c.scenarioId)))!==JSON.stringify(f.scenarios.flatMap(s=>s.after)))throw Error('Unreviewed retained table predicates');return f.beforeText;
+}
+export function beforeRetainedTableLedger(ledger:any){const copy=structuredClone(ledger),added=new Set(retainedTable.records.map(r=>r.id));for(const f of retainedTable.files)for(const row of f.afterLedgerRows){const current=copy.workflows.find((r:any)=>r.id===row.id);if(JSON.stringify(current)!==JSON.stringify(row))throw Error('Unreviewed retained table ledger');}copy.workflows=copy.workflows.filter((r:any)=>!added.has(r.id));return copy;}
 import retainedStyleWord from '../ledgers/retained-style-word.json';
 export function beforeRetainedStyleWordFeature(path:string,text:string):string {
+ text=beforeRetainedTableFeature(path,text);
  const file=retainedStyleWord.files.find(f=>f.path===path);if(!file||text===file.beforeText)return text;
  if(new Bun.CryptoHasher('sha256').update(text).digest('hex')!==file.afterSha256)throw Error('Unreviewed retained style/Word feature hash: '+path);
  const current=cases(path,text).filter(c=>retainedStyleWord.records.some(r=>r.id===c.scenarioId));
@@ -7,7 +15,7 @@ export function beforeRetainedStyleWordFeature(path:string,text:string):string {
  return file.beforeText;
 }
 export function beforeRetainedStyleWordLedger(ledger:any){
- const copy=structuredClone(ledger),added=new Set(retainedStyleWord.records.map(r=>r.id));
+ const copy=beforeRetainedTableLedger(ledger),added=new Set(retainedStyleWord.records.map(r=>r.id));
  for(const file of retainedStyleWord.files)for(const row of file.afterLedgerRows){const actual=copy.workflows.find((r:any)=>r.id===row.id);if(JSON.stringify(actual)!==JSON.stringify(row))throw Error('Unreviewed retained style/Word ledger: '+row.id);}
  copy.features=copy.features.filter((p:string)=>!retainedStyleWord.files.some(f=>f.path===p&&!f.beforeText));copy.workflows=copy.workflows.filter((r:any)=>!added.has(r.id));return copy;
 }

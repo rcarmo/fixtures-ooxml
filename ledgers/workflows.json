@@ -9952,6 +9952,1128 @@
           "evidence": []
         }
       }
+    },
+    {
+      "id": "@id-pptx-table-properties-cell-fill",
+      "feature": "workflows/pptx/tables.feature",
+      "expandedCases": 1,
+      "factIds": [],
+      "expectedOutcomes": [
+        "retained target slide 1 table frame ID 3 cell 0,0 has exact saved properties JSON {\"fill\":\"A1B2C3\"}",
+        "saved direct property children remain in schema order",
+        "the exact changed original member set is [\"ppt/slides/slide1.xml\"] with no additions or removals",
+        "every unpatched selected-property attribute and child retains its literal original bytes",
+        "all other XML spans, text leaves, runs, paragraphs and unrelated member payloads retain custody",
+        "actual caller input, original identities, relationships and content-type graph are unchanged"
+      ],
+      "consumers": {
+        "bun": {
+          "status": "planned",
+          "evidence": []
+        },
+        "go": {
+          "status": "planned",
+          "evidence": []
+        },
+        "python": {
+          "status": "planned",
+          "evidence": []
+        }
+      }
+    },
+    {
+      "id": "@id-pptx-table-properties-cell-no-fill",
+      "feature": "workflows/pptx/tables.feature",
+      "expandedCases": 1,
+      "factIds": [],
+      "expectedOutcomes": [
+        "retained target slide 1 table frame ID 3 cell 0,0 has exact saved properties JSON {\"fill\":\"none\"}",
+        "saved direct property children remain in schema order",
+        "the exact changed original member set is [\"ppt/slides/slide1.xml\"] with no additions or removals",
+        "every unpatched selected-property attribute and child retains its literal original bytes",
+        "all other XML spans, text leaves, runs, paragraphs and unrelated member payloads retain custody",
+        "actual caller input, original identities, relationships and content-type graph are unchanged"
+      ],
+      "consumers": {
+        "bun": {
+          "status": "planned",
+          "evidence": []
+        },
+        "go": {
+          "status": "planned",
+          "evidence": []
+        },
+        "python": {
+          "status": "planned",
+          "evidence": []
+        }
+      }
+    },
+    {
+      "id": "@id-pptx-table-properties-cell-inherit-fill",
+      "feature": "workflows/pptx/tables.feature",
+      "expandedCases": 1,
+      "factIds": [],
+      "expectedOutcomes": [
+        "retained target slide 1 table frame ID 3 cell 0,0 has exact saved properties JSON {\"absent\":[\"solidFill\",\"noFill\"]}",
+        "saved direct property children remain in schema order",
+        "the exact changed original member set is [\"ppt/slides/slide1.xml\"] with no additions or removals",
+        "every unpatched selected-property attribute and child retains its literal original bytes",
+        "all other XML spans, text leaves, runs, paragraphs and unrelated member payloads retain custody",
+        "actual caller input, original identities, relationships and content-type graph are unchanged"
+      ],
+      "consumers": {
+        "bun": {
+          "status": "planned",
+          "evidence": []
+        },
+        "go": {
+          "status": "planned",
+          "evidence": []
+        },
+        "python": {
+          "status": "planned",
+          "evidence": []
+        }
+      }
+    },
+    {
+      "id": "@id-pptx-table-properties-border-left",
+      "feature": "workflows/pptx/tables.feature",
+      "expandedCases": 1,
+      "factIds": [],
+      "expectedOutcomes": [
+        "retained target slide 1 table frame ID 3 cell 0,0 has exact saved properties JSON {\"border\":{\"side\":\"left\",\"color\":\"334455\",\"width\":25400,\"dash\":\"solid\"}}",
+        "saved direct property children remain in schema order",
+        "the exact changed original member set is [\"ppt/slides/slide1.xml\"] with no additions or removals",
+        "every unpatched selected-property attribute and child retains its literal original bytes",
+        "all other XML spans, text leaves, runs, paragraphs and unrelated member payloads retain custody",
+        "actual caller input, original identities, relationships and content-type graph are unchanged"
+      ],
+      "consumers": {
+        "bun": {
+          "status": "planned",
+          "evidence": []
+        },
+        "go": {
+          "status": "planned",
+          "evidence": []
+        },
+        "python": {
+          "status": "planned",
+          "evidence": []
+        }
+      }
+    },
+    {
+      "id": "@id-pptx-table-properties-border-right",
+      "feature": "workflows/pptx/tables.feature",
+      "expandedCases": 1,
+      "factIds": [],
+      "expectedOutcomes": [
+        "retained target slide 1 table frame ID 3 cell 0,0 has exact saved properties JSON {\"border\":{\"side\":\"right\",\"color\":\"334455\",\"width\":25400,\"dash\":\"solid\"}}",
+        "saved direct property children remain in schema order",
+        "the exact changed original member set is [\"ppt/slides/slide1.xml\"] with no additions or removals",
+        "every unpatched selected-property attribute and child retains its literal original bytes",
+        "all other XML spans, text leaves, runs, paragraphs and unrelated member payloads retain custody",
+        "actual caller input, original identities, relationships and content-type graph are unchanged"
+      ],
+      "consumers": {
+        "bun": {
+          "status": "planned",
+          "evidence": []
+        },
+        "go": {
+          "status": "planned",
+          "evidence": []
+        },
+        "python": {
+          "status": "planned",
+          "evidence": []
+        }
+      }
+    },
+    {
+      "id": "@id-pptx-table-properties-border-top",
+      "feature": "workflows/pptx/tables.feature",
+      "expandedCases": 1,
+      "factIds": [],
+      "expectedOutcomes": [
+        "retained target slide 1 table frame ID 3 cell 0,0 has exact saved properties JSON {\"border\":{\"side\":\"top\",\"color\":\"334455\",\"width\":25400,\"dash\":\"solid\"}}",
+        "saved direct property children remain in schema order",
+        "the exact changed original member set is [\"ppt/slides/slide1.xml\"] with no additions or removals",
+        "every unpatched selected-property attribute and child retains its literal original bytes",
+        "all other XML spans, text leaves, runs, paragraphs and unrelated member payloads retain custody",
+        "actual caller input, original identities, relationships and content-type graph are unchanged"
+      ],
+      "consumers": {
+        "bun": {
+          "status": "planned",
+          "evidence": []
+        },
+        "go": {
+          "status": "planned",
+          "evidence": []
+        },
+        "python": {
+          "status": "planned",
+          "evidence": []
+        }
+      }
+    },
+    {
+      "id": "@id-pptx-table-properties-border-bottom",
+      "feature": "workflows/pptx/tables.feature",
+      "expandedCases": 1,
+      "factIds": [],
+      "expectedOutcomes": [
+        "retained target slide 1 table frame ID 3 cell 0,0 has exact saved properties JSON {\"border\":{\"side\":\"bottom\",\"color\":\"334455\",\"width\":25400,\"dash\":\"solid\"}}",
+        "saved direct property children remain in schema order",
+        "the exact changed original member set is [\"ppt/slides/slide1.xml\"] with no additions or removals",
+        "every unpatched selected-property attribute and child retains its literal original bytes",
+        "all other XML spans, text leaves, runs, paragraphs and unrelated member payloads retain custody",
+        "actual caller input, original identities, relationships and content-type graph are unchanged"
+      ],
+      "consumers": {
+        "bun": {
+          "status": "planned",
+          "evidence": []
+        },
+        "go": {
+          "status": "planned",
+          "evidence": []
+        },
+        "python": {
+          "status": "planned",
+          "evidence": []
+        }
+      }
+    },
+    {
+      "id": "@id-pptx-table-properties-border-no-fill",
+      "feature": "workflows/pptx/tables.feature",
+      "expandedCases": 1,
+      "factIds": [],
+      "expectedOutcomes": [
+        "retained target slide 1 table frame ID 3 cell 0,0 has exact saved properties JSON {\"border\":{\"side\":\"top\",\"fill\":\"none\",\"width\":12700,\"dash\":\"solid\"}}",
+        "saved direct property children remain in schema order",
+        "the exact changed original member set is [\"ppt/slides/slide1.xml\"] with no additions or removals",
+        "every unpatched selected-property attribute and child retains its literal original bytes",
+        "all other XML spans, text leaves, runs, paragraphs and unrelated member payloads retain custody",
+        "actual caller input, original identities, relationships and content-type graph are unchanged"
+      ],
+      "consumers": {
+        "bun": {
+          "status": "planned",
+          "evidence": []
+        },
+        "go": {
+          "status": "planned",
+          "evidence": []
+        },
+        "python": {
+          "status": "planned",
+          "evidence": []
+        }
+      }
+    },
+    {
+      "id": "@id-pptx-table-properties-border-remove",
+      "feature": "workflows/pptx/tables.feature",
+      "expandedCases": 1,
+      "factIds": [],
+      "expectedOutcomes": [
+        "retained target slide 1 table frame ID 3 cell 0,0 has exact saved properties JSON {\"absent\":[\"lnL\"]}",
+        "saved direct property children remain in schema order",
+        "the exact changed original member set is [\"ppt/slides/slide1.xml\"] with no additions or removals",
+        "every unpatched selected-property attribute and child retains its literal original bytes",
+        "all other XML spans, text leaves, runs, paragraphs and unrelated member payloads retain custody",
+        "actual caller input, original identities, relationships and content-type graph are unchanged"
+      ],
+      "consumers": {
+        "bun": {
+          "status": "planned",
+          "evidence": []
+        },
+        "go": {
+          "status": "planned",
+          "evidence": []
+        },
+        "python": {
+          "status": "planned",
+          "evidence": []
+        }
+      }
+    },
+    {
+      "id": "@id-pptx-table-properties-cell-margins",
+      "feature": "workflows/pptx/tables.feature",
+      "expandedCases": 1,
+      "factIds": [],
+      "expectedOutcomes": [
+        "retained target slide 1 table frame ID 3 cell 0,0 has exact saved properties JSON {\"marL\":91440,\"marR\":91440,\"marT\":45720,\"marB\":45720}",
+        "saved direct property children remain in schema order",
+        "the exact changed original member set is [\"ppt/slides/slide1.xml\"] with no additions or removals",
+        "every unpatched selected-property attribute and child retains its literal original bytes",
+        "all other XML spans, text leaves, runs, paragraphs and unrelated member payloads retain custody",
+        "actual caller input, original identities, relationships and content-type graph are unchanged"
+      ],
+      "consumers": {
+        "bun": {
+          "status": "planned",
+          "evidence": []
+        },
+        "go": {
+          "status": "planned",
+          "evidence": []
+        },
+        "python": {
+          "status": "planned",
+          "evidence": []
+        }
+      }
+    },
+    {
+      "id": "@id-pptx-table-properties-cell-anchor",
+      "feature": "workflows/pptx/tables.feature",
+      "expandedCases": 1,
+      "factIds": [],
+      "expectedOutcomes": [
+        "retained target slide 1 table frame ID 3 cell 0,0 has exact saved properties JSON {\"anchor\":\"ctr\"}",
+        "saved direct property children remain in schema order",
+        "the exact changed original member set is [\"ppt/slides/slide1.xml\"] with no additions or removals",
+        "every unpatched selected-property attribute and child retains its literal original bytes",
+        "all other XML spans, text leaves, runs, paragraphs and unrelated member payloads retain custody",
+        "actual caller input, original identities, relationships and content-type graph are unchanged"
+      ],
+      "consumers": {
+        "bun": {
+          "status": "planned",
+          "evidence": []
+        },
+        "go": {
+          "status": "planned",
+          "evidence": []
+        },
+        "python": {
+          "status": "planned",
+          "evidence": []
+        }
+      }
+    },
+    {
+      "id": "@id-pptx-table-properties-cell-direction",
+      "feature": "workflows/pptx/tables.feature",
+      "expandedCases": 1,
+      "factIds": [],
+      "expectedOutcomes": [
+        "retained target slide 1 table frame ID 3 cell 0,0 has exact saved properties JSON {\"vert\":\"vert\"}",
+        "saved direct property children remain in schema order",
+        "the exact changed original member set is [\"ppt/slides/slide1.xml\"] with no additions or removals",
+        "every unpatched selected-property attribute and child retains its literal original bytes",
+        "all other XML spans, text leaves, runs, paragraphs and unrelated member payloads retain custody",
+        "actual caller input, original identities, relationships and content-type graph are unchanged"
+      ],
+      "consumers": {
+        "bun": {
+          "status": "planned",
+          "evidence": []
+        },
+        "go": {
+          "status": "planned",
+          "evidence": []
+        },
+        "python": {
+          "status": "planned",
+          "evidence": []
+        }
+      }
+    },
+    {
+      "id": "@id-pptx-table-properties-cell-anchor-center",
+      "feature": "workflows/pptx/tables.feature",
+      "expandedCases": 1,
+      "factIds": [],
+      "expectedOutcomes": [
+        "retained target slide 1 table frame ID 3 cell 0,0 has exact saved properties JSON {\"anchorCtr\":true}",
+        "saved direct property children remain in schema order",
+        "the exact changed original member set is [\"ppt/slides/slide1.xml\"] with no additions or removals",
+        "every unpatched selected-property attribute and child retains its literal original bytes",
+        "all other XML spans, text leaves, runs, paragraphs and unrelated member payloads retain custody",
+        "actual caller input, original identities, relationships and content-type graph are unchanged"
+      ],
+      "consumers": {
+        "bun": {
+          "status": "planned",
+          "evidence": []
+        },
+        "go": {
+          "status": "planned",
+          "evidence": []
+        },
+        "python": {
+          "status": "planned",
+          "evidence": []
+        }
+      }
+    },
+    {
+      "id": "@id-pptx-table-properties-column-width",
+      "feature": "workflows/pptx/tables.feature",
+      "expandedCases": 1,
+      "factIds": [],
+      "expectedOutcomes": [
+        "retained target slide 1 table frame ID 3 has exact saved properties JSON {\"columnWidths\":[3657600,2743200,2743200],\"frameWidth\":9144000}",
+        "saved direct property children remain in schema order",
+        "the exact changed original member set is [\"ppt/slides/slide1.xml\"] with no additions or removals",
+        "every unpatched selected-property attribute and child retains its literal original bytes",
+        "all other XML spans, text leaves, runs, paragraphs and unrelated member payloads retain custody",
+        "actual caller input, original identities, relationships and content-type graph are unchanged"
+      ],
+      "consumers": {
+        "bun": {
+          "status": "planned",
+          "evidence": []
+        },
+        "go": {
+          "status": "planned",
+          "evidence": []
+        },
+        "python": {
+          "status": "planned",
+          "evidence": []
+        }
+      }
+    },
+    {
+      "id": "@id-pptx-table-properties-row-height",
+      "feature": "workflows/pptx/tables.feature",
+      "expandedCases": 1,
+      "factIds": [],
+      "expectedOutcomes": [
+        "retained target slide 1 table frame ID 3 has exact saved properties JSON {\"rowHeights\":[914400,609600,609600,609600,609600,609600],\"frameHeight\":3962400}",
+        "saved direct property children remain in schema order",
+        "the exact changed original member set is [\"ppt/slides/slide1.xml\"] with no additions or removals",
+        "every unpatched selected-property attribute and child retains its literal original bytes",
+        "all other XML spans, text leaves, runs, paragraphs and unrelated member payloads retain custody",
+        "actual caller input, original identities, relationships and content-type graph are unchanged"
+      ],
+      "consumers": {
+        "bun": {
+          "status": "planned",
+          "evidence": []
+        },
+        "go": {
+          "status": "planned",
+          "evidence": []
+        },
+        "python": {
+          "status": "planned",
+          "evidence": []
+        }
+      }
+    },
+    {
+      "id": "@id-pptx-table-properties-first-row-off",
+      "feature": "workflows/pptx/tables.feature",
+      "expandedCases": 1,
+      "factIds": [],
+      "expectedOutcomes": [
+        "retained target slide 1 table frame ID 3 has exact saved properties JSON {\"firstRow\":false}",
+        "saved direct property children remain in schema order",
+        "the exact changed original member set is [\"ppt/slides/slide1.xml\"] with no additions or removals",
+        "every unpatched selected-property attribute and child retains its literal original bytes",
+        "all other XML spans, text leaves, runs, paragraphs and unrelated member payloads retain custody",
+        "actual caller input, original identities, relationships and content-type graph are unchanged"
+      ],
+      "consumers": {
+        "bun": {
+          "status": "planned",
+          "evidence": []
+        },
+        "go": {
+          "status": "planned",
+          "evidence": []
+        },
+        "python": {
+          "status": "planned",
+          "evidence": []
+        }
+      }
+    },
+    {
+      "id": "@id-pptx-table-properties-band-row-off",
+      "feature": "workflows/pptx/tables.feature",
+      "expandedCases": 1,
+      "factIds": [],
+      "expectedOutcomes": [
+        "retained target slide 1 table frame ID 3 has exact saved properties JSON {\"bandRow\":false}",
+        "saved direct property children remain in schema order",
+        "the exact changed original member set is [\"ppt/slides/slide1.xml\"] with no additions or removals",
+        "every unpatched selected-property attribute and child retains its literal original bytes",
+        "all other XML spans, text leaves, runs, paragraphs and unrelated member payloads retain custody",
+        "actual caller input, original identities, relationships and content-type graph are unchanged"
+      ],
+      "consumers": {
+        "bun": {
+          "status": "planned",
+          "evidence": []
+        },
+        "go": {
+          "status": "planned",
+          "evidence": []
+        },
+        "python": {
+          "status": "planned",
+          "evidence": []
+        }
+      }
+    },
+    {
+      "id": "@id-pptx-table-properties-frame-position",
+      "feature": "workflows/pptx/tables.feature",
+      "expandedCases": 1,
+      "factIds": [],
+      "expectedOutcomes": [
+        "retained target slide 1 table frame ID 3 has exact saved properties JSON {\"x\":914400,\"y\":1828800,\"width\":8229600,\"height\":3657600}",
+        "saved direct property children remain in schema order",
+        "the exact changed original member set is [\"ppt/slides/slide1.xml\"] with no additions or removals",
+        "every unpatched selected-property attribute and child retains its literal original bytes",
+        "all other XML spans, text leaves, runs, paragraphs and unrelated member payloads retain custody",
+        "actual caller input, original identities, relationships and content-type graph are unchanged"
+      ],
+      "consumers": {
+        "bun": {
+          "status": "planned",
+          "evidence": []
+        },
+        "go": {
+          "status": "planned",
+          "evidence": []
+        },
+        "python": {
+          "status": "planned",
+          "evidence": []
+        }
+      }
+    },
+    {
+      "id": "@id-pptx-table-properties-cell-unbold",
+      "feature": "workflows/pptx/tables.feature",
+      "expandedCases": 1,
+      "factIds": [],
+      "expectedOutcomes": [
+        "retained target slide 1 table frame ID 3 cell 0,0 paragraph 0 run 0 has exact saved properties JSON {\"bold\":false}",
+        "saved direct property children remain in schema order",
+        "the exact changed original member set is [\"ppt/slides/slide1.xml\"] with no additions or removals",
+        "every unpatched selected-property attribute and child retains its literal original bytes",
+        "all other XML spans, text leaves, runs, paragraphs and unrelated member payloads retain custody",
+        "actual caller input, original identities, relationships and content-type graph are unchanged"
+      ],
+      "consumers": {
+        "bun": {
+          "status": "planned",
+          "evidence": []
+        },
+        "go": {
+          "status": "planned",
+          "evidence": []
+        },
+        "python": {
+          "status": "planned",
+          "evidence": []
+        }
+      }
+    },
+    {
+      "id": "@id-pptx-table-properties-refusal",
+      "feature": "workflows/pptx/tables.feature",
+      "expandedCases": 1,
+      "factIds": [],
+      "expectedOutcomes": [
+        "retained target slide 1 table frame ID 3 cell 0,0 has exact saved properties JSON {\"refusal\":\"invalid-table-properties\"}",
+        "saved direct property children remain in schema order",
+        "the exact changed original member set is [] with no additions or removals",
+        "every unpatched selected-property attribute and child retains its literal original bytes",
+        "all other XML spans, text leaves, runs, paragraphs and unrelated member payloads retain custody",
+        "actual caller input, original identities, relationships and content-type graph are unchanged",
+        "refusal reason invalid-table-properties preserves session bytes and held target usability before save"
+      ],
+      "consumers": {
+        "bun": {
+          "status": "planned",
+          "evidence": []
+        },
+        "go": {
+          "status": "planned",
+          "evidence": []
+        },
+        "python": {
+          "status": "planned",
+          "evidence": []
+        }
+      }
+    },
+    {
+      "id": "@id-docx-table-properties-cell-shading",
+      "feature": "workflows/docx/tables.feature",
+      "expandedCases": 1,
+      "factIds": [],
+      "expectedOutcomes": [
+        "retained target table 0 row 0 cell 0 has exact saved properties JSON {\"shading\":\"A1B2C3\",\"pattern\":\"clear\",\"color\":\"auto\"}",
+        "saved direct property children remain in schema order",
+        "the exact changed original member set is [\"word/document.xml\"] with no additions or removals",
+        "every unpatched selected-property attribute and child retains its literal original bytes",
+        "all other XML spans, text leaves, runs, paragraphs and unrelated member payloads retain custody",
+        "actual caller input, original identities, relationships and content-type graph are unchanged"
+      ],
+      "consumers": {
+        "bun": {
+          "status": "planned",
+          "evidence": []
+        },
+        "go": {
+          "status": "planned",
+          "evidence": []
+        },
+        "python": {
+          "status": "planned",
+          "evidence": []
+        }
+      }
+    },
+    {
+      "id": "@id-docx-table-properties-cell-inherit-shading",
+      "feature": "workflows/docx/tables.feature",
+      "expandedCases": 1,
+      "factIds": [],
+      "expectedOutcomes": [
+        "retained target table 0 row 0 cell 0 has exact saved properties JSON {\"absent\":[\"shd\"]}",
+        "saved direct property children remain in schema order",
+        "the exact changed original member set is [\"word/document.xml\"] with no additions or removals",
+        "every unpatched selected-property attribute and child retains its literal original bytes",
+        "all other XML spans, text leaves, runs, paragraphs and unrelated member payloads retain custody",
+        "actual caller input, original identities, relationships and content-type graph are unchanged"
+      ],
+      "consumers": {
+        "bun": {
+          "status": "planned",
+          "evidence": []
+        },
+        "go": {
+          "status": "planned",
+          "evidence": []
+        },
+        "python": {
+          "status": "planned",
+          "evidence": []
+        }
+      }
+    },
+    {
+      "id": "@id-docx-table-properties-cell-anchor",
+      "feature": "workflows/docx/tables.feature",
+      "expandedCases": 1,
+      "factIds": [],
+      "expectedOutcomes": [
+        "retained target table 0 row 0 cell 0 has exact saved properties JSON {\"verticalAlign\":\"center\"}",
+        "saved direct property children remain in schema order",
+        "the exact changed original member set is [\"word/document.xml\"] with no additions or removals",
+        "every unpatched selected-property attribute and child retains its literal original bytes",
+        "all other XML spans, text leaves, runs, paragraphs and unrelated member payloads retain custody",
+        "actual caller input, original identities, relationships and content-type graph are unchanged"
+      ],
+      "consumers": {
+        "bun": {
+          "status": "planned",
+          "evidence": []
+        },
+        "go": {
+          "status": "planned",
+          "evidence": []
+        },
+        "python": {
+          "status": "planned",
+          "evidence": []
+        }
+      }
+    },
+    {
+      "id": "@id-docx-table-properties-cell-direction",
+      "feature": "workflows/docx/tables.feature",
+      "expandedCases": 1,
+      "factIds": [],
+      "expectedOutcomes": [
+        "retained target table 0 row 0 cell 0 has exact saved properties JSON {\"textDirection\":\"tbRl\"}",
+        "saved direct property children remain in schema order",
+        "the exact changed original member set is [\"word/document.xml\"] with no additions or removals",
+        "every unpatched selected-property attribute and child retains its literal original bytes",
+        "all other XML spans, text leaves, runs, paragraphs and unrelated member payloads retain custody",
+        "actual caller input, original identities, relationships and content-type graph are unchanged"
+      ],
+      "consumers": {
+        "bun": {
+          "status": "planned",
+          "evidence": []
+        },
+        "go": {
+          "status": "planned",
+          "evidence": []
+        },
+        "python": {
+          "status": "planned",
+          "evidence": []
+        }
+      }
+    },
+    {
+      "id": "@id-docx-table-properties-cell-margins",
+      "feature": "workflows/docx/tables.feature",
+      "expandedCases": 1,
+      "factIds": [],
+      "expectedOutcomes": [
+        "retained target table 0 row 0 cell 0 has exact saved properties JSON {\"margins\":{\"top\":120,\"left\":240,\"bottom\":120,\"right\":240,\"type\":\"dxa\"}}",
+        "saved direct property children remain in schema order",
+        "the exact changed original member set is [\"word/document.xml\"] with no additions or removals",
+        "every unpatched selected-property attribute and child retains its literal original bytes",
+        "all other XML spans, text leaves, runs, paragraphs and unrelated member payloads retain custody",
+        "actual caller input, original identities, relationships and content-type graph are unchanged"
+      ],
+      "consumers": {
+        "bun": {
+          "status": "planned",
+          "evidence": []
+        },
+        "go": {
+          "status": "planned",
+          "evidence": []
+        },
+        "python": {
+          "status": "planned",
+          "evidence": []
+        }
+      }
+    },
+    {
+      "id": "@id-docx-table-properties-border-top",
+      "feature": "workflows/docx/tables.feature",
+      "expandedCases": 1,
+      "factIds": [],
+      "expectedOutcomes": [
+        "retained target table 0 row 0 cell 0 has exact saved properties JSON {\"border\":{\"side\":\"top\",\"style\":\"single\",\"size\":8,\"color\":\"334455\"}}",
+        "saved direct property children remain in schema order",
+        "the exact changed original member set is [\"word/document.xml\"] with no additions or removals",
+        "every unpatched selected-property attribute and child retains its literal original bytes",
+        "all other XML spans, text leaves, runs, paragraphs and unrelated member payloads retain custody",
+        "actual caller input, original identities, relationships and content-type graph are unchanged"
+      ],
+      "consumers": {
+        "bun": {
+          "status": "planned",
+          "evidence": []
+        },
+        "go": {
+          "status": "planned",
+          "evidence": []
+        },
+        "python": {
+          "status": "planned",
+          "evidence": []
+        }
+      }
+    },
+    {
+      "id": "@id-docx-table-properties-border-left",
+      "feature": "workflows/docx/tables.feature",
+      "expandedCases": 1,
+      "factIds": [],
+      "expectedOutcomes": [
+        "retained target table 0 row 0 cell 0 has exact saved properties JSON {\"border\":{\"side\":\"left\",\"style\":\"single\",\"size\":8,\"color\":\"334455\"}}",
+        "saved direct property children remain in schema order",
+        "the exact changed original member set is [\"word/document.xml\"] with no additions or removals",
+        "every unpatched selected-property attribute and child retains its literal original bytes",
+        "all other XML spans, text leaves, runs, paragraphs and unrelated member payloads retain custody",
+        "actual caller input, original identities, relationships and content-type graph are unchanged"
+      ],
+      "consumers": {
+        "bun": {
+          "status": "planned",
+          "evidence": []
+        },
+        "go": {
+          "status": "planned",
+          "evidence": []
+        },
+        "python": {
+          "status": "planned",
+          "evidence": []
+        }
+      }
+    },
+    {
+      "id": "@id-docx-table-properties-border-bottom",
+      "feature": "workflows/docx/tables.feature",
+      "expandedCases": 1,
+      "factIds": [],
+      "expectedOutcomes": [
+        "retained target table 0 row 0 cell 0 has exact saved properties JSON {\"border\":{\"side\":\"bottom\",\"style\":\"single\",\"size\":8,\"color\":\"334455\"}}",
+        "saved direct property children remain in schema order",
+        "the exact changed original member set is [\"word/document.xml\"] with no additions or removals",
+        "every unpatched selected-property attribute and child retains its literal original bytes",
+        "all other XML spans, text leaves, runs, paragraphs and unrelated member payloads retain custody",
+        "actual caller input, original identities, relationships and content-type graph are unchanged"
+      ],
+      "consumers": {
+        "bun": {
+          "status": "planned",
+          "evidence": []
+        },
+        "go": {
+          "status": "planned",
+          "evidence": []
+        },
+        "python": {
+          "status": "planned",
+          "evidence": []
+        }
+      }
+    },
+    {
+      "id": "@id-docx-table-properties-border-right",
+      "feature": "workflows/docx/tables.feature",
+      "expandedCases": 1,
+      "factIds": [],
+      "expectedOutcomes": [
+        "retained target table 0 row 0 cell 0 has exact saved properties JSON {\"border\":{\"side\":\"right\",\"style\":\"single\",\"size\":8,\"color\":\"334455\"}}",
+        "saved direct property children remain in schema order",
+        "the exact changed original member set is [\"word/document.xml\"] with no additions or removals",
+        "every unpatched selected-property attribute and child retains its literal original bytes",
+        "all other XML spans, text leaves, runs, paragraphs and unrelated member payloads retain custody",
+        "actual caller input, original identities, relationships and content-type graph are unchanged"
+      ],
+      "consumers": {
+        "bun": {
+          "status": "planned",
+          "evidence": []
+        },
+        "go": {
+          "status": "planned",
+          "evidence": []
+        },
+        "python": {
+          "status": "planned",
+          "evidence": []
+        }
+      }
+    },
+    {
+      "id": "@id-docx-table-properties-border-remove",
+      "feature": "workflows/docx/tables.feature",
+      "expandedCases": 1,
+      "factIds": [],
+      "expectedOutcomes": [
+        "retained target table 0 row 0 cell 0 has exact saved properties JSON {\"absentBorder\":[\"top\"]}",
+        "saved direct property children remain in schema order",
+        "the exact changed original member set is [\"word/document.xml\"] with no additions or removals",
+        "every unpatched selected-property attribute and child retains its literal original bytes",
+        "all other XML spans, text leaves, runs, paragraphs and unrelated member payloads retain custody",
+        "actual caller input, original identities, relationships and content-type graph are unchanged"
+      ],
+      "consumers": {
+        "bun": {
+          "status": "planned",
+          "evidence": []
+        },
+        "go": {
+          "status": "planned",
+          "evidence": []
+        },
+        "python": {
+          "status": "planned",
+          "evidence": []
+        }
+      }
+    },
+    {
+      "id": "@id-docx-table-properties-cell-no-wrap",
+      "feature": "workflows/docx/tables.feature",
+      "expandedCases": 1,
+      "factIds": [],
+      "expectedOutcomes": [
+        "retained target table 0 row 0 cell 0 has exact saved properties JSON {\"noWrap\":true}",
+        "saved direct property children remain in schema order",
+        "the exact changed original member set is [\"word/document.xml\"] with no additions or removals",
+        "every unpatched selected-property attribute and child retains its literal original bytes",
+        "all other XML spans, text leaves, runs, paragraphs and unrelated member payloads retain custody",
+        "actual caller input, original identities, relationships and content-type graph are unchanged"
+      ],
+      "consumers": {
+        "bun": {
+          "status": "planned",
+          "evidence": []
+        },
+        "go": {
+          "status": "planned",
+          "evidence": []
+        },
+        "python": {
+          "status": "planned",
+          "evidence": []
+        }
+      }
+    },
+    {
+      "id": "@id-docx-table-properties-cell-fit-text",
+      "feature": "workflows/docx/tables.feature",
+      "expandedCases": 1,
+      "factIds": [],
+      "expectedOutcomes": [
+        "retained target table 0 row 0 cell 0 has exact saved properties JSON {\"tcFitText\":true}",
+        "saved direct property children remain in schema order",
+        "the exact changed original member set is [\"word/document.xml\"] with no additions or removals",
+        "every unpatched selected-property attribute and child retains its literal original bytes",
+        "all other XML spans, text leaves, runs, paragraphs and unrelated member payloads retain custody",
+        "actual caller input, original identities, relationships and content-type graph are unchanged"
+      ],
+      "consumers": {
+        "bun": {
+          "status": "planned",
+          "evidence": []
+        },
+        "go": {
+          "status": "planned",
+          "evidence": []
+        },
+        "python": {
+          "status": "planned",
+          "evidence": []
+        }
+      }
+    },
+    {
+      "id": "@id-docx-table-properties-cell-width",
+      "feature": "workflows/docx/tables.feature",
+      "expandedCases": 1,
+      "factIds": [],
+      "expectedOutcomes": [
+        "retained target table 0 row 0 cell 0 has exact saved properties JSON {\"width\":2400,\"widthType\":\"dxa\",\"grid\":[2880,2880,2880]}",
+        "saved direct property children remain in schema order",
+        "the exact changed original member set is [\"word/document.xml\"] with no additions or removals",
+        "every unpatched selected-property attribute and child retains its literal original bytes",
+        "all other XML spans, text leaves, runs, paragraphs and unrelated member payloads retain custody",
+        "actual caller input, original identities, relationships and content-type graph are unchanged"
+      ],
+      "consumers": {
+        "bun": {
+          "status": "planned",
+          "evidence": []
+        },
+        "go": {
+          "status": "planned",
+          "evidence": []
+        },
+        "python": {
+          "status": "planned",
+          "evidence": []
+        }
+      }
+    },
+    {
+      "id": "@id-docx-table-properties-row-header",
+      "feature": "workflows/docx/tables.feature",
+      "expandedCases": 1,
+      "factIds": [],
+      "expectedOutcomes": [
+        "retained target table 0 row 0 has exact saved properties JSON {\"tblHeader\":true}",
+        "saved direct property children remain in schema order",
+        "the exact changed original member set is [\"word/document.xml\"] with no additions or removals",
+        "every unpatched selected-property attribute and child retains its literal original bytes",
+        "all other XML spans, text leaves, runs, paragraphs and unrelated member payloads retain custody",
+        "actual caller input, original identities, relationships and content-type graph are unchanged"
+      ],
+      "consumers": {
+        "bun": {
+          "status": "planned",
+          "evidence": []
+        },
+        "go": {
+          "status": "planned",
+          "evidence": []
+        },
+        "python": {
+          "status": "planned",
+          "evidence": []
+        }
+      }
+    },
+    {
+      "id": "@id-docx-table-properties-row-cant-split",
+      "feature": "workflows/docx/tables.feature",
+      "expandedCases": 1,
+      "factIds": [],
+      "expectedOutcomes": [
+        "retained target table 0 row 0 has exact saved properties JSON {\"cantSplit\":true}",
+        "saved direct property children remain in schema order",
+        "the exact changed original member set is [\"word/document.xml\"] with no additions or removals",
+        "every unpatched selected-property attribute and child retains its literal original bytes",
+        "all other XML spans, text leaves, runs, paragraphs and unrelated member payloads retain custody",
+        "actual caller input, original identities, relationships and content-type graph are unchanged"
+      ],
+      "consumers": {
+        "bun": {
+          "status": "planned",
+          "evidence": []
+        },
+        "go": {
+          "status": "planned",
+          "evidence": []
+        },
+        "python": {
+          "status": "planned",
+          "evidence": []
+        }
+      }
+    },
+    {
+      "id": "@id-docx-table-properties-row-height",
+      "feature": "workflows/docx/tables.feature",
+      "expandedCases": 1,
+      "factIds": [],
+      "expectedOutcomes": [
+        "retained target table 0 row 0 has exact saved properties JSON {\"height\":480,\"heightRule\":\"exact\"}",
+        "saved direct property children remain in schema order",
+        "the exact changed original member set is [\"word/document.xml\"] with no additions or removals",
+        "every unpatched selected-property attribute and child retains its literal original bytes",
+        "all other XML spans, text leaves, runs, paragraphs and unrelated member payloads retain custody",
+        "actual caller input, original identities, relationships and content-type graph are unchanged"
+      ],
+      "consumers": {
+        "bun": {
+          "status": "planned",
+          "evidence": []
+        },
+        "go": {
+          "status": "planned",
+          "evidence": []
+        },
+        "python": {
+          "status": "planned",
+          "evidence": []
+        }
+      }
+    },
+    {
+      "id": "@id-docx-table-properties-table-alignment",
+      "feature": "workflows/docx/tables.feature",
+      "expandedCases": 1,
+      "factIds": [],
+      "expectedOutcomes": [
+        "retained target table 0 has exact saved properties JSON {\"alignment\":\"center\"}",
+        "saved direct property children remain in schema order",
+        "the exact changed original member set is [\"word/document.xml\"] with no additions or removals",
+        "every unpatched selected-property attribute and child retains its literal original bytes",
+        "all other XML spans, text leaves, runs, paragraphs and unrelated member payloads retain custody",
+        "actual caller input, original identities, relationships and content-type graph are unchanged"
+      ],
+      "consumers": {
+        "bun": {
+          "status": "planned",
+          "evidence": []
+        },
+        "go": {
+          "status": "planned",
+          "evidence": []
+        },
+        "python": {
+          "status": "planned",
+          "evidence": []
+        }
+      }
+    },
+    {
+      "id": "@id-docx-table-properties-table-indent",
+      "feature": "workflows/docx/tables.feature",
+      "expandedCases": 1,
+      "factIds": [],
+      "expectedOutcomes": [
+        "retained target table 0 has exact saved properties JSON {\"indent\":720,\"indentType\":\"dxa\"}",
+        "saved direct property children remain in schema order",
+        "the exact changed original member set is [\"word/document.xml\"] with no additions or removals",
+        "every unpatched selected-property attribute and child retains its literal original bytes",
+        "all other XML spans, text leaves, runs, paragraphs and unrelated member payloads retain custody",
+        "actual caller input, original identities, relationships and content-type graph are unchanged"
+      ],
+      "consumers": {
+        "bun": {
+          "status": "planned",
+          "evidence": []
+        },
+        "go": {
+          "status": "planned",
+          "evidence": []
+        },
+        "python": {
+          "status": "planned",
+          "evidence": []
+        }
+      }
+    },
+    {
+      "id": "@id-docx-table-properties-cell-hide-mark",
+      "feature": "workflows/docx/tables.feature",
+      "expandedCases": 1,
+      "factIds": [],
+      "expectedOutcomes": [
+        "retained target table 0 row 0 cell 0 has exact saved properties JSON {\"hideMark\":true}",
+        "saved direct property children remain in schema order",
+        "the exact changed original member set is [\"word/document.xml\"] with no additions or removals",
+        "every unpatched selected-property attribute and child retains its literal original bytes",
+        "all other XML spans, text leaves, runs, paragraphs and unrelated member payloads retain custody",
+        "actual caller input, original identities, relationships and content-type graph are unchanged"
+      ],
+      "consumers": {
+        "bun": {
+          "status": "planned",
+          "evidence": []
+        },
+        "go": {
+          "status": "planned",
+          "evidence": []
+        },
+        "python": {
+          "status": "planned",
+          "evidence": []
+        }
+      }
+    },
+    {
+      "id": "@id-docx-table-properties-refusal",
+      "feature": "workflows/docx/tables.feature",
+      "expandedCases": 1,
+      "factIds": [],
+      "expectedOutcomes": [
+        "retained target table 0 row 0 cell 0 has exact saved properties JSON {\"refusal\":\"invalid-table-properties\"}",
+        "saved direct property children remain in schema order",
+        "the exact changed original member set is [] with no additions or removals",
+        "every unpatched selected-property attribute and child retains its literal original bytes",
+        "all other XML spans, text leaves, runs, paragraphs and unrelated member payloads retain custody",
+        "actual caller input, original identities, relationships and content-type graph are unchanged",
+        "refusal reason invalid-table-properties preserves session bytes and held target usability before save"
+      ],
+      "consumers": {
+        "bun": {
+          "status": "planned",
+          "evidence": []
+        },
+        "go": {
+          "status": "planned",
+          "evidence": []
+        },
+        "python": {
+          "status": "planned",
+          "evidence": []
+        }
+      }
     }
   ],
   "consumerStatusPolicy": "Missing/unmapped/planned means not-run and no execution credit."
