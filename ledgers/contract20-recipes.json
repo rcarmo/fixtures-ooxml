@@ -1,0 +1,342 @@
+{
+  "schemaVersion": 1,
+  "state": "Reviewed literal input recipes; no runtime execution credit",
+  "executionCredit": false,
+  "xlsx": [
+    {
+      "id": "rel-values",
+      "construction": "Literal UTF-8 member map packed by a native ZIP writer; no OOXML creator/reader under test constructs the input",
+      "historicalProvenance": {
+        "repository": "bun-ooxml",
+        "commit": "2389c3486820a9083734a67f2ffe546c3c97a230",
+        "path": "tests/acceptance/xlsx.ts",
+        "declaration": "createRelLinkedSharedStringsWorkbook",
+        "sourceSha256": "2d24d4de5172b9a4a038fbb1e137a1926cdd1568f0da9bb9b30cce4d6cc75629"
+      },
+      "members": {
+        "[Content_Types].xml": "<?xml version=\"1.0\" encoding=\"UTF-8\"?><Types xmlns=\"http://schemas.openxmlformats.org/package/2006/content-types\"><Default Extension=\"rels\" ContentType=\"application/vnd.openxmlformats-package.relationships+xml\"/><Default Extension=\"xml\" ContentType=\"application/xml\"/><Override PartName=\"/xl/workbook.xml\" ContentType=\"application/vnd.openxmlformats-officedocument.spreadsheetml.sheet.main+xml\"/><Override PartName=\"/xl/worksheets/sheet1.xml\" ContentType=\"application/vnd.openxmlformats-officedocument.spreadsheetml.worksheet+xml\"/><Override PartName=\"/xl/worksheets/sheet2.xml\" ContentType=\"application/vnd.openxmlformats-officedocument.spreadsheetml.worksheet+xml\"/><Override PartName=\"/xl/sharedStrings.xml\" ContentType=\"application/vnd.openxmlformats-officedocument.spreadsheetml.sharedStrings+xml\"/><Default Extension=\"bin\" ContentType=\"application/octet-stream\"/></Types>",
+        "_rels/.rels": "<?xml version=\"1.0\" encoding=\"UTF-8\"?><Relationships xmlns=\"http://schemas.openxmlformats.org/package/2006/relationships\"><Relationship Id=\"rId1\" Type=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships/officeDocument\" Target=\"xl/workbook.xml\"/></Relationships>",
+        "xl/workbook.xml": "<?xml version=\"1.0\" encoding=\"UTF-8\"?><workbook xmlns=\"http://schemas.openxmlformats.org/spreadsheetml/2006/main\"\n          xmlns:r=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships\"><sheets><sheet name=\"Alpha\" sheetId=\"1\" r:id=\"rId2\"/><sheet name=\"Beta\" sheetId=\"2\" r:id=\"rId1\"/></sheets><calcPr calcId=\"124519\"/></workbook>",
+        "xl/_rels/workbook.xml.rels": "<?xml version=\"1.0\" encoding=\"UTF-8\"?><Relationships xmlns=\"http://schemas.openxmlformats.org/package/2006/relationships\"><Relationship Id=\"rId1\" Type=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships/worksheet\" Target=\"worksheets/sheet1.xml\"/><Relationship Id=\"rId2\" Type=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships/worksheet\" Target=\"worksheets/sheet2.xml\"/><Relationship Id=\"rId3\" Type=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships/sharedStrings\" Target=\"sharedStrings.xml\"/></Relationships>",
+        "xl/sharedStrings.xml": "<?xml version=\"1.0\" encoding=\"UTF-8\"?><sst xmlns=\"http://schemas.openxmlformats.org/spreadsheetml/2006/main\" count=\"2\" uniqueCount=\"2\"><si><t>alpha shared</t></si><si><t>beta shared</t></si></sst>",
+        "xl/worksheets/sheet1.xml": "<?xml version=\"1.0\" encoding=\"UTF-8\"?><worksheet xmlns=\"http://schemas.openxmlformats.org/spreadsheetml/2006/main\"><sheetData><row r=\"1\"><c r=\"A1\" t=\"s\"><v>1</v></c><c r=\"B1\" t=\"n\"><v>42</v></c><c r=\"C1\" t=\"b\"><v>1</v></c><c r=\"D1\"><f>B1*2</f><v>84</v></c></row></sheetData></worksheet>",
+        "xl/worksheets/sheet2.xml": "<?xml version=\"1.0\" encoding=\"UTF-8\"?><worksheet xmlns=\"http://schemas.openxmlformats.org/spreadsheetml/2006/main\"><sheetData><row r=\"1\"><c r=\"A1\" t=\"s\"><v>0</v></c><c r=\"B1\"><v>7</v></c><c r=\"C1\" t=\"b\"><v>0</v></c><c r=\"D1\"><f>B1+1</f><v>8</v></c></row></sheetData></worksheet>",
+        "custom/custody.bin": "contract20-unchanged"
+      }
+    },
+    {
+      "id": "cross-caches",
+      "construction": "Literal UTF-8 member map packed by a native ZIP writer; no OOXML creator/reader under test constructs the input",
+      "historicalProvenance": {
+        "repository": "bun-ooxml",
+        "commit": "2389c3486820a9083734a67f2ffe546c3c97a230",
+        "path": "tests/acceptance/xlsx.ts",
+        "declaration": "createCrossSheetCachedFormulaWorkbook",
+        "sourceSha256": "2d24d4de5172b9a4a038fbb1e137a1926cdd1568f0da9bb9b30cce4d6cc75629"
+      },
+      "members": {
+        "[Content_Types].xml": "<?xml version=\"1.0\" encoding=\"UTF-8\"?><Types xmlns=\"http://schemas.openxmlformats.org/package/2006/content-types\"><Default Extension=\"rels\" ContentType=\"application/vnd.openxmlformats-package.relationships+xml\"/><Default Extension=\"xml\" ContentType=\"application/xml\"/><Override PartName=\"/xl/workbook.xml\" ContentType=\"application/vnd.openxmlformats-officedocument.spreadsheetml.sheet.main+xml\"/><Override PartName=\"/xl/worksheets/sheet1.xml\" ContentType=\"application/vnd.openxmlformats-officedocument.spreadsheetml.worksheet+xml\"/><Override PartName=\"/xl/worksheets/sheet2.xml\" ContentType=\"application/vnd.openxmlformats-officedocument.spreadsheetml.worksheet+xml\"/><Default Extension=\"bin\" ContentType=\"application/octet-stream\"/></Types>",
+        "_rels/.rels": "<?xml version=\"1.0\" encoding=\"UTF-8\"?><Relationships xmlns=\"http://schemas.openxmlformats.org/package/2006/relationships\"><Relationship Id=\"rId1\" Type=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships/officeDocument\" Target=\"xl/workbook.xml\"/></Relationships>",
+        "xl/workbook.xml": "<?xml version=\"1.0\" encoding=\"UTF-8\"?><workbook xmlns=\"http://schemas.openxmlformats.org/spreadsheetml/2006/main\"\n          xmlns:r=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships\"><sheets><sheet name=\"Model\" sheetId=\"1\" r:id=\"rId1\"/><sheet name=\"Summary\" sheetId=\"2\" r:id=\"rId2\"/></sheets><calcPr calcId=\"124519\"/></workbook>",
+        "xl/_rels/workbook.xml.rels": "<?xml version=\"1.0\" encoding=\"UTF-8\"?><Relationships xmlns=\"http://schemas.openxmlformats.org/package/2006/relationships\"><Relationship Id=\"rId1\" Type=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships/worksheet\" Target=\"worksheets/sheet1.xml\"/><Relationship Id=\"rId2\" Type=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships/worksheet\" Target=\"worksheets/sheet2.xml\"/></Relationships>",
+        "xl/worksheets/sheet1.xml": "<?xml version=\"1.0\" encoding=\"UTF-8\"?><worksheet xmlns=\"http://schemas.openxmlformats.org/spreadsheetml/2006/main\"><sheetData><row r=\"1\"><c r=\"A1\"><v>1</v></c><c r=\"B1\"><f>A1+A2</f><v>3</v></c></row><row r=\"2\"><c r=\"A2\"><v>2</v></c><c r=\"B2\"><f>B1*2</f><v>6</v></c></row></sheetData></worksheet>",
+        "xl/worksheets/sheet2.xml": "<?xml version=\"1.0\" encoding=\"UTF-8\"?><worksheet xmlns=\"http://schemas.openxmlformats.org/spreadsheetml/2006/main\"><sheetData><row r=\"1\"><c r=\"A1\"><f>Model!B1*3</f><v>9</v></c><c r=\"B1\"><f>40+2</f><v>42</v></c></row></sheetData></worksheet>",
+        "custom/custody.bin": "contract20-unchanged"
+      }
+    },
+    {
+      "id": "prefixed-cells",
+      "construction": "Literal UTF-8 member map packed by a native ZIP writer; no OOXML creator/reader under test constructs the input",
+      "historicalProvenance": {
+        "repository": "bun-ooxml",
+        "commit": "2389c3486820a9083734a67f2ffe546c3c97a230",
+        "path": "tests/acceptance/xlsx.ts",
+        "declaration": "createPrefixedWorkbookWithBlankCellsAndFormula",
+        "sourceSha256": "2d24d4de5172b9a4a038fbb1e137a1926cdd1568f0da9bb9b30cce4d6cc75629"
+      },
+      "members": {
+        "[Content_Types].xml": "<?xml version=\"1.0\" encoding=\"UTF-8\"?><Types xmlns=\"http://schemas.openxmlformats.org/package/2006/content-types\"><Default Extension=\"rels\" ContentType=\"application/vnd.openxmlformats-package.relationships+xml\"/><Default Extension=\"xml\" ContentType=\"application/xml\"/><Override PartName=\"/xl/workbook.xml\" ContentType=\"application/vnd.openxmlformats-officedocument.spreadsheetml.sheet.main+xml\"/><Override PartName=\"/xl/worksheets/sheet1.xml\" ContentType=\"application/vnd.openxmlformats-officedocument.spreadsheetml.worksheet+xml\"/><Override PartName=\"/xl/styles.xml\" ContentType=\"application/vnd.openxmlformats-officedocument.spreadsheetml.styles+xml\"/><Default Extension=\"bin\" ContentType=\"application/octet-stream\"/></Types>",
+        "_rels/.rels": "<?xml version=\"1.0\" encoding=\"UTF-8\"?><Relationships xmlns=\"http://schemas.openxmlformats.org/package/2006/relationships\"><Relationship Id=\"rId1\" Type=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships/officeDocument\" Target=\"xl/workbook.xml\"/></Relationships>",
+        "xl/workbook.xml": "<?xml version=\"1.0\" encoding=\"UTF-8\"?><x:workbook xmlns:x=\"http://schemas.openxmlformats.org/spreadsheetml/2006/main\"\n          xmlns:r=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships\"><x:sheets><x:sheet name=\"Prefixed\" sheetId=\"1\" r:id=\"rId1\"/></x:sheets></x:workbook>",
+        "xl/_rels/workbook.xml.rels": "<?xml version=\"1.0\" encoding=\"UTF-8\"?><Relationships xmlns=\"http://schemas.openxmlformats.org/package/2006/relationships\"><Relationship Id=\"rId1\" Type=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships/worksheet\" Target=\"worksheets/sheet1.xml\"/><Relationship Id=\"rIdStyles\" Type=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships/styles\" Target=\"styles.xml\"/></Relationships>",
+        "xl/worksheets/sheet1.xml": "<?xml version=\"1.0\" encoding=\"UTF-8\"?><x:worksheet xmlns:x=\"http://schemas.openxmlformats.org/spreadsheetml/2006/main\"><x:sheetData><x:row r=\"1\"><x:c r=\"A1\" s=\"1\"/><x:c r=\"B1\" s=\"2\"/><x:c r=\"C1\"><x:f>1+1</x:f><x:v>2</x:v></x:c></x:row></x:sheetData></x:worksheet>",
+        "xl/styles.xml": "<?xml version=\"1.0\" encoding=\"UTF-8\"?><styleSheet xmlns=\"http://schemas.openxmlformats.org/spreadsheetml/2006/main\"><fonts count=\"1\"><font><sz val=\"11\"/><name val=\"Calibri\"/></font></fonts><fills count=\"2\"><fill><patternFill patternType=\"none\"/></fill><fill><patternFill patternType=\"gray125\"/></fill></fills><borders count=\"1\"><border><left/><right/><top/><bottom/><diagonal/></border></borders><cellStyleXfs count=\"1\"><xf numFmtId=\"0\" fontId=\"0\" fillId=\"0\" borderId=\"0\"/></cellStyleXfs><cellXfs count=\"3\"><xf numFmtId=\"0\" fontId=\"0\" fillId=\"0\" borderId=\"0\" xfId=\"0\"/><xf numFmtId=\"0\" fontId=\"0\" fillId=\"0\" borderId=\"0\" xfId=\"0\" applyAlignment=\"1\"><alignment horizontal=\"left\"/></xf><xf numFmtId=\"1\" fontId=\"0\" fillId=\"0\" borderId=\"0\" xfId=\"0\" applyNumberFormat=\"1\"/></cellXfs><cellStyles count=\"1\"><cellStyle name=\"Normal\" xfId=\"0\" builtinId=\"0\"/></cellStyles></styleSheet>",
+        "custom/custody.bin": "contract20-unchanged"
+      },
+      "inputAdoption": "Add valid literal cellXfs0/1/2; historical dangling style indexes are not accepted as equivalent recipe evidence"
+    },
+    {
+      "id": "phonetic-strings",
+      "construction": "Literal UTF-8 member map packed by a native ZIP writer; no OOXML creator/reader under test constructs the input",
+      "historicalProvenance": {
+        "repository": "bun-ooxml",
+        "commit": "2389c3486820a9083734a67f2ffe546c3c97a230",
+        "path": "tests/acceptance/xlsx.ts",
+        "declaration": "createPhoneticRichTextWorkbook",
+        "sourceSha256": "2d24d4de5172b9a4a038fbb1e137a1926cdd1568f0da9bb9b30cce4d6cc75629"
+      },
+      "members": {
+        "[Content_Types].xml": "<?xml version=\"1.0\" encoding=\"UTF-8\"?><Types xmlns=\"http://schemas.openxmlformats.org/package/2006/content-types\"><Default Extension=\"rels\" ContentType=\"application/vnd.openxmlformats-package.relationships+xml\"/><Default Extension=\"xml\" ContentType=\"application/xml\"/><Override PartName=\"/xl/workbook.xml\" ContentType=\"application/vnd.openxmlformats-officedocument.spreadsheetml.sheet.main+xml\"/><Override PartName=\"/xl/worksheets/sheet1.xml\" ContentType=\"application/vnd.openxmlformats-officedocument.spreadsheetml.worksheet+xml\"/><Override PartName=\"/xl/sharedStrings.xml\" ContentType=\"application/vnd.openxmlformats-officedocument.spreadsheetml.sharedStrings+xml\"/><Default Extension=\"bin\" ContentType=\"application/octet-stream\"/></Types>",
+        "_rels/.rels": "<?xml version=\"1.0\" encoding=\"UTF-8\"?><Relationships xmlns=\"http://schemas.openxmlformats.org/package/2006/relationships\"><Relationship Id=\"rId1\" Type=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships/officeDocument\" Target=\"xl/workbook.xml\"/></Relationships>",
+        "xl/workbook.xml": "<?xml version=\"1.0\" encoding=\"UTF-8\"?><workbook xmlns=\"http://schemas.openxmlformats.org/spreadsheetml/2006/main\"\n          xmlns:r=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships\"><sheets><sheet name=\"Phonetics\" sheetId=\"1\" r:id=\"rId1\"/></sheets></workbook>",
+        "xl/_rels/workbook.xml.rels": "<?xml version=\"1.0\" encoding=\"UTF-8\"?><Relationships xmlns=\"http://schemas.openxmlformats.org/package/2006/relationships\"><Relationship Id=\"rId1\" Type=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships/worksheet\" Target=\"worksheets/sheet1.xml\"/><Relationship Id=\"rId2\" Type=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships/sharedStrings\" Target=\"sharedStrings.xml\"/></Relationships>",
+        "xl/sharedStrings.xml": "<?xml version=\"1.0\" encoding=\"UTF-8\"?><sst xmlns=\"http://schemas.openxmlformats.org/spreadsheetml/2006/main\" count=\"1\" uniqueCount=\"1\"><si><r><t>Alpha</t></r><r><t xml:space=\"preserve\"> Beta</t></r><rPh sb=\"0\" eb=\"5\"><t>Guide</t></rPh></si></sst>",
+        "xl/worksheets/sheet1.xml": "<?xml version=\"1.0\" encoding=\"UTF-8\"?><worksheet xmlns=\"http://schemas.openxmlformats.org/spreadsheetml/2006/main\"><sheetData><row r=\"1\"><c r=\"A1\" t=\"s\"><v>0</v></c><c r=\"B1\" t=\"inlineStr\"><is><r><t>Gamma</t></r><r><t xml:space=\"preserve\"> Delta</t></r><rPh sb=\"0\" eb=\"5\"><t>Guide</t></rPh></is></c></row></sheetData></worksheet>",
+        "custom/custody.bin": "contract20-unchanged"
+      },
+      "inputAdoption": "Visible r runs precede rPh under CT_Rst; leading-space t uses xml:space=preserve. Imported source remains historical provenance only."
+    },
+    {
+      "id": "styled-blank",
+      "construction": "Literal UTF-8 member map packed by a native ZIP writer; no OOXML creator/reader under test constructs the input",
+      "historicalProvenance": {
+        "repository": "bun-ooxml",
+        "commit": "2389c3486820a9083734a67f2ffe546c3c97a230",
+        "path": "tests/acceptance/xlsx.ts",
+        "declaration": "createStyledBlankCellWorkbook",
+        "sourceSha256": "2d24d4de5172b9a4a038fbb1e137a1926cdd1568f0da9bb9b30cce4d6cc75629"
+      },
+      "members": {
+        "[Content_Types].xml": "<?xml version=\"1.0\" encoding=\"UTF-8\"?><Types xmlns=\"http://schemas.openxmlformats.org/package/2006/content-types\"><Default Extension=\"rels\" ContentType=\"application/vnd.openxmlformats-package.relationships+xml\"/><Default Extension=\"xml\" ContentType=\"application/xml\"/><Override PartName=\"/xl/workbook.xml\" ContentType=\"application/vnd.openxmlformats-officedocument.spreadsheetml.sheet.main+xml\"/><Override PartName=\"/xl/worksheets/sheet1.xml\" ContentType=\"application/vnd.openxmlformats-officedocument.spreadsheetml.worksheet+xml\"/><Override PartName=\"/xl/styles.xml\" ContentType=\"application/vnd.openxmlformats-officedocument.spreadsheetml.styles+xml\"/><Default Extension=\"bin\" ContentType=\"application/octet-stream\"/></Types>",
+        "_rels/.rels": "<?xml version=\"1.0\" encoding=\"UTF-8\"?><Relationships xmlns=\"http://schemas.openxmlformats.org/package/2006/relationships\"><Relationship Id=\"rId1\" Type=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships/officeDocument\" Target=\"xl/workbook.xml\"/></Relationships>",
+        "xl/workbook.xml": "<?xml version=\"1.0\" encoding=\"UTF-8\"?><workbook xmlns=\"http://schemas.openxmlformats.org/spreadsheetml/2006/main\"\n          xmlns:r=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships\"><sheets><sheet name=\"StyledBlank\" sheetId=\"1\" r:id=\"rId1\"/></sheets></workbook>",
+        "xl/_rels/workbook.xml.rels": "<?xml version=\"1.0\" encoding=\"UTF-8\"?><Relationships xmlns=\"http://schemas.openxmlformats.org/package/2006/relationships\"><Relationship Id=\"rId1\" Type=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships/worksheet\" Target=\"worksheets/sheet1.xml\"/><Relationship Id=\"rIdStyles\" Type=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships/styles\" Target=\"styles.xml\"/></Relationships>",
+        "xl/worksheets/sheet1.xml": "<?xml version=\"1.0\" encoding=\"UTF-8\"?><worksheet xmlns=\"http://schemas.openxmlformats.org/spreadsheetml/2006/main\"><sheetData><row r=\"1\"><c r=\"A1\" s=\"1\"/><c r=\"B1\" s=\"2\"><v>5</v></c></row></sheetData></worksheet>",
+        "xl/styles.xml": "<?xml version=\"1.0\" encoding=\"UTF-8\"?><styleSheet xmlns=\"http://schemas.openxmlformats.org/spreadsheetml/2006/main\"><fonts count=\"1\"><font><sz val=\"11\"/><name val=\"Calibri\"/></font></fonts><fills count=\"2\"><fill><patternFill patternType=\"none\"/></fill><fill><patternFill patternType=\"gray125\"/></fill></fills><borders count=\"1\"><border><left/><right/><top/><bottom/><diagonal/></border></borders><cellStyleXfs count=\"1\"><xf numFmtId=\"0\" fontId=\"0\" fillId=\"0\" borderId=\"0\"/></cellStyleXfs><cellXfs count=\"3\"><xf numFmtId=\"0\" fontId=\"0\" fillId=\"0\" borderId=\"0\" xfId=\"0\"/><xf numFmtId=\"0\" fontId=\"0\" fillId=\"0\" borderId=\"0\" xfId=\"0\" applyAlignment=\"1\"><alignment horizontal=\"left\"/></xf><xf numFmtId=\"1\" fontId=\"0\" fillId=\"0\" borderId=\"0\" xfId=\"0\" applyNumberFormat=\"1\"/></cellXfs><cellStyles count=\"1\"><cellStyle name=\"Normal\" xfId=\"0\" builtinId=\"0\"/></cellStyles></styleSheet>",
+        "custom/custody.bin": "contract20-unchanged"
+      },
+      "inputAdoption": "Add valid literal cellXfs0/1/2; historical dangling style indexes are not accepted as equivalent recipe evidence"
+    },
+    {
+      "id": "attributed-formulas",
+      "construction": "Literal UTF-8 member map packed by a native ZIP writer; no OOXML creator/reader under test constructs the input",
+      "historicalProvenance": {
+        "repository": "bun-ooxml",
+        "commit": "2389c34",
+        "path": "tests/fixtures/native-edge-cases.ts",
+        "declaration": "sharedFormulaWorkbook",
+        "observation": "literal formula metadata preserved; runtime-authored scaffold replaced with independent member map"
+      },
+      "members": {
+        "[Content_Types].xml": "<?xml version=\"1.0\" encoding=\"UTF-8\"?><Types xmlns=\"http://schemas.openxmlformats.org/package/2006/content-types\"><Default Extension=\"rels\" ContentType=\"application/vnd.openxmlformats-package.relationships+xml\"/><Default Extension=\"xml\" ContentType=\"application/xml\"/><Override PartName=\"/xl/workbook.xml\" ContentType=\"application/vnd.openxmlformats-officedocument.spreadsheetml.sheet.main+xml\"/><Override PartName=\"/xl/worksheets/sheet1.xml\" ContentType=\"application/vnd.openxmlformats-officedocument.spreadsheetml.worksheet+xml\"/><Default Extension=\"bin\" ContentType=\"application/octet-stream\"/></Types>",
+        "_rels/.rels": "<?xml version=\"1.0\" encoding=\"UTF-8\"?><Relationships xmlns=\"http://schemas.openxmlformats.org/package/2006/relationships\"><Relationship Id=\"rId1\" Type=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships/officeDocument\" Target=\"xl/workbook.xml\"/></Relationships>",
+        "xl/workbook.xml": "<workbook xmlns=\"http://schemas.openxmlformats.org/spreadsheetml/2006/main\" xmlns:r=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships\"><sheets><sheet name=\"Calc\" sheetId=\"1\" r:id=\"rId1\"/></sheets><calcPr calcId=\"124519\"/></workbook>",
+        "xl/_rels/workbook.xml.rels": "<Relationships xmlns=\"http://schemas.openxmlformats.org/package/2006/relationships\"><Relationship Id=\"rId1\" Type=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships/worksheet\" Target=\"worksheets/sheet1.xml\"/></Relationships>",
+        "xl/worksheets/sheet1.xml": "<worksheet xmlns=\"http://schemas.openxmlformats.org/spreadsheetml/2006/main\"><sheetData><row r=\"2\"><c r=\"A2\"><v>1</v></c><c r=\"B2\"><f t=\"shared\" si=\"0\" ref=\"B2:B3\">A2*2</f><v>2</v></c><c r=\"D2\"><f t=\"array\" ref=\"D2:D3\">A2:A3*2</f><v>2</v></c></row><row r=\"3\"><c r=\"A3\"><v>2</v></c><c r=\"B3\"><f t=\"shared\" si=\"0\"/><v>4</v></c><c r=\"D3\"><v>4</v></c></row></sheetData></worksheet>",
+        "custom/custody.bin": "contract20-unchanged"
+      }
+    },
+    {
+      "id": "input-array",
+      "construction": "Literal UTF-8 member map packed by a native ZIP writer; no OOXML creator/reader under test constructs the input",
+      "historicalProvenance": {
+        "repository": "bun-ooxml",
+        "commit": "2389c3486820a9083734a67f2ffe546c3c97a230",
+        "path": "tests/acceptance/xlsx.ts",
+        "declaration": "createCrossSheetCachedFormulaWorkbook",
+        "sourceSha256": "2d24d4de5172b9a4a038fbb1e137a1926cdd1568f0da9bb9b30cce4d6cc75629"
+      },
+      "members": {
+        "[Content_Types].xml": "<?xml version=\"1.0\" encoding=\"UTF-8\"?><Types xmlns=\"http://schemas.openxmlformats.org/package/2006/content-types\"><Default Extension=\"rels\" ContentType=\"application/vnd.openxmlformats-package.relationships+xml\"/><Default Extension=\"xml\" ContentType=\"application/xml\"/><Override PartName=\"/xl/workbook.xml\" ContentType=\"application/vnd.openxmlformats-officedocument.spreadsheetml.sheet.main+xml\"/><Override PartName=\"/xl/worksheets/sheet1.xml\" ContentType=\"application/vnd.openxmlformats-officedocument.spreadsheetml.worksheet+xml\"/><Override PartName=\"/xl/worksheets/sheet2.xml\" ContentType=\"application/vnd.openxmlformats-officedocument.spreadsheetml.worksheet+xml\"/><Default Extension=\"bin\" ContentType=\"application/octet-stream\"/></Types>",
+        "_rels/.rels": "<?xml version=\"1.0\" encoding=\"UTF-8\"?><Relationships xmlns=\"http://schemas.openxmlformats.org/package/2006/relationships\"><Relationship Id=\"rId1\" Type=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships/officeDocument\" Target=\"xl/workbook.xml\"/></Relationships>",
+        "xl/workbook.xml": "<?xml version=\"1.0\" encoding=\"UTF-8\"?><workbook xmlns=\"http://schemas.openxmlformats.org/spreadsheetml/2006/main\"\n          xmlns:r=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships\"><sheets><sheet name=\"Model\" sheetId=\"1\" r:id=\"rId1\"/><sheet name=\"Summary\" sheetId=\"2\" r:id=\"rId2\"/></sheets><calcPr calcId=\"124519\"/></workbook>",
+        "xl/_rels/workbook.xml.rels": "<?xml version=\"1.0\" encoding=\"UTF-8\"?><Relationships xmlns=\"http://schemas.openxmlformats.org/package/2006/relationships\"><Relationship Id=\"rId1\" Type=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships/worksheet\" Target=\"worksheets/sheet1.xml\"/><Relationship Id=\"rId2\" Type=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships/worksheet\" Target=\"worksheets/sheet2.xml\"/></Relationships>",
+        "xl/worksheets/sheet1.xml": "<?xml version=\"1.0\" encoding=\"UTF-8\"?><worksheet xmlns=\"http://schemas.openxmlformats.org/spreadsheetml/2006/main\"><sheetData><row r=\"1\"><c r=\"A1\"><v>1</v></c><c r=\"B1\"><f>A1+A2</f><v>3</v></c></row><row r=\"2\"><c r=\"A2\"><v>2</v></c><c r=\"B2\"><f>B1*2</f><v>6</v></c></row></sheetData></worksheet>",
+        "xl/worksheets/sheet2.xml": "<worksheet xmlns=\"http://schemas.openxmlformats.org/spreadsheetml/2006/main\"><sheetData><row r=\"1\"><c r=\"A1\"><f t=\"array\" ref=\"A1:A2\">Model!A1*{1;2}</f><v>1</v></c></row><row r=\"2\"><c r=\"A2\"><v>2</v></c></row></sheetData></worksheet>",
+        "custom/custody.bin": "contract20-unchanged"
+      },
+      "admission": "Attributed result topology is refused before expression parsing, no evaluation/format legality inferred from deliberately gated formula text"
+    },
+    {
+      "id": "input-dataTable",
+      "construction": "Literal UTF-8 member map packed by a native ZIP writer; no OOXML creator/reader under test constructs the input",
+      "historicalProvenance": {
+        "repository": "bun-ooxml",
+        "commit": "2389c3486820a9083734a67f2ffe546c3c97a230",
+        "path": "tests/acceptance/xlsx.ts",
+        "declaration": "createCrossSheetCachedFormulaWorkbook",
+        "sourceSha256": "2d24d4de5172b9a4a038fbb1e137a1926cdd1568f0da9bb9b30cce4d6cc75629"
+      },
+      "members": {
+        "[Content_Types].xml": "<?xml version=\"1.0\" encoding=\"UTF-8\"?><Types xmlns=\"http://schemas.openxmlformats.org/package/2006/content-types\"><Default Extension=\"rels\" ContentType=\"application/vnd.openxmlformats-package.relationships+xml\"/><Default Extension=\"xml\" ContentType=\"application/xml\"/><Override PartName=\"/xl/workbook.xml\" ContentType=\"application/vnd.openxmlformats-officedocument.spreadsheetml.sheet.main+xml\"/><Override PartName=\"/xl/worksheets/sheet1.xml\" ContentType=\"application/vnd.openxmlformats-officedocument.spreadsheetml.worksheet+xml\"/><Override PartName=\"/xl/worksheets/sheet2.xml\" ContentType=\"application/vnd.openxmlformats-officedocument.spreadsheetml.worksheet+xml\"/><Default Extension=\"bin\" ContentType=\"application/octet-stream\"/></Types>",
+        "_rels/.rels": "<?xml version=\"1.0\" encoding=\"UTF-8\"?><Relationships xmlns=\"http://schemas.openxmlformats.org/package/2006/relationships\"><Relationship Id=\"rId1\" Type=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships/officeDocument\" Target=\"xl/workbook.xml\"/></Relationships>",
+        "xl/workbook.xml": "<?xml version=\"1.0\" encoding=\"UTF-8\"?><workbook xmlns=\"http://schemas.openxmlformats.org/spreadsheetml/2006/main\"\n          xmlns:r=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships\"><sheets><sheet name=\"Model\" sheetId=\"1\" r:id=\"rId1\"/><sheet name=\"Summary\" sheetId=\"2\" r:id=\"rId2\"/></sheets><calcPr calcId=\"124519\"/></workbook>",
+        "xl/_rels/workbook.xml.rels": "<?xml version=\"1.0\" encoding=\"UTF-8\"?><Relationships xmlns=\"http://schemas.openxmlformats.org/package/2006/relationships\"><Relationship Id=\"rId1\" Type=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships/worksheet\" Target=\"worksheets/sheet1.xml\"/><Relationship Id=\"rId2\" Type=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships/worksheet\" Target=\"worksheets/sheet2.xml\"/></Relationships>",
+        "xl/worksheets/sheet1.xml": "<?xml version=\"1.0\" encoding=\"UTF-8\"?><worksheet xmlns=\"http://schemas.openxmlformats.org/spreadsheetml/2006/main\"><sheetData><row r=\"1\"><c r=\"A1\"><v>1</v></c><c r=\"B1\"><f>A1+A2</f><v>3</v></c></row><row r=\"2\"><c r=\"A2\"><v>2</v></c><c r=\"B2\"><f>B1*2</f><v>6</v></c></row></sheetData></worksheet>",
+        "xl/worksheets/sheet2.xml": "<worksheet xmlns=\"http://schemas.openxmlformats.org/spreadsheetml/2006/main\"><sheetData><row r=\"1\"><c r=\"A1\"><f t=\"dataTable\" ref=\"A1:A2\">Model!A1*{1;2}</f><v>1</v></c></row><row r=\"2\"><c r=\"A2\"><v>2</v></c></row></sheetData></worksheet>",
+        "custom/custody.bin": "contract20-unchanged"
+      },
+      "admission": "Attributed result topology is refused before expression parsing, no evaluation/format legality inferred from deliberately gated formula text"
+    },
+    {
+      "id": "opaque-caches",
+      "construction": "Literal UTF-8 member map packed by a native ZIP writer; no OOXML creator/reader under test constructs the input",
+      "historicalProvenance": {
+        "repository": "bun-ooxml",
+        "commit": "2389c3486820a9083734a67f2ffe546c3c97a230",
+        "path": "tests/acceptance/xlsx.ts",
+        "declaration": "createCrossSheetCachedFormulaWorkbook",
+        "sourceSha256": "2d24d4de5172b9a4a038fbb1e137a1926cdd1568f0da9bb9b30cce4d6cc75629"
+      },
+      "members": {
+        "[Content_Types].xml": "<?xml version=\"1.0\" encoding=\"UTF-8\"?><Types xmlns=\"http://schemas.openxmlformats.org/package/2006/content-types\"><Default Extension=\"rels\" ContentType=\"application/vnd.openxmlformats-package.relationships+xml\"/><Default Extension=\"xml\" ContentType=\"application/xml\"/><Override PartName=\"/xl/workbook.xml\" ContentType=\"application/vnd.openxmlformats-officedocument.spreadsheetml.sheet.main+xml\"/><Override PartName=\"/xl/worksheets/sheet1.xml\" ContentType=\"application/vnd.openxmlformats-officedocument.spreadsheetml.worksheet+xml\"/><Override PartName=\"/xl/worksheets/sheet2.xml\" ContentType=\"application/vnd.openxmlformats-officedocument.spreadsheetml.worksheet+xml\"/><Override PartName=\"/xl/charts/cache-boundary.xml\" ContentType=\"application/vnd.openxmlformats-officedocument.drawingml.chart+xml\"/><Override PartName=\"/xl/externalLinks/cache-boundary.xml\" ContentType=\"application/vnd.openxmlformats-officedocument.spreadsheetml.externalLink+xml\"/><Default Extension=\"bin\" ContentType=\"application/octet-stream\"/></Types>",
+        "_rels/.rels": "<?xml version=\"1.0\" encoding=\"UTF-8\"?><Relationships xmlns=\"http://schemas.openxmlformats.org/package/2006/relationships\"><Relationship Id=\"rId1\" Type=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships/officeDocument\" Target=\"xl/workbook.xml\"/><Relationship Id=\"cache1\" Type=\"urn:contract20:opaque/chart\" Target=\"xl/charts/cache-boundary.xml\"/><Relationship Id=\"cache2\" Type=\"urn:contract20:opaque/external\" Target=\"xl/externalLinks/cache-boundary.xml\"/></Relationships>",
+        "xl/workbook.xml": "<?xml version=\"1.0\" encoding=\"UTF-8\"?><workbook xmlns=\"http://schemas.openxmlformats.org/spreadsheetml/2006/main\"\n          xmlns:r=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships\"><sheets><sheet name=\"Model\" sheetId=\"1\" r:id=\"rId1\"/><sheet name=\"Summary\" sheetId=\"2\" r:id=\"rId2\"/></sheets><calcPr calcId=\"124519\"/></workbook>",
+        "xl/_rels/workbook.xml.rels": "<?xml version=\"1.0\" encoding=\"UTF-8\"?><Relationships xmlns=\"http://schemas.openxmlformats.org/package/2006/relationships\"><Relationship Id=\"rId1\" Type=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships/worksheet\" Target=\"worksheets/sheet1.xml\"/><Relationship Id=\"rId2\" Type=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships/worksheet\" Target=\"worksheets/sheet2.xml\"/></Relationships>",
+        "xl/worksheets/sheet1.xml": "<?xml version=\"1.0\" encoding=\"UTF-8\"?><worksheet xmlns=\"http://schemas.openxmlformats.org/spreadsheetml/2006/main\"><sheetData><row r=\"1\"><c r=\"A1\"><v>1</v></c><c r=\"B1\"><f>A1+A2</f><v>3</v></c></row><row r=\"2\"><c r=\"A2\"><v>2</v></c><c r=\"B2\"><f>B1*2</f><v>6</v></c></row></sheetData></worksheet>",
+        "xl/worksheets/sheet2.xml": "<?xml version=\"1.0\" encoding=\"UTF-8\"?><worksheet xmlns=\"http://schemas.openxmlformats.org/spreadsheetml/2006/main\"><sheetData><row r=\"1\"><c r=\"A1\"><f>Model!B1*3</f><v>9</v></c><c r=\"B1\"><f>40+2</f><v>42</v></c></row></sheetData></worksheet>",
+        "xl/charts/cache-boundary.xml": "<c:chartSpace xmlns:c=\"http://schemas.openxmlformats.org/drawingml/2006/chart\"><c:numCache><c:pt idx=\"0\"><c:v>1</c:v></c:pt></c:numCache></c:chartSpace>",
+        "xl/externalLinks/cache-boundary.xml": "<externalLink xmlns=\"http://schemas.openxmlformats.org/spreadsheetml/2006/main\"><externalBook><sheetDataSet><sheetData sheetId=\"0\"><row r=\"1\"><cell r=\"A1\"><v>1</v></cell></row></sheetData></sheetDataSet></externalBook></externalLink>",
+        "custom/custody.bin": "contract20-unchanged"
+      },
+      "admission": "Exact inert urn:contract20:opaque edges only; no semantic chart/external owner links; caller explicitly opts into retention"
+    }
+  ],
+  "pptx": [
+    {
+      "id": "fragmented-title",
+      "baseFixtureId": "fixture-1b848867cffb781112dc5778fa8cc7b9c9bd472c3636a348ec5d50005f05489e",
+      "construction": "Copy sealed member payloads in memory; exact unique anchored transformations only; never modify the physical fixture",
+      "operations": [
+        {
+          "kind": "replace-literal-once",
+          "part": "ppt/slides/slide1.xml",
+          "before": "<a:p><a:r><a:t>Frankenstein</a:t></a:r></a:p>",
+          "after": "<a:p><a:r><a:rPr b=\"1\"/><a:t>Fran</a:t></a:r><a:r><a:rPr i=\"1\"/><a:t>ken</a:t></a:r><a:r><a:rPr u=\"sng\"/><a:t>stein</a:t></a:r></a:p>"
+        },
+        {
+          "kind": "add-literal-member",
+          "part": "custom/data.bin",
+          "value": "keep-me-safe"
+        },
+        {
+          "kind": "replace-literal-once",
+          "part": "[Content_Types].xml",
+          "before": "</Types>",
+          "after": "<Default Extension=\"bin\" ContentType=\"application/octet-stream\"/></Types>"
+        }
+      ]
+    },
+    {
+      "id": "break-field-title",
+      "baseFixtureId": "fixture-1b848867cffb781112dc5778fa8cc7b9c9bd472c3636a348ec5d50005f05489e",
+      "construction": "Copy sealed member payloads in memory; exact unique anchored transformations only; never modify the physical fixture",
+      "operations": [
+        {
+          "kind": "replace-literal-once",
+          "part": "ppt/slides/slide1.xml",
+          "before": "<a:p><a:r><a:t>Frankenstein</a:t></a:r></a:p>",
+          "after": "<a:p><a:r><a:rPr b=\"1\"/><a:t>Chapter</a:t></a:r><a:br><a:rPr lang=\"en-US\"/></a:br><a:fld id=\"{00000000-0000-0000-0000-000000000007}\" type=\"slidenum\"><a:rPr i=\"1\"/><a:t>7</a:t></a:fld><a:r><a:rPr u=\"sng\"/><a:t> Notes</a:t></a:r></a:p>"
+        }
+      ]
+    },
+    {
+      "id": "plain-title",
+      "baseFixtureId": "fixture-1b848867cffb781112dc5778fa8cc7b9c9bd472c3636a348ec5d50005f05489e",
+      "construction": "Copy sealed member payloads in memory; exact unique anchored transformations only; never modify the physical fixture",
+      "operations": []
+    },
+    {
+      "id": "title-subtitle-source",
+      "baseFixtureId": "fixture-2aec94471f93c300d56ca4789106a974411085d1588f3424155362a06dd043f3",
+      "construction": "Copy sealed member payloads in memory; exact unique anchored transformations only; never modify the physical fixture",
+      "operations": []
+    },
+    {
+      "id": "missing-notes",
+      "baseFixtureId": "fixture-6a28461a00850a9297690a0a53ad8c109aea9e6f279df309639e73be0cc4c762",
+      "construction": "Copy sealed member payloads in memory; exact unique anchored transformations only; never modify the physical fixture",
+      "operations": []
+    },
+    {
+      "id": "ordered-notes",
+      "baseFixtureId": "fixture-04faba67841dda25dc3ff9e3e6e345e6feeeef1cf25a6b9065bf5fbdc83163dc",
+      "construction": "Copy sealed member payloads in memory; exact unique anchored transformations only; never modify the physical fixture",
+      "operations": [
+        {
+          "kind": "reorder-sldId-elements",
+          "part": "ppt/presentation.xml",
+          "originalCount": 5,
+          "oneBasedOrder": [
+            5,
+            1,
+            4,
+            2,
+            3
+          ]
+        },
+        {
+          "kind": "replace-literal-once",
+          "part": "ppt/notesSlides/notesSlide5.xml",
+          "before": "<a:p><a:r><a:t>Key themes: creation, responsibility, isolation</a:t></a:r></a:p>",
+          "after": "<a:p><a:r><a:t>Key themes:</a:t></a:r><a:br/><a:r><a:t>creation, responsibility, isolation</a:t></a:r></a:p><a:p></a:p><a:p><a:r><a:t>Visible date: </a:t></a:r><a:fld id=\"{00000000-0000-0000-0000-000000000099}\" type=\"datetimeFigureOut\"><a:rPr lang=\"en-US\"/><a:t>2026-03-12</a:t></a:fld></a:p>"
+        }
+      ]
+    },
+    {
+      "id": "unsafe-title-layout",
+      "baseFixtureId": "fixture-2aec94471f93c300d56ca4789106a974411085d1588f3424155362a06dd043f3",
+      "construction": "Copy sealed member payloads in memory; exact unique anchored transformations only; never modify the physical fixture",
+      "operations": [
+        {
+          "kind": "replace-literal-once",
+          "part": "ppt/slideLayouts/slideLayout1.xml",
+          "before": "<p:ph type=\"subTitle\" idx=\"1\"/>",
+          "after": "<p:ph type=\"body\" idx=\"1\"/>"
+        }
+      ]
+    },
+    {
+      "id": "stale-table",
+      "baseFixtureId": "fixture-2aec94471f93c300d56ca4789106a974411085d1588f3424155362a06dd043f3",
+      "construction": "Copy sealed member payloads in memory; exact unique anchored transformations only; never modify the physical fixture",
+      "operations": [
+        {
+          "kind": "replace-literal-once",
+          "part": "ppt/slides/slide1.xml",
+          "before": "</p:spTree>",
+          "after": "<p:graphicFrame xmlns:p=\"http://schemas.openxmlformats.org/presentationml/2006/main\" xmlns:a=\"http://schemas.openxmlformats.org/drawingml/2006/main\"><p:nvGraphicFramePr><p:cNvPr id=\"4\" name=\"Contract20 Table\"/><p:cNvGraphicFramePr/><p:nvPr/></p:nvGraphicFramePr><p:xfrm><a:off x=\"100\" y=\"100\"/><a:ext cx=\"900\" cy=\"600\"/></p:xfrm><a:graphic><a:graphicData uri=\"http://schemas.openxmlformats.org/drawingml/2006/table\"><a:tbl><a:tblPr/><a:tblGrid><a:gridCol w=\"900\"/></a:tblGrid><a:tr h=\"600\"><a:tc><a:txBody><a:bodyPr/><a:lstStyle/><a:p></a:p></a:txBody><a:tcPr/></a:tc></a:tr></a:tbl></a:graphicData></a:graphic></p:graphicFrame></p:spTree>"
+        }
+      ]
+    },
+    {
+      "id": "styled-table",
+      "baseFixtureId": "fixture-2aec94471f93c300d56ca4789106a974411085d1588f3424155362a06dd043f3",
+      "construction": "Copy sealed member payloads in memory; exact unique anchored transformations only; never modify the physical fixture",
+      "operations": [
+        {
+          "kind": "replace-literal-once",
+          "part": "ppt/slides/slide1.xml",
+          "before": "</p:spTree>",
+          "after": "<p:graphicFrame xmlns:p=\"http://schemas.openxmlformats.org/presentationml/2006/main\" xmlns:a=\"http://schemas.openxmlformats.org/drawingml/2006/main\"><p:nvGraphicFramePr><p:cNvPr id=\"4\" name=\"Contract20 Table\"/><p:cNvGraphicFramePr/><p:nvPr/></p:nvGraphicFramePr><p:xfrm><a:off x=\"500\" y=\"700\"/><a:ext cx=\"2000\" cy=\"1200\"/></p:xfrm><a:graphic><a:graphicData uri=\"http://schemas.openxmlformats.org/drawingml/2006/table\"><a:tbl><a:tblPr/><a:tblGrid><a:gridCol w=\"2000\"/></a:tblGrid><a:tr h=\"1200\"><a:tc><a:txBody><a:bodyPr wrap=\"square\"/><a:lstStyle/><a:p><a:pPr algn=\"r\"/><a:r><a:rPr b=\"1\" sz=\"1800\"/><a:t>Galvanic battery</a:t></a:r><a:endParaRPr lang=\"en-US\"/></a:p></a:txBody><a:tcPr marL=\"111\"><a:solidFill><a:srgbClr val=\"FFFF00\"/></a:solidFill></a:tcPr></a:tc></a:tr></a:tbl></a:graphicData></a:graphic></p:graphicFrame></p:spTree>"
+        }
+      ]
+    },
+    {
+      "id": "merged-table",
+      "baseFixtureId": "fixture-2aec94471f93c300d56ca4789106a974411085d1588f3424155362a06dd043f3",
+      "construction": "Copy sealed member payloads in memory; exact unique anchored transformations only; never modify the physical fixture",
+      "operations": [
+        {
+          "kind": "replace-literal-once",
+          "part": "ppt/slides/slide1.xml",
+          "before": "</p:spTree>",
+          "after": "<p:graphicFrame xmlns:p=\"http://schemas.openxmlformats.org/presentationml/2006/main\" xmlns:a=\"http://schemas.openxmlformats.org/drawingml/2006/main\"><p:nvGraphicFramePr><p:cNvPr id=\"4\" name=\"Contract20 Table\"/><p:cNvGraphicFramePr/><p:nvPr/></p:nvGraphicFramePr><p:xfrm><a:off x=\"300\" y=\"400\"/><a:ext cx=\"1800\" cy=\"900\"/></p:xfrm><a:graphic><a:graphicData uri=\"http://schemas.openxmlformats.org/drawingml/2006/table\"><a:tbl><a:tblPr/><a:tblGrid><a:gridCol w=\"900\"/><a:gridCol w=\"900\"/></a:tblGrid><a:tr h=\"450\"><a:tc gridSpan=\"2\"><a:txBody><a:bodyPr/><a:lstStyle/><a:p></a:p></a:txBody><a:tcPr/></a:tc></a:tr><a:tr h=\"450\"><a:tc><a:txBody><a:bodyPr/><a:lstStyle/><a:p></a:p></a:txBody><a:tcPr/></a:tc><a:tc><a:txBody><a:bodyPr/><a:lstStyle/><a:p></a:p></a:txBody><a:tcPr/></a:tc></a:tr></a:tbl></a:graphicData></a:graphic></p:graphicFrame></p:spTree>"
+        }
+      ]
+    },
+    {
+      "id": "malformed-table",
+      "baseFixtureId": "fixture-2aec94471f93c300d56ca4789106a974411085d1588f3424155362a06dd043f3",
+      "construction": "Copy sealed member payloads in memory; exact unique anchored transformations only; never modify the physical fixture",
+      "operations": [
+        {
+          "kind": "replace-literal-once",
+          "part": "ppt/slides/slide1.xml",
+          "before": "</p:spTree>",
+          "after": "<p:graphicFrame xmlns:p=\"http://schemas.openxmlformats.org/presentationml/2006/main\" xmlns:a=\"http://schemas.openxmlformats.org/drawingml/2006/main\"><p:nvGraphicFramePr><p:cNvPr id=\"4\" name=\"Contract20 Table\"/><p:cNvGraphicFramePr/><p:nvPr/></p:nvGraphicFramePr><p:xfrm><a:off x=\"300\" y=\"400\"/><a:ext cx=\"1800\" cy=\"900\"/></p:xfrm><a:graphic><a:graphicData uri=\"http://schemas.openxmlformats.org/drawingml/2006/table\"><a:tbl><a:tblPr/><a:tblGrid><a:gridCol w=\"900\"/><a:gridCol w=\"900\"/></a:tblGrid><a:tr h=\"450\"><a:tc hMerge=\"maybe\"><a:txBody><a:bodyPr/><a:lstStyle/><a:p></a:p></a:txBody><a:tcPr/></a:tc><a:tc><a:txBody><a:bodyPr/><a:lstStyle/><a:p></a:p></a:txBody><a:tcPr/></a:tc></a:tr><a:tr h=\"450\"><a:tc><a:txBody><a:bodyPr/><a:lstStyle/><a:p></a:p></a:txBody><a:tcPr/></a:tc><a:tc><a:txBody><a:bodyPr/><a:lstStyle/><a:p></a:p></a:txBody><a:tcPr/></a:tc></a:tr></a:tbl></a:graphicData></a:graphic></p:graphicFrame></p:spTree>"
+        }
+      ]
+    }
+  ]
+}

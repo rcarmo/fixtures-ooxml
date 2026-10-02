@@ -5,11 +5,16 @@ Feature: Presentation notes inspection and editing
     These reads follow presentation relationships and retain existing notes.
     Reading missing notes does not create a notes part.
 
-    @id-pptx-order-notes-read
-    Scenario: Follow presentation relationships and keep notes reads non-mutating
-      Given PPTX ordered notes fixtures are prepared
-      When PPTX opens the reordered notes fixture and probes notes reads
-      Then PPTX keeps slide order, notes blank lines, and notes reads non-mutating without creating missing notes parts
+    @profile-contract20 @id-pptx-order-notes-read
+    Scenario: Read reordered notes including blank lines and visible fields without creating missing notes
+      Given the contract20 derived PPTX recipes "ordered-notes" and "missing-notes" are created in memory from their sealed fixtures
+      And the source member payloads, relationships and caller archives are recorded
+      When the production reader inspects presentation-relationship order and notes without saving
+      Then the exact ordered slide titles equal JSON ["Chapter 5","Frankenstein Lecture Series","Chapter 4","Chapter 2","Chapter 3"]
+      And the first and last ordered notes texts equal JSON ["Key themes:\ncreation, responsibility, isolation\n\nVisible date: 2026-03-12","Compare to Prometheus myth"]
+      And notes absence on the missing-notes first slide returns normalized JSON {"hasNotes":false,"text":""}
+      And no read or absence observation adds notes parts or relationships or changes any member or caller archive
+      And all notes line breaks are normalized to newline without evaluating fields or trimming intentional interior blank paragraphs
 
   Rule: Read an authored collection without creating notes for a slide that lacks them
     This collection profile returns nonempty speaker notes in presentation order.

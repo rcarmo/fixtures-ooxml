@@ -5,23 +5,46 @@ Feature: Presentation anchored text editing
     The first PPTX slice opens real packages, reads existing notes without creating
     missing notes parts, and performs exact anchored text replacement across runs.
 
-    @id-pptx-readable-unsupported-topology
-    Scenario: Read line breaks and field text faithfully but refuse editing that topology
-      Given PPTX line-break and field text fixture is prepared from a real template
-      When PPTX inspects the paragraph text and attempts an anchored edit on that topology
-      Then PPTX exposes line breaks and field text faithfully and refuses the unsupported edit without mutation
+    @profile-contract20 @id-pptx-readable-unsupported-topology
+    Scenario: Inspect line breaks and visible field text but refuse an anchored edit of that paragraph
+      Given the contract20 derived PPTX recipe "break-field-title" is created in memory from its sealed fixture
+      And the source member payloads, relationships and caller archive are recorded
+      When the production text inspector reads the uniquely selected first title paragraph and issues its owned anchor
+      Then the exact paragraph text equals JSON "Chapter\n7 Notes"
+      And the exact visible fragments and properties equal JSON [{"text":"Chapter","attributes":{"b":"1"}},{"text":"\n","attributes":{"lang":"en-US"}},{"text":"7","attributes":{"i":"1"}},{"text":" Notes","attributes":{"u":"sng"}}]
+      When the production anchored editor attempts JSON "Chapter" to JSON "Section" through that anchor
+      Then the operation returns exactly typed refusal category "PPTX_UNSUPPORTED_TEXT_TOPOLOGY" with no changed result
+      And every original member, relationship, caller archive and prior destination remains unchanged
+      And the held paragraph remains readable and a subsequent no-op observation leaves the source unchanged
 
-    @id-pptx-cross-run-replace
-    Scenario: Replace exact anchored text across runs and preserve unrelated members after reopen
-      Given PPTX fragmented title fixture is prepared from a real template and an untouched ZIP member
-      When PPTX replaces anchored cross-run text and saves then reopens the package
-      Then PPTX preserves the replacement text, the starting run formatting, and unrelated ZIP member bytes
+    @profile-contract20 @id-pptx-cross-run-replace
+    Scenario: Replace a substring spanning Fran and ken while retaining starting-run formatting
+      Given the contract20 derived PPTX recipe "fragmented-title" is created in memory from its sealed fixture
+      And the unique first title paragraph reads JSON "Frankenstein" with source runs JSON [{"text":"Fran","attributes":{"b":"1"}},{"text":"ken","attributes":{"i":"1"}},{"text":"stein","attributes":{"u":"sng"}}]
+      And the source member payloads, relationships and caller archive are recorded
+      When the production anchored editor replaces UTF-16 substring [2,7) JSON "anken" with JSON "iend"
+      Then the result is saved to a distinct new path and independently parsed and reopened
+      And the source fixture, caller archive and operation operands remain unchanged
+      And only the sealed original member and lexical span allowances differ; all unrelated member payloads remain literal
+      And all saved OPC relationships and content types resolve with original identities preserved
+      And refusals and save faults publish no partial destination and leave the session and held unaffected targets usable
+      And the reopened title text equals JSON "Friendstein"
+      And the exact saved runs equal JSON [{"text":"Fr","attributes":{"b":"1"}},{"text":"iend","attributes":{"b":"1"}},{"text":"stein","attributes":{"u":"sng"}}]
+      And the exact changed member set is JSON ["ppt/slides/slide1.xml"] without additions or removals
+      And only consumed run text spans and the inherited replacement run may differ; every unrelated selected paragraph property and sibling span remains literal
+      And custom/data.bin equals JSON "keep-me-safe" and every other member payload remains unchanged
 
-    @id-pptx-stale-anchor-refusal
-    Scenario: Refuse a stale anchored replacement without mutation
-      Given PPTX stale-anchor fixture is prepared from a real template
-      When PPTX replaces anchored text once and retries with the stale anchor
-      Then PPTX refuses the stale anchor and keeps the post-success bytes unchanged
+    @profile-contract20 @id-pptx-stale-anchor-refusal
+    Scenario: A consumed owned text anchor refuses a second replacement without undoing the first
+      Given the contract20 derived PPTX recipe "plain-title" is created in memory from its sealed fixture
+      When the production inspector holds the unique first title paragraph anchor reading JSON "Frankenstein"
+      When the production anchored editor replaces JSON "Frankenstein" with JSON "Creature" through that anchor
+      Then the complete post-success package member state and prior destination are recorded
+      And the same old anchor attempts replacement JSON "Frankenstein" with JSON "Monster"
+      And the operation returns exactly typed refusal category "PPTX_STALE_ANCHOR" and no changed result
+      And the complete post-success member state, original caller input and prior destination remain unchanged
+      And saving and independently reopening the retained session reads JSON "Creature"
+      And a newly issued target for the first title remains usable and original relationships and unrelated members retain custody
 
   Rule: Edit a uniquely identified plain text shape in the retained package
     Whole-frame resets and paragraph appends retain unaffected lexical spans.

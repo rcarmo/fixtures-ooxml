@@ -3,34 +3,62 @@ Feature: PPTX native rectangular tables
   Native PPTX table authoring preserves geometry, conservative cell formatting,
   and refusal atomicity for stale and unsupported table topologies.
 
-  @id-pptx-table-roundtrip-geometry
-  Scenario: Save and reopen an authored table while keeping exact geometry sums
-    Given PPTX table round-trip scenario is prepared from a new presentation
-    When PPTX authors a rectangular table and saves then reopens it
-    Then PPTX preserves the table size, exact grid sums, and cell text after reopen
+  @profile-contract20 @id-pptx-table-roundtrip-geometry
+  Scenario: Author a two-by-three table with exact last-remainder geometry and cell text
+    Given the production creator authors a new presentation with one title slide JSON "Tables"
+    When the production table editor authors a 2-row 3-column table at EMU x=120 y=240 width=1001 height=1003
+    Then the first cell text is set to JSON "  <Alpha & Beta>  " and all other cells remain blank
+    And the result is saved to a new path and independently parsed and reopened
+    And the saved table has 2 rows 3 columns x=120 y=240 width=1001 height=1003
+    And the exact grid widths equal JSON [333,333,335] and exact row heights equal JSON [501,502]
+    And the exact cell matrix equals JSON [["  <Alpha & Beta>  ","",""],["","",""]]
+    And the title remains JSON "Tables" and every table name ID namespace and schema-ordered body/property child is valid within the sealed profile
+    And all created relationships and content types resolve inside the bounded creation support graph
+    And caller geometry/text operands remain unchanged and save faults leave destination state intact
 
-  @id-pptx-table-formatting
-  Scenario: Preserve simple table cell formatting across update and reopen
-    Given PPTX styled table fixture is prepared
-    When PPTX replaces a styled table cell and saves then reopens the presentation
-    Then PPTX preserves table cell formatting across the update and reopen
+  @profile-contract20 @id-pptx-table-formatting
+  Scenario: Change only the selected styled table cell text and retain every original property
+    Given the contract20 derived PPTX recipe "styled-table" is created in memory from its sealed fixture
+    And the unique table frame ID 4 cell 0,0 reads JSON "Galvanic battery" with its sealed literal property snapshot
+    And the source member payloads, relationships and caller archive are recorded
+    When the production retained table-cell editor replaces that cell text with JSON "updated value"
+    Then the result is saved to a distinct new path and independently parsed and reopened
+    And the source fixture, caller archive and operation operands remain unchanged
+    And only the sealed original member and lexical span allowances differ; all unrelated member payloads remain literal
+    And all saved OPC relationships and content types resolve with original identities preserved
+    And refusals and save faults publish no partial destination and leave the session and held unaffected targets usable
+    And the reopened cell text equals JSON "updated value"
+    And the saved properties equal JSON {"bodyPr":{"wrap":"square"},"tcPr":{"marL":"111"},"fill":"FFFF00","paragraph":{"algn":"r"},"firstRun":{"b":"1","sz":"1800"},"endParaRPr":{"lang":"en-US"}}
+    And the exact changed member set is JSON ["ppt/slides/slide1.xml"] without additions or removals
+    And only selected original text leaf content may differ; all bodyPr tcPr pPr rPr endParaRPr attributes children and sibling spans retain literal bytes
 
-  @id-pptx-table-stale-handle
-  Scenario: Refuse stale table cell handles atomically after slide mutation
-    Given PPTX stale table handle scenario is prepared from a new presentation
-    When PPTX mutates the slide and retries a stale table cell handle
-    Then PPTX refuses the stale table handle without mutating the package
+  @profile-contract20 @id-pptx-table-stale-handle
+  Scenario: Adding another table to the same slide stales the held first table cell
+    Given the contract20 derived PPTX recipe "stale-table" is created in memory from its sealed fixture
+    When the production editor holds table frame ID 4 cell 0,0 with its original empty text
+    When the production editor adds a second 1-row 1-column table at EMU x=1200 y=100 width=900 height=600
+    Then the complete post-add member state and prior destination are recorded
+    And the old first-table cell handle attempts JSON "stale write"
+    And the operation returns exactly typed refusal category "PPTX_STALE_TABLE_HANDLE" and no changed result
+    And every post-add member payload and graph identity, caller input and prior destination remains unchanged
+    And saving and independently reopening still finds exactly two tables with both first cells empty
+    And a freshly found first-table cell is usable and any invalid late patch refuses without consuming it
 
-  @id-pptx-table-atomic-refusals
-  Scenario Outline: Refuse unsupported table topology <case> atomically
-    Given PPTX table refusal scenario "<case>" is prepared
-    When PPTX attempts the table refusal "<case>"
-    Then PPTX refusal "<code>" is returned atomically for table refusal "<case>"
-
+  @profile-contract20 @id-pptx-table-atomic-refusals
+  Scenario Outline: A <case> table topology refuses a cell text mutation without partial output
+    Given the contract20 derived PPTX recipe "<recipe>" is created in memory from its sealed fixture
+    And the source and prior destination bytes and all member payloads are recorded
+    When the production package open and target selection of table frame ID 4 cell 0,0 succeed without mutation or intake refusal
+    When the production table-cell editor attempts JSON "x" at the selected target
+    Then only that cell-text edit preflight returns exactly typed refusal category "<code>" and no changed result
+    And every source member, selected table property and relationship remains unchanged
+    And saving the refused session retains all original members without additions or removals
+    And no refusal or save fault changes source caller operands or any prior destination
+    And an independently constructed unmerged same-shape control permits the identical cell mutation and retains unrelated bytes
     Examples:
-      | case            | code                           |
-      | merged-cell     | PPTX_TABLE_MERGE_UNSUPPORTED   |
-      | malformed-merge | PPTX_TABLE_STRUCTURE_UNSUPPORTED |
+      | case | recipe | code |
+      | merged-cell | merged-table | PPTX_TABLE_MERGE_UNSUPPORTED |
+      | malformed-merge | malformed-table | PPTX_TABLE_STRUCTURE_UNSUPPORTED |
 
   @profile-retained-manipulation @id-pptx-manipulation-table-values
   Scenario: author exact 3x3 table values

@@ -1,3 +1,4 @@
+import {beforeContract20Feature} from './contract20-history.ts';
 import {historicalWorkflowLedger} from './xml-generalization-helpers.ts';
 const pythonPackageIds = new Set(['@id-package-admission-negative-budget','@id-zip-unsigned-descriptor-signature-collision']);
 const goXmlNegativeIds = new Set(['@id-xml-comparison-significant-content','@id-xml-comparison-prefix-attribute-binding','@id-xml-comparison-unsafe-input','@id-xml-comparison-processing-instructions-and-comments']);
@@ -33,7 +34,7 @@ const specs = [
 test('Bun executes five exact PPTX table authoring and refusal cases without cross-consumer credit', async () => {
   const ledger = await historicalWorkflowLedger();
   const prior = JSON.parse(execFileSync('git', ['show', '215b9c92b43b979c1a0f839bff31db7b27c9736c:ledgers/workflows.json']).toString());
-  const compiled = cases(path, await Bun.file(path).text());
+  const compiled = cases(path, beforeContract20Feature(path, await Bun.file(path).text()));
   for (const { id, steps, markers } of specs) {
     const now = ledger.workflows.find((w: any) => w.id === id), old = prior.workflows.find((w: any) => w.id === id);
     expect(now.feature).toBe(path); expect(now.expandedCases).toBe(steps.length);

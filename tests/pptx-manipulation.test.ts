@@ -1,3 +1,4 @@
+import {beforeContract20Feature} from './contract20-history.ts';
 import {test,expect} from 'bun:test';
 import {execFileSync} from 'node:child_process';
 import {cases} from '../scripts/verify.ts';
@@ -25,5 +26,5 @@ test('immutable PPTX fixture provenance and every input payload seal agree with 
  expect(s.records.filter((r:any)=>r.kind.startsWith('insert')).every((r:any)=>r.changedMembers.length===3)).toBe(true);expect(s.records.find((r:any)=>r.kind==='reorder-refusal').changedMembers).toEqual([]);
 });
 test('historical reconstruction refuses changed PPTX predicates and consumer-credit drift',async()=>{
- const s=await load(),f=s.files[0],text=await Bun.file(f.path).text();expect(()=>beforePptxManipulationFeature(f.path,text.replace('New Title','Weak title'))).toThrow('Unreviewed PPTX');const ledger=await Bun.file('ledgers/workflows.json').json(),r=ledger.workflows.find((r:any)=>r.id===s.records[0].id);r.consumers.go.status='implemented';expect(()=>beforePptxManipulationLedger(ledger)).toThrow('Unreviewed PPTX');
+ const s=await load(),f=s.files[0],text=beforeContract20Feature(f.path,await Bun.file(f.path).text());expect(()=>beforePptxManipulationFeature(f.path,text.replace('New Title','Weak title'))).toThrow('Unreviewed Contract20 feature bytes workflows/pptx/text.feature');const ledger=await Bun.file('ledgers/workflows.json').json(),r=ledger.workflows.find((r:any)=>r.id===s.records[0].id);r.consumers.go.status='implemented';expect(()=>beforePptxManipulationLedger(ledger)).toThrow('Unreviewed PPTX');
 });

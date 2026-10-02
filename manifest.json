@@ -2287,8 +2287,8 @@
     {
       "id": "asset-c4e9b456aa07ba8d82f1b9e76807defd507a91ca899703a20aebffc80f9dff9f",
       "path": "workflows/pptx/creation.feature",
-      "bytes": 4047,
-      "sha256": "c4e9b456aa07ba8d82f1b9e76807defd507a91ca899703a20aebffc80f9dff9f",
+      "bytes": 7024,
+      "sha256": "b43a058f676ede17d0fd6677c815bf8c6425d0ec816e0bb4a958d35d89aaf5e7",
       "role": "workflow",
       "origins": [
         {
@@ -2330,8 +2330,8 @@
     {
       "id": "asset-17db743ecaafeff1ee88bc8c5d6635d299a2d22abbb008e3284d5d706850f15c",
       "path": "workflows/pptx/tables.feature",
-      "bytes": 29127,
-      "sha256": "17db743ecaafeff1ee88bc8c5d6635d299a2d22abbb008e3284d5d706850f15c",
+      "bytes": 32633,
+      "sha256": "53fa701999bf1f4d25517c73258b5673374f56dad87dcda6f0ae21dbaba01800",
       "role": "workflow",
       "origins": [
         {
@@ -3279,8 +3279,8 @@
     {
       "id": "asset-b1b9c2b9cf7f8f6d5e6403ada30493381b7f42e05c72b1c999273eaedbf705f7",
       "path": "workflows/xlsx/formula-cache.feature",
-      "bytes": 3153,
-      "sha256": "b1b9c2b9cf7f8f6d5e6403ada30493381b7f42e05c72b1c999273eaedbf705f7",
+      "bytes": 6451,
+      "sha256": "fbd217cde29b0b0b51801a9ea072768262906d56bae50180c93afa10a6a3b7f9",
       "role": "workflow",
       "origins": [
         {
@@ -3360,8 +3360,8 @@
     {
       "id": "asset-edde465c627e5fef5f048d8ad9da72db6a5e030b73838b14e056c87b3c2cbafd",
       "path": "workflows/pptx/notes.feature",
-      "bytes": 10395,
-      "sha256": "edde465c627e5fef5f048d8ad9da72db6a5e030b73838b14e056c87b3c2cbafd",
+      "bytes": 11173,
+      "sha256": "2e4fadee6dba5b2939fb4f6d1cfa41a1f59f07285804310f0c96fceefde4ceb0",
       "role": "workflow",
       "origins": [
         {
@@ -3381,8 +3381,8 @@
     {
       "id": "asset-42dae34ee08a7783b17e27bc5a5a8e906ed2ca06bf77fcecedfc3fa087dc5608",
       "path": "workflows/pptx/text.feature",
-      "bytes": 5601,
-      "sha256": "42dae34ee08a7783b17e27bc5a5a8e906ed2ca06bf77fcecedfc3fa087dc5608",
+      "bytes": 8505,
+      "sha256": "34e296bf9afd12d5bef64cf9e7fca15154d0c1500fc622dd63e65a5706b1c980",
       "role": "workflow",
       "origins": [
         {
@@ -3417,8 +3417,8 @@
     {
       "id": "asset-cdfcbd99ba3d8aa775306fc9eb2caf879350d50d832d59d9f9034b0666a6d925",
       "path": "workflows/xlsx/cells.feature",
-      "bytes": 3094,
-      "sha256": "cdfcbd99ba3d8aa775306fc9eb2caf879350d50d832d59d9f9034b0666a6d925",
+      "bytes": 7499,
+      "sha256": "0494d6e44736cd9c6672934e5a1c55e2698a675d86a10bc3f463d4250095a1f5",
       "role": "workflow",
       "origins": [
         {
@@ -6885,6 +6885,66 @@
           "path": "ledgers/uniform-api18.json"
         }
       ]
+    },
+    {
+      "id": "asset-5d8f5d19d70c2716a5d3688ff9d625ae5683175d5c88468bb3740a0e95c6edd0",
+      "path": "contracts/contract20.md",
+      "bytes": 9560,
+      "sha256": "5d8f5d19d70c2716a5d3688ff9d625ae5683175d5c88468bb3740a0e95c6edd0",
+      "role": "contract",
+      "origins": [
+        {
+          "repository": "https://github.com/rcarmo/fixtures-ooxml",
+          "path": "contracts/contract20.md",
+          "basis": "Reviewed Contract20 package input and behaviour profile; no runtime execution credit"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "id": "asset-9587da306418a4e67e7f23304beacdd5adec49719a7319342879bc315396c6fa",
+      "path": "ledgers/contract20-recipes.json",
+      "bytes": 41860,
+      "sha256": "9587da306418a4e67e7f23304beacdd5adec49719a7319342879bc315396c6fa",
+      "role": "reconciliation-ledger",
+      "origins": [
+        {
+          "repository": "https://github.com/rcarmo/fixtures-ooxml",
+          "path": "ledgers/contract20-recipes.json",
+          "basis": "Reviewed Contract20 package input and behaviour profile; no runtime execution credit"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "id": "asset-34334c3967af72a3e335ed9ec6aa728ba822b14eada26f48b16b845c61844853",
+      "path": "ledgers/contract20-creation-policy.json",
+      "bytes": 5708,
+      "sha256": "34334c3967af72a3e335ed9ec6aa728ba822b14eada26f48b16b845c61844853",
+      "role": "reconciliation-ledger",
+      "origins": [
+        {
+          "repository": "https://github.com/rcarmo/fixtures-ooxml",
+          "path": "ledgers/contract20-creation-policy.json",
+          "basis": "Reviewed Contract20 package input and behaviour profile; no runtime execution credit"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "id": "asset-f7ffb3805d24a1ca0e6b8b9a44a559695befd3466632985db5d860ed155958f7",
+      "path": "ledgers/contract20.json",
+      "bytes": 199120,
+      "sha256": "f7ffb3805d24a1ca0e6b8b9a44a559695befd3466632985db5d860ed155958f7",
+      "role": "reconciliation-ledger",
+      "origins": [
+        {
+          "repository": "https://github.com/rcarmo/fixtures-ooxml",
+          "path": "ledgers/contract20.json",
+          "basis": "Reviewed Contract20 package input and behaviour profile; no runtime execution credit"
+        }
+      ],
+      "aliases": []
     }
   ]
 }

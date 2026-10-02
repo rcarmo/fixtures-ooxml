@@ -1,0 +1,154 @@
+{
+  "schemaVersion": 1,
+  "state": "Reviewed bounded creation support graph; no runtime execution credit",
+  "partNames": "producer allocated; roles are identified by resolved graph edges and content types",
+  "namespaces": {
+    "p": "http://schemas.openxmlformats.org/presentationml/2006/main",
+    "a": "http://schemas.openxmlformats.org/drawingml/2006/main",
+    "r": "http://schemas.openxmlformats.org/officeDocument/2006/relationships",
+    "packageRelationships": "http://schemas.openxmlformats.org/package/2006/relationships",
+    "contentTypes": "http://schemas.openxmlformats.org/package/2006/content-types"
+  },
+  "relationshipTypePrefixes": {
+    "office": "http://schemas.openxmlformats.org/officeDocument/2006/relationships/",
+    "package": "http://schemas.openxmlformats.org/package/2006/relationships/"
+  },
+  "requiredRoles": {
+    "presentation": {
+      "count": 1,
+      "contentType": "application/vnd.openxmlformats-officedocument.presentationml.presentation.main+xml"
+    },
+    "slide": {
+      "count": "requested slide count: 2 for minimal creation, 1 for table geometry",
+      "contentType": "application/vnd.openxmlformats-officedocument.presentationml.slide+xml"
+    },
+    "slideMaster": {
+      "count": 1,
+      "contentType": "application/vnd.openxmlformats-officedocument.presentationml.slideMaster+xml"
+    },
+    "slideLayout": {
+      "count": 1,
+      "layoutType": "title",
+      "contentType": "application/vnd.openxmlformats-officedocument.presentationml.slideLayout+xml"
+    },
+    "theme": {
+      "count": 1,
+      "contentType": "application/vnd.openxmlformats-officedocument.theme+xml"
+    }
+  },
+  "optionalRoles": {
+    "presentationProperties": {
+      "maxCount": 1,
+      "contentType": "application/vnd.openxmlformats-officedocument.presentationml.presProps+xml"
+    },
+    "viewProperties": {
+      "maxCount": 1,
+      "contentType": "application/vnd.openxmlformats-officedocument.presentationml.viewProps+xml"
+    },
+    "tableStyleDefinitions": {
+      "maxCount": 1,
+      "contentType": "application/vnd.openxmlformats-officedocument.presentationml.tableStyles+xml"
+    },
+    "coreProperties": {
+      "maxCount": 1,
+      "contentType": "application/vnd.openxmlformats-package.core-properties+xml"
+    },
+    "applicationProperties": {
+      "maxCount": 1,
+      "contentType": "application/vnd.openxmlformats-officedocument.extended-properties+xml"
+    }
+  },
+  "requiredEdges": [
+    {
+      "sourceRole": "packageRoot",
+      "targetRole": "presentation",
+      "type": "office:officeDocument",
+      "count": 1
+    },
+    {
+      "sourceRole": "presentation",
+      "targetRole": "slide",
+      "type": "office:slide",
+      "count": "requested slide count, referenced in presentation slide-list order"
+    },
+    {
+      "sourceRole": "presentation",
+      "targetRole": "slideMaster",
+      "type": "office:slideMaster",
+      "count": 1
+    },
+    {
+      "sourceRole": "slide",
+      "targetRole": "slideLayout",
+      "type": "office:slideLayout",
+      "count": "exactly one per slide"
+    },
+    {
+      "sourceRole": "slideLayout",
+      "targetRole": "slideMaster",
+      "type": "office:slideMaster",
+      "count": 1
+    },
+    {
+      "sourceRole": "slideMaster",
+      "targetRole": "slideLayout",
+      "type": "office:slideLayout",
+      "count": 1
+    },
+    {
+      "sourceRole": "slideMaster",
+      "targetRole": "theme",
+      "type": "office:theme",
+      "count": 1
+    }
+  ],
+  "optionalEdges": [
+    {
+      "sourceRole": "presentation",
+      "targetRole": "theme",
+      "type": "office:theme",
+      "maxCount": 1
+    },
+    {
+      "sourceRole": "presentation",
+      "targetRole": "presentationProperties",
+      "type": "office:presProps",
+      "maxCount": 1
+    },
+    {
+      "sourceRole": "presentation",
+      "targetRole": "viewProperties",
+      "type": "office:viewProps",
+      "maxCount": 1
+    },
+    {
+      "sourceRole": "presentation",
+      "targetRole": "tableStyleDefinitions",
+      "type": "office:tableStyles",
+      "maxCount": 1
+    },
+    {
+      "sourceRole": "packageRoot",
+      "targetRole": "coreProperties",
+      "type": "package:metadata/core-properties",
+      "maxCount": 1
+    },
+    {
+      "sourceRole": "packageRoot",
+      "targetRole": "applicationProperties",
+      "type": "office:extended-properties",
+      "maxCount": 1
+    }
+  ],
+  "containerMembers": "Exactly one [Content_Types].xml and one root relationship member; relationship members belong only to roles with edges. No empty or orphan relationship member. Optional roles require their corresponding optional edge.",
+  "invariants": [
+    "No member outside required roles, optional roles and their OPC container members.",
+    "Every internal relationship target resolves to its declared role; no external relationships or unknown edges.",
+    "Every part has its role content type; overrides resolve to existing parts and have unique PartName values; defaults have unique extensions.",
+    "Relationship IDs are unique within each owning relationship member; slide IDs are positive and unique; the slide list and relationship targets correspond exactly.",
+    "Master layout-list and presentation master-list IDs resolve to the required edges without duplicate or dangling entries.",
+    "The single title layout supplies title and subtitle placeholders. Each authored slide has exactly the requested text and no other visible text.",
+    "No notes, media, charts, external-link parts, macros or extra layouts/masters/slides. Tables occur only when explicitly requested.",
+    "EMU table geometry is exact; unspecified deck page geometry and inert support payload defaults may differ across producers."
+  ]
+}

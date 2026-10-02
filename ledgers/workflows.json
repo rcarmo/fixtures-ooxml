@@ -776,22 +776,27 @@
         "ContentTypePresentation"
       ],
       "expectedOutcomes": [
-        "PPTX ordered notes fixtures are prepared",
-        "PPTX opens the reordered notes fixture and probes notes reads",
-        "PPTX keeps slide order, notes blank lines, and notes reads non-mutating without creating missing notes parts"
+        "the contract20 derived PPTX recipes \"ordered-notes\" and \"missing-notes\" are created in memory from their sealed fixtures",
+        "the source member payloads, relationships and caller archives are recorded",
+        "the production reader inspects presentation-relationship order and notes without saving",
+        "the exact ordered slide titles equal JSON [\"Chapter 5\",\"Frankenstein Lecture Series\",\"Chapter 4\",\"Chapter 2\",\"Chapter 3\"]",
+        "the first and last ordered notes texts equal JSON [\"Key themes:\\ncreation, responsibility, isolation\\n\\nVisible date: 2026-03-12\",\"Compare to Prometheus myth\"]",
+        "notes absence on the missing-notes first slide returns normalized JSON {\"hasNotes\":false,\"text\":\"\"}",
+        "no read or absence observation adds notes parts or relationships or changes any member or caller archive",
+        "all notes line breaks are normalized to newline without evaluating fields or trimming intentional interior blank paragraphs"
       ],
       "consumers": {
         "bun": {
-          "status": "implemented",
-          "evidence": "Historical consumer acceptance; rerun required after migration"
+          "status": "planned",
+          "evidence": []
         },
         "go": {
           "status": "planned",
-          "evidence": "not-run: not yet mapped to this common workflow"
+          "evidence": []
         },
         "python": {
           "status": "planned",
-          "evidence": "not-run: not yet mapped to this common workflow"
+          "evidence": []
         }
       }
     },
@@ -804,22 +809,28 @@
         "ContentTypePresentation"
       ],
       "expectedOutcomes": [
-        "PPTX line-break and field text fixture is prepared from a real template",
-        "PPTX inspects the paragraph text and attempts an anchored edit on that topology",
-        "PPTX exposes line breaks and field text faithfully and refuses the unsupported edit without mutation"
+        "the contract20 derived PPTX recipe \"break-field-title\" is created in memory from its sealed fixture",
+        "the source member payloads, relationships and caller archive are recorded",
+        "the production text inspector reads the uniquely selected first title paragraph and issues its owned anchor",
+        "the exact paragraph text equals JSON \"Chapter\\n7 Notes\"",
+        "the exact visible fragments and properties equal JSON [{\"text\":\"Chapter\",\"attributes\":{\"b\":\"1\"}},{\"text\":\"\\n\",\"attributes\":{\"lang\":\"en-US\"}},{\"text\":\"7\",\"attributes\":{\"i\":\"1\"}},{\"text\":\" Notes\",\"attributes\":{\"u\":\"sng\"}}]",
+        "the production anchored editor attempts JSON \"Chapter\" to JSON \"Section\" through that anchor",
+        "the operation returns exactly typed refusal category \"PPTX_UNSUPPORTED_TEXT_TOPOLOGY\" with no changed result",
+        "every original member, relationship, caller archive and prior destination remains unchanged",
+        "the held paragraph remains readable and a subsequent no-op observation leaves the source unchanged"
       ],
       "consumers": {
         "bun": {
-          "status": "implemented",
-          "evidence": "Historical consumer acceptance; rerun required after migration"
+          "status": "planned",
+          "evidence": []
         },
         "go": {
           "status": "planned",
-          "evidence": "not-run: not yet mapped to this common workflow"
+          "evidence": []
         },
         "python": {
           "status": "planned",
-          "evidence": "not-run: not yet mapped to this common workflow"
+          "evidence": []
         }
       }
     },
@@ -832,22 +843,33 @@
         "ContentTypePresentation"
       ],
       "expectedOutcomes": [
-        "PPTX fragmented title fixture is prepared from a real template and an untouched ZIP member",
-        "PPTX replaces anchored cross-run text and saves then reopens the package",
-        "PPTX preserves the replacement text, the starting run formatting, and unrelated ZIP member bytes"
+        "the contract20 derived PPTX recipe \"fragmented-title\" is created in memory from its sealed fixture",
+        "the unique first title paragraph reads JSON \"Frankenstein\" with source runs JSON [{\"text\":\"Fran\",\"attributes\":{\"b\":\"1\"}},{\"text\":\"ken\",\"attributes\":{\"i\":\"1\"}},{\"text\":\"stein\",\"attributes\":{\"u\":\"sng\"}}]",
+        "the source member payloads, relationships and caller archive are recorded",
+        "the production anchored editor replaces UTF-16 substring [2,7) JSON \"anken\" with JSON \"iend\"",
+        "the result is saved to a distinct new path and independently parsed and reopened",
+        "the source fixture, caller archive and operation operands remain unchanged",
+        "only the sealed original member and lexical span allowances differ; all unrelated member payloads remain literal",
+        "all saved OPC relationships and content types resolve with original identities preserved",
+        "refusals and save faults publish no partial destination and leave the session and held unaffected targets usable",
+        "the reopened title text equals JSON \"Friendstein\"",
+        "the exact saved runs equal JSON [{\"text\":\"Fr\",\"attributes\":{\"b\":\"1\"}},{\"text\":\"iend\",\"attributes\":{\"b\":\"1\"}},{\"text\":\"stein\",\"attributes\":{\"u\":\"sng\"}}]",
+        "the exact changed member set is JSON [\"ppt/slides/slide1.xml\"] without additions or removals",
+        "only consumed run text spans and the inherited replacement run may differ; every unrelated selected paragraph property and sibling span remains literal",
+        "custom/data.bin equals JSON \"keep-me-safe\" and every other member payload remains unchanged"
       ],
       "consumers": {
         "bun": {
-          "status": "implemented",
-          "evidence": "Historical consumer acceptance; rerun required after migration"
+          "status": "planned",
+          "evidence": []
         },
         "go": {
           "status": "planned",
-          "evidence": "not-run: not yet mapped to this common workflow"
+          "evidence": []
         },
         "python": {
           "status": "planned",
-          "evidence": "not-run: not yet mapped to this common workflow"
+          "evidence": []
         }
       }
     },
@@ -860,22 +882,28 @@
         "ContentTypePresentation"
       ],
       "expectedOutcomes": [
-        "PPTX stale-anchor fixture is prepared from a real template",
-        "PPTX replaces anchored text once and retries with the stale anchor",
-        "PPTX refuses the stale anchor and keeps the post-success bytes unchanged"
+        "the contract20 derived PPTX recipe \"plain-title\" is created in memory from its sealed fixture",
+        "the production inspector holds the unique first title paragraph anchor reading JSON \"Frankenstein\"",
+        "the production anchored editor replaces JSON \"Frankenstein\" with JSON \"Creature\" through that anchor",
+        "the complete post-success package member state and prior destination are recorded",
+        "the same old anchor attempts replacement JSON \"Frankenstein\" with JSON \"Monster\"",
+        "the operation returns exactly typed refusal category \"PPTX_STALE_ANCHOR\" and no changed result",
+        "the complete post-success member state, original caller input and prior destination remain unchanged",
+        "saving and independently reopening the retained session reads JSON \"Creature\"",
+        "a newly issued target for the first title remains usable and original relationships and unrelated members retain custody"
       ],
       "consumers": {
         "bun": {
-          "status": "implemented",
-          "evidence": "Historical consumer acceptance; rerun required after migration"
+          "status": "planned",
+          "evidence": []
         },
         "go": {
           "status": "planned",
-          "evidence": "not-run: not yet mapped to this common workflow"
+          "evidence": []
         },
         "python": {
           "status": "planned",
-          "evidence": "not-run: not yet mapped to this common workflow"
+          "evidence": []
         }
       }
     },
@@ -888,23 +916,25 @@
         "ContentTypeWorkbook"
       ],
       "expectedOutcomes": [
-        "a synthetic two-sheet XLSX fixture with rel-linked shared strings, numbers, booleans and cached formulas",
-        "I open the workbook through the XLSX reader",
-        "the workbook sheetnames follow workbook relationships",
-        "cell reads include shared strings, numbers, booleans and cached formulas across worksheets"
+        "the literal contract20 XLSX recipe \"rel-values\" is packed without workbook APIs",
+        "the source member payloads, relationships and caller archive are recorded",
+        "the production read API inspects worksheets in workbook sheet order and obtains literal cell and formula/cache values",
+        "the ordered sheet identities equal JSON [{\"name\":\"Alpha\",\"part\":\"xl/worksheets/sheet2.xml\"},{\"name\":\"Beta\",\"part\":\"xl/worksheets/sheet1.xml\"}]",
+        "the exact read records equal JSON {\"Alpha\":{\"A1\":{\"kind\":\"string\",\"value\":\"alpha shared\"},\"B1\":{\"kind\":\"number\",\"value\":7},\"C1\":{\"kind\":\"boolean\",\"value\":false},\"D1\":{\"kind\":\"formula\",\"formula\":\"B1+1\",\"cached\":8}},\"Beta\":{\"A1\":{\"kind\":\"string\",\"value\":\"beta shared\"},\"B1\":{\"kind\":\"number\",\"value\":42},\"C1\":{\"kind\":\"boolean\",\"value\":true},\"D1\":{\"kind\":\"formula\",\"formula\":\"B1*2\",\"cached\":84}}}",
+        "all read calls leave the archive, every member payload and relationship unchanged and create no new members"
       ],
       "consumers": {
         "bun": {
-          "status": "implemented",
-          "evidence": "Historical consumer acceptance; rerun required after migration"
+          "status": "planned",
+          "evidence": []
         },
         "go": {
           "status": "planned",
-          "evidence": "not-run: not yet mapped to this common workflow"
+          "evidence": []
         },
         "python": {
           "status": "planned",
-          "evidence": "not-run: not yet mapped to this common workflow"
+          "evidence": []
         }
       }
     },
@@ -946,23 +976,33 @@
         "ContentTypeWorkbook"
       ],
       "expectedOutcomes": [
-        "a synthetic two-sheet XLSX fixture with cross-sheet cached formulas",
-        "I change the input cell A1 to 10 and save the workbook",
-        "every formula cache is removed across the worksheets",
-        "workbook calculation flags request full recalculation"
+        "the literal contract20 XLSX recipe \"cross-caches\" is packed without workbook APIs",
+        "Model!A1 is numeric 1 and the original source and all member payloads are recorded",
+        "the production value editor writes numeric 10 to Model!A1 under the invalidate-all-ordinary-caches profile",
+        "the result is saved to a distinct new path and independently parsed and reopened",
+        "the source fixture, caller archive and operation operands remain unchanged",
+        "only the sealed original member and lexical span allowances differ; all unrelated member payloads remain literal",
+        "all saved OPC relationships and content types resolve with original identities preserved",
+        "refusals and save faults publish no partial destination and leave the session and held unaffected targets usable",
+        "the saved Model!A1 is numeric 10 and Model!A2 remains numeric 2",
+        "the four saved formula bodies equal JSON {\"Model!B1\":\"A1+A2\",\"Model!B2\":\"B1*2\",\"Summary!A1\":\"Model!B1*3\",\"Summary!B1\":\"40+2\"}",
+        "all four formula cells have no value cache and data-only reads return null rather than original caches JSON [3,6,9,42]",
+        "the saved workbook has exactly one qualified calcPr with calcMode auto fullCalcOnLoad 1 and forceFullCalc 1",
+        "the exact changed member set is JSON [\"xl/workbook.xml\",\"xl/worksheets/sheet1.xml\",\"xl/worksheets/sheet2.xml\"] without additions or removals",
+        "an independent numeric-1 no-op on the original input retains every original member and all four caches and calculation flags"
       ],
       "consumers": {
         "bun": {
-          "status": "implemented",
-          "evidence": "Historical consumer acceptance; rerun required after migration"
+          "status": "planned",
+          "evidence": []
         },
         "go": {
           "status": "planned",
-          "evidence": "not-run: not yet mapped to this common workflow"
+          "evidence": []
         },
         "python": {
           "status": "planned",
-          "evidence": "not-run: not yet mapped to this common workflow"
+          "evidence": []
         }
       }
     },
@@ -975,22 +1015,34 @@
         "ContentTypeWorkbook"
       ],
       "expectedOutcomes": [
-        "a synthetic prefixed XLSX fixture with blank cells and formulas",
-        "I write \"Alpha\" to prefixed A1, 7 to prefixed B1, and save the workbook",
-        "the saved prefixed workbook keeps one qualified calcPr and qualified new cell values"
+        "the literal contract20 XLSX recipe \"prefixed-cells\" includes sealed styles indexes 0 1 and 2",
+        "the source member payloads, relationships and caller archive are recorded",
+        "the production value editor writes JSON \"Alpha\" to Prefixed!A1 and numeric 7 to Prefixed!B1",
+        "the result is saved to a distinct new path and independently parsed and reopened",
+        "the source fixture, caller archive and operation operands remain unchanged",
+        "only the sealed original member and lexical span allowances differ; all unrelated member payloads remain literal",
+        "all saved OPC relationships and content types resolve with original identities preserved",
+        "refusals and save faults publish no partial destination and leave the session and held unaffected targets usable",
+        "the saved A1 and B1 retain original r and style indexes 1 and 2 and read JSON \"Alpha\" and numeric 7",
+        "the saved value nodes are qualified x:is x:t and x:v with the original spreadsheet namespace",
+        "the saved C1 formula remains 1+1 and its x:v cache is absent",
+        "the saved workbook has exactly one x:calcPr with calcMode auto fullCalcOnLoad 1 and forceFullCalc 1",
+        "the exact changed member set is JSON [\"xl/workbook.xml\",\"xl/worksheets/sheet1.xml\"] without additions or removals",
+        "only entire original A1 and B1 cell spans, original C1 x:v and the calcPr insertion site may differ; every intervening XML span retains literal bytes",
+        "the original styles.xml and all unpatched original cell attributes and properties retain literal bytes"
       ],
       "consumers": {
         "bun": {
-          "status": "implemented",
-          "evidence": "Historical consumer acceptance; rerun required after migration"
+          "status": "planned",
+          "evidence": []
         },
         "go": {
           "status": "planned",
-          "evidence": "not-run: not yet mapped to this common workflow"
+          "evidence": []
         },
         "python": {
           "status": "planned",
-          "evidence": "not-run: not yet mapped to this common workflow"
+          "evidence": []
         }
       }
     },
@@ -1003,22 +1055,25 @@
         "ContentTypeWorkbook"
       ],
       "expectedOutcomes": [
-        "a synthetic XLSX fixture with phonetic guides in shared and inline rich strings",
-        "I open the workbook through the XLSX reader",
-        "phonetic guides are excluded while rich text runs stay intact"
+        "the literal contract20 XLSX recipe \"phonetic-strings\" is packed without workbook APIs",
+        "the source member payloads, relationships and caller archive are recorded",
+        "the production reader reads Phonetics!A1 and Phonetics!B1",
+        "the exact string values equal JSON {\"A1\":\"Alpha Beta\",\"B1\":\"Gamma Delta\"}",
+        "no returned visible string includes JSON \"Guide\"",
+        "every original rich run and rPh XML span, member payload and caller archive remains unchanged"
       ],
       "consumers": {
         "bun": {
-          "status": "implemented",
-          "evidence": "Historical consumer acceptance; rerun required after migration"
+          "status": "planned",
+          "evidence": []
         },
         "go": {
           "status": "planned",
-          "evidence": "not-run: not yet mapped to this common workflow"
+          "evidence": []
         },
         "python": {
           "status": "planned",
-          "evidence": "not-run: not yet mapped to this common workflow"
+          "evidence": []
         }
       }
     },
@@ -1031,23 +1086,32 @@
         "ContentTypeWorkbook"
       ],
       "expectedOutcomes": [
-        "a synthetic XLSX fixture with a styled blank cell",
-        "I change the blank styled cell A1 text to \"filled\" and save and reopen the workbook",
-        "the blank styled cell was readable as null before editing",
-        "the reopened blank styled cell keeps its style and new value"
+        "the literal contract20 XLSX recipe \"styled-blank\" includes sealed styles indexes 0 1 and 2",
+        "the original StyledBlank!A1 reads null with style index 1 and B1 reads numeric 5 with style index 2",
+        "the production value editor writes JSON \"filled\" to StyledBlank!A1",
+        "the result is saved to a distinct new path and independently parsed and reopened",
+        "the source fixture, caller archive and operation operands remain unchanged",
+        "only the sealed original member and lexical span allowances differ; all unrelated member payloads remain literal",
+        "all saved OPC relationships and content types resolve with original identities preserved",
+        "refusals and save faults publish no partial destination and leave the session and held unaffected targets usable",
+        "the reopened StyledBlank!A1 reads JSON \"filled\" with original style index 1",
+        "the reopened StyledBlank!B1 reads numeric 5 with original style index 2",
+        "the exact changed member set is JSON [\"xl/worksheets/sheet1.xml\"] without additions or removals",
+        "only the selected original A1 cell element span may differ; styles.xml B1 and every other original XML span remain literal",
+        "every original style definition and relationship retains its original payload"
       ],
       "consumers": {
         "bun": {
-          "status": "implemented",
-          "evidence": "Historical consumer acceptance; rerun required after migration"
+          "status": "planned",
+          "evidence": []
         },
         "go": {
           "status": "planned",
-          "evidence": "not-run: not yet mapped to this common workflow"
+          "evidence": []
         },
         "python": {
-          "status": "implemented",
-          "evidence": "Python published e5489986f7faca698244f6aea4893d6829f28749 at shared v0.128.0 executes only @id-xlsx-styled-blank-cell-editable, one exact four-step case in workflows/xlsx/cells.feature via tests/xlsx_styled_blank/{cases,conftest,test_styled_blank}.py. Sealed feature/ID/title/four steps/no Examples guarded. A synthetic nine-member XLSX is authored in temporary workspace (NOT a sealed prebuilt styled-blank fixture): A1 is blank but has blue fill FF1177CC, bold coloured font FF224466, format 0.00, centred alignment and style ref 1; B1 is guard. Production ExcelAdvancedTools.tool_excel_get_range(A1) returns null/type empty; tool_excel_patch_cell(A1,filled) with distinct output, highlight=False and log_change=False reports old=None/new=filled. Independent openpyxl reopen confirms filled with same style ID/components and B1 guard; raw sheet XML A1 changes from s=1,t=n/no value to s=1,t=inlineStr with filled, while xl/styles.xml and all other eight parts stay byte-identical and source archive bytes/parts unchanged. Auxiliary unstyled, wrong-target, highlight=True and wrong-value alternatives fail intended predicates; not additional cases. Temporary production highlight-on-default mutation made canonical reopened style assertion fail and was restored byte-for-byte before four-file tests/docs commit. Uncached committed local, independent clean recursive pre-push and fresh GitHub recursive post-push suites each passed 1,411 tests (three existing warnings), sixteen provenance-clean lanes including exact styled blank 1/4; Python CI 36602932694 passed on 3.10/3.12/3.13 and Windows 36602932853 passed. No Go, broad XLSX calculation, Office rendering, PPTX/PDF/OPC or protected checkout credit."
+          "status": "planned",
+          "evidence": []
         }
       }
     },
@@ -1060,23 +1124,27 @@
         "ContentTypeWorkbook"
       ],
       "expectedOutcomes": [
-        "the shared-formula XLSX fixture",
-        "I try to overwrite the shared formula cell B2",
-        "the shared formula edit is refused before mutation",
-        "saving afterwards keeps the workbook and worksheet parts byte-identical"
+        "the literal contract20 XLSX recipe \"attributed-formulas\" is packed without workbook APIs",
+        "the source and prior destination bytes, every member and held input-cell target are recorded",
+        "the production value editor attempts numeric 99 at Calc!B2",
+        "the operation returns exactly typed refusal category \"xlsx-shared-formula-edit-unsupported\" and no edited result",
+        "the original formula anchors followers caches and all member payloads remain unchanged",
+        "saving the refused session to a new path preserves every original member without additions or removals",
+        "source caller operands and prior destination remain unchanged with no partial output",
+        "a held unrelated Calc!A2 target remains usable after the refusal"
       ],
       "consumers": {
         "bun": {
-          "status": "implemented",
-          "evidence": "Historical consumer acceptance; rerun required after migration"
+          "status": "planned",
+          "evidence": []
         },
         "go": {
           "status": "planned",
-          "evidence": "not-run: not yet mapped to this common workflow"
+          "evidence": []
         },
         "python": {
           "status": "planned",
-          "evidence": "not-run: not yet mapped to this common workflow"
+          "evidence": []
         }
       }
     },
@@ -1089,23 +1157,27 @@
         "ContentTypeWorkbook"
       ],
       "expectedOutcomes": [
-        "the shared-formula XLSX fixture",
-        "I try to overwrite the array formula cell D2",
-        "the array formula edit is refused before mutation",
-        "saving afterwards keeps the workbook and worksheet parts byte-identical"
+        "the literal contract20 XLSX recipe \"attributed-formulas\" is packed without workbook APIs",
+        "the source and prior destination bytes, every member and held input-cell target are recorded",
+        "the production value editor attempts numeric 99 at Calc!D2",
+        "the operation returns exactly typed refusal category \"xlsx-array-formula-edit-unsupported\" and no edited result",
+        "the original formula anchors followers caches and all member payloads remain unchanged",
+        "saving the refused session to a new path preserves every original member without additions or removals",
+        "source caller operands and prior destination remain unchanged with no partial output",
+        "a held unrelated Calc!A2 target remains usable after the refusal"
       ],
       "consumers": {
         "bun": {
-          "status": "implemented",
-          "evidence": "Historical consumer acceptance; rerun required after migration"
+          "status": "planned",
+          "evidence": []
         },
         "go": {
           "status": "planned",
-          "evidence": "not-run: not yet mapped to this common workflow"
+          "evidence": []
         },
         "python": {
           "status": "planned",
-          "evidence": "not-run: not yet mapped to this common workflow"
+          "evidence": []
         }
       }
     },
@@ -1118,24 +1190,29 @@
         "ContentTypeWorkbook"
       ],
       "expectedOutcomes": [
-        "a two-sheet workbook with a array formula and cached follower cells",
-        "an ordinary input value edit is attempted",
-        "the edit refuses with code \"xlsx-cache-topology-unsupported\"",
-        "every workbook member and cached result remains byte-identical",
-        "a two-sheet workbook with a dataTable formula and cached follower cells"
+        "the literal contract20 XLSX recipe \"input-array\" is packed without workbook APIs",
+        "the original Model!A1 is numeric 1 and Summary!A1:A2 cached result values are JSON [1,2]",
+        "the source and prior destination bytes, every member and held input-cell target are recorded",
+        "the production value editor attempts numeric 10 at Model!A1 under the invalidate-all-ordinary-caches profile",
+        "the operation returns exactly typed refusal category \"xlsx-cache-topology-unsupported\" before any expression evaluation and no edited result",
+        "all attributed formula metadata, follower cells, cached values and every member payload remain byte-identical",
+        "saving the refused session preserves every original member without additions or removals",
+        "source caller operands and prior destination remain unchanged with no partial output",
+        "a repeated numeric-1 no-op observation leaves the refused input and caches unchanged",
+        "the literal contract20 XLSX recipe \"input-dataTable\" is packed without workbook APIs"
       ],
       "consumers": {
         "bun": {
-          "status": "implemented",
-          "evidence": "Historical consumer acceptance; rerun required after migration"
+          "status": "planned",
+          "evidence": []
         },
         "go": {
           "status": "planned",
-          "evidence": "not-run: not yet mapped to this common workflow"
+          "evidence": []
         },
         "python": {
           "status": "planned",
-          "evidence": "not-run: not yet mapped to this common workflow"
+          "evidence": []
         }
       }
     },
@@ -1148,23 +1225,33 @@
         "ContentTypeWorkbook"
       ],
       "expectedOutcomes": [
-        "a workbook with ordinary worksheet formulas and opaque chart and external-link caches",
-        "its input is changed and the workbook is saved and reopened",
-        "worksheet formula cache values are cleared and their formulas retained",
-        "the opaque chart and external-link cache payloads remain unchanged"
+        "the literal contract20 XLSX recipe \"opaque-caches\" is packed without workbook APIs",
+        "the exact inert root edges cache1 and cache2 and typed content overrides match the sealed recipe and no semantic chart or external owner edge exists",
+        "the source member payloads, relationships and caller archive are recorded",
+        "the production value editor explicitly opts into sealed-opaque-retention and writes numeric 10 to Model!A1",
+        "the result is saved to a distinct new path and independently parsed and reopened",
+        "the source fixture, caller archive and operation operands remain unchanged",
+        "only the sealed original member and lexical span allowances differ; all unrelated member payloads remain literal",
+        "all saved OPC relationships and content types resolve with original identities preserved",
+        "refusals and save faults publish no partial destination and leave the session and held unaffected targets usable",
+        "all four ordinary formula bodies remain unchanged and all their cached values are absent",
+        "the saved workbook has exactly one qualified calcPr with calcMode auto fullCalcOnLoad 1 and forceFullCalc 1",
+        "both opaque cache payloads retain literal numeric 1 and every original byte",
+        "the exact changed member set is JSON [\"xl/workbook.xml\",\"xl/worksheets/sheet1.xml\",\"xl/worksheets/sheet2.xml\"] without additions or removals",
+        "an independent variant with an extra semantic chart or external owner relationship refuses before writing any member or destination"
       ],
       "consumers": {
         "bun": {
-          "status": "implemented",
-          "evidence": "Historical consumer acceptance; rerun required after migration"
+          "status": "planned",
+          "evidence": []
         },
         "go": {
           "status": "planned",
-          "evidence": "not-run: not yet mapped to this common workflow"
+          "evidence": []
         },
         "python": {
           "status": "planned",
-          "evidence": "not-run: not yet mapped to this common workflow"
+          "evidence": []
         }
       }
     },
@@ -2026,20 +2113,28 @@
       "expandedCases": 1,
       "factIds": [],
       "expectedOutcomes": [
-        "PPTX reopens both slides in order with title and subtitle placeholder text and valid minimal relationships"
+        "no input package is supplied to the production presentation creator",
+        "the production creator authors exactly two text slides with JSON [[\"Created title 1\",\"Created subtitle 1\"],[\"Created title 2\",\"Created subtitle 2\"]]",
+        "the resulting presentation is saved to a new path and independently parsed and reopened",
+        "the reopened slide count is 2 with exactly one master and one title-layout definition",
+        "the exact ordered title and subtitle placeholder text equals JSON [[\"Created title 1\",\"Created subtitle 1\"],[\"Created title 2\",\"Created subtitle 2\"]]",
+        "the support graph follows contract20-creation-policy.json: exactly one presentation master title-layout and theme; optional presentation-properties view-properties table-style-definitions core-properties and application-properties have at most one part each, and no other roles or unknown edges exist",
+        "each slide owns exactly one resolved layout edge and the master and layout link to each other without duplicate IDs",
+        "no unrequested notes media external links tables or extra slides are authored",
+        "a failed save leaves an existing destination unchanged or a previously absent destination absent"
       ],
       "consumers": {
         "bun": {
           "status": "planned",
-          "evidence": "Existing local bindings passed; canonical-path run tracked separately in consumer"
+          "evidence": []
         },
         "go": {
           "status": "planned",
-          "evidence": "No equivalent operation binding reviewed; language-specific behaviours remain explicit"
+          "evidence": []
         },
         "python": {
           "status": "planned",
-          "evidence": "No equivalent operation binding reviewed; creation/body editing are not existing-flag mutation"
+          "evidence": []
         }
       }
     },
@@ -2049,20 +2144,33 @@
       "expandedCases": 1,
       "factIds": [],
       "expectedOutcomes": [
-        "PPTX keeps the original slide content ordered and preserved except for the anchored edit and gives the new slide independent relationships"
+        "the contract20 derived PPTX recipe \"title-subtitle-source\" is created in memory from its sealed fixture",
+        "the first title anchor is held while its text is JSON \"Original title\" and original member identities are recorded",
+        "the production presentation editor appends title JSON \"Appended title\" and subtitle JSON \"Appended subtitle\"",
+        "the original slide part and relationships remain literal and the held original title anchor remains valid",
+        "the production anchored editor uses that held anchor to replace JSON \"Original title\" with JSON \"Edited original title\"",
+        "the result is saved to a distinct new path and independently parsed and reopened",
+        "the source fixture, caller archive and operation operands remain unchanged",
+        "only the sealed original member and lexical span allowances differ; all unrelated member payloads remain literal",
+        "all saved OPC relationships and content types resolve with original identities preserved",
+        "refusals and save faults publish no partial destination and leave the session and held unaffected targets usable",
+        "the exact reopened placeholder order equals JSON [[\"Edited original title\",\"Original subtitle\"],[\"Appended title\",\"Appended subtitle\"]]",
+        "the old slide retains its original IDs relationship IDs targets layout links and payload outside the selected title run",
+        "exactly one new slide and its one layout relationship part are added with unique valid identities; no member is removed",
+        "only original presentation list relationships content types and selected first-slide text spans may change"
       ],
       "consumers": {
         "bun": {
           "status": "planned",
-          "evidence": "Existing local bindings passed; canonical-path run tracked separately in consumer"
+          "evidence": []
         },
         "go": {
           "status": "planned",
-          "evidence": "No equivalent operation binding reviewed; language-specific behaviours remain explicit"
+          "evidence": []
         },
         "python": {
           "status": "planned",
-          "evidence": "No equivalent operation binding reviewed; creation/body editing are not existing-flag mutation"
+          "evidence": []
         }
       }
     },
@@ -2072,20 +2180,27 @@
       "expandedCases": 1,
       "factIds": [],
       "expectedOutcomes": [
-        "PPTX refuses both requests with rollback and leaves their package bytes unchanged"
+        "the production creator has a new empty session and a second session opens contract20 derived PPTX recipe \"unsafe-title-layout\"",
+        "both source session states and prior destination bytes are recorded",
+        "the new session attempts title JSON \"bad\\u0000\" and subtitle JSON \"Bad subtitle\"",
+        "that operation returns exactly typed refusal category \"PPTX_ARGUMENT_INVALID\" with no new slide or partial result",
+        "the unsafe-layout session attempts append with title JSON \"Unsafe next title\" and subtitle JSON \"Unsafe next subtitle\"",
+        "that operation returns exactly typed refusal category \"PPTX_LAYOUT_UNSAFE\" with no changed result",
+        "both complete session member states and all source relationships remain unchanged",
+        "no refusal or save fault creates or replaces a destination and held unaffected reads remain usable"
       ],
       "consumers": {
         "bun": {
           "status": "planned",
-          "evidence": "Existing local bindings passed; canonical-path run tracked separately in consumer"
+          "evidence": []
         },
         "go": {
           "status": "planned",
-          "evidence": "No equivalent operation binding reviewed; language-specific behaviours remain explicit"
+          "evidence": []
         },
         "python": {
           "status": "planned",
-          "evidence": "No equivalent operation binding reviewed; creation/body editing are not existing-flag mutation"
+          "evidence": []
         }
       }
     },
@@ -2095,20 +2210,29 @@
       "expandedCases": 1,
       "factIds": [],
       "expectedOutcomes": [
-        "PPTX preserves the table size, exact grid sums, and cell text after reopen"
+        "the production creator authors a new presentation with one title slide JSON \"Tables\"",
+        "the production table editor authors a 2-row 3-column table at EMU x=120 y=240 width=1001 height=1003",
+        "the first cell text is set to JSON \"  <Alpha & Beta>  \" and all other cells remain blank",
+        "the result is saved to a new path and independently parsed and reopened",
+        "the saved table has 2 rows 3 columns x=120 y=240 width=1001 height=1003",
+        "the exact grid widths equal JSON [333,333,335] and exact row heights equal JSON [501,502]",
+        "the exact cell matrix equals JSON [[\"  <Alpha & Beta>  \",\"\",\"\"],[\"\",\"\",\"\"]]",
+        "the title remains JSON \"Tables\" and every table name ID namespace and schema-ordered body/property child is valid within the sealed profile",
+        "all created relationships and content types resolve inside the bounded creation support graph",
+        "caller geometry/text operands remain unchanged and save faults leave destination state intact"
       ],
       "consumers": {
         "bun": {
-          "status": "implemented",
-          "evidence": "Bun 23ca11a6fee107c8abcf3e7552865866fbc944fa at shared v0.94.0 executes One exact three-step native PPTX table authoring case creates a 2x3 table, saves and reopens, checks exact first-cell escaped text, x/y/width/height values and column/row grid sums. features/shared.json, tests/acceptance/tables-pptx.ts and tests/unit/pptx-tables.test.ts bind four exact scenarios (five cases/15 steps), with independently parsed saved XML geometry/formatting and typed refusal custody. Fresh post-push GitHub recursive make check passed 732/732 selected cases; Bun CI 36528973679 succeeded. No Go/Python, merged-table editing, Office rendering, general PPTX table geometry or cross-consumer credit."
+          "status": "planned",
+          "evidence": []
         },
         "go": {
           "status": "planned",
-          "evidence": "No equivalent operation binding reviewed; language-specific behaviours remain explicit"
+          "evidence": []
         },
         "python": {
           "status": "planned",
-          "evidence": "No equivalent operation binding reviewed; creation/body editing are not existing-flag mutation"
+          "evidence": []
         }
       }
     },
@@ -2118,20 +2242,32 @@
       "expandedCases": 1,
       "factIds": [],
       "expectedOutcomes": [
-        "PPTX preserves table cell formatting across the update and reopen"
+        "the contract20 derived PPTX recipe \"styled-table\" is created in memory from its sealed fixture",
+        "the unique table frame ID 4 cell 0,0 reads JSON \"Galvanic battery\" with its sealed literal property snapshot",
+        "the source member payloads, relationships and caller archive are recorded",
+        "the production retained table-cell editor replaces that cell text with JSON \"updated value\"",
+        "the result is saved to a distinct new path and independently parsed and reopened",
+        "the source fixture, caller archive and operation operands remain unchanged",
+        "only the sealed original member and lexical span allowances differ; all unrelated member payloads remain literal",
+        "all saved OPC relationships and content types resolve with original identities preserved",
+        "refusals and save faults publish no partial destination and leave the session and held unaffected targets usable",
+        "the reopened cell text equals JSON \"updated value\"",
+        "the saved properties equal JSON {\"bodyPr\":{\"wrap\":\"square\"},\"tcPr\":{\"marL\":\"111\"},\"fill\":\"FFFF00\",\"paragraph\":{\"algn\":\"r\"},\"firstRun\":{\"b\":\"1\",\"sz\":\"1800\"},\"endParaRPr\":{\"lang\":\"en-US\"}}",
+        "the exact changed member set is JSON [\"ppt/slides/slide1.xml\"] without additions or removals",
+        "only selected original text leaf content may differ; all bodyPr tcPr pPr rPr endParaRPr attributes children and sibling spans retain literal bytes"
       ],
       "consumers": {
         "bun": {
-          "status": "implemented",
-          "evidence": "Bun 23ca11a6fee107c8abcf3e7552865866fbc944fa at shared v0.94.0 executes One exact three-step existing styled-table edit saves/reopens updated cell text and preserves wrap, margin, fill, paragraph alignment, bold/size run attributes and end-paragraph language. features/shared.json, tests/acceptance/tables-pptx.ts and tests/unit/pptx-tables.test.ts bind four exact scenarios (five cases/15 steps), with independently parsed saved XML geometry/formatting and typed refusal custody. Fresh post-push GitHub recursive make check passed 732/732 selected cases; Bun CI 36528973679 succeeded. No Go/Python, merged-table editing, Office rendering, general PPTX table geometry or cross-consumer credit."
+          "status": "planned",
+          "evidence": []
         },
         "go": {
           "status": "planned",
-          "evidence": "No equivalent operation binding reviewed; language-specific behaviours remain explicit"
+          "evidence": []
         },
         "python": {
           "status": "planned",
-          "evidence": "No equivalent operation binding reviewed; creation/body editing are not existing-flag mutation"
+          "evidence": []
         }
       }
     },
@@ -2141,20 +2277,28 @@
       "expandedCases": 1,
       "factIds": [],
       "expectedOutcomes": [
-        "PPTX refuses the stale table handle without mutating the package"
+        "the contract20 derived PPTX recipe \"stale-table\" is created in memory from its sealed fixture",
+        "the production editor holds table frame ID 4 cell 0,0 with its original empty text",
+        "the production editor adds a second 1-row 1-column table at EMU x=1200 y=100 width=900 height=600",
+        "the complete post-add member state and prior destination are recorded",
+        "the old first-table cell handle attempts JSON \"stale write\"",
+        "the operation returns exactly typed refusal category \"PPTX_STALE_TABLE_HANDLE\" and no changed result",
+        "every post-add member payload and graph identity, caller input and prior destination remains unchanged",
+        "saving and independently reopening still finds exactly two tables with both first cells empty",
+        "a freshly found first-table cell is usable and any invalid late patch refuses without consuming it"
       ],
       "consumers": {
         "bun": {
-          "status": "implemented",
-          "evidence": "Bun 23ca11a6fee107c8abcf3e7552865866fbc944fa at shared v0.94.0 executes One exact three-step table-handle case creates a new slide, invalidates its earlier cell handle by adding a second table, then requires typed PPTX_STALE_TABLE_HANDLE without changing package bytes. features/shared.json, tests/acceptance/tables-pptx.ts and tests/unit/pptx-tables.test.ts bind four exact scenarios (five cases/15 steps), with independently parsed saved XML geometry/formatting and typed refusal custody. Fresh post-push GitHub recursive make check passed 732/732 selected cases; Bun CI 36528973679 succeeded. No Go/Python, merged-table editing, Office rendering, general PPTX table geometry or cross-consumer credit."
+          "status": "planned",
+          "evidence": []
         },
         "go": {
           "status": "planned",
-          "evidence": "No equivalent operation binding reviewed; language-specific behaviours remain explicit"
+          "evidence": []
         },
         "python": {
           "status": "planned",
-          "evidence": "No equivalent operation binding reviewed; creation/body editing are not existing-flag mutation"
+          "evidence": []
         }
       }
     },
@@ -2164,21 +2308,30 @@
       "expandedCases": 2,
       "factIds": [],
       "expectedOutcomes": [
-        "PPTX refusal \"PPTX_TABLE_MERGE_UNSUPPORTED\" is returned atomically for table refusal \"merged-cell\"",
-        "PPTX refusal \"PPTX_TABLE_STRUCTURE_UNSUPPORTED\" is returned atomically for table refusal \"malformed-merge\""
+        "the contract20 derived PPTX recipe \"merged-table\" is created in memory from its sealed fixture",
+        "the source and prior destination bytes and all member payloads are recorded",
+        "the production package open and target selection of table frame ID 4 cell 0,0 succeed without mutation or intake refusal",
+        "the production table-cell editor attempts JSON \"x\" at the selected target",
+        "only that cell-text edit preflight returns exactly typed refusal category \"PPTX_TABLE_MERGE_UNSUPPORTED\" and no changed result",
+        "every source member, selected table property and relationship remains unchanged",
+        "saving the refused session retains all original members without additions or removals",
+        "no refusal or save fault changes source caller operands or any prior destination",
+        "an independently constructed unmerged same-shape control permits the identical cell mutation and retains unrelated bytes",
+        "the contract20 derived PPTX recipe \"malformed-table\" is created in memory from its sealed fixture",
+        "only that cell-text edit preflight returns exactly typed refusal category \"PPTX_TABLE_STRUCTURE_UNSUPPORTED\" and no changed result"
       ],
       "consumers": {
         "bun": {
-          "status": "implemented",
-          "evidence": "Bun 23ca11a6fee107c8abcf3e7552865866fbc944fa at shared v0.94.0 executes Two exact three-step table-topology refusals: merged-cell yields PPTX_TABLE_MERGE_UNSUPPORTED and malformed-merge yields PPTX_TABLE_STRUCTURE_UNSUPPORTED; both keep an empty package diff and source archive bytes unchanged. features/shared.json, tests/acceptance/tables-pptx.ts and tests/unit/pptx-tables.test.ts bind four exact scenarios (five cases/15 steps), with independently parsed saved XML geometry/formatting and typed refusal custody. Fresh post-push GitHub recursive make check passed 732/732 selected cases; Bun CI 36528973679 succeeded. No Go/Python, merged-table editing, Office rendering, general PPTX table geometry or cross-consumer credit."
+          "status": "planned",
+          "evidence": []
         },
         "go": {
           "status": "planned",
-          "evidence": "No equivalent operation binding reviewed; language-specific behaviours remain explicit"
+          "evidence": []
         },
         "python": {
           "status": "planned",
-          "evidence": "No equivalent operation binding reviewed; creation/body editing are not existing-flag mutation"
+          "evidence": []
         }
       }
     },
