@@ -15,6 +15,11 @@ test('independent reference vectors check UTF8 spans, exact endpoints, absolute 
  const mix=m.literalReferenceVectors['IF(A1="B2",\'O\'\'Brien\'!$C$4,SUM(D1:E2))'];expect(mix.map((r:any)=>[r.start,r.end])).toEqual([[3,5],[11,26],[31,36]]);expect(mix[1].sheet).toBe("O'Brien");expect(mix[1].first).toEqual({row:4,column:3,rowAbsolute:true,columnAbsolute:true});expect(mix[2].last).toEqual({row:2,column:5,rowAbsolute:false,columnAbsolute:false});
  expect(m.literalDirectRanges['$3:$1'].last.row).toBe(1);expect(m.literalDirectRanges['A3:B1'].last).toEqual({row:1,column:2,rowAbsolute:false,columnAbsolute:false});
 });
+test('boundary policy keeps typed categories and independent conservative lexical controls',async()=>{
+ const m=await load(),b=m.uniformPolicy.lexicalBoundaries;
+ expect(b.coordinateDigits).toBe('ASCII 0-9 with nonzero initial row');expect(b.directLimitCategory).toBe('unsupported-direct-range');expect(b.remapOutputUtf8Bytes).toBe(1048576);expect(b.depth).toContain('depth128 accepted,129 refused');
+ expect(m.boundaryVectors.formulaAccepted).toContain('1.5');expect(m.boundaryVectors.formulaRefused).toContain('A١');expect(m.boundaryVectors.directRefused).toContain('A1 : B2');expect(m.boundaryVectors.xmlRefusals.foreignReplacement).toBe('foreign-target');expect(m.boundaryVectors.xmlRefusals.outputNodesOrDepth).toBe('xml-edit-limit');
+});
 test('uniform history gates fail closed on weakened operands, altered bytes or forged credit',async()=>{
  const m=await load(),f=m.files[0],text=await Bun.file(f.path).text();expect(()=>beforeUniformApi18Feature(f.path,text.replace('normalized reference records','count-only records'))).toThrow('Unreviewed');const row=structuredClone(f.scenarios[0].after[0]);row.steps.at(-1).text+=' changed';expect(beforeUniformApi18Case(row)).toEqual(row);const l=await Bun.file('ledgers/workflows.json').json();l.workflows.find((r:any)=>r.id===m.selectedScenarioIds[0]).consumers.go.status='implemented';expect(()=>beforeUniformApi18Ledger(l)).toThrow('Unreviewed');
 });

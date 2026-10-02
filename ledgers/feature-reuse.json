@@ -5173,7 +5173,7 @@
     "contracts/retained-style-word.md": "143e5c03e420cde0f428a20cadbfe30278112d2cd394867901c363ec26acc086",
     "workflows/pptx/text-frame-properties.feature": "7c9396fbde5af9fd51ea1b5631f4d683be94b02ad35e72045c8c9ae5ceb56562",
     "contracts/retained-table-properties.md": "ca5305ef7813ba933b19e255c850a065ecf8a542988abd1dea953537c036bb80",
-    "contracts/uniform-api18.md": "3eb16ed55f8f1b013eaf16d3c9261e80efad7be06f53aa97662f8a05a9abe7c2",
-    "ledgers/uniform-api18.json": "208bc2cb44e8267c51f55e1d8c67316ad00426e4e23b100b3de1f7dc698ad247"
+    "contracts/uniform-api18.md": "e2444c438fd0687d5fa3aaf8ec0c201f8522c182190a83df81fcf1c6c2f82a6b",
+    "ledgers/uniform-api18.json": "0d2a46e89f92274e3f4304564b718d1517ea5709863b4319963d29cba8d8add5"
   }
 }

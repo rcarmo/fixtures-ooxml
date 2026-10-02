@@ -6855,10 +6855,10 @@
       ]
     },
     {
-      "id": "asset-3eb16ed55f8f1b013eaf16d3c9261e80efad7be06f53aa97662f8a05a9abe7c2",
+      "id": "asset-e2444c438fd0687d5fa3aaf8ec0c201f8522c182190a83df81fcf1c6c2f82a6b",
       "path": "contracts/uniform-api18.md",
-      "bytes": 6171,
-      "sha256": "3eb16ed55f8f1b013eaf16d3c9261e80efad7be06f53aa97662f8a05a9abe7c2",
+      "bytes": 7600,
+      "sha256": "e2444c438fd0687d5fa3aaf8ec0c201f8522c182190a83df81fcf1c6c2f82a6b",
       "role": "contract",
       "aliases": [],
       "origins": [
@@ -6871,10 +6871,10 @@
       ]
     },
     {
-      "id": "asset-208bc2cb44e8267c51f55e1d8c67316ad00426e4e23b100b3de1f7dc698ad247",
+      "id": "asset-0d2a46e89f92274e3f4304564b718d1517ea5709863b4319963d29cba8d8add5",
       "path": "ledgers/uniform-api18.json",
-      "bytes": 207882,
-      "sha256": "208bc2cb44e8267c51f55e1d8c67316ad00426e4e23b100b3de1f7dc698ad247",
+      "bytes": 209520,
+      "sha256": "0d2a46e89f92274e3f4304564b718d1517ea5709863b4319963d29cba8d8add5",
       "role": "reconciliation-ledger",
       "aliases": [],
       "origins": [

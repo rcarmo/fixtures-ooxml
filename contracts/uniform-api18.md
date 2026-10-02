@@ -1,6 +1,6 @@
 # Uniform lexical XML and static-reference APIs
 
-Proposed18 existing profile IDs:9 XML lexical edits (excluding namespace matrix) plus9 static-formula/direct-range/remap IDs. Existing59 expanded cases/201 steps are retained; strengthening adds exact independent predicates, not new claims of package editing or formula evaluation. The two evidence IDs close first at unchanged shared ec227fa.
+The18 sealed profile IDs comprise9 XML lexical edits (excluding namespace matrix) plus9 static-formula/direct-range/remap IDs. Existing59 expanded cases/201 steps are retained; strengthening adds exact independent predicates, not new claims of package editing or formula evaluation. The two evidence IDs close first at unchanged shared ec227fa.
 
 ## Cross-runtime observable API
 
@@ -14,7 +14,7 @@ Direct ranges return exact first AND last coordinates/absolute flags, axis and d
 
 Remapping accepts typed axis row/column, positive insertion coordinate/count and nonempty change/context sheets. It rewrites only static references matching the sheet case-insensitively; existing absolute markers shift for structural insertion, unchanged references retain original spelling, altered column letters uppercase; string literals and other-sheet references remain literal. Coordinate overflow/invalid insertion refuses atomically (`invalid-reference-insertion` or `unsupported-static-reference`) with null adapter value/native empty output. Input and insertion object remain unchanged.
 
-## Required strengthening before shared seal
+## Exact predicates
 
 - Formula count rows: independently frozen exact record JSON (all endpoints/flags/sheet/spans), not count-only. Accepted punctuation rows get exact references; refused rows zero partial output.
 - Direct-range rows: exact last endpoint/absolute flags and complete normalized result; zero absent-axis semantics explicit.
@@ -22,6 +22,14 @@ Remapping accepts typed axis row/column, positive insertion coordinate/count and
 - XML insertion deliberately adopts `other/a="value"` and grandchild `text` across all3. Historic Go used `v`, which the previous shared case did not assert; its old receipt remains weaker historical evidence. New consumers send and independently assert the uniform value. Read back authored attribute expanded name/value and grandchild text, exact unedited byte masks/full output where rendering deterministic. Existing root/scope semantics stay concrete.
 - All edit cases: explicit input/snapshot/patch custody; foreign target, duplicate/overlap/root/no-op controls discriminate refusal and reuse.
 - Producer APIs must implement real lexical/grammar work; whole-source reserialization or fixtures/dictionaries returning expected values cannot establish these predicates.
+
+## Lexical and boundary policy
+
+The formula lexer accepts ASCII cell letters and ASCII row digits. Only U+0020 is whitespace outside string literals and quoted sheets; C0/C1/DEL controls refuse even inside literals. A reference token has no whitespace between its sheet qualifier, exclamation mark, endpoints or colon. Direct ranges have no whitespace outside quoted sheet names. Unicode letter/number sheet identifiers and quoted Unicode sheets remain supported; Unicode digits do not become row coordinates.
+
+Root expression depth is zero. Each nested expression increments depth; depth128 succeeds and129 refuses. Direct-range byte/input limits refuse as `unsupported-direct-range`. Remapping limits UTF-8 output to1,048,576 bytes, uses Unicode simple lowercase for sheet comparison, and requires nonblank well-formed change/context sheets of at most255 UTF-16 units without C0/C1/DEL or `[]:*?/\\`. Altered range tokens render uppercase columns for both endpoints; untouched reference tokens retain their complete spelling.
+
+Invalid source Unicode, character values and unsafe edited XML refuse as `unsafe-XML`; malformed/reserved/unbound authored QNames and invalid typed fields refuse as `invalid-name-or-value`. Foreign replacement targets retain `foreign-target`. Final-output node/depth/size violations retain `xml-edit-limit`. Only exact native typed codes or typed causes establish categories; diagnostic text and substring matching do not.
 
 ## Release boundary
 

@@ -141,6 +141,21 @@
         "unsupported-direct-range": "directrangegrammarorgridrefusal",
         "invalid-reference-insertion": "axis/coordinate/count/sheetinvalidorcoordinateoverflow"
       }
+    },
+    "lexicalBoundaries": {
+      "cellLetters": "ASCII A-Z/a-z",
+      "coordinateDigits": "ASCII 0-9 with nonzero initial row",
+      "formulaWhitespace": "Only U+0020 outside strings/quoted sheets; all controls refused everywhere",
+      "referenceWhitespace": "No whitespace between sheet qualifier, !, endpoints or colon",
+      "directWhitespace": "No whitespace outside quoted sheet names",
+      "depth": "Root expression depth 0; each nested expression increments; depth128 accepted,129 refused",
+      "directLimitCategory": "unsupported-direct-range",
+      "remapSheets": "Well-formed Unicode, nonblank, at most255 UTF16 units, no C0/C1/DEL or []:*?/backslash",
+      "sheetComparison": "Unicode simple lowercase (not full case folding)",
+      "remapOutputUtf8Bytes": 1048576,
+      "xmlInvalidCharacterCategory": "unsafe-XML",
+      "xmlAuthoredNameCategory": "invalid-name-or-value",
+      "resourceClassification": "Exact typed codes or typed cause; never diagnostic messages or substring matching"
     }
   },
   "literalReferenceVectors": {
@@ -4151,5 +4166,35 @@
       "reason": "previoussharedcase omittedattributevalue; strongeruniformcontractadoptsconcreteBun/Pythonvalue deliberately; historicGo4steps remainoldscope",
       "allConsumersPlannedUntilNewExecution": true
     }
-  ]
+  ],
+  "boundaryVectors": {
+    "formulaAccepted": [
+      "1.5",
+      "1e2",
+      "IF(A1,B2)",
+      "A1 + B2",
+      "'α sheet'!A1"
+    ],
+    "formulaRefused": [
+      "A١",
+      "A1\t+B2",
+      "A1 +B2",
+      "A1 : B2",
+      "'Main' !A1",
+      "SUM(\"\u0001\",A1)"
+    ],
+    "directRefused": [
+      " A1",
+      "A1 ",
+      "A1 : B2",
+      "A١"
+    ],
+    "xmlRefusals": {
+      "foreignReplacement": "foreign-target",
+      "invalidUnicode": "unsafe-XML",
+      "invalidCharacterValue": "unsafe-XML",
+      "leadingBOM": "invalid-name-or-value",
+      "outputNodesOrDepth": "xml-edit-limit"
+    }
+  }
 }
