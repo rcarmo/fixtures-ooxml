@@ -37,10 +37,10 @@ Feature: PPTX native title-slide authoring
   Scenario: Invalid title text and an unsafe title layout each refuse atomically
     Given the production creator has a new empty session and a second session opens contract20 derived PPTX recipe "unsafe-title-layout"
     And both source session states and prior destination bytes are recorded
-    And the new session attempts title JSON "bad\u0000" and subtitle JSON "Bad subtitle"
-    And that operation returns exactly typed refusal category "PPTX_ARGUMENT_INVALID" with no new slide or partial result
-    And the unsafe-layout session attempts append with title JSON "Unsafe next title" and subtitle JSON "Unsafe next subtitle"
-    And that operation returns exactly typed refusal category "PPTX_LAYOUT_UNSAFE" with no changed result
+    When the new session attempts title JSON "bad\u0000" and subtitle JSON "Bad subtitle"
+    Then that operation returns exactly typed refusal category "PPTX_ARGUMENT_INVALID" with no new slide or partial result
+    When the unsafe-layout session attempts append with title JSON "Unsafe next title" and subtitle JSON "Unsafe next subtitle"
+    Then that operation returns exactly typed refusal category "PPTX_LAYOUT_UNSAFE" with no changed result
     And both complete session member states and all source relationships remain unchanged
     And no refusal or save fault creates or replaces a destination and held unaffected reads remain usable
 

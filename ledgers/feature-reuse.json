@@ -145,7 +145,7 @@
     },
     {
       "path": "workflows/pptx/creation.feature",
-      "reviewedSha256": "b43a058f676ede17d0fd6677c815bf8c6425d0ec816e0bb4a958d35d89aaf5e7"
+      "reviewedSha256": "bf5bf83941f372251045598da0a45b3863c7dd223ed38e70ac0ca09a213e2dcb"
     },
     {
       "path": "workflows/pptx/layout-recommendation.feature",
@@ -5185,7 +5185,7 @@
     "workflows/package/zip32.feature": "8db7070f38041a107a27f2114280971dd29a890c82387dbe31342df7909513ca",
     "workflows/package/zip64.feature": "f103ace071e647ffee092085a1c4b58e9b7be2cb4cb7553c3558c53f3be5c69a",
     "workflows/pptx/bullets.feature": "f26843b74b4b48b81631139cd907de3ddd37940034f1d9332df86df519bcb93f",
-    "workflows/pptx/creation.feature": "b43a058f676ede17d0fd6677c815bf8c6425d0ec816e0bb4a958d35d89aaf5e7",
+    "workflows/pptx/creation.feature": "bf5bf83941f372251045598da0a45b3863c7dd223ed38e70ac0ca09a213e2dcb",
     "workflows/pptx/layout-recommendation.feature": "b41b1f3ef7fe9cc022a74113a4b3edbd1fe2d93934ee83225d7e0b99e6b25a75",
     "workflows/pptx/mutation-safety.feature": "e1820e2469f1f6b809d96294b9da04a7e3edcb19ac3b45550a89b4094d73d9b8",
     "workflows/pptx/notes.feature": "2e4fadee6dba5b2939fb4f6d1cfa41a1f59f07285804310f0c96fceefde4ceb0",
