@@ -1,3 +1,4 @@
+import {beforeUniformApi18Feature} from './uniform-api18-history.ts';
 import {historicalWorkflowLedger} from './xml-generalization-helpers.ts';
 import {test,expect} from 'bun:test';
 import {execFileSync} from 'node:child_process';
@@ -16,7 +17,7 @@ test('Go credits exactly three lexical attribute splices with complete output by
  const ledger=await historicalWorkflowLedger();
  const prior=JSON.parse(execFileSync('git',['show','1e5a644ffaf82b010a5598ae3fdefa96c4331fcd:ledgers/workflows.json']).toString());
  const now=ledger.workflows.find((w:any)=>w.id===id),old=prior.workflows.find((w:any)=>w.id===id);
- const selected=cases(feature,await Bun.file(feature).text()).filter((c:any)=>c.scenarioId===id);
+ const selected=cases(feature,beforeUniformApi18Feature(feature,await Bun.file(feature).text())).filter((c:any)=>c.scenarioId===id);
  expect(now.feature).toBe(feature);expect(now.expandedCases).toBe(3);expect(selected).toHaveLength(3);
  expect(selected.map((c:any)=>c.steps.map((s:any)=>s.text))).toEqual(specs.map(([name,value,output])=>[
   `the XML source is ${source}`,`a lexical edit sets the attribute ${name} of the first t element to ${value}`,

@@ -1,3 +1,4 @@
+import {beforeUniformApi18Feature} from './uniform-api18-history.ts';
 import {historicalWorkflowLedger} from './xml-generalization-helpers.ts';
 import {test,expect} from 'bun:test';
 import {execFileSync} from 'node:child_process';
@@ -8,7 +9,7 @@ test('Go duplicate-attribute refusal is one canonical case, not borrowed from sp
  const ledger=await historicalWorkflowLedger();
  const prior=JSON.parse(execFileSync('git',['show','4bb1908f48c72c6f9ee401b36e8eaa96bf499cca:ledgers/workflows.json']).toString());
  const now=ledger.workflows.find((w:any)=>w.id===id),old=prior.workflows.find((w:any)=>w.id===id);
- const selected=cases(feature,await Bun.file(feature).text()).filter((c:any)=>c.scenarioId===id);
+ const selected=cases(feature,beforeUniformApi18Feature(feature,await Bun.file(feature).text())).filter((c:any)=>c.scenarioId===id);
  expect(now.feature).toBe(feature);expect(now.expandedCases).toBe(1);expect(selected).toHaveLength(1);
  expect(selected[0].steps.map((s:any)=>s.text)).toEqual([
   `the XML source is <r xmlns:p="urn:p"><t a = 'a&amp;b' p:n="old"/><t>text</t></r>`,

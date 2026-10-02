@@ -1,3 +1,4 @@
+import {beforeUniformApi18Feature} from './uniform-api18-history.ts';
 import {historicalWorkflowLedger} from './xml-generalization-helpers.ts';
 import {test,expect} from 'bun:test';
 import {execFileSync} from 'node:child_process';
@@ -8,7 +9,7 @@ test('Go credits only exact two-target XML element removal and byte custody',asy
  const ledger=await historicalWorkflowLedger();
  const prior=JSON.parse(execFileSync('git',['show','fe6862522c7d7df4836bd034b12a500986c3b63c:ledgers/workflows.json']).toString());
  const now=ledger.workflows.find((w:any)=>w.id===id),old=prior.workflows.find((w:any)=>w.id===id);
- const selected=cases(feature,await Bun.file(feature).text()).filter((c:any)=>c.scenarioId===id);
+ const selected=cases(feature,beforeUniformApi18Feature(feature,await Bun.file(feature).text())).filter((c:any)=>c.scenarioId===id);
  expect(now.feature).toBe(feature);expect(now.expandedCases).toBe(1);expect(selected).toHaveLength(1);
  expect(selected[0].steps.map((s:any)=>s.text)).toEqual([
   `the XML source is <r xmlns:p="u"><!--keep--><p:a x = '1'><p:b>text</p:b></p:a> gap <p:c /></r>`,

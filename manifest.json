@@ -3061,16 +3061,22 @@
       "aliases": []
     },
     {
-      "id": "asset-03aa16e68b314e3f2743a4c34235803e479809bc8414f3fa5e892934b045720e",
+      "id": "asset-be9425210db324d7df242759e6920cd7bb01fe241d5eb27bdd8326b5d650c221",
       "path": "workflows/xlsx/formula-references.feature",
-      "bytes": 8617,
-      "sha256": "03aa16e68b314e3f2743a4c34235803e479809bc8414f3fa5e892934b045720e",
+      "bytes": 12987,
+      "sha256": "be9425210db324d7df242759e6920cd7bb01fe241d5eb27bdd8326b5d650c221",
       "role": "workflow",
       "origins": [
         {
           "repository": "https://github.com/rcarmo/fixtures-ooxml",
           "path": "workflows/xlsx/formula-references.feature",
           "basis": "Consolidated operation family; exact source case fingerprints and path migration in ledgers/feature-consolidation.json"
+        },
+        {
+          "kind": "project-authored",
+          "repository": "https://github.com/rcarmo/fixtures-ooxml",
+          "revision": "ec227fa96a1d8b00bc4aacf36cb6d51e7fc5d735",
+          "path": "workflows/xlsx/formula-references.feature"
         }
       ],
       "aliases": []
@@ -3424,10 +3430,10 @@
       "aliases": []
     },
     {
-      "id": "asset-0f7b19a36ba4fd7f47f1b2d692afe7f745210a073f29b26d0056909457353769",
+      "id": "asset-805f5d689e174a7b9ea1989d994bb0a7f2131545801793ee148229c05d24edb5",
       "path": "workflows/xml/editing.feature",
-      "bytes": 8216,
-      "sha256": "0f7b19a36ba4fd7f47f1b2d692afe7f745210a073f29b26d0056909457353769",
+      "bytes": 9360,
+      "sha256": "805f5d689e174a7b9ea1989d994bb0a7f2131545801793ee148229c05d24edb5",
       "role": "workflow",
       "origins": [
         {
@@ -3440,6 +3446,12 @@
           "revision": "0df43857b6a497fb37a9052ee66172754fe15cf2",
           "path": "workflows/xml/editing.feature",
           "transformation": "Concrete lexical XML alignment; stable IDs and historical contract seal retained."
+        },
+        {
+          "kind": "project-authored",
+          "repository": "https://github.com/rcarmo/fixtures-ooxml",
+          "revision": "ec227fa96a1d8b00bc4aacf36cb6d51e7fc5d735",
+          "path": "workflows/xml/editing.feature"
         }
       ],
       "aliases": []
@@ -6839,6 +6851,38 @@
           "repository": "https://github.com/rcarmo/fixtures-ooxml",
           "revision": "7f9a3469d335b01d30b6bbd8acdecc490bc9f0d0",
           "path": "ledgers/retained-table-properties.json"
+        }
+      ]
+    },
+    {
+      "id": "asset-3eb16ed55f8f1b013eaf16d3c9261e80efad7be06f53aa97662f8a05a9abe7c2",
+      "path": "contracts/uniform-api18.md",
+      "bytes": 6171,
+      "sha256": "3eb16ed55f8f1b013eaf16d3c9261e80efad7be06f53aa97662f8a05a9abe7c2",
+      "role": "contract",
+      "aliases": [],
+      "origins": [
+        {
+          "kind": "project-authored",
+          "repository": "https://github.com/rcarmo/fixtures-ooxml",
+          "revision": "ec227fa96a1d8b00bc4aacf36cb6d51e7fc5d735",
+          "path": "contracts/uniform-api18.md"
+        }
+      ]
+    },
+    {
+      "id": "asset-208bc2cb44e8267c51f55e1d8c67316ad00426e4e23b100b3de1f7dc698ad247",
+      "path": "ledgers/uniform-api18.json",
+      "bytes": 207882,
+      "sha256": "208bc2cb44e8267c51f55e1d8c67316ad00426e4e23b100b3de1f7dc698ad247",
+      "role": "reconciliation-ledger",
+      "aliases": [],
+      "origins": [
+        {
+          "kind": "project-authored",
+          "repository": "https://github.com/rcarmo/fixtures-ooxml",
+          "revision": "ec227fa96a1d8b00bc4aacf36cb6d51e7fc5d735",
+          "path": "ledgers/uniform-api18.json"
         }
       ]
     }

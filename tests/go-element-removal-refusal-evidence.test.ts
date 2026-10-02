@@ -1,3 +1,4 @@
+import {beforeUniformApi18Feature} from './uniform-api18-history.ts';
 import {historicalWorkflowLedger} from './xml-generalization-helpers.ts';
 import {test,expect} from 'bun:test';
 import {execFileSync} from 'node:child_process';
@@ -8,7 +9,7 @@ test('Go credits exactly two XML removal refusals, not custody-case auxiliary ch
  const ledger=await historicalWorkflowLedger();
  const prior=JSON.parse(execFileSync('git',['show','5b668bd2ff33168da8dfa6935581dc5d294453e5:ledgers/workflows.json']).toString());
  const now=ledger.workflows.find((w:any)=>w.id===id),old=prior.workflows.find((w:any)=>w.id===id);
- const selected=cases(feature,await Bun.file(feature).text()).filter((c:any)=>c.scenarioId===id);
+ const selected=cases(feature,beforeUniformApi18Feature(feature,await Bun.file(feature).text())).filter((c:any)=>c.scenarioId===id);
  expect(now.feature).toBe(feature);expect(now.expandedCases).toBe(2);expect(selected).toHaveLength(2);
  expect(selected.map((c:any)=>c.name)).toEqual(['A root removal refuses','A p:a and its nested p:b removal refuses']);
  expect(selected.map((c:any)=>c.steps.map((s:any)=>s.text))).toEqual(['root','p:a and its nested p:b'].map(selection=>[

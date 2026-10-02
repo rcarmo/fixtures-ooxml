@@ -3465,6 +3465,7 @@
       "expandedCases": 3,
       "factIds": [],
       "expectedOutcomes": [
+        "the uniform profile result, refusal category and immutable input custody match the sealed API contract",
         "the complete output bytes equal <r xmlns:p=\"urn:p\"><t a = 'x&#39;y&amp;z' p:n=\"old\"/><t>text</t></r>",
         "the complete output bytes equal <r xmlns:p=\"urn:p\"><t a = 'a&amp;b' p:n=\"new\"/><t>text</t></r>",
         "the complete output bytes equal <r xmlns:p=\"urn:p\"><t a = 'a&amp;b' p:n=\"old\" fresh=\"value\"/><t>text</t></r>"
@@ -3472,15 +3473,15 @@
       "consumers": {
         "bun": {
           "status": "planned",
-          "evidence": "Native execution binding pending"
+          "evidence": []
         },
         "go": {
-          "status": "implemented",
-          "evidence": "Go published 7d9fee551547fa7a761b9797fed91f34b2ba4f3a at shared v0.116.0 executes only @id-xml-go-attribute-splice-custody: three exact Examples rows/nine steps from workflows/xml/editing.feature, selected in acceptance/{acceptance,inventory,attribute_splice}_test.go with exact outline ID/name/profile, row lines 27–29, name/value/source/output and expanded step-text guards. Each row parses caller-owned <r xmlns:p=\"urn:p\"><t a = 'a&amp;b' p:n=\"old\"/><t>text</t></r> and edits first t: a to x'y&z (exact &#39; and &amp; escaping in retained single quotes), expanded {urn:p}n to new, or adds fresh=\"value\" before />. Independent literal full-output bytes, reparsed decoded edited/untouched attributes, second t source bytes/text, source-order names and unchanged caller bytes verify bounded lexical custody. Same snapshot no-op/same-value edits retain original bytes; duplicate-a batch refuses without output, then a valid row still succeeds; mutating returned bytes leaves caller and later no-op snapshot unchanged. This auxiliary duplicate control does NOT select or credit @id-xml-go-attribute-batch-refusal. A temporary attribute pass-through mutation failed all three canonical output-byte steps after their first two steps passed; restored before the four-file test-only commit, no production API change. Uncached no-override exact Go local, independent clean recursive pre-push and fresh GitHub recursive post-push root+acceptance gates each passed 409 cases/1404 steps, exact attribute 3/9, sibling refusal zero and defective positive OPC-like XML comparison zero, with no nonpassed steps. Go has no GitHub Actions workflow or CI result. No Bun/Python, general XML/schema/ECMA, Office, CACHE-001, PPTX or PDF credit."
+          "status": "planned",
+          "evidence": []
         },
         "python": {
           "status": "planned",
-          "evidence": "Native execution binding pending"
+          "evidence": []
         }
       }
     },
@@ -3490,20 +3491,21 @@
       "expandedCases": 1,
       "factIds": [],
       "expectedOutcomes": [
+        "the uniform profile result, refusal category and immutable input custody match the sealed API contract",
         "the edit returns an error instead of accepting that batch"
       ],
       "consumers": {
         "bun": {
           "status": "planned",
-          "evidence": "Native execution binding pending"
+          "evidence": []
         },
         "go": {
-          "status": "implemented",
-          "evidence": "Go published 6463d3f237f34ee1235e1c0dc6cad169e2fa30d5 at shared v0.118.0 executes exactly @id-xml-go-attribute-batch-refusal, one three-step profile-lexical-snapshot-api case from workflows/xml/editing.feature via acceptance/{acceptance,inventory,attribute_refusal}_test.go. The binding guards exact ID/name/line 32/no Examples/three step texts and source <r xmlns:p=\"urn:p\"><t a = 'a&amp;b' p:n=\"old\"/><t>text</t></r>. It parses three source-order elements, checks first t decoded a=a&b and expanded {urn:p}n=old plus second t text/raw bytes, then one Edit batch sets first-t no-namespace a to x and y in order. Exact outcome requires nonnil error AND nil output, with caller bytes and original parsed snapshot unchanged. Empty edit and same-value edit preserve original lexical bytes; a valid first-t a=x edit on the same snapshot yields independently expected full XML bytes and reparsed target/untouched sibling. Reversed duplicate and returned-byte alias checks are auxiliary controls, not extra canonical credit. Temporary duplicate-bypass production mutation made the third canonical step fail after first two passed; restored byte-for-byte before four-file test-only commit. Uncached no-override exact local, independent clean recursive pre-push and fresh GitHub recursive post-push root+acceptance gates each passed 410 cases/1407 steps, exact refusal 1/3, previous splice 3/9 and defective positive OPC-like comparison zero selected; no nonpassed steps. Go has no GitHub Actions workflow or CI result. No Bun/Python, general XML/schema/ECMA, Office, CACHE-001, PPTX or PDF credit."
+          "status": "planned",
+          "evidence": []
         },
         "python": {
           "status": "planned",
-          "evidence": "Native execution binding pending"
+          "evidence": []
         }
       }
     },
@@ -3513,21 +3515,23 @@
       "expandedCases": 1,
       "factIds": [],
       "expectedOutcomes": [
+        "the authored attribute expanded name is other/a with JSON value \"value\" and the plain grandchild text is JSON \"text\"",
+        "the uniform profile result, refusal category and immutable input custody match the sealed API contract",
         "reparsing finds expanded element names new/x and empty-namespace plain",
         "the unedited sibling bytes <b>keep</b> remain in the output"
       ],
       "consumers": {
         "bun": {
           "status": "planned",
-          "evidence": "Native execution binding pending"
+          "evidence": []
         },
         "go": {
-          "status": "implemented",
-          "evidence": "Go published 8b8180f512899c21b6be8697211a074b19a47607 at shared v0.124.0 executes only @id-xml-go-child-insertion-custody: one exact four-step lexical-snapshot case in workflows/xml/editing.feature via acceptance/{acceptance,inventory,child_insertion_custody}_test.go and reports/batches/260.md. Exact ID, profile, scenario name, line 38, absence of Examples, source and all four expanded steps are guarded; sibling insertion refusal and namespace matrix remain unselected. Fresh caller-owned <root xmlns=\"u\" xmlns:n1=\"occupied\"><a/><b>keep</b></root> is parsed into a reusable snapshot with independently checked root/a/b expanded names and b text. One structured InsertChildren under existing a appends new/x with an other/a attribute v and empty-namespace plain descendant text text. Output is reparsed independently: source order root/a/new:x/plain/b, all parent links, expanded attribute, descendant and b text are checked. Literal original bytes through <a> and suffix </a><b>keep</b></root remain in place with exactly one sibling; no generated prefix spelling is required. Empty insertion before and after yields original bytes; repeated valid insertion on the SAME snapshot yields the same output; mutating returned bytes cannot alter caller or source snapshot. Temporary production inserted-text mutation text→wrong made the new canonical Then fail after Given/When passed; production restored byte-for-byte before four-file test/receipt commit. Uncached no-override scoped acceptance, local root+acceptance, independent clean recursive pre-push and fresh GitHub recursive post-push gates each passed 414 cases/1421 steps, insertion 1/4, zero nonpassed; sibling refusal/namespace matrix, positive OPC-like XML and CACHE-001 zero selected. Go has no GitHub Actions CI. No Bun/Python, general XML/schema/ECMA, Office, PPTX or PDF credit."
+          "status": "planned",
+          "evidence": []
         },
         "python": {
           "status": "planned",
-          "evidence": "Native execution binding pending"
+          "evidence": []
         }
       }
     },
@@ -3537,21 +3541,22 @@
       "expandedCases": 1,
       "factIds": [],
       "expectedOutcomes": [
+        "the uniform profile result, refusal category and immutable input custody match the sealed API contract",
         "the insertion returns an error",
         "a separate empty insertion batch returns the exact original source bytes"
       ],
       "consumers": {
         "bun": {
           "status": "planned",
-          "evidence": "Native execution binding pending"
+          "evidence": []
         },
         "go": {
-          "status": "implemented",
-          "evidence": "Go published 40eeb71a03b6e3ac6752dd1794a6d7b80b12f2a8 at shared v0.125.0 executes only @id-xml-go-child-insertion-refusal: one exact four-step lexical-snapshot case in workflows/xml/editing.feature via acceptance/{acceptance,inventory,child_insertion_refusal}_test.go and reports/batches/262.md. Exact ID/profile/scenario name/line 45/no-Examples/source/four-step text guarded; prior custody and sibling namespace matrix receive no new credit. Fresh caller-owned <root xmlns=\"u\" xmlns:n1=\"occupied\"><a/><b>keep</b></root> is parsed into one snapshot; root/a/b expanded names and a parent plus b text are checked. One batch targets root AND nested a with distinct nonempty authored children, requiring a nonnil error AND nil output (not a typed error/message). Caller bytes and parsed snapshot stay unchanged; a separate empty batch returns exact original source. A subsequent valid a-only insertion on the SAME snapshot independently reparses root/a/new:x/plain/b expanded names, parent chain, {other}a=v, plain text text, and preserved original prefix and sibling suffix; mutating returned bytes cannot alter a later empty output or caller. A temporary production nested-target output-on-error mutation made canonical Then fail after Given/When passed; production restored byte-for-byte before four-file test/receipt commit. Uncached no-override scoped acceptance, local root+acceptance, independent clean recursive pre-push and fresh GitHub recursive post-push gates each passed 415 cases/1425 steps with refusal 1/4, custody 1/4, zero nonpassed; namespace matrix, positive OPC-like XML and CACHE-001 zero selected. Go has no GitHub Actions CI. No Bun/Python, general XML/schema/ECMA, Office, PPTX or PDF credit."
+          "status": "planned",
+          "evidence": []
         },
         "python": {
           "status": "planned",
-          "evidence": "Native execution binding pending"
+          "evidence": []
         }
       }
     },
@@ -3586,21 +3591,22 @@
       "expandedCases": 1,
       "factIds": [],
       "expectedOutcomes": [
+        "the uniform profile result, refusal category and immutable input custody match the sealed API contract",
         "the complete output bytes equal <r xmlns:p=\"u\"><!--keep--> gap </r>",
         "a separate empty removal returns the exact original source bytes"
       ],
       "consumers": {
         "bun": {
           "status": "planned",
-          "evidence": "Native execution binding pending"
+          "evidence": []
         },
         "go": {
-          "status": "implemented",
-          "evidence": "Go published d16a3652cb39a9fa7b5873bf32ad6c4da80920f6 at shared v0.120.0 executes only @id-xml-go-element-removal-custody, one four-step profile-lexical-snapshot-api case from workflows/xml/editing.feature via acceptance/{acceptance,inventory,element_removal}_test.go; its exact ID/name/line 72/no-Examples/four-step guard excludes sibling refusal. The binding parses caller-owned <r xmlns:p=\"u\"><!--keep--><p:a x = '1'><p:b>text</p:b></p:a> gap <p:c /></r>, verifies source-order expanded names and nested text, then removes p:a and p:c in one snapshot call. Independently coded complete output <r xmlns:p=\"u\"><!--keep--> gap </r> preserves literal comment, gap and surrounding bytes; reparse has root only and caller bytes remain unchanged. Separate empty RemoveElements(nil) returns exact original; root and ancestor-plus-descendant refusal controls return nonnil error and nil output, then valid removal on same snapshot succeeds. Mutating returned bytes cannot change caller or later empty output. These controls do NOT select or credit @id-xml-go-element-removal-refusal. Existing test-only attribute-splice output matcher was narrowed to avoid ambiguous Gherkin steps; prior splice 3/9 stays green. Initial matcher/Given setup failures are not behavioural red; a temporary removal pass-through mutation made canonical output-byte step fail after first two passed, then was restored byte-for-byte before five-file test-only commit. Uncached no-override exact local, independent clean recursive pre-push and fresh GitHub recursive post-push root+acceptance gates each passed 411 cases/1411 steps with removal 1/4, sibling refusal and defective positive OPC-like comparison zero selected, zero nonpassed. Go has no GitHub Actions workflow or CI result. No Bun/Python, general XML/schema/ECMA, Office, CACHE-001, PPTX or PDF credit."
+          "status": "planned",
+          "evidence": []
         },
         "python": {
           "status": "planned",
-          "evidence": "Native execution binding pending"
+          "evidence": []
         }
       }
     },
@@ -3610,20 +3616,21 @@
       "expandedCases": 2,
       "factIds": [],
       "expectedOutcomes": [
+        "the uniform profile result, refusal category and immutable input custody match the sealed API contract",
         "the removal returns an error"
       ],
       "consumers": {
         "bun": {
           "status": "planned",
-          "evidence": "Native execution binding pending"
+          "evidence": []
         },
         "go": {
-          "status": "implemented",
-          "evidence": "Go published da499fb74f7f170acc37b16f064f226e28a6f8e2 at shared v0.122.0 executes only @id-xml-go-element-removal-refusal: two exact outline rows/six steps in workflows/xml/editing.feature via acceptance/{acceptance,inventory,element_removal_refusal}_test.go. Exact ID/profile/outline name/source/expanded three-step text and unique row lines 85 root and 86 p:a and its nested p:b are guarded; no additional refusal cases selected. Each row parses fresh caller-owned <r xmlns:p=\"u\"><!--keep--><p:a x = '1'><p:b>text</p:b></p:a> gap <p:c /></r> and independently checks source-order expanded names and nested text. Root or ancestor-plus-descendant removal requires a nonnil error AND nil output, with unchanged caller bytes and a still-usable original snapshot; no typed error or message is contracted. Empty removal returns exact original XML; a subsequent valid p:a+p:c removal on the SAME snapshot produces independently coded <r xmlns:p=\"u\"><!--keep--> gap </r> preserving comment and gap, followed by another exact empty result and unchanged caller. These are two canonical refusals separate from earlier custody-case auxiliary controls. A temporary production output-on-refusal mutation made both canonical Then steps fail while first two passed; it was restored byte-for-byte before four-file test/receipt commit. Uncached no-override exact local, independent clean recursive pre-push and fresh GitHub recursive post-push root+acceptance gates each passed 413 cases/1417 steps, refusal 2/6 and prior custody 1/4, zero nonpassed and positive OPC-like comparison/CACHE-001 zero selected. Go has no GitHub Actions CI workflow. No Bun/Python, general XML/schema/ECMA, Office, PPTX or PDF credit."
+          "status": "planned",
+          "evidence": []
         },
         "python": {
           "status": "planned",
-          "evidence": "Native execution binding pending"
+          "evidence": []
         }
       }
     },
@@ -3633,20 +3640,21 @@
       "expandedCases": 1,
       "factIds": [],
       "expectedOutcomes": [
+        "the uniform profile result, refusal category and immutable input custody match the sealed API contract",
         "the complete output bytes equal <root xmlns=\"outer\" xmlns:p=\"bound\"><!--a--><p:new>value</p:new><plain xmlns=\"\"/> tail <last/></root>"
       ],
       "consumers": {
         "bun": {
           "status": "planned",
-          "evidence": "Native execution binding pending"
+          "evidence": []
         },
         "go": {
-          "status": "implemented",
-          "evidence": "Go published 9294da534ca144d6256ac5650cda0b90696b50c2 at shared v0.127.0 executes only @id-xml-go-element-replacement-custody: one exact three-step lexical-snapshot case in workflows/xml/editing.feature via acceptance/{acceptance,inventory,element_replacement_custody}_test.go and reports/batches/266.md. Exact ID/profile/name/line 89/no Examples/source/action/whole-output literal and drift controls are guarded. Fresh caller-owned source with root {outer}, target {inner}old and surviving parent p=bound is parsed; structured {bound}new text value and unqualified plain replacement yields independently coded exact <root xmlns=\"outer\" xmlns:p=\"bound\"><!--a--><p:new>value</p:new><plain xmlns=\"\"/> tail <last/></root>. Reparse checks expanded names, parent/text, comment/gap/last custody; original caller and snapshot remain unchanged; empty ReplaceElements(nil) after success returns original bytes and returned-output mutation cannot affect repeat edit/no-op. Temporary production parent-scope→removed-target-scope mutation failed canonical Then after Given/When passed and was restored byte-for-byte. Uncached no-override scoped/local, clean recursive pre-push and fresh GitHub recursive post-push gates each passed 417 cases/1434 steps, custody 1/3, sibling replacement refusal/CACHE-001 zero selected. Go has no GitHub Actions CI. No Bun/Python, general XML, Office, PPTX, positive OPC-like or PDF credit."
+          "status": "planned",
+          "evidence": []
         },
         "python": {
           "status": "planned",
-          "evidence": "Native execution binding pending"
+          "evidence": []
         }
       }
     },
@@ -3656,21 +3664,22 @@
       "expandedCases": 3,
       "factIds": [],
       "expectedOutcomes": [
+        "the uniform profile result, refusal category and immutable input custody match the sealed API contract",
         "replacement returns an error and no edited output",
         "a separate empty replacement returns the exact original source bytes"
       ],
       "consumers": {
         "bun": {
           "status": "planned",
-          "evidence": "Native execution binding pending"
+          "evidence": []
         },
         "go": {
-          "status": "implemented",
-          "evidence": "Go published 42ca16f6f742c76cf0b20f93cf63ce4ef583caeb at shared v0.128.0 executes only @id-xml-go-element-replacement-refusal: exact three outline rows/twelve steps in workflows/xml/editing.feature via acceptance/{acceptance,inventory,element_replacement_refusal}_test.go and reports/batches/268.md. Exact ID/profile/outline name/source/four step texts and unique example lines 102 root, 103 p:old twice, 104 p:old and nested p:child are guarded; no other rows selected. Each fresh caller-owned source parses root/{inner}old/child/last with surviving p=bound; one nonempty row-specific replacement batch requires nonnil error AND nil output without typed error/message claim. Caller bytes, original parsed names/parents/attributes/namespace scope stay unchanged; a separate empty ReplaceElements(nil) returns original bytes. Valid old-only retry on SAME snapshot produces independently coded complete <root xmlns=\"outer\" xmlns:p=\"bound\"><!--a--><p:new>value</p:new><plain xmlns=\"\"/> tail <last/></root> and reparses expected names/parents/text; output mutation cannot affect caller, snapshot, further empty or valid retry. Temporary root preflight mutation returned source bytes with existing error: canonical root Then failed after Given/When passed; restored byte-for-byte before four-file test/receipt commit. Uncached no-override scoped/local root+acceptance, clean recursive pre-push and fresh GitHub recursive post-push gates each passed 420 cases/1446 steps, refusal 3/12, CACHE-001 zero selected. Go has no GitHub Actions CI. No custody re-credit, Bun/Python, OPC/Office/PPTX/PDF/general XML credit."
+          "status": "planned",
+          "evidence": []
         },
         "python": {
           "status": "planned",
-          "evidence": "Native execution binding pending"
+          "evidence": []
         }
       }
     },
@@ -3680,21 +3689,22 @@
       "expandedCases": 1,
       "factIds": [],
       "expectedOutcomes": [
+        "the uniform profile result, refusal category and immutable input custody match the sealed API contract",
         "the caller input bytes still equal the original XML source",
         "the empty edit returns the exact original source bytes"
       ],
       "consumers": {
         "bun": {
-          "status": "implemented",
-          "evidence": "Bun published c996c7d6d26a3a0ceb7a8305458d55e961951925 at shared v0.131.0 executes only @id-xml-go-immutable-leaf-seed, one exact four-step case in workflows/xml/editing.feature via features/shared.json, tests/acceptance/{xml-byte-snapshot,steps}.ts and tests/unit/xml-byte-snapshot.test.ts. The historical Go-named profile is a shared scenario label, not a cross-consumer result. The canonical literal <r><t>hello</t></r> is encoded as fresh caller-owned UTF-8 bytes, parsed with XmlByteSnapshot.parse and edited by remove([]); independent checks require caller bytes unchanged and returned bytes exactly equal original source. Exact ID/profile/name/line 107/four step texts are guarded; separate input and output corruption controls each make the canonical case fail. Snapshot reuse after caller mutation, returned no-op output mutation and nonempty leaf removal <r></r> check that the result is not pass-through or aliased; no additional case receives credit. Uncached local and independent clean recursive pre-push and fresh GitHub recursive post-push make check gates each passed 1,112 tests and 732/732 selected acceptance cases, including this exact case 1/4, with 59 still planned. Bun CI check 36618963045, office-oracles 36618963154 and property-campaign 36618963091 succeeded at exact SHA. No Go/Python, general XML/schema/ECMA, OPC/CACHE-001, Office, PPTX or PDF credit."
+          "status": "planned",
+          "evidence": []
         },
         "go": {
-          "status": "implemented",
-          "evidence": "Go published 0ca57e7544b54f4a24cdeeadef45c967874d790c at shared v0.114.0 executes exactly @id-xml-go-immutable-leaf-seed, one four-step profile-lexical-snapshot-api case from workflows/xml/editing.feature, via acceptance/{feature_roots,inventory,acceptance,immutable_leaf}_test.go with exact ID/name/step/profile guard. Parse accepts caller-owned <r><t>hello</t></r>, verifies root, text-bearing leaf and original caller bytes, then Edit(nil,nil) returns independently expected exact source bytes without changing caller. On the same snapshot, nonempty text edit bye & < yields exactly escaped <r><t>bye &amp; &lt;</t></r> and reparses to decoded text; mutating returned no-op bytes leaves later empty edit and caller unchanged. A separate caller buffer mutated after Parse leaves its parsed snapshot intact. A temporary pass-through production mutation made the target fourth step fail on the nonempty control; it was restored before commit, with a mistaken root-module ./acceptance setup error excluded from behavioural-red evidence. Go-only five-file test/receipt commit adds no native API. Uncached no-override local, independent clean recursive pre-push and fresh GitHub recursive post-push root+acceptance gates each passed 406 cases/1395 steps with exact immutable leaf 1/4, zero nonpassed and defective positive OPC comparison zero selected. Go has no GitHub Actions workflow; no Go CI result claimed. No Bun/Python, broad XML/schema/ECMA, Office, CACHE-001, PPTX or PDF credit."
+          "status": "planned",
+          "evidence": []
         },
         "python": {
           "status": "planned",
-          "evidence": "Native execution binding pending"
+          "evidence": []
         }
       }
     },
@@ -3954,6 +3964,12 @@
       "expandedCases": 6,
       "factIds": [],
       "expectedOutcomes": [
+        "the complete normalized reference records equal JSON [{\"sheet\":\"\",\"axis\":\"cell\",\"first\":{\"row\":1,\"column\":1,\"rowAbsolute\":false,\"columnAbsolute\":false},\"last\":{\"row\":1,\"column\":1,\"rowAbsolute\":false,\"columnAbsolute\":false},\"start\":3,\"end\":5},{\"sheet\":\"O'Brien\",\"axis\":\"cell\",\"first\":{\"row\":4,\"column\":3,\"rowAbsolute\":true,\"columnAbsolute\":true},\"last\":{\"row\":4,\"column\":3,\"rowAbsolute\":true,\"columnAbsolute\":true},\"start\":11,\"end\":26},{\"sheet\":\"\",\"axis\":\"cell\",\"first\":{\"row\":1,\"column\":4,\"rowAbsolute\":false,\"columnAbsolute\":false},\"last\":{\"row\":2,\"column\":5,\"rowAbsolute\":false,\"columnAbsolute\":false},\"start\":31,\"end\":36}]",
+        "the uniform profile result, refusal category and immutable input custody match the sealed API contract",
+        "the complete normalized reference records equal JSON []",
+        "the complete normalized reference records equal JSON [{\"sheet\":\"\",\"axis\":\"cell\",\"first\":{\"row\":1,\"column\":1,\"rowAbsolute\":false,\"columnAbsolute\":false},\"last\":{\"row\":1,\"column\":1,\"rowAbsolute\":false,\"columnAbsolute\":false},\"start\":6,\"end\":8}]",
+        "the complete normalized reference records equal JSON [{\"sheet\":\"\",\"axis\":\"cell\",\"first\":{\"row\":1,\"column\":1,\"rowAbsolute\":false,\"columnAbsolute\":false},\"last\":{\"row\":1,\"column\":1,\"rowAbsolute\":false,\"columnAbsolute\":false},\"start\":3,\"end\":5},{\"sheet\":\"\",\"axis\":\"cell\",\"first\":{\"row\":2,\"column\":2,\"rowAbsolute\":false,\"columnAbsolute\":false},\"last\":{\"row\":2,\"column\":2,\"rowAbsolute\":false,\"columnAbsolute\":false},\"start\":6,\"end\":8}]",
+        "the complete normalized reference records equal JSON [{\"sheet\":\"α sheet\",\"axis\":\"cell\",\"first\":{\"row\":1,\"column\":1,\"rowAbsolute\":false,\"columnAbsolute\":false},\"last\":{\"row\":1,\"column\":1,\"rowAbsolute\":false,\"columnAbsolute\":false},\"start\":0,\"end\":13}]",
         "it returns 3 reference records without error",
         "every reference has a nonempty byte span inside the original source",
         "it returns 0 reference records without error",
@@ -3962,16 +3978,16 @@
       ],
       "consumers": {
         "bun": {
-          "status": "implemented",
-          "evidence": "Bun 9aa63cf33a5b602fed7479748f6922e74d669621 at shared v0.100.0 executes six example formulas count supported static reference records and bounded nonempty UTF-8 byte spans, including zero-reference string, literal and Boolean rows; counts do not evaluate formulas. features/shared.json selects nine XLSX static-reference scenarios (45 exact cases/152 steps); tests/acceptance/formula-analysis.ts, tests/acceptance/xlsx-range.ts and tests/acceptance/formula-remap.ts bind canonical cases with tests/unit/xlsx-formula-analysis.test.ts, tests/unit/xlsx-range.test.ts and tests/unit/xlsx-formula-remap.test.ts controls. Fresh post-push recursive Bun make check passed 732/732 and Bun CI 36534553649 succeeded. Static API only; no formula evaluation, saved workbook, calculation, Office rendering, Go/Python or cross-consumer execution credit."
+          "status": "planned",
+          "evidence": []
         },
         "go": {
-          "status": "implemented",
-          "evidence": "Go published 9ff28dc21dc90b71266c84b42315956a8420178a at shared v0.102.0 executes six exact static-formula rows count references for mixed formula, strings only, numeric exponent, unary arithmetic, boolean literal and Unicode sheet; each returned reference has a nonempty in-bounds UTF-8 byte span. acceptance/canonical_formula_analysis_test.go and acceptance/inventory_test.go bind independent exact row name, JSON source, expected outcome and step guards for three IDs/14 cases/50 steps, invoking internal/formula.Analyze. reports/batches/233.md records true undefined-step red; local and independent exact-16d3eb9 recursive gates, plus fresh post-push GitHub exact-9ff28dc recursive gate, each passed 377 selected cases/1294 steps with zero failures/skips. Existing two direct-range IDs remain selected; four other sibling formula IDs/18 cases remain planned. Static API only: no formula evaluation, workbook edit/save, Office rendering, Bun/Python or cross-consumer credit."
+          "status": "planned",
+          "evidence": []
         },
         "python": {
           "status": "planned",
-          "evidence": "Native execution binding pending"
+          "evidence": []
         }
       }
     },
@@ -3981,22 +3997,24 @@
       "expandedCases": 1,
       "factIds": [],
       "expectedOutcomes": [
+        "the complete normalized reference records equal JSON [{\"sheet\":\"O'Brien\",\"axis\":\"cell\",\"first\":{\"row\":2,\"column\":2,\"rowAbsolute\":false,\"columnAbsolute\":true},\"last\":{\"row\":4,\"column\":3,\"rowAbsolute\":true,\"columnAbsolute\":false},\"start\":0,\"end\":18}]",
+        "the uniform profile result, refusal category and immutable input custody match the sealed API contract",
         "its one reference spans every byte of the original source",
         "the sheet is O'Brien with first cell column 2 row 2 and absolute column only",
         "the last cell is column 3 row 4 with absolute row only"
       ],
       "consumers": {
         "bun": {
-          "status": "implemented",
-          "evidence": "Bun 9aa63cf33a5b602fed7479748f6922e74d669621 at shared v0.100.0 executes one quoted-sheet range spans all UTF-8 source bytes, decodes O'Brien and checks independent first/last row, column and absolute flags. features/shared.json selects nine XLSX static-reference scenarios (45 exact cases/152 steps); tests/acceptance/formula-analysis.ts, tests/acceptance/xlsx-range.ts and tests/acceptance/formula-remap.ts bind canonical cases with tests/unit/xlsx-formula-analysis.test.ts, tests/unit/xlsx-range.test.ts and tests/unit/xlsx-formula-remap.test.ts controls. Fresh post-push recursive Bun make check passed 732/732 and Bun CI 36534553649 succeeded. Static API only; no formula evaluation, saved workbook, calculation, Office rendering, Go/Python or cross-consumer execution credit."
+          "status": "planned",
+          "evidence": []
         },
         "go": {
-          "status": "implemented",
-          "evidence": "Go published 9ff28dc21dc90b71266c84b42315956a8420178a at shared v0.102.0 executes one quoted O'Brien range spans every source byte and checks decoded sheet, first row/column and absolute column flag, plus last row/column and absolute row flag. acceptance/canonical_formula_analysis_test.go and acceptance/inventory_test.go bind independent exact row name, JSON source, expected outcome and step guards for three IDs/14 cases/50 steps, invoking internal/formula.Analyze. reports/batches/233.md records true undefined-step red; local and independent exact-16d3eb9 recursive gates, plus fresh post-push GitHub exact-9ff28dc recursive gate, each passed 377 selected cases/1294 steps with zero failures/skips. Existing two direct-range IDs remain selected; four other sibling formula IDs/18 cases remain planned. Static API only: no formula evaluation, workbook edit/save, Office rendering, Bun/Python or cross-consumer credit."
+          "status": "planned",
+          "evidence": []
         },
         "python": {
           "status": "planned",
-          "evidence": "Native execution binding pending"
+          "evidence": []
         }
       }
     },
@@ -4006,20 +4024,21 @@
       "expandedCases": 7,
       "factIds": [],
       "expectedOutcomes": [
+        "the uniform profile result, refusal category and immutable input custody match the sealed API contract",
         "it returns an error and zero reference records"
       ],
       "consumers": {
         "bun": {
-          "status": "implemented",
-          "evidence": "Bun 9aa63cf33a5b602fed7479748f6922e74d669621 at shared v0.100.0 executes seven unsupported/invalid static formulas refuse with xlsx-formula-unsupported and no partial reference records. features/shared.json selects nine XLSX static-reference scenarios (45 exact cases/152 steps); tests/acceptance/formula-analysis.ts, tests/acceptance/xlsx-range.ts and tests/acceptance/formula-remap.ts bind canonical cases with tests/unit/xlsx-formula-analysis.test.ts, tests/unit/xlsx-range.test.ts and tests/unit/xlsx-formula-remap.test.ts controls. Fresh post-push recursive Bun make check passed 732/732 and Bun CI 36534553649 succeeded. Static API only; no formula evaluation, saved workbook, calculation, Office rendering, Go/Python or cross-consumer execution credit."
+          "status": "planned",
+          "evidence": []
         },
         "go": {
-          "status": "implemented",
-          "evidence": "Go published 9ff28dc21dc90b71266c84b42315956a8420178a at shared v0.102.0 executes seven unsupported static formulas (dynamic function, unresolved name, out-of-grid column/row, open quoted sheet, unsupported spill and unfinished function) return an error with zero reference records. acceptance/canonical_formula_analysis_test.go and acceptance/inventory_test.go bind independent exact row name, JSON source, expected outcome and step guards for three IDs/14 cases/50 steps, invoking internal/formula.Analyze. reports/batches/233.md records true undefined-step red; local and independent exact-16d3eb9 recursive gates, plus fresh post-push GitHub exact-9ff28dc recursive gate, each passed 377 selected cases/1294 steps with zero failures/skips. Existing two direct-range IDs remain selected; four other sibling formula IDs/18 cases remain planned. Static API only: no formula evaluation, workbook edit/save, Office rendering, Bun/Python or cross-consumer credit."
+          "status": "planned",
+          "evidence": []
         },
         "python": {
           "status": "planned",
-          "evidence": "Native execution binding pending"
+          "evidence": []
         }
       }
     },
@@ -4029,21 +4048,25 @@
       "expandedCases": 5,
       "factIds": [],
       "expectedOutcomes": [
+        "the complete normalized reference records or refusal equal JSON null",
+        "the uniform profile result, refusal category and immutable input custody match the sealed API contract",
+        "the complete normalized reference records or refusal equal JSON [{\"sheet\":\"\",\"axis\":\"cell\",\"first\":{\"row\":1,\"column\":1,\"rowAbsolute\":false,\"columnAbsolute\":false},\"last\":{\"row\":1,\"column\":1,\"rowAbsolute\":false,\"columnAbsolute\":false},\"start\":8,\"end\":10}]",
+        "the complete normalized reference records or refusal equal JSON []",
         "the analysis is refused with zero references",
         "the analysis is accepted without error"
       ],
       "consumers": {
         "bun": {
-          "status": "implemented",
-          "evidence": "Bun 9aa63cf33a5b602fed7479748f6922e74d669621 at shared v0.100.0 executes five punctuation-string examples assert the specified accept/no-error or reject/zero-record outcome, without claiming references for accepted examples. features/shared.json selects nine XLSX static-reference scenarios (45 exact cases/152 steps); tests/acceptance/formula-analysis.ts, tests/acceptance/xlsx-range.ts and tests/acceptance/formula-remap.ts bind canonical cases with tests/unit/xlsx-formula-analysis.test.ts, tests/unit/xlsx-range.test.ts and tests/unit/xlsx-formula-remap.test.ts controls. Fresh post-push recursive Bun make check passed 732/732 and Bun CI 36534553649 succeeded. Static API only; no formula evaluation, saved workbook, calculation, Office rendering, Go/Python or cross-consumer execution credit."
+          "status": "planned",
+          "evidence": []
         },
         "go": {
-          "status": "implemented",
-          "evidence": "Go published c846cb384dc81e015392cefc9a21116bcc870816 at shared v0.106.0 executes five three-step literal-punctuation rows distinguish quoted operator/range refusal with error and zero references from quoted close/percent/equality acceptance without error; no accepted-count claim. Four stable IDs total 18 cases/57 steps. acceptance/{remaining_formula_steps,remaining_formula,canonical_formula_analysis,inventory}_test.go and reports/batches/238.md bind and guard exact canonical row names, complete step text and selected inventory; red checkpoint had 35 undefined steps on 18 cases before binding. Uncached local, independent exact-commit recursive and fresh post-push GitHub recursive make test-batch TEST_JOBS=2 each passed 395 selected cases/1351 steps with zero failed, skipped or undefined. Production formula and workbook code unchanged. Bounded static formula-string analysis/remap API only; no formula evaluation, workbook mutation, Office rendering, ECMA grammar-completeness, Bun/Python or cross-consumer credit. Go CI workflow unavailable; no CI success claimed."
+          "status": "planned",
+          "evidence": []
         },
         "python": {
           "status": "planned",
-          "evidence": "Native execution binding pending"
+          "evidence": []
         }
       }
     },
@@ -4053,6 +4076,13 @@
       "expandedCases": 6,
       "factIds": [],
       "expectedOutcomes": [
+        "the complete normalized direct range equals JSON {\"sheet\":\"\",\"axis\":\"column\",\"first\":{\"row\":0,\"column\":2,\"rowAbsolute\":false,\"columnAbsolute\":true},\"last\":{\"row\":0,\"column\":2,\"rowAbsolute\":false,\"columnAbsolute\":true}}",
+        "the uniform profile result, refusal category and immutable input custody match the sealed API contract",
+        "the complete normalized direct range equals JSON {\"sheet\":\"\",\"axis\":\"row\",\"first\":{\"row\":3,\"column\":0,\"rowAbsolute\":true,\"columnAbsolute\":false},\"last\":{\"row\":1,\"column\":0,\"rowAbsolute\":true,\"columnAbsolute\":false}}",
+        "the complete normalized direct range equals JSON {\"sheet\":\"O'Brien\",\"axis\":\"column\",\"first\":{\"row\":0,\"column\":2,\"rowAbsolute\":false,\"columnAbsolute\":true},\"last\":{\"row\":0,\"column\":2,\"rowAbsolute\":false,\"columnAbsolute\":true}}",
+        "the complete normalized direct range equals JSON {\"sheet\":\"\",\"axis\":\"cell\",\"first\":{\"row\":3,\"column\":1,\"rowAbsolute\":false,\"columnAbsolute\":false},\"last\":{\"row\":1,\"column\":2,\"rowAbsolute\":false,\"columnAbsolute\":false}}",
+        "the complete normalized direct range equals JSON {\"sheet\":\"Sheet\",\"axis\":\"cell\",\"first\":{\"row\":1,\"column\":1,\"rowAbsolute\":true,\"columnAbsolute\":true},\"last\":{\"row\":1,\"column\":1,\"rowAbsolute\":true,\"columnAbsolute\":true}}",
+        "the complete normalized direct range equals JSON {\"sheet\":\"3\",\"axis\":\"row\",\"first\":{\"row\":1,\"column\":0,\"rowAbsolute\":false,\"columnAbsolute\":false},\"last\":{\"row\":1,\"column\":0,\"rowAbsolute\":false,\"columnAbsolute\":false}}",
         "its sheet is JSON \"\" and its axis is column",
         "its first coordinate has row 0 and column 2",
         "its sheet is JSON \"\" and its axis is row",
@@ -4067,16 +4097,16 @@
       ],
       "consumers": {
         "bun": {
-          "status": "implemented",
-          "evidence": "Bun 9aa63cf33a5b602fed7479748f6922e74d669621 at shared v0.100.0 executes six direct-range examples verify sheet name, axis and first row/column coordinate; no second-endpoint credit from those example steps. features/shared.json selects nine XLSX static-reference scenarios (45 exact cases/152 steps); tests/acceptance/formula-analysis.ts, tests/acceptance/xlsx-range.ts and tests/acceptance/formula-remap.ts bind canonical cases with tests/unit/xlsx-formula-analysis.test.ts, tests/unit/xlsx-range.test.ts and tests/unit/xlsx-formula-remap.test.ts controls. Fresh post-push recursive Bun make check passed 732/732 and Bun CI 36534553649 succeeded. Static API only; no formula evaluation, saved workbook, calculation, Office rendering, Go/Python or cross-consumer execution credit."
+          "status": "planned",
+          "evidence": []
         },
         "go": {
-          "status": "implemented",
-          "evidence": "Go published 4967e0fde69db6248af036d2f6bc472750e7cbae at shared v0.101.0 executes six exact direct-range examples decode JSON sources and assert sheet, axis and first row/column for absolute column, reversed rows, quoted column, reversed rectangle, sheet absolute cell and numeric sheet name. acceptance/direct_range_test.go selects two canonical IDs/13 rows/45 steps with independent row-name, source, expected-field and exact-step guards in acceptance/inventory_test.go; reports/batches/231.md records red undefined and three uncached gates (local, independent pre-push clone, fresh post-push GitHub clone), each 363 selected cases/1244 steps with zero failures/skips. The seven sibling formula-reference IDs/32 cases remain unselected. Static direct-range API only; no formula evaluation, workbook edit/save, Office rendering, Bun/Python or cross-consumer credit."
+          "status": "planned",
+          "evidence": []
         },
         "python": {
           "status": "planned",
-          "evidence": "Native execution binding pending"
+          "evidence": []
         }
       }
     },
@@ -4086,20 +4116,21 @@
       "expandedCases": 7,
       "factIds": [],
       "expectedOutcomes": [
+        "the uniform profile result, refusal category and immutable input custody match the sealed API contract",
         "it returns an error"
       ],
       "consumers": {
         "bun": {
-          "status": "implemented",
-          "evidence": "Bun 9aa63cf33a5b602fed7479748f6922e74d669621 at shared v0.100.0 executes seven non-direct/unsupported range inputs refuse with xlsx-range-unsupported and no partial parsed range. features/shared.json selects nine XLSX static-reference scenarios (45 exact cases/152 steps); tests/acceptance/formula-analysis.ts, tests/acceptance/xlsx-range.ts and tests/acceptance/formula-remap.ts bind canonical cases with tests/unit/xlsx-formula-analysis.test.ts, tests/unit/xlsx-range.test.ts and tests/unit/xlsx-formula-remap.test.ts controls. Fresh post-push recursive Bun make check passed 732/732 and Bun CI 36534553649 succeeded. Static API only; no formula evaluation, saved workbook, calculation, Office rendering, Go/Python or cross-consumer execution credit."
+          "status": "planned",
+          "evidence": []
         },
         "go": {
-          "status": "implemented",
-          "evidence": "Go published 4967e0fde69db6248af036d2f6bc472750e7cbae at shared v0.101.0 executes seven exact non-direct inputs (mixed endpoint, formula expression, external book, sheet span, spill reference, union, invalid whole axis) return an error. acceptance/direct_range_test.go selects two canonical IDs/13 rows/45 steps with independent row-name, source, expected-field and exact-step guards in acceptance/inventory_test.go; reports/batches/231.md records red undefined and three uncached gates (local, independent pre-push clone, fresh post-push GitHub clone), each 363 selected cases/1244 steps with zero failures/skips. The seven sibling formula-reference IDs/32 cases remain unselected. Static direct-range API only; no formula evaluation, workbook edit/save, Office rendering, Bun/Python or cross-consumer credit."
+          "status": "planned",
+          "evidence": []
         },
         "python": {
           "status": "planned",
-          "evidence": "Native execution binding pending"
+          "evidence": []
         }
       }
     },
@@ -4109,6 +4140,7 @@
       "expandedCases": 5,
       "factIds": [],
       "expectedOutcomes": [
+        "the uniform profile result, refusal category and immutable input custody match the sealed API contract",
         "the complete replacement expression equals JSON \"IF(A1=\\\"A2\\\",A3,Other!A2)\"",
         "the complete replacement expression equals JSON \"'O''Brien'!$b$2 + Main!D1\"",
         "the complete replacement expression equals JSON \"SUM(A7:A1)\"",
@@ -4117,16 +4149,16 @@
       ],
       "consumers": {
         "bun": {
-          "status": "implemented",
-          "evidence": "Bun 9aa63cf33a5b602fed7479748f6922e74d669621 at shared v0.100.0 executes five static row/column insertion examples yield exact replacement expressions, not workbook edits. features/shared.json selects nine XLSX static-reference scenarios (45 exact cases/152 steps); tests/acceptance/formula-analysis.ts, tests/acceptance/xlsx-range.ts and tests/acceptance/formula-remap.ts bind canonical cases with tests/unit/xlsx-formula-analysis.test.ts, tests/unit/xlsx-range.test.ts and tests/unit/xlsx-formula-remap.test.ts controls. Fresh post-push recursive Bun make check passed 732/732 and Bun CI 36534553649 succeeded. Static API only; no formula evaluation, saved workbook, calculation, Office rendering, Go/Python or cross-consumer execution credit."
+          "status": "planned",
+          "evidence": []
         },
         "go": {
-          "status": "implemented",
-          "evidence": "Go published c846cb384dc81e015392cefc9a21116bcc870816 at shared v0.106.0 executes five three-step insertion remaps assert exact whole replacement expressions, preserving literal and foreign-sheet bytes, case-insensitive target sheet and reversed range. Four stable IDs total 18 cases/57 steps. acceptance/{remaining_formula_steps,remaining_formula,canonical_formula_analysis,inventory}_test.go and reports/batches/238.md bind and guard exact canonical row names, complete step text and selected inventory; red checkpoint had 35 undefined steps on 18 cases before binding. Uncached local, independent exact-commit recursive and fresh post-push GitHub recursive make test-batch TEST_JOBS=2 each passed 395 selected cases/1351 steps with zero failed, skipped or undefined. Production formula and workbook code unchanged. Bounded static formula-string analysis/remap API only; no formula evaluation, workbook mutation, Office rendering, ECMA grammar-completeness, Bun/Python or cross-consumer credit. Go CI workflow unavailable; no CI success claimed."
+          "status": "planned",
+          "evidence": []
         },
         "python": {
           "status": "planned",
-          "evidence": "Native execution binding pending"
+          "evidence": []
         }
       }
     },
@@ -4136,20 +4168,21 @@
       "expandedCases": 7,
       "factIds": [],
       "expectedOutcomes": [
+        "the uniform profile result, refusal category and immutable input custody match the sealed API contract",
         "it returns an error and an empty replacement expression"
       ],
       "consumers": {
         "bun": {
-          "status": "implemented",
-          "evidence": "Bun 9aa63cf33a5b602fed7479748f6922e74d669621 at shared v0.100.0 executes seven invalid/unsupported insertion examples refuse with no partial replacement expression. features/shared.json selects nine XLSX static-reference scenarios (45 exact cases/152 steps); tests/acceptance/formula-analysis.ts, tests/acceptance/xlsx-range.ts and tests/acceptance/formula-remap.ts bind canonical cases with tests/unit/xlsx-formula-analysis.test.ts, tests/unit/xlsx-range.test.ts and tests/unit/xlsx-formula-remap.test.ts controls. Fresh post-push recursive Bun make check passed 732/732 and Bun CI 36534553649 succeeded. Static API only; no formula evaluation, saved workbook, calculation, Office rendering, Go/Python or cross-consumer execution credit."
+          "status": "planned",
+          "evidence": []
         },
         "go": {
-          "status": "implemented",
-          "evidence": "Go published c846cb384dc81e015392cefc9a21116bcc870816 at shared v0.106.0 executes seven three-step bad axis/coordinate/count/sheet/overflow/dynamic-reference inputs refuse with an error and an empty replacement expression. Four stable IDs total 18 cases/57 steps. acceptance/{remaining_formula_steps,remaining_formula,canonical_formula_analysis,inventory}_test.go and reports/batches/238.md bind and guard exact canonical row names, complete step text and selected inventory; red checkpoint had 35 undefined steps on 18 cases before binding. Uncached local, independent exact-commit recursive and fresh post-push GitHub recursive make test-batch TEST_JOBS=2 each passed 395 selected cases/1351 steps with zero failed, skipped or undefined. Production formula and workbook code unchanged. Bounded static formula-string analysis/remap API only; no formula evaluation, workbook mutation, Office rendering, ECMA grammar-completeness, Bun/Python or cross-consumer credit. Go CI workflow unavailable; no CI success claimed."
+          "status": "planned",
+          "evidence": []
         },
         "python": {
           "status": "planned",
-          "evidence": "Native execution binding pending"
+          "evidence": []
         }
       }
     },
@@ -4159,22 +4192,23 @@
       "expandedCases": 1,
       "factIds": [],
       "expectedOutcomes": [
+        "the uniform profile result, refusal category and immutable input custody match the sealed API contract",
         "every expression has two references whose source slices each parse as one matching reference",
         "inserting one row at 100 on Main leaves each original expression byte-identical",
         "wrapping each expression in SUM preserves its references after adjusting their byte spans"
       ],
       "consumers": {
         "bun": {
-          "status": "implemented",
-          "evidence": "Bun 9aa63cf33a5b602fed7479748f6922e74d669621 at shared v0.100.0 executes one 288-expression matrix verifies two reference slices each reparse to the same reference, row-100 insertion leaves source bytes unchanged and SUM wrapping shifts spans exactly. features/shared.json selects nine XLSX static-reference scenarios (45 exact cases/152 steps); tests/acceptance/formula-analysis.ts, tests/acceptance/xlsx-range.ts and tests/acceptance/formula-remap.ts bind canonical cases with tests/unit/xlsx-formula-analysis.test.ts, tests/unit/xlsx-range.test.ts and tests/unit/xlsx-formula-remap.test.ts controls. Fresh post-push recursive Bun make check passed 732/732 and Bun CI 36534553649 succeeded. Static API only; no formula evaluation, saved workbook, calculation, Office rendering, Go/Python or cross-consumer execution credit."
+          "status": "planned",
+          "evidence": []
         },
         "go": {
-          "status": "implemented",
-          "evidence": "Go published c846cb384dc81e015392cefc9a21116bcc870816 at shared v0.106.0 executes one six-step finite 288-expression (3 prefixes x 4 left x 4 right x 6 operators) matrix checks fixed-literal reference endpoints/flags/sheets and byte spans, independent reparsing, row-100 lexical no-op and SUM-wrapped span offset. Four stable IDs total 18 cases/57 steps. acceptance/{remaining_formula_steps,remaining_formula,canonical_formula_analysis,inventory}_test.go and reports/batches/238.md bind and guard exact canonical row names, complete step text and selected inventory; red checkpoint had 35 undefined steps on 18 cases before binding. Uncached local, independent exact-commit recursive and fresh post-push GitHub recursive make test-batch TEST_JOBS=2 each passed 395 selected cases/1351 steps with zero failed, skipped or undefined. Production formula and workbook code unchanged. Bounded static formula-string analysis/remap API only; no formula evaluation, workbook mutation, Office rendering, ECMA grammar-completeness, Bun/Python or cross-consumer credit. Go CI workflow unavailable; no CI success claimed."
+          "status": "planned",
+          "evidence": []
         },
         "python": {
           "status": "planned",
-          "evidence": "Native execution binding pending"
+          "evidence": []
         }
       }
     },

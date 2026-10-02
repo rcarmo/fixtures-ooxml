@@ -1,10 +1,12 @@
+import {beforeUniformApi18Feature,beforeUniformApi18Case,beforeUniformApi18Ledger} from './uniform-api18-history.ts';
 import retainedTable from '../ledgers/retained-table-properties.json';
 export function beforeRetainedTableFeature(path:string,text:string):string{
+ text=beforeUniformApi18Feature(path,text);
  const f=retainedTable.files.find(f=>f.path===path);if(!f||text===f.beforeText)return text;
  if(new Bun.CryptoHasher('sha256').update(text).digest('hex')!==f.afterSha256)throw Error('Unreviewed retained table feature hash');
  if(JSON.stringify(cases(path,text).filter(c=>retainedTable.records.some(r=>r.id===c.scenarioId)))!==JSON.stringify(f.scenarios.flatMap(s=>s.after)))throw Error('Unreviewed retained table predicates');return f.beforeText;
 }
-export function beforeRetainedTableLedger(ledger:any){const copy=structuredClone(ledger),added=new Set(retainedTable.records.map(r=>r.id));for(const f of retainedTable.files)for(const row of f.afterLedgerRows){const current=copy.workflows.find((r:any)=>r.id===row.id);if(JSON.stringify(current)!==JSON.stringify(row))throw Error('Unreviewed retained table ledger');}copy.workflows=copy.workflows.filter((r:any)=>!added.has(r.id));return copy;}
+export function beforeRetainedTableLedger(ledger:any){const copy=beforeUniformApi18Ledger(ledger),added=new Set(retainedTable.records.map(r=>r.id));for(const f of retainedTable.files)for(const row of f.afterLedgerRows){const current=copy.workflows.find((r:any)=>r.id===row.id);if(JSON.stringify(current)!==JSON.stringify(row))throw Error('Unreviewed retained table ledger');}copy.workflows=copy.workflows.filter((r:any)=>!added.has(r.id));return copy;}
 import retainedStyleWord from '../ledgers/retained-style-word.json';
 export function beforeRetainedStyleWordFeature(path:string,text:string):string {
  text=beforeRetainedTableFeature(path,text);
@@ -65,6 +67,7 @@ export function beforePackageAlignmentFeature(path:string,text:string):string {
   return m.beforeText;
 }
 export function beforePackageAlignmentCase<T extends {scenarioId:string;steps:unknown[]}>(row:T):T {
+  row=beforeUniformApi18Case(row);
   const f=packageAlignment.files.find(f=>f.scenarios.some(s=>s.id===row.scenarioId));
   const s=f?.scenarios.find(s=>s.id===row.scenarioId);
   const n=s?.after.findIndex(c=>JSON.stringify(c)===JSON.stringify(row))??-1;

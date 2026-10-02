@@ -1,3 +1,4 @@
+import {beforeUniformApi18Feature} from './uniform-api18-history.ts';
 import {historicalWorkflowLedger} from './xml-generalization-helpers.ts';
 import {test,expect} from 'bun:test';
 import {execFileSync} from 'node:child_process';
@@ -8,7 +9,7 @@ test('Go executes only the four-step immutable XML leaf seed with snapshot and a
  const ledger=await historicalWorkflowLedger();
  const prior=JSON.parse(execFileSync('git',['show','fa08cdd9129049f76a265cb000d2fb86605b7eef:ledgers/workflows.json']).toString());
  const now=ledger.workflows.find((w:any)=>w.id===id),old=prior.workflows.find((w:any)=>w.id===id);
- const selected=cases(feature,await Bun.file(feature).text()).filter((c:any)=>c.scenarioId===id);
+ const selected=cases(feature,beforeUniformApi18Feature(feature,await Bun.file(feature).text())).filter((c:any)=>c.scenarioId===id);
  expect(now.feature).toBe(feature);expect(now.expandedCases).toBe(1);expect(selected).toHaveLength(1);
  expect(selected[0].steps.map((s:any)=>s.text)).toEqual([
   'the XML source is <r><t>hello</t></r>',

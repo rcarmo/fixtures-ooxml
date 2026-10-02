@@ -1,3 +1,4 @@
+import {beforeUniformApi18Feature} from './uniform-api18-history.ts';
 import {historicalWorkflowLedger} from './xml-generalization-helpers.ts';
 import { test, expect } from 'bun:test';
 import { execFileSync } from 'node:child_process';
@@ -20,7 +21,7 @@ const ids = [
 test('Bun executes 45 exact static-reference API cases without formula calculation or cross-consumer credit', async () => {
   const ledger = await historicalWorkflowLedger();
   const prior = JSON.parse(execFileSync('git', ['show', 'ff43afe10044040f33b82513798c2019ba96942b:ledgers/workflows.json']).toString());
-  const compiled = cases(path, await Bun.file(path).text());
+  const compiled = cases(path,beforeUniformApi18Feature(path,await Bun.file(path).text()));
   for (const [id, count, steps, scope] of ids) {
     const now = ledger.workflows.find((w: any) => w.id === id), old = prior.workflows.find((w: any) => w.id === id);
     const rows = compiled.filter((r: any) => r.scenarioId === id);

@@ -1,3 +1,4 @@
+import {beforeUniformApi18Feature} from './uniform-api18-history.ts';
 import {historicalWorkflowLedger} from './xml-generalization-helpers.ts';
 import {test,expect} from 'bun:test';
 import {execFileSync} from 'node:child_process';
@@ -8,7 +9,7 @@ test('Go credits one guarded 100-combination child namespace matrix, not 100 cas
  const ledger=await historicalWorkflowLedger();
  const prior=JSON.parse(execFileSync('git',['show','c96f8202070fc80e575d08f098453208a30db702:ledgers/workflows.json']).toString());
  const now=ledger.workflows.find((w:any)=>w.id===id),old=prior.workflows.find((w:any)=>w.id===id);
- const selected=cases(feature,await Bun.file(feature).text()).filter((c:any)=>c.scenarioId===id);
+ const selected=cases(feature,beforeUniformApi18Feature(feature,await Bun.file(feature).text())).filter((c:any)=>c.scenarioId===id);
  expect(now.feature).toBe(feature);expect(now.expandedCases).toBe(1);expect(selected).toHaveLength(1);
  expect(selected[0].name).toBe('Inserted element and attribute meanings survive a bounded namespace matrix');
  expect(selected[0].steps.map((s:any)=>s.text)).toEqual([

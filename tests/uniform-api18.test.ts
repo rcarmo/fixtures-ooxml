@@ -1,0 +1,20 @@
+import {test,expect} from 'bun:test';
+import {execFileSync} from 'node:child_process';
+import {cases} from '../scripts/verify.ts';
+import {beforeUniformApi18Feature,beforeUniformApi18Case,beforeUniformApi18Ledger} from './uniform-api18-history.ts';
+const load=()=>Bun.file('ledgers/uniform-api18.json').json(),sha=(s:string|Uint8Array)=>new Bun.CryptoHasher('sha256').update(s).digest('hex');
+test('18 uniform API profiles retain all59 cases, strengthen279 steps and preserve history',async()=>{
+ const m=await load();expect(m.executionCredit).toBe(false);expect(m.retiredScenarioIds).toEqual([]);expect(m.selectedScenarioIds).toHaveLength(18);expect(new Set(m.selectedScenarioIds).size).toBe(18);expect(m.counts).toEqual({ids:18,cases:59,beforeSteps:201,afterSteps:279});
+ expect(m.selectedScenarioIds).not.toContain('@id-xml-go-child-namespace-matrix');expect(m.selectedScenarioIds).not.toContain('@id-xml-apply-edits');
+ let count=0,steps=0;for(const f of m.files){const text=await Bun.file(f.path).text(),before=execFileSync('git',['show',m.sourceRevision+':'+f.path],{encoding:'utf8'});expect(f.beforeText).toBe(before);expect(sha(before)).toBe(f.beforeSha256);expect(sha(text)).toBe(f.afterSha256);expect(beforeUniformApi18Feature(f.path,text)).toBe(before);const current=cases(f.path,text),old=cases(f.path,before);expect(current.map(beforeUniformApi18Case)).toEqual(old);for(const s of f.scenarios){expect(current.filter(c=>c.scenarioId===s.id)).toEqual(s.after);expect(s.after.length).toBe(s.before.length);count+=s.after.length;steps+=s.after.reduce((n:number,c:any)=>n+c.steps.length,0);}for(const c of current.filter(c=>!m.selectedScenarioIds.includes(c.scenarioId)))expect(c).toEqual(old.find(o=>o.scenarioId===c.scenarioId&&o.name===c.name));}
+ expect(count).toBe(59);expect(steps).toBe(279);const ledger=await Bun.file('ledgers/workflows.json').json(),baseline=JSON.parse(execFileSync('git',['show',m.sourceRevision+':ledgers/workflows.json'],{encoding:'utf8'}));expect(beforeUniformApi18Ledger(ledger)).toEqual(baseline);for(const row of ledger.workflows.filter((r:any)=>m.selectedScenarioIds.includes(r.id)))for(const runtime of ['bun','go','python'])expect(row.consumers[runtime]).toEqual({status:'planned',evidence:[]});
+});
+test('independent reference vectors check UTF8 spans, exact endpoints, absolute flags and function policy',async()=>{
+ const m=await load();expect(Object.keys(m.uniformPolicy.functions)).toHaveLength(13);expect(m.uniformPolicy.functions.IF).toEqual([2,3]);expect(m.uniformPolicy.functions.ROUND).toEqual([2,2]);expect(m.uniformPolicy.singleCellLast).toBe('equalsFirst');expect(m.uniformPolicy.limits).toEqual({inputUtf8Bytes:1048576,tokens:100000,depth:128,references:10000});
+ const greek=m.literalReferenceVectors["'α sheet'!A1"][0];expect(greek.start).toBe(0);expect(greek.end).toBe(13);expect(greek.first).toEqual({row:1,column:1,rowAbsolute:false,columnAbsolute:false});expect(greek.last).toEqual(greek.first);
+ const mix=m.literalReferenceVectors['IF(A1="B2",\'O\'\'Brien\'!$C$4,SUM(D1:E2))'];expect(mix.map((r:any)=>[r.start,r.end])).toEqual([[3,5],[11,26],[31,36]]);expect(mix[1].sheet).toBe("O'Brien");expect(mix[1].first).toEqual({row:4,column:3,rowAbsolute:true,columnAbsolute:true});expect(mix[2].last).toEqual({row:2,column:5,rowAbsolute:false,columnAbsolute:false});
+ expect(m.literalDirectRanges['$3:$1'].last.row).toBe(1);expect(m.literalDirectRanges['A3:B1'].last).toEqual({row:1,column:2,rowAbsolute:false,columnAbsolute:false});
+});
+test('uniform history gates fail closed on weakened operands, altered bytes or forged credit',async()=>{
+ const m=await load(),f=m.files[0],text=await Bun.file(f.path).text();expect(()=>beforeUniformApi18Feature(f.path,text.replace('normalized reference records','count-only records'))).toThrow('Unreviewed');const row=structuredClone(f.scenarios[0].after[0]);row.steps.at(-1).text+=' changed';expect(beforeUniformApi18Case(row)).toEqual(row);const l=await Bun.file('ledgers/workflows.json').json();l.workflows.find((r:any)=>r.id===m.selectedScenarioIds[0]).consumers.go.status='implemented';expect(()=>beforeUniformApi18Ledger(l)).toThrow('Unreviewed');
+});

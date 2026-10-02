@@ -1,3 +1,4 @@
+import {beforeUniformApi18Feature} from './uniform-api18-history.ts';
 import {historicalWorkflowLedger} from './xml-generalization-helpers.ts';
 import {test,expect} from 'bun:test';
 import {execFileSync} from 'node:child_process';
@@ -11,7 +12,7 @@ const specs=[
 ] as const;
 
 test('Go executes fourteen exact static formula-analysis rows, leaving other siblings planned',async()=>{
- const ledger=await historicalWorkflowLedger(),prior=JSON.parse(execFileSync('git',['show','638c76b9d43430c49af260f12256cf307fb7d2e8:ledgers/workflows.json']).toString()),compiled=cases(path,await Bun.file(path).text());
+ const ledger=await historicalWorkflowLedger(),prior=JSON.parse(execFileSync('git',['show','638c76b9d43430c49af260f12256cf307fb7d2e8:ledgers/workflows.json']).toString()),compiled=cases(path,beforeUniformApi18Feature(path,await Bun.file(path).text()));
  for(const [id,count,steps,scope] of specs){const now=ledger.workflows.find((w:any)=>w.id===id),old=prior.workflows.find((w:any)=>w.id===id),rows=compiled.filter((r:any)=>r.scenarioId===id);
   expect(now.feature).toBe(path);expect(now.expandedCases).toBe(count);expect(rows).toHaveLength(count);expect(rows.reduce((n:number,r:any)=>n+r.steps.length,0)).toBe(steps);
   expect(now.expectedOutcomes).toEqual([...new Set(rows.flatMap((r:any)=>r.steps.slice(2).map((s:any)=>s.text)))]);

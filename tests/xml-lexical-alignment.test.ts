@@ -1,3 +1,4 @@
+import {beforeUniformApi18Feature,beforeUniformApi18Ledger} from './uniform-api18-history.ts';
 import {test,expect} from 'bun:test';
 import {execFileSync} from 'node:child_process';
 import {cases} from '../scripts/verify.ts';
@@ -12,14 +13,14 @@ test('twenty-ID XML alignment completes exactly eight contracts and preserves al
  for(const f of m.files){
   expect(f.beforeText).toBe(execFileSync('git',['show',m.sourceRevision+':'+f.path],{encoding:'utf8'}));
   expect(hash(f.beforeText)).toBe(f.beforeSha256);
-  const text=await Bun.file(f.path).text();expect(hash(text)).toBe(f.afterSha256);
+  const text=beforeUniformApi18Feature(f.path,await Bun.file(f.path).text());expect(hash(text)).toBe(f.afterSha256);
   const before=cases(f.path,f.beforeText),now=cases(f.path,text);expect(now.map(beforeLexicalAlignmentCase)).toEqual(before);
   expect(beforeLexicalAlignmentFeature(f.path,text)).toBe(f.beforeText);
   selectedCases+=now.filter(c=>m.selectedIds.includes(c.scenarioId)).length;
   for(const s of f.scenarios){expect(now.filter(c=>c.scenarioId===s.id)).toEqual(s.after);expect(before.filter(c=>c.scenarioId===s.id)).toEqual(s.before);expect(s.after).toHaveLength(s.before.length);}
  }
  expect(selectedCases).toBe(29);
- const current=await Bun.file('ledgers/workflows.json').json(),prior=JSON.parse(execFileSync('git',['show',m.sourceRevision+':ledgers/workflows.json'],{encoding:'utf8'}));
+ const current=beforeUniformApi18Ledger(await Bun.file('ledgers/workflows.json').json()),prior=JSON.parse(execFileSync('git',['show',m.sourceRevision+':ledgers/workflows.json'],{encoding:'utf8'}));
  expect(beforeLexicalAlignmentLedger(current)).toEqual(prior);
  for(const row of m.files.flatMap((f:any)=>f.afterLedgerRows)){expect(current.workflows.find((w:any)=>w.id===row.id)).toEqual(row);for(const c of ['bun','go','python'])expect(row.consumers[c].status).toBe('planned');}
  const review=await Bun.file('ledgers/feature-reuse.json').json();for(const id of m.files.flatMap((f:any)=>f.scenarios.map((s:any)=>s.id)))expect(review.scenarios.find((r:any)=>r.id===id).category).toBe('generalized');

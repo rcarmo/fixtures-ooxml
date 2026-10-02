@@ -31,6 +31,7 @@ Feature: XML lexical editing and byte custody
       Given the XML source is <source>
       When a lexical edit sets the attribute <name> of the first t element to <value>
       Then the complete output bytes equal <output>
+      And the uniform profile result, refusal category and immutable input custody match the sealed API contract
       Examples:
         | name   | value | source                                                   | output                                                           |
         | a      | x'y&z | <r xmlns:p="urn:p"><t a = 'a&amp;b' p:n="old"/><t>text</t></r> | <r xmlns:p="urn:p"><t a = 'x&#39;y&amp;z' p:n="old"/><t>text</t></r> |
@@ -42,13 +43,16 @@ Feature: XML lexical editing and byte custody
       Given the XML source is <r xmlns:p="urn:p"><t a = 'a&amp;b' p:n="old"/><t>text</t></r>
       When one lexical edit batch sets a of the first t element to x and to y
       Then the edit returns an error instead of accepting that batch
+      And the uniform profile result, refusal category and immutable input custody match the sealed API contract
 
     @profile-lexical-snapshot-api @id-xml-go-child-insertion-custody
     Scenario: Insert a child with independently scoped element and attribute names
       Given the XML source is <root xmlns="u" xmlns:n1="occupied"><a/><b>keep</b></root>
       When a structured edit inserts a new-namespace x child with an other-namespace a attribute and a plain text child under the existing a element
       Then reparsing finds expanded element names new/x and empty-namespace plain
+      And the authored attribute expanded name is other/a with JSON value "value" and the plain grandchild text is JSON "text"
       And the unedited sibling bytes <b>keep</b> remain in the output
+      And the uniform profile result, refusal category and immutable input custody match the sealed API contract
 
     @profile-lexical-snapshot-api @id-xml-go-child-insertion-refusal
     Scenario: Overlapping insertion targets refuse and a separate no-op preserves bytes
@@ -56,6 +60,7 @@ Feature: XML lexical editing and byte custody
       When one structured insertion batch targets both the root and its nested a element
       Then the insertion returns an error
       But a separate empty insertion batch returns the exact original source bytes
+      And the uniform profile result, refusal category and immutable input custody match the sealed API contract
 
     @profile-lexical-snapshot-api @id-xml-go-child-namespace-matrix
     Scenario: Inserted element and attribute meanings survive a bounded namespace matrix
@@ -83,12 +88,14 @@ Feature: XML lexical editing and byte custody
       When the XML editor removes the p:a subtree and the p:c element from one parsed snapshot
       Then the complete output bytes equal <r xmlns:p="u"><!--keep--> gap </r>
       And a separate empty removal returns the exact original source bytes
+      And the uniform profile result, refusal category and immutable input custody match the sealed API contract
 
     @profile-lexical-snapshot-api @id-xml-go-element-removal-refusal
     Scenario Outline: A <selection> removal refuses
       Given the XML source is <r xmlns:p="u"><!--keep--><p:a x = '1'><p:b>text</p:b></p:a> gap <p:c /></r>
       When a removal batch selects <selection>
       Then the removal returns an error
+      And the uniform profile result, refusal category and immutable input custody match the sealed API contract
       Examples:
         | selection                  |
         | root                       |
@@ -99,6 +106,7 @@ Feature: XML lexical editing and byte custody
       Given the XML source is <root xmlns="outer" xmlns:p="bound"><!--a--><p:old xmlns:p="inner" x='1'><p:child/></p:old> tail <last/></root>
       When the XML editor replaces p:old with a bound-namespace new element containing value and an empty-namespace plain element
       Then the complete output bytes equal <root xmlns="outer" xmlns:p="bound"><!--a--><p:new>value</p:new><plain xmlns=""/> tail <last/></root>
+      And the uniform profile result, refusal category and immutable input custody match the sealed API contract
 
     @profile-lexical-snapshot-api @id-xml-go-element-replacement-refusal
     Scenario Outline: A <selection> subtree replacement refuses without output
@@ -106,6 +114,7 @@ Feature: XML lexical editing and byte custody
       When a replacement batch selects <selection>
       Then replacement returns an error and no edited output
       And a separate empty replacement returns the exact original source bytes
+      And the uniform profile result, refusal category and immutable input custody match the sealed API contract
       Examples:
         | selection                    |
         | root                         |
@@ -118,3 +127,4 @@ Feature: XML lexical editing and byte custody
       When the XML editor parses a caller-owned byte slice and performs an empty edit
       Then the caller input bytes still equal the original XML source
       And the empty edit returns the exact original source bytes
+      And the uniform profile result, refusal category and immutable input custody match the sealed API contract

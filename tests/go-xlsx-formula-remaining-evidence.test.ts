@@ -1,3 +1,4 @@
+import {beforeUniformApi18Feature} from './uniform-api18-history.ts';
 import {historicalWorkflowLedger} from './xml-generalization-helpers.ts';
 import {test,expect} from 'bun:test';
 import {execFileSync} from 'node:child_process';
@@ -12,7 +13,7 @@ const specs=[
 ] as const;
 
 test('Go executes four exact static formula-reference IDs without calculation or cross-consumer credit',async()=>{
- const ledger=await historicalWorkflowLedger(),prior=JSON.parse(execFileSync('git',['show','7c57ee5c6ec4553ccd1f8b88ba4076c691e947a9:ledgers/workflows.json']).toString()),compiled=cases(path,await Bun.file(path).text());
+ const ledger=await historicalWorkflowLedger(),prior=JSON.parse(execFileSync('git',['show','7c57ee5c6ec4553ccd1f8b88ba4076c691e947a9:ledgers/workflows.json']).toString()),compiled=cases(path,beforeUniformApi18Feature(path,await Bun.file(path).text()));
  for(const [id,count,steps,scope] of specs){const now=ledger.workflows.find((w:any)=>w.id===id),old=prior.workflows.find((w:any)=>w.id===id),rows=compiled.filter((r:any)=>r.scenarioId===id);
   expect(now.feature).toBe(path);expect(now.expandedCases).toBe(count);expect(rows).toHaveLength(count);expect(rows.reduce((n:number,r:any)=>n+r.steps.length,0)).toBe(steps);
   expect(now.expectedOutcomes).toEqual([...new Set(rows.flatMap((r:any)=>r.steps.slice(2).map((s:any)=>s.text)).filter((s:string)=>s!=='the static analyser checks all 3 by 4 by 4 by 6 source expressions'))]);
