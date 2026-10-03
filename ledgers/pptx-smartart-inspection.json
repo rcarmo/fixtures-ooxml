@@ -1,0 +1,936 @@
+{
+  "schemaVersion": 1,
+  "executionCredit": false,
+  "feature": "workflows/pptx/smartart-inspection.feature",
+  "contract": "contracts/pptx-smartart-inspection.md",
+  "baseFixtureId": "fixture-792277d2c358c5bd7c8a4053078a5594fa07bfb55a06b0bb30f2813c151ea459",
+  "slidePart": "ppt/slides/slide1.xml",
+  "counts": {
+    "ids": 2,
+    "cases": 12
+  },
+  "physicalSmartArtFixtureAvailable": false,
+  "custody": {
+    "membership": "exact",
+    "preserve": "all"
+  },
+  "cases": [
+    {
+      "caseId": "dependency graph",
+      "scenarioId": "@id-pptx-graphics-smartart-inspection-read",
+      "example": {
+        "variant": "dependency graph"
+      },
+      "operations": [
+        {
+          "kind": "replace-literal-once",
+          "part": "ppt/slides/slide1.xml",
+          "before": "</p:spTree>",
+          "after": "<p:graphicFrame><p:nvGraphicFramePr><p:cNvPr id=\"2000\" name=\"SmartArt graph\"/><p:cNvGraphicFramePr/><p:nvPr/></p:nvGraphicFramePr><p:xfrm><a:off x=\"100\" y=\"200\"/><a:ext cx=\"3000\" cy=\"4000\"/></p:xfrm><a:graphic><a:graphicData uri=\"http://schemas.openxmlformats.org/drawingml/2006/diagram\"><dgm:relIds xmlns:dgm=\"http://schemas.openxmlformats.org/drawingml/2006/diagram\" r:dm=\"smartData\" r:lo=\"smartLayout\" r:qs=\"smartStyle\" r:cs=\"smartColors\"/></a:graphicData></a:graphic></p:graphicFrame></p:spTree>"
+        },
+        {
+          "kind": "replace-literal-once",
+          "part": "ppt/slides/_rels/slide1.xml.rels",
+          "before": "</Relationships>",
+          "after": "<Relationship Id=\"smartData\" Type=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships/diagramData\" Target=\"../diagrams/data1.xml\"/><Relationship Id=\"smartLayout\" Type=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships/diagramLayout\" Target=\"../diagrams/layout1.xml\"/><Relationship Id=\"smartStyle\" Type=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships/diagramQuickStyle\" Target=\"../diagrams/style1.xml\"/><Relationship Id=\"smartColors\" Type=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships/diagramColors\" Target=\"../diagrams/colors1.xml\"/></Relationships>"
+        },
+        {
+          "kind": "replace-literal-once",
+          "part": "[Content_Types].xml",
+          "before": "</Types>",
+          "after": "<Override PartName=\"/ppt/diagrams/data1.xml\" ContentType=\"application/vnd.openxmlformats-officedocument.drawingml.diagramData+xml\"/><Override PartName=\"/ppt/diagrams/layout1.xml\" ContentType=\"application/vnd.openxmlformats-officedocument.drawingml.diagramLayout+xml\"/><Override PartName=\"/ppt/diagrams/style1.xml\" ContentType=\"application/vnd.openxmlformats-officedocument.drawingml.diagramStyle+xml\"/><Override PartName=\"/ppt/diagrams/colors1.xml\" ContentType=\"application/vnd.openxmlformats-officedocument.drawingml.diagramColors+xml\"/><Override PartName=\"/ppt/diagrams/drawing1.xml\" ContentType=\"application/vnd.ms-office.drawingml.diagramDrawing+xml\"/></Types>"
+        },
+        {
+          "kind": "add-literal-member",
+          "part": "ppt/diagrams/data1.xml",
+          "value": "<dgm:dataModel xmlns:dgm=\"http://schemas.openxmlformats.org/drawingml/2006/diagram\"><dgm:ptLst><dgm:pt modelId=\"{11111111-1111-1111-1111-111111111111}\"/></dgm:ptLst><dgm:cxnLst/><dgm:extLst><dgm:ext uri=\"urn:drawing\"><dsp:dataModelExt xmlns:dsp=\"http://schemas.microsoft.com/office/drawing/2008/diagram\" relId=\"drawingRel\"/></dgm:ext></dgm:extLst></dgm:dataModel>"
+        },
+        {
+          "kind": "add-literal-member",
+          "part": "ppt/diagrams/layout1.xml",
+          "value": "<dgm:layoutDef xmlns:dgm=\"http://schemas.openxmlformats.org/drawingml/2006/diagram\" uniqueId=\"urn:shared:layout\"/>"
+        },
+        {
+          "kind": "add-literal-member",
+          "part": "ppt/diagrams/style1.xml",
+          "value": "<dgm:styleDef xmlns:dgm=\"http://schemas.openxmlformats.org/drawingml/2006/diagram\" uniqueId=\"urn:shared:style\"/>"
+        },
+        {
+          "kind": "add-literal-member",
+          "part": "ppt/diagrams/colors1.xml",
+          "value": "<dgm:colorsDef xmlns:dgm=\"http://schemas.openxmlformats.org/drawingml/2006/diagram\" uniqueId=\"urn:shared:colors\"/>"
+        },
+        {
+          "kind": "add-literal-member",
+          "part": "ppt/diagrams/drawing1.xml",
+          "value": "<dsp:drawing xmlns:dsp=\"http://schemas.microsoft.com/office/drawing/2008/diagram\" xmlns:a=\"http://schemas.openxmlformats.org/drawingml/2006/main\"><dsp:spTree/></dsp:drawing>"
+        },
+        {
+          "kind": "add-literal-member",
+          "part": "ppt/diagrams/_rels/data1.xml.rels",
+          "value": "<Relationships xmlns=\"http://schemas.openxmlformats.org/package/2006/relationships\"><Relationship Id=\"drawingRel\" Type=\"http://schemas.microsoft.com/office/2007/relationships/diagramDrawing\" Target=\"drawing1.xml\"/><Relationship Id=\"linkedPreview\" Type=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships/image\" Target=\"https://invalid.example/preview.png\" TargetMode=\"External\"/></Relationships>"
+        }
+      ],
+      "expected": [
+        {
+          "shapeId": 2000,
+          "name": "SmartArt graph",
+          "slidePart": "ppt/slides/slide1.xml",
+          "roots": [
+            {
+              "role": "data",
+              "relationshipId": "smartData",
+              "target": "../diagrams/data1.xml",
+              "partName": "ppt/diagrams/data1.xml",
+              "contentType": "application/vnd.openxmlformats-officedocument.drawingml.diagramData+xml",
+              "byteLength": 363
+            },
+            {
+              "role": "layout",
+              "relationshipId": "smartLayout",
+              "target": "../diagrams/layout1.xml",
+              "partName": "ppt/diagrams/layout1.xml",
+              "contentType": "application/vnd.openxmlformats-officedocument.drawingml.diagramLayout+xml",
+              "byteLength": 114
+            },
+            {
+              "role": "style",
+              "relationshipId": "smartStyle",
+              "target": "../diagrams/style1.xml",
+              "partName": "ppt/diagrams/style1.xml",
+              "contentType": "application/vnd.openxmlformats-officedocument.drawingml.diagramStyle+xml",
+              "byteLength": 112
+            },
+            {
+              "role": "colors",
+              "relationshipId": "smartColors",
+              "target": "../diagrams/colors1.xml",
+              "partName": "ppt/diagrams/colors1.xml",
+              "contentType": "application/vnd.openxmlformats-officedocument.drawingml.diagramColors+xml",
+              "byteLength": 114
+            }
+          ],
+          "parts": [
+            {
+              "partName": "ppt/diagrams/colors1.xml",
+              "contentType": "application/vnd.openxmlformats-officedocument.drawingml.diagramColors+xml",
+              "byteLength": 114
+            },
+            {
+              "partName": "ppt/diagrams/data1.xml",
+              "contentType": "application/vnd.openxmlformats-officedocument.drawingml.diagramData+xml",
+              "byteLength": 363
+            },
+            {
+              "partName": "ppt/diagrams/drawing1.xml",
+              "contentType": "application/vnd.ms-office.drawingml.diagramDrawing+xml",
+              "byteLength": 173
+            },
+            {
+              "partName": "ppt/diagrams/layout1.xml",
+              "contentType": "application/vnd.openxmlformats-officedocument.drawingml.diagramLayout+xml",
+              "byteLength": 114
+            },
+            {
+              "partName": "ppt/diagrams/style1.xml",
+              "contentType": "application/vnd.openxmlformats-officedocument.drawingml.diagramStyle+xml",
+              "byteLength": 112
+            }
+          ],
+          "edges": [
+            {
+              "owner": "ppt/diagrams/data1.xml",
+              "relationshipId": "drawingRel",
+              "type": "http://schemas.microsoft.com/office/2007/relationships/diagramDrawing",
+              "target": "drawing1.xml",
+              "external": false,
+              "partName": "ppt/diagrams/drawing1.xml"
+            },
+            {
+              "owner": "ppt/diagrams/data1.xml",
+              "relationshipId": "linkedPreview",
+              "type": "http://schemas.openxmlformats.org/officeDocument/2006/relationships/image",
+              "target": "https://invalid.example/preview.png",
+              "external": true,
+              "partName": null
+            }
+          ],
+          "drawingParts": [
+            "ppt/diagrams/drawing1.xml"
+          ],
+          "limits": {
+            "dataEditing": false,
+            "layoutEvaluation": false,
+            "styleEvaluation": false,
+            "drawingRegeneration": false,
+            "reason": "Dependency inspection only; no SmartArt layout/edit engine."
+          }
+        }
+      ]
+    },
+    {
+      "caseId": "cyclic transitive graph",
+      "scenarioId": "@id-pptx-graphics-smartart-inspection-read",
+      "example": {
+        "variant": "cyclic transitive graph"
+      },
+      "operations": [
+        {
+          "kind": "replace-literal-once",
+          "part": "ppt/slides/slide1.xml",
+          "before": "</p:spTree>",
+          "after": "<p:graphicFrame><p:nvGraphicFramePr><p:cNvPr id=\"2000\" name=\"SmartArt graph\"/><p:cNvGraphicFramePr/><p:nvPr/></p:nvGraphicFramePr><p:xfrm><a:off x=\"100\" y=\"200\"/><a:ext cx=\"3000\" cy=\"4000\"/></p:xfrm><a:graphic><a:graphicData uri=\"http://schemas.openxmlformats.org/drawingml/2006/diagram\"><dgm:relIds xmlns:dgm=\"http://schemas.openxmlformats.org/drawingml/2006/diagram\" r:dm=\"smartData\" r:lo=\"smartLayout\" r:qs=\"smartStyle\" r:cs=\"smartColors\"/></a:graphicData></a:graphic></p:graphicFrame></p:spTree>"
+        },
+        {
+          "kind": "replace-literal-once",
+          "part": "ppt/slides/_rels/slide1.xml.rels",
+          "before": "</Relationships>",
+          "after": "<Relationship Id=\"smartData\" Type=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships/diagramData\" Target=\"../diagrams/data1.xml\"/><Relationship Id=\"smartLayout\" Type=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships/diagramLayout\" Target=\"../diagrams/layout1.xml\"/><Relationship Id=\"smartStyle\" Type=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships/diagramQuickStyle\" Target=\"../diagrams/style1.xml\"/><Relationship Id=\"smartColors\" Type=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships/diagramColors\" Target=\"../diagrams/colors1.xml\"/></Relationships>"
+        },
+        {
+          "kind": "replace-literal-once",
+          "part": "[Content_Types].xml",
+          "before": "</Types>",
+          "after": "<Override PartName=\"/ppt/diagrams/data1.xml\" ContentType=\"application/vnd.openxmlformats-officedocument.drawingml.diagramData+xml\"/><Override PartName=\"/ppt/diagrams/layout1.xml\" ContentType=\"application/vnd.openxmlformats-officedocument.drawingml.diagramLayout+xml\"/><Override PartName=\"/ppt/diagrams/style1.xml\" ContentType=\"application/vnd.openxmlformats-officedocument.drawingml.diagramStyle+xml\"/><Override PartName=\"/ppt/diagrams/colors1.xml\" ContentType=\"application/vnd.openxmlformats-officedocument.drawingml.diagramColors+xml\"/><Override PartName=\"/ppt/diagrams/drawing1.xml\" ContentType=\"application/vnd.ms-office.drawingml.diagramDrawing+xml\"/></Types>"
+        },
+        {
+          "kind": "add-literal-member",
+          "part": "ppt/diagrams/data1.xml",
+          "value": "<dgm:dataModel xmlns:dgm=\"http://schemas.openxmlformats.org/drawingml/2006/diagram\"><dgm:ptLst><dgm:pt modelId=\"{11111111-1111-1111-1111-111111111111}\"/></dgm:ptLst><dgm:cxnLst/><dgm:extLst><dgm:ext uri=\"urn:drawing\"><dsp:dataModelExt xmlns:dsp=\"http://schemas.microsoft.com/office/drawing/2008/diagram\" relId=\"drawingRel\"/></dgm:ext></dgm:extLst></dgm:dataModel>"
+        },
+        {
+          "kind": "add-literal-member",
+          "part": "ppt/diagrams/layout1.xml",
+          "value": "<dgm:layoutDef xmlns:dgm=\"http://schemas.openxmlformats.org/drawingml/2006/diagram\" uniqueId=\"urn:shared:layout\"/>"
+        },
+        {
+          "kind": "add-literal-member",
+          "part": "ppt/diagrams/style1.xml",
+          "value": "<dgm:styleDef xmlns:dgm=\"http://schemas.openxmlformats.org/drawingml/2006/diagram\" uniqueId=\"urn:shared:style\"/>"
+        },
+        {
+          "kind": "add-literal-member",
+          "part": "ppt/diagrams/colors1.xml",
+          "value": "<dgm:colorsDef xmlns:dgm=\"http://schemas.openxmlformats.org/drawingml/2006/diagram\" uniqueId=\"urn:shared:colors\"/>"
+        },
+        {
+          "kind": "add-literal-member",
+          "part": "ppt/diagrams/drawing1.xml",
+          "value": "<dsp:drawing xmlns:dsp=\"http://schemas.microsoft.com/office/drawing/2008/diagram\" xmlns:a=\"http://schemas.openxmlformats.org/drawingml/2006/main\"><dsp:spTree/></dsp:drawing>"
+        },
+        {
+          "kind": "add-literal-member",
+          "part": "ppt/diagrams/_rels/data1.xml.rels",
+          "value": "<Relationships xmlns=\"http://schemas.openxmlformats.org/package/2006/relationships\"><Relationship Id=\"drawingRel\" Type=\"http://schemas.microsoft.com/office/2007/relationships/diagramDrawing\" Target=\"drawing1.xml\"/><Relationship Id=\"linkedPreview\" Type=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships/image\" Target=\"https://invalid.example/preview.png\" TargetMode=\"External\"/></Relationships>"
+        },
+        {
+          "kind": "add-literal-member",
+          "part": "ppt/diagrams/_rels/drawing1.xml.rels",
+          "value": "<Relationships xmlns=\"http://schemas.openxmlformats.org/package/2006/relationships\"><Relationship Id=\"cycle\" Type=\"urn:shared:cycle\" Target=\"data1.xml\"/><Relationship Id=\"preview\" Type=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships/image\" Target=\"../media/image1.png\"/></Relationships>"
+        }
+      ],
+      "expected": [
+        {
+          "shapeId": 2000,
+          "name": "SmartArt graph",
+          "slidePart": "ppt/slides/slide1.xml",
+          "roots": [
+            {
+              "role": "data",
+              "relationshipId": "smartData",
+              "target": "../diagrams/data1.xml",
+              "partName": "ppt/diagrams/data1.xml",
+              "contentType": "application/vnd.openxmlformats-officedocument.drawingml.diagramData+xml",
+              "byteLength": 363
+            },
+            {
+              "role": "layout",
+              "relationshipId": "smartLayout",
+              "target": "../diagrams/layout1.xml",
+              "partName": "ppt/diagrams/layout1.xml",
+              "contentType": "application/vnd.openxmlformats-officedocument.drawingml.diagramLayout+xml",
+              "byteLength": 114
+            },
+            {
+              "role": "style",
+              "relationshipId": "smartStyle",
+              "target": "../diagrams/style1.xml",
+              "partName": "ppt/diagrams/style1.xml",
+              "contentType": "application/vnd.openxmlformats-officedocument.drawingml.diagramStyle+xml",
+              "byteLength": 112
+            },
+            {
+              "role": "colors",
+              "relationshipId": "smartColors",
+              "target": "../diagrams/colors1.xml",
+              "partName": "ppt/diagrams/colors1.xml",
+              "contentType": "application/vnd.openxmlformats-officedocument.drawingml.diagramColors+xml",
+              "byteLength": 114
+            }
+          ],
+          "parts": [
+            {
+              "partName": "ppt/diagrams/colors1.xml",
+              "contentType": "application/vnd.openxmlformats-officedocument.drawingml.diagramColors+xml",
+              "byteLength": 114
+            },
+            {
+              "partName": "ppt/diagrams/data1.xml",
+              "contentType": "application/vnd.openxmlformats-officedocument.drawingml.diagramData+xml",
+              "byteLength": 363
+            },
+            {
+              "partName": "ppt/diagrams/drawing1.xml",
+              "contentType": "application/vnd.ms-office.drawingml.diagramDrawing+xml",
+              "byteLength": 173
+            },
+            {
+              "partName": "ppt/diagrams/layout1.xml",
+              "contentType": "application/vnd.openxmlformats-officedocument.drawingml.diagramLayout+xml",
+              "byteLength": 114
+            },
+            {
+              "partName": "ppt/diagrams/style1.xml",
+              "contentType": "application/vnd.openxmlformats-officedocument.drawingml.diagramStyle+xml",
+              "byteLength": 112
+            },
+            {
+              "partName": "ppt/media/image1.png",
+              "contentType": "image/png",
+              "byteLength": 399889
+            }
+          ],
+          "edges": [
+            {
+              "owner": "ppt/diagrams/data1.xml",
+              "relationshipId": "drawingRel",
+              "type": "http://schemas.microsoft.com/office/2007/relationships/diagramDrawing",
+              "target": "drawing1.xml",
+              "external": false,
+              "partName": "ppt/diagrams/drawing1.xml"
+            },
+            {
+              "owner": "ppt/diagrams/data1.xml",
+              "relationshipId": "linkedPreview",
+              "type": "http://schemas.openxmlformats.org/officeDocument/2006/relationships/image",
+              "target": "https://invalid.example/preview.png",
+              "external": true,
+              "partName": null
+            },
+            {
+              "owner": "ppt/diagrams/drawing1.xml",
+              "relationshipId": "cycle",
+              "type": "urn:shared:cycle",
+              "target": "data1.xml",
+              "external": false,
+              "partName": "ppt/diagrams/data1.xml"
+            },
+            {
+              "owner": "ppt/diagrams/drawing1.xml",
+              "relationshipId": "preview",
+              "type": "http://schemas.openxmlformats.org/officeDocument/2006/relationships/image",
+              "target": "../media/image1.png",
+              "external": false,
+              "partName": "ppt/media/image1.png"
+            }
+          ],
+          "drawingParts": [
+            "ppt/diagrams/drawing1.xml"
+          ],
+          "limits": {
+            "dataEditing": false,
+            "layoutEvaluation": false,
+            "styleEvaluation": false,
+            "drawingRegeneration": false,
+            "reason": "Dependency inspection only; no SmartArt layout/edit engine."
+          }
+        }
+      ]
+    },
+    {
+      "caseId": "empty",
+      "scenarioId": "@id-pptx-graphics-smartart-inspection-read",
+      "example": {
+        "variant": "empty"
+      },
+      "operations": [],
+      "expected": []
+    },
+    {
+      "caseId": "duplicate-frame-identity",
+      "scenarioId": "@id-pptx-graphics-smartart-inspection-refusals",
+      "example": {
+        "fault": "duplicate frame identity"
+      },
+      "operations": [
+        {
+          "kind": "replace-literal-once",
+          "part": "ppt/slides/slide1.xml",
+          "before": "</p:spTree>",
+          "after": "<p:graphicFrame><p:nvGraphicFramePr><p:cNvPr id=\"2000\" name=\"SmartArt graph\"/><p:cNvGraphicFramePr/><p:nvPr/></p:nvGraphicFramePr><p:xfrm><a:off x=\"100\" y=\"200\"/><a:ext cx=\"3000\" cy=\"4000\"/></p:xfrm><a:graphic><a:graphicData uri=\"http://schemas.openxmlformats.org/drawingml/2006/diagram\"><dgm:relIds xmlns:dgm=\"http://schemas.openxmlformats.org/drawingml/2006/diagram\" r:dm=\"smartData\" r:lo=\"smartLayout\" r:qs=\"smartStyle\" r:cs=\"smartColors\"/></a:graphicData></a:graphic></p:graphicFrame></p:spTree>"
+        },
+        {
+          "kind": "replace-literal-once",
+          "part": "ppt/slides/_rels/slide1.xml.rels",
+          "before": "</Relationships>",
+          "after": "<Relationship Id=\"smartData\" Type=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships/diagramData\" Target=\"../diagrams/data1.xml\"/><Relationship Id=\"smartLayout\" Type=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships/diagramLayout\" Target=\"../diagrams/layout1.xml\"/><Relationship Id=\"smartStyle\" Type=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships/diagramQuickStyle\" Target=\"../diagrams/style1.xml\"/><Relationship Id=\"smartColors\" Type=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships/diagramColors\" Target=\"../diagrams/colors1.xml\"/></Relationships>"
+        },
+        {
+          "kind": "replace-literal-once",
+          "part": "[Content_Types].xml",
+          "before": "</Types>",
+          "after": "<Override PartName=\"/ppt/diagrams/data1.xml\" ContentType=\"application/vnd.openxmlformats-officedocument.drawingml.diagramData+xml\"/><Override PartName=\"/ppt/diagrams/layout1.xml\" ContentType=\"application/vnd.openxmlformats-officedocument.drawingml.diagramLayout+xml\"/><Override PartName=\"/ppt/diagrams/style1.xml\" ContentType=\"application/vnd.openxmlformats-officedocument.drawingml.diagramStyle+xml\"/><Override PartName=\"/ppt/diagrams/colors1.xml\" ContentType=\"application/vnd.openxmlformats-officedocument.drawingml.diagramColors+xml\"/><Override PartName=\"/ppt/diagrams/drawing1.xml\" ContentType=\"application/vnd.ms-office.drawingml.diagramDrawing+xml\"/></Types>"
+        },
+        {
+          "kind": "add-literal-member",
+          "part": "ppt/diagrams/data1.xml",
+          "value": "<dgm:dataModel xmlns:dgm=\"http://schemas.openxmlformats.org/drawingml/2006/diagram\"><dgm:ptLst><dgm:pt modelId=\"{11111111-1111-1111-1111-111111111111}\"/></dgm:ptLst><dgm:cxnLst/><dgm:extLst><dgm:ext uri=\"urn:drawing\"><dsp:dataModelExt xmlns:dsp=\"http://schemas.microsoft.com/office/drawing/2008/diagram\" relId=\"drawingRel\"/></dgm:ext></dgm:extLst></dgm:dataModel>"
+        },
+        {
+          "kind": "add-literal-member",
+          "part": "ppt/diagrams/layout1.xml",
+          "value": "<dgm:layoutDef xmlns:dgm=\"http://schemas.openxmlformats.org/drawingml/2006/diagram\" uniqueId=\"urn:shared:layout\"/>"
+        },
+        {
+          "kind": "add-literal-member",
+          "part": "ppt/diagrams/style1.xml",
+          "value": "<dgm:styleDef xmlns:dgm=\"http://schemas.openxmlformats.org/drawingml/2006/diagram\" uniqueId=\"urn:shared:style\"/>"
+        },
+        {
+          "kind": "add-literal-member",
+          "part": "ppt/diagrams/colors1.xml",
+          "value": "<dgm:colorsDef xmlns:dgm=\"http://schemas.openxmlformats.org/drawingml/2006/diagram\" uniqueId=\"urn:shared:colors\"/>"
+        },
+        {
+          "kind": "add-literal-member",
+          "part": "ppt/diagrams/drawing1.xml",
+          "value": "<dsp:drawing xmlns:dsp=\"http://schemas.microsoft.com/office/drawing/2008/diagram\" xmlns:a=\"http://schemas.openxmlformats.org/drawingml/2006/main\"><dsp:spTree/></dsp:drawing>"
+        },
+        {
+          "kind": "add-literal-member",
+          "part": "ppt/diagrams/_rels/data1.xml.rels",
+          "value": "<Relationships xmlns=\"http://schemas.openxmlformats.org/package/2006/relationships\"><Relationship Id=\"drawingRel\" Type=\"http://schemas.microsoft.com/office/2007/relationships/diagramDrawing\" Target=\"drawing1.xml\"/><Relationship Id=\"linkedPreview\" Type=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships/image\" Target=\"https://invalid.example/preview.png\" TargetMode=\"External\"/></Relationships>"
+        },
+        {
+          "kind": "replace-literal-once",
+          "part": "ppt/slides/slide1.xml",
+          "before": "id=\"2000\" name=\"SmartArt graph\"",
+          "after": "id=\"1026\" name=\"SmartArt graph\""
+        }
+      ],
+      "errorCode": "PPTX_SMARTART_UNSUPPORTED"
+    },
+    {
+      "caseId": "wrong-role-relationship",
+      "scenarioId": "@id-pptx-graphics-smartart-inspection-refusals",
+      "example": {
+        "fault": "wrong role relationship"
+      },
+      "operations": [
+        {
+          "kind": "replace-literal-once",
+          "part": "ppt/slides/slide1.xml",
+          "before": "</p:spTree>",
+          "after": "<p:graphicFrame><p:nvGraphicFramePr><p:cNvPr id=\"2000\" name=\"SmartArt graph\"/><p:cNvGraphicFramePr/><p:nvPr/></p:nvGraphicFramePr><p:xfrm><a:off x=\"100\" y=\"200\"/><a:ext cx=\"3000\" cy=\"4000\"/></p:xfrm><a:graphic><a:graphicData uri=\"http://schemas.openxmlformats.org/drawingml/2006/diagram\"><dgm:relIds xmlns:dgm=\"http://schemas.openxmlformats.org/drawingml/2006/diagram\" r:dm=\"smartData\" r:lo=\"smartLayout\" r:qs=\"smartStyle\" r:cs=\"smartColors\"/></a:graphicData></a:graphic></p:graphicFrame></p:spTree>"
+        },
+        {
+          "kind": "replace-literal-once",
+          "part": "ppt/slides/_rels/slide1.xml.rels",
+          "before": "</Relationships>",
+          "after": "<Relationship Id=\"smartData\" Type=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships/diagramData\" Target=\"../diagrams/data1.xml\"/><Relationship Id=\"smartLayout\" Type=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships/diagramLayout\" Target=\"../diagrams/layout1.xml\"/><Relationship Id=\"smartStyle\" Type=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships/diagramQuickStyle\" Target=\"../diagrams/style1.xml\"/><Relationship Id=\"smartColors\" Type=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships/diagramColors\" Target=\"../diagrams/colors1.xml\"/></Relationships>"
+        },
+        {
+          "kind": "replace-literal-once",
+          "part": "[Content_Types].xml",
+          "before": "</Types>",
+          "after": "<Override PartName=\"/ppt/diagrams/data1.xml\" ContentType=\"application/vnd.openxmlformats-officedocument.drawingml.diagramData+xml\"/><Override PartName=\"/ppt/diagrams/layout1.xml\" ContentType=\"application/vnd.openxmlformats-officedocument.drawingml.diagramLayout+xml\"/><Override PartName=\"/ppt/diagrams/style1.xml\" ContentType=\"application/vnd.openxmlformats-officedocument.drawingml.diagramStyle+xml\"/><Override PartName=\"/ppt/diagrams/colors1.xml\" ContentType=\"application/vnd.openxmlformats-officedocument.drawingml.diagramColors+xml\"/><Override PartName=\"/ppt/diagrams/drawing1.xml\" ContentType=\"application/vnd.ms-office.drawingml.diagramDrawing+xml\"/></Types>"
+        },
+        {
+          "kind": "add-literal-member",
+          "part": "ppt/diagrams/data1.xml",
+          "value": "<dgm:dataModel xmlns:dgm=\"http://schemas.openxmlformats.org/drawingml/2006/diagram\"><dgm:ptLst><dgm:pt modelId=\"{11111111-1111-1111-1111-111111111111}\"/></dgm:ptLst><dgm:cxnLst/><dgm:extLst><dgm:ext uri=\"urn:drawing\"><dsp:dataModelExt xmlns:dsp=\"http://schemas.microsoft.com/office/drawing/2008/diagram\" relId=\"drawingRel\"/></dgm:ext></dgm:extLst></dgm:dataModel>"
+        },
+        {
+          "kind": "add-literal-member",
+          "part": "ppt/diagrams/layout1.xml",
+          "value": "<dgm:layoutDef xmlns:dgm=\"http://schemas.openxmlformats.org/drawingml/2006/diagram\" uniqueId=\"urn:shared:layout\"/>"
+        },
+        {
+          "kind": "add-literal-member",
+          "part": "ppt/diagrams/style1.xml",
+          "value": "<dgm:styleDef xmlns:dgm=\"http://schemas.openxmlformats.org/drawingml/2006/diagram\" uniqueId=\"urn:shared:style\"/>"
+        },
+        {
+          "kind": "add-literal-member",
+          "part": "ppt/diagrams/colors1.xml",
+          "value": "<dgm:colorsDef xmlns:dgm=\"http://schemas.openxmlformats.org/drawingml/2006/diagram\" uniqueId=\"urn:shared:colors\"/>"
+        },
+        {
+          "kind": "add-literal-member",
+          "part": "ppt/diagrams/drawing1.xml",
+          "value": "<dsp:drawing xmlns:dsp=\"http://schemas.microsoft.com/office/drawing/2008/diagram\" xmlns:a=\"http://schemas.openxmlformats.org/drawingml/2006/main\"><dsp:spTree/></dsp:drawing>"
+        },
+        {
+          "kind": "add-literal-member",
+          "part": "ppt/diagrams/_rels/data1.xml.rels",
+          "value": "<Relationships xmlns=\"http://schemas.openxmlformats.org/package/2006/relationships\"><Relationship Id=\"drawingRel\" Type=\"http://schemas.microsoft.com/office/2007/relationships/diagramDrawing\" Target=\"drawing1.xml\"/><Relationship Id=\"linkedPreview\" Type=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships/image\" Target=\"https://invalid.example/preview.png\" TargetMode=\"External\"/></Relationships>"
+        },
+        {
+          "kind": "replace-literal-once",
+          "part": "ppt/slides/_rels/slide1.xml.rels",
+          "before": "Id=\"smartData\" Type=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships/diagramData\"",
+          "after": "Id=\"smartData\" Type=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships/image\""
+        }
+      ],
+      "errorCode": "PPTX_SMARTART_UNSUPPORTED"
+    },
+    {
+      "caseId": "wrong-content-type",
+      "scenarioId": "@id-pptx-graphics-smartart-inspection-refusals",
+      "example": {
+        "fault": "wrong content type"
+      },
+      "operations": [
+        {
+          "kind": "replace-literal-once",
+          "part": "ppt/slides/slide1.xml",
+          "before": "</p:spTree>",
+          "after": "<p:graphicFrame><p:nvGraphicFramePr><p:cNvPr id=\"2000\" name=\"SmartArt graph\"/><p:cNvGraphicFramePr/><p:nvPr/></p:nvGraphicFramePr><p:xfrm><a:off x=\"100\" y=\"200\"/><a:ext cx=\"3000\" cy=\"4000\"/></p:xfrm><a:graphic><a:graphicData uri=\"http://schemas.openxmlformats.org/drawingml/2006/diagram\"><dgm:relIds xmlns:dgm=\"http://schemas.openxmlformats.org/drawingml/2006/diagram\" r:dm=\"smartData\" r:lo=\"smartLayout\" r:qs=\"smartStyle\" r:cs=\"smartColors\"/></a:graphicData></a:graphic></p:graphicFrame></p:spTree>"
+        },
+        {
+          "kind": "replace-literal-once",
+          "part": "ppt/slides/_rels/slide1.xml.rels",
+          "before": "</Relationships>",
+          "after": "<Relationship Id=\"smartData\" Type=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships/diagramData\" Target=\"../diagrams/data1.xml\"/><Relationship Id=\"smartLayout\" Type=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships/diagramLayout\" Target=\"../diagrams/layout1.xml\"/><Relationship Id=\"smartStyle\" Type=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships/diagramQuickStyle\" Target=\"../diagrams/style1.xml\"/><Relationship Id=\"smartColors\" Type=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships/diagramColors\" Target=\"../diagrams/colors1.xml\"/></Relationships>"
+        },
+        {
+          "kind": "replace-literal-once",
+          "part": "[Content_Types].xml",
+          "before": "</Types>",
+          "after": "<Override PartName=\"/ppt/diagrams/data1.xml\" ContentType=\"application/vnd.openxmlformats-officedocument.drawingml.diagramData+xml\"/><Override PartName=\"/ppt/diagrams/layout1.xml\" ContentType=\"application/vnd.openxmlformats-officedocument.drawingml.diagramLayout+xml\"/><Override PartName=\"/ppt/diagrams/style1.xml\" ContentType=\"application/vnd.openxmlformats-officedocument.drawingml.diagramStyle+xml\"/><Override PartName=\"/ppt/diagrams/colors1.xml\" ContentType=\"application/vnd.openxmlformats-officedocument.drawingml.diagramColors+xml\"/><Override PartName=\"/ppt/diagrams/drawing1.xml\" ContentType=\"application/vnd.ms-office.drawingml.diagramDrawing+xml\"/></Types>"
+        },
+        {
+          "kind": "add-literal-member",
+          "part": "ppt/diagrams/data1.xml",
+          "value": "<dgm:dataModel xmlns:dgm=\"http://schemas.openxmlformats.org/drawingml/2006/diagram\"><dgm:ptLst><dgm:pt modelId=\"{11111111-1111-1111-1111-111111111111}\"/></dgm:ptLst><dgm:cxnLst/><dgm:extLst><dgm:ext uri=\"urn:drawing\"><dsp:dataModelExt xmlns:dsp=\"http://schemas.microsoft.com/office/drawing/2008/diagram\" relId=\"drawingRel\"/></dgm:ext></dgm:extLst></dgm:dataModel>"
+        },
+        {
+          "kind": "add-literal-member",
+          "part": "ppt/diagrams/layout1.xml",
+          "value": "<dgm:layoutDef xmlns:dgm=\"http://schemas.openxmlformats.org/drawingml/2006/diagram\" uniqueId=\"urn:shared:layout\"/>"
+        },
+        {
+          "kind": "add-literal-member",
+          "part": "ppt/diagrams/style1.xml",
+          "value": "<dgm:styleDef xmlns:dgm=\"http://schemas.openxmlformats.org/drawingml/2006/diagram\" uniqueId=\"urn:shared:style\"/>"
+        },
+        {
+          "kind": "add-literal-member",
+          "part": "ppt/diagrams/colors1.xml",
+          "value": "<dgm:colorsDef xmlns:dgm=\"http://schemas.openxmlformats.org/drawingml/2006/diagram\" uniqueId=\"urn:shared:colors\"/>"
+        },
+        {
+          "kind": "add-literal-member",
+          "part": "ppt/diagrams/drawing1.xml",
+          "value": "<dsp:drawing xmlns:dsp=\"http://schemas.microsoft.com/office/drawing/2008/diagram\" xmlns:a=\"http://schemas.openxmlformats.org/drawingml/2006/main\"><dsp:spTree/></dsp:drawing>"
+        },
+        {
+          "kind": "add-literal-member",
+          "part": "ppt/diagrams/_rels/data1.xml.rels",
+          "value": "<Relationships xmlns=\"http://schemas.openxmlformats.org/package/2006/relationships\"><Relationship Id=\"drawingRel\" Type=\"http://schemas.microsoft.com/office/2007/relationships/diagramDrawing\" Target=\"drawing1.xml\"/><Relationship Id=\"linkedPreview\" Type=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships/image\" Target=\"https://invalid.example/preview.png\" TargetMode=\"External\"/></Relationships>"
+        },
+        {
+          "kind": "replace-literal-once",
+          "part": "[Content_Types].xml",
+          "before": "drawingml.diagramLayout+xml",
+          "after": "drawingml.diagramData+xml"
+        }
+      ],
+      "errorCode": "PPTX_SMARTART_UNSUPPORTED"
+    },
+    {
+      "caseId": "wrong-root-namespace",
+      "scenarioId": "@id-pptx-graphics-smartart-inspection-refusals",
+      "example": {
+        "fault": "wrong root namespace"
+      },
+      "operations": [
+        {
+          "kind": "replace-literal-once",
+          "part": "ppt/slides/slide1.xml",
+          "before": "</p:spTree>",
+          "after": "<p:graphicFrame><p:nvGraphicFramePr><p:cNvPr id=\"2000\" name=\"SmartArt graph\"/><p:cNvGraphicFramePr/><p:nvPr/></p:nvGraphicFramePr><p:xfrm><a:off x=\"100\" y=\"200\"/><a:ext cx=\"3000\" cy=\"4000\"/></p:xfrm><a:graphic><a:graphicData uri=\"http://schemas.openxmlformats.org/drawingml/2006/diagram\"><dgm:relIds xmlns:dgm=\"http://schemas.openxmlformats.org/drawingml/2006/diagram\" r:dm=\"smartData\" r:lo=\"smartLayout\" r:qs=\"smartStyle\" r:cs=\"smartColors\"/></a:graphicData></a:graphic></p:graphicFrame></p:spTree>"
+        },
+        {
+          "kind": "replace-literal-once",
+          "part": "ppt/slides/_rels/slide1.xml.rels",
+          "before": "</Relationships>",
+          "after": "<Relationship Id=\"smartData\" Type=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships/diagramData\" Target=\"../diagrams/data1.xml\"/><Relationship Id=\"smartLayout\" Type=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships/diagramLayout\" Target=\"../diagrams/layout1.xml\"/><Relationship Id=\"smartStyle\" Type=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships/diagramQuickStyle\" Target=\"../diagrams/style1.xml\"/><Relationship Id=\"smartColors\" Type=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships/diagramColors\" Target=\"../diagrams/colors1.xml\"/></Relationships>"
+        },
+        {
+          "kind": "replace-literal-once",
+          "part": "[Content_Types].xml",
+          "before": "</Types>",
+          "after": "<Override PartName=\"/ppt/diagrams/data1.xml\" ContentType=\"application/vnd.openxmlformats-officedocument.drawingml.diagramData+xml\"/><Override PartName=\"/ppt/diagrams/layout1.xml\" ContentType=\"application/vnd.openxmlformats-officedocument.drawingml.diagramLayout+xml\"/><Override PartName=\"/ppt/diagrams/style1.xml\" ContentType=\"application/vnd.openxmlformats-officedocument.drawingml.diagramStyle+xml\"/><Override PartName=\"/ppt/diagrams/colors1.xml\" ContentType=\"application/vnd.openxmlformats-officedocument.drawingml.diagramColors+xml\"/><Override PartName=\"/ppt/diagrams/drawing1.xml\" ContentType=\"application/vnd.ms-office.drawingml.diagramDrawing+xml\"/></Types>"
+        },
+        {
+          "kind": "add-literal-member",
+          "part": "ppt/diagrams/data1.xml",
+          "value": "<dgm:dataModel xmlns:dgm=\"http://schemas.openxmlformats.org/drawingml/2006/diagram\"><dgm:ptLst><dgm:pt modelId=\"{11111111-1111-1111-1111-111111111111}\"/></dgm:ptLst><dgm:cxnLst/><dgm:extLst><dgm:ext uri=\"urn:drawing\"><dsp:dataModelExt xmlns:dsp=\"http://schemas.microsoft.com/office/drawing/2008/diagram\" relId=\"drawingRel\"/></dgm:ext></dgm:extLst></dgm:dataModel>"
+        },
+        {
+          "kind": "add-literal-member",
+          "part": "ppt/diagrams/layout1.xml",
+          "value": "<dgm:layoutDef xmlns:dgm=\"http://schemas.openxmlformats.org/drawingml/2006/diagram\" uniqueId=\"urn:shared:layout\"/>"
+        },
+        {
+          "kind": "add-literal-member",
+          "part": "ppt/diagrams/style1.xml",
+          "value": "<dgm:styleDef xmlns:dgm=\"http://schemas.openxmlformats.org/drawingml/2006/diagram\" uniqueId=\"urn:shared:style\"/>"
+        },
+        {
+          "kind": "add-literal-member",
+          "part": "ppt/diagrams/colors1.xml",
+          "value": "<dgm:colorsDef xmlns:dgm=\"http://schemas.openxmlformats.org/drawingml/2006/diagram\" uniqueId=\"urn:shared:colors\"/>"
+        },
+        {
+          "kind": "add-literal-member",
+          "part": "ppt/diagrams/drawing1.xml",
+          "value": "<dsp:drawing xmlns:dsp=\"http://schemas.microsoft.com/office/drawing/2008/diagram\" xmlns:a=\"http://schemas.openxmlformats.org/drawingml/2006/main\"><dsp:spTree/></dsp:drawing>"
+        },
+        {
+          "kind": "add-literal-member",
+          "part": "ppt/diagrams/_rels/data1.xml.rels",
+          "value": "<Relationships xmlns=\"http://schemas.openxmlformats.org/package/2006/relationships\"><Relationship Id=\"drawingRel\" Type=\"http://schemas.microsoft.com/office/2007/relationships/diagramDrawing\" Target=\"drawing1.xml\"/><Relationship Id=\"linkedPreview\" Type=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships/image\" Target=\"https://invalid.example/preview.png\" TargetMode=\"External\"/></Relationships>"
+        },
+        {
+          "kind": "replace-literal-once",
+          "part": "ppt/diagrams/layout1.xml",
+          "before": "xmlns:dgm=\"http://schemas.openxmlformats.org/drawingml/2006/diagram\"",
+          "after": "xmlns:dgm=\"urn:wrong\""
+        }
+      ],
+      "errorCode": "PPTX_SMARTART_UNSUPPORTED"
+    },
+    {
+      "caseId": "foreign-relationship-attribute",
+      "scenarioId": "@id-pptx-graphics-smartart-inspection-refusals",
+      "example": {
+        "fault": "foreign relationship attribute"
+      },
+      "operations": [
+        {
+          "kind": "replace-literal-once",
+          "part": "ppt/slides/slide1.xml",
+          "before": "</p:spTree>",
+          "after": "<p:graphicFrame><p:nvGraphicFramePr><p:cNvPr id=\"2000\" name=\"SmartArt graph\"/><p:cNvGraphicFramePr/><p:nvPr/></p:nvGraphicFramePr><p:xfrm><a:off x=\"100\" y=\"200\"/><a:ext cx=\"3000\" cy=\"4000\"/></p:xfrm><a:graphic><a:graphicData uri=\"http://schemas.openxmlformats.org/drawingml/2006/diagram\"><dgm:relIds xmlns:dgm=\"http://schemas.openxmlformats.org/drawingml/2006/diagram\" r:dm=\"smartData\" r:lo=\"smartLayout\" r:qs=\"smartStyle\" r:cs=\"smartColors\"/></a:graphicData></a:graphic></p:graphicFrame></p:spTree>"
+        },
+        {
+          "kind": "replace-literal-once",
+          "part": "ppt/slides/_rels/slide1.xml.rels",
+          "before": "</Relationships>",
+          "after": "<Relationship Id=\"smartData\" Type=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships/diagramData\" Target=\"../diagrams/data1.xml\"/><Relationship Id=\"smartLayout\" Type=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships/diagramLayout\" Target=\"../diagrams/layout1.xml\"/><Relationship Id=\"smartStyle\" Type=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships/diagramQuickStyle\" Target=\"../diagrams/style1.xml\"/><Relationship Id=\"smartColors\" Type=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships/diagramColors\" Target=\"../diagrams/colors1.xml\"/></Relationships>"
+        },
+        {
+          "kind": "replace-literal-once",
+          "part": "[Content_Types].xml",
+          "before": "</Types>",
+          "after": "<Override PartName=\"/ppt/diagrams/data1.xml\" ContentType=\"application/vnd.openxmlformats-officedocument.drawingml.diagramData+xml\"/><Override PartName=\"/ppt/diagrams/layout1.xml\" ContentType=\"application/vnd.openxmlformats-officedocument.drawingml.diagramLayout+xml\"/><Override PartName=\"/ppt/diagrams/style1.xml\" ContentType=\"application/vnd.openxmlformats-officedocument.drawingml.diagramStyle+xml\"/><Override PartName=\"/ppt/diagrams/colors1.xml\" ContentType=\"application/vnd.openxmlformats-officedocument.drawingml.diagramColors+xml\"/><Override PartName=\"/ppt/diagrams/drawing1.xml\" ContentType=\"application/vnd.ms-office.drawingml.diagramDrawing+xml\"/></Types>"
+        },
+        {
+          "kind": "add-literal-member",
+          "part": "ppt/diagrams/data1.xml",
+          "value": "<dgm:dataModel xmlns:dgm=\"http://schemas.openxmlformats.org/drawingml/2006/diagram\"><dgm:ptLst><dgm:pt modelId=\"{11111111-1111-1111-1111-111111111111}\"/></dgm:ptLst><dgm:cxnLst/><dgm:extLst><dgm:ext uri=\"urn:drawing\"><dsp:dataModelExt xmlns:dsp=\"http://schemas.microsoft.com/office/drawing/2008/diagram\" relId=\"drawingRel\"/></dgm:ext></dgm:extLst></dgm:dataModel>"
+        },
+        {
+          "kind": "add-literal-member",
+          "part": "ppt/diagrams/layout1.xml",
+          "value": "<dgm:layoutDef xmlns:dgm=\"http://schemas.openxmlformats.org/drawingml/2006/diagram\" uniqueId=\"urn:shared:layout\"/>"
+        },
+        {
+          "kind": "add-literal-member",
+          "part": "ppt/diagrams/style1.xml",
+          "value": "<dgm:styleDef xmlns:dgm=\"http://schemas.openxmlformats.org/drawingml/2006/diagram\" uniqueId=\"urn:shared:style\"/>"
+        },
+        {
+          "kind": "add-literal-member",
+          "part": "ppt/diagrams/colors1.xml",
+          "value": "<dgm:colorsDef xmlns:dgm=\"http://schemas.openxmlformats.org/drawingml/2006/diagram\" uniqueId=\"urn:shared:colors\"/>"
+        },
+        {
+          "kind": "add-literal-member",
+          "part": "ppt/diagrams/drawing1.xml",
+          "value": "<dsp:drawing xmlns:dsp=\"http://schemas.microsoft.com/office/drawing/2008/diagram\" xmlns:a=\"http://schemas.openxmlformats.org/drawingml/2006/main\"><dsp:spTree/></dsp:drawing>"
+        },
+        {
+          "kind": "add-literal-member",
+          "part": "ppt/diagrams/_rels/data1.xml.rels",
+          "value": "<Relationships xmlns=\"http://schemas.openxmlformats.org/package/2006/relationships\"><Relationship Id=\"drawingRel\" Type=\"http://schemas.microsoft.com/office/2007/relationships/diagramDrawing\" Target=\"drawing1.xml\"/><Relationship Id=\"linkedPreview\" Type=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships/image\" Target=\"https://invalid.example/preview.png\" TargetMode=\"External\"/></Relationships>"
+        },
+        {
+          "kind": "replace-literal-once",
+          "part": "ppt/slides/slide1.xml",
+          "before": "r:dm=\"smartData\"",
+          "after": "xmlns:bad=\"urn:bad\" bad:dm=\"smartData\""
+        }
+      ],
+      "errorCode": "PPTX_SMARTART_UNSUPPORTED"
+    },
+    {
+      "caseId": "duplicate-relIds",
+      "scenarioId": "@id-pptx-graphics-smartart-inspection-refusals",
+      "example": {
+        "fault": "duplicate relIds"
+      },
+      "operations": [
+        {
+          "kind": "replace-literal-once",
+          "part": "ppt/slides/slide1.xml",
+          "before": "</p:spTree>",
+          "after": "<p:graphicFrame><p:nvGraphicFramePr><p:cNvPr id=\"2000\" name=\"SmartArt graph\"/><p:cNvGraphicFramePr/><p:nvPr/></p:nvGraphicFramePr><p:xfrm><a:off x=\"100\" y=\"200\"/><a:ext cx=\"3000\" cy=\"4000\"/></p:xfrm><a:graphic><a:graphicData uri=\"http://schemas.openxmlformats.org/drawingml/2006/diagram\"><dgm:relIds xmlns:dgm=\"http://schemas.openxmlformats.org/drawingml/2006/diagram\" r:dm=\"smartData\" r:lo=\"smartLayout\" r:qs=\"smartStyle\" r:cs=\"smartColors\"/></a:graphicData></a:graphic></p:graphicFrame></p:spTree>"
+        },
+        {
+          "kind": "replace-literal-once",
+          "part": "ppt/slides/_rels/slide1.xml.rels",
+          "before": "</Relationships>",
+          "after": "<Relationship Id=\"smartData\" Type=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships/diagramData\" Target=\"../diagrams/data1.xml\"/><Relationship Id=\"smartLayout\" Type=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships/diagramLayout\" Target=\"../diagrams/layout1.xml\"/><Relationship Id=\"smartStyle\" Type=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships/diagramQuickStyle\" Target=\"../diagrams/style1.xml\"/><Relationship Id=\"smartColors\" Type=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships/diagramColors\" Target=\"../diagrams/colors1.xml\"/></Relationships>"
+        },
+        {
+          "kind": "replace-literal-once",
+          "part": "[Content_Types].xml",
+          "before": "</Types>",
+          "after": "<Override PartName=\"/ppt/diagrams/data1.xml\" ContentType=\"application/vnd.openxmlformats-officedocument.drawingml.diagramData+xml\"/><Override PartName=\"/ppt/diagrams/layout1.xml\" ContentType=\"application/vnd.openxmlformats-officedocument.drawingml.diagramLayout+xml\"/><Override PartName=\"/ppt/diagrams/style1.xml\" ContentType=\"application/vnd.openxmlformats-officedocument.drawingml.diagramStyle+xml\"/><Override PartName=\"/ppt/diagrams/colors1.xml\" ContentType=\"application/vnd.openxmlformats-officedocument.drawingml.diagramColors+xml\"/><Override PartName=\"/ppt/diagrams/drawing1.xml\" ContentType=\"application/vnd.ms-office.drawingml.diagramDrawing+xml\"/></Types>"
+        },
+        {
+          "kind": "add-literal-member",
+          "part": "ppt/diagrams/data1.xml",
+          "value": "<dgm:dataModel xmlns:dgm=\"http://schemas.openxmlformats.org/drawingml/2006/diagram\"><dgm:ptLst><dgm:pt modelId=\"{11111111-1111-1111-1111-111111111111}\"/></dgm:ptLst><dgm:cxnLst/><dgm:extLst><dgm:ext uri=\"urn:drawing\"><dsp:dataModelExt xmlns:dsp=\"http://schemas.microsoft.com/office/drawing/2008/diagram\" relId=\"drawingRel\"/></dgm:ext></dgm:extLst></dgm:dataModel>"
+        },
+        {
+          "kind": "add-literal-member",
+          "part": "ppt/diagrams/layout1.xml",
+          "value": "<dgm:layoutDef xmlns:dgm=\"http://schemas.openxmlformats.org/drawingml/2006/diagram\" uniqueId=\"urn:shared:layout\"/>"
+        },
+        {
+          "kind": "add-literal-member",
+          "part": "ppt/diagrams/style1.xml",
+          "value": "<dgm:styleDef xmlns:dgm=\"http://schemas.openxmlformats.org/drawingml/2006/diagram\" uniqueId=\"urn:shared:style\"/>"
+        },
+        {
+          "kind": "add-literal-member",
+          "part": "ppt/diagrams/colors1.xml",
+          "value": "<dgm:colorsDef xmlns:dgm=\"http://schemas.openxmlformats.org/drawingml/2006/diagram\" uniqueId=\"urn:shared:colors\"/>"
+        },
+        {
+          "kind": "add-literal-member",
+          "part": "ppt/diagrams/drawing1.xml",
+          "value": "<dsp:drawing xmlns:dsp=\"http://schemas.microsoft.com/office/drawing/2008/diagram\" xmlns:a=\"http://schemas.openxmlformats.org/drawingml/2006/main\"><dsp:spTree/></dsp:drawing>"
+        },
+        {
+          "kind": "add-literal-member",
+          "part": "ppt/diagrams/_rels/data1.xml.rels",
+          "value": "<Relationships xmlns=\"http://schemas.openxmlformats.org/package/2006/relationships\"><Relationship Id=\"drawingRel\" Type=\"http://schemas.microsoft.com/office/2007/relationships/diagramDrawing\" Target=\"drawing1.xml\"/><Relationship Id=\"linkedPreview\" Type=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships/image\" Target=\"https://invalid.example/preview.png\" TargetMode=\"External\"/></Relationships>"
+        },
+        {
+          "kind": "replace-literal-once",
+          "part": "ppt/slides/slide1.xml",
+          "before": "<dgm:relIds xmlns:dgm=\"http://schemas.openxmlformats.org/drawingml/2006/diagram\"",
+          "after": "<dgm:relIds xmlns:dgm=\"http://schemas.openxmlformats.org/drawingml/2006/diagram\" r:dm=\"smartData\" r:lo=\"smartLayout\" r:qs=\"smartStyle\" r:cs=\"smartColors\"/><dgm:relIds xmlns:dgm=\"http://schemas.openxmlformats.org/drawingml/2006/diagram\""
+        }
+      ],
+      "errorCode": "PPTX_SMARTART_UNSUPPORTED"
+    },
+    {
+      "caseId": "stale-drawing-metadata",
+      "scenarioId": "@id-pptx-graphics-smartart-inspection-refusals",
+      "example": {
+        "fault": "stale drawing metadata"
+      },
+      "operations": [
+        {
+          "kind": "replace-literal-once",
+          "part": "ppt/slides/slide1.xml",
+          "before": "</p:spTree>",
+          "after": "<p:graphicFrame><p:nvGraphicFramePr><p:cNvPr id=\"2000\" name=\"SmartArt graph\"/><p:cNvGraphicFramePr/><p:nvPr/></p:nvGraphicFramePr><p:xfrm><a:off x=\"100\" y=\"200\"/><a:ext cx=\"3000\" cy=\"4000\"/></p:xfrm><a:graphic><a:graphicData uri=\"http://schemas.openxmlformats.org/drawingml/2006/diagram\"><dgm:relIds xmlns:dgm=\"http://schemas.openxmlformats.org/drawingml/2006/diagram\" r:dm=\"smartData\" r:lo=\"smartLayout\" r:qs=\"smartStyle\" r:cs=\"smartColors\"/></a:graphicData></a:graphic></p:graphicFrame></p:spTree>"
+        },
+        {
+          "kind": "replace-literal-once",
+          "part": "ppt/slides/_rels/slide1.xml.rels",
+          "before": "</Relationships>",
+          "after": "<Relationship Id=\"smartData\" Type=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships/diagramData\" Target=\"../diagrams/data1.xml\"/><Relationship Id=\"smartLayout\" Type=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships/diagramLayout\" Target=\"../diagrams/layout1.xml\"/><Relationship Id=\"smartStyle\" Type=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships/diagramQuickStyle\" Target=\"../diagrams/style1.xml\"/><Relationship Id=\"smartColors\" Type=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships/diagramColors\" Target=\"../diagrams/colors1.xml\"/></Relationships>"
+        },
+        {
+          "kind": "replace-literal-once",
+          "part": "[Content_Types].xml",
+          "before": "</Types>",
+          "after": "<Override PartName=\"/ppt/diagrams/data1.xml\" ContentType=\"application/vnd.openxmlformats-officedocument.drawingml.diagramData+xml\"/><Override PartName=\"/ppt/diagrams/layout1.xml\" ContentType=\"application/vnd.openxmlformats-officedocument.drawingml.diagramLayout+xml\"/><Override PartName=\"/ppt/diagrams/style1.xml\" ContentType=\"application/vnd.openxmlformats-officedocument.drawingml.diagramStyle+xml\"/><Override PartName=\"/ppt/diagrams/colors1.xml\" ContentType=\"application/vnd.openxmlformats-officedocument.drawingml.diagramColors+xml\"/><Override PartName=\"/ppt/diagrams/drawing1.xml\" ContentType=\"application/vnd.ms-office.drawingml.diagramDrawing+xml\"/></Types>"
+        },
+        {
+          "kind": "add-literal-member",
+          "part": "ppt/diagrams/data1.xml",
+          "value": "<dgm:dataModel xmlns:dgm=\"http://schemas.openxmlformats.org/drawingml/2006/diagram\"><dgm:ptLst><dgm:pt modelId=\"{11111111-1111-1111-1111-111111111111}\"/></dgm:ptLst><dgm:cxnLst/><dgm:extLst><dgm:ext uri=\"urn:drawing\"><dsp:dataModelExt xmlns:dsp=\"http://schemas.microsoft.com/office/drawing/2008/diagram\" relId=\"drawingRel\"/></dgm:ext></dgm:extLst></dgm:dataModel>"
+        },
+        {
+          "kind": "add-literal-member",
+          "part": "ppt/diagrams/layout1.xml",
+          "value": "<dgm:layoutDef xmlns:dgm=\"http://schemas.openxmlformats.org/drawingml/2006/diagram\" uniqueId=\"urn:shared:layout\"/>"
+        },
+        {
+          "kind": "add-literal-member",
+          "part": "ppt/diagrams/style1.xml",
+          "value": "<dgm:styleDef xmlns:dgm=\"http://schemas.openxmlformats.org/drawingml/2006/diagram\" uniqueId=\"urn:shared:style\"/>"
+        },
+        {
+          "kind": "add-literal-member",
+          "part": "ppt/diagrams/colors1.xml",
+          "value": "<dgm:colorsDef xmlns:dgm=\"http://schemas.openxmlformats.org/drawingml/2006/diagram\" uniqueId=\"urn:shared:colors\"/>"
+        },
+        {
+          "kind": "add-literal-member",
+          "part": "ppt/diagrams/drawing1.xml",
+          "value": "<dsp:drawing xmlns:dsp=\"http://schemas.microsoft.com/office/drawing/2008/diagram\" xmlns:a=\"http://schemas.openxmlformats.org/drawingml/2006/main\"><dsp:spTree/></dsp:drawing>"
+        },
+        {
+          "kind": "add-literal-member",
+          "part": "ppt/diagrams/_rels/data1.xml.rels",
+          "value": "<Relationships xmlns=\"http://schemas.openxmlformats.org/package/2006/relationships\"><Relationship Id=\"drawingRel\" Type=\"http://schemas.microsoft.com/office/2007/relationships/diagramDrawing\" Target=\"drawing1.xml\"/><Relationship Id=\"linkedPreview\" Type=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships/image\" Target=\"https://invalid.example/preview.png\" TargetMode=\"External\"/></Relationships>"
+        },
+        {
+          "kind": "replace-literal-once",
+          "part": "ppt/diagrams/data1.xml",
+          "before": "relId=\"drawingRel\"",
+          "after": "relId=\"missingDrawing\""
+        }
+      ],
+      "errorCode": "PPTX_SMARTART_UNSUPPORTED"
+    },
+    {
+      "caseId": "external-role-root",
+      "scenarioId": "@id-pptx-graphics-smartart-inspection-refusals",
+      "example": {
+        "fault": "external role root"
+      },
+      "operations": [
+        {
+          "kind": "replace-literal-once",
+          "part": "ppt/slides/slide1.xml",
+          "before": "</p:spTree>",
+          "after": "<p:graphicFrame><p:nvGraphicFramePr><p:cNvPr id=\"2000\" name=\"SmartArt graph\"/><p:cNvGraphicFramePr/><p:nvPr/></p:nvGraphicFramePr><p:xfrm><a:off x=\"100\" y=\"200\"/><a:ext cx=\"3000\" cy=\"4000\"/></p:xfrm><a:graphic><a:graphicData uri=\"http://schemas.openxmlformats.org/drawingml/2006/diagram\"><dgm:relIds xmlns:dgm=\"http://schemas.openxmlformats.org/drawingml/2006/diagram\" r:dm=\"smartData\" r:lo=\"smartLayout\" r:qs=\"smartStyle\" r:cs=\"smartColors\"/></a:graphicData></a:graphic></p:graphicFrame></p:spTree>"
+        },
+        {
+          "kind": "replace-literal-once",
+          "part": "ppt/slides/_rels/slide1.xml.rels",
+          "before": "</Relationships>",
+          "after": "<Relationship Id=\"smartData\" Type=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships/diagramData\" Target=\"../diagrams/data1.xml\"/><Relationship Id=\"smartLayout\" Type=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships/diagramLayout\" Target=\"../diagrams/layout1.xml\"/><Relationship Id=\"smartStyle\" Type=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships/diagramQuickStyle\" Target=\"../diagrams/style1.xml\"/><Relationship Id=\"smartColors\" Type=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships/diagramColors\" Target=\"../diagrams/colors1.xml\"/></Relationships>"
+        },
+        {
+          "kind": "replace-literal-once",
+          "part": "[Content_Types].xml",
+          "before": "</Types>",
+          "after": "<Override PartName=\"/ppt/diagrams/data1.xml\" ContentType=\"application/vnd.openxmlformats-officedocument.drawingml.diagramData+xml\"/><Override PartName=\"/ppt/diagrams/layout1.xml\" ContentType=\"application/vnd.openxmlformats-officedocument.drawingml.diagramLayout+xml\"/><Override PartName=\"/ppt/diagrams/style1.xml\" ContentType=\"application/vnd.openxmlformats-officedocument.drawingml.diagramStyle+xml\"/><Override PartName=\"/ppt/diagrams/colors1.xml\" ContentType=\"application/vnd.openxmlformats-officedocument.drawingml.diagramColors+xml\"/><Override PartName=\"/ppt/diagrams/drawing1.xml\" ContentType=\"application/vnd.ms-office.drawingml.diagramDrawing+xml\"/></Types>"
+        },
+        {
+          "kind": "add-literal-member",
+          "part": "ppt/diagrams/data1.xml",
+          "value": "<dgm:dataModel xmlns:dgm=\"http://schemas.openxmlformats.org/drawingml/2006/diagram\"><dgm:ptLst><dgm:pt modelId=\"{11111111-1111-1111-1111-111111111111}\"/></dgm:ptLst><dgm:cxnLst/><dgm:extLst><dgm:ext uri=\"urn:drawing\"><dsp:dataModelExt xmlns:dsp=\"http://schemas.microsoft.com/office/drawing/2008/diagram\" relId=\"drawingRel\"/></dgm:ext></dgm:extLst></dgm:dataModel>"
+        },
+        {
+          "kind": "add-literal-member",
+          "part": "ppt/diagrams/layout1.xml",
+          "value": "<dgm:layoutDef xmlns:dgm=\"http://schemas.openxmlformats.org/drawingml/2006/diagram\" uniqueId=\"urn:shared:layout\"/>"
+        },
+        {
+          "kind": "add-literal-member",
+          "part": "ppt/diagrams/style1.xml",
+          "value": "<dgm:styleDef xmlns:dgm=\"http://schemas.openxmlformats.org/drawingml/2006/diagram\" uniqueId=\"urn:shared:style\"/>"
+        },
+        {
+          "kind": "add-literal-member",
+          "part": "ppt/diagrams/colors1.xml",
+          "value": "<dgm:colorsDef xmlns:dgm=\"http://schemas.openxmlformats.org/drawingml/2006/diagram\" uniqueId=\"urn:shared:colors\"/>"
+        },
+        {
+          "kind": "add-literal-member",
+          "part": "ppt/diagrams/drawing1.xml",
+          "value": "<dsp:drawing xmlns:dsp=\"http://schemas.microsoft.com/office/drawing/2008/diagram\" xmlns:a=\"http://schemas.openxmlformats.org/drawingml/2006/main\"><dsp:spTree/></dsp:drawing>"
+        },
+        {
+          "kind": "add-literal-member",
+          "part": "ppt/diagrams/_rels/data1.xml.rels",
+          "value": "<Relationships xmlns=\"http://schemas.openxmlformats.org/package/2006/relationships\"><Relationship Id=\"drawingRel\" Type=\"http://schemas.microsoft.com/office/2007/relationships/diagramDrawing\" Target=\"drawing1.xml\"/><Relationship Id=\"linkedPreview\" Type=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships/image\" Target=\"https://invalid.example/preview.png\" TargetMode=\"External\"/></Relationships>"
+        },
+        {
+          "kind": "replace-literal-once",
+          "part": "ppt/slides/_rels/slide1.xml.rels",
+          "before": "Target=\"../diagrams/layout1.xml\"",
+          "after": "Target=\"https://invalid.example/layout\" TargetMode=\"External\""
+        }
+      ],
+      "errorCode": "PPTX_SMARTART_UNSUPPORTED"
+    },
+    {
+      "caseId": "wrong-drawing-content-type",
+      "scenarioId": "@id-pptx-graphics-smartart-inspection-refusals",
+      "example": {
+        "fault": "wrong drawing content type"
+      },
+      "operations": [
+        {
+          "kind": "replace-literal-once",
+          "part": "ppt/slides/slide1.xml",
+          "before": "</p:spTree>",
+          "after": "<p:graphicFrame><p:nvGraphicFramePr><p:cNvPr id=\"2000\" name=\"SmartArt graph\"/><p:cNvGraphicFramePr/><p:nvPr/></p:nvGraphicFramePr><p:xfrm><a:off x=\"100\" y=\"200\"/><a:ext cx=\"3000\" cy=\"4000\"/></p:xfrm><a:graphic><a:graphicData uri=\"http://schemas.openxmlformats.org/drawingml/2006/diagram\"><dgm:relIds xmlns:dgm=\"http://schemas.openxmlformats.org/drawingml/2006/diagram\" r:dm=\"smartData\" r:lo=\"smartLayout\" r:qs=\"smartStyle\" r:cs=\"smartColors\"/></a:graphicData></a:graphic></p:graphicFrame></p:spTree>"
+        },
+        {
+          "kind": "replace-literal-once",
+          "part": "ppt/slides/_rels/slide1.xml.rels",
+          "before": "</Relationships>",
+          "after": "<Relationship Id=\"smartData\" Type=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships/diagramData\" Target=\"../diagrams/data1.xml\"/><Relationship Id=\"smartLayout\" Type=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships/diagramLayout\" Target=\"../diagrams/layout1.xml\"/><Relationship Id=\"smartStyle\" Type=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships/diagramQuickStyle\" Target=\"../diagrams/style1.xml\"/><Relationship Id=\"smartColors\" Type=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships/diagramColors\" Target=\"../diagrams/colors1.xml\"/></Relationships>"
+        },
+        {
+          "kind": "replace-literal-once",
+          "part": "[Content_Types].xml",
+          "before": "</Types>",
+          "after": "<Override PartName=\"/ppt/diagrams/data1.xml\" ContentType=\"application/vnd.openxmlformats-officedocument.drawingml.diagramData+xml\"/><Override PartName=\"/ppt/diagrams/layout1.xml\" ContentType=\"application/vnd.openxmlformats-officedocument.drawingml.diagramLayout+xml\"/><Override PartName=\"/ppt/diagrams/style1.xml\" ContentType=\"application/vnd.openxmlformats-officedocument.drawingml.diagramStyle+xml\"/><Override PartName=\"/ppt/diagrams/colors1.xml\" ContentType=\"application/vnd.openxmlformats-officedocument.drawingml.diagramColors+xml\"/><Override PartName=\"/ppt/diagrams/drawing1.xml\" ContentType=\"application/vnd.ms-office.drawingml.diagramDrawing+xml\"/></Types>"
+        },
+        {
+          "kind": "add-literal-member",
+          "part": "ppt/diagrams/data1.xml",
+          "value": "<dgm:dataModel xmlns:dgm=\"http://schemas.openxmlformats.org/drawingml/2006/diagram\"><dgm:ptLst><dgm:pt modelId=\"{11111111-1111-1111-1111-111111111111}\"/></dgm:ptLst><dgm:cxnLst/><dgm:extLst><dgm:ext uri=\"urn:drawing\"><dsp:dataModelExt xmlns:dsp=\"http://schemas.microsoft.com/office/drawing/2008/diagram\" relId=\"drawingRel\"/></dgm:ext></dgm:extLst></dgm:dataModel>"
+        },
+        {
+          "kind": "add-literal-member",
+          "part": "ppt/diagrams/layout1.xml",
+          "value": "<dgm:layoutDef xmlns:dgm=\"http://schemas.openxmlformats.org/drawingml/2006/diagram\" uniqueId=\"urn:shared:layout\"/>"
+        },
+        {
+          "kind": "add-literal-member",
+          "part": "ppt/diagrams/style1.xml",
+          "value": "<dgm:styleDef xmlns:dgm=\"http://schemas.openxmlformats.org/drawingml/2006/diagram\" uniqueId=\"urn:shared:style\"/>"
+        },
+        {
+          "kind": "add-literal-member",
+          "part": "ppt/diagrams/colors1.xml",
+          "value": "<dgm:colorsDef xmlns:dgm=\"http://schemas.openxmlformats.org/drawingml/2006/diagram\" uniqueId=\"urn:shared:colors\"/>"
+        },
+        {
+          "kind": "add-literal-member",
+          "part": "ppt/diagrams/drawing1.xml",
+          "value": "<dsp:drawing xmlns:dsp=\"http://schemas.microsoft.com/office/drawing/2008/diagram\" xmlns:a=\"http://schemas.openxmlformats.org/drawingml/2006/main\"><dsp:spTree/></dsp:drawing>"
+        },
+        {
+          "kind": "add-literal-member",
+          "part": "ppt/diagrams/_rels/data1.xml.rels",
+          "value": "<Relationships xmlns=\"http://schemas.openxmlformats.org/package/2006/relationships\"><Relationship Id=\"drawingRel\" Type=\"http://schemas.microsoft.com/office/2007/relationships/diagramDrawing\" Target=\"drawing1.xml\"/><Relationship Id=\"linkedPreview\" Type=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships/image\" Target=\"https://invalid.example/preview.png\" TargetMode=\"External\"/></Relationships>"
+        },
+        {
+          "kind": "replace-literal-once",
+          "part": "[Content_Types].xml",
+          "before": "application/vnd.ms-office.drawingml.diagramDrawing+xml",
+          "after": "application/xml"
+        }
+      ],
+      "errorCode": "PPTX_SMARTART_UNSUPPORTED"
+    }
+  ]
+}

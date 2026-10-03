@@ -46,19 +46,19 @@ portable API profile; the scenario reason records the gap.
 | Group | Features | IDs | Cases | generalized | profile-specific | runtime-specific | incomplete |
 |---|---:|---:|---:|---:|---:|---:|---:|
 | DOCX | 24 | 198 | 522 | 109 | 56 | 0 | 33 |
-| PPTX | 18 | 113 | 162 | 85 | 22 | 0 | 6 |
+| PPTX | 38 | 167 | 482 | 139 | 22 | 0 | 6 |
 | XLSX | 12 | 43 | 109 | 12 | 23 | 0 | 8 |
 | PACKAGE | 10 | 36 | 68 | 29 | 6 | 0 | 1 |
 | XML | 4 | 33 | 47 | 22 | 11 | 0 | 0 |
 | OFFICE | 1 | 1 | 3 | 0 | 0 | 0 | 1 |
-| ALL | 69 | 424 | 911 | 257 | 118 | 0 | 49 |
+| ALL | 89 | 478 | 1231 | 311 | 118 | 0 | 49 |
 
-23 of 69 canonical feature files are fully generalized throughout.
+43 of 89 canonical feature files are fully generalized throughout.
 The remaining files contain profile-specific, runtime-specific or incomplete
 scenarios; 27 files mix categories and require ID-level selection.
 The four category columns count scenario IDs, not expanded example cases.
 A complete [feature-level table](../workflows/README.md) and downloadable
-[212-file CSV](feature-reuse.csv) accompany the [scenario CSV](scenario-reuse.csv).
+[232-file CSV](feature-reuse.csv) accompany the [scenario CSV](scenario-reuse.csv).
 
 ## Scenario decisions
 
@@ -428,6 +428,15 @@ Word tracking preference persistence and preservation — **generalized**; fully
 | [@id-docx-tracking-settings-plain-edit](../workflows/docx/tracking-settings.feature#L77) | 1 | generalized | @profile-preserving-settings-editor | Local settings contract defines literal source, ownership/refusal variants, encodings, saved results and synchronous fault stages. [tracking-settings.md](../contracts/tracking-settings.md) |
 | [@id-docx-tracking-settings-author-refusal](../workflows/docx/tracking-settings.feature#L84) | 3 | generalized | @profile-preserving-settings-editor | Local settings contract defines literal source, ownership/refusal variants, encodings, saved results and synchronous fault stages. [tracking-settings.md](../contracts/tracking-settings.md) |
 
+### pptx/autoshapes.feature
+
+Author bounded editable AutoShapes with preset adjustments — **generalized**; fully generalized: **yes**.
+
+| ID / source | Cases | Tag | Profiles | Reason / local evidence |
+|---|---:|---|---|---|
+| [@id-pptx-graphics-autoshapes-author](../workflows/pptx/autoshapes.feature#L7) | 8 | generalized | — | Five explicit editable presets with shared adjustment policy, literal geometry/style/text records, bounded guide values, original XML custody and atomic refusals. Two IDs/eighteen cases; execution remains planned and rendering unverified. [pptx-autoshapes.md](../contracts/pptx-autoshapes.md) [pptx-autoshapes.json](../ledgers/pptx-autoshapes.json) |
+| [@id-pptx-graphics-autoshapes-refusals](../workflows/pptx/autoshapes.feature#L26) | 10 | generalized | — | Five explicit editable presets with shared adjustment policy, literal geometry/style/text records, bounded guide values, original XML custody and atomic refusals. Two IDs/eighteen cases; execution remains planned and rendering unverified. [pptx-autoshapes.md](../contracts/pptx-autoshapes.md) [pptx-autoshapes.json](../ledgers/pptx-autoshapes.json) |
+
 ### pptx/bullets.feature
 
 PPTX bullets — **generalized**; fully generalized: **yes**.
@@ -440,6 +449,15 @@ PPTX bullets — **generalized**; fully generalized: **yes**.
 | [@id-pptx-manipulation-bullet-bold-label](../workflows/pptx/bullets.feature#L41) | 1 | generalized | @profile-retained-manipulation | Concrete immutable input, literal operation/values, independent saved XML readback and exact unrelated-payload custody; implementation planned in every runtime. [pptx-manipulation.md](../contracts/pptx-manipulation.md) |
 | [@id-pptx-manipulation-clear-bullets](../workflows/pptx/bullets.feature#L53) | 1 | generalized | @profile-retained-manipulation | Concrete immutable input, literal operation/values, independent saved XML readback and exact unrelated-payload custody; implementation planned in every runtime. [pptx-manipulation.md](../contracts/pptx-manipulation.md) |
 
+### pptx/connectors.feature
+
+Author straight connectors attached to exact rectangle IDs and sites — **generalized**; fully generalized: **yes**.
+
+| ID / source | Cases | Tag | Profiles | Reason / local evidence |
+|---|---:|---|---|---|
+| [@id-pptx-graphics-connectors-add](../workflows/pptx/connectors.feature#L7) | 6 | generalized | — | Bounded direct rectangle connectors with exact IDs/sites, literal endpoint and line-style records, explicit midpoint rounding, source XML custody and atomic refusals. Two IDs/fifteen cases; execution remains planned. [pptx-connectors.md](../contracts/pptx-connectors.md) [pptx-connectors.json](../ledgers/pptx-connectors.json) |
+| [@id-pptx-graphics-connectors-refusals](../workflows/pptx/connectors.feature#L25) | 9 | generalized | — | Bounded direct rectangle connectors with exact IDs/sites, literal endpoint and line-style records, explicit midpoint rounding, source XML custody and atomic refusals. Two IDs/fifteen cases; execution remains planned. [pptx-connectors.md](../contracts/pptx-connectors.md) [pptx-connectors.json](../ledgers/pptx-connectors.json) |
+
 ### pptx/creation.feature
 
 PPTX native title-slide authoring — **mixed**; fully generalized: **no**.
@@ -451,6 +469,43 @@ PPTX native title-slide authoring — **mixed**; fully generalized: **no**.
 | [@id-pptx-create-refusals](../workflows/pptx/creation.feature#L37) | 1 | profile-specific | @profile-contract20 | Reviewed literal Contract20 inputs, typed outcomes, retained custody and bounded creation/cache/handle profile; native execution requires deliberate adoption. [contract20.md](../contracts/contract20.md) [contract20-recipes.json](../ledgers/contract20-recipes.json) [contract20-creation-policy.json](../ledgers/contract20-creation-policy.json) |
 | [@id-pptx-manipulation-insert-start](../workflows/pptx/creation.feature#L48) | 1 | generalized | @profile-retained-manipulation | Concrete immutable input, literal operation/values, independent saved XML readback and exact unrelated-payload custody; implementation planned in every runtime. [pptx-manipulation.md](../contracts/pptx-manipulation.md) |
 | [@id-pptx-manipulation-insert-middle](../workflows/pptx/creation.feature#L60) | 1 | generalized | @profile-retained-manipulation | Concrete immutable input, literal operation/values, independent saved XML readback and exact unrelated-payload custody; implementation planned in every runtime. [pptx-manipulation.md](../contracts/pptx-manipulation.md) |
+
+### pptx/diagrams.feature
+
+Author bounded editable node-and-edge diagrams — **generalized**; fully generalized: **yes**.
+
+| ID / source | Cases | Tag | Profiles | Reason / local evidence |
+|---|---:|---|---|---|
+| [@id-pptx-graphics-diagrams-create](../workflows/pptx/diagrams.feature#L7) | 4 | generalized | — | Deterministic bounded row/column graphs with editable rectangle/text nodes, exact generated IDs/sites, shared literal placements, original XML custody and atomic refusal controls. Two IDs/fourteen cases; execution remains planned. [pptx-diagrams.md](../contracts/pptx-diagrams.md) [pptx-diagrams.json](../ledgers/pptx-diagrams.json) |
+| [@id-pptx-graphics-diagrams-refusals](../workflows/pptx/diagrams.feature#L23) | 10 | generalized | — | Deterministic bounded row/column graphs with editable rectangle/text nodes, exact generated IDs/sites, shared literal placements, original XML custody and atomic refusal controls. Two IDs/fourteen cases; execution remains planned. [pptx-diagrams.md](../contracts/pptx-diagrams.md) [pptx-diagrams.json](../ledgers/pptx-diagrams.json) |
+
+### pptx/freeform.feature
+
+Author bounded editable move line and close paths — **generalized**; fully generalized: **yes**.
+
+| ID / source | Cases | Tag | Profiles | Reason / local evidence |
+|---|---:|---|---|---|
+| [@id-pptx-graphics-freeform-author](../workflows/pptx/freeform.feature#L7) | 5 | generalized | — | Bounded explicit move/line/close custom geometry with shared literal commands/coordinate dimensions, open/closed fill policy, direct styles and complete original XML/dependency custody. Two IDs/fifteen cases; execution remains planned and rendering unverified. [pptx-freeform.md](../contracts/pptx-freeform.md) [pptx-freeform.json](../ledgers/pptx-freeform.json) |
+| [@id-pptx-graphics-freeform-refusals](../workflows/pptx/freeform.feature#L24) | 10 | generalized | — | Bounded explicit move/line/close custom geometry with shared literal commands/coordinate dimensions, open/closed fill policy, direct styles and complete original XML/dependency custody. Two IDs/fifteen cases; execution remains planned and rendering unverified. [pptx-freeform.md](../contracts/pptx-freeform.md) [pptx-freeform.json](../ledgers/pptx-freeform.json) |
+
+### pptx/gradients.feature
+
+Read and write linear gradients with exact colour references — **generalized**; fully generalized: **yes**.
+
+| ID / source | Cases | Tag | Profiles | Reason / local evidence |
+|---|---:|---|---|---|
+| [@id-pptx-graphics-gradients-write](../workflows/pptx/gradients.feature#L7) | 6 | generalized | — | Exact linear stops/angles with bounded ordered RGB/theme colour transforms, explicit reference custody, detached reads and semantic no-ops plus atomic refusal controls. Two IDs/eighteen cases; execution remains planned and rendering unverified. [pptx-gradients.md](../contracts/pptx-gradients.md) [pptx-gradients.json](../ledgers/pptx-gradients.json) |
+| [@id-pptx-graphics-gradients-refusals](../workflows/pptx/gradients.feature#L25) | 12 | generalized | — | Exact linear stops/angles with bounded ordered RGB/theme colour transforms, explicit reference custody, detached reads and semantic no-ops plus atomic refusal controls. Two IDs/eighteen cases; execution remains planned and rendering unverified. [pptx-gradients.md](../contracts/pptx-gradients.md) [pptx-gradients.json](../ledgers/pptx-gradients.json) |
+
+### pptx/group-transform.feature
+
+Transform groups and map child coordinates without rewriting children — **generalized**; fully generalized: **yes**.
+
+| ID / source | Cases | Tag | Profiles | Reason / local evidence |
+|---|---:|---|---|---|
+| [@id-pptx-graphics-group-transform-roundtrip](../workflows/pptx/group-transform.feature#L7) | 6 | generalized | — | Bounded direct group coordinate frames with literal child/dependency custody, exact serialized values, independent mapping vectors and documented forward/inverse numeric tolerances. Three IDs/twenty-one cases; execution remains planned. [pptx-group-transform.md](../contracts/pptx-group-transform.md) [pptx-group-transform.json](../ledgers/pptx-group-transform.json) |
+| [@id-pptx-graphics-group-transform-mapping](../workflows/pptx/group-transform.feature#L24) | 6 | generalized | — | Bounded direct group coordinate frames with literal child/dependency custody, exact serialized values, independent mapping vectors and documented forward/inverse numeric tolerances. Three IDs/twenty-one cases; execution remains planned. [pptx-group-transform.md](../contracts/pptx-group-transform.md) [pptx-group-transform.json](../ledgers/pptx-group-transform.json) |
+| [@id-pptx-graphics-group-transform-refusals](../workflows/pptx/group-transform.feature#L39) | 9 | generalized | — | Bounded direct group coordinate frames with literal child/dependency custody, exact serialized values, independent mapping vectors and documented forward/inverse numeric tolerances. Three IDs/twenty-one cases; execution remains planned. [pptx-group-transform.md](../contracts/pptx-group-transform.md) [pptx-group-transform.json](../ledgers/pptx-group-transform.json) |
 
 ### pptx/layout-recommendation.feature
 
@@ -490,6 +545,25 @@ Presentation notes inspection and editing — **mixed**; fully generalized: **no
 | [@id-pptx-manipulation-set-notes](../workflows/pptx/notes.feature#L113) | 1 | generalized | @profile-retained-manipulation | Concrete immutable input, literal operation/values, independent saved XML readback and exact unrelated-payload custody; implementation planned in every runtime. [pptx-manipulation.md](../contracts/pptx-manipulation.md) |
 | [@id-pptx-manipulation-notes-readback](../workflows/pptx/notes.feature#L125) | 1 | generalized | @profile-retained-manipulation | Concrete immutable input, literal operation/values, independent saved XML readback and exact unrelated-payload custody; implementation planned in every runtime. [pptx-manipulation.md](../contracts/pptx-manipulation.md) |
 
+### pptx/opacity.feature
+
+Edit shape-fill opacity and picture transparency through distinct profiles — **generalized**; fully generalized: **yes**.
+
+| ID / source | Cases | Tag | Profiles | Reason / local evidence |
+|---|---:|---|---|---|
+| [@id-pptx-graphics-opacity-shape](../workflows/pptx/opacity.feature#L7) | 5 | generalized | — | Distinct bounded direct solid-fill opacity and fixed picture transparency with literal integer records, colour/effect/dependency custody, exact no-ops and competing-alpha refusals. Three IDs/twenty-four cases; execution remains planned. [pptx-opacity.md](../contracts/pptx-opacity.md) [pptx-opacity.json](../ledgers/pptx-opacity.json) |
+| [@id-pptx-graphics-opacity-picture](../workflows/pptx/opacity.feature#L22) | 7 | generalized | — | Distinct bounded direct solid-fill opacity and fixed picture transparency with literal integer records, colour/effect/dependency custody, exact no-ops and competing-alpha refusals. Three IDs/twenty-four cases; execution remains planned. [pptx-opacity.md](../contracts/pptx-opacity.md) [pptx-opacity.json](../ledgers/pptx-opacity.json) |
+| [@id-pptx-graphics-opacity-refusals](../workflows/pptx/opacity.feature#L40) | 12 | generalized | — | Distinct bounded direct solid-fill opacity and fixed picture transparency with literal integer records, colour/effect/dependency custody, exact no-ops and competing-alpha refusals. Three IDs/twenty-four cases; execution remains planned. [pptx-opacity.md](../contracts/pptx-opacity.md) [pptx-opacity.json](../ledgers/pptx-opacity.json) |
+
+### pptx/outlines.feature
+
+Edit direct outline decorations while preserving colours and attachments — **generalized**; fully generalized: **yes**.
+
+| ID / source | Cases | Tag | Profiles | Reason / local evidence |
+|---|---:|---|---|---|
+| [@id-pptx-graphics-outlines-patch](../workflows/pptx/outlines.feature#L7) | 10 | generalized | — | Bounded direct shape/connector caps, compounds, joins and arrowheads with exact records, lexical scalar custody, opaque colour/dash/extension preservation and atomic refusal controls. Two IDs/twenty-one cases; execution remains planned. [pptx-outlines.md](../contracts/pptx-outlines.md) [pptx-outlines.json](../ledgers/pptx-outlines.json) |
+| [@id-pptx-graphics-outlines-refusals](../workflows/pptx/outlines.feature#L29) | 11 | generalized | — | Bounded direct shape/connector caps, compounds, joins and arrowheads with exact records, lexical scalar custody, opaque colour/dash/extension preservation and atomic refusal controls. Two IDs/twenty-one cases; execution remains planned. [pptx-outlines.md](../contracts/pptx-outlines.md) [pptx-outlines.json](../ledgers/pptx-outlines.json) |
+
 ### pptx/paragraph-formatting.feature
 
 Retained PPTX paragraph formatting editing — **generalized**; fully generalized: **yes**.
@@ -500,6 +574,90 @@ Retained PPTX paragraph formatting editing — **generalized**; fully generalize
 | [@id-pptx-formatting-paragraph-indent](../workflows/pptx/paragraph-formatting.feature#L17) | 1 | generalized | @profile-retained-formatting | Exactretainedinput/directpropertyvalues/lexicalcustody/refusal independent savedchecks; allruntimesplanned. [pptx-formatting.md](../contracts/pptx-formatting.md) |
 | [@id-pptx-formatting-paragraph-spacing](../workflows/pptx/paragraph-formatting.feature#L29) | 1 | generalized | @profile-retained-formatting | Exactretainedinput/directpropertyvalues/lexicalcustody/refusal independent savedchecks; allruntimesplanned. [pptx-formatting.md](../contracts/pptx-formatting.md) |
 | [@id-pptx-formatting-paragraph-line](../workflows/pptx/paragraph-formatting.feature#L41) | 1 | generalized | @profile-retained-formatting | Exactretainedinput/directpropertyvalues/lexicalcustody/refusal independent savedchecks; allruntimesplanned. [pptx-formatting.md](../contracts/pptx-formatting.md) |
+
+### pptx/picture-crop.feature
+
+Edit a bounded picture source rectangle without changing placement — **generalized**; fully generalized: **yes**.
+
+| ID / source | Cases | Tag | Profiles | Reason / local evidence |
+|---|---:|---|---|---|
+| [@id-pptx-graphics-picture-crop-roundtrip](../workflows/pptx/picture-crop.feature#L7) | 8 | generalized | — | Bounded four-side source crop editing with sealed literal recipes, detached readback, exact no-ops, namespace/ambiguity refusals, and full unrelated XML/media/relationship custody. Two IDs/seventeen cases; execution remains planned. [pptx-picture-crop.md](../contracts/pptx-picture-crop.md) [pptx-picture-crop.json](../ledgers/pptx-picture-crop.json) |
+| [@id-pptx-graphics-picture-crop-refusals](../workflows/pptx/picture-crop.feature#L26) | 9 | generalized | — | Bounded four-side source crop editing with sealed literal recipes, detached readback, exact no-ops, namespace/ambiguity refusals, and full unrelated XML/media/relationship custody. Two IDs/seventeen cases; execution remains planned. [pptx-picture-crop.md](../contracts/pptx-picture-crop.md) [pptx-picture-crop.json](../ledgers/pptx-picture-crop.json) |
+
+### pptx/picture-delete.feature
+
+Delete pictures and conservatively collect proven unreferenced media — **generalized**; fully generalized: **yes**.
+
+| ID / source | Cases | Tag | Profiles | Reason / local evidence |
+|---|---:|---|---|---|
+| [@id-pptx-graphics-picture-delete-custody](../workflows/pptx/picture-delete.feature#L7) | 11 | generalized | — | Exact picture-span deletion with opt-in conservative package-local dependency collection, shared media/pair/reference custody and atomic refusal controls. Two IDs/seventeen cases; execution remains planned. [pptx-picture-delete.md](../contracts/pptx-picture-delete.md) [pptx-picture-delete.json](../ledgers/pptx-picture-delete.json) |
+| [@id-pptx-graphics-picture-delete-refusals](../workflows/pptx/picture-delete.feature#L29) | 6 | generalized | — | Exact picture-span deletion with opt-in conservative package-local dependency collection, shared media/pair/reference custody and atomic refusal controls. Two IDs/seventeen cases; execution remains planned. [pptx-picture-delete.md](../contracts/pptx-picture-delete.md) [pptx-picture-delete.json](../ledgers/pptx-picture-delete.json) |
+
+### pptx/picture-insertion.feature
+
+Append embedded PowerPoint pictures with exact payload and placement — **generalized**; fully generalized: **yes**.
+
+| ID / source | Cases | Tag | Profiles | Reason / local evidence |
+|---|---:|---|---|---|
+| [@id-pptx-graphics-picture-insertion-add](../workflows/pptx/picture-insertion.feature#L7) | 2 | generalized | — | Bounded PNG/JPEG insertion with sealed source members, exact literal records, explicit allocation/rectangle policy, complete unrelated payload custody and twelve named atomic refusals. Six IDs/eighteen cases; all execution remains planned. [pptx-picture-insertion.md](../contracts/pptx-picture-insertion.md) [pptx-picture-insertion.json](../ledgers/pptx-picture-insertion.json) |
+| [@id-pptx-graphics-picture-insertion-repeat](../workflows/pptx/picture-insertion.feature#L19) | 1 | generalized | — | Bounded PNG/JPEG insertion with sealed source members, exact literal records, explicit allocation/rectangle policy, complete unrelated payload custody and twelve named atomic refusals. Six IDs/eighteen cases; all execution remains planned. [pptx-picture-insertion.md](../contracts/pptx-picture-insertion.md) [pptx-picture-insertion.json](../ledgers/pptx-picture-insertion.json) |
+| [@id-pptx-graphics-picture-insertion-collision](../workflows/pptx/picture-insertion.feature#L27) | 1 | generalized | — | Bounded PNG/JPEG insertion with sealed source members, exact literal records, explicit allocation/rectangle policy, complete unrelated payload custody and twelve named atomic refusals. Six IDs/eighteen cases; all execution remains planned. [pptx-picture-insertion.md](../contracts/pptx-picture-insertion.md) [pptx-picture-insertion.json](../ledgers/pptx-picture-insertion.json) |
+| [@id-pptx-graphics-picture-insertion-content-types](../workflows/pptx/picture-insertion.feature#L35) | 1 | generalized | — | Bounded PNG/JPEG insertion with sealed source members, exact literal records, explicit allocation/rectangle policy, complete unrelated payload custody and twelve named atomic refusals. Six IDs/eighteen cases; all execution remains planned. [pptx-picture-insertion.md](../contracts/pptx-picture-insertion.md) [pptx-picture-insertion.json](../ledgers/pptx-picture-insertion.json) |
+| [@id-pptx-graphics-picture-insertion-extension](../workflows/pptx/picture-insertion.feature#L43) | 1 | generalized | — | Bounded PNG/JPEG insertion with sealed source members, exact literal records, explicit allocation/rectangle policy, complete unrelated payload custody and twelve named atomic refusals. Six IDs/eighteen cases; all execution remains planned. [pptx-picture-insertion.md](../contracts/pptx-picture-insertion.md) [pptx-picture-insertion.json](../ledgers/pptx-picture-insertion.json) |
+| [@id-pptx-graphics-picture-insertion-refusals](../workflows/pptx/picture-insertion.feature#L51) | 12 | generalized | — | Bounded PNG/JPEG insertion with sealed source members, exact literal records, explicit allocation/rectangle policy, complete unrelated payload custody and twelve named atomic refusals. Six IDs/eighteen cases; all execution remains planned. [pptx-picture-insertion.md](../contracts/pptx-picture-insertion.md) [pptx-picture-insertion.json](../ledgers/pptx-picture-insertion.json) |
+
+### pptx/picture-placement.feature
+
+Place embedded pictures with explicit fit policies — **generalized**; fully generalized: **yes**.
+
+| ID / source | Cases | Tag | Profiles | Reason / local evidence |
+|---|---:|---|---|---|
+| [@id-pptx-graphics-picture-placement-policies](../workflows/pptx/picture-placement.feature#L7) | 6 | generalized | — | Centred contain/cover/stretch with explicit intrinsic ratios, literal bounded rational geometry/crop, documented rounding limits, sealed media source and atomic refusals. Three IDs/sixteen cases; execution remains planned. [pptx-picture-placement.md](../contracts/pptx-picture-placement.md) [pptx-picture-placement.json](../ledgers/pptx-picture-placement.json) |
+| [@id-pptx-graphics-picture-placement-rounding](../workflows/pptx/picture-placement.feature#L23) | 3 | generalized | — | Centred contain/cover/stretch with explicit intrinsic ratios, literal bounded rational geometry/crop, documented rounding limits, sealed media source and atomic refusals. Three IDs/sixteen cases; execution remains planned. [pptx-picture-placement.md](../contracts/pptx-picture-placement.md) [pptx-picture-placement.json](../ledgers/pptx-picture-placement.json) |
+| [@id-pptx-graphics-picture-placement-refusals](../workflows/pptx/picture-placement.feature#L37) | 7 | generalized | — | Centred contain/cover/stretch with explicit intrinsic ratios, literal bounded rational geometry/crop, documented rounding limits, sealed media source and atomic refusals. Three IDs/sixteen cases; execution remains planned. [pptx-picture-placement.md](../contracts/pptx-picture-placement.md) [pptx-picture-placement.json](../ledgers/pptx-picture-placement.json) |
+
+### pptx/picture-replacement.feature
+
+Replace one embedded picture without editing shared media — **generalized**; fully generalized: **yes**.
+
+| ID / source | Cases | Tag | Profiles | Reason / local evidence |
+|---|---:|---|---|---|
+| [@id-pptx-graphics-picture-replacement-replace](../workflows/pptx/picture-replacement.feature#L7) | 2 | generalized | — | Exact embedded-picture retargeting with sealed payload sources, fresh isolated media/relationships, literal XML custody, grouped/aliased controls and eight atomic refusal cases. Five IDs/fourteen cases; execution remains planned. [pptx-picture-replacement.md](../contracts/pptx-picture-replacement.md) [pptx-picture-replacement.json](../ledgers/pptx-picture-replacement.json) |
+| [@id-pptx-graphics-picture-replacement-isolation](../workflows/pptx/picture-replacement.feature#L20) | 2 | generalized | — | Exact embedded-picture retargeting with sealed payload sources, fresh isolated media/relationships, literal XML custody, grouped/aliased controls and eight atomic refusal cases. Five IDs/fourteen cases; execution remains planned. [pptx-picture-replacement.md](../contracts/pptx-picture-replacement.md) [pptx-picture-replacement.json](../ledgers/pptx-picture-replacement.json) |
+| [@id-pptx-graphics-picture-replacement-prefix](../workflows/pptx/picture-replacement.feature#L32) | 1 | generalized | — | Exact embedded-picture retargeting with sealed payload sources, fresh isolated media/relationships, literal XML custody, grouped/aliased controls and eight atomic refusal cases. Five IDs/fourteen cases; execution remains planned. [pptx-picture-replacement.md](../contracts/pptx-picture-replacement.md) [pptx-picture-replacement.json](../ledgers/pptx-picture-replacement.json) |
+| [@id-pptx-graphics-picture-replacement-grouped](../workflows/pptx/picture-replacement.feature#L39) | 1 | generalized | — | Exact embedded-picture retargeting with sealed payload sources, fresh isolated media/relationships, literal XML custody, grouped/aliased controls and eight atomic refusal cases. Five IDs/fourteen cases; execution remains planned. [pptx-picture-replacement.md](../contracts/pptx-picture-replacement.md) [pptx-picture-replacement.json](../ledgers/pptx-picture-replacement.json) |
+| [@id-pptx-graphics-picture-replacement-refusals](../workflows/pptx/picture-replacement.feature#L46) | 8 | generalized | — | Exact embedded-picture retargeting with sealed payload sources, fresh isolated media/relationships, literal XML custody, grouped/aliased controls and eight atomic refusal cases. Five IDs/fourteen cases; execution remains planned. [pptx-picture-replacement.md](../contracts/pptx-picture-replacement.md) [pptx-picture-replacement.json](../ledgers/pptx-picture-replacement.json) |
+
+### pptx/picture-svg.feature
+
+Author SVG pictures with caller-supplied raster fallback — **generalized**; fully generalized: **yes**.
+
+| ID / source | Cases | Tag | Profiles | Reason / local evidence |
+|---|---:|---|---|---|
+| [@id-pptx-graphics-picture-svg-add](../workflows/pptx/picture-svg.feature#L7) | 2 | generalized | — | Passive allowlisted SVG with explicit PNG/JPEG fallback, shared literal vector source, sealed raster members, exact two-edge/two-payload custody and atomic refusals. Two IDs/eleven cases; execution remains planned and rendering unverified. [pptx-picture-svg.md](../contracts/pptx-picture-svg.md) [pptx-picture-svg.json](../ledgers/pptx-picture-svg.json) |
+| [@id-pptx-graphics-picture-svg-refusals](../workflows/pptx/picture-svg.feature#L20) | 9 | generalized | — | Passive allowlisted SVG with explicit PNG/JPEG fallback, shared literal vector source, sealed raster members, exact two-edge/two-payload custody and atomic refusals. Two IDs/eleven cases; execution remains planned and rendering unverified. [pptx-picture-svg.md](../contracts/pptx-picture-svg.md) [pptx-picture-svg.json](../ledgers/pptx-picture-svg.json) |
+
+### pptx/picture-transform.feature
+
+Rotate and flip pictures without changing crop or dependencies — **generalized**; fully generalized: **yes**.
+
+| ID / source | Cases | Tag | Profiles | Reason / local evidence |
+|---|---:|---|---|---|
+| [@id-pptx-graphics-picture-transform-roundtrip](../workflows/pptx/picture-transform.feature#L7) | 8 | generalized | — | Direct picture rotation/flip patches with exact bounded angle units, sealed literal cases, exact no-ops and complete coordinate/crop/dependency custody. Two IDs/eighteen cases; execution remains planned. [pptx-picture-transform.md](../contracts/pptx-picture-transform.md) [pptx-picture-transform.json](../ledgers/pptx-picture-transform.json) |
+| [@id-pptx-graphics-picture-transform-refusals](../workflows/pptx/picture-transform.feature#L26) | 10 | generalized | — | Direct picture rotation/flip patches with exact bounded angle units, sealed literal cases, exact no-ops and complete coordinate/crop/dependency custody. Two IDs/eighteen cases; execution remains planned. [pptx-picture-transform.md](../contracts/pptx-picture-transform.md) [pptx-picture-transform.json](../ledgers/pptx-picture-transform.json) |
+
+### pptx/pictures.feature
+
+Read PowerPoint picture identities, assets and direct placement — **generalized**; fully generalized: **yes**.
+
+| ID / source | Cases | Tag | Profiles | Reason / local evidence |
+|---|---:|---|---|---|
+| [@id-pptx-graphics-picture-inspection-literal](../workflows/pptx/pictures.feature#L8) | 1 | generalized | — | Bounded read-only inspection with a sealed manifest input, twelve exact literal operation/expected-record cases, namespace and refusal policy, and complete member custody. Native adapters are needed; all execution remains planned. [pptx-pictures.md](../contracts/pptx-pictures.md) [pptx-picture-inspection.json](../ledgers/pptx-picture-inspection.json) |
+| [@id-pptx-graphics-picture-inspection-links](../workflows/pptx/pictures.feature#L16) | 1 | generalized | — | Bounded read-only inspection with a sealed manifest input, twelve exact literal operation/expected-record cases, namespace and refusal policy, and complete member custody. Native adapters are needed; all execution remains planned. [pptx-pictures.md](../contracts/pptx-pictures.md) [pptx-picture-inspection.json](../ledgers/pptx-picture-inspection.json) |
+| [@id-pptx-graphics-picture-inspection-groups](../workflows/pptx/pictures.feature#L23) | 1 | generalized | — | Bounded read-only inspection with a sealed manifest input, twelve exact literal operation/expected-record cases, namespace and refusal policy, and complete member custody. Native adapters are needed; all execution remains planned. [pptx-pictures.md](../contracts/pptx-pictures.md) [pptx-picture-inspection.json](../ledgers/pptx-picture-inspection.json) |
+| [@id-pptx-graphics-picture-inspection-transformed](../workflows/pptx/pictures.feature#L32) | 1 | generalized | — | Bounded read-only inspection with a sealed manifest input, twelve exact literal operation/expected-record cases, namespace and refusal policy, and complete member custody. Native adapters are needed; all execution remains planned. [pptx-pictures.md](../contracts/pptx-pictures.md) [pptx-picture-inspection.json](../ledgers/pptx-picture-inspection.json) |
+| [@id-pptx-graphics-picture-inspection-empty](../workflows/pptx/pictures.feature#L41) | 1 | generalized | — | Bounded read-only inspection with a sealed manifest input, twelve exact literal operation/expected-record cases, namespace and refusal policy, and complete member custody. Native adapters are needed; all execution remains planned. [pptx-pictures.md](../contracts/pptx-pictures.md) [pptx-picture-inspection.json](../ledgers/pptx-picture-inspection.json) |
+| [@id-pptx-graphics-picture-inspection-refusals](../workflows/pptx/pictures.feature#L48) | 7 | generalized | — | Bounded read-only inspection with a sealed manifest input, twelve exact literal operation/expected-record cases, namespace and refusal policy, and complete member custody. Native adapters are needed; all execution remains planned. [pptx-pictures.md](../contracts/pptx-pictures.md) [pptx-picture-inspection.json](../ledgers/pptx-picture-inspection.json) |
 
 ### pptx/preservation.feature
 
@@ -519,6 +677,15 @@ Retained PPTX shape geometry editing — **generalized**; fully generalized: **y
 | [@id-pptx-formatting-resize](../workflows/pptx/shape-geometry.feature#L17) | 1 | generalized | @profile-retained-formatting | Exactretainedinput/directpropertyvalues/lexicalcustody/refusal independent savedchecks; allruntimesplanned. [pptx-formatting.md](../contracts/pptx-formatting.md) |
 | [@id-pptx-formatting-transform](../workflows/pptx/shape-geometry.feature#L29) | 1 | generalized | @profile-retained-formatting | Exactretainedinput/directpropertyvalues/lexicalcustody/refusal independent savedchecks; allruntimesplanned. [pptx-formatting.md](../contracts/pptx-formatting.md) |
 | [@id-pptx-formatting-geometry-refusal](../workflows/pptx/shape-geometry.feature#L41) | 1 | generalized | @profile-retained-formatting | Exactretainedinput/directpropertyvalues/lexicalcustody/refusal independent savedchecks; allruntimesplanned. [pptx-formatting.md](../contracts/pptx-formatting.md) |
+
+### pptx/shape-group.feature
+
+Create editable groups without rewriting selected children — **generalized**; fully generalized: **yes**.
+
+| ID / source | Cases | Tag | Profiles | Reason / local evidence |
+|---|---:|---|---|---|
+| [@id-pptx-graphics-shape-group-create](../workflows/pptx/shape-group.feature#L7) | 4 | generalized | — | Contiguous direct editable grouping with explicit identity parent/child rectangle, source ordering, fresh unique ID, literal child/dependency custody and bounded refusals. Two IDs/sixteen cases; execution remains planned. [pptx-shape-group.md](../contracts/pptx-shape-group.md) [pptx-shape-group.json](../ledgers/pptx-shape-group.json) |
+| [@id-pptx-graphics-shape-group-refusals](../workflows/pptx/shape-group.feature#L23) | 12 | generalized | — | Contiguous direct editable grouping with explicit identity parent/child rectangle, source ordering, fresh unique ID, literal child/dependency custody and bounded refusals. Two IDs/sixteen cases; execution remains planned. [pptx-shape-group.md](../contracts/pptx-shape-group.md) [pptx-shape-group.json](../ledgers/pptx-shape-group.json) |
 
 ### pptx/shape-style.feature
 
@@ -566,6 +733,24 @@ PowerPoint slide visibility by slide identity — **mixed**; fully generalized: 
 | [@id-pptx-formatting-unhide](../workflows/pptx/slide-visibility.feature#L46) | 1 | generalized | @profile-retained-formatting | Exactretainedinput/directpropertyvalues/lexicalcustody/refusal independent savedchecks; allruntimesplanned. [pptx-formatting.md](../contracts/pptx-formatting.md) |
 | [@id-pptx-formatting-visibility-order](../workflows/pptx/slide-visibility.feature#L58) | 1 | generalized | @profile-retained-formatting | Exactretainedinput/directpropertyvalues/lexicalcustody/refusal independent savedchecks; allruntimesplanned. [pptx-formatting.md](../contracts/pptx-formatting.md) |
 | [@id-pptx-formatting-visibility-refusal](../workflows/pptx/slide-visibility.feature#L70) | 1 | generalized | @profile-retained-formatting | Exactretainedinput/directpropertyvalues/lexicalcustody/refusal independent savedchecks; allruntimesplanned. [pptx-formatting.md](../contracts/pptx-formatting.md) |
+
+### pptx/smartart-copy.feature
+
+Copy admitted SmartArt graphs with isolated parts and remapped identities — **generalized**; fully generalized: **yes**.
+
+| ID / source | Cases | Tag | Profiles | Reason / local evidence |
+|---|---:|---|---|---|
+| [@id-pptx-graphics-smartart-copy-copy](../workflows/pptx/smartart-copy.feature#L7) | 3 | generalized | — | Admitted SmartArt closure copying with shared literal graph/destination recipes, isolated parts, model/drawing identity remaps, cycle/media/external custody and atomic refusals. Two IDs/eight cases; no physical Office SmartArt certification, execution remains planned. [pptx-smartart-copy.md](../contracts/pptx-smartart-copy.md) [pptx-smartart-copy.json](../ledgers/pptx-smartart-copy.json) |
+| [@id-pptx-graphics-smartart-copy-refusals](../workflows/pptx/smartart-copy.feature#L23) | 5 | generalized | — | Admitted SmartArt closure copying with shared literal graph/destination recipes, isolated parts, model/drawing identity remaps, cycle/media/external custody and atomic refusals. Two IDs/eight cases; no physical Office SmartArt certification, execution remains planned. [pptx-smartart-copy.md](../contracts/pptx-smartart-copy.md) [pptx-smartart-copy.json](../ledgers/pptx-smartart-copy.json) |
+
+### pptx/smartart-inspection.feature
+
+Inspect SmartArt dependency graphs without editing or evaluating layout — **generalized**; fully generalized: **yes**.
+
+| ID / source | Cases | Tag | Profiles | Reason / local evidence |
+|---|---:|---|---|---|
+| [@id-pptx-graphics-smartart-inspection-read](../workflows/pptx/smartart-inspection.feature#L7) | 3 | generalized | — | Read-only bounded SmartArt package graph with shared literal member recipes, exact role/root/type records, cycle and external-edge controls, detached limits and complete custody. Two IDs/twelve cases; no physical Office SmartArt/rendering certification, execution remains planned. [pptx-smartart-inspection.md](../contracts/pptx-smartart-inspection.md) [pptx-smartart-inspection.json](../ledgers/pptx-smartart-inspection.json) |
+| [@id-pptx-graphics-smartart-inspection-refusals](../workflows/pptx/smartart-inspection.feature#L22) | 9 | generalized | — | Read-only bounded SmartArt package graph with shared literal member recipes, exact role/root/type records, cycle and external-edge controls, detached limits and complete custody. Two IDs/twelve cases; no physical Office SmartArt/rendering certification, execution remains planned. [pptx-smartart-inspection.md](../contracts/pptx-smartart-inspection.md) [pptx-smartart-inspection.json](../ledgers/pptx-smartart-inspection.json) |
 
 ### pptx/tables.feature
 
@@ -666,6 +851,15 @@ Presentation anchored text editing — **mixed**; fully generalized: **no**.
 | [@id-pptx-manipulation-patch-body](../workflows/pptx/text.feature#L65) | 1 | generalized | @profile-retained-manipulation | Concrete immutable input, literal operation/values, independent saved XML readback and exact unrelated-payload custody; implementation planned in every runtime. [pptx-manipulation.md](../contracts/pptx-manipulation.md) |
 | [@id-pptx-manipulation-patch-subtitle](../workflows/pptx/text.feature#L77) | 1 | generalized | @profile-retained-manipulation | Concrete immutable input, literal operation/values, independent saved XML readback and exact unrelated-payload custody; implementation planned in every runtime. [pptx-manipulation.md](../contracts/pptx-manipulation.md) |
 | [@id-pptx-manipulation-append-title](../workflows/pptx/text.feature#L89) | 1 | generalized | @profile-retained-manipulation | Concrete immutable input, literal operation/values, independent saved XML readback and exact unrelated-payload custody; implementation planned in every runtime. [pptx-manipulation.md](../contracts/pptx-manipulation.md) |
+
+### pptx/z-order.feature
+
+Reorder graphical sibling spans without rebuilding slide content — **generalized**; fully generalized: **yes**.
+
+| ID / source | Cases | Tag | Profiles | Reason / local evidence |
+|---|---:|---|---|---|
+| [@id-pptx-graphics-z-order-reorder](../workflows/pptx/z-order.feature#L7) | 7 | generalized | — | Exact selected sibling span permutation across slide/group graphics, opaque frame/connector/group custody, no-ops and bounded lexical/identity refusals. Two IDs/fifteen cases; execution remains planned. [pptx-z-order.md](../contracts/pptx-z-order.md) [pptx-z-order.json](../ledgers/pptx-z-order.json) |
+| [@id-pptx-graphics-z-order-refusals](../workflows/pptx/z-order.feature#L26) | 8 | generalized | — | Exact selected sibling span permutation across slide/group graphics, opaque frame/connector/group custody, no-ops and bounded lexical/identity refusals. Two IDs/fifteen cases; execution remains planned. [pptx-z-order.md](../contracts/pptx-z-order.md) [pptx-z-order.json](../ledgers/pptx-z-order.json) |
 
 ### xlsx/cache-completeness.feature
 

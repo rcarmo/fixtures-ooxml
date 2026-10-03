@@ -10,7 +10,7 @@ function seal(path:string,text:string,manifest:any,role:string){
  return {...manifest,files:[...manifest.files,{id:'asset-'+sha256,path,bytes:bytes.length,sha256,role,origins:[{repository:'https://github.com/rcarmo/fixtures-ooxml',path,basis:'Project-owned behaviour contract or source assertion mapping'}],aliases:[]}]};
 }
 export function registerAsset(path:string,text:string,manifest:any){
- const role=/^contracts\/[A-Za-z0-9_-]+\.md$/.test(path)?'workflow-contract':/^ledgers\/consumers\/[A-Za-z0-9_-]+\.json$/.test(path)?'consumer-mapping':null;
+ const role=/^contracts\/[A-Za-z0-9_-]+\.md$/.test(path)?'workflow-contract':/^ledgers\/consumers\/[A-Za-z0-9_-]+\.json$/.test(path)?'consumer-mapping':/^ledgers\/[a-z0-9]+(?:-[a-z0-9]+)*\.json$/.test(path)?'workflow-recipe':null;
  if(!role)throw Error('Invalid supporting asset path');
  return seal(path,text,manifest,role);
 }
@@ -28,7 +28,7 @@ export function registerWorkflow(path:string,text:string,manifest:any,ledger:any
 }
 if(import.meta.main){
  const root=resolve(import.meta.dir,'..');let manifest=await Bun.file(join(root,'manifest.json')).json(),ledger=await Bun.file(join(root,'ledgers/workflows.json')).json();
- const paths=process.argv.slice(2);if(!paths.length)throw Error('Usage: bun scripts/register-workflow.ts workflows/<family>/<name>.feature [contracts/<name>.md ledgers/consumers/<name>.json ...]');
+ const paths=process.argv.slice(2);if(!paths.length)throw Error('Usage: bun scripts/register-workflow.ts workflows/<family>/<name>.feature [contracts/<name>.md ledgers/<recipe>.json ledgers/consumers/<name>.json ...]');
  for(const path of paths){
   if(path.endsWith('.feature')){const result=registerWorkflow(path,await Bun.file(join(root,path)).text(),manifest,ledger);manifest=result.manifest;ledger=result.ledger;}
   else manifest=registerAsset(path,await Bun.file(join(root,path)).text(),manifest);

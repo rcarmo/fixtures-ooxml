@@ -1,0 +1,610 @@
+{
+  "schemaVersion": 1,
+  "executionCredit": false,
+  "feature": "workflows/pptx/autoshapes.feature",
+  "contract": "contracts/pptx-autoshapes.md",
+  "baseFixtureId": "fixture-792277d2c358c5bd7c8a4053078a5594fa07bfb55a06b0bb30f2813c151ea459",
+  "slidePart": "ppt/slides/slide1.xml",
+  "counts": {
+    "ids": 2,
+    "cases": 18
+  },
+  "presets": {
+    "rect": {
+      "adjustments": {}
+    },
+    "ellipse": {
+      "adjustments": {}
+    },
+    "triangle": {
+      "adjustments": {}
+    },
+    "diamond": {
+      "adjustments": {}
+    },
+    "roundRect": {
+      "adjustments": {
+        "adj": {
+          "min": 0,
+          "max": 50000,
+          "default": 16667
+        }
+      }
+    }
+  },
+  "custody": {
+    "allowedChangedParts": [
+      "ppt/slides/slide1.xml"
+    ],
+    "membership": "exact",
+    "preserve": "all original XML relationships and payloads"
+  },
+  "cases": [
+    {
+      "caseId": "rect",
+      "scenarioId": "@id-pptx-graphics-autoshapes-author",
+      "example": {
+        "variant": "rect"
+      },
+      "operations": [],
+      "request": {
+        "preset": "rect",
+        "geometry": {
+          "x": 100,
+          "y": 200,
+          "width": 1200000,
+          "height": 900000
+        },
+        "options": {
+          "text": "Editable & 雪\nSecond line",
+          "name": "AutoShape & exact",
+          "fill": "F2F2F2",
+          "lineColor": "336699",
+          "lineWidth": 25400
+        }
+      },
+      "expected": {
+        "shapeId": 1034,
+        "partName": "ppt/slides/slide1.xml",
+        "preset": "rect",
+        "geometry": {
+          "x": 100,
+          "y": 200,
+          "width": 1200000,
+          "height": 900000
+        },
+        "adjustments": {}
+      }
+    },
+    {
+      "caseId": "ellipse",
+      "scenarioId": "@id-pptx-graphics-autoshapes-author",
+      "example": {
+        "variant": "ellipse"
+      },
+      "operations": [],
+      "request": {
+        "preset": "ellipse",
+        "geometry": {
+          "x": 100,
+          "y": 200,
+          "width": 1200000,
+          "height": 900000
+        },
+        "options": {
+          "text": "Editable & 雪\nSecond line",
+          "name": "AutoShape & exact",
+          "fill": "F2F2F2",
+          "lineColor": "336699",
+          "lineWidth": 25400
+        }
+      },
+      "expected": {
+        "shapeId": 1034,
+        "partName": "ppt/slides/slide1.xml",
+        "preset": "ellipse",
+        "geometry": {
+          "x": 100,
+          "y": 200,
+          "width": 1200000,
+          "height": 900000
+        },
+        "adjustments": {}
+      }
+    },
+    {
+      "caseId": "triangle",
+      "scenarioId": "@id-pptx-graphics-autoshapes-author",
+      "example": {
+        "variant": "triangle"
+      },
+      "operations": [],
+      "request": {
+        "preset": "triangle",
+        "geometry": {
+          "x": 100,
+          "y": 200,
+          "width": 1200000,
+          "height": 900000
+        },
+        "options": {
+          "text": "Editable & 雪\nSecond line",
+          "name": "AutoShape & exact",
+          "fill": "F2F2F2",
+          "lineColor": "336699",
+          "lineWidth": 25400
+        }
+      },
+      "expected": {
+        "shapeId": 1034,
+        "partName": "ppt/slides/slide1.xml",
+        "preset": "triangle",
+        "geometry": {
+          "x": 100,
+          "y": 200,
+          "width": 1200000,
+          "height": 900000
+        },
+        "adjustments": {}
+      }
+    },
+    {
+      "caseId": "diamond",
+      "scenarioId": "@id-pptx-graphics-autoshapes-author",
+      "example": {
+        "variant": "diamond"
+      },
+      "operations": [],
+      "request": {
+        "preset": "diamond",
+        "geometry": {
+          "x": 100,
+          "y": 200,
+          "width": 1200000,
+          "height": 900000
+        },
+        "options": {
+          "text": "Editable & 雪\nSecond line",
+          "name": "AutoShape & exact",
+          "fill": "F2F2F2",
+          "lineColor": "336699",
+          "lineWidth": 25400
+        }
+      },
+      "expected": {
+        "shapeId": 1034,
+        "partName": "ppt/slides/slide1.xml",
+        "preset": "diamond",
+        "geometry": {
+          "x": 100,
+          "y": 200,
+          "width": 1200000,
+          "height": 900000
+        },
+        "adjustments": {}
+      }
+    },
+    {
+      "caseId": "roundRect",
+      "scenarioId": "@id-pptx-graphics-autoshapes-author",
+      "example": {
+        "variant": "roundRect"
+      },
+      "operations": [],
+      "request": {
+        "preset": "roundRect",
+        "geometry": {
+          "x": 100,
+          "y": 200,
+          "width": 1200000,
+          "height": 900000
+        },
+        "options": {
+          "text": "Editable & 雪\nSecond line",
+          "name": "AutoShape & exact",
+          "fill": "F2F2F2",
+          "lineColor": "336699",
+          "lineWidth": 25400
+        }
+      },
+      "expected": {
+        "shapeId": 1034,
+        "partName": "ppt/slides/slide1.xml",
+        "preset": "roundRect",
+        "geometry": {
+          "x": 100,
+          "y": 200,
+          "width": 1200000,
+          "height": 900000
+        },
+        "adjustments": {
+          "adj": 16667
+        }
+      }
+    },
+    {
+      "caseId": "roundRect zero",
+      "scenarioId": "@id-pptx-graphics-autoshapes-author",
+      "example": {
+        "variant": "roundRect zero"
+      },
+      "operations": [],
+      "request": {
+        "preset": "roundRect",
+        "geometry": {
+          "x": 100,
+          "y": 200,
+          "width": 1200000,
+          "height": 900000
+        },
+        "options": {
+          "text": "Editable & 雪\nSecond line",
+          "name": "AutoShape & exact",
+          "fill": "F2F2F2",
+          "lineColor": "336699",
+          "lineWidth": 25400,
+          "adjustments": {
+            "adj": 0
+          }
+        }
+      },
+      "expected": {
+        "shapeId": 1034,
+        "partName": "ppt/slides/slide1.xml",
+        "preset": "roundRect",
+        "geometry": {
+          "x": 100,
+          "y": 200,
+          "width": 1200000,
+          "height": 900000
+        },
+        "adjustments": {
+          "adj": 0
+        }
+      }
+    },
+    {
+      "caseId": "roundRect maximum",
+      "scenarioId": "@id-pptx-graphics-autoshapes-author",
+      "example": {
+        "variant": "roundRect maximum"
+      },
+      "operations": [],
+      "request": {
+        "preset": "roundRect",
+        "geometry": {
+          "x": 100,
+          "y": 200,
+          "width": 1200000,
+          "height": 900000
+        },
+        "options": {
+          "text": "Editable & 雪\nSecond line",
+          "name": "AutoShape & exact",
+          "fill": "F2F2F2",
+          "lineColor": "336699",
+          "lineWidth": 25400,
+          "adjustments": {
+            "adj": 50000
+          }
+        }
+      },
+      "expected": {
+        "shapeId": 1034,
+        "partName": "ppt/slides/slide1.xml",
+        "preset": "roundRect",
+        "geometry": {
+          "x": 100,
+          "y": 200,
+          "width": 1200000,
+          "height": 900000
+        },
+        "adjustments": {
+          "adj": 50000
+        }
+      }
+    },
+    {
+      "caseId": "default metadata",
+      "scenarioId": "@id-pptx-graphics-autoshapes-author",
+      "example": {
+        "variant": "default metadata"
+      },
+      "operations": [],
+      "request": {
+        "preset": "rect",
+        "geometry": {
+          "x": 100,
+          "y": 200,
+          "width": 1200000,
+          "height": 900000
+        },
+        "options": {}
+      },
+      "expected": {
+        "shapeId": 1034,
+        "partName": "ppt/slides/slide1.xml",
+        "preset": "rect",
+        "geometry": {
+          "x": 100,
+          "y": 200,
+          "width": 1200000,
+          "height": 900000
+        },
+        "adjustments": {}
+      }
+    },
+    {
+      "caseId": "unsupported-preset",
+      "scenarioId": "@id-pptx-graphics-autoshapes-refusals",
+      "example": {
+        "fault": "unsupported preset"
+      },
+      "operations": [],
+      "request": {
+        "preset": "star99",
+        "geometry": {
+          "x": 100,
+          "y": 200,
+          "width": 1200000,
+          "height": 900000
+        },
+        "options": {
+          "text": "Editable & 雪\nSecond line",
+          "name": "AutoShape & exact",
+          "fill": "F2F2F2",
+          "lineColor": "336699",
+          "lineWidth": 25400
+        }
+      },
+      "errorCode": "PPTX_AUTOSHAPE_UNSUPPORTED"
+    },
+    {
+      "caseId": "unknown-adjustment",
+      "scenarioId": "@id-pptx-graphics-autoshapes-refusals",
+      "example": {
+        "fault": "unknown adjustment"
+      },
+      "operations": [],
+      "request": {
+        "preset": "roundRect",
+        "geometry": {
+          "x": 100,
+          "y": 200,
+          "width": 1200000,
+          "height": 900000
+        },
+        "options": {
+          "text": "Editable & 雪\nSecond line",
+          "name": "AutoShape & exact",
+          "fill": "F2F2F2",
+          "lineColor": "336699",
+          "lineWidth": 25400,
+          "adjustments": {
+            "bad": 1
+          }
+        }
+      },
+      "errorCode": "PPTX_AUTOSHAPE_UNSUPPORTED"
+    },
+    {
+      "caseId": "adjustment-on-fixed-preset",
+      "scenarioId": "@id-pptx-graphics-autoshapes-refusals",
+      "example": {
+        "fault": "adjustment on fixed preset"
+      },
+      "operations": [],
+      "request": {
+        "preset": "rect",
+        "geometry": {
+          "x": 100,
+          "y": 200,
+          "width": 1200000,
+          "height": 900000
+        },
+        "options": {
+          "text": "Editable & 雪\nSecond line",
+          "name": "AutoShape & exact",
+          "fill": "F2F2F2",
+          "lineColor": "336699",
+          "lineWidth": 25400,
+          "adjustments": {
+            "adj": 1
+          }
+        }
+      },
+      "errorCode": "PPTX_AUTOSHAPE_UNSUPPORTED"
+    },
+    {
+      "caseId": "negative-adjustment",
+      "scenarioId": "@id-pptx-graphics-autoshapes-refusals",
+      "example": {
+        "fault": "negative adjustment"
+      },
+      "operations": [],
+      "request": {
+        "preset": "roundRect",
+        "geometry": {
+          "x": 100,
+          "y": 200,
+          "width": 1200000,
+          "height": 900000
+        },
+        "options": {
+          "text": "Editable & 雪\nSecond line",
+          "name": "AutoShape & exact",
+          "fill": "F2F2F2",
+          "lineColor": "336699",
+          "lineWidth": 25400,
+          "adjustments": {
+            "adj": -1
+          }
+        }
+      },
+      "errorCode": "PPTX_AUTOSHAPE_UNSUPPORTED"
+    },
+    {
+      "caseId": "excess-adjustment",
+      "scenarioId": "@id-pptx-graphics-autoshapes-refusals",
+      "example": {
+        "fault": "excess adjustment"
+      },
+      "operations": [],
+      "request": {
+        "preset": "roundRect",
+        "geometry": {
+          "x": 100,
+          "y": 200,
+          "width": 1200000,
+          "height": 900000
+        },
+        "options": {
+          "text": "Editable & 雪\nSecond line",
+          "name": "AutoShape & exact",
+          "fill": "F2F2F2",
+          "lineColor": "336699",
+          "lineWidth": 25400,
+          "adjustments": {
+            "adj": 50001
+          }
+        }
+      },
+      "errorCode": "PPTX_AUTOSHAPE_UNSUPPORTED"
+    },
+    {
+      "caseId": "fractional-adjustment",
+      "scenarioId": "@id-pptx-graphics-autoshapes-refusals",
+      "example": {
+        "fault": "fractional adjustment"
+      },
+      "operations": [],
+      "request": {
+        "preset": "roundRect",
+        "geometry": {
+          "x": 100,
+          "y": 200,
+          "width": 1200000,
+          "height": 900000
+        },
+        "options": {
+          "text": "Editable & 雪\nSecond line",
+          "name": "AutoShape & exact",
+          "fill": "F2F2F2",
+          "lineColor": "336699",
+          "lineWidth": 25400,
+          "adjustments": {
+            "adj": 1.5
+          }
+        }
+      },
+      "errorCode": "PPTX_AUTOSHAPE_UNSUPPORTED"
+    },
+    {
+      "caseId": "zero-extent",
+      "scenarioId": "@id-pptx-graphics-autoshapes-refusals",
+      "example": {
+        "fault": "zero extent"
+      },
+      "operations": [],
+      "request": {
+        "preset": "roundRect",
+        "geometry": {
+          "x": 100,
+          "y": 200,
+          "width": 0,
+          "height": 900000
+        },
+        "options": {
+          "text": "Editable & 雪\nSecond line",
+          "name": "AutoShape & exact",
+          "fill": "F2F2F2",
+          "lineColor": "336699",
+          "lineWidth": 25400
+        }
+      },
+      "errorCode": "PPTX_AUTOSHAPE_UNSUPPORTED"
+    },
+    {
+      "caseId": "invalid-fill",
+      "scenarioId": "@id-pptx-graphics-autoshapes-refusals",
+      "example": {
+        "fault": "invalid fill"
+      },
+      "operations": [],
+      "request": {
+        "preset": "roundRect",
+        "geometry": {
+          "x": 100,
+          "y": 200,
+          "width": 1200000,
+          "height": 900000
+        },
+        "options": {
+          "text": "Editable & 雪\nSecond line",
+          "name": "AutoShape & exact",
+          "fill": "red",
+          "lineColor": "336699",
+          "lineWidth": 25400
+        }
+      },
+      "errorCode": "PPTX_AUTOSHAPE_UNSUPPORTED"
+    },
+    {
+      "caseId": "invalid-text",
+      "scenarioId": "@id-pptx-graphics-autoshapes-refusals",
+      "example": {
+        "fault": "invalid text"
+      },
+      "operations": [],
+      "request": {
+        "preset": "roundRect",
+        "geometry": {
+          "x": 100,
+          "y": 200,
+          "width": 1200000,
+          "height": 900000
+        },
+        "options": {
+          "text": "bad\u0000",
+          "name": "AutoShape & exact",
+          "fill": "F2F2F2",
+          "lineColor": "336699",
+          "lineWidth": 25400
+        }
+      },
+      "errorCode": "PPTX_AUTOSHAPE_UNSUPPORTED"
+    },
+    {
+      "caseId": "protected-presentation",
+      "scenarioId": "@id-pptx-graphics-autoshapes-refusals",
+      "example": {
+        "fault": "protected presentation"
+      },
+      "operations": [
+        {
+          "kind": "replace-literal-once",
+          "part": "ppt/presentation.xml",
+          "before": "</p:presentation>",
+          "after": "<p:modifyVerifier/></p:presentation>"
+        }
+      ],
+      "request": {
+        "preset": "roundRect",
+        "geometry": {
+          "x": 100,
+          "y": 200,
+          "width": 1200000,
+          "height": 900000
+        },
+        "options": {
+          "text": "Editable & 雪\nSecond line",
+          "name": "AutoShape & exact",
+          "fill": "F2F2F2",
+          "lineColor": "336699",
+          "lineWidth": 25400
+        }
+      },
+      "errorCode": "PPTX_PROTECTED"
+    }
+  ]
+}

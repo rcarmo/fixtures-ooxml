@@ -278,6 +278,86 @@
     {
       "path": "workflows/pptx/text-frame-properties.feature",
       "reviewedSha256": "7c9396fbde5af9fd51ea1b5631f4d683be94b02ad35e72045c8c9ae5ceb56562"
+    },
+    {
+      "path": "workflows/pptx/pictures.feature",
+      "reviewedSha256": "6d83274656e9947b98f8edc04e7658a7c4fe724506ce74f3dbe72b9f7bbe686b"
+    },
+    {
+      "path": "workflows/pptx/picture-insertion.feature",
+      "reviewedSha256": "bf76016391d0e353d9a00a759a4d68af67867067fba4ffdc26adde836d7bdf57"
+    },
+    {
+      "path": "workflows/pptx/picture-replacement.feature",
+      "reviewedSha256": "2c8de11cd78eb80004cd5d5cd508161231fe8664dc2d2a2fff4bd2cd4e113bb4"
+    },
+    {
+      "path": "workflows/pptx/picture-placement.feature",
+      "reviewedSha256": "1ad7b5dbb60abba310f7f7fcf6bbee6207b82234e90f76943b6e19932d2e3e01"
+    },
+    {
+      "path": "workflows/pptx/picture-crop.feature",
+      "reviewedSha256": "e5eff16a0bc311d8f16be6b34cf16d0be4564033ec1cb4830e68bdda17e93804"
+    },
+    {
+      "path": "workflows/pptx/picture-transform.feature",
+      "reviewedSha256": "35c5af698de5fc6d3f7103445f0871659d95b3ff9b57b4f7c1b37248dc1f28be"
+    },
+    {
+      "path": "workflows/pptx/picture-svg.feature",
+      "reviewedSha256": "95e99e0d0c9023ae3c5cb28a08c99a5dc5d04cd4d6a688a9652b69e04c560712"
+    },
+    {
+      "path": "workflows/pptx/picture-delete.feature",
+      "reviewedSha256": "43a0876539d6e58f605696b07f9fbf783464e6cdcad204b309fb6d64220d0c98"
+    },
+    {
+      "path": "workflows/pptx/shape-group.feature",
+      "reviewedSha256": "a8423ccc4797e0fe934df4593786f2e2b0f2302d56e238b779a7239389d93d49"
+    },
+    {
+      "path": "workflows/pptx/group-transform.feature",
+      "reviewedSha256": "af30e75a382fbd07a589291a4cadebeedbc8170fa7083be747e2c7cce45143ab"
+    },
+    {
+      "path": "workflows/pptx/connectors.feature",
+      "reviewedSha256": "5c817aa20094f83af5ba618378fa0e1bdea23a124cebe2cd09a7b4fe4b1ec594"
+    },
+    {
+      "path": "workflows/pptx/diagrams.feature",
+      "reviewedSha256": "2947a691b99c8e28ff9530b064b2e6c91f58df10e5f11905cb83d8c700f25206"
+    },
+    {
+      "path": "workflows/pptx/smartart-inspection.feature",
+      "reviewedSha256": "92e3c0e7c5e53f0e05801a271d8b4914fd8d90ce79615e732c8d2fbb7907d2a7"
+    },
+    {
+      "path": "workflows/pptx/smartart-copy.feature",
+      "reviewedSha256": "1a475b1233d2c4e71bedf1b24362c346df94eaf0ae8b3e80d016e4ff76c93ba8"
+    },
+    {
+      "path": "workflows/pptx/autoshapes.feature",
+      "reviewedSha256": "d1c9c5cb1a4de2edac1e17f18f829e17b15a40edd79b62d67a9dec6981c63127"
+    },
+    {
+      "path": "workflows/pptx/freeform.feature",
+      "reviewedSha256": "a388df9fd2e70efa2c5e988e4070e795430cbcdb22ee02f02da28e7934c3624c"
+    },
+    {
+      "path": "workflows/pptx/z-order.feature",
+      "reviewedSha256": "a9f63d6a7f46fe60836ca89895bbd2bc0d45fb0bfae33399f58b1dac59c56da2"
+    },
+    {
+      "path": "workflows/pptx/gradients.feature",
+      "reviewedSha256": "c3d76371bafa8aa6ccfa2e3d3609d7dba899ec2b62de7e25bb9c6ecd156235a1"
+    },
+    {
+      "path": "workflows/pptx/opacity.feature",
+      "reviewedSha256": "af3d14d8ea34ed97ca8172f035dc88f401861a85b35ff9e233656f045dd8310f"
+    },
+    {
+      "path": "workflows/pptx/outlines.feature",
+      "reviewedSha256": "bd6e9a08151a017f6fdca23b26ab79a0a7c7b4b7be105df48f7e1a59d5ee6325"
     }
   ],
   "scenarios": [
@@ -5100,6 +5180,654 @@
         "workflows/docx/tables.feature",
         "contracts/retained-table-properties.md"
       ]
+    },
+    {
+      "id": "@id-pptx-graphics-picture-inspection-literal",
+      "feature": "workflows/pptx/pictures.feature",
+      "category": "generalized",
+      "runtimeConstraint": "none",
+      "reason": "Bounded read-only inspection with a sealed manifest input, twelve exact literal operation/expected-record cases, namespace and refusal policy, and complete member custody. Native adapters are needed; all execution remains planned.",
+      "evidence": [
+        "workflows/pptx/pictures.feature",
+        "contracts/pptx-pictures.md",
+        "ledgers/pptx-picture-inspection.json"
+      ]
+    },
+    {
+      "id": "@id-pptx-graphics-picture-inspection-links",
+      "feature": "workflows/pptx/pictures.feature",
+      "category": "generalized",
+      "runtimeConstraint": "none",
+      "reason": "Bounded read-only inspection with a sealed manifest input, twelve exact literal operation/expected-record cases, namespace and refusal policy, and complete member custody. Native adapters are needed; all execution remains planned.",
+      "evidence": [
+        "workflows/pptx/pictures.feature",
+        "contracts/pptx-pictures.md",
+        "ledgers/pptx-picture-inspection.json"
+      ]
+    },
+    {
+      "id": "@id-pptx-graphics-picture-inspection-groups",
+      "feature": "workflows/pptx/pictures.feature",
+      "category": "generalized",
+      "runtimeConstraint": "none",
+      "reason": "Bounded read-only inspection with a sealed manifest input, twelve exact literal operation/expected-record cases, namespace and refusal policy, and complete member custody. Native adapters are needed; all execution remains planned.",
+      "evidence": [
+        "workflows/pptx/pictures.feature",
+        "contracts/pptx-pictures.md",
+        "ledgers/pptx-picture-inspection.json"
+      ]
+    },
+    {
+      "id": "@id-pptx-graphics-picture-inspection-empty",
+      "feature": "workflows/pptx/pictures.feature",
+      "category": "generalized",
+      "runtimeConstraint": "none",
+      "reason": "Bounded read-only inspection with a sealed manifest input, twelve exact literal operation/expected-record cases, namespace and refusal policy, and complete member custody. Native adapters are needed; all execution remains planned.",
+      "evidence": [
+        "workflows/pptx/pictures.feature",
+        "contracts/pptx-pictures.md",
+        "ledgers/pptx-picture-inspection.json"
+      ]
+    },
+    {
+      "id": "@id-pptx-graphics-picture-inspection-refusals",
+      "feature": "workflows/pptx/pictures.feature",
+      "category": "generalized",
+      "runtimeConstraint": "none",
+      "reason": "Bounded read-only inspection with a sealed manifest input, twelve exact literal operation/expected-record cases, namespace and refusal policy, and complete member custody. Native adapters are needed; all execution remains planned.",
+      "evidence": [
+        "workflows/pptx/pictures.feature",
+        "contracts/pptx-pictures.md",
+        "ledgers/pptx-picture-inspection.json"
+      ]
+    },
+    {
+      "id": "@id-pptx-graphics-picture-inspection-transformed",
+      "feature": "workflows/pptx/pictures.feature",
+      "category": "generalized",
+      "runtimeConstraint": "none",
+      "reason": "Bounded read-only inspection with a sealed manifest input, twelve exact literal operation/expected-record cases, namespace and refusal policy, and complete member custody. Native adapters are needed; all execution remains planned.",
+      "evidence": [
+        "workflows/pptx/pictures.feature",
+        "contracts/pptx-pictures.md",
+        "ledgers/pptx-picture-inspection.json"
+      ]
+    },
+    {
+      "id": "@id-pptx-graphics-picture-insertion-add",
+      "feature": "workflows/pptx/picture-insertion.feature",
+      "category": "generalized",
+      "runtimeConstraint": "none",
+      "reason": "Bounded PNG/JPEG insertion with sealed source members, exact literal records, explicit allocation/rectangle policy, complete unrelated payload custody and twelve named atomic refusals. Six IDs/eighteen cases; all execution remains planned.",
+      "evidence": [
+        "workflows/pptx/picture-insertion.feature",
+        "contracts/pptx-picture-insertion.md",
+        "ledgers/pptx-picture-insertion.json"
+      ]
+    },
+    {
+      "id": "@id-pptx-graphics-picture-insertion-repeat",
+      "feature": "workflows/pptx/picture-insertion.feature",
+      "category": "generalized",
+      "runtimeConstraint": "none",
+      "reason": "Bounded PNG/JPEG insertion with sealed source members, exact literal records, explicit allocation/rectangle policy, complete unrelated payload custody and twelve named atomic refusals. Six IDs/eighteen cases; all execution remains planned.",
+      "evidence": [
+        "workflows/pptx/picture-insertion.feature",
+        "contracts/pptx-picture-insertion.md",
+        "ledgers/pptx-picture-insertion.json"
+      ]
+    },
+    {
+      "id": "@id-pptx-graphics-picture-insertion-collision",
+      "feature": "workflows/pptx/picture-insertion.feature",
+      "category": "generalized",
+      "runtimeConstraint": "none",
+      "reason": "Bounded PNG/JPEG insertion with sealed source members, exact literal records, explicit allocation/rectangle policy, complete unrelated payload custody and twelve named atomic refusals. Six IDs/eighteen cases; all execution remains planned.",
+      "evidence": [
+        "workflows/pptx/picture-insertion.feature",
+        "contracts/pptx-picture-insertion.md",
+        "ledgers/pptx-picture-insertion.json"
+      ]
+    },
+    {
+      "id": "@id-pptx-graphics-picture-insertion-content-types",
+      "feature": "workflows/pptx/picture-insertion.feature",
+      "category": "generalized",
+      "runtimeConstraint": "none",
+      "reason": "Bounded PNG/JPEG insertion with sealed source members, exact literal records, explicit allocation/rectangle policy, complete unrelated payload custody and twelve named atomic refusals. Six IDs/eighteen cases; all execution remains planned.",
+      "evidence": [
+        "workflows/pptx/picture-insertion.feature",
+        "contracts/pptx-picture-insertion.md",
+        "ledgers/pptx-picture-insertion.json"
+      ]
+    },
+    {
+      "id": "@id-pptx-graphics-picture-insertion-extension",
+      "feature": "workflows/pptx/picture-insertion.feature",
+      "category": "generalized",
+      "runtimeConstraint": "none",
+      "reason": "Bounded PNG/JPEG insertion with sealed source members, exact literal records, explicit allocation/rectangle policy, complete unrelated payload custody and twelve named atomic refusals. Six IDs/eighteen cases; all execution remains planned.",
+      "evidence": [
+        "workflows/pptx/picture-insertion.feature",
+        "contracts/pptx-picture-insertion.md",
+        "ledgers/pptx-picture-insertion.json"
+      ]
+    },
+    {
+      "id": "@id-pptx-graphics-picture-insertion-refusals",
+      "feature": "workflows/pptx/picture-insertion.feature",
+      "category": "generalized",
+      "runtimeConstraint": "none",
+      "reason": "Bounded PNG/JPEG insertion with sealed source members, exact literal records, explicit allocation/rectangle policy, complete unrelated payload custody and twelve named atomic refusals. Six IDs/eighteen cases; all execution remains planned.",
+      "evidence": [
+        "workflows/pptx/picture-insertion.feature",
+        "contracts/pptx-picture-insertion.md",
+        "ledgers/pptx-picture-insertion.json"
+      ]
+    },
+    {
+      "id": "@id-pptx-graphics-picture-replacement-replace",
+      "feature": "workflows/pptx/picture-replacement.feature",
+      "category": "generalized",
+      "runtimeConstraint": "none",
+      "reason": "Exact embedded-picture retargeting with sealed payload sources, fresh isolated media/relationships, literal XML custody, grouped/aliased controls and eight atomic refusal cases. Five IDs/fourteen cases; execution remains planned.",
+      "evidence": [
+        "workflows/pptx/picture-replacement.feature",
+        "contracts/pptx-picture-replacement.md",
+        "ledgers/pptx-picture-replacement.json"
+      ]
+    },
+    {
+      "id": "@id-pptx-graphics-picture-replacement-isolation",
+      "feature": "workflows/pptx/picture-replacement.feature",
+      "category": "generalized",
+      "runtimeConstraint": "none",
+      "reason": "Exact embedded-picture retargeting with sealed payload sources, fresh isolated media/relationships, literal XML custody, grouped/aliased controls and eight atomic refusal cases. Five IDs/fourteen cases; execution remains planned.",
+      "evidence": [
+        "workflows/pptx/picture-replacement.feature",
+        "contracts/pptx-picture-replacement.md",
+        "ledgers/pptx-picture-replacement.json"
+      ]
+    },
+    {
+      "id": "@id-pptx-graphics-picture-replacement-prefix",
+      "feature": "workflows/pptx/picture-replacement.feature",
+      "category": "generalized",
+      "runtimeConstraint": "none",
+      "reason": "Exact embedded-picture retargeting with sealed payload sources, fresh isolated media/relationships, literal XML custody, grouped/aliased controls and eight atomic refusal cases. Five IDs/fourteen cases; execution remains planned.",
+      "evidence": [
+        "workflows/pptx/picture-replacement.feature",
+        "contracts/pptx-picture-replacement.md",
+        "ledgers/pptx-picture-replacement.json"
+      ]
+    },
+    {
+      "id": "@id-pptx-graphics-picture-replacement-grouped",
+      "feature": "workflows/pptx/picture-replacement.feature",
+      "category": "generalized",
+      "runtimeConstraint": "none",
+      "reason": "Exact embedded-picture retargeting with sealed payload sources, fresh isolated media/relationships, literal XML custody, grouped/aliased controls and eight atomic refusal cases. Five IDs/fourteen cases; execution remains planned.",
+      "evidence": [
+        "workflows/pptx/picture-replacement.feature",
+        "contracts/pptx-picture-replacement.md",
+        "ledgers/pptx-picture-replacement.json"
+      ]
+    },
+    {
+      "id": "@id-pptx-graphics-picture-replacement-refusals",
+      "feature": "workflows/pptx/picture-replacement.feature",
+      "category": "generalized",
+      "runtimeConstraint": "none",
+      "reason": "Exact embedded-picture retargeting with sealed payload sources, fresh isolated media/relationships, literal XML custody, grouped/aliased controls and eight atomic refusal cases. Five IDs/fourteen cases; execution remains planned.",
+      "evidence": [
+        "workflows/pptx/picture-replacement.feature",
+        "contracts/pptx-picture-replacement.md",
+        "ledgers/pptx-picture-replacement.json"
+      ]
+    },
+    {
+      "id": "@id-pptx-graphics-picture-placement-policies",
+      "feature": "workflows/pptx/picture-placement.feature",
+      "category": "generalized",
+      "runtimeConstraint": "none",
+      "reason": "Centred contain/cover/stretch with explicit intrinsic ratios, literal bounded rational geometry/crop, documented rounding limits, sealed media source and atomic refusals. Three IDs/sixteen cases; execution remains planned.",
+      "evidence": [
+        "workflows/pptx/picture-placement.feature",
+        "contracts/pptx-picture-placement.md",
+        "ledgers/pptx-picture-placement.json"
+      ]
+    },
+    {
+      "id": "@id-pptx-graphics-picture-placement-rounding",
+      "feature": "workflows/pptx/picture-placement.feature",
+      "category": "generalized",
+      "runtimeConstraint": "none",
+      "reason": "Centred contain/cover/stretch with explicit intrinsic ratios, literal bounded rational geometry/crop, documented rounding limits, sealed media source and atomic refusals. Three IDs/sixteen cases; execution remains planned.",
+      "evidence": [
+        "workflows/pptx/picture-placement.feature",
+        "contracts/pptx-picture-placement.md",
+        "ledgers/pptx-picture-placement.json"
+      ]
+    },
+    {
+      "id": "@id-pptx-graphics-picture-placement-refusals",
+      "feature": "workflows/pptx/picture-placement.feature",
+      "category": "generalized",
+      "runtimeConstraint": "none",
+      "reason": "Centred contain/cover/stretch with explicit intrinsic ratios, literal bounded rational geometry/crop, documented rounding limits, sealed media source and atomic refusals. Three IDs/sixteen cases; execution remains planned.",
+      "evidence": [
+        "workflows/pptx/picture-placement.feature",
+        "contracts/pptx-picture-placement.md",
+        "ledgers/pptx-picture-placement.json"
+      ]
+    },
+    {
+      "id": "@id-pptx-graphics-picture-crop-roundtrip",
+      "feature": "workflows/pptx/picture-crop.feature",
+      "category": "generalized",
+      "runtimeConstraint": "none",
+      "reason": "Bounded four-side source crop editing with sealed literal recipes, detached readback, exact no-ops, namespace/ambiguity refusals, and full unrelated XML/media/relationship custody. Two IDs/seventeen cases; execution remains planned.",
+      "evidence": [
+        "workflows/pptx/picture-crop.feature",
+        "contracts/pptx-picture-crop.md",
+        "ledgers/pptx-picture-crop.json"
+      ]
+    },
+    {
+      "id": "@id-pptx-graphics-picture-crop-refusals",
+      "feature": "workflows/pptx/picture-crop.feature",
+      "category": "generalized",
+      "runtimeConstraint": "none",
+      "reason": "Bounded four-side source crop editing with sealed literal recipes, detached readback, exact no-ops, namespace/ambiguity refusals, and full unrelated XML/media/relationship custody. Two IDs/seventeen cases; execution remains planned.",
+      "evidence": [
+        "workflows/pptx/picture-crop.feature",
+        "contracts/pptx-picture-crop.md",
+        "ledgers/pptx-picture-crop.json"
+      ]
+    },
+    {
+      "id": "@id-pptx-graphics-picture-transform-roundtrip",
+      "feature": "workflows/pptx/picture-transform.feature",
+      "category": "generalized",
+      "runtimeConstraint": "none",
+      "reason": "Direct picture rotation/flip patches with exact bounded angle units, sealed literal cases, exact no-ops and complete coordinate/crop/dependency custody. Two IDs/eighteen cases; execution remains planned.",
+      "evidence": [
+        "workflows/pptx/picture-transform.feature",
+        "contracts/pptx-picture-transform.md",
+        "ledgers/pptx-picture-transform.json"
+      ]
+    },
+    {
+      "id": "@id-pptx-graphics-picture-transform-refusals",
+      "feature": "workflows/pptx/picture-transform.feature",
+      "category": "generalized",
+      "runtimeConstraint": "none",
+      "reason": "Direct picture rotation/flip patches with exact bounded angle units, sealed literal cases, exact no-ops and complete coordinate/crop/dependency custody. Two IDs/eighteen cases; execution remains planned.",
+      "evidence": [
+        "workflows/pptx/picture-transform.feature",
+        "contracts/pptx-picture-transform.md",
+        "ledgers/pptx-picture-transform.json"
+      ]
+    },
+    {
+      "id": "@id-pptx-graphics-picture-svg-add",
+      "feature": "workflows/pptx/picture-svg.feature",
+      "category": "generalized",
+      "runtimeConstraint": "none",
+      "reason": "Passive allowlisted SVG with explicit PNG/JPEG fallback, shared literal vector source, sealed raster members, exact two-edge/two-payload custody and atomic refusals. Two IDs/eleven cases; execution remains planned and rendering unverified.",
+      "evidence": [
+        "workflows/pptx/picture-svg.feature",
+        "contracts/pptx-picture-svg.md",
+        "ledgers/pptx-picture-svg.json"
+      ]
+    },
+    {
+      "id": "@id-pptx-graphics-picture-svg-refusals",
+      "feature": "workflows/pptx/picture-svg.feature",
+      "category": "generalized",
+      "runtimeConstraint": "none",
+      "reason": "Passive allowlisted SVG with explicit PNG/JPEG fallback, shared literal vector source, sealed raster members, exact two-edge/two-payload custody and atomic refusals. Two IDs/eleven cases; execution remains planned and rendering unverified.",
+      "evidence": [
+        "workflows/pptx/picture-svg.feature",
+        "contracts/pptx-picture-svg.md",
+        "ledgers/pptx-picture-svg.json"
+      ]
+    },
+    {
+      "id": "@id-pptx-graphics-picture-delete-custody",
+      "feature": "workflows/pptx/picture-delete.feature",
+      "category": "generalized",
+      "runtimeConstraint": "none",
+      "reason": "Exact picture-span deletion with opt-in conservative package-local dependency collection, shared media/pair/reference custody and atomic refusal controls. Two IDs/seventeen cases; execution remains planned.",
+      "evidence": [
+        "workflows/pptx/picture-delete.feature",
+        "contracts/pptx-picture-delete.md",
+        "ledgers/pptx-picture-delete.json"
+      ]
+    },
+    {
+      "id": "@id-pptx-graphics-picture-delete-refusals",
+      "feature": "workflows/pptx/picture-delete.feature",
+      "category": "generalized",
+      "runtimeConstraint": "none",
+      "reason": "Exact picture-span deletion with opt-in conservative package-local dependency collection, shared media/pair/reference custody and atomic refusal controls. Two IDs/seventeen cases; execution remains planned.",
+      "evidence": [
+        "workflows/pptx/picture-delete.feature",
+        "contracts/pptx-picture-delete.md",
+        "ledgers/pptx-picture-delete.json"
+      ]
+    },
+    {
+      "id": "@id-pptx-graphics-shape-group-create",
+      "feature": "workflows/pptx/shape-group.feature",
+      "category": "generalized",
+      "runtimeConstraint": "none",
+      "reason": "Contiguous direct editable grouping with explicit identity parent/child rectangle, source ordering, fresh unique ID, literal child/dependency custody and bounded refusals. Two IDs/sixteen cases; execution remains planned.",
+      "evidence": [
+        "workflows/pptx/shape-group.feature",
+        "contracts/pptx-shape-group.md",
+        "ledgers/pptx-shape-group.json"
+      ]
+    },
+    {
+      "id": "@id-pptx-graphics-shape-group-refusals",
+      "feature": "workflows/pptx/shape-group.feature",
+      "category": "generalized",
+      "runtimeConstraint": "none",
+      "reason": "Contiguous direct editable grouping with explicit identity parent/child rectangle, source ordering, fresh unique ID, literal child/dependency custody and bounded refusals. Two IDs/sixteen cases; execution remains planned.",
+      "evidence": [
+        "workflows/pptx/shape-group.feature",
+        "contracts/pptx-shape-group.md",
+        "ledgers/pptx-shape-group.json"
+      ]
+    },
+    {
+      "id": "@id-pptx-graphics-group-transform-roundtrip",
+      "feature": "workflows/pptx/group-transform.feature",
+      "category": "generalized",
+      "runtimeConstraint": "none",
+      "reason": "Bounded direct group coordinate frames with literal child/dependency custody, exact serialized values, independent mapping vectors and documented forward/inverse numeric tolerances. Three IDs/twenty-one cases; execution remains planned.",
+      "evidence": [
+        "workflows/pptx/group-transform.feature",
+        "contracts/pptx-group-transform.md",
+        "ledgers/pptx-group-transform.json"
+      ]
+    },
+    {
+      "id": "@id-pptx-graphics-group-transform-mapping",
+      "feature": "workflows/pptx/group-transform.feature",
+      "category": "generalized",
+      "runtimeConstraint": "none",
+      "reason": "Bounded direct group coordinate frames with literal child/dependency custody, exact serialized values, independent mapping vectors and documented forward/inverse numeric tolerances. Three IDs/twenty-one cases; execution remains planned.",
+      "evidence": [
+        "workflows/pptx/group-transform.feature",
+        "contracts/pptx-group-transform.md",
+        "ledgers/pptx-group-transform.json"
+      ]
+    },
+    {
+      "id": "@id-pptx-graphics-group-transform-refusals",
+      "feature": "workflows/pptx/group-transform.feature",
+      "category": "generalized",
+      "runtimeConstraint": "none",
+      "reason": "Bounded direct group coordinate frames with literal child/dependency custody, exact serialized values, independent mapping vectors and documented forward/inverse numeric tolerances. Three IDs/twenty-one cases; execution remains planned.",
+      "evidence": [
+        "workflows/pptx/group-transform.feature",
+        "contracts/pptx-group-transform.md",
+        "ledgers/pptx-group-transform.json"
+      ]
+    },
+    {
+      "id": "@id-pptx-graphics-connectors-add",
+      "feature": "workflows/pptx/connectors.feature",
+      "category": "generalized",
+      "runtimeConstraint": "none",
+      "reason": "Bounded direct rectangle connectors with exact IDs/sites, literal endpoint and line-style records, explicit midpoint rounding, source XML custody and atomic refusals. Two IDs/fifteen cases; execution remains planned.",
+      "evidence": [
+        "workflows/pptx/connectors.feature",
+        "contracts/pptx-connectors.md",
+        "ledgers/pptx-connectors.json"
+      ]
+    },
+    {
+      "id": "@id-pptx-graphics-connectors-refusals",
+      "feature": "workflows/pptx/connectors.feature",
+      "category": "generalized",
+      "runtimeConstraint": "none",
+      "reason": "Bounded direct rectangle connectors with exact IDs/sites, literal endpoint and line-style records, explicit midpoint rounding, source XML custody and atomic refusals. Two IDs/fifteen cases; execution remains planned.",
+      "evidence": [
+        "workflows/pptx/connectors.feature",
+        "contracts/pptx-connectors.md",
+        "ledgers/pptx-connectors.json"
+      ]
+    },
+    {
+      "id": "@id-pptx-graphics-diagrams-create",
+      "feature": "workflows/pptx/diagrams.feature",
+      "category": "generalized",
+      "runtimeConstraint": "none",
+      "reason": "Deterministic bounded row/column graphs with editable rectangle/text nodes, exact generated IDs/sites, shared literal placements, original XML custody and atomic refusal controls. Two IDs/fourteen cases; execution remains planned.",
+      "evidence": [
+        "workflows/pptx/diagrams.feature",
+        "contracts/pptx-diagrams.md",
+        "ledgers/pptx-diagrams.json"
+      ]
+    },
+    {
+      "id": "@id-pptx-graphics-diagrams-refusals",
+      "feature": "workflows/pptx/diagrams.feature",
+      "category": "generalized",
+      "runtimeConstraint": "none",
+      "reason": "Deterministic bounded row/column graphs with editable rectangle/text nodes, exact generated IDs/sites, shared literal placements, original XML custody and atomic refusal controls. Two IDs/fourteen cases; execution remains planned.",
+      "evidence": [
+        "workflows/pptx/diagrams.feature",
+        "contracts/pptx-diagrams.md",
+        "ledgers/pptx-diagrams.json"
+      ]
+    },
+    {
+      "id": "@id-pptx-graphics-smartart-inspection-read",
+      "feature": "workflows/pptx/smartart-inspection.feature",
+      "category": "generalized",
+      "runtimeConstraint": "none",
+      "reason": "Read-only bounded SmartArt package graph with shared literal member recipes, exact role/root/type records, cycle and external-edge controls, detached limits and complete custody. Two IDs/twelve cases; no physical Office SmartArt/rendering certification, execution remains planned.",
+      "evidence": [
+        "workflows/pptx/smartart-inspection.feature",
+        "contracts/pptx-smartart-inspection.md",
+        "ledgers/pptx-smartart-inspection.json"
+      ]
+    },
+    {
+      "id": "@id-pptx-graphics-smartart-inspection-refusals",
+      "feature": "workflows/pptx/smartart-inspection.feature",
+      "category": "generalized",
+      "runtimeConstraint": "none",
+      "reason": "Read-only bounded SmartArt package graph with shared literal member recipes, exact role/root/type records, cycle and external-edge controls, detached limits and complete custody. Two IDs/twelve cases; no physical Office SmartArt/rendering certification, execution remains planned.",
+      "evidence": [
+        "workflows/pptx/smartart-inspection.feature",
+        "contracts/pptx-smartart-inspection.md",
+        "ledgers/pptx-smartart-inspection.json"
+      ]
+    },
+    {
+      "id": "@id-pptx-graphics-smartart-copy-copy",
+      "feature": "workflows/pptx/smartart-copy.feature",
+      "category": "generalized",
+      "runtimeConstraint": "none",
+      "reason": "Admitted SmartArt closure copying with shared literal graph/destination recipes, isolated parts, model/drawing identity remaps, cycle/media/external custody and atomic refusals. Two IDs/eight cases; no physical Office SmartArt certification, execution remains planned.",
+      "evidence": [
+        "workflows/pptx/smartart-copy.feature",
+        "contracts/pptx-smartart-copy.md",
+        "ledgers/pptx-smartart-copy.json"
+      ]
+    },
+    {
+      "id": "@id-pptx-graphics-smartart-copy-refusals",
+      "feature": "workflows/pptx/smartart-copy.feature",
+      "category": "generalized",
+      "runtimeConstraint": "none",
+      "reason": "Admitted SmartArt closure copying with shared literal graph/destination recipes, isolated parts, model/drawing identity remaps, cycle/media/external custody and atomic refusals. Two IDs/eight cases; no physical Office SmartArt certification, execution remains planned.",
+      "evidence": [
+        "workflows/pptx/smartart-copy.feature",
+        "contracts/pptx-smartart-copy.md",
+        "ledgers/pptx-smartart-copy.json"
+      ]
+    },
+    {
+      "id": "@id-pptx-graphics-autoshapes-author",
+      "feature": "workflows/pptx/autoshapes.feature",
+      "category": "generalized",
+      "runtimeConstraint": "none",
+      "reason": "Five explicit editable presets with shared adjustment policy, literal geometry/style/text records, bounded guide values, original XML custody and atomic refusals. Two IDs/eighteen cases; execution remains planned and rendering unverified.",
+      "evidence": [
+        "workflows/pptx/autoshapes.feature",
+        "contracts/pptx-autoshapes.md",
+        "ledgers/pptx-autoshapes.json"
+      ]
+    },
+    {
+      "id": "@id-pptx-graphics-autoshapes-refusals",
+      "feature": "workflows/pptx/autoshapes.feature",
+      "category": "generalized",
+      "runtimeConstraint": "none",
+      "reason": "Five explicit editable presets with shared adjustment policy, literal geometry/style/text records, bounded guide values, original XML custody and atomic refusals. Two IDs/eighteen cases; execution remains planned and rendering unverified.",
+      "evidence": [
+        "workflows/pptx/autoshapes.feature",
+        "contracts/pptx-autoshapes.md",
+        "ledgers/pptx-autoshapes.json"
+      ]
+    },
+    {
+      "id": "@id-pptx-graphics-freeform-author",
+      "feature": "workflows/pptx/freeform.feature",
+      "category": "generalized",
+      "runtimeConstraint": "none",
+      "reason": "Bounded explicit move/line/close custom geometry with shared literal commands/coordinate dimensions, open/closed fill policy, direct styles and complete original XML/dependency custody. Two IDs/fifteen cases; execution remains planned and rendering unverified.",
+      "evidence": [
+        "workflows/pptx/freeform.feature",
+        "contracts/pptx-freeform.md",
+        "ledgers/pptx-freeform.json"
+      ]
+    },
+    {
+      "id": "@id-pptx-graphics-freeform-refusals",
+      "feature": "workflows/pptx/freeform.feature",
+      "category": "generalized",
+      "runtimeConstraint": "none",
+      "reason": "Bounded explicit move/line/close custom geometry with shared literal commands/coordinate dimensions, open/closed fill policy, direct styles and complete original XML/dependency custody. Two IDs/fifteen cases; execution remains planned and rendering unverified.",
+      "evidence": [
+        "workflows/pptx/freeform.feature",
+        "contracts/pptx-freeform.md",
+        "ledgers/pptx-freeform.json"
+      ]
+    },
+    {
+      "id": "@id-pptx-graphics-z-order-reorder",
+      "feature": "workflows/pptx/z-order.feature",
+      "category": "generalized",
+      "runtimeConstraint": "none",
+      "reason": "Exact selected sibling span permutation across slide/group graphics, opaque frame/connector/group custody, no-ops and bounded lexical/identity refusals. Two IDs/fifteen cases; execution remains planned.",
+      "evidence": [
+        "workflows/pptx/z-order.feature",
+        "contracts/pptx-z-order.md",
+        "ledgers/pptx-z-order.json"
+      ]
+    },
+    {
+      "id": "@id-pptx-graphics-z-order-refusals",
+      "feature": "workflows/pptx/z-order.feature",
+      "category": "generalized",
+      "runtimeConstraint": "none",
+      "reason": "Exact selected sibling span permutation across slide/group graphics, opaque frame/connector/group custody, no-ops and bounded lexical/identity refusals. Two IDs/fifteen cases; execution remains planned.",
+      "evidence": [
+        "workflows/pptx/z-order.feature",
+        "contracts/pptx-z-order.md",
+        "ledgers/pptx-z-order.json"
+      ]
+    },
+    {
+      "id": "@id-pptx-graphics-gradients-write",
+      "feature": "workflows/pptx/gradients.feature",
+      "category": "generalized",
+      "runtimeConstraint": "none",
+      "reason": "Exact linear stops/angles with bounded ordered RGB/theme colour transforms, explicit reference custody, detached reads and semantic no-ops plus atomic refusal controls. Two IDs/eighteen cases; execution remains planned and rendering unverified.",
+      "evidence": [
+        "workflows/pptx/gradients.feature",
+        "contracts/pptx-gradients.md",
+        "ledgers/pptx-gradients.json"
+      ]
+    },
+    {
+      "id": "@id-pptx-graphics-gradients-refusals",
+      "feature": "workflows/pptx/gradients.feature",
+      "category": "generalized",
+      "runtimeConstraint": "none",
+      "reason": "Exact linear stops/angles with bounded ordered RGB/theme colour transforms, explicit reference custody, detached reads and semantic no-ops plus atomic refusal controls. Two IDs/eighteen cases; execution remains planned and rendering unverified.",
+      "evidence": [
+        "workflows/pptx/gradients.feature",
+        "contracts/pptx-gradients.md",
+        "ledgers/pptx-gradients.json"
+      ]
+    },
+    {
+      "id": "@id-pptx-graphics-opacity-shape",
+      "feature": "workflows/pptx/opacity.feature",
+      "category": "generalized",
+      "runtimeConstraint": "none",
+      "reason": "Distinct bounded direct solid-fill opacity and fixed picture transparency with literal integer records, colour/effect/dependency custody, exact no-ops and competing-alpha refusals. Three IDs/twenty-four cases; execution remains planned.",
+      "evidence": [
+        "workflows/pptx/opacity.feature",
+        "contracts/pptx-opacity.md",
+        "ledgers/pptx-opacity.json"
+      ]
+    },
+    {
+      "id": "@id-pptx-graphics-opacity-picture",
+      "feature": "workflows/pptx/opacity.feature",
+      "category": "generalized",
+      "runtimeConstraint": "none",
+      "reason": "Distinct bounded direct solid-fill opacity and fixed picture transparency with literal integer records, colour/effect/dependency custody, exact no-ops and competing-alpha refusals. Three IDs/twenty-four cases; execution remains planned.",
+      "evidence": [
+        "workflows/pptx/opacity.feature",
+        "contracts/pptx-opacity.md",
+        "ledgers/pptx-opacity.json"
+      ]
+    },
+    {
+      "id": "@id-pptx-graphics-opacity-refusals",
+      "feature": "workflows/pptx/opacity.feature",
+      "category": "generalized",
+      "runtimeConstraint": "none",
+      "reason": "Distinct bounded direct solid-fill opacity and fixed picture transparency with literal integer records, colour/effect/dependency custody, exact no-ops and competing-alpha refusals. Three IDs/twenty-four cases; execution remains planned.",
+      "evidence": [
+        "workflows/pptx/opacity.feature",
+        "contracts/pptx-opacity.md",
+        "ledgers/pptx-opacity.json"
+      ]
+    },
+    {
+      "id": "@id-pptx-graphics-outlines-patch",
+      "feature": "workflows/pptx/outlines.feature",
+      "category": "generalized",
+      "runtimeConstraint": "none",
+      "reason": "Bounded direct shape/connector caps, compounds, joins and arrowheads with exact records, lexical scalar custody, opaque colour/dash/extension preservation and atomic refusal controls. Two IDs/twenty-one cases; execution remains planned.",
+      "evidence": [
+        "workflows/pptx/outlines.feature",
+        "contracts/pptx-outlines.md",
+        "ledgers/pptx-outlines.json"
+      ]
+    },
+    {
+      "id": "@id-pptx-graphics-outlines-refusals",
+      "feature": "workflows/pptx/outlines.feature",
+      "category": "generalized",
+      "runtimeConstraint": "none",
+      "reason": "Bounded direct shape/connector caps, compounds, joins and arrowheads with exact records, lexical scalar custody, opaque colour/dash/extension preservation and atomic refusal controls. Two IDs/twenty-one cases; execution remains planned.",
+      "evidence": [
+        "workflows/pptx/outlines.feature",
+        "contracts/pptx-outlines.md",
+        "ledgers/pptx-outlines.json"
+      ]
     }
   ],
   "evidenceSha256": {
@@ -5217,6 +5945,66 @@
     "workflows/xml/comparison.feature": "eb6440d3a548ba0d86ff576fc65a97d57df68c423ae17abf779eef8c423c9233",
     "workflows/xml/editing.feature": "805f5d689e174a7b9ea1989d994bb0a7f2131545801793ee148229c05d24edb5",
     "workflows/xml/names.feature": "7b3f71e3c806eb1fc50274bd5c9442324b6e4cc16c6994cd85842129f5ef3a3a",
-    "workflows/xml/parsing.feature": "e5f72d944248f84a89f60cf498d1cba642217259c362486ab279eef697a61b90"
+    "workflows/xml/parsing.feature": "e5f72d944248f84a89f60cf498d1cba642217259c362486ab279eef697a61b90",
+    "workflows/pptx/pictures.feature": "6d83274656e9947b98f8edc04e7658a7c4fe724506ce74f3dbe72b9f7bbe686b",
+    "contracts/pptx-pictures.md": "48af44c6d18ff94e56601e725afff098582724f785c308354de253ae8e62cba4",
+    "ledgers/pptx-picture-inspection.json": "7fdba30c19711ffd3a574d76ee35c9499f1b7b6bd69e6886e2d27074a4da0f78",
+    "workflows/pptx/picture-insertion.feature": "bf76016391d0e353d9a00a759a4d68af67867067fba4ffdc26adde836d7bdf57",
+    "contracts/pptx-picture-insertion.md": "0b1560f8884273320efc4129c399d025982e9e0498f87542df4efc9709251452",
+    "ledgers/pptx-picture-insertion.json": "8ce714221e55ea533a450fd43f93b7c7801b40506e05de4288be253e201915bb",
+    "workflows/pptx/picture-replacement.feature": "2c8de11cd78eb80004cd5d5cd508161231fe8664dc2d2a2fff4bd2cd4e113bb4",
+    "contracts/pptx-picture-replacement.md": "84ffb09c85d1650474935170ae686f288c71438437cc69e8cb6177529f9b7140",
+    "ledgers/pptx-picture-replacement.json": "54de533f3ce4de5beededacee794908154e35d4bffc09b2f4f42068222fdf223",
+    "workflows/pptx/picture-placement.feature": "1ad7b5dbb60abba310f7f7fcf6bbee6207b82234e90f76943b6e19932d2e3e01",
+    "contracts/pptx-picture-placement.md": "e43c942cb39ca2b9a4501c75791ff15b14410664b4d7238529f071a7872951c1",
+    "ledgers/pptx-picture-placement.json": "e5ed04fa51fed848bcb7b31d3df6eb6d41e655cc4f9cd8cef5b98c45424d53fa",
+    "workflows/pptx/picture-crop.feature": "e5eff16a0bc311d8f16be6b34cf16d0be4564033ec1cb4830e68bdda17e93804",
+    "contracts/pptx-picture-crop.md": "23a45cc3a53c3e003f8f3bbca6bd6c60b996eece4c333caa42b2b7e024af3b0e",
+    "ledgers/pptx-picture-crop.json": "6ba57f6a88a5cb2d84d6f9b5211fb3eb24bd04c6a0b7dd2da8f2e29ea4f40a03",
+    "workflows/pptx/picture-transform.feature": "35c5af698de5fc6d3f7103445f0871659d95b3ff9b57b4f7c1b37248dc1f28be",
+    "contracts/pptx-picture-transform.md": "ceadd96e3e0c225a27c367bd61e280b56655a0c6ac648e40f855e0cbd33ca68c",
+    "ledgers/pptx-picture-transform.json": "999d694d25fc93fbec3d785d55465c31279172f75d03d6d5432f80a8f2bdec0a",
+    "workflows/pptx/picture-svg.feature": "95e99e0d0c9023ae3c5cb28a08c99a5dc5d04cd4d6a688a9652b69e04c560712",
+    "contracts/pptx-picture-svg.md": "ec281371f6356697fd13d20ddc57492ed23d81b17457b2232f17e7600ebce0b8",
+    "ledgers/pptx-picture-svg.json": "7a81ed30d71842cd1245916269d16fcc034f209bb6108ae857ac4a1e31a6a56d",
+    "workflows/pptx/picture-delete.feature": "43a0876539d6e58f605696b07f9fbf783464e6cdcad204b309fb6d64220d0c98",
+    "contracts/pptx-picture-delete.md": "409366d71a4f847f929c7a57446227088476f3187cffae5ab97a2c407229aced",
+    "ledgers/pptx-picture-delete.json": "d13cc630335b3b94894a0b1751f03c9fedea7a820b6e5a35f6dba22e52ca0c00",
+    "workflows/pptx/shape-group.feature": "a8423ccc4797e0fe934df4593786f2e2b0f2302d56e238b779a7239389d93d49",
+    "contracts/pptx-shape-group.md": "b42f592dcbd862287390bc9ff7e4740bc792b68d1c59266117137f0bb0974b3b",
+    "ledgers/pptx-shape-group.json": "98c3f06074895019e7759d42a0e94d6ad816a1ec2b89cb957c77ff12704d96b1",
+    "workflows/pptx/group-transform.feature": "af30e75a382fbd07a589291a4cadebeedbc8170fa7083be747e2c7cce45143ab",
+    "contracts/pptx-group-transform.md": "654c183487d16d6040abdad299b363e5598cd80eeed9dad840d3eaf87305a19d",
+    "ledgers/pptx-group-transform.json": "76264a7d2e2cd3bfab3c2f9f6a79b7d631b50f002803122fda3eceedeea34c45",
+    "workflows/pptx/connectors.feature": "5c817aa20094f83af5ba618378fa0e1bdea23a124cebe2cd09a7b4fe4b1ec594",
+    "contracts/pptx-connectors.md": "7302ed8da7a8c591a802a6b54e6ac4ffd4237a6cd50bcff21066a17e32c789d3",
+    "ledgers/pptx-connectors.json": "c0c27bfcfcf1a26c2f19dd9346ec892c2b15743c9074a20d10c76d84f9df70ee",
+    "workflows/pptx/diagrams.feature": "2947a691b99c8e28ff9530b064b2e6c91f58df10e5f11905cb83d8c700f25206",
+    "contracts/pptx-diagrams.md": "0b3ee7418fc617f6df612191e8f6a2383221c283947ec9e9b2186b1fab9168a6",
+    "ledgers/pptx-diagrams.json": "54248971a9317864eb35d6b26a74d32747ade9e4d1f22d7f4636b42a400bd6fd",
+    "workflows/pptx/smartart-inspection.feature": "92e3c0e7c5e53f0e05801a271d8b4914fd8d90ce79615e732c8d2fbb7907d2a7",
+    "contracts/pptx-smartart-inspection.md": "e3592f8ac7813f88bea8b64adb86f209397fc6a9a2b0a5b9bacedf589ad0017f",
+    "ledgers/pptx-smartart-inspection.json": "0f0a8cb5b73182205d5eaa74200dbe94e8f891d36bedcda7163833f89f37de1e",
+    "workflows/pptx/smartart-copy.feature": "1a475b1233d2c4e71bedf1b24362c346df94eaf0ae8b3e80d016e4ff76c93ba8",
+    "contracts/pptx-smartart-copy.md": "a3baac8d69f62dbcf71d59723e151538396cc10b872cb9046ce7cf1cd417dab9",
+    "ledgers/pptx-smartart-copy.json": "0344cd89f03b04ae21db67bfe3263956df56a7e9719230b8bf218de3bb217c5c",
+    "workflows/pptx/autoshapes.feature": "d1c9c5cb1a4de2edac1e17f18f829e17b15a40edd79b62d67a9dec6981c63127",
+    "contracts/pptx-autoshapes.md": "4d3001af7b835352b8e732bd14ed4d7e189321bcdcd1444efd6af2fc0f53fd13",
+    "ledgers/pptx-autoshapes.json": "4291ddff983cd8926e0bbefa04df61824110e7e3391ea403231934b6e8d3ac3a",
+    "workflows/pptx/freeform.feature": "a388df9fd2e70efa2c5e988e4070e795430cbcdb22ee02f02da28e7934c3624c",
+    "contracts/pptx-freeform.md": "bd113c272f6e2efff9a145219beb920c7ba96da6918e51ee0f59c865c19afa4e",
+    "ledgers/pptx-freeform.json": "0f5753d6c19bb5dfa635701cef3deacab83e3df4b569608ba4dfa35b0abb9326",
+    "workflows/pptx/z-order.feature": "a9f63d6a7f46fe60836ca89895bbd2bc0d45fb0bfae33399f58b1dac59c56da2",
+    "contracts/pptx-z-order.md": "a9f21acc37baea048f6964d6798331c7a77e54e01c37ef01d5e6756770905287",
+    "ledgers/pptx-z-order.json": "784d5873e3d80a78d4f97a8b3d410d44ddf0cde4c29344f571b13bd75b25b015",
+    "workflows/pptx/gradients.feature": "c3d76371bafa8aa6ccfa2e3d3609d7dba899ec2b62de7e25bb9c6ecd156235a1",
+    "contracts/pptx-gradients.md": "64b51506a4c09f05e124bcb2f897204a8df1909f37fafa9de52bc7d14be9811a",
+    "ledgers/pptx-gradients.json": "ca4b7b8c0329cacf473de02514dc6f9ad3c832ef96594fa37ad24bf05a485048",
+    "workflows/pptx/opacity.feature": "af3d14d8ea34ed97ca8172f035dc88f401861a85b35ff9e233656f045dd8310f",
+    "contracts/pptx-opacity.md": "f8695834a68459e177f61cfd3f91b7c12c240000e6a549181aa57a3c14a1b177",
+    "ledgers/pptx-opacity.json": "c1df64a8e68c6245591b2ebe95bd85c0d39fd42c549a9958366e26111b7e54a3",
+    "workflows/pptx/outlines.feature": "bd6e9a08151a017f6fdca23b26ab79a0a7c7b4b7be105df48f7e1a59d5ee6325",
+    "contracts/pptx-outlines.md": "5e4fb83f40030496157873f4205057a59acd12fbd5b04a5ed3c42515a6f6a581",
+    "ledgers/pptx-outlines.json": "2fc1982104f0b29d2dd1506ffb99bd68de78411de83ec206fed44d7de17d823e"
   }
 }

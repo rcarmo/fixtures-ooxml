@@ -1,0 +1,510 @@
+{
+  "schemaVersion": 1,
+  "executionCredit": false,
+  "feature": "workflows/pptx/shape-group.feature",
+  "contract": "contracts/pptx-shape-group.md",
+  "baseFixtureId": "fixture-792277d2c358c5bd7c8a4053078a5594fa07bfb55a06b0bb30f2813c151ea459",
+  "slidePart": "ppt/slides/slide1.xml",
+  "counts": {
+    "ids": 2,
+    "cases": 16
+  },
+  "custody": {
+    "allowedChangedParts": [
+      "ppt/slides/slide1.xml"
+    ],
+    "membership": "exact",
+    "preserve": "all original children and XML outside selected contiguous range; every relationship and payload"
+  },
+  "cases": [
+    {
+      "caseId": "picture and text",
+      "scenarioId": "@id-pptx-graphics-shape-group-create",
+      "example": {
+        "variant": "picture and text"
+      },
+      "operations": [],
+      "request": {
+        "shapeIds": [
+          1026,
+          2
+        ],
+        "geometry": {
+          "x": -2,
+          "y": 1,
+          "width": 9144000,
+          "height": 6858000
+        },
+        "options": {
+          "name": "Editable & grouped"
+        }
+      },
+      "expected": {
+        "shapeId": 1034,
+        "partName": "ppt/slides/slide1.xml",
+        "childIds": [
+          1026,
+          2
+        ],
+        "geometry": {
+          "x": -2,
+          "y": 1,
+          "width": 9144000,
+          "height": 6858000
+        }
+      }
+    },
+    {
+      "caseId": "source order",
+      "scenarioId": "@id-pptx-graphics-shape-group-create",
+      "example": {
+        "variant": "source order"
+      },
+      "operations": [],
+      "request": {
+        "shapeIds": [
+          2,
+          1026
+        ],
+        "geometry": {
+          "x": -2,
+          "y": 1,
+          "width": 9144000,
+          "height": 6858000
+        },
+        "options": {
+          "name": "Editable & grouped"
+        }
+      },
+      "expected": {
+        "shapeId": 1034,
+        "partName": "ppt/slides/slide1.xml",
+        "childIds": [
+          1026,
+          2
+        ],
+        "geometry": {
+          "x": -2,
+          "y": 1,
+          "width": 9144000,
+          "height": 6858000
+        }
+      }
+    },
+    {
+      "caseId": "terminal extension",
+      "scenarioId": "@id-pptx-graphics-shape-group-create",
+      "example": {
+        "variant": "terminal extension"
+      },
+      "operations": [
+        {
+          "kind": "replace-literal-once",
+          "part": "ppt/slides/slide1.xml",
+          "before": "</p:spTree>",
+          "after": "<p:extLst><p:ext uri=\"urn:keep\"><x:data xmlns:x=\"urn:opaque\" value=\"retain\"/></p:ext></p:extLst></p:spTree>"
+        }
+      ],
+      "request": {
+        "shapeIds": [
+          1026,
+          2
+        ],
+        "geometry": {
+          "x": -2,
+          "y": 1,
+          "width": 9144000,
+          "height": 6858000
+        },
+        "options": {
+          "name": "Editable & grouped"
+        }
+      },
+      "expected": {
+        "shapeId": 1034,
+        "partName": "ppt/slides/slide1.xml",
+        "childIds": [
+          1026,
+          2
+        ],
+        "geometry": {
+          "x": -2,
+          "y": 1,
+          "width": 9144000,
+          "height": 6858000
+        }
+      }
+    },
+    {
+      "caseId": "default name",
+      "scenarioId": "@id-pptx-graphics-shape-group-create",
+      "example": {
+        "variant": "default name"
+      },
+      "operations": [],
+      "request": {
+        "shapeIds": [
+          1026,
+          2
+        ],
+        "geometry": {
+          "x": -2,
+          "y": 1,
+          "width": 9144000,
+          "height": 6858000
+        },
+        "options": {}
+      },
+      "expected": {
+        "shapeId": 1034,
+        "partName": "ppt/slides/slide1.xml",
+        "childIds": [
+          1026,
+          2
+        ],
+        "geometry": {
+          "x": -2,
+          "y": 1,
+          "width": 9144000,
+          "height": 6858000
+        }
+      }
+    },
+    {
+      "caseId": "noncontiguous-selection",
+      "scenarioId": "@id-pptx-graphics-shape-group-refusals",
+      "example": {
+        "fault": "noncontiguous selection"
+      },
+      "operations": [],
+      "request": {
+        "shapeIds": [
+          1026,
+          1028
+        ],
+        "geometry": {
+          "x": -2,
+          "y": 1,
+          "width": 9144000,
+          "height": 6858000
+        },
+        "options": {
+          "name": "Editable & grouped"
+        }
+      },
+      "errorCode": "PPTX_GROUP_UNSUPPORTED"
+    },
+    {
+      "caseId": "duplicate-selection",
+      "scenarioId": "@id-pptx-graphics-shape-group-refusals",
+      "example": {
+        "fault": "duplicate selection"
+      },
+      "operations": [],
+      "request": {
+        "shapeIds": [
+          1026,
+          1026
+        ],
+        "geometry": {
+          "x": -2,
+          "y": 1,
+          "width": 9144000,
+          "height": 6858000
+        },
+        "options": {
+          "name": "Editable & grouped"
+        }
+      },
+      "errorCode": "PPTX_GROUP_UNSUPPORTED"
+    },
+    {
+      "caseId": "missing-identity",
+      "scenarioId": "@id-pptx-graphics-shape-group-refusals",
+      "example": {
+        "fault": "missing identity"
+      },
+      "operations": [],
+      "request": {
+        "shapeIds": [
+          1026,
+          99999
+        ],
+        "geometry": {
+          "x": -2,
+          "y": 1,
+          "width": 9144000,
+          "height": 6858000
+        },
+        "options": {
+          "name": "Editable & grouped"
+        }
+      },
+      "errorCode": "PPTX_GROUP_UNSUPPORTED"
+    },
+    {
+      "caseId": "single-child",
+      "scenarioId": "@id-pptx-graphics-shape-group-refusals",
+      "example": {
+        "fault": "single child"
+      },
+      "operations": [],
+      "request": {
+        "shapeIds": [
+          1026
+        ],
+        "geometry": {
+          "x": -2,
+          "y": 1,
+          "width": 9144000,
+          "height": 6858000
+        },
+        "options": {
+          "name": "Editable & grouped"
+        }
+      },
+      "errorCode": "PPTX_GROUP_UNSUPPORTED"
+    },
+    {
+      "caseId": "zero-group-extent",
+      "scenarioId": "@id-pptx-graphics-shape-group-refusals",
+      "example": {
+        "fault": "zero group extent"
+      },
+      "operations": [],
+      "request": {
+        "shapeIds": [
+          1026,
+          2
+        ],
+        "geometry": {
+          "x": -2,
+          "y": 1,
+          "width": 0,
+          "height": 6858000
+        },
+        "options": {
+          "name": "Editable & grouped"
+        }
+      },
+      "errorCode": "PPTX_GROUP_UNSUPPORTED"
+    },
+    {
+      "caseId": "duplicate-source-identity",
+      "scenarioId": "@id-pptx-graphics-shape-group-refusals",
+      "example": {
+        "fault": "duplicate source identity"
+      },
+      "operations": [
+        {
+          "kind": "replace-literal-once",
+          "part": "ppt/slides/slide1.xml",
+          "before": "id=\"1028\"",
+          "after": "id=\"1026\""
+        }
+      ],
+      "request": {
+        "shapeIds": [
+          1026,
+          2
+        ],
+        "geometry": {
+          "x": -2,
+          "y": 1,
+          "width": 9144000,
+          "height": 6858000
+        },
+        "options": {
+          "name": "Editable & grouped"
+        }
+      },
+      "errorCode": "PPTX_GROUP_UNSUPPORTED"
+    },
+    {
+      "caseId": "nonidentity-root-transform",
+      "scenarioId": "@id-pptx-graphics-shape-group-refusals",
+      "example": {
+        "fault": "nonidentity root transform"
+      },
+      "operations": [
+        {
+          "kind": "replace-literal-once",
+          "part": "ppt/slides/slide1.xml",
+          "before": "<a:chOff x=\"0\" y=\"0\"/>",
+          "after": "<a:chOff x=\"1\" y=\"0\"/>"
+        }
+      ],
+      "request": {
+        "shapeIds": [
+          1026,
+          2
+        ],
+        "geometry": {
+          "x": -2,
+          "y": 1,
+          "width": 9144000,
+          "height": 6858000
+        },
+        "options": {
+          "name": "Editable & grouped"
+        }
+      },
+      "errorCode": "PPTX_GROUP_UNSUPPORTED"
+    },
+    {
+      "caseId": "protected-presentation",
+      "scenarioId": "@id-pptx-graphics-shape-group-refusals",
+      "example": {
+        "fault": "protected presentation"
+      },
+      "operations": [
+        {
+          "kind": "replace-literal-once",
+          "part": "ppt/presentation.xml",
+          "before": "</p:presentation>",
+          "after": "<p:modifyVerifier/></p:presentation>"
+        }
+      ],
+      "request": {
+        "shapeIds": [
+          1026,
+          2
+        ],
+        "geometry": {
+          "x": -2,
+          "y": 1,
+          "width": 9144000,
+          "height": 6858000
+        },
+        "options": {
+          "name": "Editable & grouped"
+        }
+      },
+      "errorCode": "PPTX_PROTECTED"
+    },
+    {
+      "caseId": "exhausted-identity",
+      "scenarioId": "@id-pptx-graphics-shape-group-refusals",
+      "example": {
+        "fault": "exhausted identity"
+      },
+      "operations": [
+        {
+          "kind": "replace-literal-once",
+          "part": "ppt/slides/slide1.xml",
+          "before": "id=\"1028\"",
+          "after": "id=\"2147483647\""
+        }
+      ],
+      "request": {
+        "shapeIds": [
+          1026,
+          2
+        ],
+        "geometry": {
+          "x": -2,
+          "y": 1,
+          "width": 9144000,
+          "height": 6858000
+        },
+        "options": {
+          "name": "Editable & grouped"
+        }
+      },
+      "errorCode": "PPTX_ID_EXHAUSTED"
+    },
+    {
+      "caseId": "placeholder-child",
+      "scenarioId": "@id-pptx-graphics-shape-group-refusals",
+      "example": {
+        "fault": "placeholder child"
+      },
+      "operations": [
+        {
+          "kind": "replace-literal-once",
+          "part": "ppt/slides/slide1.xml",
+          "before": "<p:nvPicPr><p:cNvPr id=\"1026\"",
+          "after": "<p:nvPicPr><p:nvPr><p:ph/></p:nvPr><p:cNvPr id=\"1026\""
+        }
+      ],
+      "request": {
+        "shapeIds": [
+          1026,
+          2
+        ],
+        "geometry": {
+          "x": -2,
+          "y": 1,
+          "width": 9144000,
+          "height": 6858000
+        },
+        "options": {
+          "name": "Editable & grouped"
+        }
+      },
+      "errorCode": "PPTX_GROUP_UNSUPPORTED"
+    },
+    {
+      "caseId": "grouping-lock",
+      "scenarioId": "@id-pptx-graphics-shape-group-refusals",
+      "example": {
+        "fault": "grouping lock"
+      },
+      "operations": [
+        {
+          "kind": "replace-literal-once",
+          "part": "ppt/slides/slide1.xml",
+          "before": "<p:pic><p:nvPicPr><p:cNvPr id=\"1026\" name=\"Picture 2\" descr=\"cartoony marvel-style illustration of Frankenstein's laboratory with dramatic lighting, oversized machinery, glowing tubes, and a whimsical mad-science atmosphere\"><a:extLst><a:ext uri=\"{FF2B5EF4-FFF2-40B4-BE49-F238E27FC236}\"><a16:creationId xmlns:a16=\"http://schemas.microsoft.com/office/drawing/2014/main\" id=\"{55EE74E7-0065-73C4-AC5F-B515CF386555}\"/></a:ext></a:extLst></p:cNvPr><p:cNvPicPr><a:picLocks noChangeAspect=\"1\" noChangeArrowheads=\"1\"",
+          "after": "<p:pic><p:nvPicPr><p:cNvPr id=\"1026\" name=\"Picture 2\" descr=\"cartoony marvel-style illustration of Frankenstein's laboratory with dramatic lighting, oversized machinery, glowing tubes, and a whimsical mad-science atmosphere\"><a:extLst><a:ext uri=\"{FF2B5EF4-FFF2-40B4-BE49-F238E27FC236}\"><a16:creationId xmlns:a16=\"http://schemas.microsoft.com/office/drawing/2014/main\" id=\"{55EE74E7-0065-73C4-AC5F-B515CF386555}\"/></a:ext></a:extLst></p:cNvPr><p:cNvPicPr><a:picLocks noChangeAspect=\"1\" noChangeArrowheads=\"1\" noGrp=\"1\""
+        }
+      ],
+      "request": {
+        "shapeIds": [
+          1026,
+          2
+        ],
+        "geometry": {
+          "x": -2,
+          "y": 1,
+          "width": 9144000,
+          "height": 6858000
+        },
+        "options": {
+          "name": "Editable & grouped"
+        }
+      },
+      "errorCode": "PPTX_GROUP_UNSUPPORTED"
+    },
+    {
+      "caseId": "attached-connector",
+      "scenarioId": "@id-pptx-graphics-shape-group-refusals",
+      "example": {
+        "fault": "attached connector"
+      },
+      "operations": [
+        {
+          "kind": "replace-literal-once",
+          "part": "ppt/slides/slide1.xml",
+          "before": "</p:spTree>",
+          "after": "<p:cxnSp><p:nvCxnSpPr><p:cNvPr id=\"2000\" name=\"Attached connector\"/><p:cNvCxnSpPr><a:stCxn id=\"1026\" idx=\"0\"/></p:cNvCxnSpPr><p:nvPr/></p:nvCxnSpPr><p:spPr/></p:cxnSp></p:spTree>"
+        }
+      ],
+      "request": {
+        "shapeIds": [
+          1026,
+          2
+        ],
+        "geometry": {
+          "x": -2,
+          "y": 1,
+          "width": 9144000,
+          "height": 6858000
+        },
+        "options": {
+          "name": "Editable & grouped"
+        }
+      },
+      "errorCode": "PPTX_GROUP_UNSUPPORTED"
+    }
+  ]
+}

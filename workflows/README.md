@@ -45,24 +45,44 @@ candidate file; those candidates are not canonical or presumed portable.
 
 | Group | Feature | IDs | Cases | Tags (scenario counts) | Fully generalized? |
 |---|---|---:|---:|---|---|
+| PPTX | [autoshapes.feature](pptx/autoshapes.feature) | 2 | 18 | generalized: 2 | yes |
 | PPTX | [bullets.feature](pptx/bullets.feature) | 5 | 5 | generalized: 5 | yes |
+| PPTX | [connectors.feature](pptx/connectors.feature) | 2 | 15 | generalized: 2 | yes |
 | PPTX | [creation.feature](pptx/creation.feature) | 5 | 5 | generalized: 2; profile-specific: 3 | no |
+| PPTX | [diagrams.feature](pptx/diagrams.feature) | 2 | 14 | generalized: 2 | yes |
+| PPTX | [freeform.feature](pptx/freeform.feature) | 2 | 15 | generalized: 2 | yes |
+| PPTX | [gradients.feature](pptx/gradients.feature) | 2 | 18 | generalized: 2 | yes |
+| PPTX | [group-transform.feature](pptx/group-transform.feature) | 3 | 21 | generalized: 3 | yes |
 | PPTX | [layout-recommendation.feature](pptx/layout-recommendation.feature) | 2 | 6 | profile-specific: 2 | no |
 | PPTX | [mutation-safety.feature](pptx/mutation-safety.feature) | 3 | 6 | generalized: 3 | yes |
 | PPTX | [notes.feature](pptx/notes.feature) | 12 | 13 | generalized: 2; profile-specific: 10 | no |
+| PPTX | [opacity.feature](pptx/opacity.feature) | 3 | 24 | generalized: 3 | yes |
+| PPTX | [outlines.feature](pptx/outlines.feature) | 2 | 21 | generalized: 2 | yes |
 | PPTX | [paragraph-formatting.feature](pptx/paragraph-formatting.feature) | 4 | 4 | generalized: 4 | yes |
+| PPTX | [picture-crop.feature](pptx/picture-crop.feature) | 2 | 17 | generalized: 2 | yes |
+| PPTX | [picture-delete.feature](pptx/picture-delete.feature) | 2 | 17 | generalized: 2 | yes |
+| PPTX | [picture-insertion.feature](pptx/picture-insertion.feature) | 6 | 18 | generalized: 6 | yes |
+| PPTX | [picture-placement.feature](pptx/picture-placement.feature) | 3 | 16 | generalized: 3 | yes |
+| PPTX | [picture-replacement.feature](pptx/picture-replacement.feature) | 5 | 14 | generalized: 5 | yes |
+| PPTX | [picture-svg.feature](pptx/picture-svg.feature) | 2 | 11 | generalized: 2 | yes |
+| PPTX | [picture-transform.feature](pptx/picture-transform.feature) | 2 | 18 | generalized: 2 | yes |
+| PPTX | [pictures.feature](pptx/pictures.feature) | 6 | 12 | generalized: 6 | yes |
 | PPTX | [preservation.feature](pptx/preservation.feature) | 1 | 1 | generalized: 1 | yes |
 | PPTX | [shape-geometry.feature](pptx/shape-geometry.feature) | 4 | 4 | generalized: 4 | yes |
+| PPTX | [shape-group.feature](pptx/shape-group.feature) | 2 | 16 | generalized: 2 | yes |
 | PPTX | [shape-style.feature](pptx/shape-style.feature) | 8 | 8 | generalized: 8 | yes |
 | PPTX | [slide-import.feature](pptx/slide-import.feature) | 1 | 1 | incomplete: 1 | no |
 | PPTX | [slide-order.feature](pptx/slide-order.feature) | 4 | 23 | generalized: 2; incomplete: 2 | no |
 | PPTX | [slide-visibility.feature](pptx/slide-visibility.feature) | 6 | 6 | generalized: 5; incomplete: 1 | no |
+| PPTX | [smartart-copy.feature](pptx/smartart-copy.feature) | 2 | 8 | generalized: 2 | yes |
+| PPTX | [smartart-inspection.feature](pptx/smartart-inspection.feature) | 2 | 12 | generalized: 2 | yes |
 | PPTX | [tables.feature](pptx/tables.feature) | 26 | 27 | generalized: 22; profile-specific: 4 | no |
 | PPTX | [text-autofit.feature](pptx/text-autofit.feature) | 3 | 3 | generalized: 3 | yes |
 | PPTX | [text-box.feature](pptx/text-box.feature) | 2 | 23 | incomplete: 2 | no |
 | PPTX | [text-formatting.feature](pptx/text-formatting.feature) | 12 | 12 | generalized: 12 | yes |
 | PPTX | [text-frame-properties.feature](pptx/text-frame-properties.feature) | 8 | 8 | generalized: 8 | yes |
 | PPTX | [text.feature](pptx/text.feature) | 7 | 7 | generalized: 4; profile-specific: 3 | no |
+| PPTX | [z-order.feature](pptx/z-order.feature) | 2 | 15 | generalized: 2 | yes |
 
 ## XLSX
 

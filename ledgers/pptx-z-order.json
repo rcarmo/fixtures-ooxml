@@ -1,0 +1,408 @@
+{
+  "schemaVersion": 1,
+  "executionCredit": false,
+  "feature": "workflows/pptx/z-order.feature",
+  "contract": "contracts/pptx-z-order.md",
+  "baseFixtureId": "fixture-792277d2c358c5bd7c8a4053078a5594fa07bfb55a06b0bb30f2813c151ea459",
+  "slidePart": "ppt/slides/slide1.xml",
+  "counts": {
+    "ids": 2,
+    "cases": 15
+  },
+  "custody": {
+    "allowedChangedParts": [
+      "ppt/slides/slide1.xml"
+    ],
+    "membership": "exact",
+    "preserve": "every original graphical element span and metadata gap; all relationships and payloads"
+  },
+  "cases": [
+    {
+      "caseId": "full reverse",
+      "scenarioId": "@id-pptx-graphics-z-order-reorder",
+      "example": {
+        "variant": "full reverse"
+      },
+      "operations": [],
+      "request": {
+        "order": [
+          1028,
+          1033,
+          5,
+          2,
+          1026
+        ]
+      },
+      "expected": {
+        "before": [
+          1026,
+          2,
+          5,
+          1033,
+          1028
+        ],
+        "order": [
+          1028,
+          1033,
+          5,
+          2,
+          1026
+        ],
+        "changed": 1
+      }
+    },
+    {
+      "caseId": "selected picture swap",
+      "scenarioId": "@id-pptx-graphics-z-order-reorder",
+      "example": {
+        "variant": "selected picture swap"
+      },
+      "operations": [],
+      "request": {
+        "order": [
+          1028,
+          1026
+        ]
+      },
+      "expected": {
+        "before": [
+          1026,
+          2,
+          5,
+          1033,
+          1028
+        ],
+        "order": [
+          1028,
+          2,
+          5,
+          1033,
+          1026
+        ],
+        "changed": 1
+      }
+    },
+    {
+      "caseId": "no-op",
+      "scenarioId": "@id-pptx-graphics-z-order-reorder",
+      "example": {
+        "variant": "no-op"
+      },
+      "operations": [],
+      "request": {
+        "order": [
+          1026,
+          1028
+        ]
+      },
+      "expected": {
+        "before": [
+          1026,
+          2,
+          5,
+          1033,
+          1028
+        ],
+        "order": [
+          1026,
+          2,
+          5,
+          1033,
+          1028
+        ],
+        "changed": 0
+      }
+    },
+    {
+      "caseId": "empty order",
+      "scenarioId": "@id-pptx-graphics-z-order-reorder",
+      "example": {
+        "variant": "empty order"
+      },
+      "operations": [],
+      "request": {
+        "order": []
+      },
+      "expected": {
+        "before": [
+          1026,
+          2,
+          5,
+          1033,
+          1028
+        ],
+        "order": [
+          1026,
+          2,
+          5,
+          1033,
+          1028
+        ],
+        "changed": 0
+      }
+    },
+    {
+      "caseId": "group siblings",
+      "scenarioId": "@id-pptx-graphics-z-order-reorder",
+      "example": {
+        "variant": "group siblings"
+      },
+      "operations": [
+        {
+          "kind": "replace-literal-once",
+          "part": "ppt/slides/slide1.xml",
+          "before": "<p:pic><p:nvPicPr><p:cNvPr id=\"1026\" name=\"Picture 2\" descr=\"cartoony marvel-style illustration of Frankenstein's laboratory with dramatic lighting, oversized machinery, glowing tubes, and a whimsical mad-science atmosphere\"><a:extLst><a:ext uri=\"{FF2B5EF4-FFF2-40B4-BE49-F238E27FC236}\"><a16:creationId xmlns:a16=\"http://schemas.microsoft.com/office/drawing/2014/main\" id=\"{55EE74E7-0065-73C4-AC5F-B515CF386555}\"/></a:ext></a:extLst></p:cNvPr><p:cNvPicPr><a:picLocks noChangeAspect=\"1\" noChangeArrowheads=\"1\"/></p:cNvPicPr><p:nvPr/></p:nvPicPr><p:blipFill rotWithShape=\"1\"><a:blip r:embed=\"rId2\"><a:alphaModFix amt=\"35000\"/><a:extLst><a:ext uri=\"{28A0092B-C50C-407E-A947-70E740481C1C}\"><a14:useLocalDpi xmlns:a14=\"http://schemas.microsoft.com/office/drawing/2010/main\" val=\"0\"/></a:ext></a:extLst></a:blip><a:srcRect t=\"17161\" r=\"2\" b=\"7840\"/><a:stretch><a:fillRect/></a:stretch></p:blipFill><p:spPr bwMode=\"auto\"><a:xfrm><a:off x=\"-2\" y=\"10\"/><a:ext cx=\"9144000\" cy=\"6857989\"/></a:xfrm><a:prstGeom prst=\"rect\"><a:avLst/></a:prstGeom><a:noFill/><a:extLst><a:ext uri=\"{909E8E84-426E-40DD-AFC4-6F175D3DCCD1}\"><a14:hiddenFill xmlns:a14=\"http://schemas.microsoft.com/office/drawing/2010/main\"><a:solidFill><a:srgbClr val=\"FFFFFF\"/></a:solidFill></a14:hiddenFill></a:ext></a:extLst></p:spPr></p:pic><p:sp><p:nvSpPr><p:cNvPr id=\"2\" name=\"TextBox 1\"/><p:cNvSpPr txBox=\"1\"/><p:nvPr/></p:nvSpPr><p:spPr><a:xfrm><a:off x=\"4554334\" y=\"3587441\"/><a:ext cx=\"3989575\" cy=\"2165648\"/></a:xfrm><a:prstGeom prst=\"rect\"><a:avLst/></a:prstGeom></p:spPr><p:txBody><a:bodyPr vert=\"horz\" lIns=\"91440\" tIns=\"45720\" rIns=\"91440\" bIns=\"45720\" rtlCol=\"0\" anchor=\"t\"><a:normAutofit/></a:bodyPr><a:lstStyle/><a:p><a:pPr defTabSz=\"685800\"><a:lnSpc><a:spcPct val=\"90000\"/></a:lnSpc><a:spcBef><a:spcPct val=\"0\"/></a:spcBef><a:spcAft><a:spcPts val=\"600\"/></a:spcAft><a:defRPr sz=\"2800\" b=\"1\"/></a:pPr><a:r><a:rPr lang=\"en-US\" sz=\"3600\" kern=\"1200\"><a:solidFill><a:schemeClr val=\"tx1\"/></a:solidFill><a:latin typeface=\"+mj-lt\"/><a:ea typeface=\"+mj-ea\"/><a:cs typeface=\"+mj-cs\"/></a:rPr><a:t>Visual Elements from Frankenstein</a:t></a:r></a:p></p:txBody></p:sp>",
+          "after": "<p:grpSp><p:nvGrpSpPr><p:cNvPr id=\"2000\" name=\"Order group\"/><p:cNvGrpSpPr/><p:nvPr/></p:nvGrpSpPr><p:grpSpPr/><p:pic><p:nvPicPr><p:cNvPr id=\"1026\" name=\"Picture 2\" descr=\"cartoony marvel-style illustration of Frankenstein's laboratory with dramatic lighting, oversized machinery, glowing tubes, and a whimsical mad-science atmosphere\"><a:extLst><a:ext uri=\"{FF2B5EF4-FFF2-40B4-BE49-F238E27FC236}\"><a16:creationId xmlns:a16=\"http://schemas.microsoft.com/office/drawing/2014/main\" id=\"{55EE74E7-0065-73C4-AC5F-B515CF386555}\"/></a:ext></a:extLst></p:cNvPr><p:cNvPicPr><a:picLocks noChangeAspect=\"1\" noChangeArrowheads=\"1\"/></p:cNvPicPr><p:nvPr/></p:nvPicPr><p:blipFill rotWithShape=\"1\"><a:blip r:embed=\"rId2\"><a:alphaModFix amt=\"35000\"/><a:extLst><a:ext uri=\"{28A0092B-C50C-407E-A947-70E740481C1C}\"><a14:useLocalDpi xmlns:a14=\"http://schemas.microsoft.com/office/drawing/2010/main\" val=\"0\"/></a:ext></a:extLst></a:blip><a:srcRect t=\"17161\" r=\"2\" b=\"7840\"/><a:stretch><a:fillRect/></a:stretch></p:blipFill><p:spPr bwMode=\"auto\"><a:xfrm><a:off x=\"-2\" y=\"10\"/><a:ext cx=\"9144000\" cy=\"6857989\"/></a:xfrm><a:prstGeom prst=\"rect\"><a:avLst/></a:prstGeom><a:noFill/><a:extLst><a:ext uri=\"{909E8E84-426E-40DD-AFC4-6F175D3DCCD1}\"><a14:hiddenFill xmlns:a14=\"http://schemas.microsoft.com/office/drawing/2010/main\"><a:solidFill><a:srgbClr val=\"FFFFFF\"/></a:solidFill></a14:hiddenFill></a:ext></a:extLst></p:spPr></p:pic><p:sp><p:nvSpPr><p:cNvPr id=\"2\" name=\"TextBox 1\"/><p:cNvSpPr txBox=\"1\"/><p:nvPr/></p:nvSpPr><p:spPr><a:xfrm><a:off x=\"4554334\" y=\"3587441\"/><a:ext cx=\"3989575\" cy=\"2165648\"/></a:xfrm><a:prstGeom prst=\"rect\"><a:avLst/></a:prstGeom></p:spPr><p:txBody><a:bodyPr vert=\"horz\" lIns=\"91440\" tIns=\"45720\" rIns=\"91440\" bIns=\"45720\" rtlCol=\"0\" anchor=\"t\"><a:normAutofit/></a:bodyPr><a:lstStyle/><a:p><a:pPr defTabSz=\"685800\"><a:lnSpc><a:spcPct val=\"90000\"/></a:lnSpc><a:spcBef><a:spcPct val=\"0\"/></a:spcBef><a:spcAft><a:spcPts val=\"600\"/></a:spcAft><a:defRPr sz=\"2800\" b=\"1\"/></a:pPr><a:r><a:rPr lang=\"en-US\" sz=\"3600\" kern=\"1200\"><a:solidFill><a:schemeClr val=\"tx1\"/></a:solidFill><a:latin typeface=\"+mj-lt\"/><a:ea typeface=\"+mj-ea\"/><a:cs typeface=\"+mj-cs\"/></a:rPr><a:t>Visual Elements from Frankenstein</a:t></a:r></a:p></p:txBody></p:sp></p:grpSp>"
+        }
+      ],
+      "request": {
+        "order": [
+          2,
+          1026
+        ],
+        "groupId": 2000
+      },
+      "expected": {
+        "before": [
+          1026,
+          2
+        ],
+        "order": [
+          2,
+          1026
+        ],
+        "changed": 1
+      }
+    },
+    {
+      "caseId": "terminal extension",
+      "scenarioId": "@id-pptx-graphics-z-order-reorder",
+      "example": {
+        "variant": "terminal extension"
+      },
+      "operations": [
+        {
+          "kind": "replace-literal-once",
+          "part": "ppt/slides/slide1.xml",
+          "before": "</p:spTree>",
+          "after": "<p:extLst><p:ext uri=\"urn:preserve\"><x:data xmlns:x=\"urn:opaque\" value=\"retain\"/></p:ext></p:extLst></p:spTree>"
+        }
+      ],
+      "request": {
+        "order": [
+          1028,
+          1026
+        ]
+      },
+      "expected": {
+        "before": [
+          1026,
+          2,
+          5,
+          1033,
+          1028
+        ],
+        "order": [
+          1028,
+          2,
+          5,
+          1033,
+          1026
+        ],
+        "changed": 1
+      }
+    },
+    {
+      "caseId": "mixed graphical spans",
+      "scenarioId": "@id-pptx-graphics-z-order-reorder",
+      "example": {
+        "variant": "mixed graphical spans"
+      },
+      "operations": [
+        {
+          "kind": "replace-literal-once",
+          "part": "ppt/slides/slide1.xml",
+          "before": "</p:spTree>",
+          "after": "<p:graphicFrame><p:nvGraphicFramePr><p:cNvPr id=\"2000\" name=\"Opaque frame\"/><p:cNvGraphicFramePr/><p:nvPr/></p:nvGraphicFramePr><p:xfrm><a:off x=\"1\" y=\"2\"/><a:ext cx=\"3\" cy=\"4\"/></p:xfrm><a:graphic><a:graphicData uri=\"urn:opaque\"><x:payload xmlns:x=\"urn:opaque\" value=\"retain\"/></a:graphicData></a:graphic></p:graphicFrame><p:cxnSp><p:nvCxnSpPr><p:cNvPr id=\"2001\" name=\"Connector\"/><p:cNvCxnSpPr/><p:nvPr/></p:nvCxnSpPr><p:spPr/></p:cxnSp><p:grpSp><p:nvGrpSpPr><p:cNvPr id=\"2002\" name=\"Group\"/><p:cNvGrpSpPr/><p:nvPr/></p:nvGrpSpPr><p:grpSpPr/><p:sp><p:nvSpPr><p:cNvPr id=\"2003\" name=\"Child\"/><p:cNvSpPr/><p:nvPr/></p:nvSpPr><p:spPr/></p:sp></p:grpSp></p:spTree>"
+        }
+      ],
+      "request": {
+        "order": [
+          2002,
+          2001,
+          2000
+        ]
+      },
+      "expected": {
+        "before": [
+          1026,
+          2,
+          5,
+          1033,
+          1028,
+          2000,
+          2001,
+          2002
+        ],
+        "order": [
+          1026,
+          2,
+          5,
+          1033,
+          1028,
+          2002,
+          2001,
+          2000
+        ],
+        "changed": 1
+      }
+    },
+    {
+      "caseId": "duplicate-requested-ID",
+      "scenarioId": "@id-pptx-graphics-z-order-refusals",
+      "example": {
+        "fault": "duplicate requested ID"
+      },
+      "operations": [],
+      "request": {
+        "order": [
+          1026,
+          1026
+        ]
+      },
+      "errorCode": "PPTX_Z_ORDER_UNSUPPORTED"
+    },
+    {
+      "caseId": "missing-requested-ID",
+      "scenarioId": "@id-pptx-graphics-z-order-refusals",
+      "example": {
+        "fault": "missing requested ID"
+      },
+      "operations": [],
+      "request": {
+        "order": [
+          1026,
+          99999
+        ]
+      },
+      "errorCode": "PPTX_Z_ORDER_UNSUPPORTED"
+    },
+    {
+      "caseId": "missing-group",
+      "scenarioId": "@id-pptx-graphics-z-order-refusals",
+      "example": {
+        "fault": "missing group"
+      },
+      "operations": [],
+      "request": {
+        "order": [
+          1026
+        ],
+        "groupId": 99999
+      },
+      "errorCode": "PPTX_Z_ORDER_UNSUPPORTED"
+    },
+    {
+      "caseId": "cross-parent-selection",
+      "scenarioId": "@id-pptx-graphics-z-order-refusals",
+      "example": {
+        "fault": "cross parent selection"
+      },
+      "operations": [
+        {
+          "kind": "replace-literal-once",
+          "part": "ppt/slides/slide1.xml",
+          "before": "<p:pic><p:nvPicPr><p:cNvPr id=\"1026\" name=\"Picture 2\" descr=\"cartoony marvel-style illustration of Frankenstein's laboratory with dramatic lighting, oversized machinery, glowing tubes, and a whimsical mad-science atmosphere\"><a:extLst><a:ext uri=\"{FF2B5EF4-FFF2-40B4-BE49-F238E27FC236}\"><a16:creationId xmlns:a16=\"http://schemas.microsoft.com/office/drawing/2014/main\" id=\"{55EE74E7-0065-73C4-AC5F-B515CF386555}\"/></a:ext></a:extLst></p:cNvPr><p:cNvPicPr><a:picLocks noChangeAspect=\"1\" noChangeArrowheads=\"1\"/></p:cNvPicPr><p:nvPr/></p:nvPicPr><p:blipFill rotWithShape=\"1\"><a:blip r:embed=\"rId2\"><a:alphaModFix amt=\"35000\"/><a:extLst><a:ext uri=\"{28A0092B-C50C-407E-A947-70E740481C1C}\"><a14:useLocalDpi xmlns:a14=\"http://schemas.microsoft.com/office/drawing/2010/main\" val=\"0\"/></a:ext></a:extLst></a:blip><a:srcRect t=\"17161\" r=\"2\" b=\"7840\"/><a:stretch><a:fillRect/></a:stretch></p:blipFill><p:spPr bwMode=\"auto\"><a:xfrm><a:off x=\"-2\" y=\"10\"/><a:ext cx=\"9144000\" cy=\"6857989\"/></a:xfrm><a:prstGeom prst=\"rect\"><a:avLst/></a:prstGeom><a:noFill/><a:extLst><a:ext uri=\"{909E8E84-426E-40DD-AFC4-6F175D3DCCD1}\"><a14:hiddenFill xmlns:a14=\"http://schemas.microsoft.com/office/drawing/2010/main\"><a:solidFill><a:srgbClr val=\"FFFFFF\"/></a:solidFill></a14:hiddenFill></a:ext></a:extLst></p:spPr></p:pic><p:sp><p:nvSpPr><p:cNvPr id=\"2\" name=\"TextBox 1\"/><p:cNvSpPr txBox=\"1\"/><p:nvPr/></p:nvSpPr><p:spPr><a:xfrm><a:off x=\"4554334\" y=\"3587441\"/><a:ext cx=\"3989575\" cy=\"2165648\"/></a:xfrm><a:prstGeom prst=\"rect\"><a:avLst/></a:prstGeom></p:spPr><p:txBody><a:bodyPr vert=\"horz\" lIns=\"91440\" tIns=\"45720\" rIns=\"91440\" bIns=\"45720\" rtlCol=\"0\" anchor=\"t\"><a:normAutofit/></a:bodyPr><a:lstStyle/><a:p><a:pPr defTabSz=\"685800\"><a:lnSpc><a:spcPct val=\"90000\"/></a:lnSpc><a:spcBef><a:spcPct val=\"0\"/></a:spcBef><a:spcAft><a:spcPts val=\"600\"/></a:spcAft><a:defRPr sz=\"2800\" b=\"1\"/></a:pPr><a:r><a:rPr lang=\"en-US\" sz=\"3600\" kern=\"1200\"><a:solidFill><a:schemeClr val=\"tx1\"/></a:solidFill><a:latin typeface=\"+mj-lt\"/><a:ea typeface=\"+mj-ea\"/><a:cs typeface=\"+mj-cs\"/></a:rPr><a:t>Visual Elements from Frankenstein</a:t></a:r></a:p></p:txBody></p:sp>",
+          "after": "<p:grpSp><p:nvGrpSpPr><p:cNvPr id=\"2000\" name=\"Order group\"/><p:cNvGrpSpPr/><p:nvPr/></p:nvGrpSpPr><p:grpSpPr/><p:pic><p:nvPicPr><p:cNvPr id=\"1026\" name=\"Picture 2\" descr=\"cartoony marvel-style illustration of Frankenstein's laboratory with dramatic lighting, oversized machinery, glowing tubes, and a whimsical mad-science atmosphere\"><a:extLst><a:ext uri=\"{FF2B5EF4-FFF2-40B4-BE49-F238E27FC236}\"><a16:creationId xmlns:a16=\"http://schemas.microsoft.com/office/drawing/2014/main\" id=\"{55EE74E7-0065-73C4-AC5F-B515CF386555}\"/></a:ext></a:extLst></p:cNvPr><p:cNvPicPr><a:picLocks noChangeAspect=\"1\" noChangeArrowheads=\"1\"/></p:cNvPicPr><p:nvPr/></p:nvPicPr><p:blipFill rotWithShape=\"1\"><a:blip r:embed=\"rId2\"><a:alphaModFix amt=\"35000\"/><a:extLst><a:ext uri=\"{28A0092B-C50C-407E-A947-70E740481C1C}\"><a14:useLocalDpi xmlns:a14=\"http://schemas.microsoft.com/office/drawing/2010/main\" val=\"0\"/></a:ext></a:extLst></a:blip><a:srcRect t=\"17161\" r=\"2\" b=\"7840\"/><a:stretch><a:fillRect/></a:stretch></p:blipFill><p:spPr bwMode=\"auto\"><a:xfrm><a:off x=\"-2\" y=\"10\"/><a:ext cx=\"9144000\" cy=\"6857989\"/></a:xfrm><a:prstGeom prst=\"rect\"><a:avLst/></a:prstGeom><a:noFill/><a:extLst><a:ext uri=\"{909E8E84-426E-40DD-AFC4-6F175D3DCCD1}\"><a14:hiddenFill xmlns:a14=\"http://schemas.microsoft.com/office/drawing/2010/main\"><a:solidFill><a:srgbClr val=\"FFFFFF\"/></a:solidFill></a14:hiddenFill></a:ext></a:extLst></p:spPr></p:pic><p:sp><p:nvSpPr><p:cNvPr id=\"2\" name=\"TextBox 1\"/><p:cNvSpPr txBox=\"1\"/><p:nvPr/></p:nvSpPr><p:spPr><a:xfrm><a:off x=\"4554334\" y=\"3587441\"/><a:ext cx=\"3989575\" cy=\"2165648\"/></a:xfrm><a:prstGeom prst=\"rect\"><a:avLst/></a:prstGeom></p:spPr><p:txBody><a:bodyPr vert=\"horz\" lIns=\"91440\" tIns=\"45720\" rIns=\"91440\" bIns=\"45720\" rtlCol=\"0\" anchor=\"t\"><a:normAutofit/></a:bodyPr><a:lstStyle/><a:p><a:pPr defTabSz=\"685800\"><a:lnSpc><a:spcPct val=\"90000\"/></a:lnSpc><a:spcBef><a:spcPct val=\"0\"/></a:spcBef><a:spcAft><a:spcPts val=\"600\"/></a:spcAft><a:defRPr sz=\"2800\" b=\"1\"/></a:pPr><a:r><a:rPr lang=\"en-US\" sz=\"3600\" kern=\"1200\"><a:solidFill><a:schemeClr val=\"tx1\"/></a:solidFill><a:latin typeface=\"+mj-lt\"/><a:ea typeface=\"+mj-ea\"/><a:cs typeface=\"+mj-cs\"/></a:rPr><a:t>Visual Elements from Frankenstein</a:t></a:r></a:p></p:txBody></p:sp></p:grpSp>"
+        }
+      ],
+      "request": {
+        "order": [
+          1026,
+          1028
+        ]
+      },
+      "errorCode": "PPTX_Z_ORDER_UNSUPPORTED"
+    },
+    {
+      "caseId": "metadata-identity",
+      "scenarioId": "@id-pptx-graphics-z-order-refusals",
+      "example": {
+        "fault": "metadata identity"
+      },
+      "operations": [],
+      "request": {
+        "order": [
+          1,
+          1026
+        ]
+      },
+      "errorCode": "PPTX_Z_ORDER_UNSUPPORTED"
+    },
+    {
+      "caseId": "duplicate-source-identity",
+      "scenarioId": "@id-pptx-graphics-z-order-refusals",
+      "example": {
+        "fault": "duplicate source identity"
+      },
+      "operations": [
+        {
+          "kind": "replace-literal-once",
+          "part": "ppt/slides/slide1.xml",
+          "before": "id=\"1028\"",
+          "after": "id=\"1026\""
+        }
+      ],
+      "request": {
+        "order": [
+          1026
+        ]
+      },
+      "errorCode": "PPTX_Z_ORDER_UNSUPPORTED"
+    },
+    {
+      "caseId": "lexical-barrier",
+      "scenarioId": "@id-pptx-graphics-z-order-refusals",
+      "example": {
+        "fault": "lexical barrier"
+      },
+      "operations": [
+        {
+          "kind": "replace-literal-once",
+          "part": "ppt/slides/slide1.xml",
+          "before": "<p:pic><p:nvPicPr><p:cNvPr id=\"1026\" name=\"Picture 2\" descr=\"cartoony marvel-style illustration of Frankenstein's laboratory with dramatic lighting, oversized machinery, glowing tubes, and a whimsical mad-science atmosphere\"><a:extLst><a:ext uri=\"{FF2B5EF4-FFF2-40B4-BE49-F238E27FC236}\"><a16:creationId xmlns:a16=\"http://schemas.microsoft.com/office/drawing/2014/main\" id=\"{55EE74E7-0065-73C4-AC5F-B515CF386555}\"/></a:ext></a:extLst></p:cNvPr><p:cNvPicPr><a:picLocks noChangeAspect=\"1\" noChangeArrowheads=\"1\"/></p:cNvPicPr><p:nvPr/></p:nvPicPr><p:blipFill rotWithShape=\"1\"><a:blip r:embed=\"rId2\"><a:alphaModFix amt=\"35000\"/><a:extLst><a:ext uri=\"{28A0092B-C50C-407E-A947-70E740481C1C}\"><a14:useLocalDpi xmlns:a14=\"http://schemas.microsoft.com/office/drawing/2010/main\" val=\"0\"/></a:ext></a:extLst></a:blip><a:srcRect t=\"17161\" r=\"2\" b=\"7840\"/><a:stretch><a:fillRect/></a:stretch></p:blipFill><p:spPr bwMode=\"auto\"><a:xfrm><a:off x=\"-2\" y=\"10\"/><a:ext cx=\"9144000\" cy=\"6857989\"/></a:xfrm><a:prstGeom prst=\"rect\"><a:avLst/></a:prstGeom><a:noFill/><a:extLst><a:ext uri=\"{909E8E84-426E-40DD-AFC4-6F175D3DCCD1}\"><a14:hiddenFill xmlns:a14=\"http://schemas.microsoft.com/office/drawing/2010/main\"><a:solidFill><a:srgbClr val=\"FFFFFF\"/></a:solidFill></a14:hiddenFill></a:ext></a:extLst></p:spPr></p:pic><p:sp><p:nvSpPr><p:cNvPr id=\"2\" name=\"TextBox 1\"/><p:cNvSpPr txBox=\"1\"/><p:nvPr/></p:nvSpPr><p:spPr><a:xfrm><a:off x=\"4554334\" y=\"3587441\"/><a:ext cx=\"3989575\" cy=\"2165648\"/></a:xfrm><a:prstGeom prst=\"rect\"><a:avLst/></a:prstGeom></p:spPr><p:txBody><a:bodyPr vert=\"horz\" lIns=\"91440\" tIns=\"45720\" rIns=\"91440\" bIns=\"45720\" rtlCol=\"0\" anchor=\"t\"><a:normAutofit/></a:bodyPr><a:lstStyle/><a:p><a:pPr defTabSz=\"685800\"><a:lnSpc><a:spcPct val=\"90000\"/></a:lnSpc><a:spcBef><a:spcPct val=\"0\"/></a:spcBef><a:spcAft><a:spcPts val=\"600\"/></a:spcAft><a:defRPr sz=\"2800\" b=\"1\"/></a:pPr><a:r><a:rPr lang=\"en-US\" sz=\"3600\" kern=\"1200\"><a:solidFill><a:schemeClr val=\"tx1\"/></a:solidFill><a:latin typeface=\"+mj-lt\"/><a:ea typeface=\"+mj-ea\"/><a:cs typeface=\"+mj-cs\"/></a:rPr><a:t>Visual Elements from Frankenstein</a:t></a:r></a:p></p:txBody></p:sp>",
+          "after": "<p:pic><p:nvPicPr><p:cNvPr id=\"1026\" name=\"Picture 2\" descr=\"cartoony marvel-style illustration of Frankenstein's laboratory with dramatic lighting, oversized machinery, glowing tubes, and a whimsical mad-science atmosphere\"><a:extLst><a:ext uri=\"{FF2B5EF4-FFF2-40B4-BE49-F238E27FC236}\"><a16:creationId xmlns:a16=\"http://schemas.microsoft.com/office/drawing/2014/main\" id=\"{55EE74E7-0065-73C4-AC5F-B515CF386555}\"/></a:ext></a:extLst></p:cNvPr><p:cNvPicPr><a:picLocks noChangeAspect=\"1\" noChangeArrowheads=\"1\"/></p:cNvPicPr><p:nvPr/></p:nvPicPr><p:blipFill rotWithShape=\"1\"><a:blip r:embed=\"rId2\"><a:alphaModFix amt=\"35000\"/><a:extLst><a:ext uri=\"{28A0092B-C50C-407E-A947-70E740481C1C}\"><a14:useLocalDpi xmlns:a14=\"http://schemas.microsoft.com/office/drawing/2010/main\" val=\"0\"/></a:ext></a:extLst></a:blip><a:srcRect t=\"17161\" r=\"2\" b=\"7840\"/><a:stretch><a:fillRect/></a:stretch></p:blipFill><p:spPr bwMode=\"auto\"><a:xfrm><a:off x=\"-2\" y=\"10\"/><a:ext cx=\"9144000\" cy=\"6857989\"/></a:xfrm><a:prstGeom prst=\"rect\"><a:avLst/></a:prstGeom><a:noFill/><a:extLst><a:ext uri=\"{909E8E84-426E-40DD-AFC4-6F175D3DCCD1}\"><a14:hiddenFill xmlns:a14=\"http://schemas.microsoft.com/office/drawing/2010/main\"><a:solidFill><a:srgbClr val=\"FFFFFF\"/></a:solidFill></a14:hiddenFill></a:ext></a:extLst></p:spPr></p:pic><p:sp><p:nvSpPr><p:cNvPr id=\"2\" name=\"TextBox 1\"/><p:cNvSpPr txBox=\"1\"/><p:nvPr/></p:nvSpPr><p:spPr><a:xfrm><a:off x=\"4554334\" y=\"3587441\"/><a:ext cx=\"3989575\" cy=\"2165648\"/></a:xfrm><a:prstGeom prst=\"rect\"><a:avLst/></a:prstGeom></p:spPr><p:txBody><a:bodyPr vert=\"horz\" lIns=\"91440\" tIns=\"45720\" rIns=\"91440\" bIns=\"45720\" rtlCol=\"0\" anchor=\"t\"><a:normAutofit/></a:bodyPr><a:lstStyle/><a:p><a:pPr defTabSz=\"685800\"><a:lnSpc><a:spcPct val=\"90000\"/></a:lnSpc><a:spcBef><a:spcPct val=\"0\"/></a:spcBef><a:spcAft><a:spcPts val=\"600\"/></a:spcAft><a:defRPr sz=\"2800\" b=\"1\"/></a:pPr><a:r><a:rPr lang=\"en-US\" sz=\"3600\" kern=\"1200\"><a:solidFill><a:schemeClr val=\"tx1\"/></a:solidFill><a:latin typeface=\"+mj-lt\"/><a:ea typeface=\"+mj-ea\"/><a:cs typeface=\"+mj-cs\"/></a:rPr><a:t>Visual Elements from Frankenstein</a:t></a:r></a:p></p:txBody></p:sp><!-- order barrier -->"
+        }
+      ],
+      "request": {
+        "order": [
+          1028,
+          1026
+        ]
+      },
+      "errorCode": "PPTX_Z_ORDER_UNSUPPORTED"
+    },
+    {
+      "caseId": "protected-presentation",
+      "scenarioId": "@id-pptx-graphics-z-order-refusals",
+      "example": {
+        "fault": "protected presentation"
+      },
+      "operations": [
+        {
+          "kind": "replace-literal-once",
+          "part": "ppt/presentation.xml",
+          "before": "</p:presentation>",
+          "after": "<p:modifyVerifier/></p:presentation>"
+        }
+      ],
+      "request": {
+        "order": [
+          1028,
+          1026
+        ]
+      },
+      "errorCode": "PPTX_PROTECTED"
+    }
+  ]
+}

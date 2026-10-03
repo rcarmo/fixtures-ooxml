@@ -1,0 +1,664 @@
+{
+  "schemaVersion": 1,
+  "executionCredit": false,
+  "feature": "workflows/pptx/connectors.feature",
+  "contract": "contracts/pptx-connectors.md",
+  "baseFixtureId": "fixture-792277d2c358c5bd7c8a4053078a5594fa07bfb55a06b0bb30f2813c151ea459",
+  "slidePart": "ppt/slides/slide1.xml",
+  "counts": {
+    "ids": 2,
+    "cases": 15
+  },
+  "sitePolicy": {
+    "preset": "rect",
+    "sites": [
+      "top",
+      "left",
+      "bottom",
+      "right"
+    ],
+    "midpointRounding": "floor half extent"
+  },
+  "custody": {
+    "allowedChangedParts": [
+      "ppt/slides/slide1.xml"
+    ],
+    "membership": "exact",
+    "preserve": "every original shape and every relationship/member payload"
+  },
+  "cases": [
+    {
+      "caseId": "right to left",
+      "scenarioId": "@id-pptx-graphics-connectors-add",
+      "example": {
+        "variant": "right to left"
+      },
+      "operations": [
+        {
+          "kind": "replace-literal-once",
+          "part": "ppt/slides/slide1.xml",
+          "before": "</p:spTree>",
+          "after": "<p:sp><p:nvSpPr><p:cNvPr id=\"2000\" name=\"Node 2000\"/><p:cNvSpPr/><p:nvPr/></p:nvSpPr><p:spPr><a:xfrm><a:off x=\"100\" y=\"200\"/><a:ext cx=\"400\" cy=\"600\"/></a:xfrm><a:prstGeom prst=\"rect\"><a:avLst/></a:prstGeom></p:spPr></p:sp><p:sp><p:nvSpPr><p:cNvPr id=\"2001\" name=\"Node 2001\"/><p:cNvSpPr/><p:nvPr/></p:nvSpPr><p:spPr><a:xfrm><a:off x=\"1000\" y=\"1000\"/><a:ext cx=\"800\" cy=\"400\"/></a:xfrm><a:prstGeom prst=\"rect\"><a:avLst/></a:prstGeom></p:spPr></p:sp></p:spTree>"
+        }
+      ],
+      "request": {
+        "start": {
+          "shapeId": 2000,
+          "site": 3
+        },
+        "end": {
+          "shapeId": 2001,
+          "site": 1
+        },
+        "options": {
+          "name": "Attached & exact",
+          "color": "336699",
+          "width": 25400
+        }
+      },
+      "expected": {
+        "shapeId": 2002,
+        "partName": "ppt/slides/slide1.xml",
+        "start": {
+          "shapeId": 2000,
+          "site": 3,
+          "x": 500,
+          "y": 500
+        },
+        "end": {
+          "shapeId": 2001,
+          "site": 1,
+          "x": 1000,
+          "y": 1200
+        },
+        "geometry": {
+          "x": 500,
+          "y": 500,
+          "width": 500,
+          "height": 700,
+          "flipH": false,
+          "flipV": false
+        }
+      }
+    },
+    {
+      "caseId": "top to bottom",
+      "scenarioId": "@id-pptx-graphics-connectors-add",
+      "example": {
+        "variant": "top to bottom"
+      },
+      "operations": [
+        {
+          "kind": "replace-literal-once",
+          "part": "ppt/slides/slide1.xml",
+          "before": "</p:spTree>",
+          "after": "<p:sp><p:nvSpPr><p:cNvPr id=\"2000\" name=\"Node 2000\"/><p:cNvSpPr/><p:nvPr/></p:nvSpPr><p:spPr><a:xfrm><a:off x=\"100\" y=\"200\"/><a:ext cx=\"400\" cy=\"600\"/></a:xfrm><a:prstGeom prst=\"rect\"><a:avLst/></a:prstGeom></p:spPr></p:sp><p:sp><p:nvSpPr><p:cNvPr id=\"2001\" name=\"Node 2001\"/><p:cNvSpPr/><p:nvPr/></p:nvSpPr><p:spPr><a:xfrm><a:off x=\"1000\" y=\"1000\"/><a:ext cx=\"800\" cy=\"400\"/></a:xfrm><a:prstGeom prst=\"rect\"><a:avLst/></a:prstGeom></p:spPr></p:sp></p:spTree>"
+        }
+      ],
+      "request": {
+        "start": {
+          "shapeId": 2000,
+          "site": 0
+        },
+        "end": {
+          "shapeId": 2001,
+          "site": 2
+        },
+        "options": {
+          "name": "Attached & exact",
+          "color": "336699",
+          "width": 25400
+        }
+      },
+      "expected": {
+        "shapeId": 2002,
+        "partName": "ppt/slides/slide1.xml",
+        "start": {
+          "shapeId": 2000,
+          "site": 0,
+          "x": 300,
+          "y": 200
+        },
+        "end": {
+          "shapeId": 2001,
+          "site": 2,
+          "x": 1400,
+          "y": 1400
+        },
+        "geometry": {
+          "x": 300,
+          "y": 200,
+          "width": 1100,
+          "height": 1200,
+          "flipH": false,
+          "flipV": false
+        }
+      }
+    },
+    {
+      "caseId": "reverse endpoints",
+      "scenarioId": "@id-pptx-graphics-connectors-add",
+      "example": {
+        "variant": "reverse endpoints"
+      },
+      "operations": [
+        {
+          "kind": "replace-literal-once",
+          "part": "ppt/slides/slide1.xml",
+          "before": "</p:spTree>",
+          "after": "<p:sp><p:nvSpPr><p:cNvPr id=\"2000\" name=\"Node 2000\"/><p:cNvSpPr/><p:nvPr/></p:nvSpPr><p:spPr><a:xfrm><a:off x=\"100\" y=\"200\"/><a:ext cx=\"400\" cy=\"600\"/></a:xfrm><a:prstGeom prst=\"rect\"><a:avLst/></a:prstGeom></p:spPr></p:sp><p:sp><p:nvSpPr><p:cNvPr id=\"2001\" name=\"Node 2001\"/><p:cNvSpPr/><p:nvPr/></p:nvSpPr><p:spPr><a:xfrm><a:off x=\"1000\" y=\"1000\"/><a:ext cx=\"800\" cy=\"400\"/></a:xfrm><a:prstGeom prst=\"rect\"><a:avLst/></a:prstGeom></p:spPr></p:sp></p:spTree>"
+        }
+      ],
+      "request": {
+        "start": {
+          "shapeId": 2000,
+          "site": 1
+        },
+        "end": {
+          "shapeId": 2001,
+          "site": 3
+        },
+        "options": {
+          "name": "Attached & exact",
+          "color": "336699",
+          "width": 25400
+        }
+      },
+      "expected": {
+        "shapeId": 2002,
+        "partName": "ppt/slides/slide1.xml",
+        "start": {
+          "shapeId": 2000,
+          "site": 1,
+          "x": 100,
+          "y": 500
+        },
+        "end": {
+          "shapeId": 2001,
+          "site": 3,
+          "x": 1800,
+          "y": 1200
+        },
+        "geometry": {
+          "x": 100,
+          "y": 500,
+          "width": 1700,
+          "height": 700,
+          "flipH": false,
+          "flipV": false
+        }
+      }
+    },
+    {
+      "caseId": "bottom to top",
+      "scenarioId": "@id-pptx-graphics-connectors-add",
+      "example": {
+        "variant": "bottom to top"
+      },
+      "operations": [
+        {
+          "kind": "replace-literal-once",
+          "part": "ppt/slides/slide1.xml",
+          "before": "</p:spTree>",
+          "after": "<p:sp><p:nvSpPr><p:cNvPr id=\"2000\" name=\"Node 2000\"/><p:cNvSpPr/><p:nvPr/></p:nvSpPr><p:spPr><a:xfrm><a:off x=\"100\" y=\"200\"/><a:ext cx=\"400\" cy=\"600\"/></a:xfrm><a:prstGeom prst=\"rect\"><a:avLst/></a:prstGeom></p:spPr></p:sp><p:sp><p:nvSpPr><p:cNvPr id=\"2001\" name=\"Node 2001\"/><p:cNvSpPr/><p:nvPr/></p:nvSpPr><p:spPr><a:xfrm><a:off x=\"1000\" y=\"1000\"/><a:ext cx=\"800\" cy=\"400\"/></a:xfrm><a:prstGeom prst=\"rect\"><a:avLst/></a:prstGeom></p:spPr></p:sp></p:spTree>"
+        }
+      ],
+      "request": {
+        "start": {
+          "shapeId": 2000,
+          "site": 2
+        },
+        "end": {
+          "shapeId": 2001,
+          "site": 0
+        },
+        "options": {
+          "name": "Attached & exact",
+          "color": "336699",
+          "width": 25400
+        }
+      },
+      "expected": {
+        "shapeId": 2002,
+        "partName": "ppt/slides/slide1.xml",
+        "start": {
+          "shapeId": 2000,
+          "site": 2,
+          "x": 300,
+          "y": 800
+        },
+        "end": {
+          "shapeId": 2001,
+          "site": 0,
+          "x": 1400,
+          "y": 1000
+        },
+        "geometry": {
+          "x": 300,
+          "y": 800,
+          "width": 1100,
+          "height": 200,
+          "flipH": false,
+          "flipV": false
+        }
+      }
+    },
+    {
+      "caseId": "decreasing direction",
+      "scenarioId": "@id-pptx-graphics-connectors-add",
+      "example": {
+        "variant": "decreasing direction"
+      },
+      "operations": [
+        {
+          "kind": "replace-literal-once",
+          "part": "ppt/slides/slide1.xml",
+          "before": "</p:spTree>",
+          "after": "<p:sp><p:nvSpPr><p:cNvPr id=\"2000\" name=\"Node 2000\"/><p:cNvSpPr/><p:nvPr/></p:nvSpPr><p:spPr><a:xfrm><a:off x=\"100\" y=\"200\"/><a:ext cx=\"400\" cy=\"600\"/></a:xfrm><a:prstGeom prst=\"rect\"><a:avLst/></a:prstGeom></p:spPr></p:sp><p:sp><p:nvSpPr><p:cNvPr id=\"2001\" name=\"Node 2001\"/><p:cNvSpPr/><p:nvPr/></p:nvSpPr><p:spPr><a:xfrm><a:off x=\"1000\" y=\"1000\"/><a:ext cx=\"800\" cy=\"400\"/></a:xfrm><a:prstGeom prst=\"rect\"><a:avLst/></a:prstGeom></p:spPr></p:sp></p:spTree>"
+        }
+      ],
+      "request": {
+        "start": {
+          "shapeId": 2001,
+          "site": 1
+        },
+        "end": {
+          "shapeId": 2000,
+          "site": 3
+        },
+        "options": {
+          "name": "Attached & exact",
+          "color": "336699",
+          "width": 25400
+        }
+      },
+      "expected": {
+        "shapeId": 2002,
+        "partName": "ppt/slides/slide1.xml",
+        "start": {
+          "shapeId": 2001,
+          "site": 1,
+          "x": 1000,
+          "y": 1200
+        },
+        "end": {
+          "shapeId": 2000,
+          "site": 3,
+          "x": 500,
+          "y": 500
+        },
+        "geometry": {
+          "x": 500,
+          "y": 500,
+          "width": 500,
+          "height": 700,
+          "flipH": true,
+          "flipV": true
+        }
+      }
+    },
+    {
+      "caseId": "odd midpoint",
+      "scenarioId": "@id-pptx-graphics-connectors-add",
+      "example": {
+        "variant": "odd midpoint"
+      },
+      "operations": [
+        {
+          "kind": "replace-literal-once",
+          "part": "ppt/slides/slide1.xml",
+          "before": "</p:spTree>",
+          "after": "<p:sp><p:nvSpPr><p:cNvPr id=\"2000\" name=\"Node 2000\"/><p:cNvSpPr/><p:nvPr/></p:nvSpPr><p:spPr><a:xfrm><a:off x=\"100\" y=\"200\"/><a:ext cx=\"400\" cy=\"600\"/></a:xfrm><a:prstGeom prst=\"rect\"><a:avLst/></a:prstGeom></p:spPr></p:sp><p:sp><p:nvSpPr><p:cNvPr id=\"2001\" name=\"Node 2001\"/><p:cNvSpPr/><p:nvPr/></p:nvSpPr><p:spPr><a:xfrm><a:off x=\"1000\" y=\"1000\"/><a:ext cx=\"800\" cy=\"400\"/></a:xfrm><a:prstGeom prst=\"rect\"><a:avLst/></a:prstGeom></p:spPr></p:sp></p:spTree>"
+        },
+        {
+          "kind": "replace-literal-once",
+          "part": "ppt/slides/slide1.xml",
+          "before": "<a:ext cx=\"400\" cy=\"600\"/>",
+          "after": "<a:ext cx=\"401\" cy=\"600\"/>"
+        }
+      ],
+      "request": {
+        "start": {
+          "shapeId": 2000,
+          "site": 0
+        },
+        "end": {
+          "shapeId": 2001,
+          "site": 2
+        },
+        "options": {
+          "name": "Attached & exact",
+          "color": "336699",
+          "width": 25400
+        }
+      },
+      "expected": {
+        "shapeId": 2002,
+        "partName": "ppt/slides/slide1.xml",
+        "start": {
+          "shapeId": 2000,
+          "site": 0,
+          "x": 300,
+          "y": 200
+        },
+        "end": {
+          "shapeId": 2001,
+          "site": 2,
+          "x": 1400,
+          "y": 1400
+        },
+        "geometry": {
+          "x": 300,
+          "y": 200,
+          "width": 1100,
+          "height": 1200,
+          "flipH": false,
+          "flipV": false
+        }
+      }
+    },
+    {
+      "caseId": "missing-endpoint",
+      "scenarioId": "@id-pptx-graphics-connectors-refusals",
+      "example": {
+        "fault": "missing endpoint"
+      },
+      "operations": [
+        {
+          "kind": "replace-literal-once",
+          "part": "ppt/slides/slide1.xml",
+          "before": "</p:spTree>",
+          "after": "<p:sp><p:nvSpPr><p:cNvPr id=\"2000\" name=\"Node 2000\"/><p:cNvSpPr/><p:nvPr/></p:nvSpPr><p:spPr><a:xfrm><a:off x=\"100\" y=\"200\"/><a:ext cx=\"400\" cy=\"600\"/></a:xfrm><a:prstGeom prst=\"rect\"><a:avLst/></a:prstGeom></p:spPr></p:sp><p:sp><p:nvSpPr><p:cNvPr id=\"2001\" name=\"Node 2001\"/><p:cNvSpPr/><p:nvPr/></p:nvSpPr><p:spPr><a:xfrm><a:off x=\"1000\" y=\"1000\"/><a:ext cx=\"800\" cy=\"400\"/></a:xfrm><a:prstGeom prst=\"rect\"><a:avLst/></a:prstGeom></p:spPr></p:sp></p:spTree>"
+        }
+      ],
+      "request": {
+        "start": {
+          "shapeId": 99999,
+          "site": 0
+        },
+        "end": {
+          "shapeId": 2001,
+          "site": 1
+        },
+        "options": {
+          "name": "Attached & exact",
+          "color": "336699",
+          "width": 25400
+        }
+      },
+      "errorCode": "PPTX_CONNECTOR_UNSUPPORTED"
+    },
+    {
+      "caseId": "unknown-site",
+      "scenarioId": "@id-pptx-graphics-connectors-refusals",
+      "example": {
+        "fault": "unknown site"
+      },
+      "operations": [
+        {
+          "kind": "replace-literal-once",
+          "part": "ppt/slides/slide1.xml",
+          "before": "</p:spTree>",
+          "after": "<p:sp><p:nvSpPr><p:cNvPr id=\"2000\" name=\"Node 2000\"/><p:cNvSpPr/><p:nvPr/></p:nvSpPr><p:spPr><a:xfrm><a:off x=\"100\" y=\"200\"/><a:ext cx=\"400\" cy=\"600\"/></a:xfrm><a:prstGeom prst=\"rect\"><a:avLst/></a:prstGeom></p:spPr></p:sp><p:sp><p:nvSpPr><p:cNvPr id=\"2001\" name=\"Node 2001\"/><p:cNvSpPr/><p:nvPr/></p:nvSpPr><p:spPr><a:xfrm><a:off x=\"1000\" y=\"1000\"/><a:ext cx=\"800\" cy=\"400\"/></a:xfrm><a:prstGeom prst=\"rect\"><a:avLst/></a:prstGeom></p:spPr></p:sp></p:spTree>"
+        }
+      ],
+      "request": {
+        "start": {
+          "shapeId": 2000,
+          "site": 4
+        },
+        "end": {
+          "shapeId": 2001,
+          "site": 1
+        },
+        "options": {
+          "name": "Attached & exact",
+          "color": "336699",
+          "width": 25400
+        }
+      },
+      "errorCode": "PPTX_CONNECTOR_UNSUPPORTED"
+    },
+    {
+      "caseId": "same-endpoint",
+      "scenarioId": "@id-pptx-graphics-connectors-refusals",
+      "example": {
+        "fault": "same endpoint"
+      },
+      "operations": [
+        {
+          "kind": "replace-literal-once",
+          "part": "ppt/slides/slide1.xml",
+          "before": "</p:spTree>",
+          "after": "<p:sp><p:nvSpPr><p:cNvPr id=\"2000\" name=\"Node 2000\"/><p:cNvSpPr/><p:nvPr/></p:nvSpPr><p:spPr><a:xfrm><a:off x=\"100\" y=\"200\"/><a:ext cx=\"400\" cy=\"600\"/></a:xfrm><a:prstGeom prst=\"rect\"><a:avLst/></a:prstGeom></p:spPr></p:sp><p:sp><p:nvSpPr><p:cNvPr id=\"2001\" name=\"Node 2001\"/><p:cNvSpPr/><p:nvPr/></p:nvSpPr><p:spPr><a:xfrm><a:off x=\"1000\" y=\"1000\"/><a:ext cx=\"800\" cy=\"400\"/></a:xfrm><a:prstGeom prst=\"rect\"><a:avLst/></a:prstGeom></p:spPr></p:sp></p:spTree>"
+        }
+      ],
+      "request": {
+        "start": {
+          "shapeId": 2000,
+          "site": 3
+        },
+        "end": {
+          "shapeId": 2000,
+          "site": 0
+        },
+        "options": {
+          "name": "Attached & exact",
+          "color": "336699",
+          "width": 25400
+        }
+      },
+      "errorCode": "PPTX_CONNECTOR_UNSUPPORTED"
+    },
+    {
+      "caseId": "invalid-color",
+      "scenarioId": "@id-pptx-graphics-connectors-refusals",
+      "example": {
+        "fault": "invalid color"
+      },
+      "operations": [
+        {
+          "kind": "replace-literal-once",
+          "part": "ppt/slides/slide1.xml",
+          "before": "</p:spTree>",
+          "after": "<p:sp><p:nvSpPr><p:cNvPr id=\"2000\" name=\"Node 2000\"/><p:cNvSpPr/><p:nvPr/></p:nvSpPr><p:spPr><a:xfrm><a:off x=\"100\" y=\"200\"/><a:ext cx=\"400\" cy=\"600\"/></a:xfrm><a:prstGeom prst=\"rect\"><a:avLst/></a:prstGeom></p:spPr></p:sp><p:sp><p:nvSpPr><p:cNvPr id=\"2001\" name=\"Node 2001\"/><p:cNvSpPr/><p:nvPr/></p:nvSpPr><p:spPr><a:xfrm><a:off x=\"1000\" y=\"1000\"/><a:ext cx=\"800\" cy=\"400\"/></a:xfrm><a:prstGeom prst=\"rect\"><a:avLst/></a:prstGeom></p:spPr></p:sp></p:spTree>"
+        }
+      ],
+      "request": {
+        "start": {
+          "shapeId": 2000,
+          "site": 3
+        },
+        "end": {
+          "shapeId": 2001,
+          "site": 1
+        },
+        "options": {
+          "name": "Attached & exact",
+          "color": "blue",
+          "width": 25400
+        }
+      },
+      "errorCode": "PPTX_CONNECTOR_UNSUPPORTED"
+    },
+    {
+      "caseId": "zero-line-width",
+      "scenarioId": "@id-pptx-graphics-connectors-refusals",
+      "example": {
+        "fault": "zero line width"
+      },
+      "operations": [
+        {
+          "kind": "replace-literal-once",
+          "part": "ppt/slides/slide1.xml",
+          "before": "</p:spTree>",
+          "after": "<p:sp><p:nvSpPr><p:cNvPr id=\"2000\" name=\"Node 2000\"/><p:cNvSpPr/><p:nvPr/></p:nvSpPr><p:spPr><a:xfrm><a:off x=\"100\" y=\"200\"/><a:ext cx=\"400\" cy=\"600\"/></a:xfrm><a:prstGeom prst=\"rect\"><a:avLst/></a:prstGeom></p:spPr></p:sp><p:sp><p:nvSpPr><p:cNvPr id=\"2001\" name=\"Node 2001\"/><p:cNvSpPr/><p:nvPr/></p:nvSpPr><p:spPr><a:xfrm><a:off x=\"1000\" y=\"1000\"/><a:ext cx=\"800\" cy=\"400\"/></a:xfrm><a:prstGeom prst=\"rect\"><a:avLst/></a:prstGeom></p:spPr></p:sp></p:spTree>"
+        }
+      ],
+      "request": {
+        "start": {
+          "shapeId": 2000,
+          "site": 3
+        },
+        "end": {
+          "shapeId": 2001,
+          "site": 1
+        },
+        "options": {
+          "name": "Attached & exact",
+          "color": "336699",
+          "width": 0
+        }
+      },
+      "errorCode": "PPTX_CONNECTOR_UNSUPPORTED"
+    },
+    {
+      "caseId": "rotated-endpoint",
+      "scenarioId": "@id-pptx-graphics-connectors-refusals",
+      "example": {
+        "fault": "rotated endpoint"
+      },
+      "operations": [
+        {
+          "kind": "replace-literal-once",
+          "part": "ppt/slides/slide1.xml",
+          "before": "</p:spTree>",
+          "after": "<p:sp><p:nvSpPr><p:cNvPr id=\"2000\" name=\"Node 2000\"/><p:cNvSpPr/><p:nvPr/></p:nvSpPr><p:spPr><a:xfrm><a:off x=\"100\" y=\"200\"/><a:ext cx=\"400\" cy=\"600\"/></a:xfrm><a:prstGeom prst=\"rect\"><a:avLst/></a:prstGeom></p:spPr></p:sp><p:sp><p:nvSpPr><p:cNvPr id=\"2001\" name=\"Node 2001\"/><p:cNvSpPr/><p:nvPr/></p:nvSpPr><p:spPr><a:xfrm><a:off x=\"1000\" y=\"1000\"/><a:ext cx=\"800\" cy=\"400\"/></a:xfrm><a:prstGeom prst=\"rect\"><a:avLst/></a:prstGeom></p:spPr></p:sp></p:spTree>"
+        },
+        {
+          "kind": "replace-literal-once",
+          "part": "ppt/slides/slide1.xml",
+          "before": "<a:xfrm><a:off x=\"100\" y=\"200\"/>",
+          "after": "<a:xfrm rot=\"5400000\"><a:off x=\"100\" y=\"200\"/>"
+        }
+      ],
+      "request": {
+        "start": {
+          "shapeId": 2000,
+          "site": 3
+        },
+        "end": {
+          "shapeId": 2001,
+          "site": 1
+        },
+        "options": {
+          "name": "Attached & exact",
+          "color": "336699",
+          "width": 25400
+        }
+      },
+      "errorCode": "PPTX_CONNECTOR_UNSUPPORTED"
+    },
+    {
+      "caseId": "unsupported-preset",
+      "scenarioId": "@id-pptx-graphics-connectors-refusals",
+      "example": {
+        "fault": "unsupported preset"
+      },
+      "operations": [
+        {
+          "kind": "replace-literal-once",
+          "part": "ppt/slides/slide1.xml",
+          "before": "</p:spTree>",
+          "after": "<p:sp><p:nvSpPr><p:cNvPr id=\"2000\" name=\"Node 2000\"/><p:cNvSpPr/><p:nvPr/></p:nvSpPr><p:spPr><a:xfrm><a:off x=\"100\" y=\"200\"/><a:ext cx=\"400\" cy=\"600\"/></a:xfrm><a:prstGeom prst=\"rect\"><a:avLst/></a:prstGeom></p:spPr></p:sp><p:sp><p:nvSpPr><p:cNvPr id=\"2001\" name=\"Node 2001\"/><p:cNvSpPr/><p:nvPr/></p:nvSpPr><p:spPr><a:xfrm><a:off x=\"1000\" y=\"1000\"/><a:ext cx=\"800\" cy=\"400\"/></a:xfrm><a:prstGeom prst=\"rect\"><a:avLst/></a:prstGeom></p:spPr></p:sp></p:spTree>"
+        },
+        {
+          "kind": "replace-literal-once",
+          "part": "ppt/slides/slide1.xml",
+          "before": "id=\"2000\" name=\"Node 2000\"/><p:cNvSpPr/><p:nvPr/></p:nvSpPr><p:spPr><a:xfrm><a:off x=\"100\" y=\"200\"/><a:ext cx=\"400\" cy=\"600\"/></a:xfrm><a:prstGeom prst=\"rect\"",
+          "after": "id=\"2000\" name=\"Node 2000\"/><p:cNvSpPr/><p:nvPr/></p:nvSpPr><p:spPr><a:xfrm><a:off x=\"100\" y=\"200\"/><a:ext cx=\"400\" cy=\"600\"/></a:xfrm><a:prstGeom prst=\"ellipse\""
+        }
+      ],
+      "request": {
+        "start": {
+          "shapeId": 2000,
+          "site": 3
+        },
+        "end": {
+          "shapeId": 2001,
+          "site": 1
+        },
+        "options": {
+          "name": "Attached & exact",
+          "color": "336699",
+          "width": 25400
+        }
+      },
+      "errorCode": "PPTX_CONNECTOR_UNSUPPORTED"
+    },
+    {
+      "caseId": "duplicate-source-identity",
+      "scenarioId": "@id-pptx-graphics-connectors-refusals",
+      "example": {
+        "fault": "duplicate source identity"
+      },
+      "operations": [
+        {
+          "kind": "replace-literal-once",
+          "part": "ppt/slides/slide1.xml",
+          "before": "</p:spTree>",
+          "after": "<p:sp><p:nvSpPr><p:cNvPr id=\"2000\" name=\"Node 2000\"/><p:cNvSpPr/><p:nvPr/></p:nvSpPr><p:spPr><a:xfrm><a:off x=\"100\" y=\"200\"/><a:ext cx=\"400\" cy=\"600\"/></a:xfrm><a:prstGeom prst=\"rect\"><a:avLst/></a:prstGeom></p:spPr></p:sp><p:sp><p:nvSpPr><p:cNvPr id=\"2001\" name=\"Node 2001\"/><p:cNvSpPr/><p:nvPr/></p:nvSpPr><p:spPr><a:xfrm><a:off x=\"1000\" y=\"1000\"/><a:ext cx=\"800\" cy=\"400\"/></a:xfrm><a:prstGeom prst=\"rect\"><a:avLst/></a:prstGeom></p:spPr></p:sp></p:spTree>"
+        },
+        {
+          "kind": "replace-literal-once",
+          "part": "ppt/slides/slide1.xml",
+          "before": "id=\"2001\"",
+          "after": "id=\"2000\""
+        }
+      ],
+      "request": {
+        "start": {
+          "shapeId": 2000,
+          "site": 3
+        },
+        "end": {
+          "shapeId": 2001,
+          "site": 1
+        },
+        "options": {
+          "name": "Attached & exact",
+          "color": "336699",
+          "width": 25400
+        }
+      },
+      "errorCode": "PPTX_CONNECTOR_UNSUPPORTED"
+    },
+    {
+      "caseId": "protected-presentation",
+      "scenarioId": "@id-pptx-graphics-connectors-refusals",
+      "example": {
+        "fault": "protected presentation"
+      },
+      "operations": [
+        {
+          "kind": "replace-literal-once",
+          "part": "ppt/slides/slide1.xml",
+          "before": "</p:spTree>",
+          "after": "<p:sp><p:nvSpPr><p:cNvPr id=\"2000\" name=\"Node 2000\"/><p:cNvSpPr/><p:nvPr/></p:nvSpPr><p:spPr><a:xfrm><a:off x=\"100\" y=\"200\"/><a:ext cx=\"400\" cy=\"600\"/></a:xfrm><a:prstGeom prst=\"rect\"><a:avLst/></a:prstGeom></p:spPr></p:sp><p:sp><p:nvSpPr><p:cNvPr id=\"2001\" name=\"Node 2001\"/><p:cNvSpPr/><p:nvPr/></p:nvSpPr><p:spPr><a:xfrm><a:off x=\"1000\" y=\"1000\"/><a:ext cx=\"800\" cy=\"400\"/></a:xfrm><a:prstGeom prst=\"rect\"><a:avLst/></a:prstGeom></p:spPr></p:sp></p:spTree>"
+        },
+        {
+          "kind": "replace-literal-once",
+          "part": "ppt/presentation.xml",
+          "before": "</p:presentation>",
+          "after": "<p:modifyVerifier/></p:presentation>"
+        }
+      ],
+      "request": {
+        "start": {
+          "shapeId": 2000,
+          "site": 3
+        },
+        "end": {
+          "shapeId": 2001,
+          "site": 1
+        },
+        "options": {
+          "name": "Attached & exact",
+          "color": "336699",
+          "width": 25400
+        }
+      },
+      "errorCode": "PPTX_PROTECTED"
+    }
+  ]
+}

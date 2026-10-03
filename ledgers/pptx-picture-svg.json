@@ -1,0 +1,372 @@
+{
+  "schemaVersion": 1,
+  "executionCredit": false,
+  "feature": "workflows/pptx/picture-svg.feature",
+  "contract": "contracts/pptx-picture-svg.md",
+  "baseFixtureId": "fixture-792277d2c358c5bd7c8a4053078a5594fa07bfb55a06b0bb30f2813c151ea459",
+  "slidePart": "ppt/slides/slide1.xml",
+  "counts": {
+    "ids": 2,
+    "cases": 11
+  },
+  "svgNamespace": "http://schemas.microsoft.com/office/drawing/2016/SVG/main",
+  "extensionURI": "{96DAC541-7B7A-43D3-8B79-37D633B846F1}",
+  "custody": {
+    "allowedChangedParts": [
+      "ppt/slides/slide1.xml",
+      "ppt/slides/_rels/slide1.xml.rels",
+      "[Content_Types].xml"
+    ],
+    "addedParts": "exactly receipt media parts",
+    "preserve": "all unrelated member payloads and original shape XML"
+  },
+  "cases": [
+    {
+      "caseId": "PNG",
+      "scenarioId": "@id-pptx-graphics-picture-svg-add",
+      "example": {
+        "kind": "PNG"
+      },
+      "operations": [],
+      "request": {
+        "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"100\" height=\"50\" viewBox=\"0 0 100 50\"><rect x=\"0\" y=\"0\" width=\"100\" height=\"50\" fill=\"#336699\"/><path d=\"M 10 10 L 90 10 L 50 40 Z\" fill=\"none\" stroke=\"#ffffff\" stroke-width=\"2\"/></svg>",
+        "fallback": {
+          "fixtureId": "fixture-792277d2c358c5bd7c8a4053078a5594fa07bfb55a06b0bb30f2813c151ea459",
+          "part": "ppt/media/image1.png",
+          "contentType": "image/png",
+          "byteLength": 399889,
+          "sha256": "21e40e91bf948fd8b179c59915b5b840c0f8438ea7f2f144b4287cfd9b158e7f"
+        },
+        "geometry": {
+          "x": -123,
+          "y": 456,
+          "width": 1234567,
+          "height": 2345678
+        },
+        "options": {
+          "contentType": "image/png",
+          "name": "Inserted & \"picture\"",
+          "description": "Caption <exact> 雪"
+        }
+      },
+      "expected": {
+        "shapeId": 1034,
+        "partName": "ppt/slides/slide1.xml",
+        "mediaPart": "ppt/media/image3.png",
+        "relationshipId": "rId5",
+        "svgMediaPart": "ppt/media/image1.svg",
+        "svgRelationshipId": "rId4"
+      }
+    },
+    {
+      "caseId": "JPEG",
+      "scenarioId": "@id-pptx-graphics-picture-svg-add",
+      "example": {
+        "kind": "JPEG"
+      },
+      "operations": [],
+      "request": {
+        "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"100\" height=\"50\" viewBox=\"0 0 100 50\"><rect x=\"0\" y=\"0\" width=\"100\" height=\"50\" fill=\"#336699\"/><path d=\"M 10 10 L 90 10 L 50 40 Z\" fill=\"none\" stroke=\"#ffffff\" stroke-width=\"2\"/></svg>",
+        "fallback": {
+          "fixtureId": "fixture-792277d2c358c5bd7c8a4053078a5594fa07bfb55a06b0bb30f2813c151ea459",
+          "part": "docProps/thumbnail.jpeg",
+          "contentType": "image/jpeg",
+          "byteLength": 19174,
+          "sha256": "e88c25e729f311d24c83ba3678cd1628afac87c44bf7c1625095c8d50ecc670d"
+        },
+        "geometry": {
+          "x": -123,
+          "y": 456,
+          "width": 1234567,
+          "height": 2345678
+        },
+        "options": {
+          "contentType": "image/jpeg",
+          "name": "Inserted & \"picture\"",
+          "description": "Caption <exact> 雪"
+        }
+      },
+      "expected": {
+        "shapeId": 1034,
+        "partName": "ppt/slides/slide1.xml",
+        "mediaPart": "ppt/media/image1.jpeg",
+        "relationshipId": "rId5",
+        "svgMediaPart": "ppt/media/image1.svg",
+        "svgRelationshipId": "rId4"
+      }
+    },
+    {
+      "caseId": "script",
+      "scenarioId": "@id-pptx-graphics-picture-svg-refusals",
+      "example": {
+        "fault": "script"
+      },
+      "operations": [],
+      "request": {
+        "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\"><script>alert(1)</script></svg>",
+        "fallback": {
+          "fixtureId": "fixture-792277d2c358c5bd7c8a4053078a5594fa07bfb55a06b0bb30f2813c151ea459",
+          "part": "ppt/media/image1.png",
+          "contentType": "image/png",
+          "byteLength": 399889,
+          "sha256": "21e40e91bf948fd8b179c59915b5b840c0f8438ea7f2f144b4287cfd9b158e7f"
+        },
+        "geometry": {
+          "x": -123,
+          "y": 456,
+          "width": 1234567,
+          "height": 2345678
+        },
+        "options": {
+          "contentType": "image/png",
+          "name": "Inserted & \"picture\"",
+          "description": "Caption <exact> 雪"
+        }
+      },
+      "errorCode": "PPTX_PICTURE_UNSUPPORTED"
+    },
+    {
+      "caseId": "external reference",
+      "scenarioId": "@id-pptx-graphics-picture-svg-refusals",
+      "example": {
+        "fault": "external reference"
+      },
+      "operations": [],
+      "request": {
+        "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\"><image href=\"https://invalid.example/x.png\"/></svg>",
+        "fallback": {
+          "fixtureId": "fixture-792277d2c358c5bd7c8a4053078a5594fa07bfb55a06b0bb30f2813c151ea459",
+          "part": "ppt/media/image1.png",
+          "contentType": "image/png",
+          "byteLength": 399889,
+          "sha256": "21e40e91bf948fd8b179c59915b5b840c0f8438ea7f2f144b4287cfd9b158e7f"
+        },
+        "geometry": {
+          "x": -123,
+          "y": 456,
+          "width": 1234567,
+          "height": 2345678
+        },
+        "options": {
+          "contentType": "image/png",
+          "name": "Inserted & \"picture\"",
+          "description": "Caption <exact> 雪"
+        }
+      },
+      "errorCode": "PPTX_PICTURE_UNSUPPORTED"
+    },
+    {
+      "caseId": "event handler",
+      "scenarioId": "@id-pptx-graphics-picture-svg-refusals",
+      "example": {
+        "fault": "event handler"
+      },
+      "operations": [],
+      "request": {
+        "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" onload=\"alert(1)\"/>",
+        "fallback": {
+          "fixtureId": "fixture-792277d2c358c5bd7c8a4053078a5594fa07bfb55a06b0bb30f2813c151ea459",
+          "part": "ppt/media/image1.png",
+          "contentType": "image/png",
+          "byteLength": 399889,
+          "sha256": "21e40e91bf948fd8b179c59915b5b840c0f8438ea7f2f144b4287cfd9b158e7f"
+        },
+        "geometry": {
+          "x": -123,
+          "y": 456,
+          "width": 1234567,
+          "height": 2345678
+        },
+        "options": {
+          "contentType": "image/png",
+          "name": "Inserted & \"picture\"",
+          "description": "Caption <exact> 雪"
+        }
+      },
+      "errorCode": "PPTX_PICTURE_UNSUPPORTED"
+    },
+    {
+      "caseId": "CSS style",
+      "scenarioId": "@id-pptx-graphics-picture-svg-refusals",
+      "example": {
+        "fault": "CSS style"
+      },
+      "operations": [],
+      "request": {
+        "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\"><style>rect{fill:red}</style></svg>",
+        "fallback": {
+          "fixtureId": "fixture-792277d2c358c5bd7c8a4053078a5594fa07bfb55a06b0bb30f2813c151ea459",
+          "part": "ppt/media/image1.png",
+          "contentType": "image/png",
+          "byteLength": 399889,
+          "sha256": "21e40e91bf948fd8b179c59915b5b840c0f8438ea7f2f144b4287cfd9b158e7f"
+        },
+        "geometry": {
+          "x": -123,
+          "y": 456,
+          "width": 1234567,
+          "height": 2345678
+        },
+        "options": {
+          "contentType": "image/png",
+          "name": "Inserted & \"picture\"",
+          "description": "Caption <exact> 雪"
+        }
+      },
+      "errorCode": "PPTX_PICTURE_UNSUPPORTED"
+    },
+    {
+      "caseId": "paint URL",
+      "scenarioId": "@id-pptx-graphics-picture-svg-refusals",
+      "example": {
+        "fault": "paint URL"
+      },
+      "operations": [],
+      "request": {
+        "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\"><rect fill=\"url(https://invalid.example/x)\"/></svg>",
+        "fallback": {
+          "fixtureId": "fixture-792277d2c358c5bd7c8a4053078a5594fa07bfb55a06b0bb30f2813c151ea459",
+          "part": "ppt/media/image1.png",
+          "contentType": "image/png",
+          "byteLength": 399889,
+          "sha256": "21e40e91bf948fd8b179c59915b5b840c0f8438ea7f2f144b4287cfd9b158e7f"
+        },
+        "geometry": {
+          "x": -123,
+          "y": 456,
+          "width": 1234567,
+          "height": 2345678
+        },
+        "options": {
+          "contentType": "image/png",
+          "name": "Inserted & \"picture\"",
+          "description": "Caption <exact> 雪"
+        }
+      },
+      "errorCode": "PPTX_PICTURE_UNSUPPORTED"
+    },
+    {
+      "caseId": "wrong namespace",
+      "scenarioId": "@id-pptx-graphics-picture-svg-refusals",
+      "example": {
+        "fault": "wrong namespace"
+      },
+      "operations": [],
+      "request": {
+        "svg": "<svg xmlns=\"urn:other\"/>",
+        "fallback": {
+          "fixtureId": "fixture-792277d2c358c5bd7c8a4053078a5594fa07bfb55a06b0bb30f2813c151ea459",
+          "part": "ppt/media/image1.png",
+          "contentType": "image/png",
+          "byteLength": 399889,
+          "sha256": "21e40e91bf948fd8b179c59915b5b840c0f8438ea7f2f144b4287cfd9b158e7f"
+        },
+        "geometry": {
+          "x": -123,
+          "y": 456,
+          "width": 1234567,
+          "height": 2345678
+        },
+        "options": {
+          "contentType": "image/png",
+          "name": "Inserted & \"picture\"",
+          "description": "Caption <exact> 雪"
+        }
+      },
+      "errorCode": "PPTX_PICTURE_UNSUPPORTED"
+    },
+    {
+      "caseId": "malformed XML",
+      "scenarioId": "@id-pptx-graphics-picture-svg-refusals",
+      "example": {
+        "fault": "malformed XML"
+      },
+      "operations": [],
+      "request": {
+        "svg": "<svg>",
+        "fallback": {
+          "fixtureId": "fixture-792277d2c358c5bd7c8a4053078a5594fa07bfb55a06b0bb30f2813c151ea459",
+          "part": "ppt/media/image1.png",
+          "contentType": "image/png",
+          "byteLength": 399889,
+          "sha256": "21e40e91bf948fd8b179c59915b5b840c0f8438ea7f2f144b4287cfd9b158e7f"
+        },
+        "geometry": {
+          "x": -123,
+          "y": 456,
+          "width": 1234567,
+          "height": 2345678
+        },
+        "options": {
+          "contentType": "image/png",
+          "name": "Inserted & \"picture\"",
+          "description": "Caption <exact> 雪"
+        }
+      },
+      "errorCode": "PPTX_PICTURE_UNSUPPORTED"
+    },
+    {
+      "caseId": "DOCTYPE",
+      "scenarioId": "@id-pptx-graphics-picture-svg-refusals",
+      "example": {
+        "fault": "DOCTYPE"
+      },
+      "operations": [],
+      "request": {
+        "svg": "<!DOCTYPE svg [<!ENTITY ext SYSTEM \"file:///never\">]><svg xmlns=\"http://www.w3.org/2000/svg\"/>",
+        "fallback": {
+          "fixtureId": "fixture-792277d2c358c5bd7c8a4053078a5594fa07bfb55a06b0bb30f2813c151ea459",
+          "part": "ppt/media/image1.png",
+          "contentType": "image/png",
+          "byteLength": 399889,
+          "sha256": "21e40e91bf948fd8b179c59915b5b840c0f8438ea7f2f144b4287cfd9b158e7f"
+        },
+        "geometry": {
+          "x": -123,
+          "y": 456,
+          "width": 1234567,
+          "height": 2345678
+        },
+        "options": {
+          "contentType": "image/png",
+          "name": "Inserted & \"picture\"",
+          "description": "Caption <exact> 雪"
+        }
+      },
+      "errorCode": "PPTX_PICTURE_UNSUPPORTED"
+    },
+    {
+      "caseId": "invalid fallback",
+      "scenarioId": "@id-pptx-graphics-picture-svg-refusals",
+      "example": {
+        "fault": "invalid fallback"
+      },
+      "operations": [],
+      "request": {
+        "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"100\" height=\"50\" viewBox=\"0 0 100 50\"><rect x=\"0\" y=\"0\" width=\"100\" height=\"50\" fill=\"#336699\"/><path d=\"M 10 10 L 90 10 L 50 40 Z\" fill=\"none\" stroke=\"#ffffff\" stroke-width=\"2\"/></svg>",
+        "fallback": {
+          "fixtureId": "fixture-792277d2c358c5bd7c8a4053078a5594fa07bfb55a06b0bb30f2813c151ea459",
+          "part": "ppt/media/image1.png",
+          "contentType": "image/png",
+          "byteLength": 399889,
+          "sha256": "21e40e91bf948fd8b179c59915b5b840c0f8438ea7f2f144b4287cfd9b158e7f"
+        },
+        "geometry": {
+          "x": -123,
+          "y": 456,
+          "width": 1234567,
+          "height": 2345678
+        },
+        "options": {
+          "contentType": "image/png",
+          "name": "Inserted & \"picture\"",
+          "description": "Caption <exact> 雪"
+        }
+      },
+      "requestPatch": {
+        "emptyFallback": true
+      },
+      "errorCode": "PPTX_PICTURE_UNSUPPORTED"
+    }
+  ]
+}

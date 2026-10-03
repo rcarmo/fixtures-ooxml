@@ -1,0 +1,727 @@
+{
+  "schemaVersion": 1,
+  "executionCredit": false,
+  "feature": "workflows/pptx/picture-placement.feature",
+  "contract": "contracts/pptx-picture-placement.md",
+  "baseFixtureId": "fixture-792277d2c358c5bd7c8a4053078a5594fa07bfb55a06b0bb30f2813c151ea459",
+  "slidePart": "ppt/slides/slide1.xml",
+  "counts": {
+    "ids": 3,
+    "cases": 16
+  },
+  "custody": {
+    "allowedChangedParts": [
+      "ppt/slides/slide1.xml",
+      "ppt/slides/_rels/slide1.xml.rels",
+      "[Content_Types].xml"
+    ],
+    "addedParts": "exactly receipt media parts",
+    "preserve": "all unrelated member payloads and original shape XML"
+  },
+  "cases": [
+    {
+      "caseId": "contain landscape",
+      "scenarioId": "@id-pptx-graphics-picture-placement-policies",
+      "example": {
+        "variant": "contain landscape"
+      },
+      "request": {
+        "payload": {
+          "fixtureId": "fixture-792277d2c358c5bd7c8a4053078a5594fa07bfb55a06b0bb30f2813c151ea459",
+          "part": "ppt/media/image1.png",
+          "contentType": "image/png",
+          "byteLength": 399889,
+          "sha256": "21e40e91bf948fd8b179c59915b5b840c0f8438ea7f2f144b4287cfd9b158e7f"
+        },
+        "box": {
+          "x": 100,
+          "y": 200,
+          "width": 1000,
+          "height": 1000
+        },
+        "options": {
+          "contentType": "image/png",
+          "fit": "contain",
+          "intrinsic": {
+            "width": 4,
+            "height": 2
+          }
+        }
+      },
+      "expected": {
+        "shapeId": 1034,
+        "mediaPart": "ppt/media/image3.png",
+        "relationshipId": "rId4",
+        "geometry": {
+          "x": 100,
+          "y": 450,
+          "width": 1000,
+          "height": 500
+        },
+        "crop": {
+          "left": 0,
+          "top": 0,
+          "right": 0,
+          "bottom": 0
+        }
+      }
+    },
+    {
+      "caseId": "contain portrait",
+      "scenarioId": "@id-pptx-graphics-picture-placement-policies",
+      "example": {
+        "variant": "contain portrait"
+      },
+      "request": {
+        "payload": {
+          "fixtureId": "fixture-792277d2c358c5bd7c8a4053078a5594fa07bfb55a06b0bb30f2813c151ea459",
+          "part": "ppt/media/image1.png",
+          "contentType": "image/png",
+          "byteLength": 399889,
+          "sha256": "21e40e91bf948fd8b179c59915b5b840c0f8438ea7f2f144b4287cfd9b158e7f"
+        },
+        "box": {
+          "x": 100,
+          "y": 200,
+          "width": 1000,
+          "height": 1000
+        },
+        "options": {
+          "contentType": "image/png",
+          "fit": "contain",
+          "intrinsic": {
+            "width": 2,
+            "height": 4
+          }
+        }
+      },
+      "expected": {
+        "shapeId": 1034,
+        "mediaPart": "ppt/media/image3.png",
+        "relationshipId": "rId4",
+        "geometry": {
+          "x": 350,
+          "y": 200,
+          "width": 500,
+          "height": 1000
+        },
+        "crop": {
+          "left": 0,
+          "top": 0,
+          "right": 0,
+          "bottom": 0
+        }
+      }
+    },
+    {
+      "caseId": "cover landscape",
+      "scenarioId": "@id-pptx-graphics-picture-placement-policies",
+      "example": {
+        "variant": "cover landscape"
+      },
+      "request": {
+        "payload": {
+          "fixtureId": "fixture-792277d2c358c5bd7c8a4053078a5594fa07bfb55a06b0bb30f2813c151ea459",
+          "part": "ppt/media/image1.png",
+          "contentType": "image/png",
+          "byteLength": 399889,
+          "sha256": "21e40e91bf948fd8b179c59915b5b840c0f8438ea7f2f144b4287cfd9b158e7f"
+        },
+        "box": {
+          "x": 100,
+          "y": 200,
+          "width": 1000,
+          "height": 1000
+        },
+        "options": {
+          "contentType": "image/png",
+          "fit": "cover",
+          "intrinsic": {
+            "width": 4,
+            "height": 2
+          }
+        }
+      },
+      "expected": {
+        "shapeId": 1034,
+        "mediaPart": "ppt/media/image3.png",
+        "relationshipId": "rId4",
+        "geometry": {
+          "x": 100,
+          "y": 200,
+          "width": 1000,
+          "height": 1000
+        },
+        "crop": {
+          "left": 25000,
+          "top": 0,
+          "right": 25000,
+          "bottom": 0
+        }
+      }
+    },
+    {
+      "caseId": "cover portrait",
+      "scenarioId": "@id-pptx-graphics-picture-placement-policies",
+      "example": {
+        "variant": "cover portrait"
+      },
+      "request": {
+        "payload": {
+          "fixtureId": "fixture-792277d2c358c5bd7c8a4053078a5594fa07bfb55a06b0bb30f2813c151ea459",
+          "part": "ppt/media/image1.png",
+          "contentType": "image/png",
+          "byteLength": 399889,
+          "sha256": "21e40e91bf948fd8b179c59915b5b840c0f8438ea7f2f144b4287cfd9b158e7f"
+        },
+        "box": {
+          "x": 100,
+          "y": 200,
+          "width": 1000,
+          "height": 1000
+        },
+        "options": {
+          "contentType": "image/png",
+          "fit": "cover",
+          "intrinsic": {
+            "width": 2,
+            "height": 4
+          }
+        }
+      },
+      "expected": {
+        "shapeId": 1034,
+        "mediaPart": "ppt/media/image3.png",
+        "relationshipId": "rId4",
+        "geometry": {
+          "x": 100,
+          "y": 200,
+          "width": 1000,
+          "height": 1000
+        },
+        "crop": {
+          "left": 0,
+          "top": 25000,
+          "right": 0,
+          "bottom": 25000
+        }
+      }
+    },
+    {
+      "caseId": "stretch landscape",
+      "scenarioId": "@id-pptx-graphics-picture-placement-policies",
+      "example": {
+        "variant": "stretch landscape"
+      },
+      "request": {
+        "payload": {
+          "fixtureId": "fixture-792277d2c358c5bd7c8a4053078a5594fa07bfb55a06b0bb30f2813c151ea459",
+          "part": "ppt/media/image1.png",
+          "contentType": "image/png",
+          "byteLength": 399889,
+          "sha256": "21e40e91bf948fd8b179c59915b5b840c0f8438ea7f2f144b4287cfd9b158e7f"
+        },
+        "box": {
+          "x": 100,
+          "y": 200,
+          "width": 1000,
+          "height": 1000
+        },
+        "options": {
+          "contentType": "image/png",
+          "fit": "stretch",
+          "intrinsic": {
+            "width": 4,
+            "height": 2
+          }
+        }
+      },
+      "expected": {
+        "shapeId": 1034,
+        "mediaPart": "ppt/media/image3.png",
+        "relationshipId": "rId4",
+        "geometry": {
+          "x": 100,
+          "y": 200,
+          "width": 1000,
+          "height": 1000
+        },
+        "crop": {
+          "left": 0,
+          "top": 0,
+          "right": 0,
+          "bottom": 0
+        }
+      }
+    },
+    {
+      "caseId": "equal aspect",
+      "scenarioId": "@id-pptx-graphics-picture-placement-policies",
+      "example": {
+        "variant": "equal aspect"
+      },
+      "request": {
+        "payload": {
+          "fixtureId": "fixture-792277d2c358c5bd7c8a4053078a5594fa07bfb55a06b0bb30f2813c151ea459",
+          "part": "ppt/media/image1.png",
+          "contentType": "image/png",
+          "byteLength": 399889,
+          "sha256": "21e40e91bf948fd8b179c59915b5b840c0f8438ea7f2f144b4287cfd9b158e7f"
+        },
+        "box": {
+          "x": 100,
+          "y": 200,
+          "width": 1000,
+          "height": 1000
+        },
+        "options": {
+          "contentType": "image/png",
+          "fit": "cover",
+          "intrinsic": {
+            "width": 1,
+            "height": 1
+          }
+        }
+      },
+      "expected": {
+        "shapeId": 1034,
+        "mediaPart": "ppt/media/image3.png",
+        "relationshipId": "rId4",
+        "geometry": {
+          "x": 100,
+          "y": 200,
+          "width": 1000,
+          "height": 1000
+        },
+        "crop": {
+          "left": 0,
+          "top": 0,
+          "right": 0,
+          "bottom": 0
+        }
+      }
+    },
+    {
+      "caseId": "contain odd",
+      "scenarioId": "@id-pptx-graphics-picture-placement-rounding",
+      "example": {
+        "variant": "contain odd"
+      },
+      "request": {
+        "payload": {
+          "fixtureId": "fixture-792277d2c358c5bd7c8a4053078a5594fa07bfb55a06b0bb30f2813c151ea459",
+          "part": "ppt/media/image1.png",
+          "contentType": "image/png",
+          "byteLength": 399889,
+          "sha256": "21e40e91bf948fd8b179c59915b5b840c0f8438ea7f2f144b4287cfd9b158e7f"
+        },
+        "box": {
+          "x": -10,
+          "y": 20,
+          "width": 1001,
+          "height": 670
+        },
+        "options": {
+          "contentType": "image/png",
+          "fit": "contain",
+          "intrinsic": {
+            "width": 3,
+            "height": 2
+          }
+        }
+      },
+      "expected": {
+        "shapeId": 1034,
+        "mediaPart": "ppt/media/image3.png",
+        "relationshipId": "rId4",
+        "geometry": {
+          "x": -10,
+          "y": 21,
+          "width": 1001,
+          "height": 667
+        },
+        "crop": {
+          "left": 0,
+          "top": 0,
+          "right": 0,
+          "bottom": 0
+        }
+      }
+    },
+    {
+      "caseId": "cover fractional",
+      "scenarioId": "@id-pptx-graphics-picture-placement-rounding",
+      "example": {
+        "variant": "cover fractional"
+      },
+      "request": {
+        "payload": {
+          "fixtureId": "fixture-792277d2c358c5bd7c8a4053078a5594fa07bfb55a06b0bb30f2813c151ea459",
+          "part": "ppt/media/image1.png",
+          "contentType": "image/png",
+          "byteLength": 399889,
+          "sha256": "21e40e91bf948fd8b179c59915b5b840c0f8438ea7f2f144b4287cfd9b158e7f"
+        },
+        "box": {
+          "x": 0,
+          "y": 0,
+          "width": 1000,
+          "height": 1000
+        },
+        "options": {
+          "contentType": "image/png",
+          "fit": "cover",
+          "intrinsic": {
+            "width": 3,
+            "height": 2
+          }
+        }
+      },
+      "expected": {
+        "shapeId": 1034,
+        "mediaPart": "ppt/media/image3.png",
+        "relationshipId": "rId4",
+        "geometry": {
+          "x": 0,
+          "y": 0,
+          "width": 1000,
+          "height": 1000
+        },
+        "crop": {
+          "left": 16667,
+          "top": 0,
+          "right": 16667,
+          "bottom": 0
+        }
+      }
+    },
+    {
+      "caseId": "large rational",
+      "scenarioId": "@id-pptx-graphics-picture-placement-rounding",
+      "example": {
+        "variant": "large rational"
+      },
+      "request": {
+        "payload": {
+          "fixtureId": "fixture-792277d2c358c5bd7c8a4053078a5594fa07bfb55a06b0bb30f2813c151ea459",
+          "part": "ppt/media/image1.png",
+          "contentType": "image/png",
+          "byteLength": 399889,
+          "sha256": "21e40e91bf948fd8b179c59915b5b840c0f8438ea7f2f144b4287cfd9b158e7f"
+        },
+        "box": {
+          "x": 0,
+          "y": 0,
+          "width": 2147483647,
+          "height": 2147483647
+        },
+        "options": {
+          "contentType": "image/png",
+          "fit": "contain",
+          "intrinsic": {
+            "width": 2147483647,
+            "height": 2147483646
+          }
+        }
+      },
+      "expected": {
+        "shapeId": 1034,
+        "mediaPart": "ppt/media/image3.png",
+        "relationshipId": "rId4",
+        "geometry": {
+          "x": 0,
+          "y": 0,
+          "width": 2147483647,
+          "height": 2147483646
+        },
+        "crop": {
+          "left": 0,
+          "top": 0,
+          "right": 0,
+          "bottom": 0
+        }
+      }
+    },
+    {
+      "caseId": "unknown-fit",
+      "scenarioId": "@id-pptx-graphics-picture-placement-refusals",
+      "example": {
+        "fault": "unknown fit"
+      },
+      "request": {
+        "payload": {
+          "fixtureId": "fixture-792277d2c358c5bd7c8a4053078a5594fa07bfb55a06b0bb30f2813c151ea459",
+          "part": "ppt/media/image1.png",
+          "contentType": "image/png",
+          "byteLength": 399889,
+          "sha256": "21e40e91bf948fd8b179c59915b5b840c0f8438ea7f2f144b4287cfd9b158e7f"
+        },
+        "box": {
+          "x": 100,
+          "y": 200,
+          "width": 1000,
+          "height": 1000
+        },
+        "options": {
+          "contentType": "image/png",
+          "fit": "contain",
+          "intrinsic": {
+            "width": 4,
+            "height": 2
+          }
+        }
+      },
+      "requestPatch": {
+        "options": {
+          "fit": "automatic"
+        }
+      },
+      "errorCode": "PPTX_PICTURE_UNSUPPORTED"
+    },
+    {
+      "caseId": "zero-intrinsic-dimension",
+      "scenarioId": "@id-pptx-graphics-picture-placement-refusals",
+      "example": {
+        "fault": "zero intrinsic dimension"
+      },
+      "request": {
+        "payload": {
+          "fixtureId": "fixture-792277d2c358c5bd7c8a4053078a5594fa07bfb55a06b0bb30f2813c151ea459",
+          "part": "ppt/media/image1.png",
+          "contentType": "image/png",
+          "byteLength": 399889,
+          "sha256": "21e40e91bf948fd8b179c59915b5b840c0f8438ea7f2f144b4287cfd9b158e7f"
+        },
+        "box": {
+          "x": 100,
+          "y": 200,
+          "width": 1000,
+          "height": 1000
+        },
+        "options": {
+          "contentType": "image/png",
+          "fit": "contain",
+          "intrinsic": {
+            "width": 4,
+            "height": 2
+          }
+        }
+      },
+      "requestPatch": {
+        "options": {
+          "intrinsic": {
+            "width": 0,
+            "height": 2
+          }
+        }
+      },
+      "errorCode": "PPTX_PICTURE_UNSUPPORTED"
+    },
+    {
+      "caseId": "fractional-intrinsic-dimension",
+      "scenarioId": "@id-pptx-graphics-picture-placement-refusals",
+      "example": {
+        "fault": "fractional intrinsic dimension"
+      },
+      "request": {
+        "payload": {
+          "fixtureId": "fixture-792277d2c358c5bd7c8a4053078a5594fa07bfb55a06b0bb30f2813c151ea459",
+          "part": "ppt/media/image1.png",
+          "contentType": "image/png",
+          "byteLength": 399889,
+          "sha256": "21e40e91bf948fd8b179c59915b5b840c0f8438ea7f2f144b4287cfd9b158e7f"
+        },
+        "box": {
+          "x": 100,
+          "y": 200,
+          "width": 1000,
+          "height": 1000
+        },
+        "options": {
+          "contentType": "image/png",
+          "fit": "contain",
+          "intrinsic": {
+            "width": 4,
+            "height": 2
+          }
+        }
+      },
+      "requestPatch": {
+        "options": {
+          "intrinsic": {
+            "width": 1.5,
+            "height": 2
+          }
+        }
+      },
+      "errorCode": "PPTX_PICTURE_UNSUPPORTED"
+    },
+    {
+      "caseId": "zero-box-extent",
+      "scenarioId": "@id-pptx-graphics-picture-placement-refusals",
+      "example": {
+        "fault": "zero box extent"
+      },
+      "request": {
+        "payload": {
+          "fixtureId": "fixture-792277d2c358c5bd7c8a4053078a5594fa07bfb55a06b0bb30f2813c151ea459",
+          "part": "ppt/media/image1.png",
+          "contentType": "image/png",
+          "byteLength": 399889,
+          "sha256": "21e40e91bf948fd8b179c59915b5b840c0f8438ea7f2f144b4287cfd9b158e7f"
+        },
+        "box": {
+          "x": 100,
+          "y": 200,
+          "width": 1000,
+          "height": 1000
+        },
+        "options": {
+          "contentType": "image/png",
+          "fit": "contain",
+          "intrinsic": {
+            "width": 4,
+            "height": 2
+          }
+        }
+      },
+      "requestPatch": {
+        "box": {
+          "width": 0
+        }
+      },
+      "errorCode": "PPTX_PICTURE_UNSUPPORTED"
+    },
+    {
+      "caseId": "subunit-contain-extent",
+      "scenarioId": "@id-pptx-graphics-picture-placement-refusals",
+      "example": {
+        "fault": "subunit contain extent"
+      },
+      "request": {
+        "payload": {
+          "fixtureId": "fixture-792277d2c358c5bd7c8a4053078a5594fa07bfb55a06b0bb30f2813c151ea459",
+          "part": "ppt/media/image1.png",
+          "contentType": "image/png",
+          "byteLength": 399889,
+          "sha256": "21e40e91bf948fd8b179c59915b5b840c0f8438ea7f2f144b4287cfd9b158e7f"
+        },
+        "box": {
+          "x": 100,
+          "y": 200,
+          "width": 1000,
+          "height": 1000
+        },
+        "options": {
+          "contentType": "image/png",
+          "fit": "contain",
+          "intrinsic": {
+            "width": 4,
+            "height": 2
+          }
+        }
+      },
+      "requestPatch": {
+        "options": {
+          "fit": "contain",
+          "intrinsic": {
+            "width": 2147483647,
+            "height": 1
+          }
+        },
+        "box": {
+          "width": 1,
+          "height": 1
+        }
+      },
+      "errorCode": "PPTX_PICTURE_UNSUPPORTED"
+    },
+    {
+      "caseId": "unrepresentable-cover-crop",
+      "scenarioId": "@id-pptx-graphics-picture-placement-refusals",
+      "example": {
+        "fault": "unrepresentable cover crop"
+      },
+      "request": {
+        "payload": {
+          "fixtureId": "fixture-792277d2c358c5bd7c8a4053078a5594fa07bfb55a06b0bb30f2813c151ea459",
+          "part": "ppt/media/image1.png",
+          "contentType": "image/png",
+          "byteLength": 399889,
+          "sha256": "21e40e91bf948fd8b179c59915b5b840c0f8438ea7f2f144b4287cfd9b158e7f"
+        },
+        "box": {
+          "x": 100,
+          "y": 200,
+          "width": 1000,
+          "height": 1000
+        },
+        "options": {
+          "contentType": "image/png",
+          "fit": "contain",
+          "intrinsic": {
+            "width": 4,
+            "height": 2
+          }
+        }
+      },
+      "requestPatch": {
+        "options": {
+          "fit": "cover",
+          "intrinsic": {
+            "width": 2147483647,
+            "height": 1
+          }
+        },
+        "box": {
+          "width": 1,
+          "height": 1
+        }
+      },
+      "errorCode": "PPTX_PICTURE_UNSUPPORTED"
+    },
+    {
+      "caseId": "centred-coordinate-overflow",
+      "scenarioId": "@id-pptx-graphics-picture-placement-refusals",
+      "example": {
+        "fault": "centred coordinate overflow"
+      },
+      "request": {
+        "payload": {
+          "fixtureId": "fixture-792277d2c358c5bd7c8a4053078a5594fa07bfb55a06b0bb30f2813c151ea459",
+          "part": "ppt/media/image1.png",
+          "contentType": "image/png",
+          "byteLength": 399889,
+          "sha256": "21e40e91bf948fd8b179c59915b5b840c0f8438ea7f2f144b4287cfd9b158e7f"
+        },
+        "box": {
+          "x": 100,
+          "y": 200,
+          "width": 1000,
+          "height": 1000
+        },
+        "options": {
+          "contentType": "image/png",
+          "fit": "contain",
+          "intrinsic": {
+            "width": 4,
+            "height": 2
+          }
+        }
+      },
+      "requestPatch": {
+        "options": {
+          "fit": "contain",
+          "intrinsic": {
+            "width": 1,
+            "height": 2
+          }
+        },
+        "box": {
+          "x": 2147483647
+        }
+      },
+      "errorCode": "PPTX_PICTURE_UNSUPPORTED"
+    }
+  ]
+}

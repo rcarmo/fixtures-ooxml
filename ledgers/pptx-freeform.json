@@ -1,0 +1,2133 @@
+{
+  "schemaVersion": 1,
+  "executionCredit": false,
+  "feature": "workflows/pptx/freeform.feature",
+  "contract": "contracts/pptx-freeform.md",
+  "baseFixtureId": "fixture-792277d2c358c5bd7c8a4053078a5594fa07bfb55a06b0bb30f2813c151ea459",
+  "slidePart": "ppt/slides/slide1.xml",
+  "counts": {
+    "ids": 2,
+    "cases": 15
+  },
+  "custody": {
+    "allowedChangedParts": [
+      "ppt/slides/slide1.xml"
+    ],
+    "membership": "exact",
+    "preserve": "all original XML relationships and member payloads"
+  },
+  "cases": [
+    {
+      "caseId": "closed triangle",
+      "scenarioId": "@id-pptx-graphics-freeform-author",
+      "example": {
+        "variant": "closed triangle"
+      },
+      "operations": [],
+      "request": {
+        "geometry": {
+          "x": 100,
+          "y": 200,
+          "width": 1200000,
+          "height": 900000
+        },
+        "path": {
+          "width": 1000,
+          "height": 1000,
+          "commands": [
+            {
+              "op": "move",
+              "x": 0,
+              "y": 1000
+            },
+            {
+              "op": "line",
+              "x": 500,
+              "y": 0
+            },
+            {
+              "op": "line",
+              "x": 1000,
+              "y": 1000
+            },
+            {
+              "op": "close"
+            }
+          ]
+        },
+        "options": {
+          "name": "Vector & exact",
+          "fill": "F2F2F2",
+          "lineColor": "336699",
+          "lineWidth": 25400
+        }
+      },
+      "expected": {
+        "shapeId": 1034,
+        "partName": "ppt/slides/slide1.xml",
+        "geometry": {
+          "x": 100,
+          "y": 200,
+          "width": 1200000,
+          "height": 900000
+        },
+        "path": {
+          "width": 1000,
+          "height": 1000,
+          "commands": [
+            {
+              "op": "move",
+              "x": 0,
+              "y": 1000
+            },
+            {
+              "op": "line",
+              "x": 500,
+              "y": 0
+            },
+            {
+              "op": "line",
+              "x": 1000,
+              "y": 1000
+            },
+            {
+              "op": "close"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "caseId": "open polyline",
+      "scenarioId": "@id-pptx-graphics-freeform-author",
+      "example": {
+        "variant": "open polyline"
+      },
+      "operations": [],
+      "request": {
+        "geometry": {
+          "x": 100,
+          "y": 200,
+          "width": 1200000,
+          "height": 900000
+        },
+        "path": {
+          "width": 1000,
+          "height": 1000,
+          "commands": [
+            {
+              "op": "move",
+              "x": 0,
+              "y": 0
+            },
+            {
+              "op": "line",
+              "x": 1000,
+              "y": 1000
+            }
+          ]
+        },
+        "options": {
+          "name": "Vector & exact",
+          "fill": "none",
+          "lineColor": "336699",
+          "lineWidth": 25400
+        }
+      },
+      "expected": {
+        "shapeId": 1034,
+        "partName": "ppt/slides/slide1.xml",
+        "geometry": {
+          "x": 100,
+          "y": 200,
+          "width": 1200000,
+          "height": 900000
+        },
+        "path": {
+          "width": 1000,
+          "height": 1000,
+          "commands": [
+            {
+              "op": "move",
+              "x": 0,
+              "y": 0
+            },
+            {
+              "op": "line",
+              "x": 1000,
+              "y": 1000
+            }
+          ]
+        }
+      }
+    },
+    {
+      "caseId": "multiple subpaths",
+      "scenarioId": "@id-pptx-graphics-freeform-author",
+      "example": {
+        "variant": "multiple subpaths"
+      },
+      "operations": [],
+      "request": {
+        "geometry": {
+          "x": 100,
+          "y": 200,
+          "width": 1200000,
+          "height": 900000
+        },
+        "path": {
+          "width": 1000,
+          "height": 1000,
+          "commands": [
+            {
+              "op": "move",
+              "x": 0,
+              "y": 1000
+            },
+            {
+              "op": "line",
+              "x": 500,
+              "y": 0
+            },
+            {
+              "op": "line",
+              "x": 1000,
+              "y": 1000
+            },
+            {
+              "op": "close"
+            },
+            {
+              "op": "move",
+              "x": 100,
+              "y": 100
+            },
+            {
+              "op": "line",
+              "x": 200,
+              "y": 100
+            },
+            {
+              "op": "line",
+              "x": 200,
+              "y": 200
+            },
+            {
+              "op": "close"
+            }
+          ]
+        },
+        "options": {
+          "name": "Vector & exact",
+          "fill": "F2F2F2",
+          "lineColor": "336699",
+          "lineWidth": 25400
+        }
+      },
+      "expected": {
+        "shapeId": 1034,
+        "partName": "ppt/slides/slide1.xml",
+        "geometry": {
+          "x": 100,
+          "y": 200,
+          "width": 1200000,
+          "height": 900000
+        },
+        "path": {
+          "width": 1000,
+          "height": 1000,
+          "commands": [
+            {
+              "op": "move",
+              "x": 0,
+              "y": 1000
+            },
+            {
+              "op": "line",
+              "x": 500,
+              "y": 0
+            },
+            {
+              "op": "line",
+              "x": 1000,
+              "y": 1000
+            },
+            {
+              "op": "close"
+            },
+            {
+              "op": "move",
+              "x": 100,
+              "y": 100
+            },
+            {
+              "op": "line",
+              "x": 200,
+              "y": 100
+            },
+            {
+              "op": "line",
+              "x": 200,
+              "y": 200
+            },
+            {
+              "op": "close"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "caseId": "boundary points",
+      "scenarioId": "@id-pptx-graphics-freeform-author",
+      "example": {
+        "variant": "boundary points"
+      },
+      "operations": [],
+      "request": {
+        "geometry": {
+          "x": 100,
+          "y": 200,
+          "width": 1200000,
+          "height": 900000
+        },
+        "path": {
+          "width": 1000,
+          "height": 1000,
+          "commands": [
+            {
+              "op": "move",
+              "x": 0,
+              "y": 0
+            },
+            {
+              "op": "line",
+              "x": 1000,
+              "y": 0
+            },
+            {
+              "op": "line",
+              "x": 1000,
+              "y": 1000
+            },
+            {
+              "op": "line",
+              "x": 0,
+              "y": 1000
+            },
+            {
+              "op": "close"
+            }
+          ]
+        },
+        "options": {
+          "name": "Vector & exact",
+          "fill": "F2F2F2",
+          "lineColor": "336699",
+          "lineWidth": 25400
+        }
+      },
+      "expected": {
+        "shapeId": 1034,
+        "partName": "ppt/slides/slide1.xml",
+        "geometry": {
+          "x": 100,
+          "y": 200,
+          "width": 1200000,
+          "height": 900000
+        },
+        "path": {
+          "width": 1000,
+          "height": 1000,
+          "commands": [
+            {
+              "op": "move",
+              "x": 0,
+              "y": 0
+            },
+            {
+              "op": "line",
+              "x": 1000,
+              "y": 0
+            },
+            {
+              "op": "line",
+              "x": 1000,
+              "y": 1000
+            },
+            {
+              "op": "line",
+              "x": 0,
+              "y": 1000
+            },
+            {
+              "op": "close"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "caseId": "default metadata",
+      "scenarioId": "@id-pptx-graphics-freeform-author",
+      "example": {
+        "variant": "default metadata"
+      },
+      "operations": [],
+      "request": {
+        "geometry": {
+          "x": 100,
+          "y": 200,
+          "width": 1200000,
+          "height": 900000
+        },
+        "path": {
+          "width": 1000,
+          "height": 1000,
+          "commands": [
+            {
+              "op": "move",
+              "x": 0,
+              "y": 0
+            },
+            {
+              "op": "line",
+              "x": 1000,
+              "y": 1000
+            }
+          ]
+        },
+        "options": {}
+      },
+      "expected": {
+        "shapeId": 1034,
+        "partName": "ppt/slides/slide1.xml",
+        "geometry": {
+          "x": 100,
+          "y": 200,
+          "width": 1200000,
+          "height": 900000
+        },
+        "path": {
+          "width": 1000,
+          "height": 1000,
+          "commands": [
+            {
+              "op": "move",
+              "x": 0,
+              "y": 0
+            },
+            {
+              "op": "line",
+              "x": 1000,
+              "y": 1000
+            }
+          ]
+        }
+      }
+    },
+    {
+      "caseId": "line-before-move",
+      "scenarioId": "@id-pptx-graphics-freeform-refusals",
+      "example": {
+        "fault": "line before move"
+      },
+      "operations": [],
+      "request": {
+        "geometry": {
+          "x": 100,
+          "y": 200,
+          "width": 1200000,
+          "height": 900000
+        },
+        "path": {
+          "width": 1000,
+          "height": 1000,
+          "commands": [
+            {
+              "op": "line",
+              "x": 0,
+              "y": 0
+            },
+            {
+              "op": "move",
+              "x": 0,
+              "y": 1000
+            },
+            {
+              "op": "line",
+              "x": 500,
+              "y": 0
+            },
+            {
+              "op": "line",
+              "x": 1000,
+              "y": 1000
+            },
+            {
+              "op": "close"
+            }
+          ]
+        },
+        "options": {
+          "name": "Vector & exact",
+          "fill": "F2F2F2",
+          "lineColor": "336699",
+          "lineWidth": 25400
+        }
+      },
+      "errorCode": "PPTX_FREEFORM_UNSUPPORTED"
+    },
+    {
+      "caseId": "unsupported-curve",
+      "scenarioId": "@id-pptx-graphics-freeform-refusals",
+      "example": {
+        "fault": "unsupported curve"
+      },
+      "operations": [],
+      "request": {
+        "geometry": {
+          "x": 100,
+          "y": 200,
+          "width": 1200000,
+          "height": 900000
+        },
+        "path": {
+          "width": 1000,
+          "height": 1000,
+          "commands": [
+            {
+              "op": "curve",
+              "x": 1,
+              "y": 1
+            }
+          ]
+        },
+        "options": {
+          "name": "Vector & exact",
+          "fill": "F2F2F2",
+          "lineColor": "336699",
+          "lineWidth": 25400
+        }
+      },
+      "errorCode": "PPTX_FREEFORM_UNSUPPORTED"
+    },
+    {
+      "caseId": "point-outside-path",
+      "scenarioId": "@id-pptx-graphics-freeform-refusals",
+      "example": {
+        "fault": "point outside path"
+      },
+      "operations": [],
+      "request": {
+        "geometry": {
+          "x": 100,
+          "y": 200,
+          "width": 1200000,
+          "height": 900000
+        },
+        "path": {
+          "width": 1000,
+          "height": 1000,
+          "commands": [
+            {
+              "op": "move",
+              "x": 0,
+              "y": 0
+            },
+            {
+              "op": "line",
+              "x": 1001,
+              "y": 1000
+            }
+          ]
+        },
+        "options": {
+          "name": "Vector & exact",
+          "fill": "F2F2F2",
+          "lineColor": "336699",
+          "lineWidth": 25400
+        }
+      },
+      "errorCode": "PPTX_FREEFORM_UNSUPPORTED"
+    },
+    {
+      "caseId": "fractional-point",
+      "scenarioId": "@id-pptx-graphics-freeform-refusals",
+      "example": {
+        "fault": "fractional point"
+      },
+      "operations": [],
+      "request": {
+        "geometry": {
+          "x": 100,
+          "y": 200,
+          "width": 1200000,
+          "height": 900000
+        },
+        "path": {
+          "width": 1000,
+          "height": 1000,
+          "commands": [
+            {
+              "op": "move",
+              "x": 0,
+              "y": 0
+            },
+            {
+              "op": "line",
+              "x": 1.5,
+              "y": 2
+            }
+          ]
+        },
+        "options": {
+          "name": "Vector & exact",
+          "fill": "F2F2F2",
+          "lineColor": "336699",
+          "lineWidth": 25400
+        }
+      },
+      "errorCode": "PPTX_FREEFORM_UNSUPPORTED"
+    },
+    {
+      "caseId": "degenerate-subpath",
+      "scenarioId": "@id-pptx-graphics-freeform-refusals",
+      "example": {
+        "fault": "degenerate subpath"
+      },
+      "operations": [],
+      "request": {
+        "geometry": {
+          "x": 100,
+          "y": 200,
+          "width": 1200000,
+          "height": 900000
+        },
+        "path": {
+          "width": 1000,
+          "height": 1000,
+          "commands": [
+            {
+              "op": "move",
+              "x": 0,
+              "y": 0
+            },
+            {
+              "op": "close"
+            }
+          ]
+        },
+        "options": {
+          "name": "Vector & exact",
+          "fill": "F2F2F2",
+          "lineColor": "336699",
+          "lineWidth": 25400
+        }
+      },
+      "errorCode": "PPTX_FREEFORM_UNSUPPORTED"
+    },
+    {
+      "caseId": "unclosed-filled-path",
+      "scenarioId": "@id-pptx-graphics-freeform-refusals",
+      "example": {
+        "fault": "unclosed filled path"
+      },
+      "operations": [],
+      "request": {
+        "geometry": {
+          "x": 100,
+          "y": 200,
+          "width": 1200000,
+          "height": 900000
+        },
+        "path": {
+          "width": 1000,
+          "height": 1000,
+          "commands": [
+            {
+              "op": "move",
+              "x": 0,
+              "y": 0
+            },
+            {
+              "op": "line",
+              "x": 1000,
+              "y": 1000
+            }
+          ]
+        },
+        "options": {
+          "name": "Vector & exact",
+          "fill": "F2F2F2",
+          "lineColor": "336699",
+          "lineWidth": 25400
+        }
+      },
+      "errorCode": "PPTX_FREEFORM_UNSUPPORTED"
+    },
+    {
+      "caseId": "zero-path-dimension",
+      "scenarioId": "@id-pptx-graphics-freeform-refusals",
+      "example": {
+        "fault": "zero path dimension"
+      },
+      "operations": [],
+      "request": {
+        "geometry": {
+          "x": 100,
+          "y": 200,
+          "width": 1200000,
+          "height": 900000
+        },
+        "path": {
+          "width": 0,
+          "height": 1000,
+          "commands": [
+            {
+              "op": "move",
+              "x": 0,
+              "y": 1000
+            },
+            {
+              "op": "line",
+              "x": 500,
+              "y": 0
+            },
+            {
+              "op": "line",
+              "x": 1000,
+              "y": 1000
+            },
+            {
+              "op": "close"
+            }
+          ]
+        },
+        "options": {
+          "name": "Vector & exact",
+          "fill": "F2F2F2",
+          "lineColor": "336699",
+          "lineWidth": 25400
+        }
+      },
+      "errorCode": "PPTX_FREEFORM_UNSUPPORTED"
+    },
+    {
+      "caseId": "too-many-commands",
+      "scenarioId": "@id-pptx-graphics-freeform-refusals",
+      "example": {
+        "fault": "too many commands"
+      },
+      "operations": [],
+      "request": {
+        "geometry": {
+          "x": 100,
+          "y": 200,
+          "width": 1200000,
+          "height": 900000
+        },
+        "path": {
+          "width": 1000,
+          "height": 1000,
+          "commands": [
+            {
+              "op": "move",
+              "x": 0,
+              "y": 0
+            },
+            {
+              "op": "line",
+              "x": 1,
+              "y": 1
+            },
+            {
+              "op": "line",
+              "x": 2,
+              "y": 2
+            },
+            {
+              "op": "line",
+              "x": 3,
+              "y": 3
+            },
+            {
+              "op": "line",
+              "x": 4,
+              "y": 4
+            },
+            {
+              "op": "line",
+              "x": 5,
+              "y": 5
+            },
+            {
+              "op": "line",
+              "x": 6,
+              "y": 6
+            },
+            {
+              "op": "line",
+              "x": 7,
+              "y": 7
+            },
+            {
+              "op": "line",
+              "x": 8,
+              "y": 8
+            },
+            {
+              "op": "line",
+              "x": 9,
+              "y": 9
+            },
+            {
+              "op": "line",
+              "x": 10,
+              "y": 10
+            },
+            {
+              "op": "line",
+              "x": 11,
+              "y": 11
+            },
+            {
+              "op": "line",
+              "x": 12,
+              "y": 12
+            },
+            {
+              "op": "line",
+              "x": 13,
+              "y": 13
+            },
+            {
+              "op": "line",
+              "x": 14,
+              "y": 14
+            },
+            {
+              "op": "line",
+              "x": 15,
+              "y": 15
+            },
+            {
+              "op": "line",
+              "x": 16,
+              "y": 16
+            },
+            {
+              "op": "line",
+              "x": 17,
+              "y": 17
+            },
+            {
+              "op": "line",
+              "x": 18,
+              "y": 18
+            },
+            {
+              "op": "line",
+              "x": 19,
+              "y": 19
+            },
+            {
+              "op": "line",
+              "x": 20,
+              "y": 20
+            },
+            {
+              "op": "line",
+              "x": 21,
+              "y": 21
+            },
+            {
+              "op": "line",
+              "x": 22,
+              "y": 22
+            },
+            {
+              "op": "line",
+              "x": 23,
+              "y": 23
+            },
+            {
+              "op": "line",
+              "x": 24,
+              "y": 24
+            },
+            {
+              "op": "line",
+              "x": 25,
+              "y": 25
+            },
+            {
+              "op": "line",
+              "x": 26,
+              "y": 26
+            },
+            {
+              "op": "line",
+              "x": 27,
+              "y": 27
+            },
+            {
+              "op": "line",
+              "x": 28,
+              "y": 28
+            },
+            {
+              "op": "line",
+              "x": 29,
+              "y": 29
+            },
+            {
+              "op": "line",
+              "x": 30,
+              "y": 30
+            },
+            {
+              "op": "line",
+              "x": 31,
+              "y": 31
+            },
+            {
+              "op": "line",
+              "x": 32,
+              "y": 32
+            },
+            {
+              "op": "line",
+              "x": 33,
+              "y": 33
+            },
+            {
+              "op": "line",
+              "x": 34,
+              "y": 34
+            },
+            {
+              "op": "line",
+              "x": 35,
+              "y": 35
+            },
+            {
+              "op": "line",
+              "x": 36,
+              "y": 36
+            },
+            {
+              "op": "line",
+              "x": 37,
+              "y": 37
+            },
+            {
+              "op": "line",
+              "x": 38,
+              "y": 38
+            },
+            {
+              "op": "line",
+              "x": 39,
+              "y": 39
+            },
+            {
+              "op": "line",
+              "x": 40,
+              "y": 40
+            },
+            {
+              "op": "line",
+              "x": 41,
+              "y": 41
+            },
+            {
+              "op": "line",
+              "x": 42,
+              "y": 42
+            },
+            {
+              "op": "line",
+              "x": 43,
+              "y": 43
+            },
+            {
+              "op": "line",
+              "x": 44,
+              "y": 44
+            },
+            {
+              "op": "line",
+              "x": 45,
+              "y": 45
+            },
+            {
+              "op": "line",
+              "x": 46,
+              "y": 46
+            },
+            {
+              "op": "line",
+              "x": 47,
+              "y": 47
+            },
+            {
+              "op": "line",
+              "x": 48,
+              "y": 48
+            },
+            {
+              "op": "line",
+              "x": 49,
+              "y": 49
+            },
+            {
+              "op": "line",
+              "x": 50,
+              "y": 50
+            },
+            {
+              "op": "line",
+              "x": 51,
+              "y": 51
+            },
+            {
+              "op": "line",
+              "x": 52,
+              "y": 52
+            },
+            {
+              "op": "line",
+              "x": 53,
+              "y": 53
+            },
+            {
+              "op": "line",
+              "x": 54,
+              "y": 54
+            },
+            {
+              "op": "line",
+              "x": 55,
+              "y": 55
+            },
+            {
+              "op": "line",
+              "x": 56,
+              "y": 56
+            },
+            {
+              "op": "line",
+              "x": 57,
+              "y": 57
+            },
+            {
+              "op": "line",
+              "x": 58,
+              "y": 58
+            },
+            {
+              "op": "line",
+              "x": 59,
+              "y": 59
+            },
+            {
+              "op": "line",
+              "x": 60,
+              "y": 60
+            },
+            {
+              "op": "line",
+              "x": 61,
+              "y": 61
+            },
+            {
+              "op": "line",
+              "x": 62,
+              "y": 62
+            },
+            {
+              "op": "line",
+              "x": 63,
+              "y": 63
+            },
+            {
+              "op": "line",
+              "x": 64,
+              "y": 64
+            },
+            {
+              "op": "line",
+              "x": 65,
+              "y": 65
+            },
+            {
+              "op": "line",
+              "x": 66,
+              "y": 66
+            },
+            {
+              "op": "line",
+              "x": 67,
+              "y": 67
+            },
+            {
+              "op": "line",
+              "x": 68,
+              "y": 68
+            },
+            {
+              "op": "line",
+              "x": 69,
+              "y": 69
+            },
+            {
+              "op": "line",
+              "x": 70,
+              "y": 70
+            },
+            {
+              "op": "line",
+              "x": 71,
+              "y": 71
+            },
+            {
+              "op": "line",
+              "x": 72,
+              "y": 72
+            },
+            {
+              "op": "line",
+              "x": 73,
+              "y": 73
+            },
+            {
+              "op": "line",
+              "x": 74,
+              "y": 74
+            },
+            {
+              "op": "line",
+              "x": 75,
+              "y": 75
+            },
+            {
+              "op": "line",
+              "x": 76,
+              "y": 76
+            },
+            {
+              "op": "line",
+              "x": 77,
+              "y": 77
+            },
+            {
+              "op": "line",
+              "x": 78,
+              "y": 78
+            },
+            {
+              "op": "line",
+              "x": 79,
+              "y": 79
+            },
+            {
+              "op": "line",
+              "x": 80,
+              "y": 80
+            },
+            {
+              "op": "line",
+              "x": 81,
+              "y": 81
+            },
+            {
+              "op": "line",
+              "x": 82,
+              "y": 82
+            },
+            {
+              "op": "line",
+              "x": 83,
+              "y": 83
+            },
+            {
+              "op": "line",
+              "x": 84,
+              "y": 84
+            },
+            {
+              "op": "line",
+              "x": 85,
+              "y": 85
+            },
+            {
+              "op": "line",
+              "x": 86,
+              "y": 86
+            },
+            {
+              "op": "line",
+              "x": 87,
+              "y": 87
+            },
+            {
+              "op": "line",
+              "x": 88,
+              "y": 88
+            },
+            {
+              "op": "line",
+              "x": 89,
+              "y": 89
+            },
+            {
+              "op": "line",
+              "x": 90,
+              "y": 90
+            },
+            {
+              "op": "line",
+              "x": 91,
+              "y": 91
+            },
+            {
+              "op": "line",
+              "x": 92,
+              "y": 92
+            },
+            {
+              "op": "line",
+              "x": 93,
+              "y": 93
+            },
+            {
+              "op": "line",
+              "x": 94,
+              "y": 94
+            },
+            {
+              "op": "line",
+              "x": 95,
+              "y": 95
+            },
+            {
+              "op": "line",
+              "x": 96,
+              "y": 96
+            },
+            {
+              "op": "line",
+              "x": 97,
+              "y": 97
+            },
+            {
+              "op": "line",
+              "x": 98,
+              "y": 98
+            },
+            {
+              "op": "line",
+              "x": 99,
+              "y": 99
+            },
+            {
+              "op": "line",
+              "x": 100,
+              "y": 100
+            },
+            {
+              "op": "line",
+              "x": 101,
+              "y": 101
+            },
+            {
+              "op": "line",
+              "x": 102,
+              "y": 102
+            },
+            {
+              "op": "line",
+              "x": 103,
+              "y": 103
+            },
+            {
+              "op": "line",
+              "x": 104,
+              "y": 104
+            },
+            {
+              "op": "line",
+              "x": 105,
+              "y": 105
+            },
+            {
+              "op": "line",
+              "x": 106,
+              "y": 106
+            },
+            {
+              "op": "line",
+              "x": 107,
+              "y": 107
+            },
+            {
+              "op": "line",
+              "x": 108,
+              "y": 108
+            },
+            {
+              "op": "line",
+              "x": 109,
+              "y": 109
+            },
+            {
+              "op": "line",
+              "x": 110,
+              "y": 110
+            },
+            {
+              "op": "line",
+              "x": 111,
+              "y": 111
+            },
+            {
+              "op": "line",
+              "x": 112,
+              "y": 112
+            },
+            {
+              "op": "line",
+              "x": 113,
+              "y": 113
+            },
+            {
+              "op": "line",
+              "x": 114,
+              "y": 114
+            },
+            {
+              "op": "line",
+              "x": 115,
+              "y": 115
+            },
+            {
+              "op": "line",
+              "x": 116,
+              "y": 116
+            },
+            {
+              "op": "line",
+              "x": 117,
+              "y": 117
+            },
+            {
+              "op": "line",
+              "x": 118,
+              "y": 118
+            },
+            {
+              "op": "line",
+              "x": 119,
+              "y": 119
+            },
+            {
+              "op": "line",
+              "x": 120,
+              "y": 120
+            },
+            {
+              "op": "line",
+              "x": 121,
+              "y": 121
+            },
+            {
+              "op": "line",
+              "x": 122,
+              "y": 122
+            },
+            {
+              "op": "line",
+              "x": 123,
+              "y": 123
+            },
+            {
+              "op": "line",
+              "x": 124,
+              "y": 124
+            },
+            {
+              "op": "line",
+              "x": 125,
+              "y": 125
+            },
+            {
+              "op": "line",
+              "x": 126,
+              "y": 126
+            },
+            {
+              "op": "line",
+              "x": 127,
+              "y": 127
+            },
+            {
+              "op": "line",
+              "x": 128,
+              "y": 128
+            },
+            {
+              "op": "line",
+              "x": 129,
+              "y": 129
+            },
+            {
+              "op": "line",
+              "x": 130,
+              "y": 130
+            },
+            {
+              "op": "line",
+              "x": 131,
+              "y": 131
+            },
+            {
+              "op": "line",
+              "x": 132,
+              "y": 132
+            },
+            {
+              "op": "line",
+              "x": 133,
+              "y": 133
+            },
+            {
+              "op": "line",
+              "x": 134,
+              "y": 134
+            },
+            {
+              "op": "line",
+              "x": 135,
+              "y": 135
+            },
+            {
+              "op": "line",
+              "x": 136,
+              "y": 136
+            },
+            {
+              "op": "line",
+              "x": 137,
+              "y": 137
+            },
+            {
+              "op": "line",
+              "x": 138,
+              "y": 138
+            },
+            {
+              "op": "line",
+              "x": 139,
+              "y": 139
+            },
+            {
+              "op": "line",
+              "x": 140,
+              "y": 140
+            },
+            {
+              "op": "line",
+              "x": 141,
+              "y": 141
+            },
+            {
+              "op": "line",
+              "x": 142,
+              "y": 142
+            },
+            {
+              "op": "line",
+              "x": 143,
+              "y": 143
+            },
+            {
+              "op": "line",
+              "x": 144,
+              "y": 144
+            },
+            {
+              "op": "line",
+              "x": 145,
+              "y": 145
+            },
+            {
+              "op": "line",
+              "x": 146,
+              "y": 146
+            },
+            {
+              "op": "line",
+              "x": 147,
+              "y": 147
+            },
+            {
+              "op": "line",
+              "x": 148,
+              "y": 148
+            },
+            {
+              "op": "line",
+              "x": 149,
+              "y": 149
+            },
+            {
+              "op": "line",
+              "x": 150,
+              "y": 150
+            },
+            {
+              "op": "line",
+              "x": 151,
+              "y": 151
+            },
+            {
+              "op": "line",
+              "x": 152,
+              "y": 152
+            },
+            {
+              "op": "line",
+              "x": 153,
+              "y": 153
+            },
+            {
+              "op": "line",
+              "x": 154,
+              "y": 154
+            },
+            {
+              "op": "line",
+              "x": 155,
+              "y": 155
+            },
+            {
+              "op": "line",
+              "x": 156,
+              "y": 156
+            },
+            {
+              "op": "line",
+              "x": 157,
+              "y": 157
+            },
+            {
+              "op": "line",
+              "x": 158,
+              "y": 158
+            },
+            {
+              "op": "line",
+              "x": 159,
+              "y": 159
+            },
+            {
+              "op": "line",
+              "x": 160,
+              "y": 160
+            },
+            {
+              "op": "line",
+              "x": 161,
+              "y": 161
+            },
+            {
+              "op": "line",
+              "x": 162,
+              "y": 162
+            },
+            {
+              "op": "line",
+              "x": 163,
+              "y": 163
+            },
+            {
+              "op": "line",
+              "x": 164,
+              "y": 164
+            },
+            {
+              "op": "line",
+              "x": 165,
+              "y": 165
+            },
+            {
+              "op": "line",
+              "x": 166,
+              "y": 166
+            },
+            {
+              "op": "line",
+              "x": 167,
+              "y": 167
+            },
+            {
+              "op": "line",
+              "x": 168,
+              "y": 168
+            },
+            {
+              "op": "line",
+              "x": 169,
+              "y": 169
+            },
+            {
+              "op": "line",
+              "x": 170,
+              "y": 170
+            },
+            {
+              "op": "line",
+              "x": 171,
+              "y": 171
+            },
+            {
+              "op": "line",
+              "x": 172,
+              "y": 172
+            },
+            {
+              "op": "line",
+              "x": 173,
+              "y": 173
+            },
+            {
+              "op": "line",
+              "x": 174,
+              "y": 174
+            },
+            {
+              "op": "line",
+              "x": 175,
+              "y": 175
+            },
+            {
+              "op": "line",
+              "x": 176,
+              "y": 176
+            },
+            {
+              "op": "line",
+              "x": 177,
+              "y": 177
+            },
+            {
+              "op": "line",
+              "x": 178,
+              "y": 178
+            },
+            {
+              "op": "line",
+              "x": 179,
+              "y": 179
+            },
+            {
+              "op": "line",
+              "x": 180,
+              "y": 180
+            },
+            {
+              "op": "line",
+              "x": 181,
+              "y": 181
+            },
+            {
+              "op": "line",
+              "x": 182,
+              "y": 182
+            },
+            {
+              "op": "line",
+              "x": 183,
+              "y": 183
+            },
+            {
+              "op": "line",
+              "x": 184,
+              "y": 184
+            },
+            {
+              "op": "line",
+              "x": 185,
+              "y": 185
+            },
+            {
+              "op": "line",
+              "x": 186,
+              "y": 186
+            },
+            {
+              "op": "line",
+              "x": 187,
+              "y": 187
+            },
+            {
+              "op": "line",
+              "x": 188,
+              "y": 188
+            },
+            {
+              "op": "line",
+              "x": 189,
+              "y": 189
+            },
+            {
+              "op": "line",
+              "x": 190,
+              "y": 190
+            },
+            {
+              "op": "line",
+              "x": 191,
+              "y": 191
+            },
+            {
+              "op": "line",
+              "x": 192,
+              "y": 192
+            },
+            {
+              "op": "line",
+              "x": 193,
+              "y": 193
+            },
+            {
+              "op": "line",
+              "x": 194,
+              "y": 194
+            },
+            {
+              "op": "line",
+              "x": 195,
+              "y": 195
+            },
+            {
+              "op": "line",
+              "x": 196,
+              "y": 196
+            },
+            {
+              "op": "line",
+              "x": 197,
+              "y": 197
+            },
+            {
+              "op": "line",
+              "x": 198,
+              "y": 198
+            },
+            {
+              "op": "line",
+              "x": 199,
+              "y": 199
+            },
+            {
+              "op": "line",
+              "x": 200,
+              "y": 200
+            },
+            {
+              "op": "line",
+              "x": 201,
+              "y": 201
+            },
+            {
+              "op": "line",
+              "x": 202,
+              "y": 202
+            },
+            {
+              "op": "line",
+              "x": 203,
+              "y": 203
+            },
+            {
+              "op": "line",
+              "x": 204,
+              "y": 204
+            },
+            {
+              "op": "line",
+              "x": 205,
+              "y": 205
+            },
+            {
+              "op": "line",
+              "x": 206,
+              "y": 206
+            },
+            {
+              "op": "line",
+              "x": 207,
+              "y": 207
+            },
+            {
+              "op": "line",
+              "x": 208,
+              "y": 208
+            },
+            {
+              "op": "line",
+              "x": 209,
+              "y": 209
+            },
+            {
+              "op": "line",
+              "x": 210,
+              "y": 210
+            },
+            {
+              "op": "line",
+              "x": 211,
+              "y": 211
+            },
+            {
+              "op": "line",
+              "x": 212,
+              "y": 212
+            },
+            {
+              "op": "line",
+              "x": 213,
+              "y": 213
+            },
+            {
+              "op": "line",
+              "x": 214,
+              "y": 214
+            },
+            {
+              "op": "line",
+              "x": 215,
+              "y": 215
+            },
+            {
+              "op": "line",
+              "x": 216,
+              "y": 216
+            },
+            {
+              "op": "line",
+              "x": 217,
+              "y": 217
+            },
+            {
+              "op": "line",
+              "x": 218,
+              "y": 218
+            },
+            {
+              "op": "line",
+              "x": 219,
+              "y": 219
+            },
+            {
+              "op": "line",
+              "x": 220,
+              "y": 220
+            },
+            {
+              "op": "line",
+              "x": 221,
+              "y": 221
+            },
+            {
+              "op": "line",
+              "x": 222,
+              "y": 222
+            },
+            {
+              "op": "line",
+              "x": 223,
+              "y": 223
+            },
+            {
+              "op": "line",
+              "x": 224,
+              "y": 224
+            },
+            {
+              "op": "line",
+              "x": 225,
+              "y": 225
+            },
+            {
+              "op": "line",
+              "x": 226,
+              "y": 226
+            },
+            {
+              "op": "line",
+              "x": 227,
+              "y": 227
+            },
+            {
+              "op": "line",
+              "x": 228,
+              "y": 228
+            },
+            {
+              "op": "line",
+              "x": 229,
+              "y": 229
+            },
+            {
+              "op": "line",
+              "x": 230,
+              "y": 230
+            },
+            {
+              "op": "line",
+              "x": 231,
+              "y": 231
+            },
+            {
+              "op": "line",
+              "x": 232,
+              "y": 232
+            },
+            {
+              "op": "line",
+              "x": 233,
+              "y": 233
+            },
+            {
+              "op": "line",
+              "x": 234,
+              "y": 234
+            },
+            {
+              "op": "line",
+              "x": 235,
+              "y": 235
+            },
+            {
+              "op": "line",
+              "x": 236,
+              "y": 236
+            },
+            {
+              "op": "line",
+              "x": 237,
+              "y": 237
+            },
+            {
+              "op": "line",
+              "x": 238,
+              "y": 238
+            },
+            {
+              "op": "line",
+              "x": 239,
+              "y": 239
+            },
+            {
+              "op": "line",
+              "x": 240,
+              "y": 240
+            },
+            {
+              "op": "line",
+              "x": 241,
+              "y": 241
+            },
+            {
+              "op": "line",
+              "x": 242,
+              "y": 242
+            },
+            {
+              "op": "line",
+              "x": 243,
+              "y": 243
+            },
+            {
+              "op": "line",
+              "x": 244,
+              "y": 244
+            },
+            {
+              "op": "line",
+              "x": 245,
+              "y": 245
+            },
+            {
+              "op": "line",
+              "x": 246,
+              "y": 246
+            },
+            {
+              "op": "line",
+              "x": 247,
+              "y": 247
+            },
+            {
+              "op": "line",
+              "x": 248,
+              "y": 248
+            },
+            {
+              "op": "line",
+              "x": 249,
+              "y": 249
+            },
+            {
+              "op": "line",
+              "x": 250,
+              "y": 250
+            },
+            {
+              "op": "line",
+              "x": 251,
+              "y": 251
+            },
+            {
+              "op": "line",
+              "x": 252,
+              "y": 252
+            },
+            {
+              "op": "line",
+              "x": 253,
+              "y": 253
+            },
+            {
+              "op": "line",
+              "x": 254,
+              "y": 254
+            },
+            {
+              "op": "line",
+              "x": 255,
+              "y": 255
+            },
+            {
+              "op": "line",
+              "x": 256,
+              "y": 256
+            }
+          ]
+        },
+        "options": {
+          "name": "Vector & exact",
+          "fill": "none",
+          "lineColor": "336699",
+          "lineWidth": 25400
+        }
+      },
+      "errorCode": "PPTX_FREEFORM_UNSUPPORTED"
+    },
+    {
+      "caseId": "unknown-command-field",
+      "scenarioId": "@id-pptx-graphics-freeform-refusals",
+      "example": {
+        "fault": "unknown command field"
+      },
+      "operations": [],
+      "request": {
+        "geometry": {
+          "x": 100,
+          "y": 200,
+          "width": 1200000,
+          "height": 900000
+        },
+        "path": {
+          "width": 1000,
+          "height": 1000,
+          "commands": [
+            {
+              "op": "move",
+              "x": 0,
+              "y": 0,
+              "guess": true
+            },
+            {
+              "op": "line",
+              "x": 500,
+              "y": 0
+            },
+            {
+              "op": "line",
+              "x": 1000,
+              "y": 1000
+            },
+            {
+              "op": "close"
+            }
+          ]
+        },
+        "options": {
+          "name": "Vector & exact",
+          "fill": "F2F2F2",
+          "lineColor": "336699",
+          "lineWidth": 25400
+        }
+      },
+      "errorCode": "PPTX_FREEFORM_UNSUPPORTED"
+    },
+    {
+      "caseId": "protected-presentation",
+      "scenarioId": "@id-pptx-graphics-freeform-refusals",
+      "example": {
+        "fault": "protected presentation"
+      },
+      "operations": [
+        {
+          "kind": "replace-literal-once",
+          "part": "ppt/presentation.xml",
+          "before": "</p:presentation>",
+          "after": "<p:modifyVerifier/></p:presentation>"
+        }
+      ],
+      "request": {
+        "geometry": {
+          "x": 100,
+          "y": 200,
+          "width": 1200000,
+          "height": 900000
+        },
+        "path": {
+          "width": 1000,
+          "height": 1000,
+          "commands": [
+            {
+              "op": "move",
+              "x": 0,
+              "y": 1000
+            },
+            {
+              "op": "line",
+              "x": 500,
+              "y": 0
+            },
+            {
+              "op": "line",
+              "x": 1000,
+              "y": 1000
+            },
+            {
+              "op": "close"
+            }
+          ]
+        },
+        "options": {
+          "name": "Vector & exact",
+          "fill": "F2F2F2",
+          "lineColor": "336699",
+          "lineWidth": 25400
+        }
+      },
+      "errorCode": "PPTX_PROTECTED"
+    }
+  ]
+}

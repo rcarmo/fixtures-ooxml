@@ -1,3 +1,4 @@
+import {beforePictureInspectionLedger} from './picture-inspection-history.ts';
 import migration from '../ledgers/contract20.json';
 import retainedTable from '../ledgers/retained-table-properties.json';
 import retainedStyleWord from '../ledgers/retained-style-word.json';
@@ -21,7 +22,7 @@ export function beforeContract20Case<T extends {scenarioId:string;steps:unknown[
  return index<0?row:{...row,...s!.before[index]} as T;
 }
 export function beforeContract20Ledger(ledger:any) {
- const copy=structuredClone(ledger);
+ const copy=beforePictureInspectionLedger(ledger);
  for(const f of migration.files)for(const after of f.afterLedgerRows){const i=copy.workflows.findIndex((r:any)=>r.id===after.id),before=f.beforeLedgerRows.find(r=>r.id===after.id)!;
   if(i>=0&&JSON.stringify(copy.workflows[i])===JSON.stringify(before))continue;
   if(i<0||JSON.stringify(copy.workflows[i])!==JSON.stringify(after))throw Error('Unreviewed Contract20 ledger '+after.id);

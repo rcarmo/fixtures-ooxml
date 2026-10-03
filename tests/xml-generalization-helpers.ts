@@ -1,7 +1,8 @@
+import {beforePictureInspectionFeature} from './picture-inspection-history.ts';
 import {beforeUniformApi18Feature,beforeUniformApi18Case,beforeUniformApi18Ledger} from './uniform-api18-history.ts';
 import retainedTable from '../ledgers/retained-table-properties.json';
 export function beforeRetainedTableFeature(path:string,text:string):string{
- text=beforeUniformApi18Feature(path,text);
+ text=beforeUniformApi18Feature(path,beforePictureInspectionFeature(path,text));
  const f=retainedTable.files.find(f=>f.path===path);if(!f||text===f.beforeText)return text;
  if(new Bun.CryptoHasher('sha256').update(text).digest('hex')!==f.afterSha256)throw Error('Unreviewed retained table feature hash');
  if(JSON.stringify(cases(path,text).filter(c=>retainedTable.records.some(r=>r.id===c.scenarioId)))!==JSON.stringify(f.scenarios.flatMap(s=>s.after)))throw Error('Unreviewed retained table predicates');return f.beforeText;

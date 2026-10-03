@@ -1,0 +1,566 @@
+{
+  "schemaVersion": 1,
+  "executionCredit": false,
+  "feature": "workflows/pptx/opacity.feature",
+  "contract": "contracts/pptx-opacity.md",
+  "baseFixtureId": "fixture-792277d2c358c5bd7c8a4053078a5594fa07bfb55a06b0bb30f2813c151ea459",
+  "slidePart": "ppt/slides/slide1.xml",
+  "counts": {
+    "ids": 3,
+    "cases": 24
+  },
+  "custody": {
+    "allowedChangedParts": [
+      "ppt/slides/slide1.xml"
+    ],
+    "membership": "exact",
+    "preserve": "all XML except selected alpha/effect; colour transforms references crop geometry and dependencies"
+  },
+  "cases": [
+    {
+      "caseId": "theme fill",
+      "scenarioId": "@id-pptx-graphics-opacity-shape",
+      "example": {
+        "variant": "theme fill"
+      },
+      "operations": [
+        {
+          "kind": "replace-literal-once",
+          "part": "ppt/slides/slide1.xml",
+          "before": "</p:spTree>",
+          "after": "<p:sp><p:nvSpPr><p:cNvPr id=\"2000\" name=\"Gradient target\"/><p:cNvSpPr/><p:nvPr/></p:nvSpPr><p:spPr><a:xfrm><a:off x=\"100\" y=\"200\"/><a:ext cx=\"1200000\" cy=\"900000\"/></a:xfrm><a:prstGeom prst=\"rect\"><a:avLst/></a:prstGeom><a:solidFill><a:schemeClr val=\"accent3\"><a:tint val=\"25000\"/></a:schemeClr></a:solidFill><a:ln w=\"12700\"><a:solidFill><a:schemeClr val=\"accent2\"/></a:solidFill></a:ln></p:spPr><p:style><a:lnRef idx=\"1\"><a:schemeClr val=\"accent2\"/></a:lnRef><a:fillRef idx=\"2\"><a:schemeClr val=\"accent3\"/></a:fillRef><a:effectRef idx=\"0\"><a:schemeClr val=\"accent1\"/></a:effectRef><a:fontRef idx=\"minor\"><a:schemeClr val=\"tx1\"/></a:fontRef></p:style></p:sp></p:spTree>"
+        }
+      ],
+      "request": {
+        "profile": "shape",
+        "shapeId": 2000,
+        "value": 50000
+      },
+      "expected": {
+        "before": 100000,
+        "value": 50000,
+        "changed": 1
+      }
+    },
+    {
+      "caseId": "transparent fill",
+      "scenarioId": "@id-pptx-graphics-opacity-shape",
+      "example": {
+        "variant": "transparent fill"
+      },
+      "operations": [
+        {
+          "kind": "replace-literal-once",
+          "part": "ppt/slides/slide1.xml",
+          "before": "</p:spTree>",
+          "after": "<p:sp><p:nvSpPr><p:cNvPr id=\"2000\" name=\"Gradient target\"/><p:cNvSpPr/><p:nvPr/></p:nvSpPr><p:spPr><a:xfrm><a:off x=\"100\" y=\"200\"/><a:ext cx=\"1200000\" cy=\"900000\"/></a:xfrm><a:prstGeom prst=\"rect\"><a:avLst/></a:prstGeom><a:solidFill><a:schemeClr val=\"accent3\"><a:tint val=\"25000\"/></a:schemeClr></a:solidFill><a:ln w=\"12700\"><a:solidFill><a:schemeClr val=\"accent2\"/></a:solidFill></a:ln></p:spPr><p:style><a:lnRef idx=\"1\"><a:schemeClr val=\"accent2\"/></a:lnRef><a:fillRef idx=\"2\"><a:schemeClr val=\"accent3\"/></a:fillRef><a:effectRef idx=\"0\"><a:schemeClr val=\"accent1\"/></a:effectRef><a:fontRef idx=\"minor\"><a:schemeClr val=\"tx1\"/></a:fontRef></p:style></p:sp></p:spTree>"
+        }
+      ],
+      "request": {
+        "profile": "shape",
+        "shapeId": 2000,
+        "value": 0
+      },
+      "expected": {
+        "before": 100000,
+        "value": 0,
+        "changed": 1
+      }
+    },
+    {
+      "caseId": "opaque no-op",
+      "scenarioId": "@id-pptx-graphics-opacity-shape",
+      "example": {
+        "variant": "opaque no-op"
+      },
+      "operations": [
+        {
+          "kind": "replace-literal-once",
+          "part": "ppt/slides/slide1.xml",
+          "before": "</p:spTree>",
+          "after": "<p:sp><p:nvSpPr><p:cNvPr id=\"2000\" name=\"Gradient target\"/><p:cNvSpPr/><p:nvPr/></p:nvSpPr><p:spPr><a:xfrm><a:off x=\"100\" y=\"200\"/><a:ext cx=\"1200000\" cy=\"900000\"/></a:xfrm><a:prstGeom prst=\"rect\"><a:avLst/></a:prstGeom><a:solidFill><a:schemeClr val=\"accent3\"><a:tint val=\"25000\"/></a:schemeClr></a:solidFill><a:ln w=\"12700\"><a:solidFill><a:schemeClr val=\"accent2\"/></a:solidFill></a:ln></p:spPr><p:style><a:lnRef idx=\"1\"><a:schemeClr val=\"accent2\"/></a:lnRef><a:fillRef idx=\"2\"><a:schemeClr val=\"accent3\"/></a:fillRef><a:effectRef idx=\"0\"><a:schemeClr val=\"accent1\"/></a:effectRef><a:fontRef idx=\"minor\"><a:schemeClr val=\"tx1\"/></a:fontRef></p:style></p:sp></p:spTree>"
+        }
+      ],
+      "request": {
+        "profile": "shape",
+        "shapeId": 2000,
+        "value": 100000
+      },
+      "expected": {
+        "before": 100000,
+        "value": 100000,
+        "changed": 0
+      }
+    },
+    {
+      "caseId": "existing alpha",
+      "scenarioId": "@id-pptx-graphics-opacity-shape",
+      "example": {
+        "variant": "existing alpha"
+      },
+      "operations": [
+        {
+          "kind": "replace-literal-once",
+          "part": "ppt/slides/slide1.xml",
+          "before": "</p:spTree>",
+          "after": "<p:sp><p:nvSpPr><p:cNvPr id=\"2000\" name=\"Gradient target\"/><p:cNvSpPr/><p:nvPr/></p:nvSpPr><p:spPr><a:xfrm><a:off x=\"100\" y=\"200\"/><a:ext cx=\"1200000\" cy=\"900000\"/></a:xfrm><a:prstGeom prst=\"rect\"><a:avLst/></a:prstGeom><a:solidFill><a:schemeClr val=\"accent3\"><a:tint val=\"25000\"/></a:schemeClr></a:solidFill><a:ln w=\"12700\"><a:solidFill><a:schemeClr val=\"accent2\"/></a:solidFill></a:ln></p:spPr><p:style><a:lnRef idx=\"1\"><a:schemeClr val=\"accent2\"/></a:lnRef><a:fillRef idx=\"2\"><a:schemeClr val=\"accent3\"/></a:fillRef><a:effectRef idx=\"0\"><a:schemeClr val=\"accent1\"/></a:effectRef><a:fontRef idx=\"minor\"><a:schemeClr val=\"tx1\"/></a:fontRef></p:style></p:sp></p:spTree>"
+        },
+        {
+          "kind": "replace-literal-once",
+          "part": "ppt/slides/slide1.xml",
+          "before": "<a:tint val=\"25000\"/>",
+          "after": "<a:tint val=\"25000\"/><a:alpha val=\"40000\"/>"
+        }
+      ],
+      "request": {
+        "profile": "shape",
+        "shapeId": 2000,
+        "value": 75000
+      },
+      "expected": {
+        "before": 40000,
+        "value": 75000,
+        "changed": 1
+      }
+    },
+    {
+      "caseId": "RGB fill",
+      "scenarioId": "@id-pptx-graphics-opacity-shape",
+      "example": {
+        "variant": "RGB fill"
+      },
+      "operations": [
+        {
+          "kind": "replace-literal-once",
+          "part": "ppt/slides/slide1.xml",
+          "before": "</p:spTree>",
+          "after": "<p:sp><p:nvSpPr><p:cNvPr id=\"2000\" name=\"Gradient target\"/><p:cNvSpPr/><p:nvPr/></p:nvSpPr><p:spPr><a:xfrm><a:off x=\"100\" y=\"200\"/><a:ext cx=\"1200000\" cy=\"900000\"/></a:xfrm><a:prstGeom prst=\"rect\"><a:avLst/></a:prstGeom><a:solidFill><a:schemeClr val=\"accent3\"><a:tint val=\"25000\"/></a:schemeClr></a:solidFill><a:ln w=\"12700\"><a:solidFill><a:schemeClr val=\"accent2\"/></a:solidFill></a:ln></p:spPr><p:style><a:lnRef idx=\"1\"><a:schemeClr val=\"accent2\"/></a:lnRef><a:fillRef idx=\"2\"><a:schemeClr val=\"accent3\"/></a:fillRef><a:effectRef idx=\"0\"><a:schemeClr val=\"accent1\"/></a:effectRef><a:fontRef idx=\"minor\"><a:schemeClr val=\"tx1\"/></a:fontRef></p:style></p:sp></p:spTree>"
+        },
+        {
+          "kind": "replace-literal-once",
+          "part": "ppt/slides/slide1.xml",
+          "before": "<a:schemeClr val=\"accent3\"><a:tint val=\"25000\"/></a:schemeClr>",
+          "after": "<a:srgbClr val=\"336699\"><a:shade val=\"80000\"/></a:srgbClr>"
+        }
+      ],
+      "request": {
+        "profile": "shape",
+        "shapeId": 2000,
+        "value": 25000
+      },
+      "expected": {
+        "before": 100000,
+        "value": 25000,
+        "changed": 1
+      }
+    },
+    {
+      "caseId": "existing picture",
+      "scenarioId": "@id-pptx-graphics-opacity-picture",
+      "example": {
+        "variant": "existing picture"
+      },
+      "operations": [],
+      "request": {
+        "profile": "picture",
+        "shapeId": 1026,
+        "value": 25000
+      },
+      "expected": {
+        "before": 65000,
+        "value": 25000,
+        "changed": 1
+      }
+    },
+    {
+      "caseId": "picture no-op",
+      "scenarioId": "@id-pptx-graphics-opacity-picture",
+      "example": {
+        "variant": "picture no-op"
+      },
+      "operations": [],
+      "request": {
+        "profile": "picture",
+        "shapeId": 1026,
+        "value": 65000
+      },
+      "expected": {
+        "before": 65000,
+        "value": 65000,
+        "changed": 0
+      }
+    },
+    {
+      "caseId": "opaque picture",
+      "scenarioId": "@id-pptx-graphics-opacity-picture",
+      "example": {
+        "variant": "opaque picture"
+      },
+      "operations": [],
+      "request": {
+        "profile": "picture",
+        "shapeId": 1026,
+        "value": 0
+      },
+      "expected": {
+        "before": 65000,
+        "value": 0,
+        "changed": 1
+      }
+    },
+    {
+      "caseId": "transparent picture",
+      "scenarioId": "@id-pptx-graphics-opacity-picture",
+      "example": {
+        "variant": "transparent picture"
+      },
+      "operations": [],
+      "request": {
+        "profile": "picture",
+        "shapeId": 1026,
+        "value": 100000
+      },
+      "expected": {
+        "before": 65000,
+        "value": 100000,
+        "changed": 1
+      }
+    },
+    {
+      "caseId": "absent picture effect",
+      "scenarioId": "@id-pptx-graphics-opacity-picture",
+      "example": {
+        "variant": "absent picture effect"
+      },
+      "operations": [
+        {
+          "kind": "replace-literal-once",
+          "part": "ppt/slides/slide1.xml",
+          "before": "<a:alphaModFix amt=\"35000\"/>",
+          "after": ""
+        }
+      ],
+      "request": {
+        "profile": "picture",
+        "shapeId": 1026,
+        "value": 50000
+      },
+      "expected": {
+        "before": 0,
+        "value": 50000,
+        "changed": 1
+      }
+    },
+    {
+      "caseId": "grouped picture",
+      "scenarioId": "@id-pptx-graphics-opacity-picture",
+      "example": {
+        "variant": "grouped picture"
+      },
+      "operations": [
+        {
+          "kind": "replace-literal-once",
+          "part": "ppt/slides/slide1.xml",
+          "before": "<p:pic><p:nvPicPr><p:cNvPr id=\"1026\" name=\"Picture 2\" descr=\"cartoony marvel-style illustration of Frankenstein's laboratory with dramatic lighting, oversized machinery, glowing tubes, and a whimsical mad-science atmosphere\"><a:extLst><a:ext uri=\"{FF2B5EF4-FFF2-40B4-BE49-F238E27FC236}\"><a16:creationId xmlns:a16=\"http://schemas.microsoft.com/office/drawing/2014/main\" id=\"{55EE74E7-0065-73C4-AC5F-B515CF386555}\"/></a:ext></a:extLst></p:cNvPr><p:cNvPicPr><a:picLocks noChangeAspect=\"1\" noChangeArrowheads=\"1\"/></p:cNvPicPr><p:nvPr/></p:nvPicPr><p:blipFill rotWithShape=\"1\"><a:blip r:embed=\"rId2\"><a:alphaModFix amt=\"35000\"/><a:extLst><a:ext uri=\"{28A0092B-C50C-407E-A947-70E740481C1C}\"><a14:useLocalDpi xmlns:a14=\"http://schemas.microsoft.com/office/drawing/2010/main\" val=\"0\"/></a:ext></a:extLst></a:blip><a:srcRect t=\"17161\" r=\"2\" b=\"7840\"/><a:stretch><a:fillRect/></a:stretch></p:blipFill><p:spPr bwMode=\"auto\"><a:xfrm><a:off x=\"-2\" y=\"10\"/><a:ext cx=\"9144000\" cy=\"6857989\"/></a:xfrm><a:prstGeom prst=\"rect\"><a:avLst/></a:prstGeom><a:noFill/><a:extLst><a:ext uri=\"{909E8E84-426E-40DD-AFC4-6F175D3DCCD1}\"><a14:hiddenFill xmlns:a14=\"http://schemas.microsoft.com/office/drawing/2010/main\"><a:solidFill><a:srgbClr val=\"FFFFFF\"/></a:solidFill></a14:hiddenFill></a:ext></a:extLst></p:spPr></p:pic>",
+          "after": "<p:grpSp><p:nvGrpSpPr><p:cNvPr id=\"2000\" name=\"Graphics group\"/><p:cNvGrpSpPr/><p:nvPr/></p:nvGrpSpPr><p:grpSpPr><a:xfrm rot=\"5400000\" flipH=\"1\"><a:off x=\"100\" y=\"200\"/><a:ext cx=\"3000\" cy=\"4000\"/><a:chOff x=\"10\" y=\"20\"/><a:chExt cx=\"300\" cy=\"400\"/></a:xfrm></p:grpSpPr><p:pic><p:nvPicPr><p:cNvPr id=\"1026\" name=\"Picture 2\" descr=\"cartoony marvel-style illustration of Frankenstein's laboratory with dramatic lighting, oversized machinery, glowing tubes, and a whimsical mad-science atmosphere\"><a:extLst><a:ext uri=\"{FF2B5EF4-FFF2-40B4-BE49-F238E27FC236}\"><a16:creationId xmlns:a16=\"http://schemas.microsoft.com/office/drawing/2014/main\" id=\"{55EE74E7-0065-73C4-AC5F-B515CF386555}\"/></a:ext></a:extLst></p:cNvPr><p:cNvPicPr><a:picLocks noChangeAspect=\"1\" noChangeArrowheads=\"1\"/></p:cNvPicPr><p:nvPr/></p:nvPicPr><p:blipFill rotWithShape=\"1\"><a:blip r:embed=\"rId2\"><a:alphaModFix amt=\"35000\"/><a:extLst><a:ext uri=\"{28A0092B-C50C-407E-A947-70E740481C1C}\"><a14:useLocalDpi xmlns:a14=\"http://schemas.microsoft.com/office/drawing/2010/main\" val=\"0\"/></a:ext></a:extLst></a:blip><a:srcRect t=\"17161\" r=\"2\" b=\"7840\"/><a:stretch><a:fillRect/></a:stretch></p:blipFill><p:spPr bwMode=\"auto\"><a:xfrm><a:off x=\"-2\" y=\"10\"/><a:ext cx=\"9144000\" cy=\"6857989\"/></a:xfrm><a:prstGeom prst=\"rect\"><a:avLst/></a:prstGeom><a:noFill/><a:extLst><a:ext uri=\"{909E8E84-426E-40DD-AFC4-6F175D3DCCD1}\"><a14:hiddenFill xmlns:a14=\"http://schemas.microsoft.com/office/drawing/2010/main\"><a:solidFill><a:srgbClr val=\"FFFFFF\"/></a:solidFill></a14:hiddenFill></a:ext></a:extLst></p:spPr></p:pic></p:grpSp>"
+        },
+        {
+          "kind": "replace-literal-once",
+          "part": "ppt/slides/slide1.xml",
+          "before": "<a:xfrm><a:off x=\"-2\" y=\"1\"/><a:ext cx=\"4224619\" cy=\"5012408\"/></a:xfrm>",
+          "after": ""
+        }
+      ],
+      "request": {
+        "profile": "picture",
+        "shapeId": 1026,
+        "value": 25000
+      },
+      "expected": {
+        "before": 65000,
+        "value": 25000,
+        "changed": 1
+      }
+    },
+    {
+      "caseId": "linked picture",
+      "scenarioId": "@id-pptx-graphics-opacity-picture",
+      "example": {
+        "variant": "linked picture"
+      },
+      "operations": [
+        {
+          "kind": "replace-literal-once",
+          "part": "ppt/slides/slide1.xml",
+          "before": "r:embed=\"rId2\"",
+          "after": "xmlns:asset=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships\" asset:link=\"externalImage\""
+        },
+        {
+          "kind": "replace-literal-once",
+          "part": "ppt/slides/_rels/slide1.xml.rels",
+          "before": "</Relationships>",
+          "after": "<Relationship Id=\"externalImage\" Type=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships/image\" Target=\"https://invalid.example.invalid/never-fetch.png\" TargetMode=\"External\"/></Relationships>"
+        }
+      ],
+      "request": {
+        "profile": "picture",
+        "shapeId": 1026,
+        "value": 25000
+      },
+      "expected": {
+        "before": 65000,
+        "value": 25000,
+        "changed": 1
+      }
+    },
+    {
+      "caseId": "negative-opacity",
+      "scenarioId": "@id-pptx-graphics-opacity-refusals",
+      "example": {
+        "fault": "negative opacity"
+      },
+      "operations": [
+        {
+          "kind": "replace-literal-once",
+          "part": "ppt/slides/slide1.xml",
+          "before": "</p:spTree>",
+          "after": "<p:sp><p:nvSpPr><p:cNvPr id=\"2000\" name=\"Gradient target\"/><p:cNvSpPr/><p:nvPr/></p:nvSpPr><p:spPr><a:xfrm><a:off x=\"100\" y=\"200\"/><a:ext cx=\"1200000\" cy=\"900000\"/></a:xfrm><a:prstGeom prst=\"rect\"><a:avLst/></a:prstGeom><a:solidFill><a:schemeClr val=\"accent3\"><a:tint val=\"25000\"/></a:schemeClr></a:solidFill><a:ln w=\"12700\"><a:solidFill><a:schemeClr val=\"accent2\"/></a:solidFill></a:ln></p:spPr><p:style><a:lnRef idx=\"1\"><a:schemeClr val=\"accent2\"/></a:lnRef><a:fillRef idx=\"2\"><a:schemeClr val=\"accent3\"/></a:fillRef><a:effectRef idx=\"0\"><a:schemeClr val=\"accent1\"/></a:effectRef><a:fontRef idx=\"minor\"><a:schemeClr val=\"tx1\"/></a:fontRef></p:style></p:sp></p:spTree>"
+        }
+      ],
+      "request": {
+        "profile": "shape",
+        "shapeId": 2000,
+        "value": -1
+      },
+      "errorCode": "PPTX_OPACITY_UNSUPPORTED"
+    },
+    {
+      "caseId": "excess-opacity",
+      "scenarioId": "@id-pptx-graphics-opacity-refusals",
+      "example": {
+        "fault": "excess opacity"
+      },
+      "operations": [
+        {
+          "kind": "replace-literal-once",
+          "part": "ppt/slides/slide1.xml",
+          "before": "</p:spTree>",
+          "after": "<p:sp><p:nvSpPr><p:cNvPr id=\"2000\" name=\"Gradient target\"/><p:cNvSpPr/><p:nvPr/></p:nvSpPr><p:spPr><a:xfrm><a:off x=\"100\" y=\"200\"/><a:ext cx=\"1200000\" cy=\"900000\"/></a:xfrm><a:prstGeom prst=\"rect\"><a:avLst/></a:prstGeom><a:solidFill><a:schemeClr val=\"accent3\"><a:tint val=\"25000\"/></a:schemeClr></a:solidFill><a:ln w=\"12700\"><a:solidFill><a:schemeClr val=\"accent2\"/></a:solidFill></a:ln></p:spPr><p:style><a:lnRef idx=\"1\"><a:schemeClr val=\"accent2\"/></a:lnRef><a:fillRef idx=\"2\"><a:schemeClr val=\"accent3\"/></a:fillRef><a:effectRef idx=\"0\"><a:schemeClr val=\"accent1\"/></a:effectRef><a:fontRef idx=\"minor\"><a:schemeClr val=\"tx1\"/></a:fontRef></p:style></p:sp></p:spTree>"
+        }
+      ],
+      "request": {
+        "profile": "shape",
+        "shapeId": 2000,
+        "value": 100001
+      },
+      "errorCode": "PPTX_OPACITY_UNSUPPORTED"
+    },
+    {
+      "caseId": "fractional-opacity",
+      "scenarioId": "@id-pptx-graphics-opacity-refusals",
+      "example": {
+        "fault": "fractional opacity"
+      },
+      "operations": [
+        {
+          "kind": "replace-literal-once",
+          "part": "ppt/slides/slide1.xml",
+          "before": "</p:spTree>",
+          "after": "<p:sp><p:nvSpPr><p:cNvPr id=\"2000\" name=\"Gradient target\"/><p:cNvSpPr/><p:nvPr/></p:nvSpPr><p:spPr><a:xfrm><a:off x=\"100\" y=\"200\"/><a:ext cx=\"1200000\" cy=\"900000\"/></a:xfrm><a:prstGeom prst=\"rect\"><a:avLst/></a:prstGeom><a:solidFill><a:schemeClr val=\"accent3\"><a:tint val=\"25000\"/></a:schemeClr></a:solidFill><a:ln w=\"12700\"><a:solidFill><a:schemeClr val=\"accent2\"/></a:solidFill></a:ln></p:spPr><p:style><a:lnRef idx=\"1\"><a:schemeClr val=\"accent2\"/></a:lnRef><a:fillRef idx=\"2\"><a:schemeClr val=\"accent3\"/></a:fillRef><a:effectRef idx=\"0\"><a:schemeClr val=\"accent1\"/></a:effectRef><a:fontRef idx=\"minor\"><a:schemeClr val=\"tx1\"/></a:fontRef></p:style></p:sp></p:spTree>"
+        }
+      ],
+      "request": {
+        "profile": "shape",
+        "shapeId": 2000,
+        "value": 1.5
+      },
+      "errorCode": "PPTX_OPACITY_UNSUPPORTED"
+    },
+    {
+      "caseId": "negative-transparency",
+      "scenarioId": "@id-pptx-graphics-opacity-refusals",
+      "example": {
+        "fault": "negative transparency"
+      },
+      "operations": [],
+      "request": {
+        "profile": "picture",
+        "shapeId": 1026,
+        "value": -1
+      },
+      "errorCode": "PPTX_OPACITY_UNSUPPORTED"
+    },
+    {
+      "caseId": "excess-transparency",
+      "scenarioId": "@id-pptx-graphics-opacity-refusals",
+      "example": {
+        "fault": "excess transparency"
+      },
+      "operations": [],
+      "request": {
+        "profile": "picture",
+        "shapeId": 1026,
+        "value": 100001
+      },
+      "errorCode": "PPTX_OPACITY_UNSUPPORTED"
+    },
+    {
+      "caseId": "duplicate-shape-alpha",
+      "scenarioId": "@id-pptx-graphics-opacity-refusals",
+      "example": {
+        "fault": "duplicate shape alpha"
+      },
+      "operations": [
+        {
+          "kind": "replace-literal-once",
+          "part": "ppt/slides/slide1.xml",
+          "before": "</p:spTree>",
+          "after": "<p:sp><p:nvSpPr><p:cNvPr id=\"2000\" name=\"Gradient target\"/><p:cNvSpPr/><p:nvPr/></p:nvSpPr><p:spPr><a:xfrm><a:off x=\"100\" y=\"200\"/><a:ext cx=\"1200000\" cy=\"900000\"/></a:xfrm><a:prstGeom prst=\"rect\"><a:avLst/></a:prstGeom><a:solidFill><a:schemeClr val=\"accent3\"><a:tint val=\"25000\"/></a:schemeClr></a:solidFill><a:ln w=\"12700\"><a:solidFill><a:schemeClr val=\"accent2\"/></a:solidFill></a:ln></p:spPr><p:style><a:lnRef idx=\"1\"><a:schemeClr val=\"accent2\"/></a:lnRef><a:fillRef idx=\"2\"><a:schemeClr val=\"accent3\"/></a:fillRef><a:effectRef idx=\"0\"><a:schemeClr val=\"accent1\"/></a:effectRef><a:fontRef idx=\"minor\"><a:schemeClr val=\"tx1\"/></a:fontRef></p:style></p:sp></p:spTree>"
+        },
+        {
+          "kind": "replace-literal-once",
+          "part": "ppt/slides/slide1.xml",
+          "before": "<a:tint val=\"25000\"/>",
+          "after": "<a:tint val=\"25000\"/><a:alpha val=\"50000\"/><a:alpha val=\"50000\"/>"
+        }
+      ],
+      "request": {
+        "profile": "shape",
+        "shapeId": 2000,
+        "value": 50000
+      },
+      "errorCode": "PPTX_OPACITY_UNSUPPORTED"
+    },
+    {
+      "caseId": "competing-picture-alpha",
+      "scenarioId": "@id-pptx-graphics-opacity-refusals",
+      "example": {
+        "fault": "competing picture alpha"
+      },
+      "operations": [
+        {
+          "kind": "replace-literal-once",
+          "part": "ppt/slides/slide1.xml",
+          "before": "<a:alphaModFix amt=\"35000\"/>",
+          "after": "<a:alphaModFix amt=\"35000\"/><a:alphaBiLevel thresh=\"50000\"/>"
+        }
+      ],
+      "request": {
+        "profile": "picture",
+        "shapeId": 1026,
+        "value": 25000
+      },
+      "errorCode": "PPTX_OPACITY_UNSUPPORTED"
+    },
+    {
+      "caseId": "duplicate-picture-effect",
+      "scenarioId": "@id-pptx-graphics-opacity-refusals",
+      "example": {
+        "fault": "duplicate picture effect"
+      },
+      "operations": [
+        {
+          "kind": "replace-literal-once",
+          "part": "ppt/slides/slide1.xml",
+          "before": "<a:alphaModFix amt=\"35000\"/>",
+          "after": "<a:alphaModFix amt=\"35000\"/><a:alphaModFix amt=\"35000\"/>"
+        }
+      ],
+      "request": {
+        "profile": "picture",
+        "shapeId": 1026,
+        "value": 25000
+      },
+      "errorCode": "PPTX_OPACITY_UNSUPPORTED"
+    },
+    {
+      "caseId": "foreign-alpha-attribute",
+      "scenarioId": "@id-pptx-graphics-opacity-refusals",
+      "example": {
+        "fault": "foreign alpha attribute"
+      },
+      "operations": [
+        {
+          "kind": "replace-literal-once",
+          "part": "ppt/slides/slide1.xml",
+          "before": "</p:spTree>",
+          "after": "<p:sp><p:nvSpPr><p:cNvPr id=\"2000\" name=\"Gradient target\"/><p:cNvSpPr/><p:nvPr/></p:nvSpPr><p:spPr><a:xfrm><a:off x=\"100\" y=\"200\"/><a:ext cx=\"1200000\" cy=\"900000\"/></a:xfrm><a:prstGeom prst=\"rect\"><a:avLst/></a:prstGeom><a:solidFill><a:schemeClr val=\"accent3\"><a:tint val=\"25000\"/></a:schemeClr></a:solidFill><a:ln w=\"12700\"><a:solidFill><a:schemeClr val=\"accent2\"/></a:solidFill></a:ln></p:spPr><p:style><a:lnRef idx=\"1\"><a:schemeClr val=\"accent2\"/></a:lnRef><a:fillRef idx=\"2\"><a:schemeClr val=\"accent3\"/></a:fillRef><a:effectRef idx=\"0\"><a:schemeClr val=\"accent1\"/></a:effectRef><a:fontRef idx=\"minor\"><a:schemeClr val=\"tx1\"/></a:fontRef></p:style></p:sp></p:spTree>"
+        },
+        {
+          "kind": "replace-literal-once",
+          "part": "ppt/slides/slide1.xml",
+          "before": "<a:tint val=\"25000\"/>",
+          "after": "<a:tint val=\"25000\"/><a:alpha xmlns:bad=\"urn:bad\" bad:val=\"50000\"/>"
+        }
+      ],
+      "request": {
+        "profile": "shape",
+        "shapeId": 2000,
+        "value": 50000
+      },
+      "errorCode": "PPTX_OPACITY_UNSUPPORTED"
+    },
+    {
+      "caseId": "no-solid-fill",
+      "scenarioId": "@id-pptx-graphics-opacity-refusals",
+      "example": {
+        "fault": "no solid fill"
+      },
+      "operations": [
+        {
+          "kind": "replace-literal-once",
+          "part": "ppt/slides/slide1.xml",
+          "before": "</p:spTree>",
+          "after": "<p:sp><p:nvSpPr><p:cNvPr id=\"2000\" name=\"Gradient target\"/><p:cNvSpPr/><p:nvPr/></p:nvSpPr><p:spPr><a:xfrm><a:off x=\"100\" y=\"200\"/><a:ext cx=\"1200000\" cy=\"900000\"/></a:xfrm><a:prstGeom prst=\"rect\"><a:avLst/></a:prstGeom><a:solidFill><a:schemeClr val=\"accent3\"><a:tint val=\"25000\"/></a:schemeClr></a:solidFill><a:ln w=\"12700\"><a:solidFill><a:schemeClr val=\"accent2\"/></a:solidFill></a:ln></p:spPr><p:style><a:lnRef idx=\"1\"><a:schemeClr val=\"accent2\"/></a:lnRef><a:fillRef idx=\"2\"><a:schemeClr val=\"accent3\"/></a:fillRef><a:effectRef idx=\"0\"><a:schemeClr val=\"accent1\"/></a:effectRef><a:fontRef idx=\"minor\"><a:schemeClr val=\"tx1\"/></a:fontRef></p:style></p:sp></p:spTree>"
+        },
+        {
+          "kind": "replace-literal-once",
+          "part": "ppt/slides/slide1.xml",
+          "before": "<a:solidFill><a:schemeClr val=\"accent3\"><a:tint val=\"25000\"/></a:schemeClr></a:solidFill>",
+          "after": "<a:noFill/>"
+        }
+      ],
+      "request": {
+        "profile": "shape",
+        "shapeId": 2000,
+        "value": 50000
+      },
+      "errorCode": "PPTX_OPACITY_UNSUPPORTED"
+    },
+    {
+      "caseId": "missing-picture",
+      "scenarioId": "@id-pptx-graphics-opacity-refusals",
+      "example": {
+        "fault": "missing picture"
+      },
+      "operations": [],
+      "request": {
+        "profile": "picture",
+        "shapeId": 99999,
+        "value": 25000
+      },
+      "errorCode": "PPTX_OPACITY_UNSUPPORTED"
+    },
+    {
+      "caseId": "protected-presentation",
+      "scenarioId": "@id-pptx-graphics-opacity-refusals",
+      "example": {
+        "fault": "protected presentation"
+      },
+      "operations": [
+        {
+          "kind": "replace-literal-once",
+          "part": "ppt/presentation.xml",
+          "before": "</p:presentation>",
+          "after": "<p:modifyVerifier/></p:presentation>"
+        }
+      ],
+      "request": {
+        "profile": "picture",
+        "shapeId": 1026,
+        "value": 25000
+      },
+      "errorCode": "PPTX_PROTECTED"
+    }
+  ]
+}

@@ -69,7 +69,27 @@
     "workflows/pptx/text-formatting.feature",
     "workflows/pptx/paragraph-formatting.feature",
     "workflows/pptx/shape-style.feature",
-    "workflows/pptx/text-frame-properties.feature"
+    "workflows/pptx/text-frame-properties.feature",
+    "workflows/pptx/pictures.feature",
+    "workflows/pptx/picture-insertion.feature",
+    "workflows/pptx/picture-replacement.feature",
+    "workflows/pptx/picture-placement.feature",
+    "workflows/pptx/picture-crop.feature",
+    "workflows/pptx/picture-transform.feature",
+    "workflows/pptx/picture-svg.feature",
+    "workflows/pptx/picture-delete.feature",
+    "workflows/pptx/shape-group.feature",
+    "workflows/pptx/group-transform.feature",
+    "workflows/pptx/connectors.feature",
+    "workflows/pptx/diagrams.feature",
+    "workflows/pptx/smartart-inspection.feature",
+    "workflows/pptx/smartart-copy.feature",
+    "workflows/pptx/autoshapes.feature",
+    "workflows/pptx/freeform.feature",
+    "workflows/pptx/z-order.feature",
+    "workflows/pptx/gradients.feature",
+    "workflows/pptx/opacity.feature",
+    "workflows/pptx/outlines.feature"
   ],
   "executionCredit": "Only local executed assertions count; reports here do not run consumers.",
   "workflows": [
@@ -11259,6 +11279,1360 @@
         "python": {
           "status": "planned",
           "evidence": []
+        }
+      }
+    },
+    {
+      "id": "@id-pptx-graphics-picture-inspection-literal",
+      "feature": "workflows/pptx/pictures.feature",
+      "expandedCases": 1,
+      "factIds": [],
+      "expectedOutcomes": [
+        "the picture IDs, names, relationships, MIME types and byte sizes match literal records",
+        "direct positions, extents and crop percentages match the original picture XML",
+        "every source member payload and relationship remains unchanged after save and reopen"
+      ],
+      "consumers": {
+        "bun": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        },
+        "go": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        },
+        "python": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        }
+      }
+    },
+    {
+      "id": "@id-pptx-graphics-picture-inspection-links",
+      "feature": "workflows/pptx/pictures.feature",
+      "expandedCases": 1,
+      "factIds": [],
+      "expectedOutcomes": [
+        "the literal external target is returned without resolved media bytes or network access",
+        "the package and caller archive remain unchanged"
+      ],
+      "consumers": {
+        "bun": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        },
+        "go": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        },
+        "python": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        }
+      }
+    },
+    {
+      "id": "@id-pptx-graphics-picture-inspection-groups",
+      "feature": "workflows/pptx/pictures.feature",
+      "expandedCases": 1,
+      "factIds": [],
+      "expectedOutcomes": [
+        "group IDs and local group transforms are reported in ancestor order",
+        "missing direct placement is null without invented layout coordinates",
+        "modifying returned records cannot change the package or subsequent reads"
+      ],
+      "consumers": {
+        "bun": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        },
+        "go": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        },
+        "python": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        }
+      }
+    },
+    {
+      "id": "@id-pptx-graphics-picture-inspection-transformed",
+      "feature": "workflows/pptx/pictures.feature",
+      "expandedCases": 1,
+      "factIds": [],
+      "expectedOutcomes": [
+        "complete records match the literal direct transform and both asset relationships",
+        "absent crop sides are exactly zero without fetching the linked target",
+        "every source member payload and relationship remains unchanged after save and reopen"
+      ],
+      "consumers": {
+        "bun": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        },
+        "go": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        },
+        "python": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        }
+      }
+    },
+    {
+      "id": "@id-pptx-graphics-picture-inspection-empty",
+      "feature": "workflows/pptx/pictures.feature",
+      "expandedCases": 1,
+      "factIds": [],
+      "expectedOutcomes": [
+        "the picture collection is exactly empty",
+        "every source member payload and relationship remains unchanged after save and reopen"
+      ],
+      "consumers": {
+        "bun": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        },
+        "go": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        },
+        "python": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        }
+      }
+    },
+    {
+      "id": "@id-pptx-graphics-picture-inspection-refusals",
+      "feature": "workflows/pptx/pictures.feature",
+      "expandedCases": 7,
+      "factIds": [],
+      "expectedOutcomes": [
+        "it refuses with PPTX_PICTURE_INVALID and returns no picture collection",
+        "every source member payload and relationship remains unchanged"
+      ],
+      "consumers": {
+        "bun": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        },
+        "go": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        },
+        "python": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        }
+      }
+    },
+    {
+      "id": "@id-pptx-graphics-picture-insertion-add",
+      "feature": "workflows/pptx/picture-insertion.feature",
+      "expandedCases": 2,
+      "factIds": [],
+      "expectedOutcomes": [
+        "its identity, name, description, relationship, content type and placement match the literal record",
+        "the media payload exactly matches the source fixture member",
+        "save and reopen preserve the record and all unrelated member payloads"
+      ],
+      "consumers": {
+        "bun": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        },
+        "go": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        },
+        "python": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        }
+      }
+    },
+    {
+      "id": "@id-pptx-graphics-picture-insertion-repeat",
+      "feature": "workflows/pptx/picture-insertion.feature",
+      "expandedCases": 1,
+      "factIds": [],
+      "expectedOutcomes": [
+        "both identities and relationships match the two literal records",
+        "both media members retain the exact source payload without deduplication",
+        "save and reopen preserve all preexisting shapes and unrelated member payloads"
+      ],
+      "consumers": {
+        "bun": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        },
+        "go": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        },
+        "python": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        }
+      }
+    },
+    {
+      "id": "@id-pptx-graphics-picture-insertion-collision",
+      "feature": "workflows/pptx/picture-insertion.feature",
+      "expandedCases": 1,
+      "factIds": [],
+      "expectedOutcomes": [
+        "its allocated identity and media part match the literal record",
+        "the existing orphan member and original media members remain unchanged",
+        "save and reopen preserve the record and all unrelated member payloads"
+      ],
+      "consumers": {
+        "bun": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        },
+        "go": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        },
+        "python": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        }
+      }
+    },
+    {
+      "id": "@id-pptx-graphics-picture-insertion-content-types",
+      "feature": "workflows/pptx/picture-insertion.feature",
+      "expandedCases": 1,
+      "factIds": [],
+      "expectedOutcomes": [
+        "its specific image MIME override matches the literal record",
+        "the conflicting default declaration and original media remain unchanged",
+        "save and reopen retain the new exact media payload and placement"
+      ],
+      "consumers": {
+        "bun": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        },
+        "go": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        },
+        "python": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        }
+      }
+    },
+    {
+      "id": "@id-pptx-graphics-picture-insertion-extension",
+      "feature": "workflows/pptx/picture-insertion.feature",
+      "expandedCases": 1,
+      "factIds": [],
+      "expectedOutcomes": [
+        "its allocated identity and placement match the literal record",
+        "the new picture precedes the terminal extension with every original shape unchanged",
+        "save and reopen retain the complete unknown extension payload"
+      ],
+      "consumers": {
+        "bun": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        },
+        "go": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        },
+        "python": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        }
+      }
+    },
+    {
+      "id": "@id-pptx-graphics-picture-insertion-refusals",
+      "feature": "workflows/pptx/picture-insertion.feature",
+      "expandedCases": 12,
+      "factIds": [],
+      "expectedOutcomes": [
+        "the semantic error code matches the recipe and no receipt is returned",
+        "the complete member set and every payload remain unchanged",
+        "existing slide handles remain usable"
+      ],
+      "consumers": {
+        "bun": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        },
+        "go": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        },
+        "python": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        }
+      }
+    },
+    {
+      "id": "@id-pptx-graphics-picture-replacement-replace",
+      "feature": "workflows/pptx/picture-replacement.feature",
+      "expandedCases": 2,
+      "factIds": [],
+      "expectedOutcomes": [
+        "the allocated media and relationship match the literal receipt",
+        "only that picture's embedded relationship value changes in slide XML",
+        "names, crop, transforms, effects, descriptions and ordering remain literal",
+        "save and reopen retain the new exact payload and every original media member"
+      ],
+      "consumers": {
+        "bun": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        },
+        "go": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        },
+        "python": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        }
+      }
+    },
+    {
+      "id": "@id-pptx-graphics-picture-replacement-isolation",
+      "feature": "workflows/pptx/picture-replacement.feature",
+      "expandedCases": 2,
+      "factIds": [],
+      "expectedOutcomes": [
+        "picture 1028 retains its original relationship value and payload",
+        "every original relationship and media member stays unchanged",
+        "save and reopen retain the new exact payload and all picture properties"
+      ],
+      "consumers": {
+        "bun": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        },
+        "go": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        },
+        "python": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        }
+      }
+    },
+    {
+      "id": "@id-pptx-graphics-picture-replacement-prefix",
+      "feature": "workflows/pptx/picture-replacement.feature",
+      "expandedCases": 1,
+      "factIds": [],
+      "expectedOutcomes": [
+        "only its expanded-name embed value changes with prefix whitespace and quotes preserved",
+        "save and reopen retain exact placement and all other slide XML"
+      ],
+      "consumers": {
+        "bun": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        },
+        "go": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        },
+        "python": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        }
+      }
+    },
+    {
+      "id": "@id-pptx-graphics-picture-replacement-grouped",
+      "feature": "workflows/pptx/picture-replacement.feature",
+      "expandedCases": 1,
+      "factIds": [],
+      "expectedOutcomes": [
+        "group ancestry, local transforms and every other picture property remain unchanged",
+        "save and reopen retain the new exact payload and the literal group XML"
+      ],
+      "consumers": {
+        "bun": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        },
+        "go": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        },
+        "python": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        }
+      }
+    },
+    {
+      "id": "@id-pptx-graphics-picture-replacement-refusals",
+      "feature": "workflows/pptx/picture-replacement.feature",
+      "expandedCases": 8,
+      "factIds": [],
+      "expectedOutcomes": [
+        "the semantic error code matches the recipe and no receipt is returned",
+        "the complete member set, payloads and slide handle version remain unchanged"
+      ],
+      "consumers": {
+        "bun": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        },
+        "go": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        },
+        "python": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        }
+      }
+    },
+    {
+      "id": "@id-pptx-graphics-picture-placement-policies",
+      "feature": "workflows/pptx/picture-placement.feature",
+      "expandedCases": 6,
+      "factIds": [],
+      "expectedOutcomes": [
+        "exact geometry and crop match the literal record",
+        "the allocated media payload and relationship retain source bytes",
+        "save and reopen retain all unrelated member payloads"
+      ],
+      "consumers": {
+        "bun": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        },
+        "go": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        },
+        "python": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        }
+      }
+    },
+    {
+      "id": "@id-pptx-graphics-picture-placement-rounding",
+      "feature": "workflows/pptx/picture-placement.feature",
+      "expandedCases": 3,
+      "factIds": [],
+      "expectedOutcomes": [
+        "exact geometry and crop match the literal rational rounding record",
+        "contained extents stay inside the box with at most one EMU scaling error",
+        "cover crop rounding has at most one percentage-unit error with a nonempty visible region",
+        "save and reopen retain placement and all media payloads"
+      ],
+      "consumers": {
+        "bun": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        },
+        "go": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        },
+        "python": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        }
+      }
+    },
+    {
+      "id": "@id-pptx-graphics-picture-placement-refusals",
+      "feature": "workflows/pptx/picture-placement.feature",
+      "expandedCases": 7,
+      "factIds": [],
+      "expectedOutcomes": [
+        "it refuses with PPTX_PICTURE_UNSUPPORTED and no receipt",
+        "every member payload and slide handle version remain unchanged"
+      ],
+      "consumers": {
+        "bun": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        },
+        "go": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        },
+        "python": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        }
+      }
+    },
+    {
+      "id": "@id-pptx-graphics-picture-crop-roundtrip",
+      "feature": "workflows/pptx/picture-crop.feature",
+      "expandedCases": 8,
+      "factIds": [],
+      "expectedOutcomes": [
+        "the before and after crop and changed count match the literal records",
+        "only the selected source rectangle may change with all other slide XML literal",
+        "geometry, ancestry, effects, relationships and media remain unchanged",
+        "save and reopen retain the exact crop and every unrelated member payload"
+      ],
+      "consumers": {
+        "bun": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        },
+        "go": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        },
+        "python": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        }
+      }
+    },
+    {
+      "id": "@id-pptx-graphics-picture-crop-refusals",
+      "feature": "workflows/pptx/picture-crop.feature",
+      "expandedCases": 9,
+      "factIds": [],
+      "expectedOutcomes": [
+        "the semantic error code matches the recipe",
+        "the complete member set, payloads and handle version remain unchanged"
+      ],
+      "consumers": {
+        "bun": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        },
+        "go": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        },
+        "python": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        }
+      }
+    },
+    {
+      "id": "@id-pptx-graphics-picture-transform-roundtrip",
+      "feature": "workflows/pptx/picture-transform.feature",
+      "expandedCases": 8,
+      "factIds": [],
+      "expectedOutcomes": [
+        "direct transform values and changed count match the literal records",
+        "only selected transform opening-tag attributes may change",
+        "position, size, crop, group ancestry, effects, relationships and media stay unchanged",
+        "save and reopen retain exact orientation and all unrelated member payloads"
+      ],
+      "consumers": {
+        "bun": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        },
+        "go": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        },
+        "python": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        }
+      }
+    },
+    {
+      "id": "@id-pptx-graphics-picture-transform-refusals",
+      "feature": "workflows/pptx/picture-transform.feature",
+      "expandedCases": 10,
+      "factIds": [],
+      "expectedOutcomes": [
+        "the semantic error code matches the recipe",
+        "the complete member set, payloads and handle version remain unchanged"
+      ],
+      "consumers": {
+        "bun": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        },
+        "go": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        },
+        "python": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        }
+      }
+    },
+    {
+      "id": "@id-pptx-graphics-picture-svg-add",
+      "feature": "workflows/pptx/picture-svg.feature",
+      "expandedCases": 2,
+      "factIds": [],
+      "expectedOutcomes": [
+        "the picture identity and both allocated relationships match the literal receipt",
+        "the ordinary blip embeds raster fallback while its SVG extension embeds the vector asset",
+        "both content types and payloads remain exact after save and reopen",
+        "all preexisting shapes, relationships and unrelated payloads remain unchanged"
+      ],
+      "consumers": {
+        "bun": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        },
+        "go": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        },
+        "python": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        }
+      }
+    },
+    {
+      "id": "@id-pptx-graphics-picture-svg-refusals",
+      "feature": "workflows/pptx/picture-svg.feature",
+      "expandedCases": 9,
+      "factIds": [],
+      "expectedOutcomes": [
+        "it refuses with PPTX_PICTURE_UNSUPPORTED and no receipt",
+        "complete membership, payloads and handle version remain unchanged"
+      ],
+      "consumers": {
+        "bun": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        },
+        "go": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        },
+        "python": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        }
+      }
+    },
+    {
+      "id": "@id-pptx-graphics-picture-delete-custody",
+      "feature": "workflows/pptx/picture-delete.feature",
+      "expandedCases": 11,
+      "factIds": [],
+      "expectedOutcomes": [
+        "removed relationship IDs and media members match the literal receipt",
+        "slide XML equals the original with only the selected picture removed",
+        "shared dependencies and every unselected member payload remain unchanged",
+        "save and reopen retain remaining pictures and a complete relationship graph"
+      ],
+      "consumers": {
+        "bun": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        },
+        "go": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        },
+        "python": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        }
+      }
+    },
+    {
+      "id": "@id-pptx-graphics-picture-delete-refusals",
+      "feature": "workflows/pptx/picture-delete.feature",
+      "expandedCases": 6,
+      "factIds": [],
+      "expectedOutcomes": [
+        "the semantic error code matches the recipe and no receipt is returned",
+        "complete membership, payloads and handle version remain unchanged"
+      ],
+      "consumers": {
+        "bun": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        },
+        "go": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        },
+        "python": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        }
+      }
+    },
+    {
+      "id": "@id-pptx-graphics-shape-group-create",
+      "feature": "workflows/pptx/shape-group.feature",
+      "expandedCases": 4,
+      "factIds": [],
+      "expectedOutcomes": [
+        "the allocated group identity, coordinates and child order match the literal receipt",
+        "child coordinate mapping is identity with parent and child rectangles equal",
+        "selected child XML remains literal inside the new group",
+        "every unselected node, relationship and member payload remains unchanged",
+        "save and reopen retain editable children and exact group ancestry"
+      ],
+      "consumers": {
+        "bun": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        },
+        "go": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        },
+        "python": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        }
+      }
+    },
+    {
+      "id": "@id-pptx-graphics-shape-group-refusals",
+      "feature": "workflows/pptx/shape-group.feature",
+      "expandedCases": 12,
+      "factIds": [],
+      "expectedOutcomes": [
+        "the semantic error code matches the recipe",
+        "membership, payloads and handle version remain unchanged"
+      ],
+      "consumers": {
+        "bun": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        },
+        "go": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        },
+        "python": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        }
+      }
+    },
+    {
+      "id": "@id-pptx-graphics-group-transform-roundtrip",
+      "feature": "workflows/pptx/group-transform.feature",
+      "expandedCases": 6,
+      "factIds": [],
+      "expectedOutcomes": [
+        "direct transform values and changed count match the literal record",
+        "only the selected group transform may change with child XML literal",
+        "every relationship, media payload and unselected member stays unchanged",
+        "save and reopen retain the complete group coordinate frame"
+      ],
+      "consumers": {
+        "bun": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        },
+        "go": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        },
+        "python": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        }
+      }
+    },
+    {
+      "id": "@id-pptx-graphics-group-transform-mapping",
+      "feature": "workflows/pptx/group-transform.feature",
+      "expandedCases": 6,
+      "factIds": [],
+      "expectedOutcomes": [
+        "the result matches the literal vector within the shared numeric tolerance",
+        "inverse mapping recovers the original point within that tolerance"
+      ],
+      "consumers": {
+        "bun": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        },
+        "go": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        },
+        "python": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        }
+      }
+    },
+    {
+      "id": "@id-pptx-graphics-group-transform-refusals",
+      "feature": "workflows/pptx/group-transform.feature",
+      "expandedCases": 9,
+      "factIds": [],
+      "expectedOutcomes": [
+        "the semantic error code matches the recipe",
+        "complete membership, payloads and handle version remain unchanged"
+      ],
+      "consumers": {
+        "bun": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        },
+        "go": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        },
+        "python": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        }
+      }
+    },
+    {
+      "id": "@id-pptx-graphics-connectors-add",
+      "feature": "workflows/pptx/connectors.feature",
+      "expandedCases": 6,
+      "factIds": [],
+      "expectedOutcomes": [
+        "allocated identity, endpoints and transform match the literal receipt",
+        "start and end attachment metadata retain exact shape IDs and site indices",
+        "preset geometry and direct line style match the explicit request",
+        "every original shape, relationship and unrelated payload remains literal",
+        "save and reopen retain attachments and exact endpoint coordinates"
+      ],
+      "consumers": {
+        "bun": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        },
+        "go": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        },
+        "python": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        }
+      }
+    },
+    {
+      "id": "@id-pptx-graphics-connectors-refusals",
+      "feature": "workflows/pptx/connectors.feature",
+      "expandedCases": 9,
+      "factIds": [],
+      "expectedOutcomes": [
+        "the semantic error code matches the recipe",
+        "membership, payloads and handle version remain unchanged"
+      ],
+      "consumers": {
+        "bun": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        },
+        "go": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        },
+        "python": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        }
+      }
+    },
+    {
+      "id": "@id-pptx-graphics-diagrams-create",
+      "feature": "workflows/pptx/diagrams.feature",
+      "expandedCases": 4,
+      "factIds": [],
+      "expectedOutcomes": [
+        "generated node keys, IDs and geometry match the literal receipt",
+        "edge IDs and exact shape/site attachments match the literal receipt",
+        "node text and direct rectangle styles remain editable",
+        "original XML, relationships and every unrelated payload remain unchanged",
+        "save and reopen retain exact labels placements and attachments"
+      ],
+      "consumers": {
+        "bun": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        },
+        "go": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        },
+        "python": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        }
+      }
+    },
+    {
+      "id": "@id-pptx-graphics-diagrams-refusals",
+      "feature": "workflows/pptx/diagrams.feature",
+      "expandedCases": 10,
+      "factIds": [],
+      "expectedOutcomes": [
+        "the semantic error code matches the recipe",
+        "complete membership, payloads and handle version remain unchanged"
+      ],
+      "consumers": {
+        "bun": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        },
+        "go": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        },
+        "python": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        }
+      }
+    },
+    {
+      "id": "@id-pptx-graphics-smartart-inspection-read",
+      "feature": "workflows/pptx/smartart-inspection.feature",
+      "expandedCases": 3,
+      "factIds": [],
+      "expectedOutcomes": [
+        "frame identities, four role roots, graph parts and edges match the literal record",
+        "drawing dependencies and external targets are reported without fetching",
+        "explicit limits refuse any inference of data editing layout evaluation or drawing regeneration",
+        "returned records are detached with every package payload unchanged",
+        "save and reopen retain the exact record and all members"
+      ],
+      "consumers": {
+        "bun": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        },
+        "go": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        },
+        "python": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        }
+      }
+    },
+    {
+      "id": "@id-pptx-graphics-smartart-inspection-refusals",
+      "feature": "workflows/pptx/smartart-inspection.feature",
+      "expandedCases": 9,
+      "factIds": [],
+      "expectedOutcomes": [
+        "it refuses with PPTX_SMARTART_UNSUPPORTED and no partial report",
+        "complete membership and every payload remain unchanged"
+      ],
+      "consumers": {
+        "bun": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        },
+        "go": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        },
+        "python": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        }
+      }
+    },
+    {
+      "id": "@id-pptx-graphics-smartart-copy-copy",
+      "feature": "workflows/pptx/smartart-copy.feature",
+      "expandedCases": 3,
+      "factIds": [],
+      "expectedOutcomes": [
+        "frame identity and copied part counts match the shared record",
+        "all diagram model identities and drawing shape identities are remapped consistently",
+        "every internal copied graph edge resolves inside the copied closure",
+        "external targets and opaque media bytes remain literal without fetching",
+        "all source and unrelated destination payloads remain unchanged",
+        "save and reopen retain the copied graph and remapped identities"
+      ],
+      "consumers": {
+        "bun": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        },
+        "go": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        },
+        "python": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        }
+      }
+    },
+    {
+      "id": "@id-pptx-graphics-smartart-copy-refusals",
+      "feature": "workflows/pptx/smartart-copy.feature",
+      "expandedCases": 5,
+      "factIds": [],
+      "expectedOutcomes": [
+        "the semantic error code matches the recipe",
+        "both packages and destination handle version remain unchanged"
+      ],
+      "consumers": {
+        "bun": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        },
+        "go": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        },
+        "python": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        }
+      }
+    },
+    {
+      "id": "@id-pptx-graphics-autoshapes-author",
+      "feature": "workflows/pptx/autoshapes.feature",
+      "expandedCases": 8,
+      "factIds": [],
+      "expectedOutcomes": [
+        "identity, geometry, preset and literal adjustment guides match the shared record",
+        "direct text, fill and outline match explicit options or documented defaults",
+        "every original shape, relationship and payload remains unchanged",
+        "save and reopen retain editable geometry text and style"
+      ],
+      "consumers": {
+        "bun": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        },
+        "go": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        },
+        "python": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        }
+      }
+    },
+    {
+      "id": "@id-pptx-graphics-autoshapes-refusals",
+      "feature": "workflows/pptx/autoshapes.feature",
+      "expandedCases": 10,
+      "factIds": [],
+      "expectedOutcomes": [
+        "the semantic error code matches the recipe",
+        "complete membership, payloads and handle version remain unchanged"
+      ],
+      "consumers": {
+        "bun": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        },
+        "go": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        },
+        "python": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        }
+      }
+    },
+    {
+      "id": "@id-pptx-graphics-freeform-author",
+      "feature": "workflows/pptx/freeform.feature",
+      "expandedCases": 5,
+      "factIds": [],
+      "expectedOutcomes": [
+        "identity, transform, path dimensions and ordered commands match the literal receipt",
+        "custom geometry and direct fill and outline remain editable",
+        "removing the generated shape recovers complete original slide XML",
+        "every relationship and unrelated payload stays unchanged",
+        "save and reopen retain exact vector geometry and style"
+      ],
+      "consumers": {
+        "bun": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        },
+        "go": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        },
+        "python": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        }
+      }
+    },
+    {
+      "id": "@id-pptx-graphics-freeform-refusals",
+      "feature": "workflows/pptx/freeform.feature",
+      "expandedCases": 10,
+      "factIds": [],
+      "expectedOutcomes": [
+        "the semantic error code matches the recipe",
+        "complete membership, payloads and handle version remain unchanged"
+      ],
+      "consumers": {
+        "bun": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        },
+        "go": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        },
+        "python": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        }
+      }
+    },
+    {
+      "id": "@id-pptx-graphics-z-order-reorder",
+      "feature": "workflows/pptx/z-order.feature",
+      "expandedCases": 7,
+      "factIds": [],
+      "expectedOutcomes": [
+        "the before and after order and changed count match the literal record",
+        "every graphical element retains its complete literal XML span",
+        "unselected sibling slots, group metadata and terminal extensions remain unchanged",
+        "every relationship and unrelated member payload remains unchanged",
+        "save and reopen retain exact graphical order and content"
+      ],
+      "consumers": {
+        "bun": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        },
+        "go": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        },
+        "python": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        }
+      }
+    },
+    {
+      "id": "@id-pptx-graphics-z-order-refusals",
+      "feature": "workflows/pptx/z-order.feature",
+      "expandedCases": 8,
+      "factIds": [],
+      "expectedOutcomes": [
+        "the semantic error code matches the recipe",
+        "complete membership, payloads and handle version remain unchanged"
+      ],
+      "consumers": {
+        "bun": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        },
+        "go": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        },
+        "python": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        }
+      }
+    },
+    {
+      "id": "@id-pptx-graphics-gradients-write",
+      "feature": "workflows/pptx/gradients.feature",
+      "expandedCases": 6,
+      "factIds": [],
+      "expectedOutcomes": [
+        "before and after gradient records and changed count match literal expectations",
+        "stop order, positions, angle, scaling and colour transform order remain exact",
+        "only the selected direct fill may change",
+        "theme definitions, style references, outline, text and dependencies remain literal",
+        "save and reopen retain exact gradient values and every unrelated payload"
+      ],
+      "consumers": {
+        "bun": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        },
+        "go": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        },
+        "python": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        }
+      }
+    },
+    {
+      "id": "@id-pptx-graphics-gradients-refusals",
+      "feature": "workflows/pptx/gradients.feature",
+      "expandedCases": 12,
+      "factIds": [],
+      "expectedOutcomes": [
+        "the semantic error code matches the recipe",
+        "complete membership, payloads and handle version remain unchanged"
+      ],
+      "consumers": {
+        "bun": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        },
+        "go": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        },
+        "python": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        }
+      }
+    },
+    {
+      "id": "@id-pptx-graphics-opacity-shape",
+      "feature": "workflows/pptx/opacity.feature",
+      "expandedCases": 5,
+      "factIds": [],
+      "expectedOutcomes": [
+        "readback and changed count match the literal opacity record",
+        "only its colour alpha may change with all other transforms and references literal",
+        "save and reopen retain opacity and every unrelated payload"
+      ],
+      "consumers": {
+        "bun": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        },
+        "go": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        },
+        "python": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        }
+      }
+    },
+    {
+      "id": "@id-pptx-graphics-opacity-picture",
+      "feature": "workflows/pptx/opacity.feature",
+      "expandedCases": 7,
+      "factIds": [],
+      "expectedOutcomes": [
+        "readback and changed count match the literal transparency record",
+        "only its alphaModFix may change with crop transforms and other effects literal",
+        "embedded or linked dependencies remain unchanged without fetching",
+        "save and reopen retain transparency and all media payloads"
+      ],
+      "consumers": {
+        "bun": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        },
+        "go": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        },
+        "python": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        }
+      }
+    },
+    {
+      "id": "@id-pptx-graphics-opacity-refusals",
+      "feature": "workflows/pptx/opacity.feature",
+      "expandedCases": 12,
+      "factIds": [],
+      "expectedOutcomes": [
+        "the semantic error code matches the recipe",
+        "membership, payloads and handle version remain unchanged"
+      ],
+      "consumers": {
+        "bun": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        },
+        "go": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        },
+        "python": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        }
+      }
+    },
+    {
+      "id": "@id-pptx-graphics-outlines-patch",
+      "feature": "workflows/pptx/outlines.feature",
+      "expandedCases": 10,
+      "factIds": [],
+      "expectedOutcomes": [
+        "before and after decoration records and changed count match literal expectations",
+        "cap compound join and arrowhead XML follow the explicit bounded request",
+        "all unrequested line attributes, fill colours, dashes and extensions remain literal",
+        "shape content, connector attachments, style references and dependencies remain unchanged",
+        "save and reopen retain exact line decorations and every unrelated payload"
+      ],
+      "consumers": {
+        "bun": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        },
+        "go": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        },
+        "python": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        }
+      }
+    },
+    {
+      "id": "@id-pptx-graphics-outlines-refusals",
+      "feature": "workflows/pptx/outlines.feature",
+      "expandedCases": 11,
+      "factIds": [],
+      "expectedOutcomes": [
+        "the semantic error code matches the recipe",
+        "membership, payloads and handle version remain unchanged"
+      ],
+      "consumers": {
+        "bun": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        },
+        "go": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        },
+        "python": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
         }
       }
     }

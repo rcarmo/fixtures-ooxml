@@ -1,0 +1,868 @@
+{
+  "schemaVersion": 1,
+  "executionCredit": false,
+  "feature": "workflows/pptx/outlines.feature",
+  "contract": "contracts/pptx-outlines.md",
+  "baseFixtureId": "fixture-792277d2c358c5bd7c8a4053078a5594fa07bfb55a06b0bb30f2813c151ea459",
+  "slidePart": "ppt/slides/slide1.xml",
+  "counts": {
+    "ids": 2,
+    "cases": 21
+  },
+  "custody": {
+    "allowedChangedParts": [
+      "ppt/slides/slide1.xml"
+    ],
+    "membership": "exact",
+    "preserve": "all XML outside requested line decorations; line fill/dash/style references and dependencies"
+  },
+  "cases": [
+    {
+      "caseId": "shape arrows",
+      "scenarioId": "@id-pptx-graphics-outlines-patch",
+      "example": {
+        "variant": "shape arrows"
+      },
+      "operations": [
+        {
+          "kind": "replace-literal-once",
+          "part": "ppt/slides/slide1.xml",
+          "before": "</p:spTree>",
+          "after": "<p:sp><p:nvSpPr><p:cNvPr id=\"2000\" name=\"Gradient target\"/><p:cNvSpPr/><p:nvPr/></p:nvSpPr><p:spPr><a:xfrm><a:off x=\"100\" y=\"200\"/><a:ext cx=\"1200000\" cy=\"900000\"/></a:xfrm><a:prstGeom prst=\"rect\"><a:avLst/></a:prstGeom><a:solidFill><a:schemeClr val=\"accent3\"><a:tint val=\"25000\"/></a:schemeClr></a:solidFill><a:ln w=\"12700\"><a:solidFill><a:schemeClr val=\"accent2\"/></a:solidFill></a:ln></p:spPr><p:style><a:lnRef idx=\"1\"><a:schemeClr val=\"accent2\"/></a:lnRef><a:fillRef idx=\"2\"><a:schemeClr val=\"accent3\"/></a:fillRef><a:effectRef idx=\"0\"><a:schemeClr val=\"accent1\"/></a:effectRef><a:fontRef idx=\"minor\"><a:schemeClr val=\"tx1\"/></a:fontRef></p:style></p:sp></p:spTree>"
+        }
+      ],
+      "request": {
+        "shapeId": 2000,
+        "patch": {
+          "cap": "rnd",
+          "compound": "dbl",
+          "join": {
+            "type": "round"
+          },
+          "headEnd": {
+            "type": "triangle",
+            "width": "sm",
+            "length": "lg"
+          },
+          "tailEnd": {
+            "type": "arrow",
+            "width": "lg",
+            "length": "sm"
+          }
+        }
+      },
+      "expected": {
+        "before": {
+          "cap": "flat",
+          "compound": "sng",
+          "join": null,
+          "headEnd": null,
+          "tailEnd": null
+        },
+        "outline": {
+          "cap": "rnd",
+          "compound": "dbl",
+          "join": {
+            "type": "round"
+          },
+          "headEnd": {
+            "type": "triangle",
+            "width": "sm",
+            "length": "lg"
+          },
+          "tailEnd": {
+            "type": "arrow",
+            "width": "lg",
+            "length": "sm"
+          }
+        },
+        "changed": 1
+      }
+    },
+    {
+      "caseId": "miter and triple",
+      "scenarioId": "@id-pptx-graphics-outlines-patch",
+      "example": {
+        "variant": "miter and triple"
+      },
+      "operations": [
+        {
+          "kind": "replace-literal-once",
+          "part": "ppt/slides/slide1.xml",
+          "before": "</p:spTree>",
+          "after": "<p:sp><p:nvSpPr><p:cNvPr id=\"2000\" name=\"Gradient target\"/><p:cNvSpPr/><p:nvPr/></p:nvSpPr><p:spPr><a:xfrm><a:off x=\"100\" y=\"200\"/><a:ext cx=\"1200000\" cy=\"900000\"/></a:xfrm><a:prstGeom prst=\"rect\"><a:avLst/></a:prstGeom><a:solidFill><a:schemeClr val=\"accent3\"><a:tint val=\"25000\"/></a:schemeClr></a:solidFill><a:ln w=\"12700\"><a:solidFill><a:schemeClr val=\"accent2\"/></a:solidFill></a:ln></p:spPr><p:style><a:lnRef idx=\"1\"><a:schemeClr val=\"accent2\"/></a:lnRef><a:fillRef idx=\"2\"><a:schemeClr val=\"accent3\"/></a:fillRef><a:effectRef idx=\"0\"><a:schemeClr val=\"accent1\"/></a:effectRef><a:fontRef idx=\"minor\"><a:schemeClr val=\"tx1\"/></a:fontRef></p:style></p:sp></p:spTree>"
+        }
+      ],
+      "request": {
+        "shapeId": 2000,
+        "patch": {
+          "cap": "sq",
+          "compound": "tri",
+          "join": {
+            "type": "miter",
+            "limit": 800000
+          }
+        }
+      },
+      "expected": {
+        "before": {
+          "cap": "flat",
+          "compound": "sng",
+          "join": null,
+          "headEnd": null,
+          "tailEnd": null
+        },
+        "outline": {
+          "cap": "sq",
+          "compound": "tri",
+          "join": {
+            "type": "miter",
+            "limit": 800000
+          },
+          "headEnd": null,
+          "tailEnd": null
+        },
+        "changed": 1
+      }
+    },
+    {
+      "caseId": "bevel and thick thin",
+      "scenarioId": "@id-pptx-graphics-outlines-patch",
+      "example": {
+        "variant": "bevel and thick thin"
+      },
+      "operations": [
+        {
+          "kind": "replace-literal-once",
+          "part": "ppt/slides/slide1.xml",
+          "before": "</p:spTree>",
+          "after": "<p:sp><p:nvSpPr><p:cNvPr id=\"2000\" name=\"Gradient target\"/><p:cNvSpPr/><p:nvPr/></p:nvSpPr><p:spPr><a:xfrm><a:off x=\"100\" y=\"200\"/><a:ext cx=\"1200000\" cy=\"900000\"/></a:xfrm><a:prstGeom prst=\"rect\"><a:avLst/></a:prstGeom><a:solidFill><a:schemeClr val=\"accent3\"><a:tint val=\"25000\"/></a:schemeClr></a:solidFill><a:ln w=\"12700\"><a:solidFill><a:schemeClr val=\"accent2\"/></a:solidFill></a:ln></p:spPr><p:style><a:lnRef idx=\"1\"><a:schemeClr val=\"accent2\"/></a:lnRef><a:fillRef idx=\"2\"><a:schemeClr val=\"accent3\"/></a:fillRef><a:effectRef idx=\"0\"><a:schemeClr val=\"accent1\"/></a:effectRef><a:fontRef idx=\"minor\"><a:schemeClr val=\"tx1\"/></a:fontRef></p:style></p:sp></p:spTree>"
+        }
+      ],
+      "request": {
+        "shapeId": 2000,
+        "patch": {
+          "compound": "thickThin",
+          "join": {
+            "type": "bevel"
+          }
+        }
+      },
+      "expected": {
+        "before": {
+          "cap": "flat",
+          "compound": "sng",
+          "join": null,
+          "headEnd": null,
+          "tailEnd": null
+        },
+        "outline": {
+          "cap": "flat",
+          "compound": "thickThin",
+          "join": {
+            "type": "bevel"
+          },
+          "headEnd": null,
+          "tailEnd": null
+        },
+        "changed": 1
+      }
+    },
+    {
+      "caseId": "thin thick",
+      "scenarioId": "@id-pptx-graphics-outlines-patch",
+      "example": {
+        "variant": "thin thick"
+      },
+      "operations": [
+        {
+          "kind": "replace-literal-once",
+          "part": "ppt/slides/slide1.xml",
+          "before": "</p:spTree>",
+          "after": "<p:sp><p:nvSpPr><p:cNvPr id=\"2000\" name=\"Gradient target\"/><p:cNvSpPr/><p:nvPr/></p:nvSpPr><p:spPr><a:xfrm><a:off x=\"100\" y=\"200\"/><a:ext cx=\"1200000\" cy=\"900000\"/></a:xfrm><a:prstGeom prst=\"rect\"><a:avLst/></a:prstGeom><a:solidFill><a:schemeClr val=\"accent3\"><a:tint val=\"25000\"/></a:schemeClr></a:solidFill><a:ln w=\"12700\"><a:solidFill><a:schemeClr val=\"accent2\"/></a:solidFill></a:ln></p:spPr><p:style><a:lnRef idx=\"1\"><a:schemeClr val=\"accent2\"/></a:lnRef><a:fillRef idx=\"2\"><a:schemeClr val=\"accent3\"/></a:fillRef><a:effectRef idx=\"0\"><a:schemeClr val=\"accent1\"/></a:effectRef><a:fontRef idx=\"minor\"><a:schemeClr val=\"tx1\"/></a:fontRef></p:style></p:sp></p:spTree>"
+        }
+      ],
+      "request": {
+        "shapeId": 2000,
+        "patch": {
+          "compound": "thinThick",
+          "cap": "flat"
+        }
+      },
+      "expected": {
+        "before": {
+          "cap": "flat",
+          "compound": "sng",
+          "join": null,
+          "headEnd": null,
+          "tailEnd": null
+        },
+        "outline": {
+          "cap": "flat",
+          "compound": "thinThick",
+          "join": null,
+          "headEnd": null,
+          "tailEnd": null
+        },
+        "changed": 1
+      }
+    },
+    {
+      "caseId": "connector arrows",
+      "scenarioId": "@id-pptx-graphics-outlines-patch",
+      "example": {
+        "variant": "connector arrows"
+      },
+      "operations": [
+        {
+          "kind": "replace-literal-once",
+          "part": "ppt/slides/slide1.xml",
+          "before": "</p:spTree>",
+          "after": "<p:sp><p:nvSpPr><p:cNvPr id=\"2000\" name=\"Gradient target\"/><p:cNvSpPr/><p:nvPr/></p:nvSpPr><p:spPr><a:xfrm><a:off x=\"100\" y=\"200\"/><a:ext cx=\"1200000\" cy=\"900000\"/></a:xfrm><a:prstGeom prst=\"rect\"><a:avLst/></a:prstGeom><a:solidFill><a:schemeClr val=\"accent3\"><a:tint val=\"25000\"/></a:schemeClr></a:solidFill><a:ln w=\"12700\"><a:solidFill><a:schemeClr val=\"accent2\"/></a:solidFill></a:ln></p:spPr><p:style><a:lnRef idx=\"1\"><a:schemeClr val=\"accent2\"/></a:lnRef><a:fillRef idx=\"2\"><a:schemeClr val=\"accent3\"/></a:fillRef><a:effectRef idx=\"0\"><a:schemeClr val=\"accent1\"/></a:effectRef><a:fontRef idx=\"minor\"><a:schemeClr val=\"tx1\"/></a:fontRef></p:style></p:sp></p:spTree>"
+        },
+        {
+          "kind": "replace-literal-once",
+          "part": "ppt/slides/slide1.xml",
+          "before": "</p:spTree>",
+          "after": "<p:cxnSp><p:nvCxnSpPr><p:cNvPr id=\"2001\" name=\"Styled connector\"/><p:cNvCxnSpPr><a:stCxn id=\"2000\" idx=\"3\"/><a:endCxn id=\"2\" idx=\"1\"/></p:cNvCxnSpPr><p:nvPr/></p:nvCxnSpPr><p:spPr><a:xfrm><a:off x=\"100\" y=\"200\"/><a:ext cx=\"500\" cy=\"600\"/></a:xfrm><a:prstGeom prst=\"line\"><a:avLst/></a:prstGeom><a:ln w=\"12700\"><a:solidFill><a:schemeClr val=\"accent2\"/></a:solidFill></a:ln></p:spPr></p:cxnSp></p:spTree>"
+        }
+      ],
+      "request": {
+        "shapeId": 2001,
+        "patch": {
+          "cap": "rnd",
+          "compound": "dbl",
+          "join": {
+            "type": "round"
+          },
+          "headEnd": {
+            "type": "triangle",
+            "width": "sm",
+            "length": "lg"
+          },
+          "tailEnd": {
+            "type": "arrow",
+            "width": "lg",
+            "length": "sm"
+          }
+        }
+      },
+      "expected": {
+        "before": {
+          "cap": "flat",
+          "compound": "sng",
+          "join": null,
+          "headEnd": null,
+          "tailEnd": null
+        },
+        "outline": {
+          "cap": "rnd",
+          "compound": "dbl",
+          "join": {
+            "type": "round"
+          },
+          "headEnd": {
+            "type": "triangle",
+            "width": "sm",
+            "length": "lg"
+          },
+          "tailEnd": {
+            "type": "arrow",
+            "width": "lg",
+            "length": "sm"
+          }
+        },
+        "changed": 1
+      }
+    },
+    {
+      "caseId": "exact no-op",
+      "scenarioId": "@id-pptx-graphics-outlines-patch",
+      "example": {
+        "variant": "exact no-op"
+      },
+      "operations": [
+        {
+          "kind": "replace-literal-once",
+          "part": "ppt/slides/slide1.xml",
+          "before": "</p:spTree>",
+          "after": "<p:sp><p:nvSpPr><p:cNvPr id=\"2000\" name=\"Gradient target\"/><p:cNvSpPr/><p:nvPr/></p:nvSpPr><p:spPr><a:xfrm><a:off x=\"100\" y=\"200\"/><a:ext cx=\"1200000\" cy=\"900000\"/></a:xfrm><a:prstGeom prst=\"rect\"><a:avLst/></a:prstGeom><a:solidFill><a:schemeClr val=\"accent3\"><a:tint val=\"25000\"/></a:schemeClr></a:solidFill><a:ln w=\"12700\"><a:solidFill><a:schemeClr val=\"accent2\"/></a:solidFill></a:ln></p:spPr><p:style><a:lnRef idx=\"1\"><a:schemeClr val=\"accent2\"/></a:lnRef><a:fillRef idx=\"2\"><a:schemeClr val=\"accent3\"/></a:fillRef><a:effectRef idx=\"0\"><a:schemeClr val=\"accent1\"/></a:effectRef><a:fontRef idx=\"minor\"><a:schemeClr val=\"tx1\"/></a:fontRef></p:style></p:sp></p:spTree>"
+        },
+        {
+          "kind": "replace-literal-once",
+          "part": "ppt/slides/slide1.xml",
+          "before": "<a:ln w=\"12700\"><a:solidFill><a:schemeClr val=\"accent2\"/></a:solidFill></a:ln>",
+          "after": "<a:ln w=\"12700\" cap=\"rnd\" cmpd=\"dbl\"><a:solidFill><a:schemeClr val=\"accent2\"/></a:solidFill><a:round/><a:headEnd type=\"triangle\" w=\"sm\" len=\"lg\"/><a:tailEnd type=\"arrow\" w=\"lg\" len=\"sm\"/></a:ln>"
+        }
+      ],
+      "request": {
+        "shapeId": 2000,
+        "patch": {
+          "cap": "rnd",
+          "compound": "dbl",
+          "join": {
+            "type": "round"
+          },
+          "headEnd": {
+            "type": "triangle",
+            "width": "sm",
+            "length": "lg"
+          },
+          "tailEnd": {
+            "type": "arrow",
+            "width": "lg",
+            "length": "sm"
+          }
+        }
+      },
+      "expected": {
+        "before": {
+          "cap": "rnd",
+          "compound": "dbl",
+          "join": {
+            "type": "round"
+          },
+          "headEnd": {
+            "type": "triangle",
+            "width": "sm",
+            "length": "lg"
+          },
+          "tailEnd": {
+            "type": "arrow",
+            "width": "lg",
+            "length": "sm"
+          }
+        },
+        "outline": {
+          "cap": "rnd",
+          "compound": "dbl",
+          "join": {
+            "type": "round"
+          },
+          "headEnd": {
+            "type": "triangle",
+            "width": "sm",
+            "length": "lg"
+          },
+          "tailEnd": {
+            "type": "arrow",
+            "width": "lg",
+            "length": "sm"
+          }
+        },
+        "changed": 0
+      }
+    },
+    {
+      "caseId": "remove decorations",
+      "scenarioId": "@id-pptx-graphics-outlines-patch",
+      "example": {
+        "variant": "remove decorations"
+      },
+      "operations": [
+        {
+          "kind": "replace-literal-once",
+          "part": "ppt/slides/slide1.xml",
+          "before": "</p:spTree>",
+          "after": "<p:sp><p:nvSpPr><p:cNvPr id=\"2000\" name=\"Gradient target\"/><p:cNvSpPr/><p:nvPr/></p:nvSpPr><p:spPr><a:xfrm><a:off x=\"100\" y=\"200\"/><a:ext cx=\"1200000\" cy=\"900000\"/></a:xfrm><a:prstGeom prst=\"rect\"><a:avLst/></a:prstGeom><a:solidFill><a:schemeClr val=\"accent3\"><a:tint val=\"25000\"/></a:schemeClr></a:solidFill><a:ln w=\"12700\"><a:solidFill><a:schemeClr val=\"accent2\"/></a:solidFill></a:ln></p:spPr><p:style><a:lnRef idx=\"1\"><a:schemeClr val=\"accent2\"/></a:lnRef><a:fillRef idx=\"2\"><a:schemeClr val=\"accent3\"/></a:fillRef><a:effectRef idx=\"0\"><a:schemeClr val=\"accent1\"/></a:effectRef><a:fontRef idx=\"minor\"><a:schemeClr val=\"tx1\"/></a:fontRef></p:style></p:sp></p:spTree>"
+        },
+        {
+          "kind": "replace-literal-once",
+          "part": "ppt/slides/slide1.xml",
+          "before": "<a:ln w=\"12700\"><a:solidFill><a:schemeClr val=\"accent2\"/></a:solidFill></a:ln>",
+          "after": "<a:ln w=\"12700\" cap=\"rnd\" cmpd=\"dbl\"><a:solidFill><a:schemeClr val=\"accent2\"/></a:solidFill><a:round/><a:headEnd type=\"triangle\" w=\"sm\" len=\"lg\"/><a:tailEnd type=\"arrow\" w=\"lg\" len=\"sm\"/></a:ln>"
+        }
+      ],
+      "request": {
+        "shapeId": 2000,
+        "patch": {
+          "join": null,
+          "headEnd": null,
+          "tailEnd": null
+        }
+      },
+      "expected": {
+        "before": {
+          "cap": "rnd",
+          "compound": "dbl",
+          "join": {
+            "type": "round"
+          },
+          "headEnd": {
+            "type": "triangle",
+            "width": "sm",
+            "length": "lg"
+          },
+          "tailEnd": {
+            "type": "arrow",
+            "width": "lg",
+            "length": "sm"
+          }
+        },
+        "outline": {
+          "cap": "rnd",
+          "compound": "dbl",
+          "join": null,
+          "headEnd": null,
+          "tailEnd": null
+        },
+        "changed": 1
+      }
+    },
+    {
+      "caseId": "empty patch",
+      "scenarioId": "@id-pptx-graphics-outlines-patch",
+      "example": {
+        "variant": "empty patch"
+      },
+      "operations": [
+        {
+          "kind": "replace-literal-once",
+          "part": "ppt/slides/slide1.xml",
+          "before": "</p:spTree>",
+          "after": "<p:sp><p:nvSpPr><p:cNvPr id=\"2000\" name=\"Gradient target\"/><p:cNvSpPr/><p:nvPr/></p:nvSpPr><p:spPr><a:xfrm><a:off x=\"100\" y=\"200\"/><a:ext cx=\"1200000\" cy=\"900000\"/></a:xfrm><a:prstGeom prst=\"rect\"><a:avLst/></a:prstGeom><a:solidFill><a:schemeClr val=\"accent3\"><a:tint val=\"25000\"/></a:schemeClr></a:solidFill><a:ln w=\"12700\"><a:solidFill><a:schemeClr val=\"accent2\"/></a:solidFill></a:ln></p:spPr><p:style><a:lnRef idx=\"1\"><a:schemeClr val=\"accent2\"/></a:lnRef><a:fillRef idx=\"2\"><a:schemeClr val=\"accent3\"/></a:fillRef><a:effectRef idx=\"0\"><a:schemeClr val=\"accent1\"/></a:effectRef><a:fontRef idx=\"minor\"><a:schemeClr val=\"tx1\"/></a:fontRef></p:style></p:sp></p:spTree>"
+        }
+      ],
+      "request": {
+        "shapeId": 2000,
+        "patch": {}
+      },
+      "expected": {
+        "before": {
+          "cap": "flat",
+          "compound": "sng",
+          "join": null,
+          "headEnd": null,
+          "tailEnd": null
+        },
+        "outline": {
+          "cap": "flat",
+          "compound": "sng",
+          "join": null,
+          "headEnd": null,
+          "tailEnd": null
+        },
+        "changed": 0
+      }
+    },
+    {
+      "caseId": "colour dash extension custody",
+      "scenarioId": "@id-pptx-graphics-outlines-patch",
+      "example": {
+        "variant": "colour dash extension custody"
+      },
+      "operations": [
+        {
+          "kind": "replace-literal-once",
+          "part": "ppt/slides/slide1.xml",
+          "before": "</p:spTree>",
+          "after": "<p:sp><p:nvSpPr><p:cNvPr id=\"2000\" name=\"Gradient target\"/><p:cNvSpPr/><p:nvPr/></p:nvSpPr><p:spPr><a:xfrm><a:off x=\"100\" y=\"200\"/><a:ext cx=\"1200000\" cy=\"900000\"/></a:xfrm><a:prstGeom prst=\"rect\"><a:avLst/></a:prstGeom><a:solidFill><a:schemeClr val=\"accent3\"><a:tint val=\"25000\"/></a:schemeClr></a:solidFill><a:ln w=\"12700\"><a:solidFill><a:schemeClr val=\"accent2\"/></a:solidFill></a:ln></p:spPr><p:style><a:lnRef idx=\"1\"><a:schemeClr val=\"accent2\"/></a:lnRef><a:fillRef idx=\"2\"><a:schemeClr val=\"accent3\"/></a:fillRef><a:effectRef idx=\"0\"><a:schemeClr val=\"accent1\"/></a:effectRef><a:fontRef idx=\"minor\"><a:schemeClr val=\"tx1\"/></a:fontRef></p:style></p:sp></p:spTree>"
+        },
+        {
+          "kind": "replace-literal-once",
+          "part": "ppt/slides/slide1.xml",
+          "before": "<a:ln w=\"12700\"><a:solidFill><a:schemeClr val=\"accent2\"/></a:solidFill></a:ln>",
+          "after": "<a:ln w=\"12700\"><a:solidFill><a:schemeClr val=\"accent2\"><a:tint val=\"25000\"/></a:schemeClr></a:solidFill><a:prstDash val=\"dash\"/><a:extLst><a:ext uri=\"urn:preserve\"><x:opaque xmlns:x=\"urn:opaque\" value=\"retain\"/></a:ext></a:extLst></a:ln>"
+        }
+      ],
+      "request": {
+        "shapeId": 2000,
+        "patch": {
+          "cap": "rnd",
+          "compound": "dbl",
+          "join": {
+            "type": "round"
+          },
+          "headEnd": {
+            "type": "triangle",
+            "width": "sm",
+            "length": "lg"
+          },
+          "tailEnd": {
+            "type": "arrow",
+            "width": "lg",
+            "length": "sm"
+          }
+        }
+      },
+      "expected": {
+        "before": {
+          "cap": "flat",
+          "compound": "sng",
+          "join": null,
+          "headEnd": null,
+          "tailEnd": null
+        },
+        "outline": {
+          "cap": "rnd",
+          "compound": "dbl",
+          "join": {
+            "type": "round"
+          },
+          "headEnd": {
+            "type": "triangle",
+            "width": "sm",
+            "length": "lg"
+          },
+          "tailEnd": {
+            "type": "arrow",
+            "width": "lg",
+            "length": "sm"
+          }
+        },
+        "changed": 1
+      }
+    },
+    {
+      "caseId": "aliased scalar update",
+      "scenarioId": "@id-pptx-graphics-outlines-patch",
+      "example": {
+        "variant": "aliased scalar update"
+      },
+      "operations": [
+        {
+          "kind": "replace-literal-once",
+          "part": "ppt/slides/slide1.xml",
+          "before": "</p:spTree>",
+          "after": "<p:sp><p:nvSpPr><p:cNvPr id=\"2000\" name=\"Gradient target\"/><p:cNvSpPr/><p:nvPr/></p:nvSpPr><p:spPr><a:xfrm><a:off x=\"100\" y=\"200\"/><a:ext cx=\"1200000\" cy=\"900000\"/></a:xfrm><a:prstGeom prst=\"rect\"><a:avLst/></a:prstGeom><a:solidFill><a:schemeClr val=\"accent3\"><a:tint val=\"25000\"/></a:schemeClr></a:solidFill><a:ln w=\"12700\"><a:solidFill><a:schemeClr val=\"accent2\"/></a:solidFill></a:ln></p:spPr><p:style><a:lnRef idx=\"1\"><a:schemeClr val=\"accent2\"/></a:lnRef><a:fillRef idx=\"2\"><a:schemeClr val=\"accent3\"/></a:fillRef><a:effectRef idx=\"0\"><a:schemeClr val=\"accent1\"/></a:effectRef><a:fontRef idx=\"minor\"><a:schemeClr val=\"tx1\"/></a:fontRef></p:style></p:sp></p:spTree>"
+        },
+        {
+          "kind": "replace-literal-once",
+          "part": "ppt/slides/slide1.xml",
+          "before": "<a:ln w=\"12700\"><a:solidFill><a:schemeClr val=\"accent2\"/></a:solidFill></a:ln>",
+          "after": "<a:ln w=\"12700\" cap=\"rnd\" cmpd=\"dbl\"><a:solidFill><a:schemeClr val=\"accent2\"/></a:solidFill><a:round/><a:headEnd type=\"triangle\" w=\"sm\" len=\"lg\"/><a:tailEnd type=\"arrow\" w=\"lg\" len=\"sm\"/></a:ln>"
+        },
+        {
+          "kind": "replace-literal-once",
+          "part": "ppt/slides/slide1.xml",
+          "before": "<a:headEnd type=\"triangle\" w=\"sm\" len=\"lg\"/>",
+          "after": "<outline:headEnd xmlns:outline=\"http://schemas.openxmlformats.org/drawingml/2006/main\" type = 'triangle' w='sm' len='lg'/>"
+        }
+      ],
+      "request": {
+        "shapeId": 2000,
+        "patch": {
+          "headEnd": {
+            "type": "diamond",
+            "width": "lg",
+            "length": "med"
+          }
+        }
+      },
+      "expected": {
+        "before": {
+          "cap": "rnd",
+          "compound": "dbl",
+          "join": {
+            "type": "round"
+          },
+          "headEnd": {
+            "type": "triangle",
+            "width": "sm",
+            "length": "lg"
+          },
+          "tailEnd": {
+            "type": "arrow",
+            "width": "lg",
+            "length": "sm"
+          }
+        },
+        "outline": {
+          "cap": "rnd",
+          "compound": "dbl",
+          "join": {
+            "type": "round"
+          },
+          "headEnd": {
+            "type": "diamond",
+            "width": "lg",
+            "length": "med"
+          },
+          "tailEnd": {
+            "type": "arrow",
+            "width": "lg",
+            "length": "sm"
+          }
+        },
+        "changed": 1
+      }
+    },
+    {
+      "caseId": "invalid-cap",
+      "scenarioId": "@id-pptx-graphics-outlines-refusals",
+      "example": {
+        "fault": "invalid cap"
+      },
+      "operations": [
+        {
+          "kind": "replace-literal-once",
+          "part": "ppt/slides/slide1.xml",
+          "before": "</p:spTree>",
+          "after": "<p:sp><p:nvSpPr><p:cNvPr id=\"2000\" name=\"Gradient target\"/><p:cNvSpPr/><p:nvPr/></p:nvSpPr><p:spPr><a:xfrm><a:off x=\"100\" y=\"200\"/><a:ext cx=\"1200000\" cy=\"900000\"/></a:xfrm><a:prstGeom prst=\"rect\"><a:avLst/></a:prstGeom><a:solidFill><a:schemeClr val=\"accent3\"><a:tint val=\"25000\"/></a:schemeClr></a:solidFill><a:ln w=\"12700\"><a:solidFill><a:schemeClr val=\"accent2\"/></a:solidFill></a:ln></p:spPr><p:style><a:lnRef idx=\"1\"><a:schemeClr val=\"accent2\"/></a:lnRef><a:fillRef idx=\"2\"><a:schemeClr val=\"accent3\"/></a:fillRef><a:effectRef idx=\"0\"><a:schemeClr val=\"accent1\"/></a:effectRef><a:fontRef idx=\"minor\"><a:schemeClr val=\"tx1\"/></a:fontRef></p:style></p:sp></p:spTree>"
+        }
+      ],
+      "request": {
+        "shapeId": 2000,
+        "patch": {
+          "cap": "square"
+        }
+      },
+      "errorCode": "PPTX_OUTLINE_UNSUPPORTED"
+    },
+    {
+      "caseId": "invalid-compound",
+      "scenarioId": "@id-pptx-graphics-outlines-refusals",
+      "example": {
+        "fault": "invalid compound"
+      },
+      "operations": [
+        {
+          "kind": "replace-literal-once",
+          "part": "ppt/slides/slide1.xml",
+          "before": "</p:spTree>",
+          "after": "<p:sp><p:nvSpPr><p:cNvPr id=\"2000\" name=\"Gradient target\"/><p:cNvSpPr/><p:nvPr/></p:nvSpPr><p:spPr><a:xfrm><a:off x=\"100\" y=\"200\"/><a:ext cx=\"1200000\" cy=\"900000\"/></a:xfrm><a:prstGeom prst=\"rect\"><a:avLst/></a:prstGeom><a:solidFill><a:schemeClr val=\"accent3\"><a:tint val=\"25000\"/></a:schemeClr></a:solidFill><a:ln w=\"12700\"><a:solidFill><a:schemeClr val=\"accent2\"/></a:solidFill></a:ln></p:spPr><p:style><a:lnRef idx=\"1\"><a:schemeClr val=\"accent2\"/></a:lnRef><a:fillRef idx=\"2\"><a:schemeClr val=\"accent3\"/></a:fillRef><a:effectRef idx=\"0\"><a:schemeClr val=\"accent1\"/></a:effectRef><a:fontRef idx=\"minor\"><a:schemeClr val=\"tx1\"/></a:fontRef></p:style></p:sp></p:spTree>"
+        }
+      ],
+      "request": {
+        "shapeId": 2000,
+        "patch": {
+          "compound": "quad"
+        }
+      },
+      "errorCode": "PPTX_OUTLINE_UNSUPPORTED"
+    },
+    {
+      "caseId": "invalid-arrow",
+      "scenarioId": "@id-pptx-graphics-outlines-refusals",
+      "example": {
+        "fault": "invalid arrow"
+      },
+      "operations": [
+        {
+          "kind": "replace-literal-once",
+          "part": "ppt/slides/slide1.xml",
+          "before": "</p:spTree>",
+          "after": "<p:sp><p:nvSpPr><p:cNvPr id=\"2000\" name=\"Gradient target\"/><p:cNvSpPr/><p:nvPr/></p:nvSpPr><p:spPr><a:xfrm><a:off x=\"100\" y=\"200\"/><a:ext cx=\"1200000\" cy=\"900000\"/></a:xfrm><a:prstGeom prst=\"rect\"><a:avLst/></a:prstGeom><a:solidFill><a:schemeClr val=\"accent3\"><a:tint val=\"25000\"/></a:schemeClr></a:solidFill><a:ln w=\"12700\"><a:solidFill><a:schemeClr val=\"accent2\"/></a:solidFill></a:ln></p:spPr><p:style><a:lnRef idx=\"1\"><a:schemeClr val=\"accent2\"/></a:lnRef><a:fillRef idx=\"2\"><a:schemeClr val=\"accent3\"/></a:fillRef><a:effectRef idx=\"0\"><a:schemeClr val=\"accent1\"/></a:effectRef><a:fontRef idx=\"minor\"><a:schemeClr val=\"tx1\"/></a:fontRef></p:style></p:sp></p:spTree>"
+        }
+      ],
+      "request": {
+        "shapeId": 2000,
+        "patch": {
+          "headEnd": {
+            "type": "unknown",
+            "width": "sm",
+            "length": "lg"
+          }
+        }
+      },
+      "errorCode": "PPTX_OUTLINE_UNSUPPORTED"
+    },
+    {
+      "caseId": "invalid-arrow-size",
+      "scenarioId": "@id-pptx-graphics-outlines-refusals",
+      "example": {
+        "fault": "invalid arrow size"
+      },
+      "operations": [
+        {
+          "kind": "replace-literal-once",
+          "part": "ppt/slides/slide1.xml",
+          "before": "</p:spTree>",
+          "after": "<p:sp><p:nvSpPr><p:cNvPr id=\"2000\" name=\"Gradient target\"/><p:cNvSpPr/><p:nvPr/></p:nvSpPr><p:spPr><a:xfrm><a:off x=\"100\" y=\"200\"/><a:ext cx=\"1200000\" cy=\"900000\"/></a:xfrm><a:prstGeom prst=\"rect\"><a:avLst/></a:prstGeom><a:solidFill><a:schemeClr val=\"accent3\"><a:tint val=\"25000\"/></a:schemeClr></a:solidFill><a:ln w=\"12700\"><a:solidFill><a:schemeClr val=\"accent2\"/></a:solidFill></a:ln></p:spPr><p:style><a:lnRef idx=\"1\"><a:schemeClr val=\"accent2\"/></a:lnRef><a:fillRef idx=\"2\"><a:schemeClr val=\"accent3\"/></a:fillRef><a:effectRef idx=\"0\"><a:schemeClr val=\"accent1\"/></a:effectRef><a:fontRef idx=\"minor\"><a:schemeClr val=\"tx1\"/></a:fontRef></p:style></p:sp></p:spTree>"
+        }
+      ],
+      "request": {
+        "shapeId": 2000,
+        "patch": {
+          "tailEnd": {
+            "type": "arrow",
+            "width": "huge",
+            "length": "sm"
+          }
+        }
+      },
+      "errorCode": "PPTX_OUTLINE_UNSUPPORTED"
+    },
+    {
+      "caseId": "negative-miter",
+      "scenarioId": "@id-pptx-graphics-outlines-refusals",
+      "example": {
+        "fault": "negative miter"
+      },
+      "operations": [
+        {
+          "kind": "replace-literal-once",
+          "part": "ppt/slides/slide1.xml",
+          "before": "</p:spTree>",
+          "after": "<p:sp><p:nvSpPr><p:cNvPr id=\"2000\" name=\"Gradient target\"/><p:cNvSpPr/><p:nvPr/></p:nvSpPr><p:spPr><a:xfrm><a:off x=\"100\" y=\"200\"/><a:ext cx=\"1200000\" cy=\"900000\"/></a:xfrm><a:prstGeom prst=\"rect\"><a:avLst/></a:prstGeom><a:solidFill><a:schemeClr val=\"accent3\"><a:tint val=\"25000\"/></a:schemeClr></a:solidFill><a:ln w=\"12700\"><a:solidFill><a:schemeClr val=\"accent2\"/></a:solidFill></a:ln></p:spPr><p:style><a:lnRef idx=\"1\"><a:schemeClr val=\"accent2\"/></a:lnRef><a:fillRef idx=\"2\"><a:schemeClr val=\"accent3\"/></a:fillRef><a:effectRef idx=\"0\"><a:schemeClr val=\"accent1\"/></a:effectRef><a:fontRef idx=\"minor\"><a:schemeClr val=\"tx1\"/></a:fontRef></p:style></p:sp></p:spTree>"
+        }
+      ],
+      "request": {
+        "shapeId": 2000,
+        "patch": {
+          "join": {
+            "type": "miter",
+            "limit": -1
+          }
+        }
+      },
+      "errorCode": "PPTX_OUTLINE_UNSUPPORTED"
+    },
+    {
+      "caseId": "unknown-patch-field",
+      "scenarioId": "@id-pptx-graphics-outlines-refusals",
+      "example": {
+        "fault": "unknown patch field"
+      },
+      "operations": [
+        {
+          "kind": "replace-literal-once",
+          "part": "ppt/slides/slide1.xml",
+          "before": "</p:spTree>",
+          "after": "<p:sp><p:nvSpPr><p:cNvPr id=\"2000\" name=\"Gradient target\"/><p:cNvSpPr/><p:nvPr/></p:nvSpPr><p:spPr><a:xfrm><a:off x=\"100\" y=\"200\"/><a:ext cx=\"1200000\" cy=\"900000\"/></a:xfrm><a:prstGeom prst=\"rect\"><a:avLst/></a:prstGeom><a:solidFill><a:schemeClr val=\"accent3\"><a:tint val=\"25000\"/></a:schemeClr></a:solidFill><a:ln w=\"12700\"><a:solidFill><a:schemeClr val=\"accent2\"/></a:solidFill></a:ln></p:spPr><p:style><a:lnRef idx=\"1\"><a:schemeClr val=\"accent2\"/></a:lnRef><a:fillRef idx=\"2\"><a:schemeClr val=\"accent3\"/></a:fillRef><a:effectRef idx=\"0\"><a:schemeClr val=\"accent1\"/></a:effectRef><a:fontRef idx=\"minor\"><a:schemeClr val=\"tx1\"/></a:fontRef></p:style></p:sp></p:spTree>"
+        }
+      ],
+      "request": {
+        "shapeId": 2000,
+        "patch": {
+          "color": "FF0000"
+        }
+      },
+      "errorCode": "PPTX_OUTLINE_UNSUPPORTED"
+    },
+    {
+      "caseId": "duplicate-join",
+      "scenarioId": "@id-pptx-graphics-outlines-refusals",
+      "example": {
+        "fault": "duplicate join"
+      },
+      "operations": [
+        {
+          "kind": "replace-literal-once",
+          "part": "ppt/slides/slide1.xml",
+          "before": "</p:spTree>",
+          "after": "<p:sp><p:nvSpPr><p:cNvPr id=\"2000\" name=\"Gradient target\"/><p:cNvSpPr/><p:nvPr/></p:nvSpPr><p:spPr><a:xfrm><a:off x=\"100\" y=\"200\"/><a:ext cx=\"1200000\" cy=\"900000\"/></a:xfrm><a:prstGeom prst=\"rect\"><a:avLst/></a:prstGeom><a:solidFill><a:schemeClr val=\"accent3\"><a:tint val=\"25000\"/></a:schemeClr></a:solidFill><a:ln w=\"12700\"><a:solidFill><a:schemeClr val=\"accent2\"/></a:solidFill></a:ln></p:spPr><p:style><a:lnRef idx=\"1\"><a:schemeClr val=\"accent2\"/></a:lnRef><a:fillRef idx=\"2\"><a:schemeClr val=\"accent3\"/></a:fillRef><a:effectRef idx=\"0\"><a:schemeClr val=\"accent1\"/></a:effectRef><a:fontRef idx=\"minor\"><a:schemeClr val=\"tx1\"/></a:fontRef></p:style></p:sp></p:spTree>"
+        },
+        {
+          "kind": "replace-literal-once",
+          "part": "ppt/slides/slide1.xml",
+          "before": "<a:ln w=\"12700\"><a:solidFill><a:schemeClr val=\"accent2\"/></a:solidFill></a:ln>",
+          "after": "<a:ln w=\"12700\"><a:solidFill><a:schemeClr val=\"accent2\"/></a:solidFill><a:round/><a:bevel/></a:ln>"
+        }
+      ],
+      "request": {
+        "shapeId": 2000,
+        "patch": {
+          "cap": "rnd"
+        }
+      },
+      "errorCode": "PPTX_OUTLINE_UNSUPPORTED"
+    },
+    {
+      "caseId": "foreign-cap",
+      "scenarioId": "@id-pptx-graphics-outlines-refusals",
+      "example": {
+        "fault": "foreign cap"
+      },
+      "operations": [
+        {
+          "kind": "replace-literal-once",
+          "part": "ppt/slides/slide1.xml",
+          "before": "</p:spTree>",
+          "after": "<p:sp><p:nvSpPr><p:cNvPr id=\"2000\" name=\"Gradient target\"/><p:cNvSpPr/><p:nvPr/></p:nvSpPr><p:spPr><a:xfrm><a:off x=\"100\" y=\"200\"/><a:ext cx=\"1200000\" cy=\"900000\"/></a:xfrm><a:prstGeom prst=\"rect\"><a:avLst/></a:prstGeom><a:solidFill><a:schemeClr val=\"accent3\"><a:tint val=\"25000\"/></a:schemeClr></a:solidFill><a:ln w=\"12700\"><a:solidFill><a:schemeClr val=\"accent2\"/></a:solidFill></a:ln></p:spPr><p:style><a:lnRef idx=\"1\"><a:schemeClr val=\"accent2\"/></a:lnRef><a:fillRef idx=\"2\"><a:schemeClr val=\"accent3\"/></a:fillRef><a:effectRef idx=\"0\"><a:schemeClr val=\"accent1\"/></a:effectRef><a:fontRef idx=\"minor\"><a:schemeClr val=\"tx1\"/></a:fontRef></p:style></p:sp></p:spTree>"
+        },
+        {
+          "kind": "replace-literal-once",
+          "part": "ppt/slides/slide1.xml",
+          "before": "<a:ln w=\"12700\">",
+          "after": "<a:ln xmlns:bad=\"urn:bad\" w=\"12700\" bad:cap=\"rnd\">"
+        }
+      ],
+      "request": {
+        "shapeId": 2000,
+        "patch": {
+          "cap": "rnd"
+        }
+      },
+      "errorCode": "PPTX_OUTLINE_UNSUPPORTED"
+    },
+    {
+      "caseId": "missing-line",
+      "scenarioId": "@id-pptx-graphics-outlines-refusals",
+      "example": {
+        "fault": "missing line"
+      },
+      "operations": [
+        {
+          "kind": "replace-literal-once",
+          "part": "ppt/slides/slide1.xml",
+          "before": "</p:spTree>",
+          "after": "<p:sp><p:nvSpPr><p:cNvPr id=\"2000\" name=\"Gradient target\"/><p:cNvSpPr/><p:nvPr/></p:nvSpPr><p:spPr><a:xfrm><a:off x=\"100\" y=\"200\"/><a:ext cx=\"1200000\" cy=\"900000\"/></a:xfrm><a:prstGeom prst=\"rect\"><a:avLst/></a:prstGeom><a:solidFill><a:schemeClr val=\"accent3\"><a:tint val=\"25000\"/></a:schemeClr></a:solidFill><a:ln w=\"12700\"><a:solidFill><a:schemeClr val=\"accent2\"/></a:solidFill></a:ln></p:spPr><p:style><a:lnRef idx=\"1\"><a:schemeClr val=\"accent2\"/></a:lnRef><a:fillRef idx=\"2\"><a:schemeClr val=\"accent3\"/></a:fillRef><a:effectRef idx=\"0\"><a:schemeClr val=\"accent1\"/></a:effectRef><a:fontRef idx=\"minor\"><a:schemeClr val=\"tx1\"/></a:fontRef></p:style></p:sp></p:spTree>"
+        },
+        {
+          "kind": "replace-literal-once",
+          "part": "ppt/slides/slide1.xml",
+          "before": "<a:ln w=\"12700\"><a:solidFill><a:schemeClr val=\"accent2\"/></a:solidFill></a:ln>",
+          "after": ""
+        }
+      ],
+      "request": {
+        "shapeId": 2000,
+        "patch": {
+          "cap": "rnd"
+        }
+      },
+      "errorCode": "PPTX_OUTLINE_UNSUPPORTED"
+    },
+    {
+      "caseId": "missing-shape",
+      "scenarioId": "@id-pptx-graphics-outlines-refusals",
+      "example": {
+        "fault": "missing shape"
+      },
+      "operations": [
+        {
+          "kind": "replace-literal-once",
+          "part": "ppt/slides/slide1.xml",
+          "before": "</p:spTree>",
+          "after": "<p:sp><p:nvSpPr><p:cNvPr id=\"2000\" name=\"Gradient target\"/><p:cNvSpPr/><p:nvPr/></p:nvSpPr><p:spPr><a:xfrm><a:off x=\"100\" y=\"200\"/><a:ext cx=\"1200000\" cy=\"900000\"/></a:xfrm><a:prstGeom prst=\"rect\"><a:avLst/></a:prstGeom><a:solidFill><a:schemeClr val=\"accent3\"><a:tint val=\"25000\"/></a:schemeClr></a:solidFill><a:ln w=\"12700\"><a:solidFill><a:schemeClr val=\"accent2\"/></a:solidFill></a:ln></p:spPr><p:style><a:lnRef idx=\"1\"><a:schemeClr val=\"accent2\"/></a:lnRef><a:fillRef idx=\"2\"><a:schemeClr val=\"accent3\"/></a:fillRef><a:effectRef idx=\"0\"><a:schemeClr val=\"accent1\"/></a:effectRef><a:fontRef idx=\"minor\"><a:schemeClr val=\"tx1\"/></a:fontRef></p:style></p:sp></p:spTree>"
+        }
+      ],
+      "request": {
+        "shapeId": 99999,
+        "patch": {
+          "cap": "rnd"
+        }
+      },
+      "errorCode": "PPTX_OUTLINE_UNSUPPORTED"
+    },
+    {
+      "caseId": "protected-presentation",
+      "scenarioId": "@id-pptx-graphics-outlines-refusals",
+      "example": {
+        "fault": "protected presentation"
+      },
+      "operations": [
+        {
+          "kind": "replace-literal-once",
+          "part": "ppt/slides/slide1.xml",
+          "before": "</p:spTree>",
+          "after": "<p:sp><p:nvSpPr><p:cNvPr id=\"2000\" name=\"Gradient target\"/><p:cNvSpPr/><p:nvPr/></p:nvSpPr><p:spPr><a:xfrm><a:off x=\"100\" y=\"200\"/><a:ext cx=\"1200000\" cy=\"900000\"/></a:xfrm><a:prstGeom prst=\"rect\"><a:avLst/></a:prstGeom><a:solidFill><a:schemeClr val=\"accent3\"><a:tint val=\"25000\"/></a:schemeClr></a:solidFill><a:ln w=\"12700\"><a:solidFill><a:schemeClr val=\"accent2\"/></a:solidFill></a:ln></p:spPr><p:style><a:lnRef idx=\"1\"><a:schemeClr val=\"accent2\"/></a:lnRef><a:fillRef idx=\"2\"><a:schemeClr val=\"accent3\"/></a:fillRef><a:effectRef idx=\"0\"><a:schemeClr val=\"accent1\"/></a:effectRef><a:fontRef idx=\"minor\"><a:schemeClr val=\"tx1\"/></a:fontRef></p:style></p:sp></p:spTree>"
+        },
+        {
+          "kind": "replace-literal-once",
+          "part": "ppt/presentation.xml",
+          "before": "</p:presentation>",
+          "after": "<p:modifyVerifier/></p:presentation>"
+        }
+      ],
+      "request": {
+        "shapeId": 2000,
+        "patch": {
+          "cap": "rnd"
+        }
+      },
+      "errorCode": "PPTX_PROTECTED"
+    }
+  ]
+}

@@ -1,0 +1,938 @@
+{
+  "schemaVersion": 1,
+  "executionCredit": false,
+  "feature": "workflows/pptx/diagrams.feature",
+  "contract": "contracts/pptx-diagrams.md",
+  "baseFixtureId": "fixture-792277d2c358c5bd7c8a4053078a5594fa07bfb55a06b0bb30f2813c151ea459",
+  "slidePart": "ppt/slides/slide1.xml",
+  "counts": {
+    "ids": 2,
+    "cases": 14
+  },
+  "style": {
+    "fill": "F2F2F2",
+    "lineColor": "336699",
+    "lineWidth": 12700
+  },
+  "custody": {
+    "allowedChangedParts": [
+      "ppt/slides/slide1.xml"
+    ],
+    "membership": "exact",
+    "preserve": "all original XML, relationships and member payloads"
+  },
+  "cases": [
+    {
+      "caseId": "row chain",
+      "scenarioId": "@id-pptx-graphics-diagrams-create",
+      "example": {
+        "variant": "row chain"
+      },
+      "operations": [],
+      "request": {
+        "nodes": [
+          {
+            "key": "alpha",
+            "text": "Alpha & 雪"
+          },
+          {
+            "key": "beta",
+            "text": "Beta\nsecond line"
+          },
+          {
+            "key": "gamma",
+            "text": "Gamma"
+          }
+        ],
+        "edges": [
+          {
+            "from": "alpha",
+            "to": "beta"
+          },
+          {
+            "from": "beta",
+            "to": "gamma"
+          }
+        ],
+        "options": {
+          "x": 100,
+          "y": 200,
+          "nodeWidth": 1000,
+          "nodeHeight": 600,
+          "gap": 400,
+          "direction": "row"
+        }
+      },
+      "expected": {
+        "partName": "ppt/slides/slide1.xml",
+        "nodes": [
+          {
+            "key": "alpha",
+            "shapeId": 1034,
+            "geometry": {
+              "x": 100,
+              "y": 200,
+              "width": 1000,
+              "height": 600
+            }
+          },
+          {
+            "key": "beta",
+            "shapeId": 1035,
+            "geometry": {
+              "x": 1500,
+              "y": 200,
+              "width": 1000,
+              "height": 600
+            }
+          },
+          {
+            "key": "gamma",
+            "shapeId": 1036,
+            "geometry": {
+              "x": 2900,
+              "y": 200,
+              "width": 1000,
+              "height": 600
+            }
+          }
+        ],
+        "edges": [
+          {
+            "from": "alpha",
+            "to": "beta",
+            "shapeId": 1037,
+            "start": {
+              "shapeId": 1034,
+              "site": 3
+            },
+            "end": {
+              "shapeId": 1035,
+              "site": 1
+            }
+          },
+          {
+            "from": "beta",
+            "to": "gamma",
+            "shapeId": 1038,
+            "start": {
+              "shapeId": 1035,
+              "site": 3
+            },
+            "end": {
+              "shapeId": 1036,
+              "site": 1
+            }
+          }
+        ]
+      }
+    },
+    {
+      "caseId": "column chain",
+      "scenarioId": "@id-pptx-graphics-diagrams-create",
+      "example": {
+        "variant": "column chain"
+      },
+      "operations": [],
+      "request": {
+        "nodes": [
+          {
+            "key": "alpha",
+            "text": "Alpha & 雪"
+          },
+          {
+            "key": "beta",
+            "text": "Beta\nsecond line"
+          },
+          {
+            "key": "gamma",
+            "text": "Gamma"
+          }
+        ],
+        "edges": [
+          {
+            "from": "alpha",
+            "to": "beta"
+          },
+          {
+            "from": "beta",
+            "to": "gamma"
+          }
+        ],
+        "options": {
+          "x": 100,
+          "y": 200,
+          "nodeWidth": 1000,
+          "nodeHeight": 600,
+          "gap": 400,
+          "direction": "column"
+        }
+      },
+      "expected": {
+        "partName": "ppt/slides/slide1.xml",
+        "nodes": [
+          {
+            "key": "alpha",
+            "shapeId": 1034,
+            "geometry": {
+              "x": 100,
+              "y": 200,
+              "width": 1000,
+              "height": 600
+            }
+          },
+          {
+            "key": "beta",
+            "shapeId": 1035,
+            "geometry": {
+              "x": 100,
+              "y": 1200,
+              "width": 1000,
+              "height": 600
+            }
+          },
+          {
+            "key": "gamma",
+            "shapeId": 1036,
+            "geometry": {
+              "x": 100,
+              "y": 2200,
+              "width": 1000,
+              "height": 600
+            }
+          }
+        ],
+        "edges": [
+          {
+            "from": "alpha",
+            "to": "beta",
+            "shapeId": 1037,
+            "start": {
+              "shapeId": 1034,
+              "site": 2
+            },
+            "end": {
+              "shapeId": 1035,
+              "site": 0
+            }
+          },
+          {
+            "from": "beta",
+            "to": "gamma",
+            "shapeId": 1038,
+            "start": {
+              "shapeId": 1035,
+              "site": 2
+            },
+            "end": {
+              "shapeId": 1036,
+              "site": 0
+            }
+          }
+        ]
+      }
+    },
+    {
+      "caseId": "reverse and cycle",
+      "scenarioId": "@id-pptx-graphics-diagrams-create",
+      "example": {
+        "variant": "reverse and cycle"
+      },
+      "operations": [],
+      "request": {
+        "nodes": [
+          {
+            "key": "alpha",
+            "text": "Alpha & 雪"
+          },
+          {
+            "key": "beta",
+            "text": "Beta\nsecond line"
+          },
+          {
+            "key": "gamma",
+            "text": "Gamma"
+          }
+        ],
+        "edges": [
+          {
+            "from": "gamma",
+            "to": "alpha"
+          },
+          {
+            "from": "alpha",
+            "to": "gamma"
+          }
+        ],
+        "options": {
+          "x": 100,
+          "y": 200,
+          "nodeWidth": 1000,
+          "nodeHeight": 600,
+          "gap": 400,
+          "direction": "row"
+        }
+      },
+      "expected": {
+        "partName": "ppt/slides/slide1.xml",
+        "nodes": [
+          {
+            "key": "alpha",
+            "shapeId": 1034,
+            "geometry": {
+              "x": 100,
+              "y": 200,
+              "width": 1000,
+              "height": 600
+            }
+          },
+          {
+            "key": "beta",
+            "shapeId": 1035,
+            "geometry": {
+              "x": 1500,
+              "y": 200,
+              "width": 1000,
+              "height": 600
+            }
+          },
+          {
+            "key": "gamma",
+            "shapeId": 1036,
+            "geometry": {
+              "x": 2900,
+              "y": 200,
+              "width": 1000,
+              "height": 600
+            }
+          }
+        ],
+        "edges": [
+          {
+            "from": "gamma",
+            "to": "alpha",
+            "shapeId": 1037,
+            "start": {
+              "shapeId": 1036,
+              "site": 3
+            },
+            "end": {
+              "shapeId": 1034,
+              "site": 1
+            }
+          },
+          {
+            "from": "alpha",
+            "to": "gamma",
+            "shapeId": 1038,
+            "start": {
+              "shapeId": 1034,
+              "site": 3
+            },
+            "end": {
+              "shapeId": 1036,
+              "site": 1
+            }
+          }
+        ]
+      }
+    },
+    {
+      "caseId": "nodes only",
+      "scenarioId": "@id-pptx-graphics-diagrams-create",
+      "example": {
+        "variant": "nodes only"
+      },
+      "operations": [],
+      "request": {
+        "nodes": [
+          {
+            "key": "alpha",
+            "text": "Alpha & 雪"
+          },
+          {
+            "key": "beta",
+            "text": "Beta\nsecond line"
+          },
+          {
+            "key": "gamma",
+            "text": "Gamma"
+          }
+        ],
+        "edges": [],
+        "options": {
+          "x": 100,
+          "y": 200,
+          "nodeWidth": 1000,
+          "nodeHeight": 600,
+          "gap": 400,
+          "direction": "row"
+        }
+      },
+      "expected": {
+        "partName": "ppt/slides/slide1.xml",
+        "nodes": [
+          {
+            "key": "alpha",
+            "shapeId": 1034,
+            "geometry": {
+              "x": 100,
+              "y": 200,
+              "width": 1000,
+              "height": 600
+            }
+          },
+          {
+            "key": "beta",
+            "shapeId": 1035,
+            "geometry": {
+              "x": 1500,
+              "y": 200,
+              "width": 1000,
+              "height": 600
+            }
+          },
+          {
+            "key": "gamma",
+            "shapeId": 1036,
+            "geometry": {
+              "x": 2900,
+              "y": 200,
+              "width": 1000,
+              "height": 600
+            }
+          }
+        ],
+        "edges": []
+      }
+    },
+    {
+      "caseId": "duplicate-node-key",
+      "scenarioId": "@id-pptx-graphics-diagrams-refusals",
+      "example": {
+        "fault": "duplicate node key"
+      },
+      "operations": [],
+      "request": {
+        "nodes": [
+          {
+            "key": "alpha",
+            "text": "Alpha & 雪"
+          },
+          {
+            "key": "alpha",
+            "text": "Alpha & 雪"
+          }
+        ],
+        "edges": [
+          {
+            "from": "alpha",
+            "to": "beta"
+          },
+          {
+            "from": "beta",
+            "to": "gamma"
+          }
+        ],
+        "options": {
+          "x": 100,
+          "y": 200,
+          "nodeWidth": 1000,
+          "nodeHeight": 600,
+          "gap": 400,
+          "direction": "row"
+        }
+      },
+      "errorCode": "PPTX_DIAGRAM_UNSUPPORTED"
+    },
+    {
+      "caseId": "missing-edge-node",
+      "scenarioId": "@id-pptx-graphics-diagrams-refusals",
+      "example": {
+        "fault": "missing edge node"
+      },
+      "operations": [],
+      "request": {
+        "nodes": [
+          {
+            "key": "alpha",
+            "text": "Alpha & 雪"
+          },
+          {
+            "key": "beta",
+            "text": "Beta\nsecond line"
+          },
+          {
+            "key": "gamma",
+            "text": "Gamma"
+          }
+        ],
+        "edges": [
+          {
+            "from": "alpha",
+            "to": "missing"
+          }
+        ],
+        "options": {
+          "x": 100,
+          "y": 200,
+          "nodeWidth": 1000,
+          "nodeHeight": 600,
+          "gap": 400,
+          "direction": "row"
+        }
+      },
+      "errorCode": "PPTX_DIAGRAM_UNSUPPORTED"
+    },
+    {
+      "caseId": "self-edge",
+      "scenarioId": "@id-pptx-graphics-diagrams-refusals",
+      "example": {
+        "fault": "self edge"
+      },
+      "operations": [],
+      "request": {
+        "nodes": [
+          {
+            "key": "alpha",
+            "text": "Alpha & 雪"
+          },
+          {
+            "key": "beta",
+            "text": "Beta\nsecond line"
+          },
+          {
+            "key": "gamma",
+            "text": "Gamma"
+          }
+        ],
+        "edges": [
+          {
+            "from": "alpha",
+            "to": "alpha"
+          }
+        ],
+        "options": {
+          "x": 100,
+          "y": 200,
+          "nodeWidth": 1000,
+          "nodeHeight": 600,
+          "gap": 400,
+          "direction": "row"
+        }
+      },
+      "errorCode": "PPTX_DIAGRAM_UNSUPPORTED"
+    },
+    {
+      "caseId": "duplicate-edge",
+      "scenarioId": "@id-pptx-graphics-diagrams-refusals",
+      "example": {
+        "fault": "duplicate edge"
+      },
+      "operations": [],
+      "request": {
+        "nodes": [
+          {
+            "key": "alpha",
+            "text": "Alpha & 雪"
+          },
+          {
+            "key": "beta",
+            "text": "Beta\nsecond line"
+          },
+          {
+            "key": "gamma",
+            "text": "Gamma"
+          }
+        ],
+        "edges": [
+          {
+            "from": "alpha",
+            "to": "beta"
+          },
+          {
+            "from": "alpha",
+            "to": "beta"
+          }
+        ],
+        "options": {
+          "x": 100,
+          "y": 200,
+          "nodeWidth": 1000,
+          "nodeHeight": 600,
+          "gap": 400,
+          "direction": "row"
+        }
+      },
+      "errorCode": "PPTX_DIAGRAM_UNSUPPORTED"
+    },
+    {
+      "caseId": "invalid-label",
+      "scenarioId": "@id-pptx-graphics-diagrams-refusals",
+      "example": {
+        "fault": "invalid label"
+      },
+      "operations": [],
+      "request": {
+        "nodes": [
+          {
+            "key": "alpha",
+            "text": "bad\u0000"
+          }
+        ],
+        "edges": [
+          {
+            "from": "alpha",
+            "to": "beta"
+          },
+          {
+            "from": "beta",
+            "to": "gamma"
+          }
+        ],
+        "options": {
+          "x": 100,
+          "y": 200,
+          "nodeWidth": 1000,
+          "nodeHeight": 600,
+          "gap": 400,
+          "direction": "row"
+        }
+      },
+      "errorCode": "PPTX_DIAGRAM_UNSUPPORTED"
+    },
+    {
+      "caseId": "invalid-direction",
+      "scenarioId": "@id-pptx-graphics-diagrams-refusals",
+      "example": {
+        "fault": "invalid direction"
+      },
+      "operations": [],
+      "request": {
+        "nodes": [
+          {
+            "key": "alpha",
+            "text": "Alpha & 雪"
+          },
+          {
+            "key": "beta",
+            "text": "Beta\nsecond line"
+          },
+          {
+            "key": "gamma",
+            "text": "Gamma"
+          }
+        ],
+        "edges": [
+          {
+            "from": "alpha",
+            "to": "beta"
+          },
+          {
+            "from": "beta",
+            "to": "gamma"
+          }
+        ],
+        "options": {
+          "x": 100,
+          "y": 200,
+          "nodeWidth": 1000,
+          "nodeHeight": 600,
+          "gap": 400,
+          "direction": "auto"
+        }
+      },
+      "errorCode": "PPTX_DIAGRAM_UNSUPPORTED"
+    },
+    {
+      "caseId": "negative-gap",
+      "scenarioId": "@id-pptx-graphics-diagrams-refusals",
+      "example": {
+        "fault": "negative gap"
+      },
+      "operations": [],
+      "request": {
+        "nodes": [
+          {
+            "key": "alpha",
+            "text": "Alpha & 雪"
+          },
+          {
+            "key": "beta",
+            "text": "Beta\nsecond line"
+          },
+          {
+            "key": "gamma",
+            "text": "Gamma"
+          }
+        ],
+        "edges": [
+          {
+            "from": "alpha",
+            "to": "beta"
+          },
+          {
+            "from": "beta",
+            "to": "gamma"
+          }
+        ],
+        "options": {
+          "x": 100,
+          "y": 200,
+          "nodeWidth": 1000,
+          "nodeHeight": 600,
+          "gap": -1,
+          "direction": "row"
+        }
+      },
+      "errorCode": "PPTX_DIAGRAM_UNSUPPORTED"
+    },
+    {
+      "caseId": "layout-overflow",
+      "scenarioId": "@id-pptx-graphics-diagrams-refusals",
+      "example": {
+        "fault": "layout overflow"
+      },
+      "operations": [],
+      "request": {
+        "nodes": [
+          {
+            "key": "alpha",
+            "text": "Alpha & 雪"
+          },
+          {
+            "key": "beta",
+            "text": "Beta\nsecond line"
+          },
+          {
+            "key": "gamma",
+            "text": "Gamma"
+          }
+        ],
+        "edges": [
+          {
+            "from": "alpha",
+            "to": "beta"
+          },
+          {
+            "from": "beta",
+            "to": "gamma"
+          }
+        ],
+        "options": {
+          "x": 2147483647,
+          "y": 200,
+          "nodeWidth": 1000,
+          "nodeHeight": 600,
+          "gap": 400,
+          "direction": "row"
+        }
+      },
+      "errorCode": "PPTX_DIAGRAM_UNSUPPORTED"
+    },
+    {
+      "caseId": "too-many-nodes",
+      "scenarioId": "@id-pptx-graphics-diagrams-refusals",
+      "example": {
+        "fault": "too many nodes"
+      },
+      "operations": [],
+      "request": {
+        "nodes": [
+          {
+            "key": "n0",
+            "text": "Node"
+          },
+          {
+            "key": "n1",
+            "text": "Node"
+          },
+          {
+            "key": "n2",
+            "text": "Node"
+          },
+          {
+            "key": "n3",
+            "text": "Node"
+          },
+          {
+            "key": "n4",
+            "text": "Node"
+          },
+          {
+            "key": "n5",
+            "text": "Node"
+          },
+          {
+            "key": "n6",
+            "text": "Node"
+          },
+          {
+            "key": "n7",
+            "text": "Node"
+          },
+          {
+            "key": "n8",
+            "text": "Node"
+          },
+          {
+            "key": "n9",
+            "text": "Node"
+          },
+          {
+            "key": "n10",
+            "text": "Node"
+          },
+          {
+            "key": "n11",
+            "text": "Node"
+          },
+          {
+            "key": "n12",
+            "text": "Node"
+          },
+          {
+            "key": "n13",
+            "text": "Node"
+          },
+          {
+            "key": "n14",
+            "text": "Node"
+          },
+          {
+            "key": "n15",
+            "text": "Node"
+          },
+          {
+            "key": "n16",
+            "text": "Node"
+          },
+          {
+            "key": "n17",
+            "text": "Node"
+          },
+          {
+            "key": "n18",
+            "text": "Node"
+          },
+          {
+            "key": "n19",
+            "text": "Node"
+          },
+          {
+            "key": "n20",
+            "text": "Node"
+          },
+          {
+            "key": "n21",
+            "text": "Node"
+          },
+          {
+            "key": "n22",
+            "text": "Node"
+          },
+          {
+            "key": "n23",
+            "text": "Node"
+          },
+          {
+            "key": "n24",
+            "text": "Node"
+          },
+          {
+            "key": "n25",
+            "text": "Node"
+          },
+          {
+            "key": "n26",
+            "text": "Node"
+          },
+          {
+            "key": "n27",
+            "text": "Node"
+          },
+          {
+            "key": "n28",
+            "text": "Node"
+          },
+          {
+            "key": "n29",
+            "text": "Node"
+          },
+          {
+            "key": "n30",
+            "text": "Node"
+          },
+          {
+            "key": "n31",
+            "text": "Node"
+          },
+          {
+            "key": "n32",
+            "text": "Node"
+          }
+        ],
+        "edges": [],
+        "options": {
+          "x": 100,
+          "y": 200,
+          "nodeWidth": 1000,
+          "nodeHeight": 600,
+          "gap": 400,
+          "direction": "row"
+        }
+      },
+      "errorCode": "PPTX_DIAGRAM_UNSUPPORTED"
+    },
+    {
+      "caseId": "protected-presentation",
+      "scenarioId": "@id-pptx-graphics-diagrams-refusals",
+      "example": {
+        "fault": "protected presentation"
+      },
+      "operations": [
+        {
+          "kind": "replace-literal-once",
+          "part": "ppt/presentation.xml",
+          "before": "</p:presentation>",
+          "after": "<p:modifyVerifier/></p:presentation>"
+        }
+      ],
+      "request": {
+        "nodes": [
+          {
+            "key": "alpha",
+            "text": "Alpha & 雪"
+          },
+          {
+            "key": "beta",
+            "text": "Beta\nsecond line"
+          },
+          {
+            "key": "gamma",
+            "text": "Gamma"
+          }
+        ],
+        "edges": [
+          {
+            "from": "alpha",
+            "to": "beta"
+          },
+          {
+            "from": "beta",
+            "to": "gamma"
+          }
+        ],
+        "options": {
+          "x": 100,
+          "y": 200,
+          "nodeWidth": 1000,
+          "nodeHeight": 600,
+          "gap": 400,
+          "direction": "row"
+        }
+      },
+      "errorCode": "PPTX_PROTECTED"
+    }
+  ]
+}

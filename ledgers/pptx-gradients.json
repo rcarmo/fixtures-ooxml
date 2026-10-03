@@ -1,0 +1,1130 @@
+{
+  "schemaVersion": 1,
+  "executionCredit": false,
+  "feature": "workflows/pptx/gradients.feature",
+  "contract": "contracts/pptx-gradients.md",
+  "baseFixtureId": "fixture-792277d2c358c5bd7c8a4053078a5594fa07bfb55a06b0bb30f2813c151ea459",
+  "slidePart": "ppt/slides/slide1.xml",
+  "counts": {
+    "ids": 2,
+    "cases": 18
+  },
+  "custody": {
+    "allowedChangedParts": [
+      "ppt/slides/slide1.xml"
+    ],
+    "membership": "exact",
+    "preserve": "all XML outside selected fill, theme/style/outline references and every relationship/payload"
+  },
+  "cases": [
+    {
+      "caseId": "RGB stops",
+      "scenarioId": "@id-pptx-graphics-gradients-write",
+      "example": {
+        "variant": "RGB stops"
+      },
+      "operations": [
+        {
+          "kind": "replace-literal-once",
+          "part": "ppt/slides/slide1.xml",
+          "before": "</p:spTree>",
+          "after": "<p:sp><p:nvSpPr><p:cNvPr id=\"2000\" name=\"Gradient target\"/><p:cNvSpPr/><p:nvPr/></p:nvSpPr><p:spPr><a:xfrm><a:off x=\"100\" y=\"200\"/><a:ext cx=\"1200000\" cy=\"900000\"/></a:xfrm><a:prstGeom prst=\"rect\"><a:avLst/></a:prstGeom><a:solidFill><a:schemeClr val=\"accent3\"><a:tint val=\"25000\"/></a:schemeClr></a:solidFill><a:ln w=\"12700\"><a:solidFill><a:schemeClr val=\"accent2\"/></a:solidFill></a:ln></p:spPr><p:style><a:lnRef idx=\"1\"><a:schemeClr val=\"accent2\"/></a:lnRef><a:fillRef idx=\"2\"><a:schemeClr val=\"accent3\"/></a:fillRef><a:effectRef idx=\"0\"><a:schemeClr val=\"accent1\"/></a:effectRef><a:fontRef idx=\"minor\"><a:schemeClr val=\"tx1\"/></a:fontRef></p:style></p:sp></p:spTree>"
+        }
+      ],
+      "request": {
+        "shapeId": 2000,
+        "gradient": {
+          "angle": 5400000,
+          "scaled": true,
+          "stops": [
+            {
+              "position": 0,
+              "color": {
+                "kind": "srgb",
+                "value": "112233",
+                "transforms": []
+              }
+            },
+            {
+              "position": 100000,
+              "color": {
+                "kind": "srgb",
+                "value": "FFEEDD",
+                "transforms": []
+              }
+            }
+          ]
+        }
+      },
+      "expected": {
+        "before": null,
+        "gradient": {
+          "angle": 5400000,
+          "scaled": true,
+          "stops": [
+            {
+              "position": 0,
+              "color": {
+                "kind": "srgb",
+                "value": "112233",
+                "transforms": []
+              }
+            },
+            {
+              "position": 100000,
+              "color": {
+                "kind": "srgb",
+                "value": "FFEEDD",
+                "transforms": []
+              }
+            }
+          ]
+        },
+        "changed": 1
+      }
+    },
+    {
+      "caseId": "theme references",
+      "scenarioId": "@id-pptx-graphics-gradients-write",
+      "example": {
+        "variant": "theme references"
+      },
+      "operations": [
+        {
+          "kind": "replace-literal-once",
+          "part": "ppt/slides/slide1.xml",
+          "before": "</p:spTree>",
+          "after": "<p:sp><p:nvSpPr><p:cNvPr id=\"2000\" name=\"Gradient target\"/><p:cNvSpPr/><p:nvPr/></p:nvSpPr><p:spPr><a:xfrm><a:off x=\"100\" y=\"200\"/><a:ext cx=\"1200000\" cy=\"900000\"/></a:xfrm><a:prstGeom prst=\"rect\"><a:avLst/></a:prstGeom><a:solidFill><a:schemeClr val=\"accent3\"><a:tint val=\"25000\"/></a:schemeClr></a:solidFill><a:ln w=\"12700\"><a:solidFill><a:schemeClr val=\"accent2\"/></a:solidFill></a:ln></p:spPr><p:style><a:lnRef idx=\"1\"><a:schemeClr val=\"accent2\"/></a:lnRef><a:fillRef idx=\"2\"><a:schemeClr val=\"accent3\"/></a:fillRef><a:effectRef idx=\"0\"><a:schemeClr val=\"accent1\"/></a:effectRef><a:fontRef idx=\"minor\"><a:schemeClr val=\"tx1\"/></a:fontRef></p:style></p:sp></p:spTree>"
+        }
+      ],
+      "request": {
+        "shapeId": 2000,
+        "gradient": {
+          "angle": 2700000,
+          "scaled": false,
+          "stops": [
+            {
+              "position": 0,
+              "color": {
+                "kind": "scheme",
+                "value": "accent1",
+                "transforms": [
+                  {
+                    "kind": "tint",
+                    "value": 25000
+                  }
+                ]
+              }
+            },
+            {
+              "position": 50000,
+              "color": {
+                "kind": "scheme",
+                "value": "accent2",
+                "transforms": [
+                  {
+                    "kind": "lumMod",
+                    "value": 75000
+                  },
+                  {
+                    "kind": "lumOff",
+                    "value": 10000
+                  }
+                ]
+              }
+            },
+            {
+              "position": 100000,
+              "color": {
+                "kind": "srgb",
+                "value": "336699",
+                "transforms": [
+                  {
+                    "kind": "alpha",
+                    "value": 50000
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      },
+      "expected": {
+        "before": null,
+        "gradient": {
+          "angle": 2700000,
+          "scaled": false,
+          "stops": [
+            {
+              "position": 0,
+              "color": {
+                "kind": "scheme",
+                "value": "accent1",
+                "transforms": [
+                  {
+                    "kind": "tint",
+                    "value": 25000
+                  }
+                ]
+              }
+            },
+            {
+              "position": 50000,
+              "color": {
+                "kind": "scheme",
+                "value": "accent2",
+                "transforms": [
+                  {
+                    "kind": "lumMod",
+                    "value": 75000
+                  },
+                  {
+                    "kind": "lumOff",
+                    "value": 10000
+                  }
+                ]
+              }
+            },
+            {
+              "position": 100000,
+              "color": {
+                "kind": "srgb",
+                "value": "336699",
+                "transforms": [
+                  {
+                    "kind": "alpha",
+                    "value": 50000
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        "changed": 1
+      }
+    },
+    {
+      "caseId": "replace gradient",
+      "scenarioId": "@id-pptx-graphics-gradients-write",
+      "example": {
+        "variant": "replace gradient"
+      },
+      "operations": [
+        {
+          "kind": "replace-literal-once",
+          "part": "ppt/slides/slide1.xml",
+          "before": "</p:spTree>",
+          "after": "<p:sp><p:nvSpPr><p:cNvPr id=\"2000\" name=\"Gradient target\"/><p:cNvSpPr/><p:nvPr/></p:nvSpPr><p:spPr><a:xfrm><a:off x=\"100\" y=\"200\"/><a:ext cx=\"1200000\" cy=\"900000\"/></a:xfrm><a:prstGeom prst=\"rect\"><a:avLst/></a:prstGeom><a:solidFill><a:schemeClr val=\"accent3\"><a:tint val=\"25000\"/></a:schemeClr></a:solidFill><a:ln w=\"12700\"><a:solidFill><a:schemeClr val=\"accent2\"/></a:solidFill></a:ln></p:spPr><p:style><a:lnRef idx=\"1\"><a:schemeClr val=\"accent2\"/></a:lnRef><a:fillRef idx=\"2\"><a:schemeClr val=\"accent3\"/></a:fillRef><a:effectRef idx=\"0\"><a:schemeClr val=\"accent1\"/></a:effectRef><a:fontRef idx=\"minor\"><a:schemeClr val=\"tx1\"/></a:fontRef></p:style></p:sp></p:spTree>"
+        },
+        {
+          "kind": "replace-literal-once",
+          "part": "ppt/slides/slide1.xml",
+          "before": "<a:solidFill><a:schemeClr val=\"accent3\"><a:tint val=\"25000\"/></a:schemeClr></a:solidFill>",
+          "after": "<a:gradFill xmlns:a=\"http://schemas.openxmlformats.org/drawingml/2006/main\" rotWithShape=\"1\"><a:gsLst><a:gs pos=\"0\"><a:srgbClr val=\"112233\"></a:srgbClr></a:gs><a:gs pos=\"100000\"><a:srgbClr val=\"FFEEDD\"></a:srgbClr></a:gs></a:gsLst><a:lin ang=\"5400000\" scaled=\"1\"/></a:gradFill>"
+        }
+      ],
+      "request": {
+        "shapeId": 2000,
+        "gradient": {
+          "angle": 2700000,
+          "scaled": false,
+          "stops": [
+            {
+              "position": 0,
+              "color": {
+                "kind": "scheme",
+                "value": "accent1",
+                "transforms": [
+                  {
+                    "kind": "tint",
+                    "value": 25000
+                  }
+                ]
+              }
+            },
+            {
+              "position": 50000,
+              "color": {
+                "kind": "scheme",
+                "value": "accent2",
+                "transforms": [
+                  {
+                    "kind": "lumMod",
+                    "value": 75000
+                  },
+                  {
+                    "kind": "lumOff",
+                    "value": 10000
+                  }
+                ]
+              }
+            },
+            {
+              "position": 100000,
+              "color": {
+                "kind": "srgb",
+                "value": "336699",
+                "transforms": [
+                  {
+                    "kind": "alpha",
+                    "value": 50000
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      },
+      "expected": {
+        "before": {
+          "angle": 5400000,
+          "scaled": true,
+          "stops": [
+            {
+              "position": 0,
+              "color": {
+                "kind": "srgb",
+                "value": "112233",
+                "transforms": []
+              }
+            },
+            {
+              "position": 100000,
+              "color": {
+                "kind": "srgb",
+                "value": "FFEEDD",
+                "transforms": []
+              }
+            }
+          ]
+        },
+        "gradient": {
+          "angle": 2700000,
+          "scaled": false,
+          "stops": [
+            {
+              "position": 0,
+              "color": {
+                "kind": "scheme",
+                "value": "accent1",
+                "transforms": [
+                  {
+                    "kind": "tint",
+                    "value": 25000
+                  }
+                ]
+              }
+            },
+            {
+              "position": 50000,
+              "color": {
+                "kind": "scheme",
+                "value": "accent2",
+                "transforms": [
+                  {
+                    "kind": "lumMod",
+                    "value": 75000
+                  },
+                  {
+                    "kind": "lumOff",
+                    "value": 10000
+                  }
+                ]
+              }
+            },
+            {
+              "position": 100000,
+              "color": {
+                "kind": "srgb",
+                "value": "336699",
+                "transforms": [
+                  {
+                    "kind": "alpha",
+                    "value": 50000
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        "changed": 1
+      }
+    },
+    {
+      "caseId": "exact no-op",
+      "scenarioId": "@id-pptx-graphics-gradients-write",
+      "example": {
+        "variant": "exact no-op"
+      },
+      "operations": [
+        {
+          "kind": "replace-literal-once",
+          "part": "ppt/slides/slide1.xml",
+          "before": "</p:spTree>",
+          "after": "<p:sp><p:nvSpPr><p:cNvPr id=\"2000\" name=\"Gradient target\"/><p:cNvSpPr/><p:nvPr/></p:nvSpPr><p:spPr><a:xfrm><a:off x=\"100\" y=\"200\"/><a:ext cx=\"1200000\" cy=\"900000\"/></a:xfrm><a:prstGeom prst=\"rect\"><a:avLst/></a:prstGeom><a:solidFill><a:schemeClr val=\"accent3\"><a:tint val=\"25000\"/></a:schemeClr></a:solidFill><a:ln w=\"12700\"><a:solidFill><a:schemeClr val=\"accent2\"/></a:solidFill></a:ln></p:spPr><p:style><a:lnRef idx=\"1\"><a:schemeClr val=\"accent2\"/></a:lnRef><a:fillRef idx=\"2\"><a:schemeClr val=\"accent3\"/></a:fillRef><a:effectRef idx=\"0\"><a:schemeClr val=\"accent1\"/></a:effectRef><a:fontRef idx=\"minor\"><a:schemeClr val=\"tx1\"/></a:fontRef></p:style></p:sp></p:spTree>"
+        },
+        {
+          "kind": "replace-literal-once",
+          "part": "ppt/slides/slide1.xml",
+          "before": "<a:solidFill><a:schemeClr val=\"accent3\"><a:tint val=\"25000\"/></a:schemeClr></a:solidFill>",
+          "after": "<a:gradFill xmlns:a=\"http://schemas.openxmlformats.org/drawingml/2006/main\" rotWithShape=\"1\"><a:gsLst><a:gs pos=\"0\"><a:srgbClr val=\"112233\"></a:srgbClr></a:gs><a:gs pos=\"100000\"><a:srgbClr val=\"FFEEDD\"></a:srgbClr></a:gs></a:gsLst><a:lin ang=\"5400000\" scaled=\"1\"/></a:gradFill>"
+        }
+      ],
+      "request": {
+        "shapeId": 2000,
+        "gradient": {
+          "angle": 5400000,
+          "scaled": true,
+          "stops": [
+            {
+              "position": 0,
+              "color": {
+                "kind": "srgb",
+                "value": "112233",
+                "transforms": []
+              }
+            },
+            {
+              "position": 100000,
+              "color": {
+                "kind": "srgb",
+                "value": "FFEEDD",
+                "transforms": []
+              }
+            }
+          ]
+        }
+      },
+      "expected": {
+        "before": {
+          "angle": 5400000,
+          "scaled": true,
+          "stops": [
+            {
+              "position": 0,
+              "color": {
+                "kind": "srgb",
+                "value": "112233",
+                "transforms": []
+              }
+            },
+            {
+              "position": 100000,
+              "color": {
+                "kind": "srgb",
+                "value": "FFEEDD",
+                "transforms": []
+              }
+            }
+          ]
+        },
+        "gradient": {
+          "angle": 5400000,
+          "scaled": true,
+          "stops": [
+            {
+              "position": 0,
+              "color": {
+                "kind": "srgb",
+                "value": "112233",
+                "transforms": []
+              }
+            },
+            {
+              "position": 100000,
+              "color": {
+                "kind": "srgb",
+                "value": "FFEEDD",
+                "transforms": []
+              }
+            }
+          ]
+        },
+        "changed": 0
+      }
+    },
+    {
+      "caseId": "aliased no-op",
+      "scenarioId": "@id-pptx-graphics-gradients-write",
+      "example": {
+        "variant": "aliased no-op"
+      },
+      "operations": [
+        {
+          "kind": "replace-literal-once",
+          "part": "ppt/slides/slide1.xml",
+          "before": "</p:spTree>",
+          "after": "<p:sp><p:nvSpPr><p:cNvPr id=\"2000\" name=\"Gradient target\"/><p:cNvSpPr/><p:nvPr/></p:nvSpPr><p:spPr><a:xfrm><a:off x=\"100\" y=\"200\"/><a:ext cx=\"1200000\" cy=\"900000\"/></a:xfrm><a:prstGeom prst=\"rect\"><a:avLst/></a:prstGeom><a:solidFill><a:schemeClr val=\"accent3\"><a:tint val=\"25000\"/></a:schemeClr></a:solidFill><a:ln w=\"12700\"><a:solidFill><a:schemeClr val=\"accent2\"/></a:solidFill></a:ln></p:spPr><p:style><a:lnRef idx=\"1\"><a:schemeClr val=\"accent2\"/></a:lnRef><a:fillRef idx=\"2\"><a:schemeClr val=\"accent3\"/></a:fillRef><a:effectRef idx=\"0\"><a:schemeClr val=\"accent1\"/></a:effectRef><a:fontRef idx=\"minor\"><a:schemeClr val=\"tx1\"/></a:fontRef></p:style></p:sp></p:spTree>"
+        },
+        {
+          "kind": "replace-literal-once",
+          "part": "ppt/slides/slide1.xml",
+          "before": "<a:solidFill><a:schemeClr val=\"accent3\"><a:tint val=\"25000\"/></a:schemeClr></a:solidFill>",
+          "after": "<grad:gradFill xmlns:grad=\"http://schemas.openxmlformats.org/drawingml/2006/main\" rotWithShape=\"1\"><grad:gsLst><grad:gs pos=\"0\"><grad:srgbClr val=\"112233\"></grad:srgbClr></grad:gs><grad:gs pos=\"100000\"><grad:srgbClr val=\"FFEEDD\"></grad:srgbClr></grad:gs></grad:gsLst><grad:lin ang=\"5400000\" scaled = 'true'/></grad:gradFill>"
+        }
+      ],
+      "request": {
+        "shapeId": 2000,
+        "gradient": {
+          "angle": 5400000,
+          "scaled": true,
+          "stops": [
+            {
+              "position": 0,
+              "color": {
+                "kind": "srgb",
+                "value": "112233",
+                "transforms": []
+              }
+            },
+            {
+              "position": 100000,
+              "color": {
+                "kind": "srgb",
+                "value": "FFEEDD",
+                "transforms": []
+              }
+            }
+          ]
+        }
+      },
+      "expected": {
+        "before": {
+          "angle": 5400000,
+          "scaled": true,
+          "stops": [
+            {
+              "position": 0,
+              "color": {
+                "kind": "srgb",
+                "value": "112233",
+                "transforms": []
+              }
+            },
+            {
+              "position": 100000,
+              "color": {
+                "kind": "srgb",
+                "value": "FFEEDD",
+                "transforms": []
+              }
+            }
+          ]
+        },
+        "gradient": {
+          "angle": 5400000,
+          "scaled": true,
+          "stops": [
+            {
+              "position": 0,
+              "color": {
+                "kind": "srgb",
+                "value": "112233",
+                "transforms": []
+              }
+            },
+            {
+              "position": 100000,
+              "color": {
+                "kind": "srgb",
+                "value": "FFEEDD",
+                "transforms": []
+              }
+            }
+          ]
+        },
+        "changed": 0
+      }
+    },
+    {
+      "caseId": "absent fill",
+      "scenarioId": "@id-pptx-graphics-gradients-write",
+      "example": {
+        "variant": "absent fill"
+      },
+      "operations": [
+        {
+          "kind": "replace-literal-once",
+          "part": "ppt/slides/slide1.xml",
+          "before": "</p:spTree>",
+          "after": "<p:sp><p:nvSpPr><p:cNvPr id=\"2000\" name=\"Gradient target\"/><p:cNvSpPr/><p:nvPr/></p:nvSpPr><p:spPr><a:xfrm><a:off x=\"100\" y=\"200\"/><a:ext cx=\"1200000\" cy=\"900000\"/></a:xfrm><a:prstGeom prst=\"rect\"><a:avLst/></a:prstGeom><a:solidFill><a:schemeClr val=\"accent3\"><a:tint val=\"25000\"/></a:schemeClr></a:solidFill><a:ln w=\"12700\"><a:solidFill><a:schemeClr val=\"accent2\"/></a:solidFill></a:ln></p:spPr><p:style><a:lnRef idx=\"1\"><a:schemeClr val=\"accent2\"/></a:lnRef><a:fillRef idx=\"2\"><a:schemeClr val=\"accent3\"/></a:fillRef><a:effectRef idx=\"0\"><a:schemeClr val=\"accent1\"/></a:effectRef><a:fontRef idx=\"minor\"><a:schemeClr val=\"tx1\"/></a:fontRef></p:style></p:sp></p:spTree>"
+        },
+        {
+          "kind": "replace-literal-once",
+          "part": "ppt/slides/slide1.xml",
+          "before": "<a:solidFill><a:schemeClr val=\"accent3\"><a:tint val=\"25000\"/></a:schemeClr></a:solidFill>",
+          "after": ""
+        }
+      ],
+      "request": {
+        "shapeId": 2000,
+        "gradient": {
+          "angle": 5400000,
+          "scaled": true,
+          "stops": [
+            {
+              "position": 0,
+              "color": {
+                "kind": "srgb",
+                "value": "112233",
+                "transforms": []
+              }
+            },
+            {
+              "position": 100000,
+              "color": {
+                "kind": "srgb",
+                "value": "FFEEDD",
+                "transforms": []
+              }
+            }
+          ]
+        }
+      },
+      "expected": {
+        "before": null,
+        "gradient": {
+          "angle": 5400000,
+          "scaled": true,
+          "stops": [
+            {
+              "position": 0,
+              "color": {
+                "kind": "srgb",
+                "value": "112233",
+                "transforms": []
+              }
+            },
+            {
+              "position": 100000,
+              "color": {
+                "kind": "srgb",
+                "value": "FFEEDD",
+                "transforms": []
+              }
+            }
+          ]
+        },
+        "changed": 1
+      }
+    },
+    {
+      "caseId": "one-stop",
+      "scenarioId": "@id-pptx-graphics-gradients-refusals",
+      "example": {
+        "fault": "one stop"
+      },
+      "operations": [
+        {
+          "kind": "replace-literal-once",
+          "part": "ppt/slides/slide1.xml",
+          "before": "</p:spTree>",
+          "after": "<p:sp><p:nvSpPr><p:cNvPr id=\"2000\" name=\"Gradient target\"/><p:cNvSpPr/><p:nvPr/></p:nvSpPr><p:spPr><a:xfrm><a:off x=\"100\" y=\"200\"/><a:ext cx=\"1200000\" cy=\"900000\"/></a:xfrm><a:prstGeom prst=\"rect\"><a:avLst/></a:prstGeom><a:solidFill><a:schemeClr val=\"accent3\"><a:tint val=\"25000\"/></a:schemeClr></a:solidFill><a:ln w=\"12700\"><a:solidFill><a:schemeClr val=\"accent2\"/></a:solidFill></a:ln></p:spPr><p:style><a:lnRef idx=\"1\"><a:schemeClr val=\"accent2\"/></a:lnRef><a:fillRef idx=\"2\"><a:schemeClr val=\"accent3\"/></a:fillRef><a:effectRef idx=\"0\"><a:schemeClr val=\"accent1\"/></a:effectRef><a:fontRef idx=\"minor\"><a:schemeClr val=\"tx1\"/></a:fontRef></p:style></p:sp></p:spTree>"
+        }
+      ],
+      "request": {
+        "shapeId": 2000,
+        "gradient": {
+          "angle": 5400000,
+          "scaled": true,
+          "stops": [
+            {
+              "position": 0,
+              "color": {
+                "kind": "srgb",
+                "value": "112233",
+                "transforms": []
+              }
+            }
+          ]
+        }
+      },
+      "errorCode": "PPTX_GRADIENT_UNSUPPORTED"
+    },
+    {
+      "caseId": "unordered-stops",
+      "scenarioId": "@id-pptx-graphics-gradients-refusals",
+      "example": {
+        "fault": "unordered stops"
+      },
+      "operations": [
+        {
+          "kind": "replace-literal-once",
+          "part": "ppt/slides/slide1.xml",
+          "before": "</p:spTree>",
+          "after": "<p:sp><p:nvSpPr><p:cNvPr id=\"2000\" name=\"Gradient target\"/><p:cNvSpPr/><p:nvPr/></p:nvSpPr><p:spPr><a:xfrm><a:off x=\"100\" y=\"200\"/><a:ext cx=\"1200000\" cy=\"900000\"/></a:xfrm><a:prstGeom prst=\"rect\"><a:avLst/></a:prstGeom><a:solidFill><a:schemeClr val=\"accent3\"><a:tint val=\"25000\"/></a:schemeClr></a:solidFill><a:ln w=\"12700\"><a:solidFill><a:schemeClr val=\"accent2\"/></a:solidFill></a:ln></p:spPr><p:style><a:lnRef idx=\"1\"><a:schemeClr val=\"accent2\"/></a:lnRef><a:fillRef idx=\"2\"><a:schemeClr val=\"accent3\"/></a:fillRef><a:effectRef idx=\"0\"><a:schemeClr val=\"accent1\"/></a:effectRef><a:fontRef idx=\"minor\"><a:schemeClr val=\"tx1\"/></a:fontRef></p:style></p:sp></p:spTree>"
+        }
+      ],
+      "request": {
+        "shapeId": 2000,
+        "gradient": {
+          "angle": 5400000,
+          "scaled": true,
+          "stops": [
+            {
+              "position": 100000,
+              "color": {
+                "kind": "srgb",
+                "value": "FFEEDD",
+                "transforms": []
+              }
+            },
+            {
+              "position": 0,
+              "color": {
+                "kind": "srgb",
+                "value": "112233",
+                "transforms": []
+              }
+            }
+          ]
+        }
+      },
+      "errorCode": "PPTX_GRADIENT_UNSUPPORTED"
+    },
+    {
+      "caseId": "duplicate-positions",
+      "scenarioId": "@id-pptx-graphics-gradients-refusals",
+      "example": {
+        "fault": "duplicate positions"
+      },
+      "operations": [
+        {
+          "kind": "replace-literal-once",
+          "part": "ppt/slides/slide1.xml",
+          "before": "</p:spTree>",
+          "after": "<p:sp><p:nvSpPr><p:cNvPr id=\"2000\" name=\"Gradient target\"/><p:cNvSpPr/><p:nvPr/></p:nvSpPr><p:spPr><a:xfrm><a:off x=\"100\" y=\"200\"/><a:ext cx=\"1200000\" cy=\"900000\"/></a:xfrm><a:prstGeom prst=\"rect\"><a:avLst/></a:prstGeom><a:solidFill><a:schemeClr val=\"accent3\"><a:tint val=\"25000\"/></a:schemeClr></a:solidFill><a:ln w=\"12700\"><a:solidFill><a:schemeClr val=\"accent2\"/></a:solidFill></a:ln></p:spPr><p:style><a:lnRef idx=\"1\"><a:schemeClr val=\"accent2\"/></a:lnRef><a:fillRef idx=\"2\"><a:schemeClr val=\"accent3\"/></a:fillRef><a:effectRef idx=\"0\"><a:schemeClr val=\"accent1\"/></a:effectRef><a:fontRef idx=\"minor\"><a:schemeClr val=\"tx1\"/></a:fontRef></p:style></p:sp></p:spTree>"
+        }
+      ],
+      "request": {
+        "shapeId": 2000,
+        "gradient": {
+          "angle": 5400000,
+          "scaled": true,
+          "stops": [
+            {
+              "position": 0,
+              "color": {
+                "kind": "srgb",
+                "value": "112233",
+                "transforms": []
+              }
+            },
+            {
+              "position": 0,
+              "color": {
+                "kind": "srgb",
+                "value": "112233",
+                "transforms": []
+              }
+            },
+            {
+              "position": 100000,
+              "color": {
+                "kind": "srgb",
+                "value": "FFEEDD",
+                "transforms": []
+              }
+            }
+          ]
+        }
+      },
+      "errorCode": "PPTX_GRADIENT_UNSUPPORTED"
+    },
+    {
+      "caseId": "missing-boundary",
+      "scenarioId": "@id-pptx-graphics-gradients-refusals",
+      "example": {
+        "fault": "missing boundary"
+      },
+      "operations": [
+        {
+          "kind": "replace-literal-once",
+          "part": "ppt/slides/slide1.xml",
+          "before": "</p:spTree>",
+          "after": "<p:sp><p:nvSpPr><p:cNvPr id=\"2000\" name=\"Gradient target\"/><p:cNvSpPr/><p:nvPr/></p:nvSpPr><p:spPr><a:xfrm><a:off x=\"100\" y=\"200\"/><a:ext cx=\"1200000\" cy=\"900000\"/></a:xfrm><a:prstGeom prst=\"rect\"><a:avLst/></a:prstGeom><a:solidFill><a:schemeClr val=\"accent3\"><a:tint val=\"25000\"/></a:schemeClr></a:solidFill><a:ln w=\"12700\"><a:solidFill><a:schemeClr val=\"accent2\"/></a:solidFill></a:ln></p:spPr><p:style><a:lnRef idx=\"1\"><a:schemeClr val=\"accent2\"/></a:lnRef><a:fillRef idx=\"2\"><a:schemeClr val=\"accent3\"/></a:fillRef><a:effectRef idx=\"0\"><a:schemeClr val=\"accent1\"/></a:effectRef><a:fontRef idx=\"minor\"><a:schemeClr val=\"tx1\"/></a:fontRef></p:style></p:sp></p:spTree>"
+        }
+      ],
+      "request": {
+        "shapeId": 2000,
+        "gradient": {
+          "angle": 5400000,
+          "scaled": true,
+          "stops": [
+            {
+              "position": 1,
+              "color": {
+                "kind": "srgb",
+                "value": "112233",
+                "transforms": []
+              }
+            },
+            {
+              "position": 100000,
+              "color": {
+                "kind": "srgb",
+                "value": "FFEEDD",
+                "transforms": []
+              }
+            }
+          ]
+        }
+      },
+      "errorCode": "PPTX_GRADIENT_UNSUPPORTED"
+    },
+    {
+      "caseId": "invalid-angle",
+      "scenarioId": "@id-pptx-graphics-gradients-refusals",
+      "example": {
+        "fault": "invalid angle"
+      },
+      "operations": [
+        {
+          "kind": "replace-literal-once",
+          "part": "ppt/slides/slide1.xml",
+          "before": "</p:spTree>",
+          "after": "<p:sp><p:nvSpPr><p:cNvPr id=\"2000\" name=\"Gradient target\"/><p:cNvSpPr/><p:nvPr/></p:nvSpPr><p:spPr><a:xfrm><a:off x=\"100\" y=\"200\"/><a:ext cx=\"1200000\" cy=\"900000\"/></a:xfrm><a:prstGeom prst=\"rect\"><a:avLst/></a:prstGeom><a:solidFill><a:schemeClr val=\"accent3\"><a:tint val=\"25000\"/></a:schemeClr></a:solidFill><a:ln w=\"12700\"><a:solidFill><a:schemeClr val=\"accent2\"/></a:solidFill></a:ln></p:spPr><p:style><a:lnRef idx=\"1\"><a:schemeClr val=\"accent2\"/></a:lnRef><a:fillRef idx=\"2\"><a:schemeClr val=\"accent3\"/></a:fillRef><a:effectRef idx=\"0\"><a:schemeClr val=\"accent1\"/></a:effectRef><a:fontRef idx=\"minor\"><a:schemeClr val=\"tx1\"/></a:fontRef></p:style></p:sp></p:spTree>"
+        }
+      ],
+      "request": {
+        "shapeId": 2000,
+        "gradient": {
+          "angle": 21600000,
+          "scaled": true,
+          "stops": [
+            {
+              "position": 0,
+              "color": {
+                "kind": "srgb",
+                "value": "112233",
+                "transforms": []
+              }
+            },
+            {
+              "position": 100000,
+              "color": {
+                "kind": "srgb",
+                "value": "FFEEDD",
+                "transforms": []
+              }
+            }
+          ]
+        }
+      },
+      "errorCode": "PPTX_GRADIENT_UNSUPPORTED"
+    },
+    {
+      "caseId": "invalid-RGB",
+      "scenarioId": "@id-pptx-graphics-gradients-refusals",
+      "example": {
+        "fault": "invalid RGB"
+      },
+      "operations": [
+        {
+          "kind": "replace-literal-once",
+          "part": "ppt/slides/slide1.xml",
+          "before": "</p:spTree>",
+          "after": "<p:sp><p:nvSpPr><p:cNvPr id=\"2000\" name=\"Gradient target\"/><p:cNvSpPr/><p:nvPr/></p:nvSpPr><p:spPr><a:xfrm><a:off x=\"100\" y=\"200\"/><a:ext cx=\"1200000\" cy=\"900000\"/></a:xfrm><a:prstGeom prst=\"rect\"><a:avLst/></a:prstGeom><a:solidFill><a:schemeClr val=\"accent3\"><a:tint val=\"25000\"/></a:schemeClr></a:solidFill><a:ln w=\"12700\"><a:solidFill><a:schemeClr val=\"accent2\"/></a:solidFill></a:ln></p:spPr><p:style><a:lnRef idx=\"1\"><a:schemeClr val=\"accent2\"/></a:lnRef><a:fillRef idx=\"2\"><a:schemeClr val=\"accent3\"/></a:fillRef><a:effectRef idx=\"0\"><a:schemeClr val=\"accent1\"/></a:effectRef><a:fontRef idx=\"minor\"><a:schemeClr val=\"tx1\"/></a:fontRef></p:style></p:sp></p:spTree>"
+        }
+      ],
+      "request": {
+        "shapeId": 2000,
+        "gradient": {
+          "angle": 5400000,
+          "scaled": true,
+          "stops": [
+            {
+              "position": 0,
+              "color": {
+                "kind": "srgb",
+                "value": "blue"
+              }
+            },
+            {
+              "position": 100000,
+              "color": {
+                "kind": "srgb",
+                "value": "FFEEDD",
+                "transforms": []
+              }
+            }
+          ]
+        }
+      },
+      "errorCode": "PPTX_GRADIENT_UNSUPPORTED"
+    },
+    {
+      "caseId": "unknown-theme-token",
+      "scenarioId": "@id-pptx-graphics-gradients-refusals",
+      "example": {
+        "fault": "unknown theme token"
+      },
+      "operations": [
+        {
+          "kind": "replace-literal-once",
+          "part": "ppt/slides/slide1.xml",
+          "before": "</p:spTree>",
+          "after": "<p:sp><p:nvSpPr><p:cNvPr id=\"2000\" name=\"Gradient target\"/><p:cNvSpPr/><p:nvPr/></p:nvSpPr><p:spPr><a:xfrm><a:off x=\"100\" y=\"200\"/><a:ext cx=\"1200000\" cy=\"900000\"/></a:xfrm><a:prstGeom prst=\"rect\"><a:avLst/></a:prstGeom><a:solidFill><a:schemeClr val=\"accent3\"><a:tint val=\"25000\"/></a:schemeClr></a:solidFill><a:ln w=\"12700\"><a:solidFill><a:schemeClr val=\"accent2\"/></a:solidFill></a:ln></p:spPr><p:style><a:lnRef idx=\"1\"><a:schemeClr val=\"accent2\"/></a:lnRef><a:fillRef idx=\"2\"><a:schemeClr val=\"accent3\"/></a:fillRef><a:effectRef idx=\"0\"><a:schemeClr val=\"accent1\"/></a:effectRef><a:fontRef idx=\"minor\"><a:schemeClr val=\"tx1\"/></a:fontRef></p:style></p:sp></p:spTree>"
+        }
+      ],
+      "request": {
+        "shapeId": 2000,
+        "gradient": {
+          "angle": 5400000,
+          "scaled": true,
+          "stops": [
+            {
+              "position": 0,
+              "color": {
+                "kind": "scheme",
+                "value": "invented"
+              }
+            },
+            {
+              "position": 100000,
+              "color": {
+                "kind": "srgb",
+                "value": "FFEEDD",
+                "transforms": []
+              }
+            }
+          ]
+        }
+      },
+      "errorCode": "PPTX_GRADIENT_UNSUPPORTED"
+    },
+    {
+      "caseId": "out-of-range-transform",
+      "scenarioId": "@id-pptx-graphics-gradients-refusals",
+      "example": {
+        "fault": "out of range transform"
+      },
+      "operations": [
+        {
+          "kind": "replace-literal-once",
+          "part": "ppt/slides/slide1.xml",
+          "before": "</p:spTree>",
+          "after": "<p:sp><p:nvSpPr><p:cNvPr id=\"2000\" name=\"Gradient target\"/><p:cNvSpPr/><p:nvPr/></p:nvSpPr><p:spPr><a:xfrm><a:off x=\"100\" y=\"200\"/><a:ext cx=\"1200000\" cy=\"900000\"/></a:xfrm><a:prstGeom prst=\"rect\"><a:avLst/></a:prstGeom><a:solidFill><a:schemeClr val=\"accent3\"><a:tint val=\"25000\"/></a:schemeClr></a:solidFill><a:ln w=\"12700\"><a:solidFill><a:schemeClr val=\"accent2\"/></a:solidFill></a:ln></p:spPr><p:style><a:lnRef idx=\"1\"><a:schemeClr val=\"accent2\"/></a:lnRef><a:fillRef idx=\"2\"><a:schemeClr val=\"accent3\"/></a:fillRef><a:effectRef idx=\"0\"><a:schemeClr val=\"accent1\"/></a:effectRef><a:fontRef idx=\"minor\"><a:schemeClr val=\"tx1\"/></a:fontRef></p:style></p:sp></p:spTree>"
+        }
+      ],
+      "request": {
+        "shapeId": 2000,
+        "gradient": {
+          "angle": 2700000,
+          "scaled": false,
+          "stops": [
+            {
+              "position": 0,
+              "color": {
+                "kind": "scheme",
+                "value": "accent1",
+                "transforms": [
+                  {
+                    "kind": "tint",
+                    "value": 100001
+                  }
+                ]
+              }
+            },
+            {
+              "position": 100000,
+              "color": {
+                "kind": "srgb",
+                "value": "336699",
+                "transforms": [
+                  {
+                    "kind": "alpha",
+                    "value": 50000
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      },
+      "errorCode": "PPTX_GRADIENT_UNSUPPORTED"
+    },
+    {
+      "caseId": "duplicate-source-fills",
+      "scenarioId": "@id-pptx-graphics-gradients-refusals",
+      "example": {
+        "fault": "duplicate source fills"
+      },
+      "operations": [
+        {
+          "kind": "replace-literal-once",
+          "part": "ppt/slides/slide1.xml",
+          "before": "</p:spTree>",
+          "after": "<p:sp><p:nvSpPr><p:cNvPr id=\"2000\" name=\"Gradient target\"/><p:cNvSpPr/><p:nvPr/></p:nvSpPr><p:spPr><a:xfrm><a:off x=\"100\" y=\"200\"/><a:ext cx=\"1200000\" cy=\"900000\"/></a:xfrm><a:prstGeom prst=\"rect\"><a:avLst/></a:prstGeom><a:solidFill><a:schemeClr val=\"accent3\"><a:tint val=\"25000\"/></a:schemeClr></a:solidFill><a:ln w=\"12700\"><a:solidFill><a:schemeClr val=\"accent2\"/></a:solidFill></a:ln></p:spPr><p:style><a:lnRef idx=\"1\"><a:schemeClr val=\"accent2\"/></a:lnRef><a:fillRef idx=\"2\"><a:schemeClr val=\"accent3\"/></a:fillRef><a:effectRef idx=\"0\"><a:schemeClr val=\"accent1\"/></a:effectRef><a:fontRef idx=\"minor\"><a:schemeClr val=\"tx1\"/></a:fontRef></p:style></p:sp></p:spTree>"
+        },
+        {
+          "kind": "replace-literal-once",
+          "part": "ppt/slides/slide1.xml",
+          "before": "<a:solidFill><a:schemeClr val=\"accent3\"><a:tint val=\"25000\"/></a:schemeClr></a:solidFill>",
+          "after": "<a:solidFill><a:schemeClr val=\"accent3\"><a:tint val=\"25000\"/></a:schemeClr></a:solidFill><a:noFill/>"
+        }
+      ],
+      "request": {
+        "shapeId": 2000,
+        "gradient": {
+          "angle": 5400000,
+          "scaled": true,
+          "stops": [
+            {
+              "position": 0,
+              "color": {
+                "kind": "srgb",
+                "value": "112233",
+                "transforms": []
+              }
+            },
+            {
+              "position": 100000,
+              "color": {
+                "kind": "srgb",
+                "value": "FFEEDD",
+                "transforms": []
+              }
+            }
+          ]
+        }
+      },
+      "errorCode": "PPTX_GRADIENT_UNSUPPORTED"
+    },
+    {
+      "caseId": "path-gradient",
+      "scenarioId": "@id-pptx-graphics-gradients-refusals",
+      "example": {
+        "fault": "path gradient"
+      },
+      "operations": [
+        {
+          "kind": "replace-literal-once",
+          "part": "ppt/slides/slide1.xml",
+          "before": "</p:spTree>",
+          "after": "<p:sp><p:nvSpPr><p:cNvPr id=\"2000\" name=\"Gradient target\"/><p:cNvSpPr/><p:nvPr/></p:nvSpPr><p:spPr><a:xfrm><a:off x=\"100\" y=\"200\"/><a:ext cx=\"1200000\" cy=\"900000\"/></a:xfrm><a:prstGeom prst=\"rect\"><a:avLst/></a:prstGeom><a:solidFill><a:schemeClr val=\"accent3\"><a:tint val=\"25000\"/></a:schemeClr></a:solidFill><a:ln w=\"12700\"><a:solidFill><a:schemeClr val=\"accent2\"/></a:solidFill></a:ln></p:spPr><p:style><a:lnRef idx=\"1\"><a:schemeClr val=\"accent2\"/></a:lnRef><a:fillRef idx=\"2\"><a:schemeClr val=\"accent3\"/></a:fillRef><a:effectRef idx=\"0\"><a:schemeClr val=\"accent1\"/></a:effectRef><a:fontRef idx=\"minor\"><a:schemeClr val=\"tx1\"/></a:fontRef></p:style></p:sp></p:spTree>"
+        },
+        {
+          "kind": "replace-literal-once",
+          "part": "ppt/slides/slide1.xml",
+          "before": "<a:solidFill><a:schemeClr val=\"accent3\"><a:tint val=\"25000\"/></a:schemeClr></a:solidFill>",
+          "after": "<a:gradFill xmlns:a=\"http://schemas.openxmlformats.org/drawingml/2006/main\" rotWithShape=\"1\"><a:gsLst><a:gs pos=\"0\"><a:srgbClr val=\"112233\"></a:srgbClr></a:gs><a:gs pos=\"100000\"><a:srgbClr val=\"FFEEDD\"></a:srgbClr></a:gs></a:gsLst><a:path path=\"circle\"/></a:gradFill>"
+        }
+      ],
+      "request": {
+        "shapeId": 2000,
+        "gradient": {
+          "angle": 5400000,
+          "scaled": true,
+          "stops": [
+            {
+              "position": 0,
+              "color": {
+                "kind": "srgb",
+                "value": "112233",
+                "transforms": []
+              }
+            },
+            {
+              "position": 100000,
+              "color": {
+                "kind": "srgb",
+                "value": "FFEEDD",
+                "transforms": []
+              }
+            }
+          ]
+        }
+      },
+      "errorCode": "PPTX_GRADIENT_UNSUPPORTED"
+    },
+    {
+      "caseId": "missing-shape",
+      "scenarioId": "@id-pptx-graphics-gradients-refusals",
+      "example": {
+        "fault": "missing shape"
+      },
+      "operations": [
+        {
+          "kind": "replace-literal-once",
+          "part": "ppt/slides/slide1.xml",
+          "before": "</p:spTree>",
+          "after": "<p:sp><p:nvSpPr><p:cNvPr id=\"2000\" name=\"Gradient target\"/><p:cNvSpPr/><p:nvPr/></p:nvSpPr><p:spPr><a:xfrm><a:off x=\"100\" y=\"200\"/><a:ext cx=\"1200000\" cy=\"900000\"/></a:xfrm><a:prstGeom prst=\"rect\"><a:avLst/></a:prstGeom><a:solidFill><a:schemeClr val=\"accent3\"><a:tint val=\"25000\"/></a:schemeClr></a:solidFill><a:ln w=\"12700\"><a:solidFill><a:schemeClr val=\"accent2\"/></a:solidFill></a:ln></p:spPr><p:style><a:lnRef idx=\"1\"><a:schemeClr val=\"accent2\"/></a:lnRef><a:fillRef idx=\"2\"><a:schemeClr val=\"accent3\"/></a:fillRef><a:effectRef idx=\"0\"><a:schemeClr val=\"accent1\"/></a:effectRef><a:fontRef idx=\"minor\"><a:schemeClr val=\"tx1\"/></a:fontRef></p:style></p:sp></p:spTree>"
+        }
+      ],
+      "request": {
+        "shapeId": 99999,
+        "gradient": {
+          "angle": 5400000,
+          "scaled": true,
+          "stops": [
+            {
+              "position": 0,
+              "color": {
+                "kind": "srgb",
+                "value": "112233",
+                "transforms": []
+              }
+            },
+            {
+              "position": 100000,
+              "color": {
+                "kind": "srgb",
+                "value": "FFEEDD",
+                "transforms": []
+              }
+            }
+          ]
+        }
+      },
+      "errorCode": "PPTX_GRADIENT_UNSUPPORTED"
+    },
+    {
+      "caseId": "protected-presentation",
+      "scenarioId": "@id-pptx-graphics-gradients-refusals",
+      "example": {
+        "fault": "protected presentation"
+      },
+      "operations": [
+        {
+          "kind": "replace-literal-once",
+          "part": "ppt/slides/slide1.xml",
+          "before": "</p:spTree>",
+          "after": "<p:sp><p:nvSpPr><p:cNvPr id=\"2000\" name=\"Gradient target\"/><p:cNvSpPr/><p:nvPr/></p:nvSpPr><p:spPr><a:xfrm><a:off x=\"100\" y=\"200\"/><a:ext cx=\"1200000\" cy=\"900000\"/></a:xfrm><a:prstGeom prst=\"rect\"><a:avLst/></a:prstGeom><a:solidFill><a:schemeClr val=\"accent3\"><a:tint val=\"25000\"/></a:schemeClr></a:solidFill><a:ln w=\"12700\"><a:solidFill><a:schemeClr val=\"accent2\"/></a:solidFill></a:ln></p:spPr><p:style><a:lnRef idx=\"1\"><a:schemeClr val=\"accent2\"/></a:lnRef><a:fillRef idx=\"2\"><a:schemeClr val=\"accent3\"/></a:fillRef><a:effectRef idx=\"0\"><a:schemeClr val=\"accent1\"/></a:effectRef><a:fontRef idx=\"minor\"><a:schemeClr val=\"tx1\"/></a:fontRef></p:style></p:sp></p:spTree>"
+        },
+        {
+          "kind": "replace-literal-once",
+          "part": "ppt/presentation.xml",
+          "before": "</p:presentation>",
+          "after": "<p:modifyVerifier/></p:presentation>"
+        }
+      ],
+      "request": {
+        "shapeId": 2000,
+        "gradient": {
+          "angle": 5400000,
+          "scaled": true,
+          "stops": [
+            {
+              "position": 0,
+              "color": {
+                "kind": "srgb",
+                "value": "112233",
+                "transforms": []
+              }
+            },
+            {
+              "position": 100000,
+              "color": {
+                "kind": "srgb",
+                "value": "FFEEDD",
+                "transforms": []
+              }
+            }
+          ]
+        }
+      },
+      "errorCode": "PPTX_PROTECTED"
+    }
+  ]
+}

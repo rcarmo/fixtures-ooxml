@@ -1,0 +1,555 @@
+{
+  "schemaVersion": 1,
+  "executionCredit": false,
+  "feature": "workflows/pptx/picture-transform.feature",
+  "contract": "contracts/pptx-picture-transform.md",
+  "baseFixtureId": "fixture-792277d2c358c5bd7c8a4053078a5594fa07bfb55a06b0bb30f2813c151ea459",
+  "slidePart": "ppt/slides/slide1.xml",
+  "counts": {
+    "ids": 2,
+    "cases": 18
+  },
+  "custody": {
+    "allowedChangedParts": [
+      "ppt/slides/slide1.xml"
+    ],
+    "membership": "exact",
+    "preserve": "all XML outside selected transform opening tag; every crop relationship and media payload"
+  },
+  "cases": [
+    {
+      "caseId": "rotation",
+      "scenarioId": "@id-pptx-graphics-picture-transform-roundtrip",
+      "example": {
+        "variant": "rotation"
+      },
+      "operations": [],
+      "request": {
+        "shapeId": 1026,
+        "patch": {
+          "rotation": 5400000
+        }
+      },
+      "expected": {
+        "before": {
+          "x": -2,
+          "y": 10,
+          "width": 9144000,
+          "height": 6857989,
+          "rotation": 0,
+          "flipH": false,
+          "flipV": false
+        },
+        "transform": {
+          "x": -2,
+          "y": 10,
+          "width": 9144000,
+          "height": 6857989,
+          "rotation": 5400000,
+          "flipH": false,
+          "flipV": false
+        },
+        "changed": 1
+      }
+    },
+    {
+      "caseId": "flips",
+      "scenarioId": "@id-pptx-graphics-picture-transform-roundtrip",
+      "example": {
+        "variant": "flips"
+      },
+      "operations": [],
+      "request": {
+        "shapeId": 1026,
+        "patch": {
+          "flipH": true,
+          "flipV": true
+        }
+      },
+      "expected": {
+        "before": {
+          "x": -2,
+          "y": 10,
+          "width": 9144000,
+          "height": 6857989,
+          "rotation": 0,
+          "flipH": false,
+          "flipV": false
+        },
+        "transform": {
+          "x": -2,
+          "y": 10,
+          "width": 9144000,
+          "height": 6857989,
+          "rotation": 0,
+          "flipH": true,
+          "flipV": true
+        },
+        "changed": 1
+      }
+    },
+    {
+      "caseId": "reset",
+      "scenarioId": "@id-pptx-graphics-picture-transform-roundtrip",
+      "example": {
+        "variant": "reset"
+      },
+      "operations": [
+        {
+          "kind": "replace-literal-once",
+          "part": "ppt/slides/slide1.xml",
+          "before": "r:embed=\"rId2\"",
+          "after": "r:embed=\"rId2\" xmlns:asset=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships\" asset:link=\"externalImage\""
+        },
+        {
+          "kind": "replace-literal-once",
+          "part": "ppt/slides/_rels/slide1.xml.rels",
+          "before": "</Relationships>",
+          "after": "<Relationship Id=\"externalImage\" Type=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships/image\" Target=\"https://invalid.example.invalid/never-fetch.png\" TargetMode=\"External\"/></Relationships>"
+        },
+        {
+          "kind": "replace-literal-once",
+          "part": "ppt/slides/slide1.xml",
+          "before": "<a:xfrm><a:off x=\"-2\" y=\"10\"/>",
+          "after": "<a:xfrm rot=\"2700000\" flipH=\"true\" flipV=\"1\"><a:off x=\"-2\" y=\"10\"/>"
+        },
+        {
+          "kind": "replace-literal-once",
+          "part": "ppt/slides/slide1.xml",
+          "before": "<a:srcRect t=\"17161\" r=\"2\" b=\"7840\"/>",
+          "after": ""
+        }
+      ],
+      "request": {
+        "shapeId": 1026,
+        "patch": {
+          "rotation": 0,
+          "flipH": false,
+          "flipV": false
+        }
+      },
+      "expected": {
+        "before": {
+          "x": -2,
+          "y": 10,
+          "width": 9144000,
+          "height": 6857989,
+          "rotation": 2700000,
+          "flipH": true,
+          "flipV": true
+        },
+        "transform": {
+          "x": -2,
+          "y": 10,
+          "width": 9144000,
+          "height": 6857989,
+          "rotation": 0,
+          "flipH": false,
+          "flipV": false
+        },
+        "changed": 1
+      }
+    },
+    {
+      "caseId": "no-op",
+      "scenarioId": "@id-pptx-graphics-picture-transform-roundtrip",
+      "example": {
+        "variant": "no-op"
+      },
+      "operations": [],
+      "request": {
+        "shapeId": 1026,
+        "patch": {
+          "rotation": 0,
+          "flipH": false,
+          "flipV": false
+        }
+      },
+      "expected": {
+        "before": {
+          "x": -2,
+          "y": 10,
+          "width": 9144000,
+          "height": 6857989,
+          "rotation": 0,
+          "flipH": false,
+          "flipV": false
+        },
+        "transform": {
+          "x": -2,
+          "y": 10,
+          "width": 9144000,
+          "height": 6857989,
+          "rotation": 0,
+          "flipH": false,
+          "flipV": false
+        },
+        "changed": 0
+      }
+    },
+    {
+      "caseId": "empty patch",
+      "scenarioId": "@id-pptx-graphics-picture-transform-roundtrip",
+      "example": {
+        "variant": "empty patch"
+      },
+      "operations": [],
+      "request": {
+        "shapeId": 1026,
+        "patch": {}
+      },
+      "expected": {
+        "before": {
+          "x": -2,
+          "y": 10,
+          "width": 9144000,
+          "height": 6857989,
+          "rotation": 0,
+          "flipH": false,
+          "flipV": false
+        },
+        "transform": {
+          "x": -2,
+          "y": 10,
+          "width": 9144000,
+          "height": 6857989,
+          "rotation": 0,
+          "flipH": false,
+          "flipV": false
+        },
+        "changed": 0
+      }
+    },
+    {
+      "caseId": "grouped",
+      "scenarioId": "@id-pptx-graphics-picture-transform-roundtrip",
+      "example": {
+        "variant": "grouped"
+      },
+      "operations": [
+        {
+          "kind": "replace-literal-once",
+          "part": "ppt/slides/slide1.xml",
+          "before": "<p:pic><p:nvPicPr><p:cNvPr id=\"1026\" name=\"Picture 2\" descr=\"cartoony marvel-style illustration of Frankenstein's laboratory with dramatic lighting, oversized machinery, glowing tubes, and a whimsical mad-science atmosphere\"><a:extLst><a:ext uri=\"{FF2B5EF4-FFF2-40B4-BE49-F238E27FC236}\"><a16:creationId xmlns:a16=\"http://schemas.microsoft.com/office/drawing/2014/main\" id=\"{55EE74E7-0065-73C4-AC5F-B515CF386555}\"/></a:ext></a:extLst></p:cNvPr><p:cNvPicPr><a:picLocks noChangeAspect=\"1\" noChangeArrowheads=\"1\"/></p:cNvPicPr><p:nvPr/></p:nvPicPr><p:blipFill rotWithShape=\"1\"><a:blip r:embed=\"rId2\"><a:alphaModFix amt=\"35000\"/><a:extLst><a:ext uri=\"{28A0092B-C50C-407E-A947-70E740481C1C}\"><a14:useLocalDpi xmlns:a14=\"http://schemas.microsoft.com/office/drawing/2010/main\" val=\"0\"/></a:ext></a:extLst></a:blip><a:srcRect t=\"17161\" r=\"2\" b=\"7840\"/><a:stretch><a:fillRect/></a:stretch></p:blipFill><p:spPr bwMode=\"auto\"><a:xfrm><a:off x=\"-2\" y=\"10\"/><a:ext cx=\"9144000\" cy=\"6857989\"/></a:xfrm><a:prstGeom prst=\"rect\"><a:avLst/></a:prstGeom><a:noFill/><a:extLst><a:ext uri=\"{909E8E84-426E-40DD-AFC4-6F175D3DCCD1}\"><a14:hiddenFill xmlns:a14=\"http://schemas.microsoft.com/office/drawing/2010/main\"><a:solidFill><a:srgbClr val=\"FFFFFF\"/></a:solidFill></a14:hiddenFill></a:ext></a:extLst></p:spPr></p:pic>",
+          "after": "<p:grpSp><p:nvGrpSpPr><p:cNvPr id=\"2000\" name=\"Graphics group\"/><p:cNvGrpSpPr/><p:nvPr/></p:nvGrpSpPr><p:grpSpPr><a:xfrm rot=\"5400000\" flipH=\"1\"><a:off x=\"100\" y=\"200\"/><a:ext cx=\"3000\" cy=\"4000\"/><a:chOff x=\"10\" y=\"20\"/><a:chExt cx=\"300\" cy=\"400\"/></a:xfrm></p:grpSpPr><p:pic><p:nvPicPr><p:cNvPr id=\"1026\" name=\"Picture 2\" descr=\"cartoony marvel-style illustration of Frankenstein's laboratory with dramatic lighting, oversized machinery, glowing tubes, and a whimsical mad-science atmosphere\"><a:extLst><a:ext uri=\"{FF2B5EF4-FFF2-40B4-BE49-F238E27FC236}\"><a16:creationId xmlns:a16=\"http://schemas.microsoft.com/office/drawing/2014/main\" id=\"{55EE74E7-0065-73C4-AC5F-B515CF386555}\"/></a:ext></a:extLst></p:cNvPr><p:cNvPicPr><a:picLocks noChangeAspect=\"1\" noChangeArrowheads=\"1\"/></p:cNvPicPr><p:nvPr/></p:nvPicPr><p:blipFill rotWithShape=\"1\"><a:blip r:embed=\"rId2\"><a:alphaModFix amt=\"35000\"/><a:extLst><a:ext uri=\"{28A0092B-C50C-407E-A947-70E740481C1C}\"><a14:useLocalDpi xmlns:a14=\"http://schemas.microsoft.com/office/drawing/2010/main\" val=\"0\"/></a:ext></a:extLst></a:blip><a:srcRect t=\"17161\" r=\"2\" b=\"7840\"/><a:stretch><a:fillRect/></a:stretch></p:blipFill><p:spPr bwMode=\"auto\"><a:xfrm><a:off x=\"-2\" y=\"10\"/><a:ext cx=\"9144000\" cy=\"6857989\"/></a:xfrm><a:prstGeom prst=\"rect\"><a:avLst/></a:prstGeom><a:noFill/><a:extLst><a:ext uri=\"{909E8E84-426E-40DD-AFC4-6F175D3DCCD1}\"><a14:hiddenFill xmlns:a14=\"http://schemas.microsoft.com/office/drawing/2010/main\"><a:solidFill><a:srgbClr val=\"FFFFFF\"/></a:solidFill></a14:hiddenFill></a:ext></a:extLst></p:spPr></p:pic></p:grpSp>"
+        },
+        {
+          "kind": "replace-literal-once",
+          "part": "ppt/slides/slide1.xml",
+          "before": "<a:xfrm><a:off x=\"-2\" y=\"1\"/><a:ext cx=\"4224619\" cy=\"5012408\"/></a:xfrm>",
+          "after": ""
+        }
+      ],
+      "request": {
+        "shapeId": 1026,
+        "patch": {
+          "rotation": 10800000,
+          "flipV": true
+        }
+      },
+      "expected": {
+        "before": {
+          "x": -2,
+          "y": 10,
+          "width": 9144000,
+          "height": 6857989,
+          "rotation": 0,
+          "flipH": false,
+          "flipV": false
+        },
+        "transform": {
+          "x": -2,
+          "y": 10,
+          "width": 9144000,
+          "height": 6857989,
+          "rotation": 10800000,
+          "flipH": false,
+          "flipV": true
+        },
+        "changed": 1
+      }
+    },
+    {
+      "caseId": "linked",
+      "scenarioId": "@id-pptx-graphics-picture-transform-roundtrip",
+      "example": {
+        "variant": "linked"
+      },
+      "operations": [
+        {
+          "kind": "replace-literal-once",
+          "part": "ppt/slides/slide1.xml",
+          "before": "r:embed=\"rId2\"",
+          "after": "xmlns:asset=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships\" asset:link=\"externalImage\""
+        },
+        {
+          "kind": "replace-literal-once",
+          "part": "ppt/slides/_rels/slide1.xml.rels",
+          "before": "</Relationships>",
+          "after": "<Relationship Id=\"externalImage\" Type=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships/image\" Target=\"https://invalid.example.invalid/never-fetch.png\" TargetMode=\"External\"/></Relationships>"
+        }
+      ],
+      "request": {
+        "shapeId": 1026,
+        "patch": {
+          "rotation": 5400000,
+          "flipH": true
+        }
+      },
+      "expected": {
+        "before": {
+          "x": -2,
+          "y": 10,
+          "width": 9144000,
+          "height": 6857989,
+          "rotation": 0,
+          "flipH": false,
+          "flipV": false
+        },
+        "transform": {
+          "x": -2,
+          "y": 10,
+          "width": 9144000,
+          "height": 6857989,
+          "rotation": 5400000,
+          "flipH": true,
+          "flipV": false
+        },
+        "changed": 1
+      }
+    },
+    {
+      "caseId": "aliased",
+      "scenarioId": "@id-pptx-graphics-picture-transform-roundtrip",
+      "example": {
+        "variant": "aliased"
+      },
+      "operations": [
+        {
+          "kind": "replace-literal-once",
+          "part": "ppt/slides/slide1.xml",
+          "before": "<a:xfrm><a:off x=\"-2\" y=\"10\"/>",
+          "after": "<pose:xfrm xmlns:pose=\"http://schemas.openxmlformats.org/drawingml/2006/main\" rot = '2700000' flipH='true'><a:off x=\"-2\" y=\"10\"/>"
+        },
+        {
+          "kind": "replace-literal-once",
+          "part": "ppt/slides/slide1.xml",
+          "before": "<a:ext cx=\"9144000\" cy=\"6857989\"/></a:xfrm>",
+          "after": "<a:ext cx=\"9144000\" cy=\"6857989\"/></pose:xfrm>"
+        }
+      ],
+      "request": {
+        "shapeId": 1026,
+        "patch": {
+          "rotation": 5400000,
+          "flipV": true
+        }
+      },
+      "expected": {
+        "before": {
+          "x": -2,
+          "y": 10,
+          "width": 9144000,
+          "height": 6857989,
+          "rotation": 2700000,
+          "flipH": true,
+          "flipV": false
+        },
+        "transform": {
+          "x": -2,
+          "y": 10,
+          "width": 9144000,
+          "height": 6857989,
+          "rotation": 5400000,
+          "flipH": true,
+          "flipV": true
+        },
+        "changed": 1
+      }
+    },
+    {
+      "caseId": "negative-rotation",
+      "scenarioId": "@id-pptx-graphics-picture-transform-refusals",
+      "example": {
+        "fault": "negative rotation"
+      },
+      "operations": [],
+      "request": {
+        "shapeId": 1026,
+        "patch": {
+          "rotation": -1
+        }
+      },
+      "errorCode": "PPTX_PICTURE_UNSUPPORTED"
+    },
+    {
+      "caseId": "full-turn-rotation",
+      "scenarioId": "@id-pptx-graphics-picture-transform-refusals",
+      "example": {
+        "fault": "full turn rotation"
+      },
+      "operations": [],
+      "request": {
+        "shapeId": 1026,
+        "patch": {
+          "rotation": 21600000
+        }
+      },
+      "errorCode": "PPTX_PICTURE_UNSUPPORTED"
+    },
+    {
+      "caseId": "fractional-rotation",
+      "scenarioId": "@id-pptx-graphics-picture-transform-refusals",
+      "example": {
+        "fault": "fractional rotation"
+      },
+      "operations": [],
+      "request": {
+        "shapeId": 1026,
+        "patch": {
+          "rotation": 1.5
+        }
+      },
+      "errorCode": "PPTX_PICTURE_UNSUPPORTED"
+    },
+    {
+      "caseId": "nonboolean-flip",
+      "scenarioId": "@id-pptx-graphics-picture-transform-refusals",
+      "example": {
+        "fault": "nonboolean flip"
+      },
+      "operations": [],
+      "request": {
+        "shapeId": 1026,
+        "patch": {
+          "flipH": 1
+        }
+      },
+      "errorCode": "PPTX_PICTURE_UNSUPPORTED"
+    },
+    {
+      "caseId": "unknown-transform-field",
+      "scenarioId": "@id-pptx-graphics-picture-transform-refusals",
+      "example": {
+        "fault": "unknown transform field"
+      },
+      "operations": [],
+      "request": {
+        "shapeId": 1026,
+        "patch": {
+          "x": 123
+        }
+      },
+      "errorCode": "PPTX_PICTURE_UNSUPPORTED"
+    },
+    {
+      "caseId": "missing-picture",
+      "scenarioId": "@id-pptx-graphics-picture-transform-refusals",
+      "example": {
+        "fault": "missing picture"
+      },
+      "operations": [],
+      "request": {
+        "shapeId": 99999,
+        "patch": {
+          "rotation": 1
+        }
+      },
+      "errorCode": "PPTX_PICTURE_NOT_FOUND"
+    },
+    {
+      "caseId": "missing-direct-transform",
+      "scenarioId": "@id-pptx-graphics-picture-transform-refusals",
+      "example": {
+        "fault": "missing direct transform"
+      },
+      "operations": [
+        {
+          "kind": "replace-literal-once",
+          "part": "ppt/slides/slide1.xml",
+          "before": "<p:pic><p:nvPicPr><p:cNvPr id=\"1026\" name=\"Picture 2\" descr=\"cartoony marvel-style illustration of Frankenstein's laboratory with dramatic lighting, oversized machinery, glowing tubes, and a whimsical mad-science atmosphere\"><a:extLst><a:ext uri=\"{FF2B5EF4-FFF2-40B4-BE49-F238E27FC236}\"><a16:creationId xmlns:a16=\"http://schemas.microsoft.com/office/drawing/2014/main\" id=\"{55EE74E7-0065-73C4-AC5F-B515CF386555}\"/></a:ext></a:extLst></p:cNvPr><p:cNvPicPr><a:picLocks noChangeAspect=\"1\" noChangeArrowheads=\"1\"/></p:cNvPicPr><p:nvPr/></p:nvPicPr><p:blipFill rotWithShape=\"1\"><a:blip r:embed=\"rId2\"><a:alphaModFix amt=\"35000\"/><a:extLst><a:ext uri=\"{28A0092B-C50C-407E-A947-70E740481C1C}\"><a14:useLocalDpi xmlns:a14=\"http://schemas.microsoft.com/office/drawing/2010/main\" val=\"0\"/></a:ext></a:extLst></a:blip><a:srcRect t=\"17161\" r=\"2\" b=\"7840\"/><a:stretch><a:fillRect/></a:stretch></p:blipFill><p:spPr bwMode=\"auto\"><a:xfrm><a:off x=\"-2\" y=\"10\"/><a:ext cx=\"9144000\" cy=\"6857989\"/></a:xfrm><a:prstGeom prst=\"rect\"><a:avLst/></a:prstGeom><a:noFill/><a:extLst><a:ext uri=\"{909E8E84-426E-40DD-AFC4-6F175D3DCCD1}\"><a14:hiddenFill xmlns:a14=\"http://schemas.microsoft.com/office/drawing/2010/main\"><a:solidFill><a:srgbClr val=\"FFFFFF\"/></a:solidFill></a14:hiddenFill></a:ext></a:extLst></p:spPr></p:pic>",
+          "after": "<p:grpSp><p:nvGrpSpPr><p:cNvPr id=\"2000\" name=\"Graphics group\"/><p:cNvGrpSpPr/><p:nvPr/></p:nvGrpSpPr><p:grpSpPr><a:xfrm rot=\"5400000\" flipH=\"1\"><a:off x=\"100\" y=\"200\"/><a:ext cx=\"3000\" cy=\"4000\"/><a:chOff x=\"10\" y=\"20\"/><a:chExt cx=\"300\" cy=\"400\"/></a:xfrm></p:grpSpPr><p:pic><p:nvPicPr><p:cNvPr id=\"1026\" name=\"Picture 2\" descr=\"cartoony marvel-style illustration of Frankenstein's laboratory with dramatic lighting, oversized machinery, glowing tubes, and a whimsical mad-science atmosphere\"><a:extLst><a:ext uri=\"{FF2B5EF4-FFF2-40B4-BE49-F238E27FC236}\"><a16:creationId xmlns:a16=\"http://schemas.microsoft.com/office/drawing/2014/main\" id=\"{55EE74E7-0065-73C4-AC5F-B515CF386555}\"/></a:ext></a:extLst></p:cNvPr><p:cNvPicPr><a:picLocks noChangeAspect=\"1\" noChangeArrowheads=\"1\"/></p:cNvPicPr><p:nvPr/></p:nvPicPr><p:blipFill rotWithShape=\"1\"><a:blip r:embed=\"rId2\"><a:alphaModFix amt=\"35000\"/><a:extLst><a:ext uri=\"{28A0092B-C50C-407E-A947-70E740481C1C}\"><a14:useLocalDpi xmlns:a14=\"http://schemas.microsoft.com/office/drawing/2010/main\" val=\"0\"/></a:ext></a:extLst></a:blip><a:srcRect t=\"17161\" r=\"2\" b=\"7840\"/><a:stretch><a:fillRect/></a:stretch></p:blipFill><p:spPr bwMode=\"auto\"><a:xfrm><a:off x=\"-2\" y=\"10\"/><a:ext cx=\"9144000\" cy=\"6857989\"/></a:xfrm><a:prstGeom prst=\"rect\"><a:avLst/></a:prstGeom><a:noFill/><a:extLst><a:ext uri=\"{909E8E84-426E-40DD-AFC4-6F175D3DCCD1}\"><a14:hiddenFill xmlns:a14=\"http://schemas.microsoft.com/office/drawing/2010/main\"><a:solidFill><a:srgbClr val=\"FFFFFF\"/></a:solidFill></a14:hiddenFill></a:ext></a:extLst></p:spPr></p:pic></p:grpSp>"
+        },
+        {
+          "kind": "replace-literal-once",
+          "part": "ppt/slides/slide1.xml",
+          "before": "<a:xfrm><a:off x=\"-2\" y=\"1\"/><a:ext cx=\"4224619\" cy=\"5012408\"/></a:xfrm>",
+          "after": ""
+        }
+      ],
+      "request": {
+        "shapeId": 1028,
+        "patch": {
+          "rotation": 1
+        }
+      },
+      "errorCode": "PPTX_PICTURE_UNSUPPORTED"
+    },
+    {
+      "caseId": "foreign-rotation-attribute",
+      "scenarioId": "@id-pptx-graphics-picture-transform-refusals",
+      "example": {
+        "fault": "foreign rotation attribute"
+      },
+      "operations": [
+        {
+          "kind": "replace-literal-once",
+          "part": "ppt/slides/slide1.xml",
+          "before": "<a:xfrm><a:off x=\"-2\" y=\"10\"/>",
+          "after": "<a:xfrm xmlns:bad=\"urn:not-drawing\" bad:rot=\"2\"><a:off x=\"-2\" y=\"10\"/>"
+        }
+      ],
+      "request": {
+        "shapeId": 1026,
+        "patch": {
+          "rotation": 1
+        }
+      },
+      "errorCode": "PPTX_PICTURE_UNSUPPORTED"
+    },
+    {
+      "caseId": "duplicate-transform",
+      "scenarioId": "@id-pptx-graphics-picture-transform-refusals",
+      "example": {
+        "fault": "duplicate transform"
+      },
+      "operations": [
+        {
+          "kind": "replace-literal-once",
+          "part": "ppt/slides/slide1.xml",
+          "before": "<a:xfrm><a:off x=\"-2\" y=\"10\"/>",
+          "after": "<a:xfrm><a:off x=\"0\" y=\"0\"/><a:ext cx=\"1\" cy=\"1\"/></a:xfrm><a:xfrm><a:off x=\"-2\" y=\"10\"/>"
+        }
+      ],
+      "request": {
+        "shapeId": 1026,
+        "patch": {
+          "rotation": 1
+        }
+      },
+      "errorCode": "PPTX_PICTURE_INVALID"
+    },
+    {
+      "caseId": "protected-presentation",
+      "scenarioId": "@id-pptx-graphics-picture-transform-refusals",
+      "example": {
+        "fault": "protected presentation"
+      },
+      "operations": [
+        {
+          "kind": "replace-literal-once",
+          "part": "ppt/presentation.xml",
+          "before": "</p:presentation>",
+          "after": "<p:modifyVerifier/></p:presentation>"
+        }
+      ],
+      "request": {
+        "shapeId": 1026,
+        "patch": {
+          "rotation": 1
+        }
+      },
+      "errorCode": "PPTX_PROTECTED"
+    }
+  ]
+}
