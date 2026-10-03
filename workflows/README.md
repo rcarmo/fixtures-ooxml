@@ -76,6 +76,7 @@ candidate file; those candidates are not canonical or presumed portable.
 | PPTX | [slide-visibility.feature](pptx/slide-visibility.feature) | 6 | 6 | generalized: 5; incomplete: 1 | no |
 | PPTX | [smartart-copy.feature](pptx/smartart-copy.feature) | 2 | 8 | generalized: 2 | yes |
 | PPTX | [smartart-inspection.feature](pptx/smartart-inspection.feature) | 2 | 12 | generalized: 2 | yes |
+| PPTX | [smartart-office-source.feature](pptx/smartart-office-source.feature) | 2 | 3 | profile-specific: 2 | no |
 | PPTX | [tables.feature](pptx/tables.feature) | 26 | 27 | generalized: 22; profile-specific: 4 | no |
 | PPTX | [text-autofit.feature](pptx/text-autofit.feature) | 3 | 3 | generalized: 3 | yes |
 | PPTX | [text-box.feature](pptx/text-box.feature) | 2 | 23 | incomplete: 2 | no |

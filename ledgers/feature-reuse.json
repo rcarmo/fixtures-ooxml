@@ -358,6 +358,10 @@
     {
       "path": "workflows/pptx/outlines.feature",
       "reviewedSha256": "bd6e9a08151a017f6fdca23b26ab79a0a7c7b4b7be105df48f7e1a59d5ee6325"
+    },
+    {
+      "path": "workflows/pptx/smartart-office-source.feature",
+      "reviewedSha256": "0d2d5bd4a986408090b4567f94652161feacaaccf0be93c10863fc92fb5787da"
     }
   ],
   "scenarios": [
@@ -5828,6 +5832,26 @@
         "contracts/pptx-outlines.md",
         "ledgers/pptx-outlines.json"
       ]
+    },
+    {
+      "id": "@id-pptx-smartart-office-source-inspection",
+      "feature": "workflows/pptx/smartart-office-source.feature",
+      "category": "profile-specific",
+      "runtimeConstraint": "none",
+      "reason": "Concrete Microsoft PowerPoint source encoding: slide-owned drawing metadata, numeric layout template identities and repeated zero drawing IDs; inspection/copy is separate from application interoperability.",
+      "evidence": [
+        "contracts/pptx-smartart-office-source.md"
+      ]
+    },
+    {
+      "id": "@id-pptx-smartart-office-source-copy",
+      "feature": "workflows/pptx/smartart-office-source.feature",
+      "category": "profile-specific",
+      "runtimeConstraint": "none",
+      "reason": "Concrete Microsoft PowerPoint source encoding: slide-owned drawing metadata, numeric layout template identities and repeated zero drawing IDs; inspection/copy is separate from application interoperability.",
+      "evidence": [
+        "contracts/pptx-smartart-office-source.md"
+      ]
     }
   ],
   "evidenceSha256": {
@@ -6005,6 +6029,7 @@
     "ledgers/pptx-opacity.json": "c1df64a8e68c6245591b2ebe95bd85c0d39fd42c549a9958366e26111b7e54a3",
     "workflows/pptx/outlines.feature": "bd6e9a08151a017f6fdca23b26ab79a0a7c7b4b7be105df48f7e1a59d5ee6325",
     "contracts/pptx-outlines.md": "5e4fb83f40030496157873f4205057a59acd12fbd5b04a5ed3c42515a6f6a581",
-    "ledgers/pptx-outlines.json": "2fc1982104f0b29d2dd1506ffb99bd68de78411de83ec206fed44d7de17d823e"
+    "ledgers/pptx-outlines.json": "2fc1982104f0b29d2dd1506ffb99bd68de78411de83ec206fed44d7de17d823e",
+    "contracts/pptx-smartart-office-source.md": "0c16b87d5f8cfe41ac4b6d73a3a7749005f391c9366e1c264be27711009a2faa"
   }
 }

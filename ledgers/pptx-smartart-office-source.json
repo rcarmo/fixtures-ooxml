@@ -1,0 +1,95 @@
+{
+  "schemaVersion": 1,
+  "executionCredit": false,
+  "feature": "workflows/pptx/smartart-office-source.feature",
+  "contract": "contracts/pptx-smartart-office-source.md",
+  "fixtureId": "fixture-b97e4c6d2ee1dd4094f50f9043820610268dd452d7717c537f5456636adcc353",
+  "source": {
+    "repository": "https://github.com/apache/poi",
+    "revision": "33f89110dd72c7b94710322ce7e795d0f464f68f"
+  },
+  "producerMetadata": "Microsoft Office PowerPoint",
+  "slideIndex": 0,
+  "shapeId": 4,
+  "name": "Diagram 3",
+  "drawingRelationship": {
+    "owner": "ppt/slides/slide1.xml",
+    "id": "rId6",
+    "target": "../diagrams/drawing1.xml"
+  },
+  "expected": {
+    "roots": 4,
+    "parts": 5,
+    "modelIdentities": 46,
+    "drawingIdentities": 6,
+    "partNames": [
+      "ppt/diagrams/colors1.xml",
+      "ppt/diagrams/data1.xml",
+      "ppt/diagrams/drawing1.xml",
+      "ppt/diagrams/layout1.xml",
+      "ppt/diagrams/quickStyle1.xml"
+    ],
+    "memberSha256": {
+      "[Content_Types].xml": "d5750fbbe98912dddc5d26e193529f56215eea59c23c835f573edc6fea123b28",
+      "_rels/.rels": "de11af9d3b354316b50c10ceff7203f24686fe9cbd4202a5e4655398a4c5004f",
+      "ppt/presentation.xml": "6749709c20b48a9c5d5625a98f68f5358423ed395d9585f665df8570646a6d78",
+      "ppt/_rels/presentation.xml.rels": "6c38eb3088da6ec9ee6f33f157e329c366fa21ea95fcb45bde372a249590822e",
+      "ppt/slides/slide1.xml": "cc33cd1e30b3fddb05c0a38119b887ab223a96cebac12784d164af78d8a5e83d",
+      "ppt/diagrams/data1.xml": "d86c9c53c9409a92df26655264e903a46498eb79f269e324528b99bb144e41be",
+      "ppt/slides/_rels/slide1.xml.rels": "7dd8384dc4365f179cf02d6c8767c333340d1f4b0c6143a1728143ea7f8dabc9",
+      "ppt/slideMasters/slideMaster1.xml": "4029b277492dee471a3f5c5123b52ca5eb2edd91e257dfabe6e4f01a93a111a1",
+      "ppt/slideLayouts/_rels/slideLayout7.xml.rels": "8246d333bf3764cd35563e3df1828c26bbc28890815a2987caf3e592791ba60d",
+      "ppt/slideLayouts/slideLayout4.xml": "32bf577a18333b7cf7be3275ac1a4ffe89205f334a5cbbba7284525277ae6eb3",
+      "ppt/slideLayouts/slideLayout1.xml": "e0b28dc70d3a3957002a55ff98d0d4d7373cd9b721590d947659e057124d7674",
+      "ppt/slideLayouts/slideLayout2.xml": "3f5b90cd9e9dd1fbc5e59074985f1466bb0d83defae3dfb1ee653bb50b13d26e",
+      "ppt/slideLayouts/slideLayout3.xml": "c7d12cc5334f63399b366d7d5d4dc1e0c5cfbc0f024dd465a30e14d5704aee5f",
+      "ppt/slideLayouts/slideLayout5.xml": "bf93e9a72736025f54426446238e082b1d28824f12cb4853265b6f8236303051",
+      "ppt/slideLayouts/slideLayout6.xml": "ee7b184c81dc9ccb9aa4e07531e244cf1085276bb3ca40e9cbed99a6864f2596",
+      "ppt/slideLayouts/slideLayout7.xml": "d0b0bd64264721195cbeb444717832a34fa82933f71e3f0c99d85891bcfc87c4",
+      "ppt/slideLayouts/slideLayout8.xml": "be1ff62a5657b7933caee237d8cfbd95c8eaf916158196eb61cc8d3309b7c752",
+      "ppt/slideLayouts/slideLayout9.xml": "6a158db61b6300eac897f62a6ab6e6dead96cc7af1742a18df25e08e2de0e502",
+      "ppt/slideLayouts/slideLayout10.xml": "33b5e8ade9951fc1e82cfbfd1d2a1e684e75f1992789bd6c83a059fa489eae49",
+      "ppt/slideLayouts/slideLayout11.xml": "aee3c52e2d3b38371b9e36360193ab2c6a1ff68d63836f4abb1e5331b2c407c6",
+      "ppt/slideLayouts/_rels/slideLayout2.xml.rels": "8246d333bf3764cd35563e3df1828c26bbc28890815a2987caf3e592791ba60d",
+      "ppt/slideMasters/_rels/slideMaster1.xml.rels": "e9e503158ddaff4d9afa825a3d1048ffa1c1275291d9ab818812ff8e061ea8fd",
+      "ppt/slideLayouts/_rels/slideLayout1.xml.rels": "8246d333bf3764cd35563e3df1828c26bbc28890815a2987caf3e592791ba60d",
+      "ppt/slideLayouts/_rels/slideLayout3.xml.rels": "8246d333bf3764cd35563e3df1828c26bbc28890815a2987caf3e592791ba60d",
+      "ppt/slideLayouts/_rels/slideLayout4.xml.rels": "8246d333bf3764cd35563e3df1828c26bbc28890815a2987caf3e592791ba60d",
+      "ppt/slideLayouts/_rels/slideLayout5.xml.rels": "8246d333bf3764cd35563e3df1828c26bbc28890815a2987caf3e592791ba60d",
+      "ppt/slideLayouts/_rels/slideLayout6.xml.rels": "8246d333bf3764cd35563e3df1828c26bbc28890815a2987caf3e592791ba60d",
+      "ppt/slideLayouts/_rels/slideLayout8.xml.rels": "8246d333bf3764cd35563e3df1828c26bbc28890815a2987caf3e592791ba60d",
+      "ppt/slideLayouts/_rels/slideLayout9.xml.rels": "8246d333bf3764cd35563e3df1828c26bbc28890815a2987caf3e592791ba60d",
+      "ppt/slideLayouts/_rels/slideLayout10.xml.rels": "8246d333bf3764cd35563e3df1828c26bbc28890815a2987caf3e592791ba60d",
+      "ppt/slideLayouts/_rels/slideLayout11.xml.rels": "8246d333bf3764cd35563e3df1828c26bbc28890815a2987caf3e592791ba60d",
+      "docProps/thumbnail.jpeg": "7baacd6d0ea3444381ee8a66dab4ba41a6f92b1c50394a24b9fe1d52a7482861",
+      "ppt/diagrams/layout1.xml": "a18d172057e2ce005261f430a63d9311f65a9bf1cd396cce9a8ca03f1f613550",
+      "ppt/diagrams/quickStyle1.xml": "b1aa29dfd0c14ec21c67d467f1c485d358471aca663657b87cc81d7ee8116b6c",
+      "ppt/theme/theme1.xml": "d37627ed1a5bda40fa339cc2115c70db5e019f1b128736b92b267180531434c6",
+      "ppt/diagrams/colors1.xml": "3133b8cde18a92dce566e096d63e6999273dc9c0be88ec3b620d8884518e8a6a",
+      "ppt/diagrams/drawing1.xml": "70827778dae1ff8212bf74bd17defb6b0e43f903b82289bf7f4697173098f4c2",
+      "ppt/presProps.xml": "cd12d22ac9a3825ff6772a707cd1e67f9ce26eb2aaf316023469a16b02852f85",
+      "ppt/tableStyles.xml": "0e7ac03251337ecbaf6c8ca13619db1caeda5c90c4e3210d45d6c3f5df4de103",
+      "ppt/viewProps.xml": "5300caf18c631c61f2ee3647657d239d23b69424f62e433a95a8c9294e4c1619",
+      "docProps/core.xml": "e2bd03599196737a636bbb68cf57d93108bf40f0656e9213ae6f9fe96f283e0c",
+      "docProps/app.xml": "201b1bbebd286c295f807cae090f27d9ba3f8c2d59b21f0c22c29c6d5b015ae4"
+    }
+  },
+  "cases": [
+    {
+      "scenarioId": "@id-pptx-smartart-office-source-inspection",
+      "caseId": "inspection"
+    },
+    {
+      "scenarioId": "@id-pptx-smartart-office-source-copy",
+      "caseId": "cross-presentation"
+    },
+    {
+      "scenarioId": "@id-pptx-smartart-office-source-copy",
+      "caseId": "same-slide"
+    }
+  ],
+  "limits": [
+    "Producer is reported by committed app metadata; no new PowerPoint application test.",
+    "SDK and LibreOffice are external oracles; all shared consumers remain planned."
+  ]
+}

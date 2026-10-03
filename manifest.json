@@ -7845,6 +7845,120 @@
         }
       ],
       "aliases": []
+    },
+    {
+      "id": "fixture-b97e4c6d2ee1dd4094f50f9043820610268dd452d7717c537f5456636adcc353",
+      "path": "fixtures/pptx/smartart/office-smartart.pptx",
+      "bytes": 41382,
+      "sha256": "b97e4c6d2ee1dd4094f50f9043820610268dd452d7717c537f5456636adcc353",
+      "role": "fixture",
+      "origins": [
+        {
+          "repository": "https://github.com/apache/poi",
+          "revision": "33f89110dd72c7b94710322ce7e795d0f464f68f",
+          "path": "test-data/slideshow/SmartArt.pptx",
+          "gitBlob": "7b7731d78f27352ccea5713400d4994058bcc381",
+          "licence": "Apache-2.0"
+        }
+      ],
+      "aliases": [],
+      "format": "pptx",
+      "scenarioGroup": "smartart",
+      "name": "office-smartart",
+      "scenarioIds": [
+        "@id-pptx-smartart-office-source-inspection",
+        "@id-pptx-smartart-office-source-copy"
+      ]
+    },
+    {
+      "id": "asset-6e7c918e5a49f677c1b85a9eb2d035cd85c217fc42af6b4a336964a434001a9c",
+      "path": "notices/apache-poi-license.txt",
+      "bytes": 14416,
+      "sha256": "6e7c918e5a49f677c1b85a9eb2d035cd85c217fc42af6b4a336964a434001a9c",
+      "role": "notice",
+      "origins": [
+        {
+          "repository": "https://github.com/apache/poi",
+          "revision": "33f89110dd72c7b94710322ce7e795d0f464f68f",
+          "path": "legal/LICENSE"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "id": "asset-a89ff8b670bcacd3e98ebee64979e0569181c7942e9ad795f4222b25e5637a61",
+      "path": "notices/apache-poi-notice.txt",
+      "bytes": 1571,
+      "sha256": "a89ff8b670bcacd3e98ebee64979e0569181c7942e9ad795f4222b25e5637a61",
+      "role": "notice",
+      "origins": [
+        {
+          "repository": "https://github.com/apache/poi",
+          "revision": "33f89110dd72c7b94710322ce7e795d0f464f68f",
+          "path": "legal/NOTICE"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "id": "asset-7069975107008796b6286f48d60972948a90f7c40d690d6e0d14b76d42ebae94",
+      "path": "notices/apache-poi-smartart-provenance.md",
+      "bytes": 544,
+      "sha256": "7069975107008796b6286f48d60972948a90f7c40d690d6e0d14b76d42ebae94",
+      "role": "notice",
+      "origins": [
+        {
+          "repository": "https://github.com/rcarmo/fixtures-ooxml",
+          "revision": "local-candidate",
+          "path": "notices/apache-poi-smartart-provenance.md"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "id": "asset-0d2d5bd4a986408090b4567f94652161feacaaccf0be93c10863fc92fb5787da",
+      "path": "workflows/pptx/smartart-office-source.feature",
+      "bytes": 1667,
+      "sha256": "0d2d5bd4a986408090b4567f94652161feacaaccf0be93c10863fc92fb5787da",
+      "role": "workflow",
+      "origins": [
+        {
+          "repository": "https://github.com/rcarmo/fixtures-ooxml",
+          "path": "workflows/pptx/smartart-office-source.feature",
+          "basis": "Project-owned behaviour contract or source assertion mapping"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "id": "asset-0c16b87d5f8cfe41ac4b6d73a3a7749005f391c9366e1c264be27711009a2faa",
+      "path": "contracts/pptx-smartart-office-source.md",
+      "bytes": 2149,
+      "sha256": "0c16b87d5f8cfe41ac4b6d73a3a7749005f391c9366e1c264be27711009a2faa",
+      "role": "workflow-contract",
+      "origins": [
+        {
+          "repository": "https://github.com/rcarmo/fixtures-ooxml",
+          "path": "contracts/pptx-smartart-office-source.md",
+          "basis": "Project-owned behaviour contract or source assertion mapping"
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "id": "asset-593dc0960906a7f5180f3097a0123c7651bfe89ec40a2078c9617b9e36974f04",
+      "path": "ledgers/pptx-smartart-office-source.json",
+      "bytes": 6088,
+      "sha256": "593dc0960906a7f5180f3097a0123c7651bfe89ec40a2078c9617b9e36974f04",
+      "role": "workflow-recipe",
+      "origins": [
+        {
+          "repository": "https://github.com/rcarmo/fixtures-ooxml",
+          "path": "ledgers/pptx-smartart-office-source.json",
+          "basis": "Project-owned behaviour contract or source assertion mapping"
+        }
+      ],
+      "aliases": []
     }
   ]
 }

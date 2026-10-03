@@ -54,6 +54,7 @@
 "canonical","pptx","workflows/pptx/slide-visibility.feature","PowerPoint slide visibility by slide identity","6","6","mixed","false","5","0","0","1","","See scenario-reuse.csv for all reasons"
 "canonical","pptx","workflows/pptx/smartart-copy.feature","Copy admitted SmartArt graphs with isolated parts and remapped identities","2","8","generalized","true","2","0","0","0","","See scenario-reuse.csv for all reasons"
 "canonical","pptx","workflows/pptx/smartart-inspection.feature","Inspect SmartArt dependency graphs without editing or evaluating layout","2","12","generalized","true","2","0","0","0","","See scenario-reuse.csv for all reasons"
+"canonical","pptx","workflows/pptx/smartart-office-source.feature","SmartArt from a committed Microsoft PowerPoint source","2","3","profile-specific","false","0","2","0","0","","See scenario-reuse.csv for all reasons"
 "canonical","pptx","workflows/pptx/tables.feature","PPTX native rectangular tables","26","27","mixed","false","22","4","0","0","","See scenario-reuse.csv for all reasons"
 "canonical","pptx","workflows/pptx/text-autofit.feature","PPTX text autofit","3","3","generalized","true","3","0","0","0","","See scenario-reuse.csv for all reasons"
 "canonical","pptx","workflows/pptx/text-box.feature","Positioned text-box authoring on existing slides","2","23","incomplete","false","0","0","0","2","","See scenario-reuse.csv for all reasons"

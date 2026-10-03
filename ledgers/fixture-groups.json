@@ -532,6 +532,18 @@
         "@id-docx-table-properties-cell-hide-mark",
         "@id-docx-table-properties-refusal"
       ]
+    },
+    {
+      "format": "pptx",
+      "scenarioGroup": "smartart",
+      "description": "Inspect and isolate committed Microsoft PowerPoint diagram graphs",
+      "fixtureIds": [
+        "fixture-b97e4c6d2ee1dd4094f50f9043820610268dd452d7717c537f5456636adcc353"
+      ],
+      "scenarioIds": [
+        "@id-pptx-smartart-office-source-inspection",
+        "@id-pptx-smartart-office-source-copy"
+      ]
     }
   ]
 }

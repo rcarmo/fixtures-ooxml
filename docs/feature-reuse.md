@@ -46,19 +46,19 @@ portable API profile; the scenario reason records the gap.
 | Group | Features | IDs | Cases | generalized | profile-specific | runtime-specific | incomplete |
 |---|---:|---:|---:|---:|---:|---:|---:|
 | DOCX | 24 | 198 | 522 | 109 | 56 | 0 | 33 |
-| PPTX | 38 | 167 | 482 | 139 | 22 | 0 | 6 |
+| PPTX | 39 | 169 | 485 | 139 | 24 | 0 | 6 |
 | XLSX | 12 | 43 | 109 | 12 | 23 | 0 | 8 |
 | PACKAGE | 10 | 36 | 68 | 29 | 6 | 0 | 1 |
 | XML | 4 | 33 | 47 | 22 | 11 | 0 | 0 |
 | OFFICE | 1 | 1 | 3 | 0 | 0 | 0 | 1 |
-| ALL | 89 | 478 | 1231 | 311 | 118 | 0 | 49 |
+| ALL | 90 | 480 | 1234 | 311 | 120 | 0 | 49 |
 
-43 of 89 canonical feature files are fully generalized throughout.
+43 of 90 canonical feature files are fully generalized throughout.
 The remaining files contain profile-specific, runtime-specific or incomplete
 scenarios; 27 files mix categories and require ID-level selection.
 The four category columns count scenario IDs, not expanded example cases.
 A complete [feature-level table](../workflows/README.md) and downloadable
-[232-file CSV](feature-reuse.csv) accompany the [scenario CSV](scenario-reuse.csv).
+[233-file CSV](feature-reuse.csv) accompany the [scenario CSV](scenario-reuse.csv).
 
 ## Scenario decisions
 
@@ -751,6 +751,15 @@ Inspect SmartArt dependency graphs without editing or evaluating layout — **ge
 |---|---:|---|---|---|
 | [@id-pptx-graphics-smartart-inspection-read](../workflows/pptx/smartart-inspection.feature#L7) | 3 | generalized | — | Read-only bounded SmartArt package graph with shared literal member recipes, exact role/root/type records, cycle and external-edge controls, detached limits and complete custody. Two IDs/twelve cases; no physical Office SmartArt/rendering certification, execution remains planned. [pptx-smartart-inspection.md](../contracts/pptx-smartart-inspection.md) [pptx-smartart-inspection.json](../ledgers/pptx-smartart-inspection.json) |
 | [@id-pptx-graphics-smartart-inspection-refusals](../workflows/pptx/smartart-inspection.feature#L22) | 9 | generalized | — | Read-only bounded SmartArt package graph with shared literal member recipes, exact role/root/type records, cycle and external-edge controls, detached limits and complete custody. Two IDs/twelve cases; no physical Office SmartArt/rendering certification, execution remains planned. [pptx-smartart-inspection.md](../contracts/pptx-smartart-inspection.md) [pptx-smartart-inspection.json](../ledgers/pptx-smartart-inspection.json) |
+
+### pptx/smartart-office-source.feature
+
+SmartArt from a committed Microsoft PowerPoint source — **profile-specific**; fully generalized: **no**.
+
+| ID / source | Cases | Tag | Profiles | Reason / local evidence |
+|---|---:|---|---|---|
+| [@id-pptx-smartart-office-source-inspection](../workflows/pptx/smartart-office-source.feature#L7) | 1 | profile-specific | @profile-office-slide-drawing | Concrete Microsoft PowerPoint source encoding: slide-owned drawing metadata, numeric layout template identities and repeated zero drawing IDs; inspection/copy is separate from application interoperability. [pptx-smartart-office-source.md](../contracts/pptx-smartart-office-source.md) |
+| [@id-pptx-smartart-office-source-copy](../workflows/pptx/smartart-office-source.feature#L15) | 2 | profile-specific | @profile-office-slide-drawing | Concrete Microsoft PowerPoint source encoding: slide-owned drawing metadata, numeric layout template identities and repeated zero drawing IDs; inspection/copy is separate from application interoperability. [pptx-smartart-office-source.md](../contracts/pptx-smartart-office-source.md) |
 
 ### pptx/tables.feature
 

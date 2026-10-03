@@ -89,7 +89,8 @@
     "workflows/pptx/z-order.feature",
     "workflows/pptx/gradients.feature",
     "workflows/pptx/opacity.feature",
-    "workflows/pptx/outlines.feature"
+    "workflows/pptx/outlines.feature",
+    "workflows/pptx/smartart-office-source.feature"
   ],
   "executionCredit": "Only local executed assertions count; reports here do not run consumers.",
   "workflows": [
@@ -12620,6 +12621,59 @@
       "expectedOutcomes": [
         "the semantic error code matches the recipe",
         "membership, payloads and handle version remain unchanged"
+      ],
+      "consumers": {
+        "bun": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        },
+        "go": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        },
+        "python": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        }
+      }
+    },
+    {
+      "id": "@id-pptx-smartart-office-source-inspection",
+      "feature": "workflows/pptx/smartart-office-source.feature",
+      "expandedCases": 1,
+      "factIds": [],
+      "expectedOutcomes": [
+        "four diagram role roots and five transitive parts are reported",
+        "the drawing metadata relationship is resolved on the owning slide",
+        "the source membership and all member payloads remain unchanged after save and reopen"
+      ],
+      "consumers": {
+        "bun": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        },
+        "go": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        },
+        "python": {
+          "status": "planned",
+          "evidence": "Native execution binding pending"
+        }
+      }
+    },
+    {
+      "id": "@id-pptx-smartart-office-source-copy",
+      "feature": "workflows/pptx/smartart-office-source.feature",
+      "expandedCases": 2,
+      "factIds": [],
+      "expectedOutcomes": [
+        "the five diagram parts and five slide-owned relationships are isolated",
+        "all 46 instance model GUIDs and references are remapped consistently",
+        "numeric layout-template identities and the layout URI remain literal",
+        "the six zero-valued drawing identities become unique positive identities",
+        "drawing metadata points to the copied slide-owned relationship",
+        "the copied output is saved and reopened with unrelated source payloads unchanged"
       ],
       "consumers": {
         "bun": {
