@@ -24,14 +24,17 @@ It does not implement document editing or confer parity on a consumer.
 
 ## Project-owned caches and temporary files
 
-Resolve `PROJECT_TMP_ROOT` once per command with `scripts/project-paths.sh`.
-It must be a usable absolute directory ending in `fixtures-ooxml`; an invalid
-explicit override fails. Without an override, use writable
-`/workspace/tmp/fixtures-ooxml/`, then `RUNNER_TEMP/fixtures-ooxml`, the
-original `TMPDIR/fixtures-ooxml`, or the platform temp parent with the
-canonical project suffix. The same `cache/bun/install`,
-`cache/bun/transpiler`, `cache/xdg`, `cache/npm`, `build/` and
-`runs/<purpose>/<run-id>/` hierarchy applies on every host. Never use bare
+Resolve once before changing child `TMPDIR` with `scripts/project-paths.sh`.
+`PROJECT_TMP_BASE` selects a validated absolute `<base>/fixtures-ooxml`;
+`PROJECT_TMP_ROOT` is a compatible validated absolute override ending in
+`fixtures-ooxml`. If both are set they must agree. Invalid, unusable or
+conflicting overrides fail. CI uses writable `RUNNER_TEMP/fixtures-ooxml`,
+then the original inherited `TMPDIR/fixtures-ooxml`, then platform
+`/tmp/fixtures-ooxml`, even if `/workspace/tmp` exists. Local runs prefer
+writable `/workspace/tmp/fixtures-ooxml`, then `/tmp/fixtures-ooxml`. The
+same `cache/bun/install`, `cache/bun/transpiler`, `cache/xdg`, `cache/npm`,
+`build/`, `tests/`, `logs/` and `runs/<purpose>/<run-id>/` hierarchy applies
+on every host. Never use bare
 `/tmp`, home caches or ad-hoc top-level temporary paths.
 
 Run `make install`, `make check` and `make test`. Direct commands must use
