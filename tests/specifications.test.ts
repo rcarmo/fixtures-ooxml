@@ -1,11 +1,15 @@
 import {test,expect} from 'bun:test';
-import {mkdtemp,mkdir,writeFile,rm} from 'node:fs/promises';
-import {join} from 'node:path';
-import {tmpdir} from 'node:os';
+import {mkdtemp,mkdir,writeFile,rm,lstat} from 'node:fs/promises';
+import {join,resolve} from 'node:path';
 import {verifySpecifications} from '../scripts/specifications.ts';
 const sha=(s:string)=>new Bun.CryptoHasher('sha256').update(s).digest('hex');
 async function fixture(run:(root:string,manifest:any,index:any,audit:any)=>Promise<void>){
- const root=await mkdtemp(join(tmpdir(),'ecma-specs-'));try{
+ const scratch=process.env.OOXML_TEST_SCRATCH;
+ const projectRoot=process.env.PROJECT_TMP_ROOT;
+ if(!scratch||!projectRoot||resolve(scratch)!==scratch||resolve(projectRoot)!==projectRoot||!projectRoot.endsWith('/fixtures-ooxml')||!scratch.startsWith(projectRoot+'/runs/test/'))throw Error('Tests require owned fixtures-ooxml run scratch');
+ const info=await lstat(scratch);
+ if(!info.isDirectory()||info.isSymbolicLink()||info.uid!==process.getuid?.())throw Error('Unsafe test scratch');
+ const root=await mkdtemp(join(scratch,'ecma-specs-'));try{
   await mkdir(join(root,'specs/ecma-376/part-1'),{recursive:true});
   const path='specs/ecma-376/part-1/spec.pdf',bytes='%PDF-test',hash=sha(bytes),revision='a'.repeat(40);
   const manifest={files:[{id:'asset-'+hash,path,bytes:bytes.length,sha256:hash,role:'specification',origins:[{repository:'https://example.invalid/spec',revision,path:'spec.pdf',sourceSha256:hash}]}]};

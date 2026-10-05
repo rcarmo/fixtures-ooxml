@@ -22,6 +22,33 @@ It does not implement document editing or confer parity on a consumer.
 - Commit as Rui Carmo <rui.carmo@gmail.com>, local/global configured.
 - Never rebase or rewrite a published tag. Coordinate migrations across consumers.
 
+## Project-owned caches and temporary files
+
+Resolve `PROJECT_TMP_ROOT` once per command with `scripts/project-paths.sh`.
+It must be a usable absolute directory ending in `fixtures-ooxml`; an invalid
+explicit override fails. Without an override, use writable
+`/workspace/tmp/fixtures-ooxml/`, then `RUNNER_TEMP/fixtures-ooxml`, the
+original `TMPDIR/fixtures-ooxml`, or the platform temp parent with the
+canonical project suffix. The same `cache/bun/install`,
+`cache/bun/transpiler`, `cache/xdg`, `cache/npm`, `build/` and
+`runs/<purpose>/<run-id>/` hierarchy applies on every host. Never use bare
+`/tmp`, home caches or ad-hoc top-level temporary paths.
+
+Run `make install`, `make check` and `make test`. Direct commands must use
+`bash scripts/project-paths.sh exec <command>` or the same resolved variables.
+`make test` sets `TMPDIR`, `TMP` and `TEMP` to an owned run directory;
+specification tests check `OOXML_TEST_SCRATCH` and refuse unowned/symlinked
+roots. `make clean` removes only this project's reproducible `cache/` and
+`build/`, not active `runs/` or retained evidence. Test CPU/heap profiles,
+logs and receipts live under repository `artifacts/test-profiles/` by default,
+outside disposable scratch; CI uses its own project-named artifact root and
+uploads it. Bun 1.4.2's `bun test` does not flush CLI profiling flags, so the
+test preload captures a JSC CPU profile and live heap snapshot before exit.
+Review `profile-analysis.txt` after each test run. Live heap snapshots do not
+measure sampled `alloc_space`/`alloc_objects`, and subprocesses remain outside
+this capture. Empty CPU samples or missing files fail the profiling gate.
+Fixture bytes and sealed specs stay under source control.
+
 ## Unified behaviour catalogue
 
 Organise `.feature` files by format, operation and observable behaviour, not by

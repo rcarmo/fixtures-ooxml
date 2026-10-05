@@ -6,10 +6,29 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
-          fetch-depth: 0 # Historical-custody tests read committed pre-retirement assets.
+          # Historical custody tests inspect committed pre-retirement assets.
+          fetch-depth: 0
       - uses: oven-sh/setup-bun@v2
         with:
-          bun-version: 1.4.1
-      - run: bun install --frozen-lockfile
-      - run: bun run check
-      - run: bun test
+          bun-version: '1.4.1'
+      # The same resolver accepts this explicit project-named root on hosted CI.
+      - name: Install with project-owned cache
+        env:
+          PROJECT_TMP_ROOT: ${{ runner.temp }}/fixtures-ooxml
+        run: make install
+      - name: Verify shared catalogue
+        env:
+          PROJECT_TMP_ROOT: ${{ runner.temp }}/fixtures-ooxml
+        run: make check
+      - name: Test with retained CPU and heap profiles
+        env:
+          PROJECT_TMP_ROOT: ${{ runner.temp }}/fixtures-ooxml
+          OOXML_EVIDENCE_ROOT: ${{ runner.temp }}/evidence/fixtures-ooxml
+        run: make test
+      - name: Upload test evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: fixtures-ooxml-test-profiles
+          path: ${{ runner.temp }}/evidence/fixtures-ooxml/
+          if-no-files-found: warn
